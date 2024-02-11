@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LambdaFunctionTimeoutType::NOT_SET:
+            return {};
           case LambdaFunctionTimeoutType::START_TO_CLOSE:
             return "START_TO_CLOSE";
           default:

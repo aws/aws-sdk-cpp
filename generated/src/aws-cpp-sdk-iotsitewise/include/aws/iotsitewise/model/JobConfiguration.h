@@ -39,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>The file format of the data in Amazon S3.</p>
+     * <p>The file format of the data in S3.</p>
      */
     inline const FileFormat& GetFileFormat() const{ return m_fileFormat; }
 
     /**
-     * <p>The file format of the data in Amazon S3.</p>
+     * <p>The file format of the data in S3.</p>
      */
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
 
     /**
-     * <p>The file format of the data in Amazon S3.</p>
+     * <p>The file format of the data in S3.</p>
      */
     inline void SetFileFormat(const FileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
 
     /**
-     * <p>The file format of the data in Amazon S3.</p>
+     * <p>The file format of the data in S3.</p>
      */
     inline void SetFileFormat(FileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
 
     /**
-     * <p>The file format of the data in Amazon S3.</p>
+     * <p>The file format of the data in S3.</p>
      */
     inline JobConfiguration& WithFileFormat(const FileFormat& value) { SetFileFormat(value); return *this;}
 
     /**
-     * <p>The file format of the data in Amazon S3.</p>
+     * <p>The file format of the data in S3.</p>
      */
     inline JobConfiguration& WithFileFormat(FileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
 

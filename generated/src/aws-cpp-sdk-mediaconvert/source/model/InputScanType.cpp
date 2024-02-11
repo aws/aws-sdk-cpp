@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputScanType::NOT_SET:
+            return {};
           case InputScanType::AUTO:
             return "AUTO";
           case InputScanType::PSF:

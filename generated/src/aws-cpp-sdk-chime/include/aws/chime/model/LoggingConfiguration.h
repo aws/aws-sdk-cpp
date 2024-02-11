@@ -38,51 +38,47 @@ namespace Model
 
 
     /**
-     * <p>When true, enables SIP message logs for sending to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Boolean that enables SIP message logs to Amazon CloudWatch logs.</p>
      */
     inline bool GetEnableSIPLogs() const{ return m_enableSIPLogs; }
 
     /**
-     * <p>When true, enables SIP message logs for sending to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Boolean that enables SIP message logs to Amazon CloudWatch logs.</p>
      */
     inline bool EnableSIPLogsHasBeenSet() const { return m_enableSIPLogsHasBeenSet; }
 
     /**
-     * <p>When true, enables SIP message logs for sending to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Boolean that enables SIP message logs to Amazon CloudWatch logs.</p>
      */
     inline void SetEnableSIPLogs(bool value) { m_enableSIPLogsHasBeenSet = true; m_enableSIPLogs = value; }
 
     /**
-     * <p>When true, enables SIP message logs for sending to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Boolean that enables SIP message logs to Amazon CloudWatch logs.</p>
      */
     inline LoggingConfiguration& WithEnableSIPLogs(bool value) { SetEnableSIPLogs(value); return *this;}
 
 
     /**
-     * <p>Boolean that enables the logging of Voice Connector metrics to
-     * Cloudwatch.</p>
+     * <p>Boolean that enables logging of detailed media metrics for Voice Connectors
+     * to Amazon CloudWatch logs.</p>
      */
     inline bool GetEnableMediaMetricLogs() const{ return m_enableMediaMetricLogs; }
 
     /**
-     * <p>Boolean that enables the logging of Voice Connector metrics to
-     * Cloudwatch.</p>
+     * <p>Boolean that enables logging of detailed media metrics for Voice Connectors
+     * to Amazon CloudWatch logs.</p>
      */
     inline bool EnableMediaMetricLogsHasBeenSet() const { return m_enableMediaMetricLogsHasBeenSet; }
 
     /**
-     * <p>Boolean that enables the logging of Voice Connector metrics to
-     * Cloudwatch.</p>
+     * <p>Boolean that enables logging of detailed media metrics for Voice Connectors
+     * to Amazon CloudWatch logs.</p>
      */
     inline void SetEnableMediaMetricLogs(bool value) { m_enableMediaMetricLogsHasBeenSet = true; m_enableMediaMetricLogs = value; }
 
     /**
-     * <p>Boolean that enables the logging of Voice Connector metrics to
-     * Cloudwatch.</p>
+     * <p>Boolean that enables logging of detailed media metrics for Voice Connectors
+     * to Amazon CloudWatch logs.</p>
      */
     inline LoggingConfiguration& WithEnableMediaMetricLogs(bool value) { SetEnableMediaMetricLogs(value); return *this;}
 

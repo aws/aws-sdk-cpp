@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BGPStatus::NOT_SET:
+            return {};
           case BGPStatus::up:
             return "up";
           case BGPStatus::down:

@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 DeleteFileSystemRequest::DeleteFileSystemRequest() : 
     m_fileSystemIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false),

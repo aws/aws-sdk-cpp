@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactType::NOT_SET:
+            return {};
           case ContactType::PERSONAL:
             return "PERSONAL";
           case ContactType::ESCALATION:

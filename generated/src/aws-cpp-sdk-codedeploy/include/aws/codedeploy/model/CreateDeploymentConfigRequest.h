@@ -10,6 +10,7 @@
 #include <aws/codedeploy/model/MinimumHealthyHosts.h>
 #include <aws/codedeploy/model/TrafficRoutingConfig.h>
 #include <aws/codedeploy/model/ComputePlatform.h>
+#include <aws/codedeploy/model/ZonalConfig.h>
 #include <utility>
 
 namespace Aws
@@ -246,6 +247,73 @@ namespace Model
      */
     inline CreateDeploymentConfigRequest& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to
+     * deploy your application to one <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability
+     * Zone</a> at a time, within an Amazon Web Services Region.</p> <p>For more
+     * information about the zonal configuration feature, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal
+     * configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+     */
+    inline const ZonalConfig& GetZonalConfig() const{ return m_zonalConfig; }
+
+    /**
+     * <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to
+     * deploy your application to one <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability
+     * Zone</a> at a time, within an Amazon Web Services Region.</p> <p>For more
+     * information about the zonal configuration feature, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal
+     * configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+     */
+    inline bool ZonalConfigHasBeenSet() const { return m_zonalConfigHasBeenSet; }
+
+    /**
+     * <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to
+     * deploy your application to one <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability
+     * Zone</a> at a time, within an Amazon Web Services Region.</p> <p>For more
+     * information about the zonal configuration feature, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal
+     * configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+     */
+    inline void SetZonalConfig(const ZonalConfig& value) { m_zonalConfigHasBeenSet = true; m_zonalConfig = value; }
+
+    /**
+     * <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to
+     * deploy your application to one <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability
+     * Zone</a> at a time, within an Amazon Web Services Region.</p> <p>For more
+     * information about the zonal configuration feature, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal
+     * configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+     */
+    inline void SetZonalConfig(ZonalConfig&& value) { m_zonalConfigHasBeenSet = true; m_zonalConfig = std::move(value); }
+
+    /**
+     * <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to
+     * deploy your application to one <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability
+     * Zone</a> at a time, within an Amazon Web Services Region.</p> <p>For more
+     * information about the zonal configuration feature, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal
+     * configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+     */
+    inline CreateDeploymentConfigRequest& WithZonalConfig(const ZonalConfig& value) { SetZonalConfig(value); return *this;}
+
+    /**
+     * <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to
+     * deploy your application to one <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability
+     * Zone</a> at a time, within an Amazon Web Services Region.</p> <p>For more
+     * information about the zonal configuration feature, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal
+     * configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+     */
+    inline CreateDeploymentConfigRequest& WithZonalConfig(ZonalConfig&& value) { SetZonalConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deploymentConfigName;
@@ -259,6 +327,9 @@ namespace Model
 
     ComputePlatform m_computePlatform;
     bool m_computePlatformHasBeenSet = false;
+
+    ZonalConfig m_zonalConfig;
+    bool m_zonalConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/model/AuthorizerConfig.h>
 #include <aws/iot/model/ServiceType.h>
+#include <aws/iot/model/TlsConfig.h>
 #include <aws/iot/model/Tag.h>
 #include <utility>
 
@@ -393,6 +394,37 @@ namespace Model
      */
     inline CreateDomainConfigurationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline const TlsConfig& GetTlsConfig() const{ return m_tlsConfig; }
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline bool TlsConfigHasBeenSet() const { return m_tlsConfigHasBeenSet; }
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline void SetTlsConfig(const TlsConfig& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = value; }
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline void SetTlsConfig(TlsConfig&& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = std::move(value); }
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline CreateDomainConfigurationRequest& WithTlsConfig(const TlsConfig& value) { SetTlsConfig(value); return *this;}
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline CreateDomainConfigurationRequest& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainConfigurationName;
@@ -415,6 +447,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    TlsConfig m_tlsConfig;
+    bool m_tlsConfigHasBeenSet = false;
   };
 
 } // namespace Model

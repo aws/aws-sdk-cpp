@@ -43,56 +43,56 @@ namespace Model
     /**
      * Use the base64 license string that Nagra provides you. Enter it directly in your
      * JSON job specification or in the console. Required when you include Nagra
-     * NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
+     * NexGuard File Marker watermarking in your job.
      */
     inline const Aws::String& GetLicense() const{ return m_license; }
 
     /**
      * Use the base64 license string that Nagra provides you. Enter it directly in your
      * JSON job specification or in the console. Required when you include Nagra
-     * NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
+     * NexGuard File Marker watermarking in your job.
      */
     inline bool LicenseHasBeenSet() const { return m_licenseHasBeenSet; }
 
     /**
      * Use the base64 license string that Nagra provides you. Enter it directly in your
      * JSON job specification or in the console. Required when you include Nagra
-     * NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
+     * NexGuard File Marker watermarking in your job.
      */
     inline void SetLicense(const Aws::String& value) { m_licenseHasBeenSet = true; m_license = value; }
 
     /**
      * Use the base64 license string that Nagra provides you. Enter it directly in your
      * JSON job specification or in the console. Required when you include Nagra
-     * NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
+     * NexGuard File Marker watermarking in your job.
      */
     inline void SetLicense(Aws::String&& value) { m_licenseHasBeenSet = true; m_license = std::move(value); }
 
     /**
      * Use the base64 license string that Nagra provides you. Enter it directly in your
      * JSON job specification or in the console. Required when you include Nagra
-     * NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
+     * NexGuard File Marker watermarking in your job.
      */
     inline void SetLicense(const char* value) { m_licenseHasBeenSet = true; m_license.assign(value); }
 
     /**
      * Use the base64 license string that Nagra provides you. Enter it directly in your
      * JSON job specification or in the console. Required when you include Nagra
-     * NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
+     * NexGuard File Marker watermarking in your job.
      */
     inline NexGuardFileMarkerSettings& WithLicense(const Aws::String& value) { SetLicense(value); return *this;}
 
     /**
      * Use the base64 license string that Nagra provides you. Enter it directly in your
      * JSON job specification or in the console. Required when you include Nagra
-     * NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
+     * NexGuard File Marker watermarking in your job.
      */
     inline NexGuardFileMarkerSettings& WithLicense(Aws::String&& value) { SetLicense(std::move(value)); return *this;}
 
     /**
      * Use the base64 license string that Nagra provides you. Enter it directly in your
      * JSON job specification or in the console. Required when you include Nagra
-     * NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
+     * NexGuard File Marker watermarking in your job.
      */
     inline NexGuardFileMarkerSettings& WithLicense(const char* value) { SetLicense(value); return *this;}
 
@@ -100,121 +100,105 @@ namespace Model
     /**
      * Specify the payload ID that you want associated with this output. Valid values
      * vary depending on your Nagra NexGuard forensic watermarking workflow. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job. For PreRelease Content (NGPR/G2),
-     * specify an integer from 1 through 4,194,303. You must generate a unique ID for
-     * each asset you watermark, and keep a record of which ID you have assigned to
-     * each asset. Neither Nagra nor MediaConvert keep track of the relationship
-     * between output files and your IDs. For OTT Streaming, create two adaptive
-     * bitrate (ABR) stacks for each asset. Do this by setting up two output groups.
-     * For one output group, set the value of Payload ID (payload) to 0 in every
-     * output. For the other output group, set Payload ID (payload) to 1 in every
-     * output.
+     * when you include Nagra NexGuard File Marker watermarking in your job. For
+     * PreRelease Content (NGPR/G2), specify an integer from 1 through 4,194,303. You
+     * must generate a unique ID for each asset you watermark, and keep a record of
+     * which ID you have assigned to each asset. Neither Nagra nor MediaConvert keep
+     * track of the relationship between output files and your IDs. For OTT Streaming,
+     * create two adaptive bitrate (ABR) stacks for each asset. Do this by setting up
+     * two output groups. For one output group, set the value of Payload ID to 0 in
+     * every output. For the other output group, set Payload ID to 1 in every output.
      */
     inline int GetPayload() const{ return m_payload; }
 
     /**
      * Specify the payload ID that you want associated with this output. Valid values
      * vary depending on your Nagra NexGuard forensic watermarking workflow. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job. For PreRelease Content (NGPR/G2),
-     * specify an integer from 1 through 4,194,303. You must generate a unique ID for
-     * each asset you watermark, and keep a record of which ID you have assigned to
-     * each asset. Neither Nagra nor MediaConvert keep track of the relationship
-     * between output files and your IDs. For OTT Streaming, create two adaptive
-     * bitrate (ABR) stacks for each asset. Do this by setting up two output groups.
-     * For one output group, set the value of Payload ID (payload) to 0 in every
-     * output. For the other output group, set Payload ID (payload) to 1 in every
-     * output.
+     * when you include Nagra NexGuard File Marker watermarking in your job. For
+     * PreRelease Content (NGPR/G2), specify an integer from 1 through 4,194,303. You
+     * must generate a unique ID for each asset you watermark, and keep a record of
+     * which ID you have assigned to each asset. Neither Nagra nor MediaConvert keep
+     * track of the relationship between output files and your IDs. For OTT Streaming,
+     * create two adaptive bitrate (ABR) stacks for each asset. Do this by setting up
+     * two output groups. For one output group, set the value of Payload ID to 0 in
+     * every output. For the other output group, set Payload ID to 1 in every output.
      */
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
 
     /**
      * Specify the payload ID that you want associated with this output. Valid values
      * vary depending on your Nagra NexGuard forensic watermarking workflow. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job. For PreRelease Content (NGPR/G2),
-     * specify an integer from 1 through 4,194,303. You must generate a unique ID for
-     * each asset you watermark, and keep a record of which ID you have assigned to
-     * each asset. Neither Nagra nor MediaConvert keep track of the relationship
-     * between output files and your IDs. For OTT Streaming, create two adaptive
-     * bitrate (ABR) stacks for each asset. Do this by setting up two output groups.
-     * For one output group, set the value of Payload ID (payload) to 0 in every
-     * output. For the other output group, set Payload ID (payload) to 1 in every
-     * output.
+     * when you include Nagra NexGuard File Marker watermarking in your job. For
+     * PreRelease Content (NGPR/G2), specify an integer from 1 through 4,194,303. You
+     * must generate a unique ID for each asset you watermark, and keep a record of
+     * which ID you have assigned to each asset. Neither Nagra nor MediaConvert keep
+     * track of the relationship between output files and your IDs. For OTT Streaming,
+     * create two adaptive bitrate (ABR) stacks for each asset. Do this by setting up
+     * two output groups. For one output group, set the value of Payload ID to 0 in
+     * every output. For the other output group, set Payload ID to 1 in every output.
      */
     inline void SetPayload(int value) { m_payloadHasBeenSet = true; m_payload = value; }
 
     /**
      * Specify the payload ID that you want associated with this output. Valid values
      * vary depending on your Nagra NexGuard forensic watermarking workflow. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job. For PreRelease Content (NGPR/G2),
-     * specify an integer from 1 through 4,194,303. You must generate a unique ID for
-     * each asset you watermark, and keep a record of which ID you have assigned to
-     * each asset. Neither Nagra nor MediaConvert keep track of the relationship
-     * between output files and your IDs. For OTT Streaming, create two adaptive
-     * bitrate (ABR) stacks for each asset. Do this by setting up two output groups.
-     * For one output group, set the value of Payload ID (payload) to 0 in every
-     * output. For the other output group, set Payload ID (payload) to 1 in every
-     * output.
+     * when you include Nagra NexGuard File Marker watermarking in your job. For
+     * PreRelease Content (NGPR/G2), specify an integer from 1 through 4,194,303. You
+     * must generate a unique ID for each asset you watermark, and keep a record of
+     * which ID you have assigned to each asset. Neither Nagra nor MediaConvert keep
+     * track of the relationship between output files and your IDs. For OTT Streaming,
+     * create two adaptive bitrate (ABR) stacks for each asset. Do this by setting up
+     * two output groups. For one output group, set the value of Payload ID to 0 in
+     * every output. For the other output group, set Payload ID to 1 in every output.
      */
     inline NexGuardFileMarkerSettings& WithPayload(int value) { SetPayload(value); return *this;}
 
 
     /**
      * Enter one of the watermarking preset strings that Nagra provides you. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job.
+     * when you include Nagra NexGuard File Marker watermarking in your job.
      */
     inline const Aws::String& GetPreset() const{ return m_preset; }
 
     /**
      * Enter one of the watermarking preset strings that Nagra provides you. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job.
+     * when you include Nagra NexGuard File Marker watermarking in your job.
      */
     inline bool PresetHasBeenSet() const { return m_presetHasBeenSet; }
 
     /**
      * Enter one of the watermarking preset strings that Nagra provides you. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job.
+     * when you include Nagra NexGuard File Marker watermarking in your job.
      */
     inline void SetPreset(const Aws::String& value) { m_presetHasBeenSet = true; m_preset = value; }
 
     /**
      * Enter one of the watermarking preset strings that Nagra provides you. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job.
+     * when you include Nagra NexGuard File Marker watermarking in your job.
      */
     inline void SetPreset(Aws::String&& value) { m_presetHasBeenSet = true; m_preset = std::move(value); }
 
     /**
      * Enter one of the watermarking preset strings that Nagra provides you. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job.
+     * when you include Nagra NexGuard File Marker watermarking in your job.
      */
     inline void SetPreset(const char* value) { m_presetHasBeenSet = true; m_preset.assign(value); }
 
     /**
      * Enter one of the watermarking preset strings that Nagra provides you. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job.
+     * when you include Nagra NexGuard File Marker watermarking in your job.
      */
     inline NexGuardFileMarkerSettings& WithPreset(const Aws::String& value) { SetPreset(value); return *this;}
 
     /**
      * Enter one of the watermarking preset strings that Nagra provides you. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job.
+     * when you include Nagra NexGuard File Marker watermarking in your job.
      */
     inline NexGuardFileMarkerSettings& WithPreset(Aws::String&& value) { SetPreset(std::move(value)); return *this;}
 
     /**
      * Enter one of the watermarking preset strings that Nagra provides you. Required
-     * when you include Nagra NexGuard File Marker watermarking
-     * (NexGuardWatermarkingSettings) in your job.
+     * when you include Nagra NexGuard File Marker watermarking in your job.
      */
     inline NexGuardFileMarkerSettings& WithPreset(const char* value) { SetPreset(value); return *this;}
 

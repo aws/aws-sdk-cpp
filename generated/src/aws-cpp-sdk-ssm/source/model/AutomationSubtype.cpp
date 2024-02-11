@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutomationSubtype::NOT_SET:
+            return {};
           case AutomationSubtype::ChangeRequest:
             return "ChangeRequest";
           default:

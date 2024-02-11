@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/VerifiedAccessSseSpecificationResponse.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -50,39 +51,65 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocument = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocument.assign(value); }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline ModifyVerifiedAccessEndpointPolicyResponse& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline ModifyVerifiedAccessEndpointPolicyResponse& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline ModifyVerifiedAccessEndpointPolicyResponse& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+
+
+    /**
+     * <p>The options in use for server side encryption.</p>
+     */
+    inline const VerifiedAccessSseSpecificationResponse& GetSseSpecification() const{ return m_sseSpecification; }
+
+    /**
+     * <p>The options in use for server side encryption.</p>
+     */
+    inline void SetSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { m_sseSpecification = value; }
+
+    /**
+     * <p>The options in use for server side encryption.</p>
+     */
+    inline void SetSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { m_sseSpecification = std::move(value); }
+
+    /**
+     * <p>The options in use for server side encryption.</p>
+     */
+    inline ModifyVerifiedAccessEndpointPolicyResponse& WithSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { SetSseSpecification(value); return *this;}
+
+    /**
+     * <p>The options in use for server side encryption.</p>
+     */
+    inline ModifyVerifiedAccessEndpointPolicyResponse& WithSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { SetSseSpecification(std::move(value)); return *this;}
 
 
     
@@ -105,6 +132,8 @@ namespace Model
     bool m_policyEnabled;
 
     Aws::String m_policyDocument;
+
+    VerifiedAccessSseSpecificationResponse m_sseSpecification;
 
     ResponseMetadata m_responseMetadata;
   };

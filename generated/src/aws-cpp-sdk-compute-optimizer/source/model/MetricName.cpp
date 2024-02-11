@@ -34,6 +34,8 @@ namespace Aws
         static const int NETWORK_OUT_BYTES_PER_SECOND_HASH = HashingUtils::HashString("NETWORK_OUT_BYTES_PER_SECOND");
         static const int NETWORK_PACKETS_IN_PER_SECOND_HASH = HashingUtils::HashString("NETWORK_PACKETS_IN_PER_SECOND");
         static const int NETWORK_PACKETS_OUT_PER_SECOND_HASH = HashingUtils::HashString("NETWORK_PACKETS_OUT_PER_SECOND");
+        static const int GPU_PERCENTAGE_HASH = HashingUtils::HashString("GPU_PERCENTAGE");
+        static const int GPU_MEMORY_PERCENTAGE_HASH = HashingUtils::HashString("GPU_MEMORY_PERCENTAGE");
 
 
         MetricName GetMetricNameForName(const Aws::String& name)
@@ -95,6 +97,14 @@ namespace Aws
           {
             return MetricName::NETWORK_PACKETS_OUT_PER_SECOND;
           }
+          else if (hashCode == GPU_PERCENTAGE_HASH)
+          {
+            return MetricName::GPU_PERCENTAGE;
+          }
+          else if (hashCode == GPU_MEMORY_PERCENTAGE_HASH)
+          {
+            return MetricName::GPU_MEMORY_PERCENTAGE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricName::NOT_SET:
+            return {};
           case MetricName::Cpu:
             return "Cpu";
           case MetricName::Memory:
@@ -137,6 +149,10 @@ namespace Aws
             return "NETWORK_PACKETS_IN_PER_SECOND";
           case MetricName::NETWORK_PACKETS_OUT_PER_SECOND:
             return "NETWORK_PACKETS_OUT_PER_SECOND";
+          case MetricName::GPU_PERCENTAGE:
+            return "GPU_PERCENTAGE";
+          case MetricName::GPU_MEMORY_PERCENTAGE:
+            return "GPU_MEMORY_PERCENTAGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -7,6 +7,7 @@
 #set($epContextClassName = "${metadata.classNamePrefix}ClientContextParameters")
 #set($epBuiltInClassName = "${metadata.classNamePrefix}BuiltInParameters")
 #set($exportMacro = "${CppViewHelper.computeExportValue($metadata.classNamePrefix)}")
+#set($externMacro = "AWS_${metadata.classNamePrefix.toUpperCase()}_EXTERN")
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 #if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
@@ -101,12 +102,12 @@ using ${metadata.classNamePrefix}DefaultEpProviderBase =
 namespace Endpoint
 {
 /**
- * Export endpoint provider symbols from DLL
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
  */
-template class ${exportMacro}
+${externMacro} template class ${exportMacro}
     Aws::Endpoint::EndpointProviderBase<${serviceNamespace}::Endpoint::${metadata.classNamePrefix}ClientConfiguration, ${serviceNamespace}::Endpoint::${epBuiltInClassName}, ${serviceNamespace}::Endpoint::${epContextClassName}>;
 
-template class ${exportMacro}
+${externMacro} template class ${exportMacro}
     Aws::Endpoint::DefaultEndpointProvider<${serviceNamespace}::Endpoint::${metadata.classNamePrefix}ClientConfiguration, ${serviceNamespace}::Endpoint::${epBuiltInClassName}, ${serviceNamespace}::Endpoint::${epContextClassName}>;
 } // namespace Endpoint
 

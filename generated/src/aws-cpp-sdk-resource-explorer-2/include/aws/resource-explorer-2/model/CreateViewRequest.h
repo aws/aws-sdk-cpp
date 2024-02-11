@@ -295,6 +295,55 @@ namespace Model
 
 
     /**
+     * <p>The root ARN of the account, an organizational unit (OU), or an organization
+     * ARN. If left empty, the default is account.</p>
+     */
+    inline const Aws::String& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>The root ARN of the account, an organizational unit (OU), or an organization
+     * ARN. If left empty, the default is account.</p>
+     */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+
+    /**
+     * <p>The root ARN of the account, an organizational unit (OU), or an organization
+     * ARN. If left empty, the default is account.</p>
+     */
+    inline void SetScope(const Aws::String& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>The root ARN of the account, an organizational unit (OU), or an organization
+     * ARN. If left empty, the default is account.</p>
+     */
+    inline void SetScope(Aws::String&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
+
+    /**
+     * <p>The root ARN of the account, an organizational unit (OU), or an organization
+     * ARN. If left empty, the default is account.</p>
+     */
+    inline void SetScope(const char* value) { m_scopeHasBeenSet = true; m_scope.assign(value); }
+
+    /**
+     * <p>The root ARN of the account, an organizational unit (OU), or an organization
+     * ARN. If left empty, the default is account.</p>
+     */
+    inline CreateViewRequest& WithScope(const Aws::String& value) { SetScope(value); return *this;}
+
+    /**
+     * <p>The root ARN of the account, an organizational unit (OU), or an organization
+     * ARN. If left empty, the default is account.</p>
+     */
+    inline CreateViewRequest& WithScope(Aws::String&& value) { SetScope(std::move(value)); return *this;}
+
+    /**
+     * <p>The root ARN of the account, an organizational unit (OU), or an organization
+     * ARN. If left empty, the default is account.</p>
+     */
+    inline CreateViewRequest& WithScope(const char* value) { SetScope(value); return *this;}
+
+
+    /**
      * <p>Tag key and value pairs that are attached to the view.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -434,6 +483,9 @@ namespace Model
 
     Aws::Vector<IncludedProperty> m_includedProperties;
     bool m_includedPropertiesHasBeenSet = false;
+
+    Aws::String m_scope;
+    bool m_scopeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

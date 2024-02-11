@@ -28,6 +28,9 @@ namespace Kafka
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef KafkaClientConfiguration ClientConfigurationType;
+      typedef KafkaEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -102,6 +105,34 @@ namespace Kafka
         void BatchAssociateScramSecretAsync(const BatchAssociateScramSecretRequestT& request, const BatchAssociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaClient::BatchAssociateScramSecret, request, handler, context);
+        }
+
+        /**
+         * 
+            <p>Disassociates one or more Scram Secrets from an Amazon MSK
+         * cluster.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchDisassociateScramSecret">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDisassociateScramSecretOutcome BatchDisassociateScramSecret(const Model::BatchDisassociateScramSecretRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDisassociateScramSecret that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDisassociateScramSecretRequestT = Model::BatchDisassociateScramSecretRequest>
+        Model::BatchDisassociateScramSecretOutcomeCallable BatchDisassociateScramSecretCallable(const BatchDisassociateScramSecretRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::BatchDisassociateScramSecret, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDisassociateScramSecret that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDisassociateScramSecretRequestT = Model::BatchDisassociateScramSecretRequest>
+        void BatchDisassociateScramSecretAsync(const BatchDisassociateScramSecretRequestT& request, const BatchDisassociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::BatchDisassociateScramSecret, request, handler, context);
         }
 
         /**
@@ -189,6 +220,59 @@ namespace Kafka
         }
 
         /**
+         * <p>Creates the replicator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateReplicator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateReplicatorOutcome CreateReplicator(const Model::CreateReplicatorRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateReplicator that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateReplicatorRequestT = Model::CreateReplicatorRequest>
+        Model::CreateReplicatorOutcomeCallable CreateReplicatorCallable(const CreateReplicatorRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::CreateReplicator, request);
+        }
+
+        /**
+         * An Async wrapper for CreateReplicator that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateReplicatorRequestT = Model::CreateReplicatorRequest>
+        void CreateReplicatorAsync(const CreateReplicatorRequestT& request, const CreateReplicatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::CreateReplicator, request, handler, context);
+        }
+
+        /**
+         * 
+            <p>Creates a new MSK VPC connection.</p>
+         <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateVpcConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVpcConnectionOutcome CreateVpcConnection(const Model::CreateVpcConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateVpcConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateVpcConnectionRequestT = Model::CreateVpcConnectionRequest>
+        Model::CreateVpcConnectionOutcomeCallable CreateVpcConnectionCallable(const CreateVpcConnectionRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::CreateVpcConnection, request);
+        }
+
+        /**
+         * An Async wrapper for CreateVpcConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateVpcConnectionRequestT = Model::CreateVpcConnectionRequest>
+        void CreateVpcConnectionAsync(const CreateVpcConnectionRequestT& request, const CreateVpcConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::CreateVpcConnection, request, handler, context);
+        }
+
+        /**
          * 
             <p>Deletes the MSK cluster specified by the Amazon Resource Name
          * (ARN) in the request.</p>
@@ -218,6 +302,34 @@ namespace Kafka
 
         /**
          * 
+            <p>Deletes the MSK cluster policy specified by the Amazon Resource
+         * Name (ARN) in the request.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteClusterPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteClusterPolicyOutcome DeleteClusterPolicy(const Model::DeleteClusterPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteClusterPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteClusterPolicyRequestT = Model::DeleteClusterPolicyRequest>
+        Model::DeleteClusterPolicyOutcomeCallable DeleteClusterPolicyCallable(const DeleteClusterPolicyRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::DeleteClusterPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteClusterPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteClusterPolicyRequestT = Model::DeleteClusterPolicyRequest>
+        void DeleteClusterPolicyAsync(const DeleteClusterPolicyRequestT& request, const DeleteClusterPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::DeleteClusterPolicy, request, handler, context);
+        }
+
+        /**
+         * 
             <p>Deletes an MSK Configuration.</p>
          <p><h3>See Also:</h3>
          * <a
@@ -242,6 +354,59 @@ namespace Kafka
         void DeleteConfigurationAsync(const DeleteConfigurationRequestT& request, const DeleteConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaClient::DeleteConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a replicator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteReplicator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteReplicatorOutcome DeleteReplicator(const Model::DeleteReplicatorRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteReplicator that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteReplicatorRequestT = Model::DeleteReplicatorRequest>
+        Model::DeleteReplicatorOutcomeCallable DeleteReplicatorCallable(const DeleteReplicatorRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::DeleteReplicator, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteReplicator that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteReplicatorRequestT = Model::DeleteReplicatorRequest>
+        void DeleteReplicatorAsync(const DeleteReplicatorRequestT& request, const DeleteReplicatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::DeleteReplicator, request, handler, context);
+        }
+
+        /**
+         * 
+            <p>Deletes a MSK VPC connection.</p>
+         <p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteVpcConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVpcConnectionOutcome DeleteVpcConnection(const Model::DeleteVpcConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteVpcConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteVpcConnectionRequestT = Model::DeleteVpcConnectionRequest>
+        Model::DeleteVpcConnectionOutcomeCallable DeleteVpcConnectionCallable(const DeleteVpcConnectionRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::DeleteVpcConnection, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteVpcConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteVpcConnectionRequestT = Model::DeleteVpcConnectionRequest>
+        void DeleteVpcConnectionAsync(const DeleteVpcConnectionRequestT& request, const DeleteVpcConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::DeleteVpcConnection, request, handler, context);
         }
 
         /**
@@ -274,34 +439,6 @@ namespace Kafka
 
         /**
          * 
-            <p>Returns a description of the MSK cluster whose Amazon Resource
-         * Name (ARN) is specified in the request.</p>
-         <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterV2">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::DescribeClusterV2Outcome DescribeClusterV2(const Model::DescribeClusterV2Request& request) const;
-
-        /**
-         * A Callable wrapper for DescribeClusterV2 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename DescribeClusterV2RequestT = Model::DescribeClusterV2Request>
-        Model::DescribeClusterV2OutcomeCallable DescribeClusterV2Callable(const DescribeClusterV2RequestT& request) const
-        {
-            return SubmitCallable(&KafkaClient::DescribeClusterV2, request);
-        }
-
-        /**
-         * An Async wrapper for DescribeClusterV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename DescribeClusterV2RequestT = Model::DescribeClusterV2Request>
-        void DescribeClusterV2Async(const DescribeClusterV2RequestT& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&KafkaClient::DescribeClusterV2, request, handler, context);
-        }
-
-        /**
-         * 
             <p>Returns a description of the cluster operation specified by the
          * ARN.</p>
          <p><h3>See Also:</h3>   <a
@@ -326,6 +463,62 @@ namespace Kafka
         void DescribeClusterOperationAsync(const DescribeClusterOperationRequestT& request, const DescribeClusterOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaClient::DescribeClusterOperation, request, handler, context);
+        }
+
+        /**
+         * 
+            <p>Returns a description of the cluster operation specified by the
+         * ARN.</p>
+<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperationV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClusterOperationV2Outcome DescribeClusterOperationV2(const Model::DescribeClusterOperationV2Request& request) const;
+
+        /**
+         * A Callable wrapper for DescribeClusterOperationV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeClusterOperationV2RequestT = Model::DescribeClusterOperationV2Request>
+        Model::DescribeClusterOperationV2OutcomeCallable DescribeClusterOperationV2Callable(const DescribeClusterOperationV2RequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::DescribeClusterOperationV2, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeClusterOperationV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeClusterOperationV2RequestT = Model::DescribeClusterOperationV2Request>
+        void DescribeClusterOperationV2Async(const DescribeClusterOperationV2RequestT& request, const DescribeClusterOperationV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::DescribeClusterOperationV2, request, handler, context);
+        }
+
+        /**
+         * 
+            <p>Returns a description of the MSK cluster whose Amazon Resource
+         * Name (ARN) is specified in the request.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClusterV2Outcome DescribeClusterV2(const Model::DescribeClusterV2Request& request) const;
+
+        /**
+         * A Callable wrapper for DescribeClusterV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeClusterV2RequestT = Model::DescribeClusterV2Request>
+        Model::DescribeClusterV2OutcomeCallable DescribeClusterV2Callable(const DescribeClusterV2RequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::DescribeClusterV2, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeClusterV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeClusterV2RequestT = Model::DescribeClusterV2Request>
+        void DescribeClusterV2Async(const DescribeClusterV2RequestT& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::DescribeClusterV2, request, handler, context);
         }
 
         /**
@@ -385,31 +578,56 @@ namespace Kafka
         }
 
         /**
-         * 
-            <p>Disassociates one or more Scram Secrets from an Amazon MSK
-         * cluster.</p>
-         <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchDisassociateScramSecret">AWS
+         * <p>Describes a replicator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeReplicator">AWS
          * API Reference</a></p>
          */
-        virtual Model::BatchDisassociateScramSecretOutcome BatchDisassociateScramSecret(const Model::BatchDisassociateScramSecretRequest& request) const;
+        virtual Model::DescribeReplicatorOutcome DescribeReplicator(const Model::DescribeReplicatorRequest& request) const;
 
         /**
-         * A Callable wrapper for BatchDisassociateScramSecret that returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeReplicator that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename BatchDisassociateScramSecretRequestT = Model::BatchDisassociateScramSecretRequest>
-        Model::BatchDisassociateScramSecretOutcomeCallable BatchDisassociateScramSecretCallable(const BatchDisassociateScramSecretRequestT& request) const
+        template<typename DescribeReplicatorRequestT = Model::DescribeReplicatorRequest>
+        Model::DescribeReplicatorOutcomeCallable DescribeReplicatorCallable(const DescribeReplicatorRequestT& request) const
         {
-            return SubmitCallable(&KafkaClient::BatchDisassociateScramSecret, request);
+            return SubmitCallable(&KafkaClient::DescribeReplicator, request);
         }
 
         /**
-         * An Async wrapper for BatchDisassociateScramSecret that queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeReplicator that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename BatchDisassociateScramSecretRequestT = Model::BatchDisassociateScramSecretRequest>
-        void BatchDisassociateScramSecretAsync(const BatchDisassociateScramSecretRequestT& request, const BatchDisassociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeReplicatorRequestT = Model::DescribeReplicatorRequest>
+        void DescribeReplicatorAsync(const DescribeReplicatorRequestT& request, const DescribeReplicatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
-            return SubmitAsync(&KafkaClient::BatchDisassociateScramSecret, request, handler, context);
+            return SubmitAsync(&KafkaClient::DescribeReplicator, request, handler, context);
+        }
+
+        /**
+         * 
+            <p>Returns a description of this MSK VPC connection.</p>
+        
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeVpcConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcConnectionOutcome DescribeVpcConnection(const Model::DescribeVpcConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeVpcConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeVpcConnectionRequestT = Model::DescribeVpcConnectionRequest>
+        Model::DescribeVpcConnectionOutcomeCallable DescribeVpcConnectionCallable(const DescribeVpcConnectionRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::DescribeVpcConnection, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeVpcConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeVpcConnectionRequestT = Model::DescribeVpcConnectionRequest>
+        void DescribeVpcConnectionAsync(const DescribeVpcConnectionRequestT& request, const DescribeVpcConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::DescribeVpcConnection, request, handler, context);
         }
 
         /**
@@ -442,6 +660,34 @@ namespace Kafka
 
         /**
          * 
+            <p>Get the MSK cluster policy specified by the Amazon Resource Name
+         * (ARN) in the request.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetClusterPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetClusterPolicyOutcome GetClusterPolicy(const Model::GetClusterPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetClusterPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetClusterPolicyRequestT = Model::GetClusterPolicyRequest>
+        Model::GetClusterPolicyOutcomeCallable GetClusterPolicyCallable(const GetClusterPolicyRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::GetClusterPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetClusterPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetClusterPolicyRequestT = Model::GetClusterPolicyRequest>
+        void GetClusterPolicyAsync(const GetClusterPolicyRequestT& request, const GetClusterPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::GetClusterPolicy, request, handler, context);
+        }
+
+        /**
+         * 
             <p>Gets the Apache Kafka versions to which you can update the MSK
          * cluster.</p>
          <p><h3>See Also:</h3>   <a
@@ -470,6 +716,34 @@ namespace Kafka
 
         /**
          * 
+            <p>Returns a list of all the VPC connections in this Region.</p>
+  
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClientVpcConnections">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListClientVpcConnectionsOutcome ListClientVpcConnections(const Model::ListClientVpcConnectionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListClientVpcConnections that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListClientVpcConnectionsRequestT = Model::ListClientVpcConnectionsRequest>
+        Model::ListClientVpcConnectionsOutcomeCallable ListClientVpcConnectionsCallable(const ListClientVpcConnectionsRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::ListClientVpcConnections, request);
+        }
+
+        /**
+         * An Async wrapper for ListClientVpcConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListClientVpcConnectionsRequestT = Model::ListClientVpcConnectionsRequest>
+        void ListClientVpcConnectionsAsync(const ListClientVpcConnectionsRequestT& request, const ListClientVpcConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::ListClientVpcConnections, request, handler, context);
+        }
+
+        /**
+         * 
             <p>Returns a list of all the operations that have been performed on
          * the specified MSK cluster.</p>
          <p><h3>See Also:</h3>   <a
@@ -494,6 +768,34 @@ namespace Kafka
         void ListClusterOperationsAsync(const ListClusterOperationsRequestT& request, const ListClusterOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaClient::ListClusterOperations, request, handler, context);
+        }
+
+        /**
+         * 
+            <p>Returns a list of all the operations that have been performed on
+         * the specified MSK cluster.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperationsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListClusterOperationsV2Outcome ListClusterOperationsV2(const Model::ListClusterOperationsV2Request& request) const;
+
+        /**
+         * A Callable wrapper for ListClusterOperationsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListClusterOperationsV2RequestT = Model::ListClusterOperationsV2Request>
+        Model::ListClusterOperationsV2OutcomeCallable ListClusterOperationsV2Callable(const ListClusterOperationsV2RequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::ListClusterOperationsV2, request);
+        }
+
+        /**
+         * An Async wrapper for ListClusterOperationsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListClusterOperationsV2RequestT = Model::ListClusterOperationsV2Request>
+        void ListClusterOperationsV2Async(const ListClusterOperationsV2RequestT& request, const ListClusterOperationsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::ListClusterOperationsV2, request, handler, context);
         }
 
         /**
@@ -665,6 +967,31 @@ namespace Kafka
         }
 
         /**
+         * <p>Lists the replicators.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListReplicators">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReplicatorsOutcome ListReplicators(const Model::ListReplicatorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListReplicators that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListReplicatorsRequestT = Model::ListReplicatorsRequest>
+        Model::ListReplicatorsOutcomeCallable ListReplicatorsCallable(const ListReplicatorsRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::ListReplicators, request);
+        }
+
+        /**
+         * An Async wrapper for ListReplicators that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListReplicatorsRequestT = Model::ListReplicatorsRequest>
+        void ListReplicatorsAsync(const ListReplicatorsRequestT& request, const ListReplicatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::ListReplicators, request, handler, context);
+        }
+
+        /**
          * 
             <p>Returns a list of the Scram Secrets associated with an Amazon
          * MSK cluster.</p>
@@ -721,6 +1048,63 @@ namespace Kafka
         }
 
         /**
+         * 
+            <p>Returns a list of all the VPC connections in this Region.</p>
+  
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListVpcConnections">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVpcConnectionsOutcome ListVpcConnections(const Model::ListVpcConnectionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListVpcConnections that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListVpcConnectionsRequestT = Model::ListVpcConnectionsRequest>
+        Model::ListVpcConnectionsOutcomeCallable ListVpcConnectionsCallable(const ListVpcConnectionsRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::ListVpcConnections, request);
+        }
+
+        /**
+         * An Async wrapper for ListVpcConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListVpcConnectionsRequestT = Model::ListVpcConnectionsRequest>
+        void ListVpcConnectionsAsync(const ListVpcConnectionsRequestT& request, const ListVpcConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::ListVpcConnections, request, handler, context);
+        }
+
+        /**
+         * 
+            <p>Creates or updates the MSK cluster policy specified by the
+         * cluster Amazon Resource Name (ARN) in the request.</p>
+         <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/PutClusterPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutClusterPolicyOutcome PutClusterPolicy(const Model::PutClusterPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutClusterPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutClusterPolicyRequestT = Model::PutClusterPolicyRequest>
+        Model::PutClusterPolicyOutcomeCallable PutClusterPolicyCallable(const PutClusterPolicyRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::PutClusterPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutClusterPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutClusterPolicyRequestT = Model::PutClusterPolicyRequest>
+        void PutClusterPolicyAsync(const PutClusterPolicyRequestT& request, const PutClusterPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::PutClusterPolicy, request, handler, context);
+        }
+
+        /**
          * Reboots brokers.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RebootBroker">AWS
          * API Reference</a></p>
@@ -743,6 +1127,33 @@ namespace Kafka
         void RebootBrokerAsync(const RebootBrokerRequestT& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaClient::RebootBroker, request, handler, context);
+        }
+
+        /**
+         * 
+            <p>Returns empty response.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RejectClientVpcConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RejectClientVpcConnectionOutcome RejectClientVpcConnection(const Model::RejectClientVpcConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for RejectClientVpcConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RejectClientVpcConnectionRequestT = Model::RejectClientVpcConnectionRequest>
+        Model::RejectClientVpcConnectionOutcomeCallable RejectClientVpcConnectionCallable(const RejectClientVpcConnectionRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::RejectClientVpcConnection, request);
+        }
+
+        /**
+         * An Async wrapper for RejectClientVpcConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RejectClientVpcConnectionRequestT = Model::RejectClientVpcConnectionRequest>
+        void RejectClientVpcConnectionAsync(const RejectClientVpcConnectionRequestT& request, const RejectClientVpcConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::RejectClientVpcConnection, request, handler, context);
         }
 
         /**
@@ -831,34 +1242,6 @@ namespace Kafka
 
         /**
          * 
-            <p>Updates EC2 instance type.</p>
-         <p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerType">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::UpdateBrokerTypeOutcome UpdateBrokerType(const Model::UpdateBrokerTypeRequest& request) const;
-
-        /**
-         * A Callable wrapper for UpdateBrokerType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename UpdateBrokerTypeRequestT = Model::UpdateBrokerTypeRequest>
-        Model::UpdateBrokerTypeOutcomeCallable UpdateBrokerTypeCallable(const UpdateBrokerTypeRequestT& request) const
-        {
-            return SubmitCallable(&KafkaClient::UpdateBrokerType, request);
-        }
-
-        /**
-         * An Async wrapper for UpdateBrokerType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename UpdateBrokerTypeRequestT = Model::UpdateBrokerTypeRequest>
-        void UpdateBrokerTypeAsync(const UpdateBrokerTypeRequestT& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&KafkaClient::UpdateBrokerType, request, handler, context);
-        }
-
-        /**
-         * 
             <p>Updates the EBS storage associated with MSK brokers.</p>
        
          * <p><h3>See Also:</h3>   <a
@@ -887,58 +1270,30 @@ namespace Kafka
 
         /**
          * 
-            <p>Updates an MSK configuration.</p>
-         <p><h3>See Also:</h3>
+            <p>Updates EC2 instance type.</p>
+         <p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerType">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateConfigurationOutcome UpdateConfiguration(const Model::UpdateConfigurationRequest& request) const;
+        virtual Model::UpdateBrokerTypeOutcome UpdateBrokerType(const Model::UpdateBrokerTypeRequest& request) const;
 
         /**
-         * A Callable wrapper for UpdateConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateBrokerType that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename UpdateConfigurationRequestT = Model::UpdateConfigurationRequest>
-        Model::UpdateConfigurationOutcomeCallable UpdateConfigurationCallable(const UpdateConfigurationRequestT& request) const
+        template<typename UpdateBrokerTypeRequestT = Model::UpdateBrokerTypeRequest>
+        Model::UpdateBrokerTypeOutcomeCallable UpdateBrokerTypeCallable(const UpdateBrokerTypeRequestT& request) const
         {
-            return SubmitCallable(&KafkaClient::UpdateConfiguration, request);
+            return SubmitCallable(&KafkaClient::UpdateBrokerType, request);
         }
 
         /**
-         * An Async wrapper for UpdateConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateBrokerType that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename UpdateConfigurationRequestT = Model::UpdateConfigurationRequest>
-        void UpdateConfigurationAsync(const UpdateConfigurationRequestT& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename UpdateBrokerTypeRequestT = Model::UpdateBrokerTypeRequest>
+        void UpdateBrokerTypeAsync(const UpdateBrokerTypeRequestT& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
-            return SubmitAsync(&KafkaClient::UpdateConfiguration, request, handler, context);
-        }
-
-        /**
-         * 
-            <p>Updates the cluster's connectivity configuration.</p>
-        
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::UpdateConnectivityOutcome UpdateConnectivity(const Model::UpdateConnectivityRequest& request) const;
-
-        /**
-         * A Callable wrapper for UpdateConnectivity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename UpdateConnectivityRequestT = Model::UpdateConnectivityRequest>
-        Model::UpdateConnectivityOutcomeCallable UpdateConnectivityCallable(const UpdateConnectivityRequestT& request) const
-        {
-            return SubmitCallable(&KafkaClient::UpdateConnectivity, request);
-        }
-
-        /**
-         * An Async wrapper for UpdateConnectivity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename UpdateConnectivityRequestT = Model::UpdateConnectivityRequest>
-        void UpdateConnectivityAsync(const UpdateConnectivityRequestT& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&KafkaClient::UpdateConnectivity, request, handler, context);
+            return SubmitAsync(&KafkaClient::UpdateBrokerType, request, handler, context);
         }
 
         /**
@@ -999,6 +1354,62 @@ namespace Kafka
 
         /**
          * 
+            <p>Updates an MSK configuration.</p>
+         <p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConfigurationOutcome UpdateConfiguration(const Model::UpdateConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateConfigurationRequestT = Model::UpdateConfigurationRequest>
+        Model::UpdateConfigurationOutcomeCallable UpdateConfigurationCallable(const UpdateConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::UpdateConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateConfigurationRequestT = Model::UpdateConfigurationRequest>
+        void UpdateConfigurationAsync(const UpdateConfigurationRequestT& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::UpdateConfiguration, request, handler, context);
+        }
+
+        /**
+         * 
+            <p>Updates the cluster's connectivity configuration.</p>
+        
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConnectivityOutcome UpdateConnectivity(const Model::UpdateConnectivityRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateConnectivity that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateConnectivityRequestT = Model::UpdateConnectivityRequest>
+        Model::UpdateConnectivityOutcomeCallable UpdateConnectivityCallable(const UpdateConnectivityRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::UpdateConnectivity, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateConnectivity that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateConnectivityRequestT = Model::UpdateConnectivityRequest>
+        void UpdateConnectivityAsync(const UpdateConnectivityRequestT& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::UpdateConnectivity, request, handler, context);
+        }
+
+        /**
+         * 
             <p>Updates the monitoring settings for the cluster. You can use
          * this operation to specify which Apache Kafka metrics you want Amazon MSK to send
          * to Amazon CloudWatch. You can also specify settings for open monitoring with
@@ -1025,6 +1436,31 @@ namespace Kafka
         void UpdateMonitoringAsync(const UpdateMonitoringRequestT& request, const UpdateMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaClient::UpdateMonitoring, request, handler, context);
+        }
+
+        /**
+         * <p>Updates replication info of a replicator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateReplicationInfo">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateReplicationInfoOutcome UpdateReplicationInfo(const Model::UpdateReplicationInfoRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateReplicationInfo that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateReplicationInfoRequestT = Model::UpdateReplicationInfoRequest>
+        Model::UpdateReplicationInfoOutcomeCallable UpdateReplicationInfoCallable(const UpdateReplicationInfoRequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::UpdateReplicationInfo, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateReplicationInfo that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateReplicationInfoRequestT = Model::UpdateReplicationInfoRequest>
+        void UpdateReplicationInfoAsync(const UpdateReplicationInfoRequestT& request, const UpdateReplicationInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::UpdateReplicationInfo, request, handler, context);
         }
 
         /**

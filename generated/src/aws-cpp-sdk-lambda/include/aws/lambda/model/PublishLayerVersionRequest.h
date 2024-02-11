@@ -153,7 +153,10 @@ namespace Model
      * <p>A list of compatible <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
-     * <a>ListLayerVersions</a>.</p>
+     * <a>ListLayerVersions</a>.</p> <p>The following list includes deprecated
+     * runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline const Aws::Vector<Runtime>& GetCompatibleRuntimes() const{ return m_compatibleRuntimes; }
 
@@ -161,7 +164,10 @@ namespace Model
      * <p>A list of compatible <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
-     * <a>ListLayerVersions</a>.</p>
+     * <a>ListLayerVersions</a>.</p> <p>The following list includes deprecated
+     * runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline bool CompatibleRuntimesHasBeenSet() const { return m_compatibleRuntimesHasBeenSet; }
 
@@ -169,7 +175,10 @@ namespace Model
      * <p>A list of compatible <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
-     * <a>ListLayerVersions</a>.</p>
+     * <a>ListLayerVersions</a>.</p> <p>The following list includes deprecated
+     * runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline void SetCompatibleRuntimes(const Aws::Vector<Runtime>& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes = value; }
 
@@ -177,7 +186,10 @@ namespace Model
      * <p>A list of compatible <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
-     * <a>ListLayerVersions</a>.</p>
+     * <a>ListLayerVersions</a>.</p> <p>The following list includes deprecated
+     * runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline void SetCompatibleRuntimes(Aws::Vector<Runtime>&& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes = std::move(value); }
 
@@ -185,7 +197,10 @@ namespace Model
      * <p>A list of compatible <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
-     * <a>ListLayerVersions</a>.</p>
+     * <a>ListLayerVersions</a>.</p> <p>The following list includes deprecated
+     * runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline PublishLayerVersionRequest& WithCompatibleRuntimes(const Aws::Vector<Runtime>& value) { SetCompatibleRuntimes(value); return *this;}
 
@@ -193,7 +208,10 @@ namespace Model
      * <p>A list of compatible <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
-     * <a>ListLayerVersions</a>.</p>
+     * <a>ListLayerVersions</a>.</p> <p>The following list includes deprecated
+     * runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline PublishLayerVersionRequest& WithCompatibleRuntimes(Aws::Vector<Runtime>&& value) { SetCompatibleRuntimes(std::move(value)); return *this;}
 
@@ -201,7 +219,10 @@ namespace Model
      * <p>A list of compatible <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
-     * <a>ListLayerVersions</a>.</p>
+     * <a>ListLayerVersions</a>.</p> <p>The following list includes deprecated
+     * runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline PublishLayerVersionRequest& AddCompatibleRuntimes(const Runtime& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes.push_back(value); return *this; }
 
@@ -209,7 +230,10 @@ namespace Model
      * <p>A list of compatible <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
-     * <a>ListLayerVersions</a>.</p>
+     * <a>ListLayerVersions</a>.</p> <p>The following list includes deprecated
+     * runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline PublishLayerVersionRequest& AddCompatibleRuntimes(Runtime&& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes.push_back(std::move(value)); return *this; }
 

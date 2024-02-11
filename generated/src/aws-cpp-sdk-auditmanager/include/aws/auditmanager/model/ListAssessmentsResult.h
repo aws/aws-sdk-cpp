@@ -35,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p> The metadata that's associated with the assessment. </p>
+     * <p>The metadata that the <code>ListAssessments</code> API returns for each
+     * assessment.</p>
      */
     inline const Aws::Vector<AssessmentMetadataItem>& GetAssessmentMetadata() const{ return m_assessmentMetadata; }
 
     /**
-     * <p> The metadata that's associated with the assessment. </p>
+     * <p>The metadata that the <code>ListAssessments</code> API returns for each
+     * assessment.</p>
      */
     inline void SetAssessmentMetadata(const Aws::Vector<AssessmentMetadataItem>& value) { m_assessmentMetadata = value; }
 
     /**
-     * <p> The metadata that's associated with the assessment. </p>
+     * <p>The metadata that the <code>ListAssessments</code> API returns for each
+     * assessment.</p>
      */
     inline void SetAssessmentMetadata(Aws::Vector<AssessmentMetadataItem>&& value) { m_assessmentMetadata = std::move(value); }
 
     /**
-     * <p> The metadata that's associated with the assessment. </p>
+     * <p>The metadata that the <code>ListAssessments</code> API returns for each
+     * assessment.</p>
      */
     inline ListAssessmentsResult& WithAssessmentMetadata(const Aws::Vector<AssessmentMetadataItem>& value) { SetAssessmentMetadata(value); return *this;}
 
     /**
-     * <p> The metadata that's associated with the assessment. </p>
+     * <p>The metadata that the <code>ListAssessments</code> API returns for each
+     * assessment.</p>
      */
     inline ListAssessmentsResult& WithAssessmentMetadata(Aws::Vector<AssessmentMetadataItem>&& value) { SetAssessmentMetadata(std::move(value)); return *this;}
 
     /**
-     * <p> The metadata that's associated with the assessment. </p>
+     * <p>The metadata that the <code>ListAssessments</code> API returns for each
+     * assessment.</p>
      */
     inline ListAssessmentsResult& AddAssessmentMetadata(const AssessmentMetadataItem& value) { m_assessmentMetadata.push_back(value); return *this; }
 
     /**
-     * <p> The metadata that's associated with the assessment. </p>
+     * <p>The metadata that the <code>ListAssessments</code> API returns for each
+     * assessment.</p>
      */
     inline ListAssessmentsResult& AddAssessmentMetadata(AssessmentMetadataItem&& value) { m_assessmentMetadata.push_back(std::move(value)); return *this; }
 

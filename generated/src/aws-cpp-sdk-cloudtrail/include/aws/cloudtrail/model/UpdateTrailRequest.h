@@ -363,46 +363,46 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the trail applies only to the current region or to all
-     * regions. The default is false. If the trail exists only in the current region
+     * <p>Specifies whether the trail applies only to the current Region or to all
+     * Regions. The default is false. If the trail exists only in the current Region
      * and this value is set to true, shadow trails (replications of the trail) will be
-     * created in the other regions. If the trail exists in all regions and this value
-     * is set to false, the trail will remain in the region where it was created, and
-     * its shadow trails in other regions will be deleted. As a best practice, consider
-     * using trails that log events in all regions.</p>
+     * created in the other Regions. If the trail exists in all Regions and this value
+     * is set to false, the trail will remain in the Region where it was created, and
+     * its shadow trails in other Regions will be deleted. As a best practice, consider
+     * using trails that log events in all Regions.</p>
      */
     inline bool GetIsMultiRegionTrail() const{ return m_isMultiRegionTrail; }
 
     /**
-     * <p>Specifies whether the trail applies only to the current region or to all
-     * regions. The default is false. If the trail exists only in the current region
+     * <p>Specifies whether the trail applies only to the current Region or to all
+     * Regions. The default is false. If the trail exists only in the current Region
      * and this value is set to true, shadow trails (replications of the trail) will be
-     * created in the other regions. If the trail exists in all regions and this value
-     * is set to false, the trail will remain in the region where it was created, and
-     * its shadow trails in other regions will be deleted. As a best practice, consider
-     * using trails that log events in all regions.</p>
+     * created in the other Regions. If the trail exists in all Regions and this value
+     * is set to false, the trail will remain in the Region where it was created, and
+     * its shadow trails in other Regions will be deleted. As a best practice, consider
+     * using trails that log events in all Regions.</p>
      */
     inline bool IsMultiRegionTrailHasBeenSet() const { return m_isMultiRegionTrailHasBeenSet; }
 
     /**
-     * <p>Specifies whether the trail applies only to the current region or to all
-     * regions. The default is false. If the trail exists only in the current region
+     * <p>Specifies whether the trail applies only to the current Region or to all
+     * Regions. The default is false. If the trail exists only in the current Region
      * and this value is set to true, shadow trails (replications of the trail) will be
-     * created in the other regions. If the trail exists in all regions and this value
-     * is set to false, the trail will remain in the region where it was created, and
-     * its shadow trails in other regions will be deleted. As a best practice, consider
-     * using trails that log events in all regions.</p>
+     * created in the other Regions. If the trail exists in all Regions and this value
+     * is set to false, the trail will remain in the Region where it was created, and
+     * its shadow trails in other Regions will be deleted. As a best practice, consider
+     * using trails that log events in all Regions.</p>
      */
     inline void SetIsMultiRegionTrail(bool value) { m_isMultiRegionTrailHasBeenSet = true; m_isMultiRegionTrail = value; }
 
     /**
-     * <p>Specifies whether the trail applies only to the current region or to all
-     * regions. The default is false. If the trail exists only in the current region
+     * <p>Specifies whether the trail applies only to the current Region or to all
+     * Regions. The default is false. If the trail exists only in the current Region
      * and this value is set to true, shadow trails (replications of the trail) will be
-     * created in the other regions. If the trail exists in all regions and this value
-     * is set to false, the trail will remain in the region where it was created, and
-     * its shadow trails in other regions will be deleted. As a best practice, consider
-     * using trails that log events in all regions.</p>
+     * created in the other Regions. If the trail exists in all Regions and this value
+     * is set to false, the trail will remain in the Region where it was created, and
+     * its shadow trails in other Regions will be deleted. As a best practice, consider
+     * using trails that log events in all Regions.</p>
      */
     inline UpdateTrailRequest& WithIsMultiRegionTrail(bool value) { SetIsMultiRegionTrail(value); return *this;}
 
@@ -464,7 +464,9 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
+     * management account can configure a CloudWatch Logs log group for an organization
+     * trail. </p> 
      */
     inline const Aws::String& GetCloudWatchLogsLogGroupArn() const{ return m_cloudWatchLogsLogGroupArn; }
 
@@ -472,7 +474,9 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
+     * management account can configure a CloudWatch Logs log group for an organization
+     * trail. </p> 
      */
     inline bool CloudWatchLogsLogGroupArnHasBeenSet() const { return m_cloudWatchLogsLogGroupArnHasBeenSet; }
 
@@ -480,7 +484,9 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
+     * management account can configure a CloudWatch Logs log group for an organization
+     * trail. </p> 
      */
     inline void SetCloudWatchLogsLogGroupArn(const Aws::String& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = value; }
 
@@ -488,7 +494,9 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
+     * management account can configure a CloudWatch Logs log group for an organization
+     * trail. </p> 
      */
     inline void SetCloudWatchLogsLogGroupArn(Aws::String&& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = std::move(value); }
 
@@ -496,7 +504,9 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
+     * management account can configure a CloudWatch Logs log group for an organization
+     * trail. </p> 
      */
     inline void SetCloudWatchLogsLogGroupArn(const char* value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn.assign(value); }
 
@@ -504,7 +514,9 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
+     * management account can configure a CloudWatch Logs log group for an organization
+     * trail. </p> 
      */
     inline UpdateTrailRequest& WithCloudWatchLogsLogGroupArn(const Aws::String& value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
 
@@ -512,7 +524,9 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
+     * management account can configure a CloudWatch Logs log group for an organization
+     * trail. </p> 
      */
     inline UpdateTrailRequest& WithCloudWatchLogsLogGroupArn(Aws::String&& value) { SetCloudWatchLogsLogGroupArn(std::move(value)); return *this;}
 
@@ -520,7 +534,9 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
+     * management account can configure a CloudWatch Logs log group for an organization
+     * trail. </p> 
      */
     inline UpdateTrailRequest& WithCloudWatchLogsLogGroupArn(const char* value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
 
@@ -699,13 +715,15 @@ namespace Model
      * <p>Specifies whether the trail is applied to all accounts in an organization in
      * Organizations, or only for the current Amazon Web Services account. The default
      * is false, and cannot be true unless the call is made on behalf of an Amazon Web
-     * Services account that is the management account or delegated administrator
-     * account for an organization in Organizations. If the trail is not an
-     * organization trail and this is set to <code>true</code>, the trail will be
-     * created in all Amazon Web Services accounts that belong to the organization. If
-     * the trail is an organization trail and this is set to <code>false</code>, the
-     * trail will remain in the current Amazon Web Services account but be deleted from
-     * all member accounts in the organization.</p>
+     * Services account that is the management account for an organization in
+     * Organizations. If the trail is not an organization trail and this is set to
+     * <code>true</code>, the trail will be created in all Amazon Web Services accounts
+     * that belong to the organization. If the trail is an organization trail and this
+     * is set to <code>false</code>, the trail will remain in the current Amazon Web
+     * Services account but be deleted from all member accounts in the
+     * organization.</p>  <p>Only the management account for the organization can
+     * convert an organization trail to a non-organization trail, or convert a
+     * non-organization trail to an organization trail.</p> 
      */
     inline bool GetIsOrganizationTrail() const{ return m_isOrganizationTrail; }
 
@@ -713,13 +731,15 @@ namespace Model
      * <p>Specifies whether the trail is applied to all accounts in an organization in
      * Organizations, or only for the current Amazon Web Services account. The default
      * is false, and cannot be true unless the call is made on behalf of an Amazon Web
-     * Services account that is the management account or delegated administrator
-     * account for an organization in Organizations. If the trail is not an
-     * organization trail and this is set to <code>true</code>, the trail will be
-     * created in all Amazon Web Services accounts that belong to the organization. If
-     * the trail is an organization trail and this is set to <code>false</code>, the
-     * trail will remain in the current Amazon Web Services account but be deleted from
-     * all member accounts in the organization.</p>
+     * Services account that is the management account for an organization in
+     * Organizations. If the trail is not an organization trail and this is set to
+     * <code>true</code>, the trail will be created in all Amazon Web Services accounts
+     * that belong to the organization. If the trail is an organization trail and this
+     * is set to <code>false</code>, the trail will remain in the current Amazon Web
+     * Services account but be deleted from all member accounts in the
+     * organization.</p>  <p>Only the management account for the organization can
+     * convert an organization trail to a non-organization trail, or convert a
+     * non-organization trail to an organization trail.</p> 
      */
     inline bool IsOrganizationTrailHasBeenSet() const { return m_isOrganizationTrailHasBeenSet; }
 
@@ -727,13 +747,15 @@ namespace Model
      * <p>Specifies whether the trail is applied to all accounts in an organization in
      * Organizations, or only for the current Amazon Web Services account. The default
      * is false, and cannot be true unless the call is made on behalf of an Amazon Web
-     * Services account that is the management account or delegated administrator
-     * account for an organization in Organizations. If the trail is not an
-     * organization trail and this is set to <code>true</code>, the trail will be
-     * created in all Amazon Web Services accounts that belong to the organization. If
-     * the trail is an organization trail and this is set to <code>false</code>, the
-     * trail will remain in the current Amazon Web Services account but be deleted from
-     * all member accounts in the organization.</p>
+     * Services account that is the management account for an organization in
+     * Organizations. If the trail is not an organization trail and this is set to
+     * <code>true</code>, the trail will be created in all Amazon Web Services accounts
+     * that belong to the organization. If the trail is an organization trail and this
+     * is set to <code>false</code>, the trail will remain in the current Amazon Web
+     * Services account but be deleted from all member accounts in the
+     * organization.</p>  <p>Only the management account for the organization can
+     * convert an organization trail to a non-organization trail, or convert a
+     * non-organization trail to an organization trail.</p> 
      */
     inline void SetIsOrganizationTrail(bool value) { m_isOrganizationTrailHasBeenSet = true; m_isOrganizationTrail = value; }
 
@@ -741,13 +763,15 @@ namespace Model
      * <p>Specifies whether the trail is applied to all accounts in an organization in
      * Organizations, or only for the current Amazon Web Services account. The default
      * is false, and cannot be true unless the call is made on behalf of an Amazon Web
-     * Services account that is the management account or delegated administrator
-     * account for an organization in Organizations. If the trail is not an
-     * organization trail and this is set to <code>true</code>, the trail will be
-     * created in all Amazon Web Services accounts that belong to the organization. If
-     * the trail is an organization trail and this is set to <code>false</code>, the
-     * trail will remain in the current Amazon Web Services account but be deleted from
-     * all member accounts in the organization.</p>
+     * Services account that is the management account for an organization in
+     * Organizations. If the trail is not an organization trail and this is set to
+     * <code>true</code>, the trail will be created in all Amazon Web Services accounts
+     * that belong to the organization. If the trail is an organization trail and this
+     * is set to <code>false</code>, the trail will remain in the current Amazon Web
+     * Services account but be deleted from all member accounts in the
+     * organization.</p>  <p>Only the management account for the organization can
+     * convert an organization trail to a non-organization trail, or convert a
+     * non-organization trail to an organization trail.</p> 
      */
     inline UpdateTrailRequest& WithIsOrganizationTrail(bool value) { SetIsOrganizationTrail(value); return *this;}
 

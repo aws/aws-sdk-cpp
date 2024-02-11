@@ -310,9 +310,9 @@ namespace Model
     /**
      * <p>The format of the FAQ input file. You can choose between a basic CSV format,
      * a CSV format that includes customs attributes in a header, and a JSON format
-     * that includes custom attributes.</p> <p>The format must match the format of the
-     * file stored in the S3 bucket identified in the <code>S3Path</code>
-     * parameter.</p> <p>For more information, see <a
+     * that includes custom attributes.</p> <p>The default format is CSV.</p> <p>The
+     * format must match the format of the file stored in the S3 bucket identified in
+     * the <code>S3Path</code> parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */
@@ -321,9 +321,9 @@ namespace Model
     /**
      * <p>The format of the FAQ input file. You can choose between a basic CSV format,
      * a CSV format that includes customs attributes in a header, and a JSON format
-     * that includes custom attributes.</p> <p>The format must match the format of the
-     * file stored in the S3 bucket identified in the <code>S3Path</code>
-     * parameter.</p> <p>For more information, see <a
+     * that includes custom attributes.</p> <p>The default format is CSV.</p> <p>The
+     * format must match the format of the file stored in the S3 bucket identified in
+     * the <code>S3Path</code> parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */
@@ -332,9 +332,9 @@ namespace Model
     /**
      * <p>The format of the FAQ input file. You can choose between a basic CSV format,
      * a CSV format that includes customs attributes in a header, and a JSON format
-     * that includes custom attributes.</p> <p>The format must match the format of the
-     * file stored in the S3 bucket identified in the <code>S3Path</code>
-     * parameter.</p> <p>For more information, see <a
+     * that includes custom attributes.</p> <p>The default format is CSV.</p> <p>The
+     * format must match the format of the file stored in the S3 bucket identified in
+     * the <code>S3Path</code> parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */
@@ -343,9 +343,9 @@ namespace Model
     /**
      * <p>The format of the FAQ input file. You can choose between a basic CSV format,
      * a CSV format that includes customs attributes in a header, and a JSON format
-     * that includes custom attributes.</p> <p>The format must match the format of the
-     * file stored in the S3 bucket identified in the <code>S3Path</code>
-     * parameter.</p> <p>For more information, see <a
+     * that includes custom attributes.</p> <p>The default format is CSV.</p> <p>The
+     * format must match the format of the file stored in the S3 bucket identified in
+     * the <code>S3Path</code> parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */
@@ -354,9 +354,9 @@ namespace Model
     /**
      * <p>The format of the FAQ input file. You can choose between a basic CSV format,
      * a CSV format that includes customs attributes in a header, and a JSON format
-     * that includes custom attributes.</p> <p>The format must match the format of the
-     * file stored in the S3 bucket identified in the <code>S3Path</code>
-     * parameter.</p> <p>For more information, see <a
+     * that includes custom attributes.</p> <p>The default format is CSV.</p> <p>The
+     * format must match the format of the file stored in the S3 bucket identified in
+     * the <code>S3Path</code> parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */
@@ -365,9 +365,9 @@ namespace Model
     /**
      * <p>The format of the FAQ input file. You can choose between a basic CSV format,
      * a CSV format that includes customs attributes in a header, and a JSON format
-     * that includes custom attributes.</p> <p>The format must match the format of the
-     * file stored in the S3 bucket identified in the <code>S3Path</code>
-     * parameter.</p> <p>For more information, see <a
+     * that includes custom attributes.</p> <p>The default format is CSV.</p> <p>The
+     * format must match the format of the file stored in the S3 bucket identified in
+     * the <code>S3Path</code> parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */

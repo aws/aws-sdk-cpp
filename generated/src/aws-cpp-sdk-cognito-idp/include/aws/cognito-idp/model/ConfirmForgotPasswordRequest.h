@@ -84,98 +84,138 @@ namespace Model
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline const Aws::String& GetSecretHash() const{ return m_secretHash; }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline bool SecretHashHasBeenSet() const { return m_secretHashHasBeenSet; }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline void SetSecretHash(const Aws::String& value) { m_secretHashHasBeenSet = true; m_secretHash = value; }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline void SetSecretHash(Aws::String&& value) { m_secretHashHasBeenSet = true; m_secretHash = std::move(value); }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline void SetSecretHash(const char* value) { m_secretHashHasBeenSet = true; m_secretHash.assign(value); }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithSecretHash(const Aws::String& value) { SetSecretHash(value); return *this;}
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithSecretHash(Aws::String&& value) { SetSecretHash(std::move(value)); return *this;}
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithSecretHash(const char* value) { SetSecretHash(value); return *this;}
 
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline ConfirmForgotPasswordRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline ConfirmForgotPasswordRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline ConfirmForgotPasswordRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

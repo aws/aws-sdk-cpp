@@ -43,6 +43,9 @@ namespace CloudTrail
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef CloudTrailClientConfiguration ClientConfigurationType;
+      typedef CloudTrailEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -99,7 +102,7 @@ namespace CloudTrail
          * tag will be created with the specified key and a value of null. You can tag a
          * trail or event data store that applies to all Amazon Web Services Regions only
          * from the Region in which the trail or event data store was created (also known
-         * as its home region).</p><p><h3>See Also:</h3>   <a
+         * as its home Region).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">AWS
          * API Reference</a></p>
          */
@@ -264,9 +267,11 @@ namespace CloudTrail
          * <code>DeleteEventDataStore</code>, the event data store enters a
          * <code>PENDING_DELETION</code> state, and is automatically deleted after a wait
          * period of seven days. <code>TerminationProtectionEnabled</code> must be set to
-         * <code>False</code> on the event data store; this operation cannot work if
-         * <code>TerminationProtectionEnabled</code> is <code>True</code>.</p> <p>After you
-         * run <code>DeleteEventDataStore</code> on an event data store, you cannot run
+         * <code>False</code> on the event data store and the <code>FederationStatus</code>
+         * must be <code>DISABLED</code>. You cannot delete an event data store if
+         * <code>TerminationProtectionEnabled</code> is <code>True</code> or the
+         * <code>FederationStatus</code> is <code>ENABLED</code>.</p> <p>After you run
+         * <code>DeleteEventDataStore</code> on an event data store, you cannot run
          * <code>ListQueries</code>, <code>DescribeQuery</code>, or
          * <code>GetQueryResults</code> on queries that are using an event data store in a
          * <code>PENDING_DELETION</code> state. An event data store in the
@@ -322,10 +327,10 @@ namespace CloudTrail
         }
 
         /**
-         * <p>Deletes a trail. This operation must be called from the region in which the
+         * <p>Deletes a trail. This operation must be called from the Region in which the
          * trail was created. <code>DeleteTrail</code> cannot be called on the shadow
-         * trails (replicated trails in other regions) of a trail that is enabled in all
-         * regions.</p><p><h3>See Also:</h3>   <a
+         * trails (replicated trails in other Regions) of a trail that is enabled in all
+         * Regions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">AWS
          * API Reference</a></p>
          */
@@ -377,9 +382,12 @@ namespace CloudTrail
 
         /**
          * <p>Returns metadata about a query, including query run time in milliseconds,
-         * number of events scanned and matched, and query status. You must specify an ARN
-         * for <code>EventDataStore</code>, and a value for
-         * <code>QueryID</code>.</p><p><h3>See Also:</h3>   <a
+         * number of events scanned and matched, and query status. If the query results
+         * were delivered to an S3 bucket, the response also provides the S3 URI and the
+         * delivery status.</p> <p>You must specify either a <code>QueryID</code> or a
+         * <code>QueryAlias</code>. Specifying the <code>QueryAlias</code> parameter
+         * returns information about the last query run for the alias.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeQuery">AWS
          * API Reference</a></p>
          */
@@ -404,7 +412,7 @@ namespace CloudTrail
         }
 
         /**
-         * <p>Retrieves settings for one or more trails associated with the current region
+         * <p>Retrieves settings for one or more trails associated with the current Region
          * for your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">AWS
          * API Reference</a></p>
@@ -427,6 +435,76 @@ namespace CloudTrail
         void DescribeTrailsAsync(const DescribeTrailsRequestT& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudTrailClient::DescribeTrails, request, handler, context);
+        }
+
+        /**
+         * <p> Disables Lake query federation on the specified event data store. When you
+         * disable federation, CloudTrail removes the metadata associated with the
+         * federated event data store in the Glue Data Catalog and removes registration for
+         * the federation role ARN and event data store in Lake Formation. No CloudTrail
+         * Lake data is deleted when you disable federation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DisableFederation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableFederationOutcome DisableFederation(const Model::DisableFederationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableFederation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableFederationRequestT = Model::DisableFederationRequest>
+        Model::DisableFederationOutcomeCallable DisableFederationCallable(const DisableFederationRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::DisableFederation, request);
+        }
+
+        /**
+         * An Async wrapper for DisableFederation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableFederationRequestT = Model::DisableFederationRequest>
+        void DisableFederationAsync(const DisableFederationRequestT& request, const DisableFederationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::DisableFederation, request, handler, context);
+        }
+
+        /**
+         * <p> Enables Lake query federation on the specified event data store. Federating
+         * an event data store lets you view the metadata associated with the event data
+         * store in the Glue <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/components-overview.html#data-catalog-intro">Data
+         * Catalog</a> and run SQL queries against your event data using Amazon Athena. The
+         * table metadata stored in the Glue Data Catalog lets the Athena query engine know
+         * how to find, read, and process the data that you want to query.</p> <p>When you
+         * enable Lake query federation, CloudTrail creates a federated database named
+         * <code>aws:cloudtrail</code> (if the database doesn't already exist) and a
+         * federated table in the Glue Data Catalog. The event data store ID is used for
+         * the table name. CloudTrail registers the role ARN and event data store in <a
+         * href="https://docs.aws.amazon.com/lake-formation/latest/dg/how-it-works.html">Lake
+         * Formation</a>, the service responsible for revoking or granting permissions to
+         * the federated resources in the Glue Data Catalog. </p> <p>For more information
+         * about Lake query federation, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Federate
+         * an event data store</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EnableFederation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableFederationOutcome EnableFederation(const Model::EnableFederationRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableFederation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableFederationRequestT = Model::EnableFederationRequest>
+        Model::EnableFederationOutcomeCallable EnableFederationCallable(const EnableFederationRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::EnableFederation, request);
+        }
+
+        /**
+         * An Async wrapper for EnableFederation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableFederationRequestT = Model::EnableFederationRequest>
+        void EnableFederationAsync(const EnableFederationRequestT& request, const EnableFederationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::EnableFederation, request, handler, context);
         }
 
         /**
@@ -491,9 +569,9 @@ namespace CloudTrail
          * information about logging management and data events, see the following topics
          * in the <i>CloudTrail User Guide</i>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-         * management events for trails </a> </p> </li> <li> <p> <a
+         * management events</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-         * data events for trails </a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * data events</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
          * API Reference</a></p>
          */
@@ -544,13 +622,18 @@ namespace CloudTrail
 
         /**
          * <p>Describes the settings for the Insights event selectors that you configured
-         * for your trail. <code>GetInsightSelectors</code> shows if CloudTrail Insights
-         * event logging is enabled on the trail, and if it is, which insight types are
-         * enabled. If you run <code>GetInsightSelectors</code> on a trail that does not
+         * for your trail or event data store. <code>GetInsightSelectors</code> shows if
+         * CloudTrail Insights event logging is enabled on the trail or event data store,
+         * and if it is, which Insights types are enabled. If you run
+         * <code>GetInsightSelectors</code> on a trail or event data store that does not
          * have Insights events enabled, the operation throws the exception
-         * <code>InsightNotEnabledException</code> </p> <p>For more information, see <a
+         * <code>InsightNotEnabledException</code> </p> <p>Specify either the
+         * <code>EventDataStore</code> parameter to get Insights event selectors for an
+         * event data store, or the <code>TrailName</code> parameter to the get Insights
+         * event selectors for a trail. You cannot specify these parameters together.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-         * CloudTrail Insights Events for Trails </a> in the <i>CloudTrail User
+         * CloudTrail Insights events</a> in the <i>CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">AWS
          * API Reference</a></p>
@@ -577,8 +660,8 @@ namespace CloudTrail
 
         /**
          * <p>Gets event data results of a query. You must specify the <code>QueryID</code>
-         * value returned by the <code>StartQuery</code> operation, and an ARN for
-         * <code>EventDataStore</code>.</p><p><h3>See Also:</h3>   <a
+         * value returned by the <code>StartQuery</code> operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetQueryResults">AWS
          * API Reference</a></p>
          */
@@ -658,8 +741,8 @@ namespace CloudTrail
          * <p>Returns a JSON-formatted list of information about the specified trail.
          * Fields include information on delivery errors, Amazon SNS and Amazon S3 errors,
          * and start and stop logging times for each trail. This operation returns trail
-         * status from a single region. To return trail status from all regions, you must
-         * call the operation on each region.</p><p><h3>See Also:</h3>   <a
+         * status from a single Region. To return trail status from all Regions, you must
+         * call the operation on each Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">AWS
          * API Reference</a></p>
          */
@@ -711,7 +794,7 @@ namespace CloudTrail
 
         /**
          * <p>Returns information about all event data stores in the account, in the
-         * current region.</p><p><h3>See Also:</h3>   <a
+         * current Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListEventDataStores">AWS
          * API Reference</a></p>
          */
@@ -792,9 +875,9 @@ namespace CloudTrail
          * <p>Returns all public keys whose private keys were used to sign the digest files
          * within the specified time range. The public key is needed to validate digest
          * files that were signed with its corresponding private key.</p> 
-         * <p>CloudTrail uses different private and public key pairs per region. Each
-         * digest file is signed with a private key unique to its region. When you validate
-         * a digest file from a specific region, you must look in the same region for its
+         * <p>CloudTrail uses different private and public key pairs per Region. Each
+         * digest file is signed with a private key unique to its Region. When you validate
+         * a digest file from a specific Region, you must look in the same Region for its
          * corresponding public key.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">AWS
          * API Reference</a></p>
@@ -852,8 +935,8 @@ namespace CloudTrail
         }
 
         /**
-         * <p>Lists the tags for the trail, event data store, or channel in the current
-         * region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for the specified trails, event data stores, or channels in
+         * the current Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">AWS
          * API Reference</a></p>
          */
@@ -908,19 +991,22 @@ namespace CloudTrail
          * events</a> or <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
          * Insights events</a> that are captured by CloudTrail. You can look up events that
-         * occurred in a region within the last 90 days. Lookup supports the following
-         * attributes for management events:</p> <ul> <li> <p>Amazon Web Services access
-         * key</p> </li> <li> <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li>
-         * <p>Event source</p> </li> <li> <p>Read only</p> </li> <li> <p>Resource name</p>
-         * </li> <li> <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul>
-         * <p>Lookup supports the following attributes for Insights events:</p> <ul> <li>
-         * <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li> <p>Event source</p>
-         * </li> </ul> <p>All attributes are optional. The default number of results
-         * returned is 50, with a maximum of 50 possible. The response includes a token
-         * that you can use to get the next page of results.</p>  <p>The rate of
-         * lookup requests is limited to two per second, per account, per region. If this
-         * limit is exceeded, a throttling error occurs.</p> <p><h3>See
-         * Also:</h3>   <a
+         * occurred in a Region within the last 90 days.</p>  <p>
+         * <code>LookupEvents</code> returns recent Insights events for trails that enable
+         * Insights. To view Insights events for an event data store, you can run queries
+         * on your Insights event data store, and you can also view the Lake dashboard for
+         * Insights.</p>  <p>Lookup supports the following attributes for management
+         * events:</p> <ul> <li> <p>Amazon Web Services access key</p> </li> <li> <p>Event
+         * ID</p> </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> <li>
+         * <p>Read only</p> </li> <li> <p>Resource name</p> </li> <li> <p>Resource type</p>
+         * </li> <li> <p>User name</p> </li> </ul> <p>Lookup supports the following
+         * attributes for Insights events:</p> <ul> <li> <p>Event ID</p> </li> <li>
+         * <p>Event name</p> </li> <li> <p>Event source</p> </li> </ul> <p>All attributes
+         * are optional. The default number of results returned is 50, with a maximum of 50
+         * possible. The response includes a token that you can use to get the next page of
+         * results.</p>  <p>The rate of lookup requests is limited to two per
+         * second, per account, per Region. If this limit is exceeded, a throttling error
+         * occurs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          */
@@ -947,29 +1033,34 @@ namespace CloudTrail
         /**
          * <p>Configures an event selector or advanced event selectors for your trail. Use
          * event selectors or advanced event selectors to specify management and data event
-         * settings for your trail. By default, trails created without specific event
-         * selectors are configured to log all read and write management events, and no
-         * data events.</p> <p>When an event occurs in your account, CloudTrail evaluates
-         * the event selectors or advanced event selectors in all trails. For each trail,
-         * if the event matches any event selector, the trail processes and logs the event.
-         * If the event doesn't match any event selector, the trail doesn't log the
-         * event.</p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail
-         * and specify that you want write-only events.</p> </li> <li> <p>The EC2
-         * <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur
-         * in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match
-         * your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a
-         * write-only event and it matches your event selector. The trail logs the
-         * event.</p> </li> <li> <p>The <code>GetConsoleOutput</code> is a read-only event
-         * that doesn't match your event selector. The trail doesn't log the event. </p>
-         * </li> </ol> <p>The <code>PutEventSelectors</code> operation must be called from
-         * the region in which the trail was created; otherwise, an
-         * <code>InvalidHomeRegionException</code> exception is thrown.</p> <p>You can
-         * configure up to five event selectors for each trail. For more information, see
-         * <a
+         * settings for your trail. If you want your trail to log Insights events, be sure
+         * the event selector enables logging of the Insights event types you want
+         * configured for your trail. For more information about logging Insights events,
+         * see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+         * Insights events for trails</a> in the <i>CloudTrail User Guide</i>. By default,
+         * trails created without specific event selectors are configured to log all read
+         * and write management events, and no data events.</p> <p>When an event occurs in
+         * your account, CloudTrail evaluates the event selectors or advanced event
+         * selectors in all trails. For each trail, if the event matches any event
+         * selector, the trail processes and logs the event. If the event doesn't match any
+         * event selector, the trail doesn't log the event.</p> <p>Example</p> <ol> <li>
+         * <p>You create an event selector for a trail and specify that you want write-only
+         * events.</p> </li> <li> <p>The EC2 <code>GetConsoleOutput</code> and
+         * <code>RunInstances</code> API operations occur in your account.</p> </li> <li>
+         * <p>CloudTrail evaluates whether the events match your event selectors.</p> </li>
+         * <li> <p>The <code>RunInstances</code> is a write-only event and it matches your
+         * event selector. The trail logs the event.</p> </li> <li> <p>The
+         * <code>GetConsoleOutput</code> is a read-only event that doesn't match your event
+         * selector. The trail doesn't log the event. </p> </li> </ol> <p>The
+         * <code>PutEventSelectors</code> operation must be called from the Region in which
+         * the trail was created; otherwise, an <code>InvalidHomeRegionException</code>
+         * exception is thrown.</p> <p>You can configure up to five event selectors for
+         * each trail. For more information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-         * management events for trails </a>, <a
+         * management events</a>, <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-         * data events for trails </a>, and <a
+         * data events</a>, and <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
          * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p> <p>You can add
          * advanced event selectors, and conditions for your advanced event selectors, up
@@ -979,8 +1070,8 @@ namespace CloudTrail
          * existing <code>EventSelectors</code> are overwritten. For more information about
          * advanced event selectors, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-         * data events for trails</a> in the <i>CloudTrail User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * data events</a> in the <i>CloudTrail User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">AWS
          * API Reference</a></p>
          */
@@ -1006,11 +1097,30 @@ namespace CloudTrail
 
         /**
          * <p>Lets you enable Insights event logging by specifying the Insights selectors
-         * that you want to enable on an existing trail. You also use
+         * that you want to enable on an existing trail or event data store. You also use
          * <code>PutInsightSelectors</code> to turn off Insights event logging, by passing
-         * an empty list of insight types. The valid Insights event types in this release
-         * are <code>ApiErrorRateInsight</code> and
-         * <code>ApiCallRateInsight</code>.</p><p><h3>See Also:</h3>   <a
+         * an empty list of Insights types. The valid Insights event types are
+         * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p> <p>To
+         * enable Insights on an event data store, you must specify the ARNs (or ID suffix
+         * of the ARNs) for the source event data store (<code>EventDataStore</code>) and
+         * the destination event data store (<code>InsightsDestination</code>). The source
+         * event data store logs management events and enables Insights. The destination
+         * event data store logs Insights events based upon the management event activity
+         * of the source event data store. The source and destination event data stores
+         * must belong to the same Amazon Web Services account.</p> <p>To log Insights
+         * events for a trail, you must specify the name (<code>TrailName</code>) of the
+         * CloudTrail trail for which you want to change or add Insights selectors.</p>
+         * <p>To log CloudTrail Insights events on API call volume, the trail or event data
+         * store must log <code>write</code> management events. To log CloudTrail Insights
+         * events on API error rate, the trail or event data store must log
+         * <code>read</code> or <code>write</code> management events. You can call
+         * <code>GetEventSelectors</code> on a trail to check whether the trail logs
+         * management events. You can call <code>GetEventDataStore</code> on an event data
+         * store to check whether the event data store logs management events.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+         * CloudTrail Insights events</a> in the <i>CloudTrail User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">AWS
          * API Reference</a></p>
          */
@@ -1065,8 +1175,9 @@ namespace CloudTrail
         }
 
         /**
-         * <p>Registers an organization’s member account as the CloudTrail delegated
-         * administrator.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers an organization’s member account as the CloudTrail <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-delegated-administrator.html">delegated
+         * administrator</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin">AWS
          * API Reference</a></p>
          */
@@ -1146,6 +1257,35 @@ namespace CloudTrail
         }
 
         /**
+         * <p>Starts the ingestion of live events on an event data store specified as
+         * either an ARN or the ID portion of the ARN. To start ingestion, the event data
+         * store <code>Status</code> must be <code>STOPPED_INGESTION</code> and the
+         * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>,
+         * or <code>ConfigurationItem</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartEventDataStoreIngestion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartEventDataStoreIngestionOutcome StartEventDataStoreIngestion(const Model::StartEventDataStoreIngestionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartEventDataStoreIngestion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartEventDataStoreIngestionRequestT = Model::StartEventDataStoreIngestionRequest>
+        Model::StartEventDataStoreIngestionOutcomeCallable StartEventDataStoreIngestionCallable(const StartEventDataStoreIngestionRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::StartEventDataStoreIngestion, request);
+        }
+
+        /**
+         * An Async wrapper for StartEventDataStoreIngestion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartEventDataStoreIngestionRequestT = Model::StartEventDataStoreIngestionRequest>
+        void StartEventDataStoreIngestionAsync(const StartEventDataStoreIngestionRequestT& request, const StartEventDataStoreIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::StartEventDataStoreIngestion, request, handler, context);
+        }
+
+        /**
          * <p> Starts an import of logged trail events from a source S3 bucket to a
          * destination event data store. By default, CloudTrail only imports events
          * contained in the S3 bucket's <code>CloudTrail</code> prefix and the prefixes
@@ -1191,10 +1331,10 @@ namespace CloudTrail
 
         /**
          * <p>Starts the recording of Amazon Web Services API calls and log file delivery
-         * for a trail. For a trail that is enabled in all regions, this operation must be
-         * called from the region in which the trail was created. This operation cannot be
-         * called on the shadow trails (replicated trails in other regions) of a trail that
-         * is enabled in all regions.</p><p><h3>See Also:</h3>   <a
+         * for a trail. For a trail that is enabled in all Regions, this operation must be
+         * called from the Region in which the trail was created. This operation cannot be
+         * called on the shadow trails (replicated trails in other Regions) of a trail that
+         * is enabled in all Regions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">AWS
          * API Reference</a></p>
          */
@@ -1219,10 +1359,15 @@ namespace CloudTrail
         }
 
         /**
-         * <p>Starts a CloudTrail Lake query. The required <code>QueryStatement</code>
-         * parameter provides your SQL query, enclosed in single quotation marks. Use the
-         * optional <code>DeliveryS3Uri</code> parameter to deliver the query results to an
-         * S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a CloudTrail Lake query. Use the <code>QueryStatement</code> parameter
+         * to provide your SQL query, enclosed in single quotation marks. Use the optional
+         * <code>DeliveryS3Uri</code> parameter to deliver the query results to an S3
+         * bucket.</p> <p> <code>StartQuery</code> requires you specify either the
+         * <code>QueryStatement</code> parameter, or a <code>QueryAlias</code> and any
+         * <code>QueryParameters</code>. In the current release, the
+         * <code>QueryAlias</code> and <code>QueryParameters</code> parameters are used
+         * only for the queries that populate the CloudTrail Lake dashboards.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartQuery">AWS
          * API Reference</a></p>
          */
@@ -1244,6 +1389,35 @@ namespace CloudTrail
         void StartQueryAsync(const StartQueryRequestT& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudTrailClient::StartQuery, request, handler, context);
+        }
+
+        /**
+         * <p>Stops the ingestion of live events on an event data store specified as either
+         * an ARN or the ID portion of the ARN. To stop ingestion, the event data store
+         * <code>Status</code> must be <code>ENABLED</code> and the
+         * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>,
+         * or <code>ConfigurationItem</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopEventDataStoreIngestion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopEventDataStoreIngestionOutcome StopEventDataStoreIngestion(const Model::StopEventDataStoreIngestionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopEventDataStoreIngestion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopEventDataStoreIngestionRequestT = Model::StopEventDataStoreIngestionRequest>
+        Model::StopEventDataStoreIngestionOutcomeCallable StopEventDataStoreIngestionCallable(const StopEventDataStoreIngestionRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::StopEventDataStoreIngestion, request);
+        }
+
+        /**
+         * An Async wrapper for StopEventDataStoreIngestion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopEventDataStoreIngestionRequestT = Model::StopEventDataStoreIngestionRequest>
+        void StopEventDataStoreIngestionAsync(const StopEventDataStoreIngestionRequestT& request, const StopEventDataStoreIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::StopEventDataStoreIngestion, request, handler, context);
         }
 
         /**
@@ -1275,11 +1449,11 @@ namespace CloudTrail
          * <p>Suspends the recording of Amazon Web Services API calls and log file delivery
          * for the specified trail. Under most circumstances, there is no need to use this
          * action. You can update a trail without stopping it first. This action is the
-         * only way to stop recording. For a trail enabled in all regions, this operation
-         * must be called from the region in which the trail was created, or an
+         * only way to stop recording. For a trail enabled in all Regions, this operation
+         * must be called from the Region in which the trail was created, or an
          * <code>InvalidHomeRegionException</code> will occur. This operation cannot be
-         * called on the shadow trails (replicated trails in other regions) of a trail
-         * enabled in all regions.</p><p><h3>See Also:</h3>   <a
+         * called on the shadow trails (replicated trails in other Regions) of a trail
+         * enabled in all Regions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">AWS
          * API Reference</a></p>
          */
@@ -1333,16 +1507,19 @@ namespace CloudTrail
          * <p>Updates an event data store. The required <code>EventDataStore</code> value
          * is an ARN or the ID portion of the ARN. Other parameters are optional, but at
          * least one optional parameter must be specified, or CloudTrail throws an error.
-         * <code>RetentionPeriod</code> is in days, and valid values are integers between
-         * 90 and 2557. By default, <code>TerminationProtection</code> is enabled.</p>
-         * <p>For event data stores for CloudTrail events,
-         * <code>AdvancedEventSelectors</code> includes or excludes management and data
-         * events in your event data store. For more information about
-         * <code>AdvancedEventSelectors</code>, see
-         * <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>. </p> <p> For event data
-         * stores for Config configuration items, Audit Manager evidence, or non-Amazon Web
-         * Services events, <code>AdvancedEventSelectors</code> includes events of that
-         * type in your event data store.</p><p><h3>See Also:</h3>   <a
+         * <code>RetentionPeriod</code> is in days, and valid values are integers between 7
+         * and 3653 if the <code>BillingMode</code> is set to
+         * <code>EXTENDABLE_RETENTION_PRICING</code>, or between 7 and 2557 if
+         * <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>. By
+         * default, <code>TerminationProtection</code> is enabled.</p> <p>For event data
+         * stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes or
+         * excludes management, data, or Insights events in your event data store. For more
+         * information about <code>AdvancedEventSelectors</code>, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.</p>
+         * <p> For event data stores for Config configuration items, Audit Manager
+         * evidence, or non-Amazon Web Services events, <code>AdvancedEventSelectors</code>
+         * includes events of that type in your event data store.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateEventDataStore">AWS
          * API Reference</a></p>
          */
@@ -1372,7 +1549,7 @@ namespace CloudTrail
          * service. Use this action to designate an existing bucket for log delivery. If
          * the existing bucket has previously been a target for CloudTrail log files, an
          * IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from
-         * the region in which the trail was created; otherwise, an
+         * the Region in which the trail was created; otherwise, an
          * <code>InvalidHomeRegionException</code> is thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">AWS
          * API Reference</a></p>

@@ -57,16 +57,14 @@ namespace Model
      * number of new Reserved Instances.</p> </li> <li> <p>
      * <code>modification-result.target-configuration.instance-type</code> - The
      * instance type of the new Reserved Instances.</p> </li> <li> <p>
-     * <code>modification-result.target-configuration.platform</code> - The network
-     * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
-     * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
-     * when the modification request was last updated.</p> </li> </ul>
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
+     * modified.</p> </li> <li> <p> <code>reserved-instances-modification-id</code> -
+     * The ID of the modification request.</p> </li> <li> <p> <code>status</code> - The
+     * status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> <li> <p>
+     * <code>update-date</code> - The time when the modification request was last
+     * updated.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -85,16 +83,14 @@ namespace Model
      * number of new Reserved Instances.</p> </li> <li> <p>
      * <code>modification-result.target-configuration.instance-type</code> - The
      * instance type of the new Reserved Instances.</p> </li> <li> <p>
-     * <code>modification-result.target-configuration.platform</code> - The network
-     * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
-     * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
-     * when the modification request was last updated.</p> </li> </ul>
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
+     * modified.</p> </li> <li> <p> <code>reserved-instances-modification-id</code> -
+     * The ID of the modification request.</p> </li> <li> <p> <code>status</code> - The
+     * status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> <li> <p>
+     * <code>update-date</code> - The time when the modification request was last
+     * updated.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -113,16 +109,14 @@ namespace Model
      * number of new Reserved Instances.</p> </li> <li> <p>
      * <code>modification-result.target-configuration.instance-type</code> - The
      * instance type of the new Reserved Instances.</p> </li> <li> <p>
-     * <code>modification-result.target-configuration.platform</code> - The network
-     * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
-     * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
-     * when the modification request was last updated.</p> </li> </ul>
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
+     * modified.</p> </li> <li> <p> <code>reserved-instances-modification-id</code> -
+     * The ID of the modification request.</p> </li> <li> <p> <code>status</code> - The
+     * status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> <li> <p>
+     * <code>update-date</code> - The time when the modification request was last
+     * updated.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -141,16 +135,14 @@ namespace Model
      * number of new Reserved Instances.</p> </li> <li> <p>
      * <code>modification-result.target-configuration.instance-type</code> - The
      * instance type of the new Reserved Instances.</p> </li> <li> <p>
-     * <code>modification-result.target-configuration.platform</code> - The network
-     * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
-     * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
-     * when the modification request was last updated.</p> </li> </ul>
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
+     * modified.</p> </li> <li> <p> <code>reserved-instances-modification-id</code> -
+     * The ID of the modification request.</p> </li> <li> <p> <code>status</code> - The
+     * status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> <li> <p>
+     * <code>update-date</code> - The time when the modification request was last
+     * updated.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -169,16 +161,14 @@ namespace Model
      * number of new Reserved Instances.</p> </li> <li> <p>
      * <code>modification-result.target-configuration.instance-type</code> - The
      * instance type of the new Reserved Instances.</p> </li> <li> <p>
-     * <code>modification-result.target-configuration.platform</code> - The network
-     * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
-     * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
-     * when the modification request was last updated.</p> </li> </ul>
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
+     * modified.</p> </li> <li> <p> <code>reserved-instances-modification-id</code> -
+     * The ID of the modification request.</p> </li> <li> <p> <code>status</code> - The
+     * status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> <li> <p>
+     * <code>update-date</code> - The time when the modification request was last
+     * updated.</p> </li> </ul>
      */
     inline DescribeReservedInstancesModificationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -197,16 +187,14 @@ namespace Model
      * number of new Reserved Instances.</p> </li> <li> <p>
      * <code>modification-result.target-configuration.instance-type</code> - The
      * instance type of the new Reserved Instances.</p> </li> <li> <p>
-     * <code>modification-result.target-configuration.platform</code> - The network
-     * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
-     * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
-     * when the modification request was last updated.</p> </li> </ul>
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
+     * modified.</p> </li> <li> <p> <code>reserved-instances-modification-id</code> -
+     * The ID of the modification request.</p> </li> <li> <p> <code>status</code> - The
+     * status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> <li> <p>
+     * <code>update-date</code> - The time when the modification request was last
+     * updated.</p> </li> </ul>
      */
     inline DescribeReservedInstancesModificationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -225,16 +213,14 @@ namespace Model
      * number of new Reserved Instances.</p> </li> <li> <p>
      * <code>modification-result.target-configuration.instance-type</code> - The
      * instance type of the new Reserved Instances.</p> </li> <li> <p>
-     * <code>modification-result.target-configuration.platform</code> - The network
-     * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
-     * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
-     * when the modification request was last updated.</p> </li> </ul>
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
+     * modified.</p> </li> <li> <p> <code>reserved-instances-modification-id</code> -
+     * The ID of the modification request.</p> </li> <li> <p> <code>status</code> - The
+     * status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> <li> <p>
+     * <code>update-date</code> - The time when the modification request was last
+     * updated.</p> </li> </ul>
      */
     inline DescribeReservedInstancesModificationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -253,16 +239,14 @@ namespace Model
      * number of new Reserved Instances.</p> </li> <li> <p>
      * <code>modification-result.target-configuration.instance-type</code> - The
      * instance type of the new Reserved Instances.</p> </li> <li> <p>
-     * <code>modification-result.target-configuration.platform</code> - The network
-     * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
-     * <code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
-     * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
-     * when the modification request was last updated.</p> </li> </ul>
+     * <code>reserved-instances-id</code> - The ID of the Reserved Instances
+     * modified.</p> </li> <li> <p> <code>reserved-instances-modification-id</code> -
+     * The ID of the modification request.</p> </li> <li> <p> <code>status</code> - The
+     * status of the Reserved Instances modification request (<code>processing</code> |
+     * <code>fulfilled</code> | <code>failed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> <li> <p>
+     * <code>update-date</code> - The time when the modification request was last
+     * updated.</p> </li> </ul>
      */
     inline DescribeReservedInstancesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

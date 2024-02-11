@@ -41,6 +41,42 @@ namespace Model
 
 
     /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline CreateWorkspaceResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline CreateWorkspaceResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline CreateWorkspaceResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+
+
+    /**
      * <p>The ARN of the workspace that was just created.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -164,39 +200,39 @@ namespace Model
 
 
     /**
-     * <p>The generated ID of the workspace that was just created.</p>
+     * <p>Customer managed KMS key ARN for this workspace</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The generated ID of the workspace that was just created.</p>
+     * <p>Customer managed KMS key ARN for this workspace</p>
      */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
 
     /**
-     * <p>The generated ID of the workspace that was just created.</p>
+     * <p>Customer managed KMS key ARN for this workspace</p>
      */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The generated ID of the workspace that was just created.</p>
+     * <p>Customer managed KMS key ARN for this workspace</p>
      */
-    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The generated ID of the workspace that was just created.</p>
+     * <p>Customer managed KMS key ARN for this workspace</p>
      */
-    inline CreateWorkspaceResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+    inline CreateWorkspaceResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The generated ID of the workspace that was just created.</p>
+     * <p>Customer managed KMS key ARN for this workspace</p>
      */
-    inline CreateWorkspaceResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+    inline CreateWorkspaceResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The generated ID of the workspace that was just created.</p>
+     * <p>Customer managed KMS key ARN for this workspace</p>
      */
-    inline CreateWorkspaceResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    inline CreateWorkspaceResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
 
     
@@ -222,13 +258,15 @@ namespace Model
 
   private:
 
+    Aws::String m_workspaceId;
+
     Aws::String m_arn;
 
     WorkspaceStatus m_status;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 
-    Aws::String m_workspaceId;
+    Aws::String m_kmsKeyArn;
 
     Aws::String m_requestId;
   };

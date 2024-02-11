@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/connect/model/AnswerMachineDetectionConfig.h>
 #include <aws/connect/model/TrafficType.h>
+#include <aws/connect/model/Reference.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -34,6 +35,294 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "StartOutboundVoiceContact"; }
 
     AWS_CONNECT_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The name of a voice contact that is shown to an agent in the Contact Control
+     * Panel (CCP).</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of a voice contact that is shown to an agent in the Contact Control
+     * Panel (CCP).</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of a voice contact that is shown to an agent in the Contact Control
+     * Panel (CCP).</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of a voice contact that is shown to an agent in the Contact Control
+     * Panel (CCP).</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The name of a voice contact that is shown to an agent in the Contact Control
+     * Panel (CCP).</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The name of a voice contact that is shown to an agent in the Contact Control
+     * Panel (CCP).</p>
+     */
+    inline StartOutboundVoiceContactRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of a voice contact that is shown to an agent in the Contact Control
+     * Panel (CCP).</p>
+     */
+    inline StartOutboundVoiceContactRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a voice contact that is shown to an agent in the Contact Control
+     * Panel (CCP).</p>
+     */
+    inline StartOutboundVoiceContactRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>A description of the voice contact that is shown to an agent in the Contact
+     * Control Panel (CCP).</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the voice contact that is shown to an agent in the Contact
+     * Control Panel (CCP).</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the voice contact that is shown to an agent in the Contact
+     * Control Panel (CCP).</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the voice contact that is shown to an agent in the Contact
+     * Control Panel (CCP).</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the voice contact that is shown to an agent in the Contact
+     * Control Panel (CCP).</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the voice contact that is shown to an agent in the Contact
+     * Control Panel (CCP).</p>
+     */
+    inline StartOutboundVoiceContactRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the voice contact that is shown to an agent in the Contact
+     * Control Panel (CCP).</p>
+     */
+    inline StartOutboundVoiceContactRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the voice contact that is shown to an agent in the Contact
+     * Control Panel (CCP).</p>
+     */
+    inline StartOutboundVoiceContactRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline const Aws::Map<Aws::String, Reference>& GetReferences() const{ return m_references; }
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline bool ReferencesHasBeenSet() const { return m_referencesHasBeenSet; }
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline void SetReferences(const Aws::Map<Aws::String, Reference>& value) { m_referencesHasBeenSet = true; m_references = value; }
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline void SetReferences(Aws::Map<Aws::String, Reference>&& value) { m_referencesHasBeenSet = true; m_references = std::move(value); }
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline StartOutboundVoiceContactRequest& WithReferences(const Aws::Map<Aws::String, Reference>& value) { SetReferences(value); return *this;}
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline StartOutboundVoiceContactRequest& WithReferences(Aws::Map<Aws::String, Reference>&& value) { SetReferences(std::move(value)); return *this;}
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline StartOutboundVoiceContactRequest& AddReferences(const Aws::String& key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(key, value); return *this; }
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline StartOutboundVoiceContactRequest& AddReferences(Aws::String&& key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline StartOutboundVoiceContactRequest& AddReferences(const Aws::String& key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline StartOutboundVoiceContactRequest& AddReferences(Aws::String&& key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline StartOutboundVoiceContactRequest& AddReferences(const char* key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Contacts can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during voice contact creation.</p>
+     */
+    inline StartOutboundVoiceContactRequest& AddReferences(const char* key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The <code>contactId</code> that is related to this contact. Linking voice,
+     * task, or chat by using <code>RelatedContactID</code> copies over contact
+     * attributes from the related contact to the new contact. All updates to
+     * user-defined attributes in the new contact are limited to the individual contact
+     * ID. There are no limits to the number of contacts that can be linked by using
+     * <code>RelatedContactId</code>. </p>
+     */
+    inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
+
+    /**
+     * <p>The <code>contactId</code> that is related to this contact. Linking voice,
+     * task, or chat by using <code>RelatedContactID</code> copies over contact
+     * attributes from the related contact to the new contact. All updates to
+     * user-defined attributes in the new contact are limited to the individual contact
+     * ID. There are no limits to the number of contacts that can be linked by using
+     * <code>RelatedContactId</code>. </p>
+     */
+    inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
+
+    /**
+     * <p>The <code>contactId</code> that is related to this contact. Linking voice,
+     * task, or chat by using <code>RelatedContactID</code> copies over contact
+     * attributes from the related contact to the new contact. All updates to
+     * user-defined attributes in the new contact are limited to the individual contact
+     * ID. There are no limits to the number of contacts that can be linked by using
+     * <code>RelatedContactId</code>. </p>
+     */
+    inline void SetRelatedContactId(const Aws::String& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = value; }
+
+    /**
+     * <p>The <code>contactId</code> that is related to this contact. Linking voice,
+     * task, or chat by using <code>RelatedContactID</code> copies over contact
+     * attributes from the related contact to the new contact. All updates to
+     * user-defined attributes in the new contact are limited to the individual contact
+     * ID. There are no limits to the number of contacts that can be linked by using
+     * <code>RelatedContactId</code>. </p>
+     */
+    inline void SetRelatedContactId(Aws::String&& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = std::move(value); }
+
+    /**
+     * <p>The <code>contactId</code> that is related to this contact. Linking voice,
+     * task, or chat by using <code>RelatedContactID</code> copies over contact
+     * attributes from the related contact to the new contact. All updates to
+     * user-defined attributes in the new contact are limited to the individual contact
+     * ID. There are no limits to the number of contacts that can be linked by using
+     * <code>RelatedContactId</code>. </p>
+     */
+    inline void SetRelatedContactId(const char* value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId.assign(value); }
+
+    /**
+     * <p>The <code>contactId</code> that is related to this contact. Linking voice,
+     * task, or chat by using <code>RelatedContactID</code> copies over contact
+     * attributes from the related contact to the new contact. All updates to
+     * user-defined attributes in the new contact are limited to the individual contact
+     * ID. There are no limits to the number of contacts that can be linked by using
+     * <code>RelatedContactId</code>. </p>
+     */
+    inline StartOutboundVoiceContactRequest& WithRelatedContactId(const Aws::String& value) { SetRelatedContactId(value); return *this;}
+
+    /**
+     * <p>The <code>contactId</code> that is related to this contact. Linking voice,
+     * task, or chat by using <code>RelatedContactID</code> copies over contact
+     * attributes from the related contact to the new contact. All updates to
+     * user-defined attributes in the new contact are limited to the individual contact
+     * ID. There are no limits to the number of contacts that can be linked by using
+     * <code>RelatedContactId</code>. </p>
+     */
+    inline StartOutboundVoiceContactRequest& WithRelatedContactId(Aws::String&& value) { SetRelatedContactId(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>contactId</code> that is related to this contact. Linking voice,
+     * task, or chat by using <code>RelatedContactID</code> copies over contact
+     * attributes from the related contact to the new contact. All updates to
+     * user-defined attributes in the new contact are limited to the individual contact
+     * ID. There are no limits to the number of contacts that can be linked by using
+     * <code>RelatedContactId</code>. </p>
+     */
+    inline StartOutboundVoiceContactRequest& WithRelatedContactId(const char* value) { SetRelatedContactId(value); return *this;}
 
 
     /**
@@ -79,10 +368,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -90,10 +379,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -101,10 +390,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -112,10 +401,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -123,10 +412,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -134,10 +423,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -145,10 +434,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -156,10 +445,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -665,6 +954,18 @@ namespace Model
     inline StartOutboundVoiceContactRequest& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    Aws::Map<Aws::String, Reference> m_references;
+    bool m_referencesHasBeenSet = false;
+
+    Aws::String m_relatedContactId;
+    bool m_relatedContactIdHasBeenSet = false;
 
     Aws::String m_destinationPhoneNumber;
     bool m_destinationPhoneNumberHasBeenSet = false;

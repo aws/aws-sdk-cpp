@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -148,6 +149,72 @@ namespace Model
      */
     inline PredictedItem& WithPromotionName(const char* value) { SetPromotionName(value); return *this;}
 
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline PredictedItem& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline PredictedItem& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline PredictedItem& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline PredictedItem& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline PredictedItem& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline PredictedItem& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline PredictedItem& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline PredictedItem& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Metadata about the item from your Items dataset.</p>
+     */
+    inline PredictedItem& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_itemId;
@@ -158,6 +225,9 @@ namespace Model
 
     Aws::String m_promotionName;
     bool m_promotionNameHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_metadata;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -14,14 +14,16 @@ using namespace Aws::Utils;
 
 UpdateFileSystemRequest::UpdateFileSystemRequest() : 
     m_fileSystemIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_storageCapacity(0),
     m_storageCapacityHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false),
     m_ontapConfigurationHasBeenSet(false),
-    m_openZFSConfigurationHasBeenSet(false)
+    m_openZFSConfigurationHasBeenSet(false),
+    m_storageType(StorageType::NOT_SET),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,11 @@ Aws::String UpdateFileSystemRequest::SerializePayload() const
   {
    payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
 
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+   payload.WithString("StorageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
   }
 
   return payload.View().WriteReadable();

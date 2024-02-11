@@ -35,44 +35,58 @@ namespace Model
 
 
     /**
-     * <p>The unique message identifier returned from the
-     * <code>SendBulkTemplatedEmail</code> action.</p>
+     * <p>One object per intended recipient. Check each response object and retry any
+     * messages with a failure status. (Note that order of responses will be respective
+     * to order of destinations in the request.)Receipt rules enable you to specify
+     * which actions </p>
      */
     inline const Aws::Vector<BulkEmailDestinationStatus>& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The unique message identifier returned from the
-     * <code>SendBulkTemplatedEmail</code> action.</p>
+     * <p>One object per intended recipient. Check each response object and retry any
+     * messages with a failure status. (Note that order of responses will be respective
+     * to order of destinations in the request.)Receipt rules enable you to specify
+     * which actions </p>
      */
     inline void SetStatus(const Aws::Vector<BulkEmailDestinationStatus>& value) { m_status = value; }
 
     /**
-     * <p>The unique message identifier returned from the
-     * <code>SendBulkTemplatedEmail</code> action.</p>
+     * <p>One object per intended recipient. Check each response object and retry any
+     * messages with a failure status. (Note that order of responses will be respective
+     * to order of destinations in the request.)Receipt rules enable you to specify
+     * which actions </p>
      */
     inline void SetStatus(Aws::Vector<BulkEmailDestinationStatus>&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The unique message identifier returned from the
-     * <code>SendBulkTemplatedEmail</code> action.</p>
+     * <p>One object per intended recipient. Check each response object and retry any
+     * messages with a failure status. (Note that order of responses will be respective
+     * to order of destinations in the request.)Receipt rules enable you to specify
+     * which actions </p>
      */
     inline SendBulkTemplatedEmailResult& WithStatus(const Aws::Vector<BulkEmailDestinationStatus>& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The unique message identifier returned from the
-     * <code>SendBulkTemplatedEmail</code> action.</p>
+     * <p>One object per intended recipient. Check each response object and retry any
+     * messages with a failure status. (Note that order of responses will be respective
+     * to order of destinations in the request.)Receipt rules enable you to specify
+     * which actions </p>
      */
     inline SendBulkTemplatedEmailResult& WithStatus(Aws::Vector<BulkEmailDestinationStatus>&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The unique message identifier returned from the
-     * <code>SendBulkTemplatedEmail</code> action.</p>
+     * <p>One object per intended recipient. Check each response object and retry any
+     * messages with a failure status. (Note that order of responses will be respective
+     * to order of destinations in the request.)Receipt rules enable you to specify
+     * which actions </p>
      */
     inline SendBulkTemplatedEmailResult& AddStatus(const BulkEmailDestinationStatus& value) { m_status.push_back(value); return *this; }
 
     /**
-     * <p>The unique message identifier returned from the
-     * <code>SendBulkTemplatedEmail</code> action.</p>
+     * <p>One object per intended recipient. Check each response object and retry any
+     * messages with a failure status. (Note that order of responses will be respective
+     * to order of destinations in the request.)Receipt rules enable you to specify
+     * which actions </p>
      */
     inline SendBulkTemplatedEmailResult& AddStatus(BulkEmailDestinationStatus&& value) { m_status.push_back(std::move(value)); return *this; }
 

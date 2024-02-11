@@ -18,16 +18,16 @@ namespace BillingConductor
   /**
    * <p>Amazon Web Services Billing Conductor is a fully managed service that you can
    * use to customize a <a
-   * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">pro
-   * forma</a> version of your billing data each month, to accurately show or
-   * chargeback your end customers. Amazon Web Services Billing Conductor doesn't
-   * change the way you're billed by Amazon Web Services each month by design.
-   * Instead, it provides you with a mechanism to configure, generate, and display
-   * rates to certain customers over a given billing period. You can also analyze the
-   * difference between the rates you apply to your accounting groupings relative to
-   * your actual rates from Amazon Web Services. As a result of your Amazon Web
-   * Services Billing Conductor configuration, the payer account can also see the
-   * custom rate applied on the billing details page of the <a
+   * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">proforma</a>
+   * version of your billing data each month, to accurately show or chargeback your
+   * end customers. Amazon Web Services Billing Conductor doesn't change the way
+   * you're billed by Amazon Web Services each month by design. Instead, it provides
+   * you with a mechanism to configure, generate, and display rates to certain
+   * customers over a given billing period. You can also analyze the difference
+   * between the rates you apply to your accounting groupings relative to your actual
+   * rates from Amazon Web Services. As a result of your Amazon Web Services Billing
+   * Conductor configuration, the payer account can also see the custom rate applied
+   * on the billing details page of the <a
    * href="https://console.aws.amazon.com/billing">Amazon Web Services Billing
    * console</a>, or configure a cost and usage report per billing group.</p> <p>This
    * documentation shows how you can configure Amazon Web Services Billing Conductor
@@ -43,6 +43,9 @@ namespace BillingConductor
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef BillingConductorClientConfiguration ClientConfigurationType;
+      typedef BillingConductorEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -228,8 +231,8 @@ namespace BillingConductor
         }
 
         /**
-         * <p> Creates a custom line item that can be used to create a one-time fixed
-         * charge that can be applied to a single billing group for the current or previous
+         * <p>Creates a custom line item that can be used to create a one-time fixed charge
+         * that can be applied to a single billing group for the current or previous
          * billing period. The one-time fixed charge is either a fee or discount.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateCustomLineItem">AWS
@@ -460,6 +463,33 @@ namespace BillingConductor
         void DisassociatePricingRulesAsync(const DisassociatePricingRulesRequestT& request, const DisassociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BillingConductorClient::DisassociatePricingRules, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the margin summary report, which includes the Amazon Web Services
+         * cost and charged amount (pro forma cost) by Amazon Web Service for a specific
+         * billing group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingGroupCostReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBillingGroupCostReportOutcome GetBillingGroupCostReport(const Model::GetBillingGroupCostReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetBillingGroupCostReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetBillingGroupCostReportRequestT = Model::GetBillingGroupCostReportRequest>
+        Model::GetBillingGroupCostReportOutcomeCallable GetBillingGroupCostReportCallable(const GetBillingGroupCostReportRequestT& request) const
+        {
+            return SubmitCallable(&BillingConductorClient::GetBillingGroupCostReport, request);
+        }
+
+        /**
+         * An Async wrapper for GetBillingGroupCostReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetBillingGroupCostReportRequestT = Model::GetBillingGroupCostReportRequest>
+        void GetBillingGroupCostReportAsync(const GetBillingGroupCostReportRequestT& request, const GetBillingGroupCostReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BillingConductorClient::GetBillingGroupCostReport, request, handler, context);
         }
 
         /**

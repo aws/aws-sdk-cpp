@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines a configuration recommendation.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines a recommendation configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ConfigRecommendation">AWS
    * API Reference</a></p>
    */
@@ -46,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline const Aws::String& GetAppComponentName() const{ return m_appComponentName; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline bool AppComponentNameHasBeenSet() const { return m_appComponentNameHasBeenSet; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetAppComponentName(const Aws::String& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = value; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetAppComponentName(Aws::String&& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = std::move(value); }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetAppComponentName(const char* value) { m_appComponentNameHasBeenSet = true; m_appComponentName.assign(value); }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline ConfigRecommendation& WithAppComponentName(const Aws::String& value) { SetAppComponentName(value); return *this;}
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline ConfigRecommendation& WithAppComponentName(Aws::String&& value) { SetAppComponentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline ConfigRecommendation& WithAppComponentName(const char* value) { SetAppComponentName(value); return *this;}
 
@@ -384,42 +384,42 @@ namespace Model
 
 
     /**
-     * <p>The reference identifier for the recommendation configuration.</p>
+     * <p>Reference identifier for the recommendation configuration.</p>
      */
     inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
 
     /**
-     * <p>The reference identifier for the recommendation configuration.</p>
+     * <p>Reference identifier for the recommendation configuration.</p>
      */
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
 
     /**
-     * <p>The reference identifier for the recommendation configuration.</p>
+     * <p>Reference identifier for the recommendation configuration.</p>
      */
     inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
 
     /**
-     * <p>The reference identifier for the recommendation configuration.</p>
+     * <p>Reference identifier for the recommendation configuration.</p>
      */
     inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
 
     /**
-     * <p>The reference identifier for the recommendation configuration.</p>
+     * <p>Reference identifier for the recommendation configuration.</p>
      */
     inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
 
     /**
-     * <p>The reference identifier for the recommendation configuration.</p>
+     * <p>Reference identifier for the recommendation configuration.</p>
      */
     inline ConfigRecommendation& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
 
     /**
-     * <p>The reference identifier for the recommendation configuration.</p>
+     * <p>Reference identifier for the recommendation configuration.</p>
      */
     inline ConfigRecommendation& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
 
     /**
-     * <p>The reference identifier for the recommendation configuration.</p>
+     * <p>Reference identifier for the recommendation configuration.</p>
      */
     inline ConfigRecommendation& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
 

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReferenceLinePatternType::NOT_SET:
+            return {};
           case ReferenceLinePatternType::SOLID:
             return "SOLID";
           case ReferenceLinePatternType::DASHED:

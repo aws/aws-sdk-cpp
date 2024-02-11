@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateFirewallDomainListRequest::CreateFirewallDomainListRequest() : 
-    m_creatorRequestId(Aws::Utils::UUID::RandomUUID()),
+    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_creatorRequestIdHasBeenSet(true),
     m_nameHasBeenSet(false),
     m_tagsHasBeenSet(false)

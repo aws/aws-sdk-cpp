@@ -42,85 +42,91 @@ namespace Model
 
     /**
      * <p>The next action that the bot should take in its interaction with the user.
-     * The possible values are:</p> <ul> <li> <p> <code>Close</code> - Indicates that
-     * there will not be a response from the user. For example, the statement "Your
-     * order has been placed" does not require a response.</p> </li> <li> <p>
-     * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
-     * complete and ready to be fulfilled. This is a yes/no question such as "Place the
-     * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
-     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
-     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
+     * The following values are possible:</p> <ul> <li> <p> <code>Close</code> –
+     * Indicates that there will not be a response from the user. For example, the
+     * statement "Your order has been placed" does not require a response.</p> </li>
+     * <li> <p> <code>ConfirmIntent</code> – The next action is asking the user if the
+     * intent is complete and ready to be fulfilled. This is a yes/no question such as
+     * "Place the order?"</p> </li> <li> <p> <code>Delegate</code> – The next action is
+     * determined by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> – The
+     * next action is to elicit an intent from the user.</p> </li> <li> <p>
+     * <code>ElicitSlot</code> – The next action is to elicit a slot value from the
+     * user.</p> </li> </ul>
      */
     inline const DialogActionType& GetType() const{ return m_type; }
 
     /**
      * <p>The next action that the bot should take in its interaction with the user.
-     * The possible values are:</p> <ul> <li> <p> <code>Close</code> - Indicates that
-     * there will not be a response from the user. For example, the statement "Your
-     * order has been placed" does not require a response.</p> </li> <li> <p>
-     * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
-     * complete and ready to be fulfilled. This is a yes/no question such as "Place the
-     * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
-     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
-     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
+     * The following values are possible:</p> <ul> <li> <p> <code>Close</code> –
+     * Indicates that there will not be a response from the user. For example, the
+     * statement "Your order has been placed" does not require a response.</p> </li>
+     * <li> <p> <code>ConfirmIntent</code> – The next action is asking the user if the
+     * intent is complete and ready to be fulfilled. This is a yes/no question such as
+     * "Place the order?"</p> </li> <li> <p> <code>Delegate</code> – The next action is
+     * determined by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> – The
+     * next action is to elicit an intent from the user.</p> </li> <li> <p>
+     * <code>ElicitSlot</code> – The next action is to elicit a slot value from the
+     * user.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The next action that the bot should take in its interaction with the user.
-     * The possible values are:</p> <ul> <li> <p> <code>Close</code> - Indicates that
-     * there will not be a response from the user. For example, the statement "Your
-     * order has been placed" does not require a response.</p> </li> <li> <p>
-     * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
-     * complete and ready to be fulfilled. This is a yes/no question such as "Place the
-     * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
-     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
-     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
+     * The following values are possible:</p> <ul> <li> <p> <code>Close</code> –
+     * Indicates that there will not be a response from the user. For example, the
+     * statement "Your order has been placed" does not require a response.</p> </li>
+     * <li> <p> <code>ConfirmIntent</code> – The next action is asking the user if the
+     * intent is complete and ready to be fulfilled. This is a yes/no question such as
+     * "Place the order?"</p> </li> <li> <p> <code>Delegate</code> – The next action is
+     * determined by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> – The
+     * next action is to elicit an intent from the user.</p> </li> <li> <p>
+     * <code>ElicitSlot</code> – The next action is to elicit a slot value from the
+     * user.</p> </li> </ul>
      */
     inline void SetType(const DialogActionType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The next action that the bot should take in its interaction with the user.
-     * The possible values are:</p> <ul> <li> <p> <code>Close</code> - Indicates that
-     * there will not be a response from the user. For example, the statement "Your
-     * order has been placed" does not require a response.</p> </li> <li> <p>
-     * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
-     * complete and ready to be fulfilled. This is a yes/no question such as "Place the
-     * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
-     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
-     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
+     * The following values are possible:</p> <ul> <li> <p> <code>Close</code> –
+     * Indicates that there will not be a response from the user. For example, the
+     * statement "Your order has been placed" does not require a response.</p> </li>
+     * <li> <p> <code>ConfirmIntent</code> – The next action is asking the user if the
+     * intent is complete and ready to be fulfilled. This is a yes/no question such as
+     * "Place the order?"</p> </li> <li> <p> <code>Delegate</code> – The next action is
+     * determined by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> – The
+     * next action is to elicit an intent from the user.</p> </li> <li> <p>
+     * <code>ElicitSlot</code> – The next action is to elicit a slot value from the
+     * user.</p> </li> </ul>
      */
     inline void SetType(DialogActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The next action that the bot should take in its interaction with the user.
-     * The possible values are:</p> <ul> <li> <p> <code>Close</code> - Indicates that
-     * there will not be a response from the user. For example, the statement "Your
-     * order has been placed" does not require a response.</p> </li> <li> <p>
-     * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
-     * complete and ready to be fulfilled. This is a yes/no question such as "Place the
-     * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
-     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
-     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
+     * The following values are possible:</p> <ul> <li> <p> <code>Close</code> –
+     * Indicates that there will not be a response from the user. For example, the
+     * statement "Your order has been placed" does not require a response.</p> </li>
+     * <li> <p> <code>ConfirmIntent</code> – The next action is asking the user if the
+     * intent is complete and ready to be fulfilled. This is a yes/no question such as
+     * "Place the order?"</p> </li> <li> <p> <code>Delegate</code> – The next action is
+     * determined by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> – The
+     * next action is to elicit an intent from the user.</p> </li> <li> <p>
+     * <code>ElicitSlot</code> – The next action is to elicit a slot value from the
+     * user.</p> </li> </ul>
      */
     inline DialogAction& WithType(const DialogActionType& value) { SetType(value); return *this;}
 
     /**
      * <p>The next action that the bot should take in its interaction with the user.
-     * The possible values are:</p> <ul> <li> <p> <code>Close</code> - Indicates that
-     * there will not be a response from the user. For example, the statement "Your
-     * order has been placed" does not require a response.</p> </li> <li> <p>
-     * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
-     * complete and ready to be fulfilled. This is a yes/no question such as "Place the
-     * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
-     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
-     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
+     * The following values are possible:</p> <ul> <li> <p> <code>Close</code> –
+     * Indicates that there will not be a response from the user. For example, the
+     * statement "Your order has been placed" does not require a response.</p> </li>
+     * <li> <p> <code>ConfirmIntent</code> – The next action is asking the user if the
+     * intent is complete and ready to be fulfilled. This is a yes/no question such as
+     * "Place the order?"</p> </li> <li> <p> <code>Delegate</code> – The next action is
+     * determined by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> – The
+     * next action is to elicit an intent from the user.</p> </li> <li> <p>
+     * <code>ElicitSlot</code> – The next action is to elicit a slot value from the
+     * user.</p> </li> </ul>
      */
     inline DialogAction& WithType(DialogActionType&& value) { SetType(std::move(value)); return *this;}
 
@@ -172,7 +178,7 @@ namespace Model
      * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
      * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.</p>
      */
     inline const StyleType& GetSlotElicitationStyle() const{ return m_slotElicitationStyle; }
@@ -183,7 +189,7 @@ namespace Model
      * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
      * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.</p>
      */
     inline bool SlotElicitationStyleHasBeenSet() const { return m_slotElicitationStyleHasBeenSet; }
@@ -194,7 +200,7 @@ namespace Model
      * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
      * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.</p>
      */
     inline void SetSlotElicitationStyle(const StyleType& value) { m_slotElicitationStyleHasBeenSet = true; m_slotElicitationStyle = value; }
@@ -205,7 +211,7 @@ namespace Model
      * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
      * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.</p>
      */
     inline void SetSlotElicitationStyle(StyleType&& value) { m_slotElicitationStyleHasBeenSet = true; m_slotElicitationStyle = std::move(value); }
@@ -216,7 +222,7 @@ namespace Model
      * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
      * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.</p>
      */
     inline DialogAction& WithSlotElicitationStyle(const StyleType& value) { SetSlotElicitationStyle(value); return *this;}
@@ -227,7 +233,7 @@ namespace Model
      * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
      * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.</p>
      */
     inline DialogAction& WithSlotElicitationStyle(StyleType&& value) { SetSlotElicitationStyle(std::move(value)); return *this;}

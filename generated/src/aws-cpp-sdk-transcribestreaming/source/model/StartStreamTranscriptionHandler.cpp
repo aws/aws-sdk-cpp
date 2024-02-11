@@ -29,6 +29,12 @@ namespace Model
 
     StartStreamTranscriptionHandler::StartStreamTranscriptionHandler() : EventStreamHandler()
     {
+        m_onInitialResponse = [&](const StartStreamTranscriptionInitialResponse&)
+        {
+            AWS_LOGSTREAM_TRACE(STARTSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG,
+                "StartStreamTranscription initial response received.");
+        };
+
         m_onTranscriptEvent = [&](const TranscriptEvent&)
         {
             AWS_LOGSTREAM_TRACE(STARTSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG, "TranscriptEvent received.");
@@ -88,6 +94,21 @@ namespace Model
         }
         switch (StartStreamTranscriptionEventMapper::GetStartStreamTranscriptionEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
+        
+        case StartStreamTranscriptionEventType::INITIAL_RESPONSE: 
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(STARTSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG, "Unable to generate a proper StartStreamTranscriptionInitialResponse object from the response in JSON format.");
+                break;
+            }
+
+            StartStreamTranscriptionInitialResponse event(json.View());
+            m_onInitialResponse(event);
+            break;
+        }   
+
         case StartStreamTranscriptionEventType::TRANSCRIPTEVENT:
         {
             JsonValue json(GetEventPayloadAsString());
@@ -192,12 +213,18 @@ namespace Model
 
 namespace StartStreamTranscriptionEventMapper
 {
+    static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int TRANSCRIPTEVENT_HASH = Aws::Utils::HashingUtils::HashString("TranscriptEvent");
 
     StartStreamTranscriptionEventType GetStartStreamTranscriptionEventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-        if (hashCode == TRANSCRIPTEVENT_HASH)
+
+        if (hashCode == INITIAL_RESPONSE_HASH) 
+        {
+            return StartStreamTranscriptionEventType::INITIAL_RESPONSE;
+        }
+        else if (hashCode == TRANSCRIPTEVENT_HASH)
         {
             return StartStreamTranscriptionEventType::TRANSCRIPTEVENT;
         }
@@ -208,6 +235,8 @@ namespace StartStreamTranscriptionEventMapper
     {
         switch (value)
         {
+        case StartStreamTranscriptionEventType::INITIAL_RESPONSE:
+            return "initial-response";
         case StartStreamTranscriptionEventType::TRANSCRIPTEVENT:
             return "TranscriptEvent";
         default:

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/location/model/PlaceGeometry.h>
 #include <aws/location/model/TimeZone.h>
 #include <utility>
@@ -80,6 +81,88 @@ namespace Model
      * <p>The numerical portion of an address, such as a building number. </p>
      */
     inline Place& WithAddressNumber(const char* value) { SetAddressNumber(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Location categories that describe this Place.</p> <p>For more
+     * information about using categories, including a list of Amazon Location
+     * categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCategories() const{ return m_categories; }
+
+    /**
+     * <p>The Amazon Location categories that describe this Place.</p> <p>For more
+     * information about using categories, including a list of Amazon Location
+     * categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
+
+    /**
+     * <p>The Amazon Location categories that describe this Place.</p> <p>For more
+     * information about using categories, including a list of Amazon Location
+     * categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline void SetCategories(const Aws::Vector<Aws::String>& value) { m_categoriesHasBeenSet = true; m_categories = value; }
+
+    /**
+     * <p>The Amazon Location categories that describe this Place.</p> <p>For more
+     * information about using categories, including a list of Amazon Location
+     * categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline void SetCategories(Aws::Vector<Aws::String>&& value) { m_categoriesHasBeenSet = true; m_categories = std::move(value); }
+
+    /**
+     * <p>The Amazon Location categories that describe this Place.</p> <p>For more
+     * information about using categories, including a list of Amazon Location
+     * categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline Place& WithCategories(const Aws::Vector<Aws::String>& value) { SetCategories(value); return *this;}
+
+    /**
+     * <p>The Amazon Location categories that describe this Place.</p> <p>For more
+     * information about using categories, including a list of Amazon Location
+     * categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline Place& WithCategories(Aws::Vector<Aws::String>&& value) { SetCategories(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Location categories that describe this Place.</p> <p>For more
+     * information about using categories, including a list of Amazon Location
+     * categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline Place& AddCategories(const Aws::String& value) { m_categoriesHasBeenSet = true; m_categories.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Location categories that describe this Place.</p> <p>For more
+     * information about using categories, including a list of Amazon Location
+     * categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline Place& AddCategories(Aws::String&& value) { m_categoriesHasBeenSet = true; m_categories.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Location categories that describe this Place.</p> <p>For more
+     * information about using categories, including a list of Amazon Location
+     * categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline Place& AddCategories(const char* value) { m_categoriesHasBeenSet = true; m_categories.push_back(value); return *this; }
 
 
     /**
@@ -490,6 +573,79 @@ namespace Model
 
 
     /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline const Aws::String& GetSubMunicipality() const{ return m_subMunicipality; }
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline bool SubMunicipalityHasBeenSet() const { return m_subMunicipalityHasBeenSet; }
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline void SetSubMunicipality(const Aws::String& value) { m_subMunicipalityHasBeenSet = true; m_subMunicipality = value; }
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline void SetSubMunicipality(Aws::String&& value) { m_subMunicipalityHasBeenSet = true; m_subMunicipality = std::move(value); }
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline void SetSubMunicipality(const char* value) { m_subMunicipalityHasBeenSet = true; m_subMunicipality.assign(value); }
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline Place& WithSubMunicipality(const Aws::String& value) { SetSubMunicipality(value); return *this;}
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline Place& WithSubMunicipality(Aws::String&& value) { SetSubMunicipality(std::move(value)); return *this;}
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline Place& WithSubMunicipality(const char* value) { SetSubMunicipality(value); return *this;}
+
+
+    /**
      * <p>A county, or an area that's part of a larger region. For example, <code>Metro
      * Vancouver</code>.</p>
      */
@@ -539,38 +695,93 @@ namespace Model
 
 
     /**
+     * <p>Categories from the data provider that describe the Place that are not mapped
+     * to any Amazon Location categories.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupplementalCategories() const{ return m_supplementalCategories; }
+
+    /**
+     * <p>Categories from the data provider that describe the Place that are not mapped
+     * to any Amazon Location categories.</p>
+     */
+    inline bool SupplementalCategoriesHasBeenSet() const { return m_supplementalCategoriesHasBeenSet; }
+
+    /**
+     * <p>Categories from the data provider that describe the Place that are not mapped
+     * to any Amazon Location categories.</p>
+     */
+    inline void SetSupplementalCategories(const Aws::Vector<Aws::String>& value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories = value; }
+
+    /**
+     * <p>Categories from the data provider that describe the Place that are not mapped
+     * to any Amazon Location categories.</p>
+     */
+    inline void SetSupplementalCategories(Aws::Vector<Aws::String>&& value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories = std::move(value); }
+
+    /**
+     * <p>Categories from the data provider that describe the Place that are not mapped
+     * to any Amazon Location categories.</p>
+     */
+    inline Place& WithSupplementalCategories(const Aws::Vector<Aws::String>& value) { SetSupplementalCategories(value); return *this;}
+
+    /**
+     * <p>Categories from the data provider that describe the Place that are not mapped
+     * to any Amazon Location categories.</p>
+     */
+    inline Place& WithSupplementalCategories(Aws::Vector<Aws::String>&& value) { SetSupplementalCategories(std::move(value)); return *this;}
+
+    /**
+     * <p>Categories from the data provider that describe the Place that are not mapped
+     * to any Amazon Location categories.</p>
+     */
+    inline Place& AddSupplementalCategories(const Aws::String& value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories.push_back(value); return *this; }
+
+    /**
+     * <p>Categories from the data provider that describe the Place that are not mapped
+     * to any Amazon Location categories.</p>
+     */
+    inline Place& AddSupplementalCategories(Aws::String&& value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Categories from the data provider that describe the Place that are not mapped
+     * to any Amazon Location categories.</p>
+     */
+    inline Place& AddSupplementalCategories(const char* value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories.push_back(value); return *this; }
+
+
+    /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using HERE as the selected partner.</p>
+     * using HERE or Grab as the selected partner.</p>
      */
     inline const TimeZone& GetTimeZone() const{ return m_timeZone; }
 
     /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using HERE as the selected partner.</p>
+     * using HERE or Grab as the selected partner.</p>
      */
     inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
 
     /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using HERE as the selected partner.</p>
+     * using HERE or Grab as the selected partner.</p>
      */
     inline void SetTimeZone(const TimeZone& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
 
     /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using HERE as the selected partner.</p>
+     * using HERE or Grab as the selected partner.</p>
      */
     inline void SetTimeZone(TimeZone&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
 
     /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using HERE as the selected partner.</p>
+     * using HERE or Grab as the selected partner.</p>
      */
     inline Place& WithTimeZone(const TimeZone& value) { SetTimeZone(value); return *this;}
 
     /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using HERE as the selected partner.</p>
+     * using HERE or Grab as the selected partner.</p>
      */
     inline Place& WithTimeZone(TimeZone&& value) { SetTimeZone(std::move(value)); return *this;}
 
@@ -578,113 +789,121 @@ namespace Model
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri as a data provider. Is not
-     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
+     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline const Aws::String& GetUnitNumber() const{ return m_unitNumber; }
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri as a data provider. Is not
-     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
+     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline bool UnitNumberHasBeenSet() const { return m_unitNumberHasBeenSet; }
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri as a data provider. Is not
-     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
+     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline void SetUnitNumber(const Aws::String& value) { m_unitNumberHasBeenSet = true; m_unitNumber = value; }
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri as a data provider. Is not
-     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
+     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline void SetUnitNumber(Aws::String&& value) { m_unitNumberHasBeenSet = true; m_unitNumber = std::move(value); }
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri as a data provider. Is not
-     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
+     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline void SetUnitNumber(const char* value) { m_unitNumberHasBeenSet = true; m_unitNumber.assign(value); }
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri as a data provider. Is not
-     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
+     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline Place& WithUnitNumber(const Aws::String& value) { SetUnitNumber(value); return *this;}
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri as a data provider. Is not
-     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
+     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline Place& WithUnitNumber(Aws::String&& value) { SetUnitNumber(std::move(value)); return *this;}
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri as a data provider. Is not
-     * returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
+     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline Place& WithUnitNumber(const char* value) { SetUnitNumber(value); return *this;}
 
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>
+     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
+     * Esri as a data provider.</p> 
      */
     inline const Aws::String& GetUnitType() const{ return m_unitType; }
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>
+     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
+     * Esri as a data provider.</p> 
      */
     inline bool UnitTypeHasBeenSet() const { return m_unitTypeHasBeenSet; }
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>
+     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
+     * Esri as a data provider.</p> 
      */
     inline void SetUnitType(const Aws::String& value) { m_unitTypeHasBeenSet = true; m_unitType = value; }
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>
+     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
+     * Esri as a data provider.</p> 
      */
     inline void SetUnitType(Aws::String&& value) { m_unitTypeHasBeenSet = true; m_unitType = std::move(value); }
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>
+     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
+     * Esri as a data provider.</p> 
      */
     inline void SetUnitType(const char* value) { m_unitTypeHasBeenSet = true; m_unitType.assign(value); }
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>
+     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
+     * Esri as a data provider.</p> 
      */
     inline Place& WithUnitType(const Aws::String& value) { SetUnitType(value); return *this;}
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>
+     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
+     * Esri as a data provider.</p> 
      */
     inline Place& WithUnitType(Aws::String&& value) { SetUnitType(std::move(value)); return *this;}
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>
+     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
+     * Esri as a data provider.</p> 
      */
     inline Place& WithUnitType(const char* value) { SetUnitType(value); return *this;}
 
@@ -692,6 +911,9 @@ namespace Model
 
     Aws::String m_addressNumber;
     bool m_addressNumberHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_categories;
+    bool m_categoriesHasBeenSet = false;
 
     Aws::String m_country;
     bool m_countryHasBeenSet = false;
@@ -720,8 +942,14 @@ namespace Model
     Aws::String m_street;
     bool m_streetHasBeenSet = false;
 
+    Aws::String m_subMunicipality;
+    bool m_subMunicipalityHasBeenSet = false;
+
     Aws::String m_subRegion;
     bool m_subRegionHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_supplementalCategories;
+    bool m_supplementalCategoriesHasBeenSet = false;
 
     TimeZone m_timeZone;
     bool m_timeZoneHasBeenSet = false;

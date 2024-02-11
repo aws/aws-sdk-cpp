@@ -30,7 +30,9 @@ DataQualityResult::DataQualityResult() :
     m_jobNameHasBeenSet(false),
     m_jobRunIdHasBeenSet(false),
     m_rulesetEvaluationRunIdHasBeenSet(false),
-    m_ruleResultsHasBeenSet(false)
+    m_ruleResultsHasBeenSet(false),
+    m_analyzerResultsHasBeenSet(false),
+    m_observationsHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ DataQualityResult::DataQualityResult(JsonView jsonValue) :
     m_jobNameHasBeenSet(false),
     m_jobRunIdHasBeenSet(false),
     m_rulesetEvaluationRunIdHasBeenSet(false),
-    m_ruleResultsHasBeenSet(false)
+    m_ruleResultsHasBeenSet(false),
+    m_analyzerResultsHasBeenSet(false),
+    m_observationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -133,6 +137,26 @@ DataQualityResult& DataQualityResult::operator =(JsonView jsonValue)
     m_ruleResultsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AnalyzerResults"))
+  {
+    Aws::Utils::Array<JsonView> analyzerResultsJsonList = jsonValue.GetArray("AnalyzerResults");
+    for(unsigned analyzerResultsIndex = 0; analyzerResultsIndex < analyzerResultsJsonList.GetLength(); ++analyzerResultsIndex)
+    {
+      m_analyzerResults.push_back(analyzerResultsJsonList[analyzerResultsIndex].AsObject());
+    }
+    m_analyzerResultsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Observations"))
+  {
+    Aws::Utils::Array<JsonView> observationsJsonList = jsonValue.GetArray("Observations");
+    for(unsigned observationsIndex = 0; observationsIndex < observationsJsonList.GetLength(); ++observationsIndex)
+    {
+      m_observations.push_back(observationsJsonList[observationsIndex].AsObject());
+    }
+    m_observationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -206,6 +230,28 @@ JsonValue DataQualityResult::Jsonize() const
      ruleResultsJsonList[ruleResultsIndex].AsObject(m_ruleResults[ruleResultsIndex].Jsonize());
    }
    payload.WithArray("RuleResults", std::move(ruleResultsJsonList));
+
+  }
+
+  if(m_analyzerResultsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> analyzerResultsJsonList(m_analyzerResults.size());
+   for(unsigned analyzerResultsIndex = 0; analyzerResultsIndex < analyzerResultsJsonList.GetLength(); ++analyzerResultsIndex)
+   {
+     analyzerResultsJsonList[analyzerResultsIndex].AsObject(m_analyzerResults[analyzerResultsIndex].Jsonize());
+   }
+   payload.WithArray("AnalyzerResults", std::move(analyzerResultsJsonList));
+
+  }
+
+  if(m_observationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> observationsJsonList(m_observations.size());
+   for(unsigned observationsIndex = 0; observationsIndex < observationsJsonList.GetLength(); ++observationsIndex)
+   {
+     observationsJsonList[observationsIndex].AsObject(m_observations[observationsIndex].Jsonize());
+   }
+   payload.WithArray("Observations", std::move(observationsJsonList));
 
   }
 

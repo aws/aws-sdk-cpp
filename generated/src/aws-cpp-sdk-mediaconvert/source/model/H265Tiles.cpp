@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265Tiles::NOT_SET:
+            return {};
           case H265Tiles::DISABLED:
             return "DISABLED";
           case H265Tiles::ENABLED:

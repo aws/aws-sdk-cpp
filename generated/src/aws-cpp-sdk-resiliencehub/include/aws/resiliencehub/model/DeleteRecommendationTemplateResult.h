@@ -70,27 +70,27 @@ namespace Model
 
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline const RecommendationTemplateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline void SetStatus(const RecommendationTemplateStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline void SetStatus(RecommendationTemplateStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline DeleteRecommendationTemplateResult& WithStatus(const RecommendationTemplateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline DeleteRecommendationTemplateResult& WithStatus(RecommendationTemplateStatus&& value) { SetStatus(std::move(value)); return *this;}
 

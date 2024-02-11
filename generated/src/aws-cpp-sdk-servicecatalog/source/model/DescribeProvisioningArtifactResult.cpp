@@ -52,6 +52,15 @@ DescribeProvisioningArtifactResult& DescribeProvisioningArtifactResult::operator
 
   }
 
+  if(jsonValue.ValueExists("ProvisioningArtifactParameters"))
+  {
+    Aws::Utils::Array<JsonView> provisioningArtifactParametersJsonList = jsonValue.GetArray("ProvisioningArtifactParameters");
+    for(unsigned provisioningArtifactParametersIndex = 0; provisioningArtifactParametersIndex < provisioningArtifactParametersJsonList.GetLength(); ++provisioningArtifactParametersIndex)
+    {
+      m_provisioningArtifactParameters.push_back(provisioningArtifactParametersJsonList[provisioningArtifactParametersIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

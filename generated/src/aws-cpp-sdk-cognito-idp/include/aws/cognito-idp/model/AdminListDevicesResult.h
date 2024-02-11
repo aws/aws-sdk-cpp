@@ -77,37 +77,58 @@ namespace Model
 
 
     /**
-     * <p>The pagination token.</p>
+     * <p>The identifier that Amazon Cognito returned with the previous request to this
+     * operation. When you include a pagination token in your request, Amazon Cognito
+     * returns the next set of items in the list. By use of this token, you can
+     * paginate through the full list of items.</p>
      */
     inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
 
     /**
-     * <p>The pagination token.</p>
+     * <p>The identifier that Amazon Cognito returned with the previous request to this
+     * operation. When you include a pagination token in your request, Amazon Cognito
+     * returns the next set of items in the list. By use of this token, you can
+     * paginate through the full list of items.</p>
      */
     inline void SetPaginationToken(const Aws::String& value) { m_paginationToken = value; }
 
     /**
-     * <p>The pagination token.</p>
+     * <p>The identifier that Amazon Cognito returned with the previous request to this
+     * operation. When you include a pagination token in your request, Amazon Cognito
+     * returns the next set of items in the list. By use of this token, you can
+     * paginate through the full list of items.</p>
      */
     inline void SetPaginationToken(Aws::String&& value) { m_paginationToken = std::move(value); }
 
     /**
-     * <p>The pagination token.</p>
+     * <p>The identifier that Amazon Cognito returned with the previous request to this
+     * operation. When you include a pagination token in your request, Amazon Cognito
+     * returns the next set of items in the list. By use of this token, you can
+     * paginate through the full list of items.</p>
      */
     inline void SetPaginationToken(const char* value) { m_paginationToken.assign(value); }
 
     /**
-     * <p>The pagination token.</p>
+     * <p>The identifier that Amazon Cognito returned with the previous request to this
+     * operation. When you include a pagination token in your request, Amazon Cognito
+     * returns the next set of items in the list. By use of this token, you can
+     * paginate through the full list of items.</p>
      */
     inline AdminListDevicesResult& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
 
     /**
-     * <p>The pagination token.</p>
+     * <p>The identifier that Amazon Cognito returned with the previous request to this
+     * operation. When you include a pagination token in your request, Amazon Cognito
+     * returns the next set of items in the list. By use of this token, you can
+     * paginate through the full list of items.</p>
      */
     inline AdminListDevicesResult& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
 
     /**
-     * <p>The pagination token.</p>
+     * <p>The identifier that Amazon Cognito returned with the previous request to this
+     * operation. When you include a pagination token in your request, Amazon Cognito
+     * returns the next set of items in the list. By use of this token, you can
+     * paginate through the full list of items.</p>
      */
     inline AdminListDevicesResult& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 

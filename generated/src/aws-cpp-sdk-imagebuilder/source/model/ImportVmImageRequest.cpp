@@ -21,7 +21,7 @@ ImportVmImageRequest::ImportVmImageRequest() :
     m_osVersionHasBeenSet(false),
     m_vmImportTaskIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

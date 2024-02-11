@@ -16,7 +16,9 @@ GetQuerySuggestionsRequest::GetQuerySuggestionsRequest() :
     m_indexIdHasBeenSet(false),
     m_queryTextHasBeenSet(false),
     m_maxSuggestionsCount(0),
-    m_maxSuggestionsCountHasBeenSet(false)
+    m_maxSuggestionsCountHasBeenSet(false),
+    m_suggestionTypesHasBeenSet(false),
+    m_attributeSuggestionsConfigHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,23 @@ Aws::String GetQuerySuggestionsRequest::SerializePayload() const
   if(m_maxSuggestionsCountHasBeenSet)
   {
    payload.WithInteger("MaxSuggestionsCount", m_maxSuggestionsCount);
+
+  }
+
+  if(m_suggestionTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> suggestionTypesJsonList(m_suggestionTypes.size());
+   for(unsigned suggestionTypesIndex = 0; suggestionTypesIndex < suggestionTypesJsonList.GetLength(); ++suggestionTypesIndex)
+   {
+     suggestionTypesJsonList[suggestionTypesIndex].AsString(SuggestionTypeMapper::GetNameForSuggestionType(m_suggestionTypes[suggestionTypesIndex]));
+   }
+   payload.WithArray("SuggestionTypes", std::move(suggestionTypesJsonList));
+
+  }
+
+  if(m_attributeSuggestionsConfigHasBeenSet)
+  {
+   payload.WithObject("AttributeSuggestionsConfig", m_attributeSuggestionsConfig.Jsonize());
 
   }
 

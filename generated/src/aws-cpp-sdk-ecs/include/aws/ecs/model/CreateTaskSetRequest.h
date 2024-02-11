@@ -206,42 +206,50 @@ namespace Model
 
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateTaskSetRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateTaskSetRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateTaskSetRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -740,58 +748,58 @@ namespace Model
 
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

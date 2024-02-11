@@ -31,10 +31,8 @@ namespace Model
 
     AWS_SQS_API Aws::String SerializePayload() const override;
 
-  protected:
-    AWS_SQS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SQS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-  public:
 
     /**
      * <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
@@ -86,56 +84,56 @@ namespace Model
 
 
     /**
-     * <p>The receipt handle associated with the message whose visibility timeout is
+     * <p>The receipt handle associated with the message, whose visibility timeout is
      * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
      * action.</p>
      */
     inline const Aws::String& GetReceiptHandle() const{ return m_receiptHandle; }
 
     /**
-     * <p>The receipt handle associated with the message whose visibility timeout is
+     * <p>The receipt handle associated with the message, whose visibility timeout is
      * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
      * action.</p>
      */
     inline bool ReceiptHandleHasBeenSet() const { return m_receiptHandleHasBeenSet; }
 
     /**
-     * <p>The receipt handle associated with the message whose visibility timeout is
+     * <p>The receipt handle associated with the message, whose visibility timeout is
      * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
      * action.</p>
      */
     inline void SetReceiptHandle(const Aws::String& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
 
     /**
-     * <p>The receipt handle associated with the message whose visibility timeout is
+     * <p>The receipt handle associated with the message, whose visibility timeout is
      * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
      * action.</p>
      */
     inline void SetReceiptHandle(Aws::String&& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = std::move(value); }
 
     /**
-     * <p>The receipt handle associated with the message whose visibility timeout is
+     * <p>The receipt handle associated with the message, whose visibility timeout is
      * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
      * action.</p>
      */
     inline void SetReceiptHandle(const char* value) { m_receiptHandleHasBeenSet = true; m_receiptHandle.assign(value); }
 
     /**
-     * <p>The receipt handle associated with the message whose visibility timeout is
+     * <p>The receipt handle associated with the message, whose visibility timeout is
      * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
      * action.</p>
      */
     inline ChangeMessageVisibilityRequest& WithReceiptHandle(const Aws::String& value) { SetReceiptHandle(value); return *this;}
 
     /**
-     * <p>The receipt handle associated with the message whose visibility timeout is
+     * <p>The receipt handle associated with the message, whose visibility timeout is
      * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
      * action.</p>
      */
     inline ChangeMessageVisibilityRequest& WithReceiptHandle(Aws::String&& value) { SetReceiptHandle(std::move(value)); return *this;}
 
     /**
-     * <p>The receipt handle associated with the message whose visibility timeout is
+     * <p>The receipt handle associated with the message, whose visibility timeout is
      * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
      * action.</p>
      */

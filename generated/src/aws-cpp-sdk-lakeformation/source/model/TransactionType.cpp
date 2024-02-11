@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransactionType::NOT_SET:
+            return {};
           case TransactionType::READ_AND_WRITE:
             return "READ_AND_WRITE";
           case TransactionType::READ_ONLY:

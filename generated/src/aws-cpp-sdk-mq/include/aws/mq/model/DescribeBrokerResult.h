@@ -19,6 +19,8 @@
 #include <aws/mq/model/WeeklyStartTime.h>
 #include <aws/mq/model/BrokerStorageType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mq/model/DataReplicationMetadataOutput.h>
+#include <aws/mq/model/DataReplicationMode.h>
 #include <aws/mq/model/ActionRequired.h>
 #include <aws/mq/model/BrokerInstance.h>
 #include <aws/mq/model/UserSummary.h>
@@ -49,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>A list of actions required for a broker.</p>
+     * <p>Actions required for a broker.</p>
      */
     inline const Aws::Vector<ActionRequired>& GetActionsRequired() const{ return m_actionsRequired; }
 
     /**
-     * <p>A list of actions required for a broker.</p>
+     * <p>Actions required for a broker.</p>
      */
     inline void SetActionsRequired(const Aws::Vector<ActionRequired>& value) { m_actionsRequired = value; }
 
     /**
-     * <p>A list of actions required for a broker.</p>
+     * <p>Actions required for a broker.</p>
      */
     inline void SetActionsRequired(Aws::Vector<ActionRequired>&& value) { m_actionsRequired = std::move(value); }
 
     /**
-     * <p>A list of actions required for a broker.</p>
+     * <p>Actions required for a broker.</p>
      */
     inline DescribeBrokerResult& WithActionsRequired(const Aws::Vector<ActionRequired>& value) { SetActionsRequired(value); return *this;}
 
     /**
-     * <p>A list of actions required for a broker.</p>
+     * <p>Actions required for a broker.</p>
      */
     inline DescribeBrokerResult& WithActionsRequired(Aws::Vector<ActionRequired>&& value) { SetActionsRequired(std::move(value)); return *this;}
 
     /**
-     * <p>A list of actions required for a broker.</p>
+     * <p>Actions required for a broker.</p>
      */
     inline DescribeBrokerResult& AddActionsRequired(const ActionRequired& value) { m_actionsRequired.push_back(value); return *this; }
 
     /**
-     * <p>A list of actions required for a broker.</p>
+     * <p>Actions required for a broker.</p>
      */
     inline DescribeBrokerResult& AddActionsRequired(ActionRequired&& value) { m_actionsRequired.push_back(std::move(value)); return *this; }
 
@@ -246,58 +248,58 @@ namespace Model
 
 
     /**
-     * <p>The broker's name. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value must be unique in your Amazon Web Services
+     * account account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p>
      */
     inline const Aws::String& GetBrokerName() const{ return m_brokerName; }
 
     /**
-     * <p>The broker's name. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value must be unique in your Amazon Web Services
+     * account account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p>
      */
     inline void SetBrokerName(const Aws::String& value) { m_brokerName = value; }
 
     /**
-     * <p>The broker's name. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value must be unique in your Amazon Web Services
+     * account account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p>
      */
     inline void SetBrokerName(Aws::String&& value) { m_brokerName = std::move(value); }
 
     /**
-     * <p>The broker's name. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value must be unique in your Amazon Web Services
+     * account account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p>
      */
     inline void SetBrokerName(const char* value) { m_brokerName.assign(value); }
 
     /**
-     * <p>The broker's name. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value must be unique in your Amazon Web Services
+     * account account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p>
      */
     inline DescribeBrokerResult& WithBrokerName(const Aws::String& value) { SetBrokerName(value); return *this;}
 
     /**
-     * <p>The broker's name. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value must be unique in your Amazon Web Services
+     * account account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p>
      */
     inline DescribeBrokerResult& WithBrokerName(Aws::String&& value) { SetBrokerName(std::move(value)); return *this;}
 
     /**
-     * <p>The broker's name. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value must be unique in your Amazon Web Services
+     * account account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p>
      */
     inline DescribeBrokerResult& WithBrokerName(const char* value) { SetBrokerName(value); return *this;}
 
@@ -407,27 +409,27 @@ namespace Model
 
 
     /**
-     * <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+     * <p>Encryption options for the broker.</p>
      */
     inline const EncryptionOptions& GetEncryptionOptions() const{ return m_encryptionOptions; }
 
     /**
-     * <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+     * <p>Encryption options for the broker.</p>
      */
     inline void SetEncryptionOptions(const EncryptionOptions& value) { m_encryptionOptions = value; }
 
     /**
-     * <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+     * <p>Encryption options for the broker.</p>
      */
     inline void SetEncryptionOptions(EncryptionOptions&& value) { m_encryptionOptions = std::move(value); }
 
     /**
-     * <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+     * <p>Encryption options for the broker.</p>
      */
     inline DescribeBrokerResult& WithEncryptionOptions(const EncryptionOptions& value) { SetEncryptionOptions(value); return *this;}
 
     /**
-     * <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+     * <p>Encryption options for the broker.</p>
      */
     inline DescribeBrokerResult& WithEncryptionOptions(EncryptionOptions&& value) { SetEncryptionOptions(std::move(value)); return *this;}
 
@@ -1094,6 +1096,125 @@ namespace Model
     inline DescribeBrokerResult& AddUsers(UserSummary&& value) { m_users.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The replication details of the data replication-enabled broker. Only returned
+     * if dataReplicationMode is set to CRDR.</p>
+     */
+    inline const DataReplicationMetadataOutput& GetDataReplicationMetadata() const{ return m_dataReplicationMetadata; }
+
+    /**
+     * <p>The replication details of the data replication-enabled broker. Only returned
+     * if dataReplicationMode is set to CRDR.</p>
+     */
+    inline void SetDataReplicationMetadata(const DataReplicationMetadataOutput& value) { m_dataReplicationMetadata = value; }
+
+    /**
+     * <p>The replication details of the data replication-enabled broker. Only returned
+     * if dataReplicationMode is set to CRDR.</p>
+     */
+    inline void SetDataReplicationMetadata(DataReplicationMetadataOutput&& value) { m_dataReplicationMetadata = std::move(value); }
+
+    /**
+     * <p>The replication details of the data replication-enabled broker. Only returned
+     * if dataReplicationMode is set to CRDR.</p>
+     */
+    inline DescribeBrokerResult& WithDataReplicationMetadata(const DataReplicationMetadataOutput& value) { SetDataReplicationMetadata(value); return *this;}
+
+    /**
+     * <p>The replication details of the data replication-enabled broker. Only returned
+     * if dataReplicationMode is set to CRDR.</p>
+     */
+    inline DescribeBrokerResult& WithDataReplicationMetadata(DataReplicationMetadataOutput&& value) { SetDataReplicationMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes whether this broker is a part of a data replication pair.</p>
+     */
+    inline const DataReplicationMode& GetDataReplicationMode() const{ return m_dataReplicationMode; }
+
+    /**
+     * <p>Describes whether this broker is a part of a data replication pair.</p>
+     */
+    inline void SetDataReplicationMode(const DataReplicationMode& value) { m_dataReplicationMode = value; }
+
+    /**
+     * <p>Describes whether this broker is a part of a data replication pair.</p>
+     */
+    inline void SetDataReplicationMode(DataReplicationMode&& value) { m_dataReplicationMode = std::move(value); }
+
+    /**
+     * <p>Describes whether this broker is a part of a data replication pair.</p>
+     */
+    inline DescribeBrokerResult& WithDataReplicationMode(const DataReplicationMode& value) { SetDataReplicationMode(value); return *this;}
+
+    /**
+     * <p>Describes whether this broker is a part of a data replication pair.</p>
+     */
+    inline DescribeBrokerResult& WithDataReplicationMode(DataReplicationMode&& value) { SetDataReplicationMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The pending replication details of the data replication-enabled broker. Only
+     * returned if pendingDataReplicationMode is set to CRDR.</p>
+     */
+    inline const DataReplicationMetadataOutput& GetPendingDataReplicationMetadata() const{ return m_pendingDataReplicationMetadata; }
+
+    /**
+     * <p>The pending replication details of the data replication-enabled broker. Only
+     * returned if pendingDataReplicationMode is set to CRDR.</p>
+     */
+    inline void SetPendingDataReplicationMetadata(const DataReplicationMetadataOutput& value) { m_pendingDataReplicationMetadata = value; }
+
+    /**
+     * <p>The pending replication details of the data replication-enabled broker. Only
+     * returned if pendingDataReplicationMode is set to CRDR.</p>
+     */
+    inline void SetPendingDataReplicationMetadata(DataReplicationMetadataOutput&& value) { m_pendingDataReplicationMetadata = std::move(value); }
+
+    /**
+     * <p>The pending replication details of the data replication-enabled broker. Only
+     * returned if pendingDataReplicationMode is set to CRDR.</p>
+     */
+    inline DescribeBrokerResult& WithPendingDataReplicationMetadata(const DataReplicationMetadataOutput& value) { SetPendingDataReplicationMetadata(value); return *this;}
+
+    /**
+     * <p>The pending replication details of the data replication-enabled broker. Only
+     * returned if pendingDataReplicationMode is set to CRDR.</p>
+     */
+    inline DescribeBrokerResult& WithPendingDataReplicationMetadata(DataReplicationMetadataOutput&& value) { SetPendingDataReplicationMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes whether this broker will be a part of a data replication pair after
+     * reboot.</p>
+     */
+    inline const DataReplicationMode& GetPendingDataReplicationMode() const{ return m_pendingDataReplicationMode; }
+
+    /**
+     * <p>Describes whether this broker will be a part of a data replication pair after
+     * reboot.</p>
+     */
+    inline void SetPendingDataReplicationMode(const DataReplicationMode& value) { m_pendingDataReplicationMode = value; }
+
+    /**
+     * <p>Describes whether this broker will be a part of a data replication pair after
+     * reboot.</p>
+     */
+    inline void SetPendingDataReplicationMode(DataReplicationMode&& value) { m_pendingDataReplicationMode = std::move(value); }
+
+    /**
+     * <p>Describes whether this broker will be a part of a data replication pair after
+     * reboot.</p>
+     */
+    inline DescribeBrokerResult& WithPendingDataReplicationMode(const DataReplicationMode& value) { SetPendingDataReplicationMode(value); return *this;}
+
+    /**
+     * <p>Describes whether this broker will be a part of a data replication pair after
+     * reboot.</p>
+     */
+    inline DescribeBrokerResult& WithPendingDataReplicationMode(DataReplicationMode&& value) { SetPendingDataReplicationMode(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1174,6 +1295,14 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::Vector<UserSummary> m_users;
+
+    DataReplicationMetadataOutput m_dataReplicationMetadata;
+
+    DataReplicationMode m_dataReplicationMode;
+
+    DataReplicationMetadataOutput m_pendingDataReplicationMetadata;
+
+    DataReplicationMode m_pendingDataReplicationMode;
 
     Aws::String m_requestId;
   };

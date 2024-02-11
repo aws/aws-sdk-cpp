@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvaluationState::NOT_SET:
+            return {};
           case EvaluationState::PARTIAL_DATA:
             return "PARTIAL_DATA";
           default:

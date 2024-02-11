@@ -21,14 +21,16 @@ namespace Model
 EntityAggregate::EntityAggregate() : 
     m_eventArnHasBeenSet(false),
     m_count(0),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_statusesHasBeenSet(false)
 {
 }
 
 EntityAggregate::EntityAggregate(JsonView jsonValue) : 
     m_eventArnHasBeenSet(false),
     m_count(0),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_statusesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,16 @@ EntityAggregate& EntityAggregate::operator =(JsonView jsonValue)
     m_countHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("statuses"))
+  {
+    Aws::Map<Aws::String, JsonView> statusesJsonMap = jsonValue.GetObject("statuses").GetAllObjects();
+    for(auto& statusesItem : statusesJsonMap)
+    {
+      m_statuses[EntityStatusCodeMapper::GetEntityStatusCodeForName(statusesItem.first)] = statusesItem.second.AsInteger();
+    }
+    m_statusesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +77,17 @@ JsonValue EntityAggregate::Jsonize() const
   if(m_countHasBeenSet)
   {
    payload.WithInteger("count", m_count);
+
+  }
+
+  if(m_statusesHasBeenSet)
+  {
+   JsonValue statusesJsonMap;
+   for(auto& statusesItem : m_statuses)
+   {
+     statusesJsonMap.WithInteger(EntityStatusCodeMapper::GetNameForEntityStatusCode(statusesItem.first), statusesItem.second);
+   }
+   payload.WithObject("statuses", std::move(statusesJsonMap));
 
   }
 

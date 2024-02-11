@@ -36,49 +36,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the model card to update.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
      */
     inline const Aws::String& GetModelCardName() const{ return m_modelCardName; }
 
     /**
-     * <p>The name of the model card to update.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
      */
     inline bool ModelCardNameHasBeenSet() const { return m_modelCardNameHasBeenSet; }
 
     /**
-     * <p>The name of the model card to update.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
      */
     inline void SetModelCardName(const Aws::String& value) { m_modelCardNameHasBeenSet = true; m_modelCardName = value; }
 
     /**
-     * <p>The name of the model card to update.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
      */
     inline void SetModelCardName(Aws::String&& value) { m_modelCardNameHasBeenSet = true; m_modelCardName = std::move(value); }
 
     /**
-     * <p>The name of the model card to update.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
      */
     inline void SetModelCardName(const char* value) { m_modelCardNameHasBeenSet = true; m_modelCardName.assign(value); }
 
     /**
-     * <p>The name of the model card to update.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
      */
     inline UpdateModelCardRequest& WithModelCardName(const Aws::String& value) { SetModelCardName(value); return *this;}
 
     /**
-     * <p>The name of the model card to update.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
      */
     inline UpdateModelCardRequest& WithModelCardName(Aws::String&& value) { SetModelCardName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the model card to update.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
      */
     inline UpdateModelCardRequest& WithModelCardName(const char* value) { SetModelCardName(value); return *this;}
 
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -86,7 +86,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -110,7 +110,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -118,7 +118,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -126,7 +126,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */

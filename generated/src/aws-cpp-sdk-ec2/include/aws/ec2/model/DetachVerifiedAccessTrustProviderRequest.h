@@ -38,83 +38,83 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline const Aws::String& GetVerifiedAccessInstanceId() const{ return m_verifiedAccessInstanceId; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline bool VerifiedAccessInstanceIdHasBeenSet() const { return m_verifiedAccessInstanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline void SetVerifiedAccessInstanceId(const Aws::String& value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline void SetVerifiedAccessInstanceId(Aws::String&& value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline void SetVerifiedAccessInstanceId(const char* value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline DetachVerifiedAccessTrustProviderRequest& WithVerifiedAccessInstanceId(const Aws::String& value) { SetVerifiedAccessInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline DetachVerifiedAccessTrustProviderRequest& WithVerifiedAccessInstanceId(Aws::String&& value) { SetVerifiedAccessInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline DetachVerifiedAccessTrustProviderRequest& WithVerifiedAccessInstanceId(const char* value) { SetVerifiedAccessInstanceId(value); return *this;}
 
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline const Aws::String& GetVerifiedAccessTrustProviderId() const{ return m_verifiedAccessTrustProviderId; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline bool VerifiedAccessTrustProviderIdHasBeenSet() const { return m_verifiedAccessTrustProviderIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline void SetVerifiedAccessTrustProviderId(const Aws::String& value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline void SetVerifiedAccessTrustProviderId(Aws::String&& value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline void SetVerifiedAccessTrustProviderId(const char* value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline DetachVerifiedAccessTrustProviderRequest& WithVerifiedAccessTrustProviderId(const Aws::String& value) { SetVerifiedAccessTrustProviderId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline DetachVerifiedAccessTrustProviderRequest& WithVerifiedAccessTrustProviderId(Aws::String&& value) { SetVerifiedAccessTrustProviderId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline DetachVerifiedAccessTrustProviderRequest& WithVerifiedAccessTrustProviderId(const char* value) { SetVerifiedAccessTrustProviderId(value); return *this;}
 

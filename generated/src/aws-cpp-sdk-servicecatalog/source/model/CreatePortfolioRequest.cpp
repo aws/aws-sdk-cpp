@@ -18,7 +18,7 @@ CreatePortfolioRequest::CreatePortfolioRequest() :
     m_descriptionHasBeenSet(false),
     m_providerNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

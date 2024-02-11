@@ -41,7 +41,8 @@ WriteJourneyRequest::WriteJourneyRequest() :
     m_sendingSchedule(false),
     m_sendingScheduleHasBeenSet(false),
     m_openHoursHasBeenSet(false),
-    m_closedDaysHasBeenSet(false)
+    m_closedDaysHasBeenSet(false),
+    m_timezoneEstimationMethodsHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ WriteJourneyRequest::WriteJourneyRequest(JsonView jsonValue) :
     m_sendingSchedule(false),
     m_sendingScheduleHasBeenSet(false),
     m_openHoursHasBeenSet(false),
-    m_closedDaysHasBeenSet(false)
+    m_closedDaysHasBeenSet(false),
+    m_timezoneEstimationMethodsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -204,6 +206,16 @@ WriteJourneyRequest& WriteJourneyRequest::operator =(JsonView jsonValue)
     m_closedDaysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimezoneEstimationMethods"))
+  {
+    Aws::Utils::Array<JsonView> timezoneEstimationMethodsJsonList = jsonValue.GetArray("TimezoneEstimationMethods");
+    for(unsigned timezoneEstimationMethodsIndex = 0; timezoneEstimationMethodsIndex < timezoneEstimationMethodsJsonList.GetLength(); ++timezoneEstimationMethodsIndex)
+    {
+      m_timezoneEstimationMethods.push_back(__TimezoneEstimationMethodsElementMapper::Get__TimezoneEstimationMethodsElementForName(timezoneEstimationMethodsJsonList[timezoneEstimationMethodsIndex].AsString()));
+    }
+    m_timezoneEstimationMethodsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -320,6 +332,17 @@ JsonValue WriteJourneyRequest::Jsonize() const
   if(m_closedDaysHasBeenSet)
   {
    payload.WithObject("ClosedDays", m_closedDays.Jsonize());
+
+  }
+
+  if(m_timezoneEstimationMethodsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> timezoneEstimationMethodsJsonList(m_timezoneEstimationMethods.size());
+   for(unsigned timezoneEstimationMethodsIndex = 0; timezoneEstimationMethodsIndex < timezoneEstimationMethodsJsonList.GetLength(); ++timezoneEstimationMethodsIndex)
+   {
+     timezoneEstimationMethodsJsonList[timezoneEstimationMethodsIndex].AsString(__TimezoneEstimationMethodsElementMapper::GetNameFor__TimezoneEstimationMethodsElement(m_timezoneEstimationMethods[timezoneEstimationMethodsIndex]));
+   }
+   payload.WithArray("TimezoneEstimationMethods", std::move(timezoneEstimationMethodsJsonList));
 
   }
 

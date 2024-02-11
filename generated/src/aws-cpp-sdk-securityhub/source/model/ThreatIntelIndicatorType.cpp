@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThreatIntelIndicatorType::NOT_SET:
+            return {};
           case ThreatIntelIndicatorType::DOMAIN_:
             return "DOMAIN";
           case ThreatIntelIndicatorType::EMAIL_ADDRESS:

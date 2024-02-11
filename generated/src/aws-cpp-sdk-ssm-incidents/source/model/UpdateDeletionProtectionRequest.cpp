@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 UpdateDeletionProtectionRequest::UpdateDeletionProtectionRequest() : 
     m_arnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_deletionProtected(false),
     m_deletionProtectedHasBeenSet(false)

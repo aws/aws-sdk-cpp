@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     NEW_,
-    NONE
+    NONE,
+    ALL
   };
 
 namespace OrgFeatureStatusMapper

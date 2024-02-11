@@ -204,58 +204,107 @@ namespace Model
 
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template. Using the API, you can include multiple
-     * inputs when referencing a job template.
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline int GetFollowSource() const{ return m_followSource; }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline bool FollowSourceHasBeenSet() const { return m_followSourceHasBeenSet; }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline void SetFollowSource(int value) { m_followSourceHasBeenSet = true; m_followSource = value; }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline JobTemplateSettings& WithFollowSource(int value) { SetFollowSource(value); return *this;}
+
+
+    /**
+     * Use Inputs to define the source file used in the transcode job. There can only
+     * be one input in a job template. Using the API, you can include multiple inputs
+     * when referencing a job template.
      */
     inline const Aws::Vector<InputTemplate>& GetInputs() const{ return m_inputs; }
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template. Using the API, you can include multiple
-     * inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only
+     * be one input in a job template. Using the API, you can include multiple inputs
+     * when referencing a job template.
      */
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template. Using the API, you can include multiple
-     * inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only
+     * be one input in a job template. Using the API, you can include multiple inputs
+     * when referencing a job template.
      */
     inline void SetInputs(const Aws::Vector<InputTemplate>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template. Using the API, you can include multiple
-     * inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only
+     * be one input in a job template. Using the API, you can include multiple inputs
+     * when referencing a job template.
      */
     inline void SetInputs(Aws::Vector<InputTemplate>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template. Using the API, you can include multiple
-     * inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only
+     * be one input in a job template. Using the API, you can include multiple inputs
+     * when referencing a job template.
      */
     inline JobTemplateSettings& WithInputs(const Aws::Vector<InputTemplate>& value) { SetInputs(value); return *this;}
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template. Using the API, you can include multiple
-     * inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only
+     * be one input in a job template. Using the API, you can include multiple inputs
+     * when referencing a job template.
      */
     inline JobTemplateSettings& WithInputs(Aws::Vector<InputTemplate>&& value) { SetInputs(std::move(value)); return *this;}
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template. Using the API, you can include multiple
-     * inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only
+     * be one input in a job template. Using the API, you can include multiple inputs
+     * when referencing a job template.
      */
     inline JobTemplateSettings& AddInputs(const InputTemplate& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template. Using the API, you can include multiple
-     * inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only
+     * be one input in a job template. Using the API, you can include multiple inputs
+     * when referencing a job template.
      */
     inline JobTemplateSettings& AddInputs(InputTemplate&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
 
@@ -372,67 +421,43 @@ namespace Model
 
     /**
      * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
-     * analytics, ignore these settings. When you enable Nielsen configuration
-     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
-     * in the job. To enable Nielsen configuration programmatically, include an
-     * instance of nielsenConfiguration in your JSON job specification. Even if you
-     * don't include any children of nielsenConfiguration, you still enable the
-     * setting.
+     * analytics, ignore these settings. When you enable Nielsen configuration,
+     * MediaConvert enables PCM to ID3 tagging for all outputs in the job.
      */
     inline const NielsenConfiguration& GetNielsenConfiguration() const{ return m_nielsenConfiguration; }
 
     /**
      * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
-     * analytics, ignore these settings. When you enable Nielsen configuration
-     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
-     * in the job. To enable Nielsen configuration programmatically, include an
-     * instance of nielsenConfiguration in your JSON job specification. Even if you
-     * don't include any children of nielsenConfiguration, you still enable the
-     * setting.
+     * analytics, ignore these settings. When you enable Nielsen configuration,
+     * MediaConvert enables PCM to ID3 tagging for all outputs in the job.
      */
     inline bool NielsenConfigurationHasBeenSet() const { return m_nielsenConfigurationHasBeenSet; }
 
     /**
      * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
-     * analytics, ignore these settings. When you enable Nielsen configuration
-     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
-     * in the job. To enable Nielsen configuration programmatically, include an
-     * instance of nielsenConfiguration in your JSON job specification. Even if you
-     * don't include any children of nielsenConfiguration, you still enable the
-     * setting.
+     * analytics, ignore these settings. When you enable Nielsen configuration,
+     * MediaConvert enables PCM to ID3 tagging for all outputs in the job.
      */
     inline void SetNielsenConfiguration(const NielsenConfiguration& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = value; }
 
     /**
      * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
-     * analytics, ignore these settings. When you enable Nielsen configuration
-     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
-     * in the job. To enable Nielsen configuration programmatically, include an
-     * instance of nielsenConfiguration in your JSON job specification. Even if you
-     * don't include any children of nielsenConfiguration, you still enable the
-     * setting.
+     * analytics, ignore these settings. When you enable Nielsen configuration,
+     * MediaConvert enables PCM to ID3 tagging for all outputs in the job.
      */
     inline void SetNielsenConfiguration(NielsenConfiguration&& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = std::move(value); }
 
     /**
      * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
-     * analytics, ignore these settings. When you enable Nielsen configuration
-     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
-     * in the job. To enable Nielsen configuration programmatically, include an
-     * instance of nielsenConfiguration in your JSON job specification. Even if you
-     * don't include any children of nielsenConfiguration, you still enable the
-     * setting.
+     * analytics, ignore these settings. When you enable Nielsen configuration,
+     * MediaConvert enables PCM to ID3 tagging for all outputs in the job.
      */
     inline JobTemplateSettings& WithNielsenConfiguration(const NielsenConfiguration& value) { SetNielsenConfiguration(value); return *this;}
 
     /**
      * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
-     * analytics, ignore these settings. When you enable Nielsen configuration
-     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
-     * in the job. To enable Nielsen configuration programmatically, include an
-     * instance of nielsenConfiguration in your JSON job specification. Even if you
-     * don't include any children of nielsenConfiguration, you still enable the
-     * setting.
+     * analytics, ignore these settings. When you enable Nielsen configuration,
+     * MediaConvert enables PCM to ID3 tagging for all outputs in the job.
      */
     inline JobTemplateSettings& WithNielsenConfiguration(NielsenConfiguration&& value) { SetNielsenConfiguration(std::move(value)); return *this;}
 
@@ -505,114 +530,98 @@ namespace Model
 
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share
-     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
-     * and no container) are grouped in a single output group as well. Required in
-     * (OutputGroups) is a group of settings that apply to the whole group. This
-     * required object depends on the value you set for (Type) under
-     * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
-     * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
-     * CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common
+     * package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no
+     * container) are grouped in a single output group as well. Required in is a group
+     * of settings that apply to the whole group. This required object depends on the
+     * value you set for Type. Type, settings object pairs are as follows. *
+     * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
+     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
+     * MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
     inline const Aws::Vector<OutputGroup>& GetOutputGroups() const{ return m_outputGroups; }
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share
-     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
-     * and no container) are grouped in a single output group as well. Required in
-     * (OutputGroups) is a group of settings that apply to the whole group. This
-     * required object depends on the value you set for (Type) under
-     * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
-     * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
-     * CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common
+     * package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no
+     * container) are grouped in a single output group as well. Required in is a group
+     * of settings that apply to the whole group. This required object depends on the
+     * value you set for Type. Type, settings object pairs are as follows. *
+     * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
+     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
+     * MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
     inline bool OutputGroupsHasBeenSet() const { return m_outputGroupsHasBeenSet; }
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share
-     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
-     * and no container) are grouped in a single output group as well. Required in
-     * (OutputGroups) is a group of settings that apply to the whole group. This
-     * required object depends on the value you set for (Type) under
-     * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
-     * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
-     * CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common
+     * package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no
+     * container) are grouped in a single output group as well. Required in is a group
+     * of settings that apply to the whole group. This required object depends on the
+     * value you set for Type. Type, settings object pairs are as follows. *
+     * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
+     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
+     * MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
     inline void SetOutputGroups(const Aws::Vector<OutputGroup>& value) { m_outputGroupsHasBeenSet = true; m_outputGroups = value; }
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share
-     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
-     * and no container) are grouped in a single output group as well. Required in
-     * (OutputGroups) is a group of settings that apply to the whole group. This
-     * required object depends on the value you set for (Type) under
-     * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
-     * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
-     * CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common
+     * package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no
+     * container) are grouped in a single output group as well. Required in is a group
+     * of settings that apply to the whole group. This required object depends on the
+     * value you set for Type. Type, settings object pairs are as follows. *
+     * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
+     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
+     * MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
     inline void SetOutputGroups(Aws::Vector<OutputGroup>&& value) { m_outputGroupsHasBeenSet = true; m_outputGroups = std::move(value); }
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share
-     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
-     * and no container) are grouped in a single output group as well. Required in
-     * (OutputGroups) is a group of settings that apply to the whole group. This
-     * required object depends on the value you set for (Type) under
-     * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
-     * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
-     * CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common
+     * package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no
+     * container) are grouped in a single output group as well. Required in is a group
+     * of settings that apply to the whole group. This required object depends on the
+     * value you set for Type. Type, settings object pairs are as follows. *
+     * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
+     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
+     * MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
     inline JobTemplateSettings& WithOutputGroups(const Aws::Vector<OutputGroup>& value) { SetOutputGroups(value); return *this;}
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share
-     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
-     * and no container) are grouped in a single output group as well. Required in
-     * (OutputGroups) is a group of settings that apply to the whole group. This
-     * required object depends on the value you set for (Type) under
-     * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
-     * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
-     * CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common
+     * package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no
+     * container) are grouped in a single output group as well. Required in is a group
+     * of settings that apply to the whole group. This required object depends on the
+     * value you set for Type. Type, settings object pairs are as follows. *
+     * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
+     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
+     * MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
     inline JobTemplateSettings& WithOutputGroups(Aws::Vector<OutputGroup>&& value) { SetOutputGroups(std::move(value)); return *this;}
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share
-     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
-     * and no container) are grouped in a single output group as well. Required in
-     * (OutputGroups) is a group of settings that apply to the whole group. This
-     * required object depends on the value you set for (Type) under
-     * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
-     * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
-     * CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common
+     * package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no
+     * container) are grouped in a single output group as well. Required in is a group
+     * of settings that apply to the whole group. This required object depends on the
+     * value you set for Type. Type, settings object pairs are as follows. *
+     * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
+     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
+     * MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
     inline JobTemplateSettings& AddOutputGroups(const OutputGroup& value) { m_outputGroupsHasBeenSet = true; m_outputGroups.push_back(value); return *this; }
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share
-     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
-     * and no container) are grouped in a single output group as well. Required in
-     * (OutputGroups) is a group of settings that apply to the whole group. This
-     * required object depends on the value you set for (Type) under
-     * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
-     * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
-     * CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common
+     * package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no
+     * container) are grouped in a single output group as well. Required in is a group
+     * of settings that apply to the whole group. This required object depends on the
+     * value you set for Type. Type, settings object pairs are as follows. *
+     * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
+     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
+     * MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
     inline JobTemplateSettings& AddOutputGroups(OutputGroup&& value) { m_outputGroupsHasBeenSet = true; m_outputGroups.push_back(std::move(value)); return *this; }
 
@@ -655,44 +664,44 @@ namespace Model
 
 
     /**
-     * Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you
-     * specify. In each output that you want to include this metadata, you must set ID3
-     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * Insert user-defined custom ID3 metadata at timecodes that you specify. In each
+     * output that you want to include this metadata, you must set ID3 metadata to
+     * Passthrough.
      */
     inline const TimedMetadataInsertion& GetTimedMetadataInsertion() const{ return m_timedMetadataInsertion; }
 
     /**
-     * Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you
-     * specify. In each output that you want to include this metadata, you must set ID3
-     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * Insert user-defined custom ID3 metadata at timecodes that you specify. In each
+     * output that you want to include this metadata, you must set ID3 metadata to
+     * Passthrough.
      */
     inline bool TimedMetadataInsertionHasBeenSet() const { return m_timedMetadataInsertionHasBeenSet; }
 
     /**
-     * Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you
-     * specify. In each output that you want to include this metadata, you must set ID3
-     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * Insert user-defined custom ID3 metadata at timecodes that you specify. In each
+     * output that you want to include this metadata, you must set ID3 metadata to
+     * Passthrough.
      */
     inline void SetTimedMetadataInsertion(const TimedMetadataInsertion& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = value; }
 
     /**
-     * Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you
-     * specify. In each output that you want to include this metadata, you must set ID3
-     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * Insert user-defined custom ID3 metadata at timecodes that you specify. In each
+     * output that you want to include this metadata, you must set ID3 metadata to
+     * Passthrough.
      */
     inline void SetTimedMetadataInsertion(TimedMetadataInsertion&& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = std::move(value); }
 
     /**
-     * Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you
-     * specify. In each output that you want to include this metadata, you must set ID3
-     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * Insert user-defined custom ID3 metadata at timecodes that you specify. In each
+     * output that you want to include this metadata, you must set ID3 metadata to
+     * Passthrough.
      */
     inline JobTemplateSettings& WithTimedMetadataInsertion(const TimedMetadataInsertion& value) { SetTimedMetadataInsertion(value); return *this;}
 
     /**
-     * Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you
-     * specify. In each output that you want to include this metadata, you must set ID3
-     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * Insert user-defined custom ID3 metadata at timecodes that you specify. In each
+     * output that you want to include this metadata, you must set ID3 metadata to
+     * Passthrough.
      */
     inline JobTemplateSettings& WithTimedMetadataInsertion(TimedMetadataInsertion&& value) { SetTimedMetadataInsertion(std::move(value)); return *this;}
 
@@ -709,6 +718,9 @@ namespace Model
 
     ExtendedDataServices m_extendedDataServices;
     bool m_extendedDataServicesHasBeenSet = false;
+
+    int m_followSource;
+    bool m_followSourceHasBeenSet = false;
 
     Aws::Vector<InputTemplate> m_inputs;
     bool m_inputsHasBeenSet = false;

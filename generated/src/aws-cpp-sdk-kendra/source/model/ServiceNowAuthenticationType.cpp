@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceNowAuthenticationType::NOT_SET:
+            return {};
           case ServiceNowAuthenticationType::HTTP_BASIC:
             return "HTTP_BASIC";
           case ServiceNowAuthenticationType::OAUTH2:

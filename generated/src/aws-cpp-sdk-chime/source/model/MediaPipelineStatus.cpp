@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaPipelineStatus::NOT_SET:
+            return {};
           case MediaPipelineStatus::Initializing:
             return "Initializing";
           case MediaPipelineStatus::InProgress:

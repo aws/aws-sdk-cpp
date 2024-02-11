@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 StartQueryExecutionRequest::StartQueryExecutionRequest() : 
     m_queryStringHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_queryExecutionContextHasBeenSet(false),
     m_resultConfigurationHasBeenSet(false),

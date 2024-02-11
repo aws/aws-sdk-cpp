@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AwsJobAbortCriteriaAbortAction::NOT_SET:
+            return {};
           case AwsJobAbortCriteriaAbortAction::CANCEL:
             return "CANCEL";
           default:

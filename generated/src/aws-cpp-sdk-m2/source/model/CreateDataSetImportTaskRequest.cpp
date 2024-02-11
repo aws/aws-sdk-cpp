@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreateDataSetImportTaskRequest::CreateDataSetImportTaskRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_importConfigHasBeenSet(false)
 {

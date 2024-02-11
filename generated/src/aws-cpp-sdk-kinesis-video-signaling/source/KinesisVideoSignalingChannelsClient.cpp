@@ -24,6 +24,9 @@
 #include <aws/kinesis-video-signaling/model/GetIceServerConfigRequest.h>
 #include <aws/kinesis-video-signaling/model/SendAlexaOfferToMasterRequest.h>
 
+#include <smithy/tracing/TracingUtils.h>
+
+
 using namespace Aws;
 using namespace Aws::Auth;
 using namespace Aws::Client;
@@ -31,6 +34,7 @@ using namespace Aws::KinesisVideoSignalingChannels;
 using namespace Aws::KinesisVideoSignalingChannels::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 const char* KinesisVideoSignalingChannelsClient::SERVICE_NAME = "kinesisvideo";
@@ -131,6 +135,7 @@ KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const s
     /* End of legacy constructors due deprecation */
 KinesisVideoSignalingChannelsClient::~KinesisVideoSignalingChannelsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase>& KinesisVideoSignalingChannelsClient::accessEndpointProvider()
@@ -153,19 +158,55 @@ void KinesisVideoSignalingChannelsClient::OverrideEndpoint(const Aws::String& en
 
 GetIceServerConfigOutcome KinesisVideoSignalingChannelsClient::GetIceServerConfig(const GetIceServerConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIceServerConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIceServerConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIceServerConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/get-ice-server-config");
-  return GetIceServerConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetIceServerConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetIceServerConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetIceServerConfig",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetIceServerConfigOutcome>(
+    [&]()-> GetIceServerConfigOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIceServerConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/get-ice-server-config");
+      return GetIceServerConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 SendAlexaOfferToMasterOutcome KinesisVideoSignalingChannelsClient::SendAlexaOfferToMaster(const SendAlexaOfferToMasterRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendAlexaOfferToMaster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendAlexaOfferToMaster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendAlexaOfferToMaster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/send-alexa-offer-to-master");
-  return SendAlexaOfferToMasterOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SendAlexaOfferToMaster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SendAlexaOfferToMaster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SendAlexaOfferToMaster",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SendAlexaOfferToMasterOutcome>(
+    [&]()-> SendAlexaOfferToMasterOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendAlexaOfferToMaster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/send-alexa-offer-to-master");
+      return SendAlexaOfferToMasterOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 

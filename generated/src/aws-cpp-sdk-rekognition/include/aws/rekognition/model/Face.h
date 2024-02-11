@@ -267,6 +267,47 @@ namespace Model
      */
     inline Face& WithIndexFacesModelVersion(const char* value) { SetIndexFacesModelVersion(value); return *this;}
 
+
+    /**
+     * <p>Unique identifier assigned to the user.</p>
+     */
+    inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>Unique identifier assigned to the user.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier assigned to the user.</p>
+     */
+    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
+
+    /**
+     * <p>Unique identifier assigned to the user.</p>
+     */
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
+
+    /**
+     * <p>Unique identifier assigned to the user.</p>
+     */
+    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
+
+    /**
+     * <p>Unique identifier assigned to the user.</p>
+     */
+    inline Face& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
+
+    /**
+     * <p>Unique identifier assigned to the user.</p>
+     */
+    inline Face& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier assigned to the user.</p>
+     */
+    inline Face& WithUserId(const char* value) { SetUserId(value); return *this;}
+
   private:
 
     Aws::String m_faceId;
@@ -286,6 +327,9 @@ namespace Model
 
     Aws::String m_indexFacesModelVersion;
     bool m_indexFacesModelVersionHasBeenSet = false;
+
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

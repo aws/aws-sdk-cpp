@@ -26,8 +26,11 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_cloudwatchLogsExportConfigurationHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
+    m_allowMajorVersionUpgrade(false),
+    m_allowMajorVersionUpgradeHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -101,9 +104,19 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
 
+  if(m_allowMajorVersionUpgradeHasBeenSet)
+  {
+    ss << "AllowMajorVersionUpgrade=" << std::boolalpha << m_allowMajorVersionUpgrade << "&";
+  }
+
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -41,7 +41,9 @@ EngineTranscribeSettings::EngineTranscribeSettings() :
     m_identifyLanguageHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_preferredLanguage(TranscribeLanguageCode::NOT_SET),
-    m_preferredLanguageHasBeenSet(false)
+    m_preferredLanguageHasBeenSet(false),
+    m_vocabularyNamesHasBeenSet(false),
+    m_vocabularyFilterNamesHasBeenSet(false)
 {
 }
 
@@ -68,7 +70,9 @@ EngineTranscribeSettings::EngineTranscribeSettings(JsonView jsonValue) :
     m_identifyLanguageHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_preferredLanguage(TranscribeLanguageCode::NOT_SET),
-    m_preferredLanguageHasBeenSet(false)
+    m_preferredLanguageHasBeenSet(false),
+    m_vocabularyNamesHasBeenSet(false),
+    m_vocabularyFilterNamesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -173,6 +177,20 @@ EngineTranscribeSettings& EngineTranscribeSettings::operator =(JsonView jsonValu
     m_preferredLanguageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VocabularyNames"))
+  {
+    m_vocabularyNames = jsonValue.GetString("VocabularyNames");
+
+    m_vocabularyNamesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VocabularyFilterNames"))
+  {
+    m_vocabularyFilterNames = jsonValue.GetString("VocabularyFilterNames");
+
+    m_vocabularyFilterNamesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -255,6 +273,18 @@ JsonValue EngineTranscribeSettings::Jsonize() const
   if(m_preferredLanguageHasBeenSet)
   {
    payload.WithString("PreferredLanguage", TranscribeLanguageCodeMapper::GetNameForTranscribeLanguageCode(m_preferredLanguage));
+  }
+
+  if(m_vocabularyNamesHasBeenSet)
+  {
+   payload.WithString("VocabularyNames", m_vocabularyNames);
+
+  }
+
+  if(m_vocabularyFilterNamesHasBeenSet)
+  {
+   payload.WithString("VocabularyFilterNames", m_vocabularyFilterNames);
+
   }
 
   return payload;

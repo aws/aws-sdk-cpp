@@ -87,57 +87,57 @@ namespace Model
 
     /**
      * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to user accounts for any
-     * purpose.</p>
+     * resources by type. You can attach this metadata to resources (servers, users,
+     * workflows, and so on) for any purpose.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to user accounts for any
-     * purpose.</p>
+     * resources by type. You can attach this metadata to resources (servers, users,
+     * workflows, and so on) for any purpose.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to user accounts for any
-     * purpose.</p>
+     * resources by type. You can attach this metadata to resources (servers, users,
+     * workflows, and so on) for any purpose.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to user accounts for any
-     * purpose.</p>
+     * resources by type. You can attach this metadata to resources (servers, users,
+     * workflows, and so on) for any purpose.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to user accounts for any
-     * purpose.</p>
+     * resources by type. You can attach this metadata to resources (servers, users,
+     * workflows, and so on) for any purpose.</p>
      */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to user accounts for any
-     * purpose.</p>
+     * resources by type. You can attach this metadata to resources (servers, users,
+     * workflows, and so on) for any purpose.</p>
      */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to user accounts for any
-     * purpose.</p>
+     * resources by type. You can attach this metadata to resources (servers, users,
+     * workflows, and so on) for any purpose.</p>
      */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to user accounts for any
-     * purpose.</p>
+     * resources by type. You can attach this metadata to resources (servers, users,
+     * workflows, and so on) for any purpose.</p>
      */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

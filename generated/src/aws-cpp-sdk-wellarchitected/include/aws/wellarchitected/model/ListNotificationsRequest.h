@@ -102,6 +102,63 @@ namespace Model
      */
     inline ListNotificationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The ARN for the related resource for the notification.</p>  <p>Only one
+     * of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+     * 
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The ARN for the related resource for the notification.</p>  <p>Only one
+     * of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+     * 
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the related resource for the notification.</p>  <p>Only one
+     * of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+     * 
+     */
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    /**
+     * <p>The ARN for the related resource for the notification.</p>  <p>Only one
+     * of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+     * 
+     */
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the related resource for the notification.</p>  <p>Only one
+     * of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+     * 
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p>The ARN for the related resource for the notification.</p>  <p>Only one
+     * of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+     * 
+     */
+    inline ListNotificationsRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the related resource for the notification.</p>  <p>Only one
+     * of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+     * 
+     */
+    inline ListNotificationsRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the related resource for the notification.</p>  <p>Only one
+     * of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+     * 
+     */
+    inline ListNotificationsRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
   private:
 
     Aws::String m_workloadId;
@@ -112,6 +169,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

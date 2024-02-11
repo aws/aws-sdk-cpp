@@ -687,8 +687,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
      * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
      *  <p>Use this parameter only when you intend to prevent the principal
-     * that is making the request from making a subsequent <a>PutKeyPolicy</a> request
-     * on the KMS key.</p>
+     * that is making the request from making a subsequent <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.</p>
      */
     inline bool GetBypassPolicyLockoutSafetyCheck() const{ return m_bypassPolicyLockoutSafetyCheck; }
 
@@ -700,8 +701,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
      * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
      *  <p>Use this parameter only when you intend to prevent the principal
-     * that is making the request from making a subsequent <a>PutKeyPolicy</a> request
-     * on the KMS key.</p>
+     * that is making the request from making a subsequent <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.</p>
      */
     inline bool BypassPolicyLockoutSafetyCheckHasBeenSet() const { return m_bypassPolicyLockoutSafetyCheckHasBeenSet; }
 
@@ -713,8 +715,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
      * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
      *  <p>Use this parameter only when you intend to prevent the principal
-     * that is making the request from making a subsequent <a>PutKeyPolicy</a> request
-     * on the KMS key.</p>
+     * that is making the request from making a subsequent <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.</p>
      */
     inline void SetBypassPolicyLockoutSafetyCheck(bool value) { m_bypassPolicyLockoutSafetyCheckHasBeenSet = true; m_bypassPolicyLockoutSafetyCheck = value; }
 
@@ -726,81 +729,98 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
      * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
      *  <p>Use this parameter only when you intend to prevent the principal
-     * that is making the request from making a subsequent <a>PutKeyPolicy</a> request
-     * on the KMS key.</p>
+     * that is making the request from making a subsequent <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.</p>
      */
     inline ReplicateKeyRequest& WithBypassPolicyLockoutSafetyCheck(bool value) { SetBypassPolicyLockoutSafetyCheck(value); return *this;}
 
 
     /**
      * <p>A description of the KMS key. The default value is an empty string (no
-     * description).</p> <p>The description is not a shared property of multi-Region
-     * keys. You can specify the same description or a different description for each
-     * key in a set of related multi-Region keys. KMS does not synchronize this
-     * property.</p>
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>The description is not a
+     * shared property of multi-Region keys. You can specify the same description or a
+     * different description for each key in a set of related multi-Region keys. KMS
+     * does not synchronize this property.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>A description of the KMS key. The default value is an empty string (no
-     * description).</p> <p>The description is not a shared property of multi-Region
-     * keys. You can specify the same description or a different description for each
-     * key in a set of related multi-Region keys. KMS does not synchronize this
-     * property.</p>
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>The description is not a
+     * shared property of multi-Region keys. You can specify the same description or a
+     * different description for each key in a set of related multi-Region keys. KMS
+     * does not synchronize this property.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the KMS key. The default value is an empty string (no
-     * description).</p> <p>The description is not a shared property of multi-Region
-     * keys. You can specify the same description or a different description for each
-     * key in a set of related multi-Region keys. KMS does not synchronize this
-     * property.</p>
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>The description is not a
+     * shared property of multi-Region keys. You can specify the same description or a
+     * different description for each key in a set of related multi-Region keys. KMS
+     * does not synchronize this property.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>A description of the KMS key. The default value is an empty string (no
-     * description).</p> <p>The description is not a shared property of multi-Region
-     * keys. You can specify the same description or a different description for each
-     * key in a set of related multi-Region keys. KMS does not synchronize this
-     * property.</p>
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>The description is not a
+     * shared property of multi-Region keys. You can specify the same description or a
+     * different description for each key in a set of related multi-Region keys. KMS
+     * does not synchronize this property.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the KMS key. The default value is an empty string (no
-     * description).</p> <p>The description is not a shared property of multi-Region
-     * keys. You can specify the same description or a different description for each
-     * key in a set of related multi-Region keys. KMS does not synchronize this
-     * property.</p>
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>The description is not a
+     * shared property of multi-Region keys. You can specify the same description or a
+     * different description for each key in a set of related multi-Region keys. KMS
+     * does not synchronize this property.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>A description of the KMS key. The default value is an empty string (no
-     * description).</p> <p>The description is not a shared property of multi-Region
-     * keys. You can specify the same description or a different description for each
-     * key in a set of related multi-Region keys. KMS does not synchronize this
-     * property.</p>
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>The description is not a
+     * shared property of multi-Region keys. You can specify the same description or a
+     * different description for each key in a set of related multi-Region keys. KMS
+     * does not synchronize this property.</p>
      */
     inline ReplicateKeyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>A description of the KMS key. The default value is an empty string (no
-     * description).</p> <p>The description is not a shared property of multi-Region
-     * keys. You can specify the same description or a different description for each
-     * key in a set of related multi-Region keys. KMS does not synchronize this
-     * property.</p>
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>The description is not a
+     * shared property of multi-Region keys. You can specify the same description or a
+     * different description for each key in a set of related multi-Region keys. KMS
+     * does not synchronize this property.</p>
      */
     inline ReplicateKeyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the KMS key. The default value is an empty string (no
-     * description).</p> <p>The description is not a shared property of multi-Region
-     * keys. You can specify the same description or a different description for each
-     * key in a set of related multi-Region keys. KMS does not synchronize this
-     * property.</p>
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>The description is not a
+     * shared property of multi-Region keys. You can specify the same description or a
+     * different description for each key in a set of related multi-Region keys. KMS
+     * does not synchronize this property.</p>
      */
     inline ReplicateKeyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -808,8 +828,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the replica key. Use this parameter to tag the
      * KMS key when it is created. To tag an existing KMS key, use the
-     * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
-     * allow or deny permission to the KMS key. For details, see <a
+     * <a>TagResource</a> operation.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -833,8 +856,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the replica key. Use this parameter to tag the
      * KMS key when it is created. To tag an existing KMS key, use the
-     * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
-     * allow or deny permission to the KMS key. For details, see <a
+     * <a>TagResource</a> operation.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -858,8 +884,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the replica key. Use this parameter to tag the
      * KMS key when it is created. To tag an existing KMS key, use the
-     * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
-     * allow or deny permission to the KMS key. For details, see <a
+     * <a>TagResource</a> operation.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -883,8 +912,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the replica key. Use this parameter to tag the
      * KMS key when it is created. To tag an existing KMS key, use the
-     * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
-     * allow or deny permission to the KMS key. For details, see <a
+     * <a>TagResource</a> operation.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -908,8 +940,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the replica key. Use this parameter to tag the
      * KMS key when it is created. To tag an existing KMS key, use the
-     * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
-     * allow or deny permission to the KMS key. For details, see <a
+     * <a>TagResource</a> operation.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -933,8 +968,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the replica key. Use this parameter to tag the
      * KMS key when it is created. To tag an existing KMS key, use the
-     * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
-     * allow or deny permission to the KMS key. For details, see <a
+     * <a>TagResource</a> operation.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -958,8 +996,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the replica key. Use this parameter to tag the
      * KMS key when it is created. To tag an existing KMS key, use the
-     * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
-     * allow or deny permission to the KMS key. For details, see <a
+     * <a>TagResource</a> operation.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -983,8 +1024,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the replica key. Use this parameter to tag the
      * KMS key when it is created. To tag an existing KMS key, use the
-     * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
-     * allow or deny permission to the KMS key. For details, see <a
+     * <a>TagResource</a> operation.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a

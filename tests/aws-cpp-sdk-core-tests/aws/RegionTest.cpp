@@ -3,10 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/Region.h>
 
-TEST(RegionTest, TestComputeSignerRegionFromPseudoRegion)
+class RegionTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(RegionTest, TestComputeSignerRegionFromPseudoRegion)
 {
     ASSERT_STREQ("us-east-1", Aws::Region::ComputeSignerRegion("aws-global").c_str());
     ASSERT_STREQ("us-east-1", Aws::Region::ComputeSignerRegion("fips-aws-global").c_str());

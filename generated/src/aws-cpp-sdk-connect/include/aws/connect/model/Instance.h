@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/connect/model/InstanceStatus.h>
 #include <aws/connect/model/InstanceStatusReason.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -386,6 +387,121 @@ namespace Model
      */
     inline Instance& WithOutboundCallsEnabled(bool value) { SetOutboundCallsEnabled(value); return *this;}
 
+
+    /**
+     * <p>This URL allows contact center users to access the Amazon Connect admin
+     * website.</p>
+     */
+    inline const Aws::String& GetInstanceAccessUrl() const{ return m_instanceAccessUrl; }
+
+    /**
+     * <p>This URL allows contact center users to access the Amazon Connect admin
+     * website.</p>
+     */
+    inline bool InstanceAccessUrlHasBeenSet() const { return m_instanceAccessUrlHasBeenSet; }
+
+    /**
+     * <p>This URL allows contact center users to access the Amazon Connect admin
+     * website.</p>
+     */
+    inline void SetInstanceAccessUrl(const Aws::String& value) { m_instanceAccessUrlHasBeenSet = true; m_instanceAccessUrl = value; }
+
+    /**
+     * <p>This URL allows contact center users to access the Amazon Connect admin
+     * website.</p>
+     */
+    inline void SetInstanceAccessUrl(Aws::String&& value) { m_instanceAccessUrlHasBeenSet = true; m_instanceAccessUrl = std::move(value); }
+
+    /**
+     * <p>This URL allows contact center users to access the Amazon Connect admin
+     * website.</p>
+     */
+    inline void SetInstanceAccessUrl(const char* value) { m_instanceAccessUrlHasBeenSet = true; m_instanceAccessUrl.assign(value); }
+
+    /**
+     * <p>This URL allows contact center users to access the Amazon Connect admin
+     * website.</p>
+     */
+    inline Instance& WithInstanceAccessUrl(const Aws::String& value) { SetInstanceAccessUrl(value); return *this;}
+
+    /**
+     * <p>This URL allows contact center users to access the Amazon Connect admin
+     * website.</p>
+     */
+    inline Instance& WithInstanceAccessUrl(Aws::String&& value) { SetInstanceAccessUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>This URL allows contact center users to access the Amazon Connect admin
+     * website.</p>
+     */
+    inline Instance& WithInstanceAccessUrl(const char* value) { SetInstanceAccessUrl(value); return *this;}
+
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline Instance& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline Instance& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline Instance& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline Instance& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline Instance& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline Instance& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline Instance& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline Instance& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags of an instance.</p>
+     */
+    inline Instance& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -417,6 +533,12 @@ namespace Model
 
     bool m_outboundCallsEnabled;
     bool m_outboundCallsEnabledHasBeenSet = false;
+
+    Aws::String m_instanceAccessUrl;
+    bool m_instanceAccessUrlHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

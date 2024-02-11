@@ -44,7 +44,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline const Aws::String& GetLoginPath() const{ return m_loginPath; }
@@ -52,7 +57,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline bool LoginPathHasBeenSet() const { return m_loginPathHasBeenSet; }
@@ -60,7 +70,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline void SetLoginPath(const Aws::String& value) { m_loginPathHasBeenSet = true; m_loginPath = value; }
@@ -68,7 +83,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline void SetLoginPath(Aws::String&& value) { m_loginPathHasBeenSet = true; m_loginPath = std::move(value); }
@@ -76,7 +96,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline void SetLoginPath(const char* value) { m_loginPathHasBeenSet = true; m_loginPath.assign(value); }
@@ -84,7 +109,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline AWSManagedRulesATPRuleSet& WithLoginPath(const Aws::String& value) { SetLoginPath(value); return *this;}
@@ -92,7 +122,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline AWSManagedRulesATPRuleSet& WithLoginPath(Aws::String&& value) { SetLoginPath(std::move(value)); return *this;}
@@ -100,7 +135,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline AWSManagedRulesATPRuleSet& WithLoginPath(const char* value) { SetLoginPath(value); return *this;}
@@ -145,75 +185,102 @@ namespace Model
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline const ResponseInspection& GetResponseInspection() const{ return m_responseInspection; }
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline bool ResponseInspectionHasBeenSet() const { return m_responseInspectionHasBeenSet; }
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline void SetResponseInspection(const ResponseInspection& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = value; }
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline void SetResponseInspection(ResponseInspection&& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = std::move(value); }
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline AWSManagedRulesATPRuleSet& WithResponseInspection(const ResponseInspection& value) { SetResponseInspection(value); return *this;}
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline AWSManagedRulesATPRuleSet& WithResponseInspection(ResponseInspection&& value) { SetResponseInspection(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Allow the use of regular expressions in the login page path. </p>
+     */
+    inline bool GetEnableRegexInPath() const{ return m_enableRegexInPath; }
+
+    /**
+     * <p>Allow the use of regular expressions in the login page path. </p>
+     */
+    inline bool EnableRegexInPathHasBeenSet() const { return m_enableRegexInPathHasBeenSet; }
+
+    /**
+     * <p>Allow the use of regular expressions in the login page path. </p>
+     */
+    inline void SetEnableRegexInPath(bool value) { m_enableRegexInPathHasBeenSet = true; m_enableRegexInPath = value; }
+
+    /**
+     * <p>Allow the use of regular expressions in the login page path. </p>
+     */
+    inline AWSManagedRulesATPRuleSet& WithEnableRegexInPath(bool value) { SetEnableRegexInPath(value); return *this;}
 
   private:
 
@@ -225,6 +292,9 @@ namespace Model
 
     ResponseInspection m_responseInspection;
     bool m_responseInspectionHasBeenSet = false;
+
+    bool m_enableRegexInPath;
+    bool m_enableRegexInPathHasBeenSet = false;
   };
 
 } // namespace Model

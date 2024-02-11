@@ -35,15 +35,16 @@ namespace Model
 
   /**
    * <p> A web ACL defines a collection of rules to use to inspect and control web
-   * requests. Each rule has an action defined (allow, block, or count) for requests
-   * that match the statement of the rule. In the web ACL, you assign a default
-   * action to take (allow, block) for any request that does not match any of the
-   * rules. The rules in a web ACL can be a combination of the types <a>Rule</a>,
-   * <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one
-   * or more Amazon Web Services resources to protect. The resources can be an Amazon
-   * CloudFront distribution, an Amazon API Gateway REST API, an Application Load
-   * Balancer, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner
-   * service. </p><p><h3>See Also:</h3>   <a
+   * requests. Each rule has a statement that defines what to look for in web
+   * requests and an action that WAF applies to requests that match the statement. In
+   * the web ACL, you assign a default action to take (allow, block) for any request
+   * that does not match any of the rules. The rules in a web ACL can be a
+   * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group.
+   * You can associate a web ACL with one or more Amazon Web Services resources to
+   * protect. The resources can be an Amazon CloudFront distribution, an Amazon API
+   * Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an
+   * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services
+   * Verified Access instance. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WebACL">AWS API
    * Reference</a></p>
    */
@@ -291,65 +292,57 @@ namespace Model
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline WebACL& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline WebACL& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline WebACL& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline WebACL& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
@@ -1147,9 +1140,9 @@ namespace Model
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
      * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
+     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
+     * additional fees when your protected resources forward body sizes that are larger
+     * than the default. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline const AssociationConfig& GetAssociationConfig() const{ return m_associationConfig; }
@@ -1158,9 +1151,9 @@ namespace Model
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
      * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
+     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
+     * additional fees when your protected resources forward body sizes that are larger
+     * than the default. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline bool AssociationConfigHasBeenSet() const { return m_associationConfigHasBeenSet; }
@@ -1169,9 +1162,9 @@ namespace Model
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
      * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
+     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
+     * additional fees when your protected resources forward body sizes that are larger
+     * than the default. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline void SetAssociationConfig(const AssociationConfig& value) { m_associationConfigHasBeenSet = true; m_associationConfig = value; }
@@ -1180,9 +1173,9 @@ namespace Model
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
      * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
+     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
+     * additional fees when your protected resources forward body sizes that are larger
+     * than the default. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline void SetAssociationConfig(AssociationConfig&& value) { m_associationConfigHasBeenSet = true; m_associationConfig = std::move(value); }
@@ -1191,9 +1184,9 @@ namespace Model
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
      * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
+     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
+     * additional fees when your protected resources forward body sizes that are larger
+     * than the default. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline WebACL& WithAssociationConfig(const AssociationConfig& value) { SetAssociationConfig(value); return *this;}
@@ -1202,9 +1195,9 @@ namespace Model
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
      * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
+     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
+     * additional fees when your protected resources forward body sizes that are larger
+     * than the default. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     inline WebACL& WithAssociationConfig(AssociationConfig&& value) { SetAssociationConfig(std::move(value)); return *this;}

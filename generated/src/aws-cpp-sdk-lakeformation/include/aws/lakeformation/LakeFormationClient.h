@@ -26,6 +26,9 @@ namespace LakeFormation
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef LakeFormationClientConfiguration ClientConfigurationType;
+      typedef LakeFormationEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -296,6 +299,59 @@ namespace LakeFormation
         }
 
         /**
+         * <p>Creates an IAM Identity Center connection with Lake Formation to allow IAM
+         * Identity Center users and groups to access Data Catalog resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationIdentityCenterConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLakeFormationIdentityCenterConfigurationOutcome CreateLakeFormationIdentityCenterConfiguration(const Model::CreateLakeFormationIdentityCenterConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLakeFormationIdentityCenterConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLakeFormationIdentityCenterConfigurationRequestT = Model::CreateLakeFormationIdentityCenterConfigurationRequest>
+        Model::CreateLakeFormationIdentityCenterConfigurationOutcomeCallable CreateLakeFormationIdentityCenterConfigurationCallable(const CreateLakeFormationIdentityCenterConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::CreateLakeFormationIdentityCenterConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLakeFormationIdentityCenterConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLakeFormationIdentityCenterConfigurationRequestT = Model::CreateLakeFormationIdentityCenterConfigurationRequest>
+        void CreateLakeFormationIdentityCenterConfigurationAsync(const CreateLakeFormationIdentityCenterConfigurationRequestT& request, const CreateLakeFormationIdentityCenterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::CreateLakeFormationIdentityCenterConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Enforce Lake Formation permissions for the given databases, tables, and
+         * principals.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLakeFormationOptInOutcome CreateLakeFormationOptIn(const Model::CreateLakeFormationOptInRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLakeFormationOptIn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLakeFormationOptInRequestT = Model::CreateLakeFormationOptInRequest>
+        Model::CreateLakeFormationOptInOutcomeCallable CreateLakeFormationOptInCallable(const CreateLakeFormationOptInRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::CreateLakeFormationOptIn, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLakeFormationOptIn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLakeFormationOptInRequestT = Model::CreateLakeFormationOptInRequest>
+        void CreateLakeFormationOptInAsync(const CreateLakeFormationOptInRequestT& request, const CreateLakeFormationOptInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::CreateLakeFormationOptIn, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a data cell filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteDataCellsFilter">AWS
          * API Reference</a></p>
@@ -348,6 +404,58 @@ namespace LakeFormation
         void DeleteLFTagAsync(const DeleteLFTagRequestT& request, const DeleteLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LakeFormationClient::DeleteLFTag, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an IAM Identity Center connection with Lake Formation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationIdentityCenterConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLakeFormationIdentityCenterConfigurationOutcome DeleteLakeFormationIdentityCenterConfiguration(const Model::DeleteLakeFormationIdentityCenterConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLakeFormationIdentityCenterConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLakeFormationIdentityCenterConfigurationRequestT = Model::DeleteLakeFormationIdentityCenterConfigurationRequest>
+        Model::DeleteLakeFormationIdentityCenterConfigurationOutcomeCallable DeleteLakeFormationIdentityCenterConfigurationCallable(const DeleteLakeFormationIdentityCenterConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::DeleteLakeFormationIdentityCenterConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLakeFormationIdentityCenterConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLakeFormationIdentityCenterConfigurationRequestT = Model::DeleteLakeFormationIdentityCenterConfigurationRequest>
+        void DeleteLakeFormationIdentityCenterConfigurationAsync(const DeleteLakeFormationIdentityCenterConfigurationRequestT& request, const DeleteLakeFormationIdentityCenterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::DeleteLakeFormationIdentityCenterConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Remove the Lake Formation permissions enforcement of the given databases,
+         * tables, and principals.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLakeFormationOptInOutcome DeleteLakeFormationOptIn(const Model::DeleteLakeFormationOptInRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLakeFormationOptIn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLakeFormationOptInRequestT = Model::DeleteLakeFormationOptInRequest>
+        Model::DeleteLakeFormationOptInOutcomeCallable DeleteLakeFormationOptInCallable(const DeleteLakeFormationOptInRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::DeleteLakeFormationOptIn, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLakeFormationOptIn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLakeFormationOptInRequestT = Model::DeleteLakeFormationOptInRequest>
+        void DeleteLakeFormationOptInAsync(const DeleteLakeFormationOptInRequestT& request, const DeleteLakeFormationOptInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::DeleteLakeFormationOptIn, request, handler, context);
         }
 
         /**
@@ -408,6 +516,32 @@ namespace LakeFormation
         void DeregisterResourceAsync(const DeregisterResourceRequestT& request, const DeregisterResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LakeFormationClient::DeregisterResource, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the instance ARN and application ARN for the
+         * connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeLakeFormationIdentityCenterConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLakeFormationIdentityCenterConfigurationOutcome DescribeLakeFormationIdentityCenterConfiguration(const Model::DescribeLakeFormationIdentityCenterConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeLakeFormationIdentityCenterConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeLakeFormationIdentityCenterConfigurationRequestT = Model::DescribeLakeFormationIdentityCenterConfigurationRequest>
+        Model::DescribeLakeFormationIdentityCenterConfigurationOutcomeCallable DescribeLakeFormationIdentityCenterConfigurationCallable(const DescribeLakeFormationIdentityCenterConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::DescribeLakeFormationIdentityCenterConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeLakeFormationIdentityCenterConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeLakeFormationIdentityCenterConfigurationRequestT = Model::DescribeLakeFormationIdentityCenterConfigurationRequest>
+        void DescribeLakeFormationIdentityCenterConfigurationAsync(const DescribeLakeFormationIdentityCenterConfigurationRequestT& request, const DescribeLakeFormationIdentityCenterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::DescribeLakeFormationIdentityCenterConfiguration, request, handler, context);
         }
 
         /**
@@ -891,12 +1025,38 @@ namespace LakeFormation
         }
 
         /**
+         * <p>Retrieve the current list of resources and principals that are opt in to
+         * enforce Lake Formation permissions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLakeFormationOptInsOutcome ListLakeFormationOptIns(const Model::ListLakeFormationOptInsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLakeFormationOptIns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLakeFormationOptInsRequestT = Model::ListLakeFormationOptInsRequest>
+        Model::ListLakeFormationOptInsOutcomeCallable ListLakeFormationOptInsCallable(const ListLakeFormationOptInsRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::ListLakeFormationOptIns, request);
+        }
+
+        /**
+         * An Async wrapper for ListLakeFormationOptIns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLakeFormationOptInsRequestT = Model::ListLakeFormationOptInsRequest>
+        void ListLakeFormationOptInsAsync(const ListLakeFormationOptInsRequestT& request, const ListLakeFormationOptInsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::ListLakeFormationOptIns, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of the principal permissions on the resource, filtered by the
          * permissions of the caller. For example, if you are granted an ALTER permission,
          * you are able to see only the principal permissions for ALTER.</p> <p>This
          * operation returns only those permissions that have been explicitly granted.</p>
          * <p>For information about permissions, see <a
-         * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+         * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
          * and Access Control to Metadata and Data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListPermissions">AWS
          * API Reference</a></p>
@@ -1296,6 +1456,32 @@ namespace LakeFormation
         void UpdateLFTagAsync(const UpdateLFTagRequestT& request, const UpdateLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LakeFormationClient::UpdateLFTag, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the IAM Identity Center connection parameters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLakeFormationIdentityCenterConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLakeFormationIdentityCenterConfigurationOutcome UpdateLakeFormationIdentityCenterConfiguration(const Model::UpdateLakeFormationIdentityCenterConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLakeFormationIdentityCenterConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateLakeFormationIdentityCenterConfigurationRequestT = Model::UpdateLakeFormationIdentityCenterConfigurationRequest>
+        Model::UpdateLakeFormationIdentityCenterConfigurationOutcomeCallable UpdateLakeFormationIdentityCenterConfigurationCallable(const UpdateLakeFormationIdentityCenterConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::UpdateLakeFormationIdentityCenterConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateLakeFormationIdentityCenterConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateLakeFormationIdentityCenterConfigurationRequestT = Model::UpdateLakeFormationIdentityCenterConfigurationRequest>
+        void UpdateLakeFormationIdentityCenterConfigurationAsync(const UpdateLakeFormationIdentityCenterConfigurationRequestT& request, const UpdateLakeFormationIdentityCenterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::UpdateLakeFormationIdentityCenterConfiguration, request, handler, context);
         }
 
         /**

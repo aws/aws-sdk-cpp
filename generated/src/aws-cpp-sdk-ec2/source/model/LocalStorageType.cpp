@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocalStorageType::NOT_SET:
+            return {};
           case LocalStorageType::hdd:
             return "hdd";
           case LocalStorageType::ssd:

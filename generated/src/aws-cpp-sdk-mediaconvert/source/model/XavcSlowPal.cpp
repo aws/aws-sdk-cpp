@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XavcSlowPal::NOT_SET:
+            return {};
           case XavcSlowPal::DISABLED:
             return "DISABLED";
           case XavcSlowPal::ENABLED:

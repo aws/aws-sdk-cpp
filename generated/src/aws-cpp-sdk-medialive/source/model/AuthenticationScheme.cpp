@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticationScheme::NOT_SET:
+            return {};
           case AuthenticationScheme::AKAMAI:
             return "AKAMAI";
           case AuthenticationScheme::COMMON:

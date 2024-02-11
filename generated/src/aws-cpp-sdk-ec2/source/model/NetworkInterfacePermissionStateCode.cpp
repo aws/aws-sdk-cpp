@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkInterfacePermissionStateCode::NOT_SET:
+            return {};
           case NetworkInterfacePermissionStateCode::pending:
             return "pending";
           case NetworkInterfacePermissionStateCode::granted:

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SEARCH_HASH = HashingUtils::HashString("SEARCH");
         static const int TIMESERIES_HASH = HashingUtils::HashString("TIMESERIES");
+        static const int VECTORSEARCH_HASH = HashingUtils::HashString("VECTORSEARCH");
 
 
         CollectionType GetCollectionTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == TIMESERIES_HASH)
           {
             return CollectionType::TIMESERIES;
+          }
+          else if (hashCode == VECTORSEARCH_HASH)
+          {
+            return CollectionType::VECTORSEARCH;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CollectionType::NOT_SET:
+            return {};
           case CollectionType::SEARCH:
             return "SEARCH";
           case CollectionType::TIMESERIES:
             return "TIMESERIES";
+          case CollectionType::VECTORSEARCH:
+            return "VECTORSEARCH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

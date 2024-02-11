@@ -38,52 +38,44 @@ namespace Model
 
 
     /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
+     * <p>The ID of the workspace to vend logs to.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
 
     /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
+     * <p>The ID of the workspace to vend logs to.</p>
      */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
 
     /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
+     * <p>The ID of the workspace to vend logs to.</p>
      */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
+     * <p>The ID of the workspace to vend logs to.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
 
     /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
+     * <p>The ID of the workspace to vend logs to.</p>
      */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
 
     /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
+     * <p>The ID of the workspace to vend logs to.</p>
      */
-    inline CreateLoggingConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline CreateLoggingConfigurationRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
 
     /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
+     * <p>The ID of the workspace to vend logs to.</p>
      */
-    inline CreateLoggingConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline CreateLoggingConfigurationRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
 
     /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
+     * <p>The ID of the workspace to vend logs to.</p>
      */
-    inline CreateLoggingConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline CreateLoggingConfigurationRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
 
     /**
@@ -136,55 +128,63 @@ namespace Model
 
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
+     * idempotency of the request.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
+     * idempotency of the request.</p>
      */
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
+     * idempotency of the request.</p>
      */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
+     * idempotency of the request.</p>
      */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
+     * idempotency of the request.</p>
      */
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
+     * idempotency of the request.</p>
      */
-    inline CreateLoggingConfigurationRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+    inline CreateLoggingConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
+     * idempotency of the request.</p>
      */
-    inline CreateLoggingConfigurationRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+    inline CreateLoggingConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
+     * idempotency of the request.</p>
      */
-    inline CreateLoggingConfigurationRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    inline CreateLoggingConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_logGroupArn;
     bool m_logGroupArnHasBeenSet = false;
 
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

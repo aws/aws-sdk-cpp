@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/CoverageStringFilter.h>
 #include <aws/inspector2/model/CoverageMapFilter.h>
+#include <aws/inspector2/model/CoverageDateFilter.h>
 #include <utility>
 
 namespace Aws
@@ -344,6 +345,55 @@ namespace Model
 
 
     /**
+     * <p>Filters Amazon Web Services resources based on whether Amazon Inspector has
+     * checked them for vulnerabilities within the specified time range.</p>
+     */
+    inline const Aws::Vector<CoverageDateFilter>& GetLastScannedAt() const{ return m_lastScannedAt; }
+
+    /**
+     * <p>Filters Amazon Web Services resources based on whether Amazon Inspector has
+     * checked them for vulnerabilities within the specified time range.</p>
+     */
+    inline bool LastScannedAtHasBeenSet() const { return m_lastScannedAtHasBeenSet; }
+
+    /**
+     * <p>Filters Amazon Web Services resources based on whether Amazon Inspector has
+     * checked them for vulnerabilities within the specified time range.</p>
+     */
+    inline void SetLastScannedAt(const Aws::Vector<CoverageDateFilter>& value) { m_lastScannedAtHasBeenSet = true; m_lastScannedAt = value; }
+
+    /**
+     * <p>Filters Amazon Web Services resources based on whether Amazon Inspector has
+     * checked them for vulnerabilities within the specified time range.</p>
+     */
+    inline void SetLastScannedAt(Aws::Vector<CoverageDateFilter>&& value) { m_lastScannedAtHasBeenSet = true; m_lastScannedAt = std::move(value); }
+
+    /**
+     * <p>Filters Amazon Web Services resources based on whether Amazon Inspector has
+     * checked them for vulnerabilities within the specified time range.</p>
+     */
+    inline CoverageFilterCriteria& WithLastScannedAt(const Aws::Vector<CoverageDateFilter>& value) { SetLastScannedAt(value); return *this;}
+
+    /**
+     * <p>Filters Amazon Web Services resources based on whether Amazon Inspector has
+     * checked them for vulnerabilities within the specified time range.</p>
+     */
+    inline CoverageFilterCriteria& WithLastScannedAt(Aws::Vector<CoverageDateFilter>&& value) { SetLastScannedAt(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters Amazon Web Services resources based on whether Amazon Inspector has
+     * checked them for vulnerabilities within the specified time range.</p>
+     */
+    inline CoverageFilterCriteria& AddLastScannedAt(const CoverageDateFilter& value) { m_lastScannedAtHasBeenSet = true; m_lastScannedAt.push_back(value); return *this; }
+
+    /**
+     * <p>Filters Amazon Web Services resources based on whether Amazon Inspector has
+     * checked them for vulnerabilities within the specified time range.</p>
+     */
+    inline CoverageFilterCriteria& AddLastScannedAt(CoverageDateFilter&& value) { m_lastScannedAtHasBeenSet = true; m_lastScannedAt.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>An array of Amazon Web Services resource IDs to return coverage statistics
      * for.</p>
      */
@@ -394,98 +444,122 @@ namespace Model
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
-     * <code>AWS_ECR_REPOSITORY</code>.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code>,
+     * <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline const Aws::Vector<CoverageStringFilter>& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
-     * <code>AWS_ECR_REPOSITORY</code>.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code>,
+     * <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
-     * <code>AWS_ECR_REPOSITORY</code>.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code>,
+     * <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline void SetResourceType(const Aws::Vector<CoverageStringFilter>& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
-     * <code>AWS_ECR_REPOSITORY</code>.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code>,
+     * <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline void SetResourceType(Aws::Vector<CoverageStringFilter>&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
-     * <code>AWS_ECR_REPOSITORY</code>.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code>,
+     * <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& WithResourceType(const Aws::Vector<CoverageStringFilter>& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
-     * <code>AWS_ECR_REPOSITORY</code>.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code>,
+     * <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& WithResourceType(Aws::Vector<CoverageStringFilter>&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
-     * <code>AWS_ECR_REPOSITORY</code>.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code>,
+     * <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& AddResourceType(const CoverageStringFilter& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(value); return *this; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
-     * <code>AWS_ECR_REPOSITORY</code>.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code>,
+     * <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& AddResourceType(CoverageStringFilter&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline const Aws::Vector<CoverageStringFilter>& GetScanStatusCode() const{ return m_scanStatusCode; }
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline bool ScanStatusCodeHasBeenSet() const { return m_scanStatusCodeHasBeenSet; }
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline void SetScanStatusCode(const Aws::Vector<CoverageStringFilter>& value) { m_scanStatusCodeHasBeenSet = true; m_scanStatusCode = value; }
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline void SetScanStatusCode(Aws::Vector<CoverageStringFilter>&& value) { m_scanStatusCodeHasBeenSet = true; m_scanStatusCode = std::move(value); }
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline CoverageFilterCriteria& WithScanStatusCode(const Aws::Vector<CoverageStringFilter>& value) { SetScanStatusCode(value); return *this;}
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline CoverageFilterCriteria& WithScanStatusCode(Aws::Vector<CoverageStringFilter>&& value) { SetScanStatusCode(std::move(value)); return *this;}
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline CoverageFilterCriteria& AddScanStatusCode(const CoverageStringFilter& value) { m_scanStatusCodeHasBeenSet = true; m_scanStatusCode.push_back(value); return *this; }
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline CoverageFilterCriteria& AddScanStatusCode(CoverageStringFilter&& value) { m_scanStatusCodeHasBeenSet = true; m_scanStatusCode.push_back(std::move(value)); return *this; }
 
@@ -601,6 +675,9 @@ namespace Model
 
     Aws::Vector<CoverageMapFilter> m_lambdaFunctionTags;
     bool m_lambdaFunctionTagsHasBeenSet = false;
+
+    Aws::Vector<CoverageDateFilter> m_lastScannedAt;
+    bool m_lastScannedAtHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_resourceId;
     bool m_resourceIdHasBeenSet = false;

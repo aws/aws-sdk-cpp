@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mp4CslgAtom::NOT_SET:
+            return {};
           case Mp4CslgAtom::INCLUDE:
             return "INCLUDE";
           case Mp4CslgAtom::EXCLUDE:

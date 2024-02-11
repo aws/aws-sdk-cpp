@@ -40,225 +40,201 @@ namespace Model
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
-     * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
-     * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
-     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
-     * ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services
-     * account ID of the owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * [EC2-VPC] The private IP address associated with the Elastic IP address.</p>
-     * </li> <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier
-     * IP address.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p>
+     * </li> <li> <p> <code>association-id</code> - The association ID for the
+     * address.</p> </li> <li> <p> <code>instance-id</code> - The ID of the instance
+     * the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local
+     * Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID
+     * of the owner.</p> </li> <li> <p> <code>private-ip-address</code> - The private
+     * IP address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
-     * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
-     * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
-     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
-     * ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services
-     * account ID of the owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * [EC2-VPC] The private IP address associated with the Elastic IP address.</p>
-     * </li> <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier
-     * IP address.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p>
+     * </li> <li> <p> <code>association-id</code> - The association ID for the
+     * address.</p> </li> <li> <p> <code>instance-id</code> - The ID of the instance
+     * the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local
+     * Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID
+     * of the owner.</p> </li> <li> <p> <code>private-ip-address</code> - The private
+     * IP address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
-     * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
-     * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
-     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
-     * ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services
-     * account ID of the owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * [EC2-VPC] The private IP address associated with the Elastic IP address.</p>
-     * </li> <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier
-     * IP address.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p>
+     * </li> <li> <p> <code>association-id</code> - The association ID for the
+     * address.</p> </li> <li> <p> <code>instance-id</code> - The ID of the instance
+     * the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local
+     * Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID
+     * of the owner.</p> </li> <li> <p> <code>private-ip-address</code> - The private
+     * IP address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
-     * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
-     * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
-     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
-     * ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services
-     * account ID of the owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * [EC2-VPC] The private IP address associated with the Elastic IP address.</p>
-     * </li> <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier
-     * IP address.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p>
+     * </li> <li> <p> <code>association-id</code> - The association ID for the
+     * address.</p> </li> <li> <p> <code>instance-id</code> - The ID of the instance
+     * the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local
+     * Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID
+     * of the owner.</p> </li> <li> <p> <code>private-ip-address</code> - The private
+     * IP address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
-     * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
-     * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
-     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
-     * ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services
-     * account ID of the owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * [EC2-VPC] The private IP address associated with the Elastic IP address.</p>
-     * </li> <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier
-     * IP address.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p>
+     * </li> <li> <p> <code>association-id</code> - The association ID for the
+     * address.</p> </li> <li> <p> <code>instance-id</code> - The ID of the instance
+     * the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local
+     * Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID
+     * of the owner.</p> </li> <li> <p> <code>private-ip-address</code> - The private
+     * IP address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeAddressesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
-     * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
-     * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
-     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
-     * ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services
-     * account ID of the owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * [EC2-VPC] The private IP address associated with the Elastic IP address.</p>
-     * </li> <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier
-     * IP address.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p>
+     * </li> <li> <p> <code>association-id</code> - The association ID for the
+     * address.</p> </li> <li> <p> <code>instance-id</code> - The ID of the instance
+     * the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local
+     * Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID
+     * of the owner.</p> </li> <li> <p> <code>private-ip-address</code> - The private
+     * IP address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeAddressesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
-     * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
-     * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
-     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
-     * ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services
-     * account ID of the owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * [EC2-VPC] The private IP address associated with the Elastic IP address.</p>
-     * </li> <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier
-     * IP address.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p>
+     * </li> <li> <p> <code>association-id</code> - The association ID for the
+     * address.</p> </li> <li> <p> <code>instance-id</code> - The ID of the instance
+     * the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local
+     * Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID
+     * of the owner.</p> </li> <li> <p> <code>private-ip-address</code> - The private
+     * IP address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeAddressesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
-     * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
-     * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
-     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
-     * ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services
-     * account ID of the owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * [EC2-VPC] The private IP address associated with the Elastic IP address.</p>
-     * </li> <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier
-     * IP address.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p>
+     * </li> <li> <p> <code>association-id</code> - The association ID for the
+     * address.</p> </li> <li> <p> <code>instance-id</code> - The ID of the instance
+     * the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local
+     * Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID
+     * of the owner.</p> </li> <li> <p> <code>private-ip-address</code> - The private
+     * IP address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeAddressesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -319,47 +295,47 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] Information about the allocation IDs.</p>
+     * <p>Information about the allocation IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllocationIds() const{ return m_allocationIds; }
 
     /**
-     * <p>[EC2-VPC] Information about the allocation IDs.</p>
+     * <p>Information about the allocation IDs.</p>
      */
     inline bool AllocationIdsHasBeenSet() const { return m_allocationIdsHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] Information about the allocation IDs.</p>
+     * <p>Information about the allocation IDs.</p>
      */
     inline void SetAllocationIds(const Aws::Vector<Aws::String>& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = value; }
 
     /**
-     * <p>[EC2-VPC] Information about the allocation IDs.</p>
+     * <p>Information about the allocation IDs.</p>
      */
     inline void SetAllocationIds(Aws::Vector<Aws::String>&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] Information about the allocation IDs.</p>
+     * <p>Information about the allocation IDs.</p>
      */
     inline DescribeAddressesRequest& WithAllocationIds(const Aws::Vector<Aws::String>& value) { SetAllocationIds(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] Information about the allocation IDs.</p>
+     * <p>Information about the allocation IDs.</p>
      */
     inline DescribeAddressesRequest& WithAllocationIds(Aws::Vector<Aws::String>&& value) { SetAllocationIds(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] Information about the allocation IDs.</p>
+     * <p>Information about the allocation IDs.</p>
      */
     inline DescribeAddressesRequest& AddAllocationIds(const Aws::String& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC] Information about the allocation IDs.</p>
+     * <p>Information about the allocation IDs.</p>
      */
     inline DescribeAddressesRequest& AddAllocationIds(Aws::String&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[EC2-VPC] Information about the allocation IDs.</p>
+     * <p>Information about the allocation IDs.</p>
      */
     inline DescribeAddressesRequest& AddAllocationIds(const char* value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(value); return *this; }
 

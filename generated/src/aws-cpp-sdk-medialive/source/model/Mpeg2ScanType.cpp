@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2ScanType::NOT_SET:
+            return {};
           case Mpeg2ScanType::INTERLACED:
             return "INTERLACED";
           case Mpeg2ScanType::PROGRESSIVE:

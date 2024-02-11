@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EbuTtDDestinationStyleControl::NOT_SET:
+            return {};
           case EbuTtDDestinationStyleControl::EXCLUDE:
             return "EXCLUDE";
           case EbuTtDDestinationStyleControl::INCLUDE:

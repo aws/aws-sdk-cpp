@@ -19,24 +19,35 @@ namespace Model
 {
 
 InferenceRecommendation::InferenceRecommendation() : 
+    m_recommendationIdHasBeenSet(false),
     m_metricsHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
     m_modelConfigurationHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false)
+    m_invocationEndTimeHasBeenSet(false),
+    m_invocationStartTimeHasBeenSet(false)
 {
 }
 
 InferenceRecommendation::InferenceRecommendation(JsonView jsonValue) : 
+    m_recommendationIdHasBeenSet(false),
     m_metricsHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
     m_modelConfigurationHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false)
+    m_invocationEndTimeHasBeenSet(false),
+    m_invocationStartTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 InferenceRecommendation& InferenceRecommendation::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("RecommendationId"))
+  {
+    m_recommendationId = jsonValue.GetString("RecommendationId");
+
+    m_recommendationIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Metrics"))
   {
     m_metrics = jsonValue.GetObject("Metrics");
@@ -58,11 +69,18 @@ InferenceRecommendation& InferenceRecommendation::operator =(JsonView jsonValue)
     m_modelConfigurationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("RecommendationId"))
+  if(jsonValue.ValueExists("InvocationEndTime"))
   {
-    m_recommendationId = jsonValue.GetString("RecommendationId");
+    m_invocationEndTime = jsonValue.GetDouble("InvocationEndTime");
 
-    m_recommendationIdHasBeenSet = true;
+    m_invocationEndTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InvocationStartTime"))
+  {
+    m_invocationStartTime = jsonValue.GetDouble("InvocationStartTime");
+
+    m_invocationStartTimeHasBeenSet = true;
   }
 
   return *this;
@@ -71,6 +89,12 @@ InferenceRecommendation& InferenceRecommendation::operator =(JsonView jsonValue)
 JsonValue InferenceRecommendation::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_recommendationIdHasBeenSet)
+  {
+   payload.WithString("RecommendationId", m_recommendationId);
+
+  }
 
   if(m_metricsHasBeenSet)
   {
@@ -90,10 +114,14 @@ JsonValue InferenceRecommendation::Jsonize() const
 
   }
 
-  if(m_recommendationIdHasBeenSet)
+  if(m_invocationEndTimeHasBeenSet)
   {
-   payload.WithString("RecommendationId", m_recommendationId);
+   payload.WithDouble("InvocationEndTime", m_invocationEndTime.SecondsWithMSPrecision());
+  }
 
+  if(m_invocationStartTimeHasBeenSet)
+  {
+   payload.WithDouble("InvocationStartTime", m_invocationStartTime.SecondsWithMSPrecision());
   }
 
   return payload;

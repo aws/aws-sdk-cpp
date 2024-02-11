@@ -16,7 +16,7 @@ CreateMultiplexProgramRequest::CreateMultiplexProgramRequest() :
     m_multiplexIdHasBeenSet(false),
     m_multiplexProgramSettingsHasBeenSet(false),
     m_programNameHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::RandomUUID()),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_requestIdHasBeenSet(true)
 {
 }

@@ -7,6 +7,7 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/personalize/model/DatasetUpdateSummary.h>
 #include <utility>
 
 namespace Aws
@@ -163,49 +164,57 @@ namespace Model
 
     /**
      * <p>One of the following values:</p> <ul> <li> <p>Interactions</p> </li> <li>
-     * <p>Items</p> </li> <li> <p>Users</p> </li> </ul>
+     * <p>Items</p> </li> <li> <p>Users</p> </li> <li> <p>Actions</p> </li> <li>
+     * <p>Action_Interactions</p> </li> </ul>
      */
     inline const Aws::String& GetDatasetType() const{ return m_datasetType; }
 
     /**
      * <p>One of the following values:</p> <ul> <li> <p>Interactions</p> </li> <li>
-     * <p>Items</p> </li> <li> <p>Users</p> </li> </ul>
+     * <p>Items</p> </li> <li> <p>Users</p> </li> <li> <p>Actions</p> </li> <li>
+     * <p>Action_Interactions</p> </li> </ul>
      */
     inline bool DatasetTypeHasBeenSet() const { return m_datasetTypeHasBeenSet; }
 
     /**
      * <p>One of the following values:</p> <ul> <li> <p>Interactions</p> </li> <li>
-     * <p>Items</p> </li> <li> <p>Users</p> </li> </ul>
+     * <p>Items</p> </li> <li> <p>Users</p> </li> <li> <p>Actions</p> </li> <li>
+     * <p>Action_Interactions</p> </li> </ul>
      */
     inline void SetDatasetType(const Aws::String& value) { m_datasetTypeHasBeenSet = true; m_datasetType = value; }
 
     /**
      * <p>One of the following values:</p> <ul> <li> <p>Interactions</p> </li> <li>
-     * <p>Items</p> </li> <li> <p>Users</p> </li> </ul>
+     * <p>Items</p> </li> <li> <p>Users</p> </li> <li> <p>Actions</p> </li> <li>
+     * <p>Action_Interactions</p> </li> </ul>
      */
     inline void SetDatasetType(Aws::String&& value) { m_datasetTypeHasBeenSet = true; m_datasetType = std::move(value); }
 
     /**
      * <p>One of the following values:</p> <ul> <li> <p>Interactions</p> </li> <li>
-     * <p>Items</p> </li> <li> <p>Users</p> </li> </ul>
+     * <p>Items</p> </li> <li> <p>Users</p> </li> <li> <p>Actions</p> </li> <li>
+     * <p>Action_Interactions</p> </li> </ul>
      */
     inline void SetDatasetType(const char* value) { m_datasetTypeHasBeenSet = true; m_datasetType.assign(value); }
 
     /**
      * <p>One of the following values:</p> <ul> <li> <p>Interactions</p> </li> <li>
-     * <p>Items</p> </li> <li> <p>Users</p> </li> </ul>
+     * <p>Items</p> </li> <li> <p>Users</p> </li> <li> <p>Actions</p> </li> <li>
+     * <p>Action_Interactions</p> </li> </ul>
      */
     inline Dataset& WithDatasetType(const Aws::String& value) { SetDatasetType(value); return *this;}
 
     /**
      * <p>One of the following values:</p> <ul> <li> <p>Interactions</p> </li> <li>
-     * <p>Items</p> </li> <li> <p>Users</p> </li> </ul>
+     * <p>Items</p> </li> <li> <p>Users</p> </li> <li> <p>Actions</p> </li> <li>
+     * <p>Action_Interactions</p> </li> </ul>
      */
     inline Dataset& WithDatasetType(Aws::String&& value) { SetDatasetType(std::move(value)); return *this;}
 
     /**
      * <p>One of the following values:</p> <ul> <li> <p>Interactions</p> </li> <li>
-     * <p>Items</p> </li> <li> <p>Users</p> </li> </ul>
+     * <p>Items</p> </li> <li> <p>Users</p> </li> <li> <p>Actions</p> </li> <li>
+     * <p>Action_Interactions</p> </li> </ul>
      */
     inline Dataset& WithDatasetType(const char* value) { SetDatasetType(value); return *this;}
 
@@ -377,6 +386,102 @@ namespace Model
      */
     inline Dataset& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline const DatasetUpdateSummary& GetLatestDatasetUpdate() const{ return m_latestDatasetUpdate; }
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline bool LatestDatasetUpdateHasBeenSet() const { return m_latestDatasetUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline void SetLatestDatasetUpdate(const DatasetUpdateSummary& value) { m_latestDatasetUpdateHasBeenSet = true; m_latestDatasetUpdate = value; }
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline void SetLatestDatasetUpdate(DatasetUpdateSummary&& value) { m_latestDatasetUpdateHasBeenSet = true; m_latestDatasetUpdate = std::move(value); }
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline Dataset& WithLatestDatasetUpdate(const DatasetUpdateSummary& value) { SetLatestDatasetUpdate(value); return *this;}
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline Dataset& WithLatestDatasetUpdate(DatasetUpdateSummary&& value) { SetLatestDatasetUpdate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the event tracker for an Action interactions dataset. You specify
+     * the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon
+     * Personalize uses it to direct new data to the Action interactions dataset in
+     * your dataset group.</p>
+     */
+    inline const Aws::String& GetTrackingId() const{ return m_trackingId; }
+
+    /**
+     * <p>The ID of the event tracker for an Action interactions dataset. You specify
+     * the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon
+     * Personalize uses it to direct new data to the Action interactions dataset in
+     * your dataset group.</p>
+     */
+    inline bool TrackingIdHasBeenSet() const { return m_trackingIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the event tracker for an Action interactions dataset. You specify
+     * the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon
+     * Personalize uses it to direct new data to the Action interactions dataset in
+     * your dataset group.</p>
+     */
+    inline void SetTrackingId(const Aws::String& value) { m_trackingIdHasBeenSet = true; m_trackingId = value; }
+
+    /**
+     * <p>The ID of the event tracker for an Action interactions dataset. You specify
+     * the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon
+     * Personalize uses it to direct new data to the Action interactions dataset in
+     * your dataset group.</p>
+     */
+    inline void SetTrackingId(Aws::String&& value) { m_trackingIdHasBeenSet = true; m_trackingId = std::move(value); }
+
+    /**
+     * <p>The ID of the event tracker for an Action interactions dataset. You specify
+     * the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon
+     * Personalize uses it to direct new data to the Action interactions dataset in
+     * your dataset group.</p>
+     */
+    inline void SetTrackingId(const char* value) { m_trackingIdHasBeenSet = true; m_trackingId.assign(value); }
+
+    /**
+     * <p>The ID of the event tracker for an Action interactions dataset. You specify
+     * the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon
+     * Personalize uses it to direct new data to the Action interactions dataset in
+     * your dataset group.</p>
+     */
+    inline Dataset& WithTrackingId(const Aws::String& value) { SetTrackingId(value); return *this;}
+
+    /**
+     * <p>The ID of the event tracker for an Action interactions dataset. You specify
+     * the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon
+     * Personalize uses it to direct new data to the Action interactions dataset in
+     * your dataset group.</p>
+     */
+    inline Dataset& WithTrackingId(Aws::String&& value) { SetTrackingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the event tracker for an Action interactions dataset. You specify
+     * the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon
+     * Personalize uses it to direct new data to the Action interactions dataset in
+     * your dataset group.</p>
+     */
+    inline Dataset& WithTrackingId(const char* value) { SetTrackingId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -402,6 +507,12 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
     bool m_lastUpdatedDateTimeHasBeenSet = false;
+
+    DatasetUpdateSummary m_latestDatasetUpdate;
+    bool m_latestDatasetUpdateHasBeenSet = false;
+
+    Aws::String m_trackingId;
+    bool m_trackingIdHasBeenSet = false;
   };
 
 } // namespace Model

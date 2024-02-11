@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The ClassicLink status of one or more VPCs.</p>
+     * <p>The ClassicLink status of the VPCs.</p>
      */
     inline const Aws::Vector<VpcClassicLink>& GetVpcs() const{ return m_vpcs; }
 
     /**
-     * <p>The ClassicLink status of one or more VPCs.</p>
+     * <p>The ClassicLink status of the VPCs.</p>
      */
     inline void SetVpcs(const Aws::Vector<VpcClassicLink>& value) { m_vpcs = value; }
 
     /**
-     * <p>The ClassicLink status of one or more VPCs.</p>
+     * <p>The ClassicLink status of the VPCs.</p>
      */
     inline void SetVpcs(Aws::Vector<VpcClassicLink>&& value) { m_vpcs = std::move(value); }
 
     /**
-     * <p>The ClassicLink status of one or more VPCs.</p>
+     * <p>The ClassicLink status of the VPCs.</p>
      */
     inline DescribeVpcClassicLinkResponse& WithVpcs(const Aws::Vector<VpcClassicLink>& value) { SetVpcs(value); return *this;}
 
     /**
-     * <p>The ClassicLink status of one or more VPCs.</p>
+     * <p>The ClassicLink status of the VPCs.</p>
      */
     inline DescribeVpcClassicLinkResponse& WithVpcs(Aws::Vector<VpcClassicLink>&& value) { SetVpcs(std::move(value)); return *this;}
 
     /**
-     * <p>The ClassicLink status of one or more VPCs.</p>
+     * <p>The ClassicLink status of the VPCs.</p>
      */
     inline DescribeVpcClassicLinkResponse& AddVpcs(const VpcClassicLink& value) { m_vpcs.push_back(value); return *this; }
 
     /**
-     * <p>The ClassicLink status of one or more VPCs.</p>
+     * <p>The ClassicLink status of the VPCs.</p>
      */
     inline DescribeVpcClassicLinkResponse& AddVpcs(VpcClassicLink&& value) { m_vpcs.push_back(std::move(value)); return *this; }
 

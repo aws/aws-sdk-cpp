@@ -174,32 +174,32 @@ namespace Model
 
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with a flywheel.</p>
      */
     inline const TaskConfig& GetTaskConfig() const{ return m_taskConfig; }
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with a flywheel.</p>
      */
     inline bool TaskConfigHasBeenSet() const { return m_taskConfigHasBeenSet; }
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with a flywheel.</p>
      */
     inline void SetTaskConfig(const TaskConfig& value) { m_taskConfigHasBeenSet = true; m_taskConfig = value; }
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with a flywheel.</p>
      */
     inline void SetTaskConfig(TaskConfig&& value) { m_taskConfigHasBeenSet = true; m_taskConfig = std::move(value); }
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with a flywheel.</p>
      */
     inline FlywheelProperties& WithTaskConfig(const TaskConfig& value) { SetTaskConfig(value); return *this;}
 
     /**
-     * <p>Configuration about the custom classifier associated with the flywheel.</p>
+     * <p>Configuration about the model associated with a flywheel.</p>
      */
     inline FlywheelProperties& WithTaskConfig(TaskConfig&& value) { SetTaskConfig(std::move(value)); return *this;}
 

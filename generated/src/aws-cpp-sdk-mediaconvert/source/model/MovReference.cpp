@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MovReference::NOT_SET:
+            return {};
           case MovReference::SELF_CONTAINED:
             return "SELF_CONTAINED";
           case MovReference::EXTERNAL:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperatorType::NOT_SET:
+            return {};
           case OperatorType::EQ:
             return "EQ";
           case OperatorType::REF_EQ:

@@ -10,6 +10,7 @@
 #include <aws/lexv2-models/model/BotLocaleStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/GenerativeAISettings.h>
 #include <aws/lexv2-models/model/BotLocaleHistoryEvent.h>
 #include <utility>
 
@@ -74,37 +75,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline DescribeBotLocaleResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline DescribeBotLocaleResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline DescribeBotLocaleResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
 
@@ -552,6 +553,37 @@ namespace Model
     inline DescribeBotLocaleResult& AddRecommendedActions(const char* value) { m_recommendedActions.push_back(value); return *this; }
 
 
+    /**
+     * <p>Contains settings for Amazon Bedrock's generative AI features for your bot
+     * locale.</p>
+     */
+    inline const GenerativeAISettings& GetGenerativeAISettings() const{ return m_generativeAISettings; }
+
+    /**
+     * <p>Contains settings for Amazon Bedrock's generative AI features for your bot
+     * locale.</p>
+     */
+    inline void SetGenerativeAISettings(const GenerativeAISettings& value) { m_generativeAISettings = value; }
+
+    /**
+     * <p>Contains settings for Amazon Bedrock's generative AI features for your bot
+     * locale.</p>
+     */
+    inline void SetGenerativeAISettings(GenerativeAISettings&& value) { m_generativeAISettings = std::move(value); }
+
+    /**
+     * <p>Contains settings for Amazon Bedrock's generative AI features for your bot
+     * locale.</p>
+     */
+    inline DescribeBotLocaleResult& WithGenerativeAISettings(const GenerativeAISettings& value) { SetGenerativeAISettings(value); return *this;}
+
+    /**
+     * <p>Contains settings for Amazon Bedrock's generative AI features for your bot
+     * locale.</p>
+     */
+    inline DescribeBotLocaleResult& WithGenerativeAISettings(GenerativeAISettings&& value) { SetGenerativeAISettings(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -606,6 +638,8 @@ namespace Model
     Aws::Vector<BotLocaleHistoryEvent> m_botLocaleHistoryEvents;
 
     Aws::Vector<Aws::String> m_recommendedActions;
+
+    GenerativeAISettings m_generativeAISettings;
 
     Aws::String m_requestId;
   };

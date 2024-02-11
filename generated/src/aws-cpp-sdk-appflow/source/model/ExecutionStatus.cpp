@@ -23,6 +23,8 @@ namespace Aws
         static const int InProgress_HASH = HashingUtils::HashString("InProgress");
         static const int Successful_HASH = HashingUtils::HashString("Successful");
         static const int Error_HASH = HashingUtils::HashString("Error");
+        static const int CancelStarted_HASH = HashingUtils::HashString("CancelStarted");
+        static const int Canceled_HASH = HashingUtils::HashString("Canceled");
 
 
         ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
@@ -40,6 +42,14 @@ namespace Aws
           {
             return ExecutionStatus::Error;
           }
+          else if (hashCode == CancelStarted_HASH)
+          {
+            return ExecutionStatus::CancelStarted;
+          }
+          else if (hashCode == Canceled_HASH)
+          {
+            return ExecutionStatus::Canceled;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +64,18 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionStatus::NOT_SET:
+            return {};
           case ExecutionStatus::InProgress:
             return "InProgress";
           case ExecutionStatus::Successful:
             return "Successful";
           case ExecutionStatus::Error:
             return "Error";
+          case ExecutionStatus::CancelStarted:
+            return "CancelStarted";
+          case ExecutionStatus::Canceled:
+            return "Canceled";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

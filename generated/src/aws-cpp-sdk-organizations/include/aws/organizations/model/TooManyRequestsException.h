@@ -28,7 +28,7 @@ namespace Model
    * helps protect against denial-of-service attacks. Try again later.</p> <p>For
    * information about quotas that affect Organizations, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas
-   * for Organizations</a>in the <i>Organizations User Guide.</i> </p><p><h3>See
+   * for Organizations</a> in the <i>Organizations User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/TooManyRequestsException">AWS
    * API Reference</a></p>

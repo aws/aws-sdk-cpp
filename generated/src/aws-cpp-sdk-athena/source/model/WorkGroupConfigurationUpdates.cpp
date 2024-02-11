@@ -37,7 +37,8 @@ WorkGroupConfigurationUpdates::WorkGroupConfigurationUpdates() :
     m_executionRoleHasBeenSet(false),
     m_customerContentEncryptionConfigurationHasBeenSet(false),
     m_enableMinimumEncryptionConfiguration(false),
-    m_enableMinimumEncryptionConfigurationHasBeenSet(false)
+    m_enableMinimumEncryptionConfigurationHasBeenSet(false),
+    m_queryResultsS3AccessGrantsConfigurationHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ WorkGroupConfigurationUpdates::WorkGroupConfigurationUpdates(JsonView jsonValue)
     m_executionRoleHasBeenSet(false),
     m_customerContentEncryptionConfigurationHasBeenSet(false),
     m_enableMinimumEncryptionConfiguration(false),
-    m_enableMinimumEncryptionConfigurationHasBeenSet(false)
+    m_enableMinimumEncryptionConfigurationHasBeenSet(false),
+    m_queryResultsS3AccessGrantsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -151,6 +153,13 @@ WorkGroupConfigurationUpdates& WorkGroupConfigurationUpdates::operator =(JsonVie
     m_enableMinimumEncryptionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QueryResultsS3AccessGrantsConfiguration"))
+  {
+    m_queryResultsS3AccessGrantsConfiguration = jsonValue.GetObject("QueryResultsS3AccessGrantsConfiguration");
+
+    m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +236,12 @@ JsonValue WorkGroupConfigurationUpdates::Jsonize() const
   if(m_enableMinimumEncryptionConfigurationHasBeenSet)
   {
    payload.WithBool("EnableMinimumEncryptionConfiguration", m_enableMinimumEncryptionConfiguration);
+
+  }
+
+  if(m_queryResultsS3AccessGrantsConfigurationHasBeenSet)
+  {
+   payload.WithObject("QueryResultsS3AccessGrantsConfiguration", m_queryResultsS3AccessGrantsConfiguration.Jsonize());
 
   }
 

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamDiscoveryFailureCode::NOT_SET:
+            return {};
           case IpamDiscoveryFailureCode::assume_role_failure:
             return "assume-role-failure";
           case IpamDiscoveryFailureCode::throttling_failure:

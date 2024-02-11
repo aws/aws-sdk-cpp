@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/scheduler/Scheduler_EXPORTS.h>
+#include <aws/scheduler/model/ActionAfterCompletion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/scheduler/model/FlexibleTimeWindow.h>
@@ -34,6 +35,37 @@ namespace Model
     AWS_SCHEDULER_API GetScheduleResult();
     AWS_SCHEDULER_API GetScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SCHEDULER_API GetScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Indicates the action that EventBridge Scheduler applies to the schedule after
+     * the schedule completes invoking the target.</p>
+     */
+    inline const ActionAfterCompletion& GetActionAfterCompletion() const{ return m_actionAfterCompletion; }
+
+    /**
+     * <p>Indicates the action that EventBridge Scheduler applies to the schedule after
+     * the schedule completes invoking the target.</p>
+     */
+    inline void SetActionAfterCompletion(const ActionAfterCompletion& value) { m_actionAfterCompletion = value; }
+
+    /**
+     * <p>Indicates the action that EventBridge Scheduler applies to the schedule after
+     * the schedule completes invoking the target.</p>
+     */
+    inline void SetActionAfterCompletion(ActionAfterCompletion&& value) { m_actionAfterCompletion = std::move(value); }
+
+    /**
+     * <p>Indicates the action that EventBridge Scheduler applies to the schedule after
+     * the schedule completes invoking the target.</p>
+     */
+    inline GetScheduleResult& WithActionAfterCompletion(const ActionAfterCompletion& value) { SetActionAfterCompletion(value); return *this;}
+
+    /**
+     * <p>Indicates the action that EventBridge Scheduler applies to the schedule after
+     * the schedule completes invoking the target.</p>
+     */
+    inline GetScheduleResult& WithActionAfterCompletion(ActionAfterCompletion&& value) { SetActionAfterCompletion(std::move(value)); return *this;}
 
 
     /**
@@ -351,7 +383,7 @@ namespace Model
      * <p> The expression that defines when the schedule runs. The following formats
      * are supported. </p> <ul> <li> <p> <code>at</code> expression -
      * <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code>
-     * expression - <code>rate(unit value)</code> </p> </li> <li> <p> <code>cron</code>
+     * expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code>
      * expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use
      * <code>at</code> expressions to create one-time schedules that invoke a target
      * once, at the time and in the time zone, that you specify. You can use
@@ -376,7 +408,7 @@ namespace Model
      * <p> The expression that defines when the schedule runs. The following formats
      * are supported. </p> <ul> <li> <p> <code>at</code> expression -
      * <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code>
-     * expression - <code>rate(unit value)</code> </p> </li> <li> <p> <code>cron</code>
+     * expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code>
      * expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use
      * <code>at</code> expressions to create one-time schedules that invoke a target
      * once, at the time and in the time zone, that you specify. You can use
@@ -401,7 +433,7 @@ namespace Model
      * <p> The expression that defines when the schedule runs. The following formats
      * are supported. </p> <ul> <li> <p> <code>at</code> expression -
      * <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code>
-     * expression - <code>rate(unit value)</code> </p> </li> <li> <p> <code>cron</code>
+     * expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code>
      * expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use
      * <code>at</code> expressions to create one-time schedules that invoke a target
      * once, at the time and in the time zone, that you specify. You can use
@@ -426,7 +458,7 @@ namespace Model
      * <p> The expression that defines when the schedule runs. The following formats
      * are supported. </p> <ul> <li> <p> <code>at</code> expression -
      * <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code>
-     * expression - <code>rate(unit value)</code> </p> </li> <li> <p> <code>cron</code>
+     * expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code>
      * expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use
      * <code>at</code> expressions to create one-time schedules that invoke a target
      * once, at the time and in the time zone, that you specify. You can use
@@ -451,7 +483,7 @@ namespace Model
      * <p> The expression that defines when the schedule runs. The following formats
      * are supported. </p> <ul> <li> <p> <code>at</code> expression -
      * <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code>
-     * expression - <code>rate(unit value)</code> </p> </li> <li> <p> <code>cron</code>
+     * expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code>
      * expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use
      * <code>at</code> expressions to create one-time schedules that invoke a target
      * once, at the time and in the time zone, that you specify. You can use
@@ -476,7 +508,7 @@ namespace Model
      * <p> The expression that defines when the schedule runs. The following formats
      * are supported. </p> <ul> <li> <p> <code>at</code> expression -
      * <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code>
-     * expression - <code>rate(unit value)</code> </p> </li> <li> <p> <code>cron</code>
+     * expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code>
      * expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use
      * <code>at</code> expressions to create one-time schedules that invoke a target
      * once, at the time and in the time zone, that you specify. You can use
@@ -501,7 +533,7 @@ namespace Model
      * <p> The expression that defines when the schedule runs. The following formats
      * are supported. </p> <ul> <li> <p> <code>at</code> expression -
      * <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code>
-     * expression - <code>rate(unit value)</code> </p> </li> <li> <p> <code>cron</code>
+     * expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code>
      * expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use
      * <code>at</code> expressions to create one-time schedules that invoke a target
      * once, at the time and in the time zone, that you specify. You can use
@@ -674,6 +706,8 @@ namespace Model
     inline GetScheduleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
+
+    ActionAfterCompletion m_actionAfterCompletion;
 
     Aws::String m_arn;
 

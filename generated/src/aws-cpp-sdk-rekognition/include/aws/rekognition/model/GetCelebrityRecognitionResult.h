@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/VideoMetadata.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/Video.h>
 #include <aws/rekognition/model/CelebrityRecognition.h>
 #include <utility>
 
@@ -227,6 +228,122 @@ namespace Model
     inline GetCelebrityRecognitionResult& AddCelebrities(CelebrityRecognition&& value) { m_celebrities.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Job identifier for the celebrity recognition operation for which you want to
+     * obtain results. The job identifer is returned by an initial call to
+     * StartCelebrityRecognition.</p>
+     */
+    inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p>Job identifier for the celebrity recognition operation for which you want to
+     * obtain results. The job identifer is returned by an initial call to
+     * StartCelebrityRecognition.</p>
+     */
+    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
+
+    /**
+     * <p>Job identifier for the celebrity recognition operation for which you want to
+     * obtain results. The job identifer is returned by an initial call to
+     * StartCelebrityRecognition.</p>
+     */
+    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
+
+    /**
+     * <p>Job identifier for the celebrity recognition operation for which you want to
+     * obtain results. The job identifer is returned by an initial call to
+     * StartCelebrityRecognition.</p>
+     */
+    inline void SetJobId(const char* value) { m_jobId.assign(value); }
+
+    /**
+     * <p>Job identifier for the celebrity recognition operation for which you want to
+     * obtain results. The job identifer is returned by an initial call to
+     * StartCelebrityRecognition.</p>
+     */
+    inline GetCelebrityRecognitionResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+
+    /**
+     * <p>Job identifier for the celebrity recognition operation for which you want to
+     * obtain results. The job identifer is returned by an initial call to
+     * StartCelebrityRecognition.</p>
+     */
+    inline GetCelebrityRecognitionResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>Job identifier for the celebrity recognition operation for which you want to
+     * obtain results. The job identifer is returned by an initial call to
+     * StartCelebrityRecognition.</p>
+     */
+    inline GetCelebrityRecognitionResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+
+
+    
+    inline const Video& GetVideo() const{ return m_video; }
+
+    
+    inline void SetVideo(const Video& value) { m_video = value; }
+
+    
+    inline void SetVideo(Video&& value) { m_video = std::move(value); }
+
+    
+    inline GetCelebrityRecognitionResult& WithVideo(const Video& value) { SetVideo(value); return *this;}
+
+    
+    inline GetCelebrityRecognitionResult& WithVideo(Video&& value) { SetVideo(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A job identifier specified in the call to StartCelebrityRecognition and
+     * returned in the job completion notification sent to your Amazon Simple
+     * Notification Service topic.</p>
+     */
+    inline const Aws::String& GetJobTag() const{ return m_jobTag; }
+
+    /**
+     * <p>A job identifier specified in the call to StartCelebrityRecognition and
+     * returned in the job completion notification sent to your Amazon Simple
+     * Notification Service topic.</p>
+     */
+    inline void SetJobTag(const Aws::String& value) { m_jobTag = value; }
+
+    /**
+     * <p>A job identifier specified in the call to StartCelebrityRecognition and
+     * returned in the job completion notification sent to your Amazon Simple
+     * Notification Service topic.</p>
+     */
+    inline void SetJobTag(Aws::String&& value) { m_jobTag = std::move(value); }
+
+    /**
+     * <p>A job identifier specified in the call to StartCelebrityRecognition and
+     * returned in the job completion notification sent to your Amazon Simple
+     * Notification Service topic.</p>
+     */
+    inline void SetJobTag(const char* value) { m_jobTag.assign(value); }
+
+    /**
+     * <p>A job identifier specified in the call to StartCelebrityRecognition and
+     * returned in the job completion notification sent to your Amazon Simple
+     * Notification Service topic.</p>
+     */
+    inline GetCelebrityRecognitionResult& WithJobTag(const Aws::String& value) { SetJobTag(value); return *this;}
+
+    /**
+     * <p>A job identifier specified in the call to StartCelebrityRecognition and
+     * returned in the job completion notification sent to your Amazon Simple
+     * Notification Service topic.</p>
+     */
+    inline GetCelebrityRecognitionResult& WithJobTag(Aws::String&& value) { SetJobTag(std::move(value)); return *this;}
+
+    /**
+     * <p>A job identifier specified in the call to StartCelebrityRecognition and
+     * returned in the job completion notification sent to your Amazon Simple
+     * Notification Service topic.</p>
+     */
+    inline GetCelebrityRecognitionResult& WithJobTag(const char* value) { SetJobTag(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -259,6 +376,12 @@ namespace Model
     Aws::String m_nextToken;
 
     Aws::Vector<CelebrityRecognition> m_celebrities;
+
+    Aws::String m_jobId;
+
+    Video m_video;
+
+    Aws::String m_jobTag;
 
     Aws::String m_requestId;
   };

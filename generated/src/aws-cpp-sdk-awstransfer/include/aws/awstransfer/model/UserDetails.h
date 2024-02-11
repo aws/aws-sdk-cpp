@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user associated with a
+     * server.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user associated with a
+     * server.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user associated with a
+     * server.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user associated with a
+     * server.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user associated with a
+     * server.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user associated with a
+     * server.</p>
      */
     inline UserDetails& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user associated with a
+     * server.</p>
      */
     inline UserDetails& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user associated with a
+     * server.</p>
      */
     inline UserDetails& WithUserName(const char* value) { SetUserName(value); return *this;}
 

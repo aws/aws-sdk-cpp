@@ -29,7 +29,8 @@ GlobalConfiguration::GlobalConfiguration() :
     m_outputTimingSource(GlobalConfigurationOutputTimingSource::NOT_SET),
     m_outputTimingSourceHasBeenSet(false),
     m_supportLowFramerateInputs(GlobalConfigurationLowFramerateInputs::NOT_SET),
-    m_supportLowFramerateInputsHasBeenSet(false)
+    m_supportLowFramerateInputsHasBeenSet(false),
+    m_outputLockingSettingsHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ GlobalConfiguration::GlobalConfiguration(JsonView jsonValue) :
     m_outputTimingSource(GlobalConfigurationOutputTimingSource::NOT_SET),
     m_outputTimingSourceHasBeenSet(false),
     m_supportLowFramerateInputs(GlobalConfigurationLowFramerateInputs::NOT_SET),
-    m_supportLowFramerateInputsHasBeenSet(false)
+    m_supportLowFramerateInputsHasBeenSet(false),
+    m_outputLockingSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +95,13 @@ GlobalConfiguration& GlobalConfiguration::operator =(JsonView jsonValue)
     m_supportLowFramerateInputsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("outputLockingSettings"))
+  {
+    m_outputLockingSettings = jsonValue.GetObject("outputLockingSettings");
+
+    m_outputLockingSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -130,6 +139,12 @@ JsonValue GlobalConfiguration::Jsonize() const
   if(m_supportLowFramerateInputsHasBeenSet)
   {
    payload.WithString("supportLowFramerateInputs", GlobalConfigurationLowFramerateInputsMapper::GetNameForGlobalConfigurationLowFramerateInputs(m_supportLowFramerateInputs));
+  }
+
+  if(m_outputLockingSettingsHasBeenSet)
+  {
+   payload.WithObject("outputLockingSettings", m_outputLockingSettings.Jsonize());
+
   }
 
   return payload;

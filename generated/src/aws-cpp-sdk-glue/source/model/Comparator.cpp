@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Comparator::NOT_SET:
+            return {};
           case Comparator::EQUALS:
             return "EQUALS";
           case Comparator::GREATER_THAN:

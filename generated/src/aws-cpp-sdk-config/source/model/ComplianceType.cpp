@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComplianceType::NOT_SET:
+            return {};
           case ComplianceType::COMPLIANT:
             return "COMPLIANT";
           case ComplianceType::NON_COMPLIANT:

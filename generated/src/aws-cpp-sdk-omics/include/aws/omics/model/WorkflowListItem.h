@@ -6,9 +6,10 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/WorkflowStatus.h>
 #include <aws/omics/model/WorkflowType.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -79,78 +80,6 @@ namespace Model
      * <p>The workflow's ARN.</p>
      */
     inline WorkflowListItem& WithArn(const char* value) { SetArn(value); return *this;}
-
-
-    /**
-     * <p>When the workflow was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the workflow was created.</p>
-     */
-    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>When the workflow was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>When the workflow was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the workflow was created.</p>
-     */
-    inline WorkflowListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the workflow was created.</p>
-     */
-    inline WorkflowListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline const Aws::String& GetDigest() const{ return m_digest; }
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline bool DigestHasBeenSet() const { return m_digestHasBeenSet; }
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline void SetDigest(const Aws::String& value) { m_digestHasBeenSet = true; m_digest = value; }
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline void SetDigest(Aws::String&& value) { m_digestHasBeenSet = true; m_digest = std::move(value); }
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline void SetDigest(const char* value) { m_digestHasBeenSet = true; m_digest.assign(value); }
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline WorkflowListItem& WithDigest(const Aws::String& value) { SetDigest(value); return *this;}
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline WorkflowListItem& WithDigest(Aws::String&& value) { SetDigest(std::move(value)); return *this;}
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline WorkflowListItem& WithDigest(const char* value) { SetDigest(value); return *this;}
 
 
     /**
@@ -296,16 +225,161 @@ namespace Model
      */
     inline WorkflowListItem& WithType(WorkflowType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The workflow's digest.</p>
+     */
+    inline const Aws::String& GetDigest() const{ return m_digest; }
+
+    /**
+     * <p>The workflow's digest.</p>
+     */
+    inline bool DigestHasBeenSet() const { return m_digestHasBeenSet; }
+
+    /**
+     * <p>The workflow's digest.</p>
+     */
+    inline void SetDigest(const Aws::String& value) { m_digestHasBeenSet = true; m_digest = value; }
+
+    /**
+     * <p>The workflow's digest.</p>
+     */
+    inline void SetDigest(Aws::String&& value) { m_digestHasBeenSet = true; m_digest = std::move(value); }
+
+    /**
+     * <p>The workflow's digest.</p>
+     */
+    inline void SetDigest(const char* value) { m_digestHasBeenSet = true; m_digest.assign(value); }
+
+    /**
+     * <p>The workflow's digest.</p>
+     */
+    inline WorkflowListItem& WithDigest(const Aws::String& value) { SetDigest(value); return *this;}
+
+    /**
+     * <p>The workflow's digest.</p>
+     */
+    inline WorkflowListItem& WithDigest(Aws::String&& value) { SetDigest(std::move(value)); return *this;}
+
+    /**
+     * <p>The workflow's digest.</p>
+     */
+    inline WorkflowListItem& WithDigest(const char* value) { SetDigest(value); return *this;}
+
+
+    /**
+     * <p>When the workflow was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the workflow was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>When the workflow was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>When the workflow was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the workflow was created.</p>
+     */
+    inline WorkflowListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the workflow was created.</p>
+     */
+    inline WorkflowListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline WorkflowListItem& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline WorkflowListItem& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline WorkflowListItem& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline WorkflowListItem& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline WorkflowListItem& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline WorkflowListItem& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline WorkflowListItem& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline WorkflowListItem& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> Any metadata available for workflow. The information listed may vary
+     * depending on the workflow, and there may also be no metadata to return. </p>
+     */
+    inline WorkflowListItem& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet = false;
-
-    Aws::String m_digest;
-    bool m_digestHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
@@ -318,6 +392,15 @@ namespace Model
 
     WorkflowType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_digest;
+    bool m_digestHasBeenSet = false;
+
+    Aws::Utils::DateTime m_creationTime;
+    bool m_creationTimeHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_metadata;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

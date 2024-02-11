@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationCategory::NOT_SET:
+            return {};
           case RecommendationCategory::AWSBestPractices:
             return "AWSBestPractices";
           case RecommendationCategory::AWSCloudFormationIssues:

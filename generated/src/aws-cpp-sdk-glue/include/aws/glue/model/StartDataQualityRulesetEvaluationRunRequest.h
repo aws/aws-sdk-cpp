@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/DataQualityEvaluationRunAdditionalRunOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -288,6 +289,79 @@ namespace Model
      */
     inline StartDataQualityRulesetEvaluationRunRequest& AddRulesetNames(const char* value) { m_rulesetNamesHasBeenSet = true; m_rulesetNames.push_back(value); return *this; }
 
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline const Aws::Map<Aws::String, DataSource>& GetAdditionalDataSources() const{ return m_additionalDataSources; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline bool AdditionalDataSourcesHasBeenSet() const { return m_additionalDataSourcesHasBeenSet; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline void SetAdditionalDataSources(const Aws::Map<Aws::String, DataSource>& value) { m_additionalDataSourcesHasBeenSet = true; m_additionalDataSources = value; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline void SetAdditionalDataSources(Aws::Map<Aws::String, DataSource>&& value) { m_additionalDataSourcesHasBeenSet = true; m_additionalDataSources = std::move(value); }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline StartDataQualityRulesetEvaluationRunRequest& WithAdditionalDataSources(const Aws::Map<Aws::String, DataSource>& value) { SetAdditionalDataSources(value); return *this;}
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline StartDataQualityRulesetEvaluationRunRequest& WithAdditionalDataSources(Aws::Map<Aws::String, DataSource>&& value) { SetAdditionalDataSources(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline StartDataQualityRulesetEvaluationRunRequest& AddAdditionalDataSources(const Aws::String& key, const DataSource& value) { m_additionalDataSourcesHasBeenSet = true; m_additionalDataSources.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline StartDataQualityRulesetEvaluationRunRequest& AddAdditionalDataSources(Aws::String&& key, const DataSource& value) { m_additionalDataSourcesHasBeenSet = true; m_additionalDataSources.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline StartDataQualityRulesetEvaluationRunRequest& AddAdditionalDataSources(const Aws::String& key, DataSource&& value) { m_additionalDataSourcesHasBeenSet = true; m_additionalDataSources.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline StartDataQualityRulesetEvaluationRunRequest& AddAdditionalDataSources(Aws::String&& key, DataSource&& value) { m_additionalDataSourcesHasBeenSet = true; m_additionalDataSources.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline StartDataQualityRulesetEvaluationRunRequest& AddAdditionalDataSources(const char* key, DataSource&& value) { m_additionalDataSourcesHasBeenSet = true; m_additionalDataSources.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline StartDataQualityRulesetEvaluationRunRequest& AddAdditionalDataSources(const char* key, const DataSource& value) { m_additionalDataSourcesHasBeenSet = true; m_additionalDataSources.emplace(key, value); return *this; }
+
   private:
 
     DataSource m_dataSource;
@@ -310,6 +384,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_rulesetNames;
     bool m_rulesetNamesHasBeenSet = false;
+
+    Aws::Map<Aws::String, DataSource> m_additionalDataSources;
+    bool m_additionalDataSourcesHasBeenSet = false;
   };
 
 } // namespace Model

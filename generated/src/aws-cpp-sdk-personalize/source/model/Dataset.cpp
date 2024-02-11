@@ -26,7 +26,9 @@ Dataset::Dataset() :
     m_schemaArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_latestDatasetUpdateHasBeenSet(false),
+    m_trackingIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ Dataset::Dataset(JsonView jsonValue) :
     m_schemaArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_latestDatasetUpdateHasBeenSet(false),
+    m_trackingIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +105,20 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("latestDatasetUpdate"))
+  {
+    m_latestDatasetUpdate = jsonValue.GetObject("latestDatasetUpdate");
+
+    m_latestDatasetUpdateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("trackingId"))
+  {
+    m_trackingId = jsonValue.GetString("trackingId");
+
+    m_trackingIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +170,18 @@ JsonValue Dataset::Jsonize() const
   if(m_lastUpdatedDateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_latestDatasetUpdateHasBeenSet)
+  {
+   payload.WithObject("latestDatasetUpdate", m_latestDatasetUpdate.Jsonize());
+
+  }
+
+  if(m_trackingIdHasBeenSet)
+  {
+   payload.WithString("trackingId", m_trackingId);
+
   }
 
   return payload;

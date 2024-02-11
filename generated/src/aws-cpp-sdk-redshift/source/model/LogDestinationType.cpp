@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogDestinationType::NOT_SET:
+            return {};
           case LogDestinationType::s3:
             return "s3";
           case LogDestinationType::cloudwatch:

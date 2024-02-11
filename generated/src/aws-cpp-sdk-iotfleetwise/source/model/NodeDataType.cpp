@@ -47,6 +47,8 @@ namespace Aws
         static const int STRING_ARRAY_HASH = HashingUtils::HashString("STRING_ARRAY");
         static const int UNIX_TIMESTAMP_ARRAY_HASH = HashingUtils::HashString("UNIX_TIMESTAMP_ARRAY");
         static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static const int STRUCT_HASH = HashingUtils::HashString("STRUCT");
+        static const int STRUCT_ARRAY_HASH = HashingUtils::HashString("STRUCT_ARRAY");
 
 
         NodeDataType GetNodeDataTypeForName(const Aws::String& name)
@@ -160,6 +162,14 @@ namespace Aws
           {
             return NodeDataType::UNKNOWN;
           }
+          else if (hashCode == STRUCT_HASH)
+          {
+            return NodeDataType::STRUCT;
+          }
+          else if (hashCode == STRUCT_ARRAY_HASH)
+          {
+            return NodeDataType::STRUCT_ARRAY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -174,6 +184,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeDataType::NOT_SET:
+            return {};
           case NodeDataType::INT8:
             return "INT8";
           case NodeDataType::UINT8:
@@ -228,6 +240,10 @@ namespace Aws
             return "UNIX_TIMESTAMP_ARRAY";
           case NodeDataType::UNKNOWN:
             return "UNKNOWN";
+          case NodeDataType::STRUCT:
+            return "STRUCT";
+          case NodeDataType::STRUCT_ARRAY:
+            return "STRUCT_ARRAY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

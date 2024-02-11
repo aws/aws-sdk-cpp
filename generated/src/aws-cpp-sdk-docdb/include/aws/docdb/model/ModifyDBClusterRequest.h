@@ -684,51 +684,116 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
+
+    /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
+
+    /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline ModifyDBClusterRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
 
 
     /**
@@ -766,6 +831,79 @@ namespace Model
      * deleted.</p>
      */
     inline ModifyDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline ModifyDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline ModifyDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline ModifyDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
   private:
 
@@ -805,8 +943,14 @@ namespace Model
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;
 
+    bool m_allowMajorVersionUpgrade;
+    bool m_allowMajorVersionUpgradeHasBeenSet = false;
+
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

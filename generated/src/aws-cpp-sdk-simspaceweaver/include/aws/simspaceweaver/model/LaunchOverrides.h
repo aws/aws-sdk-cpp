@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Options that apply when the app starts. These optiAons override default
+   * <p>Options that apply when the app starts. These options override default
    * behavior.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/LaunchOverrides">AWS
    * API Reference</a></p>

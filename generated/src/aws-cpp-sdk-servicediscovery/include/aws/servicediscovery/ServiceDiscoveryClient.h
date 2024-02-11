@@ -31,6 +31,9 @@ namespace ServiceDiscovery
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef ServiceDiscoveryClientConfiguration ClientConfigurationType;
+      typedef ServiceDiscoveryEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -304,8 +307,10 @@ namespace ServiceDiscovery
         /**
          * <p>Discovers registered instances for a specified namespace and service. You can
          * use <code>DiscoverInstances</code> to discover instances for any type of
-         * namespace. For public and private DNS namespaces, you can also use DNS queries
-         * to discover instances.</p><p><h3>See Also:</h3>   <a
+         * namespace. <code>DiscoverInstances</code> returns a randomized list of instances
+         * allowing customers to distribute traffic evenly across instances. For public and
+         * private DNS namespaces, you can also use DNS queries to discover
+         * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstances">AWS
          * API Reference</a></p>
          */
@@ -327,6 +332,32 @@ namespace ServiceDiscovery
         void DiscoverInstancesAsync(const DiscoverInstancesRequestT& request, const DiscoverInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ServiceDiscoveryClient::DiscoverInstances, request, handler, context);
+        }
+
+        /**
+         * <p>Discovers the increasing revision associated with an instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstancesRevision">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DiscoverInstancesRevisionOutcome DiscoverInstancesRevision(const Model::DiscoverInstancesRevisionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DiscoverInstancesRevision that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DiscoverInstancesRevisionRequestT = Model::DiscoverInstancesRevisionRequest>
+        Model::DiscoverInstancesRevisionOutcomeCallable DiscoverInstancesRevisionCallable(const DiscoverInstancesRevisionRequestT& request) const
+        {
+            return SubmitCallable(&ServiceDiscoveryClient::DiscoverInstancesRevision, request);
+        }
+
+        /**
+         * An Async wrapper for DiscoverInstancesRevision that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DiscoverInstancesRevisionRequestT = Model::DiscoverInstancesRevisionRequest>
+        void DiscoverInstancesRevisionAsync(const DiscoverInstancesRevisionRequestT& request, const DiscoverInstancesRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ServiceDiscoveryClient::DiscoverInstancesRevision, request, handler, context);
         }
 
         /**
@@ -410,8 +441,8 @@ namespace ServiceDiscovery
 
         /**
          * <p>Gets information about any operation that returns an operation ID in the
-         * response, such as a <code>CreateService</code> request.</p>  <p>To get a
-         * list of operations that match specified criteria, see <a
+         * response, such as a <code>CreateHttpNamespace</code> request.</p>  <p>To
+         * get a list of operations that match specified criteria, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a>.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetOperation">AWS

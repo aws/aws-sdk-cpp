@@ -18,7 +18,9 @@ UpdateUserRequest::UpdateUserRequest() :
     m_consoleAccessHasBeenSet(false),
     m_groupsHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_replicationUser(false),
+    m_replicationUserHasBeenSet(false)
 {
 }
 
@@ -46,6 +48,12 @@ Aws::String UpdateUserRequest::SerializePayload() const
   if(m_passwordHasBeenSet)
   {
    payload.WithString("password", m_password);
+
+  }
+
+  if(m_replicationUserHasBeenSet)
+  {
+   payload.WithBool("replicationUser", m_replicationUser);
 
   }
 

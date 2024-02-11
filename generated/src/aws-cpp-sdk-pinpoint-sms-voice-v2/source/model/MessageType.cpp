@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MessageType::NOT_SET:
+            return {};
           case MessageType::TRANSACTIONAL:
             return "TRANSACTIONAL";
           case MessageType::PROMOTIONAL:

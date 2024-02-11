@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiscoveryType::NOT_SET:
+            return {};
           case DiscoveryType::RESOURCE_GROUP_BASED:
             return "RESOURCE_GROUP_BASED";
           case DiscoveryType::ACCOUNT_BASED:

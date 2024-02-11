@@ -83,22 +83,34 @@ namespace Model
     inline BatchJobExecutionSummary& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
-    
+    /**
+     * <p>The unique identifier of this batch job.</p>
+     */
     inline const BatchJobIdentifier& GetBatchJobIdentifier() const{ return m_batchJobIdentifier; }
 
-    
+    /**
+     * <p>The unique identifier of this batch job.</p>
+     */
     inline bool BatchJobIdentifierHasBeenSet() const { return m_batchJobIdentifierHasBeenSet; }
 
-    
+    /**
+     * <p>The unique identifier of this batch job.</p>
+     */
     inline void SetBatchJobIdentifier(const BatchJobIdentifier& value) { m_batchJobIdentifierHasBeenSet = true; m_batchJobIdentifier = value; }
 
-    
+    /**
+     * <p>The unique identifier of this batch job.</p>
+     */
     inline void SetBatchJobIdentifier(BatchJobIdentifier&& value) { m_batchJobIdentifierHasBeenSet = true; m_batchJobIdentifier = std::move(value); }
 
-    
+    /**
+     * <p>The unique identifier of this batch job.</p>
+     */
     inline BatchJobExecutionSummary& WithBatchJobIdentifier(const BatchJobIdentifier& value) { SetBatchJobIdentifier(value); return *this;}
 
-    
+    /**
+     * <p>The unique identifier of this batch job.</p>
+     */
     inline BatchJobExecutionSummary& WithBatchJobIdentifier(BatchJobIdentifier&& value) { SetBatchJobIdentifier(std::move(value)); return *this;}
 
 
@@ -288,42 +300,74 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The batch job return code from either the Blu Age or Micro Focus runtime
+     * engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch
+     * return codes</a> in the <i>IBM WebSphere Application Server</i>
+     * documentation.</p>
      */
     inline const Aws::String& GetReturnCode() const{ return m_returnCode; }
 
     /**
-     * <p/>
+     * <p>The batch job return code from either the Blu Age or Micro Focus runtime
+     * engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch
+     * return codes</a> in the <i>IBM WebSphere Application Server</i>
+     * documentation.</p>
      */
     inline bool ReturnCodeHasBeenSet() const { return m_returnCodeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The batch job return code from either the Blu Age or Micro Focus runtime
+     * engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch
+     * return codes</a> in the <i>IBM WebSphere Application Server</i>
+     * documentation.</p>
      */
     inline void SetReturnCode(const Aws::String& value) { m_returnCodeHasBeenSet = true; m_returnCode = value; }
 
     /**
-     * <p/>
+     * <p>The batch job return code from either the Blu Age or Micro Focus runtime
+     * engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch
+     * return codes</a> in the <i>IBM WebSphere Application Server</i>
+     * documentation.</p>
      */
     inline void SetReturnCode(Aws::String&& value) { m_returnCodeHasBeenSet = true; m_returnCode = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The batch job return code from either the Blu Age or Micro Focus runtime
+     * engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch
+     * return codes</a> in the <i>IBM WebSphere Application Server</i>
+     * documentation.</p>
      */
     inline void SetReturnCode(const char* value) { m_returnCodeHasBeenSet = true; m_returnCode.assign(value); }
 
     /**
-     * <p/>
+     * <p>The batch job return code from either the Blu Age or Micro Focus runtime
+     * engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch
+     * return codes</a> in the <i>IBM WebSphere Application Server</i>
+     * documentation.</p>
      */
     inline BatchJobExecutionSummary& WithReturnCode(const Aws::String& value) { SetReturnCode(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The batch job return code from either the Blu Age or Micro Focus runtime
+     * engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch
+     * return codes</a> in the <i>IBM WebSphere Application Server</i>
+     * documentation.</p>
      */
     inline BatchJobExecutionSummary& WithReturnCode(Aws::String&& value) { SetReturnCode(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The batch job return code from either the Blu Age or Micro Focus runtime
+     * engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch
+     * return codes</a> in the <i>IBM WebSphere Application Server</i>
+     * documentation.</p>
      */
     inline BatchJobExecutionSummary& WithReturnCode(const char* value) { SetReturnCode(value); return *this;}
 

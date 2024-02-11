@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrafficDirection::NOT_SET:
+            return {};
           case TrafficDirection::ingress:
             return "ingress";
           case TrafficDirection::egress:

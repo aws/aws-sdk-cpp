@@ -23,7 +23,11 @@ ProjectDescription::ProjectDescription() :
     m_creationTimestampHasBeenSet(false),
     m_status(ProjectStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_datasetsHasBeenSet(false)
+    m_datasetsHasBeenSet(false),
+    m_feature(CustomizationFeature::NOT_SET),
+    m_featureHasBeenSet(false),
+    m_autoUpdate(ProjectAutoUpdate::NOT_SET),
+    m_autoUpdateHasBeenSet(false)
 {
 }
 
@@ -32,7 +36,11 @@ ProjectDescription::ProjectDescription(JsonView jsonValue) :
     m_creationTimestampHasBeenSet(false),
     m_status(ProjectStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_datasetsHasBeenSet(false)
+    m_datasetsHasBeenSet(false),
+    m_feature(CustomizationFeature::NOT_SET),
+    m_featureHasBeenSet(false),
+    m_autoUpdate(ProjectAutoUpdate::NOT_SET),
+    m_autoUpdateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +78,20 @@ ProjectDescription& ProjectDescription::operator =(JsonView jsonValue)
     m_datasetsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Feature"))
+  {
+    m_feature = CustomizationFeatureMapper::GetCustomizationFeatureForName(jsonValue.GetString("Feature"));
+
+    m_featureHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutoUpdate"))
+  {
+    m_autoUpdate = ProjectAutoUpdateMapper::GetProjectAutoUpdateForName(jsonValue.GetString("AutoUpdate"));
+
+    m_autoUpdateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -102,6 +124,16 @@ JsonValue ProjectDescription::Jsonize() const
    }
    payload.WithArray("Datasets", std::move(datasetsJsonList));
 
+  }
+
+  if(m_featureHasBeenSet)
+  {
+   payload.WithString("Feature", CustomizationFeatureMapper::GetNameForCustomizationFeature(m_feature));
+  }
+
+  if(m_autoUpdateHasBeenSet)
+  {
+   payload.WithString("AutoUpdate", ProjectAutoUpdateMapper::GetNameForProjectAutoUpdate(m_autoUpdate));
   }
 
   return payload;

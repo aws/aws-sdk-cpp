@@ -23,7 +23,8 @@ namespace Model
     RollingBack,
     InService,
     Deleting,
-    Failed
+    Failed,
+    UpdateRollbackFailed
   };
 
 namespace EndpointStatusMapper

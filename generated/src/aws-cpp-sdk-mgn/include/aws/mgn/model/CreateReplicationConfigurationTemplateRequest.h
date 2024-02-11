@@ -594,6 +594,31 @@ namespace Model
      */
     inline CreateReplicationConfigurationTemplateRequest& WithUseDedicatedReplicationServer(bool value) { SetUseDedicatedReplicationServer(value); return *this;}
 
+
+    /**
+     * <p>Request to use Fips Endpoint during Replication Settings template
+     * creation.</p>
+     */
+    inline bool GetUseFipsEndpoint() const{ return m_useFipsEndpoint; }
+
+    /**
+     * <p>Request to use Fips Endpoint during Replication Settings template
+     * creation.</p>
+     */
+    inline bool UseFipsEndpointHasBeenSet() const { return m_useFipsEndpointHasBeenSet; }
+
+    /**
+     * <p>Request to use Fips Endpoint during Replication Settings template
+     * creation.</p>
+     */
+    inline void SetUseFipsEndpoint(bool value) { m_useFipsEndpointHasBeenSet = true; m_useFipsEndpoint = value; }
+
+    /**
+     * <p>Request to use Fips Endpoint during Replication Settings template
+     * creation.</p>
+     */
+    inline CreateReplicationConfigurationTemplateRequest& WithUseFipsEndpoint(bool value) { SetUseFipsEndpoint(value); return *this;}
+
   private:
 
     bool m_associateDefaultSecurityGroup;
@@ -634,6 +659,9 @@ namespace Model
 
     bool m_useDedicatedReplicationServer;
     bool m_useDedicatedReplicationServerHasBeenSet = false;
+
+    bool m_useFipsEndpoint;
+    bool m_useFipsEndpointHasBeenSet = false;
   };
 
 } // namespace Model

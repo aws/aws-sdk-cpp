@@ -8,6 +8,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/OnlineStoreConfigUpdate.h>
 #include <aws/sagemaker/model/FeatureDefinition.h>
 #include <utility>
 
@@ -37,42 +38,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the feature group that you're updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group that you're
+     * updating.</p>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
 
     /**
-     * <p>The name of the feature group that you're updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group that you're
+     * updating.</p>
      */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the feature group that you're updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group that you're
+     * updating.</p>
      */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
 
     /**
-     * <p>The name of the feature group that you're updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group that you're
+     * updating.</p>
      */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
 
     /**
-     * <p>The name of the feature group that you're updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group that you're
+     * updating.</p>
      */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
 
     /**
-     * <p>The name of the feature group that you're updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group that you're
+     * updating.</p>
      */
     inline UpdateFeatureGroupRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
 
     /**
-     * <p>The name of the feature group that you're updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group that you're
+     * updating.</p>
      */
     inline UpdateFeatureGroupRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the feature group that you're updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group that you're
+     * updating.</p>
      */
     inline UpdateFeatureGroupRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
 
@@ -141,6 +150,37 @@ namespace Model
      */
     inline UpdateFeatureGroupRequest& AddFeatureAdditions(FeatureDefinition&& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline const OnlineStoreConfigUpdate& GetOnlineStoreConfig() const{ return m_onlineStoreConfig; }
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline bool OnlineStoreConfigHasBeenSet() const { return m_onlineStoreConfigHasBeenSet; }
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline void SetOnlineStoreConfig(const OnlineStoreConfigUpdate& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = value; }
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline void SetOnlineStoreConfig(OnlineStoreConfigUpdate&& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = std::move(value); }
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline UpdateFeatureGroupRequest& WithOnlineStoreConfig(const OnlineStoreConfigUpdate& value) { SetOnlineStoreConfig(value); return *this;}
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline UpdateFeatureGroupRequest& WithOnlineStoreConfig(OnlineStoreConfigUpdate&& value) { SetOnlineStoreConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_featureGroupName;
@@ -148,6 +188,9 @@ namespace Model
 
     Aws::Vector<FeatureDefinition> m_featureAdditions;
     bool m_featureAdditionsHasBeenSet = false;
+
+    OnlineStoreConfigUpdate m_onlineStoreConfig;
+    bool m_onlineStoreConfigHasBeenSet = false;
   };
 
 } // namespace Model

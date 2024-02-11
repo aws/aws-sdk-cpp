@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoSegmentControl::NOT_SET:
+            return {};
           case DashIsoSegmentControl::SINGLE_FILE:
             return "SINGLE_FILE";
           case DashIsoSegmentControl::SEGMENTED_FILES:

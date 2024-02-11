@@ -5,10 +5,13 @@
 
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/braket/model/QuantumTaskQueueInfo.h>
 #include <aws/braket/model/QuantumTaskStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/braket/model/Association.h>
 #include <utility>
 
 namespace Aws
@@ -33,6 +36,42 @@ namespace Model
     AWS_BRAKET_API GetQuantumTaskResult();
     AWS_BRAKET_API GetQuantumTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BRAKET_API GetQuantumTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline const Aws::Vector<Association>& GetAssociations() const{ return m_associations; }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline void SetAssociations(const Aws::Vector<Association>& value) { m_associations = value; }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline void SetAssociations(Aws::Vector<Association>&& value) { m_associations = std::move(value); }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline GetQuantumTaskResult& WithAssociations(const Aws::Vector<Association>& value) { SetAssociations(value); return *this;}
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline GetQuantumTaskResult& WithAssociations(Aws::Vector<Association>&& value) { SetAssociations(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline GetQuantumTaskResult& AddAssociations(const Association& value) { m_associations.push_back(value); return *this; }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline GetQuantumTaskResult& AddAssociations(Association&& value) { m_associations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -340,6 +379,47 @@ namespace Model
 
 
     /**
+     * <p>Queue information for the requested quantum task. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+     * API request.</p>
+     */
+    inline const QuantumTaskQueueInfo& GetQueueInfo() const{ return m_queueInfo; }
+
+    /**
+     * <p>Queue information for the requested quantum task. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+     * API request.</p>
+     */
+    inline void SetQueueInfo(const QuantumTaskQueueInfo& value) { m_queueInfo = value; }
+
+    /**
+     * <p>Queue information for the requested quantum task. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+     * API request.</p>
+     */
+    inline void SetQueueInfo(QuantumTaskQueueInfo&& value) { m_queueInfo = std::move(value); }
+
+    /**
+     * <p>Queue information for the requested quantum task. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+     * API request.</p>
+     */
+    inline GetQuantumTaskResult& WithQueueInfo(const QuantumTaskQueueInfo& value) { SetQueueInfo(value); return *this;}
+
+    /**
+     * <p>Queue information for the requested quantum task. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+     * API request.</p>
+     */
+    inline GetQuantumTaskResult& WithQueueInfo(QuantumTaskQueueInfo&& value) { SetQueueInfo(std::move(value)); return *this;}
+
+
+    /**
      * <p>The number of shots used in the task.</p>
      */
     inline long long GetShots() const{ return m_shots; }
@@ -465,6 +545,8 @@ namespace Model
 
   private:
 
+    Aws::Vector<Association> m_associations;
+
     Aws::Utils::DateTime m_createdAt;
 
     Aws::String m_deviceArn;
@@ -482,6 +564,8 @@ namespace Model
     Aws::String m_outputS3Directory;
 
     Aws::String m_quantumTaskArn;
+
+    QuantumTaskQueueInfo m_queueInfo;
 
     long long m_shots;
 

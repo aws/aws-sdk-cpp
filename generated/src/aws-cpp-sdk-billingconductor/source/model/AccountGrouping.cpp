@@ -19,12 +19,16 @@ namespace Model
 {
 
 AccountGrouping::AccountGrouping() : 
-    m_linkedAccountIdsHasBeenSet(false)
+    m_linkedAccountIdsHasBeenSet(false),
+    m_autoAssociate(false),
+    m_autoAssociateHasBeenSet(false)
 {
 }
 
 AccountGrouping::AccountGrouping(JsonView jsonValue) : 
-    m_linkedAccountIdsHasBeenSet(false)
+    m_linkedAccountIdsHasBeenSet(false),
+    m_autoAssociate(false),
+    m_autoAssociateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +43,13 @@ AccountGrouping& AccountGrouping::operator =(JsonView jsonValue)
       m_linkedAccountIds.push_back(linkedAccountIdsJsonList[linkedAccountIdsIndex].AsString());
     }
     m_linkedAccountIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutoAssociate"))
+  {
+    m_autoAssociate = jsonValue.GetBool("AutoAssociate");
+
+    m_autoAssociateHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +67,12 @@ JsonValue AccountGrouping::Jsonize() const
      linkedAccountIdsJsonList[linkedAccountIdsIndex].AsString(m_linkedAccountIds[linkedAccountIdsIndex]);
    }
    payload.WithArray("LinkedAccountIds", std::move(linkedAccountIdsJsonList));
+
+  }
+
+  if(m_autoAssociateHasBeenSet)
+  {
+   payload.WithBool("AutoAssociate", m_autoAssociate);
 
   }
 

@@ -22,7 +22,8 @@ AgentListEntry::AgentListEntry() :
     m_agentArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(AgentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_platformHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ AgentListEntry::AgentListEntry(JsonView jsonValue) :
     m_agentArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(AgentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_platformHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ AgentListEntry& AgentListEntry::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Platform"))
+  {
+    m_platform = jsonValue.GetObject("Platform");
+
+    m_platformHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue AgentListEntry::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", AgentStatusMapper::GetNameForAgentStatus(m_status));
+  }
+
+  if(m_platformHasBeenSet)
+  {
+   payload.WithObject("Platform", m_platform.Jsonize());
+
   }
 
   return payload;

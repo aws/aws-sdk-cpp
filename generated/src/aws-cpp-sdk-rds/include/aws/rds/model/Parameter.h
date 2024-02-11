@@ -46,83 +46,83 @@ namespace Model
 
 
     /**
-     * <p>Specifies the name of the parameter.</p>
+     * <p>The name of the parameter.</p>
      */
     inline const Aws::String& GetParameterName() const{ return m_parameterName; }
 
     /**
-     * <p>Specifies the name of the parameter.</p>
+     * <p>The name of the parameter.</p>
      */
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
 
     /**
-     * <p>Specifies the name of the parameter.</p>
+     * <p>The name of the parameter.</p>
      */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
 
     /**
-     * <p>Specifies the name of the parameter.</p>
+     * <p>The name of the parameter.</p>
      */
     inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
 
     /**
-     * <p>Specifies the name of the parameter.</p>
+     * <p>The name of the parameter.</p>
      */
     inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
 
     /**
-     * <p>Specifies the name of the parameter.</p>
+     * <p>The name of the parameter.</p>
      */
     inline Parameter& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
 
     /**
-     * <p>Specifies the name of the parameter.</p>
+     * <p>The name of the parameter.</p>
      */
     inline Parameter& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the name of the parameter.</p>
+     * <p>The name of the parameter.</p>
      */
     inline Parameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
 
 
     /**
-     * <p>Specifies the value of the parameter.</p>
+     * <p>The value of the parameter.</p>
      */
     inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
 
     /**
-     * <p>Specifies the value of the parameter.</p>
+     * <p>The value of the parameter.</p>
      */
     inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
 
     /**
-     * <p>Specifies the value of the parameter.</p>
+     * <p>The value of the parameter.</p>
      */
     inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
 
     /**
-     * <p>Specifies the value of the parameter.</p>
+     * <p>The value of the parameter.</p>
      */
     inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
 
     /**
-     * <p>Specifies the value of the parameter.</p>
+     * <p>The value of the parameter.</p>
      */
     inline void SetParameterValue(const char* value) { m_parameterValueHasBeenSet = true; m_parameterValue.assign(value); }
 
     /**
-     * <p>Specifies the value of the parameter.</p>
+     * <p>The value of the parameter.</p>
      */
     inline Parameter& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
 
     /**
-     * <p>Specifies the value of the parameter.</p>
+     * <p>The value of the parameter.</p>
      */
     inline Parameter& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the value of the parameter.</p>
+     * <p>The value of the parameter.</p>
      */
     inline Parameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
 
@@ -169,42 +169,42 @@ namespace Model
 
 
     /**
-     * <p>Indicates the source of the parameter value.</p>
+     * <p>The source of the parameter value.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>Indicates the source of the parameter value.</p>
+     * <p>The source of the parameter value.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>Indicates the source of the parameter value.</p>
+     * <p>The source of the parameter value.</p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>Indicates the source of the parameter value.</p>
+     * <p>The source of the parameter value.</p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>Indicates the source of the parameter value.</p>
+     * <p>The source of the parameter value.</p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>Indicates the source of the parameter value.</p>
+     * <p>The source of the parameter value.</p>
      */
     inline Parameter& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>Indicates the source of the parameter value.</p>
+     * <p>The source of the parameter value.</p>
      */
     inline Parameter& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates the source of the parameter value.</p>
+     * <p>The source of the parameter value.</p>
      */
     inline Parameter& WithSource(const char* value) { SetSource(value); return *this;}
 

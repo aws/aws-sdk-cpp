@@ -75,6 +75,72 @@ namespace Model
 
 
     /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline bool GetEventBridgeEnabled() const{ return m_eventBridgeEnabled; }
+
+    /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline bool EventBridgeEnabledHasBeenSet() const { return m_eventBridgeEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabledHasBeenSet = true; m_eventBridgeEnabled = value; }
+
+    /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline UpdateTrackerRequest& WithEventBridgeEnabled(bool value) { SetEventBridgeEnabled(value); return *this;}
+
+
+    /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>
+     */
+    inline bool GetKmsKeyEnableGeospatialQueries() const{ return m_kmsKeyEnableGeospatialQueries; }
+
+    /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>
+     */
+    inline bool KmsKeyEnableGeospatialQueriesHasBeenSet() const { return m_kmsKeyEnableGeospatialQueriesHasBeenSet; }
+
+    /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>
+     */
+    inline void SetKmsKeyEnableGeospatialQueries(bool value) { m_kmsKeyEnableGeospatialQueriesHasBeenSet = true; m_kmsKeyEnableGeospatialQueries = value; }
+
+    /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>
+     */
+    inline UpdateTrackerRequest& WithKmsKeyEnableGeospatialQueries(bool value) { SetKmsKeyEnableGeospatialQueries(value); return *this;}
+
+
+    /**
      * <p>Updates the position filtering for the tracker resource.</p> <p>Valid
      * values:</p> <ul> <li> <p> <code>TimeBased</code> - Location updates are
      * evaluated against linked geofence collections, but not every location update is
@@ -257,6 +323,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    bool m_eventBridgeEnabled;
+    bool m_eventBridgeEnabledHasBeenSet = false;
+
+    bool m_kmsKeyEnableGeospatialQueries;
+    bool m_kmsKeyEnableGeospatialQueriesHasBeenSet = false;
 
     PositionFiltering m_positionFiltering;
     bool m_positionFilteringHasBeenSet = false;

@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeUserResult::DescribeUserResult() : 
-    m_consoleAccess(false)
+    m_consoleAccess(false),
+    m_replicationUser(false)
 {
 }
 
 DescribeUserResult::DescribeUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_consoleAccess(false)
+    m_consoleAccess(false),
+    m_replicationUser(false)
 {
   *this = result;
 }
@@ -61,6 +63,12 @@ DescribeUserResult& DescribeUserResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
+
+  }
+
+  if(jsonValue.ValueExists("replicationUser"))
+  {
+    m_replicationUser = jsonValue.GetBool("replicationUser");
 
   }
 

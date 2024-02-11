@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitorType::NOT_SET:
+            return {};
           case MonitorType::DIMENSIONAL:
             return "DIMENSIONAL";
           case MonitorType::CUSTOM:

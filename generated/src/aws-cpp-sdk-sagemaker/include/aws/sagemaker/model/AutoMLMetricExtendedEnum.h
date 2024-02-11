@@ -30,7 +30,18 @@ namespace Model
     Recall,
     RecallMacro,
     LogLoss,
-    InferenceLatency
+    InferenceLatency,
+    MAPE,
+    MASE,
+    WAPE,
+    AverageWeightedQuantileLoss,
+    Rouge1,
+    Rouge2,
+    RougeL,
+    RougeLSum,
+    Perplexity,
+    ValidationLoss,
+    TrainingLoss
   };
 
 namespace AutoMLMetricExtendedEnumMapper

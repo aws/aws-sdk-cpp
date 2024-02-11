@@ -39,44 +39,44 @@ namespace Model
 
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source file's location in Amazon S3.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetSourceFile() const{ return m_sourceFile; }
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source file's location in Amazon S3.</p>
      */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline bool SourceFileHasBeenSet() const { return m_sourceFileHasBeenSet; }
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source file's location in Amazon S3.</p>
      */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetSourceFile(const Aws::String& value) { m_sourceFileHasBeenSet = true; m_sourceFile = value; }
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source file's location in Amazon S3.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetSourceFile(Aws::String&& value) { m_sourceFileHasBeenSet = true; m_sourceFile = std::move(value); }
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source file's location in Amazon S3.</p>
      */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline void SetSourceFile(const char* value) { m_sourceFileHasBeenSet = true; m_sourceFile.assign(value); }
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source file's location in Amazon S3.</p>
      */
-    inline StartReferenceImportJobSourceItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline StartReferenceImportJobSourceItem& WithSourceFile(const Aws::String& value) { SetSourceFile(value); return *this;}
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source file's location in Amazon S3.</p>
      */
-    inline StartReferenceImportJobSourceItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline StartReferenceImportJobSourceItem& WithSourceFile(Aws::String&& value) { SetSourceFile(std::move(value)); return *this;}
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source file's location in Amazon S3.</p>
      */
-    inline StartReferenceImportJobSourceItem& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline StartReferenceImportJobSourceItem& WithSourceFile(const char* value) { SetSourceFile(value); return *this;}
 
 
     /**
@@ -121,44 +121,44 @@ namespace Model
 
 
     /**
-     * <p>The source file's location in Amazon S3.</p>
+     * <p>The source's description.</p>
      */
-    inline const Aws::String& GetSourceFile() const{ return m_sourceFile; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The source file's location in Amazon S3.</p>
+     * <p>The source's description.</p>
      */
-    inline bool SourceFileHasBeenSet() const { return m_sourceFileHasBeenSet; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The source file's location in Amazon S3.</p>
+     * <p>The source's description.</p>
      */
-    inline void SetSourceFile(const Aws::String& value) { m_sourceFileHasBeenSet = true; m_sourceFile = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The source file's location in Amazon S3.</p>
+     * <p>The source's description.</p>
      */
-    inline void SetSourceFile(Aws::String&& value) { m_sourceFileHasBeenSet = true; m_sourceFile = std::move(value); }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The source file's location in Amazon S3.</p>
+     * <p>The source's description.</p>
      */
-    inline void SetSourceFile(const char* value) { m_sourceFileHasBeenSet = true; m_sourceFile.assign(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The source file's location in Amazon S3.</p>
+     * <p>The source's description.</p>
      */
-    inline StartReferenceImportJobSourceItem& WithSourceFile(const Aws::String& value) { SetSourceFile(value); return *this;}
+    inline StartReferenceImportJobSourceItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The source file's location in Amazon S3.</p>
+     * <p>The source's description.</p>
      */
-    inline StartReferenceImportJobSourceItem& WithSourceFile(Aws::String&& value) { SetSourceFile(std::move(value)); return *this;}
+    inline StartReferenceImportJobSourceItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The source file's location in Amazon S3.</p>
+     * <p>The source's description.</p>
      */
-    inline StartReferenceImportJobSourceItem& WithSourceFile(const char* value) { SetSourceFile(value); return *this;}
+    inline StartReferenceImportJobSourceItem& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -228,14 +228,14 @@ namespace Model
 
   private:
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::String m_sourceFile;
+    bool m_sourceFileHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::String m_sourceFile;
-    bool m_sourceFileHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

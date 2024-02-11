@@ -234,6 +234,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JDBCDataType::NOT_SET:
+            return {};
           case JDBCDataType::ARRAY:
             return "ARRAY";
           case JDBCDataType::BIGINT:

@@ -150,44 +150,51 @@ namespace Model
 
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint.</p>
      */
     inline const Aws::Vector<ProductionVariantSummary>& GetProductionVariants() const{ return m_productionVariants; }
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint.</p>
      */
     inline void SetProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { m_productionVariants = value; }
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint.</p>
      */
     inline void SetProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { m_productionVariants = std::move(value); }
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint.</p>
      */
     inline DescribeEndpointResult& WithProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { SetProductionVariants(value); return *this;}
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint.</p>
      */
     inline DescribeEndpointResult& WithProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { SetProductionVariants(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint.</p>
      */
     inline DescribeEndpointResult& AddProductionVariants(const ProductionVariantSummary& value) { m_productionVariants.push_back(value); return *this; }
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint.</p>
      */
     inline DescribeEndpointResult& AddProductionVariants(ProductionVariantSummary&& value) { m_productionVariants.push_back(std::move(value)); return *this; }
 
@@ -211,135 +218,210 @@ namespace Model
     /**
      * <p>The status of the endpoint.</p> <ul> <li> <p> <code>OutOfService</code>:
      * Endpoint is not available to take incoming requests.</p> </li> <li> <p>
-     * <code>Creating</code>: <a>CreateEndpoint</a> is executing.</p> </li> <li> <p>
-     * <code>Updating</code>: <a>UpdateEndpoint</a> or
-     * <a>UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li> <li> <p>
-     * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be
-     * updated or deleted or re-scaled until it has completed. This maintenance
-     * operation does not change any customer-specified values such as VPC config, KMS
-     * encryption, model, instance type, or instance count.</p> </li> <li> <p>
-     * <code>RollingBack</code>: Endpoint fails to scale up or down or change its
-     * variant weight and is in the process of rolling back to its previous
-     * configuration. Once the rollback completes, endpoint returns to an
+     * <code>Creating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+     * is executing.</p> </li> <li> <p> <code>Updating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * is executing.</p> </li> <li> <p> <code>SystemUpdating</code>: Endpoint is
+     * undergoing maintenance and cannot be updated or deleted or re-scaled until it
+     * has completed. This maintenance operation does not change any customer-specified
+     * values such as VPC config, KMS encryption, model, instance type, or instance
+     * count.</p> </li> <li> <p> <code>RollingBack</code>: Endpoint fails to scale up
+     * or down or change its variant weight and is in the process of rolling back to
+     * its previous configuration. Once the rollback completes, endpoint returns to an
      * <code>InService</code> status. This transitional status only applies to an
      * endpoint that has autoscaling enabled and is undergoing variant weight or
-     * capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a> call or
-     * when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called
-     * explicitly.</p> </li> <li> <p> <code>InService</code>: Endpoint is available to
-     * process incoming requests.</p> </li> <li> <p> <code>Deleting</code>:
-     * <a>DeleteEndpoint</a> is executing.</p> </li> <li> <p> <code>Failed</code>:
-     * Endpoint could not be created, updated, or re-scaled. Use
-     * <a>DescribeEndpointOutput$FailureReason</a> for information about the failure.
-     * <a>DeleteEndpoint</a> is the only operation that can be performed on a failed
-     * endpoint.</p> </li> </ul>
+     * capacity changes as part of an <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * call or when the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * operation is called explicitly.</p> </li> <li> <p> <code>InService</code>:
+     * Endpoint is available to process incoming requests.</p> </li> <li> <p>
+     * <code>Deleting</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+     * is executing.</p> </li> <li> <p> <code>Failed</code>: Endpoint could not be
+     * created, updated, or re-scaled. Use the <code>FailureReason</code> value
+     * returned by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+     * for information about the failure. <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+     * is the only operation that can be performed on a failed endpoint.</p> </li> <li>
+     * <p> <code>UpdateRollbackFailed</code>: Both the rolling deployment and
+     * auto-rollback failed. Your endpoint is in service with a mix of the old and new
+     * endpoint configurations. For information about how to remedy this issue and
+     * restore the endpoint's status to <code>InService</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.html">Rolling
+     * Deployments</a>.</p> </li> </ul>
      */
     inline const EndpointStatus& GetEndpointStatus() const{ return m_endpointStatus; }
 
     /**
      * <p>The status of the endpoint.</p> <ul> <li> <p> <code>OutOfService</code>:
      * Endpoint is not available to take incoming requests.</p> </li> <li> <p>
-     * <code>Creating</code>: <a>CreateEndpoint</a> is executing.</p> </li> <li> <p>
-     * <code>Updating</code>: <a>UpdateEndpoint</a> or
-     * <a>UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li> <li> <p>
-     * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be
-     * updated or deleted or re-scaled until it has completed. This maintenance
-     * operation does not change any customer-specified values such as VPC config, KMS
-     * encryption, model, instance type, or instance count.</p> </li> <li> <p>
-     * <code>RollingBack</code>: Endpoint fails to scale up or down or change its
-     * variant weight and is in the process of rolling back to its previous
-     * configuration. Once the rollback completes, endpoint returns to an
+     * <code>Creating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+     * is executing.</p> </li> <li> <p> <code>Updating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * is executing.</p> </li> <li> <p> <code>SystemUpdating</code>: Endpoint is
+     * undergoing maintenance and cannot be updated or deleted or re-scaled until it
+     * has completed. This maintenance operation does not change any customer-specified
+     * values such as VPC config, KMS encryption, model, instance type, or instance
+     * count.</p> </li> <li> <p> <code>RollingBack</code>: Endpoint fails to scale up
+     * or down or change its variant weight and is in the process of rolling back to
+     * its previous configuration. Once the rollback completes, endpoint returns to an
      * <code>InService</code> status. This transitional status only applies to an
      * endpoint that has autoscaling enabled and is undergoing variant weight or
-     * capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a> call or
-     * when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called
-     * explicitly.</p> </li> <li> <p> <code>InService</code>: Endpoint is available to
-     * process incoming requests.</p> </li> <li> <p> <code>Deleting</code>:
-     * <a>DeleteEndpoint</a> is executing.</p> </li> <li> <p> <code>Failed</code>:
-     * Endpoint could not be created, updated, or re-scaled. Use
-     * <a>DescribeEndpointOutput$FailureReason</a> for information about the failure.
-     * <a>DeleteEndpoint</a> is the only operation that can be performed on a failed
-     * endpoint.</p> </li> </ul>
+     * capacity changes as part of an <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * call or when the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * operation is called explicitly.</p> </li> <li> <p> <code>InService</code>:
+     * Endpoint is available to process incoming requests.</p> </li> <li> <p>
+     * <code>Deleting</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+     * is executing.</p> </li> <li> <p> <code>Failed</code>: Endpoint could not be
+     * created, updated, or re-scaled. Use the <code>FailureReason</code> value
+     * returned by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+     * for information about the failure. <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+     * is the only operation that can be performed on a failed endpoint.</p> </li> <li>
+     * <p> <code>UpdateRollbackFailed</code>: Both the rolling deployment and
+     * auto-rollback failed. Your endpoint is in service with a mix of the old and new
+     * endpoint configurations. For information about how to remedy this issue and
+     * restore the endpoint's status to <code>InService</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.html">Rolling
+     * Deployments</a>.</p> </li> </ul>
      */
     inline void SetEndpointStatus(const EndpointStatus& value) { m_endpointStatus = value; }
 
     /**
      * <p>The status of the endpoint.</p> <ul> <li> <p> <code>OutOfService</code>:
      * Endpoint is not available to take incoming requests.</p> </li> <li> <p>
-     * <code>Creating</code>: <a>CreateEndpoint</a> is executing.</p> </li> <li> <p>
-     * <code>Updating</code>: <a>UpdateEndpoint</a> or
-     * <a>UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li> <li> <p>
-     * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be
-     * updated or deleted or re-scaled until it has completed. This maintenance
-     * operation does not change any customer-specified values such as VPC config, KMS
-     * encryption, model, instance type, or instance count.</p> </li> <li> <p>
-     * <code>RollingBack</code>: Endpoint fails to scale up or down or change its
-     * variant weight and is in the process of rolling back to its previous
-     * configuration. Once the rollback completes, endpoint returns to an
+     * <code>Creating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+     * is executing.</p> </li> <li> <p> <code>Updating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * is executing.</p> </li> <li> <p> <code>SystemUpdating</code>: Endpoint is
+     * undergoing maintenance and cannot be updated or deleted or re-scaled until it
+     * has completed. This maintenance operation does not change any customer-specified
+     * values such as VPC config, KMS encryption, model, instance type, or instance
+     * count.</p> </li> <li> <p> <code>RollingBack</code>: Endpoint fails to scale up
+     * or down or change its variant weight and is in the process of rolling back to
+     * its previous configuration. Once the rollback completes, endpoint returns to an
      * <code>InService</code> status. This transitional status only applies to an
      * endpoint that has autoscaling enabled and is undergoing variant weight or
-     * capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a> call or
-     * when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called
-     * explicitly.</p> </li> <li> <p> <code>InService</code>: Endpoint is available to
-     * process incoming requests.</p> </li> <li> <p> <code>Deleting</code>:
-     * <a>DeleteEndpoint</a> is executing.</p> </li> <li> <p> <code>Failed</code>:
-     * Endpoint could not be created, updated, or re-scaled. Use
-     * <a>DescribeEndpointOutput$FailureReason</a> for information about the failure.
-     * <a>DeleteEndpoint</a> is the only operation that can be performed on a failed
-     * endpoint.</p> </li> </ul>
+     * capacity changes as part of an <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * call or when the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * operation is called explicitly.</p> </li> <li> <p> <code>InService</code>:
+     * Endpoint is available to process incoming requests.</p> </li> <li> <p>
+     * <code>Deleting</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+     * is executing.</p> </li> <li> <p> <code>Failed</code>: Endpoint could not be
+     * created, updated, or re-scaled. Use the <code>FailureReason</code> value
+     * returned by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+     * for information about the failure. <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+     * is the only operation that can be performed on a failed endpoint.</p> </li> <li>
+     * <p> <code>UpdateRollbackFailed</code>: Both the rolling deployment and
+     * auto-rollback failed. Your endpoint is in service with a mix of the old and new
+     * endpoint configurations. For information about how to remedy this issue and
+     * restore the endpoint's status to <code>InService</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.html">Rolling
+     * Deployments</a>.</p> </li> </ul>
      */
     inline void SetEndpointStatus(EndpointStatus&& value) { m_endpointStatus = std::move(value); }
 
     /**
      * <p>The status of the endpoint.</p> <ul> <li> <p> <code>OutOfService</code>:
      * Endpoint is not available to take incoming requests.</p> </li> <li> <p>
-     * <code>Creating</code>: <a>CreateEndpoint</a> is executing.</p> </li> <li> <p>
-     * <code>Updating</code>: <a>UpdateEndpoint</a> or
-     * <a>UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li> <li> <p>
-     * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be
-     * updated or deleted or re-scaled until it has completed. This maintenance
-     * operation does not change any customer-specified values such as VPC config, KMS
-     * encryption, model, instance type, or instance count.</p> </li> <li> <p>
-     * <code>RollingBack</code>: Endpoint fails to scale up or down or change its
-     * variant weight and is in the process of rolling back to its previous
-     * configuration. Once the rollback completes, endpoint returns to an
+     * <code>Creating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+     * is executing.</p> </li> <li> <p> <code>Updating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * is executing.</p> </li> <li> <p> <code>SystemUpdating</code>: Endpoint is
+     * undergoing maintenance and cannot be updated or deleted or re-scaled until it
+     * has completed. This maintenance operation does not change any customer-specified
+     * values such as VPC config, KMS encryption, model, instance type, or instance
+     * count.</p> </li> <li> <p> <code>RollingBack</code>: Endpoint fails to scale up
+     * or down or change its variant weight and is in the process of rolling back to
+     * its previous configuration. Once the rollback completes, endpoint returns to an
      * <code>InService</code> status. This transitional status only applies to an
      * endpoint that has autoscaling enabled and is undergoing variant weight or
-     * capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a> call or
-     * when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called
-     * explicitly.</p> </li> <li> <p> <code>InService</code>: Endpoint is available to
-     * process incoming requests.</p> </li> <li> <p> <code>Deleting</code>:
-     * <a>DeleteEndpoint</a> is executing.</p> </li> <li> <p> <code>Failed</code>:
-     * Endpoint could not be created, updated, or re-scaled. Use
-     * <a>DescribeEndpointOutput$FailureReason</a> for information about the failure.
-     * <a>DeleteEndpoint</a> is the only operation that can be performed on a failed
-     * endpoint.</p> </li> </ul>
+     * capacity changes as part of an <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * call or when the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * operation is called explicitly.</p> </li> <li> <p> <code>InService</code>:
+     * Endpoint is available to process incoming requests.</p> </li> <li> <p>
+     * <code>Deleting</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+     * is executing.</p> </li> <li> <p> <code>Failed</code>: Endpoint could not be
+     * created, updated, or re-scaled. Use the <code>FailureReason</code> value
+     * returned by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+     * for information about the failure. <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+     * is the only operation that can be performed on a failed endpoint.</p> </li> <li>
+     * <p> <code>UpdateRollbackFailed</code>: Both the rolling deployment and
+     * auto-rollback failed. Your endpoint is in service with a mix of the old and new
+     * endpoint configurations. For information about how to remedy this issue and
+     * restore the endpoint's status to <code>InService</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.html">Rolling
+     * Deployments</a>.</p> </li> </ul>
      */
     inline DescribeEndpointResult& WithEndpointStatus(const EndpointStatus& value) { SetEndpointStatus(value); return *this;}
 
     /**
      * <p>The status of the endpoint.</p> <ul> <li> <p> <code>OutOfService</code>:
      * Endpoint is not available to take incoming requests.</p> </li> <li> <p>
-     * <code>Creating</code>: <a>CreateEndpoint</a> is executing.</p> </li> <li> <p>
-     * <code>Updating</code>: <a>UpdateEndpoint</a> or
-     * <a>UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li> <li> <p>
-     * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be
-     * updated or deleted or re-scaled until it has completed. This maintenance
-     * operation does not change any customer-specified values such as VPC config, KMS
-     * encryption, model, instance type, or instance count.</p> </li> <li> <p>
-     * <code>RollingBack</code>: Endpoint fails to scale up or down or change its
-     * variant weight and is in the process of rolling back to its previous
-     * configuration. Once the rollback completes, endpoint returns to an
+     * <code>Creating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+     * is executing.</p> </li> <li> <p> <code>Updating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * is executing.</p> </li> <li> <p> <code>SystemUpdating</code>: Endpoint is
+     * undergoing maintenance and cannot be updated or deleted or re-scaled until it
+     * has completed. This maintenance operation does not change any customer-specified
+     * values such as VPC config, KMS encryption, model, instance type, or instance
+     * count.</p> </li> <li> <p> <code>RollingBack</code>: Endpoint fails to scale up
+     * or down or change its variant weight and is in the process of rolling back to
+     * its previous configuration. Once the rollback completes, endpoint returns to an
      * <code>InService</code> status. This transitional status only applies to an
      * endpoint that has autoscaling enabled and is undergoing variant weight or
-     * capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a> call or
-     * when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called
-     * explicitly.</p> </li> <li> <p> <code>InService</code>: Endpoint is available to
-     * process incoming requests.</p> </li> <li> <p> <code>Deleting</code>:
-     * <a>DeleteEndpoint</a> is executing.</p> </li> <li> <p> <code>Failed</code>:
-     * Endpoint could not be created, updated, or re-scaled. Use
-     * <a>DescribeEndpointOutput$FailureReason</a> for information about the failure.
-     * <a>DeleteEndpoint</a> is the only operation that can be performed on a failed
-     * endpoint.</p> </li> </ul>
+     * capacity changes as part of an <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * call or when the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+     * operation is called explicitly.</p> </li> <li> <p> <code>InService</code>:
+     * Endpoint is available to process incoming requests.</p> </li> <li> <p>
+     * <code>Deleting</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+     * is executing.</p> </li> <li> <p> <code>Failed</code>: Endpoint could not be
+     * created, updated, or re-scaled. Use the <code>FailureReason</code> value
+     * returned by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+     * for information about the failure. <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+     * is the only operation that can be performed on a failed endpoint.</p> </li> <li>
+     * <p> <code>UpdateRollbackFailed</code>: Both the rolling deployment and
+     * auto-rollback failed. Your endpoint is in service with a mix of the old and new
+     * endpoint configurations. For information about how to remedy this issue and
+     * restore the endpoint's status to <code>InService</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.html">Rolling
+     * Deployments</a>.</p> </li> </ul>
      */
     inline DescribeEndpointResult& WithEndpointStatus(EndpointStatus&& value) { SetEndpointStatus(std::move(value)); return *this;}
 
@@ -559,51 +641,65 @@ namespace Model
 
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
-     * you want to host at this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model that you want to host at this endpoint in shadow
+     * mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.</p>
      */
     inline const Aws::Vector<ProductionVariantSummary>& GetShadowProductionVariants() const{ return m_shadowProductionVariants; }
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
-     * you want to host at this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model that you want to host at this endpoint in shadow
+     * mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.</p>
      */
     inline void SetShadowProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { m_shadowProductionVariants = value; }
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
-     * you want to host at this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model that you want to host at this endpoint in shadow
+     * mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.</p>
      */
     inline void SetShadowProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { m_shadowProductionVariants = std::move(value); }
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
-     * you want to host at this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model that you want to host at this endpoint in shadow
+     * mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.</p>
      */
     inline DescribeEndpointResult& WithShadowProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { SetShadowProductionVariants(value); return *this;}
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
-     * you want to host at this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model that you want to host at this endpoint in shadow
+     * mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.</p>
      */
     inline DescribeEndpointResult& WithShadowProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { SetShadowProductionVariants(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
-     * you want to host at this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model that you want to host at this endpoint in shadow
+     * mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.</p>
      */
     inline DescribeEndpointResult& AddShadowProductionVariants(const ProductionVariantSummary& value) { m_shadowProductionVariants.push_back(value); return *this; }
 
     /**
-     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
-     * you want to host at this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+     * objects, one for each model that you want to host at this endpoint in shadow
+     * mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.</p>
      */
     inline DescribeEndpointResult& AddShadowProductionVariants(ProductionVariantSummary&& value) { m_shadowProductionVariants.push_back(std::move(value)); return *this; }
 

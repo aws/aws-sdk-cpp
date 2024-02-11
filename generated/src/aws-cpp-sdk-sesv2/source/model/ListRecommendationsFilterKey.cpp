@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListRecommendationsFilterKey::NOT_SET:
+            return {};
           case ListRecommendationsFilterKey::TYPE:
             return "TYPE";
           case ListRecommendationsFilterKey::IMPACT:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SlotShape::NOT_SET:
+            return {};
           case SlotShape::Scalar:
             return "Scalar";
           case SlotShape::List:

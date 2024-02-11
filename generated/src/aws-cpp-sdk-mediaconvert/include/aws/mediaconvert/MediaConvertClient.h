@@ -25,6 +25,9 @@ namespace MediaConvert
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef MediaConvertClientConfiguration ClientConfigurationType;
+      typedef MediaConvertEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -390,8 +393,7 @@ namespace MediaConvert
         }
 
         /**
-         * Retrieve the JSON for a specific completed transcoding job.<p><h3>See Also:</h3>
-         * <a
+         * Retrieve the JSON for a specific transcoding job.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetJob">AWS
          * API Reference</a></p>
          */

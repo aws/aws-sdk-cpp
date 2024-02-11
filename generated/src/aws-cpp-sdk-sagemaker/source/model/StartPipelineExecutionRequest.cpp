@@ -17,9 +17,10 @@ StartPipelineExecutionRequest::StartPipelineExecutionRequest() :
     m_pipelineExecutionDisplayNameHasBeenSet(false),
     m_pipelineParametersHasBeenSet(false),
     m_pipelineExecutionDescriptionHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_parallelismConfigurationHasBeenSet(false)
+    m_parallelismConfigurationHasBeenSet(false),
+    m_selectiveExecutionConfigHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,12 @@ Aws::String StartPipelineExecutionRequest::SerializePayload() const
   if(m_parallelismConfigurationHasBeenSet)
   {
    payload.WithObject("ParallelismConfiguration", m_parallelismConfiguration.Jsonize());
+
+  }
+
+  if(m_selectiveExecutionConfigHasBeenSet)
+  {
+   payload.WithObject("SelectiveExecutionConfig", m_selectiveExecutionConfig.Jsonize());
 
   }
 

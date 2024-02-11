@@ -145,61 +145,55 @@ namespace Model
 
 
     /**
-     * Settings related to one captions tab on the MediaConvert console. In your job
-     * JSON, an instance of captions DestinationSettings is equivalent to one captions
-     * tab in the console. Usually, one captions tab corresponds to one output captions
-     * track. Depending on your output captions format, one tab might correspond to a
-     * set of output captions tracks. For more information, see
+     * Settings related to one captions tab on the MediaConvert console. Usually, one
+     * captions tab corresponds to one output captions track. Depending on your output
+     * captions format, one tab might correspond to a set of output captions tracks.
+     * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline const CaptionDestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
 
     /**
-     * Settings related to one captions tab on the MediaConvert console. In your job
-     * JSON, an instance of captions DestinationSettings is equivalent to one captions
-     * tab in the console. Usually, one captions tab corresponds to one output captions
-     * track. Depending on your output captions format, one tab might correspond to a
-     * set of output captions tracks. For more information, see
+     * Settings related to one captions tab on the MediaConvert console. Usually, one
+     * captions tab corresponds to one output captions track. Depending on your output
+     * captions format, one tab might correspond to a set of output captions tracks.
+     * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
 
     /**
-     * Settings related to one captions tab on the MediaConvert console. In your job
-     * JSON, an instance of captions DestinationSettings is equivalent to one captions
-     * tab in the console. Usually, one captions tab corresponds to one output captions
-     * track. Depending on your output captions format, one tab might correspond to a
-     * set of output captions tracks. For more information, see
+     * Settings related to one captions tab on the MediaConvert console. Usually, one
+     * captions tab corresponds to one output captions track. Depending on your output
+     * captions format, one tab might correspond to a set of output captions tracks.
+     * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline void SetDestinationSettings(const CaptionDestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
 
     /**
-     * Settings related to one captions tab on the MediaConvert console. In your job
-     * JSON, an instance of captions DestinationSettings is equivalent to one captions
-     * tab in the console. Usually, one captions tab corresponds to one output captions
-     * track. Depending on your output captions format, one tab might correspond to a
-     * set of output captions tracks. For more information, see
+     * Settings related to one captions tab on the MediaConvert console. Usually, one
+     * captions tab corresponds to one output captions track. Depending on your output
+     * captions format, one tab might correspond to a set of output captions tracks.
+     * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline void SetDestinationSettings(CaptionDestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
 
     /**
-     * Settings related to one captions tab on the MediaConvert console. In your job
-     * JSON, an instance of captions DestinationSettings is equivalent to one captions
-     * tab in the console. Usually, one captions tab corresponds to one output captions
-     * track. Depending on your output captions format, one tab might correspond to a
-     * set of output captions tracks. For more information, see
+     * Settings related to one captions tab on the MediaConvert console. Usually, one
+     * captions tab corresponds to one output captions track. Depending on your output
+     * captions format, one tab might correspond to a set of output captions tracks.
+     * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline CaptionDescriptionPreset& WithDestinationSettings(const CaptionDestinationSettings& value) { SetDestinationSettings(value); return *this;}
 
     /**
-     * Settings related to one captions tab on the MediaConvert console. In your job
-     * JSON, an instance of captions DestinationSettings is equivalent to one captions
-     * tab in the console. Usually, one captions tab corresponds to one output captions
-     * track. Depending on your output captions format, one tab might correspond to a
-     * set of output captions tracks. For more information, see
+     * Settings related to one captions tab on the MediaConvert console. Usually, one
+     * captions tab corresponds to one output captions track. Depending on your output
+     * captions format, one tab might correspond to a set of output captions tracks.
+     * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline CaptionDescriptionPreset& WithDestinationSettings(CaptionDestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}

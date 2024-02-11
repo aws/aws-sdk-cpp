@@ -31,7 +31,9 @@ HealthEvent::HealthEvent() :
     m_percentOfTotalTrafficImpacted(0.0),
     m_percentOfTotalTrafficImpactedHasBeenSet(false),
     m_impactType(HealthEventImpactType::NOT_SET),
-    m_impactTypeHasBeenSet(false)
+    m_impactTypeHasBeenSet(false),
+    m_healthScoreThreshold(0.0),
+    m_healthScoreThresholdHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ HealthEvent::HealthEvent(JsonView jsonValue) :
     m_percentOfTotalTrafficImpacted(0.0),
     m_percentOfTotalTrafficImpactedHasBeenSet(false),
     m_impactType(HealthEventImpactType::NOT_SET),
-    m_impactTypeHasBeenSet(false)
+    m_impactTypeHasBeenSet(false),
+    m_healthScoreThreshold(0.0),
+    m_healthScoreThresholdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +132,13 @@ HealthEvent& HealthEvent::operator =(JsonView jsonValue)
     m_impactTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HealthScoreThreshold"))
+  {
+    m_healthScoreThreshold = jsonValue.GetDouble("HealthScoreThreshold");
+
+    m_healthScoreThresholdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -192,6 +203,12 @@ JsonValue HealthEvent::Jsonize() const
   if(m_impactTypeHasBeenSet)
   {
    payload.WithString("ImpactType", HealthEventImpactTypeMapper::GetNameForHealthEventImpactType(m_impactType));
+  }
+
+  if(m_healthScoreThresholdHasBeenSet)
+  {
+   payload.WithDouble("HealthScoreThreshold", m_healthScoreThreshold);
+
   }
 
   return payload;

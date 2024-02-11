@@ -19,9 +19,12 @@ CreateResolverEndpointRequest::CreateResolverEndpointRequest() :
     m_direction(ResolverEndpointDirection::NOT_SET),
     m_directionHasBeenSet(false),
     m_ipAddressesHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
+    m_preferredInstanceTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resolverEndpointType(ResolverEndpointType::NOT_SET),
-    m_resolverEndpointTypeHasBeenSet(false)
+    m_resolverEndpointTypeHasBeenSet(false),
+    m_protocolsHasBeenSet(false)
 {
 }
 
@@ -68,6 +71,18 @@ Aws::String CreateResolverEndpointRequest::SerializePayload() const
 
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+   payload.WithString("OutpostArn", m_outpostArn);
+
+  }
+
+  if(m_preferredInstanceTypeHasBeenSet)
+  {
+   payload.WithString("PreferredInstanceType", m_preferredInstanceType);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
@@ -82,6 +97,17 @@ Aws::String CreateResolverEndpointRequest::SerializePayload() const
   if(m_resolverEndpointTypeHasBeenSet)
   {
    payload.WithString("ResolverEndpointType", ResolverEndpointTypeMapper::GetNameForResolverEndpointType(m_resolverEndpointType));
+  }
+
+  if(m_protocolsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
+   for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+   {
+     protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
+   }
+   payload.WithArray("Protocols", std::move(protocolsJsonList));
+
   }
 
   return payload.View().WriteReadable();

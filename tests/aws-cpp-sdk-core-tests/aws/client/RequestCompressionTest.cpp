@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/client/RequestCompression.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -11,8 +11,12 @@
 static const char AWS_REQUEST_COMPRESSION_TEST_ALLOCATION_TAG[] =
     "RequestCompressionTest";
 #ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
+class RequestCompressionZlibTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
 // Only run these tests when ZLIB support is available
-TEST(RequestCompressionZlibTest, TestStringGetsCompressed) {
+TEST_F(RequestCompressionZlibTest, TestStringGetsCompressed) {
     Aws::Client::RequestCompression r;
     auto testingStream = Aws::MakeShared<Aws::StringStream>(AWS_REQUEST_COMPRESSION_TEST_ALLOCATION_TAG);
     const Aws::String testString =
@@ -29,7 +33,7 @@ compressed string than the uncompressed, it has to be somehow long.
     ASSERT_GT(testString.length(), compressed_size);
 }
 
-TEST(RequestCompressionZlibTest, TestCompressedUncompressIsIdem) {
+TEST_F(RequestCompressionZlibTest, TestCompressedUncompressIsIdem) {
     Aws::Client::RequestCompression r;
     auto testingStream = Aws::MakeShared<Aws::StringStream>(
         AWS_REQUEST_COMPRESSION_TEST_ALLOCATION_TAG);
@@ -48,7 +52,7 @@ TEST(RequestCompressionZlibTest, TestCompressedUncompressIsIdem) {
     ASSERT_STREQ(testString.c_str(), uncompressedString.c_str());
 }
 
-TEST(RequestCompressionZlibTest, TestCompressedLargerThanBufferStreamUncompressIsIdem) {
+TEST_F(RequestCompressionZlibTest, TestCompressedLargerThanBufferStreamUncompressIsIdem) {
     Aws::Client::RequestCompression r;
     auto testingStream = Aws::MakeShared<Aws::StringStream>(
         AWS_REQUEST_COMPRESSION_TEST_ALLOCATION_TAG);
@@ -78,8 +82,11 @@ TEST(RequestCompressionZlibTest, TestCompressedLargerThanBufferStreamUncompressI
 
 #else
 // When no compression support is available run these tests instead
+class RequestCompressionZlibTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
 
-TEST(RequestCompressionZlibTest, TestStringFailsToGetsCompressedWithoutZlibSupport) {
+TEST_F(RequestCompressionZlibTest, TestStringFailsToGetsCompressedWithoutZlibSupport) {
     Aws::Client::RequestCompression r;
     const Aws::String testString =
         R"zzz(This is a test string that should be compressed

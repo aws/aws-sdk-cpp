@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AcceleratorManufacturer::NOT_SET:
+            return {};
           case AcceleratorManufacturer::nvidia:
             return "nvidia";
           case AcceleratorManufacturer::amd:

@@ -31,7 +31,27 @@ namespace PinpointSMSVoiceV2
    * Amazon Pinpoint features programmatically and how to integrate Amazon Pinpoint
    * functionality into mobile apps and other types of applications. The guide also
    * provides key information, such as Amazon Pinpoint integration with other Amazon
-   * Web Services services, and the quotas that apply to use of the service.</p>
+   * Web Services services, and the quotas that apply to use of the service.</p> <p>
+   * <b>Regional availability</b> </p> <p>The <i>Amazon Pinpoint SMS and Voice,
+   * version 2 API Reference</i> is available in several Amazon Web Services Regions
+   * and it provides an endpoint for each of these Regions. For a list of all the
+   * Regions and endpoints where the API is currently available, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region">Amazon
+   * Web Services Service Endpoints</a> and <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/pinpoint.html">Amazon
+   * Pinpoint endpoints and quotas</a> in the Amazon Web Services General Reference.
+   * To learn more about Amazon Web Services Regions, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
+   * Amazon Web Services Regions</a> in the Amazon Web Services General
+   * Reference.</p> <p>In each Region, Amazon Web Services maintains multiple
+   * Availability Zones. These Availability Zones are physically isolated from each
+   * other, but are united by private, low-latency, high-throughput, and highly
+   * redundant network connections. These Availability Zones enable us to provide
+   * very high levels of availability and redundancy, while also minimizing latency.
+   * To learn more about the number of Availability Zones that are available in each
+   * Region, see <a
+   * href="https://aws.amazon.com/about-aws/global-infrastructure/">Amazon Web
+   * Services Global Infrastructure.</a> </p>
    */
   class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceV2Client>
   {
@@ -39,6 +59,9 @@ namespace PinpointSMSVoiceV2
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef PinpointSMSVoiceV2ClientConfiguration ClientConfigurationType;
+      typedef PinpointSMSVoiceV2EndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -91,9 +114,9 @@ namespace PinpointSMSVoiceV2
         /**
          * <p>Associates the specified origination identity with a pool.</p> <p>If the
          * origination identity is a phone number and is already associated with another
-         * pool, an Error is returned. A sender ID can be associated with multiple
+         * pool, an error is returned. A sender ID can be associated with multiple
          * pools.</p> <p>If the origination identity configuration doesn't match the pool's
-         * configuration, an Error is returned.</p><p><h3>See Also:</h3>   <a
+         * configuration, an error is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateOriginationIdentity">AWS
          * API Reference</a></p>
          */
@@ -181,7 +204,7 @@ namespace PinpointSMSVoiceV2
 
         /**
          * <p>Creates a new opt-out list.</p> <p>If the opt-out list name already exists,
-         * an Error is returned.</p> <p>An opt-out list is a list of phone numbers that are
+         * an error is returned.</p> <p>An opt-out list is a list of phone numbers that are
          * opted out, meaning you can't send SMS or voice messages to them. If end user
          * replies with the keyword "STOP," an entry for the phone number is added to the
          * opt-out list. In addition to STOP, your recipients can use any supported opt-out
@@ -221,7 +244,7 @@ namespace PinpointSMSVoiceV2
          * keywords, message type, opt-out list, two-way configuration, and self-managed
          * opt-out configuration. Deletion protection isn't inherited from the origination
          * identity and defaults to false.</p> <p>If the origination identity is a phone
-         * number and is already associated with another pool, an Error is returned. A
+         * number and is already associated with another pool, an error is returned. A
          * sender ID can be associated with multiple pools.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreatePool">AWS
          * API Reference</a></p>
@@ -244,6 +267,140 @@ namespace PinpointSMSVoiceV2
         void CreatePoolAsync(const CreatePoolRequestT& request, const CreatePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::CreatePool, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new registration based on the <b>RegistrationType</b> field.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRegistrationOutcome CreateRegistration(const Model::CreateRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRegistrationRequestT = Model::CreateRegistrationRequest>
+        Model::CreateRegistrationOutcomeCallable CreateRegistrationCallable(const CreateRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::CreateRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRegistrationRequestT = Model::CreateRegistrationRequest>
+        void CreateRegistrationAsync(const CreateRegistrationRequestT& request, const CreateRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::CreateRegistration, request, handler, context);
+        }
+
+        /**
+         * <p>Associate the registration with an origination identity such as a phone
+         * number or sender ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRegistrationAssociationOutcome CreateRegistrationAssociation(const Model::CreateRegistrationAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRegistrationAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRegistrationAssociationRequestT = Model::CreateRegistrationAssociationRequest>
+        Model::CreateRegistrationAssociationOutcomeCallable CreateRegistrationAssociationCallable(const CreateRegistrationAssociationRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::CreateRegistrationAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRegistrationAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRegistrationAssociationRequestT = Model::CreateRegistrationAssociationRequest>
+        void CreateRegistrationAssociationAsync(const CreateRegistrationAssociationRequestT& request, const CreateRegistrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::CreateRegistrationAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Create a new registration attachment to use for uploading a file or a URL to
+         * a file. The maximum file size is 1MiB and valid file extensions are PDF, JPEG
+         * and PNG. For example, many sender ID registrations require a signed “letter of
+         * authorization” (LOA) to be submitted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRegistrationAttachmentOutcome CreateRegistrationAttachment(const Model::CreateRegistrationAttachmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRegistrationAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRegistrationAttachmentRequestT = Model::CreateRegistrationAttachmentRequest>
+        Model::CreateRegistrationAttachmentOutcomeCallable CreateRegistrationAttachmentCallable(const CreateRegistrationAttachmentRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::CreateRegistrationAttachment, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRegistrationAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRegistrationAttachmentRequestT = Model::CreateRegistrationAttachmentRequest>
+        void CreateRegistrationAttachmentAsync(const CreateRegistrationAttachmentRequestT& request, const CreateRegistrationAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::CreateRegistrationAttachment, request, handler, context);
+        }
+
+        /**
+         * <p>Create a new version of the registration and increase the
+         * <b>VersionNumber</b>. The previous version of the registration becomes
+         * read-only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRegistrationVersionOutcome CreateRegistrationVersion(const Model::CreateRegistrationVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRegistrationVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRegistrationVersionRequestT = Model::CreateRegistrationVersionRequest>
+        Model::CreateRegistrationVersionOutcomeCallable CreateRegistrationVersionCallable(const CreateRegistrationVersionRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::CreateRegistrationVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRegistrationVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRegistrationVersionRequestT = Model::CreateRegistrationVersionRequest>
+        void CreateRegistrationVersionAsync(const CreateRegistrationVersionRequestT& request, const CreateRegistrationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::CreateRegistrationVersion, request, handler, context);
+        }
+
+        /**
+         * <p>You can only send messages to verified destination numbers when your account
+         * is in the sandbox. You can add up to 10 verified destination
+         * numbers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateVerifiedDestinationNumber">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVerifiedDestinationNumberOutcome CreateVerifiedDestinationNumber(const Model::CreateVerifiedDestinationNumberRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateVerifiedDestinationNumber that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateVerifiedDestinationNumberRequestT = Model::CreateVerifiedDestinationNumberRequest>
+        Model::CreateVerifiedDestinationNumberOutcomeCallable CreateVerifiedDestinationNumberCallable(const CreateVerifiedDestinationNumberRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::CreateVerifiedDestinationNumber, request);
+        }
+
+        /**
+         * An Async wrapper for CreateVerifiedDestinationNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateVerifiedDestinationNumberRequestT = Model::CreateVerifiedDestinationNumberRequest>
+        void CreateVerifiedDestinationNumberAsync(const CreateVerifiedDestinationNumberRequestT& request, const CreateVerifiedDestinationNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::CreateVerifiedDestinationNumber, request, handler, context);
         }
 
         /**
@@ -397,7 +554,7 @@ namespace PinpointSMSVoiceV2
         /**
          * <p>Deletes an existing opt-out list. All opted out phone numbers in the opt-out
          * list are deleted.</p> <p>If the specified opt-out list name doesn't exist or is
-         * in-use by an origination phone number or pool, an Error is
+         * in-use by an origination phone number or pool, an error is
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteOptOutList">AWS
          * API Reference</a></p>
@@ -426,7 +583,7 @@ namespace PinpointSMSVoiceV2
          * <p>Deletes an existing opted out destination phone number from the specified
          * opt-out list.</p> <p>Each destination phone number can only be deleted once
          * every 30 days.</p> <p>If the specified destination phone number doesn't exist or
-         * if the opt-out list doesn't exist, an Error is returned.</p><p><h3>See
+         * if the opt-out list doesn't exist, an error is returned.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteOptedOutNumber">AWS
          * API Reference</a></p>
@@ -454,7 +611,7 @@ namespace PinpointSMSVoiceV2
         /**
          * <p>Deletes an existing pool. Deleting a pool disassociates all origination
          * identities from that pool.</p> <p>If the pool status isn't active or if deletion
-         * protection is enabled, an Error is returned.</p> <p>A pool is a collection of
+         * protection is enabled, an error is returned.</p> <p>A pool is a collection of
          * phone numbers and SenderIds. A pool can include one or more phone numbers and
          * SenderIds that are associated with your Amazon Web Services
          * account.</p><p><h3>See Also:</h3>   <a
@@ -479,6 +636,83 @@ namespace PinpointSMSVoiceV2
         void DeletePoolAsync(const DeletePoolRequestT& request, const DeletePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DeletePool, request, handler, context);
+        }
+
+        /**
+         * <p>Permanently delete an existing registration from your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRegistrationOutcome DeleteRegistration(const Model::DeleteRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRegistrationRequestT = Model::DeleteRegistrationRequest>
+        Model::DeleteRegistrationOutcomeCallable DeleteRegistrationCallable(const DeleteRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRegistrationRequestT = Model::DeleteRegistrationRequest>
+        void DeleteRegistrationAsync(const DeleteRegistrationRequestT& request, const DeleteRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteRegistration, request, handler, context);
+        }
+
+        /**
+         * <p>Permanently delete the specified registration attachment.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRegistrationAttachmentOutcome DeleteRegistrationAttachment(const Model::DeleteRegistrationAttachmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRegistrationAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRegistrationAttachmentRequestT = Model::DeleteRegistrationAttachmentRequest>
+        Model::DeleteRegistrationAttachmentOutcomeCallable DeleteRegistrationAttachmentCallable(const DeleteRegistrationAttachmentRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteRegistrationAttachment, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRegistrationAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRegistrationAttachmentRequestT = Model::DeleteRegistrationAttachmentRequest>
+        void DeleteRegistrationAttachmentAsync(const DeleteRegistrationAttachmentRequestT& request, const DeleteRegistrationAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteRegistrationAttachment, request, handler, context);
+        }
+
+        /**
+         * <p>Delete the value in a registration form field.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationFieldValue">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRegistrationFieldValueOutcome DeleteRegistrationFieldValue(const Model::DeleteRegistrationFieldValueRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRegistrationFieldValue that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRegistrationFieldValueRequestT = Model::DeleteRegistrationFieldValueRequest>
+        Model::DeleteRegistrationFieldValueOutcomeCallable DeleteRegistrationFieldValueCallable(const DeleteRegistrationFieldValueRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteRegistrationFieldValue, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRegistrationFieldValue that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRegistrationFieldValueRequestT = Model::DeleteRegistrationFieldValueRequest>
+        void DeleteRegistrationFieldValueAsync(const DeleteRegistrationFieldValueRequestT& request, const DeleteRegistrationFieldValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteRegistrationFieldValue, request, handler, context);
         }
 
         /**
@@ -511,6 +745,31 @@ namespace PinpointSMSVoiceV2
         void DeleteTextMessageSpendLimitOverrideAsync(const DeleteTextMessageSpendLimitOverrideRequestT& request, const DeleteTextMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteTextMessageSpendLimitOverride, request, handler, context);
+        }
+
+        /**
+         * <p>Delete a verified destination phone number.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteVerifiedDestinationNumber">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVerifiedDestinationNumberOutcome DeleteVerifiedDestinationNumber(const Model::DeleteVerifiedDestinationNumberRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteVerifiedDestinationNumber that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteVerifiedDestinationNumberRequestT = Model::DeleteVerifiedDestinationNumberRequest>
+        Model::DeleteVerifiedDestinationNumberOutcomeCallable DeleteVerifiedDestinationNumberCallable(const DeleteVerifiedDestinationNumberRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteVerifiedDestinationNumber, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteVerifiedDestinationNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteVerifiedDestinationNumberRequestT = Model::DeleteVerifiedDestinationNumberRequest>
+        void DeleteVerifiedDestinationNumberAsync(const DeleteVerifiedDestinationNumberRequestT& request, const DeleteVerifiedDestinationNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteVerifiedDestinationNumber, request, handler, context);
         }
 
         /**
@@ -647,7 +906,7 @@ namespace PinpointSMSVoiceV2
          * end user can send to your number to elicit a response, such as an informational
          * message or a special offer. When your number receives a message that begins with
          * a keyword, Amazon Pinpoint responds with a customizable message.</p> <p>If you
-         * specify a keyword that isn't valid, an Error is returned.</p><p><h3>See
+         * specify a keyword that isn't valid, an error is returned.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeKeywords">AWS
          * API Reference</a></p>
@@ -678,7 +937,7 @@ namespace PinpointSMSVoiceV2
          * information for only the specified opt-out lists. Opt-out lists include only
          * those that meet the filter criteria. If you don't specify opt-out list names or
          * filters, the output includes information for all opt-out lists.</p> <p>If you
-         * specify an opt-out list name that isn't valid, an Error is
+         * specify an opt-out list name that isn't valid, an error is
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeOptOutLists">AWS
          * API Reference</a></p>
@@ -711,7 +970,7 @@ namespace PinpointSMSVoiceV2
          * numbers that meet the filter criteria. If you don't specify opted out numbers or
          * filters, the output includes information for all opted out destination numbers
          * in your opt-out list.</p> <p>If you specify an opted out number that isn't
-         * valid, an Error is returned.</p><p><h3>See Also:</h3>   <a
+         * valid, an error is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeOptedOutNumbers">AWS
          * API Reference</a></p>
          */
@@ -742,7 +1001,7 @@ namespace PinpointSMSVoiceV2
          * output includes information for only those phone numbers that meet the filter
          * criteria. If you don't specify phone number IDs or filters, the output includes
          * information for all phone numbers.</p> <p>If you specify a phone number ID that
-         * isn't valid, an Error is returned.</p><p><h3>See Also:</h3>   <a
+         * isn't valid, an error is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribePhoneNumbers">AWS
          * API Reference</a></p>
          */
@@ -772,7 +1031,7 @@ namespace PinpointSMSVoiceV2
          * information for only the specified pools. If you specify filters, the output
          * includes information for only those pools that meet the filter criteria. If you
          * don't specify pool IDs or filters, the output includes information for all
-         * pools.</p> <p>If you specify a pool ID that isn't valid, an Error is
+         * pools.</p> <p>If you specify a pool ID that isn't valid, an error is
          * returned.</p> <p>A pool is a collection of phone numbers and SenderIds. A pool
          * can include one or more phone numbers and SenderIds that are associated with
          * your Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
@@ -800,13 +1059,200 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
+         * <p>Retrieves the specified registration attachments or all registration
+         * attachments associated with your Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationAttachments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRegistrationAttachmentsOutcome DescribeRegistrationAttachments(const Model::DescribeRegistrationAttachmentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRegistrationAttachments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRegistrationAttachmentsRequestT = Model::DescribeRegistrationAttachmentsRequest>
+        Model::DescribeRegistrationAttachmentsOutcomeCallable DescribeRegistrationAttachmentsCallable(const DescribeRegistrationAttachmentsRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRegistrationAttachments, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRegistrationAttachments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRegistrationAttachmentsRequestT = Model::DescribeRegistrationAttachmentsRequest>
+        void DescribeRegistrationAttachmentsAsync(const DescribeRegistrationAttachmentsRequestT& request, const DescribeRegistrationAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRegistrationAttachments, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the specified registration type field definitions. You can use
+         * DescribeRegistrationFieldDefinitions to view the requirements for creating,
+         * filling out, and submitting each registration type.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRegistrationFieldDefinitionsOutcome DescribeRegistrationFieldDefinitions(const Model::DescribeRegistrationFieldDefinitionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRegistrationFieldDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRegistrationFieldDefinitionsRequestT = Model::DescribeRegistrationFieldDefinitionsRequest>
+        Model::DescribeRegistrationFieldDefinitionsOutcomeCallable DescribeRegistrationFieldDefinitionsCallable(const DescribeRegistrationFieldDefinitionsRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRegistrationFieldDefinitions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRegistrationFieldDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRegistrationFieldDefinitionsRequestT = Model::DescribeRegistrationFieldDefinitionsRequest>
+        void DescribeRegistrationFieldDefinitionsAsync(const DescribeRegistrationFieldDefinitionsRequestT& request, const DescribeRegistrationFieldDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRegistrationFieldDefinitions, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the specified registration field values.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldValues">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRegistrationFieldValuesOutcome DescribeRegistrationFieldValues(const Model::DescribeRegistrationFieldValuesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRegistrationFieldValues that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRegistrationFieldValuesRequestT = Model::DescribeRegistrationFieldValuesRequest>
+        Model::DescribeRegistrationFieldValuesOutcomeCallable DescribeRegistrationFieldValuesCallable(const DescribeRegistrationFieldValuesRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRegistrationFieldValues, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRegistrationFieldValues that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRegistrationFieldValuesRequestT = Model::DescribeRegistrationFieldValuesRequest>
+        void DescribeRegistrationFieldValuesAsync(const DescribeRegistrationFieldValuesRequestT& request, const DescribeRegistrationFieldValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRegistrationFieldValues, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the specified registration section definitions. You can use
+         * DescribeRegistrationSectionDefinitions to view the requirements for creating,
+         * filling out, and submitting each registration type.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationSectionDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRegistrationSectionDefinitionsOutcome DescribeRegistrationSectionDefinitions(const Model::DescribeRegistrationSectionDefinitionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRegistrationSectionDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRegistrationSectionDefinitionsRequestT = Model::DescribeRegistrationSectionDefinitionsRequest>
+        Model::DescribeRegistrationSectionDefinitionsOutcomeCallable DescribeRegistrationSectionDefinitionsCallable(const DescribeRegistrationSectionDefinitionsRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRegistrationSectionDefinitions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRegistrationSectionDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRegistrationSectionDefinitionsRequestT = Model::DescribeRegistrationSectionDefinitionsRequest>
+        void DescribeRegistrationSectionDefinitionsAsync(const DescribeRegistrationSectionDefinitionsRequestT& request, const DescribeRegistrationSectionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRegistrationSectionDefinitions, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the specified registration type definitions. You can use
+         * DescribeRegistrationTypeDefinitions to view the requirements for creating,
+         * filling out, and submitting each registration type.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationTypeDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRegistrationTypeDefinitionsOutcome DescribeRegistrationTypeDefinitions(const Model::DescribeRegistrationTypeDefinitionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRegistrationTypeDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRegistrationTypeDefinitionsRequestT = Model::DescribeRegistrationTypeDefinitionsRequest>
+        Model::DescribeRegistrationTypeDefinitionsOutcomeCallable DescribeRegistrationTypeDefinitionsCallable(const DescribeRegistrationTypeDefinitionsRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRegistrationTypeDefinitions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRegistrationTypeDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRegistrationTypeDefinitionsRequestT = Model::DescribeRegistrationTypeDefinitionsRequest>
+        void DescribeRegistrationTypeDefinitionsAsync(const DescribeRegistrationTypeDefinitionsRequestT& request, const DescribeRegistrationTypeDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRegistrationTypeDefinitions, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the specified registration version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRegistrationVersionsOutcome DescribeRegistrationVersions(const Model::DescribeRegistrationVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRegistrationVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRegistrationVersionsRequestT = Model::DescribeRegistrationVersionsRequest>
+        Model::DescribeRegistrationVersionsOutcomeCallable DescribeRegistrationVersionsCallable(const DescribeRegistrationVersionsRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRegistrationVersions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRegistrationVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRegistrationVersionsRequestT = Model::DescribeRegistrationVersionsRequest>
+        void DescribeRegistrationVersionsAsync(const DescribeRegistrationVersionsRequestT& request, const DescribeRegistrationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRegistrationVersions, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the specified registrations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRegistrationsOutcome DescribeRegistrations(const Model::DescribeRegistrationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRegistrations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRegistrationsRequestT = Model::DescribeRegistrationsRequest>
+        Model::DescribeRegistrationsOutcomeCallable DescribeRegistrationsCallable(const DescribeRegistrationsRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRegistrations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRegistrations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRegistrationsRequestT = Model::DescribeRegistrationsRequest>
+        void DescribeRegistrationsAsync(const DescribeRegistrationsRequestT& request, const DescribeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRegistrations, request, handler, context);
+        }
+
+        /**
          * <p>Describes the specified SenderIds or all SenderIds associated with your
          * Amazon Web Services account.</p> <p>If you specify SenderIds, the output
          * includes information for only the specified SenderIds. If you specify filters,
          * the output includes information for only those SenderIds that meet the filter
          * criteria. If you don't specify SenderIds or filters, the output includes
          * information for all SenderIds.</p> <p>f you specify a sender ID that isn't
-         * valid, an Error is returned.</p><p><h3>See Also:</h3>   <a
+         * valid, an error is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeSenderIds">AWS
          * API Reference</a></p>
          */
@@ -862,8 +1308,34 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
+         * <p>Retrieves the specified verified destiona numbers.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeVerifiedDestinationNumbers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVerifiedDestinationNumbersOutcome DescribeVerifiedDestinationNumbers(const Model::DescribeVerifiedDestinationNumbersRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeVerifiedDestinationNumbers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeVerifiedDestinationNumbersRequestT = Model::DescribeVerifiedDestinationNumbersRequest>
+        Model::DescribeVerifiedDestinationNumbersOutcomeCallable DescribeVerifiedDestinationNumbersCallable(const DescribeVerifiedDestinationNumbersRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeVerifiedDestinationNumbers, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeVerifiedDestinationNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeVerifiedDestinationNumbersRequestT = Model::DescribeVerifiedDestinationNumbersRequest>
+        void DescribeVerifiedDestinationNumbersAsync(const DescribeVerifiedDestinationNumbersRequestT& request, const DescribeVerifiedDestinationNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeVerifiedDestinationNumbers, request, handler, context);
+        }
+
+        /**
          * <p>Removes the specified origination identity from an existing pool.</p> <p>If
-         * the origination identity isn't associated with the specified pool, an Error is
+         * the origination identity isn't associated with the specified pool, an error is
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DisassociateOriginationIdentity">AWS
          * API Reference</a></p>
@@ -886,6 +1358,32 @@ namespace PinpointSMSVoiceV2
         void DisassociateOriginationIdentityAsync(const DisassociateOriginationIdentityRequestT& request, const DisassociateOriginationIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DisassociateOriginationIdentity, request, handler, context);
+        }
+
+        /**
+         * <p>Discard the current version of the registration.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DiscardRegistrationVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DiscardRegistrationVersionOutcome DiscardRegistrationVersion(const Model::DiscardRegistrationVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DiscardRegistrationVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DiscardRegistrationVersionRequestT = Model::DiscardRegistrationVersionRequest>
+        Model::DiscardRegistrationVersionOutcomeCallable DiscardRegistrationVersionCallable(const DiscardRegistrationVersionRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DiscardRegistrationVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DiscardRegistrationVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DiscardRegistrationVersionRequestT = Model::DiscardRegistrationVersionRequest>
+        void DiscardRegistrationVersionAsync(const DiscardRegistrationVersionRequestT& request, const DiscardRegistrationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DiscardRegistrationVersion, request, handler, context);
         }
 
         /**
@@ -913,6 +1411,32 @@ namespace PinpointSMSVoiceV2
         void ListPoolOriginationIdentitiesAsync(const ListPoolOriginationIdentitiesRequestT& request, const ListPoolOriginationIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::ListPoolOriginationIdentities, request, handler, context);
+        }
+
+        /**
+         * <p>Retreive all of the origination identies that are associated with a
+         * registration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListRegistrationAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRegistrationAssociationsOutcome ListRegistrationAssociations(const Model::ListRegistrationAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRegistrationAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRegistrationAssociationsRequestT = Model::ListRegistrationAssociationsRequest>
+        Model::ListRegistrationAssociationsOutcomeCallable ListRegistrationAssociationsCallable(const ListRegistrationAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::ListRegistrationAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListRegistrationAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRegistrationAssociationsRequestT = Model::ListRegistrationAssociationsRequest>
+        void ListRegistrationAssociationsAsync(const ListRegistrationAssociationsRequestT& request, const ListRegistrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::ListRegistrationAssociations, request, handler, context);
         }
 
         /**
@@ -947,7 +1471,7 @@ namespace PinpointSMSVoiceV2
          * to your number to elicit a response, such as an informational message or a
          * special offer. When your number receives a message that begins with a keyword,
          * Amazon Pinpoint responds with a customizable message.</p> <p>If you specify a
-         * keyword that isn't valid, an Error is returned.</p><p><h3>See Also:</h3>   <a
+         * keyword that isn't valid, an error is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutKeyword">AWS
          * API Reference</a></p>
          */
@@ -974,7 +1498,7 @@ namespace PinpointSMSVoiceV2
         /**
          * <p>Creates an opted out destination phone number in the opt-out list.</p> <p>If
          * the destination phone number isn't valid or if the specified opt-out list
-         * doesn't exist, an Error is returned.</p><p><h3>See Also:</h3>   <a
+         * doesn't exist, an error is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutOptedOutNumber">AWS
          * API Reference</a></p>
          */
@@ -999,10 +1523,36 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
+         * <p>Creates or updates a field value for a registration.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutRegistrationFieldValue">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutRegistrationFieldValueOutcome PutRegistrationFieldValue(const Model::PutRegistrationFieldValueRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutRegistrationFieldValue that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutRegistrationFieldValueRequestT = Model::PutRegistrationFieldValueRequest>
+        Model::PutRegistrationFieldValueOutcomeCallable PutRegistrationFieldValueCallable(const PutRegistrationFieldValueRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::PutRegistrationFieldValue, request);
+        }
+
+        /**
+         * An Async wrapper for PutRegistrationFieldValue that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutRegistrationFieldValueRequestT = Model::PutRegistrationFieldValueRequest>
+        void PutRegistrationFieldValueAsync(const PutRegistrationFieldValueRequestT& request, const PutRegistrationFieldValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::PutRegistrationFieldValue, request, handler, context);
+        }
+
+        /**
          * <p>Releases an existing origination phone number in your account. Once released,
          * a phone number is no longer available for sending messages.</p> <p>If the
          * origination phone number has deletion protection enabled or is associated with a
-         * pool, an Error is returned.</p><p><h3>See Also:</h3>   <a
+         * pool, an error is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ReleasePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -1024,6 +1574,31 @@ namespace PinpointSMSVoiceV2
         void ReleasePhoneNumberAsync(const ReleasePhoneNumberRequestT& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::ReleasePhoneNumber, request, handler, context);
+        }
+
+        /**
+         * <p>Releases an existing sender ID in your account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ReleaseSenderId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReleaseSenderIdOutcome ReleaseSenderId(const Model::ReleaseSenderIdRequest& request) const;
+
+        /**
+         * A Callable wrapper for ReleaseSenderId that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ReleaseSenderIdRequestT = Model::ReleaseSenderIdRequest>
+        Model::ReleaseSenderIdOutcomeCallable ReleaseSenderIdCallable(const ReleaseSenderIdRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::ReleaseSenderId, request);
+        }
+
+        /**
+         * An Async wrapper for ReleaseSenderId that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ReleaseSenderIdRequestT = Model::ReleaseSenderIdRequest>
+        void ReleaseSenderIdAsync(const ReleaseSenderIdRequestT& request, const ReleaseSenderIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::ReleaseSenderId, request, handler, context);
         }
 
         /**
@@ -1053,6 +1628,62 @@ namespace PinpointSMSVoiceV2
         void RequestPhoneNumberAsync(const RequestPhoneNumberRequestT& request, const RequestPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::RequestPhoneNumber, request, handler, context);
+        }
+
+        /**
+         * <p>Request a new sender ID that doesn't require registration. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/RequestSenderId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RequestSenderIdOutcome RequestSenderId(const Model::RequestSenderIdRequest& request) const;
+
+        /**
+         * A Callable wrapper for RequestSenderId that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RequestSenderIdRequestT = Model::RequestSenderIdRequest>
+        Model::RequestSenderIdOutcomeCallable RequestSenderIdCallable(const RequestSenderIdRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::RequestSenderId, request);
+        }
+
+        /**
+         * An Async wrapper for RequestSenderId that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RequestSenderIdRequestT = Model::RequestSenderIdRequest>
+        void RequestSenderIdAsync(const RequestSenderIdRequestT& request, const RequestSenderIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::RequestSenderId, request, handler, context);
+        }
+
+        /**
+         * <p>Before you can send test messages to a verified destination phone number you
+         * need to opt-in the verified destination phone number. Creates a new text message
+         * with a verification code and send it to a verified destination phone number.
+         * Once you have the verification code use <a>VerifyDestinationNumber</a> to opt-in
+         * the verified destination phone number to receive messages.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendDestinationNumberVerificationCode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendDestinationNumberVerificationCodeOutcome SendDestinationNumberVerificationCode(const Model::SendDestinationNumberVerificationCodeRequest& request) const;
+
+        /**
+         * A Callable wrapper for SendDestinationNumberVerificationCode that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SendDestinationNumberVerificationCodeRequestT = Model::SendDestinationNumberVerificationCodeRequest>
+        Model::SendDestinationNumberVerificationCodeOutcomeCallable SendDestinationNumberVerificationCodeCallable(const SendDestinationNumberVerificationCodeRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::SendDestinationNumberVerificationCode, request);
+        }
+
+        /**
+         * An Async wrapper for SendDestinationNumberVerificationCode that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SendDestinationNumberVerificationCodeRequestT = Model::SendDestinationNumberVerificationCodeRequest>
+        void SendDestinationNumberVerificationCodeAsync(const SendDestinationNumberVerificationCodeRequestT& request, const SendDestinationNumberVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::SendDestinationNumberVerificationCode, request, handler, context);
         }
 
         /**
@@ -1088,7 +1719,7 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
-         * <p>Allows you to send a request that sends a text message through Amazon
+         * <p>Allows you to send a request that sends a voice message through Amazon
          * Pinpoint. This operation uses <a href="http://aws.amazon.com/polly/">Amazon
          * Polly</a> to convert a text script into a voice message.</p><p><h3>See
          * Also:</h3>   <a
@@ -1232,6 +1863,32 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
+         * <p>Submit the specified registration for review and approval.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SubmitRegistrationVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SubmitRegistrationVersionOutcome SubmitRegistrationVersion(const Model::SubmitRegistrationVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for SubmitRegistrationVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SubmitRegistrationVersionRequestT = Model::SubmitRegistrationVersionRequest>
+        Model::SubmitRegistrationVersionOutcomeCallable SubmitRegistrationVersionCallable(const SubmitRegistrationVersionRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::SubmitRegistrationVersion, request);
+        }
+
+        /**
+         * An Async wrapper for SubmitRegistrationVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SubmitRegistrationVersionRequestT = Model::SubmitRegistrationVersionRequest>
+        void SubmitRegistrationVersionAsync(const SubmitRegistrationVersionRequestT& request, const SubmitRegistrationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::SubmitRegistrationVersion, request, handler, context);
+        }
+
+        /**
          * <p>Adds or overwrites only the specified tags for the specified Amazon Pinpoint
          * SMS Voice, version 2 resource. When you specify an existing tag key, the value
          * is overwritten with the new value. Each resource can have a maximum of 50 tags.
@@ -1327,7 +1984,7 @@ namespace PinpointSMSVoiceV2
          * update the opt-out list, enable or disable two-way messaging, change the
          * TwoWayChannelArn, enable or disable self-managed opt-outs, and enable or disable
          * deletion protection.</p> <p>If the origination phone number is associated with a
-         * pool, an Error is returned.</p><p><h3>See Also:</h3>   <a
+         * pool, an error is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdatePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -1378,6 +2035,59 @@ namespace PinpointSMSVoiceV2
         void UpdatePoolAsync(const UpdatePoolRequestT& request, const UpdatePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::UpdatePool, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the configuration of an existing sender ID.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateSenderId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSenderIdOutcome UpdateSenderId(const Model::UpdateSenderIdRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSenderId that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSenderIdRequestT = Model::UpdateSenderIdRequest>
+        Model::UpdateSenderIdOutcomeCallable UpdateSenderIdCallable(const UpdateSenderIdRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::UpdateSenderId, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSenderId that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSenderIdRequestT = Model::UpdateSenderIdRequest>
+        void UpdateSenderIdAsync(const UpdateSenderIdRequestT& request, const UpdateSenderIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::UpdateSenderId, request, handler, context);
+        }
+
+        /**
+         * <p>Use the verification code that was received by the verified destination phone
+         * number to opt-in the verified destination phone number to receive more
+         * messages.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/VerifyDestinationNumber">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::VerifyDestinationNumberOutcome VerifyDestinationNumber(const Model::VerifyDestinationNumberRequest& request) const;
+
+        /**
+         * A Callable wrapper for VerifyDestinationNumber that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename VerifyDestinationNumberRequestT = Model::VerifyDestinationNumberRequest>
+        Model::VerifyDestinationNumberOutcomeCallable VerifyDestinationNumberCallable(const VerifyDestinationNumberRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::VerifyDestinationNumber, request);
+        }
+
+        /**
+         * An Async wrapper for VerifyDestinationNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename VerifyDestinationNumberRequestT = Model::VerifyDestinationNumberRequest>
+        void VerifyDestinationNumberAsync(const VerifyDestinationNumberRequestT& request, const VerifyDestinationNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::VerifyDestinationNumber, request, handler, context);
         }
 
 

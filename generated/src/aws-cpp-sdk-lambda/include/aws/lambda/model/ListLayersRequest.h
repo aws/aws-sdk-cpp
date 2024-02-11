@@ -41,32 +41,50 @@ namespace Model
 
 
     /**
-     * <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+     * <p>A runtime identifier. For example, <code>go1.x</code>.</p> <p>The following
+     * list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline const Runtime& GetCompatibleRuntime() const{ return m_compatibleRuntime; }
 
     /**
-     * <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+     * <p>A runtime identifier. For example, <code>go1.x</code>.</p> <p>The following
+     * list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline bool CompatibleRuntimeHasBeenSet() const { return m_compatibleRuntimeHasBeenSet; }
 
     /**
-     * <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+     * <p>A runtime identifier. For example, <code>go1.x</code>.</p> <p>The following
+     * list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline void SetCompatibleRuntime(const Runtime& value) { m_compatibleRuntimeHasBeenSet = true; m_compatibleRuntime = value; }
 
     /**
-     * <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+     * <p>A runtime identifier. For example, <code>go1.x</code>.</p> <p>The following
+     * list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline void SetCompatibleRuntime(Runtime&& value) { m_compatibleRuntimeHasBeenSet = true; m_compatibleRuntime = std::move(value); }
 
     /**
-     * <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+     * <p>A runtime identifier. For example, <code>go1.x</code>.</p> <p>The following
+     * list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline ListLayersRequest& WithCompatibleRuntime(const Runtime& value) { SetCompatibleRuntime(value); return *this;}
 
     /**
-     * <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+     * <p>A runtime identifier. For example, <code>go1.x</code>.</p> <p>The following
+     * list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline ListLayersRequest& WithCompatibleRuntime(Runtime&& value) { SetCompatibleRuntime(std::move(value)); return *this;}
 

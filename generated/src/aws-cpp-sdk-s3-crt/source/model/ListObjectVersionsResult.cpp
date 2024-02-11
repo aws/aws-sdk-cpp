@@ -19,14 +19,16 @@ using namespace Aws;
 ListObjectVersionsResult::ListObjectVersionsResult() : 
     m_isTruncated(false),
     m_maxKeys(0),
-    m_encodingType(EncodingType::NOT_SET)
+    m_encodingType(EncodingType::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
 ListObjectVersionsResult::ListObjectVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false),
     m_maxKeys(0),
-    m_encodingType(EncodingType::NOT_SET)
+    m_encodingType(EncodingType::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }
@@ -124,6 +126,12 @@ ListObjectVersionsResult& ListObjectVersionsResult::operator =(const Aws::Amazon
   }
 
   const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestChargedIter = headers.find("x-amz-request-charged");
+  if(requestChargedIter != headers.end())
+  {
+    m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
+  }
+
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {

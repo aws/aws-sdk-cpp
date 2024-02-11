@@ -96,7 +96,8 @@ namespace Model
      * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
      * response indicates that more output is available. Set this parameter to the
      * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
+     * the output should continue from. The pagination tokens expire after 24
+     * hours.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -105,7 +106,8 @@ namespace Model
      * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
      * response indicates that more output is available. Set this parameter to the
      * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
+     * the output should continue from. The pagination tokens expire after 24
+     * hours.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -114,7 +116,8 @@ namespace Model
      * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
      * response indicates that more output is available. Set this parameter to the
      * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
+     * the output should continue from. The pagination tokens expire after 24
+     * hours.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -123,7 +126,8 @@ namespace Model
      * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
      * response indicates that more output is available. Set this parameter to the
      * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
+     * the output should continue from. The pagination tokens expire after 24
+     * hours.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -132,7 +136,8 @@ namespace Model
      * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
      * response indicates that more output is available. Set this parameter to the
      * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
+     * the output should continue from. The pagination tokens expire after 24
+     * hours.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -141,7 +146,8 @@ namespace Model
      * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
      * response indicates that more output is available. Set this parameter to the
      * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
+     * the output should continue from. The pagination tokens expire after 24
+     * hours.</p>
      */
     inline ListIndexesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -150,7 +156,8 @@ namespace Model
      * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
      * response indicates that more output is available. Set this parameter to the
      * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
+     * the output should continue from. The pagination tokens expire after 24
+     * hours.</p>
      */
     inline ListIndexesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -159,7 +166,8 @@ namespace Model
      * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
      * response indicates that more output is available. Set this parameter to the
      * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from.</p>
+     * the output should continue from. The pagination tokens expire after 24
+     * hours.</p>
      */
     inline ListIndexesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

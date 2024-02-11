@@ -8,6 +8,7 @@
 #include <aws/application-insights/ApplicationInsightsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/application-insights/model/Visibility.h>
 #include <utility>
 
 namespace Aws
@@ -33,6 +34,47 @@ namespace Model
     AWS_APPLICATIONINSIGHTS_API Aws::String SerializePayload() const override;
 
     AWS_APPLICATIONINSIGHTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline ListProblemsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline ListProblemsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline ListProblemsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
@@ -266,7 +308,47 @@ namespace Model
      */
     inline ListProblemsRequest& WithComponentName(const char* value) { SetComponentName(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether or not you can view the problem. If not specified, visible
+     * and ignored problems are returned.</p>
+     */
+    inline const Visibility& GetVisibility() const{ return m_visibility; }
+
+    /**
+     * <p>Specifies whether or not you can view the problem. If not specified, visible
+     * and ignored problems are returned.</p>
+     */
+    inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
+
+    /**
+     * <p>Specifies whether or not you can view the problem. If not specified, visible
+     * and ignored problems are returned.</p>
+     */
+    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+
+    /**
+     * <p>Specifies whether or not you can view the problem. If not specified, visible
+     * and ignored problems are returned.</p>
+     */
+    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
+
+    /**
+     * <p>Specifies whether or not you can view the problem. If not specified, visible
+     * and ignored problems are returned.</p>
+     */
+    inline ListProblemsRequest& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
+
+    /**
+     * <p>Specifies whether or not you can view the problem. If not specified, visible
+     * and ignored problems are returned.</p>
+     */
+    inline ListProblemsRequest& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+
   private:
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_resourceGroupName;
     bool m_resourceGroupNameHasBeenSet = false;
@@ -285,6 +367,9 @@ namespace Model
 
     Aws::String m_componentName;
     bool m_componentNameHasBeenSet = false;
+
+    Visibility m_visibility;
+    bool m_visibilityHasBeenSet = false;
   };
 
 } // namespace Model

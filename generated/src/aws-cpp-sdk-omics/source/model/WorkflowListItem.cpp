@@ -20,27 +20,29 @@ namespace Model
 
 WorkflowListItem::WorkflowListItem() : 
     m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_digestHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(WorkflowStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_type(WorkflowType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_digestHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
 WorkflowListItem::WorkflowListItem(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_digestHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(WorkflowStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_type(WorkflowType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_digestHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,20 +54,6 @@ WorkflowListItem& WorkflowListItem::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-    m_creationTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("digest"))
-  {
-    m_digest = jsonValue.GetString("digest");
-
-    m_digestHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -96,6 +84,30 @@ WorkflowListItem& WorkflowListItem::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("digest"))
+  {
+    m_digest = jsonValue.GetString("digest");
+
+    m_digestHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+    m_creationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("metadata"))
+  {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for(auto& metadataItem : metadataJsonMap)
+    {
+      m_metadata[metadataItem.first] = metadataItem.second.AsString();
+    }
+    m_metadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -106,17 +118,6 @@ JsonValue WorkflowListItem::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_digestHasBeenSet)
-  {
-   payload.WithString("digest", m_digest);
 
   }
 
@@ -140,6 +141,28 @@ JsonValue WorkflowListItem::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", WorkflowTypeMapper::GetNameForWorkflowType(m_type));
+  }
+
+  if(m_digestHasBeenSet)
+  {
+   payload.WithString("digest", m_digest);
+
+  }
+
+  if(m_creationTimeHasBeenSet)
+  {
+   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   JsonValue metadataJsonMap;
+   for(auto& metadataItem : m_metadata)
+   {
+     metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
+   }
+   payload.WithObject("metadata", std::move(metadataJsonMap));
+
   }
 
   return payload;

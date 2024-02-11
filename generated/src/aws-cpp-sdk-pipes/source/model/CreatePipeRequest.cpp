@@ -18,6 +18,7 @@ CreatePipeRequest::CreatePipeRequest() :
     m_desiredStateHasBeenSet(false),
     m_enrichmentHasBeenSet(false),
     m_enrichmentParametersHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_sourceHasBeenSet(false),
@@ -52,6 +53,12 @@ Aws::String CreatePipeRequest::SerializePayload() const
   if(m_enrichmentParametersHasBeenSet)
   {
    payload.WithObject("EnrichmentParameters", m_enrichmentParameters.Jsonize());
+
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
 
   }
 

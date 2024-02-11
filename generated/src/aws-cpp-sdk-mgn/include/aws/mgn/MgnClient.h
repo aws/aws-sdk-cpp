@@ -25,6 +25,9 @@ namespace mgn
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef MgnClientConfiguration ClientConfigurationType;
+      typedef MgnEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -227,6 +230,31 @@ namespace mgn
         }
 
         /**
+         * <p>Create Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateConnectorOutcome CreateConnector(const Model::CreateConnectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateConnectorRequestT = Model::CreateConnectorRequest>
+        Model::CreateConnectorOutcomeCallable CreateConnectorCallable(const CreateConnectorRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::CreateConnector, request);
+        }
+
+        /**
+         * An Async wrapper for CreateConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateConnectorRequestT = Model::CreateConnectorRequest>
+        void CreateConnectorAsync(const CreateConnectorRequestT& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::CreateConnector, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new Launch Configuration Template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate">AWS
          * API Reference</a></p>
@@ -324,6 +352,31 @@ namespace mgn
         void DeleteApplicationAsync(const DeleteApplicationRequestT& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MgnClient::DeleteApplication, request, handler, context);
+        }
+
+        /**
+         * <p>Delete Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConnectorOutcome DeleteConnector(const Model::DeleteConnectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteConnectorRequestT = Model::DeleteConnectorRequest>
+        Model::DeleteConnectorOutcomeCallable DeleteConnectorCallable(const DeleteConnectorRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::DeleteConnector, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteConnectorRequestT = Model::DeleteConnectorRequest>
+        void DeleteConnectorAsync(const DeleteConnectorRequestT& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::DeleteConnector, request, handler, context);
         }
 
         /**
@@ -862,6 +915,31 @@ namespace mgn
         }
 
         /**
+         * <p>List Connectors.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListConnectors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConnectorsRequestT = Model::ListConnectorsRequest>
+        Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::ListConnectors, request);
+        }
+
+        /**
+         * An Async wrapper for ListConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConnectorsRequestT = Model::ListConnectorsRequest>
+        void ListConnectorsAsync(const ListConnectorsRequestT& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::ListConnectors, request, handler, context);
+        }
+
+        /**
          * <p>List export errors.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">AWS
          * API Reference</a></p>
@@ -959,6 +1037,31 @@ namespace mgn
         void ListImportsAsync(const ListImportsRequestT& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MgnClient::ListImports, request, handler, context);
+        }
+
+        /**
+         * <p>List Managed Accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListManagedAccounts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedAccountsOutcome ListManagedAccounts(const Model::ListManagedAccountsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListManagedAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListManagedAccountsRequestT = Model::ListManagedAccountsRequest>
+        Model::ListManagedAccountsOutcomeCallable ListManagedAccountsCallable(const ListManagedAccountsRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::ListManagedAccounts, request);
+        }
+
+        /**
+         * An Async wrapper for ListManagedAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListManagedAccountsRequestT = Model::ListManagedAccountsRequest>
+        void ListManagedAccountsAsync(const ListManagedAccountsRequestT& request, const ListManagedAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::ListManagedAccounts, request, handler, context);
         }
 
         /**
@@ -1092,6 +1195,31 @@ namespace mgn
         }
 
         /**
+         * <p>Pause Replication.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PauseReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PauseReplicationOutcome PauseReplication(const Model::PauseReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PauseReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PauseReplicationRequestT = Model::PauseReplicationRequest>
+        Model::PauseReplicationOutcomeCallable PauseReplicationCallable(const PauseReplicationRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::PauseReplication, request);
+        }
+
+        /**
+         * An Async wrapper for PauseReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PauseReplicationRequestT = Model::PauseReplicationRequest>
+        void PauseReplicationAsync(const PauseReplicationRequestT& request, const PauseReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::PauseReplication, request, handler, context);
+        }
+
+        /**
          * <p>Put source server post migration custom action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction">AWS
          * API Reference</a></p>
@@ -1190,6 +1318,31 @@ namespace mgn
         void RemoveTemplateActionAsync(const RemoveTemplateActionRequestT& request, const RemoveTemplateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MgnClient::RemoveTemplateAction, request, handler, context);
+        }
+
+        /**
+         * <p>Resume Replication.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ResumeReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResumeReplicationOutcome ResumeReplication(const Model::ResumeReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ResumeReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ResumeReplicationRequestT = Model::ResumeReplicationRequest>
+        Model::ResumeReplicationOutcomeCallable ResumeReplicationCallable(const ResumeReplicationRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::ResumeReplication, request);
+        }
+
+        /**
+         * An Async wrapper for ResumeReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ResumeReplicationRequestT = Model::ResumeReplicationRequest>
+        void ResumeReplicationAsync(const ResumeReplicationRequestT& request, const ResumeReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::ResumeReplication, request, handler, context);
         }
 
         /**
@@ -1351,6 +1504,31 @@ namespace mgn
         }
 
         /**
+         * <p>Stop Replication.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StopReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopReplicationOutcome StopReplication(const Model::StopReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopReplicationRequestT = Model::StopReplicationRequest>
+        Model::StopReplicationOutcomeCallable StopReplicationCallable(const StopReplicationRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::StopReplication, request);
+        }
+
+        /**
+         * An Async wrapper for StopReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopReplicationRequestT = Model::StopReplicationRequest>
+        void StopReplicationAsync(const StopReplicationRequestT& request, const StopReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::StopReplication, request, handler, context);
+        }
+
+        /**
          * <p>Adds or overwrites only the specified tags for the specified Application
          * Migration Service resource or resources. When you specify an existing tag key,
          * the value is overwritten with the new value. Each resource can have a maximum of
@@ -1508,6 +1686,31 @@ namespace mgn
         }
 
         /**
+         * <p>Update Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConnectorOutcome UpdateConnector(const Model::UpdateConnectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateConnectorRequestT = Model::UpdateConnectorRequest>
+        Model::UpdateConnectorOutcomeCallable UpdateConnectorCallable(const UpdateConnectorRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::UpdateConnector, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateConnectorRequestT = Model::UpdateConnectorRequest>
+        void UpdateConnectorAsync(const UpdateConnectorRequestT& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::UpdateConnector, request, handler, context);
+        }
+
+        /**
          * <p>Updates multiple LaunchConfigurations by Source Server ID.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfiguration">AWS
@@ -1609,6 +1812,31 @@ namespace mgn
         void UpdateReplicationConfigurationTemplateAsync(const UpdateReplicationConfigurationTemplateRequestT& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MgnClient::UpdateReplicationConfigurationTemplate, request, handler, context);
+        }
+
+        /**
+         * <p>Update Source Server.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSourceServerOutcome UpdateSourceServer(const Model::UpdateSourceServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSourceServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSourceServerRequestT = Model::UpdateSourceServerRequest>
+        Model::UpdateSourceServerOutcomeCallable UpdateSourceServerCallable(const UpdateSourceServerRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::UpdateSourceServer, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSourceServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSourceServerRequestT = Model::UpdateSourceServerRequest>
+        void UpdateSourceServerAsync(const UpdateSourceServerRequestT& request, const UpdateSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::UpdateSourceServer, request, handler, context);
         }
 
         /**

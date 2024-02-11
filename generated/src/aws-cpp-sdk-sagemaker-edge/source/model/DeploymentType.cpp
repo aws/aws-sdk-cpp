@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentType::NOT_SET:
+            return {};
           case DeploymentType::Model:
             return "Model";
           default:

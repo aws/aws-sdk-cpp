@@ -10,6 +10,7 @@
 #include <aws/quicksight/model/BarsArrangement.h>
 #include <aws/quicksight/model/AxisDisplayOptions.h>
 #include <aws/quicksight/model/ChartAxisLabelOptions.h>
+#include <aws/quicksight/model/SingleAxisOptions.h>
 #include <aws/quicksight/model/LegendOptions.h>
 #include <aws/quicksight/model/DataLabelOptions.h>
 #include <aws/quicksight/model/TooltipOptions.h>
@@ -381,6 +382,25 @@ namespace Model
     inline ComboChartConfiguration& WithSecondaryYAxisLabelOptions(ChartAxisLabelOptions&& value) { SetSecondaryYAxisLabelOptions(std::move(value)); return *this;}
 
 
+    
+    inline const SingleAxisOptions& GetSingleAxisOptions() const{ return m_singleAxisOptions; }
+
+    
+    inline bool SingleAxisOptionsHasBeenSet() const { return m_singleAxisOptionsHasBeenSet; }
+
+    
+    inline void SetSingleAxisOptions(const SingleAxisOptions& value) { m_singleAxisOptionsHasBeenSet = true; m_singleAxisOptions = value; }
+
+    
+    inline void SetSingleAxisOptions(SingleAxisOptions&& value) { m_singleAxisOptionsHasBeenSet = true; m_singleAxisOptions = std::move(value); }
+
+    
+    inline ComboChartConfiguration& WithSingleAxisOptions(const SingleAxisOptions& value) { SetSingleAxisOptions(value); return *this;}
+
+    
+    inline ComboChartConfiguration& WithSingleAxisOptions(SingleAxisOptions&& value) { SetSingleAxisOptions(std::move(value)); return *this;}
+
+
     /**
      * <p>The label options (label text, label visibility, and sort icon visibility) of
      * a combo chart's color field well.</p>
@@ -653,6 +673,9 @@ namespace Model
 
     ChartAxisLabelOptions m_secondaryYAxisLabelOptions;
     bool m_secondaryYAxisLabelOptionsHasBeenSet = false;
+
+    SingleAxisOptions m_singleAxisOptions;
+    bool m_singleAxisOptionsHasBeenSet = false;
 
     ChartAxisLabelOptions m_colorLabelOptions;
     bool m_colorLabelOptionsHasBeenSet = false;

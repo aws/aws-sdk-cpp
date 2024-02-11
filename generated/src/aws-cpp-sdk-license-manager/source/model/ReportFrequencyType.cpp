@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportFrequencyType::NOT_SET:
+            return {};
           case ReportFrequencyType::DAY:
             return "DAY";
           case ReportFrequencyType::WEEK:

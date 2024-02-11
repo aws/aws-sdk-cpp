@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/amp/model/WorkspaceStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -38,6 +38,47 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API WorkspaceDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API WorkspaceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Unique string identifying this workspace.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+
+    /**
+     * <p>Unique string identifying this workspace.</p>
+     */
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+
+    /**
+     * <p>Unique string identifying this workspace.</p>
+     */
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+
+    /**
+     * <p>Unique string identifying this workspace.</p>
+     */
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
+
+    /**
+     * <p>Unique string identifying this workspace.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
+
+    /**
+     * <p>Unique string identifying this workspace.</p>
+     */
+    inline WorkspaceDescription& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>Unique string identifying this workspace.</p>
+     */
+    inline WorkspaceDescription& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique string identifying this workspace.</p>
+     */
+    inline WorkspaceDescription& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
 
     /**
@@ -123,34 +164,34 @@ namespace Model
 
 
     /**
-     * <p>The time when the workspace was created.</p>
+     * <p>The status of this workspace.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const WorkspaceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The time when the workspace was created.</p>
+     * <p>The status of this workspace.</p>
      */
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The time when the workspace was created.</p>
+     * <p>The status of this workspace.</p>
      */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetStatus(const WorkspaceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The time when the workspace was created.</p>
+     * <p>The status of this workspace.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+    inline void SetStatus(WorkspaceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The time when the workspace was created.</p>
+     * <p>The status of this workspace.</p>
      */
-    inline WorkspaceDescription& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline WorkspaceDescription& WithStatus(const WorkspaceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The time when the workspace was created.</p>
+     * <p>The status of this workspace.</p>
      */
-    inline WorkspaceDescription& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline WorkspaceDescription& WithStatus(WorkspaceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -195,34 +236,34 @@ namespace Model
 
 
     /**
-     * <p>The status of this workspace.</p>
+     * <p>The time when the workspace was created.</p>
      */
-    inline const WorkspaceStatus& GetStatus() const{ return m_status; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The status of this workspace.</p>
+     * <p>The time when the workspace was created.</p>
      */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The status of this workspace.</p>
+     * <p>The time when the workspace was created.</p>
      */
-    inline void SetStatus(const WorkspaceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The status of this workspace.</p>
+     * <p>The time when the workspace was created.</p>
      */
-    inline void SetStatus(WorkspaceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The status of this workspace.</p>
+     * <p>The time when the workspace was created.</p>
      */
-    inline WorkspaceDescription& WithStatus(const WorkspaceStatus& value) { SetStatus(value); return *this;}
+    inline WorkspaceDescription& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The status of this workspace.</p>
+     * <p>The time when the workspace was created.</p>
      */
-    inline WorkspaceDescription& WithStatus(WorkspaceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline WorkspaceDescription& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -292,46 +333,49 @@ namespace Model
 
 
     /**
-     * <p>Unique string identifying this workspace.</p>
+     * <p>The customer managed KMS key of this workspace.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>Unique string identifying this workspace.</p>
+     * <p>The customer managed KMS key of this workspace.</p>
      */
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>Unique string identifying this workspace.</p>
+     * <p>The customer managed KMS key of this workspace.</p>
      */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>Unique string identifying this workspace.</p>
+     * <p>The customer managed KMS key of this workspace.</p>
      */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>Unique string identifying this workspace.</p>
+     * <p>The customer managed KMS key of this workspace.</p>
      */
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>Unique string identifying this workspace.</p>
+     * <p>The customer managed KMS key of this workspace.</p>
      */
-    inline WorkspaceDescription& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+    inline WorkspaceDescription& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>Unique string identifying this workspace.</p>
+     * <p>The customer managed KMS key of this workspace.</p>
      */
-    inline WorkspaceDescription& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+    inline WorkspaceDescription& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>Unique string identifying this workspace.</p>
+     * <p>The customer managed KMS key of this workspace.</p>
      */
-    inline WorkspaceDescription& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    inline WorkspaceDescription& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
   private:
+
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_alias;
     bool m_aliasHasBeenSet = false;
@@ -339,20 +383,20 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
+    WorkspaceStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_prometheusEndpoint;
     bool m_prometheusEndpointHasBeenSet = false;
 
-    WorkspaceStatus m_status;
-    bool m_statusHasBeenSet = false;
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

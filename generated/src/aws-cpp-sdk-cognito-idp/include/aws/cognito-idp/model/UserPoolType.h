@@ -9,7 +9,6 @@
 #include <aws/cognito-idp/model/UserPoolPolicyType.h>
 #include <aws/cognito-idp/model/DeletionProtectionType.h>
 #include <aws/cognito-idp/model/LambdaConfigType.h>
-#include <aws/cognito-idp/model/StatusType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/VerificationMessageTemplateType.h>
@@ -277,135 +276,192 @@ namespace Model
 
 
     /**
-     * <p>The status of a user pool.</p>
-     */
-    inline const StatusType& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of a user pool.</p>
-     */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of a user pool.</p>
-     */
-    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of a user pool.</p>
-     */
-    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of a user pool.</p>
-     */
-    inline UserPoolType& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of a user pool.</p>
-     */
-    inline UserPoolType& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The date the user pool was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * <p>The date the user pool was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
-     * <p>The date the user pool was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * <p>The date the user pool was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * <p>The date the user pool was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline UserPoolType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * <p>The date the user pool was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline UserPoolType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date the user pool was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date the user pool was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>The date the user pool was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date the user pool was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The date the user pool was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline UserPoolType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date the user pool was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline UserPoolType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>A container with the schema attributes of a user pool.</p>
+     * <p>A list of the user attributes and their properties in your user pool. The
+     * attribute schema contains standard attributes, custom attributes with a
+     * <code>custom:</code> prefix, and developer attributes with a <code>dev:</code>
+     * prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+     * pool attributes</a>.</p> <p>Developer-only attributes are a legacy feature of
+     * user pools, are read-only to all app clients. You can create and update
+     * developer-only attributes only with IAM-authenticated API operations. Use app
+     * client read/write permissions instead.</p>
      */
     inline const Aws::Vector<SchemaAttributeType>& GetSchemaAttributes() const{ return m_schemaAttributes; }
 
     /**
-     * <p>A container with the schema attributes of a user pool.</p>
+     * <p>A list of the user attributes and their properties in your user pool. The
+     * attribute schema contains standard attributes, custom attributes with a
+     * <code>custom:</code> prefix, and developer attributes with a <code>dev:</code>
+     * prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+     * pool attributes</a>.</p> <p>Developer-only attributes are a legacy feature of
+     * user pools, are read-only to all app clients. You can create and update
+     * developer-only attributes only with IAM-authenticated API operations. Use app
+     * client read/write permissions instead.</p>
      */
     inline bool SchemaAttributesHasBeenSet() const { return m_schemaAttributesHasBeenSet; }
 
     /**
-     * <p>A container with the schema attributes of a user pool.</p>
+     * <p>A list of the user attributes and their properties in your user pool. The
+     * attribute schema contains standard attributes, custom attributes with a
+     * <code>custom:</code> prefix, and developer attributes with a <code>dev:</code>
+     * prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+     * pool attributes</a>.</p> <p>Developer-only attributes are a legacy feature of
+     * user pools, are read-only to all app clients. You can create and update
+     * developer-only attributes only with IAM-authenticated API operations. Use app
+     * client read/write permissions instead.</p>
      */
     inline void SetSchemaAttributes(const Aws::Vector<SchemaAttributeType>& value) { m_schemaAttributesHasBeenSet = true; m_schemaAttributes = value; }
 
     /**
-     * <p>A container with the schema attributes of a user pool.</p>
+     * <p>A list of the user attributes and their properties in your user pool. The
+     * attribute schema contains standard attributes, custom attributes with a
+     * <code>custom:</code> prefix, and developer attributes with a <code>dev:</code>
+     * prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+     * pool attributes</a>.</p> <p>Developer-only attributes are a legacy feature of
+     * user pools, are read-only to all app clients. You can create and update
+     * developer-only attributes only with IAM-authenticated API operations. Use app
+     * client read/write permissions instead.</p>
      */
     inline void SetSchemaAttributes(Aws::Vector<SchemaAttributeType>&& value) { m_schemaAttributesHasBeenSet = true; m_schemaAttributes = std::move(value); }
 
     /**
-     * <p>A container with the schema attributes of a user pool.</p>
+     * <p>A list of the user attributes and their properties in your user pool. The
+     * attribute schema contains standard attributes, custom attributes with a
+     * <code>custom:</code> prefix, and developer attributes with a <code>dev:</code>
+     * prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+     * pool attributes</a>.</p> <p>Developer-only attributes are a legacy feature of
+     * user pools, are read-only to all app clients. You can create and update
+     * developer-only attributes only with IAM-authenticated API operations. Use app
+     * client read/write permissions instead.</p>
      */
     inline UserPoolType& WithSchemaAttributes(const Aws::Vector<SchemaAttributeType>& value) { SetSchemaAttributes(value); return *this;}
 
     /**
-     * <p>A container with the schema attributes of a user pool.</p>
+     * <p>A list of the user attributes and their properties in your user pool. The
+     * attribute schema contains standard attributes, custom attributes with a
+     * <code>custom:</code> prefix, and developer attributes with a <code>dev:</code>
+     * prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+     * pool attributes</a>.</p> <p>Developer-only attributes are a legacy feature of
+     * user pools, are read-only to all app clients. You can create and update
+     * developer-only attributes only with IAM-authenticated API operations. Use app
+     * client read/write permissions instead.</p>
      */
     inline UserPoolType& WithSchemaAttributes(Aws::Vector<SchemaAttributeType>&& value) { SetSchemaAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>A container with the schema attributes of a user pool.</p>
+     * <p>A list of the user attributes and their properties in your user pool. The
+     * attribute schema contains standard attributes, custom attributes with a
+     * <code>custom:</code> prefix, and developer attributes with a <code>dev:</code>
+     * prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+     * pool attributes</a>.</p> <p>Developer-only attributes are a legacy feature of
+     * user pools, are read-only to all app clients. You can create and update
+     * developer-only attributes only with IAM-authenticated API operations. Use app
+     * client read/write permissions instead.</p>
      */
     inline UserPoolType& AddSchemaAttributes(const SchemaAttributeType& value) { m_schemaAttributesHasBeenSet = true; m_schemaAttributes.push_back(value); return *this; }
 
     /**
-     * <p>A container with the schema attributes of a user pool.</p>
+     * <p>A list of the user attributes and their properties in your user pool. The
+     * attribute schema contains standard attributes, custom attributes with a
+     * <code>custom:</code> prefix, and developer attributes with a <code>dev:</code>
+     * prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+     * pool attributes</a>.</p> <p>Developer-only attributes are a legacy feature of
+     * user pools, are read-only to all app clients. You can create and update
+     * developer-only attributes only with IAM-authenticated API operations. Use app
+     * client read/write permissions instead.</p>
      */
     inline UserPoolType& AddSchemaAttributes(SchemaAttributeType&& value) { m_schemaAttributesHasBeenSet = true; m_schemaAttributes.push_back(std::move(value)); return *this; }
 
@@ -955,42 +1011,42 @@ namespace Model
     /**
      * <p>The email configuration of your user pool. The email configuration type sets
      * your preferred sending method, Amazon Web Services Region, and sender for
-     * messages tfrom your user pool.</p>
+     * messages from your user pool.</p>
      */
     inline const EmailConfigurationType& GetEmailConfiguration() const{ return m_emailConfiguration; }
 
     /**
      * <p>The email configuration of your user pool. The email configuration type sets
      * your preferred sending method, Amazon Web Services Region, and sender for
-     * messages tfrom your user pool.</p>
+     * messages from your user pool.</p>
      */
     inline bool EmailConfigurationHasBeenSet() const { return m_emailConfigurationHasBeenSet; }
 
     /**
      * <p>The email configuration of your user pool. The email configuration type sets
      * your preferred sending method, Amazon Web Services Region, and sender for
-     * messages tfrom your user pool.</p>
+     * messages from your user pool.</p>
      */
     inline void SetEmailConfiguration(const EmailConfigurationType& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = value; }
 
     /**
      * <p>The email configuration of your user pool. The email configuration type sets
      * your preferred sending method, Amazon Web Services Region, and sender for
-     * messages tfrom your user pool.</p>
+     * messages from your user pool.</p>
      */
     inline void SetEmailConfiguration(EmailConfigurationType&& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = std::move(value); }
 
     /**
      * <p>The email configuration of your user pool. The email configuration type sets
      * your preferred sending method, Amazon Web Services Region, and sender for
-     * messages tfrom your user pool.</p>
+     * messages from your user pool.</p>
      */
     inline UserPoolType& WithEmailConfiguration(const EmailConfigurationType& value) { SetEmailConfiguration(value); return *this;}
 
     /**
      * <p>The email configuration of your user pool. The email configuration type sets
      * your preferred sending method, Amazon Web Services Region, and sender for
-     * messages tfrom your user pool.</p>
+     * messages from your user pool.</p>
      */
     inline UserPoolType& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(std::move(value)); return *this;}
 
@@ -1158,9 +1214,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
      * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
      * SMS Sandbox and messages will only reach verified end users. This parameter
-     * won’t get populated with SNSSandbox if the IAM user creating the user pool
-     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
-     * account out of the sandbox, see <a
+     * won’t get populated with SNSSandbox if the user creating the user pool doesn’t
+     * have SNS permissions. To learn how to move your Amazon Web Services account out
+     * of the sandbox, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
      * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
@@ -1176,9 +1232,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
      * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
      * SMS Sandbox and messages will only reach verified end users. This parameter
-     * won’t get populated with SNSSandbox if the IAM user creating the user pool
-     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
-     * account out of the sandbox, see <a
+     * won’t get populated with SNSSandbox if the user creating the user pool doesn’t
+     * have SNS permissions. To learn how to move your Amazon Web Services account out
+     * of the sandbox, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
      * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
@@ -1194,9 +1250,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
      * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
      * SMS Sandbox and messages will only reach verified end users. This parameter
-     * won’t get populated with SNSSandbox if the IAM user creating the user pool
-     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
-     * account out of the sandbox, see <a
+     * won’t get populated with SNSSandbox if the user creating the user pool doesn’t
+     * have SNS permissions. To learn how to move your Amazon Web Services account out
+     * of the sandbox, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
      * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
@@ -1212,9 +1268,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
      * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
      * SMS Sandbox and messages will only reach verified end users. This parameter
-     * won’t get populated with SNSSandbox if the IAM user creating the user pool
-     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
-     * account out of the sandbox, see <a
+     * won’t get populated with SNSSandbox if the user creating the user pool doesn’t
+     * have SNS permissions. To learn how to move your Amazon Web Services account out
+     * of the sandbox, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
      * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
@@ -1230,9 +1286,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
      * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
      * SMS Sandbox and messages will only reach verified end users. This parameter
-     * won’t get populated with SNSSandbox if the IAM user creating the user pool
-     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
-     * account out of the sandbox, see <a
+     * won’t get populated with SNSSandbox if the user creating the user pool doesn’t
+     * have SNS permissions. To learn how to move your Amazon Web Services account out
+     * of the sandbox, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
      * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
@@ -1248,9 +1304,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
      * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
      * SMS Sandbox and messages will only reach verified end users. This parameter
-     * won’t get populated with SNSSandbox if the IAM user creating the user pool
-     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
-     * account out of the sandbox, see <a
+     * won’t get populated with SNSSandbox if the user creating the user pool doesn’t
+     * have SNS permissions. To learn how to move your Amazon Web Services account out
+     * of the sandbox, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
      * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
@@ -1266,9 +1322,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
      * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
      * SMS Sandbox and messages will only reach verified end users. This parameter
-     * won’t get populated with SNSSandbox if the IAM user creating the user pool
-     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
-     * account out of the sandbox, see <a
+     * won’t get populated with SNSSandbox if the user creating the user pool doesn’t
+     * have SNS permissions. To learn how to move your Amazon Web Services account out
+     * of the sandbox, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
      * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
@@ -1284,9 +1340,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
      * </dd> <dt>SNSSandbox</dt> <dd> <p>The Amazon Web Services account is in the SNS
      * SMS Sandbox and messages will only reach verified end users. This parameter
-     * won’t get populated with SNSSandbox if the IAM user creating the user pool
-     * doesn’t have SNS permissions. To learn how to move your Amazon Web Services
-     * account out of the sandbox, see <a
+     * won’t get populated with SNSSandbox if the user creating the user pool doesn’t
+     * have SNS permissions. To learn how to move your Amazon Web Services account out
+     * of the sandbox, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
      * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
@@ -1512,32 +1568,68 @@ namespace Model
 
 
     /**
-     * <p>The user pool add-ons.</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
 
     /**
-     * <p>The user pool add-ons.</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline bool UserPoolAddOnsHasBeenSet() const { return m_userPoolAddOnsHasBeenSet; }
 
     /**
-     * <p>The user pool add-ons.</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline void SetUserPoolAddOns(const UserPoolAddOnsType& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = value; }
 
     /**
-     * <p>The user pool add-ons.</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline void SetUserPoolAddOns(UserPoolAddOnsType&& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = std::move(value); }
 
     /**
-     * <p>The user pool add-ons.</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline UserPoolType& WithUserPoolAddOns(const UserPoolAddOnsType& value) { SetUserPoolAddOns(value); return *this;}
 
     /**
-     * <p>The user pool add-ons.</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline UserPoolType& WithUserPoolAddOns(UserPoolAddOnsType&& value) { SetUserPoolAddOns(std::move(value)); return *this;}
 
@@ -1720,9 +1812,6 @@ namespace Model
 
     LambdaConfigType m_lambdaConfig;
     bool m_lambdaConfigHasBeenSet = false;
-
-    StatusType m_status;
-    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet = false;

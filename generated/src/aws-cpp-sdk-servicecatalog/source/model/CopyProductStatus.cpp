@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CopyProductStatus::NOT_SET:
+            return {};
           case CopyProductStatus::SUCCEEDED:
             return "SUCCEEDED";
           case CopyProductStatus::IN_PROGRESS:

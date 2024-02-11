@@ -16,7 +16,8 @@ namespace Model
   enum class RxNormTraitName
   {
     NOT_SET,
-    NEGATION
+    NEGATION,
+    PAST_HISTORY
   };
 
 namespace RxNormTraitNameMapper

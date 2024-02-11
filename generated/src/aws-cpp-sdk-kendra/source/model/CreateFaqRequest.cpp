@@ -21,7 +21,7 @@ CreateFaqRequest::CreateFaqRequest() :
     m_tagsHasBeenSet(false),
     m_fileFormat(FaqFileFormat::NOT_SET),
     m_fileFormatHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_languageCodeHasBeenSet(false)
 {

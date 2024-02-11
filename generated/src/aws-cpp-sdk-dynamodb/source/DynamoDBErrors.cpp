@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/dynamodb/DynamoDBErrors.h>
+#include <aws/dynamodb/model/ConditionalCheckFailedException.h>
 #include <aws/dynamodb/model/TransactionCanceledException.h>
 
 using namespace Aws::Client;
@@ -17,6 +18,12 @@ namespace Aws
 {
 namespace DynamoDB
 {
+template<> AWS_DYNAMODB_API ConditionalCheckFailedException DynamoDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == DynamoDBErrors::CONDITIONAL_CHECK_FAILED);
+  return ConditionalCheckFailedException(this->GetJsonPayload().View());
+}
+
 template<> AWS_DYNAMODB_API TransactionCanceledException DynamoDBError::GetModeledError()
 {
   assert(this->GetErrorType() == DynamoDBErrors::TRANSACTION_CANCELED);
@@ -63,119 +70,119 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONDITIONAL_CHECK_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::CONDITIONAL_CHECK_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::CONDITIONAL_CHECK_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TRANSACTION_CANCELED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TRANSACTION_CANCELED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TRANSACTION_CANCELED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == REPLICA_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::REPLICA_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::REPLICA_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TRANSACTION_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TRANSACTION_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TRANSACTION_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REPLICA_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::REPLICA_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::REPLICA_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IMPORT_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::IMPORT_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::IMPORT_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TABLE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TABLE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TABLE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EXPORT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::EXPORT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::EXPORT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TRANSACTION_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TRANSACTION_IN_PROGRESS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TRANSACTION_IN_PROGRESS), RetryableType::RETRYABLE);
   }
   else if (hashCode == BACKUP_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::BACKUP_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::BACKUP_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONTINUOUS_BACKUPS_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::CONTINUOUS_BACKUPS_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::CONTINUOUS_BACKUPS_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TABLE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TABLE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TABLE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PROVISIONED_THROUGHPUT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::PROVISIONED_THROUGHPUT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::PROVISIONED_THROUGHPUT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::RESOURCE_IN_USE), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::RESOURCE_IN_USE), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_RESTORE_TIME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::INVALID_RESTORE_TIME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::INVALID_RESTORE_TIME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ITEM_COLLECTION_SIZE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::ITEM_COLLECTION_SIZE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::ITEM_COLLECTION_SIZE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BACKUP_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::BACKUP_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::BACKUP_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::IDEMPOTENT_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POINT_IN_TIME_RECOVERY_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::POINT_IN_TIME_RECOVERY_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::POINT_IN_TIME_RECOVERY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TABLE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TABLE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TABLE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EXPORT_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::EXPORT_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::EXPORT_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GLOBAL_TABLE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::GLOBAL_TABLE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::GLOBAL_TABLE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_EXPORT_TIME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::INVALID_EXPORT_TIME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::INVALID_EXPORT_TIME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REQUEST_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::REQUEST_LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::REQUEST_LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == IMPORT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::IMPORT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::IMPORT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GLOBAL_TABLE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::GLOBAL_TABLE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::GLOBAL_TABLE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATE_ITEM_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::DUPLICATE_ITEM), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::DUPLICATE_ITEM), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INDEX_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::INDEX_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::INDEX_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

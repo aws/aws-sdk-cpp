@@ -29,7 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>The properties of an experiment as returned by the <a>Search</a>
+   * <p>The properties of an experiment as returned by the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
    * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Experiment">AWS
    * API Reference</a></p>
@@ -347,50 +348,58 @@ namespace Model
 
 
     /**
-     * <p>The list of tags that are associated with the experiment. You can use
-     * <a>Search</a> API to search on the tags.</p>
+     * <p>The list of tags that are associated with the experiment. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The list of tags that are associated with the experiment. You can use
-     * <a>Search</a> API to search on the tags.</p>
+     * <p>The list of tags that are associated with the experiment. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The list of tags that are associated with the experiment. You can use
-     * <a>Search</a> API to search on the tags.</p>
+     * <p>The list of tags that are associated with the experiment. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The list of tags that are associated with the experiment. You can use
-     * <a>Search</a> API to search on the tags.</p>
+     * <p>The list of tags that are associated with the experiment. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The list of tags that are associated with the experiment. You can use
-     * <a>Search</a> API to search on the tags.</p>
+     * <p>The list of tags that are associated with the experiment. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline Experiment& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The list of tags that are associated with the experiment. You can use
-     * <a>Search</a> API to search on the tags.</p>
+     * <p>The list of tags that are associated with the experiment. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline Experiment& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tags that are associated with the experiment. You can use
-     * <a>Search</a> API to search on the tags.</p>
+     * <p>The list of tags that are associated with the experiment. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline Experiment& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The list of tags that are associated with the experiment. You can use
-     * <a>Search</a> API to search on the tags.</p>
+     * <p>The list of tags that are associated with the experiment. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline Experiment& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

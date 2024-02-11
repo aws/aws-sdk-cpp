@@ -36,32 +36,32 @@ namespace Model
 
 
     /**
-     * <p>The x509 v3 specified certificate revocation list</p>
+     * <p>The x509 v3 specified certificate revocation list (CRL).</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCrlData() const{ return m_crlData; }
 
     /**
-     * <p>The x509 v3 specified certificate revocation list</p>
+     * <p>The x509 v3 specified certificate revocation list (CRL).</p>
      */
     inline bool CrlDataHasBeenSet() const { return m_crlDataHasBeenSet; }
 
     /**
-     * <p>The x509 v3 specified certificate revocation list</p>
+     * <p>The x509 v3 specified certificate revocation list (CRL).</p>
      */
     inline void SetCrlData(const Aws::Utils::ByteBuffer& value) { m_crlDataHasBeenSet = true; m_crlData = value; }
 
     /**
-     * <p>The x509 v3 specified certificate revocation list</p>
+     * <p>The x509 v3 specified certificate revocation list (CRL).</p>
      */
     inline void SetCrlData(Aws::Utils::ByteBuffer&& value) { m_crlDataHasBeenSet = true; m_crlData = std::move(value); }
 
     /**
-     * <p>The x509 v3 specified certificate revocation list</p>
+     * <p>The x509 v3 specified certificate revocation list (CRL).</p>
      */
     inline ImportCrlRequest& WithCrlData(const Aws::Utils::ByteBuffer& value) { SetCrlData(value); return *this;}
 
     /**
-     * <p>The x509 v3 specified certificate revocation list</p>
+     * <p>The x509 v3 specified certificate revocation list (CRL).</p>
      */
     inline ImportCrlRequest& WithCrlData(Aws::Utils::ByteBuffer&& value) { SetCrlData(std::move(value)); return *this;}
 

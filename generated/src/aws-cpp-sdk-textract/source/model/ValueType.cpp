@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValueType::NOT_SET:
+            return {};
           case ValueType::DATE:
             return "DATE";
           default:

@@ -83,128 +83,158 @@ namespace Model
 
     /**
      * <p>Specifies the location for the file being copied. Use
-     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this
      * field to parametrize the destination prefix by username or uploaded date.</p>
      * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
-     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * <code>${Transfer:UserName}</code> to copy uploaded files to an Amazon S3 bucket
      * that is prefixed with the name of the Transfer Family user that uploaded the
      * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
      * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
      * bucket that is prefixed with the date of the upload.</p>  <p>The system
      * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
-     * the date the file is uploaded.</p>  </li> </ul>
+     * the date the file is uploaded in UTC.</p>  </li> </ul>
      */
     inline const InputFileLocation& GetDestinationFileLocation() const{ return m_destinationFileLocation; }
 
     /**
      * <p>Specifies the location for the file being copied. Use
-     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this
      * field to parametrize the destination prefix by username or uploaded date.</p>
      * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
-     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * <code>${Transfer:UserName}</code> to copy uploaded files to an Amazon S3 bucket
      * that is prefixed with the name of the Transfer Family user that uploaded the
      * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
      * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
      * bucket that is prefixed with the date of the upload.</p>  <p>The system
      * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
-     * the date the file is uploaded.</p>  </li> </ul>
+     * the date the file is uploaded in UTC.</p>  </li> </ul>
      */
     inline bool DestinationFileLocationHasBeenSet() const { return m_destinationFileLocationHasBeenSet; }
 
     /**
      * <p>Specifies the location for the file being copied. Use
-     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this
      * field to parametrize the destination prefix by username or uploaded date.</p>
      * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
-     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * <code>${Transfer:UserName}</code> to copy uploaded files to an Amazon S3 bucket
      * that is prefixed with the name of the Transfer Family user that uploaded the
      * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
      * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
      * bucket that is prefixed with the date of the upload.</p>  <p>The system
      * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
-     * the date the file is uploaded.</p>  </li> </ul>
+     * the date the file is uploaded in UTC.</p>  </li> </ul>
      */
     inline void SetDestinationFileLocation(const InputFileLocation& value) { m_destinationFileLocationHasBeenSet = true; m_destinationFileLocation = value; }
 
     /**
      * <p>Specifies the location for the file being copied. Use
-     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this
      * field to parametrize the destination prefix by username or uploaded date.</p>
      * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
-     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * <code>${Transfer:UserName}</code> to copy uploaded files to an Amazon S3 bucket
      * that is prefixed with the name of the Transfer Family user that uploaded the
      * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
      * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
      * bucket that is prefixed with the date of the upload.</p>  <p>The system
      * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
-     * the date the file is uploaded.</p>  </li> </ul>
+     * the date the file is uploaded in UTC.</p>  </li> </ul>
      */
     inline void SetDestinationFileLocation(InputFileLocation&& value) { m_destinationFileLocationHasBeenSet = true; m_destinationFileLocation = std::move(value); }
 
     /**
      * <p>Specifies the location for the file being copied. Use
-     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this
      * field to parametrize the destination prefix by username or uploaded date.</p>
      * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
-     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * <code>${Transfer:UserName}</code> to copy uploaded files to an Amazon S3 bucket
      * that is prefixed with the name of the Transfer Family user that uploaded the
      * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
      * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
      * bucket that is prefixed with the date of the upload.</p>  <p>The system
      * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
-     * the date the file is uploaded.</p>  </li> </ul>
+     * the date the file is uploaded in UTC.</p>  </li> </ul>
      */
     inline CopyStepDetails& WithDestinationFileLocation(const InputFileLocation& value) { SetDestinationFileLocation(value); return *this;}
 
     /**
      * <p>Specifies the location for the file being copied. Use
-     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this
      * field to parametrize the destination prefix by username or uploaded date.</p>
      * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
-     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * <code>${Transfer:UserName}</code> to copy uploaded files to an Amazon S3 bucket
      * that is prefixed with the name of the Transfer Family user that uploaded the
      * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
      * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
      * bucket that is prefixed with the date of the upload.</p>  <p>The system
      * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
-     * the date the file is uploaded.</p>  </li> </ul>
+     * the date the file is uploaded in UTC.</p>  </li> </ul>
      */
     inline CopyStepDetails& WithDestinationFileLocation(InputFileLocation&& value) { SetDestinationFileLocation(std::move(value)); return *this;}
 
 
     /**
      * <p>A flag that indicates whether to overwrite an existing file of the same name.
-     * The default is <code>FALSE</code>.</p>
+     * The default is <code>FALSE</code>.</p> <p>If the workflow is processing a file
+     * that has the same name as an existing file, the behavior is as follows:</p> <ul>
+     * <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing
+     * file is replaced with the file being processed.</p> </li> <li> <p>If
+     * <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the
+     * workflow processing stops.</p> </li> </ul>
      */
     inline const OverwriteExisting& GetOverwriteExisting() const{ return m_overwriteExisting; }
 
     /**
      * <p>A flag that indicates whether to overwrite an existing file of the same name.
-     * The default is <code>FALSE</code>.</p>
+     * The default is <code>FALSE</code>.</p> <p>If the workflow is processing a file
+     * that has the same name as an existing file, the behavior is as follows:</p> <ul>
+     * <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing
+     * file is replaced with the file being processed.</p> </li> <li> <p>If
+     * <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the
+     * workflow processing stops.</p> </li> </ul>
      */
     inline bool OverwriteExistingHasBeenSet() const { return m_overwriteExistingHasBeenSet; }
 
     /**
      * <p>A flag that indicates whether to overwrite an existing file of the same name.
-     * The default is <code>FALSE</code>.</p>
+     * The default is <code>FALSE</code>.</p> <p>If the workflow is processing a file
+     * that has the same name as an existing file, the behavior is as follows:</p> <ul>
+     * <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing
+     * file is replaced with the file being processed.</p> </li> <li> <p>If
+     * <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the
+     * workflow processing stops.</p> </li> </ul>
      */
     inline void SetOverwriteExisting(const OverwriteExisting& value) { m_overwriteExistingHasBeenSet = true; m_overwriteExisting = value; }
 
     /**
      * <p>A flag that indicates whether to overwrite an existing file of the same name.
-     * The default is <code>FALSE</code>.</p>
+     * The default is <code>FALSE</code>.</p> <p>If the workflow is processing a file
+     * that has the same name as an existing file, the behavior is as follows:</p> <ul>
+     * <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing
+     * file is replaced with the file being processed.</p> </li> <li> <p>If
+     * <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the
+     * workflow processing stops.</p> </li> </ul>
      */
     inline void SetOverwriteExisting(OverwriteExisting&& value) { m_overwriteExistingHasBeenSet = true; m_overwriteExisting = std::move(value); }
 
     /**
      * <p>A flag that indicates whether to overwrite an existing file of the same name.
-     * The default is <code>FALSE</code>.</p>
+     * The default is <code>FALSE</code>.</p> <p>If the workflow is processing a file
+     * that has the same name as an existing file, the behavior is as follows:</p> <ul>
+     * <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing
+     * file is replaced with the file being processed.</p> </li> <li> <p>If
+     * <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the
+     * workflow processing stops.</p> </li> </ul>
      */
     inline CopyStepDetails& WithOverwriteExisting(const OverwriteExisting& value) { SetOverwriteExisting(value); return *this;}
 
     /**
      * <p>A flag that indicates whether to overwrite an existing file of the same name.
-     * The default is <code>FALSE</code>.</p>
+     * The default is <code>FALSE</code>.</p> <p>If the workflow is processing a file
+     * that has the same name as an existing file, the behavior is as follows:</p> <ul>
+     * <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing
+     * file is replaced with the file being processed.</p> </li> <li> <p>If
+     * <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the
+     * workflow processing stops.</p> </li> </ul>
      */
     inline CopyStepDetails& WithOverwriteExisting(OverwriteExisting&& value) { SetOverwriteExisting(std::move(value)); return *this;}
 

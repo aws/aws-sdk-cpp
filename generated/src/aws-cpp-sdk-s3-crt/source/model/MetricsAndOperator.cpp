@@ -81,10 +81,9 @@ void MetricsAndOperator::AddToNode(XmlNode& parentNode) const
 
   if(m_tagsHasBeenSet)
   {
-   XmlNode tagsParentNode = parentNode.CreateChildElement("Tags");
    for(const auto& item : m_tags)
    {
-     XmlNode tagsNode = tagsParentNode.CreateChildElement("Tag");
+     XmlNode tagsNode = parentNode.CreateChildElement("Tag");
      item.AddToNode(tagsNode);
    }
   }

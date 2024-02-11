@@ -23,7 +23,8 @@ ApplicationSettingsResource::ApplicationSettingsResource() :
     m_campaignHookHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_limitsHasBeenSet(false),
-    m_quietTimeHasBeenSet(false)
+    m_quietTimeHasBeenSet(false),
+    m_journeyLimitsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ ApplicationSettingsResource::ApplicationSettingsResource(JsonView jsonValue) :
     m_campaignHookHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_limitsHasBeenSet(false),
-    m_quietTimeHasBeenSet(false)
+    m_quietTimeHasBeenSet(false),
+    m_journeyLimitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ ApplicationSettingsResource& ApplicationSettingsResource::operator =(JsonView js
     m_quietTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JourneyLimits"))
+  {
+    m_journeyLimits = jsonValue.GetObject("JourneyLimits");
+
+    m_journeyLimitsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue ApplicationSettingsResource::Jsonize() const
   if(m_quietTimeHasBeenSet)
   {
    payload.WithObject("QuietTime", m_quietTime.Jsonize());
+
+  }
+
+  if(m_journeyLimitsHasBeenSet)
+  {
+   payload.WithObject("JourneyLimits", m_journeyLimits.Jsonize());
 
   }
 

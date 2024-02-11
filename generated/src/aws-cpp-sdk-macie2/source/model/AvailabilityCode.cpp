@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AvailabilityCode::NOT_SET:
+            return {};
           case AvailabilityCode::AVAILABLE:
             return "AVAILABLE";
           case AvailabilityCode::UNAVAILABLE:

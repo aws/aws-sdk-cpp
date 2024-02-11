@@ -74,37 +74,37 @@ namespace Model
 
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventId = value; }
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventId = std::move(value); }
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline void SetEventId(const char* value) { m_eventId.assign(value); }
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline GetHealthEventResult& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline GetHealthEventResult& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
-     * <p>The internally generated identifier of a health event.</p>
+     * <p>The internally-generated identifier of a health event.</p>
      */
     inline GetHealthEventResult& WithEventId(const char* value) { SetEventId(value); return *this;}
 
@@ -281,17 +281,29 @@ namespace Model
 
 
     /**
-     * <p>The impact on total traffic that a health event has.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline double GetPercentOfTotalTrafficImpacted() const{ return m_percentOfTotalTrafficImpacted; }
 
     /**
-     * <p>The impact on total traffic that a health event has.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline void SetPercentOfTotalTrafficImpacted(double value) { m_percentOfTotalTrafficImpacted = value; }
 
     /**
-     * <p>The impact on total traffic that a health event has.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline GetHealthEventResult& WithPercentOfTotalTrafficImpacted(double value) { SetPercentOfTotalTrafficImpacted(value); return *this;}
 
@@ -320,6 +332,28 @@ namespace Model
      * <p>The type of impairment of a specific health event.</p>
      */
     inline GetHealthEventResult& WithImpactType(HealthEventImpactType&& value) { SetImpactType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The threshold percentage for a health score that determines, along with other
+     * configuration information, when Internet Monitor creates a health event when
+     * there's an internet issue that affects your application end users.</p>
+     */
+    inline double GetHealthScoreThreshold() const{ return m_healthScoreThreshold; }
+
+    /**
+     * <p>The threshold percentage for a health score that determines, along with other
+     * configuration information, when Internet Monitor creates a health event when
+     * there's an internet issue that affects your application end users.</p>
+     */
+    inline void SetHealthScoreThreshold(double value) { m_healthScoreThreshold = value; }
+
+    /**
+     * <p>The threshold percentage for a health score that determines, along with other
+     * configuration information, when Internet Monitor creates a health event when
+     * there's an internet issue that affects your application end users.</p>
+     */
+    inline GetHealthEventResult& WithHealthScoreThreshold(double value) { SetHealthScoreThreshold(value); return *this;}
 
 
     
@@ -364,6 +398,8 @@ namespace Model
     double m_percentOfTotalTrafficImpacted;
 
     HealthEventImpactType m_impactType;
+
+    double m_healthScoreThreshold;
 
     Aws::String m_requestId;
   };

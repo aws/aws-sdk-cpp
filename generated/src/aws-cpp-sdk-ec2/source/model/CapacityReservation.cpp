@@ -52,7 +52,9 @@ CapacityReservation::CapacityReservation() :
     m_outpostArnHasBeenSet(false),
     m_capacityReservationFleetIdHasBeenSet(false),
     m_placementGroupArnHasBeenSet(false),
-    m_capacityAllocationsHasBeenSet(false)
+    m_capacityAllocationsHasBeenSet(false),
+    m_reservationType(CapacityReservationType::NOT_SET),
+    m_reservationTypeHasBeenSet(false)
 {
 }
 
@@ -88,7 +90,9 @@ CapacityReservation::CapacityReservation(const XmlNode& xmlNode) :
     m_outpostArnHasBeenSet(false),
     m_capacityReservationFleetIdHasBeenSet(false),
     m_placementGroupArnHasBeenSet(false),
-    m_capacityAllocationsHasBeenSet(false)
+    m_capacityAllocationsHasBeenSet(false),
+    m_reservationType(CapacityReservationType::NOT_SET),
+    m_reservationTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -249,6 +253,12 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
 
       m_capacityAllocationsHasBeenSet = true;
     }
+    XmlNode reservationTypeNode = resultNode.FirstChild("reservationType");
+    if(!reservationTypeNode.IsNull())
+    {
+      m_reservationType = CapacityReservationTypeMapper::GetCapacityReservationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservationTypeNode.GetText()).c_str()).c_str());
+      m_reservationTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -383,6 +393,11 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 
+  if(m_reservationTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReservationType=" << CapacityReservationTypeMapper::GetNameForCapacityReservationType(m_reservationType) << "&";
+  }
+
 }
 
 void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -490,6 +505,10 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
         capacityAllocationsSs << location <<  ".CapacityAllocationSet." << capacityAllocationsIdx++;
         item.OutputToStream(oStream, capacityAllocationsSs.str().c_str());
       }
+  }
+  if(m_reservationTypeHasBeenSet)
+  {
+      oStream << location << ".ReservationType=" << CapacityReservationTypeMapper::GetNameForCapacityReservationType(m_reservationType) << "&";
   }
 }
 

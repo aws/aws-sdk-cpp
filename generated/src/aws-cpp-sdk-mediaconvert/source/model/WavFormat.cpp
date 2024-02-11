@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WavFormat::NOT_SET:
+            return {};
           case WavFormat::RIFF:
             return "RIFF";
           case WavFormat::RF64:

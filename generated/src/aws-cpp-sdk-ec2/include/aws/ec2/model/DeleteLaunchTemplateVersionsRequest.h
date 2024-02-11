@@ -185,47 +185,56 @@ namespace Model
 
 
     /**
-     * <p>The version numbers of one or more launch template versions to delete.</p>
+     * <p>The version numbers of one or more launch template versions to delete. You
+     * can specify up to 200 launch template version numbers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVersions() const{ return m_versions; }
 
     /**
-     * <p>The version numbers of one or more launch template versions to delete.</p>
+     * <p>The version numbers of one or more launch template versions to delete. You
+     * can specify up to 200 launch template version numbers.</p>
      */
     inline bool VersionsHasBeenSet() const { return m_versionsHasBeenSet; }
 
     /**
-     * <p>The version numbers of one or more launch template versions to delete.</p>
+     * <p>The version numbers of one or more launch template versions to delete. You
+     * can specify up to 200 launch template version numbers.</p>
      */
     inline void SetVersions(const Aws::Vector<Aws::String>& value) { m_versionsHasBeenSet = true; m_versions = value; }
 
     /**
-     * <p>The version numbers of one or more launch template versions to delete.</p>
+     * <p>The version numbers of one or more launch template versions to delete. You
+     * can specify up to 200 launch template version numbers.</p>
      */
     inline void SetVersions(Aws::Vector<Aws::String>&& value) { m_versionsHasBeenSet = true; m_versions = std::move(value); }
 
     /**
-     * <p>The version numbers of one or more launch template versions to delete.</p>
+     * <p>The version numbers of one or more launch template versions to delete. You
+     * can specify up to 200 launch template version numbers.</p>
      */
     inline DeleteLaunchTemplateVersionsRequest& WithVersions(const Aws::Vector<Aws::String>& value) { SetVersions(value); return *this;}
 
     /**
-     * <p>The version numbers of one or more launch template versions to delete.</p>
+     * <p>The version numbers of one or more launch template versions to delete. You
+     * can specify up to 200 launch template version numbers.</p>
      */
     inline DeleteLaunchTemplateVersionsRequest& WithVersions(Aws::Vector<Aws::String>&& value) { SetVersions(std::move(value)); return *this;}
 
     /**
-     * <p>The version numbers of one or more launch template versions to delete.</p>
+     * <p>The version numbers of one or more launch template versions to delete. You
+     * can specify up to 200 launch template version numbers.</p>
      */
     inline DeleteLaunchTemplateVersionsRequest& AddVersions(const Aws::String& value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
 
     /**
-     * <p>The version numbers of one or more launch template versions to delete.</p>
+     * <p>The version numbers of one or more launch template versions to delete. You
+     * can specify up to 200 launch template version numbers.</p>
      */
     inline DeleteLaunchTemplateVersionsRequest& AddVersions(Aws::String&& value) { m_versionsHasBeenSet = true; m_versions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The version numbers of one or more launch template versions to delete.</p>
+     * <p>The version numbers of one or more launch template versions to delete. You
+     * can specify up to 200 launch template version numbers.</p>
      */
     inline DeleteLaunchTemplateVersionsRequest& AddVersions(const char* value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
 

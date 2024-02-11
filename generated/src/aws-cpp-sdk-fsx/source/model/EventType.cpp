@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::NEW_:
             return "NEW";
           case EventType::CHANGED:

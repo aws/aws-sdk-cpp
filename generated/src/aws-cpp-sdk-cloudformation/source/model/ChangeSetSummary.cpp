@@ -35,7 +35,9 @@ ChangeSetSummary::ChangeSetSummary() :
     m_includeNestedStacks(false),
     m_includeNestedStacksHasBeenSet(false),
     m_parentChangeSetIdHasBeenSet(false),
-    m_rootChangeSetIdHasBeenSet(false)
+    m_rootChangeSetIdHasBeenSet(false),
+    m_importExistingResources(false),
+    m_importExistingResourcesHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ ChangeSetSummary::ChangeSetSummary(const XmlNode& xmlNode) :
     m_includeNestedStacks(false),
     m_includeNestedStacksHasBeenSet(false),
     m_parentChangeSetIdHasBeenSet(false),
-    m_rootChangeSetIdHasBeenSet(false)
+    m_rootChangeSetIdHasBeenSet(false),
+    m_importExistingResources(false),
+    m_importExistingResourcesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -137,6 +141,12 @@ ChangeSetSummary& ChangeSetSummary::operator =(const XmlNode& xmlNode)
       m_rootChangeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(rootChangeSetIdNode.GetText());
       m_rootChangeSetIdHasBeenSet = true;
     }
+    XmlNode importExistingResourcesNode = resultNode.FirstChild("ImportExistingResources");
+    if(!importExistingResourcesNode.IsNull())
+    {
+      m_importExistingResources = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(importExistingResourcesNode.GetText()).c_str()).c_str());
+      m_importExistingResourcesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -204,6 +214,11 @@ void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".RootChangeSetId=" << StringUtils::URLEncode(m_rootChangeSetId.c_str()) << "&";
   }
 
+  if(m_importExistingResourcesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImportExistingResources=" << std::boolalpha << m_importExistingResources << "&";
+  }
+
 }
 
 void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -255,6 +270,10 @@ void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_rootChangeSetIdHasBeenSet)
   {
       oStream << location << ".RootChangeSetId=" << StringUtils::URLEncode(m_rootChangeSetId.c_str()) << "&";
+  }
+  if(m_importExistingResourcesHasBeenSet)
+  {
+      oStream << location << ".ImportExistingResources=" << std::boolalpha << m_importExistingResources << "&";
   }
 }
 

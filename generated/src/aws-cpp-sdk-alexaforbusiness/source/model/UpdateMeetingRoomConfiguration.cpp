@@ -23,7 +23,8 @@ UpdateMeetingRoomConfiguration::UpdateMeetingRoomConfiguration() :
     m_roomUtilizationMetricsEnabledHasBeenSet(false),
     m_endOfMeetingReminderHasBeenSet(false),
     m_instantBookingHasBeenSet(false),
-    m_requireCheckInHasBeenSet(false)
+    m_requireCheckInHasBeenSet(false),
+    m_proactiveJoinHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ UpdateMeetingRoomConfiguration::UpdateMeetingRoomConfiguration(JsonView jsonValu
     m_roomUtilizationMetricsEnabledHasBeenSet(false),
     m_endOfMeetingReminderHasBeenSet(false),
     m_instantBookingHasBeenSet(false),
-    m_requireCheckInHasBeenSet(false)
+    m_requireCheckInHasBeenSet(false),
+    m_proactiveJoinHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ UpdateMeetingRoomConfiguration& UpdateMeetingRoomConfiguration::operator =(JsonV
     m_requireCheckInHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProactiveJoin"))
+  {
+    m_proactiveJoin = jsonValue.GetObject("ProactiveJoin");
+
+    m_proactiveJoinHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +104,12 @@ JsonValue UpdateMeetingRoomConfiguration::Jsonize() const
   if(m_requireCheckInHasBeenSet)
   {
    payload.WithObject("RequireCheckIn", m_requireCheckIn.Jsonize());
+
+  }
+
+  if(m_proactiveJoinHasBeenSet)
+  {
+   payload.WithObject("ProactiveJoin", m_proactiveJoin.Jsonize());
 
   }
 

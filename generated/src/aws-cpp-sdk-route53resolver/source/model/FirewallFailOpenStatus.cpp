@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FirewallFailOpenStatus::NOT_SET:
+            return {};
           case FirewallFailOpenStatus::ENABLED:
             return "ENABLED";
           case FirewallFailOpenStatus::DISABLED:

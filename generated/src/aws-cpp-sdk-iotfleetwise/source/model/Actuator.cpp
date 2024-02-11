@@ -28,7 +28,10 @@ Actuator::Actuator() :
     m_min(0.0),
     m_minHasBeenSet(false),
     m_max(0.0),
-    m_maxHasBeenSet(false)
+    m_maxHasBeenSet(false),
+    m_deprecationMessageHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_structFullyQualifiedNameHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ Actuator::Actuator(JsonView jsonValue) :
     m_min(0.0),
     m_minHasBeenSet(false),
     m_max(0.0),
-    m_maxHasBeenSet(false)
+    m_maxHasBeenSet(false),
+    m_deprecationMessageHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_structFullyQualifiedNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +107,27 @@ Actuator& Actuator::operator =(JsonView jsonValue)
     m_maxHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deprecationMessage"))
+  {
+    m_deprecationMessage = jsonValue.GetString("deprecationMessage");
+
+    m_deprecationMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("comment"))
+  {
+    m_comment = jsonValue.GetString("comment");
+
+    m_commentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("structFullyQualifiedName"))
+  {
+    m_structFullyQualifiedName = jsonValue.GetString("structFullyQualifiedName");
+
+    m_structFullyQualifiedNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -151,6 +178,24 @@ JsonValue Actuator::Jsonize() const
   if(m_maxHasBeenSet)
   {
    payload.WithDouble("max", m_max);
+
+  }
+
+  if(m_deprecationMessageHasBeenSet)
+  {
+   payload.WithString("deprecationMessage", m_deprecationMessage);
+
+  }
+
+  if(m_commentHasBeenSet)
+  {
+   payload.WithString("comment", m_comment);
+
+  }
+
+  if(m_structFullyQualifiedNameHasBeenSet)
+  {
+   payload.WithString("structFullyQualifiedName", m_structFullyQualifiedName);
 
   }
 

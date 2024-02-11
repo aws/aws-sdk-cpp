@@ -89,6 +89,12 @@ UpdateBillingGroupResult& UpdateBillingGroupResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("AccountGrouping"))
+  {
+    m_accountGrouping = jsonValue.GetObject("AccountGrouping");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     IAM,
-    QUICKSIGHT
+    QUICKSIGHT,
+    IAM_IDENTITY_CENTER
   };
 
 namespace IdentityTypeMapper

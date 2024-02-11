@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> An operation failed due to a non-existent resource. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An operation failed due to a non-existent resource. </p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */

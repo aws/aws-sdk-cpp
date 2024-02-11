@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticationType::NOT_SET:
+            return {};
           case AuthenticationType::API:
             return "API";
           case AuthenticationType::SAML:

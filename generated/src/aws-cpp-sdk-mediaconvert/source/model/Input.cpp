@@ -19,6 +19,9 @@ namespace Model
 {
 
 Input::Input() : 
+    m_advancedInputFilter(AdvancedInputFilter::NOT_SET),
+    m_advancedInputFilterHasBeenSet(false),
+    m_advancedInputFilterSettingsHasBeenSet(false),
     m_audioSelectorGroupsHasBeenSet(false),
     m_audioSelectorsHasBeenSet(false),
     m_captionSelectorsHasBeenSet(false),
@@ -48,11 +51,15 @@ Input::Input() :
     m_timecodeSourceHasBeenSet(false),
     m_timecodeStartHasBeenSet(false),
     m_videoGeneratorHasBeenSet(false),
+    m_videoOverlaysHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
 {
 }
 
 Input::Input(JsonView jsonValue) : 
+    m_advancedInputFilter(AdvancedInputFilter::NOT_SET),
+    m_advancedInputFilterHasBeenSet(false),
+    m_advancedInputFilterSettingsHasBeenSet(false),
     m_audioSelectorGroupsHasBeenSet(false),
     m_audioSelectorsHasBeenSet(false),
     m_captionSelectorsHasBeenSet(false),
@@ -82,6 +89,7 @@ Input::Input(JsonView jsonValue) :
     m_timecodeSourceHasBeenSet(false),
     m_timecodeStartHasBeenSet(false),
     m_videoGeneratorHasBeenSet(false),
+    m_videoOverlaysHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
 {
   *this = jsonValue;
@@ -89,6 +97,20 @@ Input::Input(JsonView jsonValue) :
 
 Input& Input::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("advancedInputFilter"))
+  {
+    m_advancedInputFilter = AdvancedInputFilterMapper::GetAdvancedInputFilterForName(jsonValue.GetString("advancedInputFilter"));
+
+    m_advancedInputFilterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("advancedInputFilterSettings"))
+  {
+    m_advancedInputFilterSettings = jsonValue.GetObject("advancedInputFilterSettings");
+
+    m_advancedInputFilterSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("audioSelectorGroups"))
   {
     Aws::Map<Aws::String, JsonView> audioSelectorGroupsJsonMap = jsonValue.GetObject("audioSelectorGroups").GetAllObjects();
@@ -251,6 +273,16 @@ Input& Input::operator =(JsonView jsonValue)
     m_videoGeneratorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("videoOverlays"))
+  {
+    Aws::Utils::Array<JsonView> videoOverlaysJsonList = jsonValue.GetArray("videoOverlays");
+    for(unsigned videoOverlaysIndex = 0; videoOverlaysIndex < videoOverlaysJsonList.GetLength(); ++videoOverlaysIndex)
+    {
+      m_videoOverlays.push_back(videoOverlaysJsonList[videoOverlaysIndex].AsObject());
+    }
+    m_videoOverlaysHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("videoSelector"))
   {
     m_videoSelector = jsonValue.GetObject("videoSelector");
@@ -264,6 +296,17 @@ Input& Input::operator =(JsonView jsonValue)
 JsonValue Input::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_advancedInputFilterHasBeenSet)
+  {
+   payload.WithString("advancedInputFilter", AdvancedInputFilterMapper::GetNameForAdvancedInputFilter(m_advancedInputFilter));
+  }
+
+  if(m_advancedInputFilterSettingsHasBeenSet)
+  {
+   payload.WithObject("advancedInputFilterSettings", m_advancedInputFilterSettings.Jsonize());
+
+  }
 
   if(m_audioSelectorGroupsHasBeenSet)
   {
@@ -407,6 +450,17 @@ JsonValue Input::Jsonize() const
   if(m_videoGeneratorHasBeenSet)
   {
    payload.WithObject("videoGenerator", m_videoGenerator.Jsonize());
+
+  }
+
+  if(m_videoOverlaysHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> videoOverlaysJsonList(m_videoOverlays.size());
+   for(unsigned videoOverlaysIndex = 0; videoOverlaysIndex < videoOverlaysJsonList.GetLength(); ++videoOverlaysIndex)
+   {
+     videoOverlaysJsonList[videoOverlaysIndex].AsObject(m_videoOverlays[videoOverlaysIndex].Jsonize());
+   }
+   payload.WithArray("videoOverlays", std::move(videoOverlaysJsonList));
 
   }
 

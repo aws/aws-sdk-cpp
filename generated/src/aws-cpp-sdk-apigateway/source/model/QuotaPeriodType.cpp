@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QuotaPeriodType::NOT_SET:
+            return {};
           case QuotaPeriodType::DAY:
             return "DAY";
           case QuotaPeriodType::WEEK:

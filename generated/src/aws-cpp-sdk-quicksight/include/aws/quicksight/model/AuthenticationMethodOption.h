@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     IAM_AND_QUICKSIGHT,
     IAM_ONLY,
-    ACTIVE_DIRECTORY
+    ACTIVE_DIRECTORY,
+    IAM_IDENTITY_CENTER
   };
 
 namespace AuthenticationMethodOptionMapper

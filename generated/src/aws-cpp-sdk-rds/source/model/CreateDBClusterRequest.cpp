@@ -42,6 +42,7 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_enableCloudwatchLogsExportsHasBeenSet(false),
     m_engineModeHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
+    m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_globalClusterIdentifierHasBeenSet(false),
@@ -77,6 +78,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_manageMasterUserPassword(false),
     m_manageMasterUserPasswordHasBeenSet(false),
     m_masterUserSecretKmsKeyIdHasBeenSet(false),
+    m_enableLocalWriteForwarding(false),
+    m_enableLocalWriteForwardingHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -238,6 +241,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
     m_scalingConfiguration.OutputToStream(ss, "ScalingConfiguration");
   }
 
+  if(m_rdsCustomClusterConfigurationHasBeenSet)
+  {
+    m_rdsCustomClusterConfiguration.OutputToStream(ss, "RdsCustomClusterConfiguration");
+  }
+
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
@@ -351,6 +359,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_masterUserSecretKmsKeyIdHasBeenSet)
   {
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_enableLocalWriteForwardingHasBeenSet)
+  {
+    ss << "EnableLocalWriteForwarding=" << std::boolalpha << m_enableLocalWriteForwarding << "&";
   }
 
   ss << "Version=2014-10-31";

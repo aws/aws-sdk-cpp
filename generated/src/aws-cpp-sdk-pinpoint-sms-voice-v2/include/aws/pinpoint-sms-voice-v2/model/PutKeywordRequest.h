@@ -142,97 +142,91 @@ namespace Model
 
 
     /**
-     * <p>The message associated with the keyword.</p> <ul> <li> <p>AUTOMATIC_RESPONSE:
-     * A message is sent to the recipient.</p> </li> <li> <p>OPT_OUT: Keeps the
-     * recipient from receiving future messages.</p> </li> <li> <p>OPT_IN: The
-     * recipient wants to receive future messages.</p> </li> </ul>
+     * <p>The message associated with the keyword.</p>
      */
     inline const Aws::String& GetKeywordMessage() const{ return m_keywordMessage; }
 
     /**
-     * <p>The message associated with the keyword.</p> <ul> <li> <p>AUTOMATIC_RESPONSE:
-     * A message is sent to the recipient.</p> </li> <li> <p>OPT_OUT: Keeps the
-     * recipient from receiving future messages.</p> </li> <li> <p>OPT_IN: The
-     * recipient wants to receive future messages.</p> </li> </ul>
+     * <p>The message associated with the keyword.</p>
      */
     inline bool KeywordMessageHasBeenSet() const { return m_keywordMessageHasBeenSet; }
 
     /**
-     * <p>The message associated with the keyword.</p> <ul> <li> <p>AUTOMATIC_RESPONSE:
-     * A message is sent to the recipient.</p> </li> <li> <p>OPT_OUT: Keeps the
-     * recipient from receiving future messages.</p> </li> <li> <p>OPT_IN: The
-     * recipient wants to receive future messages.</p> </li> </ul>
+     * <p>The message associated with the keyword.</p>
      */
     inline void SetKeywordMessage(const Aws::String& value) { m_keywordMessageHasBeenSet = true; m_keywordMessage = value; }
 
     /**
-     * <p>The message associated with the keyword.</p> <ul> <li> <p>AUTOMATIC_RESPONSE:
-     * A message is sent to the recipient.</p> </li> <li> <p>OPT_OUT: Keeps the
-     * recipient from receiving future messages.</p> </li> <li> <p>OPT_IN: The
-     * recipient wants to receive future messages.</p> </li> </ul>
+     * <p>The message associated with the keyword.</p>
      */
     inline void SetKeywordMessage(Aws::String&& value) { m_keywordMessageHasBeenSet = true; m_keywordMessage = std::move(value); }
 
     /**
-     * <p>The message associated with the keyword.</p> <ul> <li> <p>AUTOMATIC_RESPONSE:
-     * A message is sent to the recipient.</p> </li> <li> <p>OPT_OUT: Keeps the
-     * recipient from receiving future messages.</p> </li> <li> <p>OPT_IN: The
-     * recipient wants to receive future messages.</p> </li> </ul>
+     * <p>The message associated with the keyword.</p>
      */
     inline void SetKeywordMessage(const char* value) { m_keywordMessageHasBeenSet = true; m_keywordMessage.assign(value); }
 
     /**
-     * <p>The message associated with the keyword.</p> <ul> <li> <p>AUTOMATIC_RESPONSE:
-     * A message is sent to the recipient.</p> </li> <li> <p>OPT_OUT: Keeps the
-     * recipient from receiving future messages.</p> </li> <li> <p>OPT_IN: The
-     * recipient wants to receive future messages.</p> </li> </ul>
+     * <p>The message associated with the keyword.</p>
      */
     inline PutKeywordRequest& WithKeywordMessage(const Aws::String& value) { SetKeywordMessage(value); return *this;}
 
     /**
-     * <p>The message associated with the keyword.</p> <ul> <li> <p>AUTOMATIC_RESPONSE:
-     * A message is sent to the recipient.</p> </li> <li> <p>OPT_OUT: Keeps the
-     * recipient from receiving future messages.</p> </li> <li> <p>OPT_IN: The
-     * recipient wants to receive future messages.</p> </li> </ul>
+     * <p>The message associated with the keyword.</p>
      */
     inline PutKeywordRequest& WithKeywordMessage(Aws::String&& value) { SetKeywordMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The message associated with the keyword.</p> <ul> <li> <p>AUTOMATIC_RESPONSE:
-     * A message is sent to the recipient.</p> </li> <li> <p>OPT_OUT: Keeps the
-     * recipient from receiving future messages.</p> </li> <li> <p>OPT_IN: The
-     * recipient wants to receive future messages.</p> </li> </ul>
+     * <p>The message associated with the keyword.</p>
      */
     inline PutKeywordRequest& WithKeywordMessage(const char* value) { SetKeywordMessage(value); return *this;}
 
 
     /**
-     * <p>The action to perform for the new keyword when it is received.</p>
+     * <p>The action to perform for the new keyword when it is received.</p> <ul> <li>
+     * <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li> <li>
+     * <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li> <li>
+     * <p>OPT_IN: The recipient wants to receive future messages.</p> </li> </ul>
      */
     inline const KeywordAction& GetKeywordAction() const{ return m_keywordAction; }
 
     /**
-     * <p>The action to perform for the new keyword when it is received.</p>
+     * <p>The action to perform for the new keyword when it is received.</p> <ul> <li>
+     * <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li> <li>
+     * <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li> <li>
+     * <p>OPT_IN: The recipient wants to receive future messages.</p> </li> </ul>
      */
     inline bool KeywordActionHasBeenSet() const { return m_keywordActionHasBeenSet; }
 
     /**
-     * <p>The action to perform for the new keyword when it is received.</p>
+     * <p>The action to perform for the new keyword when it is received.</p> <ul> <li>
+     * <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li> <li>
+     * <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li> <li>
+     * <p>OPT_IN: The recipient wants to receive future messages.</p> </li> </ul>
      */
     inline void SetKeywordAction(const KeywordAction& value) { m_keywordActionHasBeenSet = true; m_keywordAction = value; }
 
     /**
-     * <p>The action to perform for the new keyword when it is received.</p>
+     * <p>The action to perform for the new keyword when it is received.</p> <ul> <li>
+     * <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li> <li>
+     * <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li> <li>
+     * <p>OPT_IN: The recipient wants to receive future messages.</p> </li> </ul>
      */
     inline void SetKeywordAction(KeywordAction&& value) { m_keywordActionHasBeenSet = true; m_keywordAction = std::move(value); }
 
     /**
-     * <p>The action to perform for the new keyword when it is received.</p>
+     * <p>The action to perform for the new keyword when it is received.</p> <ul> <li>
+     * <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li> <li>
+     * <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li> <li>
+     * <p>OPT_IN: The recipient wants to receive future messages.</p> </li> </ul>
      */
     inline PutKeywordRequest& WithKeywordAction(const KeywordAction& value) { SetKeywordAction(value); return *this;}
 
     /**
-     * <p>The action to perform for the new keyword when it is received.</p>
+     * <p>The action to perform for the new keyword when it is received.</p> <ul> <li>
+     * <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li> <li>
+     * <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li> <li>
+     * <p>OPT_IN: The recipient wants to receive future messages.</p> </li> </ul>
      */
     inline PutKeywordRequest& WithKeywordAction(KeywordAction&& value) { SetKeywordAction(std::move(value)); return *this;}
 

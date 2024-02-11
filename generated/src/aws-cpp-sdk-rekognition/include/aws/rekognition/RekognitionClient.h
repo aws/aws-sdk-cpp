@@ -27,13 +27,19 @@ namespace Rekognition
    * Rekognition Streaming Video</a>. It provides descriptions of actions, data
    * types, common parameters, and common errors.</p> <p> <b>Amazon Rekognition
    * Image</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_AssociateFaces.html">AssociateFaces</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CompareFaces.html">CompareFaces</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateCollection.html">CreateCollection</a>
    * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateUser.html">CreateUser</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteCollection.html">DeleteCollection</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteFaces.html">DeleteFaces</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteUser.html">DeleteUser</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeCollection.html">DescribeCollection</a>
    * </p> </li> <li> <p> <a
@@ -47,6 +53,8 @@ namespace Rekognition
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectText.html">DetectText</a>
    * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DisassociateFaces.html">DisassociateFaces</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityInfo.html">GetCelebrityInfo</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_IndexFaces.html">IndexFaces</a>
@@ -55,11 +63,17 @@ namespace Rekognition
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListFaces.html">ListFaces</a>
    * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListFaces.html">ListUsers</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_RecognizeCelebrities.html">RecognizeCelebrities</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFaces.html">SearchFaces</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFacesByImage.html">SearchFacesByImage</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsers.html">SearchUsers</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsersByImage.html">SearchUsersByImage</a>
    * </p> </li> </ul> <p> <b>Amazon Rekognition Custom Labels</b> </p> <ul> <li> <p>
    * <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CopyProjectVersion.html">CopyProjectVersion</a>
@@ -158,6 +172,9 @@ namespace Rekognition
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef RekognitionClientConfiguration ClientConfigurationType;
+      typedef RekognitionEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -205,6 +222,54 @@ namespace Rekognition
 
         /* End of legacy constructors due deprecation */
         virtual ~RekognitionClient();
+
+        /**
+         * <p>Associates one or more faces with an existing UserID. Takes an array of
+         * <code>FaceIds</code>. Each <code>FaceId</code> that are present in the
+         * <code>FaceIds</code> list is associated with the provided UserID. The maximum
+         * number of total <code>FaceIds</code> per UserID is 100. </p> <p>The
+         * <code>UserMatchThreshold</code> parameter specifies the minimum user match
+         * confidence required for the face to be associated with a UserID that has at
+         * least one <code>FaceID</code> already associated. This ensures that the
+         * <code>FaceIds</code> are associated with the right UserID. The value ranges from
+         * 0-100 and default value is 75. </p> <p>If successful, an array of
+         * <code>AssociatedFace</code> objects containing the associated
+         * <code>FaceIds</code> is returned. If a given face is already associated with the
+         * given <code>UserID</code>, it will be ignored and will not be returned in the
+         * response. If a given face is already associated to a different
+         * <code>UserID</code>, isn't found in the collection, doesn’t meet the
+         * <code>UserMatchThreshold</code>, or there are already 100 faces associated with
+         * the <code>UserID</code>, it will be returned as part of an array of
+         * <code>UnsuccessfulFaceAssociations.</code> </p> <p>The <code>UserStatus</code>
+         * reflects the status of an operation which updates a UserID representation with a
+         * list of given faces. The <code>UserStatus</code> can be: </p> <ul> <li>
+         * <p>ACTIVE - All associations or disassociations of FaceID(s) for a UserID are
+         * complete.</p> </li> <li> <p>CREATED - A UserID has been created, but has no
+         * FaceID(s) associated with it.</p> </li> <li> <p>UPDATING - A UserID is being
+         * updated and there are current associations or disassociations of FaceID(s)
+         * taking place.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/AssociateFaces">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateFacesOutcome AssociateFaces(const Model::AssociateFacesRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateFaces that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateFacesRequestT = Model::AssociateFacesRequest>
+        Model::AssociateFacesOutcomeCallable AssociateFacesCallable(const AssociateFacesRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::AssociateFaces, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateFacesRequestT = Model::AssociateFacesRequest>
+        void AssociateFacesAsync(const AssociateFacesRequestT& request, const AssociateFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::AssociateFaces, request, handler, context);
+        }
 
         /**
          * <p>Compares a face in the <i>source</i> input image with each of the 100 largest
@@ -275,19 +340,21 @@ namespace Rekognition
         }
 
         /**
-         * <p>Copies a version of an Amazon Rekognition Custom Labels model from a source
-         * project to a destination project. The source and destination projects can be in
-         * different AWS accounts but must be in the same AWS Region. You can't copy a
-         * model to another AWS service. </p> <p>To copy a model version to a different AWS
-         * account, you need to create a resource-based policy known as a <i>project
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Copies a version of an Amazon Rekognition Custom Labels model from a
+         * source project to a destination project. The source and destination projects can
+         * be in different AWS accounts but must be in the same AWS Region. You can't copy
+         * a model to another AWS service. </p> <p>To copy a model version to a different
+         * AWS account, you need to create a resource-based policy known as a <i>project
          * policy</i>. You attach the project policy to the source project by calling
          * <a>PutProjectPolicy</a>. The project policy gives permission to copy the model
          * version from a trusting AWS account to a trusted account.</p> <p>For more
          * information creating and attaching a project policy, see Attaching a project
          * policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
          * </p> <p>If you are copying a model version to a project in the same AWS account,
-         * you don't need to create a project policy.</p>  <p>To copy a model, the
-         * destination project, source project, and source model version must already
+         * you don't need to create a project policy.</p>  <p>Copying project
+         * versions is supported only for Custom Labels models. </p> <p>To copy a model,
+         * the destination project, source project, and source model version must already
          * exist.</p>  <p>Copying a model version takes a while to complete. To get
          * the current status, call <a>DescribeProjectVersions</a> and check the value of
          * <code>Status</code> in the <a>ProjectVersionDescription</a> object. The copy
@@ -354,12 +421,13 @@ namespace Rekognition
         }
 
         /**
-         * <p>Creates a new Amazon Rekognition Custom Labels dataset. You can create a
-         * dataset by using an Amazon Sagemaker format manifest file or by copying an
-         * existing Amazon Rekognition Custom Labels dataset.</p> <p>To create a training
-         * dataset for a project, specify <code>train</code> for the value of
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Creates a new Amazon Rekognition Custom Labels dataset. You can
+         * create a dataset by using an Amazon Sagemaker format manifest file or by copying
+         * an existing Amazon Rekognition Custom Labels dataset.</p> <p>To create a
+         * training dataset for a project, specify <code>TRAIN</code> for the value of
          * <code>DatasetType</code>. To create the test dataset for a project, specify
-         * <code>test</code> for the value of <code>DatasetType</code>. </p> <p>The
+         * <code>TEST</code> for the value of <code>DatasetType</code>. </p> <p>The
          * response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for
          * the dataset. Creating a dataset takes a while to complete. Use
          * <a>DescribeDataset</a> to check the current status. The dataset created
@@ -401,13 +469,14 @@ namespace Rekognition
         /**
          * <p>This API operation initiates a Face Liveness session. It returns a
          * <code>SessionId</code>, which you can use to start streaming Face Liveness video
-         * and get the results for a Face Liveness session. You can use the
+         * and get the results for a Face Liveness session. </p> <p>You can use the
          * <code>OutputConfig</code> option in the Settings parameter to provide an Amazon
          * S3 bucket location. The Amazon S3 bucket stores reference images and audit
-         * images. You can use <code>AuditImagesLimit</code> to limit of audit images
-         * returned. This number is between 0 and 4. By default, it is set to 0. The limit
-         * is best effort and based on the duration of the selfie-video. </p><p><h3>See
-         * Also:</h3>   <a
+         * images. If no Amazon S3 bucket is defined, raw bytes are sent instead. </p>
+         * <p>You can use <code>AuditImagesLimit</code> to limit the number of audit images
+         * returned when <code>GetFaceLivenessSessionResults</code> is called. This number
+         * is between 0 and 4. By default, it is set to 0. The limit is best effort and
+         * based on the duration of the selfie-video. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">AWS
          * API Reference</a></p>
          */
@@ -432,11 +501,14 @@ namespace Rekognition
         }
 
         /**
-         * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a group
-         * of resources (datasets, model versions) that you use to create and manage Amazon
-         * Rekognition Custom Labels models. </p> <p>This operation requires permissions to
-         * perform the <code>rekognition:CreateProject</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new Amazon Rekognition project. A project is a group of resources
+         * (datasets, model versions) that you use to create and manage a Amazon
+         * Rekognition Custom Labels Model or custom adapter. You can specify a feature to
+         * create the project with, if no feature is specified then Custom Labels is used
+         * by default. For adapters, you can also choose whether or not to have the project
+         * auto update by using the AutoUpdate argument. This operation requires
+         * permissions to perform the <code>rekognition:CreateProject</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">AWS
          * API Reference</a></p>
          */
@@ -461,32 +533,30 @@ namespace Rekognition
         }
 
         /**
-         * <p>Creates a new version of a model and begins training. Models are managed as
-         * part of an Amazon Rekognition Custom Labels project. The response from
+         * <p>Creates a new version of Amazon Rekognition project (like a Custom Labels
+         * model or a custom adapter) and begins training. Models and adapters are managed
+         * as part of a Rekognition project. The response from
          * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the
-         * version of the model. </p> <p>Training uses the training and test datasets
-         * associated with the project. For more information, see Creating training and
-         * test dataset in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
-         * </p>  <p>You can train a model in a project that doesn't have associated
-         * datasets by specifying manifest files in the <code>TrainingData</code> and
-         * <code>TestingData</code> fields. </p> <p>If you open the console after training
-         * a model with manifest files, Amazon Rekognition Custom Labels creates the
-         * datasets for you using the most recent manifest files. You can no longer train a
-         * model version for the project by specifying manifest files. </p> <p>Instead of
-         * training with a project without associated datasets, we recommend that you use
-         * the manifest files to create training and test datasets for the project.</p>
-         *  <p>Training takes a while to complete. You can get the current status by
-         * calling <a>DescribeProjectVersions</a>. Training completed successfully if the
-         * value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.</p>
-         * <p>If training fails, see Debugging a failed model training in the <i>Amazon
-         * Rekognition Custom Labels</i> developer guide. </p> <p>Once training has
-         * successfully completed, call <a>DescribeProjectVersions</a> to get the training
-         * results and evaluate the model. For more information, see Improving a trained
-         * Amazon Rekognition Custom Labels model in the <i>Amazon Rekognition Custom
-         * Labels</i> developers guide. </p> <p>After evaluating the model, you start the
-         * model by calling <a>StartProjectVersion</a>.</p> <p>This operation requires
+         * project version. </p> <p>The FeatureConfig operation argument allows you to
+         * configure specific model or adapter settings. You can provide a description to
+         * the project version by using the VersionDescription argment. Training can take a
+         * while to complete. You can get the current status by calling
+         * <a>DescribeProjectVersions</a>. Training completed successfully if the value of
+         * the <code>Status</code> field is <code>TRAINING_COMPLETED</code>. Once training
+         * has successfully completed, call <a>DescribeProjectVersions</a> to get the
+         * training results and evaluate the model.</p> <p>This operation requires
          * permissions to perform the <code>rekognition:CreateProjectVersion</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p>  <p> <i>The following applies only to projects with Amazon
+         * Rekognition Custom Labels as the chosen feature:</i> </p> <p>You can train a
+         * model in a project that doesn't have associated datasets by specifying manifest
+         * files in the <code>TrainingData</code> and <code>TestingData</code> fields. </p>
+         * <p>If you open the console after training a model with manifest files, Amazon
+         * Rekognition Custom Labels creates the datasets for you using the most recent
+         * manifest files. You can no longer train a model version for the project by
+         * specifying manifest files. </p> <p>Instead of training with a project without
+         * associated datasets, we recommend that you use the manifest files to create
+         * training and test datasets for the project.</p>  <p/><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">AWS
          * API Reference</a></p>
          */
@@ -565,6 +635,39 @@ namespace Rekognition
         }
 
         /**
+         * <p>Creates a new User within a collection specified by
+         * <code>CollectionId</code>. Takes <code>UserId</code> as a parameter, which is a
+         * user provided ID which should be unique within the collection. The provided
+         * <code>UserId</code> will alias the system generated UUID to make the
+         * <code>UserId</code> more user friendly. </p> <p>Uses a <code>ClientToken</code>,
+         * an idempotency token that ensures a call to <code>CreateUser</code> completes
+         * only once. If the value is not supplied, the AWS SDK generates an idempotency
+         * token for the requests. This prevents retries after a network error results from
+         * making multiple <code>CreateUser</code> calls. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateUser that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateUserRequestT = Model::CreateUserRequest>
+        Model::CreateUserOutcomeCallable CreateUserCallable(const CreateUserRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::CreateUser, request);
+        }
+
+        /**
+         * An Async wrapper for CreateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateUserRequestT = Model::CreateUserRequest>
+        void CreateUserAsync(const CreateUserRequestT& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::CreateUser, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified collection. Note that this operation removes all faces
          * in the collection. For an example, see <a
          * href="https://docs.aws.amazon.com/rekognition/latest/dg/delete-collection-procedure.html">Deleting
@@ -594,16 +697,17 @@ namespace Rekognition
         }
 
         /**
-         * <p>Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a
-         * dataset might take while. Use <a>DescribeDataset</a> to check the current
-         * status. The dataset is still deleting if the value of <code>Status</code> is
-         * <code>DELETE_IN_PROGRESS</code>. If you try to access the dataset after it is
-         * deleted, you get a <code>ResourceNotFoundException</code> exception. </p> <p>You
-         * can't delete a dataset while it is creating (<code>Status</code> =
-         * <code>CREATE_IN_PROGRESS</code>) or if the dataset is updating
-         * (<code>Status</code> = <code>UPDATE_IN_PROGRESS</code>).</p> <p>This operation
-         * requires permissions to perform the <code>rekognition:DeleteDataset</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Deletes an existing Amazon Rekognition Custom Labels dataset.
+         * Deleting a dataset might take while. Use <a>DescribeDataset</a> to check the
+         * current status. The dataset is still deleting if the value of
+         * <code>Status</code> is <code>DELETE_IN_PROGRESS</code>. If you try to access the
+         * dataset after it is deleted, you get a <code>ResourceNotFoundException</code>
+         * exception. </p> <p>You can't delete a dataset while it is creating
+         * (<code>Status</code> = <code>CREATE_IN_PROGRESS</code>) or if the dataset is
+         * updating (<code>Status</code> = <code>UPDATE_IN_PROGRESS</code>).</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:DeleteDataset</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteDataset">AWS
          * API Reference</a></p>
          */
@@ -656,10 +760,10 @@ namespace Rekognition
         }
 
         /**
-         * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
-         * must first delete all models associated with the project. To delete a model, see
-         * <a>DeleteProjectVersion</a>.</p> <p> <code>DeleteProject</code> is an
-         * asynchronous operation. To check if the project is deleted, call
+         * <p>Deletes a Amazon Rekognition project. To delete a project you must first
+         * delete all models or adapters associated with the project. To delete a model or
+         * adapter, see <a>DeleteProjectVersion</a>.</p> <p> <code>DeleteProject</code> is
+         * an asynchronous operation. To check if the project is deleted, call
          * <a>DescribeProjects</a>. The project is deleted when the project no longer
          * appears in the response. Be aware that deleting a given project will also delete
          * any <code>ProjectPolicies</code> associated with that project.</p> <p>This
@@ -689,9 +793,10 @@ namespace Rekognition
         }
 
         /**
-         * <p>Deletes an existing project policy.</p> <p>To get a list of project policies
-         * attached to a project, call <a>ListProjectPolicies</a>. To attach a project
-         * policy to a project, call <a>PutProjectPolicy</a>.</p> <p>This operation
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Deletes an existing project policy.</p> <p>To get a list of project
+         * policies attached to a project, call <a>ListProjectPolicies</a>. To attach a
+         * project policy to a project, call <a>PutProjectPolicy</a>.</p> <p>This operation
          * requires permissions to perform the <code>rekognition:DeleteProjectPolicy</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectPolicy">AWS
@@ -718,13 +823,15 @@ namespace Rekognition
         }
 
         /**
-         * <p>Deletes an Amazon Rekognition Custom Labels model. </p> <p>You can't delete a
-         * model if it is running or if it is training. To check the status of a model, use
-         * the <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To
-         * stop a running model call <a>StopProjectVersion</a>. If the model is training,
-         * wait until it finishes.</p> <p>This operation requires permissions to perform
-         * the <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a Rekognition project model or project version, like a Amazon
+         * Rekognition Custom Labels model or a custom adapter.</p> <p>You can't delete a
+         * project version if it is running or if it is training. To check the status of a
+         * project version, use the Status field returned from
+         * <a>DescribeProjectVersions</a>. To stop a project version call
+         * <a>StopProjectVersion</a>. If the project version is training, wait until it
+         * finishes.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectVersion">AWS
          * API Reference</a></p>
          */
@@ -778,6 +885,36 @@ namespace Rekognition
         }
 
         /**
+         * <p>Deletes the specified UserID within the collection. Faces that are associated
+         * with the UserID are disassociated from the UserID before deleting the specified
+         * UserID. If the specified <code>Collection</code> or <code>UserID</code> is
+         * already deleted or not found, a <code>ResourceNotFoundException</code> will be
+         * thrown. If the action is successful with a 200 response, an empty HTTP body is
+         * returned. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteUserRequestT = Model::DeleteUserRequest>
+        Model::DeleteUserOutcomeCallable DeleteUserCallable(const DeleteUserRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::DeleteUser, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteUserRequestT = Model::DeleteUserRequest>
+        void DeleteUserAsync(const DeleteUserRequestT& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::DeleteUser, request, handler, context);
+        }
+
+        /**
          * <p>Describes the specified collection. You can use
          * <code>DescribeCollection</code> to get information, such as the number of faces
          * indexed into a collection and the version of the model used by the collection
@@ -807,7 +944,8 @@ namespace Rekognition
         }
 
         /**
-         * <p> Describes an Amazon Rekognition Custom Labels dataset. You can get
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p> Describes an Amazon Rekognition Custom Labels dataset. You can get
          * information such as the current status of a dataset and statistics about the
          * images and labels in a dataset. </p> <p>This operation requires permissions to
          * perform the <code>rekognition:DescribeDataset</code> action.</p><p><h3>See
@@ -836,12 +974,12 @@ namespace Rekognition
         }
 
         /**
-         * <p>Lists and describes the versions of a model in an Amazon Rekognition Custom
-         * Labels project. You can specify up to 10 model versions in
-         * <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for
-         * all model versions in the project are returned.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:DescribeProjectVersions</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists and describes the versions of an Amazon Rekognition project. You can
+         * specify up to 10 model or adapter versions in <code>ProjectVersionArns</code>.
+         * If you don't specify a value, descriptions for all model/adapter versions in the
+         * project are returned.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:DescribeProjectVersions</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">AWS
          * API Reference</a></p>
          */
@@ -866,9 +1004,9 @@ namespace Rekognition
         }
 
         /**
-         * <p>Gets information about your Amazon Rekognition Custom Labels projects. </p>
-         * <p>This operation requires permissions to perform the
-         * <code>rekognition:DescribeProjects</code> action.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about your Rekognition projects.</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:DescribeProjects</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">AWS
          * API Reference</a></p>
          */
@@ -921,35 +1059,37 @@ namespace Rekognition
         }
 
         /**
-         * <p>Detects custom labels in a supplied image by using an Amazon Rekognition
-         * Custom Labels model. </p> <p>You specify which version of a model version to use
-         * by using the <code>ProjectVersionArn</code> input parameter. </p> <p>You pass
-         * the input image as base64-encoded image bytes or as a reference to an image in
-         * an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
-         * operations, passing image bytes is not supported. The image must be either a PNG
-         * or JPEG formatted file. </p> <p> For each object that the model version detects
-         * on an image, the API returns a (<code>CustomLabel</code>) object in an array
-         * (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the
-         * label name (<code>Name</code>), the level of confidence that the image contains
-         * the object (<code>Confidence</code>), and object location information, if it
-         * exists, for the label on the image (<code>Geometry</code>). </p> <p>To filter
-         * labels that are returned, specify a value for <code>MinConfidence</code>.
-         * <code>DetectCustomLabelsLabels</code> only returns labels with a confidence
-         * that's higher than the specified value. The value of <code>MinConfidence</code>
-         * maps to the assumed threshold values created during training. For more
-         * information, see <i>Assumed threshold</i> in the Amazon Rekognition Custom
-         * Labels Developer Guide. Amazon Rekognition Custom Labels metrics expresses an
-         * assumed threshold as a floating point value between 0-1. The range of
-         * <code>MinConfidence</code> normalizes the threshold value to a percentage value
-         * (0-100). Confidence responses from <code>DetectCustomLabels</code> are also
-         * returned as a percentage. You can use <code>MinConfidence</code> to change the
-         * precision and recall or your model. For more information, see <i>Analyzing an
-         * image</i> in the Amazon Rekognition Custom Labels Developer Guide. </p> <p>If
-         * you don't specify a value for <code>MinConfidence</code>,
-         * <code>DetectCustomLabels</code> returns labels based on the assumed threshold of
-         * each label.</p> <p>This is a stateless API operation. That is, the operation
-         * does not persist any data.</p> <p>This operation requires permissions to perform
-         * the <code>rekognition:DetectCustomLabels</code> action. </p> <p>For more
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Detects custom labels in a supplied image by using an Amazon
+         * Rekognition Custom Labels model. </p> <p>You specify which version of a model
+         * version to use by using the <code>ProjectVersionArn</code> input parameter. </p>
+         * <p>You pass the input image as base64-encoded image bytes or as a reference to
+         * an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon
+         * Rekognition operations, passing image bytes is not supported. The image must be
+         * either a PNG or JPEG formatted file. </p> <p> For each object that the model
+         * version detects on an image, the API returns a (<code>CustomLabel</code>) object
+         * in an array (<code>CustomLabels</code>). Each <code>CustomLabel</code> object
+         * provides the label name (<code>Name</code>), the level of confidence that the
+         * image contains the object (<code>Confidence</code>), and object location
+         * information, if it exists, for the label on the image (<code>Geometry</code>).
+         * </p> <p>To filter labels that are returned, specify a value for
+         * <code>MinConfidence</code>. <code>DetectCustomLabelsLabels</code> only returns
+         * labels with a confidence that's higher than the specified value. The value of
+         * <code>MinConfidence</code> maps to the assumed threshold values created during
+         * training. For more information, see <i>Assumed threshold</i> in the Amazon
+         * Rekognition Custom Labels Developer Guide. Amazon Rekognition Custom Labels
+         * metrics expresses an assumed threshold as a floating point value between 0-1.
+         * The range of <code>MinConfidence</code> normalizes the threshold value to a
+         * percentage value (0-100). Confidence responses from
+         * <code>DetectCustomLabels</code> are also returned as a percentage. You can use
+         * <code>MinConfidence</code> to change the precision and recall or your model. For
+         * more information, see <i>Analyzing an image</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. </p> <p>If you don't specify a value for
+         * <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based
+         * on the assumed threshold of each label.</p> <p>This is a stateless API
+         * operation. That is, the operation does not persist any data.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:DetectCustomLabels</code> action. </p> <p>For more
          * information, see <i>Analyzing an image</i> in the Amazon Rekognition Custom
          * Labels Developer Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">AWS
@@ -981,8 +1121,8 @@ namespace Rekognition
          * face detected, the operation returns face details. These details include a
          * bounding box of the face, a confidence value (that the bounding box contains a
          * face), and a fixed set of attributes such as facial landmarks (for example,
-         * coordinates of eye and mouth), presence of beard, sunglasses, and so on. </p>
-         * <p>The face-detection algorithm is most effective on frontal faces. For
+         * coordinates of eye and mouth), pose, presence of facial occlusion, and so
+         * on.</p> <p>The face-detection algorithm is most effective on frontal faces. For
          * non-frontal or obscured faces, the algorithm might not detect the faces or might
          * detect faces with lower confidence. </p> <p>You pass the input image either as
          * base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket.
@@ -1036,54 +1176,55 @@ namespace Rekognition
          * inclusive filters, exclusive filters, or a combination of inclusive and
          * exclusive filters. For more information on filtering see <a
          * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detect-labels-image.html">Detecting
-         * Labels in an Image</a>.</p> <p>You can specify <code>MinConfidence</code> to
-         * control the confidence threshold for the labels returned. The default is 55%.
-         * You can also add the <code>MaxLabels</code> parameter to limit the number of
-         * labels returned. The default and upper limit is 1000 labels.</p> <p> <b>Response
-         * Elements</b> </p> <p> For each object, scene, and concept the API returns one or
-         * more labels. The API returns the following types of information about
-         * labels:</p> <ul> <li> <p> Name - The name of the detected label. </p> </li> <li>
-         * <p> Confidence - The level of confidence in the label assigned to a detected
-         * object. </p> </li> <li> <p> Parents - The ancestor labels for a detected label.
-         * DetectLabels returns a hierarchical taxonomy of detected labels. For example, a
-         * detected car might be assigned the label car. The label car has two parent
-         * labels: Vehicle (its parent) and Transportation (its grandparent). The response
-         * includes the all ancestors for a label, where every ancestor is a unique label.
-         * In the previous example, Car, Vehicle, and Transportation are returned as unique
-         * labels in the response. </p> </li> <li> <p> Aliases - Possible Aliases for the
-         * label. </p> </li> <li> <p> Categories - The label categories that the detected
-         * label belongs to. </p> </li> <li> <p> BoundingBox — Bounding boxes are described
-         * for all instances of detected common object labels, returned in an array of
-         * Instance objects. An Instance object contains a BoundingBox object, describing
-         * the location of the label on the input image. It also includes the confidence
-         * for the accuracy of the detected bounding box. </p> </li> </ul> <p> The API
-         * returns the following information regarding the image, as part of the
-         * ImageProperties structure:</p> <ul> <li> <p>Quality - Information about the
-         * Sharpness, Brightness, and Contrast of the input image, scored between 0 to 100.
-         * Image quality is returned for the entire image, as well as the background and
-         * the foreground. </p> </li> <li> <p>Dominant Color - An array of the dominant
-         * colors in the image. </p> </li> <li> <p>Foreground - Information about the
-         * sharpness, brightness, and dominant colors of the input image’s foreground. </p>
-         * </li> <li> <p>Background - Information about the sharpness, brightness, and
-         * dominant colors of the input image’s background.</p> </li> </ul> <p>The list of
-         * returned labels will include at least one label for every detected object, along
-         * with information about that label. In the following example, suppose the input
-         * image has a lighthouse, the sea, and a rock. The response includes all three
-         * labels, one for each object, as well as the confidence in the label:</p> <p>
-         * <code>{Name: lighthouse, Confidence: 98.4629}</code> </p> <p> <code>{Name:
-         * rock,Confidence: 79.2097}</code> </p> <p> <code> {Name: sea,Confidence:
-         * 75.061}</code> </p> <p>The list of labels can include multiple labels for the
-         * same object. For example, if the input image shows a flower (for example, a
-         * tulip), the operation might return the following three labels. </p> <p>
-         * <code>{Name: flower,Confidence: 99.0562}</code> </p> <p> <code>{Name:
-         * plant,Confidence: 99.0562}</code> </p> <p> <code>{Name: tulip,Confidence:
-         * 99.0562}</code> </p> <p>In this example, the detection algorithm more precisely
-         * identifies the flower as a tulip.</p>  <p>If the object detected is a
-         * person, the operation doesn't provide the same facial details that the
-         * <a>DetectFaces</a> operation provides.</p>  <p>This is a stateless API
-         * operation that doesn't return any data.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:DetectLabels</code> action.
-         * </p><p><h3>See Also:</h3>   <a
+         * Labels in an Image</a>.</p> <p>When getting labels, you can specify
+         * <code>MinConfidence</code> to control the confidence threshold for the labels
+         * returned. The default is 55%. You can also add the <code>MaxLabels</code>
+         * parameter to limit the number of labels returned. The default and upper limit is
+         * 1000 labels. These arguments are only valid when supplying GENERAL_LABELS as a
+         * feature type.</p> <p> <b>Response Elements</b> </p> <p> For each object, scene,
+         * and concept the API returns one or more labels. The API returns the following
+         * types of information about labels:</p> <ul> <li> <p> Name - The name of the
+         * detected label. </p> </li> <li> <p> Confidence - The level of confidence in the
+         * label assigned to a detected object. </p> </li> <li> <p> Parents - The ancestor
+         * labels for a detected label. DetectLabels returns a hierarchical taxonomy of
+         * detected labels. For example, a detected car might be assigned the label car.
+         * The label car has two parent labels: Vehicle (its parent) and Transportation
+         * (its grandparent). The response includes the all ancestors for a label, where
+         * every ancestor is a unique label. In the previous example, Car, Vehicle, and
+         * Transportation are returned as unique labels in the response. </p> </li> <li>
+         * <p> Aliases - Possible Aliases for the label. </p> </li> <li> <p> Categories -
+         * The label categories that the detected label belongs to. </p> </li> <li> <p>
+         * BoundingBox — Bounding boxes are described for all instances of detected common
+         * object labels, returned in an array of Instance objects. An Instance object
+         * contains a BoundingBox object, describing the location of the label on the input
+         * image. It also includes the confidence for the accuracy of the detected bounding
+         * box. </p> </li> </ul> <p> The API returns the following information regarding
+         * the image, as part of the ImageProperties structure:</p> <ul> <li> <p>Quality -
+         * Information about the Sharpness, Brightness, and Contrast of the input image,
+         * scored between 0 to 100. Image quality is returned for the entire image, as well
+         * as the background and the foreground. </p> </li> <li> <p>Dominant Color - An
+         * array of the dominant colors in the image. </p> </li> <li> <p>Foreground -
+         * Information about the sharpness, brightness, and dominant colors of the input
+         * image’s foreground. </p> </li> <li> <p>Background - Information about the
+         * sharpness, brightness, and dominant colors of the input image’s background.</p>
+         * </li> </ul> <p>The list of returned labels will include at least one label for
+         * every detected object, along with information about that label. In the following
+         * example, suppose the input image has a lighthouse, the sea, and a rock. The
+         * response includes all three labels, one for each object, as well as the
+         * confidence in the label:</p> <p> <code>{Name: lighthouse, Confidence:
+         * 98.4629}</code> </p> <p> <code>{Name: rock,Confidence: 79.2097}</code> </p> <p>
+         * <code> {Name: sea,Confidence: 75.061}</code> </p> <p>The list of labels can
+         * include multiple labels for the same object. For example, if the input image
+         * shows a flower (for example, a tulip), the operation might return the following
+         * three labels. </p> <p> <code>{Name: flower,Confidence: 99.0562}</code> </p> <p>
+         * <code>{Name: plant,Confidence: 99.0562}</code> </p> <p> <code>{Name:
+         * tulip,Confidence: 99.0562}</code> </p> <p>In this example, the detection
+         * algorithm more precisely identifies the flower as a tulip.</p>  <p>If the
+         * object detected is a person, the operation doesn't provide the same facial
+         * details that the <a>DetectFaces</a> operation provides.</p>  <p>This is a
+         * stateless API operation that doesn't return any data.</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:DetectLabels</code>
+         * action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">AWS
          * API Reference</a></p>
          */
@@ -1118,7 +1259,9 @@ namespace Rekognition
          * pass the input image either as base64-encoded image bytes or as a reference to
          * an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon
          * Rekognition operations, passing image bytes is not supported. The image must be
-         * either a PNG or JPEG formatted file. </p><p><h3>See Also:</h3>   <a
+         * either a PNG or JPEG formatted file. </p> <p>You can specify an adapter to use
+         * when retrieving label predictions by providing a <code>ProjectVersionArn</code>
+         * to the <code>ProjectVersion</code> argument.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">AWS
          * API Reference</a></p>
          */
@@ -1238,8 +1381,42 @@ namespace Rekognition
         }
 
         /**
-         * <p>Distributes the entries (images) in a training dataset across the training
-         * dataset and the test dataset for a project.
+         * <p>Removes the association between a <code>Face</code> supplied in an array of
+         * <code>FaceIds</code> and the User. If the User is not present already, then a
+         * <code>ResourceNotFound</code> exception is thrown. If successful, an array of
+         * faces that are disassociated from the User is returned. If a given face is
+         * already disassociated from the given UserID, it will be ignored and not be
+         * returned in the response. If a given face is already associated with a different
+         * User or not found in the collection it will be returned as part of
+         * <code>UnsuccessfulDisassociations</code>. You can remove 1 - 100 face IDs from a
+         * user at one time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DisassociateFaces">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateFacesOutcome DisassociateFaces(const Model::DisassociateFacesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateFaces that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateFacesRequestT = Model::DisassociateFacesRequest>
+        Model::DisassociateFacesOutcomeCallable DisassociateFacesCallable(const DisassociateFacesRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::DisassociateFaces, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateFacesRequestT = Model::DisassociateFacesRequest>
+        void DisassociateFacesAsync(const DisassociateFacesRequestT& request, const DisassociateFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::DisassociateFaces, request, handler, context);
+        }
+
+        /**
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Distributes the entries (images) in a training dataset across the
+         * training dataset and the test dataset for a project.
          * <code>DistributeDatasetEntries</code> moves 20% of the training dataset images
          * to the test dataset. An entry is a JSON Line that describes an image. </p>
          * <p>You supply the Amazon Resource Names (ARN) of a project's training dataset
@@ -1452,7 +1629,10 @@ namespace Rekognition
          * pagination token for getting the next set of results. To get the next page of
          * results, call <code>GetFaceDetection</code> and populate the
          * <code>NextToken</code> request parameter with the token value returned from the
-         * previous call to <code>GetFaceDetection</code>.</p><p><h3>See Also:</h3>   <a
+         * previous call to <code>GetFaceDetection</code>.</p> <p>Note that for the
+         * <code>GetFaceDetection</code> operation, the returned values for
+         * <code>FaceOccluded</code> and <code>EyeDirection</code> will always be
+         * "null".</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceDetection">AWS
          * API Reference</a></p>
          */
@@ -1482,8 +1662,11 @@ namespace Rekognition
          * <code>CreateFaceLivenessSession</code>. Returns the corresponding Face Liveness
          * confidence score, a reference image that includes a face bounding box, and audit
          * images that also contain face bounding boxes. The Face Liveness confidence score
-         * ranges from 0 to 100. The reference image can optionally be
-         * returned.</p><p><h3>See Also:</h3>   <a
+         * ranges from 0 to 100. </p> <p>The number of audit images returned by
+         * <code>GetFaceLivenessSessionResults</code> is defined by the
+         * <code>AuditImagesLimit</code> paramater when calling
+         * <code>CreateFaceLivenessSession</code>. Reference images are always returned
+         * when possible.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceLivenessSessionResults">AWS
          * API Reference</a></p>
          */
@@ -1638,6 +1821,33 @@ namespace Rekognition
         }
 
         /**
+         * <p>Retrieves the results for a given media analysis job. Takes a
+         * <code>JobId</code> returned by StartMediaAnalysisJob.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetMediaAnalysisJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMediaAnalysisJobOutcome GetMediaAnalysisJob(const Model::GetMediaAnalysisJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMediaAnalysisJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMediaAnalysisJobRequestT = Model::GetMediaAnalysisJobRequest>
+        Model::GetMediaAnalysisJobOutcomeCallable GetMediaAnalysisJobCallable(const GetMediaAnalysisJobRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::GetMediaAnalysisJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetMediaAnalysisJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMediaAnalysisJobRequestT = Model::GetMediaAnalysisJobRequest>
+        void GetMediaAnalysisJobAsync(const GetMediaAnalysisJobRequestT& request, const GetMediaAnalysisJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::GetMediaAnalysisJob, request, handler, context);
+        }
+
+        /**
          * <p>Gets the path tracking results of a Amazon Rekognition Video analysis started
          * by <a>StartPersonTracking</a>.</p> <p>The person path tracking operation is
          * started by a call to <code>StartPersonTracking</code> which returns a job
@@ -1756,11 +1966,11 @@ namespace Rekognition
          * <code>GetTextDetection</code> and pass the job identifier (<code>JobId</code>)
          * from the initial call of <code>StartLabelDetection</code>.</p> <p>
          * <code>GetTextDetection</code> returns an array of detected text
-         * (<code>TextDetections</code>) sorted by the time the text was detected, up to 50
-         * words per frame of video.</p> <p>Each element of the array includes the detected
-         * text, the precentage confidence in the acuracy of the detected text, the time
-         * the text was detected, bounding box information for where the text was located,
-         * and unique identifiers for words and their lines.</p> <p>Use MaxResults
+         * (<code>TextDetections</code>) sorted by the time the text was detected, up to
+         * 100 words per frame of video.</p> <p>Each element of the array includes the
+         * detected text, the precentage confidence in the acuracy of the detected text,
+         * the time the text was detected, bounding box information for where the text was
+         * located, and unique identifiers for words and their lines.</p> <p>Use MaxResults
          * parameter to limit the number of text detections returned. If there are more
          * results than specified in <code>MaxResults</code>, the value of
          * <code>NextToken</code> in the operation response contains a pagination token for
@@ -1845,11 +2055,12 @@ namespace Rekognition
          * the bounding box contains a face.</p> </li> <li> <p>A face ID,
          * <code>FaceId</code>, assigned by the service for each face that's detected and
          * stored.</p> </li> <li> <p>An image ID, <code>ImageId</code>, assigned by the
-         * service for the input image.</p> </li> </ul> <p>If you request all facial
-         * attributes (by using the <code>detectionAttributes</code> parameter), Amazon
-         * Rekognition returns detailed facial attributes, such as facial landmarks (for
-         * example, location of eye and mouth) and other facial attributes. If you provide
-         * the same image, specify the same collection, and use the same external ID in the
+         * service for the input image.</p> </li> </ul> <p>If you request <code>ALL</code>
+         * or specific facial attributes (e.g., <code>FACE_OCCLUDED</code>) by using the
+         * detectionAttributes parameter, Amazon Rekognition returns detailed facial
+         * attributes, such as facial landmarks (for example, location of eye and mouth),
+         * facial occlusion, and other facial attributes.</p> <p>If you provide the same
+         * image, specify the same collection, and use the same external ID in the
          * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
          * face metadata.</p> <p/> <p>The input image is passed either as base64-encoded
          * image bytes, or as a reference to an image in an Amazon S3 bucket. If you use
@@ -1911,8 +2122,9 @@ namespace Rekognition
         }
 
         /**
-         * <p> Lists the entries (images) within a dataset. An entry is a JSON Line that
-         * contains the information for a single image, including the image location,
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p> Lists the entries (images) within a dataset. An entry is a JSON Line
+         * that contains the information for a single image, including the image location,
          * assigned labels, and object location bounding boxes. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating
@@ -1949,8 +2161,9 @@ namespace Rekognition
         }
 
         /**
-         * <p>Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels
-         * to describe images. For more information, see <a
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Lists the labels in a dataset. Amazon Rekognition Custom Labels uses
+         * labels to describe images. For more information, see <a
          * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-labeling-images.html">Labeling
          * images</a>. </p> <p> Lists the labels in a dataset. Amazon Rekognition Custom
          * Labels uses labels to describe images. For more information, see Labeling images
@@ -2010,11 +2223,40 @@ namespace Rekognition
         }
 
         /**
-         * <p>Gets a list of the project policies attached to a project.</p> <p>To attach a
-         * project policy to a project, call <a>PutProjectPolicy</a>. To remove a project
-         * policy from a project, call <a>DeleteProjectPolicy</a>.</p> <p>This operation
-         * requires permissions to perform the <code>rekognition:ListProjectPolicies</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of media analysis jobs. Results are sorted by
+         * <code>CreationTimestamp</code> in descending order.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMediaAnalysisJobsOutcome ListMediaAnalysisJobs(const Model::ListMediaAnalysisJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMediaAnalysisJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMediaAnalysisJobsRequestT = Model::ListMediaAnalysisJobsRequest>
+        Model::ListMediaAnalysisJobsOutcomeCallable ListMediaAnalysisJobsCallable(const ListMediaAnalysisJobsRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::ListMediaAnalysisJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListMediaAnalysisJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMediaAnalysisJobsRequestT = Model::ListMediaAnalysisJobsRequest>
+        void ListMediaAnalysisJobsAsync(const ListMediaAnalysisJobsRequestT& request, const ListMediaAnalysisJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::ListMediaAnalysisJobs, request, handler, context);
+        }
+
+        /**
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Gets a list of the project policies attached to a project.</p> <p>To
+         * attach a project policy to a project, call <a>PutProjectPolicy</a>. To remove a
+         * project policy from a project, call <a>DeleteProjectPolicy</a>.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:ListProjectPolicies</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListProjectPolicies">AWS
          * API Reference</a></p>
          */
@@ -2093,22 +2335,53 @@ namespace Rekognition
         }
 
         /**
-         * <p>Attaches a project policy to a Amazon Rekognition Custom Labels project in a
-         * trusting AWS account. A project policy specifies that a trusted AWS account can
-         * copy a model version from a trusting AWS account to a project in the trusted AWS
-         * account. To copy a model version you use the <a>CopyProjectVersion</a>
-         * operation.</p> <p>For more information about the format of a project policy
-         * document, see Attaching a project policy (SDK) in the <i>Amazon Rekognition
-         * Custom Labels Developer Guide</i>. </p> <p>The response from
-         * <code>PutProjectPolicy</code> is a revision ID for the project policy. You can
-         * attach multiple project policies to a project. You can also update an existing
-         * project policy by specifying the policy revision ID of the existing policy.</p>
-         * <p>To remove a project policy from a project, call <a>DeleteProjectPolicy</a>.
-         * To get a list of project policies attached to a project, call
-         * <a>ListProjectPolicies</a>. </p> <p>You copy a model version by calling
-         * <a>CopyProjectVersion</a>.</p> <p>This operation requires permissions to perform
-         * the <code>rekognition:PutProjectPolicy</code> action.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns metadata of the User such as <code>UserID</code> in the specified
+         * collection. Anonymous User (to reserve faces without any identity) is not
+         * returned as part of this request. The results are sorted by system generated
+         * primary key ID. If the response is truncated, <code>NextToken</code> is returned
+         * in the response that can be used in the subsequent request to retrieve the next
+         * set of identities.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListUsersRequestT = Model::ListUsersRequest>
+        Model::ListUsersOutcomeCallable ListUsersCallable(const ListUsersRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::ListUsers, request);
+        }
+
+        /**
+         * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListUsersRequestT = Model::ListUsersRequest>
+        void ListUsersAsync(const ListUsersRequestT& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::ListUsers, request, handler, context);
+        }
+
+        /**
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Attaches a project policy to a Amazon Rekognition Custom Labels
+         * project in a trusting AWS account. A project policy specifies that a trusted AWS
+         * account can copy a model version from a trusting AWS account to a project in the
+         * trusted AWS account. To copy a model version you use the
+         * <a>CopyProjectVersion</a> operation. Only applies to Custom Labels projects.</p>
+         * <p>For more information about the format of a project policy document, see
+         * Attaching a project policy (SDK) in the <i>Amazon Rekognition Custom Labels
+         * Developer Guide</i>. </p> <p>The response from <code>PutProjectPolicy</code> is
+         * a revision ID for the project policy. You can attach multiple project policies
+         * to a project. You can also update an existing project policy by specifying the
+         * policy revision ID of the existing policy.</p> <p>To remove a project policy
+         * from a project, call <a>DeleteProjectPolicy</a>. To get a list of project
+         * policies attached to a project, call <a>ListProjectPolicies</a>. </p> <p>You
+         * copy a model version by calling <a>CopyProjectVersion</a>.</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:PutProjectPolicy</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PutProjectPolicy">AWS
          * API Reference</a></p>
          */
@@ -2276,6 +2549,71 @@ namespace Rekognition
         void SearchFacesByImageAsync(const SearchFacesByImageRequestT& request, const SearchFacesByImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RekognitionClient::SearchFacesByImage, request, handler, context);
+        }
+
+        /**
+         * <p>Searches for UserIDs within a collection based on a <code>FaceId</code> or
+         * <code>UserId</code>. This API can be used to find the closest UserID (with a
+         * highest similarity) to associate a face. The request must be provided with
+         * either <code>FaceId</code> or <code>UserId</code>. The operation returns an
+         * array of UserID that match the <code>FaceId</code> or <code>UserId</code>,
+         * ordered by similarity score with the highest similarity first. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchUsersOutcome SearchUsers(const Model::SearchUsersRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchUsers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchUsersRequestT = Model::SearchUsersRequest>
+        Model::SearchUsersOutcomeCallable SearchUsersCallable(const SearchUsersRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::SearchUsers, request);
+        }
+
+        /**
+         * An Async wrapper for SearchUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchUsersRequestT = Model::SearchUsersRequest>
+        void SearchUsersAsync(const SearchUsersRequestT& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::SearchUsers, request, handler, context);
+        }
+
+        /**
+         * <p>Searches for UserIDs using a supplied image. It first detects the largest
+         * face in the image, and then searches a specified collection for matching
+         * UserIDs. </p> <p>The operation returns an array of UserIDs that match the face
+         * in the supplied image, ordered by similarity score with the highest similarity
+         * first. It also returns a bounding box for the face found in the input image.
+         * </p> <p>Information about faces detected in the supplied image, but not used for
+         * the search, is returned in an array of <code>UnsearchedFace</code> objects. If
+         * no valid face is detected in the image, the response will contain an empty
+         * <code>UserMatches</code> list and no <code>SearchedFace</code> object.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchUsersByImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchUsersByImageOutcome SearchUsersByImage(const Model::SearchUsersByImageRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchUsersByImage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchUsersByImageRequestT = Model::SearchUsersByImageRequest>
+        Model::SearchUsersByImageOutcomeCallable SearchUsersByImageCallable(const SearchUsersByImageRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::SearchUsersByImage, request);
+        }
+
+        /**
+         * An Async wrapper for SearchUsersByImage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchUsersByImageRequestT = Model::SearchUsersByImageRequest>
+        void SearchUsersByImageAsync(const SearchUsersByImageRequestT& request, const SearchUsersByImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::SearchUsersByImage, request, handler, context);
         }
 
         /**
@@ -2485,6 +2823,33 @@ namespace Rekognition
         }
 
         /**
+         * <p>Initiates a new media analysis job. Accepts a manifest file in an Amazon S3
+         * bucket. The output is a manifest file and a summary of the manifest stored in
+         * the Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartMediaAnalysisJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMediaAnalysisJobOutcome StartMediaAnalysisJob(const Model::StartMediaAnalysisJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMediaAnalysisJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMediaAnalysisJobRequestT = Model::StartMediaAnalysisJobRequest>
+        Model::StartMediaAnalysisJobOutcomeCallable StartMediaAnalysisJobCallable(const StartMediaAnalysisJobRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::StartMediaAnalysisJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartMediaAnalysisJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMediaAnalysisJobRequestT = Model::StartMediaAnalysisJobRequest>
+        void StartMediaAnalysisJobAsync(const StartMediaAnalysisJobRequestT& request, const StartMediaAnalysisJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::StartMediaAnalysisJob, request, handler, context);
+        }
+
+        /**
          * <p>Starts the asynchronous tracking of a person's path in a stored video.</p>
          * <p>Amazon Rekognition Video can track the path of people in a video stored in an
          * Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename
@@ -2521,16 +2886,16 @@ namespace Rekognition
         }
 
         /**
-         * <p>Starts the running of the version of a model. Starting a model takes a while
-         * to complete. To check the current state of the model, use
-         * <a>DescribeProjectVersions</a>.</p> <p>Once the model is running, you can detect
-         * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> 
-         * <p>You are charged for the amount of time that the model is running. To stop a
-         * running model, call <a>StopProjectVersion</a>.</p>  <p>For more
-         * information, see <i>Running a trained Amazon Rekognition Custom Labels model</i>
-         * in the Amazon Rekognition Custom Labels Guide.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:StartProjectVersion</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Starts the running of the version of a model. Starting a model takes
+         * a while to complete. To check the current state of the model, use
+         * <a>DescribeProjectVersions</a>. </p> <p>Once the model is running, you can
+         * detect custom labels in new images by calling <a>DetectCustomLabels</a>.</p>
+         *  <p>You are charged for the amount of time that the model is running. To
+         * stop a running model, call <a>StopProjectVersion</a>.</p>  <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:StartProjectVersion</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">AWS
          * API Reference</a></p>
          */
@@ -2665,10 +3030,12 @@ namespace Rekognition
         }
 
         /**
-         * <p>Stops a running model. The operation might take a while to complete. To check
-         * the current status, call <a>DescribeProjectVersions</a>. </p> <p>This operation
-         * requires permissions to perform the <code>rekognition:StopProjectVersion</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Stops a running model. The operation might take a while to complete.
+         * To check the current status, call <a>DescribeProjectVersions</a>. Only applies
+         * to Custom Labels projects.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:StopProjectVersion</code> action.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">AWS
          * API Reference</a></p>
          */
@@ -2776,9 +3143,10 @@ namespace Rekognition
         }
 
         /**
-         * <p>Adds or updates one or more entries (images) in a dataset. An entry is a JSON
-         * Line which contains the information for a single image, including the image
-         * location, assigned labels, and object location bounding boxes. For more
+         *  <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+         *  <p>Adds or updates one or more entries (images) in a dataset. An entry
+         * is a JSON Line which contains the information for a single image, including the
+         * image location, assigned labels, and object location bounding boxes. For more
          * information, see Image-Level labels in manifest files and Object localization in
          * manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
          * </p> <p>If the <code>source-ref</code> field in the JSON line references an

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int GRE_HASH = HashingUtils::HashString("GRE");
+        static const int NO_ENCAP_HASH = HashingUtils::HashString("NO_ENCAP");
 
 
         TunnelProtocol GetTunnelProtocolForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == GRE_HASH)
           {
             return TunnelProtocol::GRE;
+          }
+          else if (hashCode == NO_ENCAP_HASH)
+          {
+            return TunnelProtocol::NO_ENCAP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +49,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TunnelProtocol::NOT_SET:
+            return {};
           case TunnelProtocol::GRE:
             return "GRE";
+          case TunnelProtocol::NO_ENCAP:
+            return "NO_ENCAP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

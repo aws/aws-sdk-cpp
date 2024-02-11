@@ -199,6 +199,61 @@ namespace Model
      */
     inline Filters& AddRoutingProfiles(const char* value) { m_routingProfilesHasBeenSet = true; m_routingProfiles.push_back(value); return *this; }
 
+
+    /**
+     * <p>A list of expressions as a filter, in which an expression is an object of a
+     * step in a routing criteria.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRoutingStepExpressions() const{ return m_routingStepExpressions; }
+
+    /**
+     * <p>A list of expressions as a filter, in which an expression is an object of a
+     * step in a routing criteria.</p>
+     */
+    inline bool RoutingStepExpressionsHasBeenSet() const { return m_routingStepExpressionsHasBeenSet; }
+
+    /**
+     * <p>A list of expressions as a filter, in which an expression is an object of a
+     * step in a routing criteria.</p>
+     */
+    inline void SetRoutingStepExpressions(const Aws::Vector<Aws::String>& value) { m_routingStepExpressionsHasBeenSet = true; m_routingStepExpressions = value; }
+
+    /**
+     * <p>A list of expressions as a filter, in which an expression is an object of a
+     * step in a routing criteria.</p>
+     */
+    inline void SetRoutingStepExpressions(Aws::Vector<Aws::String>&& value) { m_routingStepExpressionsHasBeenSet = true; m_routingStepExpressions = std::move(value); }
+
+    /**
+     * <p>A list of expressions as a filter, in which an expression is an object of a
+     * step in a routing criteria.</p>
+     */
+    inline Filters& WithRoutingStepExpressions(const Aws::Vector<Aws::String>& value) { SetRoutingStepExpressions(value); return *this;}
+
+    /**
+     * <p>A list of expressions as a filter, in which an expression is an object of a
+     * step in a routing criteria.</p>
+     */
+    inline Filters& WithRoutingStepExpressions(Aws::Vector<Aws::String>&& value) { SetRoutingStepExpressions(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of expressions as a filter, in which an expression is an object of a
+     * step in a routing criteria.</p>
+     */
+    inline Filters& AddRoutingStepExpressions(const Aws::String& value) { m_routingStepExpressionsHasBeenSet = true; m_routingStepExpressions.push_back(value); return *this; }
+
+    /**
+     * <p>A list of expressions as a filter, in which an expression is an object of a
+     * step in a routing criteria.</p>
+     */
+    inline Filters& AddRoutingStepExpressions(Aws::String&& value) { m_routingStepExpressionsHasBeenSet = true; m_routingStepExpressions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of expressions as a filter, in which an expression is an object of a
+     * step in a routing criteria.</p>
+     */
+    inline Filters& AddRoutingStepExpressions(const char* value) { m_routingStepExpressionsHasBeenSet = true; m_routingStepExpressions.push_back(value); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_queues;
@@ -209,6 +264,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_routingProfiles;
     bool m_routingProfilesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_routingStepExpressions;
+    bool m_routingStepExpressionsHasBeenSet = false;
   };
 
 } // namespace Model

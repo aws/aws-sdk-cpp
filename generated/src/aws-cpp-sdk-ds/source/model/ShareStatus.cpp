@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShareStatus::NOT_SET:
+            return {};
           case ShareStatus::Shared:
             return "Shared";
           case ShareStatus::PendingAcceptance:

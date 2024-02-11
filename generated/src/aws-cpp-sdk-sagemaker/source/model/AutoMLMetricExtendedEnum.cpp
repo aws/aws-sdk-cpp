@@ -35,6 +35,17 @@ namespace Aws
         static const int RecallMacro_HASH = HashingUtils::HashString("RecallMacro");
         static const int LogLoss_HASH = HashingUtils::HashString("LogLoss");
         static const int InferenceLatency_HASH = HashingUtils::HashString("InferenceLatency");
+        static const int MAPE_HASH = HashingUtils::HashString("MAPE");
+        static const int MASE_HASH = HashingUtils::HashString("MASE");
+        static const int WAPE_HASH = HashingUtils::HashString("WAPE");
+        static const int AverageWeightedQuantileLoss_HASH = HashingUtils::HashString("AverageWeightedQuantileLoss");
+        static const int Rouge1_HASH = HashingUtils::HashString("Rouge1");
+        static const int Rouge2_HASH = HashingUtils::HashString("Rouge2");
+        static const int RougeL_HASH = HashingUtils::HashString("RougeL");
+        static const int RougeLSum_HASH = HashingUtils::HashString("RougeLSum");
+        static const int Perplexity_HASH = HashingUtils::HashString("Perplexity");
+        static const int ValidationLoss_HASH = HashingUtils::HashString("ValidationLoss");
+        static const int TrainingLoss_HASH = HashingUtils::HashString("TrainingLoss");
 
 
         AutoMLMetricExtendedEnum GetAutoMLMetricExtendedEnumForName(const Aws::String& name)
@@ -100,6 +111,50 @@ namespace Aws
           {
             return AutoMLMetricExtendedEnum::InferenceLatency;
           }
+          else if (hashCode == MAPE_HASH)
+          {
+            return AutoMLMetricExtendedEnum::MAPE;
+          }
+          else if (hashCode == MASE_HASH)
+          {
+            return AutoMLMetricExtendedEnum::MASE;
+          }
+          else if (hashCode == WAPE_HASH)
+          {
+            return AutoMLMetricExtendedEnum::WAPE;
+          }
+          else if (hashCode == AverageWeightedQuantileLoss_HASH)
+          {
+            return AutoMLMetricExtendedEnum::AverageWeightedQuantileLoss;
+          }
+          else if (hashCode == Rouge1_HASH)
+          {
+            return AutoMLMetricExtendedEnum::Rouge1;
+          }
+          else if (hashCode == Rouge2_HASH)
+          {
+            return AutoMLMetricExtendedEnum::Rouge2;
+          }
+          else if (hashCode == RougeL_HASH)
+          {
+            return AutoMLMetricExtendedEnum::RougeL;
+          }
+          else if (hashCode == RougeLSum_HASH)
+          {
+            return AutoMLMetricExtendedEnum::RougeLSum;
+          }
+          else if (hashCode == Perplexity_HASH)
+          {
+            return AutoMLMetricExtendedEnum::Perplexity;
+          }
+          else if (hashCode == ValidationLoss_HASH)
+          {
+            return AutoMLMetricExtendedEnum::ValidationLoss;
+          }
+          else if (hashCode == TrainingLoss_HASH)
+          {
+            return AutoMLMetricExtendedEnum::TrainingLoss;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -114,6 +169,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLMetricExtendedEnum::NOT_SET:
+            return {};
           case AutoMLMetricExtendedEnum::Accuracy:
             return "Accuracy";
           case AutoMLMetricExtendedEnum::MSE:
@@ -144,6 +201,28 @@ namespace Aws
             return "LogLoss";
           case AutoMLMetricExtendedEnum::InferenceLatency:
             return "InferenceLatency";
+          case AutoMLMetricExtendedEnum::MAPE:
+            return "MAPE";
+          case AutoMLMetricExtendedEnum::MASE:
+            return "MASE";
+          case AutoMLMetricExtendedEnum::WAPE:
+            return "WAPE";
+          case AutoMLMetricExtendedEnum::AverageWeightedQuantileLoss:
+            return "AverageWeightedQuantileLoss";
+          case AutoMLMetricExtendedEnum::Rouge1:
+            return "Rouge1";
+          case AutoMLMetricExtendedEnum::Rouge2:
+            return "Rouge2";
+          case AutoMLMetricExtendedEnum::RougeL:
+            return "RougeL";
+          case AutoMLMetricExtendedEnum::RougeLSum:
+            return "RougeLSum";
+          case AutoMLMetricExtendedEnum::Perplexity:
+            return "Perplexity";
+          case AutoMLMetricExtendedEnum::ValidationLoss:
+            return "ValidationLoss";
+          case AutoMLMetricExtendedEnum::TrainingLoss:
+            return "TrainingLoss";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

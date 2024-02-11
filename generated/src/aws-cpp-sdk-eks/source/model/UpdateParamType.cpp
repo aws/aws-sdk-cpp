@@ -43,6 +43,10 @@ namespace Aws
         static const int ResolveConflicts_HASH = HashingUtils::HashString("ResolveConflicts");
         static const int MaxUnavailable_HASH = HashingUtils::HashString("MaxUnavailable");
         static const int MaxUnavailablePercentage_HASH = HashingUtils::HashString("MaxUnavailablePercentage");
+        static const int ConfigurationValues_HASH = HashingUtils::HashString("ConfigurationValues");
+        static const int SecurityGroups_HASH = HashingUtils::HashString("SecurityGroups");
+        static const int Subnets_HASH = HashingUtils::HashString("Subnets");
+        static const int AuthenticationMode_HASH = HashingUtils::HashString("AuthenticationMode");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -140,6 +144,22 @@ namespace Aws
           {
             return UpdateParamType::MaxUnavailablePercentage;
           }
+          else if (hashCode == ConfigurationValues_HASH)
+          {
+            return UpdateParamType::ConfigurationValues;
+          }
+          else if (hashCode == SecurityGroups_HASH)
+          {
+            return UpdateParamType::SecurityGroups;
+          }
+          else if (hashCode == Subnets_HASH)
+          {
+            return UpdateParamType::Subnets;
+          }
+          else if (hashCode == AuthenticationMode_HASH)
+          {
+            return UpdateParamType::AuthenticationMode;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -154,6 +174,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateParamType::NOT_SET:
+            return {};
           case UpdateParamType::Version:
             return "Version";
           case UpdateParamType::PlatformVersion:
@@ -200,6 +222,14 @@ namespace Aws
             return "MaxUnavailable";
           case UpdateParamType::MaxUnavailablePercentage:
             return "MaxUnavailablePercentage";
+          case UpdateParamType::ConfigurationValues:
+            return "ConfigurationValues";
+          case UpdateParamType::SecurityGroups:
+            return "SecurityGroups";
+          case UpdateParamType::Subnets:
+            return "Subnets";
+          case UpdateParamType::AuthenticationMode:
+            return "AuthenticationMode";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

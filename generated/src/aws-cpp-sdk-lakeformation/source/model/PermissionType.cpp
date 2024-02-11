@@ -22,6 +22,8 @@ namespace Aws
 
         static const int COLUMN_PERMISSION_HASH = HashingUtils::HashString("COLUMN_PERMISSION");
         static const int CELL_FILTER_PERMISSION_HASH = HashingUtils::HashString("CELL_FILTER_PERMISSION");
+        static const int NESTED_PERMISSION_HASH = HashingUtils::HashString("NESTED_PERMISSION");
+        static const int NESTED_CELL_PERMISSION_HASH = HashingUtils::HashString("NESTED_CELL_PERMISSION");
 
 
         PermissionType GetPermissionTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == CELL_FILTER_PERMISSION_HASH)
           {
             return PermissionType::CELL_FILTER_PERMISSION;
+          }
+          else if (hashCode == NESTED_PERMISSION_HASH)
+          {
+            return PermissionType::NESTED_PERMISSION;
+          }
+          else if (hashCode == NESTED_CELL_PERMISSION_HASH)
+          {
+            return PermissionType::NESTED_CELL_PERMISSION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionType::NOT_SET:
+            return {};
           case PermissionType::COLUMN_PERMISSION:
             return "COLUMN_PERMISSION";
           case PermissionType::CELL_FILTER_PERMISSION:
             return "CELL_FILTER_PERMISSION";
+          case PermissionType::NESTED_PERMISSION:
+            return "NESTED_PERMISSION";
+          case PermissionType::NESTED_CELL_PERMISSION:
+            return "NESTED_CELL_PERMISSION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -237,47 +237,74 @@ namespace Model
 
 
     /**
-     * <p>A list of column names.</p>
+     * <p>A list of column names and/or nested column attributes. When specifying
+     * nested attributes, use a qualified dot (.) delimited format such as
+     * "address"."zip". Nested attributes within this list may not exceed a depth of
+     * 5.</p>
      */
     inline const Aws::Vector<Aws::String>& GetColumnNames() const{ return m_columnNames; }
 
     /**
-     * <p>A list of column names.</p>
+     * <p>A list of column names and/or nested column attributes. When specifying
+     * nested attributes, use a qualified dot (.) delimited format such as
+     * "address"."zip". Nested attributes within this list may not exceed a depth of
+     * 5.</p>
      */
     inline bool ColumnNamesHasBeenSet() const { return m_columnNamesHasBeenSet; }
 
     /**
-     * <p>A list of column names.</p>
+     * <p>A list of column names and/or nested column attributes. When specifying
+     * nested attributes, use a qualified dot (.) delimited format such as
+     * "address"."zip". Nested attributes within this list may not exceed a depth of
+     * 5.</p>
      */
     inline void SetColumnNames(const Aws::Vector<Aws::String>& value) { m_columnNamesHasBeenSet = true; m_columnNames = value; }
 
     /**
-     * <p>A list of column names.</p>
+     * <p>A list of column names and/or nested column attributes. When specifying
+     * nested attributes, use a qualified dot (.) delimited format such as
+     * "address"."zip". Nested attributes within this list may not exceed a depth of
+     * 5.</p>
      */
     inline void SetColumnNames(Aws::Vector<Aws::String>&& value) { m_columnNamesHasBeenSet = true; m_columnNames = std::move(value); }
 
     /**
-     * <p>A list of column names.</p>
+     * <p>A list of column names and/or nested column attributes. When specifying
+     * nested attributes, use a qualified dot (.) delimited format such as
+     * "address"."zip". Nested attributes within this list may not exceed a depth of
+     * 5.</p>
      */
     inline DataCellsFilter& WithColumnNames(const Aws::Vector<Aws::String>& value) { SetColumnNames(value); return *this;}
 
     /**
-     * <p>A list of column names.</p>
+     * <p>A list of column names and/or nested column attributes. When specifying
+     * nested attributes, use a qualified dot (.) delimited format such as
+     * "address"."zip". Nested attributes within this list may not exceed a depth of
+     * 5.</p>
      */
     inline DataCellsFilter& WithColumnNames(Aws::Vector<Aws::String>&& value) { SetColumnNames(std::move(value)); return *this;}
 
     /**
-     * <p>A list of column names.</p>
+     * <p>A list of column names and/or nested column attributes. When specifying
+     * nested attributes, use a qualified dot (.) delimited format such as
+     * "address"."zip". Nested attributes within this list may not exceed a depth of
+     * 5.</p>
      */
     inline DataCellsFilter& AddColumnNames(const Aws::String& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of column names.</p>
+     * <p>A list of column names and/or nested column attributes. When specifying
+     * nested attributes, use a qualified dot (.) delimited format such as
+     * "address"."zip". Nested attributes within this list may not exceed a depth of
+     * 5.</p>
      */
     inline DataCellsFilter& AddColumnNames(Aws::String&& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of column names.</p>
+     * <p>A list of column names and/or nested column attributes. When specifying
+     * nested attributes, use a qualified dot (.) delimited format such as
+     * "address"."zip". Nested attributes within this list may not exceed a depth of
+     * 5.</p>
      */
     inline DataCellsFilter& AddColumnNames(const char* value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
 

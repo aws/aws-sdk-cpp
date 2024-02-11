@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageType::NOT_SET:
+            return {};
           case StorageType::S3:
             return "S3";
           case StorageType::KINESIS_VIDEO_STREAM:

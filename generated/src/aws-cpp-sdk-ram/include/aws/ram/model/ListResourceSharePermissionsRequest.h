@@ -35,7 +35,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share for which you want to retrieve the
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the
      * associated permissions.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share for which you want to retrieve the
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the
      * associated permissions.</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share for which you want to retrieve the
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the
      * associated permissions.</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share for which you want to retrieve the
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the
      * associated permissions.</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share for which you want to retrieve the
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the
      * associated permissions.</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share for which you want to retrieve the
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the
      * associated permissions.</p>
      */
     inline ListResourceSharePermissionsRequest& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share for which you want to retrieve the
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the
      * associated permissions.</p>
      */
     inline ListResourceSharePermissionsRequest& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
@@ -91,7 +91,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share for which you want to retrieve the
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the
      * associated permissions.</p>
      */
     inline ListResourceSharePermissionsRequest& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}

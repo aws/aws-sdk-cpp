@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoggingConfigurationStatusCode::NOT_SET:
+            return {};
           case LoggingConfigurationStatusCode::CREATING:
             return "CREATING";
           case LoggingConfigurationStatusCode::ACTIVE:

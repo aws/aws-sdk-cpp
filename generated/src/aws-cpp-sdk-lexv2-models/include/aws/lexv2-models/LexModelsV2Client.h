@@ -25,6 +25,9 @@ namespace LexModelsV2
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef LexModelsV2ClientConfiguration ClientConfigurationType;
+      typedef LexModelsV2EndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -260,11 +263,11 @@ namespace LexModelsV2
         }
 
         /**
-         * <p>Creates a new version of the bot based on the <code>DRAFT</code> version. If
-         * the <code>DRAFT</code> version of this resource hasn't changed since you created
-         * the last version, Amazon Lex doesn't create a new version, it returns the last
-         * created version.</p> <p>When you create the first version of a bot, Amazon Lex
-         * sets the version to 1. Subsequent versions increment by 1.</p><p><h3>See
+         * <p>Creates an immutable version of the bot. When you create the first version of
+         * a bot, Amazon Lex sets the version number to 1. Subsequent bot versions increase
+         * in an increment of 1. The version number will always represent the total number
+         * of versions created of the bot, not the current number of versions. If a bot
+         * version is deleted, that bot version number will not be reused.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotVersion">AWS
          * API Reference</a></p>
@@ -472,6 +475,32 @@ namespace LexModelsV2
         void CreateSlotTypeAsync(const CreateSlotTypeRequestT& request, const CreateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::CreateSlotType, request, handler, context);
+        }
+
+        /**
+         * <p>Create a report that describes the differences between the bot and the test
+         * set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateTestSetDiscrepancyReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTestSetDiscrepancyReportOutcome CreateTestSetDiscrepancyReport(const Model::CreateTestSetDiscrepancyReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTestSetDiscrepancyReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTestSetDiscrepancyReportRequestT = Model::CreateTestSetDiscrepancyReportRequest>
+        Model::CreateTestSetDiscrepancyReportOutcomeCallable CreateTestSetDiscrepancyReportCallable(const CreateTestSetDiscrepancyReportRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::CreateTestSetDiscrepancyReport, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTestSetDiscrepancyReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTestSetDiscrepancyReportRequestT = Model::CreateTestSetDiscrepancyReportRequest>
+        void CreateTestSetDiscrepancyReportAsync(const CreateTestSetDiscrepancyReportRequestT& request, const CreateTestSetDiscrepancyReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::CreateTestSetDiscrepancyReport, request, handler, context);
         }
 
         /**
@@ -825,6 +854,31 @@ namespace LexModelsV2
         }
 
         /**
+         * <p>The action to delete the selected test set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteTestSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTestSetOutcome DeleteTestSet(const Model::DeleteTestSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTestSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTestSetRequestT = Model::DeleteTestSetRequest>
+        Model::DeleteTestSetOutcomeCallable DeleteTestSetCallable(const DeleteTestSetRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::DeleteTestSet, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTestSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTestSetRequestT = Model::DeleteTestSetRequest>
+        void DeleteTestSetAsync(const DeleteTestSetRequestT& request, const DeleteTestSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::DeleteTestSet, request, handler, context);
+        }
+
+        /**
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
          * send to your bot. Utterances are stored for 15 days for use with the <a
          * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
@@ -960,6 +1014,35 @@ namespace LexModelsV2
         void DescribeBotRecommendationAsync(const DescribeBotRecommendationRequestT& request, const DescribeBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::DescribeBotRecommendation, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a request to generate a bot through natural
+         * language description, made through the <code>StartBotResource</code> API. Use
+         * the <code>generatedBotLocaleUrl</code> to retrieve the Amazon S3 object
+         * containing the bot locale configuration. You can then modify and import this
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotResourceGeneration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBotResourceGenerationOutcome DescribeBotResourceGeneration(const Model::DescribeBotResourceGenerationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeBotResourceGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeBotResourceGenerationRequestT = Model::DescribeBotResourceGenerationRequest>
+        Model::DescribeBotResourceGenerationOutcomeCallable DescribeBotResourceGenerationCallable(const DescribeBotResourceGenerationRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::DescribeBotResourceGeneration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeBotResourceGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeBotResourceGenerationRequestT = Model::DescribeBotResourceGenerationRequest>
+        void DescribeBotResourceGenerationAsync(const DescribeBotResourceGenerationRequestT& request, const DescribeBotResourceGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::DescribeBotResourceGeneration, request, handler, context);
         }
 
         /**
@@ -1165,6 +1248,160 @@ namespace LexModelsV2
         }
 
         /**
+         * <p>Gets metadata information about the test execution.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTestExecutionOutcome DescribeTestExecution(const Model::DescribeTestExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTestExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeTestExecutionRequestT = Model::DescribeTestExecutionRequest>
+        Model::DescribeTestExecutionOutcomeCallable DescribeTestExecutionCallable(const DescribeTestExecutionRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::DescribeTestExecution, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeTestExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeTestExecutionRequestT = Model::DescribeTestExecutionRequest>
+        void DescribeTestExecutionAsync(const DescribeTestExecutionRequestT& request, const DescribeTestExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::DescribeTestExecution, request, handler, context);
+        }
+
+        /**
+         * <p>Gets metadata information about the test set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTestSetOutcome DescribeTestSet(const Model::DescribeTestSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTestSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeTestSetRequestT = Model::DescribeTestSetRequest>
+        Model::DescribeTestSetOutcomeCallable DescribeTestSetCallable(const DescribeTestSetRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::DescribeTestSet, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeTestSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeTestSetRequestT = Model::DescribeTestSetRequest>
+        void DescribeTestSetAsync(const DescribeTestSetRequestT& request, const DescribeTestSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::DescribeTestSet, request, handler, context);
+        }
+
+        /**
+         * <p>Gets metadata information about the test set discrepancy
+         * report.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSetDiscrepancyReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTestSetDiscrepancyReportOutcome DescribeTestSetDiscrepancyReport(const Model::DescribeTestSetDiscrepancyReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTestSetDiscrepancyReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeTestSetDiscrepancyReportRequestT = Model::DescribeTestSetDiscrepancyReportRequest>
+        Model::DescribeTestSetDiscrepancyReportOutcomeCallable DescribeTestSetDiscrepancyReportCallable(const DescribeTestSetDiscrepancyReportRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::DescribeTestSetDiscrepancyReport, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeTestSetDiscrepancyReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeTestSetDiscrepancyReportRequestT = Model::DescribeTestSetDiscrepancyReportRequest>
+        void DescribeTestSetDiscrepancyReportAsync(const DescribeTestSetDiscrepancyReportRequestT& request, const DescribeTestSetDiscrepancyReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::DescribeTestSetDiscrepancyReport, request, handler, context);
+        }
+
+        /**
+         * <p>Gets metadata information about the test set generation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSetGeneration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTestSetGenerationOutcome DescribeTestSetGeneration(const Model::DescribeTestSetGenerationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTestSetGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeTestSetGenerationRequestT = Model::DescribeTestSetGenerationRequest>
+        Model::DescribeTestSetGenerationOutcomeCallable DescribeTestSetGenerationCallable(const DescribeTestSetGenerationRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::DescribeTestSetGeneration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeTestSetGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeTestSetGenerationRequestT = Model::DescribeTestSetGenerationRequest>
+        void DescribeTestSetGenerationAsync(const DescribeTestSetGenerationRequestT& request, const DescribeTestSetGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::DescribeTestSetGeneration, request, handler, context);
+        }
+
+        /**
+         * <p>Generates sample utterances for an intent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GenerateBotElement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GenerateBotElementOutcome GenerateBotElement(const Model::GenerateBotElementRequest& request) const;
+
+        /**
+         * A Callable wrapper for GenerateBotElement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GenerateBotElementRequestT = Model::GenerateBotElementRequest>
+        Model::GenerateBotElementOutcomeCallable GenerateBotElementCallable(const GenerateBotElementRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::GenerateBotElement, request);
+        }
+
+        /**
+         * An Async wrapper for GenerateBotElement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GenerateBotElementRequestT = Model::GenerateBotElementRequest>
+        void GenerateBotElementAsync(const GenerateBotElementRequestT& request, const GenerateBotElementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::GenerateBotElement, request, handler, context);
+        }
+
+        /**
+         * <p>The pre-signed Amazon S3 URL to download the test execution result
+         * artifacts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GetTestExecutionArtifactsUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTestExecutionArtifactsUrlOutcome GetTestExecutionArtifactsUrl(const Model::GetTestExecutionArtifactsUrlRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTestExecutionArtifactsUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTestExecutionArtifactsUrlRequestT = Model::GetTestExecutionArtifactsUrlRequest>
+        Model::GetTestExecutionArtifactsUrlOutcomeCallable GetTestExecutionArtifactsUrlCallable(const GetTestExecutionArtifactsUrlRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::GetTestExecutionArtifactsUrl, request);
+        }
+
+        /**
+         * An Async wrapper for GetTestExecutionArtifactsUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTestExecutionArtifactsUrlRequestT = Model::GetTestExecutionArtifactsUrlRequest>
+        void GetTestExecutionArtifactsUrlAsync(const GetTestExecutionArtifactsUrlRequestT& request, const GetTestExecutionArtifactsUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::GetTestExecutionArtifactsUrl, request, handler, context);
+        }
+
+        /**
          * <p>Provides a list of utterances that users have sent to the bot.</p>
          * <p>Utterances are aggregated by the text of the utterance. For example, all
          * instances where customers used the phrase "I want to order pizza" are aggregated
@@ -1275,6 +1512,32 @@ namespace LexModelsV2
         void ListBotRecommendationsAsync(const ListBotRecommendationsRequestT& request, const ListBotRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::ListBotRecommendations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the generation requests made for a bot locale.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotResourceGenerations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBotResourceGenerationsOutcome ListBotResourceGenerations(const Model::ListBotResourceGenerationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBotResourceGenerations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListBotResourceGenerationsRequestT = Model::ListBotResourceGenerationsRequest>
+        Model::ListBotResourceGenerationsOutcomeCallable ListBotResourceGenerationsCallable(const ListBotResourceGenerationsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListBotResourceGenerations, request);
+        }
+
+        /**
+         * An Async wrapper for ListBotResourceGenerations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListBotResourceGenerationsRequestT = Model::ListBotResourceGenerationsRequest>
+        void ListBotResourceGenerationsAsync(const ListBotResourceGenerationsRequestT& request, const ListBotResourceGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListBotResourceGenerations, request, handler, context);
         }
 
         /**
@@ -1469,6 +1732,130 @@ namespace LexModelsV2
         }
 
         /**
+         * <p>Retrieves summary metrics for the intents in your bot. The following fields
+         * are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html">AnalyticsIntentMetric</a>
+         * objects. In each object, use the <code>name</code> field to specify the metric
+         * to calculate, the <code>statistic</code> field to specify whether to calculate
+         * the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the
+         * <code>order</code> field to specify whether to sort the results in
+         * <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> </ul> <p>Of the optional
+         * fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use
+         * the <code>filters</code> field to filter the results, the <code>groupBy</code>
+         * field to specify categories by which to group the results, and the
+         * <code>binBy</code> field to specify time intervals by which to group the
+         * results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the
+         * number of results to return in a single response and the <code>nextToken</code>
+         * field to return the next batch of results if the response does not return the
+         * full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field
+         * exists in both <code>binBy</code> and <code>metrics</code>. You can specify only
+         * one <code>order</code> in a given request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIntentMetricsOutcome ListIntentMetrics(const Model::ListIntentMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIntentMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIntentMetricsRequestT = Model::ListIntentMetricsRequest>
+        Model::ListIntentMetricsOutcomeCallable ListIntentMetricsCallable(const ListIntentMetricsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListIntentMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for ListIntentMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIntentMetricsRequestT = Model::ListIntentMetricsRequest>
+        void ListIntentMetricsAsync(const ListIntentMetricsRequestT& request, const ListIntentMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListIntentMetrics, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves summary statistics for a path of intents that users take over
+         * sessions with your bot. The following fields are required:</p> <ul> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> <li> <p>
+         * <code>intentPath</code> – Define an order of intents for which you want to
+         * retrieve metrics. Separate intents in the path with a forward slash. For
+         * example, populate the <code>intentPath</code> field with
+         * <code>/BookCar/BookHotel</code> to see details about how many times users
+         * invoked the <code>BookCar</code> and <code>BookHotel</code> intents in that
+         * order.</p> </li> </ul> <p>Use the optional <code>filters</code> field to filter
+         * the results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentPaths">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIntentPathsOutcome ListIntentPaths(const Model::ListIntentPathsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIntentPaths that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIntentPathsRequestT = Model::ListIntentPathsRequest>
+        Model::ListIntentPathsOutcomeCallable ListIntentPathsCallable(const ListIntentPathsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListIntentPaths, request);
+        }
+
+        /**
+         * An Async wrapper for ListIntentPaths that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIntentPathsRequestT = Model::ListIntentPathsRequest>
+        void ListIntentPathsAsync(const ListIntentPathsRequestT& request, const ListIntentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListIntentPaths, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves summary metrics for the stages within intents in your bot. The
+         * following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list
+         * of <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a>
+         * objects. In each object, use the <code>name</code> field to specify the metric
+         * to calculate, the <code>statistic</code> field to specify whether to calculate
+         * the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the
+         * <code>order</code> field to specify whether to sort the results in
+         * <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> </ul> <p>Of the optional
+         * fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use
+         * the <code>filters</code> field to filter the results, the <code>groupBy</code>
+         * field to specify categories by which to group the results, and the
+         * <code>binBy</code> field to specify time intervals by which to group the
+         * results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the
+         * number of results to return in a single response and the <code>nextToken</code>
+         * field to return the next batch of results if the response does not return the
+         * full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field
+         * exists in both <code>binBy</code> and <code>metrics</code>. You can only specify
+         * one <code>order</code> in a given request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentStageMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIntentStageMetricsOutcome ListIntentStageMetrics(const Model::ListIntentStageMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIntentStageMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIntentStageMetricsRequestT = Model::ListIntentStageMetricsRequest>
+        Model::ListIntentStageMetricsOutcomeCallable ListIntentStageMetricsCallable(const ListIntentStageMetricsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListIntentStageMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for ListIntentStageMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIntentStageMetricsRequestT = Model::ListIntentStageMetricsRequest>
+        void ListIntentStageMetricsAsync(const ListIntentStageMetricsRequestT& request, const ListIntentStageMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListIntentStageMetrics, request, handler, context);
+        }
+
+        /**
          * <p>Get a list of intents that meet the specified criteria.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntents">AWS
@@ -1519,6 +1906,84 @@ namespace LexModelsV2
         void ListRecommendedIntentsAsync(const ListRecommendedIntentsRequestT& request, const ListRecommendedIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::ListRecommendedIntents, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of metadata for individual user sessions with your bot. The
+         * <code>startDateTime</code> and <code>endDateTime</code> fields are required.
+         * These fields define a time range for which you want to retrieve results. Of the
+         * optional fields, you can organize the results in the following ways:</p> <ul>
+         * <li> <p>Use the <code>filters</code> field to filter the results and the
+         * <code>sortBy</code> field to specify the values by which to sort the
+         * results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the
+         * number of results to return in a single response and the <code>nextToken</code>
+         * field to return the next batch of results if the response does not return the
+         * full set of results.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionAnalyticsData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSessionAnalyticsDataOutcome ListSessionAnalyticsData(const Model::ListSessionAnalyticsDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSessionAnalyticsData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSessionAnalyticsDataRequestT = Model::ListSessionAnalyticsDataRequest>
+        Model::ListSessionAnalyticsDataOutcomeCallable ListSessionAnalyticsDataCallable(const ListSessionAnalyticsDataRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListSessionAnalyticsData, request);
+        }
+
+        /**
+         * An Async wrapper for ListSessionAnalyticsData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSessionAnalyticsDataRequestT = Model::ListSessionAnalyticsDataRequest>
+        void ListSessionAnalyticsDataAsync(const ListSessionAnalyticsDataRequestT& request, const ListSessionAnalyticsDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListSessionAnalyticsData, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves summary metrics for the user sessions with your bot. The following
+         * fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html">AnalyticsSessionMetric</a>
+         * objects. In each object, use the <code>name</code> field to specify the metric
+         * to calculate, the <code>statistic</code> field to specify whether to calculate
+         * the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the
+         * <code>order</code> field to specify whether to sort the results in
+         * <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> </ul> <p>Of the optional
+         * fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use
+         * the <code>filters</code> field to filter the results, the <code>groupBy</code>
+         * field to specify categories by which to group the results, and the
+         * <code>binBy</code> field to specify time intervals by which to group the
+         * results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the
+         * number of results to return in a single response and the <code>nextToken</code>
+         * field to return the next batch of results if the response does not return the
+         * full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field
+         * exists in both <code>binBy</code> and <code>metrics</code>. Currently, you can
+         * specify it in either field, but not in both.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSessionMetricsOutcome ListSessionMetrics(const Model::ListSessionMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSessionMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSessionMetricsRequestT = Model::ListSessionMetricsRequest>
+        Model::ListSessionMetricsOutcomeCallable ListSessionMetricsCallable(const ListSessionMetricsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListSessionMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for ListSessionMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSessionMetricsRequestT = Model::ListSessionMetricsRequest>
+        void ListSessionMetricsAsync(const ListSessionMetricsRequestT& request, const ListSessionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListSessionMetrics, request, handler, context);
         }
 
         /**
@@ -1600,6 +2065,198 @@ namespace LexModelsV2
         }
 
         /**
+         * <p>Gets a list of test execution result items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestExecutionResultItems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTestExecutionResultItemsOutcome ListTestExecutionResultItems(const Model::ListTestExecutionResultItemsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTestExecutionResultItems that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTestExecutionResultItemsRequestT = Model::ListTestExecutionResultItemsRequest>
+        Model::ListTestExecutionResultItemsOutcomeCallable ListTestExecutionResultItemsCallable(const ListTestExecutionResultItemsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListTestExecutionResultItems, request);
+        }
+
+        /**
+         * An Async wrapper for ListTestExecutionResultItems that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTestExecutionResultItemsRequestT = Model::ListTestExecutionResultItemsRequest>
+        void ListTestExecutionResultItemsAsync(const ListTestExecutionResultItemsRequestT& request, const ListTestExecutionResultItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListTestExecutionResultItems, request, handler, context);
+        }
+
+        /**
+         * <p>The list of test set executions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTestExecutionsOutcome ListTestExecutions(const Model::ListTestExecutionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTestExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTestExecutionsRequestT = Model::ListTestExecutionsRequest>
+        Model::ListTestExecutionsOutcomeCallable ListTestExecutionsCallable(const ListTestExecutionsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListTestExecutions, request);
+        }
+
+        /**
+         * An Async wrapper for ListTestExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTestExecutionsRequestT = Model::ListTestExecutionsRequest>
+        void ListTestExecutionsAsync(const ListTestExecutionsRequestT& request, const ListTestExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListTestExecutions, request, handler, context);
+        }
+
+        /**
+         * <p>The list of test set records.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestSetRecords">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTestSetRecordsOutcome ListTestSetRecords(const Model::ListTestSetRecordsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTestSetRecords that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTestSetRecordsRequestT = Model::ListTestSetRecordsRequest>
+        Model::ListTestSetRecordsOutcomeCallable ListTestSetRecordsCallable(const ListTestSetRecordsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListTestSetRecords, request);
+        }
+
+        /**
+         * An Async wrapper for ListTestSetRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTestSetRecordsRequestT = Model::ListTestSetRecordsRequest>
+        void ListTestSetRecordsAsync(const ListTestSetRecordsRequestT& request, const ListTestSetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListTestSetRecords, request, handler, context);
+        }
+
+        /**
+         * <p>The list of the test sets</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTestSetsOutcome ListTestSets(const Model::ListTestSetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTestSets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTestSetsRequestT = Model::ListTestSetsRequest>
+        Model::ListTestSetsOutcomeCallable ListTestSetsCallable(const ListTestSetsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListTestSets, request);
+        }
+
+        /**
+         * An Async wrapper for ListTestSets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTestSetsRequestT = Model::ListTestSetsRequest>
+        void ListTestSetsAsync(const ListTestSetsRequestT& request, const ListTestSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListTestSets, request, handler, context);
+        }
+
+        /**
+         *  <p>To use this API operation, your IAM role must have permissions to
+         * perform the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, which provides access to utterance-related analytics. See <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing
+         * utterance statistics</a> for the IAM policy to apply to the IAM role.</p>
+         *  <p>Retrieves a list of metadata for individual user utterances to your
+         * bot. The following fields are required:</p> <ul> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> </ul> <p>Of the optional
+         * fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use
+         * the <code>filters</code> field to filter the results and the <code>sortBy</code>
+         * field to specify the values by which to sort the results.</p> </li> <li> <p>Use
+         * the <code>maxResults</code> field to limit the number of results to return in a
+         * single response and the <code>nextToken</code> field to return the next batch of
+         * results if the response does not return the full set of results.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceAnalyticsData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUtteranceAnalyticsDataOutcome ListUtteranceAnalyticsData(const Model::ListUtteranceAnalyticsDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListUtteranceAnalyticsData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListUtteranceAnalyticsDataRequestT = Model::ListUtteranceAnalyticsDataRequest>
+        Model::ListUtteranceAnalyticsDataOutcomeCallable ListUtteranceAnalyticsDataCallable(const ListUtteranceAnalyticsDataRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListUtteranceAnalyticsData, request);
+        }
+
+        /**
+         * An Async wrapper for ListUtteranceAnalyticsData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListUtteranceAnalyticsDataRequestT = Model::ListUtteranceAnalyticsDataRequest>
+        void ListUtteranceAnalyticsDataAsync(const ListUtteranceAnalyticsDataRequestT& request, const ListUtteranceAnalyticsDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListUtteranceAnalyticsData, request, handler, context);
+        }
+
+        /**
+         *  <p>To use this API operation, your IAM role must have permissions to
+         * perform the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, which provides access to utterance-related analytics. See <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing
+         * utterance statistics</a> for the IAM policy to apply to the IAM role.</p>
+         *  <p>Retrieves summary metrics for the utterances in your bot. The
+         * following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list
+         * of <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a>
+         * objects. In each object, use the <code>name</code> field to specify the metric
+         * to calculate, the <code>statistic</code> field to specify whether to calculate
+         * the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the
+         * <code>order</code> field to specify whether to sort the results in
+         * <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> </ul> <p>Of the optional
+         * fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use
+         * the <code>filters</code> field to filter the results, the <code>groupBy</code>
+         * field to specify categories by which to group the results, and the
+         * <code>binBy</code> field to specify time intervals by which to group the
+         * results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the
+         * number of results to return in a single response and the <code>nextToken</code>
+         * field to return the next batch of results if the response does not return the
+         * full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field
+         * exists in both <code>binBy</code> and <code>metrics</code>. Currently, you can
+         * specify it in either field, but not in both.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUtteranceMetricsOutcome ListUtteranceMetrics(const Model::ListUtteranceMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListUtteranceMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListUtteranceMetricsRequestT = Model::ListUtteranceMetricsRequest>
+        Model::ListUtteranceMetricsOutcomeCallable ListUtteranceMetricsCallable(const ListUtteranceMetricsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListUtteranceMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for ListUtteranceMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListUtteranceMetricsRequestT = Model::ListUtteranceMetricsRequest>
+        void ListUtteranceMetricsAsync(const ListUtteranceMetricsRequestT& request, const ListUtteranceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListUtteranceMetrics, request, handler, context);
+        }
+
+        /**
          * <p>Search for associated transcripts that meet the specified
          * criteria.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SearchAssociatedTranscripts">AWS
@@ -1652,6 +2309,37 @@ namespace LexModelsV2
         }
 
         /**
+         * <p>Starts a request for the descriptive bot builder to generate a bot locale
+         * configuration based on the prompt you provide it. After you make this call, use
+         * the <code>DescribeBotResourceGeneration</code> operation to check on the status
+         * of the generation and for the <code>generatedBotLocaleUrl</code> when the
+         * generation is complete. Use that value to retrieve the Amazon S3 object
+         * containing the bot locale configuration. You can then modify and import this
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotResourceGeneration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartBotResourceGenerationOutcome StartBotResourceGeneration(const Model::StartBotResourceGenerationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartBotResourceGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartBotResourceGenerationRequestT = Model::StartBotResourceGenerationRequest>
+        Model::StartBotResourceGenerationOutcomeCallable StartBotResourceGenerationCallable(const StartBotResourceGenerationRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::StartBotResourceGeneration, request);
+        }
+
+        /**
+         * An Async wrapper for StartBotResourceGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartBotResourceGenerationRequestT = Model::StartBotResourceGenerationRequest>
+        void StartBotResourceGenerationAsync(const StartBotResourceGenerationRequestT& request, const StartBotResourceGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::StartBotResourceGeneration, request, handler, context);
+        }
+
+        /**
          * <p>Starts importing a bot, bot locale, or custom vocabulary from a zip archive
          * that you uploaded to an S3 bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport">AWS
@@ -1675,6 +2363,56 @@ namespace LexModelsV2
         void StartImportAsync(const StartImportRequestT& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::StartImport, request, handler, context);
+        }
+
+        /**
+         * <p>The action to start test set execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartTestExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartTestExecutionOutcome StartTestExecution(const Model::StartTestExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartTestExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartTestExecutionRequestT = Model::StartTestExecutionRequest>
+        Model::StartTestExecutionOutcomeCallable StartTestExecutionCallable(const StartTestExecutionRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::StartTestExecution, request);
+        }
+
+        /**
+         * An Async wrapper for StartTestExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartTestExecutionRequestT = Model::StartTestExecutionRequest>
+        void StartTestExecutionAsync(const StartTestExecutionRequestT& request, const StartTestExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::StartTestExecution, request, handler, context);
+        }
+
+        /**
+         * <p>The action to start the generation of test set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartTestSetGeneration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartTestSetGenerationOutcome StartTestSetGeneration(const Model::StartTestSetGenerationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartTestSetGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartTestSetGenerationRequestT = Model::StartTestSetGenerationRequest>
+        Model::StartTestSetGenerationOutcomeCallable StartTestSetGenerationCallable(const StartTestSetGenerationRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::StartTestSetGeneration, request);
+        }
+
+        /**
+         * An Async wrapper for StartTestSetGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartTestSetGenerationRequestT = Model::StartTestSetGenerationRequest>
+        void StartTestSetGenerationAsync(const StartTestSetGenerationRequestT& request, const StartTestSetGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::StartTestSetGeneration, request, handler, context);
         }
 
         /**
@@ -1989,6 +2727,31 @@ namespace LexModelsV2
         void UpdateSlotTypeAsync(const UpdateSlotTypeRequestT& request, const UpdateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::UpdateSlotType, request, handler, context);
+        }
+
+        /**
+         * <p>The action to update the test set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateTestSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTestSetOutcome UpdateTestSet(const Model::UpdateTestSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTestSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateTestSetRequestT = Model::UpdateTestSetRequest>
+        Model::UpdateTestSetOutcomeCallable UpdateTestSetCallable(const UpdateTestSetRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::UpdateTestSet, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateTestSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateTestSetRequestT = Model::UpdateTestSetRequest>
+        void UpdateTestSetAsync(const UpdateTestSetRequestT& request, const UpdateTestSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::UpdateTestSet, request, handler, context);
         }
 
 

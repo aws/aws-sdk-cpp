@@ -10,6 +10,8 @@
 #include <aws/iotsitewise/model/DisassociatedDataStorageState.h>
 #include <aws/iotsitewise/model/RetentionPeriod.h>
 #include <aws/iotsitewise/model/ConfigurationStatus.h>
+#include <aws/iotsitewise/model/WarmTierState.h>
+#include <aws/iotsitewise/model/WarmTierRetentionPeriod.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -222,6 +224,73 @@ namespace Model
     inline PutStorageConfigurationResult& WithConfigurationStatus(ConfigurationStatus&& value) { SetConfigurationStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline const WarmTierState& GetWarmTier() const{ return m_warmTier; }
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline void SetWarmTier(const WarmTierState& value) { m_warmTier = value; }
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline void SetWarmTier(WarmTierState&& value) { m_warmTier = std::move(value); }
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline PutStorageConfigurationResult& WithWarmTier(const WarmTierState& value) { SetWarmTier(value); return *this;}
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline PutStorageConfigurationResult& WithWarmTier(WarmTierState&& value) { SetWarmTier(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline const WarmTierRetentionPeriod& GetWarmTierRetentionPeriod() const{ return m_warmTierRetentionPeriod; }
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline void SetWarmTierRetentionPeriod(const WarmTierRetentionPeriod& value) { m_warmTierRetentionPeriod = value; }
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline void SetWarmTierRetentionPeriod(WarmTierRetentionPeriod&& value) { m_warmTierRetentionPeriod = std::move(value); }
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline PutStorageConfigurationResult& WithWarmTierRetentionPeriod(const WarmTierRetentionPeriod& value) { SetWarmTierRetentionPeriod(value); return *this;}
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline PutStorageConfigurationResult& WithWarmTierRetentionPeriod(WarmTierRetentionPeriod&& value) { SetWarmTierRetentionPeriod(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -254,6 +323,10 @@ namespace Model
     RetentionPeriod m_retentionPeriod;
 
     ConfigurationStatus m_configurationStatus;
+
+    WarmTierState m_warmTier;
+
+    WarmTierRetentionPeriod m_warmTierRetentionPeriod;
 
     Aws::String m_requestId;
   };

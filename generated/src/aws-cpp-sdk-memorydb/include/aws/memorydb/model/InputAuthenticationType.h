@@ -16,7 +16,8 @@ namespace Model
   enum class InputAuthenticationType
   {
     NOT_SET,
-    password
+    password,
+    iam
   };
 
 namespace InputAuthenticationTypeMapper

@@ -9,6 +9,10 @@
 #include <aws/appstream/model/S3Location.h>
 #include <aws/appstream/model/ScriptDetails.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/appstream/model/PackagingType.h>
+#include <aws/appstream/model/AppBlockState.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appstream/model/ErrorDetails.h>
 #include <utility>
 
 namespace Aws
@@ -242,32 +246,38 @@ namespace Model
 
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block.</p> <p>This only applies to app
+     * blocks with PackagingType <code>CUSTOM</code>.</p>
      */
     inline const ScriptDetails& GetSetupScriptDetails() const{ return m_setupScriptDetails; }
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block.</p> <p>This only applies to app
+     * blocks with PackagingType <code>CUSTOM</code>.</p>
      */
     inline bool SetupScriptDetailsHasBeenSet() const { return m_setupScriptDetailsHasBeenSet; }
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block.</p> <p>This only applies to app
+     * blocks with PackagingType <code>CUSTOM</code>.</p>
      */
     inline void SetSetupScriptDetails(const ScriptDetails& value) { m_setupScriptDetailsHasBeenSet = true; m_setupScriptDetails = value; }
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block.</p> <p>This only applies to app
+     * blocks with PackagingType <code>CUSTOM</code>.</p>
      */
     inline void SetSetupScriptDetails(ScriptDetails&& value) { m_setupScriptDetailsHasBeenSet = true; m_setupScriptDetails = std::move(value); }
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block.</p> <p>This only applies to app
+     * blocks with PackagingType <code>CUSTOM</code>.</p>
      */
     inline AppBlock& WithSetupScriptDetails(const ScriptDetails& value) { SetSetupScriptDetails(value); return *this;}
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block.</p> <p>This only applies to app
+     * blocks with PackagingType <code>CUSTOM</code>.</p>
      */
     inline AppBlock& WithSetupScriptDetails(ScriptDetails&& value) { SetSetupScriptDetails(std::move(value)); return *this;}
 
@@ -302,6 +312,176 @@ namespace Model
      */
     inline AppBlock& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The post setup script details of the app block.</p> <p>This only applies to
+     * app blocks with PackagingType <code>APPSTREAM2</code>.</p>
+     */
+    inline const ScriptDetails& GetPostSetupScriptDetails() const{ return m_postSetupScriptDetails; }
+
+    /**
+     * <p>The post setup script details of the app block.</p> <p>This only applies to
+     * app blocks with PackagingType <code>APPSTREAM2</code>.</p>
+     */
+    inline bool PostSetupScriptDetailsHasBeenSet() const { return m_postSetupScriptDetailsHasBeenSet; }
+
+    /**
+     * <p>The post setup script details of the app block.</p> <p>This only applies to
+     * app blocks with PackagingType <code>APPSTREAM2</code>.</p>
+     */
+    inline void SetPostSetupScriptDetails(const ScriptDetails& value) { m_postSetupScriptDetailsHasBeenSet = true; m_postSetupScriptDetails = value; }
+
+    /**
+     * <p>The post setup script details of the app block.</p> <p>This only applies to
+     * app blocks with PackagingType <code>APPSTREAM2</code>.</p>
+     */
+    inline void SetPostSetupScriptDetails(ScriptDetails&& value) { m_postSetupScriptDetailsHasBeenSet = true; m_postSetupScriptDetails = std::move(value); }
+
+    /**
+     * <p>The post setup script details of the app block.</p> <p>This only applies to
+     * app blocks with PackagingType <code>APPSTREAM2</code>.</p>
+     */
+    inline AppBlock& WithPostSetupScriptDetails(const ScriptDetails& value) { SetPostSetupScriptDetails(value); return *this;}
+
+    /**
+     * <p>The post setup script details of the app block.</p> <p>This only applies to
+     * app blocks with PackagingType <code>APPSTREAM2</code>.</p>
+     */
+    inline AppBlock& WithPostSetupScriptDetails(ScriptDetails&& value) { SetPostSetupScriptDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline const PackagingType& GetPackagingType() const{ return m_packagingType; }
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline bool PackagingTypeHasBeenSet() const { return m_packagingTypeHasBeenSet; }
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline void SetPackagingType(const PackagingType& value) { m_packagingTypeHasBeenSet = true; m_packagingType = value; }
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline void SetPackagingType(PackagingType&& value) { m_packagingTypeHasBeenSet = true; m_packagingType = std::move(value); }
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline AppBlock& WithPackagingType(const PackagingType& value) { SetPackagingType(value); return *this;}
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline AppBlock& WithPackagingType(PackagingType&& value) { SetPackagingType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The state of the app block.</p> <p>An app block with AppStream 2.0 packaging
+     * will be in the <code>INACTIVE</code> state if no application package (VHD) is
+     * assigned to it. After an application package (VHD) is created by an app block
+     * builder for an app block, it becomes <code>ACTIVE</code>. </p> <p>Custom app
+     * blocks are always in the <code>ACTIVE</code> state and no action is required to
+     * use them.</p>
+     */
+    inline const AppBlockState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the app block.</p> <p>An app block with AppStream 2.0 packaging
+     * will be in the <code>INACTIVE</code> state if no application package (VHD) is
+     * assigned to it. After an application package (VHD) is created by an app block
+     * builder for an app block, it becomes <code>ACTIVE</code>. </p> <p>Custom app
+     * blocks are always in the <code>ACTIVE</code> state and no action is required to
+     * use them.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the app block.</p> <p>An app block with AppStream 2.0 packaging
+     * will be in the <code>INACTIVE</code> state if no application package (VHD) is
+     * assigned to it. After an application package (VHD) is created by an app block
+     * builder for an app block, it becomes <code>ACTIVE</code>. </p> <p>Custom app
+     * blocks are always in the <code>ACTIVE</code> state and no action is required to
+     * use them.</p>
+     */
+    inline void SetState(const AppBlockState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The state of the app block.</p> <p>An app block with AppStream 2.0 packaging
+     * will be in the <code>INACTIVE</code> state if no application package (VHD) is
+     * assigned to it. After an application package (VHD) is created by an app block
+     * builder for an app block, it becomes <code>ACTIVE</code>. </p> <p>Custom app
+     * blocks are always in the <code>ACTIVE</code> state and no action is required to
+     * use them.</p>
+     */
+    inline void SetState(AppBlockState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The state of the app block.</p> <p>An app block with AppStream 2.0 packaging
+     * will be in the <code>INACTIVE</code> state if no application package (VHD) is
+     * assigned to it. After an application package (VHD) is created by an app block
+     * builder for an app block, it becomes <code>ACTIVE</code>. </p> <p>Custom app
+     * blocks are always in the <code>ACTIVE</code> state and no action is required to
+     * use them.</p>
+     */
+    inline AppBlock& WithState(const AppBlockState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The state of the app block.</p> <p>An app block with AppStream 2.0 packaging
+     * will be in the <code>INACTIVE</code> state if no application package (VHD) is
+     * assigned to it. After an application package (VHD) is created by an app block
+     * builder for an app block, it becomes <code>ACTIVE</code>. </p> <p>Custom app
+     * blocks are always in the <code>ACTIVE</code> state and no action is required to
+     * use them.</p>
+     */
+    inline AppBlock& WithState(AppBlockState&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The errors of the app block.</p>
+     */
+    inline const Aws::Vector<ErrorDetails>& GetAppBlockErrors() const{ return m_appBlockErrors; }
+
+    /**
+     * <p>The errors of the app block.</p>
+     */
+    inline bool AppBlockErrorsHasBeenSet() const { return m_appBlockErrorsHasBeenSet; }
+
+    /**
+     * <p>The errors of the app block.</p>
+     */
+    inline void SetAppBlockErrors(const Aws::Vector<ErrorDetails>& value) { m_appBlockErrorsHasBeenSet = true; m_appBlockErrors = value; }
+
+    /**
+     * <p>The errors of the app block.</p>
+     */
+    inline void SetAppBlockErrors(Aws::Vector<ErrorDetails>&& value) { m_appBlockErrorsHasBeenSet = true; m_appBlockErrors = std::move(value); }
+
+    /**
+     * <p>The errors of the app block.</p>
+     */
+    inline AppBlock& WithAppBlockErrors(const Aws::Vector<ErrorDetails>& value) { SetAppBlockErrors(value); return *this;}
+
+    /**
+     * <p>The errors of the app block.</p>
+     */
+    inline AppBlock& WithAppBlockErrors(Aws::Vector<ErrorDetails>&& value) { SetAppBlockErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>The errors of the app block.</p>
+     */
+    inline AppBlock& AddAppBlockErrors(const ErrorDetails& value) { m_appBlockErrorsHasBeenSet = true; m_appBlockErrors.push_back(value); return *this; }
+
+    /**
+     * <p>The errors of the app block.</p>
+     */
+    inline AppBlock& AddAppBlockErrors(ErrorDetails&& value) { m_appBlockErrorsHasBeenSet = true; m_appBlockErrors.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -324,6 +504,18 @@ namespace Model
 
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet = false;
+
+    ScriptDetails m_postSetupScriptDetails;
+    bool m_postSetupScriptDetailsHasBeenSet = false;
+
+    PackagingType m_packagingType;
+    bool m_packagingTypeHasBeenSet = false;
+
+    AppBlockState m_state;
+    bool m_stateHasBeenSet = false;
+
+    Aws::Vector<ErrorDetails> m_appBlockErrors;
+    bool m_appBlockErrorsHasBeenSet = false;
   };
 
 } // namespace Model

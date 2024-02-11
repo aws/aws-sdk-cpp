@@ -22,6 +22,8 @@ namespace Aws
 
         static const int MqttV3_1_1_HASH = HashingUtils::HashString("MqttV3_1_1");
         static const int MqttV5_HASH = HashingUtils::HashString("MqttV5");
+        static const int MqttV3_1_1_OverWebSocket_HASH = HashingUtils::HashString("MqttV3_1_1_OverWebSocket");
+        static const int MqttV5_OverWebSocket_HASH = HashingUtils::HashString("MqttV5_OverWebSocket");
 
 
         Protocol GetProtocolForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == MqttV5_HASH)
           {
             return Protocol::MqttV5;
+          }
+          else if (hashCode == MqttV3_1_1_OverWebSocket_HASH)
+          {
+            return Protocol::MqttV3_1_1_OverWebSocket;
+          }
+          else if (hashCode == MqttV5_OverWebSocket_HASH)
+          {
+            return Protocol::MqttV5_OverWebSocket;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Protocol::NOT_SET:
+            return {};
           case Protocol::MqttV3_1_1:
             return "MqttV3_1_1";
           case Protocol::MqttV5:
             return "MqttV5";
+          case Protocol::MqttV3_1_1_OverWebSocket:
+            return "MqttV3_1_1_OverWebSocket";
+          case Protocol::MqttV5_OverWebSocket:
+            return "MqttV5_OverWebSocket";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateCatalogBehavior::NOT_SET:
+            return {};
           case UpdateCatalogBehavior::UPDATE_IN_DATABASE:
             return "UPDATE_IN_DATABASE";
           case UpdateCatalogBehavior::LOG:

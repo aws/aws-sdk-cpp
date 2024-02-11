@@ -235,32 +235,44 @@ namespace Model
 
 
     /**
-     * <p>The last modified date.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * <p>The last modified date.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
-     * <p>The last modified date.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * <p>The last modified date.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * <p>The last modified date.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline RiskConfigurationType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * <p>The last modified date.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline RiskConfigurationType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 

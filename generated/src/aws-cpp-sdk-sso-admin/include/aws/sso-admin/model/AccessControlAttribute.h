@@ -27,10 +27,10 @@ namespace Model
   /**
    * <p>These are IAM Identity Center identity store attributes that you can
    * configure for use in attributes-based access control (ABAC). You can create
-   * permissions policies that determine who can access your AWS resources based upon
-   * the configured attribute values. When you enable ABAC and specify
-   * <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute
-   * values of the authenticated user into IAM for use in policy
+   * permissions policies that determine who can access your Amazon Web Services
+   * resources based upon the configured attribute values. When you enable ABAC and
+   * specify <code>AccessControlAttributes</code>, IAM Identity Center passes the
+   * attribute values of the authenticated user into IAM for use in policy
    * evaluation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AccessControlAttribute">AWS
    * API Reference</a></p>

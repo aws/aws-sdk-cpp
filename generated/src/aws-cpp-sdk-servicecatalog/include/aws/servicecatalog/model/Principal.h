@@ -40,57 +40,81 @@ namespace Model
 
     /**
      * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
-     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
-     * <code>IAM_PATTERN</code>. </p>
+     * with no <code>accountID</code>, with or without wildcard characters if the
+     * <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p> <p>For more
+     * information, review <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+     * in the Amazon Web Services CLI Command Reference. </p>
      */
     inline const Aws::String& GetPrincipalARN() const{ return m_principalARN; }
 
     /**
      * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
-     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
-     * <code>IAM_PATTERN</code>. </p>
+     * with no <code>accountID</code>, with or without wildcard characters if the
+     * <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p> <p>For more
+     * information, review <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+     * in the Amazon Web Services CLI Command Reference. </p>
      */
     inline bool PrincipalARNHasBeenSet() const { return m_principalARNHasBeenSet; }
 
     /**
      * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
-     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
-     * <code>IAM_PATTERN</code>. </p>
+     * with no <code>accountID</code>, with or without wildcard characters if the
+     * <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p> <p>For more
+     * information, review <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+     * in the Amazon Web Services CLI Command Reference. </p>
      */
     inline void SetPrincipalARN(const Aws::String& value) { m_principalARNHasBeenSet = true; m_principalARN = value; }
 
     /**
      * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
-     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
-     * <code>IAM_PATTERN</code>. </p>
+     * with no <code>accountID</code>, with or without wildcard characters if the
+     * <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p> <p>For more
+     * information, review <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+     * in the Amazon Web Services CLI Command Reference. </p>
      */
     inline void SetPrincipalARN(Aws::String&& value) { m_principalARNHasBeenSet = true; m_principalARN = std::move(value); }
 
     /**
      * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
-     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
-     * <code>IAM_PATTERN</code>. </p>
+     * with no <code>accountID</code>, with or without wildcard characters if the
+     * <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p> <p>For more
+     * information, review <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+     * in the Amazon Web Services CLI Command Reference. </p>
      */
     inline void SetPrincipalARN(const char* value) { m_principalARNHasBeenSet = true; m_principalARN.assign(value); }
 
     /**
      * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
-     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
-     * <code>IAM_PATTERN</code>. </p>
+     * with no <code>accountID</code>, with or without wildcard characters if the
+     * <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p> <p>For more
+     * information, review <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+     * in the Amazon Web Services CLI Command Reference. </p>
      */
     inline Principal& WithPrincipalARN(const Aws::String& value) { SetPrincipalARN(value); return *this;}
 
     /**
      * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
-     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
-     * <code>IAM_PATTERN</code>. </p>
+     * with no <code>accountID</code>, with or without wildcard characters if the
+     * <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p> <p>For more
+     * information, review <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+     * in the Amazon Web Services CLI Command Reference. </p>
      */
     inline Principal& WithPrincipalARN(Aws::String&& value) { SetPrincipalARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
-     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
-     * <code>IAM_PATTERN</code>. </p>
+     * with no <code>accountID</code>, with or without wildcard characters if the
+     * <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p> <p>For more
+     * information, review <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+     * in the Amazon Web Services CLI Command Reference. </p>
      */
     inline Principal& WithPrincipalARN(const char* value) { SetPrincipalARN(value); return *this;}
 
@@ -98,42 +122,42 @@ namespace Model
     /**
      * <p>The principal type. The supported value is <code>IAM</code> if you use a
      * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
-     * <code>accountID</code>. </p>
+     * <code>accountID</code>, with or without wildcard characters. </p>
      */
     inline const PrincipalType& GetPrincipalType() const{ return m_principalType; }
 
     /**
      * <p>The principal type. The supported value is <code>IAM</code> if you use a
      * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
-     * <code>accountID</code>. </p>
+     * <code>accountID</code>, with or without wildcard characters. </p>
      */
     inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
 
     /**
      * <p>The principal type. The supported value is <code>IAM</code> if you use a
      * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
-     * <code>accountID</code>. </p>
+     * <code>accountID</code>, with or without wildcard characters. </p>
      */
     inline void SetPrincipalType(const PrincipalType& value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
 
     /**
      * <p>The principal type. The supported value is <code>IAM</code> if you use a
      * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
-     * <code>accountID</code>. </p>
+     * <code>accountID</code>, with or without wildcard characters. </p>
      */
     inline void SetPrincipalType(PrincipalType&& value) { m_principalTypeHasBeenSet = true; m_principalType = std::move(value); }
 
     /**
      * <p>The principal type. The supported value is <code>IAM</code> if you use a
      * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
-     * <code>accountID</code>. </p>
+     * <code>accountID</code>, with or without wildcard characters. </p>
      */
     inline Principal& WithPrincipalType(const PrincipalType& value) { SetPrincipalType(value); return *this;}
 
     /**
      * <p>The principal type. The supported value is <code>IAM</code> if you use a
      * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
-     * <code>accountID</code>. </p>
+     * <code>accountID</code>, with or without wildcard characters. </p>
      */
     inline Principal& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
 

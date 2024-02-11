@@ -49,7 +49,8 @@ protected:
 
 private:
     mutable CurlHandleContainer m_curlHandleContainer;
-    bool m_isUsingProxy;
+    bool m_isAllowSystemProxy = false;
+    bool m_isUsingProxy = false;
     Aws::String m_proxyUserName;
     Aws::String m_proxyPassword;
     Aws::String m_proxyScheme;
@@ -59,14 +60,15 @@ private:
     Aws::String m_proxySSLKeyPath;
     Aws::String m_proxySSLKeyType;
     Aws::String m_proxyKeyPasswd;
-    unsigned m_proxyPort;
+    unsigned m_proxyPort = 0;
     Aws::String m_nonProxyHosts;
-    bool m_verifySSL;
+    bool m_verifySSL = true;
     Aws::String m_caPath;
     Aws::String m_caFile;
-    bool m_disableExpectHeader;
-    bool m_allowRedirects;
+    bool m_disableExpectHeader = false;
+    bool m_allowRedirects = false;
     static std::atomic<bool> isInit;
+    std::shared_ptr<smithy::components::tracing::TelemetryProvider> m_telemetryProvider;
 };
 
 using PlatformHttpClient = CurlHttpClient;

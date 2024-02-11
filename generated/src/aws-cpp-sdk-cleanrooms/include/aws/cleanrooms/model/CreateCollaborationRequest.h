@@ -11,6 +11,7 @@
 #include <aws/cleanrooms/model/DataEncryptionMetadata.h>
 #include <aws/cleanrooms/model/CollaborationQueryLogStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/cleanrooms/model/PaymentConfiguration.h>
 #include <aws/cleanrooms/model/MemberSpecification.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
 #include <utility>
@@ -429,6 +430,55 @@ namespace Model
      */
     inline CreateCollaborationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The collaboration creator's payment responsibilities set by the collaboration
+     * creator. </p> <p>If the collaboration creator hasn't specified anyone as the
+     * member paying for query compute costs, then the member who can query is the
+     * default payer.</p>
+     */
+    inline const PaymentConfiguration& GetCreatorPaymentConfiguration() const{ return m_creatorPaymentConfiguration; }
+
+    /**
+     * <p>The collaboration creator's payment responsibilities set by the collaboration
+     * creator. </p> <p>If the collaboration creator hasn't specified anyone as the
+     * member paying for query compute costs, then the member who can query is the
+     * default payer.</p>
+     */
+    inline bool CreatorPaymentConfigurationHasBeenSet() const { return m_creatorPaymentConfigurationHasBeenSet; }
+
+    /**
+     * <p>The collaboration creator's payment responsibilities set by the collaboration
+     * creator. </p> <p>If the collaboration creator hasn't specified anyone as the
+     * member paying for query compute costs, then the member who can query is the
+     * default payer.</p>
+     */
+    inline void SetCreatorPaymentConfiguration(const PaymentConfiguration& value) { m_creatorPaymentConfigurationHasBeenSet = true; m_creatorPaymentConfiguration = value; }
+
+    /**
+     * <p>The collaboration creator's payment responsibilities set by the collaboration
+     * creator. </p> <p>If the collaboration creator hasn't specified anyone as the
+     * member paying for query compute costs, then the member who can query is the
+     * default payer.</p>
+     */
+    inline void SetCreatorPaymentConfiguration(PaymentConfiguration&& value) { m_creatorPaymentConfigurationHasBeenSet = true; m_creatorPaymentConfiguration = std::move(value); }
+
+    /**
+     * <p>The collaboration creator's payment responsibilities set by the collaboration
+     * creator. </p> <p>If the collaboration creator hasn't specified anyone as the
+     * member paying for query compute costs, then the member who can query is the
+     * default payer.</p>
+     */
+    inline CreateCollaborationRequest& WithCreatorPaymentConfiguration(const PaymentConfiguration& value) { SetCreatorPaymentConfiguration(value); return *this;}
+
+    /**
+     * <p>The collaboration creator's payment responsibilities set by the collaboration
+     * creator. </p> <p>If the collaboration creator hasn't specified anyone as the
+     * member paying for query compute costs, then the member who can query is the
+     * default payer.</p>
+     */
+    inline CreateCollaborationRequest& WithCreatorPaymentConfiguration(PaymentConfiguration&& value) { SetCreatorPaymentConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<MemberSpecification> m_members;
@@ -454,6 +504,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    PaymentConfiguration m_creatorPaymentConfiguration;
+    bool m_creatorPaymentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

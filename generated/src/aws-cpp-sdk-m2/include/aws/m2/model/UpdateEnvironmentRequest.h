@@ -74,22 +74,26 @@ namespace Model
 
 
     /**
-     * <p>The desired capacity for the runtime environment to update.</p>
+     * <p>The desired capacity for the runtime environment to update. The minimum
+     * possible value is 0 and the maximum is 100.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
-     * <p>The desired capacity for the runtime environment to update.</p>
+     * <p>The desired capacity for the runtime environment to update. The minimum
+     * possible value is 0 and the maximum is 100.</p>
      */
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
-     * <p>The desired capacity for the runtime environment to update.</p>
+     * <p>The desired capacity for the runtime environment to update. The minimum
+     * possible value is 0 and the maximum is 100.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
-     * <p>The desired capacity for the runtime environment to update.</p>
+     * <p>The desired capacity for the runtime environment to update. The minimum
+     * possible value is 0 and the maximum is 100.</p>
      */
     inline UpdateEnvironmentRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
@@ -177,6 +181,51 @@ namespace Model
 
 
     /**
+     * <p>Forces the updates on the environment. This option is needed if the
+     * applications in the environment are not stopped or if there are ongoing
+     * application-related activities in the environment.</p> <p>If you use this
+     * option, be aware that it could lead to data corruption in the applications, and
+     * that you might need to perform repair and recovery procedures for the
+     * applications.</p> <p>This option is not needed if the attribute being updated is
+     * <code>preferredMaintenanceWindow</code>.</p>
+     */
+    inline bool GetForceUpdate() const{ return m_forceUpdate; }
+
+    /**
+     * <p>Forces the updates on the environment. This option is needed if the
+     * applications in the environment are not stopped or if there are ongoing
+     * application-related activities in the environment.</p> <p>If you use this
+     * option, be aware that it could lead to data corruption in the applications, and
+     * that you might need to perform repair and recovery procedures for the
+     * applications.</p> <p>This option is not needed if the attribute being updated is
+     * <code>preferredMaintenanceWindow</code>.</p>
+     */
+    inline bool ForceUpdateHasBeenSet() const { return m_forceUpdateHasBeenSet; }
+
+    /**
+     * <p>Forces the updates on the environment. This option is needed if the
+     * applications in the environment are not stopped or if there are ongoing
+     * application-related activities in the environment.</p> <p>If you use this
+     * option, be aware that it could lead to data corruption in the applications, and
+     * that you might need to perform repair and recovery procedures for the
+     * applications.</p> <p>This option is not needed if the attribute being updated is
+     * <code>preferredMaintenanceWindow</code>.</p>
+     */
+    inline void SetForceUpdate(bool value) { m_forceUpdateHasBeenSet = true; m_forceUpdate = value; }
+
+    /**
+     * <p>Forces the updates on the environment. This option is needed if the
+     * applications in the environment are not stopped or if there are ongoing
+     * application-related activities in the environment.</p> <p>If you use this
+     * option, be aware that it could lead to data corruption in the applications, and
+     * that you might need to perform repair and recovery procedures for the
+     * applications.</p> <p>This option is not needed if the attribute being updated is
+     * <code>preferredMaintenanceWindow</code>.</p>
+     */
+    inline UpdateEnvironmentRequest& WithForceUpdate(bool value) { SetForceUpdate(value); return *this;}
+
+
+    /**
      * <p>The instance type for the runtime environment to update.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
@@ -218,57 +267,81 @@ namespace Model
 
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline UpdateEnvironmentRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline UpdateEnvironmentRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline UpdateEnvironmentRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
@@ -286,6 +359,9 @@ namespace Model
 
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet = false;
+
+    bool m_forceUpdate;
+    bool m_forceUpdateHasBeenSet = false;
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;

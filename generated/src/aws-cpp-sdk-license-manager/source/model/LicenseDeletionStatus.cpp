@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LicenseDeletionStatus::NOT_SET:
+            return {};
           case LicenseDeletionStatus::PENDING_DELETE:
             return "PENDING_DELETE";
           case LicenseDeletionStatus::DELETED:

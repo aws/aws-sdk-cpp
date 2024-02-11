@@ -29,7 +29,8 @@ Resource::Resource() :
     m_ecsClusterDetailsHasBeenSet(false),
     m_containerDetailsHasBeenSet(false),
     m_rdsDbInstanceDetailsHasBeenSet(false),
-    m_rdsDbUserDetailsHasBeenSet(false)
+    m_rdsDbUserDetailsHasBeenSet(false),
+    m_lambdaDetailsHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Resource::Resource(JsonView jsonValue) :
     m_ecsClusterDetailsHasBeenSet(false),
     m_containerDetailsHasBeenSet(false),
     m_rdsDbInstanceDetailsHasBeenSet(false),
-    m_rdsDbUserDetailsHasBeenSet(false)
+    m_rdsDbUserDetailsHasBeenSet(false),
+    m_lambdaDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +133,13 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_rdsDbUserDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lambdaDetails"))
+  {
+    m_lambdaDetails = jsonValue.GetObject("lambdaDetails");
+
+    m_lambdaDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -206,6 +215,12 @@ JsonValue Resource::Jsonize() const
   if(m_rdsDbUserDetailsHasBeenSet)
   {
    payload.WithObject("rdsDbUserDetails", m_rdsDbUserDetails.Jsonize());
+
+  }
+
+  if(m_lambdaDetailsHasBeenSet)
+  {
+   payload.WithObject("lambdaDetails", m_lambdaDetails.Jsonize());
 
   }
 

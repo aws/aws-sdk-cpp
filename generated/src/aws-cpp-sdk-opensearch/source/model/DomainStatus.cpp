@@ -27,6 +27,7 @@ DomainStatus::DomainStatus() :
     m_deleted(false),
     m_deletedHasBeenSet(false),
     m_endpointHasBeenSet(false),
+    m_endpointV2HasBeenSet(false),
     m_endpointsHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
@@ -36,6 +37,8 @@ DomainStatus::DomainStatus() :
     m_clusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
+    m_iPAddressType(IPAddressType::NOT_SET),
+    m_iPAddressTypeHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
     m_cognitoOptionsHasBeenSet(false),
@@ -62,6 +65,7 @@ DomainStatus::DomainStatus(JsonView jsonValue) :
     m_deleted(false),
     m_deletedHasBeenSet(false),
     m_endpointHasBeenSet(false),
+    m_endpointV2HasBeenSet(false),
     m_endpointsHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
@@ -71,6 +75,8 @@ DomainStatus::DomainStatus(JsonView jsonValue) :
     m_clusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
+    m_iPAddressType(IPAddressType::NOT_SET),
+    m_iPAddressTypeHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
     m_cognitoOptionsHasBeenSet(false),
@@ -133,6 +139,13 @@ DomainStatus& DomainStatus::operator =(JsonView jsonValue)
     m_endpointHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EndpointV2"))
+  {
+    m_endpointV2 = jsonValue.GetString("EndpointV2");
+
+    m_endpointV2HasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Endpoints"))
   {
     Aws::Map<Aws::String, JsonView> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
@@ -183,6 +196,13 @@ DomainStatus& DomainStatus::operator =(JsonView jsonValue)
     m_accessPolicies = jsonValue.GetString("AccessPolicies");
 
     m_accessPoliciesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IPAddressType"))
+  {
+    m_iPAddressType = IPAddressTypeMapper::GetIPAddressTypeForName(jsonValue.GetString("IPAddressType"));
+
+    m_iPAddressTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SnapshotOptions"))
@@ -332,6 +352,12 @@ JsonValue DomainStatus::Jsonize() const
 
   }
 
+  if(m_endpointV2HasBeenSet)
+  {
+   payload.WithString("EndpointV2", m_endpointV2);
+
+  }
+
   if(m_endpointsHasBeenSet)
   {
    JsonValue endpointsJsonMap;
@@ -377,6 +403,11 @@ JsonValue DomainStatus::Jsonize() const
   {
    payload.WithString("AccessPolicies", m_accessPolicies);
 
+  }
+
+  if(m_iPAddressTypeHasBeenSet)
+  {
+   payload.WithString("IPAddressType", IPAddressTypeMapper::GetNameForIPAddressType(m_iPAddressType));
   }
 
   if(m_snapshotOptionsHasBeenSet)

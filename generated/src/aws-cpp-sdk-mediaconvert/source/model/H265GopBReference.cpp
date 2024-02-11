@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265GopBReference::NOT_SET:
+            return {};
           case H265GopBReference::DISABLED:
             return "DISABLED";
           case H265GopBReference::ENABLED:

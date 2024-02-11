@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account associated with the repository.</p>
+     * <p>The ID of the Amazon Web Services account associated with the repository.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The ID of the AWS account associated with the repository.</p>
+     * <p>The ID of the Amazon Web Services account associated with the repository.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account associated with the repository.</p>
+     * <p>The ID of the Amazon Web Services account associated with the repository.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The ID of the AWS account associated with the repository.</p>
+     * <p>The ID of the Amazon Web Services account associated with the repository.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account associated with the repository.</p>
+     * <p>The ID of the Amazon Web Services account associated with the repository.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account associated with the repository.</p>
+     * <p>The ID of the Amazon Web Services account associated with the repository.</p>
      */
     inline RepositoryMetadata& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account associated with the repository.</p>
+     * <p>The ID of the Amazon Web Services account associated with the repository.</p>
      */
     inline RepositoryMetadata& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account associated with the repository.</p>
+     * <p>The ID of the Amazon Web Services account associated with the repository.</p>
      */
     inline RepositoryMetadata& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -427,6 +427,55 @@ namespace Model
      */
     inline RepositoryMetadata& WithArn(const char* value) { SetArn(value); return *this;}
 
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline RepositoryMetadata& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline RepositoryMetadata& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline RepositoryMetadata& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -458,6 +507,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

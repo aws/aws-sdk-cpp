@@ -15,6 +15,7 @@
 #include <aws/quicksight/model/AxisDisplayOptions.h>
 #include <aws/quicksight/model/ChartAxisLabelOptions.h>
 #include <aws/quicksight/model/LegendOptions.h>
+#include <aws/quicksight/model/RadarChartAxesRangeScale.h>
 #include <utility>
 
 namespace Aws
@@ -496,6 +497,37 @@ namespace Model
      */
     inline RadarChartConfiguration& WithLegend(LegendOptions&& value) { SetLegend(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The axis behavior options of a radar chart.</p>
+     */
+    inline const RadarChartAxesRangeScale& GetAxesRangeScale() const{ return m_axesRangeScale; }
+
+    /**
+     * <p>The axis behavior options of a radar chart.</p>
+     */
+    inline bool AxesRangeScaleHasBeenSet() const { return m_axesRangeScaleHasBeenSet; }
+
+    /**
+     * <p>The axis behavior options of a radar chart.</p>
+     */
+    inline void SetAxesRangeScale(const RadarChartAxesRangeScale& value) { m_axesRangeScaleHasBeenSet = true; m_axesRangeScale = value; }
+
+    /**
+     * <p>The axis behavior options of a radar chart.</p>
+     */
+    inline void SetAxesRangeScale(RadarChartAxesRangeScale&& value) { m_axesRangeScaleHasBeenSet = true; m_axesRangeScale = std::move(value); }
+
+    /**
+     * <p>The axis behavior options of a radar chart.</p>
+     */
+    inline RadarChartConfiguration& WithAxesRangeScale(const RadarChartAxesRangeScale& value) { SetAxesRangeScale(value); return *this;}
+
+    /**
+     * <p>The axis behavior options of a radar chart.</p>
+     */
+    inline RadarChartConfiguration& WithAxesRangeScale(RadarChartAxesRangeScale&& value) { SetAxesRangeScale(std::move(value)); return *this;}
+
   private:
 
     RadarChartFieldWells m_fieldWells;
@@ -539,6 +571,9 @@ namespace Model
 
     LegendOptions m_legend;
     bool m_legendHasBeenSet = false;
+
+    RadarChartAxesRangeScale m_axesRangeScale;
+    bool m_axesRangeScaleHasBeenSet = false;
   };
 
 } // namespace Model

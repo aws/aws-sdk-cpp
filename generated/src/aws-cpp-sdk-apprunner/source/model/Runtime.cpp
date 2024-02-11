@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Runtime::NOT_SET:
+            return {};
           case Runtime::PYTHON_3:
             return "PYTHON_3";
           case Runtime::NODEJS_12:

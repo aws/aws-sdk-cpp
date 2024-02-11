@@ -14,6 +14,8 @@
 #include <aws/medialive/model/InputDeviceType.h>
 #include <aws/medialive/model/InputDeviceUhdSettings.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/InputDeviceOutputType.h>
 #include <utility>
 
 namespace Aws
@@ -489,6 +491,127 @@ namespace Model
     inline DescribeInputDeviceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZone = value; }
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZone = std::move(value); }
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZone.assign(value); }
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline DescribeInputDeviceResult& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline DescribeInputDeviceResult& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline DescribeInputDeviceResult& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline const Aws::Vector<Aws::String>& GetMedialiveInputArns() const{ return m_medialiveInputArns; }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline void SetMedialiveInputArns(const Aws::Vector<Aws::String>& value) { m_medialiveInputArns = value; }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline void SetMedialiveInputArns(Aws::Vector<Aws::String>&& value) { m_medialiveInputArns = std::move(value); }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline DescribeInputDeviceResult& WithMedialiveInputArns(const Aws::Vector<Aws::String>& value) { SetMedialiveInputArns(value); return *this;}
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline DescribeInputDeviceResult& WithMedialiveInputArns(Aws::Vector<Aws::String>&& value) { SetMedialiveInputArns(std::move(value)); return *this;}
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline DescribeInputDeviceResult& AddMedialiveInputArns(const Aws::String& value) { m_medialiveInputArns.push_back(value); return *this; }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline DescribeInputDeviceResult& AddMedialiveInputArns(Aws::String&& value) { m_medialiveInputArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline DescribeInputDeviceResult& AddMedialiveInputArns(const char* value) { m_medialiveInputArns.push_back(value); return *this; }
+
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if
+     * this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if
+     * this device is the source for a MediaLive input.
+     */
+    inline const InputDeviceOutputType& GetOutputType() const{ return m_outputType; }
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if
+     * this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if
+     * this device is the source for a MediaLive input.
+     */
+    inline void SetOutputType(const InputDeviceOutputType& value) { m_outputType = value; }
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if
+     * this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if
+     * this device is the source for a MediaLive input.
+     */
+    inline void SetOutputType(InputDeviceOutputType&& value) { m_outputType = std::move(value); }
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if
+     * this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if
+     * this device is the source for a MediaLive input.
+     */
+    inline DescribeInputDeviceResult& WithOutputType(const InputDeviceOutputType& value) { SetOutputType(value); return *this;}
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if
+     * this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if
+     * this device is the source for a MediaLive input.
+     */
+    inline DescribeInputDeviceResult& WithOutputType(InputDeviceOutputType&& value) { SetOutputType(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -537,6 +660,12 @@ namespace Model
     InputDeviceUhdSettings m_uhdDeviceSettings;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_availabilityZone;
+
+    Aws::Vector<Aws::String> m_medialiveInputArns;
+
+    InputDeviceOutputType m_outputType;
 
     Aws::String m_requestId;
   };

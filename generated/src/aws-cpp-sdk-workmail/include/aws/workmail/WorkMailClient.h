@@ -43,6 +43,9 @@ namespace WorkMail
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef WorkMailClientConfiguration ClientConfigurationType;
+      typedef WorkMailEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -857,6 +860,32 @@ namespace WorkMail
         }
 
         /**
+         * <p>Returns basic details about an entity in WorkMail. </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEntity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEntityOutcome DescribeEntity(const Model::DescribeEntityRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEntity that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeEntityRequestT = Model::DescribeEntityRequest>
+        Model::DescribeEntityOutcomeCallable DescribeEntityCallable(const DescribeEntityRequestT& request) const
+        {
+            return SubmitCallable(&WorkMailClient::DescribeEntity, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeEntityRequestT = Model::DescribeEntityRequest>
+        void DescribeEntityAsync(const DescribeEntityRequestT& request, const DescribeEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkMailClient::DescribeEntity, request, handler, context);
+        }
+
+        /**
          * <p>Returns the data available for the group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeGroup">AWS
          * API Reference</a></p>
@@ -1400,6 +1429,32 @@ namespace WorkMail
         void ListGroupsAsync(const ListGroupsRequestT& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkMailClient::ListGroups, request, handler, context);
+        }
+
+        /**
+         * <p>Returns all the groups to which an entity belongs.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupsForEntity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGroupsForEntityOutcome ListGroupsForEntity(const Model::ListGroupsForEntityRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListGroupsForEntity that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListGroupsForEntityRequestT = Model::ListGroupsForEntityRequest>
+        Model::ListGroupsForEntityOutcomeCallable ListGroupsForEntityCallable(const ListGroupsForEntityRequestT& request) const
+        {
+            return SubmitCallable(&WorkMailClient::ListGroupsForEntity, request);
+        }
+
+        /**
+         * An Async wrapper for ListGroupsForEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListGroupsForEntityRequestT = Model::ListGroupsForEntityRequest>
+        void ListGroupsForEntityAsync(const ListGroupsForEntityRequestT& request, const ListGroupsForEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkMailClient::ListGroupsForEntity, request, handler, context);
         }
 
         /**
@@ -2106,6 +2161,31 @@ namespace WorkMail
         }
 
         /**
+         * <p>Updates attibutes in a group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateGroupRequestT = Model::UpdateGroupRequest>
+        Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const UpdateGroupRequestT& request) const
+        {
+            return SubmitCallable(&WorkMailClient::UpdateGroup, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateGroupRequestT = Model::UpdateGroupRequest>
+        void UpdateGroupAsync(const UpdateGroupRequestT& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkMailClient::UpdateGroup, request, handler, context);
+        }
+
+        /**
          * <p>Updates an impersonation role for the given WorkMail
          * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateImpersonationRole">AWS
@@ -2237,6 +2317,34 @@ namespace WorkMail
         void UpdateResourceAsync(const UpdateResourceRequestT& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkMailClient::UpdateResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates data for the user. To have the latest information, it must be
+         * preceded by a <a>DescribeUser</a> call. The dataset in the request should be the
+         * one expected when performing another <code>DescribeUser</code>
+         * call.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateUser that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateUserRequestT = Model::UpdateUserRequest>
+        Model::UpdateUserOutcomeCallable UpdateUserCallable(const UpdateUserRequestT& request) const
+        {
+            return SubmitCallable(&WorkMailClient::UpdateUser, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateUserRequestT = Model::UpdateUserRequest>
+        void UpdateUserAsync(const UpdateUserRequestT& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkMailClient::UpdateUser, request, handler, context);
         }
 
 

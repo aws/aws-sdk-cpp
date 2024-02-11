@@ -20,13 +20,15 @@ namespace Model
 
 RelativeDateTimeControlDisplayOptions::RelativeDateTimeControlDisplayOptions() : 
     m_titleOptionsHasBeenSet(false),
-    m_dateTimeFormatHasBeenSet(false)
+    m_dateTimeFormatHasBeenSet(false),
+    m_infoIconLabelOptionsHasBeenSet(false)
 {
 }
 
 RelativeDateTimeControlDisplayOptions::RelativeDateTimeControlDisplayOptions(JsonView jsonValue) : 
     m_titleOptionsHasBeenSet(false),
-    m_dateTimeFormatHasBeenSet(false)
+    m_dateTimeFormatHasBeenSet(false),
+    m_infoIconLabelOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ RelativeDateTimeControlDisplayOptions& RelativeDateTimeControlDisplayOptions::op
     m_dateTimeFormatHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InfoIconLabelOptions"))
+  {
+    m_infoIconLabelOptions = jsonValue.GetObject("InfoIconLabelOptions");
+
+    m_infoIconLabelOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue RelativeDateTimeControlDisplayOptions::Jsonize() const
   if(m_dateTimeFormatHasBeenSet)
   {
    payload.WithString("DateTimeFormat", m_dateTimeFormat);
+
+  }
+
+  if(m_infoIconLabelOptionsHasBeenSet)
+  {
+   payload.WithObject("InfoIconLabelOptions", m_infoIconLabelOptions.Jsonize());
 
   }
 

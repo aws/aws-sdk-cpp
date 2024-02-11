@@ -31,27 +31,9 @@ GetReadSetImportJobResult::GetReadSetImportJobResult(const Aws::AmazonWebService
 GetReadSetImportJobResult& GetReadSetImportJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("completionTime"))
-  {
-    m_completionTime = jsonValue.GetString("completionTime");
-
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
-  }
-
-  if(jsonValue.ValueExists("roleArn"))
-  {
-    m_roleArn = jsonValue.GetString("roleArn");
 
   }
 
@@ -61,13 +43,10 @@ GetReadSetImportJobResult& GetReadSetImportJobResult::operator =(const Aws::Amaz
 
   }
 
-  if(jsonValue.ValueExists("sources"))
+  if(jsonValue.ValueExists("roleArn"))
   {
-    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
-    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
-    {
-      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
-    }
+    m_roleArn = jsonValue.GetString("roleArn");
+
   }
 
   if(jsonValue.ValueExists("status"))
@@ -80,6 +59,27 @@ GetReadSetImportJobResult& GetReadSetImportJobResult::operator =(const Aws::Amaz
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
 
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+  }
+
+  if(jsonValue.ValueExists("completionTime"))
+  {
+    m_completionTime = jsonValue.GetString("completionTime");
+
+  }
+
+  if(jsonValue.ValueExists("sources"))
+  {
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+    {
+      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+    }
   }
 
 

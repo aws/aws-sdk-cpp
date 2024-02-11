@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Statistic::NOT_SET:
+            return {};
           case Statistic::SUM:
             return "SUM";
           case Statistic::MAX:

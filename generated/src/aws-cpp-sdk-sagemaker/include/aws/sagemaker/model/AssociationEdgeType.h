@@ -19,7 +19,8 @@ namespace Model
     ContributedTo,
     AssociatedWith,
     DerivedFrom,
-    Produced
+    Produced,
+    SameAs
   };
 
 namespace AssociationEdgeTypeMapper

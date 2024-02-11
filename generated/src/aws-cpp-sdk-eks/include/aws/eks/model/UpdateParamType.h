@@ -38,7 +38,11 @@ namespace Model
     ServiceAccountRoleArn,
     ResolveConflicts,
     MaxUnavailable,
-    MaxUnavailablePercentage
+    MaxUnavailablePercentage,
+    ConfigurationValues,
+    SecurityGroups,
+    Subnets,
+    AuthenticationMode
   };
 
 namespace UpdateParamTypeMapper

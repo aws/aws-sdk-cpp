@@ -50,6 +50,12 @@ DetectModerationLabelsResult& DetectModerationLabelsResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("ProjectVersion"))
+  {
+    m_projectVersion = jsonValue.GetString("ProjectVersion");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetErrorCode::NOT_SET:
+            return {};
           case AssetErrorCode::INTERNAL_FAILURE:
             return "INTERNAL_FAILURE";
           default:

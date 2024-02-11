@@ -20,6 +20,8 @@
 #include <aws/snowball/model/DeviceConfiguration.h>
 #include <aws/snowball/model/RemoteManagement.h>
 #include <aws/snowball/model/OnDeviceServiceConfiguration.h>
+#include <aws/snowball/model/ImpactLevel.h>
+#include <aws/snowball/model/PickupDetails.h>
 #include <utility>
 
 namespace Aws
@@ -1011,6 +1013,115 @@ namespace Model
      */
     inline JobMetadata& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline const ImpactLevel& GetImpactLevel() const{ return m_impactLevel; }
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline bool ImpactLevelHasBeenSet() const { return m_impactLevelHasBeenSet; }
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline void SetImpactLevel(const ImpactLevel& value) { m_impactLevelHasBeenSet = true; m_impactLevel = value; }
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline void SetImpactLevel(ImpactLevel&& value) { m_impactLevelHasBeenSet = true; m_impactLevel = std::move(value); }
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline JobMetadata& WithImpactLevel(const ImpactLevel& value) { SetImpactLevel(value); return *this;}
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline JobMetadata& WithImpactLevel(ImpactLevel&& value) { SetImpactLevel(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline const PickupDetails& GetPickupDetails() const{ return m_pickupDetails; }
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline bool PickupDetailsHasBeenSet() const { return m_pickupDetailsHasBeenSet; }
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline void SetPickupDetails(const PickupDetails& value) { m_pickupDetailsHasBeenSet = true; m_pickupDetails = value; }
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline void SetPickupDetails(PickupDetails&& value) { m_pickupDetailsHasBeenSet = true; m_pickupDetails = std::move(value); }
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline JobMetadata& WithPickupDetails(const PickupDetails& value) { SetPickupDetails(value); return *this;}
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline JobMetadata& WithPickupDetails(PickupDetails&& value) { SetPickupDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Unique ID associated with a device.</p>
+     */
+    inline const Aws::String& GetSnowballId() const{ return m_snowballId; }
+
+    /**
+     * <p>Unique ID associated with a device.</p>
+     */
+    inline bool SnowballIdHasBeenSet() const { return m_snowballIdHasBeenSet; }
+
+    /**
+     * <p>Unique ID associated with a device.</p>
+     */
+    inline void SetSnowballId(const Aws::String& value) { m_snowballIdHasBeenSet = true; m_snowballId = value; }
+
+    /**
+     * <p>Unique ID associated with a device.</p>
+     */
+    inline void SetSnowballId(Aws::String&& value) { m_snowballIdHasBeenSet = true; m_snowballId = std::move(value); }
+
+    /**
+     * <p>Unique ID associated with a device.</p>
+     */
+    inline void SetSnowballId(const char* value) { m_snowballIdHasBeenSet = true; m_snowballId.assign(value); }
+
+    /**
+     * <p>Unique ID associated with a device.</p>
+     */
+    inline JobMetadata& WithSnowballId(const Aws::String& value) { SetSnowballId(value); return *this;}
+
+    /**
+     * <p>Unique ID associated with a device.</p>
+     */
+    inline JobMetadata& WithSnowballId(Aws::String&& value) { SetSnowballId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique ID associated with a device.</p>
+     */
+    inline JobMetadata& WithSnowballId(const char* value) { SetSnowballId(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -1078,6 +1189,15 @@ namespace Model
 
     OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
     bool m_onDeviceServiceConfigurationHasBeenSet = false;
+
+    ImpactLevel m_impactLevel;
+    bool m_impactLevelHasBeenSet = false;
+
+    PickupDetails m_pickupDetails;
+    bool m_pickupDetailsHasBeenSet = false;
+
+    Aws::String m_snowballId;
+    bool m_snowballIdHasBeenSet = false;
   };
 
 } // namespace Model

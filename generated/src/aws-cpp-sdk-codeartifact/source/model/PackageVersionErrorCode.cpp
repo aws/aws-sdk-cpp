@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageVersionErrorCode::NOT_SET:
+            return {};
           case PackageVersionErrorCode::ALREADY_EXISTS:
             return "ALREADY_EXISTS";
           case PackageVersionErrorCode::MISMATCHED_REVISION:

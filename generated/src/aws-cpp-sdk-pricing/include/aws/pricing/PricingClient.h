@@ -16,26 +16,26 @@ namespace Aws
 namespace Pricing
 {
   /**
-   * <p>Amazon Web Services Price List API is a centralized and convenient way to
+   * <p>The Amazon Web Services Price List API is a centralized and convenient way to
    * programmatically query Amazon Web Services for services, products, and pricing
    * information. The Amazon Web Services Price List uses standardized product
    * attributes such as <code>Location</code>, <code>Storage Class</code>, and
    * <code>Operating System</code>, and provides prices at the SKU level. You can use
-   * the Amazon Web Services Price List to build cost control and scenario planning
-   * tools, reconcile billing data, forecast future spend for budgeting purposes, and
-   * provide cost benefit analysis that compare your internal workloads with Amazon
-   * Web Services.</p> <p>Use <code>GetServices</code> without a service code to
-   * retrieve the service codes for all AWS services, then <code>GetServices</code>
-   * with a service code to retrieve the attribute names for that service. After you
-   * have the service code and attribute names, you can use
+   * the Amazon Web Services Price List to do the following:</p> <ul> <li> <p>Build
+   * cost control and scenario planning tools</p> </li> <li> <p>Reconcile billing
+   * data</p> </li> <li> <p>Forecast future spend for budgeting purposes</p> </li>
+   * <li> <p>Provide cost benefit analysis that compare your internal workloads with
+   * Amazon Web Services</p> </li> </ul> <p>Use <code>GetServices</code> without a
+   * service code to retrieve the service codes for all Amazon Web Services, then
+   * <code>GetServices</code> with a service code to retrieve the attribute names for
+   * that service. After you have the service code and attribute names, you can use
    * <code>GetAttributeValues</code> to see what values are available for an
    * attribute. With the service code and an attribute name and value, you can use
    * <code>GetProducts</code> to find specific products that you're interested in,
    * such as an <code>AmazonEC2</code> instance, with a <code>Provisioned IOPS</code>
-   * <code>volumeType</code>.</p> <p>Service Endpoint</p> <p>Amazon Web Services
-   * Price List service API provides the following two endpoints:</p> <ul> <li>
-   * <p>https://api.pricing.us-east-1.amazonaws.com</p> </li> <li>
-   * <p>https://api.pricing.ap-south-1.amazonaws.com</p> </li> </ul>
+   * <code>volumeType</code>.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Using
+   * the Amazon Web Services Price List API</a> in the <i>Billing User Guide</i>.</p>
    */
   class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>
   {
@@ -43,6 +43,9 @@ namespace Pricing
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef PricingClientConfiguration ClientConfigurationType;
+      typedef PricingEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -163,8 +166,8 @@ namespace Pricing
          * retrieve your Price List file from. This URL is based on the
          * <code>PriceListArn</code> and <code>FileFormat</code> that you retrieve from the
          * <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-         * <code>ListPriceLists</code> </a> response. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">ListPriceLists</a>
+         * response. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">AWS
          * API Reference</a></p>
          */
@@ -228,8 +231,8 @@ namespace Pricing
          * to a specific Amazon Web Services Region. You can use the
          * <code>PriceListArn</code> from the response to get your preferred Price List
          * files through the <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html">
-         * <code>GetPriceListFileUrl</code> </a> API.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html">GetPriceListFileUrl</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">AWS
          * API Reference</a></p>
          */

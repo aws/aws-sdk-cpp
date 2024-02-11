@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InferenceExecutionMode::NOT_SET:
+            return {};
           case InferenceExecutionMode::Serial:
             return "Serial";
           case InferenceExecutionMode::Direct:

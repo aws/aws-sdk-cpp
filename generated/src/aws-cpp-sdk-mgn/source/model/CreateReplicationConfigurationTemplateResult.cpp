@@ -24,7 +24,8 @@ CreateReplicationConfigurationTemplateResult::CreateReplicationConfigurationTemp
     m_dataPlaneRouting(ReplicationConfigurationDataPlaneRouting::NOT_SET),
     m_defaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType::NOT_SET),
     m_ebsEncryption(ReplicationConfigurationEbsEncryption::NOT_SET),
-    m_useDedicatedReplicationServer(false)
+    m_useDedicatedReplicationServer(false),
+    m_useFipsEndpoint(false)
 {
 }
 
@@ -35,7 +36,8 @@ CreateReplicationConfigurationTemplateResult::CreateReplicationConfigurationTemp
     m_dataPlaneRouting(ReplicationConfigurationDataPlaneRouting::NOT_SET),
     m_defaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType::NOT_SET),
     m_ebsEncryption(ReplicationConfigurationEbsEncryption::NOT_SET),
-    m_useDedicatedReplicationServer(false)
+    m_useDedicatedReplicationServer(false),
+    m_useFipsEndpoint(false)
 {
   *this = result;
 }
@@ -139,6 +141,12 @@ CreateReplicationConfigurationTemplateResult& CreateReplicationConfigurationTemp
   if(jsonValue.ValueExists("useDedicatedReplicationServer"))
   {
     m_useDedicatedReplicationServer = jsonValue.GetBool("useDedicatedReplicationServer");
+
+  }
+
+  if(jsonValue.ValueExists("useFipsEndpoint"))
+  {
+    m_useFipsEndpoint = jsonValue.GetBool("useFipsEndpoint");
 
   }
 

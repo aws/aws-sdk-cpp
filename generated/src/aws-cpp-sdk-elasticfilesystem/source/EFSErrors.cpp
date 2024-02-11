@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/elasticfilesystem/EFSErrors.h>
 #include <aws/elasticfilesystem/model/SecurityGroupLimitExceeded.h>
+#include <aws/elasticfilesystem/model/ConflictException.h>
 #include <aws/elasticfilesystem/model/SecurityGroupNotFound.h>
 #include <aws/elasticfilesystem/model/AccessPointAlreadyExists.h>
 #include <aws/elasticfilesystem/model/NoFreeAddressesInSubnet.h>
@@ -30,6 +31,7 @@
 #include <aws/elasticfilesystem/model/MountTargetConflict.h>
 #include <aws/elasticfilesystem/model/InvalidPolicyException.h>
 #include <aws/elasticfilesystem/model/ThroughputLimitExceeded.h>
+#include <aws/elasticfilesystem/model/ReplicationAlreadyExists.h>
 #include <aws/elasticfilesystem/model/ThrottlingException.h>
 #include <aws/elasticfilesystem/model/FileSystemInUse.h>
 #include <aws/elasticfilesystem/model/NetworkInterfaceLimitExceeded.h>
@@ -50,6 +52,12 @@ template<> AWS_EFS_API SecurityGroupLimitExceeded EFSError::GetModeledError()
 {
   assert(this->GetErrorType() == EFSErrors::SECURITY_GROUP_LIMIT_EXCEEDED);
   return SecurityGroupLimitExceeded(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API ConflictException EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
 }
 
 template<> AWS_EFS_API SecurityGroupNotFound EFSError::GetModeledError()
@@ -190,6 +198,12 @@ template<> AWS_EFS_API ThroughputLimitExceeded EFSError::GetModeledError()
   return ThroughputLimitExceeded(this->GetJsonPayload().View());
 }
 
+template<> AWS_EFS_API ReplicationAlreadyExists EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::REPLICATION_ALREADY_EXISTS);
+  return ReplicationAlreadyExists(this->GetJsonPayload().View());
+}
+
 template<> AWS_EFS_API ThrottlingException EFSError::GetModeledError()
 {
   assert(this->GetErrorType() == EFSErrors::THROTTLING);
@@ -230,6 +244,7 @@ namespace EFSErrorMapper
 {
 
 static const int SECURITY_GROUP_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SecurityGroupLimitExceeded");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SECURITY_GROUP_NOT_FOUND_HASH = HashingUtils::HashString("SecurityGroupNotFound");
 static const int ACCESS_POINT_ALREADY_EXISTS_HASH = HashingUtils::HashString("AccessPointAlreadyExists");
 static const int NO_FREE_ADDRESSES_IN_SUBNET_HASH = HashingUtils::HashString("NoFreeAddressesInSubnet");
@@ -251,6 +266,7 @@ static const int AVAILABILITY_ZONES_MISMATCH_HASH = HashingUtils::HashString("Av
 static const int MOUNT_TARGET_CONFLICT_HASH = HashingUtils::HashString("MountTargetConflict");
 static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicyException");
 static const int THROUGHPUT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ThroughputLimitExceeded");
+static const int REPLICATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReplicationAlreadyExists");
 static const int FILE_SYSTEM_IN_USE_HASH = HashingUtils::HashString("FileSystemInUse");
 static const int NETWORK_INTERFACE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("NetworkInterfaceLimitExceeded");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequests");
@@ -264,111 +280,119 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == SECURITY_GROUP_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::SECURITY_GROUP_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::SECURITY_GROUP_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SECURITY_GROUP_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::SECURITY_GROUP_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::SECURITY_GROUP_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCESS_POINT_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::ACCESS_POINT_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::ACCESS_POINT_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_FREE_ADDRESSES_IN_SUBNET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::NO_FREE_ADDRESSES_IN_SUBNET), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::NO_FREE_ADDRESSES_IN_SUBNET), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DEPENDENCY_TIMEOUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::DEPENDENCY_TIMEOUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::DEPENDENCY_TIMEOUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_THROUGHPUT_CAPACITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::INSUFFICIENT_THROUGHPUT_CAPACITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::INSUFFICIENT_THROUGHPUT_CAPACITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MOUNT_TARGET_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::MOUNT_TARGET_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::MOUNT_TARGET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FILE_SYSTEM_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::FILE_SYSTEM_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::FILE_SYSTEM_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INCORRECT_FILE_SYSTEM_LIFE_CYCLE_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::INCORRECT_FILE_SYSTEM_LIFE_CYCLE_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::INCORRECT_FILE_SYSTEM_LIFE_CYCLE_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FILE_SYSTEM_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::FILE_SYSTEM_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::FILE_SYSTEM_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_AVAILABILITY_ZONE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::UNSUPPORTED_AVAILABILITY_ZONE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::UNSUPPORTED_AVAILABILITY_ZONE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FILE_SYSTEM_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::FILE_SYSTEM_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::FILE_SYSTEM_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::POLICY_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCESS_POINT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::ACCESS_POINT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::ACCESS_POINT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCESS_POINT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::ACCESS_POINT_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::ACCESS_POINT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IP_ADDRESS_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::IP_ADDRESS_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::IP_ADDRESS_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INCORRECT_MOUNT_TARGET_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::INCORRECT_MOUNT_TARGET_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::INCORRECT_MOUNT_TARGET_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REPLICATION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::REPLICATION_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::REPLICATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == AVAILABILITY_ZONES_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::AVAILABILITY_ZONES_MISMATCH), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::AVAILABILITY_ZONES_MISMATCH), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MOUNT_TARGET_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::MOUNT_TARGET_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::MOUNT_TARGET_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::INVALID_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::INVALID_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == THROUGHPUT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::THROUGHPUT_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::THROUGHPUT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == REPLICATION_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::REPLICATION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FILE_SYSTEM_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::FILE_SYSTEM_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::FILE_SYSTEM_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NETWORK_INTERFACE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::NETWORK_INTERFACE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::NETWORK_INTERFACE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::TOO_MANY_REQUESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::TOO_MANY_REQUESTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::SUBNET_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::SUBNET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

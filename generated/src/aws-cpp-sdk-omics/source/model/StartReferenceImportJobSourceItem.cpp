@@ -19,17 +19,17 @@ namespace Model
 {
 
 StartReferenceImportJobSourceItem::StartReferenceImportJobSourceItem() : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_sourceFileHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 StartReferenceImportJobSourceItem::StartReferenceImportJobSourceItem(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_sourceFileHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -37,11 +37,11 @@ StartReferenceImportJobSourceItem::StartReferenceImportJobSourceItem(JsonView js
 
 StartReferenceImportJobSourceItem& StartReferenceImportJobSourceItem::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("sourceFile"))
   {
-    m_description = jsonValue.GetString("description");
+    m_sourceFile = jsonValue.GetString("sourceFile");
 
-    m_descriptionHasBeenSet = true;
+    m_sourceFileHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -51,11 +51,11 @@ StartReferenceImportJobSourceItem& StartReferenceImportJobSourceItem::operator =
     m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("sourceFile"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_sourceFile = jsonValue.GetString("sourceFile");
+    m_description = jsonValue.GetString("description");
 
-    m_sourceFileHasBeenSet = true;
+    m_descriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -75,9 +75,9 @@ JsonValue StartReferenceImportJobSourceItem::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
+  if(m_sourceFileHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("sourceFile", m_sourceFile);
 
   }
 
@@ -87,9 +87,9 @@ JsonValue StartReferenceImportJobSourceItem::Jsonize() const
 
   }
 
-  if(m_sourceFileHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("sourceFile", m_sourceFile);
+   payload.WithString("description", m_description);
 
   }
 

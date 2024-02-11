@@ -19,7 +19,8 @@ namespace Model
     CREATED,
     IN_PROGRESS,
     SUCCEEDED,
-    FAILED
+    FAILED,
+    EXPIRED
   };
 
 namespace LivenessSessionStatusMapper

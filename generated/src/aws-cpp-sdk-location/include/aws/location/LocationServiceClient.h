@@ -26,6 +26,9 @@ namespace LocationService
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef LocationServiceClientConfiguration ClientConfigurationType;
+      typedef LocationServiceEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -251,27 +254,28 @@ namespace LocationService
         }
 
         /**
-         * <p>Uploads position update data for one or more devices to a tracker resource.
-         * Amazon Location uses the data when it reports the last known device position and
-         * position history. Amazon Location retains location data for 30 days.</p> 
-         * <p>Position updates are handled based on the <code>PositionFiltering</code>
-         * property of the tracker. When <code>PositionFiltering</code> is set to
-         * <code>TimeBased</code>, updates are evaluated against linked geofence
-         * collections, and location data is stored at a maximum of one position per 30
-         * second interval. If your update frequency is more often than every 30 seconds,
-         * only one update per 30 seconds is stored for each unique device ID.</p> <p>When
-         * <code>PositionFiltering</code> is set to <code>DistanceBased</code> filtering,
-         * location data is stored and evaluated against linked geofence collections only
-         * if the device has moved more than 30 m (98.4 ft).</p> <p>When
+         * <p>Uploads position update data for one or more devices to a tracker resource
+         * (up to 10 devices per batch). Amazon Location uses the data when it reports the
+         * last known device position and position history. Amazon Location retains
+         * location data for 30 days.</p>  <p>Position updates are handled based on
+         * the <code>PositionFiltering</code> property of the tracker. When
+         * <code>PositionFiltering</code> is set to <code>TimeBased</code>, updates are
+         * evaluated against linked geofence collections, and location data is stored at a
+         * maximum of one position per 30 second interval. If your update frequency is more
+         * often than every 30 seconds, only one update per 30 seconds is stored for each
+         * unique device ID.</p> <p>When <code>PositionFiltering</code> is set to
+         * <code>DistanceBased</code> filtering, location data is stored and evaluated
+         * against linked geofence collections only if the device has moved more than 30 m
+         * (98.4 ft).</p> <p>When <code>PositionFiltering</code> is set to
+         * <code>AccuracyBased</code> filtering, location data is stored and evaluated
+         * against linked geofence collections only if the device has moved more than the
+         * measured accuracy. For example, if two consecutive updates from a device have a
+         * horizontal accuracy of 5 m and 10 m, the second update is neither stored or
+         * evaluated if the device has moved less than 15 m. If
          * <code>PositionFiltering</code> is set to <code>AccuracyBased</code> filtering,
-         * location data is stored and evaluated against linked geofence collections only
-         * if the device has moved more than the measured accuracy. For example, if two
-         * consecutive updates from a device have a horizontal accuracy of 5 m and 10 m,
-         * the second update is neither stored or evaluated if the device has moved less
-         * than 15 m. If <code>PositionFiltering</code> is set to
-         * <code>AccuracyBased</code> filtering, Amazon Location uses the default value
-         * <code>{ "Horizontal": 0}</code> when accuracy is not provided on a
-         * <code>DevicePositionUpdate</code>.</p> <p><h3>See Also:</h3>   <a
+         * Amazon Location uses the default value <code>{ "Horizontal": 0}</code> when
+         * accuracy is not provided on a <code>DevicePositionUpdate</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchUpdateDevicePosition">AWS
          * API Reference</a></p>
          */
@@ -428,10 +432,8 @@ namespace LocationService
 
         /**
          * <p>Creates an API key resource in your Amazon Web Services account, which lets
-         * you grant <code>geo:GetMap*</code> actions for Amazon Location Map resources to
-         * the API key bearer.</p>  <p>The API keys feature is in preview. We
-         * may add, change, or remove features before announcing general availability. For
-         * more information, see <a
+         * you grant actions for Amazon Location resources to the API key bearer.</p>
+         *  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
          * API keys</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateKey">AWS
@@ -771,11 +773,7 @@ namespace LocationService
         }
 
         /**
-         * <p>Retrieves the API key resource details.</p>  <p>The API keys
-         * feature is in preview. We may add, change, or remove features before announcing
-         * general availability. For more information, see <a
-         * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
-         * API keys</a>.</p> <p><h3>See Also:</h3>   <a
+         * <p>Retrieves the API key resource details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeKey">AWS
          * API Reference</a></p>
          */
@@ -1231,11 +1229,8 @@ namespace LocationService
         }
 
         /**
-         * <p>Lists API key resources in your Amazon Web Services account.</p> 
-         * <p>The API keys feature is in preview. We may add, change, or remove features
-         * before announcing general availability. For more information, see <a
-         * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
-         * API keys</a>.</p> <p><h3>See Also:</h3>   <a
+         * <p>Lists API key resources in your Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListKeys">AWS
          * API Reference</a></p>
          */
@@ -1622,11 +1617,8 @@ namespace LocationService
         }
 
         /**
-         * <p>Updates the specified properties of a given API key resource.</p> 
-         * <p>The API keys feature is in preview. We may add, change, or remove features
-         * before announcing general availability. For more information, see <a
-         * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
-         * API keys</a>.</p> <p><h3>See Also:</h3>   <a
+         * <p>Updates the specified properties of a given API key resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateKey">AWS
          * API Reference</a></p>
          */

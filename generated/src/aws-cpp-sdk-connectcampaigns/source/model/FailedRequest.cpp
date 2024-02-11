@@ -20,17 +20,17 @@ namespace Model
 
 FailedRequest::FailedRequest() : 
     m_clientTokenHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_failureCode(FailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_failureCodeHasBeenSet(false)
 {
 }
 
 FailedRequest::FailedRequest(JsonView jsonValue) : 
     m_clientTokenHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_failureCode(FailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_failureCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,18 +44,18 @@ FailedRequest& FailedRequest::operator =(JsonView jsonValue)
     m_clientTokenHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("failureCode"))
-  {
-    m_failureCode = FailureCodeMapper::GetFailureCodeForName(jsonValue.GetString("failureCode"));
-
-    m_failureCodeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureCode"))
+  {
+    m_failureCode = FailureCodeMapper::GetFailureCodeForName(jsonValue.GetString("failureCode"));
+
+    m_failureCodeHasBeenSet = true;
   }
 
   return *this;
@@ -71,15 +71,15 @@ JsonValue FailedRequest::Jsonize() const
 
   }
 
-  if(m_failureCodeHasBeenSet)
-  {
-   payload.WithString("failureCode", FailureCodeMapper::GetNameForFailureCode(m_failureCode));
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
 
+  }
+
+  if(m_failureCodeHasBeenSet)
+  {
+   payload.WithString("failureCode", FailureCodeMapper::GetNameForFailureCode(m_failureCode));
   }
 
   return payload;

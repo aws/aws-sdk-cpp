@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 ModifyWorkspacePropertiesRequest::ModifyWorkspacePropertiesRequest() : 
     m_workspaceIdHasBeenSet(false),
-    m_workspacePropertiesHasBeenSet(false)
+    m_workspacePropertiesHasBeenSet(false),
+    m_dataReplication(DataReplication::NOT_SET),
+    m_dataReplicationHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,11 @@ Aws::String ModifyWorkspacePropertiesRequest::SerializePayload() const
   {
    payload.WithObject("WorkspaceProperties", m_workspaceProperties.Jsonize());
 
+  }
+
+  if(m_dataReplicationHasBeenSet)
+  {
+   payload.WithString("DataReplication", DataReplicationMapper::GetNameForDataReplication(m_dataReplication));
   }
 
   return payload.View().WriteReadable();

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoIntervalCadence::NOT_SET:
+            return {};
           case DashIsoIntervalCadence::FOLLOW_IFRAME:
             return "FOLLOW_IFRAME";
           case DashIsoIntervalCadence::FOLLOW_CUSTOM:

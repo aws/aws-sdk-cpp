@@ -56,7 +56,8 @@ Endpoint::Endpoint() :
     m_iBMDb2SettingsHasBeenSet(false),
     m_docDbSettingsHasBeenSet(false),
     m_redisSettingsHasBeenSet(false),
-    m_gcpMySQLSettingsHasBeenSet(false)
+    m_gcpMySQLSettingsHasBeenSet(false),
+    m_timestreamSettingsHasBeenSet(false)
 {
 }
 
@@ -98,7 +99,8 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_iBMDb2SettingsHasBeenSet(false),
     m_docDbSettingsHasBeenSet(false),
     m_redisSettingsHasBeenSet(false),
-    m_gcpMySQLSettingsHasBeenSet(false)
+    m_gcpMySQLSettingsHasBeenSet(false),
+    m_timestreamSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -350,6 +352,13 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_gcpMySQLSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimestreamSettings"))
+  {
+    m_timestreamSettings = jsonValue.GetObject("TimestreamSettings");
+
+    m_timestreamSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -562,6 +571,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_gcpMySQLSettingsHasBeenSet)
   {
    payload.WithObject("GcpMySQLSettings", m_gcpMySQLSettings.Jsonize());
+
+  }
+
+  if(m_timestreamSettingsHasBeenSet)
+  {
+   payload.WithObject("TimestreamSettings", m_timestreamSettings.Jsonize());
 
   }
 

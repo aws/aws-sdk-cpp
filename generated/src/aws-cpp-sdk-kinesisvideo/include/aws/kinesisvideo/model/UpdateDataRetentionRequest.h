@@ -212,26 +212,34 @@ namespace Model
 
 
     /**
-     * <p>The retention period, in hours. The value you specify replaces the current
-     * value. The maximum value for this parameter is 87600 (ten years).</p>
+     * <p>The number of hours to adjust the current retention by. The value you specify
+     * is added to or subtracted from the current value, depending on the
+     * <code>operation</code>.</p> <p>The minimum value for data retention is 0 and the
+     * maximum value is 87600 (ten years).</p>
      */
     inline int GetDataRetentionChangeInHours() const{ return m_dataRetentionChangeInHours; }
 
     /**
-     * <p>The retention period, in hours. The value you specify replaces the current
-     * value. The maximum value for this parameter is 87600 (ten years).</p>
+     * <p>The number of hours to adjust the current retention by. The value you specify
+     * is added to or subtracted from the current value, depending on the
+     * <code>operation</code>.</p> <p>The minimum value for data retention is 0 and the
+     * maximum value is 87600 (ten years).</p>
      */
     inline bool DataRetentionChangeInHoursHasBeenSet() const { return m_dataRetentionChangeInHoursHasBeenSet; }
 
     /**
-     * <p>The retention period, in hours. The value you specify replaces the current
-     * value. The maximum value for this parameter is 87600 (ten years).</p>
+     * <p>The number of hours to adjust the current retention by. The value you specify
+     * is added to or subtracted from the current value, depending on the
+     * <code>operation</code>.</p> <p>The minimum value for data retention is 0 and the
+     * maximum value is 87600 (ten years).</p>
      */
     inline void SetDataRetentionChangeInHours(int value) { m_dataRetentionChangeInHoursHasBeenSet = true; m_dataRetentionChangeInHours = value; }
 
     /**
-     * <p>The retention period, in hours. The value you specify replaces the current
-     * value. The maximum value for this parameter is 87600 (ten years).</p>
+     * <p>The number of hours to adjust the current retention by. The value you specify
+     * is added to or subtracted from the current value, depending on the
+     * <code>operation</code>.</p> <p>The minimum value for data retention is 0 and the
+     * maximum value is 87600 (ten years).</p>
      */
     inline UpdateDataRetentionRequest& WithDataRetentionChangeInHours(int value) { SetDataRetentionChangeInHours(value); return *this;}
 

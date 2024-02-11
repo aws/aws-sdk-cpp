@@ -29,6 +29,12 @@ CreateWorkspaceResult::CreateWorkspaceResult(const Aws::AmazonWebServiceResult<J
 CreateWorkspaceResult& CreateWorkspaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("workspaceId"))
+  {
+    m_workspaceId = jsonValue.GetString("workspaceId");
+
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -50,9 +56,9 @@ CreateWorkspaceResult& CreateWorkspaceResult::operator =(const Aws::AmazonWebSer
     }
   }
 
-  if(jsonValue.ValueExists("workspaceId"))
+  if(jsonValue.ValueExists("kmsKeyArn"))
   {
-    m_workspaceId = jsonValue.GetString("workspaceId");
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
 
   }
 

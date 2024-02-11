@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FrameworkType::NOT_SET:
+            return {};
           case FrameworkType::Standard:
             return "Standard";
           case FrameworkType::Custom:

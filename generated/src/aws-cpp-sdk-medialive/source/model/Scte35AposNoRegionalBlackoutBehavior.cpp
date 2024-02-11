@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scte35AposNoRegionalBlackoutBehavior::NOT_SET:
+            return {};
           case Scte35AposNoRegionalBlackoutBehavior::FOLLOW:
             return "FOLLOW";
           case Scte35AposNoRegionalBlackoutBehavior::IGNORE:

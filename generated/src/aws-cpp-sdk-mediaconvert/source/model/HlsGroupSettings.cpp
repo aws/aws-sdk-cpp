@@ -55,6 +55,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_programDateTimeHasBeenSet(false),
     m_programDateTimePeriod(0),
     m_programDateTimePeriodHasBeenSet(false),
+    m_progressiveWriteHlsManifest(HlsProgressiveWriteHlsManifest::NOT_SET),
+    m_progressiveWriteHlsManifestHasBeenSet(false),
     m_segmentControl(HlsSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
@@ -113,6 +115,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_programDateTimeHasBeenSet(false),
     m_programDateTimePeriod(0),
     m_programDateTimePeriodHasBeenSet(false),
+    m_progressiveWriteHlsManifest(HlsProgressiveWriteHlsManifest::NOT_SET),
+    m_progressiveWriteHlsManifestHasBeenSet(false),
     m_segmentControl(HlsSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
@@ -298,6 +302,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_programDateTimePeriod = jsonValue.GetInteger("programDateTimePeriod");
 
     m_programDateTimePeriodHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("progressiveWriteHlsManifest"))
+  {
+    m_progressiveWriteHlsManifest = HlsProgressiveWriteHlsManifestMapper::GetHlsProgressiveWriteHlsManifestForName(jsonValue.GetString("progressiveWriteHlsManifest"));
+
+    m_progressiveWriteHlsManifestHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentControl"))
@@ -504,6 +515,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   {
    payload.WithInteger("programDateTimePeriod", m_programDateTimePeriod);
 
+  }
+
+  if(m_progressiveWriteHlsManifestHasBeenSet)
+  {
+   payload.WithString("progressiveWriteHlsManifest", HlsProgressiveWriteHlsManifestMapper::GetNameForHlsProgressiveWriteHlsManifest(m_progressiveWriteHlsManifest));
   }
 
   if(m_segmentControlHasBeenSet)

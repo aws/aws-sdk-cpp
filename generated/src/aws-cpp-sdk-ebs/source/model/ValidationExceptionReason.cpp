@@ -23,6 +23,7 @@ namespace Aws
         static const int INVALID_CUSTOMER_KEY_HASH = HashingUtils::HashString("INVALID_CUSTOMER_KEY");
         static const int INVALID_PAGE_TOKEN_HASH = HashingUtils::HashString("INVALID_PAGE_TOKEN");
         static const int INVALID_BLOCK_TOKEN_HASH = HashingUtils::HashString("INVALID_BLOCK_TOKEN");
+        static const int INVALID_GRANT_TOKEN_HASH = HashingUtils::HashString("INVALID_GRANT_TOKEN");
         static const int INVALID_SNAPSHOT_ID_HASH = HashingUtils::HashString("INVALID_SNAPSHOT_ID");
         static const int UNRELATED_SNAPSHOTS_HASH = HashingUtils::HashString("UNRELATED_SNAPSHOTS");
         static const int INVALID_BLOCK_HASH = HashingUtils::HashString("INVALID_BLOCK");
@@ -32,6 +33,8 @@ namespace Aws
         static const int INVALID_PARAMETER_VALUE_HASH = HashingUtils::HashString("INVALID_PARAMETER_VALUE");
         static const int INVALID_VOLUME_SIZE_HASH = HashingUtils::HashString("INVALID_VOLUME_SIZE");
         static const int CONFLICTING_BLOCK_UPDATE_HASH = HashingUtils::HashString("CONFLICTING_BLOCK_UPDATE");
+        static const int INVALID_IMAGE_ID_HASH = HashingUtils::HashString("INVALID_IMAGE_ID");
+        static const int WRITE_REQUEST_TIMEOUT_HASH = HashingUtils::HashString("WRITE_REQUEST_TIMEOUT");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -48,6 +51,10 @@ namespace Aws
           else if (hashCode == INVALID_BLOCK_TOKEN_HASH)
           {
             return ValidationExceptionReason::INVALID_BLOCK_TOKEN;
+          }
+          else if (hashCode == INVALID_GRANT_TOKEN_HASH)
+          {
+            return ValidationExceptionReason::INVALID_GRANT_TOKEN;
           }
           else if (hashCode == INVALID_SNAPSHOT_ID_HASH)
           {
@@ -85,6 +92,14 @@ namespace Aws
           {
             return ValidationExceptionReason::CONFLICTING_BLOCK_UPDATE;
           }
+          else if (hashCode == INVALID_IMAGE_ID_HASH)
+          {
+            return ValidationExceptionReason::INVALID_IMAGE_ID;
+          }
+          else if (hashCode == WRITE_REQUEST_TIMEOUT_HASH)
+          {
+            return ValidationExceptionReason::WRITE_REQUEST_TIMEOUT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -99,12 +114,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionReason::NOT_SET:
+            return {};
           case ValidationExceptionReason::INVALID_CUSTOMER_KEY:
             return "INVALID_CUSTOMER_KEY";
           case ValidationExceptionReason::INVALID_PAGE_TOKEN:
             return "INVALID_PAGE_TOKEN";
           case ValidationExceptionReason::INVALID_BLOCK_TOKEN:
             return "INVALID_BLOCK_TOKEN";
+          case ValidationExceptionReason::INVALID_GRANT_TOKEN:
+            return "INVALID_GRANT_TOKEN";
           case ValidationExceptionReason::INVALID_SNAPSHOT_ID:
             return "INVALID_SNAPSHOT_ID";
           case ValidationExceptionReason::UNRELATED_SNAPSHOTS:
@@ -123,6 +142,10 @@ namespace Aws
             return "INVALID_VOLUME_SIZE";
           case ValidationExceptionReason::CONFLICTING_BLOCK_UPDATE:
             return "CONFLICTING_BLOCK_UPDATE";
+          case ValidationExceptionReason::INVALID_IMAGE_ID:
+            return "INVALID_IMAGE_ID";
+          case ValidationExceptionReason::WRITE_REQUEST_TIMEOUT:
+            return "WRITE_REQUEST_TIMEOUT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

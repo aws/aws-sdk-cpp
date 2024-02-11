@@ -17,7 +17,7 @@ using namespace Aws::Http;
 
 DeleteAnalyzerRequest::DeleteAnalyzerRequest() : 
     m_analyzerNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

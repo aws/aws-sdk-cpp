@@ -20,7 +20,7 @@ StartEngagementRequest::StartEngagementRequest() :
     m_publicSubjectHasBeenSet(false),
     m_publicContentHasBeenSet(false),
     m_incidentIdHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

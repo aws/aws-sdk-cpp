@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionsBoundaryAttachmentType::NOT_SET:
+            return {};
           case PermissionsBoundaryAttachmentType::PermissionsBoundaryPolicy:
             return "PermissionsBoundaryPolicy";
           default:

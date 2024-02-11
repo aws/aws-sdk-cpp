@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the cluster to create the node group in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p>The name of the cluster to create the node group in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
-     * <p>The name of the cluster to create the node group in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>The name of the cluster to create the node group in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
-     * <p>The name of the cluster to create the node group in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p>The name of the cluster to create the node group in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline CreateNodegroupRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>The name of the cluster to create the node group in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline CreateNodegroupRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the cluster to create the node group in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline CreateNodegroupRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
@@ -208,11 +208,10 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-     * <code>SubnetId</code> </a> in your launch template, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -220,11 +219,10 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-     * <code>SubnetId</code> </a> in your launch template, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -232,11 +230,10 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-     * <code>SubnetId</code> </a> in your launch template, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -244,11 +241,10 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-     * <code>SubnetId</code> </a> in your launch template, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -256,11 +252,10 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-     * <code>SubnetId</code> </a> in your launch template, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -268,11 +263,10 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-     * <code>SubnetId</code> </a> in your launch template, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -280,11 +274,10 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-     * <code>SubnetId</code> </a> in your launch template, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -292,11 +285,10 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-     * <code>SubnetId</code> </a> in your launch template, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -304,11 +296,10 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-     * <code>SubnetId</code> </a> in your launch template, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -642,11 +633,10 @@ namespace Model
      * those nodes to use when they are launched. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
-     * specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-     * <code>IamInstanceProfile</code> </a> in your launch template, or the node group
-     * deployment will fail. For more information about using launch templates with
-     * Amazon EKS, see <a
+     * specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">IamInstanceProfile</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -661,11 +651,10 @@ namespace Model
      * those nodes to use when they are launched. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
-     * specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-     * <code>IamInstanceProfile</code> </a> in your launch template, or the node group
-     * deployment will fail. For more information about using launch templates with
-     * Amazon EKS, see <a
+     * specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">IamInstanceProfile</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -680,11 +669,10 @@ namespace Model
      * those nodes to use when they are launched. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
-     * specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-     * <code>IamInstanceProfile</code> </a> in your launch template, or the node group
-     * deployment will fail. For more information about using launch templates with
-     * Amazon EKS, see <a
+     * specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">IamInstanceProfile</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -699,11 +687,10 @@ namespace Model
      * those nodes to use when they are launched. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
-     * specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-     * <code>IamInstanceProfile</code> </a> in your launch template, or the node group
-     * deployment will fail. For more information about using launch templates with
-     * Amazon EKS, see <a
+     * specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">IamInstanceProfile</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -718,11 +705,10 @@ namespace Model
      * those nodes to use when they are launched. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
-     * specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-     * <code>IamInstanceProfile</code> </a> in your launch template, or the node group
-     * deployment will fail. For more information about using launch templates with
-     * Amazon EKS, see <a
+     * specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">IamInstanceProfile</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -737,11 +723,10 @@ namespace Model
      * those nodes to use when they are launched. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
-     * specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-     * <code>IamInstanceProfile</code> </a> in your launch template, or the node group
-     * deployment will fail. For more information about using launch templates with
-     * Amazon EKS, see <a
+     * specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">IamInstanceProfile</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -756,11 +741,10 @@ namespace Model
      * those nodes to use when they are launched. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
-     * specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-     * <code>IamInstanceProfile</code> </a> in your launch template, or the node group
-     * deployment will fail. For more information about using launch templates with
-     * Amazon EKS, see <a
+     * specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">IamInstanceProfile</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -775,11 +759,10 @@ namespace Model
      * those nodes to use when they are launched. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
      * EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you
-     * specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-     * <code>IamInstanceProfile</code> </a> in your launch template, or the node group
-     * deployment will fail. For more information about using launch templates with
-     * Amazon EKS, see <a
+     * specify <code>launchTemplate</code>, then don't specify <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">IamInstanceProfile</a>
+     * </code> in your launch template, or the node group deployment will fail. For
+     * more information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -787,80 +770,80 @@ namespace Model
 
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const{ return m_labels; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline void SetLabels(const Aws::Map<Aws::String, Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline void SetLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline CreateNodegroupRequest& WithLabels(const Aws::Map<Aws::String, Aws::String>& value) { SetLabels(value); return *this;}
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline CreateNodegroupRequest& WithLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline CreateNodegroupRequest& AddLabels(const Aws::String& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline CreateNodegroupRequest& AddLabels(Aws::String&& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline CreateNodegroupRequest& AddLabels(const Aws::String& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline CreateNodegroupRequest& AddLabels(Aws::String&& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline CreateNodegroupRequest& AddLabels(const char* key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline CreateNodegroupRequest& AddLabels(Aws::String&& key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group when they
-     * are created.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * when they are created.</p>
      */
     inline CreateNodegroupRequest& AddLabels(const char* key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
 
@@ -931,155 +914,142 @@ namespace Model
 
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateNodegroupRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateNodegroupRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateNodegroupRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateNodegroupRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateNodegroupRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateNodegroupRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateNodegroupRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateNodegroupRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata to apply to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateNodegroupRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline CreateNodegroupRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline CreateNodegroupRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline CreateNodegroupRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

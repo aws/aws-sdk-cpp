@@ -371,6 +371,113 @@ namespace Model
     inline GetConfigurationProfileResult& WithType(const char* value) { SetType(value); return *this;}
 
 
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key to encrypt new
+     * configuration data versions in the AppConfig hosted configuration store. This
+     * attribute is only used for <code>hosted</code> configuration types. To encrypt
+     * data managed in other configuration stores, see the documentation for how to
+     * specify an KMS key for that particular service.</p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key to encrypt new
+     * configuration data versions in the AppConfig hosted configuration store. This
+     * attribute is only used for <code>hosted</code> configuration types. To encrypt
+     * data managed in other configuration stores, see the documentation for how to
+     * specify an KMS key for that particular service.</p>
+     */
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key to encrypt new
+     * configuration data versions in the AppConfig hosted configuration store. This
+     * attribute is only used for <code>hosted</code> configuration types. To encrypt
+     * data managed in other configuration stores, see the documentation for how to
+     * specify an KMS key for that particular service.</p>
+     */
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key to encrypt new
+     * configuration data versions in the AppConfig hosted configuration store. This
+     * attribute is only used for <code>hosted</code> configuration types. To encrypt
+     * data managed in other configuration stores, see the documentation for how to
+     * specify an KMS key for that particular service.</p>
+     */
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key to encrypt new
+     * configuration data versions in the AppConfig hosted configuration store. This
+     * attribute is only used for <code>hosted</code> configuration types. To encrypt
+     * data managed in other configuration stores, see the documentation for how to
+     * specify an KMS key for that particular service.</p>
+     */
+    inline GetConfigurationProfileResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key to encrypt new
+     * configuration data versions in the AppConfig hosted configuration store. This
+     * attribute is only used for <code>hosted</code> configuration types. To encrypt
+     * data managed in other configuration stores, see the documentation for how to
+     * specify an KMS key for that particular service.</p>
+     */
+    inline GetConfigurationProfileResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key to encrypt new
+     * configuration data versions in the AppConfig hosted configuration store. This
+     * attribute is only used for <code>hosted</code> configuration types. To encrypt
+     * data managed in other configuration stores, see the documentation for how to
+     * specify an KMS key for that particular service.</p>
+     */
+    inline GetConfigurationProfileResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+
+
+    /**
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
+     */
+    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
+
+    /**
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
+     */
+    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifier = value; }
+
+    /**
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
+     */
+    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifier = std::move(value); }
+
+    /**
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
+     */
+    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifier.assign(value); }
+
+    /**
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
+     */
+    inline GetConfigurationProfileResult& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
+
+    /**
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
+     */
+    inline GetConfigurationProfileResult& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
+     */
+    inline GetConfigurationProfileResult& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -409,6 +516,10 @@ namespace Model
     Aws::Vector<Validator> m_validators;
 
     Aws::String m_type;
+
+    Aws::String m_kmsKeyArn;
+
+    Aws::String m_kmsKeyIdentifier;
 
     Aws::String m_requestId;
   };

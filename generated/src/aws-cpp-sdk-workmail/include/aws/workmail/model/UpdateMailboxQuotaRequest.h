@@ -84,42 +84,82 @@ namespace Model
 
 
     /**
-     * <p>The identifer for the user for whom to update the mailbox quota.</p>
+     * <p>The identifer for the user for whom to update the mailbox quota.</p> <p>The
+     * identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>User ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The identifer for the user for whom to update the mailbox quota.</p>
+     * <p>The identifer for the user for whom to update the mailbox quota.</p> <p>The
+     * identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>User ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p>The identifer for the user for whom to update the mailbox quota.</p>
+     * <p>The identifer for the user for whom to update the mailbox quota.</p> <p>The
+     * identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>User ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The identifer for the user for whom to update the mailbox quota.</p>
+     * <p>The identifer for the user for whom to update the mailbox quota.</p> <p>The
+     * identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>User ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The identifer for the user for whom to update the mailbox quota.</p>
+     * <p>The identifer for the user for whom to update the mailbox quota.</p> <p>The
+     * identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>User ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The identifer for the user for whom to update the mailbox quota.</p>
+     * <p>The identifer for the user for whom to update the mailbox quota.</p> <p>The
+     * identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>User ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul>
      */
     inline UpdateMailboxQuotaRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The identifer for the user for whom to update the mailbox quota.</p>
+     * <p>The identifer for the user for whom to update the mailbox quota.</p> <p>The
+     * identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>User ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul>
      */
     inline UpdateMailboxQuotaRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifer for the user for whom to update the mailbox quota.</p>
+     * <p>The identifer for the user for whom to update the mailbox quota.</p> <p>The
+     * identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>User ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul>
      */
     inline UpdateMailboxQuotaRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 

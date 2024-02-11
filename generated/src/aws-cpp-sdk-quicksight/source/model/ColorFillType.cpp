@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColorFillType::NOT_SET:
+            return {};
           case ColorFillType::DISCRETE:
             return "DISCRETE";
           case ColorFillType::GRADIENT:

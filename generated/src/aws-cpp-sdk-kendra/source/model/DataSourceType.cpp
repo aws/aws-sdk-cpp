@@ -134,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceType::NOT_SET:
+            return {};
           case DataSourceType::S3:
             return "S3";
           case DataSourceType::SHAREPOINT:

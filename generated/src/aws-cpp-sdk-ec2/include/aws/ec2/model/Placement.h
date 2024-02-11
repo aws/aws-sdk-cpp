@@ -334,9 +334,9 @@ namespace Model
 
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware.</p> <p>This parameter is not supported for <a
+     * <p>The tenancy of the instance. An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware.</p> <p>This parameter is
+     * not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * The <code>host</code> tenancy is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
@@ -346,9 +346,9 @@ namespace Model
     inline const Tenancy& GetTenancy() const{ return m_tenancy; }
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware.</p> <p>This parameter is not supported for <a
+     * <p>The tenancy of the instance. An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware.</p> <p>This parameter is
+     * not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * The <code>host</code> tenancy is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
@@ -358,9 +358,9 @@ namespace Model
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware.</p> <p>This parameter is not supported for <a
+     * <p>The tenancy of the instance. An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware.</p> <p>This parameter is
+     * not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * The <code>host</code> tenancy is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
@@ -370,9 +370,9 @@ namespace Model
     inline void SetTenancy(const Tenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware.</p> <p>This parameter is not supported for <a
+     * <p>The tenancy of the instance. An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware.</p> <p>This parameter is
+     * not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * The <code>host</code> tenancy is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
@@ -382,9 +382,9 @@ namespace Model
     inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware.</p> <p>This parameter is not supported for <a
+     * <p>The tenancy of the instance. An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware.</p> <p>This parameter is
+     * not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * The <code>host</code> tenancy is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
@@ -394,9 +394,9 @@ namespace Model
     inline Placement& WithTenancy(const Tenancy& value) { SetTenancy(value); return *this;}
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware.</p> <p>This parameter is not supported for <a
+     * <p>The tenancy of the instance. An instance with a tenancy of
+     * <code>dedicated</code> runs on single-tenant hardware.</p> <p>This parameter is
+     * not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * The <code>host</code> tenancy is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>

@@ -31,6 +31,8 @@ namespace Aws
         static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
         static const int UPGRADE_FAILED_HASH = HashingUtils::HashString("UPGRADE_FAILED");
         static const int LICENSE_REMOVAL_FAILED_HASH = HashingUtils::HashString("LICENSE_REMOVAL_FAILED");
+        static const int VERSION_UPDATING_HASH = HashingUtils::HashString("VERSION_UPDATING");
+        static const int VERSION_UPDATE_FAILED_HASH = HashingUtils::HashString("VERSION_UPDATE_FAILED");
 
 
         WorkspaceStatus GetWorkspaceStatusForName(const Aws::String& name)
@@ -80,6 +82,14 @@ namespace Aws
           {
             return WorkspaceStatus::LICENSE_REMOVAL_FAILED;
           }
+          else if (hashCode == VERSION_UPDATING_HASH)
+          {
+            return WorkspaceStatus::VERSION_UPDATING;
+          }
+          else if (hashCode == VERSION_UPDATE_FAILED_HASH)
+          {
+            return WorkspaceStatus::VERSION_UPDATE_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -94,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkspaceStatus::NOT_SET:
+            return {};
           case WorkspaceStatus::ACTIVE:
             return "ACTIVE";
           case WorkspaceStatus::CREATING:
@@ -116,6 +128,10 @@ namespace Aws
             return "UPGRADE_FAILED";
           case WorkspaceStatus::LICENSE_REMOVAL_FAILED:
             return "LICENSE_REMOVAL_FAILED";
+          case WorkspaceStatus::VERSION_UPDATING:
+            return "VERSION_UPDATING";
+          case WorkspaceStatus::VERSION_UPDATE_FAILED:
+            return "VERSION_UPDATE_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

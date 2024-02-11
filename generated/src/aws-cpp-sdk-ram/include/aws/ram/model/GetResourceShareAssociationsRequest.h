@@ -38,54 +38,54 @@ namespace Model
     /**
      * <p>Specifies whether you want to retrieve the associations that involve a
      * specified resource or principal.</p> <ul> <li> <p> <code>PRINCIPAL</code> – list
-     * the principals that are associated with the specified resource share.</p> </li>
-     * <li> <p> <code>RESOURCE</code> – list the resources that are associated with the
-     * specified resource share.</p> </li> </ul>
+     * the principals whose associations you want to see.</p> </li> <li> <p>
+     * <code>RESOURCE</code> – list the resources whose associations you want to
+     * see.</p> </li> </ul>
      */
     inline const ResourceShareAssociationType& GetAssociationType() const{ return m_associationType; }
 
     /**
      * <p>Specifies whether you want to retrieve the associations that involve a
      * specified resource or principal.</p> <ul> <li> <p> <code>PRINCIPAL</code> – list
-     * the principals that are associated with the specified resource share.</p> </li>
-     * <li> <p> <code>RESOURCE</code> – list the resources that are associated with the
-     * specified resource share.</p> </li> </ul>
+     * the principals whose associations you want to see.</p> </li> <li> <p>
+     * <code>RESOURCE</code> – list the resources whose associations you want to
+     * see.</p> </li> </ul>
      */
     inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
 
     /**
      * <p>Specifies whether you want to retrieve the associations that involve a
      * specified resource or principal.</p> <ul> <li> <p> <code>PRINCIPAL</code> – list
-     * the principals that are associated with the specified resource share.</p> </li>
-     * <li> <p> <code>RESOURCE</code> – list the resources that are associated with the
-     * specified resource share.</p> </li> </ul>
+     * the principals whose associations you want to see.</p> </li> <li> <p>
+     * <code>RESOURCE</code> – list the resources whose associations you want to
+     * see.</p> </li> </ul>
      */
     inline void SetAssociationType(const ResourceShareAssociationType& value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
 
     /**
      * <p>Specifies whether you want to retrieve the associations that involve a
      * specified resource or principal.</p> <ul> <li> <p> <code>PRINCIPAL</code> – list
-     * the principals that are associated with the specified resource share.</p> </li>
-     * <li> <p> <code>RESOURCE</code> – list the resources that are associated with the
-     * specified resource share.</p> </li> </ul>
+     * the principals whose associations you want to see.</p> </li> <li> <p>
+     * <code>RESOURCE</code> – list the resources whose associations you want to
+     * see.</p> </li> </ul>
      */
     inline void SetAssociationType(ResourceShareAssociationType&& value) { m_associationTypeHasBeenSet = true; m_associationType = std::move(value); }
 
     /**
      * <p>Specifies whether you want to retrieve the associations that involve a
      * specified resource or principal.</p> <ul> <li> <p> <code>PRINCIPAL</code> – list
-     * the principals that are associated with the specified resource share.</p> </li>
-     * <li> <p> <code>RESOURCE</code> – list the resources that are associated with the
-     * specified resource share.</p> </li> </ul>
+     * the principals whose associations you want to see.</p> </li> <li> <p>
+     * <code>RESOURCE</code> – list the resources whose associations you want to
+     * see.</p> </li> </ul>
      */
     inline GetResourceShareAssociationsRequest& WithAssociationType(const ResourceShareAssociationType& value) { SetAssociationType(value); return *this;}
 
     /**
      * <p>Specifies whether you want to retrieve the associations that involve a
      * specified resource or principal.</p> <ul> <li> <p> <code>PRINCIPAL</code> – list
-     * the principals that are associated with the specified resource share.</p> </li>
-     * <li> <p> <code>RESOURCE</code> – list the resources that are associated with the
-     * specified resource share.</p> </li> </ul>
+     * the principals whose associations you want to see.</p> </li> <li> <p>
+     * <code>RESOURCE</code> – list the resources whose associations you want to
+     * see.</p> </li> </ul>
      */
     inline GetResourceShareAssociationsRequest& WithAssociationType(ResourceShareAssociationType&& value) { SetAssociationType(std::move(value)); return *this;}
 
@@ -166,7 +166,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource whose resource shares you want to
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to
      * retrieve.</p> <p>You cannot specify this parameter if the association type is
      * <code>PRINCIPAL</code>.</p>
      */
@@ -175,7 +175,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource whose resource shares you want to
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to
      * retrieve.</p> <p>You cannot specify this parameter if the association type is
      * <code>PRINCIPAL</code>.</p>
      */
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource whose resource shares you want to
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to
      * retrieve.</p> <p>You cannot specify this parameter if the association type is
      * <code>PRINCIPAL</code>.</p>
      */
@@ -193,7 +193,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource whose resource shares you want to
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to
      * retrieve.</p> <p>You cannot specify this parameter if the association type is
      * <code>PRINCIPAL</code>.</p>
      */
@@ -202,7 +202,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource whose resource shares you want to
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to
      * retrieve.</p> <p>You cannot specify this parameter if the association type is
      * <code>PRINCIPAL</code>.</p>
      */
@@ -211,7 +211,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource whose resource shares you want to
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to
      * retrieve.</p> <p>You cannot specify this parameter if the association type is
      * <code>PRINCIPAL</code>.</p>
      */
@@ -220,7 +220,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource whose resource shares you want to
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to
      * retrieve.</p> <p>You cannot specify this parameter if the association type is
      * <code>PRINCIPAL</code>.</p>
      */
@@ -229,7 +229,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource whose resource shares you want to
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to
      * retrieve.</p> <p>You cannot specify this parameter if the association type is
      * <code>PRINCIPAL</code>.</p>
      */
@@ -241,7 +241,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
@@ -251,7 +251,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
@@ -261,7 +261,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
@@ -271,7 +271,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
@@ -281,7 +281,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
@@ -291,7 +291,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline GetResourceShareAssociationsRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
@@ -301,7 +301,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline GetResourceShareAssociationsRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
@@ -311,39 +311,45 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline GetResourceShareAssociationsRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
 
     /**
-     * <p>Specifies that you want to retrieve only associations with this status.</p>
+     * <p>Specifies that you want to retrieve only associations that have this
+     * status.</p>
      */
     inline const ResourceShareAssociationStatus& GetAssociationStatus() const{ return m_associationStatus; }
 
     /**
-     * <p>Specifies that you want to retrieve only associations with this status.</p>
+     * <p>Specifies that you want to retrieve only associations that have this
+     * status.</p>
      */
     inline bool AssociationStatusHasBeenSet() const { return m_associationStatusHasBeenSet; }
 
     /**
-     * <p>Specifies that you want to retrieve only associations with this status.</p>
+     * <p>Specifies that you want to retrieve only associations that have this
+     * status.</p>
      */
     inline void SetAssociationStatus(const ResourceShareAssociationStatus& value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
 
     /**
-     * <p>Specifies that you want to retrieve only associations with this status.</p>
+     * <p>Specifies that you want to retrieve only associations that have this
+     * status.</p>
      */
     inline void SetAssociationStatus(ResourceShareAssociationStatus&& value) { m_associationStatusHasBeenSet = true; m_associationStatus = std::move(value); }
 
     /**
-     * <p>Specifies that you want to retrieve only associations with this status.</p>
+     * <p>Specifies that you want to retrieve only associations that have this
+     * status.</p>
      */
     inline GetResourceShareAssociationsRequest& WithAssociationStatus(const ResourceShareAssociationStatus& value) { SetAssociationStatus(value); return *this;}
 
     /**
-     * <p>Specifies that you want to retrieve only associations with this status.</p>
+     * <p>Specifies that you want to retrieve only associations that have this
+     * status.</p>
      */
     inline GetResourceShareAssociationsRequest& WithAssociationStatus(ResourceShareAssociationStatus&& value) { SetAssociationStatus(std::move(value)); return *this;}
 

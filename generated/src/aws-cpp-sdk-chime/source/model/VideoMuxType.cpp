@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VideoMuxType::NOT_SET:
+            return {};
           case VideoMuxType::VideoOnly:
             return "VideoOnly";
           default:

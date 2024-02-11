@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RepoUpgradeOnBoot::NOT_SET:
+            return {};
           case RepoUpgradeOnBoot::SECURITY:
             return "SECURITY";
           case RepoUpgradeOnBoot::NONE:

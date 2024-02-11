@@ -25,7 +25,7 @@ ProvisionProductRequest::ProvisionProductRequest() :
     m_provisioningPreferencesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_notificationArnsHasBeenSet(false),
-    m_provisionToken(Aws::Utils::UUID::RandomUUID()),
+    m_provisionToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_provisionTokenHasBeenSet(true)
 {
 }

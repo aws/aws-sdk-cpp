@@ -30,11 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>A collection of attributes that are applied to all active Security
-   * Hub-aggregated findings and that result in a subset of findings that are
-   * included in this insight.</p> <p>You can filter by up to 10 finding attributes.
-   * For each attribute, you can provide up to 20 filter values.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A collection of filters that are applied to all active findings aggregated by
+   * Security Hub.</p> <p>You can filter by up to ten finding attributes. For each
+   * attribute, you can provide up to 20 filter values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFindingFilters">AWS
    * API Reference</a></p>
    */
@@ -105,42 +103,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline const Aws::Vector<StringFilter>& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline void SetAwsAccountId(const Aws::Vector<StringFilter>& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline void SetAwsAccountId(Aws::Vector<StringFilter>&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& WithAwsAccountId(const Aws::Vector<StringFilter>& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& WithAwsAccountId(Aws::Vector<StringFilter>&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& AddAwsAccountId(const StringFilter& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& AddAwsAccountId(StringFilter&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(std::move(value)); return *this; }
 
@@ -188,56 +186,56 @@ namespace Model
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline const Aws::Vector<StringFilter>& GetGeneratorId() const{ return m_generatorId; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline bool GeneratorIdHasBeenSet() const { return m_generatorIdHasBeenSet; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline void SetGeneratorId(const Aws::Vector<StringFilter>& value) { m_generatorIdHasBeenSet = true; m_generatorId = value; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline void SetGeneratorId(Aws::Vector<StringFilter>&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::move(value); }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& WithGeneratorId(const Aws::Vector<StringFilter>& value) { SetGeneratorId(value); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& WithGeneratorId(Aws::Vector<StringFilter>&& value) { SetGeneratorId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& AddGeneratorId(const StringFilter& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(value); return *this; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& AddGeneratorId(StringFilter&& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(std::move(value)); return *this; }
@@ -334,7 +332,7 @@ namespace Model
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -345,7 +343,7 @@ namespace Model
     inline const Aws::Vector<DateFilter>& GetFirstObservedAt() const{ return m_firstObservedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -356,7 +354,7 @@ namespace Model
     inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -367,7 +365,7 @@ namespace Model
     inline void SetFirstObservedAt(const Aws::Vector<DateFilter>& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -378,7 +376,7 @@ namespace Model
     inline void SetFirstObservedAt(Aws::Vector<DateFilter>&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -389,7 +387,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithFirstObservedAt(const Aws::Vector<DateFilter>& value) { SetFirstObservedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -400,7 +398,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithFirstObservedAt(Aws::Vector<DateFilter>&& value) { SetFirstObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -411,7 +409,7 @@ namespace Model
     inline AwsSecurityFindingFilters& AddFirstObservedAt(const DateFilter& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -423,7 +421,7 @@ namespace Model
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -434,7 +432,7 @@ namespace Model
     inline const Aws::Vector<DateFilter>& GetLastObservedAt() const{ return m_lastObservedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -445,7 +443,7 @@ namespace Model
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -456,7 +454,7 @@ namespace Model
     inline void SetLastObservedAt(const Aws::Vector<DateFilter>& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -467,7 +465,7 @@ namespace Model
     inline void SetLastObservedAt(Aws::Vector<DateFilter>&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -478,7 +476,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithLastObservedAt(const Aws::Vector<DateFilter>& value) { SetLastObservedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -489,7 +487,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithLastObservedAt(Aws::Vector<DateFilter>&& value) { SetLastObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -500,7 +498,7 @@ namespace Model
     inline AwsSecurityFindingFilters& AddLastObservedAt(const DateFilter& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -512,7 +510,7 @@ namespace Model
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -523,7 +521,7 @@ namespace Model
     inline const Aws::Vector<DateFilter>& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -534,7 +532,7 @@ namespace Model
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -545,7 +543,7 @@ namespace Model
     inline void SetCreatedAt(const Aws::Vector<DateFilter>& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -556,7 +554,7 @@ namespace Model
     inline void SetCreatedAt(Aws::Vector<DateFilter>&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -567,7 +565,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithCreatedAt(const Aws::Vector<DateFilter>& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -578,7 +576,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithCreatedAt(Aws::Vector<DateFilter>&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -589,7 +587,7 @@ namespace Model
     inline AwsSecurityFindingFilters& AddCreatedAt(const DateFilter& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -601,7 +599,7 @@ namespace Model
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -611,7 +609,7 @@ namespace Model
     inline const Aws::Vector<DateFilter>& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -621,7 +619,7 @@ namespace Model
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -631,7 +629,7 @@ namespace Model
     inline void SetUpdatedAt(const Aws::Vector<DateFilter>& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -641,7 +639,7 @@ namespace Model
     inline void SetUpdatedAt(Aws::Vector<DateFilter>&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -651,7 +649,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithUpdatedAt(const Aws::Vector<DateFilter>& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -661,7 +659,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithUpdatedAt(Aws::Vector<DateFilter>&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -671,7 +669,7 @@ namespace Model
     inline AwsSecurityFindingFilters& AddUpdatedAt(const DateFilter& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -968,105 +966,105 @@ namespace Model
 
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline const Aws::Vector<StringFilter>& GetSourceUrl() const{ return m_sourceUrl; }
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline bool SourceUrlHasBeenSet() const { return m_sourceUrlHasBeenSet; }
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline void SetSourceUrl(const Aws::Vector<StringFilter>& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = value; }
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline void SetSourceUrl(Aws::Vector<StringFilter>&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = std::move(value); }
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline AwsSecurityFindingFilters& WithSourceUrl(const Aws::Vector<StringFilter>& value) { SetSourceUrl(value); return *this;}
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline AwsSecurityFindingFilters& WithSourceUrl(Aws::Vector<StringFilter>&& value) { SetSourceUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline AwsSecurityFindingFilters& AddSourceUrl(const StringFilter& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.push_back(value); return *this; }
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline AwsSecurityFindingFilters& AddSourceUrl(StringFilter&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline const Aws::Vector<MapFilter>& GetProductFields() const{ return m_productFields; }
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline bool ProductFieldsHasBeenSet() const { return m_productFieldsHasBeenSet; }
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline void SetProductFields(const Aws::Vector<MapFilter>& value) { m_productFieldsHasBeenSet = true; m_productFields = value; }
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline void SetProductFields(Aws::Vector<MapFilter>&& value) { m_productFieldsHasBeenSet = true; m_productFields = std::move(value); }
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFindingFilters& WithProductFields(const Aws::Vector<MapFilter>& value) { SetProductFields(value); return *this;}
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFindingFilters& WithProductFields(Aws::Vector<MapFilter>&& value) { SetProductFields(std::move(value)); return *this;}
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFindingFilters& AddProductFields(const MapFilter& value) { m_productFieldsHasBeenSet = true; m_productFields.push_back(value); return *this; }
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
@@ -4779,6 +4777,333 @@ namespace Model
      */
     inline AwsSecurityFindingFilters& AddComplianceAssociatedStandardsId(StringFilter&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetVulnerabilitiesExploitAvailable() const{ return m_vulnerabilitiesExploitAvailable; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline bool VulnerabilitiesExploitAvailableHasBeenSet() const { return m_vulnerabilitiesExploitAvailableHasBeenSet; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesExploitAvailable(const Aws::Vector<StringFilter>& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable = value; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesExploitAvailable(Aws::Vector<StringFilter>&& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable = std::move(value); }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesExploitAvailable(const Aws::Vector<StringFilter>& value) { SetVulnerabilitiesExploitAvailable(value); return *this;}
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesExploitAvailable(Aws::Vector<StringFilter>&& value) { SetVulnerabilitiesExploitAvailable(std::move(value)); return *this;}
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesExploitAvailable(const StringFilter& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable.push_back(value); return *this; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesExploitAvailable(StringFilter&& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetVulnerabilitiesFixAvailable() const{ return m_vulnerabilitiesFixAvailable; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline bool VulnerabilitiesFixAvailableHasBeenSet() const { return m_vulnerabilitiesFixAvailableHasBeenSet; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesFixAvailable(const Aws::Vector<StringFilter>& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable = value; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesFixAvailable(Aws::Vector<StringFilter>&& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable = std::move(value); }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesFixAvailable(const Aws::Vector<StringFilter>& value) { SetVulnerabilitiesFixAvailable(value); return *this;}
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesFixAvailable(Aws::Vector<StringFilter>&& value) { SetVulnerabilitiesFixAvailable(std::move(value)); return *this;}
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesFixAvailable(const StringFilter& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable.push_back(value); return *this; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesFixAvailable(StringFilter&& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlParametersName() const{ return m_complianceSecurityControlParametersName; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline bool ComplianceSecurityControlParametersNameHasBeenSet() const { return m_complianceSecurityControlParametersNameHasBeenSet; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersName(const Aws::Vector<StringFilter>& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName = value; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersName(Aws::Vector<StringFilter>&& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName = std::move(value); }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersName(const Aws::Vector<StringFilter>& value) { SetComplianceSecurityControlParametersName(value); return *this;}
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersName(Aws::Vector<StringFilter>&& value) { SetComplianceSecurityControlParametersName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersName(const StringFilter& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName.push_back(value); return *this; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersName(StringFilter&& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlParametersValue() const{ return m_complianceSecurityControlParametersValue; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline bool ComplianceSecurityControlParametersValueHasBeenSet() const { return m_complianceSecurityControlParametersValueHasBeenSet; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersValue(const Aws::Vector<StringFilter>& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue = value; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersValue(Aws::Vector<StringFilter>&& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue = std::move(value); }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersValue(const Aws::Vector<StringFilter>& value) { SetComplianceSecurityControlParametersValue(value); return *this;}
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersValue(Aws::Vector<StringFilter>&& value) { SetComplianceSecurityControlParametersValue(std::move(value)); return *this;}
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersValue(const StringFilter& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue.push_back(value); return *this; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersValue(StringFilter&& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetAwsAccountName() const{ return m_awsAccountName; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline bool AwsAccountNameHasBeenSet() const { return m_awsAccountNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline void SetAwsAccountName(const Aws::Vector<StringFilter>& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = value; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline void SetAwsAccountName(Aws::Vector<StringFilter>&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& WithAwsAccountName(const Aws::Vector<StringFilter>& value) { SetAwsAccountName(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& WithAwsAccountName(Aws::Vector<StringFilter>&& value) { SetAwsAccountName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& AddAwsAccountName(const StringFilter& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.push_back(value); return *this; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& AddAwsAccountName(StringFilter&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetResourceApplicationName() const{ return m_resourceApplicationName; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline bool ResourceApplicationNameHasBeenSet() const { return m_resourceApplicationNameHasBeenSet; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationName(const Aws::Vector<StringFilter>& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = value; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationName(Aws::Vector<StringFilter>&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = std::move(value); }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationName(const Aws::Vector<StringFilter>& value) { SetResourceApplicationName(value); return *this;}
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationName(Aws::Vector<StringFilter>&& value) { SetResourceApplicationName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationName(const StringFilter& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.push_back(value); return *this; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationName(StringFilter&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetResourceApplicationArn() const{ return m_resourceApplicationArn; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline bool ResourceApplicationArnHasBeenSet() const { return m_resourceApplicationArnHasBeenSet; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationArn(const Aws::Vector<StringFilter>& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = value; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationArn(Aws::Vector<StringFilter>&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = std::move(value); }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationArn(const Aws::Vector<StringFilter>& value) { SetResourceApplicationArn(value); return *this;}
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationArn(Aws::Vector<StringFilter>&& value) { SetResourceApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationArn(const StringFilter& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.push_back(value); return *this; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationArn(StringFilter&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<StringFilter> m_productArn;
@@ -5059,6 +5384,27 @@ namespace Model
 
     Aws::Vector<StringFilter> m_complianceAssociatedStandardsId;
     bool m_complianceAssociatedStandardsIdHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_vulnerabilitiesExploitAvailable;
+    bool m_vulnerabilitiesExploitAvailableHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_vulnerabilitiesFixAvailable;
+    bool m_vulnerabilitiesFixAvailableHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_complianceSecurityControlParametersName;
+    bool m_complianceSecurityControlParametersNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_complianceSecurityControlParametersValue;
+    bool m_complianceSecurityControlParametersValueHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_awsAccountName;
+    bool m_awsAccountNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_resourceApplicationName;
+    bool m_resourceApplicationNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_resourceApplicationArn;
+    bool m_resourceApplicationArnHasBeenSet = false;
   };
 
 } // namespace Model

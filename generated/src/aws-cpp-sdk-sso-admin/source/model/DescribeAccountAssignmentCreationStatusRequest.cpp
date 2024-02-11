@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeAccountAssignmentCreationStatusRequest::DescribeAccountAssignmentCreationStatusRequest() : 
-    m_instanceArnHasBeenSet(false),
-    m_accountAssignmentCreationRequestIdHasBeenSet(false)
+    m_accountAssignmentCreationRequestIdHasBeenSet(false),
+    m_instanceArnHasBeenSet(false)
 {
 }
 
@@ -22,15 +22,15 @@ Aws::String DescribeAccountAssignmentCreationStatusRequest::SerializePayload() c
 {
   JsonValue payload;
 
-  if(m_instanceArnHasBeenSet)
-  {
-   payload.WithString("InstanceArn", m_instanceArn);
-
-  }
-
   if(m_accountAssignmentCreationRequestIdHasBeenSet)
   {
    payload.WithString("AccountAssignmentCreationRequestId", m_accountAssignmentCreationRequestId);
+
+  }
+
+  if(m_instanceArnHasBeenSet)
+  {
+   payload.WithString("InstanceArn", m_instanceArn);
 
   }
 

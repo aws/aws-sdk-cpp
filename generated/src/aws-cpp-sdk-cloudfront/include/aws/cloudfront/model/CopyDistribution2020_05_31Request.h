@@ -225,6 +225,43 @@ namespace Model
      */
     inline CopyDistribution2020_05_31Request& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
+
+    /**
+     * <p>A Boolean flag to specify the state of the staging distribution when it's
+     * created. When you set this value to <code>True</code>, the staging distribution
+     * is enabled. When you set this value to <code>False</code>, the staging
+     * distribution is disabled.</p> <p>If you omit this field, the default value is
+     * <code>True</code>.</p>
+     */
+    inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>A Boolean flag to specify the state of the staging distribution when it's
+     * created. When you set this value to <code>True</code>, the staging distribution
+     * is enabled. When you set this value to <code>False</code>, the staging
+     * distribution is disabled.</p> <p>If you omit this field, the default value is
+     * <code>True</code>.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>A Boolean flag to specify the state of the staging distribution when it's
+     * created. When you set this value to <code>True</code>, the staging distribution
+     * is enabled. When you set this value to <code>False</code>, the staging
+     * distribution is disabled.</p> <p>If you omit this field, the default value is
+     * <code>True</code>.</p>
+     */
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
+
+    /**
+     * <p>A Boolean flag to specify the state of the staging distribution when it's
+     * created. When you set this value to <code>True</code>, the staging distribution
+     * is enabled. When you set this value to <code>False</code>, the staging
+     * distribution is disabled.</p> <p>If you omit this field, the default value is
+     * <code>True</code>.</p>
+     */
+    inline CopyDistribution2020_05_31Request& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
   private:
 
     Aws::String m_primaryDistributionId;
@@ -238,6 +275,9 @@ namespace Model
 
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet = false;
+
+    bool m_enabled;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

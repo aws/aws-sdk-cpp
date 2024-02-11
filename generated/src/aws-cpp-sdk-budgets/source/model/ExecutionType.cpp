@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionType::NOT_SET:
+            return {};
           case ExecutionType::APPROVE_BUDGET_ACTION:
             return "APPROVE_BUDGET_ACTION";
           case ExecutionType::RETRY_BUDGET_ACTION:

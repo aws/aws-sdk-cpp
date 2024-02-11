@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Context::NOT_SET:
+            return {};
           case Context::COST_AND_USAGE:
             return "COST_AND_USAGE";
           case Context::RESERVATIONS:

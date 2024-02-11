@@ -20,7 +20,7 @@ CreateJobRequest::CreateJobRequest() :
     m_confirmationRequiredHasBeenSet(false),
     m_operationHasBeenSet(false),
     m_reportHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_manifestHasBeenSet(false),
     m_descriptionHasBeenSet(false),

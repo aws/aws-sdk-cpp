@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/detective/DetectiveServiceClientModel.h>
+#include <aws/detective/model/DisableOrganizationAdminAccountRequest.h>
 
 namespace Aws
 {
@@ -68,6 +69,9 @@ namespace Detective
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef DetectiveClientConfiguration ClientConfigurationType;
+      typedef DetectiveEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -389,25 +393,26 @@ namespace Detective
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisableOrganizationAdminAccountOutcome DisableOrganizationAdminAccount() const;
+        virtual Model::DisableOrganizationAdminAccountOutcome DisableOrganizationAdminAccount(const Model::DisableOrganizationAdminAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DisableOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DisableOrganizationAdminAccountOutcomeCallable DisableOrganizationAdminAccountCallable() const
+        template<typename DisableOrganizationAdminAccountRequestT = Model::DisableOrganizationAdminAccountRequest>
+        Model::DisableOrganizationAdminAccountOutcomeCallable DisableOrganizationAdminAccountCallable(const DisableOrganizationAdminAccountRequestT& request = {}) const
         {
-            return SubmitCallable(&DetectiveClient::DisableOrganizationAdminAccount);
+            return SubmitCallable(&DetectiveClient::DisableOrganizationAdminAccount, request);
         }
 
         /**
          * An Async wrapper for DisableOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DisableOrganizationAdminAccountRequestT = Model::DisableOrganizationAdminAccountRequest>
+        void DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableOrganizationAdminAccountRequestT& request = {}) const
         {
-            return SubmitAsync(&DetectiveClient::DisableOrganizationAdminAccount, handler, context);
+            return SubmitAsync(&DetectiveClient::DisableOrganizationAdminAccount, request, handler, context);
         }
+
         /**
          * <p>Removes the member account from the specified behavior graph. This operation
          * can only be called by an invited member account that has the
@@ -474,6 +479,32 @@ namespace Detective
         void EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequestT& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DetectiveClient::EnableOrganizationAdminAccount, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the investigation results of an investigation for a behavior graph.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInvestigationOutcome GetInvestigation(const Model::GetInvestigationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetInvestigation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetInvestigationRequestT = Model::GetInvestigationRequest>
+        Model::GetInvestigationOutcomeCallable GetInvestigationCallable(const GetInvestigationRequestT& request) const
+        {
+            return SubmitCallable(&DetectiveClient::GetInvestigation, request);
+        }
+
+        /**
+         * An Async wrapper for GetInvestigation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetInvestigationRequestT = Model::GetInvestigationRequest>
+        void GetInvestigationAsync(const GetInvestigationRequestT& request, const GetInvestigationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DetectiveClient::GetInvestigation, request, handler, context);
         }
 
         /**
@@ -555,6 +586,56 @@ namespace Detective
         void ListGraphsAsync(const ListGraphsRequestT& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DetectiveClient::ListGraphs, request, handler, context);
+        }
+
+        /**
+         * <p>Get the indicators from an investigation</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIndicatorsOutcome ListIndicators(const Model::ListIndicatorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIndicators that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIndicatorsRequestT = Model::ListIndicatorsRequest>
+        Model::ListIndicatorsOutcomeCallable ListIndicatorsCallable(const ListIndicatorsRequestT& request) const
+        {
+            return SubmitCallable(&DetectiveClient::ListIndicators, request);
+        }
+
+        /**
+         * An Async wrapper for ListIndicators that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIndicatorsRequestT = Model::ListIndicatorsRequest>
+        void ListIndicatorsAsync(const ListIndicatorsRequestT& request, const ListIndicatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DetectiveClient::ListIndicators, request, handler, context);
+        }
+
+        /**
+         * <p>List all Investigations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInvestigationsOutcome ListInvestigations(const Model::ListInvestigationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListInvestigations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListInvestigationsRequestT = Model::ListInvestigationsRequest>
+        Model::ListInvestigationsOutcomeCallable ListInvestigationsCallable(const ListInvestigationsRequestT& request) const
+        {
+            return SubmitCallable(&DetectiveClient::ListInvestigations, request);
+        }
+
+        /**
+         * An Async wrapper for ListInvestigations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListInvestigationsRequestT = Model::ListInvestigationsRequest>
+        void ListInvestigationsAsync(const ListInvestigationsRequestT& request, const ListInvestigationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DetectiveClient::ListInvestigations, request, handler, context);
         }
 
         /**
@@ -701,6 +782,32 @@ namespace Detective
         }
 
         /**
+         * <p>initiate an investigation on an entity in a graph</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartInvestigationOutcome StartInvestigation(const Model::StartInvestigationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartInvestigation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartInvestigationRequestT = Model::StartInvestigationRequest>
+        Model::StartInvestigationOutcomeCallable StartInvestigationCallable(const StartInvestigationRequestT& request) const
+        {
+            return SubmitCallable(&DetectiveClient::StartInvestigation, request);
+        }
+
+        /**
+         * An Async wrapper for StartInvestigation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartInvestigationRequestT = Model::StartInvestigationRequest>
+        void StartInvestigationAsync(const StartInvestigationRequestT& request, const StartInvestigationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DetectiveClient::StartInvestigation, request, handler, context);
+        }
+
+        /**
          * <p>Sends a request to enable data ingest for a member account that has a status
          * of <code>ACCEPTED_BUT_DISABLED</code>.</p> <p>For valid member accounts, the
          * status is updated as follows.</p> <ul> <li> <p>If Detective enabled the member
@@ -804,6 +911,31 @@ namespace Detective
         void UpdateDatasourcePackagesAsync(const UpdateDatasourcePackagesRequestT& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DetectiveClient::UpdateDatasourcePackages, request, handler, context);
+        }
+
+        /**
+         * <p>Update the state of an investigation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateInvestigationStateOutcome UpdateInvestigationState(const Model::UpdateInvestigationStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateInvestigationState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateInvestigationStateRequestT = Model::UpdateInvestigationStateRequest>
+        Model::UpdateInvestigationStateOutcomeCallable UpdateInvestigationStateCallable(const UpdateInvestigationStateRequestT& request) const
+        {
+            return SubmitCallable(&DetectiveClient::UpdateInvestigationState, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateInvestigationState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateInvestigationStateRequestT = Model::UpdateInvestigationStateRequest>
+        void UpdateInvestigationStateAsync(const UpdateInvestigationStateRequestT& request, const UpdateInvestigationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DetectiveClient::UpdateInvestigationState, request, handler, context);
         }
 
         /**

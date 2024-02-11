@@ -11,6 +11,9 @@
 \#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/core/utils/json/JsonSerializer.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
+#foreach($RequestImport in $RequestlessOperations)
+\#include <aws/$metadata.projectName/model/${RequestImport}Request.h>
+#end
 
 namespace ${rootNamespace}
 {
@@ -32,6 +35,7 @@ namespace ${serviceNamespace}
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConfigTypeDeclarations.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 

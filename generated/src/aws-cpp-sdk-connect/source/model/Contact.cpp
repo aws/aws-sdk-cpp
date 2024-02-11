@@ -34,9 +34,20 @@ Contact::Contact() :
     m_initiationTimestampHasBeenSet(false),
     m_disconnectTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
+    m_lastPausedTimestampHasBeenSet(false),
+    m_lastResumedTimestampHasBeenSet(false),
+    m_totalPauseCount(0),
+    m_totalPauseCountHasBeenSet(false),
+    m_totalPauseDurationInSeconds(0),
+    m_totalPauseDurationInSecondsHasBeenSet(false),
     m_scheduledTimestampHasBeenSet(false),
     m_relatedContactIdHasBeenSet(false),
-    m_wisdomInfoHasBeenSet(false)
+    m_wisdomInfoHasBeenSet(false),
+    m_queueTimeAdjustmentSeconds(0),
+    m_queueTimeAdjustmentSecondsHasBeenSet(false),
+    m_queuePriority(0),
+    m_queuePriorityHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -56,9 +67,20 @@ Contact::Contact(JsonView jsonValue) :
     m_initiationTimestampHasBeenSet(false),
     m_disconnectTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
+    m_lastPausedTimestampHasBeenSet(false),
+    m_lastResumedTimestampHasBeenSet(false),
+    m_totalPauseCount(0),
+    m_totalPauseCountHasBeenSet(false),
+    m_totalPauseDurationInSeconds(0),
+    m_totalPauseDurationInSecondsHasBeenSet(false),
     m_scheduledTimestampHasBeenSet(false),
     m_relatedContactIdHasBeenSet(false),
-    m_wisdomInfoHasBeenSet(false)
+    m_wisdomInfoHasBeenSet(false),
+    m_queueTimeAdjustmentSeconds(0),
+    m_queueTimeAdjustmentSecondsHasBeenSet(false),
+    m_queuePriority(0),
+    m_queuePriorityHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -156,6 +178,34 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_lastUpdateTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastPausedTimestamp"))
+  {
+    m_lastPausedTimestamp = jsonValue.GetDouble("LastPausedTimestamp");
+
+    m_lastPausedTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastResumedTimestamp"))
+  {
+    m_lastResumedTimestamp = jsonValue.GetDouble("LastResumedTimestamp");
+
+    m_lastResumedTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TotalPauseCount"))
+  {
+    m_totalPauseCount = jsonValue.GetInteger("TotalPauseCount");
+
+    m_totalPauseCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TotalPauseDurationInSeconds"))
+  {
+    m_totalPauseDurationInSeconds = jsonValue.GetInteger("TotalPauseDurationInSeconds");
+
+    m_totalPauseDurationInSecondsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ScheduledTimestamp"))
   {
     m_scheduledTimestamp = jsonValue.GetDouble("ScheduledTimestamp");
@@ -175,6 +225,30 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_wisdomInfo = jsonValue.GetObject("WisdomInfo");
 
     m_wisdomInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("QueueTimeAdjustmentSeconds"))
+  {
+    m_queueTimeAdjustmentSeconds = jsonValue.GetInteger("QueueTimeAdjustmentSeconds");
+
+    m_queueTimeAdjustmentSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("QueuePriority"))
+  {
+    m_queuePriority = jsonValue.GetInt64("QueuePriority");
+
+    m_queuePriorityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
   }
 
   return *this;
@@ -257,6 +331,28 @@ JsonValue Contact::Jsonize() const
    payload.WithDouble("LastUpdateTimestamp", m_lastUpdateTimestamp.SecondsWithMSPrecision());
   }
 
+  if(m_lastPausedTimestampHasBeenSet)
+  {
+   payload.WithDouble("LastPausedTimestamp", m_lastPausedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_lastResumedTimestampHasBeenSet)
+  {
+   payload.WithDouble("LastResumedTimestamp", m_lastResumedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_totalPauseCountHasBeenSet)
+  {
+   payload.WithInteger("TotalPauseCount", m_totalPauseCount);
+
+  }
+
+  if(m_totalPauseDurationInSecondsHasBeenSet)
+  {
+   payload.WithInteger("TotalPauseDurationInSeconds", m_totalPauseDurationInSeconds);
+
+  }
+
   if(m_scheduledTimestampHasBeenSet)
   {
    payload.WithDouble("ScheduledTimestamp", m_scheduledTimestamp.SecondsWithMSPrecision());
@@ -271,6 +367,29 @@ JsonValue Contact::Jsonize() const
   if(m_wisdomInfoHasBeenSet)
   {
    payload.WithObject("WisdomInfo", m_wisdomInfo.Jsonize());
+
+  }
+
+  if(m_queueTimeAdjustmentSecondsHasBeenSet)
+  {
+   payload.WithInteger("QueueTimeAdjustmentSeconds", m_queueTimeAdjustmentSeconds);
+
+  }
+
+  if(m_queuePriorityHasBeenSet)
+  {
+   payload.WithInt64("QueuePriority", m_queuePriority);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

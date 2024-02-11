@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DisassociateApplicationsRequest::DisassociateApplicationsRequest() : 
+    m_accountIDHasBeenSet(false),
     m_applicationIDsHasBeenSet(false),
     m_waveIDHasBeenSet(false)
 {
@@ -21,6 +22,12 @@ DisassociateApplicationsRequest::DisassociateApplicationsRequest() :
 Aws::String DisassociateApplicationsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIDHasBeenSet)
+  {
+   payload.WithString("accountID", m_accountID);
+
+  }
 
   if(m_applicationIDsHasBeenSet)
   {

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Transferable::NOT_SET:
+            return {};
           case Transferable::TRANSFERABLE:
             return "TRANSFERABLE";
           case Transferable::UNTRANSFERABLE:

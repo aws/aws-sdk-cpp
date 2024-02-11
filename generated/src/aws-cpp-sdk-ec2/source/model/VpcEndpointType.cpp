@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcEndpointType::NOT_SET:
+            return {};
           case VpcEndpointType::Interface:
             return "Interface";
           case VpcEndpointType::Gateway:

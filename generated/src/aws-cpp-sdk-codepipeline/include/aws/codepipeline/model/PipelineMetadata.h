@@ -140,6 +140,79 @@ namespace Model
      */
     inline PipelineMetadata& WithUpdated(Aws::Utils::DateTime&& value) { SetUpdated(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The date and time that polling for source changes (periodic checks) was
+     * stopped for the pipeline, in timestamp format. You can migrate (update) a
+     * polling pipeline to use event-based change detection. For example, for a
+     * pipeline with a CodeCommit source, we recommend you migrate (update) your
+     * pipeline to use CloudWatch Events. To learn more, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
+     * polling pipelines to use event-based change detection</a> in the CodePipeline
+     * User Guide.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPollingDisabledAt() const{ return m_pollingDisabledAt; }
+
+    /**
+     * <p>The date and time that polling for source changes (periodic checks) was
+     * stopped for the pipeline, in timestamp format. You can migrate (update) a
+     * polling pipeline to use event-based change detection. For example, for a
+     * pipeline with a CodeCommit source, we recommend you migrate (update) your
+     * pipeline to use CloudWatch Events. To learn more, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
+     * polling pipelines to use event-based change detection</a> in the CodePipeline
+     * User Guide.</p>
+     */
+    inline bool PollingDisabledAtHasBeenSet() const { return m_pollingDisabledAtHasBeenSet; }
+
+    /**
+     * <p>The date and time that polling for source changes (periodic checks) was
+     * stopped for the pipeline, in timestamp format. You can migrate (update) a
+     * polling pipeline to use event-based change detection. For example, for a
+     * pipeline with a CodeCommit source, we recommend you migrate (update) your
+     * pipeline to use CloudWatch Events. To learn more, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
+     * polling pipelines to use event-based change detection</a> in the CodePipeline
+     * User Guide.</p>
+     */
+    inline void SetPollingDisabledAt(const Aws::Utils::DateTime& value) { m_pollingDisabledAtHasBeenSet = true; m_pollingDisabledAt = value; }
+
+    /**
+     * <p>The date and time that polling for source changes (periodic checks) was
+     * stopped for the pipeline, in timestamp format. You can migrate (update) a
+     * polling pipeline to use event-based change detection. For example, for a
+     * pipeline with a CodeCommit source, we recommend you migrate (update) your
+     * pipeline to use CloudWatch Events. To learn more, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
+     * polling pipelines to use event-based change detection</a> in the CodePipeline
+     * User Guide.</p>
+     */
+    inline void SetPollingDisabledAt(Aws::Utils::DateTime&& value) { m_pollingDisabledAtHasBeenSet = true; m_pollingDisabledAt = std::move(value); }
+
+    /**
+     * <p>The date and time that polling for source changes (periodic checks) was
+     * stopped for the pipeline, in timestamp format. You can migrate (update) a
+     * polling pipeline to use event-based change detection. For example, for a
+     * pipeline with a CodeCommit source, we recommend you migrate (update) your
+     * pipeline to use CloudWatch Events. To learn more, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
+     * polling pipelines to use event-based change detection</a> in the CodePipeline
+     * User Guide.</p>
+     */
+    inline PipelineMetadata& WithPollingDisabledAt(const Aws::Utils::DateTime& value) { SetPollingDisabledAt(value); return *this;}
+
+    /**
+     * <p>The date and time that polling for source changes (periodic checks) was
+     * stopped for the pipeline, in timestamp format. You can migrate (update) a
+     * polling pipeline to use event-based change detection. For example, for a
+     * pipeline with a CodeCommit source, we recommend you migrate (update) your
+     * pipeline to use CloudWatch Events. To learn more, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
+     * polling pipelines to use event-based change detection</a> in the CodePipeline
+     * User Guide.</p>
+     */
+    inline PipelineMetadata& WithPollingDisabledAt(Aws::Utils::DateTime&& value) { SetPollingDisabledAt(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineArn;
@@ -150,6 +223,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updated;
     bool m_updatedHasBeenSet = false;
+
+    Aws::Utils::DateTime m_pollingDisabledAt;
+    bool m_pollingDisabledAtHasBeenSet = false;
   };
 
 } // namespace Model

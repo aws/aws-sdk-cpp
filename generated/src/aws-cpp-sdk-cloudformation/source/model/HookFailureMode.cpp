@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HookFailureMode::NOT_SET:
+            return {};
           case HookFailureMode::FAIL:
             return "FAIL";
           case HookFailureMode::WARN:

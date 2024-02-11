@@ -46,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
      */
     inline AmazonOpenSearchServerlessDestinationDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
      */
     inline AmazonOpenSearchServerlessDestinationDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
      */
     inline AmazonOpenSearchServerlessDestinationDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

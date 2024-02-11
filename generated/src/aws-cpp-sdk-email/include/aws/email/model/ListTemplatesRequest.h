@@ -87,33 +87,33 @@ namespace Model
 
     /**
      * <p>The maximum number of templates to return. This value must be at least 1 and
-     * less than or equal to 10. If you do not specify a value, or if you specify a
-     * value less than 1 or greater than 10, the operation will return up to 10
-     * results.</p>
+     * less than or equal to 100. If more than 100 items are requested, the page size
+     * will automatically set to 100. If you do not specify a value, 10 is the default
+     * page size. </p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>The maximum number of templates to return. This value must be at least 1 and
-     * less than or equal to 10. If you do not specify a value, or if you specify a
-     * value less than 1 or greater than 10, the operation will return up to 10
-     * results.</p>
+     * less than or equal to 100. If more than 100 items are requested, the page size
+     * will automatically set to 100. If you do not specify a value, 10 is the default
+     * page size. </p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>The maximum number of templates to return. This value must be at least 1 and
-     * less than or equal to 10. If you do not specify a value, or if you specify a
-     * value less than 1 or greater than 10, the operation will return up to 10
-     * results.</p>
+     * less than or equal to 100. If more than 100 items are requested, the page size
+     * will automatically set to 100. If you do not specify a value, 10 is the default
+     * page size. </p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>The maximum number of templates to return. This value must be at least 1 and
-     * less than or equal to 10. If you do not specify a value, or if you specify a
-     * value less than 1 or greater than 10, the operation will return up to 10
-     * results.</p>
+     * less than or equal to 100. If more than 100 items are requested, the page size
+     * will automatically set to 100. If you do not specify a value, 10 is the default
+     * page size. </p>
      */
     inline ListTemplatesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

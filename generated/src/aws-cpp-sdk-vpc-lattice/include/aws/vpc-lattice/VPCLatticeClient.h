@@ -31,6 +31,9 @@ namespace VPCLattice
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef VPCLatticeClientConfiguration ClientConfigurationType;
+      typedef VPCLatticeEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -301,12 +304,11 @@ namespace VPCLattice
          * can't use this operation if there is a disassociation in progress. If the
          * association fails, retry by deleting the association and recreating it.</p>
          * <p>As a result of this operation, the association gets created in the service
-         * network account and the VPC owner account.</p> <p>If you add a security group to
-         * the service network and VPC association, the association must continue to always
-         * have at least one security group. You can add or edit security groups at any
-         * time. However, to remove all security groups, you must first delete the
-         * association and recreate it without security groups.</p><p><h3>See Also:</h3>  
-         * <a
+         * network account and the VPC owner account.</p> <p>Once a security group is added
+         * to the VPC association it cannot be removed. You can add or update the security
+         * groups being used for the VPC association once a security group is attached. To
+         * remove all security groups you must reassociate the VPC.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkVpcAssociation">AWS
          * API Reference</a></p>
          */
@@ -386,11 +388,11 @@ namespace VPCLattice
         }
 
         /**
-         * <p>Deletes the specified auth policy. If an auth is set to <code>AWS_IAM</code>
-         * and the auth policy is deleted, all requests will be denied by default. If you
-         * are trying to remove the auth policy completely, you must set the auth_type to
-         * <code>NONE</code>. If auth is enabled on the resource, but no auth policy is
-         * set, all requests will be denied.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified auth policy. If an auth is set to <code>Amazon Web
+         * Services_IAM</code> and the auth policy is deleted, all requests will be denied
+         * by default. If you are trying to remove the auth policy completely, you must set
+         * the auth_type to <code>NONE</code>. If auth is enabled on the resource, but no
+         * auth policy is set, all requests will be denied.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteAuthPolicy">AWS
          * API Reference</a></p>
          */
@@ -746,7 +748,7 @@ namespace VPCLattice
 
         /**
          * <p>Retrieves information about the resource policy. The resource policy is an
-         * IAM policy created on behalf of the resource owner when they share a
+         * IAM policy created by AWS RAM on behalf of the resource owner when they share a
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourcePolicy">AWS
          * API Reference</a></p>
@@ -1198,8 +1200,7 @@ namespace VPCLattice
         }
 
         /**
-         * <p>Creates or updates the auth policy. The policy string in JSON must not
-         * contain newlines or blank lines.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates the auth policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/PutAuthPolicy">AWS
          * API Reference</a></p>
          */
@@ -1458,12 +1459,8 @@ namespace VPCLattice
         }
 
         /**
-         * <p>Updates the service network and VPC association. If you add a security group
-         * to the service network and VPC association, the association must continue to
-         * always have at least one security group. You can add or edit security groups at
-         * any time. However, to remove all security groups, you must first delete the
-         * association and recreate it without security groups.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates the service network and VPC association. Once you add a security
+         * group, it cannot be removed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateServiceNetworkVpcAssociation">AWS
          * API Reference</a></p>
          */

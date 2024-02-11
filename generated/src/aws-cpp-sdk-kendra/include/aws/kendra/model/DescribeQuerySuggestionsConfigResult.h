@@ -8,6 +8,7 @@
 #include <aws/kendra/model/Mode.h>
 #include <aws/kendra/model/QuerySuggestionsStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/kendra/model/AttributeSuggestionsDescribeConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -202,26 +203,46 @@ namespace Model
 
     /**
      * <p>The Unix timestamp when query suggestions for an index was last updated.</p>
+     * <p>Amazon Kendra automatically updates suggestions every 24 hours, after you
+     * change a setting or after you apply a <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block
+     * list</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetLastSuggestionsBuildTime() const{ return m_lastSuggestionsBuildTime; }
 
     /**
      * <p>The Unix timestamp when query suggestions for an index was last updated.</p>
+     * <p>Amazon Kendra automatically updates suggestions every 24 hours, after you
+     * change a setting or after you apply a <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block
+     * list</a>.</p>
      */
     inline void SetLastSuggestionsBuildTime(const Aws::Utils::DateTime& value) { m_lastSuggestionsBuildTime = value; }
 
     /**
      * <p>The Unix timestamp when query suggestions for an index was last updated.</p>
+     * <p>Amazon Kendra automatically updates suggestions every 24 hours, after you
+     * change a setting or after you apply a <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block
+     * list</a>.</p>
      */
     inline void SetLastSuggestionsBuildTime(Aws::Utils::DateTime&& value) { m_lastSuggestionsBuildTime = std::move(value); }
 
     /**
      * <p>The Unix timestamp when query suggestions for an index was last updated.</p>
+     * <p>Amazon Kendra automatically updates suggestions every 24 hours, after you
+     * change a setting or after you apply a <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block
+     * list</a>.</p>
      */
     inline DescribeQuerySuggestionsConfigResult& WithLastSuggestionsBuildTime(const Aws::Utils::DateTime& value) { SetLastSuggestionsBuildTime(value); return *this;}
 
     /**
      * <p>The Unix timestamp when query suggestions for an index was last updated.</p>
+     * <p>Amazon Kendra automatically updates suggestions every 24 hours, after you
+     * change a setting or after you apply a <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block
+     * list</a>.</p>
      */
     inline DescribeQuerySuggestionsConfigResult& WithLastSuggestionsBuildTime(Aws::Utils::DateTime&& value) { SetLastSuggestionsBuildTime(std::move(value)); return *this;}
 
@@ -276,7 +297,10 @@ namespace Model
      * <p>The current total count of query suggestions for an index.</p> <p>This count
      * can change when you update your query suggestions settings, if you filter out
      * certain queries from suggestions using a block list, and as the query log
-     * accumulates more queries for Amazon Kendra to learn from.</p>
+     * accumulates more queries for Amazon Kendra to learn from.</p> <p>If the count is
+     * much lower than you expected, it could be because Amazon Kendra needs more
+     * queries in the query history to learn from or your current query suggestions
+     * settings are too strict.</p>
      */
     inline int GetTotalSuggestionsCount() const{ return m_totalSuggestionsCount; }
 
@@ -284,7 +308,10 @@ namespace Model
      * <p>The current total count of query suggestions for an index.</p> <p>This count
      * can change when you update your query suggestions settings, if you filter out
      * certain queries from suggestions using a block list, and as the query log
-     * accumulates more queries for Amazon Kendra to learn from.</p>
+     * accumulates more queries for Amazon Kendra to learn from.</p> <p>If the count is
+     * much lower than you expected, it could be because Amazon Kendra needs more
+     * queries in the query history to learn from or your current query suggestions
+     * settings are too strict.</p>
      */
     inline void SetTotalSuggestionsCount(int value) { m_totalSuggestionsCount = value; }
 
@@ -292,9 +319,43 @@ namespace Model
      * <p>The current total count of query suggestions for an index.</p> <p>This count
      * can change when you update your query suggestions settings, if you filter out
      * certain queries from suggestions using a block list, and as the query log
-     * accumulates more queries for Amazon Kendra to learn from.</p>
+     * accumulates more queries for Amazon Kendra to learn from.</p> <p>If the count is
+     * much lower than you expected, it could be because Amazon Kendra needs more
+     * queries in the query history to learn from or your current query suggestions
+     * settings are too strict.</p>
      */
     inline DescribeQuerySuggestionsConfigResult& WithTotalSuggestionsCount(int value) { SetTotalSuggestionsCount(value); return *this;}
+
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline const AttributeSuggestionsDescribeConfig& GetAttributeSuggestionsConfig() const{ return m_attributeSuggestionsConfig; }
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline void SetAttributeSuggestionsConfig(const AttributeSuggestionsDescribeConfig& value) { m_attributeSuggestionsConfig = value; }
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline void SetAttributeSuggestionsConfig(AttributeSuggestionsDescribeConfig&& value) { m_attributeSuggestionsConfig = std::move(value); }
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline DescribeQuerySuggestionsConfigResult& WithAttributeSuggestionsConfig(const AttributeSuggestionsDescribeConfig& value) { SetAttributeSuggestionsConfig(value); return *this;}
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline DescribeQuerySuggestionsConfigResult& WithAttributeSuggestionsConfig(AttributeSuggestionsDescribeConfig&& value) { SetAttributeSuggestionsConfig(std::move(value)); return *this;}
 
 
     
@@ -337,6 +398,8 @@ namespace Model
     Aws::Utils::DateTime m_lastClearTime;
 
     int m_totalSuggestionsCount;
+
+    AttributeSuggestionsDescribeConfig m_attributeSuggestionsConfig;
 
     Aws::String m_requestId;
   };

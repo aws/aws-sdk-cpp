@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/BlueGreenUpdatePolicy.h>
+#include <aws/sagemaker/model/RollingUpdatePolicy.h>
 #include <aws/sagemaker/model/AutoRollbackConfig.h>
 #include <utility>
 
@@ -107,6 +108,43 @@ namespace Model
 
 
     /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline const RollingUpdatePolicy& GetRollingUpdatePolicy() const{ return m_rollingUpdatePolicy; }
+
+    /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline bool RollingUpdatePolicyHasBeenSet() const { return m_rollingUpdatePolicyHasBeenSet; }
+
+    /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline void SetRollingUpdatePolicy(const RollingUpdatePolicy& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = value; }
+
+    /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline void SetRollingUpdatePolicy(RollingUpdatePolicy&& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = std::move(value); }
+
+    /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline DeploymentConfig& WithRollingUpdatePolicy(const RollingUpdatePolicy& value) { SetRollingUpdatePolicy(value); return *this;}
+
+    /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline DeploymentConfig& WithRollingUpdatePolicy(RollingUpdatePolicy&& value) { SetRollingUpdatePolicy(std::move(value)); return *this;}
+
+
+    /**
      * <p>Automatic rollback configuration for handling endpoint deployment failures
      * and recovery.</p>
      */
@@ -146,6 +184,9 @@ namespace Model
 
     BlueGreenUpdatePolicy m_blueGreenUpdatePolicy;
     bool m_blueGreenUpdatePolicyHasBeenSet = false;
+
+    RollingUpdatePolicy m_rollingUpdatePolicy;
+    bool m_rollingUpdatePolicyHasBeenSet = false;
 
     AutoRollbackConfig m_autoRollbackConfiguration;
     bool m_autoRollbackConfigurationHasBeenSet = false;

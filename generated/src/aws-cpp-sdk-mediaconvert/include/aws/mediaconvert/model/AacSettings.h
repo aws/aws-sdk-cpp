@@ -30,13 +30,12 @@ namespace Model
 {
 
   /**
-   * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
-   * value AAC. The service accepts one of two mutually exclusive groups of AAC
-   * settings--VBR and CBR. To select one of these modes, set the value of Bitrate
-   * control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the
-   * audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use
-   * the setting Bitrate (bitrate). Defaults and valid values depend on the rate
-   * control mode.<p><h3>See Also:</h3>   <a
+   * Required when you set Codec to the value AAC. The service accepts one of two
+   * mutually exclusive groups of AAC settings--VBR and CBR. To select one of these
+   * modes, set the value of Bitrate control mode to "VBR" or "CBR". In VBR mode, you
+   * control the audio quality with the setting VBR quality. In CBR mode, you use the
+   * setting Bitrate. Defaults and valid values depend on the rate control
+   * mode.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AacSettings">AWS
    * API Reference</a></p>
    */
@@ -134,8 +133,8 @@ namespace Model
      * 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000,
      * 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000,
      * 896000, 1024000. The value you set is also constrained by the values that you
-     * choose for Profile (codecProfile), Bitrate control mode (codingMode), and Sample
-     * rate (sampleRate). Default values depend on Bitrate control mode and Profile.
+     * choose for Profile, Bitrate control mode, and Sample rate. Default values depend
+     * on Bitrate control mode and Profile.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
@@ -145,8 +144,8 @@ namespace Model
      * 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000,
      * 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000,
      * 896000, 1024000. The value you set is also constrained by the values that you
-     * choose for Profile (codecProfile), Bitrate control mode (codingMode), and Sample
-     * rate (sampleRate). Default values depend on Bitrate control mode and Profile.
+     * choose for Profile, Bitrate control mode, and Sample rate. Default values depend
+     * on Bitrate control mode and Profile.
      */
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
 
@@ -156,8 +155,8 @@ namespace Model
      * 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000,
      * 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000,
      * 896000, 1024000. The value you set is also constrained by the values that you
-     * choose for Profile (codecProfile), Bitrate control mode (codingMode), and Sample
-     * rate (sampleRate). Default values depend on Bitrate control mode and Profile.
+     * choose for Profile, Bitrate control mode, and Sample rate. Default values depend
+     * on Bitrate control mode and Profile.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
@@ -167,8 +166,8 @@ namespace Model
      * 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000,
      * 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000,
      * 896000, 1024000. The value you set is also constrained by the values that you
-     * choose for Profile (codecProfile), Bitrate control mode (codingMode), and Sample
-     * rate (sampleRate). Default values depend on Bitrate control mode and Profile.
+     * choose for Profile, Bitrate control mode, and Sample rate. Default values depend
+     * on Bitrate control mode and Profile.
      */
     inline AacSettings& WithBitrate(int value) { SetBitrate(value); return *this;}
 
@@ -211,7 +210,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline const AacCodingMode& GetCodingMode() const{ return m_codingMode; }
@@ -223,7 +222,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
@@ -235,7 +234,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline void SetCodingMode(const AacCodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
@@ -247,7 +246,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline void SetCodingMode(AacCodingMode&& value) { m_codingModeHasBeenSet = true; m_codingMode = std::move(value); }
@@ -259,7 +258,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline AacSettings& WithCodingMode(const AacCodingMode& value) { SetCodingMode(value); return *this;}
@@ -271,7 +270,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline AacSettings& WithCodingMode(AacCodingMode&& value) { SetCodingMode(std::move(value)); return *this;}

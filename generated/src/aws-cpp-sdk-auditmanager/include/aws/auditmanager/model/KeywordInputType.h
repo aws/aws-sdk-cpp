@@ -16,7 +16,9 @@ namespace Model
   enum class KeywordInputType
   {
     NOT_SET,
-    SELECT_FROM_LIST
+    SELECT_FROM_LIST,
+    UPLOAD_FILE,
+    INPUT_TEXT
   };
 
 namespace KeywordInputTypeMapper

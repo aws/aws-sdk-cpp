@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsDescriptiveVideoServiceFlag::NOT_SET:
+            return {};
           case HlsDescriptiveVideoServiceFlag::DONT_FLAG:
             return "DONT_FLAG";
           case HlsDescriptiveVideoServiceFlag::FLAG:

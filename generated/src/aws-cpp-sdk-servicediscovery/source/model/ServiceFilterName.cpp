@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceFilterName::NOT_SET:
+            return {};
           case ServiceFilterName::NAMESPACE_ID:
             return "NAMESPACE_ID";
           default:

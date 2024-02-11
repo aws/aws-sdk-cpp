@@ -42,42 +42,42 @@ namespace Model
     /**
      * Specifies an ESAM ManifestConfirmConditionNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
-     * instructions that you provide in the setting MCC XML (mccXml).
+     * instructions that you provide in the setting MCC XML.
      */
     inline const EsamManifestConfirmConditionNotification& GetManifestConfirmConditionNotification() const{ return m_manifestConfirmConditionNotification; }
 
     /**
      * Specifies an ESAM ManifestConfirmConditionNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
-     * instructions that you provide in the setting MCC XML (mccXml).
+     * instructions that you provide in the setting MCC XML.
      */
     inline bool ManifestConfirmConditionNotificationHasBeenSet() const { return m_manifestConfirmConditionNotificationHasBeenSet; }
 
     /**
      * Specifies an ESAM ManifestConfirmConditionNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
-     * instructions that you provide in the setting MCC XML (mccXml).
+     * instructions that you provide in the setting MCC XML.
      */
     inline void SetManifestConfirmConditionNotification(const EsamManifestConfirmConditionNotification& value) { m_manifestConfirmConditionNotificationHasBeenSet = true; m_manifestConfirmConditionNotification = value; }
 
     /**
      * Specifies an ESAM ManifestConfirmConditionNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
-     * instructions that you provide in the setting MCC XML (mccXml).
+     * instructions that you provide in the setting MCC XML.
      */
     inline void SetManifestConfirmConditionNotification(EsamManifestConfirmConditionNotification&& value) { m_manifestConfirmConditionNotificationHasBeenSet = true; m_manifestConfirmConditionNotification = std::move(value); }
 
     /**
      * Specifies an ESAM ManifestConfirmConditionNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
-     * instructions that you provide in the setting MCC XML (mccXml).
+     * instructions that you provide in the setting MCC XML.
      */
     inline EsamSettings& WithManifestConfirmConditionNotification(const EsamManifestConfirmConditionNotification& value) { SetManifestConfirmConditionNotification(value); return *this;}
 
     /**
      * Specifies an ESAM ManifestConfirmConditionNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
-     * instructions that you provide in the setting MCC XML (mccXml).
+     * instructions that you provide in the setting MCC XML.
      */
     inline EsamSettings& WithManifestConfirmConditionNotification(EsamManifestConfirmConditionNotification&& value) { SetManifestConfirmConditionNotification(std::move(value)); return *this;}
 
@@ -118,42 +118,42 @@ namespace Model
     /**
      * Specifies an ESAM SignalProcessingNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
-     * instructions that you provide in the setting SCC XML (sccXml).
+     * instructions that you provide in the setting SCC XML.
      */
     inline const EsamSignalProcessingNotification& GetSignalProcessingNotification() const{ return m_signalProcessingNotification; }
 
     /**
      * Specifies an ESAM SignalProcessingNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
-     * instructions that you provide in the setting SCC XML (sccXml).
+     * instructions that you provide in the setting SCC XML.
      */
     inline bool SignalProcessingNotificationHasBeenSet() const { return m_signalProcessingNotificationHasBeenSet; }
 
     /**
      * Specifies an ESAM SignalProcessingNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
-     * instructions that you provide in the setting SCC XML (sccXml).
+     * instructions that you provide in the setting SCC XML.
      */
     inline void SetSignalProcessingNotification(const EsamSignalProcessingNotification& value) { m_signalProcessingNotificationHasBeenSet = true; m_signalProcessingNotification = value; }
 
     /**
      * Specifies an ESAM SignalProcessingNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
-     * instructions that you provide in the setting SCC XML (sccXml).
+     * instructions that you provide in the setting SCC XML.
      */
     inline void SetSignalProcessingNotification(EsamSignalProcessingNotification&& value) { m_signalProcessingNotificationHasBeenSet = true; m_signalProcessingNotification = std::move(value); }
 
     /**
      * Specifies an ESAM SignalProcessingNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
-     * instructions that you provide in the setting SCC XML (sccXml).
+     * instructions that you provide in the setting SCC XML.
      */
     inline EsamSettings& WithSignalProcessingNotification(const EsamSignalProcessingNotification& value) { SetSignalProcessingNotification(value); return *this;}
 
     /**
      * Specifies an ESAM SignalProcessingNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
-     * instructions that you provide in the setting SCC XML (sccXml).
+     * instructions that you provide in the setting SCC XML.
      */
     inline EsamSettings& WithSignalProcessingNotification(EsamSignalProcessingNotification&& value) { SetSignalProcessingNotification(std::move(value)); return *this;}
 

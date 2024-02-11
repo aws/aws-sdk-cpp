@@ -38,7 +38,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
@@ -46,7 +47,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
@@ -54,7 +56,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
@@ -62,7 +65,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
@@ -70,7 +74,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
@@ -78,7 +83,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline ListTagsForResourceRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
@@ -86,7 +92,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline ListTagsForResourceRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
@@ -94,50 +101,10 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline ListTagsForResourceRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
-
-
-    /**
-     * <p>The ARN of the resource with the tags to be listed.</p>
-     */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The ARN of the resource with the tags to be listed.</p>
-     */
-    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the resource with the tags to be listed.</p>
-     */
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The ARN of the resource with the tags to be listed.</p>
-     */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the resource with the tags to be listed.</p>
-     */
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the resource with the tags to be listed.</p>
-     */
-    inline ListTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the resource with the tags to be listed.</p>
-     */
-    inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the resource with the tags to be listed.</p>
-     */
-    inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
 
     /**
@@ -188,16 +155,57 @@ namespace Model
      */
     inline ListTagsForResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the resource with the tags to be listed.</p>
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The ARN of the resource with the tags to be listed.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource with the tags to be listed.</p>
+     */
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    /**
+     * <p>The ARN of the resource with the tags to be listed.</p>
+     */
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the resource with the tags to be listed.</p>
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p>The ARN of the resource with the tags to be listed.</p>
+     */
+    inline ListTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the resource with the tags to be listed.</p>
+     */
+    inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the resource with the tags to be listed.</p>
+     */
+    inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
   private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
-    Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

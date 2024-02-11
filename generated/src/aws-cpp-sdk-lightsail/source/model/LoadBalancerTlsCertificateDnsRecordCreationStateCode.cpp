@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerTlsCertificateDnsRecordCreationStateCode::NOT_SET:
+            return {};
           case LoadBalancerTlsCertificateDnsRecordCreationStateCode::SUCCEEDED:
             return "SUCCEEDED";
           case LoadBalancerTlsCertificateDnsRecordCreationStateCode::STARTED:

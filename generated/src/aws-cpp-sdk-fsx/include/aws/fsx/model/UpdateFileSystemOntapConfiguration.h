@@ -79,42 +79,74 @@ namespace Model
 
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
+     * <p>Update the password for the <code>fsxadmin</code> user by entering a new
+     * password. You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI
+     * and REST API to manage your file system resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+     * resources using NetApp Applicaton</a>.</p>
      */
     inline const Aws::String& GetFsxAdminPassword() const{ return m_fsxAdminPassword; }
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
+     * <p>Update the password for the <code>fsxadmin</code> user by entering a new
+     * password. You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI
+     * and REST API to manage your file system resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+     * resources using NetApp Applicaton</a>.</p>
      */
     inline bool FsxAdminPasswordHasBeenSet() const { return m_fsxAdminPasswordHasBeenSet; }
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
+     * <p>Update the password for the <code>fsxadmin</code> user by entering a new
+     * password. You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI
+     * and REST API to manage your file system resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+     * resources using NetApp Applicaton</a>.</p>
      */
     inline void SetFsxAdminPassword(const Aws::String& value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword = value; }
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
+     * <p>Update the password for the <code>fsxadmin</code> user by entering a new
+     * password. You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI
+     * and REST API to manage your file system resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+     * resources using NetApp Applicaton</a>.</p>
      */
     inline void SetFsxAdminPassword(Aws::String&& value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword = std::move(value); }
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
+     * <p>Update the password for the <code>fsxadmin</code> user by entering a new
+     * password. You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI
+     * and REST API to manage your file system resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+     * resources using NetApp Applicaton</a>.</p>
      */
     inline void SetFsxAdminPassword(const char* value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword.assign(value); }
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
+     * <p>Update the password for the <code>fsxadmin</code> user by entering a new
+     * password. You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI
+     * and REST API to manage your file system resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+     * resources using NetApp Applicaton</a>.</p>
      */
     inline UpdateFileSystemOntapConfiguration& WithFsxAdminPassword(const Aws::String& value) { SetFsxAdminPassword(value); return *this;}
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
+     * <p>Update the password for the <code>fsxadmin</code> user by entering a new
+     * password. You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI
+     * and REST API to manage your file system resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+     * resources using NetApp Applicaton</a>.</p>
      */
     inline UpdateFileSystemOntapConfiguration& WithFsxAdminPassword(Aws::String&& value) { SetFsxAdminPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
+     * <p>Update the password for the <code>fsxadmin</code> user by entering a new
+     * password. You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI
+     * and REST API to manage your file system resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+     * resources using NetApp Applicaton</a>.</p>
      */
     inline UpdateFileSystemOntapConfiguration& WithFsxAdminPassword(const char* value) { SetFsxAdminPassword(value); return *this;}
 
@@ -145,91 +177,131 @@ namespace Model
 
 
     /**
-     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * <p>The SSD IOPS (input output operations per second) configuration for an Amazon
      * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
      * capacity, but you can provision additional IOPS per GB of storage. The
      * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
      * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
-     * IOPS, the total number of SSD IOPS provisioned.</p>
+     * IOPS, the total number of SSD IOPS provisioned. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
+     * SSD storage capacity and IOPS</a>.</p>
      */
     inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const{ return m_diskIopsConfiguration; }
 
     /**
-     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * <p>The SSD IOPS (input output operations per second) configuration for an Amazon
      * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
      * capacity, but you can provision additional IOPS per GB of storage. The
      * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
      * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
-     * IOPS, the total number of SSD IOPS provisioned.</p>
+     * IOPS, the total number of SSD IOPS provisioned. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
+     * SSD storage capacity and IOPS</a>.</p>
      */
     inline bool DiskIopsConfigurationHasBeenSet() const { return m_diskIopsConfigurationHasBeenSet; }
 
     /**
-     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * <p>The SSD IOPS (input output operations per second) configuration for an Amazon
      * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
      * capacity, but you can provision additional IOPS per GB of storage. The
      * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
      * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
-     * IOPS, the total number of SSD IOPS provisioned.</p>
+     * IOPS, the total number of SSD IOPS provisioned. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
+     * SSD storage capacity and IOPS</a>.</p>
      */
     inline void SetDiskIopsConfiguration(const DiskIopsConfiguration& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = value; }
 
     /**
-     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * <p>The SSD IOPS (input output operations per second) configuration for an Amazon
      * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
      * capacity, but you can provision additional IOPS per GB of storage. The
      * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
      * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
-     * IOPS, the total number of SSD IOPS provisioned.</p>
+     * IOPS, the total number of SSD IOPS provisioned. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
+     * SSD storage capacity and IOPS</a>.</p>
      */
     inline void SetDiskIopsConfiguration(DiskIopsConfiguration&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::move(value); }
 
     /**
-     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * <p>The SSD IOPS (input output operations per second) configuration for an Amazon
      * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
      * capacity, but you can provision additional IOPS per GB of storage. The
      * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
      * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
-     * IOPS, the total number of SSD IOPS provisioned.</p>
+     * IOPS, the total number of SSD IOPS provisioned. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
+     * SSD storage capacity and IOPS</a>.</p>
      */
     inline UpdateFileSystemOntapConfiguration& WithDiskIopsConfiguration(const DiskIopsConfiguration& value) { SetDiskIopsConfiguration(value); return *this;}
 
     /**
-     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * <p>The SSD IOPS (input output operations per second) configuration for an Amazon
      * FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage
      * capacity, but you can provision additional IOPS per GB of storage. The
      * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
      * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
-     * IOPS, the total number of SSD IOPS provisioned.</p>
+     * IOPS, the total number of SSD IOPS provisioned. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
+     * SSD storage capacity and IOPS</a>.</p>
      */
     inline UpdateFileSystemOntapConfiguration& WithDiskIopsConfiguration(DiskIopsConfiguration&& value) { SetDiskIopsConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and
-     * 4096 MBps.</p>
+     * <p>Enter a new value to change the amount of throughput capacity for the file
+     * system in megabytes per second (MBps). For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+     * throughput capacity</a> in the FSx for ONTAP User Guide.</p> <p>Amazon FSx
+     * responds with an HTTP status code 400 (Bad Request) for the following
+     * conditions:</p> <ul> <li> <p>The value of <code>ThroughputCapacity</code> and
+     * <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li> <li>
+     * <p>The value of <code>ThroughputCapacity</code> when divided by the value of
+     * <code>HAPairs</code> is outside of the valid range for
+     * <code>ThroughputCapacity</code>.</p> </li> </ul>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
-     * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and
-     * 4096 MBps.</p>
+     * <p>Enter a new value to change the amount of throughput capacity for the file
+     * system in megabytes per second (MBps). For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+     * throughput capacity</a> in the FSx for ONTAP User Guide.</p> <p>Amazon FSx
+     * responds with an HTTP status code 400 (Bad Request) for the following
+     * conditions:</p> <ul> <li> <p>The value of <code>ThroughputCapacity</code> and
+     * <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li> <li>
+     * <p>The value of <code>ThroughputCapacity</code> when divided by the value of
+     * <code>HAPairs</code> is outside of the valid range for
+     * <code>ThroughputCapacity</code>.</p> </li> </ul>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
-     * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and
-     * 4096 MBps.</p>
+     * <p>Enter a new value to change the amount of throughput capacity for the file
+     * system in megabytes per second (MBps). For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+     * throughput capacity</a> in the FSx for ONTAP User Guide.</p> <p>Amazon FSx
+     * responds with an HTTP status code 400 (Bad Request) for the following
+     * conditions:</p> <ul> <li> <p>The value of <code>ThroughputCapacity</code> and
+     * <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li> <li>
+     * <p>The value of <code>ThroughputCapacity</code> when divided by the value of
+     * <code>HAPairs</code> is outside of the valid range for
+     * <code>ThroughputCapacity</code>.</p> </li> </ul>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
-     * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and
-     * 4096 MBps.</p>
+     * <p>Enter a new value to change the amount of throughput capacity for the file
+     * system in megabytes per second (MBps). For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+     * throughput capacity</a> in the FSx for ONTAP User Guide.</p> <p>Amazon FSx
+     * responds with an HTTP status code 400 (Bad Request) for the following
+     * conditions:</p> <ul> <li> <p>The value of <code>ThroughputCapacity</code> and
+     * <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li> <li>
+     * <p>The value of <code>ThroughputCapacity</code> when divided by the value of
+     * <code>HAPairs</code> is outside of the valid range for
+     * <code>ThroughputCapacity</code>.</p> </li> </ul>
      */
     inline UpdateFileSystemOntapConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 
@@ -361,6 +433,83 @@ namespace Model
      */
     inline UpdateFileSystemOntapConfiguration& AddRemoveRouteTableIds(const char* value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>Use to choose the throughput capacity per HA pair, rather than the total
+     * throughput for the file system. </p> <p>This field and
+     * <code>ThroughputCapacity</code> cannot be defined in the same API call, but one
+     * is required.</p> <p>This field and <code>ThroughputCapacity</code> are the same
+     * for file systems with one HA pair.</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>
+     * and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096
+     * MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or
+     * 6144 MBps.</p> </li> </ul> <p>Amazon FSx responds with an HTTP status code 400
+     * (Bad Request) for the following conditions:</p> <ul> <li> <p>The value of
+     * <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are
+     * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
+     * value of deployment type is <code>SINGLE_AZ_2</code> and
+     * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
+     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
+     */
+    inline int GetThroughputCapacityPerHAPair() const{ return m_throughputCapacityPerHAPair; }
+
+    /**
+     * <p>Use to choose the throughput capacity per HA pair, rather than the total
+     * throughput for the file system. </p> <p>This field and
+     * <code>ThroughputCapacity</code> cannot be defined in the same API call, but one
+     * is required.</p> <p>This field and <code>ThroughputCapacity</code> are the same
+     * for file systems with one HA pair.</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>
+     * and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096
+     * MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or
+     * 6144 MBps.</p> </li> </ul> <p>Amazon FSx responds with an HTTP status code 400
+     * (Bad Request) for the following conditions:</p> <ul> <li> <p>The value of
+     * <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are
+     * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
+     * value of deployment type is <code>SINGLE_AZ_2</code> and
+     * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
+     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
+     */
+    inline bool ThroughputCapacityPerHAPairHasBeenSet() const { return m_throughputCapacityPerHAPairHasBeenSet; }
+
+    /**
+     * <p>Use to choose the throughput capacity per HA pair, rather than the total
+     * throughput for the file system. </p> <p>This field and
+     * <code>ThroughputCapacity</code> cannot be defined in the same API call, but one
+     * is required.</p> <p>This field and <code>ThroughputCapacity</code> are the same
+     * for file systems with one HA pair.</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>
+     * and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096
+     * MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or
+     * 6144 MBps.</p> </li> </ul> <p>Amazon FSx responds with an HTTP status code 400
+     * (Bad Request) for the following conditions:</p> <ul> <li> <p>The value of
+     * <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are
+     * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
+     * value of deployment type is <code>SINGLE_AZ_2</code> and
+     * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
+     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
+     */
+    inline void SetThroughputCapacityPerHAPair(int value) { m_throughputCapacityPerHAPairHasBeenSet = true; m_throughputCapacityPerHAPair = value; }
+
+    /**
+     * <p>Use to choose the throughput capacity per HA pair, rather than the total
+     * throughput for the file system. </p> <p>This field and
+     * <code>ThroughputCapacity</code> cannot be defined in the same API call, but one
+     * is required.</p> <p>This field and <code>ThroughputCapacity</code> are the same
+     * for file systems with one HA pair.</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>
+     * and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096
+     * MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or
+     * 6144 MBps.</p> </li> </ul> <p>Amazon FSx responds with an HTTP status code 400
+     * (Bad Request) for the following conditions:</p> <ul> <li> <p>The value of
+     * <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are
+     * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
+     * value of deployment type is <code>SINGLE_AZ_2</code> and
+     * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
+     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
+     */
+    inline UpdateFileSystemOntapConfiguration& WithThroughputCapacityPerHAPair(int value) { SetThroughputCapacityPerHAPair(value); return *this;}
+
   private:
 
     int m_automaticBackupRetentionDays;
@@ -386,6 +535,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_removeRouteTableIds;
     bool m_removeRouteTableIdsHasBeenSet = false;
+
+    int m_throughputCapacityPerHAPair;
+    bool m_throughputCapacityPerHAPairHasBeenSet = false;
   };
 
 } // namespace Model

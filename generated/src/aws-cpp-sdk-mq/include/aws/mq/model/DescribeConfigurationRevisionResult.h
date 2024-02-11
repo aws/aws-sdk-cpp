@@ -96,37 +96,44 @@ namespace Model
 
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: base64-encoded Cuttlefish.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: base64-encoded Cuttlefish.</p>
      */
     inline void SetData(const Aws::String& value) { m_data = value; }
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: base64-encoded Cuttlefish.</p>
      */
     inline void SetData(Aws::String&& value) { m_data = std::move(value); }
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: base64-encoded Cuttlefish.</p>
      */
     inline void SetData(const char* value) { m_data.assign(value); }
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: base64-encoded Cuttlefish.</p>
      */
     inline DescribeConfigurationRevisionResult& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: base64-encoded Cuttlefish.</p>
      */
     inline DescribeConfigurationRevisionResult& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: base64-encoded Cuttlefish.</p>
      */
     inline DescribeConfigurationRevisionResult& WithData(const char* value) { SetData(value); return *this;}
 

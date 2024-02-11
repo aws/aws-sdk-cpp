@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int password_HASH = HashingUtils::HashString("password");
+        static const int iam_HASH = HashingUtils::HashString("iam");
 
 
         InputAuthenticationType GetInputAuthenticationTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == password_HASH)
           {
             return InputAuthenticationType::password;
+          }
+          else if (hashCode == iam_HASH)
+          {
+            return InputAuthenticationType::iam;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +49,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputAuthenticationType::NOT_SET:
+            return {};
           case InputAuthenticationType::password:
             return "password";
+          case InputAuthenticationType::iam:
+            return "iam";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

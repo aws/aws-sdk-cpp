@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlayerSessionCreationPolicy::NOT_SET:
+            return {};
           case PlayerSessionCreationPolicy::ACCEPT_ALL:
             return "ACCEPT_ALL";
           case PlayerSessionCreationPolicy::DENY_ALL:

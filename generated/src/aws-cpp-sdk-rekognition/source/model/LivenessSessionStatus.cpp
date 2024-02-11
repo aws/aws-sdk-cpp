@@ -24,6 +24,7 @@ namespace Aws
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
 
 
         LivenessSessionStatus GetLivenessSessionStatusForName(const Aws::String& name)
@@ -45,6 +46,10 @@ namespace Aws
           {
             return LivenessSessionStatus::FAILED;
           }
+          else if (hashCode == EXPIRED_HASH)
+          {
+            return LivenessSessionStatus::EXPIRED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -59,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LivenessSessionStatus::NOT_SET:
+            return {};
           case LivenessSessionStatus::CREATED:
             return "CREATED";
           case LivenessSessionStatus::IN_PROGRESS:
@@ -67,6 +74,8 @@ namespace Aws
             return "SUCCEEDED";
           case LivenessSessionStatus::FAILED:
             return "FAILED";
+          case LivenessSessionStatus::EXPIRED:
+            return "EXPIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

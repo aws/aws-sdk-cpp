@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amp/model/WorkspaceSummary.h>
 #include <utility>
 
@@ -38,42 +38,6 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API ListWorkspacesResult();
     AWS_PROMETHEUSSERVICE_API ListWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROMETHEUSSERVICE_API ListWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
-     */
-    inline ListWorkspacesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
-     */
-    inline ListWorkspacesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
-     */
-    inline ListWorkspacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
@@ -119,6 +83,42 @@ namespace Model
     inline ListWorkspacesResult& AddWorkspaces(WorkspaceSummary&& value) { m_workspaces.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Pagination token to use when requesting the next page in this list.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Pagination token to use when requesting the next page in this list.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>Pagination token to use when requesting the next page in this list.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>Pagination token to use when requesting the next page in this list.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>Pagination token to use when requesting the next page in this list.</p>
+     */
+    inline ListWorkspacesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>Pagination token to use when requesting the next page in this list.</p>
+     */
+    inline ListWorkspacesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Pagination token to use when requesting the next page in this list.</p>
+     */
+    inline ListWorkspacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -142,9 +142,9 @@ namespace Model
 
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<WorkspaceSummary> m_workspaces;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

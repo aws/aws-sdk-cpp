@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/omics/model/ReadSetFile.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/ReadSetFile.h>
 #include <utility>
 
 namespace Aws
@@ -37,37 +37,6 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline const ReadSetFile& GetFile() const{ return m_file; }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline void SetFile(const ReadSetFile& value) { m_fileHasBeenSet = true; m_file = value; }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline void SetFile(ReadSetFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline GetReadSetRequest& WithFile(const ReadSetFile& value) { SetFile(value); return *this;}
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline GetReadSetRequest& WithFile(ReadSetFile&& value) { SetFile(std::move(value)); return *this;}
 
 
     /**
@@ -112,27 +81,6 @@ namespace Model
 
 
     /**
-     * <p>The part number to retrieve.</p>
-     */
-    inline int GetPartNumber() const{ return m_partNumber; }
-
-    /**
-     * <p>The part number to retrieve.</p>
-     */
-    inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
-
-    /**
-     * <p>The part number to retrieve.</p>
-     */
-    inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
-
-    /**
-     * <p>The part number to retrieve.</p>
-     */
-    inline GetReadSetRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
-
-
-    /**
      * <p>The read set's sequence store ID.</p>
      */
     inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
@@ -172,19 +120,71 @@ namespace Model
      */
     inline GetReadSetRequest& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
 
-  private:
 
-    ReadSetFile m_file;
-    bool m_fileHasBeenSet = false;
+    /**
+     * <p>The file to retrieve.</p>
+     */
+    inline const ReadSetFile& GetFile() const{ return m_file; }
+
+    /**
+     * <p>The file to retrieve.</p>
+     */
+    inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
+
+    /**
+     * <p>The file to retrieve.</p>
+     */
+    inline void SetFile(const ReadSetFile& value) { m_fileHasBeenSet = true; m_file = value; }
+
+    /**
+     * <p>The file to retrieve.</p>
+     */
+    inline void SetFile(ReadSetFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
+
+    /**
+     * <p>The file to retrieve.</p>
+     */
+    inline GetReadSetRequest& WithFile(const ReadSetFile& value) { SetFile(value); return *this;}
+
+    /**
+     * <p>The file to retrieve.</p>
+     */
+    inline GetReadSetRequest& WithFile(ReadSetFile&& value) { SetFile(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The part number to retrieve.</p>
+     */
+    inline int GetPartNumber() const{ return m_partNumber; }
+
+    /**
+     * <p>The part number to retrieve.</p>
+     */
+    inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
+
+    /**
+     * <p>The part number to retrieve.</p>
+     */
+    inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
+
+    /**
+     * <p>The part number to retrieve.</p>
+     */
+    inline GetReadSetRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
+
+  private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_partNumber;
-    bool m_partNumberHasBeenSet = false;
-
     Aws::String m_sequenceStoreId;
     bool m_sequenceStoreIdHasBeenSet = false;
+
+    ReadSetFile m_file;
+    bool m_fileHasBeenSet = false;
+
+    int m_partNumber;
+    bool m_partNumberHasBeenSet = false;
   };
 
 } // namespace Model

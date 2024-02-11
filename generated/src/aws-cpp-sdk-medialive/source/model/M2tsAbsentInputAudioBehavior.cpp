@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsAbsentInputAudioBehavior::NOT_SET:
+            return {};
           case M2tsAbsentInputAudioBehavior::DROP:
             return "DROP";
           case M2tsAbsentInputAudioBehavior::ENCODE_SILENCE:

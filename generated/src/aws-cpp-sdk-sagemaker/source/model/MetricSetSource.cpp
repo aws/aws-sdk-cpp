@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricSetSource::NOT_SET:
+            return {};
           case MetricSetSource::Train:
             return "Train";
           case MetricSetSource::Validation:

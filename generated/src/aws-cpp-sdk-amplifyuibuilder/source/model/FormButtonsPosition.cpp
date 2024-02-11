@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FormButtonsPosition::NOT_SET:
+            return {};
           case FormButtonsPosition::top:
             return "top";
           case FormButtonsPosition::bottom:

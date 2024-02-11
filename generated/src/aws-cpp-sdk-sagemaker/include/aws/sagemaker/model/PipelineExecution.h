@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
 #include <aws/sagemaker/model/ParallelismConfiguration.h>
+#include <aws/sagemaker/model/SelectiveExecutionConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Parameter.h>
 #include <utility>
@@ -431,6 +432,37 @@ namespace Model
 
 
     /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline const SelectiveExecutionConfig& GetSelectiveExecutionConfig() const{ return m_selectiveExecutionConfig; }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline bool SelectiveExecutionConfigHasBeenSet() const { return m_selectiveExecutionConfigHasBeenSet; }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline void SetSelectiveExecutionConfig(const SelectiveExecutionConfig& value) { m_selectiveExecutionConfigHasBeenSet = true; m_selectiveExecutionConfig = value; }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline void SetSelectiveExecutionConfig(SelectiveExecutionConfig&& value) { m_selectiveExecutionConfigHasBeenSet = true; m_selectiveExecutionConfig = std::move(value); }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline PipelineExecution& WithSelectiveExecutionConfig(const SelectiveExecutionConfig& value) { SetSelectiveExecutionConfig(value); return *this;}
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline PipelineExecution& WithSelectiveExecutionConfig(SelectiveExecutionConfig&& value) { SetSelectiveExecutionConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Contains a list of pipeline parameters. This list can be empty. </p>
      */
     inline const Aws::Vector<Parameter>& GetPipelineParameters() const{ return m_pipelineParameters; }
@@ -507,6 +539,9 @@ namespace Model
 
     ParallelismConfiguration m_parallelismConfiguration;
     bool m_parallelismConfigurationHasBeenSet = false;
+
+    SelectiveExecutionConfig m_selectiveExecutionConfig;
+    bool m_selectiveExecutionConfigHasBeenSet = false;
 
     Aws::Vector<Parameter> m_pipelineParameters;
     bool m_pipelineParametersHasBeenSet = false;

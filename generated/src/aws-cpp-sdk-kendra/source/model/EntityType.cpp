@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntityType::NOT_SET:
+            return {};
           case EntityType::USER:
             return "USER";
           case EntityType::GROUP:

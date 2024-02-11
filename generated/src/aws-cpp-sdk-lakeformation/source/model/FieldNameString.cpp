@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FieldNameString::NOT_SET:
+            return {};
           case FieldNameString::RESOURCE_ARN:
             return "RESOURCE_ARN";
           case FieldNameString::ROLE_ARN:

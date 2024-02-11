@@ -142,58 +142,114 @@ namespace Model
 
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
-     * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+     * <p>The Apache Airflow version for your environment. To upgrade your environment,
+     * specify a newer version of Apache Airflow supported by Amazon MWAA.</p>
+     * <p>Before you upgrade an environment, make sure your requirements, DAGs,
+     * plugins, and other resources used in your workflows are compatible with the new
+     * Apache Airflow version. For more information about updating your resources, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading
+     * an Amazon MWAA environment</a>.</p> <p>Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>,
+     * <code>2.6.3</code>, <code>2.7.2</code>.</p>
      */
     inline const Aws::String& GetAirflowVersion() const{ return m_airflowVersion; }
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
-     * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+     * <p>The Apache Airflow version for your environment. To upgrade your environment,
+     * specify a newer version of Apache Airflow supported by Amazon MWAA.</p>
+     * <p>Before you upgrade an environment, make sure your requirements, DAGs,
+     * plugins, and other resources used in your workflows are compatible with the new
+     * Apache Airflow version. For more information about updating your resources, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading
+     * an Amazon MWAA environment</a>.</p> <p>Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>,
+     * <code>2.6.3</code>, <code>2.7.2</code>.</p>
      */
     inline bool AirflowVersionHasBeenSet() const { return m_airflowVersionHasBeenSet; }
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
-     * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+     * <p>The Apache Airflow version for your environment. To upgrade your environment,
+     * specify a newer version of Apache Airflow supported by Amazon MWAA.</p>
+     * <p>Before you upgrade an environment, make sure your requirements, DAGs,
+     * plugins, and other resources used in your workflows are compatible with the new
+     * Apache Airflow version. For more information about updating your resources, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading
+     * an Amazon MWAA environment</a>.</p> <p>Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>,
+     * <code>2.6.3</code>, <code>2.7.2</code>.</p>
      */
     inline void SetAirflowVersion(const Aws::String& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = value; }
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
-     * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+     * <p>The Apache Airflow version for your environment. To upgrade your environment,
+     * specify a newer version of Apache Airflow supported by Amazon MWAA.</p>
+     * <p>Before you upgrade an environment, make sure your requirements, DAGs,
+     * plugins, and other resources used in your workflows are compatible with the new
+     * Apache Airflow version. For more information about updating your resources, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading
+     * an Amazon MWAA environment</a>.</p> <p>Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>,
+     * <code>2.6.3</code>, <code>2.7.2</code>.</p>
      */
     inline void SetAirflowVersion(Aws::String&& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = std::move(value); }
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
-     * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+     * <p>The Apache Airflow version for your environment. To upgrade your environment,
+     * specify a newer version of Apache Airflow supported by Amazon MWAA.</p>
+     * <p>Before you upgrade an environment, make sure your requirements, DAGs,
+     * plugins, and other resources used in your workflows are compatible with the new
+     * Apache Airflow version. For more information about updating your resources, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading
+     * an Amazon MWAA environment</a>.</p> <p>Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>,
+     * <code>2.6.3</code>, <code>2.7.2</code>.</p>
      */
     inline void SetAirflowVersion(const char* value) { m_airflowVersionHasBeenSet = true; m_airflowVersion.assign(value); }
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
-     * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+     * <p>The Apache Airflow version for your environment. To upgrade your environment,
+     * specify a newer version of Apache Airflow supported by Amazon MWAA.</p>
+     * <p>Before you upgrade an environment, make sure your requirements, DAGs,
+     * plugins, and other resources used in your workflows are compatible with the new
+     * Apache Airflow version. For more information about updating your resources, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading
+     * an Amazon MWAA environment</a>.</p> <p>Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>,
+     * <code>2.6.3</code>, <code>2.7.2</code>.</p>
      */
     inline UpdateEnvironmentRequest& WithAirflowVersion(const Aws::String& value) { SetAirflowVersion(value); return *this;}
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
-     * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+     * <p>The Apache Airflow version for your environment. To upgrade your environment,
+     * specify a newer version of Apache Airflow supported by Amazon MWAA.</p>
+     * <p>Before you upgrade an environment, make sure your requirements, DAGs,
+     * plugins, and other resources used in your workflows are compatible with the new
+     * Apache Airflow version. For more information about updating your resources, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading
+     * an Amazon MWAA environment</a>.</p> <p>Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>,
+     * <code>2.6.3</code>, <code>2.7.2</code>.</p>
      */
     inline UpdateEnvironmentRequest& WithAirflowVersion(Aws::String&& value) { SetAirflowVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
-     * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+     * <p>The Apache Airflow version for your environment. To upgrade your environment,
+     * specify a newer version of Apache Airflow supported by Amazon MWAA.</p>
+     * <p>Before you upgrade an environment, make sure your requirements, DAGs,
+     * plugins, and other resources used in your workflows are compatible with the new
+     * Apache Airflow version. For more information about updating your resources, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading
+     * an Amazon MWAA environment</a>.</p> <p>Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>,
+     * <code>2.6.3</code>, <code>2.7.2</code>.</p>
      */
     inline UpdateEnvironmentRequest& WithAirflowVersion(const char* value) { SetAirflowVersion(value); return *this;}
 

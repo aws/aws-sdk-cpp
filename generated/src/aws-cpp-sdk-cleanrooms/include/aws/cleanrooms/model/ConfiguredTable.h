@@ -208,32 +208,32 @@ namespace Model
 
 
     /**
-     * <p>The AWS Glue table that this configured table represents.</p>
+     * <p>The Glue table that this configured table represents.</p>
      */
     inline const TableReference& GetTableReference() const{ return m_tableReference; }
 
     /**
-     * <p>The AWS Glue table that this configured table represents.</p>
+     * <p>The Glue table that this configured table represents.</p>
      */
     inline bool TableReferenceHasBeenSet() const { return m_tableReferenceHasBeenSet; }
 
     /**
-     * <p>The AWS Glue table that this configured table represents.</p>
+     * <p>The Glue table that this configured table represents.</p>
      */
     inline void SetTableReference(const TableReference& value) { m_tableReferenceHasBeenSet = true; m_tableReference = value; }
 
     /**
-     * <p>The AWS Glue table that this configured table represents.</p>
+     * <p>The Glue table that this configured table represents.</p>
      */
     inline void SetTableReference(TableReference&& value) { m_tableReferenceHasBeenSet = true; m_tableReference = std::move(value); }
 
     /**
-     * <p>The AWS Glue table that this configured table represents.</p>
+     * <p>The Glue table that this configured table represents.</p>
      */
     inline ConfiguredTable& WithTableReference(const TableReference& value) { SetTableReference(value); return *this;}
 
     /**
-     * <p>The AWS Glue table that this configured table represents.</p>
+     * <p>The Glue table that this configured table represents.</p>
      */
     inline ConfiguredTable& WithTableReference(TableReference&& value) { SetTableReference(std::move(value)); return *this;}
 
@@ -301,58 +301,50 @@ namespace Model
 
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline const Aws::Vector<ConfiguredTableAnalysisRuleType>& GetAnalysisRuleTypes() const{ return m_analysisRuleTypes; }
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline bool AnalysisRuleTypesHasBeenSet() const { return m_analysisRuleTypesHasBeenSet; }
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline void SetAnalysisRuleTypes(const Aws::Vector<ConfiguredTableAnalysisRuleType>& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = value; }
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline void SetAnalysisRuleTypes(Aws::Vector<ConfiguredTableAnalysisRuleType>&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = std::move(value); }
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline ConfiguredTable& WithAnalysisRuleTypes(const Aws::Vector<ConfiguredTableAnalysisRuleType>& value) { SetAnalysisRuleTypes(value); return *this;}
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline ConfiguredTable& WithAnalysisRuleTypes(Aws::Vector<ConfiguredTableAnalysisRuleType>&& value) { SetAnalysisRuleTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline ConfiguredTable& AddAnalysisRuleTypes(const ConfiguredTableAnalysisRuleType& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(value); return *this; }
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline ConfiguredTable& AddAnalysisRuleTypes(ConfiguredTableAnalysisRuleType&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(std::move(value)); return *this; }
 
@@ -395,55 +387,55 @@ namespace Model
 
 
     /**
-     * <p>The columns within the underlying AWS Glue table that can be utilized within
+     * <p>The columns within the underlying Glue table that can be utilized within
      * collaborations.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedColumns() const{ return m_allowedColumns; }
 
     /**
-     * <p>The columns within the underlying AWS Glue table that can be utilized within
+     * <p>The columns within the underlying Glue table that can be utilized within
      * collaborations.</p>
      */
     inline bool AllowedColumnsHasBeenSet() const { return m_allowedColumnsHasBeenSet; }
 
     /**
-     * <p>The columns within the underlying AWS Glue table that can be utilized within
+     * <p>The columns within the underlying Glue table that can be utilized within
      * collaborations.</p>
      */
     inline void SetAllowedColumns(const Aws::Vector<Aws::String>& value) { m_allowedColumnsHasBeenSet = true; m_allowedColumns = value; }
 
     /**
-     * <p>The columns within the underlying AWS Glue table that can be utilized within
+     * <p>The columns within the underlying Glue table that can be utilized within
      * collaborations.</p>
      */
     inline void SetAllowedColumns(Aws::Vector<Aws::String>&& value) { m_allowedColumnsHasBeenSet = true; m_allowedColumns = std::move(value); }
 
     /**
-     * <p>The columns within the underlying AWS Glue table that can be utilized within
+     * <p>The columns within the underlying Glue table that can be utilized within
      * collaborations.</p>
      */
     inline ConfiguredTable& WithAllowedColumns(const Aws::Vector<Aws::String>& value) { SetAllowedColumns(value); return *this;}
 
     /**
-     * <p>The columns within the underlying AWS Glue table that can be utilized within
+     * <p>The columns within the underlying Glue table that can be utilized within
      * collaborations.</p>
      */
     inline ConfiguredTable& WithAllowedColumns(Aws::Vector<Aws::String>&& value) { SetAllowedColumns(std::move(value)); return *this;}
 
     /**
-     * <p>The columns within the underlying AWS Glue table that can be utilized within
+     * <p>The columns within the underlying Glue table that can be utilized within
      * collaborations.</p>
      */
     inline ConfiguredTable& AddAllowedColumns(const Aws::String& value) { m_allowedColumnsHasBeenSet = true; m_allowedColumns.push_back(value); return *this; }
 
     /**
-     * <p>The columns within the underlying AWS Glue table that can be utilized within
+     * <p>The columns within the underlying Glue table that can be utilized within
      * collaborations.</p>
      */
     inline ConfiguredTable& AddAllowedColumns(Aws::String&& value) { m_allowedColumnsHasBeenSet = true; m_allowedColumns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The columns within the underlying AWS Glue table that can be utilized within
+     * <p>The columns within the underlying Glue table that can be utilized within
      * collaborations.</p>
      */
     inline ConfiguredTable& AddAllowedColumns(const char* value) { m_allowedColumnsHasBeenSet = true; m_allowedColumns.push_back(value); return *this; }

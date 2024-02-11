@@ -10,6 +10,7 @@
 #include <aws/auditmanager/model/AssessmentReportsDestination.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/auditmanager/model/DeregistrationPolicy.h>
+#include <aws/auditmanager/model/DefaultExportDestination.h>
 #include <aws/auditmanager/model/Role.h>
 #include <utility>
 
@@ -86,32 +87,32 @@ namespace Model
 
 
     /**
-     * <p> The default storage destination for assessment reports. </p>
+     * <p> The default S3 destination bucket for storing assessment reports. </p>
      */
     inline const AssessmentReportsDestination& GetDefaultAssessmentReportsDestination() const{ return m_defaultAssessmentReportsDestination; }
 
     /**
-     * <p> The default storage destination for assessment reports. </p>
+     * <p> The default S3 destination bucket for storing assessment reports. </p>
      */
     inline bool DefaultAssessmentReportsDestinationHasBeenSet() const { return m_defaultAssessmentReportsDestinationHasBeenSet; }
 
     /**
-     * <p> The default storage destination for assessment reports. </p>
+     * <p> The default S3 destination bucket for storing assessment reports. </p>
      */
     inline void SetDefaultAssessmentReportsDestination(const AssessmentReportsDestination& value) { m_defaultAssessmentReportsDestinationHasBeenSet = true; m_defaultAssessmentReportsDestination = value; }
 
     /**
-     * <p> The default storage destination for assessment reports. </p>
+     * <p> The default S3 destination bucket for storing assessment reports. </p>
      */
     inline void SetDefaultAssessmentReportsDestination(AssessmentReportsDestination&& value) { m_defaultAssessmentReportsDestinationHasBeenSet = true; m_defaultAssessmentReportsDestination = std::move(value); }
 
     /**
-     * <p> The default storage destination for assessment reports. </p>
+     * <p> The default S3 destination bucket for storing assessment reports. </p>
      */
     inline UpdateSettingsRequest& WithDefaultAssessmentReportsDestination(const AssessmentReportsDestination& value) { SetDefaultAssessmentReportsDestination(value); return *this;}
 
     /**
-     * <p> The default storage destination for assessment reports. </p>
+     * <p> The default S3 destination bucket for storing assessment reports. </p>
      */
     inline UpdateSettingsRequest& WithDefaultAssessmentReportsDestination(AssessmentReportsDestination&& value) { SetDefaultAssessmentReportsDestination(std::move(value)); return *this;}
 
@@ -293,6 +294,37 @@ namespace Model
      */
     inline UpdateSettingsRequest& WithDeregistrationPolicy(DeregistrationPolicy&& value) { SetDeregistrationPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The default S3 destination bucket for storing evidence finder exports. </p>
+     */
+    inline const DefaultExportDestination& GetDefaultExportDestination() const{ return m_defaultExportDestination; }
+
+    /**
+     * <p> The default S3 destination bucket for storing evidence finder exports. </p>
+     */
+    inline bool DefaultExportDestinationHasBeenSet() const { return m_defaultExportDestinationHasBeenSet; }
+
+    /**
+     * <p> The default S3 destination bucket for storing evidence finder exports. </p>
+     */
+    inline void SetDefaultExportDestination(const DefaultExportDestination& value) { m_defaultExportDestinationHasBeenSet = true; m_defaultExportDestination = value; }
+
+    /**
+     * <p> The default S3 destination bucket for storing evidence finder exports. </p>
+     */
+    inline void SetDefaultExportDestination(DefaultExportDestination&& value) { m_defaultExportDestinationHasBeenSet = true; m_defaultExportDestination = std::move(value); }
+
+    /**
+     * <p> The default S3 destination bucket for storing evidence finder exports. </p>
+     */
+    inline UpdateSettingsRequest& WithDefaultExportDestination(const DefaultExportDestination& value) { SetDefaultExportDestination(value); return *this;}
+
+    /**
+     * <p> The default S3 destination bucket for storing evidence finder exports. </p>
+     */
+    inline UpdateSettingsRequest& WithDefaultExportDestination(DefaultExportDestination&& value) { SetDefaultExportDestination(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_snsTopic;
@@ -312,6 +344,9 @@ namespace Model
 
     DeregistrationPolicy m_deregistrationPolicy;
     bool m_deregistrationPolicyHasBeenSet = false;
+
+    DefaultExportDestination m_defaultExportDestination;
+    bool m_defaultExportDestinationHasBeenSet = false;
   };
 
 } // namespace Model

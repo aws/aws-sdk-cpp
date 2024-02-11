@@ -16,7 +16,7 @@ CreateAppInstanceBotRequest::CreateAppInstanceBotRequest() :
     m_appInstanceArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_configurationHasBeenSet(false)

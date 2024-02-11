@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnnotationType::NOT_SET:
+            return {};
           case AnnotationType::GENERIC:
             return "GENERIC";
           case AnnotationType::CHR_POS:

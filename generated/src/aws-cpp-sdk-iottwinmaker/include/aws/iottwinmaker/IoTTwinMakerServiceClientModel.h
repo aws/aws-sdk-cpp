@@ -19,8 +19,10 @@
 
 /* Service model headers required in IoTTwinMakerClient header */
 #include <aws/iottwinmaker/model/BatchPutPropertyValuesResult.h>
+#include <aws/iottwinmaker/model/CancelMetadataTransferJobResult.h>
 #include <aws/iottwinmaker/model/CreateComponentTypeResult.h>
 #include <aws/iottwinmaker/model/CreateEntityResult.h>
+#include <aws/iottwinmaker/model/CreateMetadataTransferJobResult.h>
 #include <aws/iottwinmaker/model/CreateSceneResult.h>
 #include <aws/iottwinmaker/model/CreateSyncJobResult.h>
 #include <aws/iottwinmaker/model/CreateWorkspaceResult.h>
@@ -32,6 +34,7 @@
 #include <aws/iottwinmaker/model/ExecuteQueryResult.h>
 #include <aws/iottwinmaker/model/GetComponentTypeResult.h>
 #include <aws/iottwinmaker/model/GetEntityResult.h>
+#include <aws/iottwinmaker/model/GetMetadataTransferJobResult.h>
 #include <aws/iottwinmaker/model/GetPricingPlanResult.h>
 #include <aws/iottwinmaker/model/GetPropertyValueResult.h>
 #include <aws/iottwinmaker/model/GetPropertyValueHistoryResult.h>
@@ -39,7 +42,10 @@
 #include <aws/iottwinmaker/model/GetSyncJobResult.h>
 #include <aws/iottwinmaker/model/GetWorkspaceResult.h>
 #include <aws/iottwinmaker/model/ListComponentTypesResult.h>
+#include <aws/iottwinmaker/model/ListComponentsResult.h>
 #include <aws/iottwinmaker/model/ListEntitiesResult.h>
+#include <aws/iottwinmaker/model/ListMetadataTransferJobsResult.h>
+#include <aws/iottwinmaker/model/ListPropertiesResult.h>
 #include <aws/iottwinmaker/model/ListScenesResult.h>
 #include <aws/iottwinmaker/model/ListSyncJobsResult.h>
 #include <aws/iottwinmaker/model/ListSyncResourcesResult.h>
@@ -93,8 +99,10 @@ namespace Aws
     {
       /* Service model forward declarations required in IoTTwinMakerClient header */
       class BatchPutPropertyValuesRequest;
+      class CancelMetadataTransferJobRequest;
       class CreateComponentTypeRequest;
       class CreateEntityRequest;
+      class CreateMetadataTransferJobRequest;
       class CreateSceneRequest;
       class CreateSyncJobRequest;
       class CreateWorkspaceRequest;
@@ -106,6 +114,7 @@ namespace Aws
       class ExecuteQueryRequest;
       class GetComponentTypeRequest;
       class GetEntityRequest;
+      class GetMetadataTransferJobRequest;
       class GetPricingPlanRequest;
       class GetPropertyValueRequest;
       class GetPropertyValueHistoryRequest;
@@ -113,7 +122,10 @@ namespace Aws
       class GetSyncJobRequest;
       class GetWorkspaceRequest;
       class ListComponentTypesRequest;
+      class ListComponentsRequest;
       class ListEntitiesRequest;
+      class ListMetadataTransferJobsRequest;
+      class ListPropertiesRequest;
       class ListScenesRequest;
       class ListSyncJobsRequest;
       class ListSyncResourcesRequest;
@@ -130,8 +142,10 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<BatchPutPropertyValuesResult, IoTTwinMakerError> BatchPutPropertyValuesOutcome;
+      typedef Aws::Utils::Outcome<CancelMetadataTransferJobResult, IoTTwinMakerError> CancelMetadataTransferJobOutcome;
       typedef Aws::Utils::Outcome<CreateComponentTypeResult, IoTTwinMakerError> CreateComponentTypeOutcome;
       typedef Aws::Utils::Outcome<CreateEntityResult, IoTTwinMakerError> CreateEntityOutcome;
+      typedef Aws::Utils::Outcome<CreateMetadataTransferJobResult, IoTTwinMakerError> CreateMetadataTransferJobOutcome;
       typedef Aws::Utils::Outcome<CreateSceneResult, IoTTwinMakerError> CreateSceneOutcome;
       typedef Aws::Utils::Outcome<CreateSyncJobResult, IoTTwinMakerError> CreateSyncJobOutcome;
       typedef Aws::Utils::Outcome<CreateWorkspaceResult, IoTTwinMakerError> CreateWorkspaceOutcome;
@@ -143,6 +157,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ExecuteQueryResult, IoTTwinMakerError> ExecuteQueryOutcome;
       typedef Aws::Utils::Outcome<GetComponentTypeResult, IoTTwinMakerError> GetComponentTypeOutcome;
       typedef Aws::Utils::Outcome<GetEntityResult, IoTTwinMakerError> GetEntityOutcome;
+      typedef Aws::Utils::Outcome<GetMetadataTransferJobResult, IoTTwinMakerError> GetMetadataTransferJobOutcome;
       typedef Aws::Utils::Outcome<GetPricingPlanResult, IoTTwinMakerError> GetPricingPlanOutcome;
       typedef Aws::Utils::Outcome<GetPropertyValueResult, IoTTwinMakerError> GetPropertyValueOutcome;
       typedef Aws::Utils::Outcome<GetPropertyValueHistoryResult, IoTTwinMakerError> GetPropertyValueHistoryOutcome;
@@ -150,7 +165,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetSyncJobResult, IoTTwinMakerError> GetSyncJobOutcome;
       typedef Aws::Utils::Outcome<GetWorkspaceResult, IoTTwinMakerError> GetWorkspaceOutcome;
       typedef Aws::Utils::Outcome<ListComponentTypesResult, IoTTwinMakerError> ListComponentTypesOutcome;
+      typedef Aws::Utils::Outcome<ListComponentsResult, IoTTwinMakerError> ListComponentsOutcome;
       typedef Aws::Utils::Outcome<ListEntitiesResult, IoTTwinMakerError> ListEntitiesOutcome;
+      typedef Aws::Utils::Outcome<ListMetadataTransferJobsResult, IoTTwinMakerError> ListMetadataTransferJobsOutcome;
+      typedef Aws::Utils::Outcome<ListPropertiesResult, IoTTwinMakerError> ListPropertiesOutcome;
       typedef Aws::Utils::Outcome<ListScenesResult, IoTTwinMakerError> ListScenesOutcome;
       typedef Aws::Utils::Outcome<ListSyncJobsResult, IoTTwinMakerError> ListSyncJobsOutcome;
       typedef Aws::Utils::Outcome<ListSyncResourcesResult, IoTTwinMakerError> ListSyncResourcesOutcome;
@@ -167,8 +185,10 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<BatchPutPropertyValuesOutcome> BatchPutPropertyValuesOutcomeCallable;
+      typedef std::future<CancelMetadataTransferJobOutcome> CancelMetadataTransferJobOutcomeCallable;
       typedef std::future<CreateComponentTypeOutcome> CreateComponentTypeOutcomeCallable;
       typedef std::future<CreateEntityOutcome> CreateEntityOutcomeCallable;
+      typedef std::future<CreateMetadataTransferJobOutcome> CreateMetadataTransferJobOutcomeCallable;
       typedef std::future<CreateSceneOutcome> CreateSceneOutcomeCallable;
       typedef std::future<CreateSyncJobOutcome> CreateSyncJobOutcomeCallable;
       typedef std::future<CreateWorkspaceOutcome> CreateWorkspaceOutcomeCallable;
@@ -180,6 +200,7 @@ namespace Aws
       typedef std::future<ExecuteQueryOutcome> ExecuteQueryOutcomeCallable;
       typedef std::future<GetComponentTypeOutcome> GetComponentTypeOutcomeCallable;
       typedef std::future<GetEntityOutcome> GetEntityOutcomeCallable;
+      typedef std::future<GetMetadataTransferJobOutcome> GetMetadataTransferJobOutcomeCallable;
       typedef std::future<GetPricingPlanOutcome> GetPricingPlanOutcomeCallable;
       typedef std::future<GetPropertyValueOutcome> GetPropertyValueOutcomeCallable;
       typedef std::future<GetPropertyValueHistoryOutcome> GetPropertyValueHistoryOutcomeCallable;
@@ -187,7 +208,10 @@ namespace Aws
       typedef std::future<GetSyncJobOutcome> GetSyncJobOutcomeCallable;
       typedef std::future<GetWorkspaceOutcome> GetWorkspaceOutcomeCallable;
       typedef std::future<ListComponentTypesOutcome> ListComponentTypesOutcomeCallable;
+      typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
       typedef std::future<ListEntitiesOutcome> ListEntitiesOutcomeCallable;
+      typedef std::future<ListMetadataTransferJobsOutcome> ListMetadataTransferJobsOutcomeCallable;
+      typedef std::future<ListPropertiesOutcome> ListPropertiesOutcomeCallable;
       typedef std::future<ListScenesOutcome> ListScenesOutcomeCallable;
       typedef std::future<ListSyncJobsOutcome> ListSyncJobsOutcomeCallable;
       typedef std::future<ListSyncResourcesOutcome> ListSyncResourcesOutcomeCallable;
@@ -207,8 +231,10 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const IoTTwinMakerClient*, const Model::BatchPutPropertyValuesRequest&, const Model::BatchPutPropertyValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutPropertyValuesResponseReceivedHandler;
+    typedef std::function<void(const IoTTwinMakerClient*, const Model::CancelMetadataTransferJobRequest&, const Model::CancelMetadataTransferJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMetadataTransferJobResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::CreateComponentTypeRequest&, const Model::CreateComponentTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComponentTypeResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::CreateEntityRequest&, const Model::CreateEntityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEntityResponseReceivedHandler;
+    typedef std::function<void(const IoTTwinMakerClient*, const Model::CreateMetadataTransferJobRequest&, const Model::CreateMetadataTransferJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMetadataTransferJobResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::CreateSceneRequest&, const Model::CreateSceneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSceneResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::CreateSyncJobRequest&, const Model::CreateSyncJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSyncJobResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::CreateWorkspaceRequest&, const Model::CreateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceResponseReceivedHandler;
@@ -220,6 +246,7 @@ namespace Aws
     typedef std::function<void(const IoTTwinMakerClient*, const Model::ExecuteQueryRequest&, const Model::ExecuteQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteQueryResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetComponentTypeRequest&, const Model::GetComponentTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentTypeResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetEntityRequest&, const Model::GetEntityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEntityResponseReceivedHandler;
+    typedef std::function<void(const IoTTwinMakerClient*, const Model::GetMetadataTransferJobRequest&, const Model::GetMetadataTransferJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetadataTransferJobResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetPricingPlanRequest&, const Model::GetPricingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPricingPlanResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetPropertyValueRequest&, const Model::GetPropertyValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPropertyValueResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetPropertyValueHistoryRequest&, const Model::GetPropertyValueHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPropertyValueHistoryResponseReceivedHandler;
@@ -227,7 +254,10 @@ namespace Aws
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetSyncJobRequest&, const Model::GetSyncJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSyncJobResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetWorkspaceRequest&, const Model::GetWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkspaceResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::ListComponentTypesRequest&, const Model::ListComponentTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentTypesResponseReceivedHandler;
+    typedef std::function<void(const IoTTwinMakerClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::ListEntitiesRequest&, const Model::ListEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntitiesResponseReceivedHandler;
+    typedef std::function<void(const IoTTwinMakerClient*, const Model::ListMetadataTransferJobsRequest&, const Model::ListMetadataTransferJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetadataTransferJobsResponseReceivedHandler;
+    typedef std::function<void(const IoTTwinMakerClient*, const Model::ListPropertiesRequest&, const Model::ListPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPropertiesResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::ListScenesRequest&, const Model::ListScenesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListScenesResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::ListSyncJobsRequest&, const Model::ListSyncJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSyncJobsResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::ListSyncResourcesRequest&, const Model::ListSyncResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSyncResourcesResponseReceivedHandler;

@@ -266,7 +266,15 @@ namespace Model
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
      * if it doesn't start successfully. This value is optional, and the default is 8
      * hours. If this value is included, it must be at least 60 minutes to avoid
-     * errors.</p>
+     * errors.</p> <p>This parameter has a maximum value of 100 years (52,560,000
+     * minutes).</p> <p>During the start window, the backup job status remains in
+     * <code>CREATED</code> status until it has successfully begun or until the start
+     * window time has run out. If within the start window time Backup receives an
+     * error that allows the job to be retried, Backup will automatically retry to
+     * begin the job at least every 10 minutes until the backup successfully begins
+     * (the job status changes to <code>RUNNING</code>) or until the job status changes
+     * to <code>EXPIRED</code> (which is expected to occur when the start window time
+     * is over).</p>
      */
     inline long long GetStartWindowMinutes() const{ return m_startWindowMinutes; }
 
@@ -274,7 +282,15 @@ namespace Model
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
      * if it doesn't start successfully. This value is optional, and the default is 8
      * hours. If this value is included, it must be at least 60 minutes to avoid
-     * errors.</p>
+     * errors.</p> <p>This parameter has a maximum value of 100 years (52,560,000
+     * minutes).</p> <p>During the start window, the backup job status remains in
+     * <code>CREATED</code> status until it has successfully begun or until the start
+     * window time has run out. If within the start window time Backup receives an
+     * error that allows the job to be retried, Backup will automatically retry to
+     * begin the job at least every 10 minutes until the backup successfully begins
+     * (the job status changes to <code>RUNNING</code>) or until the job status changes
+     * to <code>EXPIRED</code> (which is expected to occur when the start window time
+     * is over).</p>
      */
     inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
 
@@ -282,7 +298,15 @@ namespace Model
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
      * if it doesn't start successfully. This value is optional, and the default is 8
      * hours. If this value is included, it must be at least 60 minutes to avoid
-     * errors.</p>
+     * errors.</p> <p>This parameter has a maximum value of 100 years (52,560,000
+     * minutes).</p> <p>During the start window, the backup job status remains in
+     * <code>CREATED</code> status until it has successfully begun or until the start
+     * window time has run out. If within the start window time Backup receives an
+     * error that allows the job to be retried, Backup will automatically retry to
+     * begin the job at least every 10 minutes until the backup successfully begins
+     * (the job status changes to <code>RUNNING</code>) or until the job status changes
+     * to <code>EXPIRED</code> (which is expected to occur when the start window time
+     * is over).</p>
      */
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
 
@@ -290,7 +314,15 @@ namespace Model
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
      * if it doesn't start successfully. This value is optional, and the default is 8
      * hours. If this value is included, it must be at least 60 minutes to avoid
-     * errors.</p>
+     * errors.</p> <p>This parameter has a maximum value of 100 years (52,560,000
+     * minutes).</p> <p>During the start window, the backup job status remains in
+     * <code>CREATED</code> status until it has successfully begun or until the start
+     * window time has run out. If within the start window time Backup receives an
+     * error that allows the job to be retried, Backup will automatically retry to
+     * begin the job at least every 10 minutes until the backup successfully begins
+     * (the job status changes to <code>RUNNING</code>) or until the job status changes
+     * to <code>EXPIRED</code> (which is expected to occur when the start window time
+     * is over).</p>
      */
     inline StartBackupJobRequest& WithStartWindowMinutes(long long value) { SetStartWindowMinutes(value); return *this;}
 
@@ -300,7 +332,8 @@ namespace Model
      * or else Backup will cancel the job. This value is optional. This value begins
      * counting down from when the backup was scheduled. It does not add additional
      * time for <code>StartWindowMinutes</code>, or if the backup started later than
-     * scheduled.</p>
+     * scheduled.</p> <p>Like <code>StartWindowMinutes</code>, this parameter has a
+     * maximum value of 100 years (52,560,000 minutes).</p>
      */
     inline long long GetCompleteWindowMinutes() const{ return m_completeWindowMinutes; }
 
@@ -309,7 +342,8 @@ namespace Model
      * or else Backup will cancel the job. This value is optional. This value begins
      * counting down from when the backup was scheduled. It does not add additional
      * time for <code>StartWindowMinutes</code>, or if the backup started later than
-     * scheduled.</p>
+     * scheduled.</p> <p>Like <code>StartWindowMinutes</code>, this parameter has a
+     * maximum value of 100 years (52,560,000 minutes).</p>
      */
     inline bool CompleteWindowMinutesHasBeenSet() const { return m_completeWindowMinutesHasBeenSet; }
 
@@ -318,7 +352,8 @@ namespace Model
      * or else Backup will cancel the job. This value is optional. This value begins
      * counting down from when the backup was scheduled. It does not add additional
      * time for <code>StartWindowMinutes</code>, or if the backup started later than
-     * scheduled.</p>
+     * scheduled.</p> <p>Like <code>StartWindowMinutes</code>, this parameter has a
+     * maximum value of 100 years (52,560,000 minutes).</p>
      */
     inline void SetCompleteWindowMinutes(long long value) { m_completeWindowMinutesHasBeenSet = true; m_completeWindowMinutes = value; }
 
@@ -327,7 +362,8 @@ namespace Model
      * or else Backup will cancel the job. This value is optional. This value begins
      * counting down from when the backup was scheduled. It does not add additional
      * time for <code>StartWindowMinutes</code>, or if the backup started later than
-     * scheduled.</p>
+     * scheduled.</p> <p>Like <code>StartWindowMinutes</code>, this parameter has a
+     * maximum value of 100 years (52,560,000 minutes).</p>
      */
     inline StartBackupJobRequest& WithCompleteWindowMinutes(long long value) { SetCompleteWindowMinutes(value); return *this;}
 
@@ -344,7 +380,8 @@ namespace Model
      * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
-     * other resource types.</p>
+     * other resource types.</p> <p>This parameter has a maximum value of 100 years
+     * (36,500 days).</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
 
@@ -360,7 +397,8 @@ namespace Model
      * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
-     * other resource types.</p>
+     * other resource types.</p> <p>This parameter has a maximum value of 100 years
+     * (36,500 days).</p>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
@@ -376,7 +414,8 @@ namespace Model
      * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
-     * other resource types.</p>
+     * other resource types.</p> <p>This parameter has a maximum value of 100 years
+     * (36,500 days).</p>
      */
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
@@ -392,7 +431,8 @@ namespace Model
      * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
-     * other resource types.</p>
+     * other resource types.</p> <p>This parameter has a maximum value of 100 years
+     * (36,500 days).</p>
      */
     inline void SetLifecycle(Lifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
@@ -408,7 +448,8 @@ namespace Model
      * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
-     * other resource types.</p>
+     * other resource types.</p> <p>This parameter has a maximum value of 100 years
+     * (36,500 days).</p>
      */
     inline StartBackupJobRequest& WithLifecycle(const Lifecycle& value) { SetLifecycle(value); return *this;}
 
@@ -424,7 +465,8 @@ namespace Model
      * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
-     * other resource types.</p>
+     * other resource types.</p> <p>This parameter has a maximum value of 100 years
+     * (36,500 days).</p>
      */
     inline StartBackupJobRequest& WithLifecycle(Lifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 

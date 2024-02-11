@@ -33,6 +33,12 @@ DisconnectSourceServerResult::DisconnectSourceServerResult(const Aws::AmazonWebS
 DisconnectSourceServerResult& DisconnectSourceServerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("agentVersion"))
+  {
+    m_agentVersion = jsonValue.GetString("agentVersion");
+
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -78,6 +84,12 @@ DisconnectSourceServerResult& DisconnectSourceServerResult::operator =(const Aws
   if(jsonValue.ValueExists("sourceCloudProperties"))
   {
     m_sourceCloudProperties = jsonValue.GetObject("sourceCloudProperties");
+
+  }
+
+  if(jsonValue.ValueExists("sourceNetworkID"))
+  {
+    m_sourceNetworkID = jsonValue.GetString("sourceNetworkID");
 
   }
 

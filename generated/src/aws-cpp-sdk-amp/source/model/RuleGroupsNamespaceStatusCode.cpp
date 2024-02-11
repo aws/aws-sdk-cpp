@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleGroupsNamespaceStatusCode::NOT_SET:
+            return {};
           case RuleGroupsNamespaceStatusCode::CREATING:
             return "CREATING";
           case RuleGroupsNamespaceStatusCode::ACTIVE:

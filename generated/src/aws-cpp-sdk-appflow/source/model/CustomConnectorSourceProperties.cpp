@@ -20,13 +20,15 @@ namespace Model
 
 CustomConnectorSourceProperties::CustomConnectorSourceProperties() : 
     m_entityNameHasBeenSet(false),
-    m_customPropertiesHasBeenSet(false)
+    m_customPropertiesHasBeenSet(false),
+    m_dataTransferApiHasBeenSet(false)
 {
 }
 
 CustomConnectorSourceProperties::CustomConnectorSourceProperties(JsonView jsonValue) : 
     m_entityNameHasBeenSet(false),
-    m_customPropertiesHasBeenSet(false)
+    m_customPropertiesHasBeenSet(false),
+    m_dataTransferApiHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ CustomConnectorSourceProperties& CustomConnectorSourceProperties::operator =(Jso
     m_customPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataTransferApi"))
+  {
+    m_dataTransferApi = jsonValue.GetObject("dataTransferApi");
+
+    m_dataTransferApiHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +80,12 @@ JsonValue CustomConnectorSourceProperties::Jsonize() const
      customPropertiesJsonMap.WithString(customPropertiesItem.first, customPropertiesItem.second);
    }
    payload.WithObject("customProperties", std::move(customPropertiesJsonMap));
+
+  }
+
+  if(m_dataTransferApiHasBeenSet)
+  {
+   payload.WithObject("dataTransferApi", m_dataTransferApi.Jsonize());
 
   }
 

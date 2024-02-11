@@ -38,74 +38,82 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline const Aws::String& GetAssessmentArn() const{ return m_assessmentArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline bool AssessmentArnHasBeenSet() const { return m_assessmentArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAssessmentArn(const Aws::String& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAssessmentArn(const char* value) { m_assessmentArnHasBeenSet = true; m_assessmentArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline CreateRecommendationTemplateRequest& WithAssessmentArn(const Aws::String& value) { SetAssessmentArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline CreateRecommendationTemplateRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline CreateRecommendationTemplateRequest& WithAssessmentArn(const char* value) { SetAssessmentArn(value); return *this;}
 
@@ -429,80 +437,80 @@ namespace Model
 
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline CreateRecommendationTemplateRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline CreateRecommendationTemplateRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline CreateRecommendationTemplateRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline CreateRecommendationTemplateRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline CreateRecommendationTemplateRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline CreateRecommendationTemplateRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline CreateRecommendationTemplateRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline CreateRecommendationTemplateRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline CreateRecommendationTemplateRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

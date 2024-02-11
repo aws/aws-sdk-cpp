@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobEventType::NOT_SET:
+            return {};
           case JobEventType::WAITING_FOR_PRIORITY:
             return "WAITING_FOR_PRIORITY";
           case JobEventType::QUEUED_FOR_EXECUTION:

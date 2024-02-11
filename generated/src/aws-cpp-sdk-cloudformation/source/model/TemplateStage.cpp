@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemplateStage::NOT_SET:
+            return {};
           case TemplateStage::Original:
             return "Original";
           case TemplateStage::Processed:

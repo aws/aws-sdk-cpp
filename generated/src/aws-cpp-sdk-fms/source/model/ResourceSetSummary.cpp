@@ -22,7 +22,9 @@ ResourceSetSummary::ResourceSetSummary() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_resourceSetStatus(ResourceSetStatus::NOT_SET),
+    m_resourceSetStatusHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ ResourceSetSummary::ResourceSetSummary(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_resourceSetStatus(ResourceSetStatus::NOT_SET),
+    m_resourceSetStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,13 @@ ResourceSetSummary& ResourceSetSummary::operator =(JsonView jsonValue)
     m_lastUpdateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceSetStatus"))
+  {
+    m_resourceSetStatus = ResourceSetStatusMapper::GetResourceSetStatusForName(jsonValue.GetString("ResourceSetStatus"));
+
+    m_resourceSetStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +104,11 @@ JsonValue ResourceSetSummary::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_resourceSetStatusHasBeenSet)
+  {
+   payload.WithString("ResourceSetStatus", ResourceSetStatusMapper::GetNameForResourceSetStatus(m_resourceSetStatus));
   }
 
   return payload;

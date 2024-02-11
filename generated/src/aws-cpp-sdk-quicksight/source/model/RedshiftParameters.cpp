@@ -23,7 +23,9 @@ RedshiftParameters::RedshiftParameters() :
     m_port(0),
     m_portHasBeenSet(false),
     m_databaseHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_iAMParametersHasBeenSet(false),
+    m_identityCenterConfigurationHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ RedshiftParameters::RedshiftParameters(JsonView jsonValue) :
     m_port(0),
     m_portHasBeenSet(false),
     m_databaseHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_iAMParametersHasBeenSet(false),
+    m_identityCenterConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +71,20 @@ RedshiftParameters& RedshiftParameters::operator =(JsonView jsonValue)
     m_clusterIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IAMParameters"))
+  {
+    m_iAMParameters = jsonValue.GetObject("IAMParameters");
+
+    m_iAMParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdentityCenterConfiguration"))
+  {
+    m_identityCenterConfiguration = jsonValue.GetObject("IdentityCenterConfiguration");
+
+    m_identityCenterConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +113,18 @@ JsonValue RedshiftParameters::Jsonize() const
   if(m_clusterIdHasBeenSet)
   {
    payload.WithString("ClusterId", m_clusterId);
+
+  }
+
+  if(m_iAMParametersHasBeenSet)
+  {
+   payload.WithObject("IAMParameters", m_iAMParameters.Jsonize());
+
+  }
+
+  if(m_identityCenterConfigurationHasBeenSet)
+  {
+   payload.WithObject("IdentityCenterConfiguration", m_identityCenterConfiguration.Jsonize());
 
   }
 

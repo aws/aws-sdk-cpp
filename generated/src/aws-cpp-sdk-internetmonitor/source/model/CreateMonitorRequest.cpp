@@ -15,14 +15,15 @@ using namespace Aws::Utils;
 CreateMonitorRequest::CreateMonitorRequest() : 
     m_monitorNameHasBeenSet(false),
     m_resourcesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_maxCityNetworksToMonitor(0),
     m_maxCityNetworksToMonitorHasBeenSet(false),
     m_internetMeasurementsLogDeliveryHasBeenSet(false),
     m_trafficPercentageToMonitor(0),
-    m_trafficPercentageToMonitorHasBeenSet(false)
+    m_trafficPercentageToMonitorHasBeenSet(false),
+    m_healthEventsConfigHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String CreateMonitorRequest::SerializePayload() const
   if(m_trafficPercentageToMonitorHasBeenSet)
   {
    payload.WithInteger("TrafficPercentageToMonitor", m_trafficPercentageToMonitor);
+
+  }
+
+  if(m_healthEventsConfigHasBeenSet)
+  {
+   payload.WithObject("HealthEventsConfig", m_healthEventsConfig.Jsonize());
 
   }
 

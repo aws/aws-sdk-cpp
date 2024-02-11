@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApiGatewayEndpointType::NOT_SET:
+            return {};
           case ApiGatewayEndpointType::REGIONAL:
             return "REGIONAL";
           case ApiGatewayEndpointType::PRIVATE_:

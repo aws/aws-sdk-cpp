@@ -160,6 +160,47 @@ namespace Model
      */
     inline TableIdentifier& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>Region of the target table.</p>
+     */
+    inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>Region of the target table.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>Region of the target table.</p>
+     */
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>Region of the target table.</p>
+     */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>Region of the target table.</p>
+     */
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
+
+    /**
+     * <p>Region of the target table.</p>
+     */
+    inline TableIdentifier& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>Region of the target table.</p>
+     */
+    inline TableIdentifier& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>Region of the target table.</p>
+     */
+    inline TableIdentifier& WithRegion(const char* value) { SetRegion(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -170,6 +211,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_region;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

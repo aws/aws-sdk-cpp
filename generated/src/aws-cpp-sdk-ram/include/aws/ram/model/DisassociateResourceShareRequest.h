@@ -36,64 +36,64 @@ namespace Model
     /**
      * <p>Specifies <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to remove resources
-     * from.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to remove resources
+     * or principals from.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
 
     /**
      * <p>Specifies <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to remove resources
-     * from.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to remove resources
+     * or principals from.</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
      * <p>Specifies <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to remove resources
-     * from.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to remove resources
+     * or principals from.</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
      * <p>Specifies <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to remove resources
-     * from.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to remove resources
+     * or principals from.</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
 
     /**
      * <p>Specifies <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to remove resources
-     * from.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to remove resources
+     * or principals from.</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
 
     /**
      * <p>Specifies <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to remove resources
-     * from.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to remove resources
+     * or principals from.</p>
      */
     inline DisassociateResourceShareRequest& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
 
     /**
      * <p>Specifies <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to remove resources
-     * from.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to remove resources
+     * or principals from.</p>
      */
     inline DisassociateResourceShareRequest& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
 
     /**
      * <p>Specifies <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to remove resources
-     * from.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to remove resources
+     * or principals from.</p>
      */
     inline DisassociateResourceShareRequest& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
 
@@ -103,8 +103,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from
      * the resource share. After the operation runs, these resources are no longer
-     * shared with principals outside of the Amazon Web Services account that created
-     * the resources.</p>
+     * shared with principals associated with the resource share.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
 
@@ -113,8 +112,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from
      * the resource share. After the operation runs, these resources are no longer
-     * shared with principals outside of the Amazon Web Services account that created
-     * the resources.</p>
+     * shared with principals associated with the resource share.</p>
      */
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
 
@@ -123,8 +121,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from
      * the resource share. After the operation runs, these resources are no longer
-     * shared with principals outside of the Amazon Web Services account that created
-     * the resources.</p>
+     * shared with principals associated with the resource share.</p>
      */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
@@ -133,8 +130,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from
      * the resource share. After the operation runs, these resources are no longer
-     * shared with principals outside of the Amazon Web Services account that created
-     * the resources.</p>
+     * shared with principals associated with the resource share.</p>
      */
     inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
@@ -143,8 +139,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from
      * the resource share. After the operation runs, these resources are no longer
-     * shared with principals outside of the Amazon Web Services account that created
-     * the resources.</p>
+     * shared with principals associated with the resource share.</p>
      */
     inline DisassociateResourceShareRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
 
@@ -153,8 +148,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from
      * the resource share. After the operation runs, these resources are no longer
-     * shared with principals outside of the Amazon Web Services account that created
-     * the resources.</p>
+     * shared with principals associated with the resource share.</p>
      */
     inline DisassociateResourceShareRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
@@ -163,8 +157,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from
      * the resource share. After the operation runs, these resources are no longer
-     * shared with principals outside of the Amazon Web Services account that created
-     * the resources.</p>
+     * shared with principals associated with the resource share.</p>
      */
     inline DisassociateResourceShareRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
@@ -173,8 +166,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from
      * the resource share. After the operation runs, these resources are no longer
-     * shared with principals outside of the Amazon Web Services account that created
-     * the resources.</p>
+     * shared with principals associated with the resource share.</p>
      */
     inline DisassociateResourceShareRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
@@ -183,8 +175,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from
      * the resource share. After the operation runs, these resources are no longer
-     * shared with principals outside of the Amazon Web Services account that created
-     * the resources.</p>
+     * shared with principals associated with the resource share.</p>
      */
     inline DisassociateResourceShareRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
@@ -195,7 +186,7 @@ namespace Model
      * values:</p> <ul> <li> <p>An Amazon Web Services account ID, for example:
      * <code>123456789012</code> </p> </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -216,7 +207,7 @@ namespace Model
      * values:</p> <ul> <li> <p>An Amazon Web Services account ID, for example:
      * <code>123456789012</code> </p> </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -237,7 +228,7 @@ namespace Model
      * values:</p> <ul> <li> <p>An Amazon Web Services account ID, for example:
      * <code>123456789012</code> </p> </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -258,7 +249,7 @@ namespace Model
      * values:</p> <ul> <li> <p>An Amazon Web Services account ID, for example:
      * <code>123456789012</code> </p> </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -279,7 +270,7 @@ namespace Model
      * values:</p> <ul> <li> <p>An Amazon Web Services account ID, for example:
      * <code>123456789012</code> </p> </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -300,7 +291,7 @@ namespace Model
      * values:</p> <ul> <li> <p>An Amazon Web Services account ID, for example:
      * <code>123456789012</code> </p> </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -321,7 +312,7 @@ namespace Model
      * values:</p> <ul> <li> <p>An Amazon Web Services account ID, for example:
      * <code>123456789012</code> </p> </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -342,7 +333,7 @@ namespace Model
      * values:</p> <ul> <li> <p>An Amazon Web Services account ID, for example:
      * <code>123456789012</code> </p> </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -363,7 +354,7 @@ namespace Model
      * values:</p> <ul> <li> <p>An Amazon Web Services account ID, for example:
      * <code>123456789012</code> </p> </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -387,7 +378,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -399,7 +392,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -411,7 +406,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -423,7 +420,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -435,7 +434,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -447,7 +448,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline DisassociateResourceShareRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -459,7 +462,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline DisassociateResourceShareRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -471,9 +476,66 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline DisassociateResourceShareRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p>Specifies from which source accounts the service principal no longer has
+     * access to the resources in this resource share.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal no longer has
+     * access to the resources in this resource share.</p>
+     */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal no longer has
+     * access to the resources in this resource share.</p>
+     */
+    inline void SetSources(const Aws::Vector<Aws::String>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal no longer has
+     * access to the resources in this resource share.</p>
+     */
+    inline void SetSources(Aws::Vector<Aws::String>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
+
+    /**
+     * <p>Specifies from which source accounts the service principal no longer has
+     * access to the resources in this resource share.</p>
+     */
+    inline DisassociateResourceShareRequest& WithSources(const Aws::Vector<Aws::String>& value) { SetSources(value); return *this;}
+
+    /**
+     * <p>Specifies from which source accounts the service principal no longer has
+     * access to the resources in this resource share.</p>
+     */
+    inline DisassociateResourceShareRequest& WithSources(Aws::Vector<Aws::String>&& value) { SetSources(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies from which source accounts the service principal no longer has
+     * access to the resources in this resource share.</p>
+     */
+    inline DisassociateResourceShareRequest& AddSources(const Aws::String& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal no longer has
+     * access to the resources in this resource share.</p>
+     */
+    inline DisassociateResourceShareRequest& AddSources(Aws::String&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal no longer has
+     * access to the resources in this resource share.</p>
+     */
+    inline DisassociateResourceShareRequest& AddSources(const char* value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
 
   private:
 
@@ -488,6 +550,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_sources;
+    bool m_sourcesHasBeenSet = false;
   };
 
 } // namespace Model

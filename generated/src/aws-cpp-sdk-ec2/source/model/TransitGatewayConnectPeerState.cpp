@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayConnectPeerState::NOT_SET:
+            return {};
           case TransitGatewayConnectPeerState::pending:
             return "pending";
           case TransitGatewayConnectPeerState::available:

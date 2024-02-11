@@ -28,8 +28,7 @@ namespace Model
 {
 
   /**
-   * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-   * value VP8.<p><h3>See Also:</h3>   <a
+   * Required when you set Codec to the value VP8.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Vp8Settings">AWS
    * API Reference</a></p>
    */
@@ -73,12 +72,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline const Vp8FramerateControl& GetFramerateControl() const{ return m_framerateControl; }
 
@@ -88,12 +82,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
 
@@ -103,12 +92,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline void SetFramerateControl(const Vp8FramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
 
@@ -118,12 +102,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline void SetFramerateControl(Vp8FramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
 
@@ -133,12 +112,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline Vp8Settings& WithFramerateControl(const Vp8FramerateControl& value) { SetFramerateControl(value); return *this;}
 
@@ -148,97 +122,98 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline Vp8Settings& WithFramerateControl(Vp8FramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
 
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline const Vp8FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline void SetFramerateConversionAlgorithm(const Vp8FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline void SetFramerateConversionAlgorithm(Vp8FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline Vp8Settings& WithFramerateConversionAlgorithm(const Vp8FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline Vp8Settings& WithFramerateConversionAlgorithm(Vp8FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
@@ -406,192 +381,172 @@ namespace Model
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR in the console, choose any
+     * value other than Follow source. When you choose SPECIFIED for this setting, you
+     * must also specify values for the parNumerator and parDenominator settings.
      */
     inline const Vp8ParControl& GetParControl() const{ return m_parControl; }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR in the console, choose any
+     * value other than Follow source. When you choose SPECIFIED for this setting, you
+     * must also specify values for the parNumerator and parDenominator settings.
      */
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR in the console, choose any
+     * value other than Follow source. When you choose SPECIFIED for this setting, you
+     * must also specify values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(const Vp8ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR in the console, choose any
+     * value other than Follow source. When you choose SPECIFIED for this setting, you
+     * must also specify values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(Vp8ParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR in the console, choose any
+     * value other than Follow source. When you choose SPECIFIED for this setting, you
+     * must also specify values for the parNumerator and parDenominator settings.
      */
     inline Vp8Settings& WithParControl(const Vp8ParControl& value) { SetParControl(value); return *this;}
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR in the console, choose any
+     * value other than Follow source. When you choose SPECIFIED for this setting, you
+     * must also specify values for the parNumerator and parDenominator settings.
      */
     inline Vp8Settings& WithParControl(Vp8ParControl&& value) { SetParControl(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline int GetParDenominator() const{ return m_parDenominator; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline Vp8Settings& WithParDenominator(int value) { SetParDenominator(value); return *this;}
 
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline int GetParNumerator() const{ return m_parNumerator; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline Vp8Settings& WithParNumerator(int value) { SetParNumerator(value); return *this;}
 
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline const Vp8QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline void SetQualityTuningLevel(const Vp8QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline void SetQualityTuningLevel(Vp8QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline Vp8Settings& WithQualityTuningLevel(const Vp8QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline Vp8Settings& WithQualityTuningLevel(Vp8QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
 

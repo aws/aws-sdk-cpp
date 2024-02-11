@@ -166,6 +166,88 @@ namespace Model
      */
     inline CostAllocationTag& WithStatus(CostAllocationTagStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The last date that the tag was either activated or deactivated.</p>
+     */
+    inline const Aws::String& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
+
+    /**
+     * <p>The last date that the tag was either activated or deactivated.</p>
+     */
+    inline bool LastUpdatedDateHasBeenSet() const { return m_lastUpdatedDateHasBeenSet; }
+
+    /**
+     * <p>The last date that the tag was either activated or deactivated.</p>
+     */
+    inline void SetLastUpdatedDate(const Aws::String& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = value; }
+
+    /**
+     * <p>The last date that the tag was either activated or deactivated.</p>
+     */
+    inline void SetLastUpdatedDate(Aws::String&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::move(value); }
+
+    /**
+     * <p>The last date that the tag was either activated or deactivated.</p>
+     */
+    inline void SetLastUpdatedDate(const char* value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate.assign(value); }
+
+    /**
+     * <p>The last date that the tag was either activated or deactivated.</p>
+     */
+    inline CostAllocationTag& WithLastUpdatedDate(const Aws::String& value) { SetLastUpdatedDate(value); return *this;}
+
+    /**
+     * <p>The last date that the tag was either activated or deactivated.</p>
+     */
+    inline CostAllocationTag& WithLastUpdatedDate(Aws::String&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+
+    /**
+     * <p>The last date that the tag was either activated or deactivated.</p>
+     */
+    inline CostAllocationTag& WithLastUpdatedDate(const char* value) { SetLastUpdatedDate(value); return *this;}
+
+
+    /**
+     * <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+     */
+    inline const Aws::String& GetLastUsedDate() const{ return m_lastUsedDate; }
+
+    /**
+     * <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+     */
+    inline bool LastUsedDateHasBeenSet() const { return m_lastUsedDateHasBeenSet; }
+
+    /**
+     * <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+     */
+    inline void SetLastUsedDate(const Aws::String& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = value; }
+
+    /**
+     * <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+     */
+    inline void SetLastUsedDate(Aws::String&& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = std::move(value); }
+
+    /**
+     * <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+     */
+    inline void SetLastUsedDate(const char* value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate.assign(value); }
+
+    /**
+     * <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+     */
+    inline CostAllocationTag& WithLastUsedDate(const Aws::String& value) { SetLastUsedDate(value); return *this;}
+
+    /**
+     * <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+     */
+    inline CostAllocationTag& WithLastUsedDate(Aws::String&& value) { SetLastUsedDate(std::move(value)); return *this;}
+
+    /**
+     * <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+     */
+    inline CostAllocationTag& WithLastUsedDate(const char* value) { SetLastUsedDate(value); return *this;}
+
   private:
 
     Aws::String m_tagKey;
@@ -176,6 +258,12 @@ namespace Model
 
     CostAllocationTagStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_lastUpdatedDate;
+    bool m_lastUpdatedDateHasBeenSet = false;
+
+    Aws::String m_lastUsedDate;
+    bool m_lastUsedDateHasBeenSet = false;
   };
 
 } // namespace Model

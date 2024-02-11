@@ -82,74 +82,98 @@ namespace Model
 
     /**
      * <p> Selects inference experiments of this type. For the possible types of
-     * inference experiments, see <a>CreateInferenceExperimentRequest$Type</a>. </p>
+     * inference experiments, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline const InferenceExperimentType& GetType() const{ return m_type; }
 
     /**
      * <p> Selects inference experiments of this type. For the possible types of
-     * inference experiments, see <a>CreateInferenceExperimentRequest$Type</a>. </p>
+     * inference experiments, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p> Selects inference experiments of this type. For the possible types of
-     * inference experiments, see <a>CreateInferenceExperimentRequest$Type</a>. </p>
+     * inference experiments, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline void SetType(const InferenceExperimentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p> Selects inference experiments of this type. For the possible types of
-     * inference experiments, see <a>CreateInferenceExperimentRequest$Type</a>. </p>
+     * inference experiments, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline void SetType(InferenceExperimentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p> Selects inference experiments of this type. For the possible types of
-     * inference experiments, see <a>CreateInferenceExperimentRequest$Type</a>. </p>
+     * inference experiments, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline ListInferenceExperimentsRequest& WithType(const InferenceExperimentType& value) { SetType(value); return *this;}
 
     /**
      * <p> Selects inference experiments of this type. For the possible types of
-     * inference experiments, see <a>CreateInferenceExperimentRequest$Type</a>. </p>
+     * inference experiments, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline ListInferenceExperimentsRequest& WithType(InferenceExperimentType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
      * <p> Selects inference experiments which are in this status. For the possible
-     * statuses, see <a>DescribeInferenceExperimentResponse$Status</a>. </p>
+     * statuses, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.
+     * </p>
      */
     inline const InferenceExperimentStatus& GetStatusEquals() const{ return m_statusEquals; }
 
     /**
      * <p> Selects inference experiments which are in this status. For the possible
-     * statuses, see <a>DescribeInferenceExperimentResponse$Status</a>. </p>
+     * statuses, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.
+     * </p>
      */
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
 
     /**
      * <p> Selects inference experiments which are in this status. For the possible
-     * statuses, see <a>DescribeInferenceExperimentResponse$Status</a>. </p>
+     * statuses, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.
+     * </p>
      */
     inline void SetStatusEquals(const InferenceExperimentStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
 
     /**
      * <p> Selects inference experiments which are in this status. For the possible
-     * statuses, see <a>DescribeInferenceExperimentResponse$Status</a>. </p>
+     * statuses, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.
+     * </p>
      */
     inline void SetStatusEquals(InferenceExperimentStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
 
     /**
      * <p> Selects inference experiments which are in this status. For the possible
-     * statuses, see <a>DescribeInferenceExperimentResponse$Status</a>. </p>
+     * statuses, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.
+     * </p>
      */
     inline ListInferenceExperimentsRequest& WithStatusEquals(const InferenceExperimentStatus& value) { SetStatusEquals(value); return *this;}
 
     /**
      * <p> Selects inference experiments which are in this status. For the possible
-     * statuses, see <a>DescribeInferenceExperimentResponse$Status</a>. </p>
+     * statuses, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.
+     * </p>
      */
     inline ListInferenceExperimentsRequest& WithStatusEquals(InferenceExperimentStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
 

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidatePolicyFindingType::NOT_SET:
+            return {};
           case ValidatePolicyFindingType::ERROR_:
             return "ERROR";
           case ValidatePolicyFindingType::SECURITY_WARNING:

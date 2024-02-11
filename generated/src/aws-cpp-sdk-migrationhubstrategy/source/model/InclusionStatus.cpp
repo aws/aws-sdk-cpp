@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InclusionStatus::NOT_SET:
+            return {};
           case InclusionStatus::excludeFromAssessment:
             return "excludeFromAssessment";
           case InclusionStatus::includeInAssessment:

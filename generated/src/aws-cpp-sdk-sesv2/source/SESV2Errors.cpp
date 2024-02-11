@@ -39,55 +39,55 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SENDING_PAUSED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::SENDING_PAUSED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::SENDING_PAUSED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::CONCURRENT_MODIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MESSAGE_REJECTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::MESSAGE_REJECTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::MESSAGE_REJECTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::MAIL_FROM_DOMAIN_NOT_VERIFIED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::MAIL_FROM_DOMAIN_NOT_VERIFIED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVICE_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::INTERNAL_SERVICE_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::INTERNAL_SERVICE_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_SUSPENDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::ACCOUNT_SUSPENDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::ACCOUNT_SUSPENDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

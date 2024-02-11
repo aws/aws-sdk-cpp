@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalingPlanStatusCode::NOT_SET:
+            return {};
           case ScalingPlanStatusCode::Active:
             return "Active";
           case ScalingPlanStatusCode::ActiveWithProblems:

@@ -16,7 +16,8 @@ GetCertificatesRequest::GetCertificatesRequest() :
     m_certificateStatusesHasBeenSet(false),
     m_includeCertificateDetails(false),
     m_includeCertificateDetailsHasBeenSet(false),
-    m_certificateNameHasBeenSet(false)
+    m_certificateNameHasBeenSet(false),
+    m_pageTokenHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,12 @@ Aws::String GetCertificatesRequest::SerializePayload() const
   if(m_certificateNameHasBeenSet)
   {
    payload.WithString("certificateName", m_certificateName);
+
+  }
+
+  if(m_pageTokenHasBeenSet)
+  {
+   payload.WithString("pageToken", m_pageToken);
 
   }
 

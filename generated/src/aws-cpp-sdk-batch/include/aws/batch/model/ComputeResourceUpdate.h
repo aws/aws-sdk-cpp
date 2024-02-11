@@ -48,43 +48,44 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
-     * parameter isn't applicable to jobs that are running on Fargate resources. Don't
-     * specify it.</p> 
+     * <p>The minimum number of vCPUs that an environment should maintain (even if the
+     * compute environment is <code>DISABLED</code>).</p>  <p>This parameter
+     * isn't applicable to jobs that are running on Fargate resources. Don't specify
+     * it.</p> 
      */
     inline int GetMinvCpus() const{ return m_minvCpus; }
 
     /**
-     * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
-     * parameter isn't applicable to jobs that are running on Fargate resources. Don't
-     * specify it.</p> 
+     * <p>The minimum number of vCPUs that an environment should maintain (even if the
+     * compute environment is <code>DISABLED</code>).</p>  <p>This parameter
+     * isn't applicable to jobs that are running on Fargate resources. Don't specify
+     * it.</p> 
      */
     inline bool MinvCpusHasBeenSet() const { return m_minvCpusHasBeenSet; }
 
     /**
-     * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
-     * parameter isn't applicable to jobs that are running on Fargate resources. Don't
-     * specify it.</p> 
+     * <p>The minimum number of vCPUs that an environment should maintain (even if the
+     * compute environment is <code>DISABLED</code>).</p>  <p>This parameter
+     * isn't applicable to jobs that are running on Fargate resources. Don't specify
+     * it.</p> 
      */
     inline void SetMinvCpus(int value) { m_minvCpusHasBeenSet = true; m_minvCpus = value; }
 
     /**
-     * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
-     * parameter isn't applicable to jobs that are running on Fargate resources. Don't
-     * specify it.</p> 
+     * <p>The minimum number of vCPUs that an environment should maintain (even if the
+     * compute environment is <code>DISABLED</code>).</p>  <p>This parameter
+     * isn't applicable to jobs that are running on Fargate resources. Don't specify
+     * it.</p> 
      */
     inline ComputeResourceUpdate& WithMinvCpus(int value) { SetMinvCpus(value); return *this;}
 
 
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
-     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
-     * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
+     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
+     * <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
+     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
      * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
      * than a single instance. That is, no more than a single instance from among those
@@ -94,9 +95,10 @@ namespace Model
 
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
-     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
-     * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
+     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
+     * <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
+     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
      * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
      * than a single instance. That is, no more than a single instance from among those
@@ -106,9 +108,10 @@ namespace Model
 
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
-     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
-     * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
+     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
+     * <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
+     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
      * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
      * than a single instance. That is, no more than a single instance from among those
@@ -118,9 +121,10 @@ namespace Model
 
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
-     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
-     * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
+     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
+     * <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
+     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
      * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
      * than a single instance. That is, no more than a single instance from among those
@@ -130,68 +134,68 @@ namespace Model
 
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
-     * modifies this value between the minimum and maximum values based on job queue
-     * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
-     * support changing the desired number of vCPUs of an existing compute environment.
-     * Don't specify this parameter for compute environments using Amazon EKS
-     * clusters.</p>   <p>When you update the <code>desiredvCpus</code>
-     * setting, the value must be between the <code>minvCpus</code> and
-     * <code>maxvCpus</code> values. </p> <p>Additionally, the updated
-     * <code>desiredvCpus</code> value must be greater than or equal to the current
-     * <code>desiredvCpus</code> value. For more information, see <a
+     * <p>The desired number of vCPUS in the compute environment. Batch modifies this
+     * value between the minimum and maximum values based on job queue demand.</p>
+     *  <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p>   <p>Batch doesn't support
+     * changing the desired number of vCPUs of an existing compute environment. Don't
+     * specify this parameter for compute environments using Amazon EKS clusters.</p>
+     *   <p>When you update the <code>desiredvCpus</code> setting, the
+     * value must be between the <code>minvCpus</code> and <code>maxvCpus</code>
+     * values. </p> <p>Additionally, the updated <code>desiredvCpus</code> value must
+     * be greater than or equal to the current <code>desiredvCpus</code> value. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting
      * Batch</a> in the <i>Batch User Guide</i>.</p> 
      */
     inline int GetDesiredvCpus() const{ return m_desiredvCpus; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
-     * modifies this value between the minimum and maximum values based on job queue
-     * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
-     * support changing the desired number of vCPUs of an existing compute environment.
-     * Don't specify this parameter for compute environments using Amazon EKS
-     * clusters.</p>   <p>When you update the <code>desiredvCpus</code>
-     * setting, the value must be between the <code>minvCpus</code> and
-     * <code>maxvCpus</code> values. </p> <p>Additionally, the updated
-     * <code>desiredvCpus</code> value must be greater than or equal to the current
-     * <code>desiredvCpus</code> value. For more information, see <a
+     * <p>The desired number of vCPUS in the compute environment. Batch modifies this
+     * value between the minimum and maximum values based on job queue demand.</p>
+     *  <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p>   <p>Batch doesn't support
+     * changing the desired number of vCPUs of an existing compute environment. Don't
+     * specify this parameter for compute environments using Amazon EKS clusters.</p>
+     *   <p>When you update the <code>desiredvCpus</code> setting, the
+     * value must be between the <code>minvCpus</code> and <code>maxvCpus</code>
+     * values. </p> <p>Additionally, the updated <code>desiredvCpus</code> value must
+     * be greater than or equal to the current <code>desiredvCpus</code> value. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting
      * Batch</a> in the <i>Batch User Guide</i>.</p> 
      */
     inline bool DesiredvCpusHasBeenSet() const { return m_desiredvCpusHasBeenSet; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
-     * modifies this value between the minimum and maximum values based on job queue
-     * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
-     * support changing the desired number of vCPUs of an existing compute environment.
-     * Don't specify this parameter for compute environments using Amazon EKS
-     * clusters.</p>   <p>When you update the <code>desiredvCpus</code>
-     * setting, the value must be between the <code>minvCpus</code> and
-     * <code>maxvCpus</code> values. </p> <p>Additionally, the updated
-     * <code>desiredvCpus</code> value must be greater than or equal to the current
-     * <code>desiredvCpus</code> value. For more information, see <a
+     * <p>The desired number of vCPUS in the compute environment. Batch modifies this
+     * value between the minimum and maximum values based on job queue demand.</p>
+     *  <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p>   <p>Batch doesn't support
+     * changing the desired number of vCPUs of an existing compute environment. Don't
+     * specify this parameter for compute environments using Amazon EKS clusters.</p>
+     *   <p>When you update the <code>desiredvCpus</code> setting, the
+     * value must be between the <code>minvCpus</code> and <code>maxvCpus</code>
+     * values. </p> <p>Additionally, the updated <code>desiredvCpus</code> value must
+     * be greater than or equal to the current <code>desiredvCpus</code> value. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting
      * Batch</a> in the <i>Batch User Guide</i>.</p> 
      */
     inline void SetDesiredvCpus(int value) { m_desiredvCpusHasBeenSet = true; m_desiredvCpus = value; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
-     * modifies this value between the minimum and maximum values based on job queue
-     * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
-     * support changing the desired number of vCPUs of an existing compute environment.
-     * Don't specify this parameter for compute environments using Amazon EKS
-     * clusters.</p>   <p>When you update the <code>desiredvCpus</code>
-     * setting, the value must be between the <code>minvCpus</code> and
-     * <code>maxvCpus</code> values. </p> <p>Additionally, the updated
-     * <code>desiredvCpus</code> value must be greater than or equal to the current
-     * <code>desiredvCpus</code> value. For more information, see <a
+     * <p>The desired number of vCPUS in the compute environment. Batch modifies this
+     * value between the minimum and maximum values based on job queue demand.</p>
+     *  <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p>   <p>Batch doesn't support
+     * changing the desired number of vCPUs of an existing compute environment. Don't
+     * specify this parameter for compute environments using Amazon EKS clusters.</p>
+     *   <p>When you update the <code>desiredvCpus</code> setting, the
+     * value must be between the <code>minvCpus</code> and <code>maxvCpus</code>
+     * values. </p> <p>Additionally, the updated <code>desiredvCpus</code> value must
+     * be greater than or equal to the current <code>desiredvCpus</code> value. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting
      * Batch</a> in the <i>Batch User Guide</i>.</p> 
      */
@@ -583,8 +587,13 @@ namespace Model
      * types that are large enough to meet the requirements of the jobs in the queue.
      * Its preference is for instance types that are less likely to be interrupted.
      * This allocation strategy is only available for Spot Instance compute
-     * resources.</p> </dd> </dl> <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The price
+     * and capacity optimized allocation strategy looks at both price and capacity to
+     * select the Spot Instance pools that are the least likely to be interrupted and
+     * have the lowest possible price. This allocation strategy is only available for
+     * Spot Instance compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
      * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
      * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
      * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
@@ -615,8 +624,13 @@ namespace Model
      * types that are large enough to meet the requirements of the jobs in the queue.
      * Its preference is for instance types that are less likely to be interrupted.
      * This allocation strategy is only available for Spot Instance compute
-     * resources.</p> </dd> </dl> <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The price
+     * and capacity optimized allocation strategy looks at both price and capacity to
+     * select the Spot Instance pools that are the least likely to be interrupted and
+     * have the lowest possible price. This allocation strategy is only available for
+     * Spot Instance compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
      * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
      * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
      * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
@@ -647,8 +661,13 @@ namespace Model
      * types that are large enough to meet the requirements of the jobs in the queue.
      * Its preference is for instance types that are less likely to be interrupted.
      * This allocation strategy is only available for Spot Instance compute
-     * resources.</p> </dd> </dl> <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The price
+     * and capacity optimized allocation strategy looks at both price and capacity to
+     * select the Spot Instance pools that are the least likely to be interrupted and
+     * have the lowest possible price. This allocation strategy is only available for
+     * Spot Instance compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
      * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
      * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
      * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
@@ -679,8 +698,13 @@ namespace Model
      * types that are large enough to meet the requirements of the jobs in the queue.
      * Its preference is for instance types that are less likely to be interrupted.
      * This allocation strategy is only available for Spot Instance compute
-     * resources.</p> </dd> </dl> <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The price
+     * and capacity optimized allocation strategy looks at both price and capacity to
+     * select the Spot Instance pools that are the least likely to be interrupted and
+     * have the lowest possible price. This allocation strategy is only available for
+     * Spot Instance compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
      * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
      * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
      * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
@@ -711,8 +735,13 @@ namespace Model
      * types that are large enough to meet the requirements of the jobs in the queue.
      * Its preference is for instance types that are less likely to be interrupted.
      * This allocation strategy is only available for Spot Instance compute
-     * resources.</p> </dd> </dl> <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The price
+     * and capacity optimized allocation strategy looks at both price and capacity to
+     * select the Spot Instance pools that are the least likely to be interrupted and
+     * have the lowest possible price. This allocation strategy is only available for
+     * Spot Instance compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
      * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
      * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
      * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
@@ -743,8 +772,13 @@ namespace Model
      * types that are large enough to meet the requirements of the jobs in the queue.
      * Its preference is for instance types that are less likely to be interrupted.
      * This allocation strategy is only available for Spot Instance compute
-     * resources.</p> </dd> </dl> <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The price
+     * and capacity optimized allocation strategy looks at both price and capacity to
+     * select the Spot Instance pools that are the least likely to be interrupted and
+     * have the lowest possible price. This allocation strategy is only available for
+     * Spot Instance compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
      * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
      * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
      * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single

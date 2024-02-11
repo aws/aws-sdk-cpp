@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PageBasedErrorCode::NOT_SET:
+            return {};
           case PageBasedErrorCode::TEXTRACT_BAD_PAGE:
             return "TEXTRACT_BAD_PAGE";
           case PageBasedErrorCode::TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED:

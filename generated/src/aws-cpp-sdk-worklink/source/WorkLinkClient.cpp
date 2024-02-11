@@ -22,6 +22,9 @@
 #include <aws/worklink/WorkLinkErrorMarshaller.h>
 #include <aws/worklink/WorkLinkEndpointProvider.h>
 
+#include <smithy/tracing/TracingUtils.h>
+
+
 using namespace Aws;
 using namespace Aws::Auth;
 using namespace Aws::Client;
@@ -29,6 +32,7 @@ using namespace Aws::WorkLink;
 using namespace Aws::WorkLink::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 const char* WorkLinkClient::SERVICE_NAME = "worklink";
@@ -129,6 +133,7 @@ WorkLinkClient::WorkLinkClient(const std::shared_ptr<AWSCredentialsProvider>& cr
     /* End of legacy constructors due deprecation */
 WorkLinkClient::~WorkLinkClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<WorkLinkEndpointProviderBase>& WorkLinkClient::accessEndpointProvider()

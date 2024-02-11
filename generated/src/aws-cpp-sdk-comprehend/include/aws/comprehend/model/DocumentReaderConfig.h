@@ -38,8 +38,9 @@ namespace Model
    * <code>DocumentReaderConfig</code> does not apply to plain text files or Word
    * files.</p> <p> For image files and PDF documents, you can override these default
    * actions using the fields listed below. For more information, see <a
-   * href="https://docs.aws.amazon.com/comprehend/latest/dg/detecting-cer.html#detecting-cer-pdf">
-   * Setting text extraction options</a>. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html">
+   * Setting text extraction options</a> in the Comprehend Developer Guide.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentReaderConfig">AWS
    * API Reference</a></p>
    */
@@ -184,9 +185,9 @@ namespace Model
      * <p>Specifies the type of Amazon Textract features to apply. If you chose
      * <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one
      * or both of the following values:</p> <ul> <li> <p> <code>TABLES</code> - Returns
-     * information about any tables that are detected in the input document. </p> </li>
-     * <li> <p> <code>FORMS</code> - Returns information and the data from any forms
-     * that are detected in the input document. </p> </li> </ul>
+     * additional information about any tables that are detected in the input document.
+     * </p> </li> <li> <p> <code>FORMS</code> - Returns additional information about
+     * any forms that are detected in the input document. </p> </li> </ul>
      */
     inline const Aws::Vector<DocumentReadFeatureTypes>& GetFeatureTypes() const{ return m_featureTypes; }
 
@@ -194,9 +195,9 @@ namespace Model
      * <p>Specifies the type of Amazon Textract features to apply. If you chose
      * <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one
      * or both of the following values:</p> <ul> <li> <p> <code>TABLES</code> - Returns
-     * information about any tables that are detected in the input document. </p> </li>
-     * <li> <p> <code>FORMS</code> - Returns information and the data from any forms
-     * that are detected in the input document. </p> </li> </ul>
+     * additional information about any tables that are detected in the input document.
+     * </p> </li> <li> <p> <code>FORMS</code> - Returns additional information about
+     * any forms that are detected in the input document. </p> </li> </ul>
      */
     inline bool FeatureTypesHasBeenSet() const { return m_featureTypesHasBeenSet; }
 
@@ -204,9 +205,9 @@ namespace Model
      * <p>Specifies the type of Amazon Textract features to apply. If you chose
      * <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one
      * or both of the following values:</p> <ul> <li> <p> <code>TABLES</code> - Returns
-     * information about any tables that are detected in the input document. </p> </li>
-     * <li> <p> <code>FORMS</code> - Returns information and the data from any forms
-     * that are detected in the input document. </p> </li> </ul>
+     * additional information about any tables that are detected in the input document.
+     * </p> </li> <li> <p> <code>FORMS</code> - Returns additional information about
+     * any forms that are detected in the input document. </p> </li> </ul>
      */
     inline void SetFeatureTypes(const Aws::Vector<DocumentReadFeatureTypes>& value) { m_featureTypesHasBeenSet = true; m_featureTypes = value; }
 
@@ -214,9 +215,9 @@ namespace Model
      * <p>Specifies the type of Amazon Textract features to apply. If you chose
      * <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one
      * or both of the following values:</p> <ul> <li> <p> <code>TABLES</code> - Returns
-     * information about any tables that are detected in the input document. </p> </li>
-     * <li> <p> <code>FORMS</code> - Returns information and the data from any forms
-     * that are detected in the input document. </p> </li> </ul>
+     * additional information about any tables that are detected in the input document.
+     * </p> </li> <li> <p> <code>FORMS</code> - Returns additional information about
+     * any forms that are detected in the input document. </p> </li> </ul>
      */
     inline void SetFeatureTypes(Aws::Vector<DocumentReadFeatureTypes>&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::move(value); }
 
@@ -224,9 +225,9 @@ namespace Model
      * <p>Specifies the type of Amazon Textract features to apply. If you chose
      * <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one
      * or both of the following values:</p> <ul> <li> <p> <code>TABLES</code> - Returns
-     * information about any tables that are detected in the input document. </p> </li>
-     * <li> <p> <code>FORMS</code> - Returns information and the data from any forms
-     * that are detected in the input document. </p> </li> </ul>
+     * additional information about any tables that are detected in the input document.
+     * </p> </li> <li> <p> <code>FORMS</code> - Returns additional information about
+     * any forms that are detected in the input document. </p> </li> </ul>
      */
     inline DocumentReaderConfig& WithFeatureTypes(const Aws::Vector<DocumentReadFeatureTypes>& value) { SetFeatureTypes(value); return *this;}
 
@@ -234,9 +235,9 @@ namespace Model
      * <p>Specifies the type of Amazon Textract features to apply. If you chose
      * <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one
      * or both of the following values:</p> <ul> <li> <p> <code>TABLES</code> - Returns
-     * information about any tables that are detected in the input document. </p> </li>
-     * <li> <p> <code>FORMS</code> - Returns information and the data from any forms
-     * that are detected in the input document. </p> </li> </ul>
+     * additional information about any tables that are detected in the input document.
+     * </p> </li> <li> <p> <code>FORMS</code> - Returns additional information about
+     * any forms that are detected in the input document. </p> </li> </ul>
      */
     inline DocumentReaderConfig& WithFeatureTypes(Aws::Vector<DocumentReadFeatureTypes>&& value) { SetFeatureTypes(std::move(value)); return *this;}
 
@@ -244,9 +245,9 @@ namespace Model
      * <p>Specifies the type of Amazon Textract features to apply. If you chose
      * <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one
      * or both of the following values:</p> <ul> <li> <p> <code>TABLES</code> - Returns
-     * information about any tables that are detected in the input document. </p> </li>
-     * <li> <p> <code>FORMS</code> - Returns information and the data from any forms
-     * that are detected in the input document. </p> </li> </ul>
+     * additional information about any tables that are detected in the input document.
+     * </p> </li> <li> <p> <code>FORMS</code> - Returns additional information about
+     * any forms that are detected in the input document. </p> </li> </ul>
      */
     inline DocumentReaderConfig& AddFeatureTypes(const DocumentReadFeatureTypes& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
 
@@ -254,9 +255,9 @@ namespace Model
      * <p>Specifies the type of Amazon Textract features to apply. If you chose
      * <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one
      * or both of the following values:</p> <ul> <li> <p> <code>TABLES</code> - Returns
-     * information about any tables that are detected in the input document. </p> </li>
-     * <li> <p> <code>FORMS</code> - Returns information and the data from any forms
-     * that are detected in the input document. </p> </li> </ul>
+     * additional information about any tables that are detected in the input document.
+     * </p> </li> <li> <p> <code>FORMS</code> - Returns additional information about
+     * any forms that are detected in the input document. </p> </li> </ul>
      */
     inline DocumentReaderConfig& AddFeatureTypes(DocumentReadFeatureTypes&& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(std::move(value)); return *this; }
 

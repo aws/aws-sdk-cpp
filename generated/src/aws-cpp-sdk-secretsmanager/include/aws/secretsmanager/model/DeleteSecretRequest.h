@@ -103,7 +103,7 @@ namespace Model
      * <p>The number of days from 7 to 30 that Secrets Manager waits before permanently
      * deleting the secret. You can't use both this parameter and
      * <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use
-     * either, then Secrets Manager defaults to a 30 day recovery window.</p>
+     * either, then by default Secrets Manager uses a 30 day recovery window.</p>
      */
     inline long long GetRecoveryWindowInDays() const{ return m_recoveryWindowInDays; }
 
@@ -111,7 +111,7 @@ namespace Model
      * <p>The number of days from 7 to 30 that Secrets Manager waits before permanently
      * deleting the secret. You can't use both this parameter and
      * <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use
-     * either, then Secrets Manager defaults to a 30 day recovery window.</p>
+     * either, then by default Secrets Manager uses a 30 day recovery window.</p>
      */
     inline bool RecoveryWindowInDaysHasBeenSet() const { return m_recoveryWindowInDaysHasBeenSet; }
 
@@ -119,7 +119,7 @@ namespace Model
      * <p>The number of days from 7 to 30 that Secrets Manager waits before permanently
      * deleting the secret. You can't use both this parameter and
      * <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use
-     * either, then Secrets Manager defaults to a 30 day recovery window.</p>
+     * either, then by default Secrets Manager uses a 30 day recovery window.</p>
      */
     inline void SetRecoveryWindowInDays(long long value) { m_recoveryWindowInDaysHasBeenSet = true; m_recoveryWindowInDays = value; }
 
@@ -127,7 +127,7 @@ namespace Model
      * <p>The number of days from 7 to 30 that Secrets Manager waits before permanently
      * deleting the secret. You can't use both this parameter and
      * <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use
-     * either, then Secrets Manager defaults to a 30 day recovery window.</p>
+     * either, then by default Secrets Manager uses a 30 day recovery window.</p>
      */
     inline DeleteSecretRequest& WithRecoveryWindowInDays(long long value) { SetRecoveryWindowInDays(value); return *this;}
 
@@ -135,16 +135,18 @@ namespace Model
     /**
      * <p>Specifies whether to delete the secret without any recovery window. You can't
      * use both this parameter and <code>RecoveryWindowInDays</code> in the same call.
-     * If you don't use either, then Secrets Manager defaults to a 30 day recovery
+     * If you don't use either, then by default Secrets Manager uses a 30 day recovery
      * window.</p> <p>Secrets Manager performs the actual deletion with an asynchronous
      * background process, so there might be a short delay before the secret is
      * permanently deleted. If you delete a secret and then immediately create a secret
-     * with the same name, use appropriate back off and retry logic.</p> 
-     * <p>Use this parameter with caution. This parameter causes the operation to skip
-     * the normal recovery window before the permanent deletion that Secrets Manager
-     * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
-     * then you have no opportunity to recover the secret. You lose the secret
+     * with the same name, use appropriate back off and retry logic.</p> <p>If you
+     * forcibly delete an already deleted or nonexistent secret, the operation does not
+     * return <code>ResourceNotFoundException</code>.</p>  <p>Use this
+     * parameter with caution. This parameter causes the operation to skip the normal
+     * recovery window before the permanent deletion that Secrets Manager would
+     * normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then
+     * you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
     inline bool GetForceDeleteWithoutRecovery() const{ return m_forceDeleteWithoutRecovery; }
@@ -152,16 +154,18 @@ namespace Model
     /**
      * <p>Specifies whether to delete the secret without any recovery window. You can't
      * use both this parameter and <code>RecoveryWindowInDays</code> in the same call.
-     * If you don't use either, then Secrets Manager defaults to a 30 day recovery
+     * If you don't use either, then by default Secrets Manager uses a 30 day recovery
      * window.</p> <p>Secrets Manager performs the actual deletion with an asynchronous
      * background process, so there might be a short delay before the secret is
      * permanently deleted. If you delete a secret and then immediately create a secret
-     * with the same name, use appropriate back off and retry logic.</p> 
-     * <p>Use this parameter with caution. This parameter causes the operation to skip
-     * the normal recovery window before the permanent deletion that Secrets Manager
-     * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
-     * then you have no opportunity to recover the secret. You lose the secret
+     * with the same name, use appropriate back off and retry logic.</p> <p>If you
+     * forcibly delete an already deleted or nonexistent secret, the operation does not
+     * return <code>ResourceNotFoundException</code>.</p>  <p>Use this
+     * parameter with caution. This parameter causes the operation to skip the normal
+     * recovery window before the permanent deletion that Secrets Manager would
+     * normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then
+     * you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
     inline bool ForceDeleteWithoutRecoveryHasBeenSet() const { return m_forceDeleteWithoutRecoveryHasBeenSet; }
@@ -169,16 +173,18 @@ namespace Model
     /**
      * <p>Specifies whether to delete the secret without any recovery window. You can't
      * use both this parameter and <code>RecoveryWindowInDays</code> in the same call.
-     * If you don't use either, then Secrets Manager defaults to a 30 day recovery
+     * If you don't use either, then by default Secrets Manager uses a 30 day recovery
      * window.</p> <p>Secrets Manager performs the actual deletion with an asynchronous
      * background process, so there might be a short delay before the secret is
      * permanently deleted. If you delete a secret and then immediately create a secret
-     * with the same name, use appropriate back off and retry logic.</p> 
-     * <p>Use this parameter with caution. This parameter causes the operation to skip
-     * the normal recovery window before the permanent deletion that Secrets Manager
-     * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
-     * then you have no opportunity to recover the secret. You lose the secret
+     * with the same name, use appropriate back off and retry logic.</p> <p>If you
+     * forcibly delete an already deleted or nonexistent secret, the operation does not
+     * return <code>ResourceNotFoundException</code>.</p>  <p>Use this
+     * parameter with caution. This parameter causes the operation to skip the normal
+     * recovery window before the permanent deletion that Secrets Manager would
+     * normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then
+     * you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
     inline void SetForceDeleteWithoutRecovery(bool value) { m_forceDeleteWithoutRecoveryHasBeenSet = true; m_forceDeleteWithoutRecovery = value; }
@@ -186,16 +192,18 @@ namespace Model
     /**
      * <p>Specifies whether to delete the secret without any recovery window. You can't
      * use both this parameter and <code>RecoveryWindowInDays</code> in the same call.
-     * If you don't use either, then Secrets Manager defaults to a 30 day recovery
+     * If you don't use either, then by default Secrets Manager uses a 30 day recovery
      * window.</p> <p>Secrets Manager performs the actual deletion with an asynchronous
      * background process, so there might be a short delay before the secret is
      * permanently deleted. If you delete a secret and then immediately create a secret
-     * with the same name, use appropriate back off and retry logic.</p> 
-     * <p>Use this parameter with caution. This parameter causes the operation to skip
-     * the normal recovery window before the permanent deletion that Secrets Manager
-     * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
-     * then you have no opportunity to recover the secret. You lose the secret
+     * with the same name, use appropriate back off and retry logic.</p> <p>If you
+     * forcibly delete an already deleted or nonexistent secret, the operation does not
+     * return <code>ResourceNotFoundException</code>.</p>  <p>Use this
+     * parameter with caution. This parameter causes the operation to skip the normal
+     * recovery window before the permanent deletion that Secrets Manager would
+     * normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then
+     * you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
     inline DeleteSecretRequest& WithForceDeleteWithoutRecovery(bool value) { SetForceDeleteWithoutRecovery(value); return *this;}

@@ -7,6 +7,7 @@
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/appflow/model/DataTransferApi.h>
 #include <utility>
 
 namespace Aws
@@ -158,6 +159,43 @@ namespace Model
      */
     inline CustomConnectorSourceProperties& AddCustomProperties(const char* key, const char* value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The API of the connector application that Amazon AppFlow uses to transfer
+     * your data.</p>
+     */
+    inline const DataTransferApi& GetDataTransferApi() const{ return m_dataTransferApi; }
+
+    /**
+     * <p>The API of the connector application that Amazon AppFlow uses to transfer
+     * your data.</p>
+     */
+    inline bool DataTransferApiHasBeenSet() const { return m_dataTransferApiHasBeenSet; }
+
+    /**
+     * <p>The API of the connector application that Amazon AppFlow uses to transfer
+     * your data.</p>
+     */
+    inline void SetDataTransferApi(const DataTransferApi& value) { m_dataTransferApiHasBeenSet = true; m_dataTransferApi = value; }
+
+    /**
+     * <p>The API of the connector application that Amazon AppFlow uses to transfer
+     * your data.</p>
+     */
+    inline void SetDataTransferApi(DataTransferApi&& value) { m_dataTransferApiHasBeenSet = true; m_dataTransferApi = std::move(value); }
+
+    /**
+     * <p>The API of the connector application that Amazon AppFlow uses to transfer
+     * your data.</p>
+     */
+    inline CustomConnectorSourceProperties& WithDataTransferApi(const DataTransferApi& value) { SetDataTransferApi(value); return *this;}
+
+    /**
+     * <p>The API of the connector application that Amazon AppFlow uses to transfer
+     * your data.</p>
+     */
+    inline CustomConnectorSourceProperties& WithDataTransferApi(DataTransferApi&& value) { SetDataTransferApi(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_entityName;
@@ -165,6 +203,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_customProperties;
     bool m_customPropertiesHasBeenSet = false;
+
+    DataTransferApi m_dataTransferApi;
+    bool m_dataTransferApiHasBeenSet = false;
   };
 
 } // namespace Model

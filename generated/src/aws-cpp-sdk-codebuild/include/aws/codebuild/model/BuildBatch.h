@@ -942,8 +942,8 @@ namespace Model
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
      * <p>If CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
      * CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -952,8 +952,8 @@ namespace Model
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
      * <p>If CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
      * CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -962,8 +962,8 @@ namespace Model
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
      * <p>If CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
      * CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -972,8 +972,8 @@ namespace Model
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
      * <p>If CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
      * CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -982,8 +982,8 @@ namespace Model
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
      * <p>If CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
      * CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -992,8 +992,8 @@ namespace Model
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
      * <p>If CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
      * CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -1002,8 +1002,8 @@ namespace Model
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
      * <p>If CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
      * CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -1012,8 +1012,8 @@ namespace Model
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
      * <p>If CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
      * CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */

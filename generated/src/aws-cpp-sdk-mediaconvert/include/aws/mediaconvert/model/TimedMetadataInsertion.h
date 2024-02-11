@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you
-   * specify. In each output that you want to include this metadata, you must set ID3
-   * metadata (timedMetadata) to Passthrough (PASSTHROUGH).<p><h3>See Also:</h3>   <a
+   * Insert user-defined custom ID3 metadata at timecodes that you specify. In each
+   * output that you want to include this metadata, you must set ID3 metadata to
+   * Passthrough.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TimedMetadataInsertion">AWS
    * API Reference</a></p>
    */

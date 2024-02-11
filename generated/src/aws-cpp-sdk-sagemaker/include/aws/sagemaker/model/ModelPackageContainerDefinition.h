@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/ModelInput.h>
+#include <aws/sagemaker/model/AdditionalS3DataSource.h>
 #include <utility>
 
 namespace Aws
@@ -602,6 +603,43 @@ namespace Model
      */
     inline ModelPackageContainerDefinition& WithNearestModelName(const char* value) { SetNearestModelName(value); return *this;}
 
+
+    /**
+     * <p>The additional data source that is used during inference in the Docker
+     * container for your model package.</p>
+     */
+    inline const AdditionalS3DataSource& GetAdditionalS3DataSource() const{ return m_additionalS3DataSource; }
+
+    /**
+     * <p>The additional data source that is used during inference in the Docker
+     * container for your model package.</p>
+     */
+    inline bool AdditionalS3DataSourceHasBeenSet() const { return m_additionalS3DataSourceHasBeenSet; }
+
+    /**
+     * <p>The additional data source that is used during inference in the Docker
+     * container for your model package.</p>
+     */
+    inline void SetAdditionalS3DataSource(const AdditionalS3DataSource& value) { m_additionalS3DataSourceHasBeenSet = true; m_additionalS3DataSource = value; }
+
+    /**
+     * <p>The additional data source that is used during inference in the Docker
+     * container for your model package.</p>
+     */
+    inline void SetAdditionalS3DataSource(AdditionalS3DataSource&& value) { m_additionalS3DataSourceHasBeenSet = true; m_additionalS3DataSource = std::move(value); }
+
+    /**
+     * <p>The additional data source that is used during inference in the Docker
+     * container for your model package.</p>
+     */
+    inline ModelPackageContainerDefinition& WithAdditionalS3DataSource(const AdditionalS3DataSource& value) { SetAdditionalS3DataSource(value); return *this;}
+
+    /**
+     * <p>The additional data source that is used during inference in the Docker
+     * container for your model package.</p>
+     */
+    inline ModelPackageContainerDefinition& WithAdditionalS3DataSource(AdditionalS3DataSource&& value) { SetAdditionalS3DataSource(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_containerHostname;
@@ -633,6 +671,9 @@ namespace Model
 
     Aws::String m_nearestModelName;
     bool m_nearestModelNameHasBeenSet = false;
+
+    AdditionalS3DataSource m_additionalS3DataSource;
+    bool m_additionalS3DataSourceHasBeenSet = false;
   };
 
 } // namespace Model

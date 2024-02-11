@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     latest,
     trim_horizon,
-    earliest
+    earliest,
+    timestamp
   };
 
 namespace StartingPositionMapper

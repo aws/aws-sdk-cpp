@@ -22,8 +22,7 @@ namespace Model
 {
 
   /**
-   * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
-   * value AIFF.<p><h3>See Also:</h3>   <a
+   * Required when you set Codec to the value AIFF.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AiffSettings">AWS
    * API Reference</a></p>
    */
@@ -37,26 +36,26 @@ namespace Model
 
 
     /**
-     * Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality
-     * for this audio track.
+     * Specify Bit depth, in bits per sample, to choose the encoding quality for this
+     * audio track.
      */
     inline int GetBitDepth() const{ return m_bitDepth; }
 
     /**
-     * Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality
-     * for this audio track.
+     * Specify Bit depth, in bits per sample, to choose the encoding quality for this
+     * audio track.
      */
     inline bool BitDepthHasBeenSet() const { return m_bitDepthHasBeenSet; }
 
     /**
-     * Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality
-     * for this audio track.
+     * Specify Bit depth, in bits per sample, to choose the encoding quality for this
+     * audio track.
      */
     inline void SetBitDepth(int value) { m_bitDepthHasBeenSet = true; m_bitDepth = value; }
 
     /**
-     * Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality
-     * for this audio track.
+     * Specify Bit depth, in bits per sample, to choose the encoding quality for this
+     * audio track.
      */
     inline AiffSettings& WithBitDepth(int value) { SetBitDepth(value); return *this;}
 
@@ -87,22 +86,22 @@ namespace Model
 
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline AiffSettings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
 

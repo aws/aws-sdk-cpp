@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChallengeName::NOT_SET:
+            return {};
           case ChallengeName::Password:
             return "Password";
           case ChallengeName::Mfa:

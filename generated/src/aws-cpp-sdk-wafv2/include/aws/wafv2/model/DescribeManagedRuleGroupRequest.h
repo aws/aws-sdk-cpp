@@ -37,49 +37,49 @@ namespace Model
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline const Aws::String& GetVendorName() const{ return m_vendorName; }
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline bool VendorNameHasBeenSet() const { return m_vendorNameHasBeenSet; }
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline void SetVendorName(const Aws::String& value) { m_vendorNameHasBeenSet = true; m_vendorName = value; }
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline void SetVendorName(Aws::String&& value) { m_vendorNameHasBeenSet = true; m_vendorName = std::move(value); }
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline void SetVendorName(const char* value) { m_vendorNameHasBeenSet = true; m_vendorName.assign(value); }
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline DescribeManagedRuleGroupRequest& WithVendorName(const Aws::String& value) { SetVendorName(value); return *this;}
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline DescribeManagedRuleGroupRequest& WithVendorName(Aws::String&& value) { SetVendorName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline DescribeManagedRuleGroupRequest& WithVendorName(const char* value) { SetVendorName(value); return *this;}
 
@@ -137,9 +137,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -149,9 +150,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -161,9 +163,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -173,9 +176,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -185,9 +189,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -197,9 +202,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */

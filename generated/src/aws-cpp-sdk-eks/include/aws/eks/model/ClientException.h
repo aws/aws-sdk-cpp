@@ -25,9 +25,10 @@ namespace Model
 
   /**
    * <p>These errors are usually caused by a client action. Actions can include using
-   * an action or resource on behalf of a user that doesn't have permissions to use
-   * the action or resource or specifying an identifier that is not
-   * valid.</p><p><h3>See Also:</h3>   <a
+   * an action or resource on behalf of an <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+   * principal</a> that doesn't have permissions to use the action or resource or
+   * specifying an identifier that is not valid.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ClientException">AWS
    * API Reference</a></p>
    */
@@ -122,53 +123,158 @@ namespace Model
     inline ClientException& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline const Aws::String& GetAddonName() const{ return m_addonName; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline ClientException& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline ClientException& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline ClientException& WithAddonName(const char* value) { SetAddonName(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline ClientException& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline ClientException& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline ClientException& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
+
+
+    /**
+     * <p>These errors are usually caused by a client action. Actions can include using
+     * an action or resource on behalf of an <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+     * principal</a> that doesn't have permissions to use the action or resource or
+     * specifying an identifier that is not valid.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    
+    /**
+     * <p>These errors are usually caused by a client action. Actions can include using
+     * an action or resource on behalf of an <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+     * principal</a> that doesn't have permissions to use the action or resource or
+     * specifying an identifier that is not valid.</p>
+     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
-    
+    /**
+     * <p>These errors are usually caused by a client action. Actions can include using
+     * an action or resource on behalf of an <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+     * principal</a> that doesn't have permissions to use the action or resource or
+     * specifying an identifier that is not valid.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p>These errors are usually caused by a client action. Actions can include using
+     * an action or resource on behalf of an <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+     * principal</a> that doesn't have permissions to use the action or resource or
+     * specifying an identifier that is not valid.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
-    
+    /**
+     * <p>These errors are usually caused by a client action. Actions can include using
+     * an action or resource on behalf of an <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+     * principal</a> that doesn't have permissions to use the action or resource or
+     * specifying an identifier that is not valid.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /**
+     * <p>These errors are usually caused by a client action. Actions can include using
+     * an action or resource on behalf of an <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+     * principal</a> that doesn't have permissions to use the action or resource or
+     * specifying an identifier that is not valid.</p>
+     */
     inline ClientException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>These errors are usually caused by a client action. Actions can include using
+     * an action or resource on behalf of an <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+     * principal</a> that doesn't have permissions to use the action or resource or
+     * specifying an identifier that is not valid.</p>
+     */
     inline ClientException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>These errors are usually caused by a client action. Actions can include using
+     * an action or resource on behalf of an <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+     * principal</a> that doesn't have permissions to use the action or resource or
+     * specifying an identifier that is not valid.</p>
+     */
     inline ClientException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
@@ -181,6 +287,9 @@ namespace Model
 
     Aws::String m_addonName;
     bool m_addonNameHasBeenSet = false;
+
+    Aws::String m_subscriptionId;
+    bool m_subscriptionIdHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;

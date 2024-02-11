@@ -19,7 +19,7 @@ UpdateNodegroupConfigRequest::UpdateNodegroupConfigRequest() :
     m_taintsHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
     m_updateConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

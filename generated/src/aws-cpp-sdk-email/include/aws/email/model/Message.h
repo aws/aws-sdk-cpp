@@ -42,38 +42,38 @@ namespace Model
 
 
     /**
-     * <p>The subject of the message: A short summary of the content, which will appear
-     * in the recipient's inbox.</p>
+     * <p>The subject of the message: A short summary of the content, which appears in
+     * the recipient's inbox.</p>
      */
     inline const Content& GetSubject() const{ return m_subject; }
 
     /**
-     * <p>The subject of the message: A short summary of the content, which will appear
-     * in the recipient's inbox.</p>
+     * <p>The subject of the message: A short summary of the content, which appears in
+     * the recipient's inbox.</p>
      */
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
 
     /**
-     * <p>The subject of the message: A short summary of the content, which will appear
-     * in the recipient's inbox.</p>
+     * <p>The subject of the message: A short summary of the content, which appears in
+     * the recipient's inbox.</p>
      */
     inline void SetSubject(const Content& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
-     * <p>The subject of the message: A short summary of the content, which will appear
-     * in the recipient's inbox.</p>
+     * <p>The subject of the message: A short summary of the content, which appears in
+     * the recipient's inbox.</p>
      */
     inline void SetSubject(Content&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
 
     /**
-     * <p>The subject of the message: A short summary of the content, which will appear
-     * in the recipient's inbox.</p>
+     * <p>The subject of the message: A short summary of the content, which appears in
+     * the recipient's inbox.</p>
      */
     inline Message& WithSubject(const Content& value) { SetSubject(value); return *this;}
 
     /**
-     * <p>The subject of the message: A short summary of the content, which will appear
-     * in the recipient's inbox.</p>
+     * <p>The subject of the message: A short summary of the content, which appears in
+     * the recipient's inbox.</p>
      */
     inline Message& WithSubject(Content&& value) { SetSubject(std::move(value)); return *this;}
 

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/FolderType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/quicksight/model/SharingModel.h>
 #include <utility>
 
 namespace Aws
@@ -255,6 +256,37 @@ namespace Model
      */
     inline FolderSummary& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The sharing scope of the folder.</p>
+     */
+    inline const SharingModel& GetSharingModel() const{ return m_sharingModel; }
+
+    /**
+     * <p>The sharing scope of the folder.</p>
+     */
+    inline bool SharingModelHasBeenSet() const { return m_sharingModelHasBeenSet; }
+
+    /**
+     * <p>The sharing scope of the folder.</p>
+     */
+    inline void SetSharingModel(const SharingModel& value) { m_sharingModelHasBeenSet = true; m_sharingModel = value; }
+
+    /**
+     * <p>The sharing scope of the folder.</p>
+     */
+    inline void SetSharingModel(SharingModel&& value) { m_sharingModelHasBeenSet = true; m_sharingModel = std::move(value); }
+
+    /**
+     * <p>The sharing scope of the folder.</p>
+     */
+    inline FolderSummary& WithSharingModel(const SharingModel& value) { SetSharingModel(value); return *this;}
+
+    /**
+     * <p>The sharing scope of the folder.</p>
+     */
+    inline FolderSummary& WithSharingModel(SharingModel&& value) { SetSharingModel(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -274,6 +306,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet = false;
+
+    SharingModel m_sharingModel;
+    bool m_sharingModelHasBeenSet = false;
   };
 
 } // namespace Model

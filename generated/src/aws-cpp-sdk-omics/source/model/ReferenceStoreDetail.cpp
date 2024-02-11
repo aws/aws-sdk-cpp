@@ -20,21 +20,21 @@ namespace Model
 
 ReferenceStoreDetail::ReferenceStoreDetail() : 
     m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_sseConfigHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_sseConfigHasBeenSet(false),
+    m_creationTimeHasBeenSet(false)
 {
 }
 
 ReferenceStoreDetail::ReferenceStoreDetail(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_sseConfigHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_sseConfigHasBeenSet(false),
+    m_creationTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -46,20 +46,6 @@ ReferenceStoreDetail& ReferenceStoreDetail::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-    m_creationTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -76,11 +62,25 @@ ReferenceStoreDetail& ReferenceStoreDetail::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sseConfig"))
   {
     m_sseConfig = jsonValue.GetObject("sseConfig");
 
     m_sseConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+    m_creationTimeHasBeenSet = true;
   }
 
   return *this;
@@ -96,17 +96,6 @@ JsonValue ReferenceStoreDetail::Jsonize() const
 
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
@@ -119,10 +108,21 @@ JsonValue ReferenceStoreDetail::Jsonize() const
 
   }
 
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
   if(m_sseConfigHasBeenSet)
   {
    payload.WithObject("sseConfig", m_sseConfig.Jsonize());
 
+  }
+
+  if(m_creationTimeHasBeenSet)
+  {
+   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

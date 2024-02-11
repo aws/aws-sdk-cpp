@@ -22,6 +22,7 @@ namespace Aws
 
         static const int OFF_HASH = HashingUtils::HashString("OFF");
         static const int BEHIND_LIVE_EDGE_HASH = HashingUtils::HashString("BEHIND_LIVE_EDGE");
+        static const int AFTER_LIVE_EDGE_HASH = HashingUtils::HashString("AFTER_LIVE_EDGE");
 
 
         Mode GetModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == BEHIND_LIVE_EDGE_HASH)
           {
             return Mode::BEHIND_LIVE_EDGE;
+          }
+          else if (hashCode == AFTER_LIVE_EDGE_HASH)
+          {
+            return Mode::AFTER_LIVE_EDGE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mode::NOT_SET:
+            return {};
           case Mode::OFF:
             return "OFF";
           case Mode::BEHIND_LIVE_EDGE:
             return "BEHIND_LIVE_EDGE";
+          case Mode::AFTER_LIVE_EDGE:
+            return "AFTER_LIVE_EDGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

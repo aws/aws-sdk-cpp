@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobResourceType::NOT_SET:
+            return {};
           case JobResourceType::PACKAGE:
             return "PACKAGE";
           default:

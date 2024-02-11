@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration information for the AMAZON.KendraSearchIntent intent.
-   * When you use this intent, Amazon Lex searches the specified Amazon Kendra index
-   * and returns documents from the index that match the user's
-   * utterance.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides configuration information for the
+   * <code>AMAZON.KendraSearchIntent</code> intent. When you use this intent, Amazon
+   * Lex searches the specified Amazon Kendra index and returns documents from the
+   * index that match the user's utterance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/KendraConfiguration">AWS
    * API Reference</a></p>
    */
@@ -42,82 +42,82 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
-     * AMAZON.KendraSearchIntent intent to search. The index must be in the same
-     * account and Region as the Amazon Lex bot.</p>
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in
+     * the same account and Region as the Amazon Lex bot.</p>
      */
     inline const Aws::String& GetKendraIndex() const{ return m_kendraIndex; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
-     * AMAZON.KendraSearchIntent intent to search. The index must be in the same
-     * account and Region as the Amazon Lex bot.</p>
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in
+     * the same account and Region as the Amazon Lex bot.</p>
      */
     inline bool KendraIndexHasBeenSet() const { return m_kendraIndexHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
-     * AMAZON.KendraSearchIntent intent to search. The index must be in the same
-     * account and Region as the Amazon Lex bot.</p>
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in
+     * the same account and Region as the Amazon Lex bot.</p>
      */
     inline void SetKendraIndex(const Aws::String& value) { m_kendraIndexHasBeenSet = true; m_kendraIndex = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
-     * AMAZON.KendraSearchIntent intent to search. The index must be in the same
-     * account and Region as the Amazon Lex bot.</p>
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in
+     * the same account and Region as the Amazon Lex bot.</p>
      */
     inline void SetKendraIndex(Aws::String&& value) { m_kendraIndexHasBeenSet = true; m_kendraIndex = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
-     * AMAZON.KendraSearchIntent intent to search. The index must be in the same
-     * account and Region as the Amazon Lex bot.</p>
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in
+     * the same account and Region as the Amazon Lex bot.</p>
      */
     inline void SetKendraIndex(const char* value) { m_kendraIndexHasBeenSet = true; m_kendraIndex.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
-     * AMAZON.KendraSearchIntent intent to search. The index must be in the same
-     * account and Region as the Amazon Lex bot.</p>
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in
+     * the same account and Region as the Amazon Lex bot.</p>
      */
     inline KendraConfiguration& WithKendraIndex(const Aws::String& value) { SetKendraIndex(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
-     * AMAZON.KendraSearchIntent intent to search. The index must be in the same
-     * account and Region as the Amazon Lex bot.</p>
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in
+     * the same account and Region as the Amazon Lex bot.</p>
      */
     inline KendraConfiguration& WithKendraIndex(Aws::String&& value) { SetKendraIndex(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
-     * AMAZON.KendraSearchIntent intent to search. The index must be in the same
-     * account and Region as the Amazon Lex bot.</p>
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in
+     * the same account and Region as the Amazon Lex bot.</p>
      */
     inline KendraConfiguration& WithKendraIndex(const char* value) { SetKendraIndex(value); return *this;}
 
 
     /**
-     * <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query
-     * string to query the Amazon Kendra index.</p>
+     * <p>Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a
+     * custom query string to query the Amazon Kendra index.</p>
      */
     inline bool GetQueryFilterStringEnabled() const{ return m_queryFilterStringEnabled; }
 
     /**
-     * <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query
-     * string to query the Amazon Kendra index.</p>
+     * <p>Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a
+     * custom query string to query the Amazon Kendra index.</p>
      */
     inline bool QueryFilterStringEnabledHasBeenSet() const { return m_queryFilterStringEnabledHasBeenSet; }
 
     /**
-     * <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query
-     * string to query the Amazon Kendra index.</p>
+     * <p>Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a
+     * custom query string to query the Amazon Kendra index.</p>
      */
     inline void SetQueryFilterStringEnabled(bool value) { m_queryFilterStringEnabledHasBeenSet = true; m_queryFilterStringEnabled = value; }
 
     /**
-     * <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query
-     * string to query the Amazon Kendra index.</p>
+     * <p>Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a
+     * custom query string to query the Amazon Kendra index.</p>
      */
     inline KendraConfiguration& WithQueryFilterStringEnabled(bool value) { SetQueryFilterStringEnabled(value); return *this;}
 

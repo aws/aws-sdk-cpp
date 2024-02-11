@@ -41,89 +41,121 @@ namespace Model
     /**
      * <p>If the principal is an Amazon Web Services account, it provides the Canonical
      * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
+     *  <p> <b>Directory buckets</b> - If the principal is an Amazon Web Services
+     * account, it provides the Amazon Web Services account ID. If the principal is an
+     * IAM User, it provides a user ARN value.</p> 
      */
     inline const Aws::String& GetID() const{ return m_iD; }
 
     /**
      * <p>If the principal is an Amazon Web Services account, it provides the Canonical
      * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
+     *  <p> <b>Directory buckets</b> - If the principal is an Amazon Web Services
+     * account, it provides the Amazon Web Services account ID. If the principal is an
+     * IAM User, it provides a user ARN value.</p> 
      */
     inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
 
     /**
      * <p>If the principal is an Amazon Web Services account, it provides the Canonical
      * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
+     *  <p> <b>Directory buckets</b> - If the principal is an Amazon Web Services
+     * account, it provides the Amazon Web Services account ID. If the principal is an
+     * IAM User, it provides a user ARN value.</p> 
      */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /**
      * <p>If the principal is an Amazon Web Services account, it provides the Canonical
      * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
+     *  <p> <b>Directory buckets</b> - If the principal is an Amazon Web Services
+     * account, it provides the Amazon Web Services account ID. If the principal is an
+     * IAM User, it provides a user ARN value.</p> 
      */
     inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
 
     /**
      * <p>If the principal is an Amazon Web Services account, it provides the Canonical
      * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
+     *  <p> <b>Directory buckets</b> - If the principal is an Amazon Web Services
+     * account, it provides the Amazon Web Services account ID. If the principal is an
+     * IAM User, it provides a user ARN value.</p> 
      */
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
 
     /**
      * <p>If the principal is an Amazon Web Services account, it provides the Canonical
      * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
+     *  <p> <b>Directory buckets</b> - If the principal is an Amazon Web Services
+     * account, it provides the Amazon Web Services account ID. If the principal is an
+     * IAM User, it provides a user ARN value.</p> 
      */
     inline Initiator& WithID(const Aws::String& value) { SetID(value); return *this;}
 
     /**
      * <p>If the principal is an Amazon Web Services account, it provides the Canonical
      * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
+     *  <p> <b>Directory buckets</b> - If the principal is an Amazon Web Services
+     * account, it provides the Amazon Web Services account ID. If the principal is an
+     * IAM User, it provides a user ARN value.</p> 
      */
     inline Initiator& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
 
     /**
      * <p>If the principal is an Amazon Web Services account, it provides the Canonical
      * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
+     *  <p> <b>Directory buckets</b> - If the principal is an Amazon Web Services
+     * account, it provides the Amazon Web Services account ID. If the principal is an
+     * IAM User, it provides a user ARN value.</p> 
      */
     inline Initiator& WithID(const char* value) { SetID(value); return *this;}
 
 
     /**
-     * <p>Name of the Principal.</p>
+     * <p>Name of the Principal.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>Name of the Principal.</p>
+     * <p>Name of the Principal.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>Name of the Principal.</p>
+     * <p>Name of the Principal.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>Name of the Principal.</p>
+     * <p>Name of the Principal.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>Name of the Principal.</p>
+     * <p>Name of the Principal.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>Name of the Principal.</p>
+     * <p>Name of the Principal.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline Initiator& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>Name of the Principal.</p>
+     * <p>Name of the Principal.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline Initiator& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the Principal.</p>
+     * <p>Name of the Principal.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline Initiator& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 

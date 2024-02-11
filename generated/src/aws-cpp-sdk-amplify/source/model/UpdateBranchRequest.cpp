@@ -35,7 +35,8 @@ UpdateBranchRequest::UpdateBranchRequest() :
     m_enablePullRequestPreview(false),
     m_enablePullRequestPreviewHasBeenSet(false),
     m_pullRequestEnvironmentNameHasBeenSet(false),
-    m_backendEnvironmentArnHasBeenSet(false)
+    m_backendEnvironmentArnHasBeenSet(false),
+    m_backendHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,12 @@ Aws::String UpdateBranchRequest::SerializePayload() const
   if(m_backendEnvironmentArnHasBeenSet)
   {
    payload.WithString("backendEnvironmentArn", m_backendEnvironmentArn);
+
+  }
+
+  if(m_backendHasBeenSet)
+  {
+   payload.WithObject("backend", m_backend.Jsonize());
 
   }
 

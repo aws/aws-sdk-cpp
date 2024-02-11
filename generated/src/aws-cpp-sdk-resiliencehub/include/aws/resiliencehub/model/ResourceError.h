@@ -38,83 +38,83 @@ namespace Model
 
 
     /**
-     * <p> This is the identifier of the resource. </p>
+     * <p>Identifier of the logical resource. </p>
      */
     inline const Aws::String& GetLogicalResourceId() const{ return m_logicalResourceId; }
 
     /**
-     * <p> This is the identifier of the resource. </p>
+     * <p>Identifier of the logical resource. </p>
      */
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
 
     /**
-     * <p> This is the identifier of the resource. </p>
+     * <p>Identifier of the logical resource. </p>
      */
     inline void SetLogicalResourceId(const Aws::String& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
 
     /**
-     * <p> This is the identifier of the resource. </p>
+     * <p>Identifier of the logical resource. </p>
      */
     inline void SetLogicalResourceId(Aws::String&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
 
     /**
-     * <p> This is the identifier of the resource. </p>
+     * <p>Identifier of the logical resource. </p>
      */
     inline void SetLogicalResourceId(const char* value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId.assign(value); }
 
     /**
-     * <p> This is the identifier of the resource. </p>
+     * <p>Identifier of the logical resource. </p>
      */
     inline ResourceError& WithLogicalResourceId(const Aws::String& value) { SetLogicalResourceId(value); return *this;}
 
     /**
-     * <p> This is the identifier of the resource. </p>
+     * <p>Identifier of the logical resource. </p>
      */
     inline ResourceError& WithLogicalResourceId(Aws::String&& value) { SetLogicalResourceId(std::move(value)); return *this;}
 
     /**
-     * <p> This is the identifier of the resource. </p>
+     * <p>Identifier of the logical resource. </p>
      */
     inline ResourceError& WithLogicalResourceId(const char* value) { SetLogicalResourceId(value); return *this;}
 
 
     /**
-     * <p> This is the identifier of the physical resource. </p>
+     * <p>Identifier of the physical resource. </p>
      */
     inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
 
     /**
-     * <p> This is the identifier of the physical resource. </p>
+     * <p>Identifier of the physical resource. </p>
      */
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
-     * <p> This is the identifier of the physical resource. </p>
+     * <p>Identifier of the physical resource. </p>
      */
     inline void SetPhysicalResourceId(const Aws::String& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
 
     /**
-     * <p> This is the identifier of the physical resource. </p>
+     * <p>Identifier of the physical resource. </p>
      */
     inline void SetPhysicalResourceId(Aws::String&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
 
     /**
-     * <p> This is the identifier of the physical resource. </p>
+     * <p>Identifier of the physical resource. </p>
      */
     inline void SetPhysicalResourceId(const char* value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId.assign(value); }
 
     /**
-     * <p> This is the identifier of the physical resource. </p>
+     * <p>Identifier of the physical resource. </p>
      */
     inline ResourceError& WithPhysicalResourceId(const Aws::String& value) { SetPhysicalResourceId(value); return *this;}
 
     /**
-     * <p> This is the identifier of the physical resource. </p>
+     * <p>Identifier of the physical resource. </p>
      */
     inline ResourceError& WithPhysicalResourceId(Aws::String&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
 
     /**
-     * <p> This is the identifier of the physical resource. </p>
+     * <p>Identifier of the physical resource. </p>
      */
     inline ResourceError& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
 

@@ -40,7 +40,8 @@ UpdateAutoScalingGroupRequest::UpdateAutoScalingGroupRequest() :
     m_contextHasBeenSet(false),
     m_desiredCapacityTypeHasBeenSet(false),
     m_defaultInstanceWarmup(0),
-    m_defaultInstanceWarmupHasBeenSet(false)
+    m_defaultInstanceWarmupHasBeenSet(false),
+    m_instanceMaintenancePolicyHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,11 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
   if(m_defaultInstanceWarmupHasBeenSet)
   {
     ss << "DefaultInstanceWarmup=" << m_defaultInstanceWarmup << "&";
+  }
+
+  if(m_instanceMaintenancePolicyHasBeenSet)
+  {
+    m_instanceMaintenancePolicy.OutputToStream(ss, "InstanceMaintenancePolicy");
   }
 
   ss << "Version=2011-01-01";

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactStoreType::NOT_SET:
+            return {};
           case ArtifactStoreType::S3:
             return "S3";
           default:

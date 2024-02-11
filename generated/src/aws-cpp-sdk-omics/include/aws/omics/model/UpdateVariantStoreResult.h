@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/ReferenceItem.h>
 #include <aws/omics/model/StoreStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -33,68 +33,6 @@ namespace Model
     AWS_OMICS_API UpdateVariantStoreResult();
     AWS_OMICS_API UpdateVariantStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API UpdateVariantStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline UpdateVariantStoreResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline UpdateVariantStoreResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline UpdateVariantStoreResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline UpdateVariantStoreResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline UpdateVariantStoreResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -131,42 +69,6 @@ namespace Model
      * <p>The store's ID.</p>
      */
     inline UpdateVariantStoreResult& WithId(const char* value) { SetId(value); return *this;}
-
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline UpdateVariantStoreResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline UpdateVariantStoreResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline UpdateVariantStoreResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -222,6 +124,104 @@ namespace Model
 
 
     /**
+     * <p>The store's name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_name = value; }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline void SetName(const char* value) { m_name.assign(value); }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline UpdateVariantStoreResult& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline UpdateVariantStoreResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline UpdateVariantStoreResult& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline UpdateVariantStoreResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline UpdateVariantStoreResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline UpdateVariantStoreResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline UpdateVariantStoreResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline UpdateVariantStoreResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>When the store was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
@@ -270,17 +270,17 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_creationTime;
-
-    Aws::String m_description;
-
     Aws::String m_id;
-
-    Aws::String m_name;
 
     ReferenceItem m_reference;
 
     StoreStatus m_status;
+
+    Aws::String m_name;
+
+    Aws::String m_description;
+
+    Aws::Utils::DateTime m_creationTime;
 
     Aws::Utils::DateTime m_updateTime;
 

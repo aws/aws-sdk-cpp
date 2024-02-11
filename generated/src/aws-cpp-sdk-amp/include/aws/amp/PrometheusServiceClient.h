@@ -25,6 +25,9 @@ namespace PrometheusService
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef PrometheusServiceClientConfiguration ClientConfigurationType;
+      typedef PrometheusServiceEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -149,6 +152,31 @@ namespace PrometheusService
         }
 
         /**
+         * <p>Create a scraper.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateScraper">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateScraperOutcome CreateScraper(const Model::CreateScraperRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateScraper that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateScraperRequestT = Model::CreateScraperRequest>
+        Model::CreateScraperOutcomeCallable CreateScraperCallable(const CreateScraperRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::CreateScraper, request);
+        }
+
+        /**
+         * An Async wrapper for CreateScraper that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateScraperRequestT = Model::CreateScraperRequest>
+        void CreateScraperAsync(const CreateScraperRequestT& request, const CreateScraperResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::CreateScraper, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new AMP workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateWorkspace">AWS
          * API Reference</a></p>
@@ -246,6 +274,31 @@ namespace PrometheusService
         void DeleteRuleGroupsNamespaceAsync(const DeleteRuleGroupsNamespaceRequestT& request, const DeleteRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PrometheusServiceClient::DeleteRuleGroupsNamespace, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a scraper.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraper">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteScraperOutcome DeleteScraper(const Model::DeleteScraperRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteScraper that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteScraperRequestT = Model::DeleteScraperRequest>
+        Model::DeleteScraperOutcomeCallable DeleteScraperCallable(const DeleteScraperRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::DeleteScraper, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteScraper that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteScraperRequestT = Model::DeleteScraperRequest>
+        void DeleteScraperAsync(const DeleteScraperRequestT& request, const DeleteScraperResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::DeleteScraper, request, handler, context);
         }
 
         /**
@@ -349,6 +402,31 @@ namespace PrometheusService
         }
 
         /**
+         * <p>Describe an existing scraper.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraper">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeScraperOutcome DescribeScraper(const Model::DescribeScraperRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeScraper that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeScraperRequestT = Model::DescribeScraperRequest>
+        Model::DescribeScraperOutcomeCallable DescribeScraperCallable(const DescribeScraperRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::DescribeScraper, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeScraper that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeScraperRequestT = Model::DescribeScraperRequest>
+        void DescribeScraperAsync(const DescribeScraperRequestT& request, const DescribeScraperResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::DescribeScraper, request, handler, context);
+        }
+
+        /**
          * <p>Describes an existing AMP workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspace">AWS
          * API Reference</a></p>
@@ -374,6 +452,31 @@ namespace PrometheusService
         }
 
         /**
+         * <p>Gets a default configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDefaultScraperConfigurationOutcome GetDefaultScraperConfiguration(const Model::GetDefaultScraperConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDefaultScraperConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDefaultScraperConfigurationRequestT = Model::GetDefaultScraperConfigurationRequest>
+        Model::GetDefaultScraperConfigurationOutcomeCallable GetDefaultScraperConfigurationCallable(const GetDefaultScraperConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::GetDefaultScraperConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetDefaultScraperConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDefaultScraperConfigurationRequestT = Model::GetDefaultScraperConfigurationRequest>
+        void GetDefaultScraperConfigurationAsync(const GetDefaultScraperConfigurationRequestT& request, const GetDefaultScraperConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::GetDefaultScraperConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Lists rule groups namespaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces">AWS
          * API Reference</a></p>
@@ -396,6 +499,33 @@ namespace PrometheusService
         void ListRuleGroupsNamespacesAsync(const ListRuleGroupsNamespacesRequestT& request, const ListRuleGroupsNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PrometheusServiceClient::ListRuleGroupsNamespaces, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all scrapers in a customer account, including scrapers being created or
+         * deleted. You may provide filters to return a more specific list of
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListScrapers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListScrapersOutcome ListScrapers(const Model::ListScrapersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListScrapers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListScrapersRequestT = Model::ListScrapersRequest>
+        Model::ListScrapersOutcomeCallable ListScrapersCallable(const ListScrapersRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::ListScrapers, request);
+        }
+
+        /**
+         * An Async wrapper for ListScrapers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListScrapersRequestT = Model::ListScrapersRequest>
+        void ListScrapersAsync(const ListScrapersRequestT& request, const ListScrapersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::ListScrapers, request, handler, context);
         }
 
         /**

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionType::NOT_SET:
+            return {};
           case ActionType::SERVICE_SOFTWARE_UPDATE:
             return "SERVICE_SOFTWARE_UPDATE";
           case ActionType::JVM_HEAP_SIZE_TUNING:

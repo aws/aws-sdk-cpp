@@ -28,8 +28,10 @@ EnvironmentSummary::EnvironmentSummary() :
     m_descriptionHasBeenSet(false),
     m_environmentAccountConnectionIdHasBeenSet(false),
     m_environmentAccountIdHasBeenSet(false),
+    m_lastAttemptedDeploymentIdHasBeenSet(false),
     m_lastDeploymentAttemptedAtHasBeenSet(false),
     m_lastDeploymentSucceededAtHasBeenSet(false),
+    m_lastSucceededDeploymentIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protonServiceRoleArnHasBeenSet(false),
     m_provisioning(Provisioning::NOT_SET),
@@ -50,8 +52,10 @@ EnvironmentSummary::EnvironmentSummary(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_environmentAccountConnectionIdHasBeenSet(false),
     m_environmentAccountIdHasBeenSet(false),
+    m_lastAttemptedDeploymentIdHasBeenSet(false),
     m_lastDeploymentAttemptedAtHasBeenSet(false),
     m_lastDeploymentSucceededAtHasBeenSet(false),
+    m_lastSucceededDeploymentIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protonServiceRoleArnHasBeenSet(false),
     m_provisioning(Provisioning::NOT_SET),
@@ -121,6 +125,13 @@ EnvironmentSummary& EnvironmentSummary::operator =(JsonView jsonValue)
     m_environmentAccountIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastAttemptedDeploymentId"))
+  {
+    m_lastAttemptedDeploymentId = jsonValue.GetString("lastAttemptedDeploymentId");
+
+    m_lastAttemptedDeploymentIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("lastDeploymentAttemptedAt"))
   {
     m_lastDeploymentAttemptedAt = jsonValue.GetDouble("lastDeploymentAttemptedAt");
@@ -133,6 +144,13 @@ EnvironmentSummary& EnvironmentSummary::operator =(JsonView jsonValue)
     m_lastDeploymentSucceededAt = jsonValue.GetDouble("lastDeploymentSucceededAt");
 
     m_lastDeploymentSucceededAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastSucceededDeploymentId"))
+  {
+    m_lastSucceededDeploymentId = jsonValue.GetString("lastSucceededDeploymentId");
+
+    m_lastSucceededDeploymentIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -230,6 +248,12 @@ JsonValue EnvironmentSummary::Jsonize() const
 
   }
 
+  if(m_lastAttemptedDeploymentIdHasBeenSet)
+  {
+   payload.WithString("lastAttemptedDeploymentId", m_lastAttemptedDeploymentId);
+
+  }
+
   if(m_lastDeploymentAttemptedAtHasBeenSet)
   {
    payload.WithDouble("lastDeploymentAttemptedAt", m_lastDeploymentAttemptedAt.SecondsWithMSPrecision());
@@ -238,6 +262,12 @@ JsonValue EnvironmentSummary::Jsonize() const
   if(m_lastDeploymentSucceededAtHasBeenSet)
   {
    payload.WithDouble("lastDeploymentSucceededAt", m_lastDeploymentSucceededAt.SecondsWithMSPrecision());
+  }
+
+  if(m_lastSucceededDeploymentIdHasBeenSet)
+  {
+   payload.WithString("lastSucceededDeploymentId", m_lastSucceededDeploymentId);
+
   }
 
   if(m_nameHasBeenSet)

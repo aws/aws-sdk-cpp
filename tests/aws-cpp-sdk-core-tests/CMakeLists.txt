@@ -21,7 +21,9 @@ file(GLOB UTILS_RATE_LIMITER_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/ratelimiter/
 file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/xml/*.cpp")
 file(GLOB UTILS_THREADING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/threading/*.cpp")
 file(GLOB UTILS_MEMORY_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/memory/*.cpp")
+file(GLOB UTILS_COMPONENT_REGISTRY_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/component-registry/*.cpp")
 file(GLOB MONITORING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/monitoring/*.cpp")
+file(GLOB SMITHY_TRACING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/smithy/tracing/*.cpp")
 
 
 file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
@@ -42,8 +44,10 @@ file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   ${UTILS_XML_SRC}
   ${UTILS_THREADING_SRC}
   ${UTILS_MEMORY_SRC}
+  ${UTILS_COMPONENT_REGISTRY_SRC}
   ${UTILS_LOGGING_SRC}
   ${UTILS_RATE_LIMITER_SRC}
+  ${SMITHY_TRACING_SRC}
 )
 
 if(PLATFORM_WINDOWS)
@@ -64,7 +68,9 @@ if(PLATFORM_WINDOWS)
     source_group("Source Files\\utils\\logging" FILES ${UTILS_LOGGING_SRC})
     source_group("Source Files\\utils\\ratelimiter" FILES ${UTILS_RATE_LIMITER_SRC})
     source_group("Source Files\\utils\\memory" FILES ${UTILS_MEMORY_SRC})
+    source_group("Source Files\\utils\\component-registry" FILES ${UTILS_COMPONENT_REGISTRY_SRC})
     source_group("Source Files\\utils\\threading" FILES ${UTILS_THREADING_SRC})
+    source_group("Source Files\\smithy\\tracing" FILES ${SMITHY_TRACING_SRC})
   endif()
 endif()
 

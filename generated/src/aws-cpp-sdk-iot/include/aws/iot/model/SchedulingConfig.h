@@ -48,7 +48,10 @@ namespace Model
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
      * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
-     * the date and HH:MM for the time.</p>
+     * the date and HH:MM for the time.</p> <p>For more information on the syntax for
+     * <code>startTime</code> when using an API command or the Command Line Interface,
+     * see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline const Aws::String& GetStartTime() const{ return m_startTime; }
 
@@ -57,7 +60,10 @@ namespace Model
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
      * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
-     * the date and HH:MM for the time.</p>
+     * the date and HH:MM for the time.</p> <p>For more information on the syntax for
+     * <code>startTime</code> when using an API command or the Command Line Interface,
+     * see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
@@ -66,7 +72,10 @@ namespace Model
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
      * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
-     * the date and HH:MM for the time.</p>
+     * the date and HH:MM for the time.</p> <p>For more information on the syntax for
+     * <code>startTime</code> when using an API command or the Command Line Interface,
+     * see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
@@ -75,7 +84,10 @@ namespace Model
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
      * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
-     * the date and HH:MM for the time.</p>
+     * the date and HH:MM for the time.</p> <p>For more information on the syntax for
+     * <code>startTime</code> when using an API command or the Command Line Interface,
+     * see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
@@ -84,7 +96,10 @@ namespace Model
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
      * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
-     * the date and HH:MM for the time.</p>
+     * the date and HH:MM for the time.</p> <p>For more information on the syntax for
+     * <code>startTime</code> when using an API command or the Command Line Interface,
+     * see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
 
@@ -93,7 +108,10 @@ namespace Model
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
      * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
-     * the date and HH:MM for the time.</p>
+     * the date and HH:MM for the time.</p> <p>For more information on the syntax for
+     * <code>startTime</code> when using an API command or the Command Line Interface,
+     * see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline SchedulingConfig& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
 
@@ -102,7 +120,10 @@ namespace Model
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
      * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
-     * the date and HH:MM for the time.</p>
+     * the date and HH:MM for the time.</p> <p>For more information on the syntax for
+     * <code>startTime</code> when using an API command or the Command Line Interface,
+     * see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline SchedulingConfig& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -111,7 +132,10 @@ namespace Model
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
      * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
-     * the date and HH:MM for the time.</p>
+     * the date and HH:MM for the time.</p> <p>For more information on the syntax for
+     * <code>startTime</code> when using an API command or the Command Line Interface,
+     * see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline SchedulingConfig& WithStartTime(const char* value) { SetStartTime(value); return *this;}
 
@@ -124,7 +148,9 @@ namespace Model
      * <code>endTime</code> is thirty minutes. The maximum duration between
      * <code>startTime</code> and <code>endTime</code> is two years. The date and time
      * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
-     * time.</p>
+     * time.</p> <p>For more information on the syntax for <code>endTime</code> when
+     * using an API command or the Command Line Interface, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline const Aws::String& GetEndTime() const{ return m_endTime; }
 
@@ -136,7 +162,9 @@ namespace Model
      * <code>endTime</code> is thirty minutes. The maximum duration between
      * <code>startTime</code> and <code>endTime</code> is two years. The date and time
      * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
-     * time.</p>
+     * time.</p> <p>For more information on the syntax for <code>endTime</code> when
+     * using an API command or the Command Line Interface, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
@@ -148,7 +176,9 @@ namespace Model
      * <code>endTime</code> is thirty minutes. The maximum duration between
      * <code>startTime</code> and <code>endTime</code> is two years. The date and time
      * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
-     * time.</p>
+     * time.</p> <p>For more information on the syntax for <code>endTime</code> when
+     * using an API command or the Command Line Interface, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
@@ -160,7 +190,9 @@ namespace Model
      * <code>endTime</code> is thirty minutes. The maximum duration between
      * <code>startTime</code> and <code>endTime</code> is two years. The date and time
      * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
-     * time.</p>
+     * time.</p> <p>For more information on the syntax for <code>endTime</code> when
+     * using an API command or the Command Line Interface, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
@@ -172,7 +204,9 @@ namespace Model
      * <code>endTime</code> is thirty minutes. The maximum duration between
      * <code>startTime</code> and <code>endTime</code> is two years. The date and time
      * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
-     * time.</p>
+     * time.</p> <p>For more information on the syntax for <code>endTime</code> when
+     * using an API command or the Command Line Interface, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
 
@@ -184,7 +218,9 @@ namespace Model
      * <code>endTime</code> is thirty minutes. The maximum duration between
      * <code>startTime</code> and <code>endTime</code> is two years. The date and time
      * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
-     * time.</p>
+     * time.</p> <p>For more information on the syntax for <code>endTime</code> when
+     * using an API command or the Command Line Interface, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline SchedulingConfig& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
 
@@ -196,7 +232,9 @@ namespace Model
      * <code>endTime</code> is thirty minutes. The maximum duration between
      * <code>startTime</code> and <code>endTime</code> is two years. The date and time
      * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
-     * time.</p>
+     * time.</p> <p>For more information on the syntax for <code>endTime</code> when
+     * using an API command or the Command Line Interface, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline SchedulingConfig& WithEndTime(Aws::String&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -208,7 +246,9 @@ namespace Model
      * <code>endTime</code> is thirty minutes. The maximum duration between
      * <code>startTime</code> and <code>endTime</code> is two years. The date and time
      * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
-     * time.</p>
+     * time.</p> <p>For more information on the syntax for <code>endTime</code> when
+     * using an API command or the Command Line Interface, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.</p>
      */
     inline SchedulingConfig& WithEndTime(const char* value) { SetEndTime(value); return *this;}
 

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExternalReportStatus::NOT_SET:
+            return {};
           case ExternalReportStatus::SUCCEEDED:
             return "SUCCEEDED";
           case ExternalReportStatus::IN_PROGRESS:

@@ -12,6 +12,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace LocationService
 {
 namespace Model
@@ -31,6 +35,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "SearchPlaceIndexForSuggestions"; }
 
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
+
+    AWS_LOCATIONSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -239,6 +245,97 @@ namespace Model
 
 
     /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFilterCategories() const{ return m_filterCategories; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline bool FilterCategoriesHasBeenSet() const { return m_filterCategoriesHasBeenSet; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline void SetFilterCategories(const Aws::Vector<Aws::String>& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = value; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline void SetFilterCategories(Aws::Vector<Aws::String>&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = std::move(value); }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& WithFilterCategories(const Aws::Vector<Aws::String>& value) { SetFilterCategories(value); return *this;}
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& WithFilterCategories(Aws::Vector<Aws::String>&& value) { SetFilterCategories(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCategories(const Aws::String& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCategories(Aws::String&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCategories(const char* value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
+
+
+    /**
      * <p>An optional parameter that limits the search results by returning only
      * suggestions within the provided list of countries.</p> <ul> <li> <p>Use the <a
      * href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
@@ -359,6 +456,63 @@ namespace Model
      * <p>The name of the place index resource you want to use for the search.</p>
      */
     inline SearchPlaceIndexForSuggestionsRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
@@ -571,11 +725,17 @@ namespace Model
     Aws::Vector<double> m_filterBBox;
     bool m_filterBBoxHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_filterCategories;
+    bool m_filterCategoriesHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_filterCountries;
     bool m_filterCountriesHasBeenSet = false;
 
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet = false;
+
+    Aws::String m_key;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_language;
     bool m_languageHasBeenSet = false;

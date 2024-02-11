@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterBehavior::NOT_SET:
+            return {};
           case FilterBehavior::KEEP:
             return "KEEP";
           case FilterBehavior::DROP:

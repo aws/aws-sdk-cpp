@@ -79,6 +79,9 @@ namespace CodeDeploy
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef CodeDeployClientConfiguration ClientConfigurationType;
+      typedef CodeDeployEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -554,7 +557,12 @@ namespace CodeDeploy
         }
 
         /**
-         * <p>Deletes resources linked to an external ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes resources linked to an external ID. This action only applies if you
+         * have configured blue/green deployments through CloudFormation. </p>  <p>It
+         * is not necessary to call this action directly. CloudFormation calls it on your
+         * behalf when it needs to delete stack resources. This action is offered publicly
+         * in case you need to delete resources to comply with General Data Protection
+         * Regulation (GDPR) requirements.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteResourcesByExternalId">AWS
          * API Reference</a></p>
          */
@@ -812,7 +820,7 @@ namespace CodeDeploy
         }
 
         /**
-         * <p>Lists the applications registered with the IAM user or Amazon Web Services
+         * <p>Lists the applications registered with the user or Amazon Web Services
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">AWS
          * API Reference</a></p>
@@ -838,7 +846,7 @@ namespace CodeDeploy
         }
 
         /**
-         * <p>Lists the deployment configurations with the IAM user or Amazon Web Services
+         * <p>Lists the deployment configurations with the user or Amazon Web Services
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">AWS
          * API Reference</a></p>
@@ -864,8 +872,8 @@ namespace CodeDeploy
         }
 
         /**
-         * <p>Lists the deployment groups for an application registered with the IAM user
-         * or Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the deployment groups for an application registered with the Amazon Web
+         * Services user or Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups">AWS
          * API Reference</a></p>
          */
@@ -917,7 +925,7 @@ namespace CodeDeploy
 
         /**
          * <p>Lists the deployments in a deployment group for an application registered
-         * with the IAM user or Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+         * with the user or Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">AWS
          * API Reference</a></p>
          */

@@ -136,7 +136,7 @@ namespace Model
      * Web Services account ID, for example: <code>123456789012</code> </p> </li> <li>
      * <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -157,7 +157,7 @@ namespace Model
      * Web Services account ID, for example: <code>123456789012</code> </p> </li> <li>
      * <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -178,7 +178,7 @@ namespace Model
      * Web Services account ID, for example: <code>123456789012</code> </p> </li> <li>
      * <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -199,7 +199,7 @@ namespace Model
      * Web Services account ID, for example: <code>123456789012</code> </p> </li> <li>
      * <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -220,7 +220,7 @@ namespace Model
      * Web Services account ID, for example: <code>123456789012</code> </p> </li> <li>
      * <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -241,7 +241,7 @@ namespace Model
      * Web Services account ID, for example: <code>123456789012</code> </p> </li> <li>
      * <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -262,7 +262,7 @@ namespace Model
      * Web Services account ID, for example: <code>123456789012</code> </p> </li> <li>
      * <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -283,7 +283,7 @@ namespace Model
      * Web Services account ID, for example: <code>123456789012</code> </p> </li> <li>
      * <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -304,7 +304,7 @@ namespace Model
      * Web Services account ID, for example: <code>123456789012</code> </p> </li> <li>
      * <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -418,7 +418,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -430,7 +432,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -442,7 +446,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -454,7 +460,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -466,7 +474,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -478,7 +488,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline CreateResourceShareRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -490,7 +502,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline CreateResourceShareRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -502,7 +516,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline CreateResourceShareRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -606,6 +622,61 @@ namespace Model
      */
     inline CreateResourceShareRequest& AddPermissionArns(const char* value) { m_permissionArnsHasBeenSet = true; m_permissionArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline void SetSources(const Aws::Vector<Aws::String>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline void SetSources(Aws::Vector<Aws::String>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline CreateResourceShareRequest& WithSources(const Aws::Vector<Aws::String>& value) { SetSources(value); return *this;}
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline CreateResourceShareRequest& WithSources(Aws::Vector<Aws::String>&& value) { SetSources(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline CreateResourceShareRequest& AddSources(const Aws::String& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline CreateResourceShareRequest& AddSources(Aws::String&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline CreateResourceShareRequest& AddSources(const char* value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -628,6 +699,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_permissionArns;
     bool m_permissionArnsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_sources;
+    bool m_sourcesHasBeenSet = false;
   };
 
 } // namespace Model

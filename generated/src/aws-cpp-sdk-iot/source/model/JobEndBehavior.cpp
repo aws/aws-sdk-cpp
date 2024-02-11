@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobEndBehavior::NOT_SET:
+            return {};
           case JobEndBehavior::STOP_ROLLOUT:
             return "STOP_ROLLOUT";
           case JobEndBehavior::CANCEL:

@@ -26,7 +26,9 @@ DeleteItemRequest::DeleteItemRequest() :
     m_returnItemCollectionMetricsHasBeenSet(false),
     m_conditionExpressionHasBeenSet(false),
     m_expressionAttributeNamesHasBeenSet(false),
-    m_expressionAttributeValuesHasBeenSet(false)
+    m_expressionAttributeValuesHasBeenSet(false),
+    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
+    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,11 @@ Aws::String DeleteItemRequest::SerializePayload() const
    }
    payload.WithObject("ExpressionAttributeValues", std::move(expressionAttributeValuesJsonMap));
 
+  }
+
+  if(m_returnValuesOnConditionCheckFailureHasBeenSet)
+  {
+   payload.WithString("ReturnValuesOnConditionCheckFailure", ReturnValuesOnConditionCheckFailureMapper::GetNameForReturnValuesOnConditionCheckFailure(m_returnValuesOnConditionCheckFailure));
   }
 
   return payload.View().WriteReadable();

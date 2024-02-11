@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateMode::NOT_SET:
+            return {};
           case CertificateMode::DEFAULT:
             return "DEFAULT";
           case CertificateMode::SNI_ONLY:

@@ -14,7 +14,8 @@ GetClusterCredentialsWithIAMRequest::GetClusterCredentialsWithIAMRequest() :
     m_dbNameHasBeenSet(false),
     m_clusterIdentifierHasBeenSet(false),
     m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false)
+    m_durationSecondsHasBeenSet(false),
+    m_customDomainNameHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,11 @@ Aws::String GetClusterCredentialsWithIAMRequest::SerializePayload() const
   if(m_durationSecondsHasBeenSet)
   {
     ss << "DurationSeconds=" << m_durationSeconds << "&";
+  }
+
+  if(m_customDomainNameHasBeenSet)
+  {
+    ss << "CustomDomainName=" << StringUtils::URLEncode(m_customDomainName.c_str()) << "&";
   }
 
   ss << "Version=2012-12-01";

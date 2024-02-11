@@ -24,6 +24,9 @@
 #include <aws/workmailmessageflow/model/GetRawMessageContentRequest.h>
 #include <aws/workmailmessageflow/model/PutRawMessageContentRequest.h>
 
+#include <smithy/tracing/TracingUtils.h>
+
+
 using namespace Aws;
 using namespace Aws::Auth;
 using namespace Aws::Client;
@@ -31,6 +34,7 @@ using namespace Aws::WorkMailMessageFlow;
 using namespace Aws::WorkMailMessageFlow::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 const char* WorkMailMessageFlowClient::SERVICE_NAME = "workmailmessageflow";
@@ -131,6 +135,7 @@ WorkMailMessageFlowClient::WorkMailMessageFlowClient(const std::shared_ptr<AWSCr
     /* End of legacy constructors due deprecation */
 WorkMailMessageFlowClient::~WorkMailMessageFlowClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<WorkMailMessageFlowEndpointProviderBase>& WorkMailMessageFlowClient::accessEndpointProvider()
@@ -153,31 +158,67 @@ void WorkMailMessageFlowClient::OverrideEndpoint(const Aws::String& endpoint)
 
 GetRawMessageContentOutcome WorkMailMessageFlowClient::GetRawMessageContent(const GetRawMessageContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRawMessageContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MessageIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetRawMessageContent", "Required field: MessageId, is not set");
     return GetRawMessageContentOutcome(Aws::Client::AWSError<WorkMailMessageFlowErrors>(WorkMailMessageFlowErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
   }
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
-  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
-  return GetRawMessageContentOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetRawMessageContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetRawMessageContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetRawMessageContent",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetRawMessageContentOutcome>(
+    [&]()-> GetRawMessageContentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
+      return GetRawMessageContentOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 PutRawMessageContentOutcome WorkMailMessageFlowClient::PutRawMessageContent(const PutRawMessageContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutRawMessageContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MessageIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutRawMessageContent", "Required field: MessageId, is not set");
     return PutRawMessageContentOutcome(Aws::Client::AWSError<WorkMailMessageFlowErrors>(WorkMailMessageFlowErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
   }
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
-  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
-  return PutRawMessageContentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutRawMessageContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutRawMessageContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutRawMessageContent",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutRawMessageContentOutcome>(
+    [&]()-> PutRawMessageContentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
+      return PutRawMessageContentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 

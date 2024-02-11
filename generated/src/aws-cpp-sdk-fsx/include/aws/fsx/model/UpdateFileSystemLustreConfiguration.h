@@ -124,16 +124,32 @@ namespace Model
     inline UpdateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
 
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline UpdateFileSystemLustreConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
 
 
@@ -452,6 +468,63 @@ namespace Model
      */
     inline UpdateFileSystemLustreConfiguration& WithRootSquashConfiguration(LustreRootSquashConfiguration&& value) { SetRootSquashConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system,
+     * measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or
+     * decrease your file system's throughput. Valid values depend on the deployment
+     * type of the file system, as follows:</p> <ul> <li> <p>For
+     * <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100,
+     * and 200 MB/s/TiB.</p> </li> <li> <p>For <code>PERSISTENT_2</code> SSD-based
+     * deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+     * </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html">
+     * Managing throughput capacity</a>.</p>
+     */
+    inline int GetPerUnitStorageThroughput() const{ return m_perUnitStorageThroughput; }
+
+    /**
+     * <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system,
+     * measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or
+     * decrease your file system's throughput. Valid values depend on the deployment
+     * type of the file system, as follows:</p> <ul> <li> <p>For
+     * <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100,
+     * and 200 MB/s/TiB.</p> </li> <li> <p>For <code>PERSISTENT_2</code> SSD-based
+     * deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+     * </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html">
+     * Managing throughput capacity</a>.</p>
+     */
+    inline bool PerUnitStorageThroughputHasBeenSet() const { return m_perUnitStorageThroughputHasBeenSet; }
+
+    /**
+     * <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system,
+     * measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or
+     * decrease your file system's throughput. Valid values depend on the deployment
+     * type of the file system, as follows:</p> <ul> <li> <p>For
+     * <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100,
+     * and 200 MB/s/TiB.</p> </li> <li> <p>For <code>PERSISTENT_2</code> SSD-based
+     * deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+     * </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html">
+     * Managing throughput capacity</a>.</p>
+     */
+    inline void SetPerUnitStorageThroughput(int value) { m_perUnitStorageThroughputHasBeenSet = true; m_perUnitStorageThroughput = value; }
+
+    /**
+     * <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system,
+     * measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or
+     * decrease your file system's throughput. Valid values depend on the deployment
+     * type of the file system, as follows:</p> <ul> <li> <p>For
+     * <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100,
+     * and 200 MB/s/TiB.</p> </li> <li> <p>For <code>PERSISTENT_2</code> SSD-based
+     * deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+     * </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html">
+     * Managing throughput capacity</a>.</p>
+     */
+    inline UpdateFileSystemLustreConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -474,6 +547,9 @@ namespace Model
 
     LustreRootSquashConfiguration m_rootSquashConfiguration;
     bool m_rootSquashConfigurationHasBeenSet = false;
+
+    int m_perUnitStorageThroughput;
+    bool m_perUnitStorageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

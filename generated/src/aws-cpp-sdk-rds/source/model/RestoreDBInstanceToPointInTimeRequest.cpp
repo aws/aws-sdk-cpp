@@ -42,6 +42,10 @@ RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() :
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_domainIAMRoleNameHasBeenSet(false),
+    m_domainFqdnHasBeenSet(false),
+    m_domainOuHasBeenSet(false),
+    m_domainAuthSecretArnHasBeenSet(false),
+    m_domainDnsIpsHasBeenSet(false),
     m_enableIAMDatabaseAuthentication(false),
     m_enableIAMDatabaseAuthenticationHasBeenSet(false),
     m_enableCloudwatchLogsExportsHasBeenSet(false),
@@ -63,7 +67,9 @@ RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() :
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
     m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false)
+    m_allocatedStorageHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false)
 {
 }
 
@@ -202,6 +208,32 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
 
+  if(m_domainFqdnHasBeenSet)
+  {
+    ss << "DomainFqdn=" << StringUtils::URLEncode(m_domainFqdn.c_str()) << "&";
+  }
+
+  if(m_domainOuHasBeenSet)
+  {
+    ss << "DomainOu=" << StringUtils::URLEncode(m_domainOu.c_str()) << "&";
+  }
+
+  if(m_domainAuthSecretArnHasBeenSet)
+  {
+    ss << "DomainAuthSecretArn=" << StringUtils::URLEncode(m_domainAuthSecretArn.c_str()) << "&";
+  }
+
+  if(m_domainDnsIpsHasBeenSet)
+  {
+    unsigned domainDnsIpsCount = 1;
+    for(auto& item : m_domainDnsIps)
+    {
+      ss << "DomainDnsIps.member." << domainDnsIpsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      domainDnsIpsCount++;
+    }
+  }
+
   if(m_enableIAMDatabaseAuthenticationHasBeenSet)
   {
     ss << "EnableIAMDatabaseAuthentication=" << std::boolalpha << m_enableIAMDatabaseAuthentication << "&";
@@ -286,6 +318,11 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   if(m_allocatedStorageHasBeenSet)
   {
     ss << "AllocatedStorage=" << m_allocatedStorage << "&";
+  }
+
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+    ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
   ss << "Version=2014-10-31";

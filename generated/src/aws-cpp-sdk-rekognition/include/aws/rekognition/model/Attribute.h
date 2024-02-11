@@ -17,7 +17,19 @@ namespace Model
   {
     NOT_SET,
     DEFAULT,
-    ALL
+    ALL,
+    AGE_RANGE,
+    BEARD,
+    EMOTIONS,
+    EYE_DIRECTION,
+    EYEGLASSES,
+    EYES_OPEN,
+    GENDER,
+    MOUTH_OPEN,
+    MUSTACHE,
+    FACE_OCCLUDED,
+    SMILE,
+    SUNGLASSES
   };
 
 namespace AttributeMapper

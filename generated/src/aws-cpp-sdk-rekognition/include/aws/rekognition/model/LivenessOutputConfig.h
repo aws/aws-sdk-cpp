@@ -91,49 +91,49 @@ namespace Model
 
 
     /**
-     * <p>The prefix appended to the output files for the Face Liveness session
+     * <p>The prefix prepended to the output files for the Face Liveness session
      * results.</p>
      */
     inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
 
     /**
-     * <p>The prefix appended to the output files for the Face Liveness session
+     * <p>The prefix prepended to the output files for the Face Liveness session
      * results.</p>
      */
     inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
 
     /**
-     * <p>The prefix appended to the output files for the Face Liveness session
+     * <p>The prefix prepended to the output files for the Face Liveness session
      * results.</p>
      */
     inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
 
     /**
-     * <p>The prefix appended to the output files for the Face Liveness session
+     * <p>The prefix prepended to the output files for the Face Liveness session
      * results.</p>
      */
     inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::move(value); }
 
     /**
-     * <p>The prefix appended to the output files for the Face Liveness session
+     * <p>The prefix prepended to the output files for the Face Liveness session
      * results.</p>
      */
     inline void SetS3KeyPrefix(const char* value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix.assign(value); }
 
     /**
-     * <p>The prefix appended to the output files for the Face Liveness session
+     * <p>The prefix prepended to the output files for the Face Liveness session
      * results.</p>
      */
     inline LivenessOutputConfig& WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
 
     /**
-     * <p>The prefix appended to the output files for the Face Liveness session
+     * <p>The prefix prepended to the output files for the Face Liveness session
      * results.</p>
      */
     inline LivenessOutputConfig& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix appended to the output files for the Face Liveness session
+     * <p>The prefix prepended to the output files for the Face Liveness session
      * results.</p>
      */
     inline LivenessOutputConfig& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}

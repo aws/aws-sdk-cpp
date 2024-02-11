@@ -20,13 +20,17 @@ namespace Model
 
 Branch::Branch() : 
     m_fullyQualifiedNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_deprecationMessageHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
 Branch::Branch(JsonView jsonValue) : 
     m_fullyQualifiedNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_deprecationMessageHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,20 @@ Branch& Branch::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deprecationMessage"))
+  {
+    m_deprecationMessage = jsonValue.GetString("deprecationMessage");
+
+    m_deprecationMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("comment"))
+  {
+    m_comment = jsonValue.GetString("comment");
+
+    m_commentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +81,18 @@ JsonValue Branch::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_deprecationMessageHasBeenSet)
+  {
+   payload.WithString("deprecationMessage", m_deprecationMessage);
+
+  }
+
+  if(m_commentHasBeenSet)
+  {
+   payload.WithString("comment", m_comment);
 
   }
 

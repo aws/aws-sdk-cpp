@@ -13,8 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateUserSettingsRequest::UpdateUserSettingsRequest() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_cookieSynchronizationConfigurationHasBeenSet(false),
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
@@ -40,6 +41,12 @@ Aws::String UpdateUserSettingsRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_cookieSynchronizationConfigurationHasBeenSet)
+  {
+   payload.WithObject("cookieSynchronizationConfiguration", m_cookieSynchronizationConfiguration.Jsonize());
 
   }
 

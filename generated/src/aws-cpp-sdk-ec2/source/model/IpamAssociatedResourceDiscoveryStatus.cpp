@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamAssociatedResourceDiscoveryStatus::NOT_SET:
+            return {};
           case IpamAssociatedResourceDiscoveryStatus::active:
             return "active";
           case IpamAssociatedResourceDiscoveryStatus::not_found:

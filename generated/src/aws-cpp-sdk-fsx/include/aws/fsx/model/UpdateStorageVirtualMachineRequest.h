@@ -37,38 +37,38 @@ namespace Model
 
 
     /**
-     * <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is
-     * joined to an AD.</p>
+     * <p>Specifies updates to an SVM's Microsoft Active Directory (AD)
+     * configuration.</p>
      */
     inline const UpdateSvmActiveDirectoryConfiguration& GetActiveDirectoryConfiguration() const{ return m_activeDirectoryConfiguration; }
 
     /**
-     * <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is
-     * joined to an AD.</p>
+     * <p>Specifies updates to an SVM's Microsoft Active Directory (AD)
+     * configuration.</p>
      */
     inline bool ActiveDirectoryConfigurationHasBeenSet() const { return m_activeDirectoryConfigurationHasBeenSet; }
 
     /**
-     * <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is
-     * joined to an AD.</p>
+     * <p>Specifies updates to an SVM's Microsoft Active Directory (AD)
+     * configuration.</p>
      */
     inline void SetActiveDirectoryConfiguration(const UpdateSvmActiveDirectoryConfiguration& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = value; }
 
     /**
-     * <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is
-     * joined to an AD.</p>
+     * <p>Specifies updates to an SVM's Microsoft Active Directory (AD)
+     * configuration.</p>
      */
     inline void SetActiveDirectoryConfiguration(UpdateSvmActiveDirectoryConfiguration&& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = std::move(value); }
 
     /**
-     * <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is
-     * joined to an AD.</p>
+     * <p>Specifies updates to an SVM's Microsoft Active Directory (AD)
+     * configuration.</p>
      */
     inline UpdateStorageVirtualMachineRequest& WithActiveDirectoryConfiguration(const UpdateSvmActiveDirectoryConfiguration& value) { SetActiveDirectoryConfiguration(value); return *this;}
 
     /**
-     * <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is
-     * joined to an AD.</p>
+     * <p>Specifies updates to an SVM's Microsoft Active Directory (AD)
+     * configuration.</p>
      */
     inline UpdateStorageVirtualMachineRequest& WithActiveDirectoryConfiguration(UpdateSvmActiveDirectoryConfiguration&& value) { SetActiveDirectoryConfiguration(std::move(value)); return *this;}
 
@@ -148,42 +148,42 @@ namespace Model
 
 
     /**
-     * <p>Enter a new SvmAdminPassword if you are updating it.</p>
+     * <p>Specifies a new SvmAdminPassword.</p>
      */
     inline const Aws::String& GetSvmAdminPassword() const{ return m_svmAdminPassword; }
 
     /**
-     * <p>Enter a new SvmAdminPassword if you are updating it.</p>
+     * <p>Specifies a new SvmAdminPassword.</p>
      */
     inline bool SvmAdminPasswordHasBeenSet() const { return m_svmAdminPasswordHasBeenSet; }
 
     /**
-     * <p>Enter a new SvmAdminPassword if you are updating it.</p>
+     * <p>Specifies a new SvmAdminPassword.</p>
      */
     inline void SetSvmAdminPassword(const Aws::String& value) { m_svmAdminPasswordHasBeenSet = true; m_svmAdminPassword = value; }
 
     /**
-     * <p>Enter a new SvmAdminPassword if you are updating it.</p>
+     * <p>Specifies a new SvmAdminPassword.</p>
      */
     inline void SetSvmAdminPassword(Aws::String&& value) { m_svmAdminPasswordHasBeenSet = true; m_svmAdminPassword = std::move(value); }
 
     /**
-     * <p>Enter a new SvmAdminPassword if you are updating it.</p>
+     * <p>Specifies a new SvmAdminPassword.</p>
      */
     inline void SetSvmAdminPassword(const char* value) { m_svmAdminPasswordHasBeenSet = true; m_svmAdminPassword.assign(value); }
 
     /**
-     * <p>Enter a new SvmAdminPassword if you are updating it.</p>
+     * <p>Specifies a new SvmAdminPassword.</p>
      */
     inline UpdateStorageVirtualMachineRequest& WithSvmAdminPassword(const Aws::String& value) { SetSvmAdminPassword(value); return *this;}
 
     /**
-     * <p>Enter a new SvmAdminPassword if you are updating it.</p>
+     * <p>Specifies a new SvmAdminPassword.</p>
      */
     inline UpdateStorageVirtualMachineRequest& WithSvmAdminPassword(Aws::String&& value) { SetSvmAdminPassword(std::move(value)); return *this;}
 
     /**
-     * <p>Enter a new SvmAdminPassword if you are updating it.</p>
+     * <p>Specifies a new SvmAdminPassword.</p>
      */
     inline UpdateStorageVirtualMachineRequest& WithSvmAdminPassword(const char* value) { SetSvmAdminPassword(value); return *this;}
 

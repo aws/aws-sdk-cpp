@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET:
+            return {};
           case DashIsoGroupAudioChannelConfigSchemeIdUri::MPEG_CHANNEL_CONFIGURATION:
             return "MPEG_CHANNEL_CONFIGURATION";
           case DashIsoGroupAudioChannelConfigSchemeIdUri::DOLBY_CHANNEL_CONFIGURATION:

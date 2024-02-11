@@ -85,6 +85,9 @@
 #include <aws/pinpoint/model/GetJourneyDateRangeKpiResult.h>
 #include <aws/pinpoint/model/GetJourneyExecutionActivityMetricsResult.h>
 #include <aws/pinpoint/model/GetJourneyExecutionMetricsResult.h>
+#include <aws/pinpoint/model/GetJourneyRunExecutionActivityMetricsResult.h>
+#include <aws/pinpoint/model/GetJourneyRunExecutionMetricsResult.h>
+#include <aws/pinpoint/model/GetJourneyRunsResult.h>
 #include <aws/pinpoint/model/GetPushTemplateResult.h>
 #include <aws/pinpoint/model/GetRecommenderConfigurationResult.h>
 #include <aws/pinpoint/model/GetRecommenderConfigurationsResult.h>
@@ -243,6 +246,9 @@ namespace Aws
       class GetJourneyDateRangeKpiRequest;
       class GetJourneyExecutionActivityMetricsRequest;
       class GetJourneyExecutionMetricsRequest;
+      class GetJourneyRunExecutionActivityMetricsRequest;
+      class GetJourneyRunExecutionMetricsRequest;
+      class GetJourneyRunsRequest;
       class GetPushTemplateRequest;
       class GetRecommenderConfigurationRequest;
       class GetRecommenderConfigurationsRequest;
@@ -365,6 +371,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetJourneyDateRangeKpiResult, PinpointError> GetJourneyDateRangeKpiOutcome;
       typedef Aws::Utils::Outcome<GetJourneyExecutionActivityMetricsResult, PinpointError> GetJourneyExecutionActivityMetricsOutcome;
       typedef Aws::Utils::Outcome<GetJourneyExecutionMetricsResult, PinpointError> GetJourneyExecutionMetricsOutcome;
+      typedef Aws::Utils::Outcome<GetJourneyRunExecutionActivityMetricsResult, PinpointError> GetJourneyRunExecutionActivityMetricsOutcome;
+      typedef Aws::Utils::Outcome<GetJourneyRunExecutionMetricsResult, PinpointError> GetJourneyRunExecutionMetricsOutcome;
+      typedef Aws::Utils::Outcome<GetJourneyRunsResult, PinpointError> GetJourneyRunsOutcome;
       typedef Aws::Utils::Outcome<GetPushTemplateResult, PinpointError> GetPushTemplateOutcome;
       typedef Aws::Utils::Outcome<GetRecommenderConfigurationResult, PinpointError> GetRecommenderConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetRecommenderConfigurationsResult, PinpointError> GetRecommenderConfigurationsOutcome;
@@ -487,6 +496,9 @@ namespace Aws
       typedef std::future<GetJourneyDateRangeKpiOutcome> GetJourneyDateRangeKpiOutcomeCallable;
       typedef std::future<GetJourneyExecutionActivityMetricsOutcome> GetJourneyExecutionActivityMetricsOutcomeCallable;
       typedef std::future<GetJourneyExecutionMetricsOutcome> GetJourneyExecutionMetricsOutcomeCallable;
+      typedef std::future<GetJourneyRunExecutionActivityMetricsOutcome> GetJourneyRunExecutionActivityMetricsOutcomeCallable;
+      typedef std::future<GetJourneyRunExecutionMetricsOutcome> GetJourneyRunExecutionMetricsOutcomeCallable;
+      typedef std::future<GetJourneyRunsOutcome> GetJourneyRunsOutcomeCallable;
       typedef std::future<GetPushTemplateOutcome> GetPushTemplateOutcomeCallable;
       typedef std::future<GetRecommenderConfigurationOutcome> GetRecommenderConfigurationOutcomeCallable;
       typedef std::future<GetRecommenderConfigurationsOutcome> GetRecommenderConfigurationsOutcomeCallable;
@@ -612,6 +624,9 @@ namespace Aws
     typedef std::function<void(const PinpointClient*, const Model::GetJourneyDateRangeKpiRequest&, const Model::GetJourneyDateRangeKpiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJourneyDateRangeKpiResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetJourneyExecutionActivityMetricsRequest&, const Model::GetJourneyExecutionActivityMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJourneyExecutionActivityMetricsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetJourneyExecutionMetricsRequest&, const Model::GetJourneyExecutionMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJourneyExecutionMetricsResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetJourneyRunExecutionActivityMetricsRequest&, const Model::GetJourneyRunExecutionActivityMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJourneyRunExecutionActivityMetricsResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetJourneyRunExecutionMetricsRequest&, const Model::GetJourneyRunExecutionMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJourneyRunExecutionMetricsResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetJourneyRunsRequest&, const Model::GetJourneyRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJourneyRunsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetPushTemplateRequest&, const Model::GetPushTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPushTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetRecommenderConfigurationRequest&, const Model::GetRecommenderConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommenderConfigurationResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetRecommenderConfigurationsRequest&, const Model::GetRecommenderConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommenderConfigurationsResponseReceivedHandler;

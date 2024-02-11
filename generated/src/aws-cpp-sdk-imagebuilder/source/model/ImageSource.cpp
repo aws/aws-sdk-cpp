@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageSource::NOT_SET:
+            return {};
           case ImageSource::AMAZON_MANAGED:
             return "AMAZON_MANAGED";
           case ImageSource::AWS_MARKETPLACE:

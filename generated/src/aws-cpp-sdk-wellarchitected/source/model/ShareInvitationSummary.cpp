@@ -29,7 +29,11 @@ ShareInvitationSummary::ShareInvitationSummary() :
     m_workloadNameHasBeenSet(false),
     m_workloadIdHasBeenSet(false),
     m_lensNameHasBeenSet(false),
-    m_lensArnHasBeenSet(false)
+    m_lensArnHasBeenSet(false),
+    m_profileNameHasBeenSet(false),
+    m_profileArnHasBeenSet(false),
+    m_templateNameHasBeenSet(false),
+    m_templateArnHasBeenSet(false)
 {
 }
 
@@ -44,7 +48,11 @@ ShareInvitationSummary::ShareInvitationSummary(JsonView jsonValue) :
     m_workloadNameHasBeenSet(false),
     m_workloadIdHasBeenSet(false),
     m_lensNameHasBeenSet(false),
-    m_lensArnHasBeenSet(false)
+    m_lensArnHasBeenSet(false),
+    m_profileNameHasBeenSet(false),
+    m_profileArnHasBeenSet(false),
+    m_templateNameHasBeenSet(false),
+    m_templateArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -114,6 +122,34 @@ ShareInvitationSummary& ShareInvitationSummary::operator =(JsonView jsonValue)
     m_lensArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProfileName"))
+  {
+    m_profileName = jsonValue.GetString("ProfileName");
+
+    m_profileNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProfileArn"))
+  {
+    m_profileArn = jsonValue.GetString("ProfileArn");
+
+    m_profileArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateName"))
+  {
+    m_templateName = jsonValue.GetString("TemplateName");
+
+    m_templateNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateArn"))
+  {
+    m_templateArn = jsonValue.GetString("TemplateArn");
+
+    m_templateArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -170,6 +206,30 @@ JsonValue ShareInvitationSummary::Jsonize() const
   if(m_lensArnHasBeenSet)
   {
    payload.WithString("LensArn", m_lensArn);
+
+  }
+
+  if(m_profileNameHasBeenSet)
+  {
+   payload.WithString("ProfileName", m_profileName);
+
+  }
+
+  if(m_profileArnHasBeenSet)
+  {
+   payload.WithString("ProfileArn", m_profileArn);
+
+  }
+
+  if(m_templateNameHasBeenSet)
+  {
+   payload.WithString("TemplateName", m_templateName);
+
+  }
+
+  if(m_templateArnHasBeenSet)
+  {
+   payload.WithString("TemplateArn", m_templateArn);
 
   }
 

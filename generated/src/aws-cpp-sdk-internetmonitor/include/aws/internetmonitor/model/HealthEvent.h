@@ -85,49 +85,49 @@ namespace Model
 
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline HealthEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline HealthEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline HealthEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
@@ -336,26 +336,38 @@ namespace Model
 
 
     /**
-     * <p>The impact on global traffic monitored by this monitor for this health
-     * event.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline double GetPercentOfTotalTrafficImpacted() const{ return m_percentOfTotalTrafficImpacted; }
 
     /**
-     * <p>The impact on global traffic monitored by this monitor for this health
-     * event.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline bool PercentOfTotalTrafficImpactedHasBeenSet() const { return m_percentOfTotalTrafficImpactedHasBeenSet; }
 
     /**
-     * <p>The impact on global traffic monitored by this monitor for this health
-     * event.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline void SetPercentOfTotalTrafficImpacted(double value) { m_percentOfTotalTrafficImpactedHasBeenSet = true; m_percentOfTotalTrafficImpacted = value; }
 
     /**
-     * <p>The impact on global traffic monitored by this monitor for this health
-     * event.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline HealthEvent& WithPercentOfTotalTrafficImpacted(double value) { SetPercentOfTotalTrafficImpacted(value); return *this;}
 
@@ -390,6 +402,35 @@ namespace Model
      */
     inline HealthEvent& WithImpactType(HealthEventImpactType&& value) { SetImpactType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The value of the threshold percentage for performance or availability that
+     * was configured when Amazon CloudWatch Internet Monitor created the health
+     * event.</p>
+     */
+    inline double GetHealthScoreThreshold() const{ return m_healthScoreThreshold; }
+
+    /**
+     * <p>The value of the threshold percentage for performance or availability that
+     * was configured when Amazon CloudWatch Internet Monitor created the health
+     * event.</p>
+     */
+    inline bool HealthScoreThresholdHasBeenSet() const { return m_healthScoreThresholdHasBeenSet; }
+
+    /**
+     * <p>The value of the threshold percentage for performance or availability that
+     * was configured when Amazon CloudWatch Internet Monitor created the health
+     * event.</p>
+     */
+    inline void SetHealthScoreThreshold(double value) { m_healthScoreThresholdHasBeenSet = true; m_healthScoreThreshold = value; }
+
+    /**
+     * <p>The value of the threshold percentage for performance or availability that
+     * was configured when Amazon CloudWatch Internet Monitor created the health
+     * event.</p>
+     */
+    inline HealthEvent& WithHealthScoreThreshold(double value) { SetHealthScoreThreshold(value); return *this;}
+
   private:
 
     Aws::String m_eventArn;
@@ -421,6 +462,9 @@ namespace Model
 
     HealthEventImpactType m_impactType;
     bool m_impactTypeHasBeenSet = false;
+
+    double m_healthScoreThreshold;
+    bool m_healthScoreThresholdHasBeenSet = false;
   };
 
 } // namespace Model

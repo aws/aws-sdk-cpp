@@ -16,6 +16,7 @@
 #include <aws/accessanalyzer/model/S3BucketConfiguration.h>
 #include <aws/accessanalyzer/model/SnsTopicConfiguration.h>
 #include <aws/accessanalyzer/model/SqsQueueConfiguration.h>
+#include <aws/accessanalyzer/model/S3ExpressDirectoryBucketConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -304,32 +305,32 @@ namespace Model
 
 
     /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     * <p>The access control configuration is for an Amazon S3 bucket. </p>
      */
     inline const S3BucketConfiguration& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     * <p>The access control configuration is for an Amazon S3 bucket. </p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     * <p>The access control configuration is for an Amazon S3 bucket. </p>
      */
     inline void SetS3Bucket(const S3BucketConfiguration& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     * <p>The access control configuration is for an Amazon S3 bucket. </p>
      */
     inline void SetS3Bucket(S3BucketConfiguration&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     * <p>The access control configuration is for an Amazon S3 bucket. </p>
      */
     inline Configuration& WithS3Bucket(const S3BucketConfiguration& value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     * <p>The access control configuration is for an Amazon S3 bucket. </p>
      */
     inline Configuration& WithS3Bucket(S3BucketConfiguration&& value) { SetS3Bucket(std::move(value)); return *this;}
 
@@ -395,6 +396,37 @@ namespace Model
      */
     inline Configuration& WithSqsQueue(SqsQueueConfiguration&& value) { SetSqsQueue(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 directory bucket.</p>
+     */
+    inline const S3ExpressDirectoryBucketConfiguration& GetS3ExpressDirectoryBucket() const{ return m_s3ExpressDirectoryBucket; }
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 directory bucket.</p>
+     */
+    inline bool S3ExpressDirectoryBucketHasBeenSet() const { return m_s3ExpressDirectoryBucketHasBeenSet; }
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 directory bucket.</p>
+     */
+    inline void SetS3ExpressDirectoryBucket(const S3ExpressDirectoryBucketConfiguration& value) { m_s3ExpressDirectoryBucketHasBeenSet = true; m_s3ExpressDirectoryBucket = value; }
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 directory bucket.</p>
+     */
+    inline void SetS3ExpressDirectoryBucket(S3ExpressDirectoryBucketConfiguration&& value) { m_s3ExpressDirectoryBucketHasBeenSet = true; m_s3ExpressDirectoryBucket = std::move(value); }
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 directory bucket.</p>
+     */
+    inline Configuration& WithS3ExpressDirectoryBucket(const S3ExpressDirectoryBucketConfiguration& value) { SetS3ExpressDirectoryBucket(value); return *this;}
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 directory bucket.</p>
+     */
+    inline Configuration& WithS3ExpressDirectoryBucket(S3ExpressDirectoryBucketConfiguration&& value) { SetS3ExpressDirectoryBucket(std::move(value)); return *this;}
+
   private:
 
     EbsSnapshotConfiguration m_ebsSnapshot;
@@ -429,6 +461,9 @@ namespace Model
 
     SqsQueueConfiguration m_sqsQueue;
     bool m_sqsQueueHasBeenSet = false;
+
+    S3ExpressDirectoryBucketConfiguration m_s3ExpressDirectoryBucket;
+    bool m_s3ExpressDirectoryBucketHasBeenSet = false;
   };
 
 } // namespace Model

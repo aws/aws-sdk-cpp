@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DimensionValueOperator::NOT_SET:
+            return {};
           case DimensionValueOperator::IN:
             return "IN";
           case DimensionValueOperator::NOT_IN:

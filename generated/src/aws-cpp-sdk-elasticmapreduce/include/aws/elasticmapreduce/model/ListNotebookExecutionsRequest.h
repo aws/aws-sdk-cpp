@@ -334,6 +334,47 @@ namespace Model
      */
     inline ListNotebookExecutionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
+    /**
+     * <p>The unique ID of the execution engine.</p>
+     */
+    inline const Aws::String& GetExecutionEngineId() const{ return m_executionEngineId; }
+
+    /**
+     * <p>The unique ID of the execution engine.</p>
+     */
+    inline bool ExecutionEngineIdHasBeenSet() const { return m_executionEngineIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID of the execution engine.</p>
+     */
+    inline void SetExecutionEngineId(const Aws::String& value) { m_executionEngineIdHasBeenSet = true; m_executionEngineId = value; }
+
+    /**
+     * <p>The unique ID of the execution engine.</p>
+     */
+    inline void SetExecutionEngineId(Aws::String&& value) { m_executionEngineIdHasBeenSet = true; m_executionEngineId = std::move(value); }
+
+    /**
+     * <p>The unique ID of the execution engine.</p>
+     */
+    inline void SetExecutionEngineId(const char* value) { m_executionEngineIdHasBeenSet = true; m_executionEngineId.assign(value); }
+
+    /**
+     * <p>The unique ID of the execution engine.</p>
+     */
+    inline ListNotebookExecutionsRequest& WithExecutionEngineId(const Aws::String& value) { SetExecutionEngineId(value); return *this;}
+
+    /**
+     * <p>The unique ID of the execution engine.</p>
+     */
+    inline ListNotebookExecutionsRequest& WithExecutionEngineId(Aws::String&& value) { SetExecutionEngineId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique ID of the execution engine.</p>
+     */
+    inline ListNotebookExecutionsRequest& WithExecutionEngineId(const char* value) { SetExecutionEngineId(value); return *this;}
+
   private:
 
     Aws::String m_editorId;
@@ -350,6 +391,9 @@ namespace Model
 
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
+
+    Aws::String m_executionEngineId;
+    bool m_executionEngineIdHasBeenSet = false;
   };
 
 } // namespace Model

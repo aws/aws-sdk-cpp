@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     USER,
     RESOURCE,
-    SYSTEM_USER
+    SYSTEM_USER,
+    REMOTE_USER
   };
 
 namespace UserRoleMapper

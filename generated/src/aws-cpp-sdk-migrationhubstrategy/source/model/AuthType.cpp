@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthType::NOT_SET:
+            return {};
           case AuthType::NTLM:
             return "NTLM";
           case AuthType::SSH:

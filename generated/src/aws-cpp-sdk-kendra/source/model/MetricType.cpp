@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricType::NOT_SET:
+            return {};
           case MetricType::QUERIES_BY_COUNT:
             return "QUERIES_BY_COUNT";
           case MetricType::QUERIES_BY_ZERO_CLICK_RATE:

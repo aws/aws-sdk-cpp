@@ -30,7 +30,11 @@ CreateChangeSetRequest::CreateChangeSetRequest() :
     m_changeSetTypeHasBeenSet(false),
     m_resourcesToImportHasBeenSet(false),
     m_includeNestedStacks(false),
-    m_includeNestedStacksHasBeenSet(false)
+    m_includeNestedStacksHasBeenSet(false),
+    m_onStackFailure(OnStackFailure::NOT_SET),
+    m_onStackFailureHasBeenSet(false),
+    m_importExistingResources(false),
+    m_importExistingResourcesHasBeenSet(false)
 {
 }
 
@@ -154,6 +158,16 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
   if(m_includeNestedStacksHasBeenSet)
   {
     ss << "IncludeNestedStacks=" << std::boolalpha << m_includeNestedStacks << "&";
+  }
+
+  if(m_onStackFailureHasBeenSet)
+  {
+    ss << "OnStackFailure=" << OnStackFailureMapper::GetNameForOnStackFailure(m_onStackFailure) << "&";
+  }
+
+  if(m_importExistingResourcesHasBeenSet)
+  {
+    ss << "ImportExistingResources=" << std::boolalpha << m_importExistingResources << "&";
   }
 
   ss << "Version=2010-05-15";

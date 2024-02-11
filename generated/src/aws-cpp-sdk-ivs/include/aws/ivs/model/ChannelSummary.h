@@ -7,7 +7,9 @@
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs/model/ChannelLatencyMode.h>
+#include <aws/ivs/model/TranscodePreset.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/ivs/model/ChannelType.h>
 #include <utility>
 
 namespace Aws
@@ -227,6 +229,67 @@ namespace Model
 
 
     /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline const TranscodePreset& GetPreset() const{ return m_preset; }
+
+    /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline bool PresetHasBeenSet() const { return m_presetHasBeenSet; }
+
+    /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline void SetPreset(const TranscodePreset& value) { m_presetHasBeenSet = true; m_preset = value; }
+
+    /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline void SetPreset(TranscodePreset&& value) { m_presetHasBeenSet = true; m_preset = std::move(value); }
+
+    /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline ChannelSummary& WithPreset(const TranscodePreset& value) { SetPreset(value); return *this;}
+
+    /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline ChannelSummary& WithPreset(TranscodePreset&& value) { SetPreset(std::move(value)); return *this;}
+
+
+    /**
      * <p>Recording-configuration ARN. A value other than an empty string indicates
      * that recording is enabled. Default: "" (empty string, recording is
      * disabled).</p>
@@ -413,6 +476,61 @@ namespace Model
      */
     inline ChannelSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
+     */
+    inline const ChannelType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
+     */
+    inline void SetType(const ChannelType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
+     */
+    inline void SetType(ChannelType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
+     */
+    inline ChannelSummary& WithType(const ChannelType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
+     */
+    inline ChannelSummary& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -430,11 +548,17 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    TranscodePreset m_preset;
+    bool m_presetHasBeenSet = false;
+
     Aws::String m_recordingConfigurationArn;
     bool m_recordingConfigurationArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ChannelType m_type;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

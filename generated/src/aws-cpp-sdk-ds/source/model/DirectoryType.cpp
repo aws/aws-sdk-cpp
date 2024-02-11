@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectoryType::NOT_SET:
+            return {};
           case DirectoryType::SimpleAD:
             return "SimpleAD";
           case DirectoryType::ADConnector:

@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/model/AmdSevSnpSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,6 +80,55 @@ namespace Model
      */
     inline CpuOptions& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
+     */
+    inline const AmdSevSnpSpecification& GetAmdSevSnp() const{ return m_amdSevSnp; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
+     */
+    inline bool AmdSevSnpHasBeenSet() const { return m_amdSevSnpHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
+     */
+    inline void SetAmdSevSnp(const AmdSevSnpSpecification& value) { m_amdSevSnpHasBeenSet = true; m_amdSevSnp = value; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
+     */
+    inline void SetAmdSevSnp(AmdSevSnpSpecification&& value) { m_amdSevSnpHasBeenSet = true; m_amdSevSnp = std::move(value); }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
+     */
+    inline CpuOptions& WithAmdSevSnp(const AmdSevSnpSpecification& value) { SetAmdSevSnp(value); return *this;}
+
+    /**
+     * <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
+     */
+    inline CpuOptions& WithAmdSevSnp(AmdSevSnpSpecification&& value) { SetAmdSevSnp(std::move(value)); return *this;}
+
   private:
 
     int m_coreCount;
@@ -85,6 +136,9 @@ namespace Model
 
     int m_threadsPerCore;
     bool m_threadsPerCoreHasBeenSet = false;
+
+    AmdSevSnpSpecification m_amdSevSnp;
+    bool m_amdSevSnpHasBeenSet = false;
   };
 
 } // namespace Model

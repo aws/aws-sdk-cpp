@@ -90,6 +90,55 @@ namespace Model
 
 
     /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline const Aws::String& GetDefaultAuthenticationMethod() const{ return m_defaultAuthenticationMethod; }
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline bool DefaultAuthenticationMethodHasBeenSet() const { return m_defaultAuthenticationMethodHasBeenSet; }
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline void SetDefaultAuthenticationMethod(const Aws::String& value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod = value; }
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline void SetDefaultAuthenticationMethod(Aws::String&& value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod = std::move(value); }
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline void SetDefaultAuthenticationMethod(const char* value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod.assign(value); }
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline GCMChannelRequest& WithDefaultAuthenticationMethod(const Aws::String& value) { SetDefaultAuthenticationMethod(value); return *this;}
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline GCMChannelRequest& WithDefaultAuthenticationMethod(Aws::String&& value) { SetDefaultAuthenticationMethod(std::move(value)); return *this;}
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline GCMChannelRequest& WithDefaultAuthenticationMethod(const char* value) { SetDefaultAuthenticationMethod(value); return *this;}
+
+
+    /**
      * <p>Specifies whether to enable the GCM channel for the application.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
@@ -109,13 +158,84 @@ namespace Model
      */
     inline GCMChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
+    /**
+     * <p>The contents of the JSON file provided by Google during registration in order
+     * to generate an access token for authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from
+     * legacy FCM APIs to HTTP v1</a>.</p>
+     */
+    inline const Aws::String& GetServiceJson() const{ return m_serviceJson; }
+
+    /**
+     * <p>The contents of the JSON file provided by Google during registration in order
+     * to generate an access token for authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from
+     * legacy FCM APIs to HTTP v1</a>.</p>
+     */
+    inline bool ServiceJsonHasBeenSet() const { return m_serviceJsonHasBeenSet; }
+
+    /**
+     * <p>The contents of the JSON file provided by Google during registration in order
+     * to generate an access token for authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from
+     * legacy FCM APIs to HTTP v1</a>.</p>
+     */
+    inline void SetServiceJson(const Aws::String& value) { m_serviceJsonHasBeenSet = true; m_serviceJson = value; }
+
+    /**
+     * <p>The contents of the JSON file provided by Google during registration in order
+     * to generate an access token for authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from
+     * legacy FCM APIs to HTTP v1</a>.</p>
+     */
+    inline void SetServiceJson(Aws::String&& value) { m_serviceJsonHasBeenSet = true; m_serviceJson = std::move(value); }
+
+    /**
+     * <p>The contents of the JSON file provided by Google during registration in order
+     * to generate an access token for authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from
+     * legacy FCM APIs to HTTP v1</a>.</p>
+     */
+    inline void SetServiceJson(const char* value) { m_serviceJsonHasBeenSet = true; m_serviceJson.assign(value); }
+
+    /**
+     * <p>The contents of the JSON file provided by Google during registration in order
+     * to generate an access token for authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from
+     * legacy FCM APIs to HTTP v1</a>.</p>
+     */
+    inline GCMChannelRequest& WithServiceJson(const Aws::String& value) { SetServiceJson(value); return *this;}
+
+    /**
+     * <p>The contents of the JSON file provided by Google during registration in order
+     * to generate an access token for authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from
+     * legacy FCM APIs to HTTP v1</a>.</p>
+     */
+    inline GCMChannelRequest& WithServiceJson(Aws::String&& value) { SetServiceJson(std::move(value)); return *this;}
+
+    /**
+     * <p>The contents of the JSON file provided by Google during registration in order
+     * to generate an access token for authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from
+     * legacy FCM APIs to HTTP v1</a>.</p>
+     */
+    inline GCMChannelRequest& WithServiceJson(const char* value) { SetServiceJson(value); return *this;}
+
   private:
 
     Aws::String m_apiKey;
     bool m_apiKeyHasBeenSet = false;
 
+    Aws::String m_defaultAuthenticationMethod;
+    bool m_defaultAuthenticationMethodHasBeenSet = false;
+
     bool m_enabled;
     bool m_enabledHasBeenSet = false;
+
+    Aws::String m_serviceJson;
+    bool m_serviceJsonHasBeenSet = false;
   };
 
 } // namespace Model

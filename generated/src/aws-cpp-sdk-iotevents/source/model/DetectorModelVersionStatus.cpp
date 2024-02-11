@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetectorModelVersionStatus::NOT_SET:
+            return {};
           case DetectorModelVersionStatus::ACTIVE:
             return "ACTIVE";
           case DetectorModelVersionStatus::ACTIVATING:

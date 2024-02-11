@@ -9,6 +9,7 @@
 #include <aws/opensearch/model/DomainInformationContainer.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/model/ConnectionMode.h>
+#include <aws/opensearch/model/ConnectionProperties.h>
 #include <utility>
 
 namespace Aws
@@ -171,6 +172,37 @@ namespace Model
      */
     inline CreateOutboundConnectionRequest& WithConnectionMode(ConnectionMode&& value) { SetConnectionMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
+     */
+    inline const ConnectionProperties& GetConnectionProperties() const{ return m_connectionProperties; }
+
+    /**
+     * <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
+     */
+    inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
+
+    /**
+     * <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
+     */
+    inline void SetConnectionProperties(const ConnectionProperties& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
+
+    /**
+     * <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
+     */
+    inline void SetConnectionProperties(ConnectionProperties&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
+
+    /**
+     * <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
+     */
+    inline CreateOutboundConnectionRequest& WithConnectionProperties(const ConnectionProperties& value) { SetConnectionProperties(value); return *this;}
+
+    /**
+     * <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
+     */
+    inline CreateOutboundConnectionRequest& WithConnectionProperties(ConnectionProperties&& value) { SetConnectionProperties(std::move(value)); return *this;}
+
   private:
 
     DomainInformationContainer m_localDomainInfo;
@@ -184,6 +216,9 @@ namespace Model
 
     ConnectionMode m_connectionMode;
     bool m_connectionModeHasBeenSet = false;
+
+    ConnectionProperties m_connectionProperties;
+    bool m_connectionPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

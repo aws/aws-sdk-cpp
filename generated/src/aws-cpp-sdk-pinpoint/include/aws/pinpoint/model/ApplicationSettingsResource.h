@@ -9,6 +9,7 @@
 #include <aws/pinpoint/model/CampaignHook.h>
 #include <aws/pinpoint/model/CampaignLimits.h>
 #include <aws/pinpoint/model/QuietTime.h>
+#include <aws/pinpoint/model/ApplicationSettingsJourneyLimits.h>
 #include <utility>
 
 namespace Aws
@@ -309,6 +310,49 @@ namespace Model
      */
     inline ApplicationSettingsResource& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The default sending limits for journeys in the application. These limits
+     * apply to each journey for the application but can be overridden, on a per
+     * journey basis, with the JourneyLimits resource.</p>
+     */
+    inline const ApplicationSettingsJourneyLimits& GetJourneyLimits() const{ return m_journeyLimits; }
+
+    /**
+     * <p>The default sending limits for journeys in the application. These limits
+     * apply to each journey for the application but can be overridden, on a per
+     * journey basis, with the JourneyLimits resource.</p>
+     */
+    inline bool JourneyLimitsHasBeenSet() const { return m_journeyLimitsHasBeenSet; }
+
+    /**
+     * <p>The default sending limits for journeys in the application. These limits
+     * apply to each journey for the application but can be overridden, on a per
+     * journey basis, with the JourneyLimits resource.</p>
+     */
+    inline void SetJourneyLimits(const ApplicationSettingsJourneyLimits& value) { m_journeyLimitsHasBeenSet = true; m_journeyLimits = value; }
+
+    /**
+     * <p>The default sending limits for journeys in the application. These limits
+     * apply to each journey for the application but can be overridden, on a per
+     * journey basis, with the JourneyLimits resource.</p>
+     */
+    inline void SetJourneyLimits(ApplicationSettingsJourneyLimits&& value) { m_journeyLimitsHasBeenSet = true; m_journeyLimits = std::move(value); }
+
+    /**
+     * <p>The default sending limits for journeys in the application. These limits
+     * apply to each journey for the application but can be overridden, on a per
+     * journey basis, with the JourneyLimits resource.</p>
+     */
+    inline ApplicationSettingsResource& WithJourneyLimits(const ApplicationSettingsJourneyLimits& value) { SetJourneyLimits(value); return *this;}
+
+    /**
+     * <p>The default sending limits for journeys in the application. These limits
+     * apply to each journey for the application but can be overridden, on a per
+     * journey basis, with the JourneyLimits resource.</p>
+     */
+    inline ApplicationSettingsResource& WithJourneyLimits(ApplicationSettingsJourneyLimits&& value) { SetJourneyLimits(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -325,6 +369,9 @@ namespace Model
 
     QuietTime m_quietTime;
     bool m_quietTimeHasBeenSet = false;
+
+    ApplicationSettingsJourneyLimits m_journeyLimits;
+    bool m_journeyLimitsHasBeenSet = false;
   };
 
 } // namespace Model

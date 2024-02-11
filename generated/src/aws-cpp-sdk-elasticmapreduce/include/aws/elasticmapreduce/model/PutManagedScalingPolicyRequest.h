@@ -36,49 +36,49 @@ namespace Model
 
 
     /**
-     * <p>Specifies the ID of an EMR cluster where the managed scaling policy is
+     * <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is
      * attached. </p>
      */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
 
     /**
-     * <p>Specifies the ID of an EMR cluster where the managed scaling policy is
+     * <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is
      * attached. </p>
      */
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
 
     /**
-     * <p>Specifies the ID of an EMR cluster where the managed scaling policy is
+     * <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is
      * attached. </p>
      */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
-     * <p>Specifies the ID of an EMR cluster where the managed scaling policy is
+     * <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is
      * attached. </p>
      */
     inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
-     * <p>Specifies the ID of an EMR cluster where the managed scaling policy is
+     * <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is
      * attached. </p>
      */
     inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
 
     /**
-     * <p>Specifies the ID of an EMR cluster where the managed scaling policy is
+     * <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is
      * attached. </p>
      */
     inline PutManagedScalingPolicyRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
 
     /**
-     * <p>Specifies the ID of an EMR cluster where the managed scaling policy is
+     * <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is
      * attached. </p>
      */
     inline PutManagedScalingPolicyRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the ID of an EMR cluster where the managed scaling policy is
+     * <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is
      * attached. </p>
      */
     inline PutManagedScalingPolicyRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}

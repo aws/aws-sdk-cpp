@@ -24,6 +24,8 @@ namespace Aws
         static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
         static const int CREATE_COMPLETE_HASH = HashingUtils::HashString("CREATE_COMPLETE");
         static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
+        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
+        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
 
 
         OTAUpdateStatus GetOTAUpdateStatusForName(const Aws::String& name)
@@ -45,6 +47,14 @@ namespace Aws
           {
             return OTAUpdateStatus::CREATE_FAILED;
           }
+          else if (hashCode == DELETE_IN_PROGRESS_HASH)
+          {
+            return OTAUpdateStatus::DELETE_IN_PROGRESS;
+          }
+          else if (hashCode == DELETE_FAILED_HASH)
+          {
+            return OTAUpdateStatus::DELETE_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -59,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OTAUpdateStatus::NOT_SET:
+            return {};
           case OTAUpdateStatus::CREATE_PENDING:
             return "CREATE_PENDING";
           case OTAUpdateStatus::CREATE_IN_PROGRESS:
@@ -67,6 +79,10 @@ namespace Aws
             return "CREATE_COMPLETE";
           case OTAUpdateStatus::CREATE_FAILED:
             return "CREATE_FAILED";
+          case OTAUpdateStatus::DELETE_IN_PROGRESS:
+            return "DELETE_IN_PROGRESS";
+          case OTAUpdateStatus::DELETE_FAILED:
+            return "DELETE_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

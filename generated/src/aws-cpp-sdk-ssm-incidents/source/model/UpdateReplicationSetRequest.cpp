@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 UpdateReplicationSetRequest::UpdateReplicationSetRequest() : 
     m_actionsHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

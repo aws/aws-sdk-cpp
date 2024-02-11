@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3PassthroughControl::NOT_SET:
+            return {};
           case Eac3PassthroughControl::WHEN_POSSIBLE:
             return "WHEN_POSSIBLE";
           case Eac3PassthroughControl::NO_PASSTHROUGH:

@@ -7,6 +7,7 @@
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fms/model/SecurityServiceType.h>
+#include <aws/fms/model/CustomerPolicyStatus.h>
 #include <utility>
 
 namespace Aws
@@ -410,6 +411,67 @@ namespace Model
      */
     inline PolicySummary& WithDeleteUnusedFMManagedResources(bool value) { SetDeleteUnusedFMManagedResources(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline const CustomerPolicyStatus& GetPolicyStatus() const{ return m_policyStatus; }
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline bool PolicyStatusHasBeenSet() const { return m_policyStatusHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline void SetPolicyStatus(const CustomerPolicyStatus& value) { m_policyStatusHasBeenSet = true; m_policyStatus = value; }
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline void SetPolicyStatus(CustomerPolicyStatus&& value) { m_policyStatusHasBeenSet = true; m_policyStatus = std::move(value); }
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline PolicySummary& WithPolicyStatus(const CustomerPolicyStatus& value) { SetPolicyStatus(value); return *this;}
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline PolicySummary& WithPolicyStatus(CustomerPolicyStatus&& value) { SetPolicyStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_policyArn;
@@ -432,6 +494,9 @@ namespace Model
 
     bool m_deleteUnusedFMManagedResources;
     bool m_deleteUnusedFMManagedResourcesHasBeenSet = false;
+
+    CustomerPolicyStatus m_policyStatus;
+    bool m_policyStatusHasBeenSet = false;
   };
 
 } // namespace Model

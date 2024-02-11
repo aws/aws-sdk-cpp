@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpSetStatus::NOT_SET:
+            return {};
           case IpSetStatus::INACTIVE:
             return "INACTIVE";
           case IpSetStatus::ACTIVATING:

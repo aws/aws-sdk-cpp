@@ -72,155 +72,50 @@ namespace Model
 
     /**
      * <p>The name of the bucket that contains the newly created object. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
      * <p>The name of the bucket that contains the newly created object. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline void SetBucket(const Aws::String& value) { m_bucket = value; }
 
     /**
      * <p>The name of the bucket that contains the newly created object. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
 
     /**
      * <p>The name of the bucket that contains the newly created object. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline void SetBucket(const char* value) { m_bucket.assign(value); }
 
     /**
      * <p>The name of the bucket that contains the newly created object. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
      * <p>The name of the bucket that contains the newly created object. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>The name of the bucket that contains the newly created object. Does not
-     * return the access point ARN or access point alias if used.</p> <p>When using
-     * this action with an access point, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * return the access point ARN or access point alias if used.</p>  <p>Access
+     * points are not supported by directory buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -264,49 +159,56 @@ namespace Model
     /**
      * <p>If the object expiration is configured, this will contain the expiration date
      * (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of
-     * <code>rule-id</code> is URL-encoded.</p>
+     * <code>rule-id</code> is URL-encoded.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline const Aws::String& GetExpiration() const{ return m_expiration; }
 
     /**
      * <p>If the object expiration is configured, this will contain the expiration date
      * (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of
-     * <code>rule-id</code> is URL-encoded.</p>
+     * <code>rule-id</code> is URL-encoded.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline void SetExpiration(const Aws::String& value) { m_expiration = value; }
 
     /**
      * <p>If the object expiration is configured, this will contain the expiration date
      * (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of
-     * <code>rule-id</code> is URL-encoded.</p>
+     * <code>rule-id</code> is URL-encoded.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline void SetExpiration(Aws::String&& value) { m_expiration = std::move(value); }
 
     /**
      * <p>If the object expiration is configured, this will contain the expiration date
      * (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of
-     * <code>rule-id</code> is URL-encoded.</p>
+     * <code>rule-id</code> is URL-encoded.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline void SetExpiration(const char* value) { m_expiration.assign(value); }
 
     /**
      * <p>If the object expiration is configured, this will contain the expiration date
      * (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of
-     * <code>rule-id</code> is URL-encoded.</p>
+     * <code>rule-id</code> is URL-encoded.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithExpiration(const Aws::String& value) { SetExpiration(value); return *this;}
 
     /**
      * <p>If the object expiration is configured, this will contain the expiration date
      * (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of
-     * <code>rule-id</code> is URL-encoded.</p>
+     * <code>rule-id</code> is URL-encoded.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithExpiration(Aws::String&& value) { SetExpiration(std::move(value)); return *this;}
 
     /**
      * <p>If the object expiration is configured, this will contain the expiration date
      * (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of
-     * <code>rule-id</code> is URL-encoded.</p>
+     * <code>rule-id</code> is URL-encoded.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
@@ -405,9 +307,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -415,9 +319,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -425,9 +331,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -435,9 +343,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -445,9 +355,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -455,9 +367,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -465,9 +379,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -476,9 +392,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -486,9 +404,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -496,9 +416,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -506,9 +428,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -516,9 +440,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -526,9 +452,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -536,9 +464,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -547,9 +477,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use the API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -557,9 +489,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use the API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -567,9 +501,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use the API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -577,9 +513,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use the API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -587,9 +525,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use the API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -597,9 +537,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use the API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -607,9 +549,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use the API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -618,9 +562,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -628,9 +574,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -638,9 +586,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -648,9 +598,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -658,9 +610,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -668,9 +622,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -678,9 +634,11 @@ namespace Model
 
     /**
      * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
-     * present if it was uploaded with the object. With multipart uploads, this may not
-     * be a checksum value of the object. For more information about how checksums are
-     * calculated with multipart uploads, see <a
+     * present if it was uploaded with the object. When you use an API operation on an
+     * object that was uploaded using multipart uploads, this value may not be a direct
+     * checksum value of the full object. Instead, it's a calculation based on the
+     * checksum values of each individual part. For more information about how
+     * checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -689,143 +647,163 @@ namespace Model
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>  <p>For
+     * directory buckets, only server-side encryption with Amazon S3 managed keys
+     * (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>  <p>For
+     * directory buckets, only server-side encryption with Amazon S3 managed keys
+     * (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>  <p>For
+     * directory buckets, only server-side encryption with Amazon S3 managed keys
+     * (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>  <p>For
+     * directory buckets, only server-side encryption with Amazon S3 managed keys
+     * (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline CompleteMultipartUploadResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>  <p>For
+     * directory buckets, only server-side encryption with Amazon S3 managed keys
+     * (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline CompleteMultipartUploadResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
 
     /**
      * <p>Version ID of the newly created object, in case the bucket has versioning
-     * turned on.</p>
+     * turned on.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
      * <p>Version ID of the newly created object, in case the bucket has versioning
-     * turned on.</p>
+     * turned on.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
      * <p>Version ID of the newly created object, in case the bucket has versioning
-     * turned on.</p>
+     * turned on.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
      * <p>Version ID of the newly created object, in case the bucket has versioning
-     * turned on.</p>
+     * turned on.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
      * <p>Version ID of the newly created object, in case the bucket has versioning
-     * turned on.</p>
+     * turned on.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
      * <p>Version ID of the newly created object, in case the bucket has versioning
-     * turned on.</p>
+     * turned on.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
      * <p>Version ID of the newly created object, in case the bucket has versioning
-     * turned on.</p>
+     * turned on.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
 
     /**
      * <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side
-     * encryption with Amazon Web Services KMS (SSE-KMS).</p>
+     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
 
     /**
      * <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side
-     * encryption with Amazon Web Services KMS (SSE-KMS).</p>
+     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }
 
     /**
      * <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side
-     * encryption with Amazon Web Services KMS (SSE-KMS).</p>
+     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline CompleteMultipartUploadResult& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
 

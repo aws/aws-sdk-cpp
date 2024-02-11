@@ -34,6 +34,9 @@ namespace CostExplorer
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef CostExplorerClientConfiguration ClientConfigurationType;
+      typedef CostExplorerEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -648,6 +651,33 @@ namespace CostExplorer
         }
 
         /**
+         * <p>Retrieves the details for a Savings Plan recommendation. These details
+         * include the hourly data-points that construct the cost, coverage, and
+         * utilization charts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSavingsPlanPurchaseRecommendationDetailsOutcome GetSavingsPlanPurchaseRecommendationDetails(const Model::GetSavingsPlanPurchaseRecommendationDetailsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSavingsPlanPurchaseRecommendationDetails that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSavingsPlanPurchaseRecommendationDetailsRequestT = Model::GetSavingsPlanPurchaseRecommendationDetailsRequest>
+        Model::GetSavingsPlanPurchaseRecommendationDetailsOutcomeCallable GetSavingsPlanPurchaseRecommendationDetailsCallable(const GetSavingsPlanPurchaseRecommendationDetailsRequestT& request) const
+        {
+            return SubmitCallable(&CostExplorerClient::GetSavingsPlanPurchaseRecommendationDetails, request);
+        }
+
+        /**
+         * An Async wrapper for GetSavingsPlanPurchaseRecommendationDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSavingsPlanPurchaseRecommendationDetailsRequestT = Model::GetSavingsPlanPurchaseRecommendationDetailsRequest>
+        void GetSavingsPlanPurchaseRecommendationDetailsAsync(const GetSavingsPlanPurchaseRecommendationDetailsRequestT& request, const GetSavingsPlanPurchaseRecommendationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostExplorerClient::GetSavingsPlanPurchaseRecommendationDetails, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the Savings Plans covered for your account. This enables you to see
          * how much of your cost is covered by a Savings Plan. An organization’s management
          * account can see the coverage of the associated member accounts. This supports
@@ -858,8 +888,8 @@ namespace CostExplorer
          * effective dates of all Cost Categories defined in the account. You have the
          * option to use <code>EffectiveOn</code> to return a list of Cost Categories that
          * were active on a specific date. If there is no <code>EffectiveOn</code>
-         * specified, you��ll see Cost Categories that are effective on the current date.
-         * If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the
+         * specified, you’ll see Cost Categories that are effective on the current date. If
+         * Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the
          * response. <code>ListCostCategoryDefinitions</code> supports pagination. The
          * request can have a <code>MaxResults</code> range up to 100.</p><p><h3>See
          * Also:</h3>   <a
@@ -1082,8 +1112,12 @@ namespace CostExplorer
         }
 
         /**
-         * <p>Updates an existing cost anomaly monitor subscription. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an existing cost anomaly subscription. Specify the fields that you
+         * want to update. Omitted fields are unchanged.</p>  <p>The JSON below
+         * describes the generic construct for each type. See <a
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html#API_UpdateAnomalySubscription_RequestParameters">Request
+         * Parameters</a> for possible values as they apply to
+         * <code>AnomalySubscription</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalySubscription">AWS
          * API Reference</a></p>
          */

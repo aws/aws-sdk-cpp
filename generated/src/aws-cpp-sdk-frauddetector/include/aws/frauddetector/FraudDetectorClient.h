@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/frauddetector/FraudDetectorServiceClientModel.h>
+#include <aws/frauddetector/model/GetKMSEncryptionKeyRequest.h>
 
 namespace Aws
 {
@@ -30,9 +31,10 @@ namespace FraudDetector
    * libraries provide basic functions that automatically take care of tasks such as
    * cryptographically signing your requests, retrying requests, and handling error
    * responses, so that it is easier for you to get started. For more information
-   * about the AWS SDKs, see <a
-   * href="https://docs.aws.amazon.com/https:/aws.amazon.com/tools/">Tools to build
-   * on AWS</a>. </p>
+   * about the AWS SDKs, go to <a
+   * href="https://aws.amazon.com/developer/tools/">Tools to build on AWS</a> page,
+   * scroll down to the <b>SDK</b> section, and choose plus (+) sign to expand the
+   * section. </p>
    */
   class AWS_FRAUDDETECTOR_API FraudDetectorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient>
   {
@@ -40,6 +42,9 @@ namespace FraudDetector
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef FraudDetectorClientConfiguration ClientConfigurationType;
+      typedef FraudDetectorEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -535,7 +540,9 @@ namespace FraudDetector
         /**
          * <p>Deletes the specified event.</p> <p>When you delete an event, Amazon Fraud
          * Detector permanently deletes that event and the event data is no longer stored
-         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * in Amazon Fraud Detector. If <code>deleteAuditHistory</code> is
+         * <code>True</code>, event data is available through search for up to 30 seconds
+         * after the delete operation is completed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent">AWS
          * API Reference</a></p>
          */
@@ -1217,25 +1224,26 @@ namespace FraudDetector
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetKMSEncryptionKeyOutcome GetKMSEncryptionKey() const;
+        virtual Model::GetKMSEncryptionKeyOutcome GetKMSEncryptionKey(const Model::GetKMSEncryptionKeyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetKMSEncryptionKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetKMSEncryptionKeyOutcomeCallable GetKMSEncryptionKeyCallable() const
+        template<typename GetKMSEncryptionKeyRequestT = Model::GetKMSEncryptionKeyRequest>
+        Model::GetKMSEncryptionKeyOutcomeCallable GetKMSEncryptionKeyCallable(const GetKMSEncryptionKeyRequestT& request = {}) const
         {
-            return SubmitCallable(&FraudDetectorClient::GetKMSEncryptionKey);
+            return SubmitCallable(&FraudDetectorClient::GetKMSEncryptionKey, request);
         }
 
         /**
          * An Async wrapper for GetKMSEncryptionKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetKMSEncryptionKeyAsync(const GetKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetKMSEncryptionKeyRequestT = Model::GetKMSEncryptionKeyRequest>
+        void GetKMSEncryptionKeyAsync(const GetKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetKMSEncryptionKeyRequestT& request = {}) const
         {
-            return SubmitAsync(&FraudDetectorClient::GetKMSEncryptionKey, handler, context);
+            return SubmitAsync(&FraudDetectorClient::GetKMSEncryptionKey, request, handler, context);
         }
+
         /**
          * <p>Gets all labels or a specific label if name is provided. This is a paginated
          * API. If you provide a null <code>maxResults</code>, this action retrieves a

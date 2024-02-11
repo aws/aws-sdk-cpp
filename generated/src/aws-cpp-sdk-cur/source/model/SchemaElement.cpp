@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int RESOURCES_HASH = HashingUtils::HashString("RESOURCES");
+        static const int SPLIT_COST_ALLOCATION_DATA_HASH = HashingUtils::HashString("SPLIT_COST_ALLOCATION_DATA");
+        static const int MANUAL_DISCOUNT_COMPATIBILITY_HASH = HashingUtils::HashString("MANUAL_DISCOUNT_COMPATIBILITY");
 
 
         SchemaElement GetSchemaElementForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == RESOURCES_HASH)
           {
             return SchemaElement::RESOURCES;
+          }
+          else if (hashCode == SPLIT_COST_ALLOCATION_DATA_HASH)
+          {
+            return SchemaElement::SPLIT_COST_ALLOCATION_DATA;
+          }
+          else if (hashCode == MANUAL_DISCOUNT_COMPATIBILITY_HASH)
+          {
+            return SchemaElement::MANUAL_DISCOUNT_COMPATIBILITY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SchemaElement::NOT_SET:
+            return {};
           case SchemaElement::RESOURCES:
             return "RESOURCES";
+          case SchemaElement::SPLIT_COST_ALLOCATION_DATA:
+            return "SPLIT_COST_ALLOCATION_DATA";
+          case SchemaElement::MANUAL_DISCOUNT_COMPATIBILITY:
+            return "MANUAL_DISCOUNT_COMPATIBILITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

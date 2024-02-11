@@ -7,6 +7,7 @@
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/drs/model/LaunchDisposition.h>
+#include <aws/drs/model/LaunchIntoInstanceProperties.h>
 #include <aws/drs/model/Licensing.h>
 #include <aws/drs/model/TargetInstanceTypeRightSizingMethod.h>
 #include <utility>
@@ -136,6 +137,32 @@ namespace Model
 
 
     /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline const LaunchIntoInstanceProperties& GetLaunchIntoInstanceProperties() const{ return m_launchIntoInstanceProperties; }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline void SetLaunchIntoInstanceProperties(const LaunchIntoInstanceProperties& value) { m_launchIntoInstanceProperties = value; }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline void SetLaunchIntoInstanceProperties(LaunchIntoInstanceProperties&& value) { m_launchIntoInstanceProperties = std::move(value); }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline UpdateLaunchConfigurationResult& WithLaunchIntoInstanceProperties(const LaunchIntoInstanceProperties& value) { SetLaunchIntoInstanceProperties(value); return *this;}
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline UpdateLaunchConfigurationResult& WithLaunchIntoInstanceProperties(LaunchIntoInstanceProperties&& value) { SetLaunchIntoInstanceProperties(std::move(value)); return *this;}
+
+
+    /**
      * <p>The licensing configuration to be used for this launch configuration.</p>
      */
     inline const Licensing& GetLicensing() const{ return m_licensing; }
@@ -195,6 +222,22 @@ namespace Model
      * <p>The name of the launch configuration.</p>
      */
     inline UpdateLaunchConfigurationResult& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>Whether we want to activate post-launch actions for the Source Server.</p>
+     */
+    inline bool GetPostLaunchEnabled() const{ return m_postLaunchEnabled; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions for the Source Server.</p>
+     */
+    inline void SetPostLaunchEnabled(bool value) { m_postLaunchEnabled = value; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions for the Source Server.</p>
+     */
+    inline UpdateLaunchConfigurationResult& WithPostLaunchEnabled(bool value) { SetPostLaunchEnabled(value); return *this;}
 
 
     /**
@@ -295,9 +338,13 @@ namespace Model
 
     LaunchDisposition m_launchDisposition;
 
+    LaunchIntoInstanceProperties m_launchIntoInstanceProperties;
+
     Licensing m_licensing;
 
     Aws::String m_name;
+
+    bool m_postLaunchEnabled;
 
     Aws::String m_sourceServerID;
 

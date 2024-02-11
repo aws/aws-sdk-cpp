@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p> </p>
+     * <p>The data schema used within the given dataset.</p>
      */
     inline const Aws::String& GetInlineDataSchema() const{ return m_inlineDataSchema; }
 
     /**
-     * <p> </p>
+     * <p>The data schema used within the given dataset.</p>
      */
     inline bool InlineDataSchemaHasBeenSet() const { return m_inlineDataSchemaHasBeenSet; }
 
     /**
-     * <p> </p>
+     * <p>The data schema used within the given dataset.</p>
      */
     inline void SetInlineDataSchema(const Aws::String& value) { m_inlineDataSchemaHasBeenSet = true; m_inlineDataSchema = value; }
 
     /**
-     * <p> </p>
+     * <p>The data schema used within the given dataset.</p>
      */
     inline void SetInlineDataSchema(Aws::String&& value) { m_inlineDataSchemaHasBeenSet = true; m_inlineDataSchema = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p>The data schema used within the given dataset.</p>
      */
     inline void SetInlineDataSchema(const char* value) { m_inlineDataSchemaHasBeenSet = true; m_inlineDataSchema.assign(value); }
 
     /**
-     * <p> </p>
+     * <p>The data schema used within the given dataset.</p>
      */
     inline DatasetSchema& WithInlineDataSchema(const Aws::String& value) { SetInlineDataSchema(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p>The data schema used within the given dataset.</p>
      */
     inline DatasetSchema& WithInlineDataSchema(Aws::String&& value) { SetInlineDataSchema(std::move(value)); return *this;}
 
     /**
-     * <p> </p>
+     * <p>The data schema used within the given dataset.</p>
      */
     inline DatasetSchema& WithInlineDataSchema(const char* value) { SetInlineDataSchema(value); return *this;}
 

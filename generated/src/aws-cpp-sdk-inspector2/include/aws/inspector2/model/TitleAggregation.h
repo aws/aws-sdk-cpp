@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/AggregationFindingType.h>
 #include <aws/inspector2/model/AggregationResourceType.h>
 #include <aws/inspector2/model/TitleSortBy.h>
 #include <aws/inspector2/model/SortOrder.h>
@@ -40,6 +41,37 @@ namespace Model
     AWS_INSPECTOR2_API TitleAggregation(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API TitleAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The type of finding to aggregate on.</p>
+     */
+    inline const AggregationFindingType& GetFindingType() const{ return m_findingType; }
+
+    /**
+     * <p>The type of finding to aggregate on.</p>
+     */
+    inline bool FindingTypeHasBeenSet() const { return m_findingTypeHasBeenSet; }
+
+    /**
+     * <p>The type of finding to aggregate on.</p>
+     */
+    inline void SetFindingType(const AggregationFindingType& value) { m_findingTypeHasBeenSet = true; m_findingType = value; }
+
+    /**
+     * <p>The type of finding to aggregate on.</p>
+     */
+    inline void SetFindingType(AggregationFindingType&& value) { m_findingTypeHasBeenSet = true; m_findingType = std::move(value); }
+
+    /**
+     * <p>The type of finding to aggregate on.</p>
+     */
+    inline TitleAggregation& WithFindingType(const AggregationFindingType& value) { SetFindingType(value); return *this;}
+
+    /**
+     * <p>The type of finding to aggregate on.</p>
+     */
+    inline TitleAggregation& WithFindingType(AggregationFindingType&& value) { SetFindingType(std::move(value)); return *this;}
 
 
     /**
@@ -217,6 +249,9 @@ namespace Model
     inline TitleAggregation& AddVulnerabilityIds(StringFilter&& value) { m_vulnerabilityIdsHasBeenSet = true; m_vulnerabilityIds.push_back(std::move(value)); return *this; }
 
   private:
+
+    AggregationFindingType m_findingType;
+    bool m_findingTypeHasBeenSet = false;
 
     AggregationResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet = false;

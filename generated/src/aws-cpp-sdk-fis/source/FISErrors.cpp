@@ -28,11 +28,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FISErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FISErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FISErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FISErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

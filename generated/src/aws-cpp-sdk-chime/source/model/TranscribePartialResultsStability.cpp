@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscribePartialResultsStability::NOT_SET:
+            return {};
           case TranscribePartialResultsStability::low:
             return "low";
           case TranscribePartialResultsStability::medium:

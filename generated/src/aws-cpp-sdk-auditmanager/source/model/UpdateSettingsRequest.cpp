@@ -19,7 +19,8 @@ UpdateSettingsRequest::UpdateSettingsRequest() :
     m_kmsKeyHasBeenSet(false),
     m_evidenceFinderEnabled(false),
     m_evidenceFinderEnabledHasBeenSet(false),
-    m_deregistrationPolicyHasBeenSet(false)
+    m_deregistrationPolicyHasBeenSet(false),
+    m_defaultExportDestinationHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,12 @@ Aws::String UpdateSettingsRequest::SerializePayload() const
   if(m_deregistrationPolicyHasBeenSet)
   {
    payload.WithObject("deregistrationPolicy", m_deregistrationPolicy.Jsonize());
+
+  }
+
+  if(m_defaultExportDestinationHasBeenSet)
+  {
+   payload.WithObject("defaultExportDestination", m_defaultExportDestination.Jsonize());
 
   }
 

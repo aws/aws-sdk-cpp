@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaPipelineSinkType::NOT_SET:
+            return {};
           case MediaPipelineSinkType::S3Bucket:
             return "S3Bucket";
           default:

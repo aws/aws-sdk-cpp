@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PublishingStatus::NOT_SET:
+            return {};
           case PublishingStatus::PENDING_VERIFICATION:
             return "PENDING_VERIFICATION";
           case PublishingStatus::PUBLISHING:

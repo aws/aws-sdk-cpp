@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerFormat::NOT_SET:
+            return {};
           case ContainerFormat::ova:
             return "ova";
           default:

@@ -501,6 +501,22 @@ namespace Model
     inline GetReplicationConfigurationResult& WithUseDedicatedReplicationServer(bool value) { SetUseDedicatedReplicationServer(value); return *this;}
 
 
+    /**
+     * <p>Replication Configuration use Fips Endpoint.</p>
+     */
+    inline bool GetUseFipsEndpoint() const{ return m_useFipsEndpoint; }
+
+    /**
+     * <p>Replication Configuration use Fips Endpoint.</p>
+     */
+    inline void SetUseFipsEndpoint(bool value) { m_useFipsEndpoint = value; }
+
+    /**
+     * <p>Replication Configuration use Fips Endpoint.</p>
+     */
+    inline GetReplicationConfigurationResult& WithUseFipsEndpoint(bool value) { SetUseFipsEndpoint(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -553,6 +569,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_stagingAreaTags;
 
     bool m_useDedicatedReplicationServer;
+
+    bool m_useFipsEndpoint;
 
     Aws::String m_requestId;
   };

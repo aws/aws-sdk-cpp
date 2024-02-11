@@ -255,42 +255,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region for the action, such as us-east-1.</p>
+     * <p>The Amazon Web Services Region for the action, such as us-east-1.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region for the action, such as us-east-1.</p>
+     * <p>The Amazon Web Services Region for the action, such as us-east-1.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region for the action, such as us-east-1.</p>
+     * <p>The Amazon Web Services Region for the action, such as us-east-1.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region for the action, such as us-east-1.</p>
+     * <p>The Amazon Web Services Region for the action, such as us-east-1.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region for the action, such as us-east-1.</p>
+     * <p>The Amazon Web Services Region for the action, such as us-east-1.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region for the action, such as us-east-1.</p>
+     * <p>The Amazon Web Services Region for the action, such as us-east-1.</p>
      */
     inline ActionExecutionInput& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region for the action, such as us-east-1.</p>
+     * <p>The Amazon Web Services Region for the action, such as us-east-1.</p>
      */
     inline ActionExecutionInput& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region for the action, such as us-east-1.</p>
+     * <p>The Amazon Web Services Region for the action, such as us-east-1.</p>
      */
     inline ActionExecutionInput& WithRegion(const char* value) { SetRegion(value); return *this;}
 

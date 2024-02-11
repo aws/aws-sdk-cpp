@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PriceUnits::NOT_SET:
+            return {};
           case PriceUnits::HOURLY:
             return "HOURLY";
           default:

@@ -21,9 +21,12 @@
         #else
             #define AWS_IOT1CLICKPROJECTS_API __declspec(dllimport)
         #endif /* AWS_IOT1CLICKPROJECTS_EXPORTS */
+        #define AWS_IOT1CLICKPROJECTS_EXTERN
     #else
         #define AWS_IOT1CLICKPROJECTS_API
+        #define AWS_IOT1CLICKPROJECTS_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_IOT1CLICKPROJECTS_API
+    #define AWS_IOT1CLICKPROJECTS_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

@@ -11,6 +11,7 @@
 #include <aws/lambda/model/ResourceNotFoundException.h>
 #include <aws/lambda/model/ProvisionedConcurrencyConfigNotFoundException.h>
 #include <aws/lambda/model/KMSInvalidStateException.h>
+#include <aws/lambda/model/RecursiveInvocationException.h>
 #include <aws/lambda/model/InvalidParameterValueException.h>
 #include <aws/lambda/model/PolicyLengthExceededException.h>
 #include <aws/lambda/model/KMSNotFoundException.h>
@@ -81,6 +82,12 @@ template<> AWS_LAMBDA_API KMSInvalidStateException LambdaError::GetModeledError(
 {
   assert(this->GetErrorType() == LambdaErrors::K_M_S_INVALID_STATE);
   return KMSInvalidStateException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LAMBDA_API RecursiveInvocationException LambdaError::GetModeledError()
+{
+  assert(this->GetErrorType() == LambdaErrors::RECURSIVE_INVOCATION);
+  return RecursiveInvocationException(this->GetJsonPayload().View());
 }
 
 template<> AWS_LAMBDA_API InvalidParameterValueException LambdaError::GetModeledError()
@@ -282,6 +289,7 @@ static const int E_F_S_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("EFSMo
 static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
 static const int PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
 static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
+static const int RECURSIVE_INVOCATION_HASH = HashingUtils::HashString("RecursiveInvocationException");
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFoundException");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
@@ -321,143 +329,147 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == E_F_S_MOUNT_CONNECTIVITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_CONNECTIVITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_CONNECTIVITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_NOT_READY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_NOT_READY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_NOT_READY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_INVALID_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_INVALID_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_INVALID_STATE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == RECURSIVE_INVOCATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RECURSIVE_INVOCATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::POLICY_LENGTH_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::POLICY_LENGTH_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PRECONDITION_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PRECONDITION_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PRECONDITION_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CODE_VERIFICATION_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_VERIFICATION_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_VERIFICATION_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SNAP_START_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SUBNET_I_P_ADDRESS_LIMIT_REACHED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SUBNET_I_P_ADDRESS_LIMIT_REACHED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SNAP_START_NOT_READY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START_NOT_READY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START_NOT_READY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_CONTENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_REQUEST_CONTENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_REQUEST_CONTENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == E_C2_ACCESS_DENIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_ACCESS_DENIED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REQUEST_TOO_LARGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::REQUEST_TOO_LARGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::REQUEST_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CODE_SIGNATURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_CODE_SIGNATURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_CODE_SIGNATURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == E_F_S_I_O_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_I_O), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_I_O), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SECURITY_GROUP_I_D_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SECURITY_GROUP_I_D), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SECURITY_GROUP_I_D), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SUBNET_I_D_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SUBNET_I_D), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SUBNET_I_D), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CODE_SIGNING_CONFIG_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_SIGNING_CONFIG_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_SIGNING_CONFIG_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == E_F_S_MOUNT_TIMEOUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_TIMEOUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_TIMEOUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RUNTIME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_RUNTIME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_RUNTIME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == E_C2_UNEXPECTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_UNEXPECTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_UNEXPECTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ZIP_FILE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_ZIP_FILE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_ZIP_FILE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_MEDIA_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::UNSUPPORTED_MEDIA_TYPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::UNSUPPORTED_MEDIA_TYPE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == E_F_S_MOUNT_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_FAILURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_DISABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_DISABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_DISABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_ACCESS_DENIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_ACCESS_DENIED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == E_C2_THROTTLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_THROTTLED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_THROTTLED), RetryableType::RETRYABLE);
   }
   else if (hashCode == RESOURCE_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == E_N_I_LIMIT_REACHED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_N_I_LIMIT_REACHED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_N_I_LIMIT_REACHED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SNAP_START_TIMEOUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START_TIMEOUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START_TIMEOUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CODE_STORAGE_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_STORAGE_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_STORAGE_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

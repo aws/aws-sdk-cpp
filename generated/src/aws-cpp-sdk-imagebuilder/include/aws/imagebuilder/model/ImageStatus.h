@@ -26,7 +26,8 @@ namespace Model
     CANCELLED,
     FAILED,
     DEPRECATED,
-    DELETED
+    DELETED,
+    DISABLED
   };
 
 namespace ImageStatusMapper

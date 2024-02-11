@@ -7,6 +7,8 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/PluginNameValue.h>
+#include <aws/dms/model/LongVarcharMappingType.h>
+#include <aws/dms/model/DatabaseMode.h>
 #include <utility>
 
 namespace Aws
@@ -620,7 +622,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -643,7 +645,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -666,7 +668,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -689,7 +691,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -712,7 +714,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -735,7 +737,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -758,7 +760,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -781,7 +783,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -1074,27 +1076,167 @@ namespace Model
 
     /**
      * <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default,
-     * PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+     * PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this
+     * setting on both the source and target endpoints for it to take effect.</p>
      */
     inline bool GetMapBooleanAsBoolean() const{ return m_mapBooleanAsBoolean; }
 
     /**
      * <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default,
-     * PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+     * PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this
+     * setting on both the source and target endpoints for it to take effect.</p>
      */
     inline bool MapBooleanAsBooleanHasBeenSet() const { return m_mapBooleanAsBooleanHasBeenSet; }
 
     /**
      * <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default,
-     * PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+     * PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this
+     * setting on both the source and target endpoints for it to take effect.</p>
      */
     inline void SetMapBooleanAsBoolean(bool value) { m_mapBooleanAsBooleanHasBeenSet = true; m_mapBooleanAsBoolean = value; }
 
     /**
      * <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default,
-     * PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+     * PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this
+     * setting on both the source and target endpoints for it to take effect.</p>
      */
     inline PostgreSQLSettings& WithMapBooleanAsBoolean(bool value) { SetMapBooleanAsBoolean(value); return *this;}
+
+
+    /**
+     * <p>When true, DMS migrates JSONB values as CLOB.</p>
+     */
+    inline bool GetMapJsonbAsClob() const{ return m_mapJsonbAsClob; }
+
+    /**
+     * <p>When true, DMS migrates JSONB values as CLOB.</p>
+     */
+    inline bool MapJsonbAsClobHasBeenSet() const { return m_mapJsonbAsClobHasBeenSet; }
+
+    /**
+     * <p>When true, DMS migrates JSONB values as CLOB.</p>
+     */
+    inline void SetMapJsonbAsClob(bool value) { m_mapJsonbAsClobHasBeenSet = true; m_mapJsonbAsClob = value; }
+
+    /**
+     * <p>When true, DMS migrates JSONB values as CLOB.</p>
+     */
+    inline PostgreSQLSettings& WithMapJsonbAsClob(bool value) { SetMapJsonbAsClob(value); return *this;}
+
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline const LongVarcharMappingType& GetMapLongVarcharAs() const{ return m_mapLongVarcharAs; }
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline bool MapLongVarcharAsHasBeenSet() const { return m_mapLongVarcharAsHasBeenSet; }
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline void SetMapLongVarcharAs(const LongVarcharMappingType& value) { m_mapLongVarcharAsHasBeenSet = true; m_mapLongVarcharAs = value; }
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline void SetMapLongVarcharAs(LongVarcharMappingType&& value) { m_mapLongVarcharAsHasBeenSet = true; m_mapLongVarcharAs = std::move(value); }
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline PostgreSQLSettings& WithMapLongVarcharAs(const LongVarcharMappingType& value) { SetMapLongVarcharAs(value); return *this;}
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline PostgreSQLSettings& WithMapLongVarcharAs(LongVarcharMappingType&& value) { SetMapLongVarcharAs(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
+     */
+    inline const DatabaseMode& GetDatabaseMode() const{ return m_databaseMode; }
+
+    /**
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
+     */
+    inline bool DatabaseModeHasBeenSet() const { return m_databaseModeHasBeenSet; }
+
+    /**
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
+     */
+    inline void SetDatabaseMode(const DatabaseMode& value) { m_databaseModeHasBeenSet = true; m_databaseMode = value; }
+
+    /**
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
+     */
+    inline void SetDatabaseMode(DatabaseMode&& value) { m_databaseModeHasBeenSet = true; m_databaseMode = std::move(value); }
+
+    /**
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
+     */
+    inline PostgreSQLSettings& WithDatabaseMode(const DatabaseMode& value) { SetDatabaseMode(value); return *this;}
+
+    /**
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
+     */
+    inline PostgreSQLSettings& WithDatabaseMode(DatabaseMode&& value) { SetDatabaseMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline const Aws::String& GetBabelfishDatabaseName() const{ return m_babelfishDatabaseName; }
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline bool BabelfishDatabaseNameHasBeenSet() const { return m_babelfishDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline void SetBabelfishDatabaseName(const Aws::String& value) { m_babelfishDatabaseNameHasBeenSet = true; m_babelfishDatabaseName = value; }
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline void SetBabelfishDatabaseName(Aws::String&& value) { m_babelfishDatabaseNameHasBeenSet = true; m_babelfishDatabaseName = std::move(value); }
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline void SetBabelfishDatabaseName(const char* value) { m_babelfishDatabaseNameHasBeenSet = true; m_babelfishDatabaseName.assign(value); }
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline PostgreSQLSettings& WithBabelfishDatabaseName(const Aws::String& value) { SetBabelfishDatabaseName(value); return *this;}
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline PostgreSQLSettings& WithBabelfishDatabaseName(Aws::String&& value) { SetBabelfishDatabaseName(std::move(value)); return *this;}
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline PostgreSQLSettings& WithBabelfishDatabaseName(const char* value) { SetBabelfishDatabaseName(value); return *this;}
 
   private:
 
@@ -1157,6 +1299,18 @@ namespace Model
 
     bool m_mapBooleanAsBoolean;
     bool m_mapBooleanAsBooleanHasBeenSet = false;
+
+    bool m_mapJsonbAsClob;
+    bool m_mapJsonbAsClobHasBeenSet = false;
+
+    LongVarcharMappingType m_mapLongVarcharAs;
+    bool m_mapLongVarcharAsHasBeenSet = false;
+
+    DatabaseMode m_databaseMode;
+    bool m_databaseModeHasBeenSet = false;
+
+    Aws::String m_babelfishDatabaseName;
+    bool m_babelfishDatabaseNameHasBeenSet = false;
   };
 
 } // namespace Model

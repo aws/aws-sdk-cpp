@@ -33,7 +33,9 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($member.key))
 #set($varName = $CppViewHelper.computeVariableName($member.key))
 #set($spaces = '')
-#if(!$member.value.usedForPayload || ($shape.hasPreSignedUrl && $member.key.equals("SourceRegion")))
+#if(!$member.value.usedForPayload ||
+    ($shape.hasPreSignedUrl && $member.key.equals("SourceRegion") && ${serviceNamespace} != "EC2") ||
+    ($shape.hasPreSignedUrl && $member.key.equals("DestinationRegion") && ${serviceNamespace} == "EC2"))
 #set($shouldSkipSerialize = true)
 #else
 #set($shouldSkipSerialize = false)
@@ -197,6 +199,27 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 void  ${typeInfo.className}::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
   uri.SetQueryString(SerializePayload());
+}
+#end
+#if($shape.hasHeaderMembers() || $metadata.targetPrefix)
+
+Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+#if($metadata.targetPrefix)
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "${metadata.targetPrefix}.${CppViewHelper.computeOperationNameFromInputOutputShape($shape.name)}"));
+#end
+#if($metadata.additionalHeaders)
+#foreach($headerEntry in $metadata.additionalHeaders.entrySet())
+  headers.insert(Aws::Http::HeaderValuePair("${headerEntry.key}", "${headerEntry.value}"));
+#end
+#end
+#foreach($headerEntry in $requestSpecificHeaders.entrySet())
+  headers.emplace(${headerEntry.key}, ${headerEntry.value});
+#end
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassHeaderMembersSource.vm")
+  return headers;
 }
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")

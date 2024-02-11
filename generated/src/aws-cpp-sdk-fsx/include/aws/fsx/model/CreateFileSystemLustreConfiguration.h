@@ -34,8 +34,8 @@ namespace Model
    * following parameters are not supported for file systems with a data repository
    * association created with .</p> <ul> <li> <p> <code>AutoImportPolicy</code> </p>
    * </li> <li> <p> <code>ExportPath</code> </p> </li> <li> <p>
-   * <code>ImportedChunkSize</code> </p> </li> <li> <p> <code>ImportPath</code> </p>
-   * </li> </ul> <p><h3>See Also:</h3>   <a
+   * <code>ImportedFileChunkSize</code> </p> </li> <li> <p> <code>ImportPath</code>
+   * </p> </li> </ul> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemLustreConfiguration">AWS
    * API Reference</a></p>
    */
@@ -860,16 +860,32 @@ namespace Model
     inline CreateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
 
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline CreateFileSystemLustreConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
 
 

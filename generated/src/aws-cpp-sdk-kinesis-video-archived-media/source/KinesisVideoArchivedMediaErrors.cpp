@@ -34,35 +34,35 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INVALID_CODEC_PRIVATE_DATA_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_CODEC_PRIVATE_DATA), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_CODEC_PRIVATE_DATA), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_DATA_RETENTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::NO_DATA_RETENTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::NO_DATA_RETENTION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MISSING_CODEC_PRIVATE_DATA_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::MISSING_CODEC_PRIVATE_DATA), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::MISSING_CODEC_PRIVATE_DATA), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_AUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::NOT_AUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::NOT_AUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_STREAM_MEDIA_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::UNSUPPORTED_STREAM_MEDIA_TYPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::UNSUPPORTED_STREAM_MEDIA_TYPE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ARGUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_ARGUMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::CLIENT_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::CLIENT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_MEDIA_FRAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_MEDIA_FRAME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_MEDIA_FRAME), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

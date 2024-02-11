@@ -84,50 +84,50 @@ namespace Model
 
 
     /**
-     * <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>)
-     * any existing DocumentationParts definition or to merge (<code>MERGE</code>) the
+     * <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>)
+     * any existing DocumentationParts definition or to merge (<code>merge</code>) the
      * new definition into the existing one. The default value is
-     * <code>MERGE</code>.</p>
+     * <code>merge</code>.</p>
      */
     inline const PutMode& GetMode() const{ return m_mode; }
 
     /**
-     * <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>)
-     * any existing DocumentationParts definition or to merge (<code>MERGE</code>) the
+     * <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>)
+     * any existing DocumentationParts definition or to merge (<code>merge</code>) the
      * new definition into the existing one. The default value is
-     * <code>MERGE</code>.</p>
+     * <code>merge</code>.</p>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>)
-     * any existing DocumentationParts definition or to merge (<code>MERGE</code>) the
+     * <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>)
+     * any existing DocumentationParts definition or to merge (<code>merge</code>) the
      * new definition into the existing one. The default value is
-     * <code>MERGE</code>.</p>
+     * <code>merge</code>.</p>
      */
     inline void SetMode(const PutMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>)
-     * any existing DocumentationParts definition or to merge (<code>MERGE</code>) the
+     * <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>)
+     * any existing DocumentationParts definition or to merge (<code>merge</code>) the
      * new definition into the existing one. The default value is
-     * <code>MERGE</code>.</p>
+     * <code>merge</code>.</p>
      */
     inline void SetMode(PutMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>)
-     * any existing DocumentationParts definition or to merge (<code>MERGE</code>) the
+     * <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>)
+     * any existing DocumentationParts definition or to merge (<code>merge</code>) the
      * new definition into the existing one. The default value is
-     * <code>MERGE</code>.</p>
+     * <code>merge</code>.</p>
      */
     inline ImportDocumentationPartsRequest& WithMode(const PutMode& value) { SetMode(value); return *this;}
 
     /**
-     * <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>)
-     * any existing DocumentationParts definition or to merge (<code>MERGE</code>) the
+     * <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>)
+     * any existing DocumentationParts definition or to merge (<code>merge</code>) the
      * new definition into the existing one. The default value is
-     * <code>MERGE</code>.</p>
+     * <code>merge</code>.</p>
      */
     inline ImportDocumentationPartsRequest& WithMode(PutMode&& value) { SetMode(std::move(value)); return *this;}
 

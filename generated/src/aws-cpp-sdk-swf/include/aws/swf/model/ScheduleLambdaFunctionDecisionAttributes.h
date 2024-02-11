@@ -222,57 +222,65 @@ namespace Model
 
     /**
      * <p>The timeout value, in seconds, after which the Lambda function is considered
-     * to be failed once it has started. This can be any integer from 1-300 (1s-5m). If
-     * no value is supplied, than a default value of 300s is assumed.</p>
+     * to be failed once it has started. This can be any integer from 1-900
+     * (1s-15m).</p> <p>If no value is supplied, then a default value of 900s is
+     * assumed.</p>
      */
     inline const Aws::String& GetStartToCloseTimeout() const{ return m_startToCloseTimeout; }
 
     /**
      * <p>The timeout value, in seconds, after which the Lambda function is considered
-     * to be failed once it has started. This can be any integer from 1-300 (1s-5m). If
-     * no value is supplied, than a default value of 300s is assumed.</p>
+     * to be failed once it has started. This can be any integer from 1-900
+     * (1s-15m).</p> <p>If no value is supplied, then a default value of 900s is
+     * assumed.</p>
      */
     inline bool StartToCloseTimeoutHasBeenSet() const { return m_startToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>The timeout value, in seconds, after which the Lambda function is considered
-     * to be failed once it has started. This can be any integer from 1-300 (1s-5m). If
-     * no value is supplied, than a default value of 300s is assumed.</p>
+     * to be failed once it has started. This can be any integer from 1-900
+     * (1s-15m).</p> <p>If no value is supplied, then a default value of 900s is
+     * assumed.</p>
      */
     inline void SetStartToCloseTimeout(const Aws::String& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = value; }
 
     /**
      * <p>The timeout value, in seconds, after which the Lambda function is considered
-     * to be failed once it has started. This can be any integer from 1-300 (1s-5m). If
-     * no value is supplied, than a default value of 300s is assumed.</p>
+     * to be failed once it has started. This can be any integer from 1-900
+     * (1s-15m).</p> <p>If no value is supplied, then a default value of 900s is
+     * assumed.</p>
      */
     inline void SetStartToCloseTimeout(Aws::String&& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = std::move(value); }
 
     /**
      * <p>The timeout value, in seconds, after which the Lambda function is considered
-     * to be failed once it has started. This can be any integer from 1-300 (1s-5m). If
-     * no value is supplied, than a default value of 300s is assumed.</p>
+     * to be failed once it has started. This can be any integer from 1-900
+     * (1s-15m).</p> <p>If no value is supplied, then a default value of 900s is
+     * assumed.</p>
      */
     inline void SetStartToCloseTimeout(const char* value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout.assign(value); }
 
     /**
      * <p>The timeout value, in seconds, after which the Lambda function is considered
-     * to be failed once it has started. This can be any integer from 1-300 (1s-5m). If
-     * no value is supplied, than a default value of 300s is assumed.</p>
+     * to be failed once it has started. This can be any integer from 1-900
+     * (1s-15m).</p> <p>If no value is supplied, then a default value of 900s is
+     * assumed.</p>
      */
     inline ScheduleLambdaFunctionDecisionAttributes& WithStartToCloseTimeout(const Aws::String& value) { SetStartToCloseTimeout(value); return *this;}
 
     /**
      * <p>The timeout value, in seconds, after which the Lambda function is considered
-     * to be failed once it has started. This can be any integer from 1-300 (1s-5m). If
-     * no value is supplied, than a default value of 300s is assumed.</p>
+     * to be failed once it has started. This can be any integer from 1-900
+     * (1s-15m).</p> <p>If no value is supplied, then a default value of 900s is
+     * assumed.</p>
      */
     inline ScheduleLambdaFunctionDecisionAttributes& WithStartToCloseTimeout(Aws::String&& value) { SetStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>The timeout value, in seconds, after which the Lambda function is considered
-     * to be failed once it has started. This can be any integer from 1-300 (1s-5m). If
-     * no value is supplied, than a default value of 300s is assumed.</p>
+     * to be failed once it has started. This can be any integer from 1-900
+     * (1s-15m).</p> <p>If no value is supplied, then a default value of 900s is
+     * assumed.</p>
      */
     inline ScheduleLambdaFunctionDecisionAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
 

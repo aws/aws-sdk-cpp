@@ -32,7 +32,8 @@ RestoreDBClusterFromSnapshotRequest::RestoreDBClusterFromSnapshotRequest() :
     m_deletionProtectionHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
-    m_serverlessV2ScalingConfigurationHasBeenSet(false)
+    m_serverlessV2ScalingConfigurationHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,11 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
   if(m_serverlessV2ScalingConfigurationHasBeenSet)
   {
     m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

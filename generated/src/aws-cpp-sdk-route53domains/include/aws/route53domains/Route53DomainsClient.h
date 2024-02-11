@@ -26,6 +26,9 @@ namespace Route53Domains
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef Route53DomainsClientConfiguration ClientConfigurationType;
+      typedef Route53DomainsEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -699,29 +702,27 @@ namespace Route53Domains
         }
 
         /**
-         * <p>This operation registers a domain. Domains are registered either by Amazon
-         * Registrar (for .com, .net, and .org domains) or by our registrar associate,
-         * Gandi (for all other domains). For some top-level domains (TLDs), this operation
-         * requires extra parameters.</p> <p>When you register a domain, Amazon Route 53
-         * does the following:</p> <ul> <li> <p>Creates a Route 53 hosted zone that has the
-         * same name as the domain. Route 53 assigns four name servers to your hosted zone
-         * and automatically updates your domain registration with the names of these name
-         * servers.</p> </li> <li> <p>Enables auto renew, so your domain registration will
-         * renew automatically each year. We'll notify you in advance of the renewal date
-         * so you can choose whether to renew the registration.</p> </li> <li>
-         * <p>Optionally enables privacy protection, so WHOIS queries return contact
-         * information either for Amazon Registrar (for .com, .net, and .org domains) or
-         * for our registrar associate, Gandi (for all other TLDs). If you don't enable
-         * privacy protection, WHOIS queries return the information that you entered for
-         * the administrative, registrant, and technical contacts.</p>  <p>You must
-         * specify the same privacy setting for the administrative, registrant, and
-         * technical contacts.</p>  </li> <li> <p>If registration is successful,
-         * returns an operation ID that you can use to track the progress and completion of
-         * the action. If the request is not completed successfully, the domain registrant
-         * is notified by email.</p> </li> <li> <p>Charges your Amazon Web Services account
-         * an amount based on the top-level domain. For more information, see <a
-         * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>This operation registers a domain. For some top-level domains (TLDs), this
+         * operation requires extra parameters.</p> <p>When you register a domain, Amazon
+         * Route 53 does the following:</p> <ul> <li> <p>Creates a Route 53 hosted zone
+         * that has the same name as the domain. Route 53 assigns four name servers to your
+         * hosted zone and automatically updates your domain registration with the names of
+         * these name servers.</p> </li> <li> <p>Enables auto renew, so your domain
+         * registration will renew automatically each year. We'll notify you in advance of
+         * the renewal date so you can choose whether to renew the registration.</p> </li>
+         * <li> <p>Optionally enables privacy protection, so WHOIS queries return contact
+         * for the registrar or the phrase "REDACTED FOR PRIVACY", or "On behalf of
+         * &lt;domain name&gt; owner." If you don't enable privacy protection, WHOIS
+         * queries return the information that you entered for the administrative,
+         * registrant, and technical contacts.</p>  <p>While some domains may allow
+         * different privacy settings per contact, we recommend specifying the same privacy
+         * setting for all contacts.</p>  </li> <li> <p>If registration is
+         * successful, returns an operation ID that you can use to track the progress and
+         * completion of the action. If the request is not completed successfully, the
+         * domain registrant is notified by email.</p> </li> <li> <p>Charges your Amazon
+         * Web Services account an amount based on the top-level domain. For more
+         * information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
+         * 53 Pricing</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">AWS
          * API Reference</a></p>
          */
@@ -896,13 +897,10 @@ namespace Route53Domains
         }
 
         /**
-         * <p>Transfers a domain from another registrar to Amazon Route 53. When the
-         * transfer is complete, the domain is registered either with Amazon Registrar (for
-         * .com, .net, and .org domains) or with our registrar associate, Gandi (for all
-         * other TLDs).</p> <p>For more information about transferring domains, see the
-         * following topics:</p> <ul> <li> <p>For transfer requirements, a detailed
-         * procedure, and information about viewing the status of a domain that you're
-         * transferring to Route 53, see <a
+         * <p>Transfers a domain from another registrar to Amazon Route 53. </p> <p>For
+         * more information about transferring domains, see the following topics:</p> <ul>
+         * <li> <p>For transfer requirements, a detailed procedure, and information about
+         * viewing the status of a domain that you're transferring to Route 53, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
          * Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53
          * Developer Guide</i>.</p> </li> <li> <p>For information about how to transfer a
@@ -1032,14 +1030,14 @@ namespace Route53Domains
 
         /**
          * <p>This operation updates the specified domain contact's privacy setting. When
-         * privacy protection is enabled, contact information such as email address is
-         * replaced either with contact information for Amazon Registrar (for .com, .net,
-         * and .org domains) or with contact information for our registrar associate,
-         * Gandi.</p>  <p>You must specify the same privacy setting for the
-         * administrative, registrant, and technical contacts.</p>  <p>This
-         * operation affects only the contact information for the specified contact type
-         * (administrative, registrant, or technical). If the request succeeds, Amazon
-         * Route 53 returns an operation ID that you can use with <a
+         * privacy protection is enabled, your contact information is replaced with contact
+         * information for the registrar or with the phrase "REDACTED FOR PRIVACY", or "On
+         * behalf of &lt;domain name&gt; owner."</p>  <p>While some domains may allow
+         * different privacy settings per contact, we recommend specifying the same privacy
+         * setting for all contacts.</p>  <p>This operation affects only the contact
+         * information for the specified contact type (administrative, registrant, or
+         * technical). If the request succeeds, Amazon Route 53 returns an operation ID
+         * that you can use with <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
          * to track the progress and completion of the action. If the request doesn't
          * complete successfully, the domain registrant will be notified by email.</p>

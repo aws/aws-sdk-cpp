@@ -25,7 +25,9 @@ CreateRuleGroupRequest::CreateRuleGroupRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_encryptionConfigurationHasBeenSet(false),
-    m_sourceMetadataHasBeenSet(false)
+    m_sourceMetadataHasBeenSet(false),
+    m_analyzeRuleGroup(false),
+    m_analyzeRuleGroupHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,12 @@ Aws::String CreateRuleGroupRequest::SerializePayload() const
   if(m_sourceMetadataHasBeenSet)
   {
    payload.WithObject("SourceMetadata", m_sourceMetadata.Jsonize());
+
+  }
+
+  if(m_analyzeRuleGroupHasBeenSet)
+  {
+   payload.WithBool("AnalyzeRuleGroup", m_analyzeRuleGroup);
 
   }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CalendarState::NOT_SET:
+            return {};
           case CalendarState::OPEN:
             return "OPEN";
           case CalendarState::CLOSED:

@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dms/DatabaseMigrationServiceServiceClientModel.h>
+#include <aws/dms/model/RunFleetAdvisorLsaAnalysisRequest.h>
 
 namespace Aws
 {
@@ -34,6 +35,9 @@ namespace DatabaseMigrationService
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef DatabaseMigrationServiceClientConfiguration ClientConfigurationType;
+      typedef DatabaseMigrationServiceEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -200,6 +204,33 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Creates a data provider using the provided settings. A data provider stores a
+         * data store type and location information about your database. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataProviderOutcome CreateDataProvider(const Model::CreateDataProviderRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataProvider that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataProviderRequestT = Model::CreateDataProviderRequest>
+        Model::CreateDataProviderOutcomeCallable CreateDataProviderCallable(const CreateDataProviderRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::CreateDataProvider, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataProviderRequestT = Model::CreateDataProviderRequest>
+        void CreateDataProviderAsync(const CreateDataProviderRequestT& request, const CreateDataProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::CreateDataProvider, request, handler, context);
+        }
+
+        /**
          * <p>Creates an endpoint using the provided settings.</p>  <p>For a MySQL
          * source or target endpoint, don't explicitly specify the database using the
          * <code>DatabaseName</code> request parameter on the <code>CreateEndpoint</code>
@@ -298,6 +329,91 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Creates the instance profile using the specified parameters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateInstanceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInstanceProfileOutcome CreateInstanceProfile(const Model::CreateInstanceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateInstanceProfileRequestT = Model::CreateInstanceProfileRequest>
+        Model::CreateInstanceProfileOutcomeCallable CreateInstanceProfileCallable(const CreateInstanceProfileRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::CreateInstanceProfile, request);
+        }
+
+        /**
+         * An Async wrapper for CreateInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateInstanceProfileRequestT = Model::CreateInstanceProfileRequest>
+        void CreateInstanceProfileAsync(const CreateInstanceProfileRequestT& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::CreateInstanceProfile, request, handler, context);
+        }
+
+        /**
+         * <p>Creates the migration project using the specified parameters.</p> <p>You can
+         * run this action only after you create an instance profile and data providers
+         * using <a
+         * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateInstanceProfile.html">CreateInstanceProfile</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateDataProvider.html">CreateDataProvider</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateMigrationProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMigrationProjectOutcome CreateMigrationProject(const Model::CreateMigrationProjectRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMigrationProject that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMigrationProjectRequestT = Model::CreateMigrationProjectRequest>
+        Model::CreateMigrationProjectOutcomeCallable CreateMigrationProjectCallable(const CreateMigrationProjectRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::CreateMigrationProject, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMigrationProject that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMigrationProjectRequestT = Model::CreateMigrationProjectRequest>
+        void CreateMigrationProjectAsync(const CreateMigrationProjectRequestT& request, const CreateMigrationProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::CreateMigrationProject, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a configuration that you can later provide to configure and start an
+         * DMS Serverless replication. You can also provide options to validate the
+         * configuration inputs before you start the replication.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateReplicationConfigOutcome CreateReplicationConfig(const Model::CreateReplicationConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateReplicationConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateReplicationConfigRequestT = Model::CreateReplicationConfigRequest>
+        Model::CreateReplicationConfigOutcomeCallable CreateReplicationConfigCallable(const CreateReplicationConfigRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::CreateReplicationConfig, request);
+        }
+
+        /**
+         * An Async wrapper for CreateReplicationConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateReplicationConfigRequestT = Model::CreateReplicationConfigRequest>
+        void CreateReplicationConfigAsync(const CreateReplicationConfigRequestT& request, const CreateReplicationConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::CreateReplicationConfig, request, handler, context);
+        }
+
+        /**
          * <p>Creates the replication instance using the specified parameters.</p> <p>DMS
          * requires that your account have certain roles with appropriate permissions
          * before you can create a replication instance. For information on the required
@@ -306,7 +422,11 @@ namespace DatabaseMigrationService
          * the IAM Roles to Use With the CLI and DMS API</a>. For information on the
          * required permissions, see <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM
-         * Permissions Needed to Use DMS</a>.</p><p><h3>See Also:</h3>   <a
+         * Permissions Needed to Use DMS</a>.</p>  <p>If you don't specify a version
+         * when creating a replication instance, DMS will create the instance using the
+         * default engine version. For information about the default engine version, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReleaseNotes.html">Release
+         * Notes</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">AWS
          * API Reference</a></p>
          */
@@ -334,8 +454,14 @@ namespace DatabaseMigrationService
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
          * VPC.</p> <p>The VPC needs to have at least one subnet in at least two
          * availability zones in the Amazon Web Services Region, otherwise the service will
-         * throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
-         * exception.</p><p><h3>See Also:</h3>   <a
+         * throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.</p>
+         * <p>If a replication subnet group exists in your Amazon Web Services account, the
+         * CreateReplicationSubnetGroup action returns the following error message: The
+         * Replication Subnet Group already exists. In this case, delete the existing
+         * replication subnet group. To do so, use the <a
+         * href="https://docs.aws.amazon.com/en_us/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html">DeleteReplicationSubnetGroup</a>
+         * action. Optionally, choose Subnet groups in the DMS console, then choose your
+         * subnet group. Next, choose Delete from Actions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">AWS
          * API Reference</a></p>
          */
@@ -434,6 +560,33 @@ namespace DatabaseMigrationService
         void DeleteConnectionAsync(const DeleteConnectionRequestT& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::DeleteConnection, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified data provider.</p>  <p>All migration projects
+         * associated with the data provider must be deleted or modified before you can
+         * delete the data provider.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDataProviderOutcome DeleteDataProvider(const Model::DeleteDataProviderRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDataProvider that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDataProviderRequestT = Model::DeleteDataProviderRequest>
+        Model::DeleteDataProviderOutcomeCallable DeleteDataProviderCallable(const DeleteDataProviderRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DeleteDataProvider, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDataProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDataProviderRequestT = Model::DeleteDataProviderRequest>
+        void DeleteDataProviderAsync(const DeleteDataProviderRequestT& request, const DeleteDataProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DeleteDataProvider, request, handler, context);
         }
 
         /**
@@ -537,6 +690,88 @@ namespace DatabaseMigrationService
         void DeleteFleetAdvisorDatabasesAsync(const DeleteFleetAdvisorDatabasesRequestT& request, const DeleteFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::DeleteFleetAdvisorDatabases, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified instance profile.</p>  <p>All migration projects
+         * associated with the instance profile must be deleted or modified before you can
+         * delete the instance profile.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteInstanceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteInstanceProfileOutcome DeleteInstanceProfile(const Model::DeleteInstanceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteInstanceProfileRequestT = Model::DeleteInstanceProfileRequest>
+        Model::DeleteInstanceProfileOutcomeCallable DeleteInstanceProfileCallable(const DeleteInstanceProfileRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DeleteInstanceProfile, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteInstanceProfileRequestT = Model::DeleteInstanceProfileRequest>
+        void DeleteInstanceProfileAsync(const DeleteInstanceProfileRequestT& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DeleteInstanceProfile, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified migration project.</p>  <p>The migration project
+         * must be closed before you can delete it.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteMigrationProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMigrationProjectOutcome DeleteMigrationProject(const Model::DeleteMigrationProjectRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMigrationProject that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMigrationProjectRequestT = Model::DeleteMigrationProjectRequest>
+        Model::DeleteMigrationProjectOutcomeCallable DeleteMigrationProjectCallable(const DeleteMigrationProjectRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DeleteMigrationProject, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMigrationProject that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMigrationProjectRequestT = Model::DeleteMigrationProjectRequest>
+        void DeleteMigrationProjectAsync(const DeleteMigrationProjectRequestT& request, const DeleteMigrationProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DeleteMigrationProject, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an DMS Serverless replication configuration. This effectively
+         * deprovisions any and all replications that use this configuration. You can't
+         * delete the configuration for an DMS Serverless replication that is ongoing. You
+         * can delete the configuration when the replication is in a non-RUNNING and
+         * non-STARTING state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteReplicationConfigOutcome DeleteReplicationConfig(const Model::DeleteReplicationConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteReplicationConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteReplicationConfigRequestT = Model::DeleteReplicationConfigRequest>
+        Model::DeleteReplicationConfigOutcomeCallable DeleteReplicationConfigCallable(const DeleteReplicationConfigRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DeleteReplicationConfig, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteReplicationConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteReplicationConfigRequestT = Model::DeleteReplicationConfigRequest>
+        void DeleteReplicationConfigAsync(const DeleteReplicationConfigRequestT& request, const DeleteReplicationConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DeleteReplicationConfig, request, handler, context);
         }
 
         /**
@@ -770,6 +1005,58 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Returns configuration parameters for a schema conversion
+         * project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConversionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeConversionConfigurationOutcome DescribeConversionConfiguration(const Model::DescribeConversionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeConversionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeConversionConfigurationRequestT = Model::DescribeConversionConfigurationRequest>
+        Model::DescribeConversionConfigurationOutcomeCallable DescribeConversionConfigurationCallable(const DescribeConversionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeConversionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeConversionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeConversionConfigurationRequestT = Model::DescribeConversionConfigurationRequest>
+        void DescribeConversionConfigurationAsync(const DescribeConversionConfigurationRequestT& request, const DescribeConversionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeConversionConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of data providers for your account in the current
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataProviders">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDataProvidersOutcome DescribeDataProviders(const Model::DescribeDataProvidersRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDataProviders that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDataProvidersRequestT = Model::DescribeDataProvidersRequest>
+        Model::DescribeDataProvidersOutcomeCallable DescribeDataProvidersCallable(const DescribeDataProvidersRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeDataProviders, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDataProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDataProvidersRequestT = Model::DescribeDataProvidersRequest>
+        void DescribeDataProvidersAsync(const DescribeDataProvidersRequestT& request, const DescribeDataProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeDataProviders, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about the possible endpoint settings available when you
          * create an endpoint for a specific database engine.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointSettings">AWS
@@ -845,6 +1132,32 @@ namespace DatabaseMigrationService
         void DescribeEndpointsAsync(const DescribeEndpointsRequestT& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::DescribeEndpoints, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about the replication instance versions used in the
+         * project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEngineVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEngineVersionsOutcome DescribeEngineVersions(const Model::DescribeEngineVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEngineVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeEngineVersionsRequestT = Model::DescribeEngineVersionsRequest>
+        Model::DescribeEngineVersionsOutcomeCallable DescribeEngineVersionsCallable(const DescribeEngineVersionsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeEngineVersions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeEngineVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeEngineVersionsRequestT = Model::DescribeEngineVersionsRequest>
+        void DescribeEngineVersionsAsync(const DescribeEngineVersionsRequestT& request, const DescribeEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeEngineVersions, request, handler, context);
         }
 
         /**
@@ -934,6 +1247,34 @@ namespace DatabaseMigrationService
         void DescribeEventsAsync(const DescribeEventsRequestT& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::DescribeEvents, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of extension pack associations for the specified
+         * migration project. An extension pack is an add-on module that emulates functions
+         * present in a source database that are required when converting objects to the
+         * target database.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeExtensionPackAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeExtensionPackAssociationsOutcome DescribeExtensionPackAssociations(const Model::DescribeExtensionPackAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeExtensionPackAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeExtensionPackAssociationsRequestT = Model::DescribeExtensionPackAssociationsRequest>
+        Model::DescribeExtensionPackAssociationsOutcomeCallable DescribeExtensionPackAssociationsCallable(const DescribeExtensionPackAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeExtensionPackAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeExtensionPackAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeExtensionPackAssociationsRequestT = Model::DescribeExtensionPackAssociationsRequest>
+        void DescribeExtensionPackAssociationsAsync(const DescribeExtensionPackAssociationsRequestT& request, const DescribeExtensionPackAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeExtensionPackAssociations, request, handler, context);
         }
 
         /**
@@ -1067,6 +1408,188 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Returns a paginated list of instance profiles for your account in the current
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeInstanceProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceProfilesOutcome DescribeInstanceProfiles(const Model::DescribeInstanceProfilesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeInstanceProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeInstanceProfilesRequestT = Model::DescribeInstanceProfilesRequest>
+        Model::DescribeInstanceProfilesOutcomeCallable DescribeInstanceProfilesCallable(const DescribeInstanceProfilesRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeInstanceProfiles, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeInstanceProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeInstanceProfilesRequestT = Model::DescribeInstanceProfilesRequest>
+        void DescribeInstanceProfilesAsync(const DescribeInstanceProfilesRequestT& request, const DescribeInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeInstanceProfiles, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of metadata model assessments for your account in
+         * the current region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelAssessments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMetadataModelAssessmentsOutcome DescribeMetadataModelAssessments(const Model::DescribeMetadataModelAssessmentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMetadataModelAssessments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMetadataModelAssessmentsRequestT = Model::DescribeMetadataModelAssessmentsRequest>
+        Model::DescribeMetadataModelAssessmentsOutcomeCallable DescribeMetadataModelAssessmentsCallable(const DescribeMetadataModelAssessmentsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeMetadataModelAssessments, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMetadataModelAssessments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMetadataModelAssessmentsRequestT = Model::DescribeMetadataModelAssessmentsRequest>
+        void DescribeMetadataModelAssessmentsAsync(const DescribeMetadataModelAssessmentsRequestT& request, const DescribeMetadataModelAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeMetadataModelAssessments, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of metadata model conversions for a migration
+         * project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelConversions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMetadataModelConversionsOutcome DescribeMetadataModelConversions(const Model::DescribeMetadataModelConversionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMetadataModelConversions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMetadataModelConversionsRequestT = Model::DescribeMetadataModelConversionsRequest>
+        Model::DescribeMetadataModelConversionsOutcomeCallable DescribeMetadataModelConversionsCallable(const DescribeMetadataModelConversionsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeMetadataModelConversions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMetadataModelConversions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMetadataModelConversionsRequestT = Model::DescribeMetadataModelConversionsRequest>
+        void DescribeMetadataModelConversionsAsync(const DescribeMetadataModelConversionsRequestT& request, const DescribeMetadataModelConversionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeMetadataModelConversions, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of metadata model exports.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsAsScript">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMetadataModelExportsAsScriptOutcome DescribeMetadataModelExportsAsScript(const Model::DescribeMetadataModelExportsAsScriptRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMetadataModelExportsAsScript that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMetadataModelExportsAsScriptRequestT = Model::DescribeMetadataModelExportsAsScriptRequest>
+        Model::DescribeMetadataModelExportsAsScriptOutcomeCallable DescribeMetadataModelExportsAsScriptCallable(const DescribeMetadataModelExportsAsScriptRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeMetadataModelExportsAsScript, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMetadataModelExportsAsScript that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMetadataModelExportsAsScriptRequestT = Model::DescribeMetadataModelExportsAsScriptRequest>
+        void DescribeMetadataModelExportsAsScriptAsync(const DescribeMetadataModelExportsAsScriptRequestT& request, const DescribeMetadataModelExportsAsScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeMetadataModelExportsAsScript, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of metadata model exports.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsToTarget">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMetadataModelExportsToTargetOutcome DescribeMetadataModelExportsToTarget(const Model::DescribeMetadataModelExportsToTargetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMetadataModelExportsToTarget that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMetadataModelExportsToTargetRequestT = Model::DescribeMetadataModelExportsToTargetRequest>
+        Model::DescribeMetadataModelExportsToTargetOutcomeCallable DescribeMetadataModelExportsToTargetCallable(const DescribeMetadataModelExportsToTargetRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeMetadataModelExportsToTarget, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMetadataModelExportsToTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMetadataModelExportsToTargetRequestT = Model::DescribeMetadataModelExportsToTargetRequest>
+        void DescribeMetadataModelExportsToTargetAsync(const DescribeMetadataModelExportsToTargetRequestT& request, const DescribeMetadataModelExportsToTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeMetadataModelExportsToTarget, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of metadata model imports.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelImports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMetadataModelImportsOutcome DescribeMetadataModelImports(const Model::DescribeMetadataModelImportsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMetadataModelImports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMetadataModelImportsRequestT = Model::DescribeMetadataModelImportsRequest>
+        Model::DescribeMetadataModelImportsOutcomeCallable DescribeMetadataModelImportsCallable(const DescribeMetadataModelImportsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeMetadataModelImports, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMetadataModelImports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMetadataModelImportsRequestT = Model::DescribeMetadataModelImportsRequest>
+        void DescribeMetadataModelImportsAsync(const DescribeMetadataModelImportsRequestT& request, const DescribeMetadataModelImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeMetadataModelImports, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of migration projects for your account in the
+         * current region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMigrationProjects">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMigrationProjectsOutcome DescribeMigrationProjects(const Model::DescribeMigrationProjectsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMigrationProjects that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMigrationProjectsRequestT = Model::DescribeMigrationProjectsRequest>
+        Model::DescribeMigrationProjectsOutcomeCallable DescribeMigrationProjectsCallable(const DescribeMigrationProjectsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeMigrationProjects, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMigrationProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMigrationProjectsRequestT = Model::DescribeMigrationProjectsRequest>
+        void DescribeMigrationProjectsAsync(const DescribeMigrationProjectsRequestT& request, const DescribeMigrationProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeMigrationProjects, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about the replication instance types that can be created
          * in the specified region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">AWS
@@ -1196,6 +1719,32 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Returns one or more existing DMS Serverless replication configurations as a
+         * list of structures.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplicationConfigsOutcome DescribeReplicationConfigs(const Model::DescribeReplicationConfigsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeReplicationConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeReplicationConfigsRequestT = Model::DescribeReplicationConfigsRequest>
+        Model::DescribeReplicationConfigsOutcomeCallable DescribeReplicationConfigsCallable(const DescribeReplicationConfigsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeReplicationConfigs, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeReplicationConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeReplicationConfigsRequestT = Model::DescribeReplicationConfigsRequest>
+        void DescribeReplicationConfigsAsync(const DescribeReplicationConfigsRequestT& request, const DescribeReplicationConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeReplicationConfigs, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about the task logs for the specified task.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstanceTaskLogs">AWS
@@ -1271,6 +1820,33 @@ namespace DatabaseMigrationService
         void DescribeReplicationSubnetGroupsAsync(const DescribeReplicationSubnetGroupsRequestT& request, const DescribeReplicationSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::DescribeReplicationSubnetGroups, request, handler, context);
+        }
+
+        /**
+         * <p>Returns table and schema statistics for one or more provisioned replications
+         * that use a given DMS Serverless replication configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplicationTableStatisticsOutcome DescribeReplicationTableStatistics(const Model::DescribeReplicationTableStatisticsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeReplicationTableStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeReplicationTableStatisticsRequestT = Model::DescribeReplicationTableStatisticsRequest>
+        Model::DescribeReplicationTableStatisticsOutcomeCallable DescribeReplicationTableStatisticsCallable(const DescribeReplicationTableStatisticsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeReplicationTableStatistics, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeReplicationTableStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeReplicationTableStatisticsRequestT = Model::DescribeReplicationTableStatisticsRequest>
+        void DescribeReplicationTableStatisticsAsync(const DescribeReplicationTableStatisticsRequestT& request, const DescribeReplicationTableStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeReplicationTableStatistics, request, handler, context);
         }
 
         /**
@@ -1389,6 +1965,33 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Provides details on replication progress by returning status information for
+         * one or more provisioned DMS Serverless replications.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplicationsOutcome DescribeReplications(const Model::DescribeReplicationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeReplications that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeReplicationsRequestT = Model::DescribeReplicationsRequest>
+        Model::DescribeReplicationsOutcomeCallable DescribeReplicationsCallable(const DescribeReplicationsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeReplications, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeReplications that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeReplicationsRequestT = Model::DescribeReplicationsRequest>
+        void DescribeReplicationsAsync(const DescribeReplicationsRequestT& request, const DescribeReplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeReplications, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about the schema for the specified endpoint.</p>
          * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">AWS
@@ -1444,6 +2047,33 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Saves a copy of a database migration assessment report to your Amazon S3
+         * bucket. DMS can save your assessment report as a comma-separated value (CSV) or
+         * a PDF file. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ExportMetadataModelAssessment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportMetadataModelAssessmentOutcome ExportMetadataModelAssessment(const Model::ExportMetadataModelAssessmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportMetadataModelAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExportMetadataModelAssessmentRequestT = Model::ExportMetadataModelAssessmentRequest>
+        Model::ExportMetadataModelAssessmentOutcomeCallable ExportMetadataModelAssessmentCallable(const ExportMetadataModelAssessmentRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::ExportMetadataModelAssessment, request);
+        }
+
+        /**
+         * An Async wrapper for ExportMetadataModelAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExportMetadataModelAssessmentRequestT = Model::ExportMetadataModelAssessmentRequest>
+        void ExportMetadataModelAssessmentAsync(const ExportMetadataModelAssessmentRequestT& request, const ExportMetadataModelAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::ExportMetadataModelAssessment, request, handler, context);
+        }
+
+        /**
          * <p>Uploads the specified certificate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">AWS
          * API Reference</a></p>
@@ -1494,6 +2124,59 @@ namespace DatabaseMigrationService
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the specified schema conversion configuration using the provided
+         * parameters. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyConversionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyConversionConfigurationOutcome ModifyConversionConfiguration(const Model::ModifyConversionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyConversionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyConversionConfigurationRequestT = Model::ModifyConversionConfigurationRequest>
+        Model::ModifyConversionConfigurationOutcomeCallable ModifyConversionConfigurationCallable(const ModifyConversionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::ModifyConversionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyConversionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyConversionConfigurationRequestT = Model::ModifyConversionConfigurationRequest>
+        void ModifyConversionConfigurationAsync(const ModifyConversionConfigurationRequestT& request, const ModifyConversionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::ModifyConversionConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the specified data provider using the provided settings.</p> 
+         * <p>You must remove the data provider from all migration projects before you can
+         * modify it.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyDataProviderOutcome ModifyDataProvider(const Model::ModifyDataProviderRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyDataProvider that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyDataProviderRequestT = Model::ModifyDataProviderRequest>
+        Model::ModifyDataProviderOutcomeCallable ModifyDataProviderCallable(const ModifyDataProviderRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::ModifyDataProvider, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyDataProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyDataProviderRequestT = Model::ModifyDataProviderRequest>
+        void ModifyDataProviderAsync(const ModifyDataProviderRequestT& request, const ModifyDataProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::ModifyDataProvider, request, handler, context);
         }
 
         /**
@@ -1551,6 +2234,94 @@ namespace DatabaseMigrationService
         void ModifyEventSubscriptionAsync(const ModifyEventSubscriptionRequestT& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::ModifyEventSubscription, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the specified instance profile using the provided parameters.</p>
+         *  <p>All migration projects associated with the instance profile must be
+         * deleted or modified before you can modify the instance profile.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyInstanceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceProfileOutcome ModifyInstanceProfile(const Model::ModifyInstanceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyInstanceProfileRequestT = Model::ModifyInstanceProfileRequest>
+        Model::ModifyInstanceProfileOutcomeCallable ModifyInstanceProfileCallable(const ModifyInstanceProfileRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::ModifyInstanceProfile, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyInstanceProfileRequestT = Model::ModifyInstanceProfileRequest>
+        void ModifyInstanceProfileAsync(const ModifyInstanceProfileRequestT& request, const ModifyInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::ModifyInstanceProfile, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the specified migration project using the provided parameters.</p>
+         *  <p>The migration project must be closed before you can modify it.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyMigrationProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyMigrationProjectOutcome ModifyMigrationProject(const Model::ModifyMigrationProjectRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyMigrationProject that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyMigrationProjectRequestT = Model::ModifyMigrationProjectRequest>
+        Model::ModifyMigrationProjectOutcomeCallable ModifyMigrationProjectCallable(const ModifyMigrationProjectRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::ModifyMigrationProject, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyMigrationProject that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyMigrationProjectRequestT = Model::ModifyMigrationProjectRequest>
+        void ModifyMigrationProjectAsync(const ModifyMigrationProjectRequestT& request, const ModifyMigrationProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::ModifyMigrationProject, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies an existing DMS Serverless replication configuration that you can
+         * use to start a replication. This command includes input validation and logic to
+         * check the state of any replication that uses this configuration. You can only
+         * modify a replication configuration before any replication that uses it has
+         * started. As soon as you have initially started a replication with a given
+         * configuiration, you can't modify that configuration, even if you stop it.</p>
+         * <p>Other run statuses that allow you to run this command include FAILED and
+         * CREATED. A provisioning state that allows you to run this command is
+         * FAILED_PROVISION.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyReplicationConfigOutcome ModifyReplicationConfig(const Model::ModifyReplicationConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyReplicationConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyReplicationConfigRequestT = Model::ModifyReplicationConfigRequest>
+        Model::ModifyReplicationConfigOutcomeCallable ModifyReplicationConfigCallable(const ModifyReplicationConfigRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::ModifyReplicationConfig, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyReplicationConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyReplicationConfigRequestT = Model::ModifyReplicationConfigRequest>
+        void ModifyReplicationConfigAsync(const ModifyReplicationConfigRequestT& request, const ModifyReplicationConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::ModifyReplicationConfig, request, handler, context);
         }
 
         /**
@@ -1721,6 +2492,34 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Reloads the target database table with the source data for a given DMS
+         * Serverless replication configuration.</p> <p>You can only use this operation
+         * with a task in the RUNNING state, otherwise the service will throw an
+         * <code>InvalidResourceStateFault</code> exception.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReloadReplicationTablesOutcome ReloadReplicationTables(const Model::ReloadReplicationTablesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ReloadReplicationTables that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ReloadReplicationTablesRequestT = Model::ReloadReplicationTablesRequest>
+        Model::ReloadReplicationTablesOutcomeCallable ReloadReplicationTablesCallable(const ReloadReplicationTablesRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::ReloadReplicationTables, request);
+        }
+
+        /**
+         * An Async wrapper for ReloadReplicationTables that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ReloadReplicationTablesRequestT = Model::ReloadReplicationTablesRequest>
+        void ReloadReplicationTablesAsync(const ReloadReplicationTablesRequestT& request, const ReloadReplicationTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::ReloadReplicationTables, request, handler, context);
+        }
+
+        /**
          * <p>Reloads the target database table with the source data. </p> <p>You can only
          * use this operation with a task in the <code>RUNNING</code> state, otherwise the
          * service will throw an <code>InvalidResourceStateFault</code>
@@ -1782,25 +2581,188 @@ namespace DatabaseMigrationService
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis">AWS
          * API Reference</a></p>
          */
-        virtual Model::RunFleetAdvisorLsaAnalysisOutcome RunFleetAdvisorLsaAnalysis() const;
+        virtual Model::RunFleetAdvisorLsaAnalysisOutcome RunFleetAdvisorLsaAnalysis(const Model::RunFleetAdvisorLsaAnalysisRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RunFleetAdvisorLsaAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::RunFleetAdvisorLsaAnalysisOutcomeCallable RunFleetAdvisorLsaAnalysisCallable() const
+        template<typename RunFleetAdvisorLsaAnalysisRequestT = Model::RunFleetAdvisorLsaAnalysisRequest>
+        Model::RunFleetAdvisorLsaAnalysisOutcomeCallable RunFleetAdvisorLsaAnalysisCallable(const RunFleetAdvisorLsaAnalysisRequestT& request = {}) const
         {
-            return SubmitCallable(&DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysis);
+            return SubmitCallable(&DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysis, request);
         }
 
         /**
          * An Async wrapper for RunFleetAdvisorLsaAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void RunFleetAdvisorLsaAnalysisAsync(const RunFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename RunFleetAdvisorLsaAnalysisRequestT = Model::RunFleetAdvisorLsaAnalysisRequest>
+        void RunFleetAdvisorLsaAnalysisAsync(const RunFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RunFleetAdvisorLsaAnalysisRequestT& request = {}) const
         {
-            return SubmitAsync(&DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysis, handler, context);
+            return SubmitAsync(&DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysis, request, handler, context);
         }
+
+        /**
+         * <p>Applies the extension pack to your target database. An extension pack is an
+         * add-on module that emulates functions present in a source database that are
+         * required when converting objects to the target database. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartExtensionPackAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartExtensionPackAssociationOutcome StartExtensionPackAssociation(const Model::StartExtensionPackAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartExtensionPackAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartExtensionPackAssociationRequestT = Model::StartExtensionPackAssociationRequest>
+        Model::StartExtensionPackAssociationOutcomeCallable StartExtensionPackAssociationCallable(const StartExtensionPackAssociationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StartExtensionPackAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for StartExtensionPackAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartExtensionPackAssociationRequestT = Model::StartExtensionPackAssociationRequest>
+        void StartExtensionPackAssociationAsync(const StartExtensionPackAssociationRequestT& request, const StartExtensionPackAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StartExtensionPackAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a database migration assessment report by assessing the migration
+         * complexity for your source database. A database migration assessment report
+         * summarizes all of the schema conversion tasks. It also details the action items
+         * for database objects that can't be converted to the database engine of your
+         * target database instance. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelAssessment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMetadataModelAssessmentOutcome StartMetadataModelAssessment(const Model::StartMetadataModelAssessmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMetadataModelAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMetadataModelAssessmentRequestT = Model::StartMetadataModelAssessmentRequest>
+        Model::StartMetadataModelAssessmentOutcomeCallable StartMetadataModelAssessmentCallable(const StartMetadataModelAssessmentRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StartMetadataModelAssessment, request);
+        }
+
+        /**
+         * An Async wrapper for StartMetadataModelAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMetadataModelAssessmentRequestT = Model::StartMetadataModelAssessmentRequest>
+        void StartMetadataModelAssessmentAsync(const StartMetadataModelAssessmentRequestT& request, const StartMetadataModelAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StartMetadataModelAssessment, request, handler, context);
+        }
+
+        /**
+         * <p>Converts your source database objects to a format compatible with the target
+         * database. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelConversion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMetadataModelConversionOutcome StartMetadataModelConversion(const Model::StartMetadataModelConversionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMetadataModelConversion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMetadataModelConversionRequestT = Model::StartMetadataModelConversionRequest>
+        Model::StartMetadataModelConversionOutcomeCallable StartMetadataModelConversionCallable(const StartMetadataModelConversionRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StartMetadataModelConversion, request);
+        }
+
+        /**
+         * An Async wrapper for StartMetadataModelConversion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMetadataModelConversionRequestT = Model::StartMetadataModelConversionRequest>
+        void StartMetadataModelConversionAsync(const StartMetadataModelConversionRequestT& request, const StartMetadataModelConversionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StartMetadataModelConversion, request, handler, context);
+        }
+
+        /**
+         * <p>Saves your converted code to a file as a SQL script, and stores this file on
+         * your Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportAsScript">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMetadataModelExportAsScriptOutcome StartMetadataModelExportAsScript(const Model::StartMetadataModelExportAsScriptRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMetadataModelExportAsScript that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMetadataModelExportAsScriptRequestT = Model::StartMetadataModelExportAsScriptRequest>
+        Model::StartMetadataModelExportAsScriptOutcomeCallable StartMetadataModelExportAsScriptCallable(const StartMetadataModelExportAsScriptRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StartMetadataModelExportAsScript, request);
+        }
+
+        /**
+         * An Async wrapper for StartMetadataModelExportAsScript that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMetadataModelExportAsScriptRequestT = Model::StartMetadataModelExportAsScriptRequest>
+        void StartMetadataModelExportAsScriptAsync(const StartMetadataModelExportAsScriptRequestT& request, const StartMetadataModelExportAsScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StartMetadataModelExportAsScript, request, handler, context);
+        }
+
+        /**
+         * <p>Applies converted database objects to your target database. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportToTarget">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMetadataModelExportToTargetOutcome StartMetadataModelExportToTarget(const Model::StartMetadataModelExportToTargetRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMetadataModelExportToTarget that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMetadataModelExportToTargetRequestT = Model::StartMetadataModelExportToTargetRequest>
+        Model::StartMetadataModelExportToTargetOutcomeCallable StartMetadataModelExportToTargetCallable(const StartMetadataModelExportToTargetRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StartMetadataModelExportToTarget, request);
+        }
+
+        /**
+         * An Async wrapper for StartMetadataModelExportToTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMetadataModelExportToTargetRequestT = Model::StartMetadataModelExportToTargetRequest>
+        void StartMetadataModelExportToTargetAsync(const StartMetadataModelExportToTargetRequestT& request, const StartMetadataModelExportToTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StartMetadataModelExportToTarget, request, handler, context);
+        }
+
+        /**
+         * <p>Loads the metadata for all the dependent database objects of the parent
+         * object.</p> <p>This operation uses your project's Amazon S3 bucket as a metadata
+         * cache to improve performance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMetadataModelImportOutcome StartMetadataModelImport(const Model::StartMetadataModelImportRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMetadataModelImport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMetadataModelImportRequestT = Model::StartMetadataModelImportRequest>
+        Model::StartMetadataModelImportOutcomeCallable StartMetadataModelImportCallable(const StartMetadataModelImportRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StartMetadataModelImport, request);
+        }
+
+        /**
+         * An Async wrapper for StartMetadataModelImport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMetadataModelImportRequestT = Model::StartMetadataModelImportRequest>
+        void StartMetadataModelImportAsync(const StartMetadataModelImportRequestT& request, const StartMetadataModelImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StartMetadataModelImport, request, handler, context);
+        }
+
         /**
          * <p>Starts the analysis of your source database to provide recommendations of
          * target engines.</p> <p>You can create recommendations for multiple source
@@ -1828,6 +2790,36 @@ namespace DatabaseMigrationService
         void StartRecommendationsAsync(const StartRecommendationsRequestT& request, const StartRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::StartRecommendations, request, handler, context);
+        }
+
+        /**
+         * <p>For a given DMS Serverless replication configuration, DMS connects to the
+         * source endpoint and collects the metadata to analyze the replication workload.
+         * Using this metadata, DMS then computes and provisions the required capacity and
+         * starts replicating to the target endpoint using the server resources that DMS
+         * has provisioned for the DMS Serverless replication.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartReplicationOutcome StartReplication(const Model::StartReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartReplicationRequestT = Model::StartReplicationRequest>
+        Model::StartReplicationOutcomeCallable StartReplicationCallable(const StartReplicationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StartReplication, request);
+        }
+
+        /**
+         * An Async wrapper for StartReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartReplicationRequestT = Model::StartReplicationRequest>
+        void StartReplicationAsync(const StartReplicationRequestT& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StartReplication, request, handler, context);
         }
 
         /**
@@ -1926,6 +2918,33 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>For a given DMS Serverless replication configuration, DMS stops any and all
+         * ongoing DMS Serverless replications. This command doesn't deprovision the
+         * stopped replications.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopReplicationOutcome StopReplication(const Model::StopReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopReplicationRequestT = Model::StopReplicationRequest>
+        Model::StopReplicationOutcomeCallable StopReplicationCallable(const StopReplicationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StopReplication, request);
+        }
+
+        /**
+         * An Async wrapper for StopReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopReplicationRequestT = Model::StopReplicationRequest>
+        void StopReplicationAsync(const StopReplicationRequestT& request, const StopReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StopReplication, request, handler, context);
+        }
+
+        /**
          * <p>Stops the replication task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">AWS
          * API Reference</a></p>
@@ -1980,11 +2999,11 @@ namespace DatabaseMigrationService
          * <p>Migrates 10 active and enabled Amazon SNS subscriptions at a time and
          * converts them to corresponding Amazon EventBridge rules. By default, this
          * operation migrates subscriptions only when all your replication instance
-         * versions are 3.4.6 or higher. If any replication instances are from versions
-         * earlier than 3.4.6, the operation raises an error and tells you to upgrade these
-         * instances to version 3.4.6 or higher. To enable migration regardless of version,
+         * versions are 3.4.5 or higher. If any replication instances are from versions
+         * earlier than 3.4.5, the operation raises an error and tells you to upgrade these
+         * instances to version 3.4.5 or higher. To enable migration regardless of version,
          * set the <code>Force</code> option to true. However, if you don't upgrade
-         * instances earlier than version 3.4.6, some types of events might not be
+         * instances earlier than version 3.4.5, some types of events might not be
          * available when you use Amazon EventBridge.</p> <p>To call this operation, make
          * sure that you have certain permissions added to your user account. For more
          * information, see <a

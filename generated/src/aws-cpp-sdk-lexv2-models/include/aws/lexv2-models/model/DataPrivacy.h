@@ -61,7 +61,7 @@ namespace Model
      * COPPA. For information regarding the use of Amazon Lex in connection with
      * websites, programs, or other applications that are directed or targeted, in
      * whole or in part, to children under age 13, see the <a
-     * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
+     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
      */
     inline bool GetChildDirected() const{ return m_childDirected; }
 
@@ -88,7 +88,7 @@ namespace Model
      * COPPA. For information regarding the use of Amazon Lex in connection with
      * websites, programs, or other applications that are directed or targeted, in
      * whole or in part, to children under age 13, see the <a
-     * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
+     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
      */
     inline bool ChildDirectedHasBeenSet() const { return m_childDirectedHasBeenSet; }
 
@@ -115,7 +115,7 @@ namespace Model
      * COPPA. For information regarding the use of Amazon Lex in connection with
      * websites, programs, or other applications that are directed or targeted, in
      * whole or in part, to children under age 13, see the <a
-     * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
+     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
      */
     inline void SetChildDirected(bool value) { m_childDirectedHasBeenSet = true; m_childDirected = value; }
 
@@ -142,7 +142,7 @@ namespace Model
      * COPPA. For information regarding the use of Amazon Lex in connection with
      * websites, programs, or other applications that are directed or targeted, in
      * whole or in part, to children under age 13, see the <a
-     * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
+     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
      */
     inline DataPrivacy& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
 

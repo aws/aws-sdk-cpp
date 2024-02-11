@@ -23,7 +23,8 @@ namespace Model
     SequenceNumber,
     MessageDeduplicationId,
     MessageGroupId,
-    AWSTraceHeader
+    AWSTraceHeader,
+    DeadLetterQueueSourceArn
   };
 
 namespace MessageSystemAttributeNameMapper

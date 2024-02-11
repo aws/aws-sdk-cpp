@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatasetActionType::NOT_SET:
+            return {};
           case DatasetActionType::QUERY:
             return "QUERY";
           case DatasetActionType::CONTAINER:

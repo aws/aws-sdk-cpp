@@ -21,7 +21,9 @@ namespace Aws
       {
 
         static const int SNAPSHOT_NOT_FOUND_HASH = HashingUtils::HashString("SNAPSHOT_NOT_FOUND");
+        static const int GRANT_NOT_FOUND_HASH = HashingUtils::HashString("GRANT_NOT_FOUND");
         static const int DEPENDENCY_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("DEPENDENCY_RESOURCE_NOT_FOUND");
+        static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("IMAGE_NOT_FOUND");
 
 
         ResourceNotFoundExceptionReason GetResourceNotFoundExceptionReasonForName(const Aws::String& name)
@@ -31,9 +33,17 @@ namespace Aws
           {
             return ResourceNotFoundExceptionReason::SNAPSHOT_NOT_FOUND;
           }
+          else if (hashCode == GRANT_NOT_FOUND_HASH)
+          {
+            return ResourceNotFoundExceptionReason::GRANT_NOT_FOUND;
+          }
           else if (hashCode == DEPENDENCY_RESOURCE_NOT_FOUND_HASH)
           {
             return ResourceNotFoundExceptionReason::DEPENDENCY_RESOURCE_NOT_FOUND;
+          }
+          else if (hashCode == IMAGE_NOT_FOUND_HASH)
+          {
+            return ResourceNotFoundExceptionReason::IMAGE_NOT_FOUND;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceNotFoundExceptionReason::NOT_SET:
+            return {};
           case ResourceNotFoundExceptionReason::SNAPSHOT_NOT_FOUND:
             return "SNAPSHOT_NOT_FOUND";
+          case ResourceNotFoundExceptionReason::GRANT_NOT_FOUND:
+            return "GRANT_NOT_FOUND";
           case ResourceNotFoundExceptionReason::DEPENDENCY_RESOURCE_NOT_FOUND:
             return "DEPENDENCY_RESOURCE_NOT_FOUND";
+          case ResourceNotFoundExceptionReason::IMAGE_NOT_FOUND:
+            return "IMAGE_NOT_FOUND";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

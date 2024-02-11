@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EbsSnapshotPreservation::NOT_SET:
+            return {};
           case EbsSnapshotPreservation::NO_RETENTION:
             return "NO_RETENTION";
           case EbsSnapshotPreservation::RETENTION_WITH_FINDING:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FastLaunchStateCode::NOT_SET:
+            return {};
           case FastLaunchStateCode::enabling:
             return "enabling";
           case FastLaunchStateCode::enabling_failed:

@@ -17,7 +17,7 @@ CreateModelRequest::CreateModelRequest() :
     m_datasetNameHasBeenSet(false),
     m_datasetSchemaHasBeenSet(false),
     m_labelsInputConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_trainingDataStartTimeHasBeenSet(false),
     m_trainingDataEndTimeHasBeenSet(false),

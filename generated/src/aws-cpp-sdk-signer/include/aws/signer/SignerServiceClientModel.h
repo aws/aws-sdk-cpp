@@ -20,6 +20,7 @@
 /* Service model headers required in SignerClient header */
 #include <aws/signer/model/AddProfilePermissionResult.h>
 #include <aws/signer/model/DescribeSigningJobResult.h>
+#include <aws/signer/model/GetRevocationStatusResult.h>
 #include <aws/signer/model/GetSigningPlatformResult.h>
 #include <aws/signer/model/GetSigningProfileResult.h>
 #include <aws/signer/model/ListProfilePermissionsResult.h>
@@ -29,6 +30,7 @@
 #include <aws/signer/model/ListTagsForResourceResult.h>
 #include <aws/signer/model/PutSigningProfileResult.h>
 #include <aws/signer/model/RemoveProfilePermissionResult.h>
+#include <aws/signer/model/SignPayloadResult.h>
 #include <aws/signer/model/StartSigningJobResult.h>
 #include <aws/signer/model/TagResourceResult.h>
 #include <aws/signer/model/UntagResourceResult.h>
@@ -76,6 +78,7 @@ namespace Aws
       class AddProfilePermissionRequest;
       class CancelSigningProfileRequest;
       class DescribeSigningJobRequest;
+      class GetRevocationStatusRequest;
       class GetSigningPlatformRequest;
       class GetSigningProfileRequest;
       class ListProfilePermissionsRequest;
@@ -87,6 +90,7 @@ namespace Aws
       class RemoveProfilePermissionRequest;
       class RevokeSignatureRequest;
       class RevokeSigningProfileRequest;
+      class SignPayloadRequest;
       class StartSigningJobRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -96,6 +100,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AddProfilePermissionResult, SignerError> AddProfilePermissionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SignerError> CancelSigningProfileOutcome;
       typedef Aws::Utils::Outcome<DescribeSigningJobResult, SignerError> DescribeSigningJobOutcome;
+      typedef Aws::Utils::Outcome<GetRevocationStatusResult, SignerError> GetRevocationStatusOutcome;
       typedef Aws::Utils::Outcome<GetSigningPlatformResult, SignerError> GetSigningPlatformOutcome;
       typedef Aws::Utils::Outcome<GetSigningProfileResult, SignerError> GetSigningProfileOutcome;
       typedef Aws::Utils::Outcome<ListProfilePermissionsResult, SignerError> ListProfilePermissionsOutcome;
@@ -107,6 +112,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RemoveProfilePermissionResult, SignerError> RemoveProfilePermissionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SignerError> RevokeSignatureOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SignerError> RevokeSigningProfileOutcome;
+      typedef Aws::Utils::Outcome<SignPayloadResult, SignerError> SignPayloadOutcome;
       typedef Aws::Utils::Outcome<StartSigningJobResult, SignerError> StartSigningJobOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, SignerError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, SignerError> UntagResourceOutcome;
@@ -116,6 +122,7 @@ namespace Aws
       typedef std::future<AddProfilePermissionOutcome> AddProfilePermissionOutcomeCallable;
       typedef std::future<CancelSigningProfileOutcome> CancelSigningProfileOutcomeCallable;
       typedef std::future<DescribeSigningJobOutcome> DescribeSigningJobOutcomeCallable;
+      typedef std::future<GetRevocationStatusOutcome> GetRevocationStatusOutcomeCallable;
       typedef std::future<GetSigningPlatformOutcome> GetSigningPlatformOutcomeCallable;
       typedef std::future<GetSigningProfileOutcome> GetSigningProfileOutcomeCallable;
       typedef std::future<ListProfilePermissionsOutcome> ListProfilePermissionsOutcomeCallable;
@@ -127,6 +134,7 @@ namespace Aws
       typedef std::future<RemoveProfilePermissionOutcome> RemoveProfilePermissionOutcomeCallable;
       typedef std::future<RevokeSignatureOutcome> RevokeSignatureOutcomeCallable;
       typedef std::future<RevokeSigningProfileOutcome> RevokeSigningProfileOutcomeCallable;
+      typedef std::future<SignPayloadOutcome> SignPayloadOutcomeCallable;
       typedef std::future<StartSigningJobOutcome> StartSigningJobOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -139,6 +147,7 @@ namespace Aws
     typedef std::function<void(const SignerClient*, const Model::AddProfilePermissionRequest&, const Model::AddProfilePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddProfilePermissionResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::CancelSigningProfileRequest&, const Model::CancelSigningProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSigningProfileResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::DescribeSigningJobRequest&, const Model::DescribeSigningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSigningJobResponseReceivedHandler;
+    typedef std::function<void(const SignerClient*, const Model::GetRevocationStatusRequest&, const Model::GetRevocationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRevocationStatusResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::GetSigningPlatformRequest&, const Model::GetSigningPlatformOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSigningPlatformResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::GetSigningProfileRequest&, const Model::GetSigningProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSigningProfileResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::ListProfilePermissionsRequest&, const Model::ListProfilePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfilePermissionsResponseReceivedHandler;
@@ -150,6 +159,7 @@ namespace Aws
     typedef std::function<void(const SignerClient*, const Model::RemoveProfilePermissionRequest&, const Model::RemoveProfilePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveProfilePermissionResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::RevokeSignatureRequest&, const Model::RevokeSignatureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeSignatureResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::RevokeSigningProfileRequest&, const Model::RevokeSigningProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeSigningProfileResponseReceivedHandler;
+    typedef std::function<void(const SignerClient*, const Model::SignPayloadRequest&, const Model::SignPayloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignPayloadResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::StartSigningJobRequest&, const Model::StartSigningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSigningJobResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

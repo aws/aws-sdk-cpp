@@ -46,7 +46,9 @@ Stack::Stack() :
     m_enableTerminationProtectionHasBeenSet(false),
     m_parentIdHasBeenSet(false),
     m_rootIdHasBeenSet(false),
-    m_driftInformationHasBeenSet(false)
+    m_driftInformationHasBeenSet(false),
+    m_retainExceptOnCreate(false),
+    m_retainExceptOnCreateHasBeenSet(false)
 {
 }
 
@@ -76,7 +78,9 @@ Stack::Stack(const XmlNode& xmlNode) :
     m_enableTerminationProtectionHasBeenSet(false),
     m_parentIdHasBeenSet(false),
     m_rootIdHasBeenSet(false),
-    m_driftInformationHasBeenSet(false)
+    m_driftInformationHasBeenSet(false),
+    m_retainExceptOnCreate(false),
+    m_retainExceptOnCreateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -249,6 +253,12 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
       m_driftInformation = driftInformationNode;
       m_driftInformationHasBeenSet = true;
     }
+    XmlNode retainExceptOnCreateNode = resultNode.FirstChild("RetainExceptOnCreate");
+    if(!retainExceptOnCreateNode.IsNull())
+    {
+      m_retainExceptOnCreate = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retainExceptOnCreateNode.GetText()).c_str()).c_str());
+      m_retainExceptOnCreateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -396,6 +406,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_retainExceptOnCreateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
+  }
+
 }
 
 void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -517,6 +532,10 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String driftInformationLocationAndMember(location);
       driftInformationLocationAndMember += ".DriftInformation";
       m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMember.c_str());
+  }
+  if(m_retainExceptOnCreateHasBeenSet)
+  {
+      oStream << location << ".RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
   }
 }
 

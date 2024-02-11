@@ -23,7 +23,9 @@ CreateCustomDBEngineVersionResult::CreateCustomDBEngineVersionResult() :
     m_supportsParallelQuery(false),
     m_supportsGlobalDatabases(false),
     m_supportsBabelfish(false),
-    m_supportsCertificateRotationWithoutRestart(false)
+    m_supportsCertificateRotationWithoutRestart(false),
+    m_supportsLocalWriteForwarding(false),
+    m_supportsIntegrations(false)
 {
 }
 
@@ -33,7 +35,9 @@ CreateCustomDBEngineVersionResult::CreateCustomDBEngineVersionResult(const Aws::
     m_supportsParallelQuery(false),
     m_supportsGlobalDatabases(false),
     m_supportsBabelfish(false),
-    m_supportsCertificateRotationWithoutRestart(false)
+    m_supportsCertificateRotationWithoutRestart(false),
+    m_supportsLocalWriteForwarding(false),
+    m_supportsIntegrations(false)
 {
   *this = result;
 }
@@ -258,6 +262,16 @@ CreateCustomDBEngineVersionResult& CreateCustomDBEngineVersionResult::operator =
         supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersMember.NextNode("member");
       }
 
+    }
+    XmlNode supportsLocalWriteForwardingNode = resultNode.FirstChild("SupportsLocalWriteForwarding");
+    if(!supportsLocalWriteForwardingNode.IsNull())
+    {
+      m_supportsLocalWriteForwarding = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLocalWriteForwardingNode.GetText()).c_str()).c_str());
+    }
+    XmlNode supportsIntegrationsNode = resultNode.FirstChild("SupportsIntegrations");
+    if(!supportsIntegrationsNode.IsNull())
+    {
+      m_supportsIntegrations = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsIntegrationsNode.GetText()).c_str()).c_str());
     }
   }
 

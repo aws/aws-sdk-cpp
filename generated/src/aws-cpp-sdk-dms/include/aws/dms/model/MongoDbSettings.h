@@ -132,42 +132,50 @@ namespace Model
 
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline MongoDbSettings& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline MongoDbSettings& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline MongoDbSettings& WithServerName(const char* value) { SetServerName(value); return *this;}
 
@@ -844,6 +852,80 @@ namespace Model
      */
     inline MongoDbSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
 
+
+    /**
+     * <p>If <code>true</code>, DMS retrieves the entire document from the MongoDB
+     * source during migration. This may cause a migration failure if the server
+     * response exceeds bandwidth limits. To fetch only updates and deletes during
+     * migration, set this parameter to <code>false</code>.</p>
+     */
+    inline bool GetUseUpdateLookUp() const{ return m_useUpdateLookUp; }
+
+    /**
+     * <p>If <code>true</code>, DMS retrieves the entire document from the MongoDB
+     * source during migration. This may cause a migration failure if the server
+     * response exceeds bandwidth limits. To fetch only updates and deletes during
+     * migration, set this parameter to <code>false</code>.</p>
+     */
+    inline bool UseUpdateLookUpHasBeenSet() const { return m_useUpdateLookUpHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, DMS retrieves the entire document from the MongoDB
+     * source during migration. This may cause a migration failure if the server
+     * response exceeds bandwidth limits. To fetch only updates and deletes during
+     * migration, set this parameter to <code>false</code>.</p>
+     */
+    inline void SetUseUpdateLookUp(bool value) { m_useUpdateLookUpHasBeenSet = true; m_useUpdateLookUp = value; }
+
+    /**
+     * <p>If <code>true</code>, DMS retrieves the entire document from the MongoDB
+     * source during migration. This may cause a migration failure if the server
+     * response exceeds bandwidth limits. To fetch only updates and deletes during
+     * migration, set this parameter to <code>false</code>.</p>
+     */
+    inline MongoDbSettings& WithUseUpdateLookUp(bool value) { SetUseUpdateLookUp(value); return *this;}
+
+
+    /**
+     * <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses
+     * this setting if the target endpoint is a DocumentDB elastic cluster.</p> <p>When
+     * this setting is <code>true</code>, note the following:</p> <ul> <li> <p>You must
+     * set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li> <li>
+     * <p>DMS automatically sets <code>useUpdateLookup</code> to
+     * <code>false</code>.</p> </li> </ul>
+     */
+    inline bool GetReplicateShardCollections() const{ return m_replicateShardCollections; }
+
+    /**
+     * <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses
+     * this setting if the target endpoint is a DocumentDB elastic cluster.</p> <p>When
+     * this setting is <code>true</code>, note the following:</p> <ul> <li> <p>You must
+     * set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li> <li>
+     * <p>DMS automatically sets <code>useUpdateLookup</code> to
+     * <code>false</code>.</p> </li> </ul>
+     */
+    inline bool ReplicateShardCollectionsHasBeenSet() const { return m_replicateShardCollectionsHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses
+     * this setting if the target endpoint is a DocumentDB elastic cluster.</p> <p>When
+     * this setting is <code>true</code>, note the following:</p> <ul> <li> <p>You must
+     * set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li> <li>
+     * <p>DMS automatically sets <code>useUpdateLookup</code> to
+     * <code>false</code>.</p> </li> </ul>
+     */
+    inline void SetReplicateShardCollections(bool value) { m_replicateShardCollectionsHasBeenSet = true; m_replicateShardCollections = value; }
+
+    /**
+     * <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses
+     * this setting if the target endpoint is a DocumentDB elastic cluster.</p> <p>When
+     * this setting is <code>true</code>, note the following:</p> <ul> <li> <p>You must
+     * set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li> <li>
+     * <p>DMS automatically sets <code>useUpdateLookup</code> to
+     * <code>false</code>.</p> </li> </ul>
+     */
+    inline MongoDbSettings& WithReplicateShardCollections(bool value) { SetReplicateShardCollections(value); return *this;}
+
   private:
 
     Aws::String m_username;
@@ -887,6 +969,12 @@ namespace Model
 
     Aws::String m_secretsManagerSecretId;
     bool m_secretsManagerSecretIdHasBeenSet = false;
+
+    bool m_useUpdateLookUp;
+    bool m_useUpdateLookUpHasBeenSet = false;
+
+    bool m_replicateShardCollections;
+    bool m_replicateShardCollectionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3-crt/model/EncodingType.h>
+#include <aws/s3-crt/model/RequestCharged.h>
 #include <aws/s3-crt/model/Object.h>
 #include <aws/s3-crt/model/CommonPrefix.h>
 #include <utility>
@@ -99,79 +100,100 @@ namespace Model
 
 
     /**
-     * <p>When response is truncated (the IsTruncated element value in the response is
-     * true), you can use the key name in this field as marker in the subsequent
-     * request to get next set of objects. Amazon S3 lists objects in alphabetical
-     * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMarker and it is
-     * truncated, you can use the value of the last Key in the response as the marker
-     * in the subsequent request to get the next set of object keys.</p>
+     * <p>When the response is truncated (the <code>IsTruncated</code> element value in
+     * the response is <code>true</code>), you can use the key name in this field as
+     * the <code>marker</code> parameter in the subsequent request to get the next set
+     * of objects. Amazon S3 lists objects in alphabetical order. </p>  <p>This
+     * element is returned only if you have the <code>delimiter</code> request
+     * parameter specified. If the response does not include the
+     * <code>NextMarker</code> element and it is truncated, you can use the value of
+     * the last <code>Key</code> element in the response as the <code>marker</code>
+     * parameter in the subsequent request to get the next set of object keys.</p>
+     * 
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
-     * <p>When response is truncated (the IsTruncated element value in the response is
-     * true), you can use the key name in this field as marker in the subsequent
-     * request to get next set of objects. Amazon S3 lists objects in alphabetical
-     * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMarker and it is
-     * truncated, you can use the value of the last Key in the response as the marker
-     * in the subsequent request to get the next set of object keys.</p>
+     * <p>When the response is truncated (the <code>IsTruncated</code> element value in
+     * the response is <code>true</code>), you can use the key name in this field as
+     * the <code>marker</code> parameter in the subsequent request to get the next set
+     * of objects. Amazon S3 lists objects in alphabetical order. </p>  <p>This
+     * element is returned only if you have the <code>delimiter</code> request
+     * parameter specified. If the response does not include the
+     * <code>NextMarker</code> element and it is truncated, you can use the value of
+     * the last <code>Key</code> element in the response as the <code>marker</code>
+     * parameter in the subsequent request to get the next set of object keys.</p>
+     * 
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
     /**
-     * <p>When response is truncated (the IsTruncated element value in the response is
-     * true), you can use the key name in this field as marker in the subsequent
-     * request to get next set of objects. Amazon S3 lists objects in alphabetical
-     * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMarker and it is
-     * truncated, you can use the value of the last Key in the response as the marker
-     * in the subsequent request to get the next set of object keys.</p>
+     * <p>When the response is truncated (the <code>IsTruncated</code> element value in
+     * the response is <code>true</code>), you can use the key name in this field as
+     * the <code>marker</code> parameter in the subsequent request to get the next set
+     * of objects. Amazon S3 lists objects in alphabetical order. </p>  <p>This
+     * element is returned only if you have the <code>delimiter</code> request
+     * parameter specified. If the response does not include the
+     * <code>NextMarker</code> element and it is truncated, you can use the value of
+     * the last <code>Key</code> element in the response as the <code>marker</code>
+     * parameter in the subsequent request to get the next set of object keys.</p>
+     * 
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
-     * <p>When response is truncated (the IsTruncated element value in the response is
-     * true), you can use the key name in this field as marker in the subsequent
-     * request to get next set of objects. Amazon S3 lists objects in alphabetical
-     * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMarker and it is
-     * truncated, you can use the value of the last Key in the response as the marker
-     * in the subsequent request to get the next set of object keys.</p>
+     * <p>When the response is truncated (the <code>IsTruncated</code> element value in
+     * the response is <code>true</code>), you can use the key name in this field as
+     * the <code>marker</code> parameter in the subsequent request to get the next set
+     * of objects. Amazon S3 lists objects in alphabetical order. </p>  <p>This
+     * element is returned only if you have the <code>delimiter</code> request
+     * parameter specified. If the response does not include the
+     * <code>NextMarker</code> element and it is truncated, you can use the value of
+     * the last <code>Key</code> element in the response as the <code>marker</code>
+     * parameter in the subsequent request to get the next set of object keys.</p>
+     * 
      */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
     /**
-     * <p>When response is truncated (the IsTruncated element value in the response is
-     * true), you can use the key name in this field as marker in the subsequent
-     * request to get next set of objects. Amazon S3 lists objects in alphabetical
-     * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMarker and it is
-     * truncated, you can use the value of the last Key in the response as the marker
-     * in the subsequent request to get the next set of object keys.</p>
+     * <p>When the response is truncated (the <code>IsTruncated</code> element value in
+     * the response is <code>true</code>), you can use the key name in this field as
+     * the <code>marker</code> parameter in the subsequent request to get the next set
+     * of objects. Amazon S3 lists objects in alphabetical order. </p>  <p>This
+     * element is returned only if you have the <code>delimiter</code> request
+     * parameter specified. If the response does not include the
+     * <code>NextMarker</code> element and it is truncated, you can use the value of
+     * the last <code>Key</code> element in the response as the <code>marker</code>
+     * parameter in the subsequent request to get the next set of object keys.</p>
+     * 
      */
     inline ListObjectsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
-     * <p>When response is truncated (the IsTruncated element value in the response is
-     * true), you can use the key name in this field as marker in the subsequent
-     * request to get next set of objects. Amazon S3 lists objects in alphabetical
-     * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMarker and it is
-     * truncated, you can use the value of the last Key in the response as the marker
-     * in the subsequent request to get the next set of object keys.</p>
+     * <p>When the response is truncated (the <code>IsTruncated</code> element value in
+     * the response is <code>true</code>), you can use the key name in this field as
+     * the <code>marker</code> parameter in the subsequent request to get the next set
+     * of objects. Amazon S3 lists objects in alphabetical order. </p>  <p>This
+     * element is returned only if you have the <code>delimiter</code> request
+     * parameter specified. If the response does not include the
+     * <code>NextMarker</code> element and it is truncated, you can use the value of
+     * the last <code>Key</code> element in the response as the <code>marker</code>
+     * parameter in the subsequent request to get the next set of object keys.</p>
+     * 
      */
     inline ListObjectsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
-     * <p>When response is truncated (the IsTruncated element value in the response is
-     * true), you can use the key name in this field as marker in the subsequent
-     * request to get next set of objects. Amazon S3 lists objects in alphabetical
-     * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMarker and it is
-     * truncated, you can use the value of the last Key in the response as the marker
-     * in the subsequent request to get the next set of object keys.</p>
+     * <p>When the response is truncated (the <code>IsTruncated</code> element value in
+     * the response is <code>true</code>), you can use the key name in this field as
+     * the <code>marker</code> parameter in the subsequent request to get the next set
+     * of objects. Amazon S3 lists objects in alphabetical order. </p>  <p>This
+     * element is returned only if you have the <code>delimiter</code> request
+     * parameter specified. If the response does not include the
+     * <code>NextMarker</code> element and it is truncated, you can use the value of
+     * the last <code>Key</code> element in the response as the <code>marker</code>
+     * parameter in the subsequent request to get the next set of object keys.</p>
+     * 
      */
     inline ListObjectsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
@@ -367,91 +389,105 @@ namespace Model
     /**
      * <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single
      * return when calculating the number of returns. </p> <p>A response can contain
-     * CommonPrefixes only if you specify a delimiter.</p> <p>CommonPrefixes contains
-     * all (if there are any) keys between Prefix and the next occurrence of the string
-     * specified by the delimiter.</p> <p> CommonPrefixes lists keys that act like
-     * subdirectories in the directory specified by Prefix.</p> <p>For example, if the
-     * prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the
-     * common prefix is notes/summer/. All of the keys that roll up into a common
-     * prefix count as a single return when calculating the number of returns.</p>
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by the
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns.</p>
      */
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
     /**
      * <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single
      * return when calculating the number of returns. </p> <p>A response can contain
-     * CommonPrefixes only if you specify a delimiter.</p> <p>CommonPrefixes contains
-     * all (if there are any) keys between Prefix and the next occurrence of the string
-     * specified by the delimiter.</p> <p> CommonPrefixes lists keys that act like
-     * subdirectories in the directory specified by Prefix.</p> <p>For example, if the
-     * prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the
-     * common prefix is notes/summer/. All of the keys that roll up into a common
-     * prefix count as a single return when calculating the number of returns.</p>
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by the
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns.</p>
      */
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
     /**
      * <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single
      * return when calculating the number of returns. </p> <p>A response can contain
-     * CommonPrefixes only if you specify a delimiter.</p> <p>CommonPrefixes contains
-     * all (if there are any) keys between Prefix and the next occurrence of the string
-     * specified by the delimiter.</p> <p> CommonPrefixes lists keys that act like
-     * subdirectories in the directory specified by Prefix.</p> <p>For example, if the
-     * prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the
-     * common prefix is notes/summer/. All of the keys that roll up into a common
-     * prefix count as a single return when calculating the number of returns.</p>
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by the
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns.</p>
      */
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
 
     /**
      * <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single
      * return when calculating the number of returns. </p> <p>A response can contain
-     * CommonPrefixes only if you specify a delimiter.</p> <p>CommonPrefixes contains
-     * all (if there are any) keys between Prefix and the next occurrence of the string
-     * specified by the delimiter.</p> <p> CommonPrefixes lists keys that act like
-     * subdirectories in the directory specified by Prefix.</p> <p>For example, if the
-     * prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the
-     * common prefix is notes/summer/. All of the keys that roll up into a common
-     * prefix count as a single return when calculating the number of returns.</p>
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by the
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns.</p>
      */
     inline ListObjectsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
     /**
      * <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single
      * return when calculating the number of returns. </p> <p>A response can contain
-     * CommonPrefixes only if you specify a delimiter.</p> <p>CommonPrefixes contains
-     * all (if there are any) keys between Prefix and the next occurrence of the string
-     * specified by the delimiter.</p> <p> CommonPrefixes lists keys that act like
-     * subdirectories in the directory specified by Prefix.</p> <p>For example, if the
-     * prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the
-     * common prefix is notes/summer/. All of the keys that roll up into a common
-     * prefix count as a single return when calculating the number of returns.</p>
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by the
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns.</p>
      */
     inline ListObjectsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
 
     /**
      * <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single
      * return when calculating the number of returns. </p> <p>A response can contain
-     * CommonPrefixes only if you specify a delimiter.</p> <p>CommonPrefixes contains
-     * all (if there are any) keys between Prefix and the next occurrence of the string
-     * specified by the delimiter.</p> <p> CommonPrefixes lists keys that act like
-     * subdirectories in the directory specified by Prefix.</p> <p>For example, if the
-     * prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the
-     * common prefix is notes/summer/. All of the keys that roll up into a common
-     * prefix count as a single return when calculating the number of returns.</p>
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by the
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns.</p>
      */
     inline ListObjectsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
     /**
      * <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single
      * return when calculating the number of returns. </p> <p>A response can contain
-     * CommonPrefixes only if you specify a delimiter.</p> <p>CommonPrefixes contains
-     * all (if there are any) keys between Prefix and the next occurrence of the string
-     * specified by the delimiter.</p> <p> CommonPrefixes lists keys that act like
-     * subdirectories in the directory specified by Prefix.</p> <p>For example, if the
-     * prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the
-     * common prefix is notes/summer/. All of the keys that roll up into a common
-     * prefix count as a single return when calculating the number of returns.</p>
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by the
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns.</p>
      */
     inline ListObjectsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
 
@@ -480,6 +516,22 @@ namespace Model
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
      */
     inline ListObjectsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
+
+
+    
+    inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
+
+    
+    inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
+
+    
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
+
+    
+    inline ListObjectsResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+
+    
+    inline ListObjectsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
 
     
@@ -524,6 +576,8 @@ namespace Model
     Aws::Vector<CommonPrefix> m_commonPrefixes;
 
     EncodingType m_encodingType;
+
+    RequestCharged m_requestCharged;
 
     Aws::String m_requestId;
   };

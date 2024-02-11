@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XavcHdProfileBitrateClass::NOT_SET:
+            return {};
           case XavcHdProfileBitrateClass::BITRATE_CLASS_25:
             return "BITRATE_CLASS_25";
           case XavcHdProfileBitrateClass::BITRATE_CLASS_35:

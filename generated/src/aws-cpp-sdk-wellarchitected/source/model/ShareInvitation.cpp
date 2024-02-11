@@ -24,7 +24,9 @@ ShareInvitation::ShareInvitation() :
     m_shareResourceTypeHasBeenSet(false),
     m_workloadIdHasBeenSet(false),
     m_lensAliasHasBeenSet(false),
-    m_lensArnHasBeenSet(false)
+    m_lensArnHasBeenSet(false),
+    m_profileArnHasBeenSet(false),
+    m_templateArnHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ ShareInvitation::ShareInvitation(JsonView jsonValue) :
     m_shareResourceTypeHasBeenSet(false),
     m_workloadIdHasBeenSet(false),
     m_lensAliasHasBeenSet(false),
-    m_lensArnHasBeenSet(false)
+    m_lensArnHasBeenSet(false),
+    m_profileArnHasBeenSet(false),
+    m_templateArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +80,20 @@ ShareInvitation& ShareInvitation::operator =(JsonView jsonValue)
     m_lensArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProfileArn"))
+  {
+    m_profileArn = jsonValue.GetString("ProfileArn");
+
+    m_profileArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateArn"))
+  {
+    m_templateArn = jsonValue.GetString("TemplateArn");
+
+    m_templateArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +127,18 @@ JsonValue ShareInvitation::Jsonize() const
   if(m_lensArnHasBeenSet)
   {
    payload.WithString("LensArn", m_lensArn);
+
+  }
+
+  if(m_profileArnHasBeenSet)
+  {
+   payload.WithString("ProfileArn", m_profileArn);
+
+  }
+
+  if(m_templateArnHasBeenSet)
+  {
+   payload.WithString("TemplateArn", m_templateArn);
 
   }
 

@@ -167,6 +167,43 @@ namespace Model
      */
     inline TemplateConfiguration& WithVoiceTemplate(Template&& value) { SetVoiceTemplate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The InApp template to use for the message. The InApp template object is not
+     * supported for SendMessages.</p>
+     */
+    inline const Template& GetInAppTemplate() const{ return m_inAppTemplate; }
+
+    /**
+     * <p>The InApp template to use for the message. The InApp template object is not
+     * supported for SendMessages.</p>
+     */
+    inline bool InAppTemplateHasBeenSet() const { return m_inAppTemplateHasBeenSet; }
+
+    /**
+     * <p>The InApp template to use for the message. The InApp template object is not
+     * supported for SendMessages.</p>
+     */
+    inline void SetInAppTemplate(const Template& value) { m_inAppTemplateHasBeenSet = true; m_inAppTemplate = value; }
+
+    /**
+     * <p>The InApp template to use for the message. The InApp template object is not
+     * supported for SendMessages.</p>
+     */
+    inline void SetInAppTemplate(Template&& value) { m_inAppTemplateHasBeenSet = true; m_inAppTemplate = std::move(value); }
+
+    /**
+     * <p>The InApp template to use for the message. The InApp template object is not
+     * supported for SendMessages.</p>
+     */
+    inline TemplateConfiguration& WithInAppTemplate(const Template& value) { SetInAppTemplate(value); return *this;}
+
+    /**
+     * <p>The InApp template to use for the message. The InApp template object is not
+     * supported for SendMessages.</p>
+     */
+    inline TemplateConfiguration& WithInAppTemplate(Template&& value) { SetInAppTemplate(std::move(value)); return *this;}
+
   private:
 
     Template m_emailTemplate;
@@ -180,6 +217,9 @@ namespace Model
 
     Template m_voiceTemplate;
     bool m_voiceTemplateHasBeenSet = false;
+
+    Template m_inAppTemplate;
+    bool m_inAppTemplateHasBeenSet = false;
   };
 
 } // namespace Model

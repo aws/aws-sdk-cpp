@@ -1360,109 +1360,151 @@ namespace Model
 
     /**
      * <p>The process namespace to use for the containers in the task. The valid values
-     * are <code>host</code> or <code>task</code>. If <code>host</code> is specified,
-     * then all containers within the tasks that specified the <code>host</code> PID
-     * mode on the same container instance share the same process namespace with the
-     * host Amazon EC2 instance. If <code>task</code> is specified, all containers
-     * within the specified task share the same process namespace. If no value is
-     * specified, the default is a private namespace. For more information, see <a
+     * are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the
+     * only valid value is <code>task</code>. For example, monitoring sidecars might
+     * need <code>pidMode</code> to access information about other containers running
+     * in the same task.</p> <p>If <code>host</code> is specified, all containers
+     * within the tasks that specified the <code>host</code> PID mode on the same
+     * container instance share the same process namespace with the host Amazon EC2
+     * instance.</p> <p>If <code>task</code> is specified, all containers within the
+     * specified task share the same process namespace.</p> <p>If no value is
+     * specified, the default is a private namespace for each container. For more
+     * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
      * settings</a> in the <i>Docker run reference</i>.</p> <p>If the <code>host</code>
-     * PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a
+     * PID mode is used, there's a heightened risk of undesired process namespace
+     * exposure. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on Fargate.</p> 
+     * containers.</p>   <p>This parameter is only supported for tasks
+     * that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers
+     * on Fargate.</p> 
      */
     inline const PidMode& GetPidMode() const{ return m_pidMode; }
 
     /**
      * <p>The process namespace to use for the containers in the task. The valid values
-     * are <code>host</code> or <code>task</code>. If <code>host</code> is specified,
-     * then all containers within the tasks that specified the <code>host</code> PID
-     * mode on the same container instance share the same process namespace with the
-     * host Amazon EC2 instance. If <code>task</code> is specified, all containers
-     * within the specified task share the same process namespace. If no value is
-     * specified, the default is a private namespace. For more information, see <a
+     * are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the
+     * only valid value is <code>task</code>. For example, monitoring sidecars might
+     * need <code>pidMode</code> to access information about other containers running
+     * in the same task.</p> <p>If <code>host</code> is specified, all containers
+     * within the tasks that specified the <code>host</code> PID mode on the same
+     * container instance share the same process namespace with the host Amazon EC2
+     * instance.</p> <p>If <code>task</code> is specified, all containers within the
+     * specified task share the same process namespace.</p> <p>If no value is
+     * specified, the default is a private namespace for each container. For more
+     * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
      * settings</a> in the <i>Docker run reference</i>.</p> <p>If the <code>host</code>
-     * PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a
+     * PID mode is used, there's a heightened risk of undesired process namespace
+     * exposure. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on Fargate.</p> 
+     * containers.</p>   <p>This parameter is only supported for tasks
+     * that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers
+     * on Fargate.</p> 
      */
     inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
 
     /**
      * <p>The process namespace to use for the containers in the task. The valid values
-     * are <code>host</code> or <code>task</code>. If <code>host</code> is specified,
-     * then all containers within the tasks that specified the <code>host</code> PID
-     * mode on the same container instance share the same process namespace with the
-     * host Amazon EC2 instance. If <code>task</code> is specified, all containers
-     * within the specified task share the same process namespace. If no value is
-     * specified, the default is a private namespace. For more information, see <a
+     * are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the
+     * only valid value is <code>task</code>. For example, monitoring sidecars might
+     * need <code>pidMode</code> to access information about other containers running
+     * in the same task.</p> <p>If <code>host</code> is specified, all containers
+     * within the tasks that specified the <code>host</code> PID mode on the same
+     * container instance share the same process namespace with the host Amazon EC2
+     * instance.</p> <p>If <code>task</code> is specified, all containers within the
+     * specified task share the same process namespace.</p> <p>If no value is
+     * specified, the default is a private namespace for each container. For more
+     * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
      * settings</a> in the <i>Docker run reference</i>.</p> <p>If the <code>host</code>
-     * PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a
+     * PID mode is used, there's a heightened risk of undesired process namespace
+     * exposure. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on Fargate.</p> 
+     * containers.</p>   <p>This parameter is only supported for tasks
+     * that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers
+     * on Fargate.</p> 
      */
     inline void SetPidMode(const PidMode& value) { m_pidModeHasBeenSet = true; m_pidMode = value; }
 
     /**
      * <p>The process namespace to use for the containers in the task. The valid values
-     * are <code>host</code> or <code>task</code>. If <code>host</code> is specified,
-     * then all containers within the tasks that specified the <code>host</code> PID
-     * mode on the same container instance share the same process namespace with the
-     * host Amazon EC2 instance. If <code>task</code> is specified, all containers
-     * within the specified task share the same process namespace. If no value is
-     * specified, the default is a private namespace. For more information, see <a
+     * are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the
+     * only valid value is <code>task</code>. For example, monitoring sidecars might
+     * need <code>pidMode</code> to access information about other containers running
+     * in the same task.</p> <p>If <code>host</code> is specified, all containers
+     * within the tasks that specified the <code>host</code> PID mode on the same
+     * container instance share the same process namespace with the host Amazon EC2
+     * instance.</p> <p>If <code>task</code> is specified, all containers within the
+     * specified task share the same process namespace.</p> <p>If no value is
+     * specified, the default is a private namespace for each container. For more
+     * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
      * settings</a> in the <i>Docker run reference</i>.</p> <p>If the <code>host</code>
-     * PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a
+     * PID mode is used, there's a heightened risk of undesired process namespace
+     * exposure. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on Fargate.</p> 
+     * containers.</p>   <p>This parameter is only supported for tasks
+     * that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers
+     * on Fargate.</p> 
      */
     inline void SetPidMode(PidMode&& value) { m_pidModeHasBeenSet = true; m_pidMode = std::move(value); }
 
     /**
      * <p>The process namespace to use for the containers in the task. The valid values
-     * are <code>host</code> or <code>task</code>. If <code>host</code> is specified,
-     * then all containers within the tasks that specified the <code>host</code> PID
-     * mode on the same container instance share the same process namespace with the
-     * host Amazon EC2 instance. If <code>task</code> is specified, all containers
-     * within the specified task share the same process namespace. If no value is
-     * specified, the default is a private namespace. For more information, see <a
+     * are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the
+     * only valid value is <code>task</code>. For example, monitoring sidecars might
+     * need <code>pidMode</code> to access information about other containers running
+     * in the same task.</p> <p>If <code>host</code> is specified, all containers
+     * within the tasks that specified the <code>host</code> PID mode on the same
+     * container instance share the same process namespace with the host Amazon EC2
+     * instance.</p> <p>If <code>task</code> is specified, all containers within the
+     * specified task share the same process namespace.</p> <p>If no value is
+     * specified, the default is a private namespace for each container. For more
+     * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
      * settings</a> in the <i>Docker run reference</i>.</p> <p>If the <code>host</code>
-     * PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a
+     * PID mode is used, there's a heightened risk of undesired process namespace
+     * exposure. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on Fargate.</p> 
+     * containers.</p>   <p>This parameter is only supported for tasks
+     * that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers
+     * on Fargate.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithPidMode(const PidMode& value) { SetPidMode(value); return *this;}
 
     /**
      * <p>The process namespace to use for the containers in the task. The valid values
-     * are <code>host</code> or <code>task</code>. If <code>host</code> is specified,
-     * then all containers within the tasks that specified the <code>host</code> PID
-     * mode on the same container instance share the same process namespace with the
-     * host Amazon EC2 instance. If <code>task</code> is specified, all containers
-     * within the specified task share the same process namespace. If no value is
-     * specified, the default is a private namespace. For more information, see <a
+     * are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the
+     * only valid value is <code>task</code>. For example, monitoring sidecars might
+     * need <code>pidMode</code> to access information about other containers running
+     * in the same task.</p> <p>If <code>host</code> is specified, all containers
+     * within the tasks that specified the <code>host</code> PID mode on the same
+     * container instance share the same process namespace with the host Amazon EC2
+     * instance.</p> <p>If <code>task</code> is specified, all containers within the
+     * specified task share the same process namespace.</p> <p>If no value is
+     * specified, the default is a private namespace for each container. For more
+     * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
      * settings</a> in the <i>Docker run reference</i>.</p> <p>If the <code>host</code>
-     * PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a
+     * PID mode is used, there's a heightened risk of undesired process namespace
+     * exposure. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on Fargate.</p> 
+     * containers.</p>   <p>This parameter is only supported for tasks
+     * that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers
+     * on Fargate.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithPidMode(PidMode&& value) { SetPidMode(std::move(value)); return *this;}
 
@@ -1794,6 +1836,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
@@ -1806,6 +1849,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
@@ -1818,6 +1862,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
@@ -1830,6 +1875,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
@@ -1842,6 +1888,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline RegisterTaskDefinitionRequest& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
@@ -1854,6 +1901,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline RegisterTaskDefinitionRequest& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}

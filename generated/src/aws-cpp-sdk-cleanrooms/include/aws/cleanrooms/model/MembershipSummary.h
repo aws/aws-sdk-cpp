@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/cleanrooms/model/MembershipStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/MembershipPaymentConfiguration.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
 #include <utility>
 
@@ -206,50 +207,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetCollaborationCreatorAccountId() const{ return m_collaborationCreatorAccountId; }
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline bool CollaborationCreatorAccountIdHasBeenSet() const { return m_collaborationCreatorAccountIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline void SetCollaborationCreatorAccountId(const Aws::String& value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId = value; }
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline void SetCollaborationCreatorAccountId(Aws::String&& value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline void SetCollaborationCreatorAccountId(const char* value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline MembershipSummary& WithCollaborationCreatorAccountId(const Aws::String& value) { SetCollaborationCreatorAccountId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline MembershipSummary& WithCollaborationCreatorAccountId(Aws::String&& value) { SetCollaborationCreatorAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline MembershipSummary& WithCollaborationCreatorAccountId(const char* value) { SetCollaborationCreatorAccountId(value); return *this;}
 
@@ -399,38 +400,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline const MembershipStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline void SetStatus(const MembershipStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline void SetStatus(MembershipStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline MembershipSummary& WithStatus(const MembershipStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and
-     * `COLLABORATION_DELETED`.</p>
+     * <p>The status of the membership.</p>
      */
     inline MembershipSummary& WithStatus(MembershipStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -475,6 +470,37 @@ namespace Model
      */
     inline MembershipSummary& AddMemberAbilities(MemberAbility&& value) { m_memberAbilitiesHasBeenSet = true; m_memberAbilities.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline const MembershipPaymentConfiguration& GetPaymentConfiguration() const{ return m_paymentConfiguration; }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline bool PaymentConfigurationHasBeenSet() const { return m_paymentConfigurationHasBeenSet; }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline void SetPaymentConfiguration(const MembershipPaymentConfiguration& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = value; }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline void SetPaymentConfiguration(MembershipPaymentConfiguration&& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = std::move(value); }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline MembershipSummary& WithPaymentConfiguration(const MembershipPaymentConfiguration& value) { SetPaymentConfiguration(value); return *this;}
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p>
+     */
+    inline MembershipSummary& WithPaymentConfiguration(MembershipPaymentConfiguration&& value) { SetPaymentConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -509,6 +535,9 @@ namespace Model
 
     Aws::Vector<MemberAbility> m_memberAbilities;
     bool m_memberAbilitiesHasBeenSet = false;
+
+    MembershipPaymentConfiguration m_paymentConfiguration;
+    bool m_paymentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

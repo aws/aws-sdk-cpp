@@ -26,6 +26,7 @@
 #include <aws/dms/model/DocDbSettings.h>
 #include <aws/dms/model/RedisSettings.h>
 #include <aws/dms/model/GcpMySQLSettings.h>
+#include <aws/dms/model/TimestreamSettings.h>
 #include <utility>
 
 namespace Aws
@@ -158,11 +159,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"redshift"</code>, <code>"redshift-serverless"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>,
+     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
      * <code>"babelfish"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
@@ -171,11 +172,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"redshift"</code>, <code>"redshift-serverless"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>,
+     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
      * <code>"babelfish"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
@@ -184,11 +185,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"redshift"</code>, <code>"redshift-serverless"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>,
+     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
      * <code>"babelfish"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
@@ -197,11 +198,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"redshift"</code>, <code>"redshift-serverless"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>,
+     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
      * <code>"babelfish"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
@@ -210,11 +211,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"redshift"</code>, <code>"redshift-serverless"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>,
+     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
      * <code>"babelfish"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
@@ -223,11 +224,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"redshift"</code>, <code>"redshift-serverless"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>,
+     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
      * <code>"babelfish"</code>.</p>
      */
     inline Endpoint& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
@@ -236,11 +237,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"redshift"</code>, <code>"redshift-serverless"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>,
+     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
      * <code>"babelfish"</code>.</p>
      */
     inline Endpoint& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
@@ -249,11 +250,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"redshift"</code>, <code>"redshift-serverless"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>,
+     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
      * <code>"babelfish"</code>.</p>
      */
     inline Endpoint& WithEngineName(const char* value) { SetEngineName(value); return *this;}
@@ -1532,6 +1533,43 @@ namespace Model
      */
     inline Endpoint& WithGcpMySQLSettings(GcpMySQLSettings&& value) { SetGcpMySQLSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The settings for the Amazon Timestream target endpoint. For more information,
+     * see the <code>TimestreamSettings</code> structure.</p>
+     */
+    inline const TimestreamSettings& GetTimestreamSettings() const{ return m_timestreamSettings; }
+
+    /**
+     * <p>The settings for the Amazon Timestream target endpoint. For more information,
+     * see the <code>TimestreamSettings</code> structure.</p>
+     */
+    inline bool TimestreamSettingsHasBeenSet() const { return m_timestreamSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the Amazon Timestream target endpoint. For more information,
+     * see the <code>TimestreamSettings</code> structure.</p>
+     */
+    inline void SetTimestreamSettings(const TimestreamSettings& value) { m_timestreamSettingsHasBeenSet = true; m_timestreamSettings = value; }
+
+    /**
+     * <p>The settings for the Amazon Timestream target endpoint. For more information,
+     * see the <code>TimestreamSettings</code> structure.</p>
+     */
+    inline void SetTimestreamSettings(TimestreamSettings&& value) { m_timestreamSettingsHasBeenSet = true; m_timestreamSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the Amazon Timestream target endpoint. For more information,
+     * see the <code>TimestreamSettings</code> structure.</p>
+     */
+    inline Endpoint& WithTimestreamSettings(const TimestreamSettings& value) { SetTimestreamSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the Amazon Timestream target endpoint. For more information,
+     * see the <code>TimestreamSettings</code> structure.</p>
+     */
+    inline Endpoint& WithTimestreamSettings(TimestreamSettings&& value) { SetTimestreamSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointIdentifier;
@@ -1638,6 +1676,9 @@ namespace Model
 
     GcpMySQLSettings m_gcpMySQLSettings;
     bool m_gcpMySQLSettingsHasBeenSet = false;
+
+    TimestreamSettings m_timestreamSettings;
+    bool m_timestreamSettingsHasBeenSet = false;
   };
 
 } // namespace Model

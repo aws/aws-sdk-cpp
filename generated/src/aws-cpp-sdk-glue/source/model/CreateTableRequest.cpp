@@ -17,7 +17,8 @@ CreateTableRequest::CreateTableRequest() :
     m_databaseNameHasBeenSet(false),
     m_tableInputHasBeenSet(false),
     m_partitionIndexesHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
+    m_transactionIdHasBeenSet(false),
+    m_openTableFormatInputHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,12 @@ Aws::String CreateTableRequest::SerializePayload() const
   if(m_transactionIdHasBeenSet)
   {
    payload.WithString("TransactionId", m_transactionId);
+
+  }
+
+  if(m_openTableFormatInputHasBeenSet)
+  {
+   payload.WithObject("OpenTableFormatInput", m_openTableFormatInput.Jsonize());
 
   }
 

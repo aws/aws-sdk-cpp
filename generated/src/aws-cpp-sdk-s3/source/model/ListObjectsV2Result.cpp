@@ -20,7 +20,8 @@ ListObjectsV2Result::ListObjectsV2Result() :
     m_isTruncated(false),
     m_maxKeys(0),
     m_encodingType(EncodingType::NOT_SET),
-    m_keyCount(0)
+    m_keyCount(0),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
@@ -28,7 +29,8 @@ ListObjectsV2Result::ListObjectsV2Result(const Aws::AmazonWebServiceResult<XmlDo
     m_isTruncated(false),
     m_maxKeys(0),
     m_encodingType(EncodingType::NOT_SET),
-    m_keyCount(0)
+    m_keyCount(0),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }
@@ -115,6 +117,12 @@ ListObjectsV2Result& ListObjectsV2Result::operator =(const Aws::AmazonWebService
   }
 
   const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestChargedIter = headers.find("x-amz-request-charged");
+  if(requestChargedIter != headers.end())
+  {
+    m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
+  }
+
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {

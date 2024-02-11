@@ -113,8 +113,49 @@ namespace Model
 
 
     /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline const Aws::String& GetBackupVaultAccountId() const{ return m_backupVaultAccountId; }
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline bool BackupVaultAccountIdHasBeenSet() const { return m_backupVaultAccountIdHasBeenSet; }
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline void SetBackupVaultAccountId(const Aws::String& value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId = value; }
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline void SetBackupVaultAccountId(Aws::String&& value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId = std::move(value); }
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline void SetBackupVaultAccountId(const char* value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId.assign(value); }
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithBackupVaultAccountId(const Aws::String& value) { SetBackupVaultAccountId(value); return *this;}
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithBackupVaultAccountId(Aws::String&& value) { SetBackupVaultAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithBackupVaultAccountId(const char* value) { SetBackupVaultAccountId(value); return *this;}
+
+
+    /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -122,7 +163,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -130,7 +171,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -138,7 +179,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -146,7 +187,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -154,7 +195,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -162,7 +203,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -170,7 +211,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -248,42 +289,162 @@ namespace Model
 
 
     /**
-     * <p>Returns only recovery points that match the specified resource type.</p>
+     * <p>Returns only recovery points that match the specified resource type(s):</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
 
     /**
-     * <p>Returns only recovery points that match the specified resource type.</p>
+     * <p>Returns only recovery points that match the specified resource type(s):</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
 
     /**
-     * <p>Returns only recovery points that match the specified resource type.</p>
+     * <p>Returns only recovery points that match the specified resource type(s):</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
 
     /**
-     * <p>Returns only recovery points that match the specified resource type.</p>
+     * <p>Returns only recovery points that match the specified resource type(s):</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline void SetByResourceType(Aws::String&& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = std::move(value); }
 
     /**
-     * <p>Returns only recovery points that match the specified resource type.</p>
+     * <p>Returns only recovery points that match the specified resource type(s):</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline void SetByResourceType(const char* value) { m_byResourceTypeHasBeenSet = true; m_byResourceType.assign(value); }
 
     /**
-     * <p>Returns only recovery points that match the specified resource type.</p>
+     * <p>Returns only recovery points that match the specified resource type(s):</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline ListRecoveryPointsByBackupVaultRequest& WithByResourceType(const Aws::String& value) { SetByResourceType(value); return *this;}
 
     /**
-     * <p>Returns only recovery points that match the specified resource type.</p>
+     * <p>Returns only recovery points that match the specified resource type(s):</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline ListRecoveryPointsByBackupVaultRequest& WithByResourceType(Aws::String&& value) { SetByResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>Returns only recovery points that match the specified resource type.</p>
+     * <p>Returns only recovery points that match the specified resource type(s):</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline ListRecoveryPointsByBackupVaultRequest& WithByResourceType(const char* value) { SetByResourceType(value); return *this;}
 
@@ -455,6 +616,9 @@ namespace Model
 
     Aws::String m_backupVaultName;
     bool m_backupVaultNameHasBeenSet = false;
+
+    Aws::String m_backupVaultAccountId;
+    bool m_backupVaultAccountIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

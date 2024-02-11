@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationRestoreType::NOT_SET:
+            return {};
           case ApplicationRestoreType::SKIP_RESTORE_FROM_SNAPSHOT:
             return "SKIP_RESTORE_FROM_SNAPSHOT";
           case ApplicationRestoreType::RESTORE_FROM_LATEST_SNAPSHOT:

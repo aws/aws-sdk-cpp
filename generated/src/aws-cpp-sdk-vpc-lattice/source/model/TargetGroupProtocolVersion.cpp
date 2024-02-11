@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetGroupProtocolVersion::NOT_SET:
+            return {};
           case TargetGroupProtocolVersion::HTTP1:
             return "HTTP1";
           case TargetGroupProtocolVersion::HTTP2:

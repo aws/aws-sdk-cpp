@@ -14,11 +14,13 @@ using namespace Aws::Utils;
 
 StartAnnotationImportJobRequest::StartAnnotationImportJobRequest() : 
     m_destinationNameHasBeenSet(false),
-    m_formatOptionsHasBeenSet(false),
-    m_itemsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_itemsHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
+    m_formatOptionsHasBeenSet(false),
     m_runLeftNormalization(false),
-    m_runLeftNormalizationHasBeenSet(false)
+    m_runLeftNormalizationHasBeenSet(false),
+    m_annotationFieldsHasBeenSet(false)
 {
 }
 
@@ -32,9 +34,9 @@ Aws::String StartAnnotationImportJobRequest::SerializePayload() const
 
   }
 
-  if(m_formatOptionsHasBeenSet)
+  if(m_roleArnHasBeenSet)
   {
-   payload.WithObject("formatOptions", m_formatOptions.Jsonize());
+   payload.WithString("roleArn", m_roleArn);
 
   }
 
@@ -49,15 +51,32 @@ Aws::String StartAnnotationImportJobRequest::SerializePayload() const
 
   }
 
-  if(m_roleArnHasBeenSet)
+  if(m_versionNameHasBeenSet)
   {
-   payload.WithString("roleArn", m_roleArn);
+   payload.WithString("versionName", m_versionName);
+
+  }
+
+  if(m_formatOptionsHasBeenSet)
+  {
+   payload.WithObject("formatOptions", m_formatOptions.Jsonize());
 
   }
 
   if(m_runLeftNormalizationHasBeenSet)
   {
    payload.WithBool("runLeftNormalization", m_runLeftNormalization);
+
+  }
+
+  if(m_annotationFieldsHasBeenSet)
+  {
+   JsonValue annotationFieldsJsonMap;
+   for(auto& annotationFieldsItem : m_annotationFields)
+   {
+     annotationFieldsJsonMap.WithString(annotationFieldsItem.first, annotationFieldsItem.second);
+   }
+   payload.WithObject("annotationFields", std::move(annotationFieldsJsonMap));
 
   }
 

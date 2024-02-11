@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FraudDetectionAction::NOT_SET:
+            return {};
           case FraudDetectionAction::IGNORE:
             return "IGNORE";
           case FraudDetectionAction::FAIL:

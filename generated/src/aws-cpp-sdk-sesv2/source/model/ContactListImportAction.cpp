@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactListImportAction::NOT_SET:
+            return {};
           case ContactListImportAction::DELETE_:
             return "DELETE";
           case ContactListImportAction::PUT:

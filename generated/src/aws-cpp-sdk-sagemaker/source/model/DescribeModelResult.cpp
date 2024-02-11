@@ -88,6 +88,12 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("DeploymentRecommendation"))
+  {
+    m_deploymentRecommendation = jsonValue.GetObject("DeploymentRecommendation");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

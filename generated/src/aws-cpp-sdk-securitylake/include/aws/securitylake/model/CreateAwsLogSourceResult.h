@@ -90,55 +90,6 @@ namespace Model
     inline CreateAwsLogSourceResult& AddFailed(const char* value) { m_failed.push_back(value); return *this; }
 
 
-    /**
-     * <p>Lists the accounts that are in the process of enabling a natively supported
-     * Amazon Web Service as a Security Lake source.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetProcessing() const{ return m_processing; }
-
-    /**
-     * <p>Lists the accounts that are in the process of enabling a natively supported
-     * Amazon Web Service as a Security Lake source.</p>
-     */
-    inline void SetProcessing(const Aws::Vector<Aws::String>& value) { m_processing = value; }
-
-    /**
-     * <p>Lists the accounts that are in the process of enabling a natively supported
-     * Amazon Web Service as a Security Lake source.</p>
-     */
-    inline void SetProcessing(Aws::Vector<Aws::String>&& value) { m_processing = std::move(value); }
-
-    /**
-     * <p>Lists the accounts that are in the process of enabling a natively supported
-     * Amazon Web Service as a Security Lake source.</p>
-     */
-    inline CreateAwsLogSourceResult& WithProcessing(const Aws::Vector<Aws::String>& value) { SetProcessing(value); return *this;}
-
-    /**
-     * <p>Lists the accounts that are in the process of enabling a natively supported
-     * Amazon Web Service as a Security Lake source.</p>
-     */
-    inline CreateAwsLogSourceResult& WithProcessing(Aws::Vector<Aws::String>&& value) { SetProcessing(std::move(value)); return *this;}
-
-    /**
-     * <p>Lists the accounts that are in the process of enabling a natively supported
-     * Amazon Web Service as a Security Lake source.</p>
-     */
-    inline CreateAwsLogSourceResult& AddProcessing(const Aws::String& value) { m_processing.push_back(value); return *this; }
-
-    /**
-     * <p>Lists the accounts that are in the process of enabling a natively supported
-     * Amazon Web Service as a Security Lake source.</p>
-     */
-    inline CreateAwsLogSourceResult& AddProcessing(Aws::String&& value) { m_processing.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Lists the accounts that are in the process of enabling a natively supported
-     * Amazon Web Service as a Security Lake source.</p>
-     */
-    inline CreateAwsLogSourceResult& AddProcessing(const char* value) { m_processing.push_back(value); return *this; }
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -163,8 +114,6 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_failed;
-
-    Aws::Vector<Aws::String> m_processing;
 
     Aws::String m_requestId;
   };

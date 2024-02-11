@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MergeStrategy::NOT_SET:
+            return {};
           case MergeStrategy::OVERWRITE:
             return "OVERWRITE";
           default:

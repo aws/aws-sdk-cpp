@@ -21,14 +21,20 @@ namespace Model
 RecommenderConfig::RecommenderConfig() : 
     m_itemExplorationConfigHasBeenSet(false),
     m_minRecommendationRequestsPerSecond(0),
-    m_minRecommendationRequestsPerSecondHasBeenSet(false)
+    m_minRecommendationRequestsPerSecondHasBeenSet(false),
+    m_trainingDataConfigHasBeenSet(false),
+    m_enableMetadataWithRecommendations(false),
+    m_enableMetadataWithRecommendationsHasBeenSet(false)
 {
 }
 
 RecommenderConfig::RecommenderConfig(JsonView jsonValue) : 
     m_itemExplorationConfigHasBeenSet(false),
     m_minRecommendationRequestsPerSecond(0),
-    m_minRecommendationRequestsPerSecondHasBeenSet(false)
+    m_minRecommendationRequestsPerSecondHasBeenSet(false),
+    m_trainingDataConfigHasBeenSet(false),
+    m_enableMetadataWithRecommendations(false),
+    m_enableMetadataWithRecommendationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,6 +58,20 @@ RecommenderConfig& RecommenderConfig::operator =(JsonView jsonValue)
     m_minRecommendationRequestsPerSecondHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("trainingDataConfig"))
+  {
+    m_trainingDataConfig = jsonValue.GetObject("trainingDataConfig");
+
+    m_trainingDataConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("enableMetadataWithRecommendations"))
+  {
+    m_enableMetadataWithRecommendations = jsonValue.GetBool("enableMetadataWithRecommendations");
+
+    m_enableMetadataWithRecommendationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +93,18 @@ JsonValue RecommenderConfig::Jsonize() const
   if(m_minRecommendationRequestsPerSecondHasBeenSet)
   {
    payload.WithInteger("minRecommendationRequestsPerSecond", m_minRecommendationRequestsPerSecond);
+
+  }
+
+  if(m_trainingDataConfigHasBeenSet)
+  {
+   payload.WithObject("trainingDataConfig", m_trainingDataConfig.Jsonize());
+
+  }
+
+  if(m_enableMetadataWithRecommendationsHasBeenSet)
+  {
+   payload.WithBool("enableMetadataWithRecommendations", m_enableMetadataWithRecommendations);
 
   }
 

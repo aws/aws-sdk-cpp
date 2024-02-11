@@ -29,6 +29,9 @@ namespace CloudFront
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef CloudFrontClientConfiguration ClientConfigurationType;
+      typedef CloudFrontEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -122,8 +125,14 @@ namespace CloudFront
          * deployment workflow.</p> <p>After you create a staging distribution, you can use
          * <code>UpdateDistribution</code> to modify the staging distribution's
          * configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to
-         * incrementally move traffic to the staging distribution.</p><p><h3>See Also:</h3>
-         * <a
+         * incrementally move traffic to the staging distribution.</p> <p>This API
+         * operation requires the following IAM permissions:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html">CopyDistribution</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CopyDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -279,7 +288,12 @@ namespace CloudFront
         }
 
         /**
-         * <p>Create a new distribution with tags.</p><p><h3>See Also:</h3>   <a
+         * <p>Create a new distribution with tags. This API operation requires the
+         * following IAM permissions:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html">TagResource</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -449,6 +463,34 @@ namespace CloudFront
         void CreateKeyGroup2020_05_31Async(const CreateKeyGroup2020_05_31RequestT& request, const CreateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::CreateKeyGroup2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Specifies the Key Value Store resource to add to your account. In your
+         * account, the Key Value Store names must be unique. You can also import Key Value
+         * Store data in JSON format from an S3 bucket by providing a valid
+         * <code>ImportSource</code> that you own.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyValueStore2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateKeyValueStore2020_05_31Outcome CreateKeyValueStore2020_05_31(const Model::CreateKeyValueStore2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for CreateKeyValueStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateKeyValueStore2020_05_31RequestT = Model::CreateKeyValueStore2020_05_31Request>
+        Model::CreateKeyValueStore2020_05_31OutcomeCallable CreateKeyValueStore2020_05_31Callable(const CreateKeyValueStore2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::CreateKeyValueStore2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for CreateKeyValueStore2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateKeyValueStore2020_05_31RequestT = Model::CreateKeyValueStore2020_05_31Request>
+        void CreateKeyValueStore2020_05_31Async(const CreateKeyValueStore2020_05_31RequestT& request, const CreateKeyValueStore2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::CreateKeyValueStore2020_05_31, request, handler, context);
         }
 
         /**
@@ -932,6 +974,31 @@ namespace CloudFront
         }
 
         /**
+         * <p>Specifies the Key Value Store to delete.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteKeyValueStore2020_05_31Outcome DeleteKeyValueStore2020_05_31(const Model::DeleteKeyValueStore2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for DeleteKeyValueStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteKeyValueStore2020_05_31RequestT = Model::DeleteKeyValueStore2020_05_31Request>
+        Model::DeleteKeyValueStore2020_05_31OutcomeCallable DeleteKeyValueStore2020_05_31Callable(const DeleteKeyValueStore2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::DeleteKeyValueStore2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteKeyValueStore2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteKeyValueStore2020_05_31RequestT = Model::DeleteKeyValueStore2020_05_31Request>
+        void DeleteKeyValueStore2020_05_31Async(const DeleteKeyValueStore2020_05_31RequestT& request, const DeleteKeyValueStore2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::DeleteKeyValueStore2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Disables additional CloudWatch metrics for the specified CloudFront
          * distribution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription2020_05_31">AWS
@@ -1185,6 +1252,32 @@ namespace CloudFront
         void DescribeFunction2020_05_31Async(const DescribeFunction2020_05_31RequestT& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::DescribeFunction2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Specifies the Key Value Store and its configuration.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeKeyValueStore2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeKeyValueStore2020_05_31Outcome DescribeKeyValueStore2020_05_31(const Model::DescribeKeyValueStore2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for DescribeKeyValueStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeKeyValueStore2020_05_31RequestT = Model::DescribeKeyValueStore2020_05_31Request>
+        Model::DescribeKeyValueStore2020_05_31OutcomeCallable DescribeKeyValueStore2020_05_31Callable(const DescribeKeyValueStore2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::DescribeKeyValueStore2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeKeyValueStore2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeKeyValueStore2020_05_31RequestT = Model::DescribeKeyValueStore2020_05_31Request>
+        void DescribeKeyValueStore2020_05_31Async(const DescribeKeyValueStore2020_05_31RequestT& request, const DescribeKeyValueStore2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::DescribeKeyValueStore2020_05_31, request, handler, context);
         }
 
         /**
@@ -2457,6 +2550,31 @@ namespace CloudFront
         }
 
         /**
+         * <p>Specifies the Key Value Stores to list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyValueStores2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListKeyValueStores2020_05_31Outcome ListKeyValueStores2020_05_31(const Model::ListKeyValueStores2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for ListKeyValueStores2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListKeyValueStores2020_05_31RequestT = Model::ListKeyValueStores2020_05_31Request>
+        Model::ListKeyValueStores2020_05_31OutcomeCallable ListKeyValueStores2020_05_31Callable(const ListKeyValueStores2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::ListKeyValueStores2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for ListKeyValueStores2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListKeyValueStores2020_05_31RequestT = Model::ListKeyValueStores2020_05_31Request>
+        void ListKeyValueStores2020_05_31Async(const ListKeyValueStores2020_05_31RequestT& request, const ListKeyValueStores2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::ListKeyValueStores2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Gets the list of CloudFront origin access controls in this Amazon Web
          * Services account.</p> <p>You can optionally specify the maximum number of items
          * to receive in the response. If the total number of items in the list exceeds the
@@ -2930,7 +3048,12 @@ namespace CloudFront
          * distribution and verifying that it works as intended, you can use this operation
          * to copy the staging distribution's configuration to the primary distribution.
          * This action will disable the continuous deployment policy and move your domain's
-         * traffic back to the primary distribution.</p><p><h3>See Also:</h3>   <a
+         * traffic back to the primary distribution.</p> <p>This API operation requires the
+         * following IAM permissions:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -3065,6 +3188,31 @@ namespace CloudFront
         void UpdateKeyGroup2020_05_31Async(const UpdateKeyGroup2020_05_31RequestT& request, const UpdateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::UpdateKeyGroup2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Specifies the Key Value Store to update.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateKeyValueStore2020_05_31Outcome UpdateKeyValueStore2020_05_31(const Model::UpdateKeyValueStore2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for UpdateKeyValueStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateKeyValueStore2020_05_31RequestT = Model::UpdateKeyValueStore2020_05_31Request>
+        Model::UpdateKeyValueStore2020_05_31OutcomeCallable UpdateKeyValueStore2020_05_31Callable(const UpdateKeyValueStore2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::UpdateKeyValueStore2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateKeyValueStore2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateKeyValueStore2020_05_31RequestT = Model::UpdateKeyValueStore2020_05_31Request>
+        void UpdateKeyValueStore2020_05_31Async(const UpdateKeyValueStore2020_05_31RequestT& request, const UpdateKeyValueStore2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::UpdateKeyValueStore2020_05_31, request, handler, context);
         }
 
         /**

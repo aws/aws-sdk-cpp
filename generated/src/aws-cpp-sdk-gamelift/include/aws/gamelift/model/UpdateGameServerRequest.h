@@ -184,38 +184,50 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the game server is available or is currently hosting
-     * gameplay.</p>
+     * <p>Indicates if the game server is available or is currently hosting gameplay.
+     * You can update a game server status from <code>AVAILABLE</code> to
+     * <code>UTILIZED</code>, but you can't change a the status from
+     * <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
      */
     inline const GameServerUtilizationStatus& GetUtilizationStatus() const{ return m_utilizationStatus; }
 
     /**
-     * <p>Indicates whether the game server is available or is currently hosting
-     * gameplay.</p>
+     * <p>Indicates if the game server is available or is currently hosting gameplay.
+     * You can update a game server status from <code>AVAILABLE</code> to
+     * <code>UTILIZED</code>, but you can't change a the status from
+     * <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
      */
     inline bool UtilizationStatusHasBeenSet() const { return m_utilizationStatusHasBeenSet; }
 
     /**
-     * <p>Indicates whether the game server is available or is currently hosting
-     * gameplay.</p>
+     * <p>Indicates if the game server is available or is currently hosting gameplay.
+     * You can update a game server status from <code>AVAILABLE</code> to
+     * <code>UTILIZED</code>, but you can't change a the status from
+     * <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
      */
     inline void SetUtilizationStatus(const GameServerUtilizationStatus& value) { m_utilizationStatusHasBeenSet = true; m_utilizationStatus = value; }
 
     /**
-     * <p>Indicates whether the game server is available or is currently hosting
-     * gameplay.</p>
+     * <p>Indicates if the game server is available or is currently hosting gameplay.
+     * You can update a game server status from <code>AVAILABLE</code> to
+     * <code>UTILIZED</code>, but you can't change a the status from
+     * <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
      */
     inline void SetUtilizationStatus(GameServerUtilizationStatus&& value) { m_utilizationStatusHasBeenSet = true; m_utilizationStatus = std::move(value); }
 
     /**
-     * <p>Indicates whether the game server is available or is currently hosting
-     * gameplay.</p>
+     * <p>Indicates if the game server is available or is currently hosting gameplay.
+     * You can update a game server status from <code>AVAILABLE</code> to
+     * <code>UTILIZED</code>, but you can't change a the status from
+     * <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
      */
     inline UpdateGameServerRequest& WithUtilizationStatus(const GameServerUtilizationStatus& value) { SetUtilizationStatus(value); return *this;}
 
     /**
-     * <p>Indicates whether the game server is available or is currently hosting
-     * gameplay.</p>
+     * <p>Indicates if the game server is available or is currently hosting gameplay.
+     * You can update a game server status from <code>AVAILABLE</code> to
+     * <code>UTILIZED</code>, but you can't change a the status from
+     * <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
      */
     inline UpdateGameServerRequest& WithUtilizationStatus(GameServerUtilizationStatus&& value) { SetUtilizationStatus(std::move(value)); return *this;}
 

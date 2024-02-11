@@ -139,6 +139,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3ConnectorOperator::NOT_SET:
+            return {};
           case S3ConnectorOperator::PROJECTION:
             return "PROJECTION";
           case S3ConnectorOperator::LESS_THAN:

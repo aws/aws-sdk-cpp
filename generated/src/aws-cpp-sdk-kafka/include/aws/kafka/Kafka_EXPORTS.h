@@ -21,9 +21,12 @@
         #else
             #define AWS_KAFKA_API __declspec(dllimport)
         #endif /* AWS_KAFKA_EXPORTS */
+        #define AWS_KAFKA_EXTERN
     #else
         #define AWS_KAFKA_API
+        #define AWS_KAFKA_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_KAFKA_API
+    #define AWS_KAFKA_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

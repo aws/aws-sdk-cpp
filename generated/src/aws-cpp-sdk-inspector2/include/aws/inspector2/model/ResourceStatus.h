@@ -101,40 +101,71 @@ namespace Model
 
 
     /**
-     * <p>The status of Amazon Inspector scanning for AWS Lambda function
-     * resources.</p>
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
      */
     inline const Status& GetLambda() const{ return m_lambda; }
 
     /**
-     * <p>The status of Amazon Inspector scanning for AWS Lambda function
-     * resources.</p>
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
      */
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
 
     /**
-     * <p>The status of Amazon Inspector scanning for AWS Lambda function
-     * resources.</p>
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
      */
     inline void SetLambda(const Status& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
 
     /**
-     * <p>The status of Amazon Inspector scanning for AWS Lambda function
-     * resources.</p>
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
      */
     inline void SetLambda(Status&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
 
     /**
-     * <p>The status of Amazon Inspector scanning for AWS Lambda function
-     * resources.</p>
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
      */
     inline ResourceStatus& WithLambda(const Status& value) { SetLambda(value); return *this;}
 
     /**
-     * <p>The status of Amazon Inspector scanning for AWS Lambda function
-     * resources.</p>
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
      */
     inline ResourceStatus& WithLambda(Status&& value) { SetLambda(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The status of Amazon Inspector scanning for custom application code for
+     * Amazon Web Services Lambda functions. </p>
+     */
+    inline const Status& GetLambdaCode() const{ return m_lambdaCode; }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for custom application code for
+     * Amazon Web Services Lambda functions. </p>
+     */
+    inline bool LambdaCodeHasBeenSet() const { return m_lambdaCodeHasBeenSet; }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for custom application code for
+     * Amazon Web Services Lambda functions. </p>
+     */
+    inline void SetLambdaCode(const Status& value) { m_lambdaCodeHasBeenSet = true; m_lambdaCode = value; }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for custom application code for
+     * Amazon Web Services Lambda functions. </p>
+     */
+    inline void SetLambdaCode(Status&& value) { m_lambdaCodeHasBeenSet = true; m_lambdaCode = std::move(value); }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for custom application code for
+     * Amazon Web Services Lambda functions. </p>
+     */
+    inline ResourceStatus& WithLambdaCode(const Status& value) { SetLambdaCode(value); return *this;}
+
+    /**
+     * <p>The status of Amazon Inspector scanning for custom application code for
+     * Amazon Web Services Lambda functions. </p>
+     */
+    inline ResourceStatus& WithLambdaCode(Status&& value) { SetLambdaCode(std::move(value)); return *this;}
 
   private:
 
@@ -146,6 +177,9 @@ namespace Model
 
     Status m_lambda;
     bool m_lambdaHasBeenSet = false;
+
+    Status m_lambdaCode;
+    bool m_lambdaCodeHasBeenSet = false;
   };
 
 } // namespace Model

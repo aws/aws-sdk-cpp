@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentRolloutState::NOT_SET:
+            return {};
           case DeploymentRolloutState::COMPLETED:
             return "COMPLETED";
           case DeploymentRolloutState::FAILED:

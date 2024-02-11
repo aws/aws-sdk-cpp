@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int NEGATION_HASH = HashingUtils::HashString("NEGATION");
+        static const int PAST_HISTORY_HASH = HashingUtils::HashString("PAST_HISTORY");
 
 
         RxNormTraitName GetRxNormTraitNameForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == NEGATION_HASH)
           {
             return RxNormTraitName::NEGATION;
+          }
+          else if (hashCode == PAST_HISTORY_HASH)
+          {
+            return RxNormTraitName::PAST_HISTORY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +49,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RxNormTraitName::NOT_SET:
+            return {};
           case RxNormTraitName::NEGATION:
             return "NEGATION";
+          case RxNormTraitName::PAST_HISTORY:
+            return "PAST_HISTORY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

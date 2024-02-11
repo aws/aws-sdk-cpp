@@ -23,6 +23,7 @@ namespace Aws
         static const int Bot_HASH = HashingUtils::HashString("Bot");
         static const int BotLocale_HASH = HashingUtils::HashString("BotLocale");
         static const int CustomVocabulary_HASH = HashingUtils::HashString("CustomVocabulary");
+        static const int TestSet_HASH = HashingUtils::HashString("TestSet");
 
 
         ImportResourceType GetImportResourceTypeForName(const Aws::String& name)
@@ -40,6 +41,10 @@ namespace Aws
           {
             return ImportResourceType::CustomVocabulary;
           }
+          else if (hashCode == TestSet_HASH)
+          {
+            return ImportResourceType::TestSet;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportResourceType::NOT_SET:
+            return {};
           case ImportResourceType::Bot:
             return "Bot";
           case ImportResourceType::BotLocale:
             return "BotLocale";
           case ImportResourceType::CustomVocabulary:
             return "CustomVocabulary";
+          case ImportResourceType::TestSet:
+            return "TestSet";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -203,6 +203,153 @@ namespace Model
     inline DescribeProtectedResourceResult& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
 
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline const Aws::String& GetLastBackupVaultArn() const{ return m_lastBackupVaultArn; }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline void SetLastBackupVaultArn(const Aws::String& value) { m_lastBackupVaultArn = value; }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline void SetLastBackupVaultArn(Aws::String&& value) { m_lastBackupVaultArn = std::move(value); }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline void SetLastBackupVaultArn(const char* value) { m_lastBackupVaultArn.assign(value); }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline DescribeProtectedResourceResult& WithLastBackupVaultArn(const Aws::String& value) { SetLastBackupVaultArn(value); return *this;}
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline DescribeProtectedResourceResult& WithLastBackupVaultArn(Aws::String&& value) { SetLastBackupVaultArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the
+     * most recent backup recovery point.</p>
+     */
+    inline DescribeProtectedResourceResult& WithLastBackupVaultArn(const char* value) { SetLastBackupVaultArn(value); return *this;}
+
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline const Aws::String& GetLastRecoveryPointArn() const{ return m_lastRecoveryPointArn; }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline void SetLastRecoveryPointArn(const Aws::String& value) { m_lastRecoveryPointArn = value; }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline void SetLastRecoveryPointArn(Aws::String&& value) { m_lastRecoveryPointArn = std::move(value); }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline void SetLastRecoveryPointArn(const char* value) { m_lastRecoveryPointArn.assign(value); }
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline DescribeProtectedResourceResult& WithLastRecoveryPointArn(const Aws::String& value) { SetLastRecoveryPointArn(value); return *this;}
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline DescribeProtectedResourceResult& WithLastRecoveryPointArn(Aws::String&& value) { SetLastRecoveryPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+     */
+    inline DescribeProtectedResourceResult& WithLastRecoveryPointArn(const char* value) { SetLastRecoveryPointArn(value); return *this;}
+
+
+    /**
+     * <p>This is the time in minutes the most recent restore job took to complete.</p>
+     */
+    inline long long GetLatestRestoreExecutionTimeMinutes() const{ return m_latestRestoreExecutionTimeMinutes; }
+
+    /**
+     * <p>This is the time in minutes the most recent restore job took to complete.</p>
+     */
+    inline void SetLatestRestoreExecutionTimeMinutes(long long value) { m_latestRestoreExecutionTimeMinutes = value; }
+
+    /**
+     * <p>This is the time in minutes the most recent restore job took to complete.</p>
+     */
+    inline DescribeProtectedResourceResult& WithLatestRestoreExecutionTimeMinutes(long long value) { SetLatestRestoreExecutionTimeMinutes(value); return *this;}
+
+
+    /**
+     * <p>This is the creation date of the most recent restore job.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLatestRestoreJobCreationDate() const{ return m_latestRestoreJobCreationDate; }
+
+    /**
+     * <p>This is the creation date of the most recent restore job.</p>
+     */
+    inline void SetLatestRestoreJobCreationDate(const Aws::Utils::DateTime& value) { m_latestRestoreJobCreationDate = value; }
+
+    /**
+     * <p>This is the creation date of the most recent restore job.</p>
+     */
+    inline void SetLatestRestoreJobCreationDate(Aws::Utils::DateTime&& value) { m_latestRestoreJobCreationDate = std::move(value); }
+
+    /**
+     * <p>This is the creation date of the most recent restore job.</p>
+     */
+    inline DescribeProtectedResourceResult& WithLatestRestoreJobCreationDate(const Aws::Utils::DateTime& value) { SetLatestRestoreJobCreationDate(value); return *this;}
+
+    /**
+     * <p>This is the creation date of the most recent restore job.</p>
+     */
+    inline DescribeProtectedResourceResult& WithLatestRestoreJobCreationDate(Aws::Utils::DateTime&& value) { SetLatestRestoreJobCreationDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This is the date the most recent recovery point was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLatestRestoreRecoveryPointCreationDate() const{ return m_latestRestoreRecoveryPointCreationDate; }
+
+    /**
+     * <p>This is the date the most recent recovery point was created.</p>
+     */
+    inline void SetLatestRestoreRecoveryPointCreationDate(const Aws::Utils::DateTime& value) { m_latestRestoreRecoveryPointCreationDate = value; }
+
+    /**
+     * <p>This is the date the most recent recovery point was created.</p>
+     */
+    inline void SetLatestRestoreRecoveryPointCreationDate(Aws::Utils::DateTime&& value) { m_latestRestoreRecoveryPointCreationDate = std::move(value); }
+
+    /**
+     * <p>This is the date the most recent recovery point was created.</p>
+     */
+    inline DescribeProtectedResourceResult& WithLatestRestoreRecoveryPointCreationDate(const Aws::Utils::DateTime& value) { SetLatestRestoreRecoveryPointCreationDate(value); return *this;}
+
+    /**
+     * <p>This is the date the most recent recovery point was created.</p>
+     */
+    inline DescribeProtectedResourceResult& WithLatestRestoreRecoveryPointCreationDate(Aws::Utils::DateTime&& value) { SetLatestRestoreRecoveryPointCreationDate(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -233,6 +380,16 @@ namespace Model
     Aws::Utils::DateTime m_lastBackupTime;
 
     Aws::String m_resourceName;
+
+    Aws::String m_lastBackupVaultArn;
+
+    Aws::String m_lastRecoveryPointArn;
+
+    long long m_latestRestoreExecutionTimeMinutes;
+
+    Aws::Utils::DateTime m_latestRestoreJobCreationDate;
+
+    Aws::Utils::DateTime m_latestRestoreRecoveryPointCreationDate;
 
     Aws::String m_requestId;
   };

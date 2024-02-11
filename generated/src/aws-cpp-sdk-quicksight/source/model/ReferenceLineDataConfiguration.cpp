@@ -22,7 +22,9 @@ ReferenceLineDataConfiguration::ReferenceLineDataConfiguration() :
     m_staticConfigurationHasBeenSet(false),
     m_dynamicConfigurationHasBeenSet(false),
     m_axisBinding(AxisBinding::NOT_SET),
-    m_axisBindingHasBeenSet(false)
+    m_axisBindingHasBeenSet(false),
+    m_seriesType(ReferenceLineSeriesType::NOT_SET),
+    m_seriesTypeHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ ReferenceLineDataConfiguration::ReferenceLineDataConfiguration(JsonView jsonValu
     m_staticConfigurationHasBeenSet(false),
     m_dynamicConfigurationHasBeenSet(false),
     m_axisBinding(AxisBinding::NOT_SET),
-    m_axisBindingHasBeenSet(false)
+    m_axisBindingHasBeenSet(false),
+    m_seriesType(ReferenceLineSeriesType::NOT_SET),
+    m_seriesTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +62,13 @@ ReferenceLineDataConfiguration& ReferenceLineDataConfiguration::operator =(JsonV
     m_axisBindingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SeriesType"))
+  {
+    m_seriesType = ReferenceLineSeriesTypeMapper::GetReferenceLineSeriesTypeForName(jsonValue.GetString("SeriesType"));
+
+    m_seriesTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +91,11 @@ JsonValue ReferenceLineDataConfiguration::Jsonize() const
   if(m_axisBindingHasBeenSet)
   {
    payload.WithString("AxisBinding", AxisBindingMapper::GetNameForAxisBinding(m_axisBinding));
+  }
+
+  if(m_seriesTypeHasBeenSet)
+  {
+   payload.WithString("SeriesType", ReferenceLineSeriesTypeMapper::GetNameForReferenceLineSeriesType(m_seriesType));
   }
 
   return payload;

@@ -108,6 +108,13 @@ namespace Aws
         static const int Stephen_HASH = HashingUtils::HashString("Stephen");
         static const int Kazuha_HASH = HashingUtils::HashString("Kazuha");
         static const int Tomoko_HASH = HashingUtils::HashString("Tomoko");
+        static const int Niamh_HASH = HashingUtils::HashString("Niamh");
+        static const int Sofie_HASH = HashingUtils::HashString("Sofie");
+        static const int Lisa_HASH = HashingUtils::HashString("Lisa");
+        static const int Isabelle_HASH = HashingUtils::HashString("Isabelle");
+        static const int Zayd_HASH = HashingUtils::HashString("Zayd");
+        static const int Danielle_HASH = HashingUtils::HashString("Danielle");
+        static const int Gregory_HASH = HashingUtils::HashString("Gregory");
 
 
         VoiceId GetVoiceIdForName(const Aws::String& name)
@@ -465,6 +472,34 @@ namespace Aws
           {
             return VoiceId::Tomoko;
           }
+          else if (hashCode == Niamh_HASH)
+          {
+            return VoiceId::Niamh;
+          }
+          else if (hashCode == Sofie_HASH)
+          {
+            return VoiceId::Sofie;
+          }
+          else if (hashCode == Lisa_HASH)
+          {
+            return VoiceId::Lisa;
+          }
+          else if (hashCode == Isabelle_HASH)
+          {
+            return VoiceId::Isabelle;
+          }
+          else if (hashCode == Zayd_HASH)
+          {
+            return VoiceId::Zayd;
+          }
+          else if (hashCode == Danielle_HASH)
+          {
+            return VoiceId::Danielle;
+          }
+          else if (hashCode == Gregory_HASH)
+          {
+            return VoiceId::Gregory;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -479,6 +514,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VoiceId::NOT_SET:
+            return {};
           case VoiceId::Aditi:
             return "Aditi";
           case VoiceId::Amy:
@@ -655,6 +692,20 @@ namespace Aws
             return "Kazuha";
           case VoiceId::Tomoko:
             return "Tomoko";
+          case VoiceId::Niamh:
+            return "Niamh";
+          case VoiceId::Sofie:
+            return "Sofie";
+          case VoiceId::Lisa:
+            return "Lisa";
+          case VoiceId::Isabelle:
+            return "Isabelle";
+          case VoiceId::Zayd:
+            return "Zayd";
+          case VoiceId::Danielle:
+            return "Danielle";
+          case VoiceId::Gregory:
+            return "Gregory";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CpuVendorArchitecture::NOT_SET:
+            return {};
           case CpuVendorArchitecture::AWS_ARM64:
             return "AWS_ARM64";
           case CpuVendorArchitecture::CURRENT:

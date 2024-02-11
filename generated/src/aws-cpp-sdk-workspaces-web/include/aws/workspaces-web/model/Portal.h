@@ -278,6 +278,47 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the IP access settings.</p>
+     */
+    inline const Aws::String& GetIpAccessSettingsArn() const{ return m_ipAccessSettingsArn; }
+
+    /**
+     * <p>The ARN of the IP access settings.</p>
+     */
+    inline bool IpAccessSettingsArnHasBeenSet() const { return m_ipAccessSettingsArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IP access settings.</p>
+     */
+    inline void SetIpAccessSettingsArn(const Aws::String& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = value; }
+
+    /**
+     * <p>The ARN of the IP access settings.</p>
+     */
+    inline void SetIpAccessSettingsArn(Aws::String&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the IP access settings.</p>
+     */
+    inline void SetIpAccessSettingsArn(const char* value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn.assign(value); }
+
+    /**
+     * <p>The ARN of the IP access settings.</p>
+     */
+    inline Portal& WithIpAccessSettingsArn(const Aws::String& value) { SetIpAccessSettingsArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the IP access settings.</p>
+     */
+    inline Portal& WithIpAccessSettingsArn(Aws::String&& value) { SetIpAccessSettingsArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the IP access settings.</p>
+     */
+    inline Portal& WithIpAccessSettingsArn(const char* value) { SetIpAccessSettingsArn(value); return *this;}
+
+
+    /**
      * <p>The ARN of the network settings that is associated with the web portal.</p>
      */
     inline const Aws::String& GetNetworkSettingsArn() const{ return m_networkSettingsArn; }
@@ -657,6 +698,9 @@ namespace Model
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
+
+    Aws::String m_ipAccessSettingsArn;
+    bool m_ipAccessSettingsArnHasBeenSet = false;
 
     Aws::String m_networkSettingsArn;
     bool m_networkSettingsArnHasBeenSet = false;

@@ -277,26 +277,26 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that specifies whether the entity has child entities or
-     * not.</p>
+     * <p>An <b>eventual</b> Boolean value that specifies whether the entity has child
+     * entities or not.</p>
      */
     inline bool GetHasChildEntities() const{ return m_hasChildEntities; }
 
     /**
-     * <p>A Boolean value that specifies whether the entity has child entities or
-     * not.</p>
+     * <p>An <b>eventual</b> Boolean value that specifies whether the entity has child
+     * entities or not.</p>
      */
     inline bool HasChildEntitiesHasBeenSet() const { return m_hasChildEntitiesHasBeenSet; }
 
     /**
-     * <p>A Boolean value that specifies whether the entity has child entities or
-     * not.</p>
+     * <p>An <b>eventual</b> Boolean value that specifies whether the entity has child
+     * entities or not.</p>
      */
     inline void SetHasChildEntities(bool value) { m_hasChildEntitiesHasBeenSet = true; m_hasChildEntities = value; }
 
     /**
-     * <p>A Boolean value that specifies whether the entity has child entities or
-     * not.</p>
+     * <p>An <b>eventual</b> Boolean value that specifies whether the entity has child
+     * entities or not.</p>
      */
     inline EntitySummary& WithHasChildEntities(bool value) { SetHasChildEntities(value); return *this;}
 

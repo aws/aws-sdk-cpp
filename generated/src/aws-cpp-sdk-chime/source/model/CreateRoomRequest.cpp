@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateRoomRequest::CreateRoomRequest() : 
     m_accountIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

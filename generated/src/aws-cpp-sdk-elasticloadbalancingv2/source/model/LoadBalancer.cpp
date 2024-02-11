@@ -36,7 +36,8 @@ LoadBalancer::LoadBalancer() :
     m_securityGroupsHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
     m_ipAddressTypeHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false)
+    m_customerOwnedIpv4PoolHasBeenSet(false),
+    m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ LoadBalancer::LoadBalancer(const XmlNode& xmlNode) :
     m_securityGroupsHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
     m_ipAddressTypeHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false)
+    m_customerOwnedIpv4PoolHasBeenSet(false),
+    m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -157,6 +159,12 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
       m_customerOwnedIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpv4PoolNode.GetText());
       m_customerOwnedIpv4PoolHasBeenSet = true;
     }
+    XmlNode enforceSecurityGroupInboundRulesOnPrivateLinkTrafficNode = resultNode.FirstChild("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic");
+    if(!enforceSecurityGroupInboundRulesOnPrivateLinkTrafficNode.IsNull())
+    {
+      m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = Aws::Utils::Xml::DecodeEscapedXmlText(enforceSecurityGroupInboundRulesOnPrivateLinkTrafficNode.GetText());
+      m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -241,6 +249,11 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
   }
 
+  if(m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic=" << StringUtils::URLEncode(m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic.c_str()) << "&";
+  }
+
 }
 
 void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -308,6 +321,10 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_customerOwnedIpv4PoolHasBeenSet)
   {
       oStream << location << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
+  }
+  if(m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet)
+  {
+      oStream << location << ".EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic=" << StringUtils::URLEncode(m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic.c_str()) << "&";
   }
 }
 

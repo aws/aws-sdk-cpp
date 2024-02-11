@@ -40,6 +40,25 @@ namespace Model
 
 
     /**
+     * <p>If set to <code>true</code>, this option appends the source path to the
+     * service URL endpoint.</p>
+     */
+    inline bool GetAppendSourcePath() const{ return m_appendSourcePath; }
+
+    /**
+     * <p>If set to <code>true</code>, this option appends the source path to the
+     * service URL endpoint.</p>
+     */
+    inline void SetAppendSourcePath(bool value) { m_appendSourcePath = value; }
+
+    /**
+     * <p>If set to <code>true</code>, this option appends the source path to the
+     * service URL endpoint.</p>
+     */
+    inline GetRouteResult& WithAppendSourcePath(bool value) { SetAppendSourcePath(value); return *this;}
+
+
+    /**
      * <p>The ID of the application that the route belongs to. </p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
@@ -550,44 +569,58 @@ namespace Model
 
 
     /**
-     * <p>The path to use to match traffic. Paths must start with <code>/</code> and
-     * are relative to the base of the application. </p>
+     * <p>This is the path that Refactor Spaces uses to match traffic. Paths must start
+     * with <code>/</code> and are relative to the base of the application. To use path
+     * parameters in the source path, add a variable in curly braces. For example, the
+     * resource path {user} represents a path parameter called 'user'.</p>
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
 
     /**
-     * <p>The path to use to match traffic. Paths must start with <code>/</code> and
-     * are relative to the base of the application. </p>
+     * <p>This is the path that Refactor Spaces uses to match traffic. Paths must start
+     * with <code>/</code> and are relative to the base of the application. To use path
+     * parameters in the source path, add a variable in curly braces. For example, the
+     * resource path {user} represents a path parameter called 'user'.</p>
      */
     inline void SetSourcePath(const Aws::String& value) { m_sourcePath = value; }
 
     /**
-     * <p>The path to use to match traffic. Paths must start with <code>/</code> and
-     * are relative to the base of the application. </p>
+     * <p>This is the path that Refactor Spaces uses to match traffic. Paths must start
+     * with <code>/</code> and are relative to the base of the application. To use path
+     * parameters in the source path, add a variable in curly braces. For example, the
+     * resource path {user} represents a path parameter called 'user'.</p>
      */
     inline void SetSourcePath(Aws::String&& value) { m_sourcePath = std::move(value); }
 
     /**
-     * <p>The path to use to match traffic. Paths must start with <code>/</code> and
-     * are relative to the base of the application. </p>
+     * <p>This is the path that Refactor Spaces uses to match traffic. Paths must start
+     * with <code>/</code> and are relative to the base of the application. To use path
+     * parameters in the source path, add a variable in curly braces. For example, the
+     * resource path {user} represents a path parameter called 'user'.</p>
      */
     inline void SetSourcePath(const char* value) { m_sourcePath.assign(value); }
 
     /**
-     * <p>The path to use to match traffic. Paths must start with <code>/</code> and
-     * are relative to the base of the application. </p>
+     * <p>This is the path that Refactor Spaces uses to match traffic. Paths must start
+     * with <code>/</code> and are relative to the base of the application. To use path
+     * parameters in the source path, add a variable in curly braces. For example, the
+     * resource path {user} represents a path parameter called 'user'.</p>
      */
     inline GetRouteResult& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
 
     /**
-     * <p>The path to use to match traffic. Paths must start with <code>/</code> and
-     * are relative to the base of the application. </p>
+     * <p>This is the path that Refactor Spaces uses to match traffic. Paths must start
+     * with <code>/</code> and are relative to the base of the application. To use path
+     * parameters in the source path, add a variable in curly braces. For example, the
+     * resource path {user} represents a path parameter called 'user'.</p>
      */
     inline GetRouteResult& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
 
     /**
-     * <p>The path to use to match traffic. Paths must start with <code>/</code> and
-     * are relative to the base of the application. </p>
+     * <p>This is the path that Refactor Spaces uses to match traffic. Paths must start
+     * with <code>/</code> and are relative to the base of the application. To use path
+     * parameters in the source path, add a variable in curly braces. For example, the
+     * resource path {user} represents a path parameter called 'user'.</p>
      */
     inline GetRouteResult& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
 
@@ -713,6 +746,8 @@ namespace Model
     inline GetRouteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
+
+    bool m_appendSourcePath;
 
     Aws::String m_applicationId;
 

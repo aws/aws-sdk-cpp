@@ -227,32 +227,38 @@ namespace Model
 
 
     /**
-     * <p> The frequency of evidence collection for the control mapping source. </p>
+     * <p>Specifies how often evidence is collected from the control mapping source.
+     * </p>
      */
     inline const SourceFrequency& GetSourceFrequency() const{ return m_sourceFrequency; }
 
     /**
-     * <p> The frequency of evidence collection for the control mapping source. </p>
+     * <p>Specifies how often evidence is collected from the control mapping source.
+     * </p>
      */
     inline bool SourceFrequencyHasBeenSet() const { return m_sourceFrequencyHasBeenSet; }
 
     /**
-     * <p> The frequency of evidence collection for the control mapping source. </p>
+     * <p>Specifies how often evidence is collected from the control mapping source.
+     * </p>
      */
     inline void SetSourceFrequency(const SourceFrequency& value) { m_sourceFrequencyHasBeenSet = true; m_sourceFrequency = value; }
 
     /**
-     * <p> The frequency of evidence collection for the control mapping source. </p>
+     * <p>Specifies how often evidence is collected from the control mapping source.
+     * </p>
      */
     inline void SetSourceFrequency(SourceFrequency&& value) { m_sourceFrequencyHasBeenSet = true; m_sourceFrequency = std::move(value); }
 
     /**
-     * <p> The frequency of evidence collection for the control mapping source. </p>
+     * <p>Specifies how often evidence is collected from the control mapping source.
+     * </p>
      */
     inline CreateControlMappingSource& WithSourceFrequency(const SourceFrequency& value) { SetSourceFrequency(value); return *this;}
 
     /**
-     * <p> The frequency of evidence collection for the control mapping source. </p>
+     * <p>Specifies how often evidence is collected from the control mapping source.
+     * </p>
      */
     inline CreateControlMappingSource& WithSourceFrequency(SourceFrequency&& value) { SetSourceFrequency(std::move(value)); return *this;}
 

@@ -154,7 +154,16 @@ namespace Model
      * by default.</p>  <p>You use the capabilities with a set of values that
      * control what the capabilities can do, such as <code>SendReceive</code> data. For
      * more information about those values, see .</p>  <p>When using
-     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>You can't set
+     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
      * <code>content</code> capabilities to <code>SendReceive</code> or
      * <code>Receive</code> unless you also set <code>video</code> capabilities to
      * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
@@ -168,7 +177,7 @@ namespace Model
      * <li> <p>When you change a <code>video</code> or <code>content</code> capability
      * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
      * <code>SendReceive</code> , and if the attendee turned on their video or content
-     * streams, remote attendess can receive those streams, but only after media
+     * streams, remote attendees can receive those streams, but only after media
      * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
      * </ul>
      */
@@ -181,7 +190,16 @@ namespace Model
      * by default.</p>  <p>You use the capabilities with a set of values that
      * control what the capabilities can do, such as <code>SendReceive</code> data. For
      * more information about those values, see .</p>  <p>When using
-     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>You can't set
+     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
      * <code>content</code> capabilities to <code>SendReceive</code> or
      * <code>Receive</code> unless you also set <code>video</code> capabilities to
      * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
@@ -195,7 +213,7 @@ namespace Model
      * <li> <p>When you change a <code>video</code> or <code>content</code> capability
      * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
      * <code>SendReceive</code> , and if the attendee turned on their video or content
-     * streams, remote attendess can receive those streams, but only after media
+     * streams, remote attendees can receive those streams, but only after media
      * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
      * </ul>
      */
@@ -208,7 +226,16 @@ namespace Model
      * by default.</p>  <p>You use the capabilities with a set of values that
      * control what the capabilities can do, such as <code>SendReceive</code> data. For
      * more information about those values, see .</p>  <p>When using
-     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>You can't set
+     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
      * <code>content</code> capabilities to <code>SendReceive</code> or
      * <code>Receive</code> unless you also set <code>video</code> capabilities to
      * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
@@ -222,7 +249,7 @@ namespace Model
      * <li> <p>When you change a <code>video</code> or <code>content</code> capability
      * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
      * <code>SendReceive</code> , and if the attendee turned on their video or content
-     * streams, remote attendess can receive those streams, but only after media
+     * streams, remote attendees can receive those streams, but only after media
      * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
      * </ul>
      */
@@ -235,7 +262,16 @@ namespace Model
      * by default.</p>  <p>You use the capabilities with a set of values that
      * control what the capabilities can do, such as <code>SendReceive</code> data. For
      * more information about those values, see .</p>  <p>When using
-     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>You can't set
+     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
      * <code>content</code> capabilities to <code>SendReceive</code> or
      * <code>Receive</code> unless you also set <code>video</code> capabilities to
      * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
@@ -249,7 +285,7 @@ namespace Model
      * <li> <p>When you change a <code>video</code> or <code>content</code> capability
      * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
      * <code>SendReceive</code> , and if the attendee turned on their video or content
-     * streams, remote attendess can receive those streams, but only after media
+     * streams, remote attendees can receive those streams, but only after media
      * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
      * </ul>
      */
@@ -262,7 +298,16 @@ namespace Model
      * by default.</p>  <p>You use the capabilities with a set of values that
      * control what the capabilities can do, such as <code>SendReceive</code> data. For
      * more information about those values, see .</p>  <p>When using
-     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>You can't set
+     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
      * <code>content</code> capabilities to <code>SendReceive</code> or
      * <code>Receive</code> unless you also set <code>video</code> capabilities to
      * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
@@ -276,7 +321,7 @@ namespace Model
      * <li> <p>When you change a <code>video</code> or <code>content</code> capability
      * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
      * <code>SendReceive</code> , and if the attendee turned on their video or content
-     * streams, remote attendess can receive those streams, but only after media
+     * streams, remote attendees can receive those streams, but only after media
      * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
      * </ul>
      */
@@ -289,7 +334,16 @@ namespace Model
      * by default.</p>  <p>You use the capabilities with a set of values that
      * control what the capabilities can do, such as <code>SendReceive</code> data. For
      * more information about those values, see .</p>  <p>When using
-     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>You can't set
+     * capabilities, be aware of these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
      * <code>content</code> capabilities to <code>SendReceive</code> or
      * <code>Receive</code> unless you also set <code>video</code> capabilities to
      * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
@@ -303,7 +357,7 @@ namespace Model
      * <li> <p>When you change a <code>video</code> or <code>content</code> capability
      * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
      * <code>SendReceive</code> , and if the attendee turned on their video or content
-     * streams, remote attendess can receive those streams, but only after media
+     * streams, remote attendees can receive those streams, but only after media
      * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
      * </ul>
      */

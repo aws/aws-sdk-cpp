@@ -334,7 +334,7 @@ namespace Model
      * <p> The storage class to use when replicating objects. All objects stored on S3
      * on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on
      * Outposts uses the <code>OUTPOSTS</code> storage class to create the object
-     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> are not
+     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> aren't
      * supported by Amazon S3 on Outposts. </p> 
      */
     inline const ReplicationStorageClass& GetStorageClass() const{ return m_storageClass; }
@@ -343,7 +343,7 @@ namespace Model
      * <p> The storage class to use when replicating objects. All objects stored on S3
      * on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on
      * Outposts uses the <code>OUTPOSTS</code> storage class to create the object
-     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> are not
+     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> aren't
      * supported by Amazon S3 on Outposts. </p> 
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
@@ -352,7 +352,7 @@ namespace Model
      * <p> The storage class to use when replicating objects. All objects stored on S3
      * on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on
      * Outposts uses the <code>OUTPOSTS</code> storage class to create the object
-     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> are not
+     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> aren't
      * supported by Amazon S3 on Outposts. </p> 
      */
     inline void SetStorageClass(const ReplicationStorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
@@ -361,7 +361,7 @@ namespace Model
      * <p> The storage class to use when replicating objects. All objects stored on S3
      * on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on
      * Outposts uses the <code>OUTPOSTS</code> storage class to create the object
-     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> are not
+     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> aren't
      * supported by Amazon S3 on Outposts. </p> 
      */
     inline void SetStorageClass(ReplicationStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
@@ -370,7 +370,7 @@ namespace Model
      * <p> The storage class to use when replicating objects. All objects stored on S3
      * on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on
      * Outposts uses the <code>OUTPOSTS</code> storage class to create the object
-     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> are not
+     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> aren't
      * supported by Amazon S3 on Outposts. </p> 
      */
     inline Destination& WithStorageClass(const ReplicationStorageClass& value) { SetStorageClass(value); return *this;}
@@ -379,7 +379,7 @@ namespace Model
      * <p> The storage class to use when replicating objects. All objects stored on S3
      * on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on
      * Outposts uses the <code>OUTPOSTS</code> storage class to create the object
-     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> are not
+     * replicas. </p>  <p>Values other than <code>OUTPOSTS</code> aren't
      * supported by Amazon S3 on Outposts. </p> 
      */
     inline Destination& WithStorageClass(ReplicationStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}

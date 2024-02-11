@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KafkaSecurityProtocol::NOT_SET:
+            return {};
           case KafkaSecurityProtocol::plaintext:
             return "plaintext";
           case KafkaSecurityProtocol::ssl_authentication:

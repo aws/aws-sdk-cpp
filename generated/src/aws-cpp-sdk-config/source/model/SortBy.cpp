@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortBy::NOT_SET:
+            return {};
           case SortBy::SCORE:
             return "SCORE";
           default:

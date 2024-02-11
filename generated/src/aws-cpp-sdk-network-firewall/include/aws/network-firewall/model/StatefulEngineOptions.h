@@ -41,9 +41,15 @@ namespace Model
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
+     * <code>STRICT_ORDER</code> is the default and recommended option. With
+     * <code>STRICT_ORDER</code>, provide your rules in the order that you want them to
+     * be evaluated. You can then choose one or more default actions for packets that
+     * don't match any rules. Choose <code>STRICT_ORDER</code> to have the stateful
+     * rules engine determine the evaluation order of your rules. The default action
+     * for this rule order is <code>PASS</code>, followed by <code>DROP</code>,
+     * <code>REJECT</code>, and <code>ALERT</code> actions. Stateful rules are provided
+     * to the rule engine as Suricata compatible strings, and Suricata evaluates them
+     * based on your settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
      * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
@@ -52,9 +58,15 @@ namespace Model
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
+     * <code>STRICT_ORDER</code> is the default and recommended option. With
+     * <code>STRICT_ORDER</code>, provide your rules in the order that you want them to
+     * be evaluated. You can then choose one or more default actions for packets that
+     * don't match any rules. Choose <code>STRICT_ORDER</code> to have the stateful
+     * rules engine determine the evaluation order of your rules. The default action
+     * for this rule order is <code>PASS</code>, followed by <code>DROP</code>,
+     * <code>REJECT</code>, and <code>ALERT</code> actions. Stateful rules are provided
+     * to the rule engine as Suricata compatible strings, and Suricata evaluates them
+     * based on your settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
      * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
@@ -63,9 +75,15 @@ namespace Model
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
+     * <code>STRICT_ORDER</code> is the default and recommended option. With
+     * <code>STRICT_ORDER</code>, provide your rules in the order that you want them to
+     * be evaluated. You can then choose one or more default actions for packets that
+     * don't match any rules. Choose <code>STRICT_ORDER</code> to have the stateful
+     * rules engine determine the evaluation order of your rules. The default action
+     * for this rule order is <code>PASS</code>, followed by <code>DROP</code>,
+     * <code>REJECT</code>, and <code>ALERT</code> actions. Stateful rules are provided
+     * to the rule engine as Suricata compatible strings, and Suricata evaluates them
+     * based on your settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
      * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
@@ -74,9 +92,15 @@ namespace Model
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
+     * <code>STRICT_ORDER</code> is the default and recommended option. With
+     * <code>STRICT_ORDER</code>, provide your rules in the order that you want them to
+     * be evaluated. You can then choose one or more default actions for packets that
+     * don't match any rules. Choose <code>STRICT_ORDER</code> to have the stateful
+     * rules engine determine the evaluation order of your rules. The default action
+     * for this rule order is <code>PASS</code>, followed by <code>DROP</code>,
+     * <code>REJECT</code>, and <code>ALERT</code> actions. Stateful rules are provided
+     * to the rule engine as Suricata compatible strings, and Suricata evaluates them
+     * based on your settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
      * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
@@ -85,9 +109,15 @@ namespace Model
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
+     * <code>STRICT_ORDER</code> is the default and recommended option. With
+     * <code>STRICT_ORDER</code>, provide your rules in the order that you want them to
+     * be evaluated. You can then choose one or more default actions for packets that
+     * don't match any rules. Choose <code>STRICT_ORDER</code> to have the stateful
+     * rules engine determine the evaluation order of your rules. The default action
+     * for this rule order is <code>PASS</code>, followed by <code>DROP</code>,
+     * <code>REJECT</code>, and <code>ALERT</code> actions. Stateful rules are provided
+     * to the rule engine as Suricata compatible strings, and Suricata evaluates them
+     * based on your settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
      * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
@@ -96,9 +126,15 @@ namespace Model
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
+     * <code>STRICT_ORDER</code> is the default and recommended option. With
+     * <code>STRICT_ORDER</code>, provide your rules in the order that you want them to
+     * be evaluated. You can then choose one or more default actions for packets that
+     * don't match any rules. Choose <code>STRICT_ORDER</code> to have the stateful
+     * rules engine determine the evaluation order of your rules. The default action
+     * for this rule order is <code>PASS</code>, followed by <code>DROP</code>,
+     * <code>REJECT</code>, and <code>ALERT</code> actions. Stateful rules are provided
+     * to the rule engine as Suricata compatible strings, and Suricata evaluates them
+     * based on your settings. For more information, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
      * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
@@ -119,7 +155,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline const StreamExceptionPolicy& GetStreamExceptionPolicy() const{ return m_streamExceptionPolicy; }
 
@@ -136,7 +177,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline bool StreamExceptionPolicyHasBeenSet() const { return m_streamExceptionPolicyHasBeenSet; }
 
@@ -153,7 +199,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline void SetStreamExceptionPolicy(const StreamExceptionPolicy& value) { m_streamExceptionPolicyHasBeenSet = true; m_streamExceptionPolicy = value; }
 
@@ -170,7 +221,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline void SetStreamExceptionPolicy(StreamExceptionPolicy&& value) { m_streamExceptionPolicyHasBeenSet = true; m_streamExceptionPolicy = std::move(value); }
 
@@ -187,7 +243,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline StatefulEngineOptions& WithStreamExceptionPolicy(const StreamExceptionPolicy& value) { SetStreamExceptionPolicy(value); return *this;}
 
@@ -204,7 +265,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline StatefulEngineOptions& WithStreamExceptionPolicy(StreamExceptionPolicy&& value) { SetStreamExceptionPolicy(std::move(value)); return *this;}
 

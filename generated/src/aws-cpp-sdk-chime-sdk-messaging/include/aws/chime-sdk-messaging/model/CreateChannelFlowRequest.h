@@ -11,6 +11,7 @@
 #include <aws/chime-sdk-messaging/model/Processor.h>
 #include <aws/chime-sdk-messaging/model/Tag.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {

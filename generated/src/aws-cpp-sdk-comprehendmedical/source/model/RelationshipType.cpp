@@ -40,6 +40,8 @@ namespace Aws
         static const int DIRECTION_HASH = HashingUtils::HashString("DIRECTION");
         static const int SYSTEM_ORGAN_SITE_HASH = HashingUtils::HashString("SYSTEM_ORGAN_SITE");
         static const int AMOUNT_HASH = HashingUtils::HashString("AMOUNT");
+        static const int USAGE_HASH = HashingUtils::HashString("USAGE");
+        static const int QUALITY_HASH = HashingUtils::HashString("QUALITY");
 
 
         RelationshipType GetRelationshipTypeForName(const Aws::String& name)
@@ -125,6 +127,14 @@ namespace Aws
           {
             return RelationshipType::AMOUNT;
           }
+          else if (hashCode == USAGE_HASH)
+          {
+            return RelationshipType::USAGE;
+          }
+          else if (hashCode == QUALITY_HASH)
+          {
+            return RelationshipType::QUALITY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -139,6 +149,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelationshipType::NOT_SET:
+            return {};
           case RelationshipType::EVERY:
             return "EVERY";
           case RelationshipType::WITH_DOSAGE:
@@ -179,6 +191,10 @@ namespace Aws
             return "SYSTEM_ORGAN_SITE";
           case RelationshipType::AMOUNT:
             return "AMOUNT";
+          case RelationshipType::USAGE:
+            return "USAGE";
+          case RelationshipType::QUALITY:
+            return "QUALITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

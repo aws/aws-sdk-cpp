@@ -22,7 +22,9 @@ ProductionVariantServerlessConfig::ProductionVariantServerlessConfig() :
     m_memorySizeInMB(0),
     m_memorySizeInMBHasBeenSet(false),
     m_maxConcurrency(0),
-    m_maxConcurrencyHasBeenSet(false)
+    m_maxConcurrencyHasBeenSet(false),
+    m_provisionedConcurrency(0),
+    m_provisionedConcurrencyHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ ProductionVariantServerlessConfig::ProductionVariantServerlessConfig(JsonView js
     m_memorySizeInMB(0),
     m_memorySizeInMBHasBeenSet(false),
     m_maxConcurrency(0),
-    m_maxConcurrencyHasBeenSet(false)
+    m_maxConcurrencyHasBeenSet(false),
+    m_provisionedConcurrency(0),
+    m_provisionedConcurrencyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ ProductionVariantServerlessConfig& ProductionVariantServerlessConfig::operator =
     m_maxConcurrencyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProvisionedConcurrency"))
+  {
+    m_provisionedConcurrency = jsonValue.GetInteger("ProvisionedConcurrency");
+
+    m_provisionedConcurrencyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +78,12 @@ JsonValue ProductionVariantServerlessConfig::Jsonize() const
   if(m_maxConcurrencyHasBeenSet)
   {
    payload.WithInteger("MaxConcurrency", m_maxConcurrency);
+
+  }
+
+  if(m_provisionedConcurrencyHasBeenSet)
+  {
+   payload.WithInteger("ProvisionedConcurrency", m_provisionedConcurrency);
 
   }
 

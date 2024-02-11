@@ -41,73 +41,73 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
+     * <p>The ARN of the NFS location.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
+     * <p>The ARN of the NFS location.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
+     * <p>The ARN of the NFS location.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
+     * <p>The ARN of the NFS location.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
+     * <p>The ARN of the NFS location.</p>
      */
     inline DescribeLocationNfsResult& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
+     * <p>The ARN of the NFS location.</p>
      */
     inline DescribeLocationNfsResult& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
+     * <p>The ARN of the NFS location.</p>
      */
     inline DescribeLocationNfsResult& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 
 
     /**
-     * <p>The URL of the source NFS location that was described.</p>
+     * <p>The URL of the NFS location.</p>
      */
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
     /**
-     * <p>The URL of the source NFS location that was described.</p>
+     * <p>The URL of the NFS location.</p>
      */
     inline void SetLocationUri(const Aws::String& value) { m_locationUri = value; }
 
     /**
-     * <p>The URL of the source NFS location that was described.</p>
+     * <p>The URL of the NFS location.</p>
      */
     inline void SetLocationUri(Aws::String&& value) { m_locationUri = std::move(value); }
 
     /**
-     * <p>The URL of the source NFS location that was described.</p>
+     * <p>The URL of the NFS location.</p>
      */
     inline void SetLocationUri(const char* value) { m_locationUri.assign(value); }
 
     /**
-     * <p>The URL of the source NFS location that was described.</p>
+     * <p>The URL of the NFS location.</p>
      */
     inline DescribeLocationNfsResult& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
     /**
-     * <p>The URL of the source NFS location that was described.</p>
+     * <p>The URL of the NFS location.</p>
      */
     inline DescribeLocationNfsResult& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the source NFS location that was described.</p>
+     * <p>The URL of the NFS location.</p>
      */
     inline DescribeLocationNfsResult& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
 
@@ -129,53 +129,53 @@ namespace Model
 
 
     /**
-     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     * <p>The mount options that DataSync uses to mount your NFS file server.</p>
      */
     inline const NfsMountOptions& GetMountOptions() const{ return m_mountOptions; }
 
     /**
-     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     * <p>The mount options that DataSync uses to mount your NFS file server.</p>
      */
     inline void SetMountOptions(const NfsMountOptions& value) { m_mountOptions = value; }
 
     /**
-     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     * <p>The mount options that DataSync uses to mount your NFS file server.</p>
      */
     inline void SetMountOptions(NfsMountOptions&& value) { m_mountOptions = std::move(value); }
 
     /**
-     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     * <p>The mount options that DataSync uses to mount your NFS file server.</p>
      */
     inline DescribeLocationNfsResult& WithMountOptions(const NfsMountOptions& value) { SetMountOptions(value); return *this;}
 
     /**
-     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     * <p>The mount options that DataSync uses to mount your NFS file server.</p>
      */
     inline DescribeLocationNfsResult& WithMountOptions(NfsMountOptions&& value) { SetMountOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time that the NFS location was created.</p>
+     * <p>The time when the NFS location was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time that the NFS location was created.</p>
+     * <p>The time when the NFS location was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
 
     /**
-     * <p>The time that the NFS location was created.</p>
+     * <p>The time when the NFS location was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
 
     /**
-     * <p>The time that the NFS location was created.</p>
+     * <p>The time when the NFS location was created.</p>
      */
     inline DescribeLocationNfsResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time that the NFS location was created.</p>
+     * <p>The time when the NFS location was created.</p>
      */
     inline DescribeLocationNfsResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 

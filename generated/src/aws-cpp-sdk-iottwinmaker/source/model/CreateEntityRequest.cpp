@@ -18,6 +18,7 @@ CreateEntityRequest::CreateEntityRequest() :
     m_entityNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_componentsHasBeenSet(false),
+    m_compositeComponentsHasBeenSet(false),
     m_parentEntityIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -53,6 +54,17 @@ Aws::String CreateEntityRequest::SerializePayload() const
      componentsJsonMap.WithObject(componentsItem.first, componentsItem.second.Jsonize());
    }
    payload.WithObject("components", std::move(componentsJsonMap));
+
+  }
+
+  if(m_compositeComponentsHasBeenSet)
+  {
+   JsonValue compositeComponentsJsonMap;
+   for(auto& compositeComponentsItem : m_compositeComponents)
+   {
+     compositeComponentsJsonMap.WithObject(compositeComponentsItem.first, compositeComponentsItem.second.Jsonize());
+   }
+   payload.WithObject("compositeComponents", std::move(compositeComponentsJsonMap));
 
   }
 

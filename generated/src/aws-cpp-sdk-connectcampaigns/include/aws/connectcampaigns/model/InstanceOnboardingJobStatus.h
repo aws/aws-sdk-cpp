@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/connectcampaigns/model/InstanceOnboardingJobFailureCode.h>
 #include <aws/connectcampaigns/model/InstanceOnboardingJobStatusCode.h>
+#include <aws/connectcampaigns/model/InstanceOnboardingJobFailureCode.h>
 #include <utility>
 
 namespace Aws
@@ -65,25 +65,6 @@ namespace Model
 
 
     
-    inline const InstanceOnboardingJobFailureCode& GetFailureCode() const{ return m_failureCode; }
-
-    
-    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-
-    
-    inline void SetFailureCode(const InstanceOnboardingJobFailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-
-    
-    inline void SetFailureCode(InstanceOnboardingJobFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-
-    
-    inline InstanceOnboardingJobStatus& WithFailureCode(const InstanceOnboardingJobFailureCode& value) { SetFailureCode(value); return *this;}
-
-    
-    inline InstanceOnboardingJobStatus& WithFailureCode(InstanceOnboardingJobFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
-
-
-    
     inline const InstanceOnboardingJobStatusCode& GetStatus() const{ return m_status; }
 
     
@@ -101,16 +82,35 @@ namespace Model
     
     inline InstanceOnboardingJobStatus& WithStatus(InstanceOnboardingJobStatusCode&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    
+    inline const InstanceOnboardingJobFailureCode& GetFailureCode() const{ return m_failureCode; }
+
+    
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
+
+    
+    inline void SetFailureCode(const InstanceOnboardingJobFailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+
+    
+    inline void SetFailureCode(InstanceOnboardingJobFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
+
+    
+    inline InstanceOnboardingJobStatus& WithFailureCode(const InstanceOnboardingJobFailureCode& value) { SetFailureCode(value); return *this;}
+
+    
+    inline InstanceOnboardingJobStatus& WithFailureCode(InstanceOnboardingJobFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_connectInstanceId;
     bool m_connectInstanceIdHasBeenSet = false;
 
-    InstanceOnboardingJobFailureCode m_failureCode;
-    bool m_failureCodeHasBeenSet = false;
-
     InstanceOnboardingJobStatusCode m_status;
     bool m_statusHasBeenSet = false;
+
+    InstanceOnboardingJobFailureCode m_failureCode;
+    bool m_failureCodeHasBeenSet = false;
   };
 
 } // namespace Model

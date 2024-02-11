@@ -16,14 +16,16 @@ namespace Aws
 namespace CostandUsageReportService
 {
   /**
-   * <p>The AWS Cost and Usage Report API enables you to programmatically create,
-   * query, and delete AWS Cost and Usage report definitions.</p> <p>AWS Cost and
-   * Usage reports track the monthly AWS costs and usage associated with your AWS
-   * account. The report contains line items for each unique combination of AWS
-   * product, usage type, and operation that your AWS account uses. You can configure
-   * the AWS Cost and Usage report to show only the data that you want, using the AWS
-   * Cost and Usage API.</p> <p>Service Endpoint</p> <p>The AWS Cost and Usage Report
-   * API provides the following endpoint:</p> <ul> <li>
+   * <p>You can use the Amazon Web Services Cost and Usage Report API to
+   * programmatically create, query, and delete Amazon Web Services Cost and Usage
+   * Report definitions.</p> <p>Amazon Web Services Cost and Usage Report track the
+   * monthly Amazon Web Services costs and usage associated with your Amazon Web
+   * Services account. The report contains line items for each unique combination of
+   * Amazon Web Services product, usage type, and operation that your Amazon Web
+   * Services account uses. You can configure the Amazon Web Services Cost and Usage
+   * Report to show only the data that you want, using the Amazon Web Services Cost
+   * and Usage Report API.</p> <p>Service Endpoint</p> <p>The Amazon Web Services
+   * Cost and Usage Report API provides the following endpoint:</p> <ul> <li>
    * <p>cur.us-east-1.amazonaws.com</p> </li> </ul>
    */
   class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CostandUsageReportServiceClient>
@@ -32,6 +34,9 @@ namespace CostandUsageReportService
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef CostandUsageReportServiceClientConfiguration ClientConfigurationType;
+      typedef CostandUsageReportServiceEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -82,7 +87,8 @@ namespace CostandUsageReportService
         virtual ~CostandUsageReportServiceClient();
 
         /**
-         * <p>Deletes the specified report.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified report. Any tags associated with the report are also
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">AWS
          * API Reference</a></p>
          */
@@ -107,8 +113,8 @@ namespace CostandUsageReportService
         }
 
         /**
-         * <p>Lists the AWS Cost and Usage reports available to this account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Amazon Web Services Cost and Usage Report available to this
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">AWS
          * API Reference</a></p>
          */
@@ -133,7 +139,33 @@ namespace CostandUsageReportService
         }
 
         /**
-         * <p>Allows you to programatically update your report preferences.</p><p><h3>See
+         * <p>Lists the tags associated with the specified report definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&CostandUsageReportServiceClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostandUsageReportServiceClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Allows you to programmatically update your report preferences.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">AWS
          * API Reference</a></p>
@@ -182,6 +214,57 @@ namespace CostandUsageReportService
         void PutReportDefinitionAsync(const PutReportDefinitionRequestT& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CostandUsageReportServiceClient::PutReportDefinition, request, handler, context);
+        }
+
+        /**
+         * <p>Associates a set of tags with a report definition.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&CostandUsageReportServiceClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostandUsageReportServiceClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates a set of tags from a report definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&CostandUsageReportServiceClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostandUsageReportServiceClient::UntagResource, request, handler, context);
         }
 
 

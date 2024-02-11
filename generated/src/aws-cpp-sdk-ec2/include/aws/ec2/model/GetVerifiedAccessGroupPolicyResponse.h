@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocument = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocument.assign(value); }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline GetVerifiedAccessGroupPolicyResponse& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline GetVerifiedAccessGroupPolicyResponse& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline GetVerifiedAccessGroupPolicyResponse& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

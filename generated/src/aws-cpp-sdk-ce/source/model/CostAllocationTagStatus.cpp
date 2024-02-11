@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostAllocationTagStatus::NOT_SET:
+            return {};
           case CostAllocationTagStatus::Active:
             return "Active";
           case CostAllocationTagStatus::Inactive:

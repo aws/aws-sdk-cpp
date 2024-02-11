@@ -370,7 +370,8 @@ namespace Model
      * container instance it is running on. A <code>maxSwap</code> value must be set
      * for the <code>swappiness</code> parameter to be used.</p>  <p>If you're
      * using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter
-     * isn't supported.</p> 
+     * isn't supported.</p> <p>If you're using tasks on Amazon Linux 2023 the
+     * <code>swappiness</code> parameter isn't supported.</p> 
      */
     inline int GetMaxSwap() const{ return m_maxSwap; }
 
@@ -386,7 +387,8 @@ namespace Model
      * container instance it is running on. A <code>maxSwap</code> value must be set
      * for the <code>swappiness</code> parameter to be used.</p>  <p>If you're
      * using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter
-     * isn't supported.</p> 
+     * isn't supported.</p> <p>If you're using tasks on Amazon Linux 2023 the
+     * <code>swappiness</code> parameter isn't supported.</p> 
      */
     inline bool MaxSwapHasBeenSet() const { return m_maxSwapHasBeenSet; }
 
@@ -402,7 +404,8 @@ namespace Model
      * container instance it is running on. A <code>maxSwap</code> value must be set
      * for the <code>swappiness</code> parameter to be used.</p>  <p>If you're
      * using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter
-     * isn't supported.</p> 
+     * isn't supported.</p> <p>If you're using tasks on Amazon Linux 2023 the
+     * <code>swappiness</code> parameter isn't supported.</p> 
      */
     inline void SetMaxSwap(int value) { m_maxSwapHasBeenSet = true; m_maxSwap = value; }
 
@@ -418,7 +421,8 @@ namespace Model
      * container instance it is running on. A <code>maxSwap</code> value must be set
      * for the <code>swappiness</code> parameter to be used.</p>  <p>If you're
      * using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter
-     * isn't supported.</p> 
+     * isn't supported.</p> <p>If you're using tasks on Amazon Linux 2023 the
+     * <code>swappiness</code> parameter isn't supported.</p> 
      */
     inline LinuxParameters& WithMaxSwap(int value) { SetMaxSwap(value); return *this;}
 
@@ -435,7 +439,9 @@ namespace Model
      * <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
-     * the <code>swappiness</code> parameter isn't supported.</p> 
+     * the <code>swappiness</code> parameter isn't supported.</p> <p>If you're using
+     * tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't
+     * supported.</p> 
      */
     inline int GetSwappiness() const{ return m_swappiness; }
 
@@ -451,7 +457,9 @@ namespace Model
      * <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
-     * the <code>swappiness</code> parameter isn't supported.</p> 
+     * the <code>swappiness</code> parameter isn't supported.</p> <p>If you're using
+     * tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't
+     * supported.</p> 
      */
     inline bool SwappinessHasBeenSet() const { return m_swappinessHasBeenSet; }
 
@@ -467,7 +475,9 @@ namespace Model
      * <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
-     * the <code>swappiness</code> parameter isn't supported.</p> 
+     * the <code>swappiness</code> parameter isn't supported.</p> <p>If you're using
+     * tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't
+     * supported.</p> 
      */
     inline void SetSwappiness(int value) { m_swappinessHasBeenSet = true; m_swappiness = value; }
 
@@ -483,7 +493,9 @@ namespace Model
      * <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>If you're using tasks that use the Fargate launch type,
-     * the <code>swappiness</code> parameter isn't supported.</p> 
+     * the <code>swappiness</code> parameter isn't supported.</p> <p>If you're using
+     * tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't
+     * supported.</p> 
      */
     inline LinuxParameters& WithSwappiness(int value) { SetSwappiness(value); return *this;}
 

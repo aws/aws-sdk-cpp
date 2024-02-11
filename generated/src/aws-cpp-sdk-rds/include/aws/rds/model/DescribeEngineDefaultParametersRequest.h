@@ -43,14 +43,15 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
      * <code>aurora-postgresql13</code> </p> </li> <li> <p>
      * <code>aurora-postgresql14</code> </p> </li> <li> <p>
-     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb10.2</code>
      * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
      * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
      * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
@@ -87,14 +88,15 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
      * <code>aurora-postgresql13</code> </p> </li> <li> <p>
      * <code>aurora-postgresql14</code> </p> </li> <li> <p>
-     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb10.2</code>
      * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
      * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
      * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
@@ -131,14 +133,15 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
      * <code>aurora-postgresql13</code> </p> </li> <li> <p>
      * <code>aurora-postgresql14</code> </p> </li> <li> <p>
-     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb10.2</code>
      * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
      * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
      * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
@@ -175,14 +178,15 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
      * <code>aurora-postgresql13</code> </p> </li> <li> <p>
      * <code>aurora-postgresql14</code> </p> </li> <li> <p>
-     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb10.2</code>
      * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
      * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
      * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
@@ -219,14 +223,15 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
      * <code>aurora-postgresql13</code> </p> </li> <li> <p>
      * <code>aurora-postgresql14</code> </p> </li> <li> <p>
-     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb10.2</code>
      * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
      * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
      * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
@@ -263,14 +268,15 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
      * <code>aurora-postgresql13</code> </p> </li> <li> <p>
      * <code>aurora-postgresql14</code> </p> </li> <li> <p>
-     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb10.2</code>
      * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
      * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
      * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
@@ -307,14 +313,15 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
      * <code>aurora-postgresql13</code> </p> </li> <li> <p>
      * <code>aurora-postgresql14</code> </p> </li> <li> <p>
-     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb10.2</code>
      * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
      * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
      * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
@@ -351,14 +358,15 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
      * <code>aurora-postgresql13</code> </p> </li> <li> <p>
      * <code>aurora-postgresql14</code> </p> </li> <li> <p>
-     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * <code>custom-oracle-ee-19</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb10.2</code>
      * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
      * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
      * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>

@@ -81,10 +81,38 @@ namespace Model
      */
     inline InferenceAcceleratorInfo& AddAccelerators(InferenceDeviceInfo&& value) { m_acceleratorsHasBeenSet = true; m_accelerators.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The total size of the memory for the inference accelerators for the instance
+     * type, in MiB.</p>
+     */
+    inline int GetTotalInferenceMemoryInMiB() const{ return m_totalInferenceMemoryInMiB; }
+
+    /**
+     * <p>The total size of the memory for the inference accelerators for the instance
+     * type, in MiB.</p>
+     */
+    inline bool TotalInferenceMemoryInMiBHasBeenSet() const { return m_totalInferenceMemoryInMiBHasBeenSet; }
+
+    /**
+     * <p>The total size of the memory for the inference accelerators for the instance
+     * type, in MiB.</p>
+     */
+    inline void SetTotalInferenceMemoryInMiB(int value) { m_totalInferenceMemoryInMiBHasBeenSet = true; m_totalInferenceMemoryInMiB = value; }
+
+    /**
+     * <p>The total size of the memory for the inference accelerators for the instance
+     * type, in MiB.</p>
+     */
+    inline InferenceAcceleratorInfo& WithTotalInferenceMemoryInMiB(int value) { SetTotalInferenceMemoryInMiB(value); return *this;}
+
   private:
 
     Aws::Vector<InferenceDeviceInfo> m_accelerators;
     bool m_acceleratorsHasBeenSet = false;
+
+    int m_totalInferenceMemoryInMiB;
+    bool m_totalInferenceMemoryInMiBHasBeenSet = false;
   };
 
 } // namespace Model

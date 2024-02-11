@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IngestionRequestSource::NOT_SET:
+            return {};
           case IngestionRequestSource::MANUAL:
             return "MANUAL";
           case IngestionRequestSource::SCHEDULED:

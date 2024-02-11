@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/omics/model/JobStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/JobStatus.h>
 #include <utility>
 
 namespace Aws
@@ -36,37 +36,6 @@ namespace Model
     AWS_OMICS_API AnnotationImportItemDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API AnnotationImportItemDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The item's job status.</p>
-     */
-    inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
-
-    /**
-     * <p>The item's job status.</p>
-     */
-    inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
-
-    /**
-     * <p>The item's job status.</p>
-     */
-    inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
-
-    /**
-     * <p>The item's job status.</p>
-     */
-    inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
-
-    /**
-     * <p>The item's job status.</p>
-     */
-    inline AnnotationImportItemDetail& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-
-    /**
-     * <p>The item's job status.</p>
-     */
-    inline AnnotationImportItemDetail& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 
 
     /**
@@ -109,13 +78,44 @@ namespace Model
      */
     inline AnnotationImportItemDetail& WithSource(const char* value) { SetSource(value); return *this;}
 
-  private:
 
-    JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet = false;
+    /**
+     * <p>The item's job status.</p>
+     */
+    inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
+
+    /**
+     * <p>The item's job status.</p>
+     */
+    inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
+
+    /**
+     * <p>The item's job status.</p>
+     */
+    inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+
+    /**
+     * <p>The item's job status.</p>
+     */
+    inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
+
+    /**
+     * <p>The item's job status.</p>
+     */
+    inline AnnotationImportItemDetail& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
+
+    /**
+     * <p>The item's job status.</p>
+     */
+    inline AnnotationImportItemDetail& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_source;
     bool m_sourceHasBeenSet = false;
+
+    JobStatus m_jobStatus;
+    bool m_jobStatusHasBeenSet = false;
   };
 
 } // namespace Model

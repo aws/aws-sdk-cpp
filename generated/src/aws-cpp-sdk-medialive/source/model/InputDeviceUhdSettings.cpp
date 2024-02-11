@@ -36,7 +36,11 @@ InputDeviceUhdSettings::InputDeviceUhdSettings() :
     m_width(0),
     m_widthHasBeenSet(false),
     m_latencyMs(0),
-    m_latencyMsHasBeenSet(false)
+    m_latencyMsHasBeenSet(false),
+    m_codec(InputDeviceCodec::NOT_SET),
+    m_codecHasBeenSet(false),
+    m_mediaconnectSettingsHasBeenSet(false),
+    m_audioChannelPairsHasBeenSet(false)
 {
 }
 
@@ -58,7 +62,11 @@ InputDeviceUhdSettings::InputDeviceUhdSettings(JsonView jsonValue) :
     m_width(0),
     m_widthHasBeenSet(false),
     m_latencyMs(0),
-    m_latencyMsHasBeenSet(false)
+    m_latencyMsHasBeenSet(false),
+    m_codec(InputDeviceCodec::NOT_SET),
+    m_codecHasBeenSet(false),
+    m_mediaconnectSettingsHasBeenSet(false),
+    m_audioChannelPairsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +136,30 @@ InputDeviceUhdSettings& InputDeviceUhdSettings::operator =(JsonView jsonValue)
     m_latencyMsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("codec"))
+  {
+    m_codec = InputDeviceCodecMapper::GetInputDeviceCodecForName(jsonValue.GetString("codec"));
+
+    m_codecHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mediaconnectSettings"))
+  {
+    m_mediaconnectSettings = jsonValue.GetObject("mediaconnectSettings");
+
+    m_mediaconnectSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioChannelPairs"))
+  {
+    Aws::Utils::Array<JsonView> audioChannelPairsJsonList = jsonValue.GetArray("audioChannelPairs");
+    for(unsigned audioChannelPairsIndex = 0; audioChannelPairsIndex < audioChannelPairsJsonList.GetLength(); ++audioChannelPairsIndex)
+    {
+      m_audioChannelPairs.push_back(audioChannelPairsJsonList[audioChannelPairsIndex].AsObject());
+    }
+    m_audioChannelPairsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -182,6 +214,28 @@ JsonValue InputDeviceUhdSettings::Jsonize() const
   if(m_latencyMsHasBeenSet)
   {
    payload.WithInteger("latencyMs", m_latencyMs);
+
+  }
+
+  if(m_codecHasBeenSet)
+  {
+   payload.WithString("codec", InputDeviceCodecMapper::GetNameForInputDeviceCodec(m_codec));
+  }
+
+  if(m_mediaconnectSettingsHasBeenSet)
+  {
+   payload.WithObject("mediaconnectSettings", m_mediaconnectSettings.Jsonize());
+
+  }
+
+  if(m_audioChannelPairsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> audioChannelPairsJsonList(m_audioChannelPairs.size());
+   for(unsigned audioChannelPairsIndex = 0; audioChannelPairsIndex < audioChannelPairsJsonList.GetLength(); ++audioChannelPairsIndex)
+   {
+     audioChannelPairsJsonList[audioChannelPairsIndex].AsObject(m_audioChannelPairs[audioChannelPairsIndex].Jsonize());
+   }
+   payload.WithArray("audioChannelPairs", std::move(audioChannelPairsJsonList));
 
   }
 

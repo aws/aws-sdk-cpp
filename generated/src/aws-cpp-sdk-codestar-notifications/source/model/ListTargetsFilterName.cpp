@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListTargetsFilterName::NOT_SET:
+            return {};
           case ListTargetsFilterName::TARGET_TYPE:
             return "TARGET_TYPE";
           case ListTargetsFilterName::TARGET_ADDRESS:

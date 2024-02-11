@@ -94,9 +94,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -106,9 +107,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -118,9 +120,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -130,9 +133,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -142,9 +146,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -154,9 +159,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -275,65 +281,57 @@ namespace Model
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline CreateRuleGroupRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline CreateRuleGroupRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline CreateRuleGroupRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline CreateRuleGroupRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 

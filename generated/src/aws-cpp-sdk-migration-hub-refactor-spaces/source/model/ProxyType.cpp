@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProxyType::NOT_SET:
+            return {};
           case ProxyType::API_GATEWAY:
             return "API_GATEWAY";
           default:

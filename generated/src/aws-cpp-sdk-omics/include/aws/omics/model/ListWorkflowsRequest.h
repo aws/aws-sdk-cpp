@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/WorkflowType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -40,24 +40,34 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of workflows to return in one page of results.</p>
+     * <p>The workflows' type.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const WorkflowType& GetType() const{ return m_type; }
 
     /**
-     * <p>The maximum number of workflows to return in one page of results.</p>
+     * <p>The workflows' type.</p>
      */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The maximum number of workflows to return in one page of results.</p>
+     * <p>The workflows' type.</p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetType(const WorkflowType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The maximum number of workflows to return in one page of results.</p>
+     * <p>The workflows' type.</p>
      */
-    inline ListWorkflowsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline void SetType(WorkflowType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The workflows' type.</p>
+     */
+    inline ListWorkflowsRequest& WithType(const WorkflowType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The workflows' type.</p>
+     */
+    inline ListWorkflowsRequest& WithType(WorkflowType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -151,39 +161,29 @@ namespace Model
 
 
     /**
-     * <p>The workflows' type.</p>
+     * <p>The maximum number of workflows to return in one page of results.</p>
      */
-    inline const WorkflowType& GetType() const{ return m_type; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The workflows' type.</p>
+     * <p>The maximum number of workflows to return in one page of results.</p>
      */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The workflows' type.</p>
+     * <p>The maximum number of workflows to return in one page of results.</p>
      */
-    inline void SetType(const WorkflowType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The workflows' type.</p>
+     * <p>The maximum number of workflows to return in one page of results.</p>
      */
-    inline void SetType(WorkflowType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The workflows' type.</p>
-     */
-    inline ListWorkflowsRequest& WithType(const WorkflowType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The workflows' type.</p>
-     */
-    inline ListWorkflowsRequest& WithType(WorkflowType&& value) { SetType(std::move(value)); return *this;}
+    inline ListWorkflowsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    WorkflowType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -191,8 +191,8 @@ namespace Model
     Aws::String m_startingToken;
     bool m_startingTokenHasBeenSet = false;
 
-    WorkflowType m_type;
-    bool m_typeHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

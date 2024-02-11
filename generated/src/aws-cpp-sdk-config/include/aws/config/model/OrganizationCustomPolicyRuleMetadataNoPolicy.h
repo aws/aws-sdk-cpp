@@ -27,12 +27,11 @@ namespace Model
 {
 
   /**
-   * <p>An object that specifies metadata for your organization Config Custom Policy
-   * rule including the runtime system in use, which accounts have debug logging
-   * enabled, and other custom rule metadata such as resource type, resource ID of
-   * Amazon Web Services resource, and organization trigger types that trigger Config
-   * to evaluate Amazon Web Services resources against a rule.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p> metadata for your organization Config Custom Policy rule including the
+   * runtime system in use, which accounts have debug logging enabled, and other
+   * custom rule metadata such as resource type, resource ID of Amazon Web Services
+   * resource, and organization trigger types that trigger Config to evaluate Amazon
+   * Web Services resources against a rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationCustomPolicyRuleMetadataNoPolicy">AWS
    * API Reference</a></p>
    */

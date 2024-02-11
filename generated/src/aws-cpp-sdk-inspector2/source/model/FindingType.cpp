@@ -22,6 +22,7 @@ namespace Aws
 
         static const int NETWORK_REACHABILITY_HASH = HashingUtils::HashString("NETWORK_REACHABILITY");
         static const int PACKAGE_VULNERABILITY_HASH = HashingUtils::HashString("PACKAGE_VULNERABILITY");
+        static const int CODE_VULNERABILITY_HASH = HashingUtils::HashString("CODE_VULNERABILITY");
 
 
         FindingType GetFindingTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == PACKAGE_VULNERABILITY_HASH)
           {
             return FindingType::PACKAGE_VULNERABILITY;
+          }
+          else if (hashCode == CODE_VULNERABILITY_HASH)
+          {
+            return FindingType::CODE_VULNERABILITY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingType::NOT_SET:
+            return {};
           case FindingType::NETWORK_REACHABILITY:
             return "NETWORK_REACHABILITY";
           case FindingType::PACKAGE_VULNERABILITY:
             return "PACKAGE_VULNERABILITY";
+          case FindingType::CODE_VULNERABILITY:
+            return "CODE_VULNERABILITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

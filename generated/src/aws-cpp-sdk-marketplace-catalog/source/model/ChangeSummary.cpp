@@ -22,6 +22,7 @@ ChangeSummary::ChangeSummary() :
     m_changeTypeHasBeenSet(false),
     m_entityHasBeenSet(false),
     m_detailsHasBeenSet(false),
+    m_detailsDocumentHasBeenSet(false),
     m_errorDetailListHasBeenSet(false),
     m_changeNameHasBeenSet(false)
 {
@@ -31,6 +32,7 @@ ChangeSummary::ChangeSummary(JsonView jsonValue) :
     m_changeTypeHasBeenSet(false),
     m_entityHasBeenSet(false),
     m_detailsHasBeenSet(false),
+    m_detailsDocumentHasBeenSet(false),
     m_errorDetailListHasBeenSet(false),
     m_changeNameHasBeenSet(false)
 {
@@ -58,6 +60,13 @@ ChangeSummary& ChangeSummary::operator =(JsonView jsonValue)
     m_details = jsonValue.GetString("Details");
 
     m_detailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DetailsDocument"))
+  {
+    m_detailsDocument = jsonValue.GetObject("DetailsDocument");
+
+    m_detailsDocumentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ErrorDetailList"))
@@ -100,6 +109,14 @@ JsonValue ChangeSummary::Jsonize() const
   {
    payload.WithString("Details", m_details);
 
+  }
+
+  if(m_detailsDocumentHasBeenSet)
+  {
+    if(!m_detailsDocument.View().IsNull())
+    {
+       payload.WithObject("DetailsDocument", JsonValue(m_detailsDocument.View()));
+    }
   }
 
   if(m_errorDetailListHasBeenSet)

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Type::NOT_SET:
+            return {};
           case Type::AmazonCustomerByEmail:
             return "AmazonCustomerByEmail";
           case Type::CanonicalUser:

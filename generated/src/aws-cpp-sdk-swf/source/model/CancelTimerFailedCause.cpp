@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CancelTimerFailedCause::NOT_SET:
+            return {};
           case CancelTimerFailedCause::TIMER_ID_UNKNOWN:
             return "TIMER_ID_UNKNOWN";
           case CancelTimerFailedCause::OPERATION_NOT_PERMITTED:

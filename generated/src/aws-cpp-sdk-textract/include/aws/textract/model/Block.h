@@ -90,14 +90,28 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline const BlockType& GetBlockType() const{ return m_blockType; }
 
@@ -133,14 +147,28 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline bool BlockTypeHasBeenSet() const { return m_blockTypeHasBeenSet; }
 
@@ -176,14 +204,28 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline void SetBlockType(const BlockType& value) { m_blockTypeHasBeenSet = true; m_blockType = value; }
 
@@ -219,14 +261,28 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline void SetBlockType(BlockType&& value) { m_blockTypeHasBeenSet = true; m_blockType = std::move(value); }
 
@@ -262,14 +318,28 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline Block& WithBlockType(const BlockType& value) { SetBlockType(value); return *this;}
 
@@ -305,14 +375,28 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
      * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
      * to a question asked during the call of analyze document. Comes with an alias and
      * ID for ease of locating in a response. Also contains location and confidence
-     * score.</p> </li> </ul>
+     * score.</p> </li> </ul> <p>The following BlockTypes are only returned for Amazon
+     * Textract Layout.</p> <ul> <li> <p> <code>LAYOUT_TITLE</code> - The main title of
+     * the document.</p> </li> <li> <p> <code>LAYOUT_HEADER</code> - Text located in
+     * the top margin of the document.</p> </li> <li> <p> <code>LAYOUT_FOOTER</code> -
+     * Text located in the bottom margin of the document.</p> </li> <li> <p>
+     * <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a
+     * document.</p> </li> <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number
+     * of the documents.</p> </li> <li> <p> <code>LAYOUT_LIST</code> - Any information
+     * grouped together in list form. </p> </li> <li> <p> <code>LAYOUT_FIGURE</code> -
+     * Indicates the location of an image in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TABLE</code> - Indicates the location of a table in the
+     * document.</p> </li> <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the
+     * location of form key-values in a document.</p> </li> <li> <p>
+     * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
+     * paragraphs in documents.</p> </li> </ul>
      */
     inline Block& WithBlockType(BlockType&& value) { SetBlockType(std::move(value)); return *this;}
 
@@ -925,9 +1009,7 @@ namespace Model
      * returned for multipage documents that are in PDF or TIFF format. A scanned image
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
-     * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations will also return a <code>Page</code> value of 1 because every input
-     * document is considered to be a single-page document.</p>
+     * scanned images the value of <code>Page</code> is always 1. </p>
      */
     inline int GetPage() const{ return m_page; }
 
@@ -937,9 +1019,7 @@ namespace Model
      * returned for multipage documents that are in PDF or TIFF format. A scanned image
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
-     * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations will also return a <code>Page</code> value of 1 because every input
-     * document is considered to be a single-page document.</p>
+     * scanned images the value of <code>Page</code> is always 1. </p>
      */
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
 
@@ -949,9 +1029,7 @@ namespace Model
      * returned for multipage documents that are in PDF or TIFF format. A scanned image
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
-     * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations will also return a <code>Page</code> value of 1 because every input
-     * document is considered to be a single-page document.</p>
+     * scanned images the value of <code>Page</code> is always 1. </p>
      */
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
 
@@ -961,9 +1039,7 @@ namespace Model
      * returned for multipage documents that are in PDF or TIFF format. A scanned image
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
-     * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations will also return a <code>Page</code> value of 1 because every input
-     * document is considered to be a single-page document.</p>
+     * scanned images the value of <code>Page</code> is always 1. </p>
      */
     inline Block& WithPage(int value) { SetPage(value); return *this;}
 

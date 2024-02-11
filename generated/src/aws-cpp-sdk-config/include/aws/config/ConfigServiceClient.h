@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/config/ConfigServiceServiceClientModel.h>
+#include <aws/config/model/GetComplianceSummaryByConfigRuleRequest.h>
 
 namespace Aws
 {
@@ -46,6 +47,9 @@ namespace ConfigService
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef ConfigServiceClientConfiguration ClientConfigurationType;
+      typedef ConfigServiceEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -898,11 +902,11 @@ namespace ConfigService
          * <p>Returns the current status of the specified configuration recorder as well as
          * the status of the last recording event for the recorder. If a configuration
          * recorder is not specified, this action returns the status of all configuration
-         * recorders associated with the account.</p>  <p>Currently, you can specify
-         * only one configuration recorder per region in your account. For a detailed
-         * status of recording events over time, add your Config events to Amazon
-         * CloudWatch metrics and use CloudWatch metrics.</p> <p><h3>See Also:</h3> 
-         * <a
+         * recorders associated with the account.</p>  <p>&gt;You can specify only
+         * one configuration recorder for each Amazon Web Services Region for each account.
+         * For a detailed status of recording events over time, add your Config events to
+         * Amazon CloudWatch metrics and use CloudWatch metrics.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
          * API Reference</a></p>
          */
@@ -929,9 +933,9 @@ namespace ConfigService
         /**
          * <p>Returns the details for the specified configuration recorders. If the
          * configuration recorder is not specified, this action returns the details for all
-         * configuration recorders associated with the account.</p>  <p>Currently,
-         * you can specify only one configuration recorder per region in your account.</p>
-         * <p><h3>See Also:</h3>   <a
+         * configuration recorders associated with the account.</p>  <p>You can
+         * specify only one configuration recorder for each Amazon Web Services Region for
+         * each account.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">AWS
          * API Reference</a></p>
          */
@@ -1587,25 +1591,26 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetComplianceSummaryByConfigRuleOutcome GetComplianceSummaryByConfigRule() const;
+        virtual Model::GetComplianceSummaryByConfigRuleOutcome GetComplianceSummaryByConfigRule(const Model::GetComplianceSummaryByConfigRuleRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetComplianceSummaryByConfigRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetComplianceSummaryByConfigRuleOutcomeCallable GetComplianceSummaryByConfigRuleCallable() const
+        template<typename GetComplianceSummaryByConfigRuleRequestT = Model::GetComplianceSummaryByConfigRuleRequest>
+        Model::GetComplianceSummaryByConfigRuleOutcomeCallable GetComplianceSummaryByConfigRuleCallable(const GetComplianceSummaryByConfigRuleRequestT& request = {}) const
         {
-            return SubmitCallable(&ConfigServiceClient::GetComplianceSummaryByConfigRule);
+            return SubmitCallable(&ConfigServiceClient::GetComplianceSummaryByConfigRule, request);
         }
 
         /**
          * An Async wrapper for GetComplianceSummaryByConfigRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetComplianceSummaryByConfigRuleAsync(const GetComplianceSummaryByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetComplianceSummaryByConfigRuleRequestT = Model::GetComplianceSummaryByConfigRuleRequest>
+        void GetComplianceSummaryByConfigRuleAsync(const GetComplianceSummaryByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetComplianceSummaryByConfigRuleRequestT& request = {}) const
         {
-            return SubmitAsync(&ConfigServiceClient::GetComplianceSummaryByConfigRule, handler, context);
+            return SubmitAsync(&ConfigServiceClient::GetComplianceSummaryByConfigRule, request, handler, context);
         }
+
         /**
          * <p>Returns the number of resources that are compliant and the number that are
          * noncompliant. You can specify one or more resource types to get these numbers
@@ -1838,20 +1843,25 @@ namespace ConfigService
         }
 
         /**
-         * <p>Returns a list of <code>ConfigurationItems</code> for the specified resource.
-         * The list contains details about each state of the resource during the specified
-         * time interval. If you specified a retention period to retain your
-         * <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7
-         * years (2557 days), Config returns the <code>ConfigurationItems</code> for the
-         * specified retention period. </p> <p>The response is paginated. By default,
-         * Config returns a limit of 10 configuration items per page. You can customize
-         * this number with the <code>limit</code> parameter. The response includes a
-         * <code>nextToken</code> string. To get the next page of results, run the request
-         * again and specify the string for the <code>nextToken</code> parameter.</p>
-         *  <p>Each call to the API is limited to span a duration of seven days. It
-         * is likely that the number of records returned is smaller than the specified
-         * <code>limit</code>. In such cases, you can make another call, using the
-         * <code>nextToken</code>.</p> <p><h3>See Also:</h3>   <a
+         *  <p>For accurate reporting on the compliance status, you must record
+         * the <code>AWS::Config::ResourceCompliance</code> resource type. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
+         * Which Resources Config Records</a>.</p>  <p>Returns a list of
+         * <code>ConfigurationItems</code> for the specified resource. The list contains
+         * details about each state of the resource during the specified time interval. If
+         * you specified a retention period to retain your <code>ConfigurationItems</code>
+         * between a minimum of 30 days and a maximum of 7 years (2557 days), Config
+         * returns the <code>ConfigurationItems</code> for the specified retention period.
+         * </p> <p>The response is paginated. By default, Config returns a limit of 10
+         * configuration items per page. You can customize this number with the
+         * <code>limit</code> parameter. The response includes a <code>nextToken</code>
+         * string. To get the next page of results, run the request again and specify the
+         * string for the <code>nextToken</code> parameter.</p>  <p>Each call to the
+         * API is limited to span a duration of seven days. It is likely that the number of
+         * records returned is smaller than the specified <code>limit</code>. In such
+         * cases, you can make another call, using the <code>nextToken</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
          * API Reference</a></p>
          */
@@ -2262,15 +2272,17 @@ namespace ConfigService
         }
 
         /**
-         * <p>Creates a new configuration recorder to record the selected resource
-         * configurations.</p> <p>You can use this action to change the role
+         * <p>Creates a new configuration recorder to record configuration changes for
+         * specified resource types.</p> <p>You can also use this action to change the
          * <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder.
-         * To change the role, call the action on the existing configuration recorder and
-         * specify a role.</p>  <p>Currently, you can specify only one configuration
-         * recorder per region in your account.</p> <p>If
-         * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
-         * parameter specified, the default is to record all supported resource types.</p>
-         * <p><h3>See Also:</h3>   <a
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+         * <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer
+         * Guide</i>.</p>  <p>You can specify only one configuration recorder for
+         * each Amazon Web Services Region for each account.</p> <p>If the configuration
+         * recorder does not have the <code>recordingGroup</code> field specified, the
+         * default is to record all supported resource types.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">AWS
          * API Reference</a></p>
          */
@@ -2300,7 +2312,7 @@ namespace ConfigService
          * an organization. For information on how many conformance packs you can have per
          * account, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-         * <b>Service Limits</b> </a> in the Config Developer Guide.</p> <p>This API
+         * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p> <p>This API
          * creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in
          * your account. The service-linked role is created only when the role does not
          * exist in your account. </p>  <p>You must specify only one of the follow
@@ -2330,16 +2342,19 @@ namespace ConfigService
         }
 
         /**
-         * <p>Creates a delivery channel object to deliver configuration information to an
-         * Amazon S3 bucket and Amazon SNS topic.</p> <p>Before you can create a delivery
-         * channel, you must create a configuration recorder.</p> <p>You can use this
-         * action to change the Amazon S3 bucket or an Amazon SNS topic of the existing
-         * delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call
-         * this action and specify the changed values for the S3 bucket and the SNS topic.
-         * If you specify a different value for either the S3 bucket or the SNS topic, this
-         * action will keep the existing value for the parameter that is not changed.</p>
-         *  <p>You can have only one delivery channel per region in your account.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Creates a delivery channel object to deliver configuration information and
+         * other compliance information to an Amazon S3 bucket and Amazon SNS topic. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html">Notifications
+         * that Config Sends to an Amazon SNS topic</a>.</p> <p>Before you can create a
+         * delivery channel, you must create a configuration recorder.</p> <p>You can use
+         * this action to change the Amazon S3 bucket or an Amazon SNS topic of the
+         * existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS
+         * topic, call this action and specify the changed values for the S3 bucket and the
+         * SNS topic. If you specify a different value for either the S3 bucket or the SNS
+         * topic, this action will keep the existing value for the parameter that is not
+         * changed.</p>  <p>You can have only one delivery channel per region in your
+         * account.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">AWS
          * API Reference</a></p>
          */
@@ -2493,7 +2508,7 @@ namespace ConfigService
          * Organization. For information on how many organization conformance packs and how
          * many Config rules you can have per account, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-         * <b>Service Limits</b> </a> in the Config Developer Guide.</p> <p>Only a
+         * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p> <p>Only a
          * management account and a delegated administrator can call this API. When calling
          * this API with a delegated administrator, you must ensure Organizations
          * <code>ListDelegatedAdministrator</code> permissions are added. An organization
@@ -2600,7 +2615,7 @@ namespace ConfigService
          * more information on the conditions that initiate the possible Config evaluation
          * results, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts
-         * | Config Rules</a> in the Config Developer Guide.</p> <p><h3>See
+         * | Config Rules</a> in the <i>Config Developer Guide</i>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">AWS
          * API Reference</a></p>
@@ -2732,17 +2747,17 @@ namespace ConfigService
          * configurations matching the properties.</p> <p>For more information about query
          * components, see the <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-         * <b>Query Components</b> </a> section in the Config Developer Guide.</p> 
-         * <p>If you run an aggregation query (i.e., using <code>GROUP BY</code> or using
-         * aggregate functions such as <code>COUNT</code>; e.g., <code>SELECT resourceId,
-         * COUNT(*) WHERE resourceType = 'AWS::IAM::Role' GROUP BY resourceId</code>) and
-         * do not specify the <code>MaxResults</code> or the <code>Limit</code> query
-         * parameters, the default page size is set to 500.</p> <p>If you run a
-         * non-aggregation query (i.e., not using <code>GROUP BY</code> or aggregate
-         * function; e.g., <code>SELECT * WHERE resourceType = 'AWS::IAM::Role'</code>) and
-         * do not specify the <code>MaxResults</code> or the <code>Limit</code> query
-         * parameters, the default page size is set to 25.</p> <p><h3>See Also:</h3>
-         * <a
+         * <b>Query Components</b> </a> section in the <i>Config Developer Guide</i>.</p>
+         *  <p>If you run an aggregation query (i.e., using <code>GROUP BY</code> or
+         * using aggregate functions such as <code>COUNT</code>; e.g., <code>SELECT
+         * resourceId, COUNT(*) WHERE resourceType = 'AWS::IAM::Role' GROUP BY
+         * resourceId</code>) and do not specify the <code>MaxResults</code> or the
+         * <code>Limit</code> query parameters, the default page size is set to 500.</p>
+         * <p>If you run a non-aggregation query (i.e., not using <code>GROUP BY</code> or
+         * aggregate function; e.g., <code>SELECT * WHERE resourceType =
+         * 'AWS::IAM::Role'</code>) and do not specify the <code>MaxResults</code> or the
+         * <code>Limit</code> query parameters, the default page size is set to 25.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectAggregateResourceConfig">AWS
          * API Reference</a></p>
          */

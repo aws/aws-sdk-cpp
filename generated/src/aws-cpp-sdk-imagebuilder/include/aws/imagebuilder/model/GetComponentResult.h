@@ -70,27 +70,27 @@ namespace Model
 
 
     /**
-     * <p>The component object associated with the specified ARN.</p>
+     * <p>The component object specified in the request.</p>
      */
     inline const Component& GetComponent() const{ return m_component; }
 
     /**
-     * <p>The component object associated with the specified ARN.</p>
+     * <p>The component object specified in the request.</p>
      */
     inline void SetComponent(const Component& value) { m_component = value; }
 
     /**
-     * <p>The component object associated with the specified ARN.</p>
+     * <p>The component object specified in the request.</p>
      */
     inline void SetComponent(Component&& value) { m_component = std::move(value); }
 
     /**
-     * <p>The component object associated with the specified ARN.</p>
+     * <p>The component object specified in the request.</p>
      */
     inline GetComponentResult& WithComponent(const Component& value) { SetComponent(value); return *this;}
 
     /**
-     * <p>The component object associated with the specified ARN.</p>
+     * <p>The component object specified in the request.</p>
      */
     inline GetComponentResult& WithComponent(Component&& value) { SetComponent(std::move(value)); return *this;}
 

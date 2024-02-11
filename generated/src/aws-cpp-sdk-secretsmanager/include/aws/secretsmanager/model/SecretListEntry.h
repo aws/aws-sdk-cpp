@@ -88,66 +88,42 @@ namespace Model
 
 
     /**
-     * <p>The friendly name of the secret. You can use forward slashes in the name to
-     * represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code>
-     * could represent the secret for a server named <code>dbserver1</code> in the
-     * folder <code>databases</code> in the folder <code>prod</code>. </p>
+     * <p>The friendly name of the secret. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The friendly name of the secret. You can use forward slashes in the name to
-     * represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code>
-     * could represent the secret for a server named <code>dbserver1</code> in the
-     * folder <code>databases</code> in the folder <code>prod</code>. </p>
+     * <p>The friendly name of the secret. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The friendly name of the secret. You can use forward slashes in the name to
-     * represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code>
-     * could represent the secret for a server named <code>dbserver1</code> in the
-     * folder <code>databases</code> in the folder <code>prod</code>. </p>
+     * <p>The friendly name of the secret. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The friendly name of the secret. You can use forward slashes in the name to
-     * represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code>
-     * could represent the secret for a server named <code>dbserver1</code> in the
-     * folder <code>databases</code> in the folder <code>prod</code>. </p>
+     * <p>The friendly name of the secret. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The friendly name of the secret. You can use forward slashes in the name to
-     * represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code>
-     * could represent the secret for a server named <code>dbserver1</code> in the
-     * folder <code>databases</code> in the folder <code>prod</code>. </p>
+     * <p>The friendly name of the secret. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The friendly name of the secret. You can use forward slashes in the name to
-     * represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code>
-     * could represent the secret for a server named <code>dbserver1</code> in the
-     * folder <code>databases</code> in the folder <code>prod</code>. </p>
+     * <p>The friendly name of the secret. </p>
      */
     inline SecretListEntry& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name of the secret. You can use forward slashes in the name to
-     * represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code>
-     * could represent the secret for a server named <code>dbserver1</code> in the
-     * folder <code>databases</code> in the folder <code>prod</code>. </p>
+     * <p>The friendly name of the secret. </p>
      */
     inline SecretListEntry& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the secret. You can use forward slashes in the name to
-     * represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code>
-     * could represent the secret for a server named <code>dbserver1</code> in the
-     * folder <code>databases</code> in the folder <code>prod</code>. </p>
+     * <p>The friendly name of the secret. </p>
      */
     inline SecretListEntry& WithName(const char* value) { SetName(value); return *this;}
 
@@ -552,44 +528,38 @@ namespace Model
 
 
     /**
-     * <p>The next date and time that Secrets Manager will attempt to rotate the
-     * secret, rounded to the nearest hour. This value is null if the secret is not set
-     * up for rotation.</p>
+     * <p>The next rotation is scheduled to occur on or before this date. If the secret
+     * isn't configured for rotation, Secrets Manager returns null.</p>
      */
     inline const Aws::Utils::DateTime& GetNextRotationDate() const{ return m_nextRotationDate; }
 
     /**
-     * <p>The next date and time that Secrets Manager will attempt to rotate the
-     * secret, rounded to the nearest hour. This value is null if the secret is not set
-     * up for rotation.</p>
+     * <p>The next rotation is scheduled to occur on or before this date. If the secret
+     * isn't configured for rotation, Secrets Manager returns null.</p>
      */
     inline bool NextRotationDateHasBeenSet() const { return m_nextRotationDateHasBeenSet; }
 
     /**
-     * <p>The next date and time that Secrets Manager will attempt to rotate the
-     * secret, rounded to the nearest hour. This value is null if the secret is not set
-     * up for rotation.</p>
+     * <p>The next rotation is scheduled to occur on or before this date. If the secret
+     * isn't configured for rotation, Secrets Manager returns null.</p>
      */
     inline void SetNextRotationDate(const Aws::Utils::DateTime& value) { m_nextRotationDateHasBeenSet = true; m_nextRotationDate = value; }
 
     /**
-     * <p>The next date and time that Secrets Manager will attempt to rotate the
-     * secret, rounded to the nearest hour. This value is null if the secret is not set
-     * up for rotation.</p>
+     * <p>The next rotation is scheduled to occur on or before this date. If the secret
+     * isn't configured for rotation, Secrets Manager returns null.</p>
      */
     inline void SetNextRotationDate(Aws::Utils::DateTime&& value) { m_nextRotationDateHasBeenSet = true; m_nextRotationDate = std::move(value); }
 
     /**
-     * <p>The next date and time that Secrets Manager will attempt to rotate the
-     * secret, rounded to the nearest hour. This value is null if the secret is not set
-     * up for rotation.</p>
+     * <p>The next rotation is scheduled to occur on or before this date. If the secret
+     * isn't configured for rotation, Secrets Manager returns null.</p>
      */
     inline SecretListEntry& WithNextRotationDate(const Aws::Utils::DateTime& value) { SetNextRotationDate(value); return *this;}
 
     /**
-     * <p>The next date and time that Secrets Manager will attempt to rotate the
-     * secret, rounded to the nearest hour. This value is null if the secret is not set
-     * up for rotation.</p>
+     * <p>The next rotation is scheduled to occur on or before this date. If the secret
+     * isn't configured for rotation, Secrets Manager returns null.</p>
      */
     inline SecretListEntry& WithNextRotationDate(Aws::Utils::DateTime&& value) { SetNextRotationDate(std::move(value)); return *this;}
 

@@ -36,7 +36,8 @@ DataSet::DataSet() :
     m_rowLevelPermissionDataSetHasBeenSet(false),
     m_rowLevelPermissionTagConfigurationHasBeenSet(false),
     m_columnLevelPermissionRulesHasBeenSet(false),
-    m_dataSetUsageConfigurationHasBeenSet(false)
+    m_dataSetUsageConfigurationHasBeenSet(false),
+    m_datasetParametersHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ DataSet::DataSet(JsonView jsonValue) :
     m_rowLevelPermissionDataSetHasBeenSet(false),
     m_rowLevelPermissionTagConfigurationHasBeenSet(false),
     m_columnLevelPermissionRulesHasBeenSet(false),
-    m_dataSetUsageConfigurationHasBeenSet(false)
+    m_dataSetUsageConfigurationHasBeenSet(false),
+    m_datasetParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -195,6 +197,16 @@ DataSet& DataSet::operator =(JsonView jsonValue)
     m_dataSetUsageConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DatasetParameters"))
+  {
+    Aws::Utils::Array<JsonView> datasetParametersJsonList = jsonValue.GetArray("DatasetParameters");
+    for(unsigned datasetParametersIndex = 0; datasetParametersIndex < datasetParametersJsonList.GetLength(); ++datasetParametersIndex)
+    {
+      m_datasetParameters.push_back(datasetParametersJsonList[datasetParametersIndex].AsObject());
+    }
+    m_datasetParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -322,6 +334,17 @@ JsonValue DataSet::Jsonize() const
   if(m_dataSetUsageConfigurationHasBeenSet)
   {
    payload.WithObject("DataSetUsageConfiguration", m_dataSetUsageConfiguration.Jsonize());
+
+  }
+
+  if(m_datasetParametersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> datasetParametersJsonList(m_datasetParameters.size());
+   for(unsigned datasetParametersIndex = 0; datasetParametersIndex < datasetParametersJsonList.GetLength(); ++datasetParametersIndex)
+   {
+     datasetParametersJsonList[datasetParametersIndex].AsObject(m_datasetParameters[datasetParametersIndex].Jsonize());
+   }
+   payload.WithArray("DatasetParameters", std::move(datasetParametersJsonList));
 
   }
 

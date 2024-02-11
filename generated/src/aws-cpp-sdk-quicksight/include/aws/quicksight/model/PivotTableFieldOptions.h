@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/PivotTableFieldOption.h>
 #include <aws/quicksight/model/PivotTableDataPathOption.h>
+#include <aws/quicksight/model/PivotTableFieldCollapseStateOption.h>
 #include <utility>
 
 namespace Aws
@@ -120,6 +121,47 @@ namespace Model
      */
     inline PivotTableFieldOptions& AddDataPathOptions(PivotTableDataPathOption&& value) { m_dataPathOptionsHasBeenSet = true; m_dataPathOptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The collapse state options for the pivot table field options.</p>
+     */
+    inline const Aws::Vector<PivotTableFieldCollapseStateOption>& GetCollapseStateOptions() const{ return m_collapseStateOptions; }
+
+    /**
+     * <p>The collapse state options for the pivot table field options.</p>
+     */
+    inline bool CollapseStateOptionsHasBeenSet() const { return m_collapseStateOptionsHasBeenSet; }
+
+    /**
+     * <p>The collapse state options for the pivot table field options.</p>
+     */
+    inline void SetCollapseStateOptions(const Aws::Vector<PivotTableFieldCollapseStateOption>& value) { m_collapseStateOptionsHasBeenSet = true; m_collapseStateOptions = value; }
+
+    /**
+     * <p>The collapse state options for the pivot table field options.</p>
+     */
+    inline void SetCollapseStateOptions(Aws::Vector<PivotTableFieldCollapseStateOption>&& value) { m_collapseStateOptionsHasBeenSet = true; m_collapseStateOptions = std::move(value); }
+
+    /**
+     * <p>The collapse state options for the pivot table field options.</p>
+     */
+    inline PivotTableFieldOptions& WithCollapseStateOptions(const Aws::Vector<PivotTableFieldCollapseStateOption>& value) { SetCollapseStateOptions(value); return *this;}
+
+    /**
+     * <p>The collapse state options for the pivot table field options.</p>
+     */
+    inline PivotTableFieldOptions& WithCollapseStateOptions(Aws::Vector<PivotTableFieldCollapseStateOption>&& value) { SetCollapseStateOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>The collapse state options for the pivot table field options.</p>
+     */
+    inline PivotTableFieldOptions& AddCollapseStateOptions(const PivotTableFieldCollapseStateOption& value) { m_collapseStateOptionsHasBeenSet = true; m_collapseStateOptions.push_back(value); return *this; }
+
+    /**
+     * <p>The collapse state options for the pivot table field options.</p>
+     */
+    inline PivotTableFieldOptions& AddCollapseStateOptions(PivotTableFieldCollapseStateOption&& value) { m_collapseStateOptionsHasBeenSet = true; m_collapseStateOptions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<PivotTableFieldOption> m_selectedFieldOptions;
@@ -127,6 +169,9 @@ namespace Model
 
     Aws::Vector<PivotTableDataPathOption> m_dataPathOptions;
     bool m_dataPathOptionsHasBeenSet = false;
+
+    Aws::Vector<PivotTableFieldCollapseStateOption> m_collapseStateOptions;
+    bool m_collapseStateOptionsHasBeenSet = false;
   };
 
 } // namespace Model

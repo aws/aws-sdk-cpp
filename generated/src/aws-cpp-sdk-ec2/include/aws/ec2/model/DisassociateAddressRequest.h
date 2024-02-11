@@ -37,83 +37,83 @@ namespace Model
   public:
 
     /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     * <p>The association ID. This parameter is required.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
 
     /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     * <p>The association ID. This parameter is required.</p>
      */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     * <p>The association ID. This parameter is required.</p>
      */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     * <p>The association ID. This parameter is required.</p>
      */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     * <p>The association ID. This parameter is required.</p>
      */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     * <p>The association ID. This parameter is required.</p>
      */
     inline DisassociateAddressRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     * <p>The association ID. This parameter is required.</p>
      */
     inline DisassociateAddressRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+     * <p>The association ID. This parameter is required.</p>
      */
     inline DisassociateAddressRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline DisassociateAddressRequest& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline DisassociateAddressRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline DisassociateAddressRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 

@@ -25,7 +25,10 @@ Action::Action() :
     m_networkConnectionActionHasBeenSet(false),
     m_portProbeActionHasBeenSet(false),
     m_kubernetesApiCallActionHasBeenSet(false),
-    m_rdsLoginAttemptActionHasBeenSet(false)
+    m_rdsLoginAttemptActionHasBeenSet(false),
+    m_kubernetesPermissionCheckedDetailsHasBeenSet(false),
+    m_kubernetesRoleBindingDetailsHasBeenSet(false),
+    m_kubernetesRoleDetailsHasBeenSet(false)
 {
 }
 
@@ -36,7 +39,10 @@ Action::Action(JsonView jsonValue) :
     m_networkConnectionActionHasBeenSet(false),
     m_portProbeActionHasBeenSet(false),
     m_kubernetesApiCallActionHasBeenSet(false),
-    m_rdsLoginAttemptActionHasBeenSet(false)
+    m_rdsLoginAttemptActionHasBeenSet(false),
+    m_kubernetesPermissionCheckedDetailsHasBeenSet(false),
+    m_kubernetesRoleBindingDetailsHasBeenSet(false),
+    m_kubernetesRoleDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +98,27 @@ Action& Action::operator =(JsonView jsonValue)
     m_rdsLoginAttemptActionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("kubernetesPermissionCheckedDetails"))
+  {
+    m_kubernetesPermissionCheckedDetails = jsonValue.GetObject("kubernetesPermissionCheckedDetails");
+
+    m_kubernetesPermissionCheckedDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kubernetesRoleBindingDetails"))
+  {
+    m_kubernetesRoleBindingDetails = jsonValue.GetObject("kubernetesRoleBindingDetails");
+
+    m_kubernetesRoleBindingDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kubernetesRoleDetails"))
+  {
+    m_kubernetesRoleDetails = jsonValue.GetObject("kubernetesRoleDetails");
+
+    m_kubernetesRoleDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +165,24 @@ JsonValue Action::Jsonize() const
   if(m_rdsLoginAttemptActionHasBeenSet)
   {
    payload.WithObject("rdsLoginAttemptAction", m_rdsLoginAttemptAction.Jsonize());
+
+  }
+
+  if(m_kubernetesPermissionCheckedDetailsHasBeenSet)
+  {
+   payload.WithObject("kubernetesPermissionCheckedDetails", m_kubernetesPermissionCheckedDetails.Jsonize());
+
+  }
+
+  if(m_kubernetesRoleBindingDetailsHasBeenSet)
+  {
+   payload.WithObject("kubernetesRoleBindingDetails", m_kubernetesRoleBindingDetails.Jsonize());
+
+  }
+
+  if(m_kubernetesRoleDetailsHasBeenSet)
+  {
+   payload.WithObject("kubernetesRoleDetails", m_kubernetesRoleDetails.Jsonize());
 
   }
 

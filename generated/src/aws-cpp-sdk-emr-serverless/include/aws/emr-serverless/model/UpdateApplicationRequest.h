@@ -14,8 +14,11 @@
 #include <aws/emr-serverless/model/NetworkConfiguration.h>
 #include <aws/emr-serverless/model/Architecture.h>
 #include <aws/emr-serverless/model/ImageConfigurationInput.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/emr-serverless/model/MonitoringConfiguration.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <aws/emr-serverless/model/WorkerTypeSpecificationInput.h>
+#include <aws/emr-serverless/model/Configuration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -541,6 +544,159 @@ namespace Model
      */
     inline UpdateApplicationRequest& AddWorkerTypeSpecifications(const char* key, const WorkerTypeSpecificationInput& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline UpdateApplicationRequest& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline UpdateApplicationRequest& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline UpdateApplicationRequest& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
+
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when updating an application. Each configuration consists
+     * of a classification and properties. This configuration is applied across all the
+     * job runs submitted under the application.</p>
+     */
+    inline const Aws::Vector<Configuration>& GetRuntimeConfiguration() const{ return m_runtimeConfiguration; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when updating an application. Each configuration consists
+     * of a classification and properties. This configuration is applied across all the
+     * job runs submitted under the application.</p>
+     */
+    inline bool RuntimeConfigurationHasBeenSet() const { return m_runtimeConfigurationHasBeenSet; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when updating an application. Each configuration consists
+     * of a classification and properties. This configuration is applied across all the
+     * job runs submitted under the application.</p>
+     */
+    inline void SetRuntimeConfiguration(const Aws::Vector<Configuration>& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = value; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when updating an application. Each configuration consists
+     * of a classification and properties. This configuration is applied across all the
+     * job runs submitted under the application.</p>
+     */
+    inline void SetRuntimeConfiguration(Aws::Vector<Configuration>&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = std::move(value); }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when updating an application. Each configuration consists
+     * of a classification and properties. This configuration is applied across all the
+     * job runs submitted under the application.</p>
+     */
+    inline UpdateApplicationRequest& WithRuntimeConfiguration(const Aws::Vector<Configuration>& value) { SetRuntimeConfiguration(value); return *this;}
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when updating an application. Each configuration consists
+     * of a classification and properties. This configuration is applied across all the
+     * job runs submitted under the application.</p>
+     */
+    inline UpdateApplicationRequest& WithRuntimeConfiguration(Aws::Vector<Configuration>&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when updating an application. Each configuration consists
+     * of a classification and properties. This configuration is applied across all the
+     * job runs submitted under the application.</p>
+     */
+    inline UpdateApplicationRequest& AddRuntimeConfiguration(const Configuration& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration.push_back(value); return *this; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when updating an application. Each configuration consists
+     * of a classification and properties. This configuration is applied across all the
+     * job runs submitted under the application.</p>
+     */
+    inline UpdateApplicationRequest& AddRuntimeConfiguration(Configuration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The configuration setting for monitoring.</p>
+     */
+    inline const MonitoringConfiguration& GetMonitoringConfiguration() const{ return m_monitoringConfiguration; }
+
+    /**
+     * <p>The configuration setting for monitoring.</p>
+     */
+    inline bool MonitoringConfigurationHasBeenSet() const { return m_monitoringConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration setting for monitoring.</p>
+     */
+    inline void SetMonitoringConfiguration(const MonitoringConfiguration& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = value; }
+
+    /**
+     * <p>The configuration setting for monitoring.</p>
+     */
+    inline void SetMonitoringConfiguration(MonitoringConfiguration&& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration setting for monitoring.</p>
+     */
+    inline UpdateApplicationRequest& WithMonitoringConfiguration(const MonitoringConfiguration& value) { SetMonitoringConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration setting for monitoring.</p>
+     */
+    inline UpdateApplicationRequest& WithMonitoringConfiguration(MonitoringConfiguration&& value) { SetMonitoringConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -572,6 +728,15 @@ namespace Model
 
     Aws::Map<Aws::String, WorkerTypeSpecificationInput> m_workerTypeSpecifications;
     bool m_workerTypeSpecificationsHasBeenSet = false;
+
+    Aws::String m_releaseLabel;
+    bool m_releaseLabelHasBeenSet = false;
+
+    Aws::Vector<Configuration> m_runtimeConfiguration;
+    bool m_runtimeConfigurationHasBeenSet = false;
+
+    MonitoringConfiguration m_monitoringConfiguration;
+    bool m_monitoringConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

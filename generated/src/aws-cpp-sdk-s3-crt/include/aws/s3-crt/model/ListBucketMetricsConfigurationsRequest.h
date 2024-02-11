@@ -88,122 +88,122 @@ namespace Model
 
     /**
      * <p>The marker that is used to continue a metrics configuration listing that has
-     * been truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * been truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
      * <p>The marker that is used to continue a metrics configuration listing that has
-     * been truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * been truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
 
     /**
      * <p>The marker that is used to continue a metrics configuration listing that has
-     * been truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * been truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
     /**
      * <p>The marker that is used to continue a metrics configuration listing that has
-     * been truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * been truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
      * <p>The marker that is used to continue a metrics configuration listing that has
-     * been truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * been truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
 
     /**
      * <p>The marker that is used to continue a metrics configuration listing that has
-     * been truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * been truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline ListBucketMetricsConfigurationsRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
      * <p>The marker that is used to continue a metrics configuration listing that has
-     * been truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * been truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline ListBucketMetricsConfigurationsRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
      * <p>The marker that is used to continue a metrics configuration listing that has
-     * been truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * been truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline ListBucketMetricsConfigurationsRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline ListBucketMetricsConfigurationsRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline ListBucketMetricsConfigurationsRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline ListBucketMetricsConfigurationsRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 

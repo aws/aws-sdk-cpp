@@ -18,7 +18,8 @@ UpdateDomainConfigurationRequest::UpdateDomainConfigurationRequest() :
     m_domainConfigurationStatus(DomainConfigurationStatus::NOT_SET),
     m_domainConfigurationStatusHasBeenSet(false),
     m_removeAuthorizerConfig(false),
-    m_removeAuthorizerConfigHasBeenSet(false)
+    m_removeAuthorizerConfigHasBeenSet(false),
+    m_tlsConfigHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,12 @@ Aws::String UpdateDomainConfigurationRequest::SerializePayload() const
   if(m_removeAuthorizerConfigHasBeenSet)
   {
    payload.WithBool("removeAuthorizerConfig", m_removeAuthorizerConfig);
+
+  }
+
+  if(m_tlsConfigHasBeenSet)
+  {
+   payload.WithObject("tlsConfig", m_tlsConfig.Jsonize());
 
   }
 

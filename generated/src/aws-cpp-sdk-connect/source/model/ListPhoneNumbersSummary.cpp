@@ -26,7 +26,10 @@ ListPhoneNumbersSummary::ListPhoneNumbersSummary() :
     m_phoneNumberCountryCodeHasBeenSet(false),
     m_phoneNumberType(PhoneNumberType::NOT_SET),
     m_phoneNumberTypeHasBeenSet(false),
-    m_targetArnHasBeenSet(false)
+    m_targetArnHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_phoneNumberDescriptionHasBeenSet(false),
+    m_sourcePhoneNumberArnHasBeenSet(false)
 {
 }
 
@@ -38,7 +41,10 @@ ListPhoneNumbersSummary::ListPhoneNumbersSummary(JsonView jsonValue) :
     m_phoneNumberCountryCodeHasBeenSet(false),
     m_phoneNumberType(PhoneNumberType::NOT_SET),
     m_phoneNumberTypeHasBeenSet(false),
-    m_targetArnHasBeenSet(false)
+    m_targetArnHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_phoneNumberDescriptionHasBeenSet(false),
+    m_sourcePhoneNumberArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +93,27 @@ ListPhoneNumbersSummary& ListPhoneNumbersSummary::operator =(JsonView jsonValue)
     m_targetArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceId"))
+  {
+    m_instanceId = jsonValue.GetString("InstanceId");
+
+    m_instanceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PhoneNumberDescription"))
+  {
+    m_phoneNumberDescription = jsonValue.GetString("PhoneNumberDescription");
+
+    m_phoneNumberDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourcePhoneNumberArn"))
+  {
+    m_sourcePhoneNumberArn = jsonValue.GetString("SourcePhoneNumberArn");
+
+    m_sourcePhoneNumberArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +152,24 @@ JsonValue ListPhoneNumbersSummary::Jsonize() const
   if(m_targetArnHasBeenSet)
   {
    payload.WithString("TargetArn", m_targetArn);
+
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
+
+  }
+
+  if(m_phoneNumberDescriptionHasBeenSet)
+  {
+   payload.WithString("PhoneNumberDescription", m_phoneNumberDescription);
+
+  }
+
+  if(m_sourcePhoneNumberArnHasBeenSet)
+  {
+   payload.WithString("SourcePhoneNumberArn", m_sourcePhoneNumberArn);
 
   }
 

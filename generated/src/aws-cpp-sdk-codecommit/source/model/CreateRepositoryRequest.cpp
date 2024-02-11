@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateRepositoryRequest::CreateRepositoryRequest() : 
     m_repositoryNameHasBeenSet(false),
     m_repositoryDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String CreateRepositoryRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("kmsKeyId", m_kmsKeyId);
 
   }
 

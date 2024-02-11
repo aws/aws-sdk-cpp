@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EndpointConfigSortKey::NOT_SET:
+            return {};
           case EndpointConfigSortKey::Name:
             return "Name";
           case EndpointConfigSortKey::CreationTime:

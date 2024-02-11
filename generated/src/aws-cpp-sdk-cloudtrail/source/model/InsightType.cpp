@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InsightType::NOT_SET:
+            return {};
           case InsightType::ApiCallRateInsight:
             return "ApiCallRateInsight";
           case InsightType::ApiErrorRateInsight:

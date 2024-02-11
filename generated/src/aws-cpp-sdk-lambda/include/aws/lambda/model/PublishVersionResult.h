@@ -21,6 +21,7 @@
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/SnapStartResponse.h>
 #include <aws/lambda/model/RuntimeVersionConfig.h>
+#include <aws/lambda/model/LoggingConfig.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <aws/lambda/model/Architecture.h>
@@ -1289,6 +1290,32 @@ namespace Model
     inline PublishVersionResult& WithRuntimeVersionConfig(RuntimeVersionConfig&& value) { SetRuntimeVersionConfig(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfig = value; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfig = std::move(value); }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline PublishVersionResult& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline PublishVersionResult& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1381,6 +1408,8 @@ namespace Model
     SnapStartResponse m_snapStart;
 
     RuntimeVersionConfig m_runtimeVersionConfig;
+
+    LoggingConfig m_loggingConfig;
 
     Aws::String m_requestId;
   };

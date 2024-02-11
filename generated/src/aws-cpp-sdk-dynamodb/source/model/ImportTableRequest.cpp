@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ImportTableRequest::ImportTableRequest() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_s3BucketSourceHasBeenSet(false),
     m_inputFormat(InputFormat::NOT_SET),

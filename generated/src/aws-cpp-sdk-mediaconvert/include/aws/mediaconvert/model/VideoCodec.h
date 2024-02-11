@@ -22,6 +22,7 @@ namespace Model
     H_264,
     H_265,
     MPEG2,
+    PASSTHROUGH,
     PRORES,
     VC3,
     VP8,

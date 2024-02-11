@@ -21,6 +21,12 @@ namespace Aws
       {
 
         static const int ACTIVATED_HASH = HashingUtils::HashString("ACTIVATED");
+        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
+        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
+        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int RUNNING_WITH_ERROR_HASH = HashingUtils::HashString("RUNNING_WITH_ERROR");
+        static const int UNDEFINED_HASH = HashingUtils::HashString("UNDEFINED");
 
 
         ComponentStatus GetComponentStatusForName(const Aws::String& name)
@@ -29,6 +35,30 @@ namespace Aws
           if (hashCode == ACTIVATED_HASH)
           {
             return ComponentStatus::ACTIVATED;
+          }
+          else if (hashCode == STARTING_HASH)
+          {
+            return ComponentStatus::STARTING;
+          }
+          else if (hashCode == STOPPED_HASH)
+          {
+            return ComponentStatus::STOPPED;
+          }
+          else if (hashCode == STOPPING_HASH)
+          {
+            return ComponentStatus::STOPPING;
+          }
+          else if (hashCode == RUNNING_HASH)
+          {
+            return ComponentStatus::RUNNING;
+          }
+          else if (hashCode == RUNNING_WITH_ERROR_HASH)
+          {
+            return ComponentStatus::RUNNING_WITH_ERROR;
+          }
+          else if (hashCode == UNDEFINED_HASH)
+          {
+            return ComponentStatus::UNDEFINED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +74,22 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComponentStatus::NOT_SET:
+            return {};
           case ComponentStatus::ACTIVATED:
             return "ACTIVATED";
+          case ComponentStatus::STARTING:
+            return "STARTING";
+          case ComponentStatus::STOPPED:
+            return "STOPPED";
+          case ComponentStatus::STOPPING:
+            return "STOPPING";
+          case ComponentStatus::RUNNING:
+            return "RUNNING";
+          case ComponentStatus::RUNNING_WITH_ERROR:
+            return "RUNNING_WITH_ERROR";
+          case ComponentStatus::UNDEFINED:
+            return "UNDEFINED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

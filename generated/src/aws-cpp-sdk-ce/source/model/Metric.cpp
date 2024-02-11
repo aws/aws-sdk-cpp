@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Metric::NOT_SET:
+            return {};
           case Metric::BLENDED_COST:
             return "BLENDED_COST";
           case Metric::UNBLENDED_COST:

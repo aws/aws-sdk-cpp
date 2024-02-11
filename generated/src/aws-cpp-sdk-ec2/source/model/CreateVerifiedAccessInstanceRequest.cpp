@@ -13,10 +13,12 @@ using namespace Aws::Utils;
 CreateVerifiedAccessInstanceRequest::CreateVerifiedAccessInstanceRequest() : 
     m_descriptionHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_fIPSEnabled(false),
+    m_fIPSEnabledHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,11 @@ Aws::String CreateVerifiedAccessInstanceRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_fIPSEnabledHasBeenSet)
+  {
+    ss << "FIPSEnabled=" << std::boolalpha << m_fIPSEnabled << "&";
   }
 
   ss << "Version=2016-11-15";

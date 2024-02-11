@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateVirtualClusterRequest::CreateVirtualClusterRequest() : 
     m_nameHasBeenSet(false),
     m_containerProviderHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

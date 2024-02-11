@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutboundCrossClusterSearchConnectionStatusCode::NOT_SET:
+            return {};
           case OutboundCrossClusterSearchConnectionStatusCode::PENDING_ACCEPTANCE:
             return "PENDING_ACCEPTANCE";
           case OutboundCrossClusterSearchConnectionStatusCode::VALIDATING:

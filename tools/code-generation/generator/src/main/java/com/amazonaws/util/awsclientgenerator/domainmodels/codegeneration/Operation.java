@@ -51,6 +51,10 @@ public class Operation {
     private boolean requiresServiceNameOverride;
     private String serviceNameOverride;
 
+    // For S3 Express
+    private boolean shouldUsePropertyBag;
+    private boolean shouldSkipChecksum;
+
     // For Host Prefix Injection.
     private boolean hasEndpointTrait;
     private Endpoint endpoint;
@@ -73,4 +77,15 @@ public class Operation {
     private List<String> responseAlgorithms;
     private boolean requestCompressionRequired;
     private boolean requestCompressionRequiredGzip;
+
+    // For Requestless Defaults
+    private boolean requestlessDefault = false;
+
+    public boolean hasRequest() {
+        return this.request != null;
+    }
+
+    public void addRequest(final ShapeMember request) {
+        this.request = request;
+    }
 }

@@ -49,6 +49,9 @@ namespace AuditManager
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef AuditManagerClientConfiguration ClientConfigurationType;
+      typedef AuditManagerEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -228,19 +231,16 @@ namespace AuditManager
         }
 
         /**
-         * <p>Uploads one or more pieces of evidence to a control in an Audit Manager
-         * assessment. You can upload manual evidence from any Amazon Simple Storage
-         * Service (Amazon S3) bucket by specifying the S3 URI of the evidence. </p> <p>You
-         * must upload manual evidence to your S3 bucket before you can upload it to your
-         * assessment. For instructions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
-         * and <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
-         * in the <i>Amazon Simple Storage Service API Reference.</i> </p> <p>The following
-         * restrictions apply to this action:</p> <ul> <li> <p>Maximum size of an
-         * individual evidence file: 100 MB</p> </li> <li> <p>Number of daily manual
-         * evidence uploads per control: 100</p> </li> <li> <p>Supported file formats: See
-         * <a
+         * <p>Adds one or more pieces of evidence to a control in an Audit Manager
+         * assessment. </p> <p>You can import manual evidence from any S3 bucket by
+         * specifying the S3 URI of the object. You can also upload a file from your
+         * browser, or enter plain text in response to a risk assessment question. </p>
+         * <p>The following restrictions apply to this action:</p> <ul> <li> <p>
+         * <code>manualEvidence</code> can be only one of the following:
+         * <code>evidenceFileName</code>, <code>s3ResourcePath</code>, or
+         * <code>textResponse</code> </p> </li> <li> <p>Maximum size of an individual
+         * evidence file: 100 MB</p> </li> <li> <p>Number of daily manual evidence uploads
+         * per control: 100</p> </li> <li> <p>Supported file formats: See <a
          * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
          * file types for manual evidence</a> in the <i>Audit Manager User Guide</i> </p>
          * </li> </ul> <p>For more information about Audit Manager service restrictions,
@@ -494,7 +494,12 @@ namespace AuditManager
         }
 
         /**
-         * <p> Deletes a custom control in Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a custom control in Audit Manager. </p>  <p>When you
+         * invoke this operation, the custom control is deleted from any frameworks or
+         * assessments that it’s currently part of. As a result, Audit Manager will stop
+         * collecting evidence for that custom control in all of your assessments. This
+         * includes assessments that you previously created before you deleted the custom
+         * control.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteControl">AWS
          * API Reference</a></p>
          */
@@ -659,8 +664,8 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns the registration status of an account in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets the registration status of an account in Audit Manager. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAccountStatus">AWS
          * API Reference</a></p>
          */
@@ -685,7 +690,7 @@ namespace AuditManager
         }
 
         /**
-         * <p>Returns an assessment from Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specified assessment. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessment">AWS
          * API Reference</a></p>
          */
@@ -710,7 +715,7 @@ namespace AuditManager
         }
 
         /**
-         * <p>Returns a framework from Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specified framework.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentFramework">AWS
          * API Reference</a></p>
          */
@@ -735,7 +740,7 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns the URL of an assessment report in Audit Manager. </p><p><h3>See
+         * <p> Gets the URL of an assessment report in Audit Manager. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentReportUrl">AWS
          * API Reference</a></p>
@@ -761,8 +766,7 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns a list of changelogs from Audit Manager. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Gets a list of changelogs from Audit Manager. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetChangeLogs">AWS
          * API Reference</a></p>
          */
@@ -787,7 +791,7 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns a control from Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets information about a specified control.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetControl">AWS
          * API Reference</a></p>
          */
@@ -812,8 +816,8 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns a list of delegations from an audit owner to a delegate.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a list of delegations from an audit owner to a delegate. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetDelegations">AWS
          * API Reference</a></p>
          */
@@ -838,7 +842,8 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns evidence from Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets information about a specified evidence item.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidence">AWS
          * API Reference</a></p>
          */
@@ -863,7 +868,7 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns all evidence from a specified evidence folder in Audit Manager.
+         * <p> Gets all evidence from a specified evidence folder in Audit Manager.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceByEvidenceFolder">AWS
          * API Reference</a></p>
@@ -889,7 +894,45 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns an evidence folder from the specified assessment in Audit Manager.
+         * <p>Creates a presigned Amazon S3 URL that can be used to upload a file as manual
+         * evidence. For instructions on how to use this operation, see <a
+         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files">Upload
+         * a file from your browser </a> in the <i>Audit Manager User Guide</i>.</p> <p>The
+         * following restrictions apply to this operation:</p> <ul> <li> <p>Maximum size of
+         * an individual evidence file: 100 MB</p> </li> <li> <p>Number of daily manual
+         * evidence uploads per control: 100</p> </li> <li> <p>Supported file formats: See
+         * <a
+         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
+         * file types for manual evidence</a> in the <i>Audit Manager User Guide</i> </p>
+         * </li> </ul> <p>For more information about Audit Manager service restrictions,
+         * see <a
+         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+         * and restrictions for Audit Manager</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFileUploadUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEvidenceFileUploadUrlOutcome GetEvidenceFileUploadUrl(const Model::GetEvidenceFileUploadUrlRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEvidenceFileUploadUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEvidenceFileUploadUrlRequestT = Model::GetEvidenceFileUploadUrlRequest>
+        Model::GetEvidenceFileUploadUrlOutcomeCallable GetEvidenceFileUploadUrlCallable(const GetEvidenceFileUploadUrlRequestT& request) const
+        {
+            return SubmitCallable(&AuditManagerClient::GetEvidenceFileUploadUrl, request);
+        }
+
+        /**
+         * An Async wrapper for GetEvidenceFileUploadUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEvidenceFileUploadUrlRequestT = Model::GetEvidenceFileUploadUrlRequest>
+        void GetEvidenceFileUploadUrlAsync(const GetEvidenceFileUploadUrlRequestT& request, const GetEvidenceFileUploadUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AuditManagerClient::GetEvidenceFileUploadUrl, request, handler, context);
+        }
+
+        /**
+         * <p> Gets an evidence folder from a specified assessment in Audit Manager.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFolder">AWS
          * API Reference</a></p>
@@ -915,7 +958,7 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns the evidence folders from a specified assessment in Audit Manager.
+         * <p> Gets the evidence folders from a specified assessment in Audit Manager.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFoldersByAssessment">AWS
          * API Reference</a></p>
@@ -941,8 +984,8 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns a list of evidence folders that are associated with a specified
-         * control in an Audit Manager assessment. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a list of evidence folders that are associated with a specified control
+         * in an Audit Manager assessment. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFoldersByAssessmentControl">AWS
          * API Reference</a></p>
          */
@@ -1019,8 +1062,8 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns the name of the delegated Amazon Web Services administrator account
-         * for the organization. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets the name of the delegated Amazon Web Services administrator account for
+         * a specified organization. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
@@ -1045,8 +1088,8 @@ namespace AuditManager
         }
 
         /**
-         * <p>Returns a list of all of the Amazon Web Services that you can choose to
-         * include in your assessment. When you <a
+         * <p>Gets a list of all of the Amazon Web Services that you can choose to include
+         * in your assessment. When you <a
          * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create
          * an assessment</a>, specify which of these services you want to include to narrow
          * the assessment's <a
@@ -1076,7 +1119,7 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns the settings for the specified Amazon Web Services account.
+         * <p> Gets the settings for a specified Amazon Web Services account.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetSettings">AWS
          * API Reference</a></p>

@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a set of DHCP options.</p><p><h3>See Also:</h3>   <a
+   * <p>The set of DHCP options.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DhcpOptions">AWS API
    * Reference</a></p>
    */
@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>One or more DHCP options in the set.</p>
+     * <p>The DHCP options in the set.</p>
      */
     inline const Aws::Vector<DhcpConfiguration>& GetDhcpConfigurations() const{ return m_dhcpConfigurations; }
 
     /**
-     * <p>One or more DHCP options in the set.</p>
+     * <p>The DHCP options in the set.</p>
      */
     inline bool DhcpConfigurationsHasBeenSet() const { return m_dhcpConfigurationsHasBeenSet; }
 
     /**
-     * <p>One or more DHCP options in the set.</p>
+     * <p>The DHCP options in the set.</p>
      */
     inline void SetDhcpConfigurations(const Aws::Vector<DhcpConfiguration>& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = value; }
 
     /**
-     * <p>One or more DHCP options in the set.</p>
+     * <p>The DHCP options in the set.</p>
      */
     inline void SetDhcpConfigurations(Aws::Vector<DhcpConfiguration>&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = std::move(value); }
 
     /**
-     * <p>One or more DHCP options in the set.</p>
+     * <p>The DHCP options in the set.</p>
      */
     inline DhcpOptions& WithDhcpConfigurations(const Aws::Vector<DhcpConfiguration>& value) { SetDhcpConfigurations(value); return *this;}
 
     /**
-     * <p>One or more DHCP options in the set.</p>
+     * <p>The DHCP options in the set.</p>
      */
     inline DhcpOptions& WithDhcpConfigurations(Aws::Vector<DhcpConfiguration>&& value) { SetDhcpConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>One or more DHCP options in the set.</p>
+     * <p>The DHCP options in the set.</p>
      */
     inline DhcpOptions& AddDhcpConfigurations(const DhcpConfiguration& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>One or more DHCP options in the set.</p>
+     * <p>The DHCP options in the set.</p>
      */
     inline DhcpOptions& AddDhcpConfigurations(DhcpConfiguration&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(std::move(value)); return *this; }
 

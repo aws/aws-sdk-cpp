@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wisdom/model/AssistantIntegrationConfiguration.h>
 #include <aws/wisdom/model/ServerSideEncryptionConfiguration.h>
 #include <aws/wisdom/model/AssistantStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -165,6 +166,37 @@ namespace Model
 
 
     /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline const AssistantIntegrationConfiguration& GetIntegrationConfiguration() const{ return m_integrationConfiguration; }
+
+    /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline bool IntegrationConfigurationHasBeenSet() const { return m_integrationConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline void SetIntegrationConfiguration(const AssistantIntegrationConfiguration& value) { m_integrationConfigurationHasBeenSet = true; m_integrationConfiguration = value; }
+
+    /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline void SetIntegrationConfiguration(AssistantIntegrationConfiguration&& value) { m_integrationConfigurationHasBeenSet = true; m_integrationConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline AssistantData& WithIntegrationConfiguration(const AssistantIntegrationConfiguration& value) { SetIntegrationConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline AssistantData& WithIntegrationConfiguration(AssistantIntegrationConfiguration&& value) { SetIntegrationConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -206,32 +238,92 @@ namespace Model
 
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline AssistantData& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must
+     * also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal. </p> <p>For more
+     * information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline AssistantData& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
 
@@ -373,6 +465,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    AssistantIntegrationConfiguration m_integrationConfiguration;
+    bool m_integrationConfigurationHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

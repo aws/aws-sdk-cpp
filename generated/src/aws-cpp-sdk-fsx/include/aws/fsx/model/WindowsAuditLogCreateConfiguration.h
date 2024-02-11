@@ -188,7 +188,7 @@ namespace Model
      * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
      * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
      * of the Amazon CloudWatch Logs log group must begin with the
-     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose
      * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
      * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
      * Amazon FSx will create and use a log stream in the CloudWatch Logs
@@ -211,7 +211,7 @@ namespace Model
      * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
      * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
      * of the Amazon CloudWatch Logs log group must begin with the
-     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose
      * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
      * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
      * Amazon FSx will create and use a log stream in the CloudWatch Logs
@@ -234,7 +234,7 @@ namespace Model
      * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
      * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
      * of the Amazon CloudWatch Logs log group must begin with the
-     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose
      * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
      * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
      * Amazon FSx will create and use a log stream in the CloudWatch Logs
@@ -257,7 +257,7 @@ namespace Model
      * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
      * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
      * of the Amazon CloudWatch Logs log group must begin with the
-     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose
      * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
      * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
      * Amazon FSx will create and use a log stream in the CloudWatch Logs
@@ -280,7 +280,7 @@ namespace Model
      * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
      * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
      * of the Amazon CloudWatch Logs log group must begin with the
-     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose
      * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
      * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
      * Amazon FSx will create and use a log stream in the CloudWatch Logs
@@ -303,7 +303,7 @@ namespace Model
      * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
      * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
      * of the Amazon CloudWatch Logs log group must begin with the
-     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose
      * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
      * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
      * Amazon FSx will create and use a log stream in the CloudWatch Logs
@@ -326,7 +326,7 @@ namespace Model
      * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
      * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
      * of the Amazon CloudWatch Logs log group must begin with the
-     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose
      * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
      * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
      * Amazon FSx will create and use a log stream in the CloudWatch Logs
@@ -349,7 +349,7 @@ namespace Model
      * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
      * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
      * of the Amazon CloudWatch Logs log group must begin with the
-     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose
      * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
      * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
      * Amazon FSx will create and use a log stream in the CloudWatch Logs

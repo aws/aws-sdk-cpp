@@ -41,6 +41,42 @@ namespace Model
 
 
     /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersion = value; }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersion = std::move(value); }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline void SetAgentVersion(const char* value) { m_agentVersion.assign(value); }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline DisconnectSourceServerResult& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline DisconnectSourceServerResult& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline DisconnectSourceServerResult& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
+
+    /**
      * <p>The ARN of the Source Server.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -293,6 +329,49 @@ namespace Model
 
 
     /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline const Aws::String& GetSourceNetworkID() const{ return m_sourceNetworkID; }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline void SetSourceNetworkID(const Aws::String& value) { m_sourceNetworkID = value; }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline void SetSourceNetworkID(Aws::String&& value) { m_sourceNetworkID = std::move(value); }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline void SetSourceNetworkID(const char* value) { m_sourceNetworkID.assign(value); }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline DisconnectSourceServerResult& WithSourceNetworkID(const Aws::String& value) { SetSourceNetworkID(value); return *this;}
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline DisconnectSourceServerResult& WithSourceNetworkID(Aws::String&& value) { SetSourceNetworkID(std::move(value)); return *this;}
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline DisconnectSourceServerResult& WithSourceNetworkID(const char* value) { SetSourceNetworkID(value); return *this;}
+
+
+    /**
      * <p>The source properties of the Source Server.</p>
      */
     inline const SourceProperties& GetSourceProperties() const{ return m_sourceProperties; }
@@ -464,6 +543,8 @@ namespace Model
 
   private:
 
+    Aws::String m_agentVersion;
+
     Aws::String m_arn;
 
     DataReplicationInfo m_dataReplicationInfo;
@@ -479,6 +560,8 @@ namespace Model
     Aws::String m_reversedDirectionSourceServerArn;
 
     SourceCloudProperties m_sourceCloudProperties;
+
+    Aws::String m_sourceNetworkID;
 
     SourceProperties m_sourceProperties;
 

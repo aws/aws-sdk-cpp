@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MsSmoothFragmentLengthControl::NOT_SET:
+            return {};
           case MsSmoothFragmentLengthControl::EXACT:
             return "EXACT";
           case MsSmoothFragmentLengthControl::GOP_MULTIPLE:

@@ -24,6 +24,7 @@
 #include <aws/mgn/model/AssociateSourceServersResult.h>
 #include <aws/mgn/model/ChangeServerLifeCycleStateResult.h>
 #include <aws/mgn/model/CreateApplicationResult.h>
+#include <aws/mgn/model/CreateConnectorResult.h>
 #include <aws/mgn/model/CreateLaunchConfigurationTemplateResult.h>
 #include <aws/mgn/model/CreateReplicationConfigurationTemplateResult.h>
 #include <aws/mgn/model/CreateWaveResult.h>
@@ -47,33 +48,40 @@
 #include <aws/mgn/model/GetReplicationConfigurationResult.h>
 #include <aws/mgn/model/InitializeServiceResult.h>
 #include <aws/mgn/model/ListApplicationsResult.h>
+#include <aws/mgn/model/ListConnectorsResult.h>
 #include <aws/mgn/model/ListExportErrorsResult.h>
 #include <aws/mgn/model/ListExportsResult.h>
 #include <aws/mgn/model/ListImportErrorsResult.h>
 #include <aws/mgn/model/ListImportsResult.h>
+#include <aws/mgn/model/ListManagedAccountsResult.h>
 #include <aws/mgn/model/ListSourceServerActionsResult.h>
 #include <aws/mgn/model/ListTagsForResourceResult.h>
 #include <aws/mgn/model/ListTemplateActionsResult.h>
 #include <aws/mgn/model/ListWavesResult.h>
 #include <aws/mgn/model/MarkAsArchivedResult.h>
+#include <aws/mgn/model/PauseReplicationResult.h>
 #include <aws/mgn/model/PutSourceServerActionResult.h>
 #include <aws/mgn/model/PutTemplateActionResult.h>
 #include <aws/mgn/model/RemoveSourceServerActionResult.h>
 #include <aws/mgn/model/RemoveTemplateActionResult.h>
+#include <aws/mgn/model/ResumeReplicationResult.h>
 #include <aws/mgn/model/RetryDataReplicationResult.h>
 #include <aws/mgn/model/StartCutoverResult.h>
 #include <aws/mgn/model/StartExportResult.h>
 #include <aws/mgn/model/StartImportResult.h>
 #include <aws/mgn/model/StartReplicationResult.h>
 #include <aws/mgn/model/StartTestResult.h>
+#include <aws/mgn/model/StopReplicationResult.h>
 #include <aws/mgn/model/TerminateTargetInstancesResult.h>
 #include <aws/mgn/model/UnarchiveApplicationResult.h>
 #include <aws/mgn/model/UnarchiveWaveResult.h>
 #include <aws/mgn/model/UpdateApplicationResult.h>
+#include <aws/mgn/model/UpdateConnectorResult.h>
 #include <aws/mgn/model/UpdateLaunchConfigurationResult.h>
 #include <aws/mgn/model/UpdateLaunchConfigurationTemplateResult.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationResult.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationTemplateResult.h>
+#include <aws/mgn/model/UpdateSourceServerResult.h>
 #include <aws/mgn/model/UpdateSourceServerReplicationTypeResult.h>
 #include <aws/mgn/model/UpdateWaveResult.h>
 #include <aws/core/NoResult.h>
@@ -123,10 +131,12 @@ namespace Aws
       class AssociateSourceServersRequest;
       class ChangeServerLifeCycleStateRequest;
       class CreateApplicationRequest;
+      class CreateConnectorRequest;
       class CreateLaunchConfigurationTemplateRequest;
       class CreateReplicationConfigurationTemplateRequest;
       class CreateWaveRequest;
       class DeleteApplicationRequest;
+      class DeleteConnectorRequest;
       class DeleteJobRequest;
       class DeleteLaunchConfigurationTemplateRequest;
       class DeleteReplicationConfigurationTemplateRequest;
@@ -147,35 +157,42 @@ namespace Aws
       class GetReplicationConfigurationRequest;
       class InitializeServiceRequest;
       class ListApplicationsRequest;
+      class ListConnectorsRequest;
       class ListExportErrorsRequest;
       class ListExportsRequest;
       class ListImportErrorsRequest;
       class ListImportsRequest;
+      class ListManagedAccountsRequest;
       class ListSourceServerActionsRequest;
       class ListTagsForResourceRequest;
       class ListTemplateActionsRequest;
       class ListWavesRequest;
       class MarkAsArchivedRequest;
+      class PauseReplicationRequest;
       class PutSourceServerActionRequest;
       class PutTemplateActionRequest;
       class RemoveSourceServerActionRequest;
       class RemoveTemplateActionRequest;
+      class ResumeReplicationRequest;
       class RetryDataReplicationRequest;
       class StartCutoverRequest;
       class StartExportRequest;
       class StartImportRequest;
       class StartReplicationRequest;
       class StartTestRequest;
+      class StopReplicationRequest;
       class TagResourceRequest;
       class TerminateTargetInstancesRequest;
       class UnarchiveApplicationRequest;
       class UnarchiveWaveRequest;
       class UntagResourceRequest;
       class UpdateApplicationRequest;
+      class UpdateConnectorRequest;
       class UpdateLaunchConfigurationRequest;
       class UpdateLaunchConfigurationTemplateRequest;
       class UpdateReplicationConfigurationRequest;
       class UpdateReplicationConfigurationTemplateRequest;
+      class UpdateSourceServerRequest;
       class UpdateSourceServerReplicationTypeRequest;
       class UpdateWaveRequest;
       /* End of service model forward declarations required in MgnClient header */
@@ -187,10 +204,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssociateSourceServersResult, MgnError> AssociateSourceServersOutcome;
       typedef Aws::Utils::Outcome<ChangeServerLifeCycleStateResult, MgnError> ChangeServerLifeCycleStateOutcome;
       typedef Aws::Utils::Outcome<CreateApplicationResult, MgnError> CreateApplicationOutcome;
+      typedef Aws::Utils::Outcome<CreateConnectorResult, MgnError> CreateConnectorOutcome;
       typedef Aws::Utils::Outcome<CreateLaunchConfigurationTemplateResult, MgnError> CreateLaunchConfigurationTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateReplicationConfigurationTemplateResult, MgnError> CreateReplicationConfigurationTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateWaveResult, MgnError> CreateWaveOutcome;
       typedef Aws::Utils::Outcome<DeleteApplicationResult, MgnError> DeleteApplicationOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, MgnError> DeleteConnectorOutcome;
       typedef Aws::Utils::Outcome<DeleteJobResult, MgnError> DeleteJobOutcome;
       typedef Aws::Utils::Outcome<DeleteLaunchConfigurationTemplateResult, MgnError> DeleteLaunchConfigurationTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteReplicationConfigurationTemplateResult, MgnError> DeleteReplicationConfigurationTemplateOutcome;
@@ -211,35 +230,42 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetReplicationConfigurationResult, MgnError> GetReplicationConfigurationOutcome;
       typedef Aws::Utils::Outcome<InitializeServiceResult, MgnError> InitializeServiceOutcome;
       typedef Aws::Utils::Outcome<ListApplicationsResult, MgnError> ListApplicationsOutcome;
+      typedef Aws::Utils::Outcome<ListConnectorsResult, MgnError> ListConnectorsOutcome;
       typedef Aws::Utils::Outcome<ListExportErrorsResult, MgnError> ListExportErrorsOutcome;
       typedef Aws::Utils::Outcome<ListExportsResult, MgnError> ListExportsOutcome;
       typedef Aws::Utils::Outcome<ListImportErrorsResult, MgnError> ListImportErrorsOutcome;
       typedef Aws::Utils::Outcome<ListImportsResult, MgnError> ListImportsOutcome;
+      typedef Aws::Utils::Outcome<ListManagedAccountsResult, MgnError> ListManagedAccountsOutcome;
       typedef Aws::Utils::Outcome<ListSourceServerActionsResult, MgnError> ListSourceServerActionsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, MgnError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTemplateActionsResult, MgnError> ListTemplateActionsOutcome;
       typedef Aws::Utils::Outcome<ListWavesResult, MgnError> ListWavesOutcome;
       typedef Aws::Utils::Outcome<MarkAsArchivedResult, MgnError> MarkAsArchivedOutcome;
+      typedef Aws::Utils::Outcome<PauseReplicationResult, MgnError> PauseReplicationOutcome;
       typedef Aws::Utils::Outcome<PutSourceServerActionResult, MgnError> PutSourceServerActionOutcome;
       typedef Aws::Utils::Outcome<PutTemplateActionResult, MgnError> PutTemplateActionOutcome;
       typedef Aws::Utils::Outcome<RemoveSourceServerActionResult, MgnError> RemoveSourceServerActionOutcome;
       typedef Aws::Utils::Outcome<RemoveTemplateActionResult, MgnError> RemoveTemplateActionOutcome;
+      typedef Aws::Utils::Outcome<ResumeReplicationResult, MgnError> ResumeReplicationOutcome;
       typedef Aws::Utils::Outcome<RetryDataReplicationResult, MgnError> RetryDataReplicationOutcome;
       typedef Aws::Utils::Outcome<StartCutoverResult, MgnError> StartCutoverOutcome;
       typedef Aws::Utils::Outcome<StartExportResult, MgnError> StartExportOutcome;
       typedef Aws::Utils::Outcome<StartImportResult, MgnError> StartImportOutcome;
       typedef Aws::Utils::Outcome<StartReplicationResult, MgnError> StartReplicationOutcome;
       typedef Aws::Utils::Outcome<StartTestResult, MgnError> StartTestOutcome;
+      typedef Aws::Utils::Outcome<StopReplicationResult, MgnError> StopReplicationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, MgnError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<TerminateTargetInstancesResult, MgnError> TerminateTargetInstancesOutcome;
       typedef Aws::Utils::Outcome<UnarchiveApplicationResult, MgnError> UnarchiveApplicationOutcome;
       typedef Aws::Utils::Outcome<UnarchiveWaveResult, MgnError> UnarchiveWaveOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, MgnError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateApplicationResult, MgnError> UpdateApplicationOutcome;
+      typedef Aws::Utils::Outcome<UpdateConnectorResult, MgnError> UpdateConnectorOutcome;
       typedef Aws::Utils::Outcome<UpdateLaunchConfigurationResult, MgnError> UpdateLaunchConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateLaunchConfigurationTemplateResult, MgnError> UpdateLaunchConfigurationTemplateOutcome;
       typedef Aws::Utils::Outcome<UpdateReplicationConfigurationResult, MgnError> UpdateReplicationConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateReplicationConfigurationTemplateResult, MgnError> UpdateReplicationConfigurationTemplateOutcome;
+      typedef Aws::Utils::Outcome<UpdateSourceServerResult, MgnError> UpdateSourceServerOutcome;
       typedef Aws::Utils::Outcome<UpdateSourceServerReplicationTypeResult, MgnError> UpdateSourceServerReplicationTypeOutcome;
       typedef Aws::Utils::Outcome<UpdateWaveResult, MgnError> UpdateWaveOutcome;
       /* End of service model Outcome class definitions */
@@ -251,10 +277,12 @@ namespace Aws
       typedef std::future<AssociateSourceServersOutcome> AssociateSourceServersOutcomeCallable;
       typedef std::future<ChangeServerLifeCycleStateOutcome> ChangeServerLifeCycleStateOutcomeCallable;
       typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
+      typedef std::future<CreateConnectorOutcome> CreateConnectorOutcomeCallable;
       typedef std::future<CreateLaunchConfigurationTemplateOutcome> CreateLaunchConfigurationTemplateOutcomeCallable;
       typedef std::future<CreateReplicationConfigurationTemplateOutcome> CreateReplicationConfigurationTemplateOutcomeCallable;
       typedef std::future<CreateWaveOutcome> CreateWaveOutcomeCallable;
       typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
+      typedef std::future<DeleteConnectorOutcome> DeleteConnectorOutcomeCallable;
       typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
       typedef std::future<DeleteLaunchConfigurationTemplateOutcome> DeleteLaunchConfigurationTemplateOutcomeCallable;
       typedef std::future<DeleteReplicationConfigurationTemplateOutcome> DeleteReplicationConfigurationTemplateOutcomeCallable;
@@ -275,35 +303,42 @@ namespace Aws
       typedef std::future<GetReplicationConfigurationOutcome> GetReplicationConfigurationOutcomeCallable;
       typedef std::future<InitializeServiceOutcome> InitializeServiceOutcomeCallable;
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
+      typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
       typedef std::future<ListExportErrorsOutcome> ListExportErrorsOutcomeCallable;
       typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
       typedef std::future<ListImportErrorsOutcome> ListImportErrorsOutcomeCallable;
       typedef std::future<ListImportsOutcome> ListImportsOutcomeCallable;
+      typedef std::future<ListManagedAccountsOutcome> ListManagedAccountsOutcomeCallable;
       typedef std::future<ListSourceServerActionsOutcome> ListSourceServerActionsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTemplateActionsOutcome> ListTemplateActionsOutcomeCallable;
       typedef std::future<ListWavesOutcome> ListWavesOutcomeCallable;
       typedef std::future<MarkAsArchivedOutcome> MarkAsArchivedOutcomeCallable;
+      typedef std::future<PauseReplicationOutcome> PauseReplicationOutcomeCallable;
       typedef std::future<PutSourceServerActionOutcome> PutSourceServerActionOutcomeCallable;
       typedef std::future<PutTemplateActionOutcome> PutTemplateActionOutcomeCallable;
       typedef std::future<RemoveSourceServerActionOutcome> RemoveSourceServerActionOutcomeCallable;
       typedef std::future<RemoveTemplateActionOutcome> RemoveTemplateActionOutcomeCallable;
+      typedef std::future<ResumeReplicationOutcome> ResumeReplicationOutcomeCallable;
       typedef std::future<RetryDataReplicationOutcome> RetryDataReplicationOutcomeCallable;
       typedef std::future<StartCutoverOutcome> StartCutoverOutcomeCallable;
       typedef std::future<StartExportOutcome> StartExportOutcomeCallable;
       typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
       typedef std::future<StartReplicationOutcome> StartReplicationOutcomeCallable;
       typedef std::future<StartTestOutcome> StartTestOutcomeCallable;
+      typedef std::future<StopReplicationOutcome> StopReplicationOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<TerminateTargetInstancesOutcome> TerminateTargetInstancesOutcomeCallable;
       typedef std::future<UnarchiveApplicationOutcome> UnarchiveApplicationOutcomeCallable;
       typedef std::future<UnarchiveWaveOutcome> UnarchiveWaveOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
+      typedef std::future<UpdateConnectorOutcome> UpdateConnectorOutcomeCallable;
       typedef std::future<UpdateLaunchConfigurationOutcome> UpdateLaunchConfigurationOutcomeCallable;
       typedef std::future<UpdateLaunchConfigurationTemplateOutcome> UpdateLaunchConfigurationTemplateOutcomeCallable;
       typedef std::future<UpdateReplicationConfigurationOutcome> UpdateReplicationConfigurationOutcomeCallable;
       typedef std::future<UpdateReplicationConfigurationTemplateOutcome> UpdateReplicationConfigurationTemplateOutcomeCallable;
+      typedef std::future<UpdateSourceServerOutcome> UpdateSourceServerOutcomeCallable;
       typedef std::future<UpdateSourceServerReplicationTypeOutcome> UpdateSourceServerReplicationTypeOutcomeCallable;
       typedef std::future<UpdateWaveOutcome> UpdateWaveOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -318,10 +353,12 @@ namespace Aws
     typedef std::function<void(const MgnClient*, const Model::AssociateSourceServersRequest&, const Model::AssociateSourceServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSourceServersResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::ChangeServerLifeCycleStateRequest&, const Model::ChangeServerLifeCycleStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeServerLifeCycleStateResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
+    typedef std::function<void(const MgnClient*, const Model::CreateConnectorRequest&, const Model::CreateConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectorResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::CreateLaunchConfigurationTemplateRequest&, const Model::CreateLaunchConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::CreateReplicationConfigurationTemplateRequest&, const Model::CreateReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::CreateWaveRequest&, const Model::CreateWaveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWaveResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
+    typedef std::function<void(const MgnClient*, const Model::DeleteConnectorRequest&, const Model::DeleteConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectorResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::DeleteLaunchConfigurationTemplateRequest&, const Model::DeleteLaunchConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::DeleteReplicationConfigurationTemplateRequest&, const Model::DeleteReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationConfigurationTemplateResponseReceivedHandler;
@@ -342,35 +379,42 @@ namespace Aws
     typedef std::function<void(const MgnClient*, const Model::GetReplicationConfigurationRequest&, const Model::GetReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReplicationConfigurationResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::InitializeServiceRequest&, const Model::InitializeServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitializeServiceResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
+    typedef std::function<void(const MgnClient*, const Model::ListConnectorsRequest&, const Model::ListConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectorsResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::ListExportErrorsRequest&, const Model::ListExportErrorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExportErrorsResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::ListExportsRequest&, const Model::ListExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExportsResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::ListImportErrorsRequest&, const Model::ListImportErrorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportErrorsResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::ListImportsRequest&, const Model::ListImportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportsResponseReceivedHandler;
+    typedef std::function<void(const MgnClient*, const Model::ListManagedAccountsRequest&, const Model::ListManagedAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedAccountsResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::ListSourceServerActionsRequest&, const Model::ListSourceServerActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSourceServerActionsResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::ListTemplateActionsRequest&, const Model::ListTemplateActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTemplateActionsResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::ListWavesRequest&, const Model::ListWavesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWavesResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::MarkAsArchivedRequest&, const Model::MarkAsArchivedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MarkAsArchivedResponseReceivedHandler;
+    typedef std::function<void(const MgnClient*, const Model::PauseReplicationRequest&, const Model::PauseReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PauseReplicationResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::PutSourceServerActionRequest&, const Model::PutSourceServerActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSourceServerActionResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::PutTemplateActionRequest&, const Model::PutTemplateActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTemplateActionResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::RemoveSourceServerActionRequest&, const Model::RemoveSourceServerActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveSourceServerActionResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::RemoveTemplateActionRequest&, const Model::RemoveTemplateActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTemplateActionResponseReceivedHandler;
+    typedef std::function<void(const MgnClient*, const Model::ResumeReplicationRequest&, const Model::ResumeReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeReplicationResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::RetryDataReplicationRequest&, const Model::RetryDataReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryDataReplicationResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::StartCutoverRequest&, const Model::StartCutoverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCutoverResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::StartExportRequest&, const Model::StartExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExportResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::StartImportRequest&, const Model::StartImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::StartReplicationRequest&, const Model::StartReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::StartTestRequest&, const Model::StartTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTestResponseReceivedHandler;
+    typedef std::function<void(const MgnClient*, const Model::StopReplicationRequest&, const Model::StopReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopReplicationResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::TerminateTargetInstancesRequest&, const Model::TerminateTargetInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateTargetInstancesResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::UnarchiveApplicationRequest&, const Model::UnarchiveApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnarchiveApplicationResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::UnarchiveWaveRequest&, const Model::UnarchiveWaveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnarchiveWaveResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
+    typedef std::function<void(const MgnClient*, const Model::UpdateConnectorRequest&, const Model::UpdateConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectorResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::UpdateLaunchConfigurationRequest&, const Model::UpdateLaunchConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLaunchConfigurationResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::UpdateLaunchConfigurationTemplateRequest&, const Model::UpdateLaunchConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLaunchConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::UpdateReplicationConfigurationRequest&, const Model::UpdateReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReplicationConfigurationResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::UpdateReplicationConfigurationTemplateRequest&, const Model::UpdateReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReplicationConfigurationTemplateResponseReceivedHandler;
+    typedef std::function<void(const MgnClient*, const Model::UpdateSourceServerRequest&, const Model::UpdateSourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSourceServerResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::UpdateSourceServerReplicationTypeRequest&, const Model::UpdateSourceServerReplicationTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSourceServerReplicationTypeResponseReceivedHandler;
     typedef std::function<void(const MgnClient*, const Model::UpdateWaveRequest&, const Model::UpdateWaveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWaveResponseReceivedHandler;
     /* End of service model async handlers definitions */

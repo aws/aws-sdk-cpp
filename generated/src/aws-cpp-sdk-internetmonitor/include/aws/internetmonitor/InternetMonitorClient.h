@@ -18,8 +18,8 @@ namespace InternetMonitor
   /**
    * <p>Amazon CloudWatch Internet Monitor provides visibility into how internet
    * issues impact the performance and availability between your applications hosted
-   * on Amazon Web Services and your end users. It reduces the time it takes for you
-   * to diagnose internet issues from days to minutes. Internet Monitor uses the
+   * on Amazon Web Services and your end users. It can reduce the time it takes for
+   * you to diagnose internet issues from days to minutes. Internet Monitor uses the
    * connectivity data that Amazon Web Services captures from its global networking
    * footprint to calculate a baseline of performance and availability for internet
    * traffic. This is the same data that Amazon Web Services uses to monitor internet
@@ -34,11 +34,12 @@ namespace InternetMonitor
    * also automatically receive an Amazon Web Services Health Dashboard notification
    * with the steps that Amazon Web Services is taking to mitigate the problem.</p>
    * <p>To use Internet Monitor, you create a <i>monitor</i> and associate your
-   * application's resources with it, VPCs, CloudFront distributions, or WorkSpaces
-   * directories, to enable Internet Monitor to know where your application's
-   * internet traffic is. Internet Monitor then provides internet measurements from
-   * Amazon Web Services that are specific to the locations and networks that
-   * communicate with your application.</p> <p>For more information, see <a
+   * application's resources with it - VPCs, NLBs, CloudFront distributions, or
+   * WorkSpaces directories - so Internet Monitor can determine where your
+   * application's internet traffic is. Internet Monitor then provides internet
+   * measurements from Amazon Web Services that are specific to the locations and
+   * ASNs (typically, internet service providers or ISPs) that communicate with your
+   * application.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-InternetMonitor.html">Using
    * Amazon CloudWatch Internet Monitor</a> in the <i>Amazon CloudWatch User
    * Guide</i>.</p>
@@ -49,6 +50,9 @@ namespace InternetMonitor
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef InternetMonitorClientConfiguration ClientConfigurationType;
+      typedef InternetMonitorEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -100,19 +104,22 @@ namespace InternetMonitor
 
         /**
          * <p>Creates a monitor in Amazon CloudWatch Internet Monitor. A monitor is built
-         * based on information from the application resources that you add: Amazon Virtual
-         * Private Clouds (VPCs), Amazon CloudFront distributions, and WorkSpaces
+         * based on information from the application resources that you add: VPCs, Network
+         * Load Balancers (NLBs), Amazon CloudFront distributions, and Amazon WorkSpaces
          * directories. Internet Monitor then publishes internet measurements from Amazon
-         * Web Services that are specific to the <i>city-networks</i>, that is, the
+         * Web Services that are specific to the <i>city-networks</i>. That is, the
          * locations and ASNs (typically internet service providers or ISPs), where clients
          * access your application. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-InternetMonitor.html">Using
          * Amazon CloudWatch Internet Monitor</a> in the <i>Amazon CloudWatch User
-         * Guide</i>.</p> <p>When you create a monitor, you set a maximum limit for the
-         * number of city-networks where client traffic is monitored. The city-network
-         * maximum that you choose is the limit, but you only pay for the number of
-         * city-networks that are actually monitored. You can change the maximum at any
-         * time by updating your monitor. For more information, see <a
+         * Guide</i>.</p> <p>When you create a monitor, you choose the percentage of
+         * traffic that you want to monitor. You can also set a maximum limit for the
+         * number of city-networks where client traffic is monitored, that caps the total
+         * traffic that Internet Monitor monitors. A city-network maximum is the limit of
+         * city-networks, but you only pay for the number of city-networks that are
+         * actually monitored. You can update your monitor at any time to change the
+         * percentage of traffic to monitor or the city-networks maximum. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
          * a city-network maximum value</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -168,10 +175,10 @@ namespace InternetMonitor
         /**
          * <p>Gets information the Amazon CloudWatch Internet Monitor has created and
          * stored about a health event for a specified monitor. This information includes
-         * the impacted locations, and all of the information related to the event by
-         * location.</p> <p>The information returned includes the performance,
-         * availability, and round-trip time impact, information about the network
-         * providers, the event type, and so on.</p> <p>Information rolled up at the global
+         * the impacted locations, and all the information related to the event, by
+         * location.</p> <p>The information returned includes the impact on performance,
+         * availability, and round-trip time, information about the network providers
+         * (ASNs), the event type, and so on.</p> <p>Information rolled up at the global
          * traffic level is also returned, including the impact type and total traffic
          * impact.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetHealthEvent">AWS
@@ -226,12 +233,75 @@ namespace InternetMonitor
         }
 
         /**
+         * <p>Return the data for a query with the Amazon CloudWatch Internet Monitor query
+         * interface. Specify the query that you want to return results for by providing a
+         * <code>QueryId</code> and a monitor name.</p> <p>For more information about using
+         * the query interface, including examples, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html">Using
+         * the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon
+         * CloudWatch Internet Monitor User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetQueryResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetQueryResultsOutcome GetQueryResults(const Model::GetQueryResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetQueryResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetQueryResultsRequestT = Model::GetQueryResultsRequest>
+        Model::GetQueryResultsOutcomeCallable GetQueryResultsCallable(const GetQueryResultsRequestT& request) const
+        {
+            return SubmitCallable(&InternetMonitorClient::GetQueryResults, request);
+        }
+
+        /**
+         * An Async wrapper for GetQueryResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetQueryResultsRequestT = Model::GetQueryResultsRequest>
+        void GetQueryResultsAsync(const GetQueryResultsRequestT& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&InternetMonitorClient::GetQueryResults, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the current status of a query for the Amazon CloudWatch Internet
+         * Monitor query interface, for a specified query ID and monitor. When you run a
+         * query, check the status to make sure that the query has <code>SUCCEEDED</code>
+         * before you review the results.</p> <ul> <li> <p> <code>QUEUED</code>: The query
+         * is scheduled to run.</p> </li> <li> <p> <code>RUNNING</code>: The query is in
+         * progress but not complete.</p> </li> <li> <p> <code>SUCCEEDED</code>: The query
+         * completed sucessfully.</p> </li> <li> <p> <code>FAILED</code>: The query failed
+         * due to an error.</p> </li> <li> <p> <code>CANCELED</code>: The query was
+         * canceled.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetQueryStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetQueryStatusOutcome GetQueryStatus(const Model::GetQueryStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetQueryStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetQueryStatusRequestT = Model::GetQueryStatusRequest>
+        Model::GetQueryStatusOutcomeCallable GetQueryStatusCallable(const GetQueryStatusRequestT& request) const
+        {
+            return SubmitCallable(&InternetMonitorClient::GetQueryStatus, request);
+        }
+
+        /**
+         * An Async wrapper for GetQueryStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetQueryStatusRequestT = Model::GetQueryStatusRequest>
+        void GetQueryStatusAsync(const GetQueryStatusRequestT& request, const GetQueryStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&InternetMonitorClient::GetQueryStatus, request, handler, context);
+        }
+
+        /**
          * <p>Lists all health events for a monitor in Amazon CloudWatch Internet Monitor.
-         * Returns all information for health events including the client location
-         * information the network cause and status, event start and end time, percentage
-         * of total traffic impacted, and status.</p>  <p>Health events that have
-         * start times during the time frame that is requested are not included in the list
-         * of health events.</p> <p><h3>See Also:</h3>   <a
+         * Returns information for health events including the event start and end time and
+         * the status.</p>  <p>Health events that have start times during the time
+         * frame that is requested are not included in the list of health events.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListHealthEvents">AWS
          * API Reference</a></p>
          */
@@ -309,6 +379,65 @@ namespace InternetMonitor
         }
 
         /**
+         * <p>Start a query to return data for a specific query type for the Amazon
+         * CloudWatch Internet Monitor query interface. Specify a time period for the data
+         * that you want returned by using <code>StartTime</code> and <code>EndTime</code>.
+         * You filter the query results to return by providing parameters that you specify
+         * with <code>FilterParameters</code>.</p> <p>For more information about using the
+         * query interface, including examples, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html">Using
+         * the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon
+         * CloudWatch Internet Monitor User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/StartQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartQueryOutcome StartQuery(const Model::StartQueryRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartQuery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartQueryRequestT = Model::StartQueryRequest>
+        Model::StartQueryOutcomeCallable StartQueryCallable(const StartQueryRequestT& request) const
+        {
+            return SubmitCallable(&InternetMonitorClient::StartQuery, request);
+        }
+
+        /**
+         * An Async wrapper for StartQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartQueryRequestT = Model::StartQueryRequest>
+        void StartQueryAsync(const StartQueryRequestT& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&InternetMonitorClient::StartQuery, request, handler, context);
+        }
+
+        /**
+         * <p>Stop a query that is progress for a specific monitor.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/StopQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopQueryOutcome StopQuery(const Model::StopQueryRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopQuery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopQueryRequestT = Model::StopQueryRequest>
+        Model::StopQueryOutcomeCallable StopQueryCallable(const StopQueryRequestT& request) const
+        {
+            return SubmitCallable(&InternetMonitorClient::StopQuery, request);
+        }
+
+        /**
+         * An Async wrapper for StopQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopQueryRequestT = Model::StopQueryRequest>
+        void StopQueryAsync(const StopQueryRequestT& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&InternetMonitorClient::StopQuery, request, handler, context);
+        }
+
+        /**
          * <p>Adds a tag to a resource. Tags are supported only for monitors in Amazon
          * CloudWatch Internet Monitor. You can add a maximum of 50 tags in Internet
          * Monitor.</p> <p>A minimum of one tag is required for this call. It returns an
@@ -363,12 +492,12 @@ namespace InternetMonitor
         }
 
         /**
-         * <p>Updates a monitor. You can update a monitor to change the maximum number of
-         * city-networks (locations and ASNs or internet service providers), to add or
-         * remove resources, or to change the status of the monitor. Note that you can't
-         * change the name of a monitor.</p> <p>The city-network maximum that you choose is
-         * the limit, but you only pay for the number of city-networks that are actually
-         * monitored. For more information, see <a
+         * <p>Updates a monitor. You can update a monitor to change the percentage of
+         * traffic to monitor or the maximum number of city-networks (locations and ASNs),
+         * to add or remove resources, or to change the status of the monitor. Note that
+         * you can't change the name of a monitor.</p> <p>The city-network maximum that you
+         * choose is the limit, but you only pay for the number of city-networks that are
+         * actually monitored. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
          * a city-network maximum value</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a

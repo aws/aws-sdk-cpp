@@ -14,9 +14,11 @@ using namespace Aws::Utils;
 
 ListAppVersionsRequest::ListAppVersionsRequest() : 
     m_appArnHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -30,6 +32,11 @@ Aws::String ListAppVersionsRequest::SerializePayload() const
 
   }
 
+  if(m_endTimeHasBeenSet)
+  {
+   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  }
+
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
@@ -40,6 +47,11 @@ Aws::String ListAppVersionsRequest::SerializePayload() const
   {
    payload.WithString("nextToken", m_nextToken);
 
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();

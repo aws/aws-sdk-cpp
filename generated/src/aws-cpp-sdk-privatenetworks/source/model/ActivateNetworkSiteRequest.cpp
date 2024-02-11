@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 ActivateNetworkSiteRequest::ActivateNetworkSiteRequest() : 
     m_clientTokenHasBeenSet(false),
+    m_commitmentConfigurationHasBeenSet(false),
     m_networkSiteArnHasBeenSet(false),
     m_shippingAddressHasBeenSet(false)
 {
@@ -26,6 +27,12 @@ Aws::String ActivateNetworkSiteRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_commitmentConfigurationHasBeenSet)
+  {
+   payload.WithObject("commitmentConfiguration", m_commitmentConfiguration.Jsonize());
 
   }
 

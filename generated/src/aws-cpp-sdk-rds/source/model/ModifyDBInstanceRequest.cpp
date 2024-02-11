@@ -43,6 +43,10 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_tdeCredentialPasswordHasBeenSet(false),
     m_cACertificateIdentifierHasBeenSet(false),
     m_domainHasBeenSet(false),
+    m_domainFqdnHasBeenSet(false),
+    m_domainOuHasBeenSet(false),
+    m_domainAuthSecretArnHasBeenSet(false),
+    m_domainDnsIpsHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_monitoringInterval(0),
@@ -53,6 +57,8 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_publiclyAccessibleHasBeenSet(false),
     m_monitoringRoleArnHasBeenSet(false),
     m_domainIAMRoleNameHasBeenSet(false),
+    m_disableDomain(false),
+    m_disableDomainHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
     m_enableIAMDatabaseAuthentication(false),
@@ -88,7 +94,12 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_manageMasterUserPasswordHasBeenSet(false),
     m_rotateMasterUserPassword(false),
     m_rotateMasterUserPasswordHasBeenSet(false),
-    m_masterUserSecretKmsKeyIdHasBeenSet(false)
+    m_masterUserSecretKmsKeyIdHasBeenSet(false),
+    m_engineHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
 }
 
@@ -233,6 +244,32 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
     ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
   }
 
+  if(m_domainFqdnHasBeenSet)
+  {
+    ss << "DomainFqdn=" << StringUtils::URLEncode(m_domainFqdn.c_str()) << "&";
+  }
+
+  if(m_domainOuHasBeenSet)
+  {
+    ss << "DomainOu=" << StringUtils::URLEncode(m_domainOu.c_str()) << "&";
+  }
+
+  if(m_domainAuthSecretArnHasBeenSet)
+  {
+    ss << "DomainAuthSecretArn=" << StringUtils::URLEncode(m_domainAuthSecretArn.c_str()) << "&";
+  }
+
+  if(m_domainDnsIpsHasBeenSet)
+  {
+    unsigned domainDnsIpsCount = 1;
+    for(auto& item : m_domainDnsIps)
+    {
+      ss << "DomainDnsIps.member." << domainDnsIpsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      domainDnsIpsCount++;
+    }
+  }
+
   if(m_copyTagsToSnapshotHasBeenSet)
   {
     ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
@@ -261,6 +298,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_domainIAMRoleNameHasBeenSet)
   {
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
+  }
+
+  if(m_disableDomainHasBeenSet)
+  {
+    ss << "DisableDomain=" << std::boolalpha << m_disableDomain << "&";
   }
 
   if(m_promotionTierHasBeenSet)
@@ -371,6 +413,21 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_masterUserSecretKmsKeyIdHasBeenSet)
   {
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_engineHasBeenSet)
+  {
+    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+    ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+
+  if(m_multiTenantHasBeenSet)
+  {
+    ss << "MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
   ss << "Version=2014-10-31";

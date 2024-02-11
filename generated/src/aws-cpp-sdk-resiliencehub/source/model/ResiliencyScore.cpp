@@ -19,6 +19,7 @@ namespace Model
 {
 
 ResiliencyScore::ResiliencyScore() : 
+    m_componentScoreHasBeenSet(false),
     m_disruptionScoreHasBeenSet(false),
     m_score(0.0),
     m_scoreHasBeenSet(false)
@@ -26,6 +27,7 @@ ResiliencyScore::ResiliencyScore() :
 }
 
 ResiliencyScore::ResiliencyScore(JsonView jsonValue) : 
+    m_componentScoreHasBeenSet(false),
     m_disruptionScoreHasBeenSet(false),
     m_score(0.0),
     m_scoreHasBeenSet(false)
@@ -35,6 +37,16 @@ ResiliencyScore::ResiliencyScore(JsonView jsonValue) :
 
 ResiliencyScore& ResiliencyScore::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("componentScore"))
+  {
+    Aws::Map<Aws::String, JsonView> componentScoreJsonMap = jsonValue.GetObject("componentScore").GetAllObjects();
+    for(auto& componentScoreItem : componentScoreJsonMap)
+    {
+      m_componentScore[ResiliencyScoreTypeMapper::GetResiliencyScoreTypeForName(componentScoreItem.first)] = componentScoreItem.second.AsObject();
+    }
+    m_componentScoreHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("disruptionScore"))
   {
     Aws::Map<Aws::String, JsonView> disruptionScoreJsonMap = jsonValue.GetObject("disruptionScore").GetAllObjects();
@@ -58,6 +70,17 @@ ResiliencyScore& ResiliencyScore::operator =(JsonView jsonValue)
 JsonValue ResiliencyScore::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_componentScoreHasBeenSet)
+  {
+   JsonValue componentScoreJsonMap;
+   for(auto& componentScoreItem : m_componentScore)
+   {
+     componentScoreJsonMap.WithObject(ResiliencyScoreTypeMapper::GetNameForResiliencyScoreType(componentScoreItem.first), componentScoreItem.second.Jsonize());
+   }
+   payload.WithObject("componentScore", std::move(componentScoreJsonMap));
+
+  }
 
   if(m_disruptionScoreHasBeenSet)
   {

@@ -13,10 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateUserSettingsRequest::CreateUserSettingsRequest() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_additionalEncryptionContextHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_cookieSynchronizationConfigurationHasBeenSet(false),
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
+    m_customerManagedKeyHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
     m_disconnectTimeoutInMinutesHasBeenSet(false),
     m_downloadAllowed(EnabledType::NOT_SET),
@@ -37,15 +40,38 @@ Aws::String CreateUserSettingsRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_additionalEncryptionContextHasBeenSet)
+  {
+   JsonValue additionalEncryptionContextJsonMap;
+   for(auto& additionalEncryptionContextItem : m_additionalEncryptionContext)
+   {
+     additionalEncryptionContextJsonMap.WithString(additionalEncryptionContextItem.first, additionalEncryptionContextItem.second);
+   }
+   payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
+
+  }
+
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
 
   }
 
+  if(m_cookieSynchronizationConfigurationHasBeenSet)
+  {
+   payload.WithObject("cookieSynchronizationConfiguration", m_cookieSynchronizationConfiguration.Jsonize());
+
+  }
+
   if(m_copyAllowedHasBeenSet)
   {
    payload.WithString("copyAllowed", EnabledTypeMapper::GetNameForEnabledType(m_copyAllowed));
+  }
+
+  if(m_customerManagedKeyHasBeenSet)
+  {
+   payload.WithString("customerManagedKey", m_customerManagedKey);
+
   }
 
   if(m_disconnectTimeoutInMinutesHasBeenSet)

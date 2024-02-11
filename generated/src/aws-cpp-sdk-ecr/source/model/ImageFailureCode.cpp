@@ -27,6 +27,9 @@ namespace Aws
         static const int MissingDigestAndTag_HASH = HashingUtils::HashString("MissingDigestAndTag");
         static const int ImageReferencedByManifestList_HASH = HashingUtils::HashString("ImageReferencedByManifestList");
         static const int KmsError_HASH = HashingUtils::HashString("KmsError");
+        static const int UpstreamAccessDenied_HASH = HashingUtils::HashString("UpstreamAccessDenied");
+        static const int UpstreamTooManyRequests_HASH = HashingUtils::HashString("UpstreamTooManyRequests");
+        static const int UpstreamUnavailable_HASH = HashingUtils::HashString("UpstreamUnavailable");
 
 
         ImageFailureCode GetImageFailureCodeForName(const Aws::String& name)
@@ -60,6 +63,18 @@ namespace Aws
           {
             return ImageFailureCode::KmsError;
           }
+          else if (hashCode == UpstreamAccessDenied_HASH)
+          {
+            return ImageFailureCode::UpstreamAccessDenied;
+          }
+          else if (hashCode == UpstreamTooManyRequests_HASH)
+          {
+            return ImageFailureCode::UpstreamTooManyRequests;
+          }
+          else if (hashCode == UpstreamUnavailable_HASH)
+          {
+            return ImageFailureCode::UpstreamUnavailable;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageFailureCode::NOT_SET:
+            return {};
           case ImageFailureCode::InvalidImageDigest:
             return "InvalidImageDigest";
           case ImageFailureCode::InvalidImageTag:
@@ -88,6 +105,12 @@ namespace Aws
             return "ImageReferencedByManifestList";
           case ImageFailureCode::KmsError:
             return "KmsError";
+          case ImageFailureCode::UpstreamAccessDenied:
+            return "UpstreamAccessDenied";
+          case ImageFailureCode::UpstreamTooManyRequests:
+            return "UpstreamTooManyRequests";
+          case ImageFailureCode::UpstreamUnavailable:
+            return "UpstreamUnavailable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CreateAccountFailureReason::NOT_SET:
+            return {};
           case CreateAccountFailureReason::ACCOUNT_LIMIT_EXCEEDED:
             return "ACCOUNT_LIMIT_EXCEEDED";
           case CreateAccountFailureReason::EMAIL_ALREADY_EXISTS:

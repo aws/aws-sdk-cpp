@@ -155,38 +155,32 @@ namespace Model
 
 
     /**
-     * <p>The type of configured table analysis rule. Valid values are `AGGREGATION`
-     * and `LIST`.</p>
+     * <p>The type of configured table analysis rule.</p>
      */
     inline const ConfiguredTableAnalysisRuleType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of configured table analysis rule. Valid values are `AGGREGATION`
-     * and `LIST`.</p>
+     * <p>The type of configured table analysis rule.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of configured table analysis rule. Valid values are `AGGREGATION`
-     * and `LIST`.</p>
+     * <p>The type of configured table analysis rule.</p>
      */
     inline void SetType(const ConfiguredTableAnalysisRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of configured table analysis rule. Valid values are `AGGREGATION`
-     * and `LIST`.</p>
+     * <p>The type of configured table analysis rule.</p>
      */
     inline void SetType(ConfiguredTableAnalysisRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of configured table analysis rule. Valid values are `AGGREGATION`
-     * and `LIST`.</p>
+     * <p>The type of configured table analysis rule.</p>
      */
     inline ConfiguredTableAnalysisRule& WithType(const ConfiguredTableAnalysisRuleType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of configured table analysis rule. Valid values are `AGGREGATION`
-     * and `LIST`.</p>
+     * <p>The type of configured table analysis rule.</p>
      */
     inline ConfiguredTableAnalysisRule& WithType(ConfiguredTableAnalysisRuleType&& value) { SetType(std::move(value)); return *this;}
 

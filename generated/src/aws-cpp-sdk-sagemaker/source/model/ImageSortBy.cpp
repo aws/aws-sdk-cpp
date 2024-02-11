@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageSortBy::NOT_SET:
+            return {};
           case ImageSortBy::CREATION_TIME:
             return "CREATION_TIME";
           case ImageSortBy::LAST_MODIFIED_TIME:

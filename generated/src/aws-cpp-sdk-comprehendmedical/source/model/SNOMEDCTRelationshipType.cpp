@@ -26,6 +26,7 @@ namespace Aws
         static const int TEST_UNITS_HASH = HashingUtils::HashString("TEST_UNITS");
         static const int DIRECTION_HASH = HashingUtils::HashString("DIRECTION");
         static const int SYSTEM_ORGAN_SITE_HASH = HashingUtils::HashString("SYSTEM_ORGAN_SITE");
+        static const int TEST_UNIT_HASH = HashingUtils::HashString("TEST_UNIT");
 
 
         SNOMEDCTRelationshipType GetSNOMEDCTRelationshipTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return SNOMEDCTRelationshipType::SYSTEM_ORGAN_SITE;
           }
+          else if (hashCode == TEST_UNIT_HASH)
+          {
+            return SNOMEDCTRelationshipType::TEST_UNIT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -69,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SNOMEDCTRelationshipType::NOT_SET:
+            return {};
           case SNOMEDCTRelationshipType::ACUITY:
             return "ACUITY";
           case SNOMEDCTRelationshipType::QUALITY:
@@ -81,6 +88,8 @@ namespace Aws
             return "DIRECTION";
           case SNOMEDCTRelationshipType::SYSTEM_ORGAN_SITE:
             return "SYSTEM_ORGAN_SITE";
+          case SNOMEDCTRelationshipType::TEST_UNIT:
+            return "TEST_UNIT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

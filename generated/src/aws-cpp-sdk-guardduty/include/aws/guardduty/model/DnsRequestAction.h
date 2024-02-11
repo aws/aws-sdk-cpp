@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline DnsRequestAction& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline DnsRequestAction& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline DnsRequestAction& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -148,6 +148,55 @@ namespace Model
      */
     inline DnsRequestAction& WithBlocked(bool value) { SetBlocked(value); return *this;}
 
+
+    /**
+     * <p>The second and top level domain involved in the activity that prompted
+     * GuardDuty to generate this finding.</p>
+     */
+    inline const Aws::String& GetDomainWithSuffix() const{ return m_domainWithSuffix; }
+
+    /**
+     * <p>The second and top level domain involved in the activity that prompted
+     * GuardDuty to generate this finding.</p>
+     */
+    inline bool DomainWithSuffixHasBeenSet() const { return m_domainWithSuffixHasBeenSet; }
+
+    /**
+     * <p>The second and top level domain involved in the activity that prompted
+     * GuardDuty to generate this finding.</p>
+     */
+    inline void SetDomainWithSuffix(const Aws::String& value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix = value; }
+
+    /**
+     * <p>The second and top level domain involved in the activity that prompted
+     * GuardDuty to generate this finding.</p>
+     */
+    inline void SetDomainWithSuffix(Aws::String&& value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix = std::move(value); }
+
+    /**
+     * <p>The second and top level domain involved in the activity that prompted
+     * GuardDuty to generate this finding.</p>
+     */
+    inline void SetDomainWithSuffix(const char* value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix.assign(value); }
+
+    /**
+     * <p>The second and top level domain involved in the activity that prompted
+     * GuardDuty to generate this finding.</p>
+     */
+    inline DnsRequestAction& WithDomainWithSuffix(const Aws::String& value) { SetDomainWithSuffix(value); return *this;}
+
+    /**
+     * <p>The second and top level domain involved in the activity that prompted
+     * GuardDuty to generate this finding.</p>
+     */
+    inline DnsRequestAction& WithDomainWithSuffix(Aws::String&& value) { SetDomainWithSuffix(std::move(value)); return *this;}
+
+    /**
+     * <p>The second and top level domain involved in the activity that prompted
+     * GuardDuty to generate this finding.</p>
+     */
+    inline DnsRequestAction& WithDomainWithSuffix(const char* value) { SetDomainWithSuffix(value); return *this;}
+
   private:
 
     Aws::String m_domain;
@@ -158,6 +207,9 @@ namespace Model
 
     bool m_blocked;
     bool m_blockedHasBeenSet = false;
+
+    Aws::String m_domainWithSuffix;
+    bool m_domainWithSuffixHasBeenSet = false;
   };
 
 } // namespace Model

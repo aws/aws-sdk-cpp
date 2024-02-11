@@ -31,23 +31,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::IDEMPOTENT_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RoboMakerErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -175,32 +175,38 @@ namespace Model
 
 
     /**
-     * <p> Customer's consent for the owner change request. </p>
+     * <p> Customer's consent for the owner change request. Required if the domain is
+     * not free (consent price is more than $0.00).</p>
      */
     inline const Consent& GetConsent() const{ return m_consent; }
 
     /**
-     * <p> Customer's consent for the owner change request. </p>
+     * <p> Customer's consent for the owner change request. Required if the domain is
+     * not free (consent price is more than $0.00).</p>
      */
     inline bool ConsentHasBeenSet() const { return m_consentHasBeenSet; }
 
     /**
-     * <p> Customer's consent for the owner change request. </p>
+     * <p> Customer's consent for the owner change request. Required if the domain is
+     * not free (consent price is more than $0.00).</p>
      */
     inline void SetConsent(const Consent& value) { m_consentHasBeenSet = true; m_consent = value; }
 
     /**
-     * <p> Customer's consent for the owner change request. </p>
+     * <p> Customer's consent for the owner change request. Required if the domain is
+     * not free (consent price is more than $0.00).</p>
      */
     inline void SetConsent(Consent&& value) { m_consentHasBeenSet = true; m_consent = std::move(value); }
 
     /**
-     * <p> Customer's consent for the owner change request. </p>
+     * <p> Customer's consent for the owner change request. Required if the domain is
+     * not free (consent price is more than $0.00).</p>
      */
     inline UpdateDomainContactRequest& WithConsent(const Consent& value) { SetConsent(value); return *this;}
 
     /**
-     * <p> Customer's consent for the owner change request. </p>
+     * <p> Customer's consent for the owner change request. Required if the domain is
+     * not free (consent price is more than $0.00).</p>
      */
     inline UpdateDomainContactRequest& WithConsent(Consent&& value) { SetConsent(std::move(value)); return *this;}
 

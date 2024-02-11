@@ -9,6 +9,7 @@
 #include <aws/fms/model/SecurityServicePolicyData.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/fms/model/CustomerPolicyStatus.h>
 #include <aws/fms/model/ResourceTag.h>
 #include <aws/fms/model/CustomerPolicyScopeIdType.h>
 #include <utility>
@@ -240,18 +241,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
-     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, resource types include
+     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>The
+     * following are valid resource types for each Firewall Manager policy type:</p>
+     * <ul> <li> <p>Amazon Web Services WAF Classic -
+     * <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>,
+     * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
+     * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
+     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
+     * </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
-     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
-     * a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
-     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
+     * </li> <li> <p>Security group content audit -
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
-     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
-     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
+     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
@@ -261,18 +267,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
-     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, resource types include
+     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>The
+     * following are valid resource types for each Firewall Manager policy type:</p>
+     * <ul> <li> <p>Amazon Web Services WAF Classic -
+     * <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>,
+     * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
+     * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
+     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
+     * </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
-     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
-     * a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
-     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
+     * </li> <li> <p>Security group content audit -
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
-     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
-     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
+     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -282,18 +293,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
-     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, resource types include
+     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>The
+     * following are valid resource types for each Firewall Manager policy type:</p>
+     * <ul> <li> <p>Amazon Web Services WAF Classic -
+     * <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>,
+     * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
+     * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
+     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
+     * </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
-     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
-     * a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
-     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
+     * </li> <li> <p>Security group content audit -
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
-     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
-     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
+     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -303,18 +319,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
-     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, resource types include
+     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>The
+     * following are valid resource types for each Firewall Manager policy type:</p>
+     * <ul> <li> <p>Amazon Web Services WAF Classic -
+     * <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>,
+     * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
+     * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
+     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
+     * </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
-     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
-     * a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
-     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
+     * </li> <li> <p>Security group content audit -
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
-     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
-     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
+     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -324,18 +345,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
-     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, resource types include
+     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>The
+     * following are valid resource types for each Firewall Manager policy type:</p>
+     * <ul> <li> <p>Amazon Web Services WAF Classic -
+     * <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>,
+     * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
+     * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
+     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
+     * </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
-     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
-     * a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
-     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
+     * </li> <li> <p>Security group content audit -
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
-     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
-     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
+     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
@@ -345,18 +371,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
-     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, resource types include
+     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>The
+     * following are valid resource types for each Firewall Manager policy type:</p>
+     * <ul> <li> <p>Amazon Web Services WAF Classic -
+     * <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>,
+     * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
+     * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
+     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
+     * </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
-     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
-     * a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
-     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
+     * </li> <li> <p>Security group content audit -
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
-     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
-     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
+     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
      */
     inline Policy& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
@@ -366,18 +397,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
-     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, resource types include
+     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>The
+     * following are valid resource types for each Firewall Manager policy type:</p>
+     * <ul> <li> <p>Amazon Web Services WAF Classic -
+     * <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>,
+     * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
+     * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
+     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
+     * </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
-     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
-     * a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
-     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
+     * </li> <li> <p>Security group content audit -
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
-     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
-     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
+     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
      */
     inline Policy& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -387,18 +423,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
-     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, resource types include
+     * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>The
+     * following are valid resource types for each Firewall Manager policy type:</p>
+     * <ul> <li> <p>Amazon Web Services WAF Classic -
+     * <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>,
+     * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
+     * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
+     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
+     * </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
-     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
-     * a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
-     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
+     * </li> <li> <p>Security group content audit -
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
-     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
-     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
+     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
      */
     inline Policy& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -629,7 +670,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetIncludeMap() const{ return m_includeMap; }
@@ -652,7 +693,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline bool IncludeMapHasBeenSet() const { return m_includeMapHasBeenSet; }
@@ -675,7 +716,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline void SetIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_includeMapHasBeenSet = true; m_includeMap = value; }
@@ -698,7 +739,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline void SetIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_includeMapHasBeenSet = true; m_includeMap = std::move(value); }
@@ -721,7 +762,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& WithIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetIncludeMap(value); return *this;}
@@ -744,7 +785,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& WithIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetIncludeMap(std::move(value)); return *this;}
@@ -767,7 +808,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, value); return *this; }
@@ -790,7 +831,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), value); return *this; }
@@ -813,7 +854,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, std::move(value)); return *this; }
@@ -836,7 +877,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), std::move(value)); return *this; }
@@ -1159,6 +1200,67 @@ namespace Model
      */
     inline Policy& WithPolicyDescription(const char* value) { SetPolicyDescription(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline const CustomerPolicyStatus& GetPolicyStatus() const{ return m_policyStatus; }
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline bool PolicyStatusHasBeenSet() const { return m_policyStatusHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline void SetPolicyStatus(const CustomerPolicyStatus& value) { m_policyStatusHasBeenSet = true; m_policyStatus = value; }
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline void SetPolicyStatus(CustomerPolicyStatus&& value) { m_policyStatusHasBeenSet = true; m_policyStatus = std::move(value); }
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline Policy& WithPolicyStatus(const CustomerPolicyStatus& value) { SetPolicyStatus(value); return *this;}
+
+    /**
+     * <p>Indicates whether the policy is in or out of an admin's policy or Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the policy.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The
+     * administrator can view the policy, but they can't edit or delete the policy.
+     * Existing policy protections stay in place. Any new resources that come into
+     * scope of the policy won't be protected.</p> </li> </ul>
+     */
+    inline Policy& WithPolicyStatus(CustomerPolicyStatus&& value) { SetPolicyStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_policyId;
@@ -1202,6 +1304,9 @@ namespace Model
 
     Aws::String m_policyDescription;
     bool m_policyDescriptionHasBeenSet = false;
+
+    CustomerPolicyStatus m_policyStatus;
+    bool m_policyStatusHasBeenSet = false;
   };
 
 } // namespace Model

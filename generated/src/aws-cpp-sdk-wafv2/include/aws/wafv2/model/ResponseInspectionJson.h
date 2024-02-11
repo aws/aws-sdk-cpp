@@ -28,7 +28,8 @@ namespace Model
    * <p>Configures inspection of the response JSON. WAF can inspect the first 65,536
    * bytes (64 KB) of the response JSON. This is part of the
    * <code>ResponseInspection</code> configuration for
-   * <code>AWSManagedRulesATPRuleSet</code>. </p>  <p>Response inspection is
+   * <code>AWSManagedRulesATPRuleSet</code> and
+   * <code>AWSManagedRulesACFPRuleSet</code>. </p>  <p>Response inspection is
    * available only in web ACLs that protect Amazon CloudFront distributions.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ResponseInspectionJson">AWS
@@ -45,221 +46,229 @@ namespace Model
 
     /**
      * <p>The identifier for the value to match against in the JSON. The identifier
-     * must be an exact match, including case.</p> <p>JSON example: <code>"Identifier":
-     * [ "/login/success" ]</code> </p>
+     * must be an exact match, including case.</p> <p>JSON examples:
+     * <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [
+     * "/sign-up/success" ]</code> </p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
      * <p>The identifier for the value to match against in the JSON. The identifier
-     * must be an exact match, including case.</p> <p>JSON example: <code>"Identifier":
-     * [ "/login/success" ]</code> </p>
+     * must be an exact match, including case.</p> <p>JSON examples:
+     * <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [
+     * "/sign-up/success" ]</code> </p>
      */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
      * <p>The identifier for the value to match against in the JSON. The identifier
-     * must be an exact match, including case.</p> <p>JSON example: <code>"Identifier":
-     * [ "/login/success" ]</code> </p>
+     * must be an exact match, including case.</p> <p>JSON examples:
+     * <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [
+     * "/sign-up/success" ]</code> </p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
 
     /**
      * <p>The identifier for the value to match against in the JSON. The identifier
-     * must be an exact match, including case.</p> <p>JSON example: <code>"Identifier":
-     * [ "/login/success" ]</code> </p>
+     * must be an exact match, including case.</p> <p>JSON examples:
+     * <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [
+     * "/sign-up/success" ]</code> </p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
 
     /**
      * <p>The identifier for the value to match against in the JSON. The identifier
-     * must be an exact match, including case.</p> <p>JSON example: <code>"Identifier":
-     * [ "/login/success" ]</code> </p>
+     * must be an exact match, including case.</p> <p>JSON examples:
+     * <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [
+     * "/sign-up/success" ]</code> </p>
      */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
 
     /**
      * <p>The identifier for the value to match against in the JSON. The identifier
-     * must be an exact match, including case.</p> <p>JSON example: <code>"Identifier":
-     * [ "/login/success" ]</code> </p>
+     * must be an exact match, including case.</p> <p>JSON examples:
+     * <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [
+     * "/sign-up/success" ]</code> </p>
      */
     inline ResponseInspectionJson& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
      * <p>The identifier for the value to match against in the JSON. The identifier
-     * must be an exact match, including case.</p> <p>JSON example: <code>"Identifier":
-     * [ "/login/success" ]</code> </p>
+     * must be an exact match, including case.</p> <p>JSON examples:
+     * <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [
+     * "/sign-up/success" ]</code> </p>
      */
     inline ResponseInspectionJson& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the value to match against in the JSON. The identifier
-     * must be an exact match, including case.</p> <p>JSON example: <code>"Identifier":
-     * [ "/login/success" ]</code> </p>
+     * must be an exact match, including case.</p> <p>JSON examples:
+     * <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [
+     * "/sign-up/success" ]</code> </p>
      */
     inline ResponseInspectionJson& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * successful login attempt. To be counted as a successful login, the value must be
-     * an exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"SuccessValues": [ "True",
-     * "Succeeded" ]</code> </p>
+     * successful login or account creation attempt. To be counted as a success, the
+     * value must be an exact match, including case. Each value must be unique among
+     * the success and failure values. </p> <p>JSON example: <code>"SuccessValues": [
+     * "True", "Succeeded" ]</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetSuccessValues() const{ return m_successValues; }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * successful login attempt. To be counted as a successful login, the value must be
-     * an exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"SuccessValues": [ "True",
-     * "Succeeded" ]</code> </p>
+     * successful login or account creation attempt. To be counted as a success, the
+     * value must be an exact match, including case. Each value must be unique among
+     * the success and failure values. </p> <p>JSON example: <code>"SuccessValues": [
+     * "True", "Succeeded" ]</code> </p>
      */
     inline bool SuccessValuesHasBeenSet() const { return m_successValuesHasBeenSet; }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * successful login attempt. To be counted as a successful login, the value must be
-     * an exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"SuccessValues": [ "True",
-     * "Succeeded" ]</code> </p>
+     * successful login or account creation attempt. To be counted as a success, the
+     * value must be an exact match, including case. Each value must be unique among
+     * the success and failure values. </p> <p>JSON example: <code>"SuccessValues": [
+     * "True", "Succeeded" ]</code> </p>
      */
     inline void SetSuccessValues(const Aws::Vector<Aws::String>& value) { m_successValuesHasBeenSet = true; m_successValues = value; }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * successful login attempt. To be counted as a successful login, the value must be
-     * an exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"SuccessValues": [ "True",
-     * "Succeeded" ]</code> </p>
+     * successful login or account creation attempt. To be counted as a success, the
+     * value must be an exact match, including case. Each value must be unique among
+     * the success and failure values. </p> <p>JSON example: <code>"SuccessValues": [
+     * "True", "Succeeded" ]</code> </p>
      */
     inline void SetSuccessValues(Aws::Vector<Aws::String>&& value) { m_successValuesHasBeenSet = true; m_successValues = std::move(value); }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * successful login attempt. To be counted as a successful login, the value must be
-     * an exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"SuccessValues": [ "True",
-     * "Succeeded" ]</code> </p>
+     * successful login or account creation attempt. To be counted as a success, the
+     * value must be an exact match, including case. Each value must be unique among
+     * the success and failure values. </p> <p>JSON example: <code>"SuccessValues": [
+     * "True", "Succeeded" ]</code> </p>
      */
     inline ResponseInspectionJson& WithSuccessValues(const Aws::Vector<Aws::String>& value) { SetSuccessValues(value); return *this;}
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * successful login attempt. To be counted as a successful login, the value must be
-     * an exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"SuccessValues": [ "True",
-     * "Succeeded" ]</code> </p>
+     * successful login or account creation attempt. To be counted as a success, the
+     * value must be an exact match, including case. Each value must be unique among
+     * the success and failure values. </p> <p>JSON example: <code>"SuccessValues": [
+     * "True", "Succeeded" ]</code> </p>
      */
     inline ResponseInspectionJson& WithSuccessValues(Aws::Vector<Aws::String>&& value) { SetSuccessValues(std::move(value)); return *this;}
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * successful login attempt. To be counted as a successful login, the value must be
-     * an exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"SuccessValues": [ "True",
-     * "Succeeded" ]</code> </p>
+     * successful login or account creation attempt. To be counted as a success, the
+     * value must be an exact match, including case. Each value must be unique among
+     * the success and failure values. </p> <p>JSON example: <code>"SuccessValues": [
+     * "True", "Succeeded" ]</code> </p>
      */
     inline ResponseInspectionJson& AddSuccessValues(const Aws::String& value) { m_successValuesHasBeenSet = true; m_successValues.push_back(value); return *this; }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * successful login attempt. To be counted as a successful login, the value must be
-     * an exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"SuccessValues": [ "True",
-     * "Succeeded" ]</code> </p>
+     * successful login or account creation attempt. To be counted as a success, the
+     * value must be an exact match, including case. Each value must be unique among
+     * the success and failure values. </p> <p>JSON example: <code>"SuccessValues": [
+     * "True", "Succeeded" ]</code> </p>
      */
     inline ResponseInspectionJson& AddSuccessValues(Aws::String&& value) { m_successValuesHasBeenSet = true; m_successValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * successful login attempt. To be counted as a successful login, the value must be
-     * an exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"SuccessValues": [ "True",
-     * "Succeeded" ]</code> </p>
+     * successful login or account creation attempt. To be counted as a success, the
+     * value must be an exact match, including case. Each value must be unique among
+     * the success and failure values. </p> <p>JSON example: <code>"SuccessValues": [
+     * "True", "Succeeded" ]</code> </p>
      */
     inline ResponseInspectionJson& AddSuccessValues(const char* value) { m_successValuesHasBeenSet = true; m_successValues.push_back(value); return *this; }
 
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * failed login attempt. To be counted as a failed login, the value must be an
-     * exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"FailureValues": [ "False", "Failed"
-     * ]</code> </p>
+     * failed login or account creation attempt. To be counted as a failure, the value
+     * must be an exact match, including case. Each value must be unique among the
+     * success and failure values. </p> <p>JSON example: <code>"FailureValues": [
+     * "False", "Failed" ]</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetFailureValues() const{ return m_failureValues; }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * failed login attempt. To be counted as a failed login, the value must be an
-     * exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"FailureValues": [ "False", "Failed"
-     * ]</code> </p>
+     * failed login or account creation attempt. To be counted as a failure, the value
+     * must be an exact match, including case. Each value must be unique among the
+     * success and failure values. </p> <p>JSON example: <code>"FailureValues": [
+     * "False", "Failed" ]</code> </p>
      */
     inline bool FailureValuesHasBeenSet() const { return m_failureValuesHasBeenSet; }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * failed login attempt. To be counted as a failed login, the value must be an
-     * exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"FailureValues": [ "False", "Failed"
-     * ]</code> </p>
+     * failed login or account creation attempt. To be counted as a failure, the value
+     * must be an exact match, including case. Each value must be unique among the
+     * success and failure values. </p> <p>JSON example: <code>"FailureValues": [
+     * "False", "Failed" ]</code> </p>
      */
     inline void SetFailureValues(const Aws::Vector<Aws::String>& value) { m_failureValuesHasBeenSet = true; m_failureValues = value; }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * failed login attempt. To be counted as a failed login, the value must be an
-     * exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"FailureValues": [ "False", "Failed"
-     * ]</code> </p>
+     * failed login or account creation attempt. To be counted as a failure, the value
+     * must be an exact match, including case. Each value must be unique among the
+     * success and failure values. </p> <p>JSON example: <code>"FailureValues": [
+     * "False", "Failed" ]</code> </p>
      */
     inline void SetFailureValues(Aws::Vector<Aws::String>&& value) { m_failureValuesHasBeenSet = true; m_failureValues = std::move(value); }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * failed login attempt. To be counted as a failed login, the value must be an
-     * exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"FailureValues": [ "False", "Failed"
-     * ]</code> </p>
+     * failed login or account creation attempt. To be counted as a failure, the value
+     * must be an exact match, including case. Each value must be unique among the
+     * success and failure values. </p> <p>JSON example: <code>"FailureValues": [
+     * "False", "Failed" ]</code> </p>
      */
     inline ResponseInspectionJson& WithFailureValues(const Aws::Vector<Aws::String>& value) { SetFailureValues(value); return *this;}
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * failed login attempt. To be counted as a failed login, the value must be an
-     * exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"FailureValues": [ "False", "Failed"
-     * ]</code> </p>
+     * failed login or account creation attempt. To be counted as a failure, the value
+     * must be an exact match, including case. Each value must be unique among the
+     * success and failure values. </p> <p>JSON example: <code>"FailureValues": [
+     * "False", "Failed" ]</code> </p>
      */
     inline ResponseInspectionJson& WithFailureValues(Aws::Vector<Aws::String>&& value) { SetFailureValues(std::move(value)); return *this;}
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * failed login attempt. To be counted as a failed login, the value must be an
-     * exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"FailureValues": [ "False", "Failed"
-     * ]</code> </p>
+     * failed login or account creation attempt. To be counted as a failure, the value
+     * must be an exact match, including case. Each value must be unique among the
+     * success and failure values. </p> <p>JSON example: <code>"FailureValues": [
+     * "False", "Failed" ]</code> </p>
      */
     inline ResponseInspectionJson& AddFailureValues(const Aws::String& value) { m_failureValuesHasBeenSet = true; m_failureValues.push_back(value); return *this; }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * failed login attempt. To be counted as a failed login, the value must be an
-     * exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"FailureValues": [ "False", "Failed"
-     * ]</code> </p>
+     * failed login or account creation attempt. To be counted as a failure, the value
+     * must be an exact match, including case. Each value must be unique among the
+     * success and failure values. </p> <p>JSON example: <code>"FailureValues": [
+     * "False", "Failed" ]</code> </p>
      */
     inline ResponseInspectionJson& AddFailureValues(Aws::String&& value) { m_failureValuesHasBeenSet = true; m_failureValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Values for the specified identifier in the response JSON that indicate a
-     * failed login attempt. To be counted as a failed login, the value must be an
-     * exact match, including case. Each value must be unique among the success and
-     * failure values. </p> <p>JSON example: <code>"FailureValues": [ "False", "Failed"
-     * ]</code> </p>
+     * failed login or account creation attempt. To be counted as a failure, the value
+     * must be an exact match, including case. Each value must be unique among the
+     * success and failure values. </p> <p>JSON example: <code>"FailureValues": [
+     * "False", "Failed" ]</code> </p>
      */
     inline ResponseInspectionJson& AddFailureValues(const char* value) { m_failureValuesHasBeenSet = true; m_failureValues.push_back(value); return *this; }
 

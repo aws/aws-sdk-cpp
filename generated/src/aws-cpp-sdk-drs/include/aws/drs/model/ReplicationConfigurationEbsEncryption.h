@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     DEFAULT,
-    CUSTOM
+    CUSTOM,
+    NONE
   };
 
 namespace ReplicationConfigurationEbsEncryptionMapper

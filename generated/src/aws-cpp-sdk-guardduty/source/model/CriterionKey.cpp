@@ -26,6 +26,7 @@ namespace Aws
         static const int GUARDDUTY_FINDING_ID_HASH = HashingUtils::HashString("GUARDDUTY_FINDING_ID");
         static const int SCAN_START_TIME_HASH = HashingUtils::HashString("SCAN_START_TIME");
         static const int SCAN_STATUS_HASH = HashingUtils::HashString("SCAN_STATUS");
+        static const int SCAN_TYPE_HASH = HashingUtils::HashString("SCAN_TYPE");
 
 
         CriterionKey GetCriterionKeyForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return CriterionKey::SCAN_STATUS;
           }
+          else if (hashCode == SCAN_TYPE_HASH)
+          {
+            return CriterionKey::SCAN_TYPE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -69,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CriterionKey::NOT_SET:
+            return {};
           case CriterionKey::EC2_INSTANCE_ARN:
             return "EC2_INSTANCE_ARN";
           case CriterionKey::SCAN_ID:
@@ -81,6 +88,8 @@ namespace Aws
             return "SCAN_START_TIME";
           case CriterionKey::SCAN_STATUS:
             return "SCAN_STATUS";
+          case CriterionKey::SCAN_TYPE:
+            return "SCAN_TYPE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

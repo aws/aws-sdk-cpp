@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IndexStatus::NOT_SET:
+            return {};
           case IndexStatus::CREATING:
             return "CREATING";
           case IndexStatus::UPDATING:

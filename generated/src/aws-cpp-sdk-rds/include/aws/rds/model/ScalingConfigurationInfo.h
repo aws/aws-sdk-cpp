@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Shows the scaling configuration for an Aurora DB cluster in
-   * <code>serverless</code> DB engine mode.</p> <p>For more information, see <a
+   * <p>The scaling configuration for an Aurora DB cluster in <code>serverless</code>
+   * DB engine mode.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
    * Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -94,33 +94,33 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether automatic pause is allowed for the Aurora DB
-     * cluster in <code>serverless</code> DB engine mode.</p> <p>When the value is set
-     * to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
+     * <p>Indicates whether automatic pause is allowed for the Aurora DB cluster in
+     * <code>serverless</code> DB engine mode.</p> <p>When the value is set to false
+     * for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      * resumes.</p>
      */
     inline bool GetAutoPause() const{ return m_autoPause; }
 
     /**
-     * <p>A value that indicates whether automatic pause is allowed for the Aurora DB
-     * cluster in <code>serverless</code> DB engine mode.</p> <p>When the value is set
-     * to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
+     * <p>Indicates whether automatic pause is allowed for the Aurora DB cluster in
+     * <code>serverless</code> DB engine mode.</p> <p>When the value is set to false
+     * for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      * resumes.</p>
      */
     inline bool AutoPauseHasBeenSet() const { return m_autoPauseHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether automatic pause is allowed for the Aurora DB
-     * cluster in <code>serverless</code> DB engine mode.</p> <p>When the value is set
-     * to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
+     * <p>Indicates whether automatic pause is allowed for the Aurora DB cluster in
+     * <code>serverless</code> DB engine mode.</p> <p>When the value is set to false
+     * for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      * resumes.</p>
      */
     inline void SetAutoPause(bool value) { m_autoPauseHasBeenSet = true; m_autoPause = value; }
 
     /**
-     * <p>A value that indicates whether automatic pause is allowed for the Aurora DB
-     * cluster in <code>serverless</code> DB engine mode.</p> <p>When the value is set
-     * to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
+     * <p>Indicates whether automatic pause is allowed for the Aurora DB cluster in
+     * <code>serverless</code> DB engine mode.</p> <p>When the value is set to false
+     * for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      * resumes.</p>
      */
     inline ScalingConfigurationInfo& WithAutoPause(bool value) { SetAutoPause(value); return *this;}

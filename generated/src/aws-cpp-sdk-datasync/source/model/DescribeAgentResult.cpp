@@ -75,6 +75,12 @@ DescribeAgentResult& DescribeAgentResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("Platform"))
+  {
+    m_platform = jsonValue.GetObject("Platform");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

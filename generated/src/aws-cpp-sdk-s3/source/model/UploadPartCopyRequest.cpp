@@ -58,7 +58,7 @@ bool UploadPartCopyRequest::HasEmbeddedError(Aws::IOStream &body,
     return false;
   }
 
-  if (doc.GetRootElement().GetName() == "Error") {
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
     /// Must not be here because earlier we already checked for an embedded error in PocoHTTPClient (see checkRequestCanReturn2xxAndErrorInBody).
     AWS_FATAL_ASSERT(false);
   }
@@ -219,6 +219,8 @@ Aws::Http::HeaderValueCollection UploadPartCopyRequest::GetRequestSpecificHeader
 UploadPartCopyRequest::EndpointParameters UploadPartCopyRequest::GetEndpointContextParams() const
 {
     EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("DisableS3ExpressSessionAuth"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
     // Operation context parameters
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);

@@ -21,6 +21,7 @@ namespace Model
 ListGeofenceResponseEntry::ListGeofenceResponseEntry() : 
     m_createTimeHasBeenSet(false),
     m_geofenceIdHasBeenSet(false),
+    m_geofencePropertiesHasBeenSet(false),
     m_geometryHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
@@ -30,6 +31,7 @@ ListGeofenceResponseEntry::ListGeofenceResponseEntry() :
 ListGeofenceResponseEntry::ListGeofenceResponseEntry(JsonView jsonValue) : 
     m_createTimeHasBeenSet(false),
     m_geofenceIdHasBeenSet(false),
+    m_geofencePropertiesHasBeenSet(false),
     m_geometryHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
@@ -51,6 +53,16 @@ ListGeofenceResponseEntry& ListGeofenceResponseEntry::operator =(JsonView jsonVa
     m_geofenceId = jsonValue.GetString("GeofenceId");
 
     m_geofenceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GeofenceProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> geofencePropertiesJsonMap = jsonValue.GetObject("GeofenceProperties").GetAllObjects();
+    for(auto& geofencePropertiesItem : geofencePropertiesJsonMap)
+    {
+      m_geofenceProperties[geofencePropertiesItem.first] = geofencePropertiesItem.second.AsString();
+    }
+    m_geofencePropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Geometry"))
@@ -89,6 +101,17 @@ JsonValue ListGeofenceResponseEntry::Jsonize() const
   if(m_geofenceIdHasBeenSet)
   {
    payload.WithString("GeofenceId", m_geofenceId);
+
+  }
+
+  if(m_geofencePropertiesHasBeenSet)
+  {
+   JsonValue geofencePropertiesJsonMap;
+   for(auto& geofencePropertiesItem : m_geofenceProperties)
+   {
+     geofencePropertiesJsonMap.WithString(geofencePropertiesItem.first, geofencePropertiesItem.second);
+   }
+   payload.WithObject("GeofenceProperties", std::move(geofencePropertiesJsonMap));
 
   }
 

@@ -178,112 +178,120 @@ namespace Model
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetDatasetType() const{ return m_datasetType; }
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline bool DatasetTypeHasBeenSet() const { return m_datasetTypeHasBeenSet; }
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline void SetDatasetType(const Aws::String& value) { m_datasetTypeHasBeenSet = true; m_datasetType = value; }
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline void SetDatasetType(Aws::String&& value) { m_datasetTypeHasBeenSet = true; m_datasetType = std::move(value); }
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline void SetDatasetType(const char* value) { m_datasetTypeHasBeenSet = true; m_datasetType.assign(value); }
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline CreateDatasetRequest& WithDatasetType(const Aws::String& value) { SetDatasetType(value); return *this;}
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline CreateDatasetRequest& WithDatasetType(Aws::String&& value) { SetDatasetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline CreateDatasetRequest& WithDatasetType(const char* value) { SetDatasetType(value); return *this;}
 
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the dataset.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the dataset.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the dataset.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the dataset.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the dataset.</p>
      */
     inline CreateDatasetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the dataset.</p>
      */
     inline CreateDatasetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the dataset.</p>
      */
     inline CreateDatasetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the dataset.</p>
      */
     inline CreateDatasetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

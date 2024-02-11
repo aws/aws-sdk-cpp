@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdatePhoneNumberRequest::UpdatePhoneNumberRequest() : 
     m_phoneNumberIdHasBeenSet(false),
     m_targetArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_instanceIdHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }
@@ -27,6 +28,12 @@ Aws::String UpdatePhoneNumberRequest::SerializePayload() const
   if(m_targetArnHasBeenSet)
   {
    payload.WithString("TargetArn", m_targetArn);
+
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
 
   }
 

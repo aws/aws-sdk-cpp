@@ -1066,7 +1066,7 @@ namespace Model
      *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
      * capacity units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
@@ -1078,7 +1078,7 @@ namespace Model
      *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
      * capacity units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
@@ -1090,7 +1090,7 @@ namespace Model
      *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
      * capacity units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetFilterExpression(const Aws::String& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
@@ -1102,7 +1102,7 @@ namespace Model
      *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
      * capacity units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::move(value); }
@@ -1114,7 +1114,7 @@ namespace Model
      *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
      * capacity units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetFilterExpression(const char* value) { m_filterExpressionHasBeenSet = true; m_filterExpression.assign(value); }
@@ -1126,7 +1126,7 @@ namespace Model
      *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
      * capacity units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithFilterExpression(const Aws::String& value) { SetFilterExpression(value); return *this;}
@@ -1138,7 +1138,7 @@ namespace Model
      *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
      * capacity units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(std::move(value)); return *this;}
@@ -1150,7 +1150,7 @@ namespace Model
      *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
      * capacity units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}

@@ -25,9 +25,11 @@ UpdateImagePipelineRequest::UpdateImagePipelineRequest() :
     m_scheduleHasBeenSet(false),
     m_status(PipelineStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_imageScanningConfigurationHasBeenSet(false)
+    m_imageScanningConfigurationHasBeenSet(false),
+    m_workflowsHasBeenSet(false),
+    m_executionRoleHasBeenSet(false)
 {
 }
 
@@ -103,6 +105,23 @@ Aws::String UpdateImagePipelineRequest::SerializePayload() const
   if(m_imageScanningConfigurationHasBeenSet)
   {
    payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
+
+  }
+
+  if(m_workflowsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> workflowsJsonList(m_workflows.size());
+   for(unsigned workflowsIndex = 0; workflowsIndex < workflowsJsonList.GetLength(); ++workflowsIndex)
+   {
+     workflowsJsonList[workflowsIndex].AsObject(m_workflows[workflowsIndex].Jsonize());
+   }
+   payload.WithArray("workflows", std::move(workflowsJsonList));
+
+  }
+
+  if(m_executionRoleHasBeenSet)
+  {
+   payload.WithString("executionRole", m_executionRole);
 
   }
 

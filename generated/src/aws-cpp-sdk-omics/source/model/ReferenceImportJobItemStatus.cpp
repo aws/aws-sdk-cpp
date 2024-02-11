@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReferenceImportJobItemStatus::NOT_SET:
+            return {};
           case ReferenceImportJobItemStatus::NOT_STARTED:
             return "NOT_STARTED";
           case ReferenceImportJobItemStatus::IN_PROGRESS:

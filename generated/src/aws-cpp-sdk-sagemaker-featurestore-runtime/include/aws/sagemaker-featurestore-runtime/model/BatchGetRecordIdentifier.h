@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a
-     * batch.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>
+     * containing the records you are retrieving in a batch.</p>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
 
     /**
-     * <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a
-     * batch.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>
+     * containing the records you are retrieving in a batch.</p>
      */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
 
     /**
-     * <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a
-     * batch.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>
+     * containing the records you are retrieving in a batch.</p>
      */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
 
     /**
-     * <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a
-     * batch.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>
+     * containing the records you are retrieving in a batch.</p>
      */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
 
     /**
-     * <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a
-     * batch.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>
+     * containing the records you are retrieving in a batch.</p>
      */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
 
     /**
-     * <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a
-     * batch.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>
+     * containing the records you are retrieving in a batch.</p>
      */
     inline BatchGetRecordIdentifier& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
 
     /**
-     * <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a
-     * batch.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>
+     * containing the records you are retrieving in a batch.</p>
      */
     inline BatchGetRecordIdentifier& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a
-     * batch.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>
+     * containing the records you are retrieving in a batch.</p>
      */
     inline BatchGetRecordIdentifier& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
 

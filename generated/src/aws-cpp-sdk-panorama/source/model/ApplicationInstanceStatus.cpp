@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationInstanceStatus::NOT_SET:
+            return {};
           case ApplicationInstanceStatus::DEPLOYMENT_PENDING:
             return "DEPLOYMENT_PENDING";
           case ApplicationInstanceStatus::DEPLOYMENT_REQUESTED:

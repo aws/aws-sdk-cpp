@@ -8,6 +8,7 @@
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -205,6 +206,72 @@ namespace Model
      */
     inline CreateCustomEntityTypeRequest& AddContextWords(const char* value) { m_contextWordsHasBeenSet = true; m_contextWords.push_back(value); return *this; }
 
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline CreateCustomEntityTypeRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline CreateCustomEntityTypeRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline CreateCustomEntityTypeRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline CreateCustomEntityTypeRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline CreateCustomEntityTypeRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline CreateCustomEntityTypeRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline CreateCustomEntityTypeRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline CreateCustomEntityTypeRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A list of tags applied to the custom entity type.</p>
+     */
+    inline CreateCustomEntityTypeRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -215,6 +282,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_contextWords;
     bool m_contextWordsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

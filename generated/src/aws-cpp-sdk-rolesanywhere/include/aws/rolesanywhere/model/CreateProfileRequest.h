@@ -173,94 +173,81 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether instance properties are required in <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
+     * <p>Specifies whether instance properties are required in temporary credential
      * requests with this profile. </p>
      */
     inline bool GetRequireInstanceProperties() const{ return m_requireInstanceProperties; }
 
     /**
-     * <p>Specifies whether instance properties are required in <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
+     * <p>Specifies whether instance properties are required in temporary credential
      * requests with this profile. </p>
      */
     inline bool RequireInstancePropertiesHasBeenSet() const { return m_requireInstancePropertiesHasBeenSet; }
 
     /**
-     * <p>Specifies whether instance properties are required in <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
+     * <p>Specifies whether instance properties are required in temporary credential
      * requests with this profile. </p>
      */
     inline void SetRequireInstanceProperties(bool value) { m_requireInstancePropertiesHasBeenSet = true; m_requireInstanceProperties = value; }
 
     /**
-     * <p>Specifies whether instance properties are required in <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
+     * <p>Specifies whether instance properties are required in temporary credential
      * requests with this profile. </p>
      */
     inline CreateProfileRequest& WithRequireInstanceProperties(bool value) { SetRequireInstanceProperties(value); return *this;}
 
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRoleArns() const{ return m_roleArns; }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline bool RoleArnsHasBeenSet() const { return m_roleArnsHasBeenSet; }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline void SetRoleArns(const Aws::Vector<Aws::String>& value) { m_roleArnsHasBeenSet = true; m_roleArns = value; }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline void SetRoleArns(Aws::Vector<Aws::String>&& value) { m_roleArnsHasBeenSet = true; m_roleArns = std::move(value); }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline CreateProfileRequest& WithRoleArns(const Aws::Vector<Aws::String>& value) { SetRoleArns(value); return *this;}
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline CreateProfileRequest& WithRoleArns(Aws::Vector<Aws::String>&& value) { SetRoleArns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline CreateProfileRequest& AddRoleArns(const Aws::String& value) { m_roleArnsHasBeenSet = true; m_roleArns.push_back(value); return *this; }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline CreateProfileRequest& AddRoleArns(Aws::String&& value) { m_roleArnsHasBeenSet = true; m_roleArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline CreateProfileRequest& AddRoleArns(const char* value) { m_roleArnsHasBeenSet = true; m_roleArns.push_back(value); return *this; }
 

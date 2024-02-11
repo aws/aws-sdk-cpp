@@ -46,7 +46,8 @@ StepExecution::StepExecution() :
     m_validNextStepsHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_targetLocationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false)
+    m_triggeredAlarmsHasBeenSet(false),
+    m_parentStepDetailsHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ StepExecution::StepExecution(JsonView jsonValue) :
     m_validNextStepsHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_targetLocationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false)
+    m_triggeredAlarmsHasBeenSet(false),
+    m_parentStepDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -278,6 +280,13 @@ StepExecution& StepExecution::operator =(JsonView jsonValue)
     m_triggeredAlarmsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ParentStepDetails"))
+  {
+    m_parentStepDetails = jsonValue.GetObject("ParentStepDetails");
+
+    m_parentStepDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -457,6 +466,12 @@ JsonValue StepExecution::Jsonize() const
      triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject(m_triggeredAlarms[triggeredAlarmsIndex].Jsonize());
    }
    payload.WithArray("TriggeredAlarms", std::move(triggeredAlarmsJsonList));
+
+  }
+
+  if(m_parentStepDetailsHasBeenSet)
+  {
+   payload.WithObject("ParentStepDetails", m_parentStepDetails.Jsonize());
 
   }
 

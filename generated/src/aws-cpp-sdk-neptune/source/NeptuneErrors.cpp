@@ -93,271 +93,271 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == D_B_CLUSTER_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBSCRIPTION_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SUBSCRIPTION_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SUBSCRIPTION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_ENDPOINT_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ENDPOINT_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ENDPOINT_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPTION_GROUP_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::OPTION_GROUP_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::OPTION_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_SUBNET_GROUP_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_SUBNET_GROUP_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_SUBNET_GROUP_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_INSTANCE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_INSTANCE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_INSTANCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_UPGRADE_DEPENDENCY_FAILURE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_UPGRADE_DEPENDENCY_FAILURE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_UPGRADE_DEPENDENCY_FAILURE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_SNAPSHOT_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_SNAPSHOT_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_SNAPSHOT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SHARED_SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SHARED_SNAPSHOT_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SHARED_SNAPSHOT_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SUBNET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_SUBNET), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_SUBNET), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DOMAIN_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::DOMAIN_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::DOMAIN_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_EVENT_SUBSCRIPTION_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_EVENT_SUBSCRIPTION_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_EVENT_SUBSCRIPTION_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_ROLE_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ROLE_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ROLE_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SUBNET_GROUP_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SUBNET_GROUP_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SUBNET_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SNAPSHOT_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SNAPSHOT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SNAPSHOT_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SNAPSHOT_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_ALREADY_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SUBNET_ALREADY_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SUBNET_ALREADY_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_ENDPOINT_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ENDPOINT_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ENDPOINT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_INSTANCE_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_INSTANCE_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_PARAMETER_GROUP_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_PARAMETER_GROUP_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_PARAMETER_GROUP_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SECURITY_GROUP_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SECURITY_GROUP_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SECURITY_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GLOBAL_CLUSTER_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::GLOBAL_CLUSTER_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::GLOBAL_CLUSTER_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_SECURITY_GROUP_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_SECURITY_GROUP_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_SECURITY_GROUP_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PROVISIONED_IOPS_NOT_AVAILABLE_IN_A_Z_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::PROVISIONED_IOPS_NOT_AVAILABLE_IN_A_Z_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::PROVISIONED_IOPS_NOT_AVAILABLE_IN_A_Z_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STORAGE_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::STORAGE_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::STORAGE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_INSTANCE_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_INSTANCE_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_INSTANCE_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SUBNET_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SUBNET_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SUBNET_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::RESOURCE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::RESOURCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_ROLE_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ROLE_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ROLE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_PARAMETER_GROUP_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_PARAMETER_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSTANCE_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INSTANCE_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INSTANCE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_CLUSTER_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_CLUSTER_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_CLUSTER_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SUBSCRIPTION_ALREADY_EXIST_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SUBSCRIPTION_ALREADY_EXIST_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SNAPSHOT_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SNAPSHOT_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SNAPSHOT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::K_M_S_KEY_NOT_ACCESSIBLE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::K_M_S_KEY_NOT_ACCESSIBLE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CERTIFICATE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::CERTIFICATE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::CERTIFICATE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::S_N_S_NO_AUTHORIZATION_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::S_N_S_NO_AUTHORIZATION_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RESTORE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_RESTORE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_RESTORE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STORAGE_TYPE_NOT_SUPPORTED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::STORAGE_TYPE_NOT_SUPPORTED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::STORAGE_TYPE_NOT_SUPPORTED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S_N_S_TOPIC_ARN_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::S_N_S_TOPIC_ARN_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::S_N_S_TOPIC_ARN_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S_N_S_INVALID_TOPIC_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::S_N_S_INVALID_TOPIC_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::S_N_S_INVALID_TOPIC_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_SUBNET_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_SUBNET_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_SUBNET_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_V_P_C_NETWORK_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_V_P_C_NETWORK_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_V_P_C_NETWORK_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == AUTHORIZATION_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::AUTHORIZATION_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::AUTHORIZATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_ROLE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ROLE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ROLE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SOURCE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SOURCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_GLOBAL_CLUSTER_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_GLOBAL_CLUSTER_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_GLOBAL_CLUSTER_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

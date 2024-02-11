@@ -13,11 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateCustomLogSourceRequest::CreateCustomLogSourceRequest() : 
-    m_customSourceNameHasBeenSet(false),
-    m_eventClass(OcsfEventClass::NOT_SET),
-    m_eventClassHasBeenSet(false),
-    m_glueInvocationRoleArnHasBeenSet(false),
-    m_logProviderAccountIdHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_eventClassesHasBeenSet(false),
+    m_sourceNameHasBeenSet(false),
+    m_sourceVersionHasBeenSet(false)
 {
 }
 
@@ -25,26 +24,32 @@ Aws::String CreateCustomLogSourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_customSourceNameHasBeenSet)
+  if(m_configurationHasBeenSet)
   {
-   payload.WithString("customSourceName", m_customSourceName);
+   payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 
-  if(m_eventClassHasBeenSet)
+  if(m_eventClassesHasBeenSet)
   {
-   payload.WithString("eventClass", OcsfEventClassMapper::GetNameForOcsfEventClass(m_eventClass));
+   Aws::Utils::Array<JsonValue> eventClassesJsonList(m_eventClasses.size());
+   for(unsigned eventClassesIndex = 0; eventClassesIndex < eventClassesJsonList.GetLength(); ++eventClassesIndex)
+   {
+     eventClassesJsonList[eventClassesIndex].AsString(m_eventClasses[eventClassesIndex]);
+   }
+   payload.WithArray("eventClasses", std::move(eventClassesJsonList));
+
   }
 
-  if(m_glueInvocationRoleArnHasBeenSet)
+  if(m_sourceNameHasBeenSet)
   {
-   payload.WithString("glueInvocationRoleArn", m_glueInvocationRoleArn);
+   payload.WithString("sourceName", m_sourceName);
 
   }
 
-  if(m_logProviderAccountIdHasBeenSet)
+  if(m_sourceVersionHasBeenSet)
   {
-   payload.WithString("logProviderAccountId", m_logProviderAccountId);
+   payload.WithString("sourceVersion", m_sourceVersion);
 
   }
 

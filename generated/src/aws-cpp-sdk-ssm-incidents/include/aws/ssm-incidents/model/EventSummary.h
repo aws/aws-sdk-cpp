@@ -124,104 +124,112 @@ namespace Model
 
 
     /**
-     * <p>The time that the event occurred.</p>
+     * <p>The timestamp for when the event occurred.</p>
      */
     inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
 
     /**
-     * <p>The time that the event occurred.</p>
+     * <p>The timestamp for when the event occurred.</p>
      */
     inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
 
     /**
-     * <p>The time that the event occurred.</p>
+     * <p>The timestamp for when the event occurred.</p>
      */
     inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
-     * <p>The time that the event occurred.</p>
+     * <p>The timestamp for when the event occurred.</p>
      */
     inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
 
     /**
-     * <p>The time that the event occurred.</p>
+     * <p>The timestamp for when the event occurred.</p>
      */
     inline EventSummary& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
 
     /**
-     * <p>The time that the event occurred.</p>
+     * <p>The timestamp for when the event occurred.</p>
      */
     inline EventSummary& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+     * <p>The type of event. The timeline event must be <code>Custom Event</code> or
+     * <code>Note</code>.</p>
      */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
 
     /**
-     * <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+     * <p>The type of event. The timeline event must be <code>Custom Event</code> or
+     * <code>Note</code>.</p>
      */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
-     * <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+     * <p>The type of event. The timeline event must be <code>Custom Event</code> or
+     * <code>Note</code>.</p>
      */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
-     * <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+     * <p>The type of event. The timeline event must be <code>Custom Event</code> or
+     * <code>Note</code>.</p>
      */
     inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
 
     /**
-     * <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+     * <p>The type of event. The timeline event must be <code>Custom Event</code> or
+     * <code>Note</code>.</p>
      */
     inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
 
     /**
-     * <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+     * <p>The type of event. The timeline event must be <code>Custom Event</code> or
+     * <code>Note</code>.</p>
      */
     inline EventSummary& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
 
     /**
-     * <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+     * <p>The type of event. The timeline event must be <code>Custom Event</code> or
+     * <code>Note</code>.</p>
      */
     inline EventSummary& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+     * <p>The type of event. The timeline event must be <code>Custom Event</code> or
+     * <code>Note</code>.</p>
      */
     inline EventSummary& WithEventType(const char* value) { SetEventType(value); return *this;}
 
 
     /**
-     * <p>The time that the timeline event was last updated.</p>
+     * <p>The timestamp for when the timeline event was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetEventUpdatedTime() const{ return m_eventUpdatedTime; }
 
     /**
-     * <p>The time that the timeline event was last updated.</p>
+     * <p>The timestamp for when the timeline event was last updated.</p>
      */
     inline bool EventUpdatedTimeHasBeenSet() const { return m_eventUpdatedTimeHasBeenSet; }
 
     /**
-     * <p>The time that the timeline event was last updated.</p>
+     * <p>The timestamp for when the timeline event was last updated.</p>
      */
     inline void SetEventUpdatedTime(const Aws::Utils::DateTime& value) { m_eventUpdatedTimeHasBeenSet = true; m_eventUpdatedTime = value; }
 
     /**
-     * <p>The time that the timeline event was last updated.</p>
+     * <p>The timestamp for when the timeline event was last updated.</p>
      */
     inline void SetEventUpdatedTime(Aws::Utils::DateTime&& value) { m_eventUpdatedTimeHasBeenSet = true; m_eventUpdatedTime = std::move(value); }
 
     /**
-     * <p>The time that the timeline event was last updated.</p>
+     * <p>The timestamp for when the timeline event was last updated.</p>
      */
     inline EventSummary& WithEventUpdatedTime(const Aws::Utils::DateTime& value) { SetEventUpdatedTime(value); return *this;}
 
     /**
-     * <p>The time that the timeline event was last updated.</p>
+     * <p>The timestamp for when the timeline event was last updated.</p>
      */
     inline EventSummary& WithEventUpdatedTime(Aws::Utils::DateTime&& value) { SetEventUpdatedTime(std::move(value)); return *this;}
 

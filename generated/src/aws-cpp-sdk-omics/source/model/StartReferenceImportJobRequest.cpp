@@ -13,9 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartReferenceImportJobRequest::StartReferenceImportJobRequest() : 
-    m_clientTokenHasBeenSet(false),
     m_referenceStoreIdHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
     m_sourcesHasBeenSet(false)
 {
 }
@@ -24,15 +24,15 @@ Aws::String StartReferenceImportJobRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

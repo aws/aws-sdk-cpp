@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/iot/IoTErrors.h>
+#include <aws/iot/model/ConflictException.h>
 #include <aws/iot/model/ResourceAlreadyExistsException.h>
 
 using namespace Aws::Client;
@@ -17,6 +18,12 @@ namespace Aws
 {
 namespace IoT
 {
+template<> AWS_IOT_API ConflictException IoTError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoTErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
 template<> AWS_IOT_API ResourceAlreadyExistsException IoTError::GetModeledError()
 {
   assert(this->GetErrorType() == IoTErrors::RESOURCE_ALREADY_EXISTS);
@@ -33,6 +40,7 @@ static const int NOT_CONFIGURED_HASH = HashingUtils::HashString("NotConfiguredEx
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int MALFORMED_POLICY_HASH = HashingUtils::HashString("MalformedPolicyException");
 static const int INVALID_AGGREGATION_HASH = HashingUtils::HashString("InvalidAggregationException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int INVALID_RESPONSE_HASH = HashingUtils::HashString("InvalidResponseException");
 static const int TRANSFER_ALREADY_COMPLETED_HASH = HashingUtils::HashString("TransferAlreadyCompletedException");
@@ -61,111 +69,115 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == VERSION_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::VERSION_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::VERSION_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DELETE_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::DELETE_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::DELETE_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_CONFIGURED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::NOT_CONFIGURED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::NOT_CONFIGURED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == MALFORMED_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::MALFORMED_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::MALFORMED_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_AGGREGATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_AGGREGATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_AGGREGATION), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNAUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::UNAUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RESPONSE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_RESPONSE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_RESPONSE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TRANSFER_ALREADY_COMPLETED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::TRANSFER_ALREADY_COMPLETED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::TRANSFER_ALREADY_COMPLETED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_STATE_TRANSITION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_STATE_TRANSITION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_STATE_TRANSITION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CERTIFICATE_VALIDATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CERTIFICATE_VALIDATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CERTIFICATE_VALIDATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONFLICTING_RESOURCE_UPDATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CONFLICTING_RESOURCE_UPDATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CONFLICTING_RESOURCE_UPDATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TRANSFER_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::TRANSFER_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::TRANSFER_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SQL_PARSE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::SQL_PARSE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::SQL_PARSE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REGISTRATION_CODE_VALIDATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::REGISTRATION_CODE_VALIDATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::REGISTRATION_CODE_VALIDATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CERTIFICATE_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CERTIFICATE_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CERTIFICATE_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INTERNAL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INTERNAL), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TASK_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::TASK_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::TASK_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_REGISTRATION_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::RESOURCE_REGISTRATION_FAILURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::RESOURCE_REGISTRATION_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_QUERY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_QUERY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_QUERY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INDEX_NOT_READY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INDEX_NOT_READY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INDEX_NOT_READY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == VERSIONS_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::VERSIONS_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::VERSIONS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CERTIFICATE_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CERTIFICATE_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CERTIFICATE_STATE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

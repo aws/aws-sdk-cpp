@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EdgePresetDeploymentStatus::NOT_SET:
+            return {};
           case EdgePresetDeploymentStatus::COMPLETED:
             return "COMPLETED";
           case EdgePresetDeploymentStatus::FAILED:

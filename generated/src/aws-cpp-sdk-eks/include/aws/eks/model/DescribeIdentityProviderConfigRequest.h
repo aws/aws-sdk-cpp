@@ -34,50 +34,42 @@ namespace Model
 
 
     /**
-     * <p>The cluster name that the identity provider configuration is associated
-     * to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p>The cluster name that the identity provider configuration is associated
-     * to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
-     * <p>The cluster name that the identity provider configuration is associated
-     * to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>The cluster name that the identity provider configuration is associated
-     * to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
-     * <p>The cluster name that the identity provider configuration is associated
-     * to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p>The cluster name that the identity provider configuration is associated
-     * to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline DescribeIdentityProviderConfigRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>The cluster name that the identity provider configuration is associated
-     * to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline DescribeIdentityProviderConfigRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
-     * <p>The cluster name that the identity provider configuration is associated
-     * to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline DescribeIdentityProviderConfigRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 

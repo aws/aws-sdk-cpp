@@ -6,11 +6,12 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/omics/model/RunLogLevel.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/Document.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/omics/model/WorkflowType.h>
+#include <aws/core/utils/Document.h>
+#include <aws/omics/model/RunLogLevel.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/omics/model/RunRetentionMode.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -38,217 +39,116 @@ namespace Model
 
 
     /**
-     * <p>A log level for the run.</p>
+     * <p>The run's workflow ID.</p>
      */
-    inline const RunLogLevel& GetLogLevel() const{ return m_logLevel; }
+    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
 
     /**
-     * <p>A log level for the run.</p>
+     * <p>The run's workflow ID.</p>
      */
-    inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
+    inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
 
     /**
-     * <p>A log level for the run.</p>
+     * <p>The run's workflow ID.</p>
      */
-    inline void SetLogLevel(const RunLogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
     /**
-     * <p>A log level for the run.</p>
+     * <p>The run's workflow ID.</p>
      */
-    inline void SetLogLevel(RunLogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
+    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
 
     /**
-     * <p>A log level for the run.</p>
+     * <p>The run's workflow ID.</p>
      */
-    inline StartRunRequest& WithLogLevel(const RunLogLevel& value) { SetLogLevel(value); return *this;}
+    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
 
     /**
-     * <p>A log level for the run.</p>
+     * <p>The run's workflow ID.</p>
      */
-    inline StartRunRequest& WithLogLevel(RunLogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
-
-
-    /**
-     * <p>A name for the run.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline StartRunRequest& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
 
     /**
-     * <p>A name for the run.</p>
+     * <p>The run's workflow ID.</p>
      */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline StartRunRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the run.</p>
+     * <p>The run's workflow ID.</p>
      */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A name for the run.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A name for the run.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A name for the run.</p>
-     */
-    inline StartRunRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A name for the run.</p>
-     */
-    inline StartRunRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the run.</p>
-     */
-    inline StartRunRequest& WithName(const char* value) { SetName(value); return *this;}
+    inline StartRunRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
 
     /**
-     * <p>An output URI for the run.</p>
+     * <p>The run's workflow type.</p>
      */
-    inline const Aws::String& GetOutputUri() const{ return m_outputUri; }
+    inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
 
     /**
-     * <p>An output URI for the run.</p>
+     * <p>The run's workflow type.</p>
      */
-    inline bool OutputUriHasBeenSet() const { return m_outputUriHasBeenSet; }
+    inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
 
     /**
-     * <p>An output URI for the run.</p>
+     * <p>The run's workflow type.</p>
      */
-    inline void SetOutputUri(const Aws::String& value) { m_outputUriHasBeenSet = true; m_outputUri = value; }
+    inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
 
     /**
-     * <p>An output URI for the run.</p>
+     * <p>The run's workflow type.</p>
      */
-    inline void SetOutputUri(Aws::String&& value) { m_outputUriHasBeenSet = true; m_outputUri = std::move(value); }
+    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
 
     /**
-     * <p>An output URI for the run.</p>
+     * <p>The run's workflow type.</p>
      */
-    inline void SetOutputUri(const char* value) { m_outputUriHasBeenSet = true; m_outputUri.assign(value); }
+    inline StartRunRequest& WithWorkflowType(const WorkflowType& value) { SetWorkflowType(value); return *this;}
 
     /**
-     * <p>An output URI for the run.</p>
+     * <p>The run's workflow type.</p>
      */
-    inline StartRunRequest& WithOutputUri(const Aws::String& value) { SetOutputUri(value); return *this;}
-
-    /**
-     * <p>An output URI for the run.</p>
-     */
-    inline StartRunRequest& WithOutputUri(Aws::String&& value) { SetOutputUri(std::move(value)); return *this;}
-
-    /**
-     * <p>An output URI for the run.</p>
-     */
-    inline StartRunRequest& WithOutputUri(const char* value) { SetOutputUri(value); return *this;}
+    inline StartRunRequest& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Parameters for the run.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
-    inline Aws::Utils::DocumentView GetParameters() const{ return m_parameters; }
+    inline const Aws::String& GetRunId() const{ return m_runId; }
 
     /**
-     * <p>Parameters for the run.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
-    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
 
     /**
-     * <p>Parameters for the run.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
-    inline void SetParameters(const Aws::Utils::Document& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
     /**
-     * <p>Parameters for the run.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
-    inline void SetParameters(Aws::Utils::Document&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
 
     /**
-     * <p>Parameters for the run.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
-    inline StartRunRequest& WithParameters(const Aws::Utils::Document& value) { SetParameters(value); return *this;}
+    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
 
     /**
-     * <p>Parameters for the run.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
-    inline StartRunRequest& WithParameters(Aws::Utils::Document&& value) { SetParameters(std::move(value)); return *this;}
-
+    inline StartRunRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
 
     /**
-     * <p>A priority for the run.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline StartRunRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
 
     /**
-     * <p>A priority for the run.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
-    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-
-    /**
-     * <p>A priority for the run.</p>
-     */
-    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
-
-    /**
-     * <p>A priority for the run.</p>
-     */
-    inline StartRunRequest& WithPriority(int value) { SetPriority(value); return *this;}
-
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
-    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
-    inline StartRunRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
-    inline StartRunRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
-    inline StartRunRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline StartRunRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
 
 
     /**
@@ -293,6 +193,47 @@ namespace Model
 
 
     /**
+     * <p>A name for the run.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A name for the run.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A name for the run.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>A name for the run.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>A name for the run.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>A name for the run.</p>
+     */
+    inline StartRunRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>A name for the run.</p>
+     */
+    inline StartRunRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>A name for the run.</p>
+     */
+    inline StartRunRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
      * <p>The run's group ID.</p>
      */
     inline const Aws::String& GetRunGroupId() const{ return m_runGroupId; }
@@ -334,44 +275,55 @@ namespace Model
 
 
     /**
-     * <p>The run's ID.</p>
+     * <p>A priority for the run.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The run's ID.</p>
+     * <p>A priority for the run.</p>
      */
-    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>The run's ID.</p>
+     * <p>A priority for the run.</p>
      */
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The run's ID.</p>
+     * <p>A priority for the run.</p>
      */
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
+    inline StartRunRequest& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
-     * <p>The run's ID.</p>
+     * <p>Parameters for the run.</p>
      */
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
+    inline Aws::Utils::DocumentView GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The run's ID.</p>
+     * <p>Parameters for the run.</p>
      */
-    inline StartRunRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The run's ID.</p>
+     * <p>Parameters for the run.</p>
      */
-    inline StartRunRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
+    inline void SetParameters(const Aws::Utils::Document& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The run's ID.</p>
+     * <p>Parameters for the run.</p>
      */
-    inline StartRunRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
+    inline void SetParameters(Aws::Utils::Document&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>Parameters for the run.</p>
+     */
+    inline StartRunRequest& WithParameters(const Aws::Utils::Document& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>Parameters for the run.</p>
+     */
+    inline StartRunRequest& WithParameters(Aws::Utils::Document&& value) { SetParameters(std::move(value)); return *this;}
 
 
     /**
@@ -393,6 +345,78 @@ namespace Model
      * <p>A storage capacity for the run in gigabytes.</p>
      */
     inline StartRunRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
+
+
+    /**
+     * <p>An output URI for the run.</p>
+     */
+    inline const Aws::String& GetOutputUri() const{ return m_outputUri; }
+
+    /**
+     * <p>An output URI for the run.</p>
+     */
+    inline bool OutputUriHasBeenSet() const { return m_outputUriHasBeenSet; }
+
+    /**
+     * <p>An output URI for the run.</p>
+     */
+    inline void SetOutputUri(const Aws::String& value) { m_outputUriHasBeenSet = true; m_outputUri = value; }
+
+    /**
+     * <p>An output URI for the run.</p>
+     */
+    inline void SetOutputUri(Aws::String&& value) { m_outputUriHasBeenSet = true; m_outputUri = std::move(value); }
+
+    /**
+     * <p>An output URI for the run.</p>
+     */
+    inline void SetOutputUri(const char* value) { m_outputUriHasBeenSet = true; m_outputUri.assign(value); }
+
+    /**
+     * <p>An output URI for the run.</p>
+     */
+    inline StartRunRequest& WithOutputUri(const Aws::String& value) { SetOutputUri(value); return *this;}
+
+    /**
+     * <p>An output URI for the run.</p>
+     */
+    inline StartRunRequest& WithOutputUri(Aws::String&& value) { SetOutputUri(std::move(value)); return *this;}
+
+    /**
+     * <p>An output URI for the run.</p>
+     */
+    inline StartRunRequest& WithOutputUri(const char* value) { SetOutputUri(value); return *this;}
+
+
+    /**
+     * <p>A log level for the run.</p>
+     */
+    inline const RunLogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * <p>A log level for the run.</p>
+     */
+    inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
+
+    /**
+     * <p>A log level for the run.</p>
+     */
+    inline void SetLogLevel(const RunLogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+
+    /**
+     * <p>A log level for the run.</p>
+     */
+    inline void SetLogLevel(RunLogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
+
+    /**
+     * <p>A log level for the run.</p>
+     */
+    inline StartRunRequest& WithLogLevel(const RunLogLevel& value) { SetLogLevel(value); return *this;}
+
+    /**
+     * <p>A log level for the run.</p>
+     */
+    inline StartRunRequest& WithLogLevel(RunLogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
 
 
     /**
@@ -462,116 +486,127 @@ namespace Model
 
 
     /**
-     * <p>The run's workflow ID.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The run's workflow ID.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
-    inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
-     * <p>The run's workflow ID.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
+    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
-     * <p>The run's workflow ID.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
-     * <p>The run's workflow ID.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
+    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
-     * <p>The run's workflow ID.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
-    inline StartRunRequest& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
+    inline StartRunRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The run's workflow ID.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
-    inline StartRunRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
+    inline StartRunRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The run's workflow ID.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
-    inline StartRunRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    inline StartRunRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The retention mode for the run.</p>
      */
-    inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
+    inline const RunRetentionMode& GetRetentionMode() const{ return m_retentionMode; }
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The retention mode for the run.</p>
      */
-    inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
+    inline bool RetentionModeHasBeenSet() const { return m_retentionModeHasBeenSet; }
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The retention mode for the run.</p>
      */
-    inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
+    inline void SetRetentionMode(const RunRetentionMode& value) { m_retentionModeHasBeenSet = true; m_retentionMode = value; }
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The retention mode for the run.</p>
      */
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
+    inline void SetRetentionMode(RunRetentionMode&& value) { m_retentionModeHasBeenSet = true; m_retentionMode = std::move(value); }
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The retention mode for the run.</p>
      */
-    inline StartRunRequest& WithWorkflowType(const WorkflowType& value) { SetWorkflowType(value); return *this;}
+    inline StartRunRequest& WithRetentionMode(const RunRetentionMode& value) { SetRetentionMode(value); return *this;}
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The retention mode for the run.</p>
      */
-    inline StartRunRequest& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+    inline StartRunRequest& WithRetentionMode(RunRetentionMode&& value) { SetRetentionMode(std::move(value)); return *this;}
 
   private:
-
-    RunLogLevel m_logLevel;
-    bool m_logLevelHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_outputUri;
-    bool m_outputUriHasBeenSet = false;
-
-    Aws::Utils::Document m_parameters;
-    bool m_parametersHasBeenSet = false;
-
-    int m_priority;
-    bool m_priorityHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
-
-    Aws::String m_runGroupId;
-    bool m_runGroupIdHasBeenSet = false;
-
-    Aws::String m_runId;
-    bool m_runIdHasBeenSet = false;
-
-    int m_storageCapacity;
-    bool m_storageCapacityHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
 
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet = false;
 
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet = false;
+
+    Aws::String m_runId;
+    bool m_runIdHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_runGroupId;
+    bool m_runGroupIdHasBeenSet = false;
+
+    int m_priority;
+    bool m_priorityHasBeenSet = false;
+
+    Aws::Utils::Document m_parameters;
+    bool m_parametersHasBeenSet = false;
+
+    int m_storageCapacity;
+    bool m_storageCapacityHasBeenSet = false;
+
+    Aws::String m_outputUri;
+    bool m_outputUriHasBeenSet = false;
+
+    RunLogLevel m_logLevel;
+    bool m_logLevelHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
+
+    RunRetentionMode m_retentionMode;
+    bool m_retentionModeHasBeenSet = false;
   };
 
 } // namespace Model

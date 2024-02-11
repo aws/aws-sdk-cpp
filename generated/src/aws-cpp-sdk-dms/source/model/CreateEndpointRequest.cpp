@@ -49,7 +49,8 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_resourceIdentifierHasBeenSet(false),
     m_docDbSettingsHasBeenSet(false),
     m_redisSettingsHasBeenSet(false),
-    m_gcpMySQLSettingsHasBeenSet(false)
+    m_gcpMySQLSettingsHasBeenSet(false),
+    m_timestreamSettingsHasBeenSet(false)
 {
 }
 
@@ -261,6 +262,12 @@ Aws::String CreateEndpointRequest::SerializePayload() const
   if(m_gcpMySQLSettingsHasBeenSet)
   {
    payload.WithObject("GcpMySQLSettings", m_gcpMySQLSettings.Jsonize());
+
+  }
+
+  if(m_timestreamSettingsHasBeenSet)
+  {
+   payload.WithObject("TimestreamSettings", m_timestreamSettings.Jsonize());
 
   }
 

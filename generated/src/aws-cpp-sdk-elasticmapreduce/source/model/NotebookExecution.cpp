@@ -32,7 +32,12 @@ NotebookExecution::NotebookExecution() :
     m_outputNotebookURIHasBeenSet(false),
     m_lastStateChangeReasonHasBeenSet(false),
     m_notebookInstanceSecurityGroupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_notebookS3LocationHasBeenSet(false),
+    m_outputNotebookS3LocationHasBeenSet(false),
+    m_outputNotebookFormat(OutputNotebookFormat::NOT_SET),
+    m_outputNotebookFormatHasBeenSet(false),
+    m_environmentVariablesHasBeenSet(false)
 {
 }
 
@@ -50,7 +55,12 @@ NotebookExecution::NotebookExecution(JsonView jsonValue) :
     m_outputNotebookURIHasBeenSet(false),
     m_lastStateChangeReasonHasBeenSet(false),
     m_notebookInstanceSecurityGroupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_notebookS3LocationHasBeenSet(false),
+    m_outputNotebookS3LocationHasBeenSet(false),
+    m_outputNotebookFormat(OutputNotebookFormat::NOT_SET),
+    m_outputNotebookFormatHasBeenSet(false),
+    m_environmentVariablesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -151,6 +161,37 @@ NotebookExecution& NotebookExecution::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NotebookS3Location"))
+  {
+    m_notebookS3Location = jsonValue.GetObject("NotebookS3Location");
+
+    m_notebookS3LocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OutputNotebookS3Location"))
+  {
+    m_outputNotebookS3Location = jsonValue.GetObject("OutputNotebookS3Location");
+
+    m_outputNotebookS3LocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OutputNotebookFormat"))
+  {
+    m_outputNotebookFormat = OutputNotebookFormatMapper::GetOutputNotebookFormatForName(jsonValue.GetString("OutputNotebookFormat"));
+
+    m_outputNotebookFormatHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EnvironmentVariables"))
+  {
+    Aws::Map<Aws::String, JsonView> environmentVariablesJsonMap = jsonValue.GetObject("EnvironmentVariables").GetAllObjects();
+    for(auto& environmentVariablesItem : environmentVariablesJsonMap)
+    {
+      m_environmentVariables[environmentVariablesItem.first] = environmentVariablesItem.second.AsString();
+    }
+    m_environmentVariablesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -235,6 +276,34 @@ JsonValue NotebookExecution::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_notebookS3LocationHasBeenSet)
+  {
+   payload.WithObject("NotebookS3Location", m_notebookS3Location.Jsonize());
+
+  }
+
+  if(m_outputNotebookS3LocationHasBeenSet)
+  {
+   payload.WithObject("OutputNotebookS3Location", m_outputNotebookS3Location.Jsonize());
+
+  }
+
+  if(m_outputNotebookFormatHasBeenSet)
+  {
+   payload.WithString("OutputNotebookFormat", OutputNotebookFormatMapper::GetNameForOutputNotebookFormat(m_outputNotebookFormat));
+  }
+
+  if(m_environmentVariablesHasBeenSet)
+  {
+   JsonValue environmentVariablesJsonMap;
+   for(auto& environmentVariablesItem : m_environmentVariables)
+   {
+     environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
+   }
+   payload.WithObject("EnvironmentVariables", std::move(environmentVariablesJsonMap));
 
   }
 

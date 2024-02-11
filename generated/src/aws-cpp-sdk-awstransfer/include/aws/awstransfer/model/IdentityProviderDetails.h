@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/SftpAuthenticationMethods.h>
 #include <utility>
 
 namespace Aws
@@ -81,50 +82,58 @@ namespace Model
 
 
     /**
-     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
-     * user account.</p>
+     * <p>This parameter is only applicable if your <code>IdentityProviderType</code>
+     * is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code>
+     * used to authenticate the user account.</p>
      */
     inline const Aws::String& GetInvocationRole() const{ return m_invocationRole; }
 
     /**
-     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
-     * user account.</p>
+     * <p>This parameter is only applicable if your <code>IdentityProviderType</code>
+     * is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code>
+     * used to authenticate the user account.</p>
      */
     inline bool InvocationRoleHasBeenSet() const { return m_invocationRoleHasBeenSet; }
 
     /**
-     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
-     * user account.</p>
+     * <p>This parameter is only applicable if your <code>IdentityProviderType</code>
+     * is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code>
+     * used to authenticate the user account.</p>
      */
     inline void SetInvocationRole(const Aws::String& value) { m_invocationRoleHasBeenSet = true; m_invocationRole = value; }
 
     /**
-     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
-     * user account.</p>
+     * <p>This parameter is only applicable if your <code>IdentityProviderType</code>
+     * is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code>
+     * used to authenticate the user account.</p>
      */
     inline void SetInvocationRole(Aws::String&& value) { m_invocationRoleHasBeenSet = true; m_invocationRole = std::move(value); }
 
     /**
-     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
-     * user account.</p>
+     * <p>This parameter is only applicable if your <code>IdentityProviderType</code>
+     * is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code>
+     * used to authenticate the user account.</p>
      */
     inline void SetInvocationRole(const char* value) { m_invocationRoleHasBeenSet = true; m_invocationRole.assign(value); }
 
     /**
-     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
-     * user account.</p>
+     * <p>This parameter is only applicable if your <code>IdentityProviderType</code>
+     * is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code>
+     * used to authenticate the user account.</p>
      */
     inline IdentityProviderDetails& WithInvocationRole(const Aws::String& value) { SetInvocationRole(value); return *this;}
 
     /**
-     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
-     * user account.</p>
+     * <p>This parameter is only applicable if your <code>IdentityProviderType</code>
+     * is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code>
+     * used to authenticate the user account.</p>
      */
     inline IdentityProviderDetails& WithInvocationRole(Aws::String&& value) { SetInvocationRole(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
-     * user account.</p>
+     * <p>This parameter is only applicable if your <code>IdentityProviderType</code>
+     * is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code>
+     * used to authenticate the user account.</p>
      */
     inline IdentityProviderDetails& WithInvocationRole(const char* value) { SetInvocationRole(value); return *this;}
 
@@ -179,44 +188,135 @@ namespace Model
 
 
     /**
-     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     * <p>The ARN for a Lambda function to use for the Identity provider.</p>
      */
     inline const Aws::String& GetFunction() const{ return m_function; }
 
     /**
-     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     * <p>The ARN for a Lambda function to use for the Identity provider.</p>
      */
     inline bool FunctionHasBeenSet() const { return m_functionHasBeenSet; }
 
     /**
-     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     * <p>The ARN for a Lambda function to use for the Identity provider.</p>
      */
     inline void SetFunction(const Aws::String& value) { m_functionHasBeenSet = true; m_function = value; }
 
     /**
-     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     * <p>The ARN for a Lambda function to use for the Identity provider.</p>
      */
     inline void SetFunction(Aws::String&& value) { m_functionHasBeenSet = true; m_function = std::move(value); }
 
     /**
-     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     * <p>The ARN for a Lambda function to use for the Identity provider.</p>
      */
     inline void SetFunction(const char* value) { m_functionHasBeenSet = true; m_function.assign(value); }
 
     /**
-     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     * <p>The ARN for a Lambda function to use for the Identity provider.</p>
      */
     inline IdentityProviderDetails& WithFunction(const Aws::String& value) { SetFunction(value); return *this;}
 
     /**
-     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     * <p>The ARN for a Lambda function to use for the Identity provider.</p>
      */
     inline IdentityProviderDetails& WithFunction(Aws::String&& value) { SetFunction(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     * <p>The ARN for a Lambda function to use for the Identity provider.</p>
      */
     inline IdentityProviderDetails& WithFunction(const char* value) { SetFunction(value); return *this;}
+
+
+    /**
+     * <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you
+     * can specify whether to authenticate using a password, SSH key pair, or both.</p>
+     * <ul> <li> <p> <code>PASSWORD</code> - users must provide their password to
+     * connect.</p> </li> <li> <p> <code>PUBLIC_KEY</code> - users must provide their
+     * private key to connect.</p> </li> <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> -
+     * users can authenticate with either their password or their key. This is the
+     * default value.</p> </li> <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users
+     * must provide both their private key and their password to connect. The server
+     * checks the key first, and then if the key is valid, the system prompts for a
+     * password. If the private key provided does not match the public key that is
+     * stored, authentication fails.</p> </li> </ul>
+     */
+    inline const SftpAuthenticationMethods& GetSftpAuthenticationMethods() const{ return m_sftpAuthenticationMethods; }
+
+    /**
+     * <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you
+     * can specify whether to authenticate using a password, SSH key pair, or both.</p>
+     * <ul> <li> <p> <code>PASSWORD</code> - users must provide their password to
+     * connect.</p> </li> <li> <p> <code>PUBLIC_KEY</code> - users must provide their
+     * private key to connect.</p> </li> <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> -
+     * users can authenticate with either their password or their key. This is the
+     * default value.</p> </li> <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users
+     * must provide both their private key and their password to connect. The server
+     * checks the key first, and then if the key is valid, the system prompts for a
+     * password. If the private key provided does not match the public key that is
+     * stored, authentication fails.</p> </li> </ul>
+     */
+    inline bool SftpAuthenticationMethodsHasBeenSet() const { return m_sftpAuthenticationMethodsHasBeenSet; }
+
+    /**
+     * <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you
+     * can specify whether to authenticate using a password, SSH key pair, or both.</p>
+     * <ul> <li> <p> <code>PASSWORD</code> - users must provide their password to
+     * connect.</p> </li> <li> <p> <code>PUBLIC_KEY</code> - users must provide their
+     * private key to connect.</p> </li> <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> -
+     * users can authenticate with either their password or their key. This is the
+     * default value.</p> </li> <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users
+     * must provide both their private key and their password to connect. The server
+     * checks the key first, and then if the key is valid, the system prompts for a
+     * password. If the private key provided does not match the public key that is
+     * stored, authentication fails.</p> </li> </ul>
+     */
+    inline void SetSftpAuthenticationMethods(const SftpAuthenticationMethods& value) { m_sftpAuthenticationMethodsHasBeenSet = true; m_sftpAuthenticationMethods = value; }
+
+    /**
+     * <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you
+     * can specify whether to authenticate using a password, SSH key pair, or both.</p>
+     * <ul> <li> <p> <code>PASSWORD</code> - users must provide their password to
+     * connect.</p> </li> <li> <p> <code>PUBLIC_KEY</code> - users must provide their
+     * private key to connect.</p> </li> <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> -
+     * users can authenticate with either their password or their key. This is the
+     * default value.</p> </li> <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users
+     * must provide both their private key and their password to connect. The server
+     * checks the key first, and then if the key is valid, the system prompts for a
+     * password. If the private key provided does not match the public key that is
+     * stored, authentication fails.</p> </li> </ul>
+     */
+    inline void SetSftpAuthenticationMethods(SftpAuthenticationMethods&& value) { m_sftpAuthenticationMethodsHasBeenSet = true; m_sftpAuthenticationMethods = std::move(value); }
+
+    /**
+     * <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you
+     * can specify whether to authenticate using a password, SSH key pair, or both.</p>
+     * <ul> <li> <p> <code>PASSWORD</code> - users must provide their password to
+     * connect.</p> </li> <li> <p> <code>PUBLIC_KEY</code> - users must provide their
+     * private key to connect.</p> </li> <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> -
+     * users can authenticate with either their password or their key. This is the
+     * default value.</p> </li> <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users
+     * must provide both their private key and their password to connect. The server
+     * checks the key first, and then if the key is valid, the system prompts for a
+     * password. If the private key provided does not match the public key that is
+     * stored, authentication fails.</p> </li> </ul>
+     */
+    inline IdentityProviderDetails& WithSftpAuthenticationMethods(const SftpAuthenticationMethods& value) { SetSftpAuthenticationMethods(value); return *this;}
+
+    /**
+     * <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you
+     * can specify whether to authenticate using a password, SSH key pair, or both.</p>
+     * <ul> <li> <p> <code>PASSWORD</code> - users must provide their password to
+     * connect.</p> </li> <li> <p> <code>PUBLIC_KEY</code> - users must provide their
+     * private key to connect.</p> </li> <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> -
+     * users can authenticate with either their password or their key. This is the
+     * default value.</p> </li> <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users
+     * must provide both their private key and their password to connect. The server
+     * checks the key first, and then if the key is valid, the system prompts for a
+     * password. If the private key provided does not match the public key that is
+     * stored, authentication fails.</p> </li> </ul>
+     */
+    inline IdentityProviderDetails& WithSftpAuthenticationMethods(SftpAuthenticationMethods&& value) { SetSftpAuthenticationMethods(std::move(value)); return *this;}
 
   private:
 
@@ -231,6 +331,9 @@ namespace Model
 
     Aws::String m_function;
     bool m_functionHasBeenSet = false;
+
+    SftpAuthenticationMethods m_sftpAuthenticationMethods;
+    bool m_sftpAuthenticationMethodsHasBeenSet = false;
   };
 
 } // namespace Model

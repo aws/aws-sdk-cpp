@@ -37,50 +37,42 @@ namespace Model
   public:
 
     /**
-     * <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix
-     * length.</p>
+     * <p>The IPv6 CIDR block for your subnet.</p>
      */
     inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
 
     /**
-     * <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix
-     * length.</p>
+     * <p>The IPv6 CIDR block for your subnet.</p>
      */
     inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
 
     /**
-     * <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix
-     * length.</p>
+     * <p>The IPv6 CIDR block for your subnet.</p>
      */
     inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
 
     /**
-     * <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix
-     * length.</p>
+     * <p>The IPv6 CIDR block for your subnet.</p>
      */
     inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
 
     /**
-     * <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix
-     * length.</p>
+     * <p>The IPv6 CIDR block for your subnet.</p>
      */
     inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
 
     /**
-     * <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix
-     * length.</p>
+     * <p>The IPv6 CIDR block for your subnet.</p>
      */
     inline AssociateSubnetCidrBlockRequest& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
 
     /**
-     * <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix
-     * length.</p>
+     * <p>The IPv6 CIDR block for your subnet.</p>
      */
     inline AssociateSubnetCidrBlockRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
 
     /**
-     * <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix
-     * length.</p>
+     * <p>The IPv6 CIDR block for your subnet.</p>
      */
     inline AssociateSubnetCidrBlockRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
 
@@ -125,6 +117,68 @@ namespace Model
      */
     inline AssociateSubnetCidrBlockRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
+    /**
+     * <p>An IPv6 IPAM pool ID.</p>
+     */
+    inline const Aws::String& GetIpv6IpamPoolId() const{ return m_ipv6IpamPoolId; }
+
+    /**
+     * <p>An IPv6 IPAM pool ID.</p>
+     */
+    inline bool Ipv6IpamPoolIdHasBeenSet() const { return m_ipv6IpamPoolIdHasBeenSet; }
+
+    /**
+     * <p>An IPv6 IPAM pool ID.</p>
+     */
+    inline void SetIpv6IpamPoolId(const Aws::String& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = value; }
+
+    /**
+     * <p>An IPv6 IPAM pool ID.</p>
+     */
+    inline void SetIpv6IpamPoolId(Aws::String&& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = std::move(value); }
+
+    /**
+     * <p>An IPv6 IPAM pool ID.</p>
+     */
+    inline void SetIpv6IpamPoolId(const char* value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId.assign(value); }
+
+    /**
+     * <p>An IPv6 IPAM pool ID.</p>
+     */
+    inline AssociateSubnetCidrBlockRequest& WithIpv6IpamPoolId(const Aws::String& value) { SetIpv6IpamPoolId(value); return *this;}
+
+    /**
+     * <p>An IPv6 IPAM pool ID.</p>
+     */
+    inline AssociateSubnetCidrBlockRequest& WithIpv6IpamPoolId(Aws::String&& value) { SetIpv6IpamPoolId(std::move(value)); return *this;}
+
+    /**
+     * <p>An IPv6 IPAM pool ID.</p>
+     */
+    inline AssociateSubnetCidrBlockRequest& WithIpv6IpamPoolId(const char* value) { SetIpv6IpamPoolId(value); return *this;}
+
+
+    /**
+     * <p>An IPv6 netmask length.</p>
+     */
+    inline int GetIpv6NetmaskLength() const{ return m_ipv6NetmaskLength; }
+
+    /**
+     * <p>An IPv6 netmask length.</p>
+     */
+    inline bool Ipv6NetmaskLengthHasBeenSet() const { return m_ipv6NetmaskLengthHasBeenSet; }
+
+    /**
+     * <p>An IPv6 netmask length.</p>
+     */
+    inline void SetIpv6NetmaskLength(int value) { m_ipv6NetmaskLengthHasBeenSet = true; m_ipv6NetmaskLength = value; }
+
+    /**
+     * <p>An IPv6 netmask length.</p>
+     */
+    inline AssociateSubnetCidrBlockRequest& WithIpv6NetmaskLength(int value) { SetIpv6NetmaskLength(value); return *this;}
+
   private:
 
     Aws::String m_ipv6CidrBlock;
@@ -132,6 +186,12 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;
+
+    Aws::String m_ipv6IpamPoolId;
+    bool m_ipv6IpamPoolIdHasBeenSet = false;
+
+    int m_ipv6NetmaskLength;
+    bool m_ipv6NetmaskLengthHasBeenSet = false;
   };
 
 } // namespace Model

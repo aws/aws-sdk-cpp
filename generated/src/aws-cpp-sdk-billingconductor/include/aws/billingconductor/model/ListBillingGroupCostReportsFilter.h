@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>The filter used to retrieve specific
-   * <code>BillingGroupCostReportElements</code>. </p><p><h3>See Also:</h3>   <a
+   * <code>BillingGroupCostReportElements</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroupCostReportsFilter">AWS
    * API Reference</a></p>
    */

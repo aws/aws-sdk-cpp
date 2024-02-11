@@ -20,7 +20,11 @@ CreateEndpointConfigRequest::CreateEndpointConfigRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_asyncInferenceConfigHasBeenSet(false),
     m_explainerConfigHasBeenSet(false),
-    m_shadowProductionVariantsHasBeenSet(false)
+    m_shadowProductionVariantsHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_enableNetworkIsolation(false),
+    m_enableNetworkIsolationHasBeenSet(false)
 {
 }
 
@@ -88,6 +92,24 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
      shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject(m_shadowProductionVariants[shadowProductionVariantsIndex].Jsonize());
    }
    payload.WithArray("ShadowProductionVariants", std::move(shadowProductionVariantsJsonList));
+
+  }
+
+  if(m_executionRoleArnHasBeenSet)
+  {
+   payload.WithString("ExecutionRoleArn", m_executionRoleArn);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_enableNetworkIsolationHasBeenSet)
+  {
+   payload.WithBool("EnableNetworkIsolation", m_enableNetworkIsolation);
 
   }
 

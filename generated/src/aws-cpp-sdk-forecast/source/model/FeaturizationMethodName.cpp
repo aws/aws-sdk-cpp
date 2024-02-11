@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FeaturizationMethodName::NOT_SET:
+            return {};
           case FeaturizationMethodName::filling:
             return "filling";
           default:

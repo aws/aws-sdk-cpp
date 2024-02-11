@@ -22,6 +22,7 @@ namespace Aws
 
         static const int IAM_HASH = HashingUtils::HashString("IAM");
         static const int QUICKSIGHT_HASH = HashingUtils::HashString("QUICKSIGHT");
+        static const int IAM_IDENTITY_CENTER_HASH = HashingUtils::HashString("IAM_IDENTITY_CENTER");
 
 
         IdentityType GetIdentityTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == QUICKSIGHT_HASH)
           {
             return IdentityType::QUICKSIGHT;
+          }
+          else if (hashCode == IAM_IDENTITY_CENTER_HASH)
+          {
+            return IdentityType::IAM_IDENTITY_CENTER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IdentityType::NOT_SET:
+            return {};
           case IdentityType::IAM:
             return "IAM";
           case IdentityType::QUICKSIGHT:
             return "QUICKSIGHT";
+          case IdentityType::IAM_IDENTITY_CENTER:
+            return "IAM_IDENTITY_CENTER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

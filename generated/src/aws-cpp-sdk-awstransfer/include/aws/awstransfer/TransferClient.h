@@ -36,6 +36,9 @@ namespace Transfer
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef TransferClientConfiguration ClientConfigurationType;
+      typedef TransferEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -147,11 +150,17 @@ namespace Transfer
         }
 
         /**
-         * <p>Creates the connector, which captures the parameters for an outbound
-         * connection for the AS2 protocol. The connector is required for sending files to
-         * an externally hosted AS2 server. For more details about connectors, see <a
+         * <p>Creates the connector, which captures the parameters for a connection for the
+         * AS2 or SFTP protocol. For AS2, the connector is required for sending files to an
+         * externally hosted AS2 server. For SFTP, the connector is required when sending
+         * files to an SFTP server or receiving files from an SFTP server. For more details
+         * about connectors, see <a
          * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
-         * AS2 connectors</a>.</p><p><h3>See Also:</h3>   <a
+         * AS2 connectors</a> and <a
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-sftp-connector.html">Create
+         * SFTP connectors</a>.</p>  <p>You must specify exactly one configuration
+         * object: either for AS2 (<code>As2Config</code>) or SFTP
+         * (<code>SftpConfig</code>).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">AWS
          * API Reference</a></p>
          */
@@ -370,7 +379,7 @@ namespace Transfer
         }
 
         /**
-         * <p>Deletes the agreement that's specified in the provided
+         * <p>Deletes the connector that's specified in the provided
          * <code>ConnectorId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteConnector">AWS
          * API Reference</a></p>
@@ -396,7 +405,7 @@ namespace Transfer
         }
 
         /**
-         * <p>Deletes the host key that's specified in the <code>HoskKeyId</code>
+         * <p>Deletes the host key that's specified in the <code>HostKeyId</code>
          * parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteHostKey">AWS
          * API Reference</a></p>
@@ -660,7 +669,11 @@ namespace Transfer
 
         /**
          * <p>You can use <code>DescribeExecution</code> to check the details of the
-         * execution of the specified workflow.</p><p><h3>See Also:</h3>   <a
+         * execution of the specified workflow.</p>  <p>This API call only returns
+         * details for in-progress workflows.</p> <p> If you provide an ID for an execution
+         * that is not in progress, or if the execution doesn't match the specified
+         * workflow ID, you receive a <code>ResourceNotFound</code> exception.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeExecution">AWS
          * API Reference</a></p>
          */
@@ -900,8 +913,8 @@ namespace Transfer
         }
 
         /**
-         * <p>Adds a Secure Shell (SSH) public key to a user account identified by a
-         * <code>UserName</code> value assigned to the specific file transfer
+         * <p>Adds a Secure Shell (SSH) public key to a Transfer Family user identified by
+         * a <code>UserName</code> value assigned to the specific file transfer
          * protocol-enabled server, identified by <code>ServerId</code>.</p> <p>The
          * response returns the <code>UserName</code> value, the <code>ServerId</code>
          * value, and the name of the <code>SshPublicKeyId</code>.</p><p><h3>See Also:</h3>
@@ -1041,8 +1054,9 @@ namespace Transfer
         }
 
         /**
-         * <p>Lists all executions for the specified workflow.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all in-progress executions for the specified workflow.</p>  <p>If
+         * the specified workflow ID cannot be found, <code>ListExecutions</code> returns a
+         * <code>ResourceNotFound</code> exception.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListExecutions">AWS
          * API Reference</a></p>
          */
@@ -1227,7 +1241,8 @@ namespace Transfer
         }
 
         /**
-         * <p>Lists all of your workflows.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all workflows associated with your Amazon Web Services account for your
+         * current region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWorkflows">AWS
          * API Reference</a></p>
          */
@@ -1281,9 +1296,21 @@ namespace Transfer
         }
 
         /**
-         * <p>Begins an outbound file transfer to a remote AS2 server. You specify the
-         * <code>ConnectorId</code> and the file paths for where to send the files.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Begins a file transfer between local Amazon Web Services storage and a remote
+         * AS2 or SFTP server.</p> <ul> <li> <p>For an AS2 connector, you specify the
+         * <code>ConnectorId</code> and one or more <code>SendFilePaths</code> to identify
+         * the files you want to transfer.</p> </li> <li> <p>For an SFTP connector, the
+         * file transfer can be either outbound or inbound. In both cases, you specify the
+         * <code>ConnectorId</code>. Depending on the direction of the transfer, you also
+         * specify the following items:</p> <ul> <li> <p>If you are transferring file from
+         * a partner's SFTP server to Amazon Web Services storage, you specify one or more
+         * <code>RetreiveFilePaths</code> to identify the files you want to transfer, and a
+         * <code>LocalDirectoryPath</code> to specify the destination folder.</p> </li>
+         * <li> <p>If you are transferring file to a partner's SFTP server from Amazon Web
+         * Services storage, you specify one or more <code>SendFilePaths</code> to identify
+         * the files you want to transfer, and a <code>RemoteDirectoryPath</code> to
+         * specify the destination folder.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer">AWS
          * API Reference</a></p>
          */
@@ -1402,6 +1429,34 @@ namespace Transfer
         }
 
         /**
+         * <p>Tests whether your SFTP connector is set up successfully. We highly recommend
+         * that you call this operation to test your ability to transfer files between
+         * local Amazon Web Services storage and a trading partner's SFTP
+         * server.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TestConnectionOutcome TestConnection(const Model::TestConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for TestConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TestConnectionRequestT = Model::TestConnectionRequest>
+        Model::TestConnectionOutcomeCallable TestConnectionCallable(const TestConnectionRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::TestConnection, request);
+        }
+
+        /**
+         * An Async wrapper for TestConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TestConnectionRequestT = Model::TestConnectionRequest>
+        void TestConnectionAsync(const TestConnectionRequestT& request, const TestConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::TestConnection, request, handler, context);
+        }
+
+        /**
          * <p>If the <code>IdentityProviderType</code> of a file transfer protocol-enabled
          * server is <code>AWS_DIRECTORY_SERVICE</code> or <code>API_Gateway</code>, tests
          * whether your identity provider is set up successfully. We highly recommend that
@@ -1410,19 +1465,26 @@ namespace Transfer
          * integration to ensure that your users can successfully use the service.</p> <p>
          * The <code>ServerId</code> and <code>UserName</code> parameters are required. The
          * <code>ServerProtocol</code>, <code>SourceIp</code>, and
-         * <code>UserPassword</code> are all optional. </p>  <p> You cannot use
-         * <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code> of
-         * your server is <code>SERVICE_MANAGED</code>. </p>  <ul> <li> <p> If you
-         * provide any incorrect values for any parameters, the <code>Response</code> field
-         * is empty. </p> </li> <li> <p> If you provide a server ID for a server that uses
-         * service-managed users, you get an error: </p> <p> <code> An error occurred
-         * (InvalidRequestException) when calling the TestIdentityProvider operation:
-         * s-<i>server-ID</i> not configured for external auth </code> </p> </li> <li> <p>
-         * If you enter a Server ID for the <code>--server-id</code> parameter that does
-         * not identify an actual Transfer server, you receive the following error: </p>
-         * <p> <code>An error occurred (ResourceNotFoundException) when calling the
-         * TestIdentityProvider operation: Unknown server</code> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * <code>UserPassword</code> are all optional. </p> <p>Note the following:</p> <ul>
+         * <li> <p> You cannot use <code>TestIdentityProvider</code> if the
+         * <code>IdentityProviderType</code> of your server is
+         * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>
+         * <code>TestIdentityProvider</code> does not work with keys: it only accepts
+         * passwords.</p> </li> <li> <p> <code>TestIdentityProvider</code> can test the
+         * password operation for a custom Identity Provider that handles keys and
+         * passwords.</p> </li> <li> <p> If you provide any incorrect values for any
+         * parameters, the <code>Response</code> field is empty. </p> </li> <li> <p> If you
+         * provide a server ID for a server that uses service-managed users, you get an
+         * error: </p> <p> <code> An error occurred (InvalidRequestException) when calling
+         * the TestIdentityProvider operation: s-<i>server-ID</i> not configured for
+         * external auth </code> </p> </li> <li> <p> If you enter a Server ID for the
+         * <code>--server-id</code> parameter that does not identify an actual Transfer
+         * server, you receive the following error: </p> <p> <code>An error occurred
+         * (ResourceNotFoundException) when calling the TestIdentityProvider operation:
+         * Unknown server</code>. </p> <p>It is possible your sever is in a different
+         * region. You can specify a region by adding the following: <code>--region
+         * region-code</code>, such as <code>--region us-east-2</code> to specify a server
+         * in <b>US East (Ohio)</b>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider">AWS
          * API Reference</a></p>
          */

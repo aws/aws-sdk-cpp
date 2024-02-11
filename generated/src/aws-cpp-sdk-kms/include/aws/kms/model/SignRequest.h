@@ -563,6 +563,39 @@ namespace Model
      */
     inline SignRequest& WithSigningAlgorithm(SigningAlgorithmSpec&& value) { SetSigningAlgorithm(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline SignRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
 
     Aws::String m_keyId;
@@ -579,6 +612,9 @@ namespace Model
 
     SigningAlgorithmSpec m_signingAlgorithm;
     bool m_signingAlgorithmHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

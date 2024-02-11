@@ -31,6 +31,10 @@ namespace Aws
         static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
         static const int START_FAILED_HASH = HashingUtils::HashString("START_FAILED");
         static const int STOP_FAILED_HASH = HashingUtils::HashString("STOP_FAILED");
+        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
+        static const int CREATE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("CREATE_ROLLBACK_FAILED");
+        static const int DELETE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("DELETE_ROLLBACK_FAILED");
+        static const int UPDATE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_FAILED");
 
 
         PipeState GetPipeStateForName(const Aws::String& name)
@@ -80,6 +84,22 @@ namespace Aws
           {
             return PipeState::STOP_FAILED;
           }
+          else if (hashCode == DELETE_FAILED_HASH)
+          {
+            return PipeState::DELETE_FAILED;
+          }
+          else if (hashCode == CREATE_ROLLBACK_FAILED_HASH)
+          {
+            return PipeState::CREATE_ROLLBACK_FAILED;
+          }
+          else if (hashCode == DELETE_ROLLBACK_FAILED_HASH)
+          {
+            return PipeState::DELETE_ROLLBACK_FAILED;
+          }
+          else if (hashCode == UPDATE_ROLLBACK_FAILED_HASH)
+          {
+            return PipeState::UPDATE_ROLLBACK_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -94,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PipeState::NOT_SET:
+            return {};
           case PipeState::RUNNING:
             return "RUNNING";
           case PipeState::STOPPED:
@@ -116,6 +138,14 @@ namespace Aws
             return "START_FAILED";
           case PipeState::STOP_FAILED:
             return "STOP_FAILED";
+          case PipeState::DELETE_FAILED:
+            return "DELETE_FAILED";
+          case PipeState::CREATE_ROLLBACK_FAILED:
+            return "CREATE_ROLLBACK_FAILED";
+          case PipeState::DELETE_ROLLBACK_FAILED:
+            return "DELETE_ROLLBACK_FAILED";
+          case PipeState::UPDATE_ROLLBACK_FAILED:
+            return "UPDATE_ROLLBACK_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

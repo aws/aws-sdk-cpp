@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoEnableStandards::NOT_SET:
+            return {};
           case AutoEnableStandards::NONE:
             return "NONE";
           case AutoEnableStandards::DEFAULT:

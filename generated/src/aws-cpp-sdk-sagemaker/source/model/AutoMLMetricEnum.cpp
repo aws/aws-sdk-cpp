@@ -26,13 +26,17 @@ namespace Aws
         static const int F1macro_HASH = HashingUtils::HashString("F1macro");
         static const int AUC_HASH = HashingUtils::HashString("AUC");
         static const int RMSE_HASH = HashingUtils::HashString("RMSE");
-        static const int MAE_HASH = HashingUtils::HashString("MAE");
-        static const int R2_HASH = HashingUtils::HashString("R2");
         static const int BalancedAccuracy_HASH = HashingUtils::HashString("BalancedAccuracy");
-        static const int Precision_HASH = HashingUtils::HashString("Precision");
-        static const int PrecisionMacro_HASH = HashingUtils::HashString("PrecisionMacro");
+        static const int R2_HASH = HashingUtils::HashString("R2");
         static const int Recall_HASH = HashingUtils::HashString("Recall");
         static const int RecallMacro_HASH = HashingUtils::HashString("RecallMacro");
+        static const int Precision_HASH = HashingUtils::HashString("Precision");
+        static const int PrecisionMacro_HASH = HashingUtils::HashString("PrecisionMacro");
+        static const int MAE_HASH = HashingUtils::HashString("MAE");
+        static const int MAPE_HASH = HashingUtils::HashString("MAPE");
+        static const int MASE_HASH = HashingUtils::HashString("MASE");
+        static const int WAPE_HASH = HashingUtils::HashString("WAPE");
+        static const int AverageWeightedQuantileLoss_HASH = HashingUtils::HashString("AverageWeightedQuantileLoss");
 
 
         AutoMLMetricEnum GetAutoMLMetricEnumForName(const Aws::String& name)
@@ -62,17 +66,21 @@ namespace Aws
           {
             return AutoMLMetricEnum::RMSE;
           }
-          else if (hashCode == MAE_HASH)
+          else if (hashCode == BalancedAccuracy_HASH)
           {
-            return AutoMLMetricEnum::MAE;
+            return AutoMLMetricEnum::BalancedAccuracy;
           }
           else if (hashCode == R2_HASH)
           {
             return AutoMLMetricEnum::R2;
           }
-          else if (hashCode == BalancedAccuracy_HASH)
+          else if (hashCode == Recall_HASH)
           {
-            return AutoMLMetricEnum::BalancedAccuracy;
+            return AutoMLMetricEnum::Recall;
+          }
+          else if (hashCode == RecallMacro_HASH)
+          {
+            return AutoMLMetricEnum::RecallMacro;
           }
           else if (hashCode == Precision_HASH)
           {
@@ -82,13 +90,25 @@ namespace Aws
           {
             return AutoMLMetricEnum::PrecisionMacro;
           }
-          else if (hashCode == Recall_HASH)
+          else if (hashCode == MAE_HASH)
           {
-            return AutoMLMetricEnum::Recall;
+            return AutoMLMetricEnum::MAE;
           }
-          else if (hashCode == RecallMacro_HASH)
+          else if (hashCode == MAPE_HASH)
           {
-            return AutoMLMetricEnum::RecallMacro;
+            return AutoMLMetricEnum::MAPE;
+          }
+          else if (hashCode == MASE_HASH)
+          {
+            return AutoMLMetricEnum::MASE;
+          }
+          else if (hashCode == WAPE_HASH)
+          {
+            return AutoMLMetricEnum::WAPE;
+          }
+          else if (hashCode == AverageWeightedQuantileLoss_HASH)
+          {
+            return AutoMLMetricEnum::AverageWeightedQuantileLoss;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -104,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLMetricEnum::NOT_SET:
+            return {};
           case AutoMLMetricEnum::Accuracy:
             return "Accuracy";
           case AutoMLMetricEnum::MSE:
@@ -116,20 +138,28 @@ namespace Aws
             return "AUC";
           case AutoMLMetricEnum::RMSE:
             return "RMSE";
-          case AutoMLMetricEnum::MAE:
-            return "MAE";
-          case AutoMLMetricEnum::R2:
-            return "R2";
           case AutoMLMetricEnum::BalancedAccuracy:
             return "BalancedAccuracy";
-          case AutoMLMetricEnum::Precision:
-            return "Precision";
-          case AutoMLMetricEnum::PrecisionMacro:
-            return "PrecisionMacro";
+          case AutoMLMetricEnum::R2:
+            return "R2";
           case AutoMLMetricEnum::Recall:
             return "Recall";
           case AutoMLMetricEnum::RecallMacro:
             return "RecallMacro";
+          case AutoMLMetricEnum::Precision:
+            return "Precision";
+          case AutoMLMetricEnum::PrecisionMacro:
+            return "PrecisionMacro";
+          case AutoMLMetricEnum::MAE:
+            return "MAE";
+          case AutoMLMetricEnum::MAPE:
+            return "MAPE";
+          case AutoMLMetricEnum::MASE:
+            return "MASE";
+          case AutoMLMetricEnum::WAPE:
+            return "WAPE";
+          case AutoMLMetricEnum::AverageWeightedQuantileLoss:
+            return "AverageWeightedQuantileLoss";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

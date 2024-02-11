@@ -21,14 +21,18 @@ namespace Model
 ScatterPlotUnaggregatedFieldWells::ScatterPlotUnaggregatedFieldWells() : 
     m_xAxisHasBeenSet(false),
     m_yAxisHasBeenSet(false),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
 }
 
 ScatterPlotUnaggregatedFieldWells::ScatterPlotUnaggregatedFieldWells(JsonView jsonValue) : 
     m_xAxisHasBeenSet(false),
     m_yAxisHasBeenSet(false),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -63,6 +67,26 @@ ScatterPlotUnaggregatedFieldWells& ScatterPlotUnaggregatedFieldWells::operator =
       m_size.push_back(sizeJsonList[sizeIndex].AsObject());
     }
     m_sizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Category"))
+  {
+    Aws::Utils::Array<JsonView> categoryJsonList = jsonValue.GetArray("Category");
+    for(unsigned categoryIndex = 0; categoryIndex < categoryJsonList.GetLength(); ++categoryIndex)
+    {
+      m_category.push_back(categoryJsonList[categoryIndex].AsObject());
+    }
+    m_categoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Label"))
+  {
+    Aws::Utils::Array<JsonView> labelJsonList = jsonValue.GetArray("Label");
+    for(unsigned labelIndex = 0; labelIndex < labelJsonList.GetLength(); ++labelIndex)
+    {
+      m_label.push_back(labelJsonList[labelIndex].AsObject());
+    }
+    m_labelHasBeenSet = true;
   }
 
   return *this;
@@ -102,6 +126,28 @@ JsonValue ScatterPlotUnaggregatedFieldWells::Jsonize() const
      sizeJsonList[sizeIndex].AsObject(m_size[sizeIndex].Jsonize());
    }
    payload.WithArray("Size", std::move(sizeJsonList));
+
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> categoryJsonList(m_category.size());
+   for(unsigned categoryIndex = 0; categoryIndex < categoryJsonList.GetLength(); ++categoryIndex)
+   {
+     categoryJsonList[categoryIndex].AsObject(m_category[categoryIndex].Jsonize());
+   }
+   payload.WithArray("Category", std::move(categoryJsonList));
+
+  }
+
+  if(m_labelHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> labelJsonList(m_label.size());
+   for(unsigned labelIndex = 0; labelIndex < labelJsonList.GetLength(); ++labelIndex)
+   {
+     labelJsonList[labelIndex].AsObject(m_label[labelIndex].Jsonize());
+   }
+   payload.WithArray("Label", std::move(labelJsonList));
 
   }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcConnectorStatus::NOT_SET:
+            return {};
           case VpcConnectorStatus::ACTIVE:
             return "ACTIVE";
           case VpcConnectorStatus::INACTIVE:

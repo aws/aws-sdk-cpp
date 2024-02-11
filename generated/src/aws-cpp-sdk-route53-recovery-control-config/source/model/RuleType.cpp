@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleType::NOT_SET:
+            return {};
           case RuleType::ATLEAST:
             return "ATLEAST";
           case RuleType::AND:

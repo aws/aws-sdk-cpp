@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -542,6 +543,137 @@ namespace Model
      */
     inline ActivityResponse& WithTreatmentId(const char* value) { SetTreatmentId(value); return *this;}
 
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetExecutionMetrics() const{ return m_executionMetrics; }
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline bool ExecutionMetricsHasBeenSet() const { return m_executionMetricsHasBeenSet; }
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline void SetExecutionMetrics(const Aws::Map<Aws::String, Aws::String>& value) { m_executionMetricsHasBeenSet = true; m_executionMetrics = value; }
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline void SetExecutionMetrics(Aws::Map<Aws::String, Aws::String>&& value) { m_executionMetricsHasBeenSet = true; m_executionMetrics = std::move(value); }
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline ActivityResponse& WithExecutionMetrics(const Aws::Map<Aws::String, Aws::String>& value) { SetExecutionMetrics(value); return *this;}
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline ActivityResponse& WithExecutionMetrics(Aws::Map<Aws::String, Aws::String>&& value) { SetExecutionMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline ActivityResponse& AddExecutionMetrics(const Aws::String& key, const Aws::String& value) { m_executionMetricsHasBeenSet = true; m_executionMetrics.emplace(key, value); return *this; }
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline ActivityResponse& AddExecutionMetrics(Aws::String&& key, const Aws::String& value) { m_executionMetricsHasBeenSet = true; m_executionMetrics.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline ActivityResponse& AddExecutionMetrics(const Aws::String& key, Aws::String&& value) { m_executionMetricsHasBeenSet = true; m_executionMetrics.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline ActivityResponse& AddExecutionMetrics(Aws::String&& key, Aws::String&& value) { m_executionMetricsHasBeenSet = true; m_executionMetrics.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline ActivityResponse& AddExecutionMetrics(const char* key, Aws::String&& value) { m_executionMetricsHasBeenSet = true; m_executionMetrics.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline ActivityResponse& AddExecutionMetrics(Aws::String&& key, const char* value) { m_executionMetricsHasBeenSet = true; m_executionMetrics.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A JSON object that contains metrics relating to the campaign execution for
+     * this campaign activity. For information about the structure and contents of the
+     * results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
+     * Guide</i>.</p>
+     */
+    inline ActivityResponse& AddExecutionMetrics(const char* key, const char* value) { m_executionMetricsHasBeenSet = true; m_executionMetrics.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_applicationId;
@@ -582,6 +714,9 @@ namespace Model
 
     Aws::String m_treatmentId;
     bool m_treatmentIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_executionMetrics;
+    bool m_executionMetricsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/AWSManagedRulesBotControlRuleSet.h>
 #include <aws/wafv2/model/AWSManagedRulesATPRuleSet.h>
+#include <aws/wafv2/model/AWSManagedRulesACFPRuleSet.h>
 #include <utility>
 
 namespace Aws
@@ -26,13 +27,20 @@ namespace Model
 
   /**
    * <p>Additional information that's used by a managed rule group. Many managed rule
-   * groups don't require this.</p> <p>Use the <code>AWSManagedRulesATPRuleSet</code>
-   * configuration object for the account takeover prevention managed rule group, to
-   * provide information such as the sign-in page of your application and the type of
-   * content to accept or reject from the client. </p> <p>Use the
+   * groups don't require this.</p> <p>The rule groups used for intelligent threat
+   * mitigation require additional configuration: </p> <ul> <li> <p>Use the
+   * <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the
+   * account creation fraud prevention managed rule group. The configuration includes
+   * the registration and sign-up pages of your application and the locations in the
+   * account creation request payload of data, such as the user email and phone
+   * number fields. </p> </li> <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code>
+   * configuration object to configure the account takeover prevention managed rule
+   * group. The configuration includes the sign-in page of your application and the
+   * locations in the login request payload of data such as the username and
+   * password. </p> </li> <li> <p>Use the
    * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
-   * the protection level that you want the Bot Control rule group to use. </p>
-   * <p>For example specifications, see the examples section of
+   * the protection level that you want the Bot Control rule group to use. </p> </li>
+   * </ul> <p>For example specifications, see the examples section of
    * <a>CreateWebACL</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupConfig">AWS
    * API Reference</a></p>
@@ -221,6 +229,97 @@ namespace Model
      */
     inline ManagedRuleGroupConfig& WithAWSManagedRulesATPRuleSet(AWSManagedRulesATPRuleSet&& value) { SetAWSManagedRulesATPRuleSet(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Additional configuration for using the account creation fraud prevention
+     * (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to
+     * provide account creation request information to the rule group. For web ACLs
+     * that protect CloudFront distributions, use this to also provide the information
+     * about how your distribution responds to account creation requests. </p> <p>For
+     * information about using the ACFP managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF
+     * Developer Guide</i>.</p>
+     */
+    inline const AWSManagedRulesACFPRuleSet& GetAWSManagedRulesACFPRuleSet() const{ return m_aWSManagedRulesACFPRuleSet; }
+
+    /**
+     * <p>Additional configuration for using the account creation fraud prevention
+     * (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to
+     * provide account creation request information to the rule group. For web ACLs
+     * that protect CloudFront distributions, use this to also provide the information
+     * about how your distribution responds to account creation requests. </p> <p>For
+     * information about using the ACFP managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF
+     * Developer Guide</i>.</p>
+     */
+    inline bool AWSManagedRulesACFPRuleSetHasBeenSet() const { return m_aWSManagedRulesACFPRuleSetHasBeenSet; }
+
+    /**
+     * <p>Additional configuration for using the account creation fraud prevention
+     * (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to
+     * provide account creation request information to the rule group. For web ACLs
+     * that protect CloudFront distributions, use this to also provide the information
+     * about how your distribution responds to account creation requests. </p> <p>For
+     * information about using the ACFP managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF
+     * Developer Guide</i>.</p>
+     */
+    inline void SetAWSManagedRulesACFPRuleSet(const AWSManagedRulesACFPRuleSet& value) { m_aWSManagedRulesACFPRuleSetHasBeenSet = true; m_aWSManagedRulesACFPRuleSet = value; }
+
+    /**
+     * <p>Additional configuration for using the account creation fraud prevention
+     * (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to
+     * provide account creation request information to the rule group. For web ACLs
+     * that protect CloudFront distributions, use this to also provide the information
+     * about how your distribution responds to account creation requests. </p> <p>For
+     * information about using the ACFP managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF
+     * Developer Guide</i>.</p>
+     */
+    inline void SetAWSManagedRulesACFPRuleSet(AWSManagedRulesACFPRuleSet&& value) { m_aWSManagedRulesACFPRuleSetHasBeenSet = true; m_aWSManagedRulesACFPRuleSet = std::move(value); }
+
+    /**
+     * <p>Additional configuration for using the account creation fraud prevention
+     * (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to
+     * provide account creation request information to the rule group. For web ACLs
+     * that protect CloudFront distributions, use this to also provide the information
+     * about how your distribution responds to account creation requests. </p> <p>For
+     * information about using the ACFP managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF
+     * Developer Guide</i>.</p>
+     */
+    inline ManagedRuleGroupConfig& WithAWSManagedRulesACFPRuleSet(const AWSManagedRulesACFPRuleSet& value) { SetAWSManagedRulesACFPRuleSet(value); return *this;}
+
+    /**
+     * <p>Additional configuration for using the account creation fraud prevention
+     * (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to
+     * provide account creation request information to the rule group. For web ACLs
+     * that protect CloudFront distributions, use this to also provide the information
+     * about how your distribution responds to account creation requests. </p> <p>For
+     * information about using the ACFP managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF
+     * Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF
+     * Developer Guide</i>.</p>
+     */
+    inline ManagedRuleGroupConfig& WithAWSManagedRulesACFPRuleSet(AWSManagedRulesACFPRuleSet&& value) { SetAWSManagedRulesACFPRuleSet(std::move(value)); return *this;}
+
   private:
 
     AWSManagedRulesBotControlRuleSet m_aWSManagedRulesBotControlRuleSet;
@@ -228,6 +327,9 @@ namespace Model
 
     AWSManagedRulesATPRuleSet m_aWSManagedRulesATPRuleSet;
     bool m_aWSManagedRulesATPRuleSetHasBeenSet = false;
+
+    AWSManagedRulesACFPRuleSet m_aWSManagedRulesACFPRuleSet;
+    bool m_aWSManagedRulesACFPRuleSetHasBeenSet = false;
   };
 
 } // namespace Model

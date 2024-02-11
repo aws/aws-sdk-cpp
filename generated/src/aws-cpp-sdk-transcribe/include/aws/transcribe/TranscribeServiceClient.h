@@ -34,6 +34,9 @@ namespace TranscribeService
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef TranscribeServiceClientConfiguration ClientConfigurationType;
+      typedef TranscribeServiceEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -347,6 +350,33 @@ namespace TranscribeService
         }
 
         /**
+         * <p>Deletes a Medical Scribe job. To use this operation, specify the name of the
+         * job you want to delete using <code>MedicalScribeJobName</code>. Job names are
+         * case sensitive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalScribeJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMedicalScribeJobOutcome DeleteMedicalScribeJob(const Model::DeleteMedicalScribeJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMedicalScribeJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMedicalScribeJobRequestT = Model::DeleteMedicalScribeJobRequest>
+        Model::DeleteMedicalScribeJobOutcomeCallable DeleteMedicalScribeJobCallable(const DeleteMedicalScribeJobRequestT& request) const
+        {
+            return SubmitCallable(&TranscribeServiceClient::DeleteMedicalScribeJob, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMedicalScribeJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMedicalScribeJobRequestT = Model::DeleteMedicalScribeJobRequest>
+        void DeleteMedicalScribeJobAsync(const DeleteMedicalScribeJobRequestT& request, const DeleteMedicalScribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TranscribeServiceClient::DeleteMedicalScribeJob, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a medical transcription job. To use this operation, specify the name
          * of the job you want to delete using <code>MedicalTranscriptionJobName</code>.
          * Job names are case sensitive.</p><p><h3>See Also:</h3>   <a
@@ -574,6 +604,38 @@ namespace TranscribeService
         void GetCallAnalyticsJobAsync(const GetCallAnalyticsJobRequestT& request, const GetCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TranscribeServiceClient::GetCallAnalyticsJob, request, handler, context);
+        }
+
+        /**
+         * <p>Provides information about the specified Medical Scribe job.</p> <p>To view
+         * the status of the specified medical transcription job, check the
+         * <code>MedicalScribeJobStatus</code> field. If the status is
+         * <code>COMPLETED</code>, the job is finished. You can find the results at the
+         * location specified in <code>MedicalScribeOutput</code>. If the status is
+         * <code>FAILED</code>, <code>FailureReason</code> provides details on why your
+         * Medical Scribe job failed.</p> <p>To get a list of your Medical Scribe jobs, use
+         * the operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalScribeJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMedicalScribeJobOutcome GetMedicalScribeJob(const Model::GetMedicalScribeJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMedicalScribeJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMedicalScribeJobRequestT = Model::GetMedicalScribeJobRequest>
+        Model::GetMedicalScribeJobOutcomeCallable GetMedicalScribeJobCallable(const GetMedicalScribeJobRequestT& request) const
+        {
+            return SubmitCallable(&TranscribeServiceClient::GetMedicalScribeJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetMedicalScribeJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMedicalScribeJobRequestT = Model::GetMedicalScribeJobRequest>
+        void GetMedicalScribeJobAsync(const GetMedicalScribeJobRequestT& request, const GetMedicalScribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TranscribeServiceClient::GetMedicalScribeJob, request, handler, context);
         }
 
         /**
@@ -815,6 +877,34 @@ namespace TranscribeService
         }
 
         /**
+         * <p>Provides a list of Medical Scribe jobs that match the specified criteria. If
+         * no criteria are specified, all Medical Scribe jobs are returned.</p> <p>To get
+         * detailed information about a specific Medical Scribe job, use the
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalScribeJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMedicalScribeJobsOutcome ListMedicalScribeJobs(const Model::ListMedicalScribeJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMedicalScribeJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMedicalScribeJobsRequestT = Model::ListMedicalScribeJobsRequest>
+        Model::ListMedicalScribeJobsOutcomeCallable ListMedicalScribeJobsCallable(const ListMedicalScribeJobsRequestT& request) const
+        {
+            return SubmitCallable(&TranscribeServiceClient::ListMedicalScribeJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListMedicalScribeJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMedicalScribeJobsRequestT = Model::ListMedicalScribeJobsRequest>
+        void ListMedicalScribeJobsAsync(const ListMedicalScribeJobsRequestT& request, const ListMedicalScribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TranscribeServiceClient::ListMedicalScribeJobs, request, handler, context);
+        }
+
+        /**
          * <p>Provides a list of medical transcription jobs that match the specified
          * criteria. If no criteria are specified, all medical transcription jobs are
          * returned.</p> <p>To get detailed information about a specific medical
@@ -1048,6 +1138,60 @@ namespace TranscribeService
         }
 
         /**
+         * <p>Transcribes patient-clinician conversations and generates clinical notes.
+         * </p> <p>Amazon Web Services HealthScribe automatically provides rich
+         * conversation transcripts, identifies speaker roles, classifies dialogues,
+         * extracts medical terms, and generates preliminary clinical notes. To learn more
+         * about these features, refer to <a
+         * href="https://docs.aws.amazon.com/transcribe/latest/dg/health-scribe.html">Amazon
+         * Web Services HealthScribe</a>.</p> <p>To make a
+         * <code>StartMedicalScribeJob</code> request, you must first upload your media
+         * file into an Amazon S3 bucket; you can then specify the Amazon S3 location of
+         * the file using the <code>Media</code> parameter.</p> <p>You must include the
+         * following parameters in your <code>StartMedicalTranscriptionJob</code>
+         * request:</p> <ul> <li> <p> <code>DataAccessRoleArn</code>: The ARN of an IAM
+         * role with the these minimum permissions: read permission on input file Amazon S3
+         * bucket specified in <code>Media</code>, write permission on the Amazon S3 bucket
+         * specified in <code>OutputBucketName</code>, and full permissions on the KMS key
+         * specified in <code>OutputEncryptionKMSKeyId</code> (if set). The role should
+         * also allow <code>transcribe.amazonaws.com</code> to assume it. </p> </li> <li>
+         * <p> <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of
+         * your media file.</p> </li> <li> <p> <code>MedicalScribeJobName</code>: A custom
+         * name you create for your MedicalScribe job that is unique within your Amazon Web
+         * Services account.</p> </li> <li> <p> <code>OutputBucketName</code>: The Amazon
+         * S3 bucket where you want your output files stored.</p> </li> <li> <p>
+         * <code>Settings</code>: A <code>MedicalScribeSettings</code> obect that must set
+         * exactly one of <code>ShowSpeakerLabels</code> or
+         * <code>ChannelIdentification</code> to true. If <code>ShowSpeakerLabels</code> is
+         * true, <code>MaxSpeakerLabels</code> must also be set. </p> </li> <li> <p>
+         * <code>ChannelDefinitions</code>: A <code>MedicalScribeChannelDefinitions</code>
+         * array should be set if and only if the <code>ChannelIdentification</code> value
+         * of <code>Settings</code> is set to true. </p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalScribeJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMedicalScribeJobOutcome StartMedicalScribeJob(const Model::StartMedicalScribeJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMedicalScribeJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMedicalScribeJobRequestT = Model::StartMedicalScribeJobRequest>
+        Model::StartMedicalScribeJobOutcomeCallable StartMedicalScribeJobCallable(const StartMedicalScribeJobRequestT& request) const
+        {
+            return SubmitCallable(&TranscribeServiceClient::StartMedicalScribeJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartMedicalScribeJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMedicalScribeJobRequestT = Model::StartMedicalScribeJobRequest>
+        void StartMedicalScribeJobAsync(const StartMedicalScribeJobRequestT& request, const StartMedicalScribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TranscribeServiceClient::StartMedicalScribeJob, request, handler, context);
+        }
+
+        /**
          * <p>Transcribes the audio from a medical dictation or conversation and applies
          * any additional Request Parameters you choose to include in your request.</p>
          * <p>In addition to many standard transcription features, Amazon Transcribe
@@ -1057,8 +1201,8 @@ namespace TranscribeService
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works-med.html">How
          * Amazon Transcribe Medical works</a>.</p> <p>To make a
          * <code>StartMedicalTranscriptionJob</code> request, you must first upload your
-         * media file into an Amazon S3 bucket; you can then specify the S3 location of the
-         * file using the <code>Media</code> parameter.</p> <p>You must include the
+         * media file into an Amazon S3 bucket; you can then specify the Amazon S3 location
+         * of the file using the <code>Media</code> parameter.</p> <p>You must include the
          * following parameters in your <code>StartMedicalTranscriptionJob</code>
          * request:</p> <ul> <li> <p> <code>region</code>: The Amazon Web Services Region
          * where you are making your request. For a list of Amazon Web Services Regions
@@ -1120,7 +1264,7 @@ namespace TranscribeService
          * <code>LanguageCode</code> parameter; you can find all valid language codes in
          * the <a
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-         * languages</a> table. If you don't know the languages spoken in your media, use
+         * languages</a> table. If you do not know the languages spoken in your media, use
          * either <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code>
          * and let Amazon Transcribe identify the languages for you.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a

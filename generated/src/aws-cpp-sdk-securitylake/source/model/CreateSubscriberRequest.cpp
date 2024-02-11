@@ -14,11 +14,11 @@ using namespace Aws::Utils;
 
 CreateSubscriberRequest::CreateSubscriberRequest() : 
     m_accessTypesHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_sourceTypesHasBeenSet(false),
+    m_sourcesHasBeenSet(false),
     m_subscriberDescriptionHasBeenSet(false),
-    m_subscriberNameHasBeenSet(false)
+    m_subscriberIdentityHasBeenSet(false),
+    m_subscriberNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -37,26 +37,14 @@ Aws::String CreateSubscriberRequest::SerializePayload() const
 
   }
 
-  if(m_accountIdHasBeenSet)
+  if(m_sourcesHasBeenSet)
   {
-   payload.WithString("accountId", m_accountId);
-
-  }
-
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("externalId", m_externalId);
-
-  }
-
-  if(m_sourceTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sourceTypesJsonList(m_sourceTypes.size());
-   for(unsigned sourceTypesIndex = 0; sourceTypesIndex < sourceTypesJsonList.GetLength(); ++sourceTypesIndex)
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
+   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
-     sourceTypesJsonList[sourceTypesIndex].AsObject(m_sourceTypes[sourceTypesIndex].Jsonize());
+     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
    }
-   payload.WithArray("sourceTypes", std::move(sourceTypesJsonList));
+   payload.WithArray("sources", std::move(sourcesJsonList));
 
   }
 
@@ -66,9 +54,26 @@ Aws::String CreateSubscriberRequest::SerializePayload() const
 
   }
 
+  if(m_subscriberIdentityHasBeenSet)
+  {
+   payload.WithObject("subscriberIdentity", m_subscriberIdentity.Jsonize());
+
+  }
+
   if(m_subscriberNameHasBeenSet)
   {
    payload.WithString("subscriberName", m_subscriberName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

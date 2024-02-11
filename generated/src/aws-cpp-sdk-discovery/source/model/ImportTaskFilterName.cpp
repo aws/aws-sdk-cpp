@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportTaskFilterName::NOT_SET:
+            return {};
           case ImportTaskFilterName::IMPORT_TASK_ID:
             return "IMPORT_TASK_ID";
           case ImportTaskFilterName::STATUS:

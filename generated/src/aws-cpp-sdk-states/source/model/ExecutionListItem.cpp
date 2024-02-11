@@ -28,7 +28,12 @@ ExecutionListItem::ExecutionListItem() :
     m_stopDateHasBeenSet(false),
     m_mapRunArnHasBeenSet(false),
     m_itemCount(0),
-    m_itemCountHasBeenSet(false)
+    m_itemCountHasBeenSet(false),
+    m_stateMachineVersionArnHasBeenSet(false),
+    m_stateMachineAliasArnHasBeenSet(false),
+    m_redriveCount(0),
+    m_redriveCountHasBeenSet(false),
+    m_redriveDateHasBeenSet(false)
 {
 }
 
@@ -42,7 +47,12 @@ ExecutionListItem::ExecutionListItem(JsonView jsonValue) :
     m_stopDateHasBeenSet(false),
     m_mapRunArnHasBeenSet(false),
     m_itemCount(0),
-    m_itemCountHasBeenSet(false)
+    m_itemCountHasBeenSet(false),
+    m_stateMachineVersionArnHasBeenSet(false),
+    m_stateMachineAliasArnHasBeenSet(false),
+    m_redriveCount(0),
+    m_redriveCountHasBeenSet(false),
+    m_redriveDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +115,34 @@ ExecutionListItem& ExecutionListItem::operator =(JsonView jsonValue)
     m_itemCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stateMachineVersionArn"))
+  {
+    m_stateMachineVersionArn = jsonValue.GetString("stateMachineVersionArn");
+
+    m_stateMachineVersionArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stateMachineAliasArn"))
+  {
+    m_stateMachineAliasArn = jsonValue.GetString("stateMachineAliasArn");
+
+    m_stateMachineAliasArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("redriveCount"))
+  {
+    m_redriveCount = jsonValue.GetInteger("redriveCount");
+
+    m_redriveCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("redriveDate"))
+  {
+    m_redriveDate = jsonValue.GetDouble("redriveDate");
+
+    m_redriveDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +193,29 @@ JsonValue ExecutionListItem::Jsonize() const
   {
    payload.WithInteger("itemCount", m_itemCount);
 
+  }
+
+  if(m_stateMachineVersionArnHasBeenSet)
+  {
+   payload.WithString("stateMachineVersionArn", m_stateMachineVersionArn);
+
+  }
+
+  if(m_stateMachineAliasArnHasBeenSet)
+  {
+   payload.WithString("stateMachineAliasArn", m_stateMachineAliasArn);
+
+  }
+
+  if(m_redriveCountHasBeenSet)
+  {
+   payload.WithInteger("redriveCount", m_redriveCount);
+
+  }
+
+  if(m_redriveDateHasBeenSet)
+  {
+   payload.WithDouble("redriveDate", m_redriveDate.SecondsWithMSPrecision());
   }
 
   return payload;

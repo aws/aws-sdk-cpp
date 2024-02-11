@@ -28,6 +28,9 @@ namespace Comprehend
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef ComprehendClientConfiguration ClientConfigurationType;
+      typedef ComprehendEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -219,7 +222,8 @@ namespace Comprehend
          * entity identified in the documents.</p> <p>For more information about targeted
          * sentiment, see <a
          * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
-         * sentiment</a>.</p><p><h3>See Also:</h3>   <a
+         * sentiment</a> in the <i>Amazon Comprehend Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectTargetedSentiment">AWS
          * API Reference</a></p>
          */
@@ -244,15 +248,25 @@ namespace Comprehend
         }
 
         /**
-         * <p>Creates a new document classification request to analyze a single document in
-         * real-time, using a previously created and trained custom model and an
-         * endpoint.</p> <p>You can input plain text or you can upload a single-page input
-         * document (text, PDF, Word, or image). </p> <p>If the system detects errors while
-         * processing a page in the input document, the API response includes an entry in
-         * <code>Errors</code> that describes the errors.</p> <p>If the system detects a
-         * document-level error in your input document, the API returns an
-         * <code>InvalidRequestException</code> error response. For details about this
-         * exception, see <a
+         * <p>Creates a classification request to analyze a single document in real-time.
+         * <code>ClassifyDocument</code> supports the following model types:</p> <ul> <li>
+         * <p>Custom classifier - a custom model that you have created and trained. For
+         * input, you can provide plain text, a single-page document (PDF, Word, or image),
+         * or Amazon Textract API output. For more information, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Custom
+         * classification</a> in the <i>Amazon Comprehend Developer Guide</i>.</p> </li>
+         * <li> <p>Prompt safety classifier - Amazon Comprehend provides a pre-trained
+         * model for classifying input prompts for generative AI applications. For input,
+         * you provide English plain text input. For prompt safety classification, the
+         * response includes only the <code>Classes</code> field. For more information
+         * about prompt safety classifiers, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+         * safety classification</a> in the <i>Amazon Comprehend Developer Guide</i>.</p>
+         * </li> </ul> <p>If the system detects errors while processing a page in the input
+         * document, the API response includes an <code>Errors</code> field that describes
+         * the errors.</p> <p>If the system detects a document-level error in your input
+         * document, the API returns an <code>InvalidRequestException</code> error
+         * response. For details about this exception, see <a
          * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html">
          * Errors in semi-structured documents</a> in the Comprehend Developer Guide.
          * </p><p><h3>See Also:</h3>   <a
@@ -337,13 +351,11 @@ namespace Comprehend
 
         /**
          * <p>Creates a new document classifier that you can use to categorize documents.
-         * To create a classifier, you provide a set of training documents that labeled
-         * with the categories that you want to use. After the classifier is trained you
-         * can use it to categorize a set of labeled documents into the categories. For
-         * more information, see <a
-         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Document
-         * Classification</a> in the Comprehend Developer Guide. </p><p><h3>See Also:</h3> 
-         * <a
+         * To create a classifier, you provide a set of training documents that are labeled
+         * with the categories that you want to use. For more information, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/training-classifier-model.html">Training
+         * classifier models</a> in the Comprehend Developer Guide. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">AWS
          * API Reference</a></p>
          */
@@ -1220,7 +1232,8 @@ namespace Comprehend
          * identified in the text.</p> <p>For more information about targeted sentiment,
          * see <a
          * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
-         * sentiment</a>.</p><p><h3>See Also:</h3>   <a
+         * sentiment</a> in the <i>Amazon Comprehend Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectTargetedSentiment">AWS
          * API Reference</a></p>
          */
@@ -1242,6 +1255,36 @@ namespace Comprehend
         void DetectTargetedSentimentAsync(const DetectTargetedSentimentRequestT& request, const DetectTargetedSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ComprehendClient::DetectTargetedSentiment, request, handler, context);
+        }
+
+        /**
+         * <p>Performs toxicity analysis on the list of text strings that you provide as
+         * input. The API response contains a results list that matches the size of the
+         * input list. For more information about toxicity detection, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html">Toxicity
+         * detection</a> in the <i>Amazon Comprehend Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectToxicContent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectToxicContentOutcome DetectToxicContent(const Model::DetectToxicContentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DetectToxicContent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DetectToxicContentRequestT = Model::DetectToxicContentRequest>
+        Model::DetectToxicContentOutcomeCallable DetectToxicContentCallable(const DetectToxicContentRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::DetectToxicContent, request);
+        }
+
+        /**
+         * An Async wrapper for DetectToxicContent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DetectToxicContentRequestT = Model::DetectToxicContentRequest>
+        void DetectToxicContentAsync(const DetectToxicContentRequestT& request, const DetectToxicContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::DetectToxicContent, request, handler, context);
         }
 
         /**
@@ -1785,9 +1828,9 @@ namespace Comprehend
         }
 
         /**
-         * <p>Starts an asynchronous document classification job. Use the
-         * <code>DescribeDocumentClassificationJob</code> operation to track the progress
-         * of the job.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an asynchronous document classification job using a custom
+         * classification model. Use the <code>DescribeDocumentClassificationJob</code>
+         * operation to track the progress of the job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob">AWS
          * API Reference</a></p>
          */

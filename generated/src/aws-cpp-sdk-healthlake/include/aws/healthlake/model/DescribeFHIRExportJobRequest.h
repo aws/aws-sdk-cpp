@@ -35,49 +35,49 @@ namespace Model
 
 
     /**
-     * <p>The AWS generated ID for the Data Store from which files are being exported
+     * <p>The AWS generated ID for the data store from which files are being exported
      * from for an export job.</p>
      */
     inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
 
     /**
-     * <p>The AWS generated ID for the Data Store from which files are being exported
+     * <p>The AWS generated ID for the data store from which files are being exported
      * from for an export job.</p>
      */
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
 
     /**
-     * <p>The AWS generated ID for the Data Store from which files are being exported
+     * <p>The AWS generated ID for the data store from which files are being exported
      * from for an export job.</p>
      */
     inline void SetDatastoreId(const Aws::String& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = value; }
 
     /**
-     * <p>The AWS generated ID for the Data Store from which files are being exported
+     * <p>The AWS generated ID for the data store from which files are being exported
      * from for an export job.</p>
      */
     inline void SetDatastoreId(Aws::String&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::move(value); }
 
     /**
-     * <p>The AWS generated ID for the Data Store from which files are being exported
+     * <p>The AWS generated ID for the data store from which files are being exported
      * from for an export job.</p>
      */
     inline void SetDatastoreId(const char* value) { m_datastoreIdHasBeenSet = true; m_datastoreId.assign(value); }
 
     /**
-     * <p>The AWS generated ID for the Data Store from which files are being exported
+     * <p>The AWS generated ID for the data store from which files are being exported
      * from for an export job.</p>
      */
     inline DescribeFHIRExportJobRequest& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
 
     /**
-     * <p>The AWS generated ID for the Data Store from which files are being exported
+     * <p>The AWS generated ID for the data store from which files are being exported
      * from for an export job.</p>
      */
     inline DescribeFHIRExportJobRequest& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS generated ID for the Data Store from which files are being exported
+     * <p>The AWS generated ID for the data store from which files are being exported
      * from for an export job.</p>
      */
     inline DescribeFHIRExportJobRequest& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}

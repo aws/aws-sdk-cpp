@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreatePrivateDnsNamespaceRequest::CreatePrivateDnsNamespaceRequest() : 
     m_nameHasBeenSet(false),
-    m_creatorRequestId(Aws::Utils::UUID::RandomUUID()),
+    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_creatorRequestIdHasBeenSet(true),
     m_descriptionHasBeenSet(false),
     m_vpcHasBeenSet(false),

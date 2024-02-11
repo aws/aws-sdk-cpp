@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/m2/MainframeModernizationServiceClientModel.h>
+#include <aws/m2/model/GetSignedBluinsightsUrlRequest.h>
 
 namespace Aws
 {
@@ -29,6 +30,9 @@ namespace MainframeModernization
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef MainframeModernizationClientConfiguration ClientConfigurationType;
+      typedef MainframeModernizationEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -468,6 +472,32 @@ namespace MainframeModernization
         void GetEnvironmentAsync(const GetEnvironmentRequestT& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MainframeModernizationClient::GetEnvironment, request, handler, context);
+        }
+
+        /**
+         * <p>Gets a single sign-on URL that can be used to connect to AWS Blu
+         * Insights.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSignedBluinsightsUrlOutcome GetSignedBluinsightsUrl(const Model::GetSignedBluinsightsUrlRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetSignedBluinsightsUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSignedBluinsightsUrlRequestT = Model::GetSignedBluinsightsUrlRequest>
+        Model::GetSignedBluinsightsUrlOutcomeCallable GetSignedBluinsightsUrlCallable(const GetSignedBluinsightsUrlRequestT& request = {}) const
+        {
+            return SubmitCallable(&MainframeModernizationClient::GetSignedBluinsightsUrl, request);
+        }
+
+        /**
+         * An Async wrapper for GetSignedBluinsightsUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSignedBluinsightsUrlRequestT = Model::GetSignedBluinsightsUrlRequest>
+        void GetSignedBluinsightsUrlAsync(const GetSignedBluinsightsUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSignedBluinsightsUrlRequestT& request = {}) const
+        {
+            return SubmitAsync(&MainframeModernizationClient::GetSignedBluinsightsUrl, request, handler, context);
         }
 
         /**

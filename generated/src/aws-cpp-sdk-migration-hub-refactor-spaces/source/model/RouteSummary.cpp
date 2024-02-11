@@ -19,6 +19,8 @@ namespace Model
 {
 
 RouteSummary::RouteSummary() : 
+    m_appendSourcePath(false),
+    m_appendSourcePathHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createdByAccountIdHasBeenSet(false),
@@ -43,6 +45,8 @@ RouteSummary::RouteSummary() :
 }
 
 RouteSummary::RouteSummary(JsonView jsonValue) : 
+    m_appendSourcePath(false),
+    m_appendSourcePathHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createdByAccountIdHasBeenSet(false),
@@ -69,6 +73,13 @@ RouteSummary::RouteSummary(JsonView jsonValue) :
 
 RouteSummary& RouteSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AppendSourcePath"))
+  {
+    m_appendSourcePath = jsonValue.GetBool("AppendSourcePath");
+
+    m_appendSourcePathHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
@@ -203,6 +214,12 @@ RouteSummary& RouteSummary::operator =(JsonView jsonValue)
 JsonValue RouteSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_appendSourcePathHasBeenSet)
+  {
+   payload.WithBool("AppendSourcePath", m_appendSourcePath);
+
+  }
 
   if(m_applicationIdHasBeenSet)
   {

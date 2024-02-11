@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CheckoutType::NOT_SET:
+            return {};
           case CheckoutType::PROVISIONAL:
             return "PROVISIONAL";
           case CheckoutType::PERPETUAL:

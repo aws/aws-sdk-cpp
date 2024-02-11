@@ -31,7 +31,9 @@ CreateStackRequest::CreateStackRequest() :
     m_tagsHasBeenSet(false),
     m_clientRequestTokenHasBeenSet(false),
     m_enableTerminationProtection(false),
-    m_enableTerminationProtectionHasBeenSet(false)
+    m_enableTerminationProtectionHasBeenSet(false),
+    m_retainExceptOnCreate(false),
+    m_retainExceptOnCreateHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,11 @@ Aws::String CreateStackRequest::SerializePayload() const
   if(m_enableTerminationProtectionHasBeenSet)
   {
     ss << "EnableTerminationProtection=" << std::boolalpha << m_enableTerminationProtection << "&";
+  }
+
+  if(m_retainExceptOnCreateHasBeenSet)
+  {
+    ss << "RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
   }
 
   ss << "Version=2010-05-15";

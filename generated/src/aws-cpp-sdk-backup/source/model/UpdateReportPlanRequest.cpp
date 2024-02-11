@@ -17,7 +17,7 @@ UpdateReportPlanRequest::UpdateReportPlanRequest() :
     m_reportPlanDescriptionHasBeenSet(false),
     m_reportDeliveryChannelHasBeenSet(false),
     m_reportSettingHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

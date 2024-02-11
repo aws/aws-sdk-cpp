@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FlowLogsResourceType::NOT_SET:
+            return {};
           case FlowLogsResourceType::VPC:
             return "VPC";
           case FlowLogsResourceType::Subnet:

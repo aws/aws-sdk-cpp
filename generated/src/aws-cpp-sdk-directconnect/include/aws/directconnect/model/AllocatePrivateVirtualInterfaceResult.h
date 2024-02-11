@@ -648,35 +648,35 @@ namespace Model
 
     /**
      * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
-     * and 9001. The default value is 1500.</p>
+     * and 8500. The default value is 1500</p>
      */
     inline int GetMtu() const{ return m_mtu; }
 
     /**
      * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
-     * and 9001. The default value is 1500.</p>
+     * and 8500. The default value is 1500</p>
      */
     inline void SetMtu(int value) { m_mtu = value; }
 
     /**
      * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
-     * and 9001. The default value is 1500.</p>
+     * and 8500. The default value is 1500</p>
      */
     inline AllocatePrivateVirtualInterfaceResult& WithMtu(int value) { SetMtu(value); return *this;}
 
 
     /**
-     * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+     * <p>Indicates whether jumbo frames are supported.</p>
      */
     inline bool GetJumboFrameCapable() const{ return m_jumboFrameCapable; }
 
     /**
-     * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+     * <p>Indicates whether jumbo frames are supported.</p>
      */
     inline void SetJumboFrameCapable(bool value) { m_jumboFrameCapable = value; }
 
     /**
-     * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+     * <p>Indicates whether jumbo frames are supported.</p>
      */
     inline AllocatePrivateVirtualInterfaceResult& WithJumboFrameCapable(bool value) { SetJumboFrameCapable(value); return *this;}
 

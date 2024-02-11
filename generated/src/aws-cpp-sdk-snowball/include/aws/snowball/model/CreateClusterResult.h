@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/snowball/model/JobListEntry.h>
 #include <utility>
 
 namespace Aws
@@ -68,6 +70,56 @@ namespace Model
     inline CreateClusterResult& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
 
+    /**
+     * <p>List of jobs created for this cluster. For syntax, see <a
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * in this guide.</p>
+     */
+    inline const Aws::Vector<JobListEntry>& GetJobListEntries() const{ return m_jobListEntries; }
+
+    /**
+     * <p>List of jobs created for this cluster. For syntax, see <a
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * in this guide.</p>
+     */
+    inline void SetJobListEntries(const Aws::Vector<JobListEntry>& value) { m_jobListEntries = value; }
+
+    /**
+     * <p>List of jobs created for this cluster. For syntax, see <a
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * in this guide.</p>
+     */
+    inline void SetJobListEntries(Aws::Vector<JobListEntry>&& value) { m_jobListEntries = std::move(value); }
+
+    /**
+     * <p>List of jobs created for this cluster. For syntax, see <a
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * in this guide.</p>
+     */
+    inline CreateClusterResult& WithJobListEntries(const Aws::Vector<JobListEntry>& value) { SetJobListEntries(value); return *this;}
+
+    /**
+     * <p>List of jobs created for this cluster. For syntax, see <a
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * in this guide.</p>
+     */
+    inline CreateClusterResult& WithJobListEntries(Aws::Vector<JobListEntry>&& value) { SetJobListEntries(std::move(value)); return *this;}
+
+    /**
+     * <p>List of jobs created for this cluster. For syntax, see <a
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * in this guide.</p>
+     */
+    inline CreateClusterResult& AddJobListEntries(const JobListEntry& value) { m_jobListEntries.push_back(value); return *this; }
+
+    /**
+     * <p>List of jobs created for this cluster. For syntax, see <a
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+     * in this guide.</p>
+     */
+    inline CreateClusterResult& AddJobListEntries(JobListEntry&& value) { m_jobListEntries.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -92,6 +144,8 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
+
+    Aws::Vector<JobListEntry> m_jobListEntries;
 
     Aws::String m_requestId;
   };

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RepositorySyncStatus::NOT_SET:
+            return {};
           case RepositorySyncStatus::INITIATED:
             return "INITIATED";
           case RepositorySyncStatus::IN_PROGRESS:

@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/inspector/InspectorServiceClientModel.h>
+#include <aws/inspector/model/DescribeCrossAccountAccessRoleRequest.h>
 
 namespace Aws
 {
@@ -28,6 +29,9 @@ namespace Inspector
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef InspectorClientConfiguration ClientConfigurationType;
+      typedef InspectorEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -388,25 +392,26 @@ namespace Inspector
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCrossAccountAccessRoleOutcome DescribeCrossAccountAccessRole() const;
+        virtual Model::DescribeCrossAccountAccessRoleOutcome DescribeCrossAccountAccessRole(const Model::DescribeCrossAccountAccessRoleRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCrossAccountAccessRole that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeCrossAccountAccessRoleOutcomeCallable DescribeCrossAccountAccessRoleCallable() const
+        template<typename DescribeCrossAccountAccessRoleRequestT = Model::DescribeCrossAccountAccessRoleRequest>
+        Model::DescribeCrossAccountAccessRoleOutcomeCallable DescribeCrossAccountAccessRoleCallable(const DescribeCrossAccountAccessRoleRequestT& request = {}) const
         {
-            return SubmitCallable(&InspectorClient::DescribeCrossAccountAccessRole);
+            return SubmitCallable(&InspectorClient::DescribeCrossAccountAccessRole, request);
         }
 
         /**
          * An Async wrapper for DescribeCrossAccountAccessRole that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeCrossAccountAccessRoleAsync(const DescribeCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeCrossAccountAccessRoleRequestT = Model::DescribeCrossAccountAccessRoleRequest>
+        void DescribeCrossAccountAccessRoleAsync(const DescribeCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCrossAccountAccessRoleRequestT& request = {}) const
         {
-            return SubmitAsync(&InspectorClient::DescribeCrossAccountAccessRole, handler, context);
+            return SubmitAsync(&InspectorClient::DescribeCrossAccountAccessRole, request, handler, context);
         }
+
         /**
          * <p>Describes the exclusions that are specified by the exclusions'
          * ARNs.</p><p><h3>See Also:</h3>   <a

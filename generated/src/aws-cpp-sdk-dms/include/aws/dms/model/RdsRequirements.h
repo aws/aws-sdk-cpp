@@ -223,6 +223,47 @@ namespace Model
      */
     inline RdsRequirements& WithDeploymentOption(const char* value) { SetDeploymentOption(value); return *this;}
 
+
+    /**
+     * <p>The required target Amazon RDS engine version.</p>
+     */
+    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The required target Amazon RDS engine version.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The required target Amazon RDS engine version.</p>
+     */
+    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /**
+     * <p>The required target Amazon RDS engine version.</p>
+     */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
+
+    /**
+     * <p>The required target Amazon RDS engine version.</p>
+     */
+    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
+
+    /**
+     * <p>The required target Amazon RDS engine version.</p>
+     */
+    inline RdsRequirements& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /**
+     * <p>The required target Amazon RDS engine version.</p>
+     */
+    inline RdsRequirements& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The required target Amazon RDS engine version.</p>
+     */
+    inline RdsRequirements& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
   private:
 
     Aws::String m_engineEdition;
@@ -242,6 +283,9 @@ namespace Model
 
     Aws::String m_deploymentOption;
     bool m_deploymentOptionHasBeenSet = false;
+
+    Aws::String m_engineVersion;
+    bool m_engineVersionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetGroupStatus::NOT_SET:
+            return {};
           case TargetGroupStatus::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case TargetGroupStatus::ACTIVE:

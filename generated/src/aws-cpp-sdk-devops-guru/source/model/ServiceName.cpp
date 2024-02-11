@@ -164,6 +164,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceName::NOT_SET:
+            return {};
           case ServiceName::API_GATEWAY:
             return "API_GATEWAY";
           case ServiceName::APPLICATION_ELB:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InsightState::NOT_SET:
+            return {};
           case InsightState::ACTIVE:
             return "ACTIVE";
           case InsightState::CLOSED:

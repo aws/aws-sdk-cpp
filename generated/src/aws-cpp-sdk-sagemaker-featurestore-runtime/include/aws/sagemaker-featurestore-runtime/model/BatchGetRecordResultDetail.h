@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The output of Records that have been retrieved in a batch.</p><p><h3>See
+   * <p>The output of records that have been retrieved in a batch.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecordResultDetail">AWS
    * API Reference</a></p>
@@ -170,6 +170,47 @@ namespace Model
      */
     inline BatchGetRecordResultDetail& AddRecord(FeatureValue&& value) { m_recordHasBeenSet = true; m_record.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline const Aws::String& GetExpiresAt() const{ return m_expiresAt; }
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline bool ExpiresAtHasBeenSet() const { return m_expiresAtHasBeenSet; }
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline void SetExpiresAt(const Aws::String& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline void SetExpiresAt(Aws::String&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::move(value); }
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline void SetExpiresAt(const char* value) { m_expiresAtHasBeenSet = true; m_expiresAt.assign(value); }
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline BatchGetRecordResultDetail& WithExpiresAt(const Aws::String& value) { SetExpiresAt(value); return *this;}
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline BatchGetRecordResultDetail& WithExpiresAt(Aws::String&& value) { SetExpiresAt(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline BatchGetRecordResultDetail& WithExpiresAt(const char* value) { SetExpiresAt(value); return *this;}
+
   private:
 
     Aws::String m_featureGroupName;
@@ -180,6 +221,9 @@ namespace Model
 
     Aws::Vector<FeatureValue> m_record;
     bool m_recordHasBeenSet = false;
+
+    Aws::String m_expiresAt;
+    bool m_expiresAtHasBeenSet = false;
   };
 
 } // namespace Model

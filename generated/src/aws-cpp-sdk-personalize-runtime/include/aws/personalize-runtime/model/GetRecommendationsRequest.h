@@ -183,22 +183,30 @@ namespace Model
 
 
     /**
-     * <p>The number of results to return. The default is 25. The maximum is 500.</p>
+     * <p>The number of results to return. The default is 25. If you are including
+     * metadata in recommendations, the maximum is 50. Otherwise, the maximum is
+     * 500.</p>
      */
     inline int GetNumResults() const{ return m_numResults; }
 
     /**
-     * <p>The number of results to return. The default is 25. The maximum is 500.</p>
+     * <p>The number of results to return. The default is 25. If you are including
+     * metadata in recommendations, the maximum is 50. Otherwise, the maximum is
+     * 500.</p>
      */
     inline bool NumResultsHasBeenSet() const { return m_numResultsHasBeenSet; }
 
     /**
-     * <p>The number of results to return. The default is 25. The maximum is 500.</p>
+     * <p>The number of results to return. The default is 25. If you are including
+     * metadata in recommendations, the maximum is 50. Otherwise, the maximum is
+     * 500.</p>
      */
     inline void SetNumResults(int value) { m_numResultsHasBeenSet = true; m_numResults = value; }
 
     /**
-     * <p>The number of results to return. The default is 25. The maximum is 500.</p>
+     * <p>The number of results to return. The default is 25. If you are including
+     * metadata in recommendations, the maximum is 50. Otherwise, the maximum is
+     * 500.</p>
      */
     inline GetRecommendationsRequest& WithNumResults(int value) { SetNumResults(value); return *this;}
 
@@ -703,6 +711,187 @@ namespace Model
      */
     inline GetRecommendationsRequest& AddPromotions(Promotion&& value) { m_promotionsHasBeenSet = true; m_promotions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetMetadataColumns() const{ return m_metadataColumns; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline bool MetadataColumnsHasBeenSet() const { return m_metadataColumnsHasBeenSet; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline void SetMetadataColumns(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns = value; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline void SetMetadataColumns(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns = std::move(value); }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline GetRecommendationsRequest& WithMetadataColumns(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetMetadataColumns(value); return *this;}
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline GetRecommendationsRequest& WithMetadataColumns(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetMetadataColumns(std::move(value)); return *this;}
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline GetRecommendationsRequest& AddMetadataColumns(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, value); return *this; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline GetRecommendationsRequest& AddMetadataColumns(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline GetRecommendationsRequest& AddMetadataColumns(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline GetRecommendationsRequest& AddMetadataColumns(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline GetRecommendationsRequest& AddMetadataColumns(const char* key, Aws::Vector<Aws::String>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign or recommender, specify the metadata columns from your Items dataset to
+     * include in item recommendations. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns
+     * you can provide is 10.</p> <p> For information about enabling metadata for a
+     * campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling
+     * metadata for a recommender, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+     * metadata in recommendations for a recommender</a>. </p>
+     */
+    inline GetRecommendationsRequest& AddMetadataColumns(const char* key, const Aws::Vector<Aws::String>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_campaignArn;
@@ -731,6 +920,9 @@ namespace Model
 
     Aws::Vector<Promotion> m_promotions;
     bool m_promotionsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_metadataColumns;
+    bool m_metadataColumnsHasBeenSet = false;
   };
 
 } // namespace Model

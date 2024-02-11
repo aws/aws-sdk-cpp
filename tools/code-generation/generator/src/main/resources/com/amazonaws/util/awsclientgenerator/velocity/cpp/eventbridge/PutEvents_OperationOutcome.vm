@@ -4,6 +4,7 @@
  */
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
+  AWS_OPERATION_GUARD(${operation.name});
   if (request.EndpointIdHasBeenSet())
   {
     Aws::Http::URI uri;

@@ -6,16 +6,18 @@
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/model/AlgorithmSpecification.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/braket/model/JobCheckpointConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/braket/model/DeviceConfig.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/braket/model/InstanceConfig.h>
 #include <aws/braket/model/JobOutputDataConfig.h>
+#include <aws/braket/model/HybridJobQueueInfo.h>
 #include <aws/braket/model/JobPrimaryStatus.h>
 #include <aws/braket/model/JobStoppingCondition.h>
+#include <aws/braket/model/Association.h>
 #include <aws/braket/model/JobEventDetails.h>
 #include <aws/braket/model/InputFileConfig.h>
 #include <utility>
@@ -78,6 +80,42 @@ namespace Model
      * and the user-defined metrics used to evaluation the job.</p>
      */
     inline GetJobResult& WithAlgorithmSpecification(AlgorithmSpecification&& value) { SetAlgorithmSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+     */
+    inline const Aws::Vector<Association>& GetAssociations() const{ return m_associations; }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+     */
+    inline void SetAssociations(const Aws::Vector<Association>& value) { m_associations = value; }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+     */
+    inline void SetAssociations(Aws::Vector<Association>&& value) { m_associations = std::move(value); }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+     */
+    inline GetJobResult& WithAssociations(const Aws::Vector<Association>& value) { SetAssociations(value); return *this;}
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+     */
+    inline GetJobResult& WithAssociations(Aws::Vector<Association>&& value) { SetAssociations(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+     */
+    inline GetJobResult& AddAssociations(const Association& value) { m_associations.push_back(value); return *this; }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+     */
+    inline GetJobResult& AddAssociations(Association&& value) { m_associations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -566,6 +604,47 @@ namespace Model
 
 
     /**
+     * <p>Queue information for the requested job. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API
+     * request.</p>
+     */
+    inline const HybridJobQueueInfo& GetQueueInfo() const{ return m_queueInfo; }
+
+    /**
+     * <p>Queue information for the requested job. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API
+     * request.</p>
+     */
+    inline void SetQueueInfo(const HybridJobQueueInfo& value) { m_queueInfo = value; }
+
+    /**
+     * <p>Queue information for the requested job. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API
+     * request.</p>
+     */
+    inline void SetQueueInfo(HybridJobQueueInfo&& value) { m_queueInfo = std::move(value); }
+
+    /**
+     * <p>Queue information for the requested job. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API
+     * request.</p>
+     */
+    inline GetJobResult& WithQueueInfo(const HybridJobQueueInfo& value) { SetQueueInfo(value); return *this;}
+
+    /**
+     * <p>Queue information for the requested job. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API
+     * request.</p>
+     */
+    inline GetJobResult& WithQueueInfo(HybridJobQueueInfo&& value) { SetQueueInfo(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume
      * to perform tasks on behalf of a user. It can access user resources, run an
      * Amazon Braket job container on behalf of user, and output resources to the s3
@@ -798,6 +877,8 @@ namespace Model
 
     AlgorithmSpecification m_algorithmSpecification;
 
+    Aws::Vector<Association> m_associations;
+
     int m_billableDuration;
 
     JobCheckpointConfig m_checkpointConfig;
@@ -823,6 +904,8 @@ namespace Model
     Aws::String m_jobName;
 
     JobOutputDataConfig m_outputDataConfig;
+
+    HybridJobQueueInfo m_queueInfo;
 
     Aws::String m_roleArn;
 

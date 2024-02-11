@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RevocationReason::NOT_SET:
+            return {};
           case RevocationReason::UNSPECIFIED:
             return "UNSPECIFIED";
           case RevocationReason::KEY_COMPROMISE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FontStyle::NOT_SET:
+            return {};
           case FontStyle::NORMAL:
             return "NORMAL";
           case FontStyle::ITALIC:

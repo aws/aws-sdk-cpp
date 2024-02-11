@@ -19,12 +19,14 @@ namespace Model
 {
 
 Integrations::Integrations() : 
-    m_resourceGroupHasBeenSet(false)
+    m_resourceGroupHasBeenSet(false),
+    m_applicationTagResourceGroupHasBeenSet(false)
 {
 }
 
 Integrations::Integrations(JsonView jsonValue) : 
-    m_resourceGroupHasBeenSet(false)
+    m_resourceGroupHasBeenSet(false),
+    m_applicationTagResourceGroupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ Integrations& Integrations::operator =(JsonView jsonValue)
     m_resourceGroupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("applicationTagResourceGroup"))
+  {
+    m_applicationTagResourceGroup = jsonValue.GetObject("applicationTagResourceGroup");
+
+    m_applicationTagResourceGroupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue Integrations::Jsonize() const
   if(m_resourceGroupHasBeenSet)
   {
    payload.WithObject("resourceGroup", m_resourceGroup.Jsonize());
+
+  }
+
+  if(m_applicationTagResourceGroupHasBeenSet)
+  {
+   payload.WithObject("applicationTagResourceGroup", m_applicationTagResourceGroup.Jsonize());
 
   }
 

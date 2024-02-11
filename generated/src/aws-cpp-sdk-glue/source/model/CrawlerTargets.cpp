@@ -24,7 +24,9 @@ CrawlerTargets::CrawlerTargets() :
     m_mongoDBTargetsHasBeenSet(false),
     m_dynamoDBTargetsHasBeenSet(false),
     m_catalogTargetsHasBeenSet(false),
-    m_deltaTargetsHasBeenSet(false)
+    m_deltaTargetsHasBeenSet(false),
+    m_icebergTargetsHasBeenSet(false),
+    m_hudiTargetsHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ CrawlerTargets::CrawlerTargets(JsonView jsonValue) :
     m_mongoDBTargetsHasBeenSet(false),
     m_dynamoDBTargetsHasBeenSet(false),
     m_catalogTargetsHasBeenSet(false),
-    m_deltaTargetsHasBeenSet(false)
+    m_deltaTargetsHasBeenSet(false),
+    m_icebergTargetsHasBeenSet(false),
+    m_hudiTargetsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +103,26 @@ CrawlerTargets& CrawlerTargets::operator =(JsonView jsonValue)
       m_deltaTargets.push_back(deltaTargetsJsonList[deltaTargetsIndex].AsObject());
     }
     m_deltaTargetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IcebergTargets"))
+  {
+    Aws::Utils::Array<JsonView> icebergTargetsJsonList = jsonValue.GetArray("IcebergTargets");
+    for(unsigned icebergTargetsIndex = 0; icebergTargetsIndex < icebergTargetsJsonList.GetLength(); ++icebergTargetsIndex)
+    {
+      m_icebergTargets.push_back(icebergTargetsJsonList[icebergTargetsIndex].AsObject());
+    }
+    m_icebergTargetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HudiTargets"))
+  {
+    Aws::Utils::Array<JsonView> hudiTargetsJsonList = jsonValue.GetArray("HudiTargets");
+    for(unsigned hudiTargetsIndex = 0; hudiTargetsIndex < hudiTargetsJsonList.GetLength(); ++hudiTargetsIndex)
+    {
+      m_hudiTargets.push_back(hudiTargetsJsonList[hudiTargetsIndex].AsObject());
+    }
+    m_hudiTargetsHasBeenSet = true;
   }
 
   return *this;
@@ -171,6 +195,28 @@ JsonValue CrawlerTargets::Jsonize() const
      deltaTargetsJsonList[deltaTargetsIndex].AsObject(m_deltaTargets[deltaTargetsIndex].Jsonize());
    }
    payload.WithArray("DeltaTargets", std::move(deltaTargetsJsonList));
+
+  }
+
+  if(m_icebergTargetsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> icebergTargetsJsonList(m_icebergTargets.size());
+   for(unsigned icebergTargetsIndex = 0; icebergTargetsIndex < icebergTargetsJsonList.GetLength(); ++icebergTargetsIndex)
+   {
+     icebergTargetsJsonList[icebergTargetsIndex].AsObject(m_icebergTargets[icebergTargetsIndex].Jsonize());
+   }
+   payload.WithArray("IcebergTargets", std::move(icebergTargetsJsonList));
+
+  }
+
+  if(m_hudiTargetsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> hudiTargetsJsonList(m_hudiTargets.size());
+   for(unsigned hudiTargetsIndex = 0; hudiTargetsIndex < hudiTargetsJsonList.GetLength(); ++hudiTargetsIndex)
+   {
+     hudiTargetsJsonList[hudiTargetsIndex].AsObject(m_hudiTargets[hudiTargetsIndex].Jsonize());
+   }
+   payload.WithArray("HudiTargets", std::move(hudiTargetsJsonList));
 
   }
 

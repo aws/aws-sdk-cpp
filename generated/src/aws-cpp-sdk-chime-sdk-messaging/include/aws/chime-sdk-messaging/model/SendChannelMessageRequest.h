@@ -11,7 +11,9 @@
 #include <aws/chime-sdk-messaging/model/ChannelMessagePersistenceType.h>
 #include <aws/chime-sdk-messaging/model/PushNotificationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/chime-sdk-messaging/model/MessageAttributeValue.h>
+#include <aws/chime-sdk-messaging/model/Target.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -82,73 +84,97 @@ namespace Model
 
 
     /**
-     * <p>The content of the message.</p>
+     * <p>The content of the channel message.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>The content of the message.</p>
+     * <p>The content of the channel message.</p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
-     * <p>The content of the message.</p>
+     * <p>The content of the channel message.</p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>The content of the message.</p>
+     * <p>The content of the channel message.</p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p>The content of the message.</p>
+     * <p>The content of the channel message.</p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>The content of the message.</p>
+     * <p>The content of the channel message.</p>
      */
     inline SendChannelMessageRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>The content of the message.</p>
+     * <p>The content of the channel message.</p>
      */
     inline SendChannelMessageRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>The content of the message.</p>
+     * <p>The content of the channel message.</p>
      */
     inline SendChannelMessageRequest& WithContent(const char* value) { SetContent(value); return *this;}
 
 
     /**
-     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p> <p>
+     * <code>STANDARD</code> messages can be up to 4KB in size and contain metadata.
+     * Metadata is arbitrary, and you can use it in a variety of ways, such as
+     * containing a link to an attachment.</p> <p> <code>CONTROL</code> messages are
+     * limited to 30 bytes and do not contain metadata.</p>
      */
     inline const ChannelMessageType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p> <p>
+     * <code>STANDARD</code> messages can be up to 4KB in size and contain metadata.
+     * Metadata is arbitrary, and you can use it in a variety of ways, such as
+     * containing a link to an attachment.</p> <p> <code>CONTROL</code> messages are
+     * limited to 30 bytes and do not contain metadata.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p> <p>
+     * <code>STANDARD</code> messages can be up to 4KB in size and contain metadata.
+     * Metadata is arbitrary, and you can use it in a variety of ways, such as
+     * containing a link to an attachment.</p> <p> <code>CONTROL</code> messages are
+     * limited to 30 bytes and do not contain metadata.</p>
      */
     inline void SetType(const ChannelMessageType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p> <p>
+     * <code>STANDARD</code> messages can be up to 4KB in size and contain metadata.
+     * Metadata is arbitrary, and you can use it in a variety of ways, such as
+     * containing a link to an attachment.</p> <p> <code>CONTROL</code> messages are
+     * limited to 30 bytes and do not contain metadata.</p>
      */
     inline void SetType(ChannelMessageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p> <p>
+     * <code>STANDARD</code> messages can be up to 4KB in size and contain metadata.
+     * Metadata is arbitrary, and you can use it in a variety of ways, such as
+     * containing a link to an attachment.</p> <p> <code>CONTROL</code> messages are
+     * limited to 30 bytes and do not contain metadata.</p>
      */
     inline SendChannelMessageRequest& WithType(const ChannelMessageType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+     * <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p> <p>
+     * <code>STANDARD</code> messages can be up to 4KB in size and contain metadata.
+     * Metadata is arbitrary, and you can use it in a variety of ways, such as
+     * containing a link to an attachment.</p> <p> <code>CONTROL</code> messages are
+     * limited to 30 bytes and do not contain metadata.</p>
      */
     inline SendChannelMessageRequest& WithType(ChannelMessageType&& value) { SetType(std::move(value)); return *this;}
 
@@ -518,6 +544,71 @@ namespace Model
      */
     inline SendChannelMessageRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
 
+
+    /**
+     * <p>The target of a message. Must be a member of the channel, such as another
+     * user, a bot, or the sender. Only the target and the sender can view targeted
+     * messages. Only users who can see targeted messages can take actions on them.
+     * However, administrators can delete targeted messages that they can’t see. </p>
+     */
+    inline const Aws::Vector<Target>& GetTarget() const{ return m_target; }
+
+    /**
+     * <p>The target of a message. Must be a member of the channel, such as another
+     * user, a bot, or the sender. Only the target and the sender can view targeted
+     * messages. Only users who can see targeted messages can take actions on them.
+     * However, administrators can delete targeted messages that they can’t see. </p>
+     */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    /**
+     * <p>The target of a message. Must be a member of the channel, such as another
+     * user, a bot, or the sender. Only the target and the sender can view targeted
+     * messages. Only users who can see targeted messages can take actions on them.
+     * However, administrators can delete targeted messages that they can’t see. </p>
+     */
+    inline void SetTarget(const Aws::Vector<Target>& value) { m_targetHasBeenSet = true; m_target = value; }
+
+    /**
+     * <p>The target of a message. Must be a member of the channel, such as another
+     * user, a bot, or the sender. Only the target and the sender can view targeted
+     * messages. Only users who can see targeted messages can take actions on them.
+     * However, administrators can delete targeted messages that they can’t see. </p>
+     */
+    inline void SetTarget(Aws::Vector<Target>&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
+
+    /**
+     * <p>The target of a message. Must be a member of the channel, such as another
+     * user, a bot, or the sender. Only the target and the sender can view targeted
+     * messages. Only users who can see targeted messages can take actions on them.
+     * However, administrators can delete targeted messages that they can’t see. </p>
+     */
+    inline SendChannelMessageRequest& WithTarget(const Aws::Vector<Target>& value) { SetTarget(value); return *this;}
+
+    /**
+     * <p>The target of a message. Must be a member of the channel, such as another
+     * user, a bot, or the sender. Only the target and the sender can view targeted
+     * messages. Only users who can see targeted messages can take actions on them.
+     * However, administrators can delete targeted messages that they can’t see. </p>
+     */
+    inline SendChannelMessageRequest& WithTarget(Aws::Vector<Target>&& value) { SetTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>The target of a message. Must be a member of the channel, such as another
+     * user, a bot, or the sender. Only the target and the sender can view targeted
+     * messages. Only users who can see targeted messages can take actions on them.
+     * However, administrators can delete targeted messages that they can’t see. </p>
+     */
+    inline SendChannelMessageRequest& AddTarget(const Target& value) { m_targetHasBeenSet = true; m_target.push_back(value); return *this; }
+
+    /**
+     * <p>The target of a message. Must be a member of the channel, such as another
+     * user, a bot, or the sender. Only the target and the sender can view targeted
+     * messages. Only users who can see targeted messages can take actions on them.
+     * However, administrators can delete targeted messages that they can’t see. </p>
+     */
+    inline SendChannelMessageRequest& AddTarget(Target&& value) { m_targetHasBeenSet = true; m_target.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_channelArn;
@@ -552,6 +643,9 @@ namespace Model
 
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
+
+    Aws::Vector<Target> m_target;
+    bool m_targetHasBeenSet = false;
   };
 
 } // namespace Model

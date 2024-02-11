@@ -7,6 +7,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudfront/model/FunctionRuntime.h>
+#include <aws/cloudfront/model/KeyValueStoreAssociations.h>
 #include <utility>
 
 namespace Aws
@@ -81,40 +82,65 @@ namespace Model
 
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment version.</p>
      */
     inline const FunctionRuntime& GetRuntime() const{ return m_runtime; }
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment version.</p>
      */
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment version.</p>
      */
     inline void SetRuntime(const FunctionRuntime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment version.</p>
      */
     inline void SetRuntime(FunctionRuntime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment version.</p>
      */
     inline FunctionConfig& WithRuntime(const FunctionRuntime& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment version.</p>
      */
     inline FunctionConfig& WithRuntime(FunctionRuntime&& value) { SetRuntime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for the Key Value Store associations.</p>
+     */
+    inline const KeyValueStoreAssociations& GetKeyValueStoreAssociations() const{ return m_keyValueStoreAssociations; }
+
+    /**
+     * <p>The configuration for the Key Value Store associations.</p>
+     */
+    inline bool KeyValueStoreAssociationsHasBeenSet() const { return m_keyValueStoreAssociationsHasBeenSet; }
+
+    /**
+     * <p>The configuration for the Key Value Store associations.</p>
+     */
+    inline void SetKeyValueStoreAssociations(const KeyValueStoreAssociations& value) { m_keyValueStoreAssociationsHasBeenSet = true; m_keyValueStoreAssociations = value; }
+
+    /**
+     * <p>The configuration for the Key Value Store associations.</p>
+     */
+    inline void SetKeyValueStoreAssociations(KeyValueStoreAssociations&& value) { m_keyValueStoreAssociationsHasBeenSet = true; m_keyValueStoreAssociations = std::move(value); }
+
+    /**
+     * <p>The configuration for the Key Value Store associations.</p>
+     */
+    inline FunctionConfig& WithKeyValueStoreAssociations(const KeyValueStoreAssociations& value) { SetKeyValueStoreAssociations(value); return *this;}
+
+    /**
+     * <p>The configuration for the Key Value Store associations.</p>
+     */
+    inline FunctionConfig& WithKeyValueStoreAssociations(KeyValueStoreAssociations&& value) { SetKeyValueStoreAssociations(std::move(value)); return *this;}
 
   private:
 
@@ -123,6 +149,9 @@ namespace Model
 
     FunctionRuntime m_runtime;
     bool m_runtimeHasBeenSet = false;
+
+    KeyValueStoreAssociations m_keyValueStoreAssociations;
+    bool m_keyValueStoreAssociationsHasBeenSet = false;
   };
 
 } // namespace Model

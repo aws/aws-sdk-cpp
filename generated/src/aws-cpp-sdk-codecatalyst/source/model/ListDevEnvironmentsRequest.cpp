@@ -26,6 +26,12 @@ Aws::String ListDevEnvironmentsRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_projectNameHasBeenSet)
+  {
+   payload.WithString("projectName", m_projectName);
+
+  }
+
   if(m_filtersHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());

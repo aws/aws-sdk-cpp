@@ -22,6 +22,7 @@ namespace Aws
 
         static const int WDL_HASH = HashingUtils::HashString("WDL");
         static const int NEXTFLOW_HASH = HashingUtils::HashString("NEXTFLOW");
+        static const int CWL_HASH = HashingUtils::HashString("CWL");
 
 
         WorkflowEngine GetWorkflowEngineForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == NEXTFLOW_HASH)
           {
             return WorkflowEngine::NEXTFLOW;
+          }
+          else if (hashCode == CWL_HASH)
+          {
+            return WorkflowEngine::CWL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowEngine::NOT_SET:
+            return {};
           case WorkflowEngine::WDL:
             return "WDL";
           case WorkflowEngine::NEXTFLOW:
             return "NEXTFLOW";
+          case WorkflowEngine::CWL:
+            return "CWL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

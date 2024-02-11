@@ -24,7 +24,8 @@ AccountInfo::AccountInfo() :
     m_editionHasBeenSet(false),
     m_notificationEmailHasBeenSet(false),
     m_authenticationTypeHasBeenSet(false),
-    m_accountSubscriptionStatusHasBeenSet(false)
+    m_accountSubscriptionStatusHasBeenSet(false),
+    m_iAMIdentityCenterInstanceArnHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ AccountInfo::AccountInfo(JsonView jsonValue) :
     m_editionHasBeenSet(false),
     m_notificationEmailHasBeenSet(false),
     m_authenticationTypeHasBeenSet(false),
-    m_accountSubscriptionStatusHasBeenSet(false)
+    m_accountSubscriptionStatusHasBeenSet(false),
+    m_iAMIdentityCenterInstanceArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ AccountInfo& AccountInfo::operator =(JsonView jsonValue)
     m_accountSubscriptionStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IAMIdentityCenterInstanceArn"))
+  {
+    m_iAMIdentityCenterInstanceArn = jsonValue.GetString("IAMIdentityCenterInstanceArn");
+
+    m_iAMIdentityCenterInstanceArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +118,12 @@ JsonValue AccountInfo::Jsonize() const
   if(m_accountSubscriptionStatusHasBeenSet)
   {
    payload.WithString("AccountSubscriptionStatus", m_accountSubscriptionStatus);
+
+  }
+
+  if(m_iAMIdentityCenterInstanceArnHasBeenSet)
+  {
+   payload.WithString("IAMIdentityCenterInstanceArn", m_iAMIdentityCenterInstanceArn);
 
   }
 

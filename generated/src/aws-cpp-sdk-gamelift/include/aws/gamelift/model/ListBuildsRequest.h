@@ -142,56 +142,56 @@ namespace Model
     /**
      * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
-     * the beginning of the result set, do not specify a value.</p>
+     * the beginning of the result set, don't specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
-     * the beginning of the result set, do not specify a value.</p>
+     * the beginning of the result set, don't specify a value.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
-     * the beginning of the result set, do not specify a value.</p>
+     * the beginning of the result set, don't specify a value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
-     * the beginning of the result set, do not specify a value.</p>
+     * the beginning of the result set, don't specify a value.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
-     * the beginning of the result set, do not specify a value.</p>
+     * the beginning of the result set, don't specify a value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
-     * the beginning of the result set, do not specify a value.</p>
+     * the beginning of the result set, don't specify a value.</p>
      */
     inline ListBuildsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
-     * the beginning of the result set, do not specify a value.</p>
+     * the beginning of the result set, don't specify a value.</p>
      */
     inline ListBuildsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
-     * the beginning of the result set, do not specify a value.</p>
+     * the beginning of the result set, don't specify a value.</p>
      */
     inline ListBuildsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

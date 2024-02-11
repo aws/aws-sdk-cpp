@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connect/model/DisconnectReason.h>
 #include <utility>
 
 namespace Aws
@@ -129,6 +130,43 @@ namespace Model
      */
     inline StopContactRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
+    /**
+     * <p>The reason a contact can be disconnected. Only Amazon Connect outbound
+     * campaigns can provide this field.</p>
+     */
+    inline const DisconnectReason& GetDisconnectReason() const{ return m_disconnectReason; }
+
+    /**
+     * <p>The reason a contact can be disconnected. Only Amazon Connect outbound
+     * campaigns can provide this field.</p>
+     */
+    inline bool DisconnectReasonHasBeenSet() const { return m_disconnectReasonHasBeenSet; }
+
+    /**
+     * <p>The reason a contact can be disconnected. Only Amazon Connect outbound
+     * campaigns can provide this field.</p>
+     */
+    inline void SetDisconnectReason(const DisconnectReason& value) { m_disconnectReasonHasBeenSet = true; m_disconnectReason = value; }
+
+    /**
+     * <p>The reason a contact can be disconnected. Only Amazon Connect outbound
+     * campaigns can provide this field.</p>
+     */
+    inline void SetDisconnectReason(DisconnectReason&& value) { m_disconnectReasonHasBeenSet = true; m_disconnectReason = std::move(value); }
+
+    /**
+     * <p>The reason a contact can be disconnected. Only Amazon Connect outbound
+     * campaigns can provide this field.</p>
+     */
+    inline StopContactRequest& WithDisconnectReason(const DisconnectReason& value) { SetDisconnectReason(value); return *this;}
+
+    /**
+     * <p>The reason a contact can be disconnected. Only Amazon Connect outbound
+     * campaigns can provide this field.</p>
+     */
+    inline StopContactRequest& WithDisconnectReason(DisconnectReason&& value) { SetDisconnectReason(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_contactId;
@@ -136,6 +174,9 @@ namespace Model
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
+
+    DisconnectReason m_disconnectReason;
+    bool m_disconnectReasonHasBeenSet = false;
   };
 
 } // namespace Model

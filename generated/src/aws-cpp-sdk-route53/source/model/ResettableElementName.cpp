@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResettableElementName::NOT_SET:
+            return {};
           case ResettableElementName::FullyQualifiedDomainName:
             return "FullyQualifiedDomainName";
           case ResettableElementName::Regions:

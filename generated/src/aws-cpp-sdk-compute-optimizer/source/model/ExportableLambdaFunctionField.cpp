@@ -46,6 +46,11 @@ namespace Aws
         static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
         static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
         static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
+        static const int Tags_HASH = HashingUtils::HashString("Tags");
+        static const int EffectiveRecommendationPreferencesSavingsEstimationMode_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesSavingsEstimationMode");
+        static const int RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
+        static const int RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
+        static const int RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
 
 
         ExportableLambdaFunctionField GetExportableLambdaFunctionFieldForName(const Aws::String& name)
@@ -155,6 +160,26 @@ namespace Aws
           {
             return ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue;
           }
+          else if (hashCode == Tags_HASH)
+          {
+            return ExportableLambdaFunctionField::Tags;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesSavingsEstimationMode_HASH)
+          {
+            return ExportableLambdaFunctionField::EffectiveRecommendationPreferencesSavingsEstimationMode;
+          }
+          else if (hashCode == RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage_HASH)
+          {
+            return ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts_HASH)
+          {
+            return ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH)
+          {
+            return ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -169,6 +194,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportableLambdaFunctionField::NOT_SET:
+            return {};
           case ExportableLambdaFunctionField::AccountId:
             return "AccountId";
           case ExportableLambdaFunctionField::FunctionArn:
@@ -221,6 +248,16 @@ namespace Aws
             return "RecommendationOptionsEstimatedMonthlySavingsCurrency";
           case ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue:
             return "RecommendationOptionsEstimatedMonthlySavingsValue";
+          case ExportableLambdaFunctionField::Tags:
+            return "Tags";
+          case ExportableLambdaFunctionField::EffectiveRecommendationPreferencesSavingsEstimationMode:
+            return "EffectiveRecommendationPreferencesSavingsEstimationMode";
+          case ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage:
+            return "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage";
+          case ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts:
+            return "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts";
+          case ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts:
+            return "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

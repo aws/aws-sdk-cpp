@@ -29,6 +29,9 @@ namespace Aws
         static const int FAILED_CREATION_HASH = HashingUtils::HashString("FAILED_CREATION");
         static const int RETRY_DELETION_HASH = HashingUtils::HashString("RETRY_DELETION");
         static const int FAILED_DELETION_HASH = HashingUtils::HashString("FAILED_DELETION");
+        static const int UPDATE_NETWORK_REQUESTED_HASH = HashingUtils::HashString("UPDATE_NETWORK_REQUESTED");
+        static const int UPDATING_NETWORK_HASH = HashingUtils::HashString("UPDATING_NETWORK");
+        static const int FAILED_UPDATING_NETWORK_HASH = HashingUtils::HashString("FAILED_UPDATING_NETWORK");
         static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
 
 
@@ -71,6 +74,18 @@ namespace Aws
           {
             return EnvironmentStatus::FAILED_DELETION;
           }
+          else if (hashCode == UPDATE_NETWORK_REQUESTED_HASH)
+          {
+            return EnvironmentStatus::UPDATE_NETWORK_REQUESTED;
+          }
+          else if (hashCode == UPDATING_NETWORK_HASH)
+          {
+            return EnvironmentStatus::UPDATING_NETWORK;
+          }
+          else if (hashCode == FAILED_UPDATING_NETWORK_HASH)
+          {
+            return EnvironmentStatus::FAILED_UPDATING_NETWORK;
+          }
           else if (hashCode == SUSPENDED_HASH)
           {
             return EnvironmentStatus::SUSPENDED;
@@ -89,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentStatus::NOT_SET:
+            return {};
           case EnvironmentStatus::CREATE_REQUESTED:
             return "CREATE_REQUESTED";
           case EnvironmentStatus::CREATING:
@@ -107,6 +124,12 @@ namespace Aws
             return "RETRY_DELETION";
           case EnvironmentStatus::FAILED_DELETION:
             return "FAILED_DELETION";
+          case EnvironmentStatus::UPDATE_NETWORK_REQUESTED:
+            return "UPDATE_NETWORK_REQUESTED";
+          case EnvironmentStatus::UPDATING_NETWORK:
+            return "UPDATING_NETWORK";
+          case EnvironmentStatus::FAILED_UPDATING_NETWORK:
+            return "FAILED_UPDATING_NETWORK";
           case EnvironmentStatus::SUSPENDED:
             return "SUSPENDED";
           default:

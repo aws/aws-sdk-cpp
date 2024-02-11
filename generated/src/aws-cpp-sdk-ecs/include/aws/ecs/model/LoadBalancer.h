@@ -50,9 +50,8 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you're using a Classic Load Balancer, omit the target group
-     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
-     * can specify one or multiple target groups. For more information, see <a
+     * Balancer. </p> <p>For services using the <code>ECS</code> deployment controller,
+     * you can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * multiple target groups with a service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
@@ -73,9 +72,8 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you're using a Classic Load Balancer, omit the target group
-     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
-     * can specify one or multiple target groups. For more information, see <a
+     * Balancer. </p> <p>For services using the <code>ECS</code> deployment controller,
+     * you can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * multiple target groups with a service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
@@ -96,9 +94,8 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you're using a Classic Load Balancer, omit the target group
-     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
-     * can specify one or multiple target groups. For more information, see <a
+     * Balancer. </p> <p>For services using the <code>ECS</code> deployment controller,
+     * you can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * multiple target groups with a service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
@@ -119,9 +116,8 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you're using a Classic Load Balancer, omit the target group
-     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
-     * can specify one or multiple target groups. For more information, see <a
+     * Balancer. </p> <p>For services using the <code>ECS</code> deployment controller,
+     * you can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * multiple target groups with a service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
@@ -142,9 +138,8 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you're using a Classic Load Balancer, omit the target group
-     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
-     * can specify one or multiple target groups. For more information, see <a
+     * Balancer. </p> <p>For services using the <code>ECS</code> deployment controller,
+     * you can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * multiple target groups with a service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
@@ -165,9 +160,8 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you're using a Classic Load Balancer, omit the target group
-     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
-     * can specify one or multiple target groups. For more information, see <a
+     * Balancer. </p> <p>For services using the <code>ECS</code> deployment controller,
+     * you can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * multiple target groups with a service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
@@ -188,9 +182,8 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you're using a Classic Load Balancer, omit the target group
-     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
-     * can specify one or multiple target groups. For more information, see <a
+     * Balancer. </p> <p>For services using the <code>ECS</code> deployment controller,
+     * you can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * multiple target groups with a service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
@@ -211,9 +204,8 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you're using a Classic Load Balancer, omit the target group
-     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
-     * can specify one or multiple target groups. For more information, see <a
+     * Balancer. </p> <p>For services using the <code>ECS</code> deployment controller,
+     * you can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * multiple target groups with a service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
@@ -233,64 +225,56 @@ namespace Model
 
     /**
      * <p>The name of the load balancer to associate with the Amazon ECS service or
-     * task set.</p> <p>A load balancer name is only specified when using a Classic
-     * Load Balancer. If you are using an Application Load Balancer or a Network Load
+     * task set.</p> <p>If you are using an Application Load Balancer or a Network Load
      * Balancer the load balancer name parameter should be omitted.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
     /**
      * <p>The name of the load balancer to associate with the Amazon ECS service or
-     * task set.</p> <p>A load balancer name is only specified when using a Classic
-     * Load Balancer. If you are using an Application Load Balancer or a Network Load
+     * task set.</p> <p>If you are using an Application Load Balancer or a Network Load
      * Balancer the load balancer name parameter should be omitted.</p>
      */
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
 
     /**
      * <p>The name of the load balancer to associate with the Amazon ECS service or
-     * task set.</p> <p>A load balancer name is only specified when using a Classic
-     * Load Balancer. If you are using an Application Load Balancer or a Network Load
+     * task set.</p> <p>If you are using an Application Load Balancer or a Network Load
      * Balancer the load balancer name parameter should be omitted.</p>
      */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
      * <p>The name of the load balancer to associate with the Amazon ECS service or
-     * task set.</p> <p>A load balancer name is only specified when using a Classic
-     * Load Balancer. If you are using an Application Load Balancer or a Network Load
+     * task set.</p> <p>If you are using an Application Load Balancer or a Network Load
      * Balancer the load balancer name parameter should be omitted.</p>
      */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
 
     /**
      * <p>The name of the load balancer to associate with the Amazon ECS service or
-     * task set.</p> <p>A load balancer name is only specified when using a Classic
-     * Load Balancer. If you are using an Application Load Balancer or a Network Load
+     * task set.</p> <p>If you are using an Application Load Balancer or a Network Load
      * Balancer the load balancer name parameter should be omitted.</p>
      */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /**
      * <p>The name of the load balancer to associate with the Amazon ECS service or
-     * task set.</p> <p>A load balancer name is only specified when using a Classic
-     * Load Balancer. If you are using an Application Load Balancer or a Network Load
+     * task set.</p> <p>If you are using an Application Load Balancer or a Network Load
      * Balancer the load balancer name parameter should be omitted.</p>
      */
     inline LoadBalancer& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
     /**
      * <p>The name of the load balancer to associate with the Amazon ECS service or
-     * task set.</p> <p>A load balancer name is only specified when using a Classic
-     * Load Balancer. If you are using an Application Load Balancer or a Network Load
+     * task set.</p> <p>If you are using an Application Load Balancer or a Network Load
      * Balancer the load balancer name parameter should be omitted.</p>
      */
     inline LoadBalancer& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the load balancer to associate with the Amazon ECS service or
-     * task set.</p> <p>A load balancer name is only specified when using a Classic
-     * Load Balancer. If you are using an Application Load Balancer or a Network Load
+     * task set.</p> <p>If you are using an Application Load Balancer or a Network Load
      * Balancer the load balancer name parameter should be omitted.</p>
      */
     inline LoadBalancer& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}

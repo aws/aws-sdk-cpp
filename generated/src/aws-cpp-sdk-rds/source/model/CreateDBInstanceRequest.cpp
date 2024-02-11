@@ -52,6 +52,10 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_domainHasBeenSet(false),
+    m_domainFqdnHasBeenSet(false),
+    m_domainOuHasBeenSet(false),
+    m_domainAuthSecretArnHasBeenSet(false),
+    m_domainDnsIpsHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_monitoringInterval(0),
@@ -84,7 +88,12 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_manageMasterUserPassword(false),
     m_manageMasterUserPasswordHasBeenSet(false),
     m_masterUserSecretKmsKeyIdHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false)
+    m_cACertificateIdentifierHasBeenSet(false),
+    m_dBSystemIdHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
 }
 
@@ -274,6 +283,32 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
     ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
   }
 
+  if(m_domainFqdnHasBeenSet)
+  {
+    ss << "DomainFqdn=" << StringUtils::URLEncode(m_domainFqdn.c_str()) << "&";
+  }
+
+  if(m_domainOuHasBeenSet)
+  {
+    ss << "DomainOu=" << StringUtils::URLEncode(m_domainOu.c_str()) << "&";
+  }
+
+  if(m_domainAuthSecretArnHasBeenSet)
+  {
+    ss << "DomainAuthSecretArn=" << StringUtils::URLEncode(m_domainAuthSecretArn.c_str()) << "&";
+  }
+
+  if(m_domainDnsIpsHasBeenSet)
+  {
+    unsigned domainDnsIpsCount = 1;
+    for(auto& item : m_domainDnsIps)
+    {
+      ss << "DomainDnsIps.member." << domainDnsIpsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      domainDnsIpsCount++;
+    }
+  }
+
   if(m_copyTagsToSnapshotHasBeenSet)
   {
     ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
@@ -393,6 +428,21 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_cACertificateIdentifierHasBeenSet)
   {
     ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
+
+  if(m_dBSystemIdHasBeenSet)
+  {
+    ss << "DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
+  }
+
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+    ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+
+  if(m_multiTenantHasBeenSet)
+  {
+    ss << "MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
   ss << "Version=2014-10-31";

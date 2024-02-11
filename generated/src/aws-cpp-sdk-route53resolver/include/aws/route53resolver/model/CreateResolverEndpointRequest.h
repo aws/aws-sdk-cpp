@@ -12,6 +12,7 @@
 #include <aws/route53resolver/model/ResolverEndpointType.h>
 #include <aws/route53resolver/model/IpAddressRequest.h>
 #include <aws/route53resolver/model/Tag.h>
+#include <aws/route53resolver/model/Protocol.h>
 #include <utility>
 
 namespace Aws
@@ -296,58 +297,164 @@ namespace Model
     /**
      * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
      * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
-     * The subnet ID uniquely identifies a VPC. </p>
+     * The subnet ID uniquely identifies a VPC. </p>  <p>Even though the minimum
+     * is 1, Route 53 requires that you create at least two.</p> 
      */
     inline const Aws::Vector<IpAddressRequest>& GetIpAddresses() const{ return m_ipAddresses; }
 
     /**
      * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
      * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
-     * The subnet ID uniquely identifies a VPC. </p>
+     * The subnet ID uniquely identifies a VPC. </p>  <p>Even though the minimum
+     * is 1, Route 53 requires that you create at least two.</p> 
      */
     inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
 
     /**
      * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
      * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
-     * The subnet ID uniquely identifies a VPC. </p>
+     * The subnet ID uniquely identifies a VPC. </p>  <p>Even though the minimum
+     * is 1, Route 53 requires that you create at least two.</p> 
      */
     inline void SetIpAddresses(const Aws::Vector<IpAddressRequest>& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
 
     /**
      * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
      * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
-     * The subnet ID uniquely identifies a VPC. </p>
+     * The subnet ID uniquely identifies a VPC. </p>  <p>Even though the minimum
+     * is 1, Route 53 requires that you create at least two.</p> 
      */
     inline void SetIpAddresses(Aws::Vector<IpAddressRequest>&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
 
     /**
      * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
      * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
-     * The subnet ID uniquely identifies a VPC. </p>
+     * The subnet ID uniquely identifies a VPC. </p>  <p>Even though the minimum
+     * is 1, Route 53 requires that you create at least two.</p> 
      */
     inline CreateResolverEndpointRequest& WithIpAddresses(const Aws::Vector<IpAddressRequest>& value) { SetIpAddresses(value); return *this;}
 
     /**
      * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
      * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
-     * The subnet ID uniquely identifies a VPC. </p>
+     * The subnet ID uniquely identifies a VPC. </p>  <p>Even though the minimum
+     * is 1, Route 53 requires that you create at least two.</p> 
      */
     inline CreateResolverEndpointRequest& WithIpAddresses(Aws::Vector<IpAddressRequest>&& value) { SetIpAddresses(std::move(value)); return *this;}
 
     /**
      * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
      * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
-     * The subnet ID uniquely identifies a VPC. </p>
+     * The subnet ID uniquely identifies a VPC. </p>  <p>Even though the minimum
+     * is 1, Route 53 requires that you create at least two.</p> 
      */
     inline CreateResolverEndpointRequest& AddIpAddresses(const IpAddressRequest& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
 
     /**
      * <p>The subnets and IP addresses in your VPC that DNS queries originate from (for
      * outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
-     * The subnet ID uniquely identifies a VPC. </p>
+     * The subnet ID uniquely identifies a VPC. </p>  <p>Even though the minimum
+     * is 1, Route 53 requires that you create at least two.</p> 
      */
     inline CreateResolverEndpointRequest& AddIpAddresses(IpAddressRequest&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline CreateResolverEndpointRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline CreateResolverEndpointRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline CreateResolverEndpointRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline const Aws::String& GetPreferredInstanceType() const{ return m_preferredInstanceType; }
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline bool PreferredInstanceTypeHasBeenSet() const { return m_preferredInstanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline void SetPreferredInstanceType(const Aws::String& value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType = value; }
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline void SetPreferredInstanceType(Aws::String&& value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType = std::move(value); }
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline void SetPreferredInstanceType(const char* value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType.assign(value); }
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline CreateResolverEndpointRequest& WithPreferredInstanceType(const Aws::String& value) { SetPreferredInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline CreateResolverEndpointRequest& WithPreferredInstanceType(Aws::String&& value) { SetPreferredInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline CreateResolverEndpointRequest& WithPreferredInstanceType(const char* value) { SetPreferredInstanceType(value); return *this;}
 
 
     /**
@@ -400,46 +507,151 @@ namespace Model
 
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline const ResolverEndpointType& GetResolverEndpointType() const{ return m_resolverEndpointType; }
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline bool ResolverEndpointTypeHasBeenSet() const { return m_resolverEndpointTypeHasBeenSet; }
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline void SetResolverEndpointType(const ResolverEndpointType& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = value; }
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline void SetResolverEndpointType(ResolverEndpointType&& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = std::move(value); }
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline CreateResolverEndpointRequest& WithResolverEndpointType(const ResolverEndpointType& value) { SetResolverEndpointType(value); return *this;}
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline CreateResolverEndpointRequest& WithResolverEndpointType(ResolverEndpointType&& value) { SetResolverEndpointType(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>
+     */
+    inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>
+     */
+    inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>
+     */
+    inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>
+     */
+    inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>
+     */
+    inline CreateResolverEndpointRequest& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>
+     */
+    inline CreateResolverEndpointRequest& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>
+     */
+    inline CreateResolverEndpointRequest& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>
+     */
+    inline CreateResolverEndpointRequest& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -458,11 +670,20 @@ namespace Model
     Aws::Vector<IpAddressRequest> m_ipAddresses;
     bool m_ipAddressesHasBeenSet = false;
 
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet = false;
+
+    Aws::String m_preferredInstanceType;
+    bool m_preferredInstanceTypeHasBeenSet = false;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
     ResolverEndpointType m_resolverEndpointType;
     bool m_resolverEndpointTypeHasBeenSet = false;
+
+    Aws::Vector<Protocol> m_protocols;
+    bool m_protocolsHasBeenSet = false;
   };
 
 } // namespace Model

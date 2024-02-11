@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     OFF,
-    BEHIND_LIVE_EDGE
+    BEHIND_LIVE_EDGE,
+    AFTER_LIVE_EDGE
   };
 
 namespace ModeMapper

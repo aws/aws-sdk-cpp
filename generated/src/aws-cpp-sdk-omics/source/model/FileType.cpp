@@ -23,6 +23,7 @@ namespace Aws
         static const int FASTQ_HASH = HashingUtils::HashString("FASTQ");
         static const int BAM_HASH = HashingUtils::HashString("BAM");
         static const int CRAM_HASH = HashingUtils::HashString("CRAM");
+        static const int UBAM_HASH = HashingUtils::HashString("UBAM");
 
 
         FileType GetFileTypeForName(const Aws::String& name)
@@ -40,6 +41,10 @@ namespace Aws
           {
             return FileType::CRAM;
           }
+          else if (hashCode == UBAM_HASH)
+          {
+            return FileType::UBAM;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileType::NOT_SET:
+            return {};
           case FileType::FASTQ:
             return "FASTQ";
           case FileType::BAM:
             return "BAM";
           case FileType::CRAM:
             return "CRAM";
+          case FileType::UBAM:
+            return "UBAM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

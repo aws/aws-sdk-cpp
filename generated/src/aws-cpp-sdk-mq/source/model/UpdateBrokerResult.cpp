@@ -19,13 +19,17 @@ using namespace Aws;
 
 UpdateBrokerResult::UpdateBrokerResult() : 
     m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
-    m_autoMinorVersionUpgrade(false)
+    m_autoMinorVersionUpgrade(false),
+    m_dataReplicationMode(DataReplicationMode::NOT_SET),
+    m_pendingDataReplicationMode(DataReplicationMode::NOT_SET)
 {
 }
 
 UpdateBrokerResult::UpdateBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
-    m_autoMinorVersionUpgrade(false)
+    m_autoMinorVersionUpgrade(false),
+    m_dataReplicationMode(DataReplicationMode::NOT_SET),
+    m_pendingDataReplicationMode(DataReplicationMode::NOT_SET)
 {
   *this = result;
 }
@@ -94,6 +98,30 @@ UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
     }
+  }
+
+  if(jsonValue.ValueExists("dataReplicationMetadata"))
+  {
+    m_dataReplicationMetadata = jsonValue.GetObject("dataReplicationMetadata");
+
+  }
+
+  if(jsonValue.ValueExists("dataReplicationMode"))
+  {
+    m_dataReplicationMode = DataReplicationModeMapper::GetDataReplicationModeForName(jsonValue.GetString("dataReplicationMode"));
+
+  }
+
+  if(jsonValue.ValueExists("pendingDataReplicationMetadata"))
+  {
+    m_pendingDataReplicationMetadata = jsonValue.GetObject("pendingDataReplicationMetadata");
+
+  }
+
+  if(jsonValue.ValueExists("pendingDataReplicationMode"))
+  {
+    m_pendingDataReplicationMode = DataReplicationModeMapper::GetDataReplicationModeForName(jsonValue.GetString("pendingDataReplicationMode"));
+
   }
 
 

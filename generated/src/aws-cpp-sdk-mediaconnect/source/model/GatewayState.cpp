@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GatewayState::NOT_SET:
+            return {};
           case GatewayState::CREATING:
             return "CREATING";
           case GatewayState::ACTIVE:

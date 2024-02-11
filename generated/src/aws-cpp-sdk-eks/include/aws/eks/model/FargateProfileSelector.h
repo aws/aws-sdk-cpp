@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The Kubernetes namespace that the selector should match.</p>
+     * <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The Kubernetes namespace that the selector should match.</p>
+     * <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The Kubernetes namespace that the selector should match.</p>
+     * <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The Kubernetes namespace that the selector should match.</p>
+     * <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The Kubernetes namespace that the selector should match.</p>
+     * <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The Kubernetes namespace that the selector should match.</p>
+     * <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
      */
     inline FargateProfileSelector& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The Kubernetes namespace that the selector should match.</p>
+     * <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
      */
     inline FargateProfileSelector& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The Kubernetes namespace that the selector should match.</p>
+     * <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
      */
     inline FargateProfileSelector& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

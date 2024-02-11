@@ -126,42 +126,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline KnowledgeBaseSummary& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline KnowledgeBaseSummary& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline KnowledgeBaseSummary& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
 
@@ -270,32 +278,74 @@ namespace Model
 
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. </p> <p>For more information about setting up a
+     * customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. </p> <p>For more information about setting up a
+     * customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. </p> <p>For more information about setting up a
+     * customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. </p> <p>For more information about setting up a
+     * customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. </p> <p>For more information about setting up a
+     * customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline KnowledgeBaseSummary& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The KMS key used for encryption.</p>
+     * <p>The configuration information for the customer managed key used for
+     * encryption. </p> <p>This KMS key must have a policy that allows
+     * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. </p> <p>For more information about setting up a
+     * customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     * Amazon Connect Wisdom for your instance</a>.</p>
      */
     inline KnowledgeBaseSummary& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
 

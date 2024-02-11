@@ -21,9 +21,12 @@
         #else
             #define AWS_CONFIGSERVICE_API __declspec(dllimport)
         #endif /* AWS_CONFIGSERVICE_EXPORTS */
+        #define AWS_CONFIGSERVICE_EXTERN
     #else
         #define AWS_CONFIGSERVICE_API
+        #define AWS_CONFIGSERVICE_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_CONFIGSERVICE_API
+    #define AWS_CONFIGSERVICE_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

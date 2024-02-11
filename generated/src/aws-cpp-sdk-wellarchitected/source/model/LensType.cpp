@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LensType::NOT_SET:
+            return {};
           case LensType::AWS_OFFICIAL:
             return "AWS_OFFICIAL";
           case LensType::CUSTOM_SHARED:

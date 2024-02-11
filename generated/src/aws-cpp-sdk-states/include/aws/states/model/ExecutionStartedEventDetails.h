@@ -167,6 +167,104 @@ namespace Model
      */
     inline ExecutionStartedEventDetails& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for
+     * starting the state machine execution.</p>
+     */
+    inline const Aws::String& GetStateMachineAliasArn() const{ return m_stateMachineAliasArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for
+     * starting the state machine execution.</p>
+     */
+    inline bool StateMachineAliasArnHasBeenSet() const { return m_stateMachineAliasArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for
+     * starting the state machine execution.</p>
+     */
+    inline void SetStateMachineAliasArn(const Aws::String& value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for
+     * starting the state machine execution.</p>
+     */
+    inline void SetStateMachineAliasArn(Aws::String&& value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for
+     * starting the state machine execution.</p>
+     */
+    inline void SetStateMachineAliasArn(const char* value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for
+     * starting the state machine execution.</p>
+     */
+    inline ExecutionStartedEventDetails& WithStateMachineAliasArn(const Aws::String& value) { SetStateMachineAliasArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for
+     * starting the state machine execution.</p>
+     */
+    inline ExecutionStartedEventDetails& WithStateMachineAliasArn(Aws::String&& value) { SetStateMachineAliasArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for
+     * starting the state machine execution.</p>
+     */
+    inline ExecutionStartedEventDetails& WithStateMachineAliasArn(const char* value) { SetStateMachineAliasArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine version used
+     * for starting the state machine execution.</p>
+     */
+    inline const Aws::String& GetStateMachineVersionArn() const{ return m_stateMachineVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine version used
+     * for starting the state machine execution.</p>
+     */
+    inline bool StateMachineVersionArnHasBeenSet() const { return m_stateMachineVersionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine version used
+     * for starting the state machine execution.</p>
+     */
+    inline void SetStateMachineVersionArn(const Aws::String& value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine version used
+     * for starting the state machine execution.</p>
+     */
+    inline void SetStateMachineVersionArn(Aws::String&& value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine version used
+     * for starting the state machine execution.</p>
+     */
+    inline void SetStateMachineVersionArn(const char* value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine version used
+     * for starting the state machine execution.</p>
+     */
+    inline ExecutionStartedEventDetails& WithStateMachineVersionArn(const Aws::String& value) { SetStateMachineVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine version used
+     * for starting the state machine execution.</p>
+     */
+    inline ExecutionStartedEventDetails& WithStateMachineVersionArn(Aws::String&& value) { SetStateMachineVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a state machine version used
+     * for starting the state machine execution.</p>
+     */
+    inline ExecutionStartedEventDetails& WithStateMachineVersionArn(const char* value) { SetStateMachineVersionArn(value); return *this;}
+
   private:
 
     Aws::String m_input;
@@ -177,6 +275,12 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    Aws::String m_stateMachineAliasArn;
+    bool m_stateMachineAliasArnHasBeenSet = false;
+
+    Aws::String m_stateMachineVersionArn;
+    bool m_stateMachineVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

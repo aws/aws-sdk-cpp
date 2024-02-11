@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A label that can be assigned to a GameLift resource. </p> <p> <b>Learn
+   * <p>A label that you can assign to a Amazon GameLift resource. </p> <p> <b>Learn
    * more</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
    * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
@@ -47,98 +47,98 @@ namespace Model
 
 
     /**
-     * <p>The key for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The key for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The key for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The key for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The key for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The key for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The key for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The key for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The key for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The key for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The key for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The key for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The key for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The key for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The key for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The key for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * <p>The value for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The value for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The value for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The value for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The value for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The value for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The value for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The value for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The value for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The value for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value for a developer-defined key:value pair for tagging an Amazon Web
+     * <p>The value for a developer-defined key value pair for tagging an Amazon Web
      * Services resource. </p>
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}

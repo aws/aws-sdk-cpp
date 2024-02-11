@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacityReservationTenancy::NOT_SET:
+            return {};
           case CapacityReservationTenancy::default_:
             return "default";
           case CapacityReservationTenancy::dedicated:

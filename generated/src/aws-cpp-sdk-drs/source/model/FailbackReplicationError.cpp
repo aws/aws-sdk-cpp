@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailbackReplicationError::NOT_SET:
+            return {};
           case FailbackReplicationError::AGENT_NOT_SEEN:
             return "AGENT_NOT_SEEN";
           case FailbackReplicationError::FAILBACK_CLIENT_NOT_SEEN:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsAudioOnlyContainer::NOT_SET:
+            return {};
           case HlsAudioOnlyContainer::AUTOMATIC:
             return "AUTOMATIC";
           case HlsAudioOnlyContainer::M2TS:

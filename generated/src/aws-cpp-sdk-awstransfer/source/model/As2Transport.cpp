@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case As2Transport::NOT_SET:
+            return {};
           case As2Transport::HTTP:
             return "HTTP";
           default:

@@ -123,44 +123,149 @@ namespace Model
 
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection (if applicable). For more information
+     * about security group referencing for peering connections, see <a
+     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * your security groups to reference peer security groups</a> in the <i>VPC Peering
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection (if applicable). For more information
+     * about security group referencing for peering connections, see <a
+     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * your security groups to reference peer security groups</a> in the <i>VPC Peering
+     * Guide</i>.</p>
      */
     inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection (if applicable). For more information
+     * about security group referencing for peering connections, see <a
+     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * your security groups to reference peer security groups</a> in the <i>VPC Peering
+     * Guide</i>.</p>
      */
     inline void SetVpcPeeringConnectionId(const Aws::String& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection (if applicable). For more information
+     * about security group referencing for peering connections, see <a
+     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * your security groups to reference peer security groups</a> in the <i>VPC Peering
+     * Guide</i>.</p>
      */
     inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection (if applicable). For more information
+     * about security group referencing for peering connections, see <a
+     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * your security groups to reference peer security groups</a> in the <i>VPC Peering
+     * Guide</i>.</p>
      */
     inline void SetVpcPeeringConnectionId(const char* value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId.assign(value); }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection (if applicable). For more information
+     * about security group referencing for peering connections, see <a
+     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * your security groups to reference peer security groups</a> in the <i>VPC Peering
+     * Guide</i>.</p>
      */
     inline SecurityGroupReference& WithVpcPeeringConnectionId(const Aws::String& value) { SetVpcPeeringConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection (if applicable). For more information
+     * about security group referencing for peering connections, see <a
+     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * your security groups to reference peer security groups</a> in the <i>VPC Peering
+     * Guide</i>.</p>
      */
     inline SecurityGroupReference& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of the VPC peering connection (if applicable). For more information
+     * about security group referencing for peering connections, see <a
+     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * your security groups to reference peer security groups</a> in the <i>VPC Peering
+     * Guide</i>.</p>
      */
     inline SecurityGroupReference& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the transit gateway (if applicable). For more information about
+     * security group referencing for transit gateways, see <a
+     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
+     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
+     * Gateway Guide</i>.</p>
+     */
+    inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
+
+    /**
+     * <p>The ID of the transit gateway (if applicable). For more information about
+     * security group referencing for transit gateways, see <a
+     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
+     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
+     * Gateway Guide</i>.</p>
+     */
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transit gateway (if applicable). For more information about
+     * security group referencing for transit gateways, see <a
+     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
+     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
+     * Gateway Guide</i>.</p>
+     */
+    inline void SetTransitGatewayId(const Aws::String& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = value; }
+
+    /**
+     * <p>The ID of the transit gateway (if applicable). For more information about
+     * security group referencing for transit gateways, see <a
+     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
+     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
+     * Gateway Guide</i>.</p>
+     */
+    inline void SetTransitGatewayId(Aws::String&& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the transit gateway (if applicable). For more information about
+     * security group referencing for transit gateways, see <a
+     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
+     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
+     * Gateway Guide</i>.</p>
+     */
+    inline void SetTransitGatewayId(const char* value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the transit gateway (if applicable). For more information about
+     * security group referencing for transit gateways, see <a
+     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
+     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
+     * Gateway Guide</i>.</p>
+     */
+    inline SecurityGroupReference& WithTransitGatewayId(const Aws::String& value) { SetTransitGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway (if applicable). For more information about
+     * security group referencing for transit gateways, see <a
+     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
+     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
+     * Gateway Guide</i>.</p>
+     */
+    inline SecurityGroupReference& WithTransitGatewayId(Aws::String&& value) { SetTransitGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway (if applicable). For more information about
+     * security group referencing for transit gateways, see <a
+     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
+     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
+     * Gateway Guide</i>.</p>
+     */
+    inline SecurityGroupReference& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
 
   private:
 
@@ -172,6 +277,9 @@ namespace Model
 
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet = false;
+
+    Aws::String m_transitGatewayId;
+    bool m_transitGatewayIdHasBeenSet = false;
   };
 
 } // namespace Model

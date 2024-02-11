@@ -26,7 +26,7 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> The result structure for the delete webhook request. </p><p><h3>See
+   * <p>The result structure for the delete webhook request. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteWebhookResult">AWS
    * API Reference</a></p>
@@ -40,27 +40,27 @@ namespace Model
 
 
     /**
-     * <p> Describes a webhook that connects repository events to an Amplify app. </p>
+     * <p>Describes a webhook that connects repository events to an Amplify app. </p>
      */
     inline const Webhook& GetWebhook() const{ return m_webhook; }
 
     /**
-     * <p> Describes a webhook that connects repository events to an Amplify app. </p>
+     * <p>Describes a webhook that connects repository events to an Amplify app. </p>
      */
     inline void SetWebhook(const Webhook& value) { m_webhook = value; }
 
     /**
-     * <p> Describes a webhook that connects repository events to an Amplify app. </p>
+     * <p>Describes a webhook that connects repository events to an Amplify app. </p>
      */
     inline void SetWebhook(Webhook&& value) { m_webhook = std::move(value); }
 
     /**
-     * <p> Describes a webhook that connects repository events to an Amplify app. </p>
+     * <p>Describes a webhook that connects repository events to an Amplify app. </p>
      */
     inline DeleteWebhookResult& WithWebhook(const Webhook& value) { SetWebhook(value); return *this;}
 
     /**
-     * <p> Describes a webhook that connects repository events to an Amplify app. </p>
+     * <p>Describes a webhook that connects repository events to an Amplify app. </p>
      */
     inline DeleteWebhookResult& WithWebhook(Webhook&& value) { SetWebhook(std::move(value)); return *this;}
 

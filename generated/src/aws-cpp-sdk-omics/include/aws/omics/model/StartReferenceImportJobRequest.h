@@ -35,55 +35,6 @@ namespace Model
 
 
     /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
-     */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
-     */
-    inline StartReferenceImportJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
-     */
-    inline StartReferenceImportJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
-     */
-    inline StartReferenceImportJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
-
-    /**
      * <p>The job's reference store ID.</p>
      */
     inline const Aws::String& GetReferenceStoreId() const{ return m_referenceStoreId; }
@@ -166,6 +117,55 @@ namespace Model
 
 
     /**
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
+     */
+    inline StartReferenceImportJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
+     */
+    inline StartReferenceImportJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
+     */
+    inline StartReferenceImportJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
      * <p>The job's source files.</p>
      */
     inline const Aws::Vector<StartReferenceImportJobSourceItem>& GetSources() const{ return m_sources; }
@@ -207,14 +207,14 @@ namespace Model
 
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
     Aws::String m_referenceStoreId;
     bool m_referenceStoreIdHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<StartReferenceImportJobSourceItem> m_sources;
     bool m_sourcesHasBeenSet = false;

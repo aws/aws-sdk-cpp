@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SNOMEDCTTraitName::NOT_SET:
+            return {};
           case SNOMEDCTTraitName::NEGATION:
             return "NEGATION";
           case SNOMEDCTTraitName::DIAGNOSIS:

@@ -12,6 +12,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
 #include <aws/compute-optimizer/model/EffectiveRecommendationPreferences.h>
+#include <aws/compute-optimizer/model/GpuInfo.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/compute-optimizer/model/AutoScalingGroupRecommendationOption.h>
 #include <aws/compute-optimizer/model/InferredWorkloadType.h>
@@ -544,7 +545,10 @@ namespace Model
      * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instances.</p> </li> </ul>
+     * running on the instances.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const{ return m_inferredWorkloadTypes; }
 
@@ -561,7 +565,10 @@ namespace Model
      * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instances.</p> </li> </ul>
+     * running on the instances.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }
 
@@ -578,7 +585,10 @@ namespace Model
      * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instances.</p> </li> </ul>
+     * running on the instances.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline void SetInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
 
@@ -595,7 +605,10 @@ namespace Model
      * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instances.</p> </li> </ul>
+     * running on the instances.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline void SetInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::move(value); }
 
@@ -612,7 +625,10 @@ namespace Model
      * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instances.</p> </li> </ul>
+     * running on the instances.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline AutoScalingGroupRecommendation& WithInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { SetInferredWorkloadTypes(value); return *this;}
 
@@ -629,7 +645,10 @@ namespace Model
      * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instances.</p> </li> </ul>
+     * running on the instances.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline AutoScalingGroupRecommendation& WithInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
 
@@ -646,7 +665,10 @@ namespace Model
      * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instances.</p> </li> </ul>
+     * running on the instances.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline AutoScalingGroupRecommendation& AddInferredWorkloadTypes(const InferredWorkloadType& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
 
@@ -663,9 +685,49 @@ namespace Model
      * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instances.</p> </li> </ul>
+     * running on the instances.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline AutoScalingGroupRecommendation& AddInferredWorkloadTypes(InferredWorkloadType&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type of the
+     * Auto Scaling group. </p>
+     */
+    inline const GpuInfo& GetCurrentInstanceGpuInfo() const{ return m_currentInstanceGpuInfo; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type of the
+     * Auto Scaling group. </p>
+     */
+    inline bool CurrentInstanceGpuInfoHasBeenSet() const { return m_currentInstanceGpuInfoHasBeenSet; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type of the
+     * Auto Scaling group. </p>
+     */
+    inline void SetCurrentInstanceGpuInfo(const GpuInfo& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = value; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type of the
+     * Auto Scaling group. </p>
+     */
+    inline void SetCurrentInstanceGpuInfo(GpuInfo&& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = std::move(value); }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type of the
+     * Auto Scaling group. </p>
+     */
+    inline AutoScalingGroupRecommendation& WithCurrentInstanceGpuInfo(const GpuInfo& value) { SetCurrentInstanceGpuInfo(value); return *this;}
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type of the
+     * Auto Scaling group. </p>
+     */
+    inline AutoScalingGroupRecommendation& WithCurrentInstanceGpuInfo(GpuInfo&& value) { SetCurrentInstanceGpuInfo(std::move(value)); return *this;}
 
   private:
 
@@ -704,6 +766,9 @@ namespace Model
 
     Aws::Vector<InferredWorkloadType> m_inferredWorkloadTypes;
     bool m_inferredWorkloadTypesHasBeenSet = false;
+
+    GpuInfo m_currentInstanceGpuInfo;
+    bool m_currentInstanceGpuInfoHasBeenSet = false;
   };
 
 } // namespace Model

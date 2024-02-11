@@ -33,6 +33,9 @@ namespace AutoScaling
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef AutoScalingClientConfiguration ClientConfigurationType;
+      typedef AutoScalingEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -351,8 +354,8 @@ namespace AutoScaling
          * the timeout period ends, send a callback by using the
          * <a>CompleteLifecycleAction</a> API call.</b> </p> </li> </ol> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
-         * EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/completing-lifecycle-hooks.html">Complete
+         * a lifecycle action</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">AWS
          * API Reference</a></p>
@@ -1513,11 +1516,11 @@ namespace AutoScaling
 
         /**
          * <p>Detaches one or more traffic sources from the specified Auto Scaling
-         * group.</p> <p>When you detach a taffic, it enters the <code>Removing</code>
-         * state while deregistering the instances in the group. When all instances are
-         * deregistered, then you can no longer describe the traffic source using the
-         * <a>DescribeTrafficSources</a> API call. The instances continue to
-         * run.</p><p><h3>See Also:</h3>   <a
+         * group.</p> <p>When you detach a traffic source, it enters the
+         * <code>Removing</code> state while deregistering the instances in the group. When
+         * all instances are deregistered, then you can no longer describe the traffic
+         * source using the <a>DescribeTrafficSources</a> API call. The instances continue
+         * to run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachTrafficSources">AWS
          * API Reference</a></p>
          */
@@ -2130,11 +2133,7 @@ namespace AutoScaling
         }
 
         /**
-         * <p>Starts an instance refresh. During an instance refresh, Amazon EC2 Auto
-         * Scaling performs a rolling update of instances in an Auto Scaling group.
-         * Instances are terminated first and then replaced, which temporarily reduces the
-         * capacity available within your Auto Scaling group.</p> <p>This operation is part
-         * of the <a
+         * <p>Starts an instance refresh.</p> <p>This operation is part of the <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance
          * refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances
          * in your Auto Scaling group. This feature is helpful, for example, when you have

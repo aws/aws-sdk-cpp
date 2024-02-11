@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SigningAlg::NOT_SET:
+            return {};
           case SigningAlg::Ed25519:
             return "Ed25519";
           case SigningAlg::P256r1:

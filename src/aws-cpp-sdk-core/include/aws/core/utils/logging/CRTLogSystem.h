@@ -27,41 +27,30 @@ namespace Aws
             {
             public:
                 virtual ~CRTLogSystemInterface() = default;
-            };
-
-            /**
-             * The default CRT log system will just do a redirection of all logs from common runtime libraries to C++ SDK.
-             * You can override virtual function Log() in your subclass to change the default behaviors.
-             */
-            class AWS_CORE_API DefaultCRTLogSystem : public CRTLogSystemInterface
-            {
-            public:
-                DefaultCRTLogSystem(LogLevel logLevel);
-                virtual ~DefaultCRTLogSystem();
 
                 /**
                  * Gets the currently configured log level.
                  */
-                LogLevel GetLogLevel() const { return m_logLevel; }
+                virtual LogLevel GetLogLevel() const = 0;
                 /**
                  * Set a new log level. This has the immediate effect of changing the log output to the new level.
                  */
-                void SetLogLevel(LogLevel logLevel) { m_logLevel.store(logLevel); }
+                virtual void SetLogLevel(LogLevel logLevel) = 0;
 
                 /**
                  * Handle the logging information from common runtime libraries.
                  * Redirect them to C++ SDK logging system by default.
                  */
-                virtual void Log(LogLevel logLevel, const char* subjectName, const char* formatStr, va_list args);
+                virtual void Log(LogLevel logLevel, const char* subjectName, const char* formatStr, va_list args) = 0;
 
-            protected:
-                std::atomic<LogLevel> m_logLevel;
                 /**
-                 * Underlying logging interface used by common runtime libraries.
+                 * Wrapper on top of CRT's aws_logger::clean_up method.
                  */
-                aws_logger m_logger;
+                virtual void CleanUp() {return;}
             };
-
         } // namespace Logging
     } // namespace Utils
 } // namespace Aws
+
+// for backward compatibility
+#include <aws/core/utils/logging/DefaultCRTLogSystem.h>

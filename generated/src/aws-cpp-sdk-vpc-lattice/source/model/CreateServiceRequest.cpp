@@ -16,7 +16,7 @@ CreateServiceRequest::CreateServiceRequest() :
     m_authType(AuthType::NOT_SET),
     m_authTypeHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_customDomainNameHasBeenSet(false),
     m_nameHasBeenSet(false),

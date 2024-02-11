@@ -33,6 +33,9 @@ namespace ManagedGrafana
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef ManagedGrafanaClientConfiguration ClientConfigurationType;
+      typedef ManagedGrafanaEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -379,6 +382,33 @@ namespace ManagedGrafana
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ManagedGrafanaClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Lists available versions of Grafana. These are available when calling
+         * <code>CreateWorkspace</code>. Optionally, include a workspace to list the
+         * versions to which it can be upgraded.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVersionsOutcome ListVersions(const Model::ListVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListVersionsRequestT = Model::ListVersionsRequest>
+        Model::ListVersionsOutcomeCallable ListVersionsCallable(const ListVersionsRequestT& request) const
+        {
+            return SubmitCallable(&ManagedGrafanaClient::ListVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListVersionsRequestT = Model::ListVersionsRequest>
+        void ListVersionsAsync(const ListVersionsRequestT& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ManagedGrafanaClient::ListVersions, request, handler, context);
         }
 
         /**

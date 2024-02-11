@@ -13,6 +13,7 @@
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/awstransfer/model/WorkflowDetails.h>
+#include <aws/awstransfer/model/S3StorageOptions.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <utility>
 
@@ -1269,50 +1270,50 @@ namespace Model
 
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline UpdateServerRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline UpdateServerRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline UpdateServerRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 
@@ -1322,11 +1323,11 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline const WorkflowDetails& GetWorkflowDetails() const{ return m_workflowDetails; }
 
@@ -1335,11 +1336,11 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline bool WorkflowDetailsHasBeenSet() const { return m_workflowDetailsHasBeenSet; }
 
@@ -1348,11 +1349,11 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline void SetWorkflowDetails(const WorkflowDetails& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = value; }
 
@@ -1361,11 +1362,11 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline void SetWorkflowDetails(WorkflowDetails&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::move(value); }
 
@@ -1374,11 +1375,11 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline UpdateServerRequest& WithWorkflowDetails(const WorkflowDetails& value) { SetWorkflowDetails(value); return *this;}
 
@@ -1387,13 +1388,210 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline UpdateServerRequest& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetStructuredLogDestinations() const{ return m_structuredLogDestinations; }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline bool StructuredLogDestinationsHasBeenSet() const { return m_structuredLogDestinationsHasBeenSet; }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline void SetStructuredLogDestinations(const Aws::Vector<Aws::String>& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations = value; }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline void SetStructuredLogDestinations(Aws::Vector<Aws::String>&& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations = std::move(value); }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline UpdateServerRequest& WithStructuredLogDestinations(const Aws::Vector<Aws::String>& value) { SetStructuredLogDestinations(value); return *this;}
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline UpdateServerRequest& WithStructuredLogDestinations(Aws::Vector<Aws::String>&& value) { SetStructuredLogDestinations(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline UpdateServerRequest& AddStructuredLogDestinations(const Aws::String& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline UpdateServerRequest& AddStructuredLogDestinations(Aws::String&& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline UpdateServerRequest& AddStructuredLogDestinations(const char* value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.push_back(value); return *this; }
+
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline const S3StorageOptions& GetS3StorageOptions() const{ return m_s3StorageOptions; }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline bool S3StorageOptionsHasBeenSet() const { return m_s3StorageOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline void SetS3StorageOptions(const S3StorageOptions& value) { m_s3StorageOptionsHasBeenSet = true; m_s3StorageOptions = value; }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline void SetS3StorageOptions(S3StorageOptions&& value) { m_s3StorageOptionsHasBeenSet = true; m_s3StorageOptions = std::move(value); }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline UpdateServerRequest& WithS3StorageOptions(const S3StorageOptions& value) { SetS3StorageOptions(value); return *this;}
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline UpdateServerRequest& WithS3StorageOptions(S3StorageOptions&& value) { SetS3StorageOptions(std::move(value)); return *this;}
 
   private:
 
@@ -1435,6 +1633,12 @@ namespace Model
 
     WorkflowDetails m_workflowDetails;
     bool m_workflowDetailsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_structuredLogDestinations;
+    bool m_structuredLogDestinationsHasBeenSet = false;
+
+    S3StorageOptions m_s3StorageOptions;
+    bool m_s3StorageOptionsHasBeenSet = false;
   };
 
 } // namespace Model

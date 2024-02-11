@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetOnDemandAllocationStrategy::NOT_SET:
+            return {};
           case FleetOnDemandAllocationStrategy::lowest_price:
             return "lowest-price";
           case FleetOnDemandAllocationStrategy::prioritized:

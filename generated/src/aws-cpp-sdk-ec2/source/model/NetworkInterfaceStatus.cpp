@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkInterfaceStatus::NOT_SET:
+            return {};
           case NetworkInterfaceStatus::available:
             return "available";
           case NetworkInterfaceStatus::associated:

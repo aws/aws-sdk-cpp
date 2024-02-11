@@ -8,6 +8,7 @@
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/model/LogGroupClass.h>
 #include <utility>
 
 namespace Aws
@@ -162,9 +163,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline const Aws::String& GetLogGroupNamePattern() const{ return m_logGroupNamePattern; }
 
@@ -174,9 +177,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline bool LogGroupNamePatternHasBeenSet() const { return m_logGroupNamePatternHasBeenSet; }
 
@@ -186,9 +191,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline void SetLogGroupNamePattern(const Aws::String& value) { m_logGroupNamePatternHasBeenSet = true; m_logGroupNamePattern = value; }
 
@@ -198,9 +205,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline void SetLogGroupNamePattern(Aws::String&& value) { m_logGroupNamePatternHasBeenSet = true; m_logGroupNamePattern = std::move(value); }
 
@@ -210,9 +219,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline void SetLogGroupNamePattern(const char* value) { m_logGroupNamePatternHasBeenSet = true; m_logGroupNamePattern.assign(value); }
 
@@ -222,9 +233,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline DescribeLogGroupsRequest& WithLogGroupNamePattern(const Aws::String& value) { SetLogGroupNamePattern(value); return *this;}
 
@@ -234,9 +247,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline DescribeLogGroupsRequest& WithLogGroupNamePattern(Aws::String&& value) { SetLogGroupNamePattern(std::move(value)); return *this;}
 
@@ -246,9 +261,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline DescribeLogGroupsRequest& WithLogGroupNamePattern(const char* value) { SetLogGroupNamePattern(value); return *this;}
 
@@ -333,10 +350,7 @@ namespace Model
      * <code>accountIdentifiers</code>.</p> <p>If this parameter is set to
      * <code>true</code> and <code>accountIdentifiers</code> contains a null value, the
      * operation returns all log groups in the monitoring account and all log groups in
-     * all source accounts that are linked to the monitoring account. </p>  <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then
-     * <code>metricFilterCount</code>, <code>retentionInDays</code>, and
-     * <code>storedBytes</code> are not included in the response. </p> 
+     * all source accounts that are linked to the monitoring account. </p>
      */
     inline bool GetIncludeLinkedAccounts() const{ return m_includeLinkedAccounts; }
 
@@ -346,10 +360,7 @@ namespace Model
      * <code>accountIdentifiers</code>.</p> <p>If this parameter is set to
      * <code>true</code> and <code>accountIdentifiers</code> contains a null value, the
      * operation returns all log groups in the monitoring account and all log groups in
-     * all source accounts that are linked to the monitoring account. </p>  <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then
-     * <code>metricFilterCount</code>, <code>retentionInDays</code>, and
-     * <code>storedBytes</code> are not included in the response. </p> 
+     * all source accounts that are linked to the monitoring account. </p>
      */
     inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
 
@@ -359,10 +370,7 @@ namespace Model
      * <code>accountIdentifiers</code>.</p> <p>If this parameter is set to
      * <code>true</code> and <code>accountIdentifiers</code> contains a null value, the
      * operation returns all log groups in the monitoring account and all log groups in
-     * all source accounts that are linked to the monitoring account. </p>  <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then
-     * <code>metricFilterCount</code>, <code>retentionInDays</code>, and
-     * <code>storedBytes</code> are not included in the response. </p> 
+     * all source accounts that are linked to the monitoring account. </p>
      */
     inline void SetIncludeLinkedAccounts(bool value) { m_includeLinkedAccountsHasBeenSet = true; m_includeLinkedAccounts = value; }
 
@@ -372,12 +380,76 @@ namespace Model
      * <code>accountIdentifiers</code>.</p> <p>If this parameter is set to
      * <code>true</code> and <code>accountIdentifiers</code> contains a null value, the
      * operation returns all log groups in the monitoring account and all log groups in
-     * all source accounts that are linked to the monitoring account. </p>  <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then
-     * <code>metricFilterCount</code>, <code>retentionInDays</code>, and
-     * <code>storedBytes</code> are not included in the response. </p> 
+     * all source accounts that are linked to the monitoring account. </p>
      */
     inline DescribeLogGroupsRequest& WithIncludeLinkedAccounts(bool value) { SetIncludeLinkedAccounts(value); return *this;}
+
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline const LogGroupClass& GetLogGroupClass() const{ return m_logGroupClass; }
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline bool LogGroupClassHasBeenSet() const { return m_logGroupClassHasBeenSet; }
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline void SetLogGroupClass(const LogGroupClass& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = value; }
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline void SetLogGroupClass(LogGroupClass&& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = std::move(value); }
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline DescribeLogGroupsRequest& WithLogGroupClass(const LogGroupClass& value) { SetLogGroupClass(value); return *this;}
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline DescribeLogGroupsRequest& WithLogGroupClass(LogGroupClass&& value) { SetLogGroupClass(std::move(value)); return *this;}
 
   private:
 
@@ -398,6 +470,9 @@ namespace Model
 
     bool m_includeLinkedAccounts;
     bool m_includeLinkedAccountsHasBeenSet = false;
+
+    LogGroupClass m_logGroupClass;
+    bool m_logGroupClassHasBeenSet = false;
   };
 
 } // namespace Model

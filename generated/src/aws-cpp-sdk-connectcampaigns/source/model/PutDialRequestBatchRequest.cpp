@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutDialRequestBatchRequest::PutDialRequestBatchRequest() : 
-    m_dialRequestsHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_dialRequestsHasBeenSet(false)
 {
 }
 

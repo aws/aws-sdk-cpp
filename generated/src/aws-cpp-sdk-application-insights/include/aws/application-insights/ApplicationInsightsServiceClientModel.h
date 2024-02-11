@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in ApplicationInsightsClient header */
+#include <aws/application-insights/model/AddWorkloadResult.h>
 #include <aws/application-insights/model/CreateApplicationResult.h>
 #include <aws/application-insights/model/CreateComponentResult.h>
 #include <aws/application-insights/model/CreateLogPatternResult.h>
@@ -32,6 +33,7 @@
 #include <aws/application-insights/model/DescribeObservationResult.h>
 #include <aws/application-insights/model/DescribeProblemResult.h>
 #include <aws/application-insights/model/DescribeProblemObservationsResult.h>
+#include <aws/application-insights/model/DescribeWorkloadResult.h>
 #include <aws/application-insights/model/ListApplicationsResult.h>
 #include <aws/application-insights/model/ListComponentsResult.h>
 #include <aws/application-insights/model/ListConfigurationHistoryResult.h>
@@ -39,12 +41,16 @@
 #include <aws/application-insights/model/ListLogPatternsResult.h>
 #include <aws/application-insights/model/ListProblemsResult.h>
 #include <aws/application-insights/model/ListTagsForResourceResult.h>
+#include <aws/application-insights/model/ListWorkloadsResult.h>
+#include <aws/application-insights/model/RemoveWorkloadResult.h>
 #include <aws/application-insights/model/TagResourceResult.h>
 #include <aws/application-insights/model/UntagResourceResult.h>
 #include <aws/application-insights/model/UpdateApplicationResult.h>
 #include <aws/application-insights/model/UpdateComponentResult.h>
 #include <aws/application-insights/model/UpdateComponentConfigurationResult.h>
 #include <aws/application-insights/model/UpdateLogPatternResult.h>
+#include <aws/application-insights/model/UpdateProblemResult.h>
+#include <aws/application-insights/model/UpdateWorkloadResult.h>
 /* End of service model headers required in ApplicationInsightsClient header */
 
 namespace Aws
@@ -85,6 +91,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in ApplicationInsightsClient header */
+      class AddWorkloadRequest;
       class CreateApplicationRequest;
       class CreateComponentRequest;
       class CreateLogPatternRequest;
@@ -99,6 +106,7 @@ namespace Aws
       class DescribeObservationRequest;
       class DescribeProblemRequest;
       class DescribeProblemObservationsRequest;
+      class DescribeWorkloadRequest;
       class ListApplicationsRequest;
       class ListComponentsRequest;
       class ListConfigurationHistoryRequest;
@@ -106,15 +114,20 @@ namespace Aws
       class ListLogPatternsRequest;
       class ListProblemsRequest;
       class ListTagsForResourceRequest;
+      class ListWorkloadsRequest;
+      class RemoveWorkloadRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateApplicationRequest;
       class UpdateComponentRequest;
       class UpdateComponentConfigurationRequest;
       class UpdateLogPatternRequest;
+      class UpdateProblemRequest;
+      class UpdateWorkloadRequest;
       /* End of service model forward declarations required in ApplicationInsightsClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<AddWorkloadResult, ApplicationInsightsError> AddWorkloadOutcome;
       typedef Aws::Utils::Outcome<CreateApplicationResult, ApplicationInsightsError> CreateApplicationOutcome;
       typedef Aws::Utils::Outcome<CreateComponentResult, ApplicationInsightsError> CreateComponentOutcome;
       typedef Aws::Utils::Outcome<CreateLogPatternResult, ApplicationInsightsError> CreateLogPatternOutcome;
@@ -129,6 +142,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeObservationResult, ApplicationInsightsError> DescribeObservationOutcome;
       typedef Aws::Utils::Outcome<DescribeProblemResult, ApplicationInsightsError> DescribeProblemOutcome;
       typedef Aws::Utils::Outcome<DescribeProblemObservationsResult, ApplicationInsightsError> DescribeProblemObservationsOutcome;
+      typedef Aws::Utils::Outcome<DescribeWorkloadResult, ApplicationInsightsError> DescribeWorkloadOutcome;
       typedef Aws::Utils::Outcome<ListApplicationsResult, ApplicationInsightsError> ListApplicationsOutcome;
       typedef Aws::Utils::Outcome<ListComponentsResult, ApplicationInsightsError> ListComponentsOutcome;
       typedef Aws::Utils::Outcome<ListConfigurationHistoryResult, ApplicationInsightsError> ListConfigurationHistoryOutcome;
@@ -136,15 +150,20 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListLogPatternsResult, ApplicationInsightsError> ListLogPatternsOutcome;
       typedef Aws::Utils::Outcome<ListProblemsResult, ApplicationInsightsError> ListProblemsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ApplicationInsightsError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ListWorkloadsResult, ApplicationInsightsError> ListWorkloadsOutcome;
+      typedef Aws::Utils::Outcome<RemoveWorkloadResult, ApplicationInsightsError> RemoveWorkloadOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, ApplicationInsightsError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, ApplicationInsightsError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateApplicationResult, ApplicationInsightsError> UpdateApplicationOutcome;
       typedef Aws::Utils::Outcome<UpdateComponentResult, ApplicationInsightsError> UpdateComponentOutcome;
       typedef Aws::Utils::Outcome<UpdateComponentConfigurationResult, ApplicationInsightsError> UpdateComponentConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateLogPatternResult, ApplicationInsightsError> UpdateLogPatternOutcome;
+      typedef Aws::Utils::Outcome<UpdateProblemResult, ApplicationInsightsError> UpdateProblemOutcome;
+      typedef Aws::Utils::Outcome<UpdateWorkloadResult, ApplicationInsightsError> UpdateWorkloadOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<AddWorkloadOutcome> AddWorkloadOutcomeCallable;
       typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
       typedef std::future<CreateComponentOutcome> CreateComponentOutcomeCallable;
       typedef std::future<CreateLogPatternOutcome> CreateLogPatternOutcomeCallable;
@@ -159,6 +178,7 @@ namespace Aws
       typedef std::future<DescribeObservationOutcome> DescribeObservationOutcomeCallable;
       typedef std::future<DescribeProblemOutcome> DescribeProblemOutcomeCallable;
       typedef std::future<DescribeProblemObservationsOutcome> DescribeProblemObservationsOutcomeCallable;
+      typedef std::future<DescribeWorkloadOutcome> DescribeWorkloadOutcomeCallable;
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
       typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
       typedef std::future<ListConfigurationHistoryOutcome> ListConfigurationHistoryOutcomeCallable;
@@ -166,18 +186,23 @@ namespace Aws
       typedef std::future<ListLogPatternsOutcome> ListLogPatternsOutcomeCallable;
       typedef std::future<ListProblemsOutcome> ListProblemsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ListWorkloadsOutcome> ListWorkloadsOutcomeCallable;
+      typedef std::future<RemoveWorkloadOutcome> RemoveWorkloadOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
       typedef std::future<UpdateComponentOutcome> UpdateComponentOutcomeCallable;
       typedef std::future<UpdateComponentConfigurationOutcome> UpdateComponentConfigurationOutcomeCallable;
       typedef std::future<UpdateLogPatternOutcome> UpdateLogPatternOutcomeCallable;
+      typedef std::future<UpdateProblemOutcome> UpdateProblemOutcomeCallable;
+      typedef std::future<UpdateWorkloadOutcome> UpdateWorkloadOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
     class ApplicationInsightsClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const ApplicationInsightsClient*, const Model::AddWorkloadRequest&, const Model::AddWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddWorkloadResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::CreateComponentRequest&, const Model::CreateComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComponentResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::CreateLogPatternRequest&, const Model::CreateLogPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLogPatternResponseReceivedHandler;
@@ -192,6 +217,7 @@ namespace Aws
     typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeObservationRequest&, const Model::DescribeObservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeObservationResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeProblemRequest&, const Model::DescribeProblemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProblemResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeProblemObservationsRequest&, const Model::DescribeProblemObservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProblemObservationsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeWorkloadRequest&, const Model::DescribeWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkloadResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListConfigurationHistoryRequest&, const Model::ListConfigurationHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationHistoryResponseReceivedHandler;
@@ -199,12 +225,16 @@ namespace Aws
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListLogPatternsRequest&, const Model::ListLogPatternsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLogPatternsResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListProblemsRequest&, const Model::ListProblemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProblemsResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ApplicationInsightsClient*, const Model::ListWorkloadsRequest&, const Model::ListWorkloadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkloadsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationInsightsClient*, const Model::RemoveWorkloadRequest&, const Model::RemoveWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveWorkloadResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateComponentRequest&, const Model::UpdateComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComponentResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateComponentConfigurationRequest&, const Model::UpdateComponentConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComponentConfigurationResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateLogPatternRequest&, const Model::UpdateLogPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLogPatternResponseReceivedHandler;
+    typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateProblemRequest&, const Model::UpdateProblemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProblemResponseReceivedHandler;
+    typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateWorkloadRequest&, const Model::UpdateWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkloadResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace ApplicationInsights
 } // namespace Aws

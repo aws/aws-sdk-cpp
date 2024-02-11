@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidatorType::NOT_SET:
+            return {};
           case ValidatorType::JSON_SCHEMA:
             return "JSON_SCHEMA";
           case ValidatorType::LAMBDA:

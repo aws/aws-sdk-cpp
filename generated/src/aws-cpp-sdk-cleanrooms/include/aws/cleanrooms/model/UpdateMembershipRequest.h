@@ -8,6 +8,7 @@
 #include <aws/cleanrooms/CleanRoomsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanrooms/model/MembershipQueryLogStatus.h>
+#include <aws/cleanrooms/model/MembershipProtectedQueryResultConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -76,39 +77,76 @@ namespace Model
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline const MembershipQueryLogStatus& GetQueryLogStatus() const{ return m_queryLogStatus; }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline bool QueryLogStatusHasBeenSet() const { return m_queryLogStatusHasBeenSet; }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline void SetQueryLogStatus(const MembershipQueryLogStatus& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = value; }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline void SetQueryLogStatus(MembershipQueryLogStatus&& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = std::move(value); }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline UpdateMembershipRequest& WithQueryLogStatus(const MembershipQueryLogStatus& value) { SetQueryLogStatus(value); return *this;}
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline UpdateMembershipRequest& WithQueryLogStatus(MembershipQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline const MembershipProtectedQueryResultConfiguration& GetDefaultResultConfiguration() const{ return m_defaultResultConfiguration; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline bool DefaultResultConfigurationHasBeenSet() const { return m_defaultResultConfigurationHasBeenSet; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline void SetDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = value; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline void SetDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = std::move(value); }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline UpdateMembershipRequest& WithDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { SetDefaultResultConfiguration(value); return *this;}
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline UpdateMembershipRequest& WithDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { SetDefaultResultConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -117,6 +155,9 @@ namespace Model
 
     MembershipQueryLogStatus m_queryLogStatus;
     bool m_queryLogStatusHasBeenSet = false;
+
+    MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;
+    bool m_defaultResultConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

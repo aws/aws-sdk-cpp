@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionNotificationType::NOT_SET:
+            return {};
           case ConnectionNotificationType::Topic:
             return "Topic";
           default:

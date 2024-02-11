@@ -14,6 +14,8 @@
 #include <aws/medialive/model/MotionGraphicsConfiguration.h>
 #include <aws/medialive/model/NielsenConfiguration.h>
 #include <aws/medialive/model/TimecodeConfig.h>
+#include <aws/medialive/model/ThumbnailConfiguration.h>
+#include <aws/medialive/model/ColorCorrectionSettings.h>
 #include <aws/medialive/model/AudioDescription.h>
 #include <aws/medialive/model/CaptionDescription.h>
 #include <aws/medialive/model/OutputGroup.h>
@@ -412,6 +414,68 @@ namespace Model
     
     inline EncoderSettings& AddVideoDescriptions(VideoDescription&& value) { m_videoDescriptionsHasBeenSet = true; m_videoDescriptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline const ThumbnailConfiguration& GetThumbnailConfiguration() const{ return m_thumbnailConfiguration; }
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline bool ThumbnailConfigurationHasBeenSet() const { return m_thumbnailConfigurationHasBeenSet; }
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline void SetThumbnailConfiguration(const ThumbnailConfiguration& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = value; }
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline void SetThumbnailConfiguration(ThumbnailConfiguration&& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = std::move(value); }
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline EncoderSettings& WithThumbnailConfiguration(const ThumbnailConfiguration& value) { SetThumbnailConfiguration(value); return *this;}
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline EncoderSettings& WithThumbnailConfiguration(ThumbnailConfiguration&& value) { SetThumbnailConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * Color Correction Settings
+     */
+    inline const ColorCorrectionSettings& GetColorCorrectionSettings() const{ return m_colorCorrectionSettings; }
+
+    /**
+     * Color Correction Settings
+     */
+    inline bool ColorCorrectionSettingsHasBeenSet() const { return m_colorCorrectionSettingsHasBeenSet; }
+
+    /**
+     * Color Correction Settings
+     */
+    inline void SetColorCorrectionSettings(const ColorCorrectionSettings& value) { m_colorCorrectionSettingsHasBeenSet = true; m_colorCorrectionSettings = value; }
+
+    /**
+     * Color Correction Settings
+     */
+    inline void SetColorCorrectionSettings(ColorCorrectionSettings&& value) { m_colorCorrectionSettingsHasBeenSet = true; m_colorCorrectionSettings = std::move(value); }
+
+    /**
+     * Color Correction Settings
+     */
+    inline EncoderSettings& WithColorCorrectionSettings(const ColorCorrectionSettings& value) { SetColorCorrectionSettings(value); return *this;}
+
+    /**
+     * Color Correction Settings
+     */
+    inline EncoderSettings& WithColorCorrectionSettings(ColorCorrectionSettings&& value) { SetColorCorrectionSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AudioDescription> m_audioDescriptions;
@@ -449,6 +513,12 @@ namespace Model
 
     Aws::Vector<VideoDescription> m_videoDescriptions;
     bool m_videoDescriptionsHasBeenSet = false;
+
+    ThumbnailConfiguration m_thumbnailConfiguration;
+    bool m_thumbnailConfigurationHasBeenSet = false;
+
+    ColorCorrectionSettings m_colorCorrectionSettings;
+    bool m_colorCorrectionSettingsHasBeenSet = false;
   };
 
 } // namespace Model

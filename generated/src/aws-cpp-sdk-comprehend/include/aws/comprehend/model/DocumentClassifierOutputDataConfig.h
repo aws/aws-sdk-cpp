@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides output results configuration parameters for custom classifier jobs.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Provide the location for output data from a custom classifier job. This field
+   * is mandatory if you are training a native document model.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierOutputDataConfig">AWS
    * API Reference</a></p>
    */
@@ -41,12 +42,12 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same Region as the API endpoint that
-     * you are calling. The location is used as the prefix for the actual location of
-     * this output file.</p> <p>When the custom classifier job is finished, the service
-     * creates the output file in a directory specific to the job. The
-     * <code>S3Uri</code> field contains the location of the output file, called
-     * <code>output.tar.gz</code>. It is a compressed archive that contains the
+     * confusion matrix and other output files. The URI must be in the same Region as
+     * the API endpoint that you are calling. The location is used as the prefix for
+     * the actual location of this output file.</p> <p>When the custom classifier job
+     * is finished, the service creates the output file in a directory specific to the
+     * job. The <code>S3Uri</code> field contains the location of the output file,
+     * called <code>output.tar.gz</code>. It is a compressed archive that contains the
      * confusion matrix.</p>
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
@@ -54,12 +55,12 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same Region as the API endpoint that
-     * you are calling. The location is used as the prefix for the actual location of
-     * this output file.</p> <p>When the custom classifier job is finished, the service
-     * creates the output file in a directory specific to the job. The
-     * <code>S3Uri</code> field contains the location of the output file, called
-     * <code>output.tar.gz</code>. It is a compressed archive that contains the
+     * confusion matrix and other output files. The URI must be in the same Region as
+     * the API endpoint that you are calling. The location is used as the prefix for
+     * the actual location of this output file.</p> <p>When the custom classifier job
+     * is finished, the service creates the output file in a directory specific to the
+     * job. The <code>S3Uri</code> field contains the location of the output file,
+     * called <code>output.tar.gz</code>. It is a compressed archive that contains the
      * confusion matrix.</p>
      */
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
@@ -67,12 +68,12 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same Region as the API endpoint that
-     * you are calling. The location is used as the prefix for the actual location of
-     * this output file.</p> <p>When the custom classifier job is finished, the service
-     * creates the output file in a directory specific to the job. The
-     * <code>S3Uri</code> field contains the location of the output file, called
-     * <code>output.tar.gz</code>. It is a compressed archive that contains the
+     * confusion matrix and other output files. The URI must be in the same Region as
+     * the API endpoint that you are calling. The location is used as the prefix for
+     * the actual location of this output file.</p> <p>When the custom classifier job
+     * is finished, the service creates the output file in a directory specific to the
+     * job. The <code>S3Uri</code> field contains the location of the output file,
+     * called <code>output.tar.gz</code>. It is a compressed archive that contains the
      * confusion matrix.</p>
      */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
@@ -80,12 +81,12 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same Region as the API endpoint that
-     * you are calling. The location is used as the prefix for the actual location of
-     * this output file.</p> <p>When the custom classifier job is finished, the service
-     * creates the output file in a directory specific to the job. The
-     * <code>S3Uri</code> field contains the location of the output file, called
-     * <code>output.tar.gz</code>. It is a compressed archive that contains the
+     * confusion matrix and other output files. The URI must be in the same Region as
+     * the API endpoint that you are calling. The location is used as the prefix for
+     * the actual location of this output file.</p> <p>When the custom classifier job
+     * is finished, the service creates the output file in a directory specific to the
+     * job. The <code>S3Uri</code> field contains the location of the output file,
+     * called <code>output.tar.gz</code>. It is a compressed archive that contains the
      * confusion matrix.</p>
      */
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
@@ -93,12 +94,12 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same Region as the API endpoint that
-     * you are calling. The location is used as the prefix for the actual location of
-     * this output file.</p> <p>When the custom classifier job is finished, the service
-     * creates the output file in a directory specific to the job. The
-     * <code>S3Uri</code> field contains the location of the output file, called
-     * <code>output.tar.gz</code>. It is a compressed archive that contains the
+     * confusion matrix and other output files. The URI must be in the same Region as
+     * the API endpoint that you are calling. The location is used as the prefix for
+     * the actual location of this output file.</p> <p>When the custom classifier job
+     * is finished, the service creates the output file in a directory specific to the
+     * job. The <code>S3Uri</code> field contains the location of the output file,
+     * called <code>output.tar.gz</code>. It is a compressed archive that contains the
      * confusion matrix.</p>
      */
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
@@ -106,12 +107,12 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same Region as the API endpoint that
-     * you are calling. The location is used as the prefix for the actual location of
-     * this output file.</p> <p>When the custom classifier job is finished, the service
-     * creates the output file in a directory specific to the job. The
-     * <code>S3Uri</code> field contains the location of the output file, called
-     * <code>output.tar.gz</code>. It is a compressed archive that contains the
+     * confusion matrix and other output files. The URI must be in the same Region as
+     * the API endpoint that you are calling. The location is used as the prefix for
+     * the actual location of this output file.</p> <p>When the custom classifier job
+     * is finished, the service creates the output file in a directory specific to the
+     * job. The <code>S3Uri</code> field contains the location of the output file,
+     * called <code>output.tar.gz</code>. It is a compressed archive that contains the
      * confusion matrix.</p>
      */
     inline DocumentClassifierOutputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
@@ -119,12 +120,12 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same Region as the API endpoint that
-     * you are calling. The location is used as the prefix for the actual location of
-     * this output file.</p> <p>When the custom classifier job is finished, the service
-     * creates the output file in a directory specific to the job. The
-     * <code>S3Uri</code> field contains the location of the output file, called
-     * <code>output.tar.gz</code>. It is a compressed archive that contains the
+     * confusion matrix and other output files. The URI must be in the same Region as
+     * the API endpoint that you are calling. The location is used as the prefix for
+     * the actual location of this output file.</p> <p>When the custom classifier job
+     * is finished, the service creates the output file in a directory specific to the
+     * job. The <code>S3Uri</code> field contains the location of the output file,
+     * called <code>output.tar.gz</code>. It is a compressed archive that contains the
      * confusion matrix.</p>
      */
     inline DocumentClassifierOutputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
@@ -132,12 +133,12 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same Region as the API endpoint that
-     * you are calling. The location is used as the prefix for the actual location of
-     * this output file.</p> <p>When the custom classifier job is finished, the service
-     * creates the output file in a directory specific to the job. The
-     * <code>S3Uri</code> field contains the location of the output file, called
-     * <code>output.tar.gz</code>. It is a compressed archive that contains the
+     * confusion matrix and other output files. The URI must be in the same Region as
+     * the API endpoint that you are calling. The location is used as the prefix for
+     * the actual location of this output file.</p> <p>When the custom classifier job
+     * is finished, the service creates the output file in a directory specific to the
+     * job. The <code>S3Uri</code> field contains the location of the output file,
+     * called <code>output.tar.gz</code>. It is a compressed archive that contains the
      * confusion matrix.</p>
      */
     inline DocumentClassifierOutputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}

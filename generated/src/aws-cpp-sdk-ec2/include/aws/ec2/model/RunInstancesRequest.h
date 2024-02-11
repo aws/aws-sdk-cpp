@@ -177,170 +177,156 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>[EC2-VPC] The number of IPv6 addresses to associate with the primary network
-     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
-     * You cannot specify this option and the option to assign specific IPv6 addresses
-     * in the same request. You can specify this option if you've specified a minimum
-     * number of instances to launch.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The number of IPv6 addresses to associate with the primary network interface.
+     * Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot
+     * specify this option and the option to assign specific IPv6 addresses in the same
+     * request. You can specify this option if you've specified a minimum number of
+     * instances to launch.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
 
     /**
-     * <p>[EC2-VPC] The number of IPv6 addresses to associate with the primary network
-     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
-     * You cannot specify this option and the option to assign specific IPv6 addresses
-     * in the same request. You can specify this option if you've specified a minimum
-     * number of instances to launch.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The number of IPv6 addresses to associate with the primary network interface.
+     * Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot
+     * specify this option and the option to assign specific IPv6 addresses in the same
+     * request. You can specify this option if you've specified a minimum number of
+     * instances to launch.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The number of IPv6 addresses to associate with the primary network
-     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
-     * You cannot specify this option and the option to assign specific IPv6 addresses
-     * in the same request. You can specify this option if you've specified a minimum
-     * number of instances to launch.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The number of IPv6 addresses to associate with the primary network interface.
+     * Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot
+     * specify this option and the option to assign specific IPv6 addresses in the same
+     * request. You can specify this option if you've specified a minimum number of
+     * instances to launch.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
 
     /**
-     * <p>[EC2-VPC] The number of IPv6 addresses to associate with the primary network
-     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
-     * You cannot specify this option and the option to assign specific IPv6 addresses
-     * in the same request. You can specify this option if you've specified a minimum
-     * number of instances to launch.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The number of IPv6 addresses to associate with the primary network interface.
+     * Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot
+     * specify this option and the option to assign specific IPv6 addresses in the same
+     * request. You can specify this option if you've specified a minimum number of
+     * instances to launch.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
 
 
     /**
-     * <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with
-     * the primary network interface. You cannot specify this option and the option to
-     * assign a number of IPv6 addresses in the same request. You cannot specify this
-     * option if you've specified a minimum number of instances to launch.</p> <p>You
-     * cannot specify this option and the network interfaces option in the same
-     * request.</p>
+     * <p>The IPv6 addresses from the range of the subnet to associate with the primary
+     * network interface. You cannot specify this option and the option to assign a
+     * number of IPv6 addresses in the same request. You cannot specify this option if
+     * you've specified a minimum number of instances to launch.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
 
     /**
-     * <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with
-     * the primary network interface. You cannot specify this option and the option to
-     * assign a number of IPv6 addresses in the same request. You cannot specify this
-     * option if you've specified a minimum number of instances to launch.</p> <p>You
-     * cannot specify this option and the network interfaces option in the same
-     * request.</p>
+     * <p>The IPv6 addresses from the range of the subnet to associate with the primary
+     * network interface. You cannot specify this option and the option to assign a
+     * number of IPv6 addresses in the same request. You cannot specify this option if
+     * you've specified a minimum number of instances to launch.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with
-     * the primary network interface. You cannot specify this option and the option to
-     * assign a number of IPv6 addresses in the same request. You cannot specify this
-     * option if you've specified a minimum number of instances to launch.</p> <p>You
-     * cannot specify this option and the network interfaces option in the same
-     * request.</p>
+     * <p>The IPv6 addresses from the range of the subnet to associate with the primary
+     * network interface. You cannot specify this option and the option to assign a
+     * number of IPv6 addresses in the same request. You cannot specify this option if
+     * you've specified a minimum number of instances to launch.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
 
     /**
-     * <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with
-     * the primary network interface. You cannot specify this option and the option to
-     * assign a number of IPv6 addresses in the same request. You cannot specify this
-     * option if you've specified a minimum number of instances to launch.</p> <p>You
-     * cannot specify this option and the network interfaces option in the same
-     * request.</p>
+     * <p>The IPv6 addresses from the range of the subnet to associate with the primary
+     * network interface. You cannot specify this option and the option to assign a
+     * number of IPv6 addresses in the same request. You cannot specify this option if
+     * you've specified a minimum number of instances to launch.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with
-     * the primary network interface. You cannot specify this option and the option to
-     * assign a number of IPv6 addresses in the same request. You cannot specify this
-     * option if you've specified a minimum number of instances to launch.</p> <p>You
-     * cannot specify this option and the network interfaces option in the same
-     * request.</p>
+     * <p>The IPv6 addresses from the range of the subnet to associate with the primary
+     * network interface. You cannot specify this option and the option to assign a
+     * number of IPv6 addresses in the same request. You cannot specify this option if
+     * you've specified a minimum number of instances to launch.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with
-     * the primary network interface. You cannot specify this option and the option to
-     * assign a number of IPv6 addresses in the same request. You cannot specify this
-     * option if you've specified a minimum number of instances to launch.</p> <p>You
-     * cannot specify this option and the network interfaces option in the same
-     * request.</p>
+     * <p>The IPv6 addresses from the range of the subnet to associate with the primary
+     * network interface. You cannot specify this option and the option to assign a
+     * number of IPv6 addresses in the same request. You cannot specify this option if
+     * you've specified a minimum number of instances to launch.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with
-     * the primary network interface. You cannot specify this option and the option to
-     * assign a number of IPv6 addresses in the same request. You cannot specify this
-     * option if you've specified a minimum number of instances to launch.</p> <p>You
-     * cannot specify this option and the network interfaces option in the same
-     * request.</p>
+     * <p>The IPv6 addresses from the range of the subnet to associate with the primary
+     * network interface. You cannot specify this option and the option to assign a
+     * number of IPv6 addresses in the same request. You cannot specify this option if
+     * you've specified a minimum number of instances to launch.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with
-     * the primary network interface. You cannot specify this option and the option to
-     * assign a number of IPv6 addresses in the same request. You cannot specify this
-     * option if you've specified a minimum number of instances to launch.</p> <p>You
-     * cannot specify this option and the network interfaces option in the same
-     * request.</p>
+     * <p>The IPv6 addresses from the range of the subnet to associate with the primary
+     * network interface. You cannot specify this option and the option to assign a
+     * number of IPv6 addresses in the same request. You cannot specify this option if
+     * you've specified a minimum number of instances to launch.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
@@ -826,130 +812,121 @@ namespace Model
 
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
-     * specify a network interface, you must specify any security groups as part of the
-     * network interface.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
-     * specify a network interface, you must specify any security groups as part of the
-     * network interface.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
-     * specify a network interface, you must specify any security groups as part of the
-     * network interface.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
-     * specify a network interface, you must specify any security groups as part of the
-     * network interface.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
-     * specify a network interface, you must specify any security groups as part of the
-     * network interface.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
-     * specify a network interface, you must specify any security groups as part of the
-     * network interface.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
-     * specify a network interface, you must specify any security groups as part of the
-     * network interface.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
-     * specify a network interface, you must specify any security groups as part of the
-     * network interface.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
-     * specify a network interface, you must specify any security groups as part of the
-     * network interface.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
-     * specify a network interface, you must specify any subnets as part of the network
+     * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
+     * network interface, you must specify any subnets as part of the network
      * interface.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
-     * specify a network interface, you must specify any subnets as part of the network
+     * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
+     * network interface, you must specify any subnets as part of the network
      * interface.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
-     * specify a network interface, you must specify any subnets as part of the network
+     * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
+     * network interface, you must specify any subnets as part of the network
      * interface.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
-     * specify a network interface, you must specify any subnets as part of the network
+     * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
+     * network interface, you must specify any subnets as part of the network
      * interface.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
-     * specify a network interface, you must specify any subnets as part of the network
+     * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
+     * network interface, you must specify any subnets as part of the network
      * interface.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
-     * specify a network interface, you must specify any subnets as part of the network
+     * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
+     * network interface, you must specify any subnets as part of the network
      * interface.</p>
      */
     inline RunInstancesRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
-     * specify a network interface, you must specify any subnets as part of the network
+     * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
+     * network interface, you must specify any subnets as part of the network
      * interface.</p>
      */
     inline RunInstancesRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
-     * specify a network interface, you must specify any subnets as part of the network
+     * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
+     * network interface, you must specify any subnets as part of the network
      * interface.</p>
      */
     inline RunInstancesRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
@@ -1425,90 +1402,90 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
-     * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. You can't specify this option if you've specified the
-     * option to designate a private IP address as the primary IP address in a network
-     * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The primary IPv4 address. You must specify a value from the IPv4 address
+     * range of the subnet.</p> <p>Only one private IP address can be designated as
+     * primary. You can't specify this option if you've specified the option to
+     * designate a private IP address as the primary IP address in a network interface
+     * specification. You cannot specify this option if you're launching more than one
+     * instance in the request.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
-     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
-     * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. You can't specify this option if you've specified the
-     * option to designate a private IP address as the primary IP address in a network
-     * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The primary IPv4 address. You must specify a value from the IPv4 address
+     * range of the subnet.</p> <p>Only one private IP address can be designated as
+     * primary. You can't specify this option if you've specified the option to
+     * designate a private IP address as the primary IP address in a network interface
+     * specification. You cannot specify this option if you're launching more than one
+     * instance in the request.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
-     * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. You can't specify this option if you've specified the
-     * option to designate a private IP address as the primary IP address in a network
-     * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The primary IPv4 address. You must specify a value from the IPv4 address
+     * range of the subnet.</p> <p>Only one private IP address can be designated as
+     * primary. You can't specify this option if you've specified the option to
+     * designate a private IP address as the primary IP address in a network interface
+     * specification. You cannot specify this option if you're launching more than one
+     * instance in the request.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
-     * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. You can't specify this option if you've specified the
-     * option to designate a private IP address as the primary IP address in a network
-     * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The primary IPv4 address. You must specify a value from the IPv4 address
+     * range of the subnet.</p> <p>Only one private IP address can be designated as
+     * primary. You can't specify this option if you've specified the option to
+     * designate a private IP address as the primary IP address in a network interface
+     * specification. You cannot specify this option if you're launching more than one
+     * instance in the request.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
-     * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. You can't specify this option if you've specified the
-     * option to designate a private IP address as the primary IP address in a network
-     * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The primary IPv4 address. You must specify a value from the IPv4 address
+     * range of the subnet.</p> <p>Only one private IP address can be designated as
+     * primary. You can't specify this option if you've specified the option to
+     * designate a private IP address as the primary IP address in a network interface
+     * specification. You cannot specify this option if you're launching more than one
+     * instance in the request.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
-     * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. You can't specify this option if you've specified the
-     * option to designate a private IP address as the primary IP address in a network
-     * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The primary IPv4 address. You must specify a value from the IPv4 address
+     * range of the subnet.</p> <p>Only one private IP address can be designated as
+     * primary. You can't specify this option if you've specified the option to
+     * designate a private IP address as the primary IP address in a network interface
+     * specification. You cannot specify this option if you're launching more than one
+     * instance in the request.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
-     * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. You can't specify this option if you've specified the
-     * option to designate a private IP address as the primary IP address in a network
-     * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The primary IPv4 address. You must specify a value from the IPv4 address
+     * range of the subnet.</p> <p>Only one private IP address can be designated as
+     * primary. You can't specify this option if you've specified the option to
+     * designate a private IP address as the primary IP address in a network interface
+     * specification. You cannot specify this option if you're launching more than one
+     * instance in the request.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
-     * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. You can't specify this option if you've specified the
-     * option to designate a private IP address as the primary IP address in a network
-     * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p> <p>You cannot specify this option and the
-     * network interfaces option in the same request.</p>
+     * <p>The primary IPv4 address. You must specify a value from the IPv4 address
+     * range of the subnet.</p> <p>Only one private IP address can be designated as
+     * primary. You can't specify this option if you've specified the option to
+     * designate a private IP address as the primary IP address in a network interface
+     * specification. You cannot specify this option if you're launching more than one
+     * instance in the request.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
@@ -2080,8 +2057,10 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2089,8 +2068,10 @@ namespace Model
     inline const HibernationOptionsRequest& GetHibernationOptions() const{ return m_hibernationOptions; }
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2098,8 +2079,10 @@ namespace Model
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2107,8 +2090,10 @@ namespace Model
     inline void SetHibernationOptions(const HibernationOptionsRequest& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2116,8 +2101,10 @@ namespace Model
     inline void SetHibernationOptions(HibernationOptionsRequest&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::move(value); }
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2125,8 +2112,10 @@ namespace Model
     inline RunInstancesRequest& WithHibernationOptions(const HibernationOptionsRequest& value) { SetHibernationOptions(value); return *this;}
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2221,7 +2210,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -2231,7 +2220,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -2241,7 +2230,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -2251,7 +2240,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -2261,7 +2250,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -2271,7 +2260,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -2281,37 +2270,43 @@ namespace Model
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline const PrivateDnsNameOptionsRequest& GetPrivateDnsNameOptions() const{ return m_privateDnsNameOptions; }
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline bool PrivateDnsNameOptionsHasBeenSet() const { return m_privateDnsNameOptionsHasBeenSet; }
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline void SetPrivateDnsNameOptions(const PrivateDnsNameOptionsRequest& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = value; }
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline void SetPrivateDnsNameOptions(PrivateDnsNameOptionsRequest&& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = std::move(value); }
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline RunInstancesRequest& WithPrivateDnsNameOptions(const PrivateDnsNameOptionsRequest& value) { SetPrivateDnsNameOptions(value); return *this;}
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline RunInstancesRequest& WithPrivateDnsNameOptions(PrivateDnsNameOptionsRequest&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
 
@@ -2378,6 +2373,75 @@ namespace Model
      * protection</a>. </p>
      */
     inline RunInstancesRequest& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
+
+
+    /**
+     * <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you
+     * can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6
+     * GUA address associated with an ENI that you have enabled to use a primary IPv6
+     * address. Use this option if an instance relies on its IPv6 address not changing.
+     * When you launch the instance, Amazon Web Services will automatically assign an
+     * IPv6 address associated with the ENI attached to your instance to be the primary
+     * IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you
+     * cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is
+     * terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a
+     * primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes
+     * the primary IPv6 address.</p>
+     */
+    inline bool GetEnablePrimaryIpv6() const{ return m_enablePrimaryIpv6; }
+
+    /**
+     * <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you
+     * can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6
+     * GUA address associated with an ENI that you have enabled to use a primary IPv6
+     * address. Use this option if an instance relies on its IPv6 address not changing.
+     * When you launch the instance, Amazon Web Services will automatically assign an
+     * IPv6 address associated with the ENI attached to your instance to be the primary
+     * IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you
+     * cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is
+     * terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a
+     * primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes
+     * the primary IPv6 address.</p>
+     */
+    inline bool EnablePrimaryIpv6HasBeenSet() const { return m_enablePrimaryIpv6HasBeenSet; }
+
+    /**
+     * <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you
+     * can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6
+     * GUA address associated with an ENI that you have enabled to use a primary IPv6
+     * address. Use this option if an instance relies on its IPv6 address not changing.
+     * When you launch the instance, Amazon Web Services will automatically assign an
+     * IPv6 address associated with the ENI attached to your instance to be the primary
+     * IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you
+     * cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is
+     * terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a
+     * primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes
+     * the primary IPv6 address.</p>
+     */
+    inline void SetEnablePrimaryIpv6(bool value) { m_enablePrimaryIpv6HasBeenSet = true; m_enablePrimaryIpv6 = value; }
+
+    /**
+     * <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you
+     * can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6
+     * GUA address associated with an ENI that you have enabled to use a primary IPv6
+     * address. Use this option if an instance relies on its IPv6 address not changing.
+     * When you launch the instance, Amazon Web Services will automatically assign an
+     * IPv6 address associated with the ENI attached to your instance to be the primary
+     * IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you
+     * cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is
+     * terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a
+     * primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes
+     * the primary IPv6 address.</p>
+     */
+    inline RunInstancesRequest& WithEnablePrimaryIpv6(bool value) { SetEnablePrimaryIpv6(value); return *this;}
 
   private:
 
@@ -2500,6 +2564,9 @@ namespace Model
 
     bool m_disableApiStop;
     bool m_disableApiStopHasBeenSet = false;
+
+    bool m_enablePrimaryIpv6;
+    bool m_enablePrimaryIpv6HasBeenSet = false;
   };
 
 } // namespace Model

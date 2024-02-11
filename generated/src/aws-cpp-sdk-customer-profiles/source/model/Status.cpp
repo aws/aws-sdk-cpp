@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Status::NOT_SET:
+            return {};
           case Status::NOT_STARTED:
             return "NOT_STARTED";
           case Status::IN_PROGRESS:

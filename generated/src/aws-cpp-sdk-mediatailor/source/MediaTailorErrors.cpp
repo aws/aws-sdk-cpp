@@ -27,7 +27,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaTailorErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaTailorErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

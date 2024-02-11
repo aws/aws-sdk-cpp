@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PerObjectSyncStatus::NOT_SET:
+            return {};
           case PerObjectSyncStatus::PENDING:
             return "PENDING";
           case PerObjectSyncStatus::IN_SYNC:

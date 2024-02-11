@@ -22,6 +22,8 @@ namespace Aws
 
         static const int AVAILABILITY_HASH = HashingUtils::HashString("AVAILABILITY");
         static const int PERFORMANCE_HASH = HashingUtils::HashString("PERFORMANCE");
+        static const int LOCAL_AVAILABILITY_HASH = HashingUtils::HashString("LOCAL_AVAILABILITY");
+        static const int LOCAL_PERFORMANCE_HASH = HashingUtils::HashString("LOCAL_PERFORMANCE");
 
 
         HealthEventImpactType GetHealthEventImpactTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == PERFORMANCE_HASH)
           {
             return HealthEventImpactType::PERFORMANCE;
+          }
+          else if (hashCode == LOCAL_AVAILABILITY_HASH)
+          {
+            return HealthEventImpactType::LOCAL_AVAILABILITY;
+          }
+          else if (hashCode == LOCAL_PERFORMANCE_HASH)
+          {
+            return HealthEventImpactType::LOCAL_PERFORMANCE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HealthEventImpactType::NOT_SET:
+            return {};
           case HealthEventImpactType::AVAILABILITY:
             return "AVAILABILITY";
           case HealthEventImpactType::PERFORMANCE:
             return "PERFORMANCE";
+          case HealthEventImpactType::LOCAL_AVAILABILITY:
+            return "LOCAL_AVAILABILITY";
+          case HealthEventImpactType::LOCAL_PERFORMANCE:
+            return "LOCAL_PERFORMANCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

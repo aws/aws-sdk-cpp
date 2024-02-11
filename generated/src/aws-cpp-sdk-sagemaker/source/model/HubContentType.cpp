@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HubContentType::NOT_SET:
+            return {};
           case HubContentType::Model:
             return "Model";
           case HubContentType::Notebook:

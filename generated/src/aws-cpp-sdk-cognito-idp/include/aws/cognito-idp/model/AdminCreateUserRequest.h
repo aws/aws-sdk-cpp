@@ -85,58 +85,114 @@ namespace Model
 
 
     /**
-     * <p>The username for the user. Must be unique within the user pool. Must be a
-     * UTF-8 string between 1 and 128 characters. After the user is created, the
-     * username can't be changed.</p>
+     * <p>The value that you want to set as the username sign-in attribute. The
+     * following conditions apply to the username parameter.</p> <ul> <li> <p>The
+     * username can't be a duplicate of another username in the same user pool.</p>
+     * </li> <li> <p>You can't change the value of a username after you create it.</p>
+     * </li> <li> <p>You can only provide a value if usernames are a valid sign-in
+     * attribute for your user pool. If your user pool only supports phone numbers or
+     * email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+     * sign-in attributes</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The username for the user. Must be unique within the user pool. Must be a
-     * UTF-8 string between 1 and 128 characters. After the user is created, the
-     * username can't be changed.</p>
+     * <p>The value that you want to set as the username sign-in attribute. The
+     * following conditions apply to the username parameter.</p> <ul> <li> <p>The
+     * username can't be a duplicate of another username in the same user pool.</p>
+     * </li> <li> <p>You can't change the value of a username after you create it.</p>
+     * </li> <li> <p>You can only provide a value if usernames are a valid sign-in
+     * attribute for your user pool. If your user pool only supports phone numbers or
+     * email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+     * sign-in attributes</a>.</p> </li> </ul>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The username for the user. Must be unique within the user pool. Must be a
-     * UTF-8 string between 1 and 128 characters. After the user is created, the
-     * username can't be changed.</p>
+     * <p>The value that you want to set as the username sign-in attribute. The
+     * following conditions apply to the username parameter.</p> <ul> <li> <p>The
+     * username can't be a duplicate of another username in the same user pool.</p>
+     * </li> <li> <p>You can't change the value of a username after you create it.</p>
+     * </li> <li> <p>You can only provide a value if usernames are a valid sign-in
+     * attribute for your user pool. If your user pool only supports phone numbers or
+     * email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+     * sign-in attributes</a>.</p> </li> </ul>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The username for the user. Must be unique within the user pool. Must be a
-     * UTF-8 string between 1 and 128 characters. After the user is created, the
-     * username can't be changed.</p>
+     * <p>The value that you want to set as the username sign-in attribute. The
+     * following conditions apply to the username parameter.</p> <ul> <li> <p>The
+     * username can't be a duplicate of another username in the same user pool.</p>
+     * </li> <li> <p>You can't change the value of a username after you create it.</p>
+     * </li> <li> <p>You can only provide a value if usernames are a valid sign-in
+     * attribute for your user pool. If your user pool only supports phone numbers or
+     * email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+     * sign-in attributes</a>.</p> </li> </ul>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The username for the user. Must be unique within the user pool. Must be a
-     * UTF-8 string between 1 and 128 characters. After the user is created, the
-     * username can't be changed.</p>
+     * <p>The value that you want to set as the username sign-in attribute. The
+     * following conditions apply to the username parameter.</p> <ul> <li> <p>The
+     * username can't be a duplicate of another username in the same user pool.</p>
+     * </li> <li> <p>You can't change the value of a username after you create it.</p>
+     * </li> <li> <p>You can only provide a value if usernames are a valid sign-in
+     * attribute for your user pool. If your user pool only supports phone numbers or
+     * email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+     * sign-in attributes</a>.</p> </li> </ul>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The username for the user. Must be unique within the user pool. Must be a
-     * UTF-8 string between 1 and 128 characters. After the user is created, the
-     * username can't be changed.</p>
+     * <p>The value that you want to set as the username sign-in attribute. The
+     * following conditions apply to the username parameter.</p> <ul> <li> <p>The
+     * username can't be a duplicate of another username in the same user pool.</p>
+     * </li> <li> <p>You can't change the value of a username after you create it.</p>
+     * </li> <li> <p>You can only provide a value if usernames are a valid sign-in
+     * attribute for your user pool. If your user pool only supports phone numbers or
+     * email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+     * sign-in attributes</a>.</p> </li> </ul>
      */
     inline AdminCreateUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The username for the user. Must be unique within the user pool. Must be a
-     * UTF-8 string between 1 and 128 characters. After the user is created, the
-     * username can't be changed.</p>
+     * <p>The value that you want to set as the username sign-in attribute. The
+     * following conditions apply to the username parameter.</p> <ul> <li> <p>The
+     * username can't be a duplicate of another username in the same user pool.</p>
+     * </li> <li> <p>You can't change the value of a username after you create it.</p>
+     * </li> <li> <p>You can only provide a value if usernames are a valid sign-in
+     * attribute for your user pool. If your user pool only supports phone numbers or
+     * email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+     * sign-in attributes</a>.</p> </li> </ul>
      */
     inline AdminCreateUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The username for the user. Must be unique within the user pool. Must be a
-     * UTF-8 string between 1 and 128 characters. After the user is created, the
-     * username can't be changed.</p>
+     * <p>The value that you want to set as the username sign-in attribute. The
+     * following conditions apply to the username parameter.</p> <ul> <li> <p>The
+     * username can't be a duplicate of another username in the same user pool.</p>
+     * </li> <li> <p>You can't change the value of a username after you create it.</p>
+     * </li> <li> <p>You can only provide a value if usernames are a valid sign-in
+     * attribute for your user pool. If your user pool only supports phone numbers or
+     * email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+     * sign-in attributes</a>.</p> </li> </ul>
      */
     inline AdminCreateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
@@ -375,98 +431,122 @@ namespace Model
 
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline const Aws::Vector<AttributeType>& GetValidationData() const{ return m_validationData; }
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline bool ValidationDataHasBeenSet() const { return m_validationDataHasBeenSet; }
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline void SetValidationData(const Aws::Vector<AttributeType>& value) { m_validationDataHasBeenSet = true; m_validationData = value; }
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline void SetValidationData(Aws::Vector<AttributeType>&& value) { m_validationDataHasBeenSet = true; m_validationData = std::move(value); }
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline AdminCreateUserRequest& WithValidationData(const Aws::Vector<AttributeType>& value) { SetValidationData(value); return *this;}
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline AdminCreateUserRequest& WithValidationData(Aws::Vector<AttributeType>&& value) { SetValidationData(std::move(value)); return *this;}
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline AdminCreateUserRequest& AddValidationData(const AttributeType& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(value); return *this; }
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline AdminCreateUserRequest& AddValidationData(AttributeType&& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(std::move(value)); return *this; }
 
@@ -479,9 +559,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline const Aws::String& GetTemporaryPassword() const{ return m_temporaryPassword; }
 
@@ -493,9 +573,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline bool TemporaryPasswordHasBeenSet() const { return m_temporaryPasswordHasBeenSet; }
 
@@ -507,9 +587,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline void SetTemporaryPassword(const Aws::String& value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword = value; }
 
@@ -521,9 +601,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline void SetTemporaryPassword(Aws::String&& value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword = std::move(value); }
 
@@ -535,9 +615,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline void SetTemporaryPassword(const char* value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword.assign(value); }
 
@@ -549,9 +629,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline AdminCreateUserRequest& WithTemporaryPassword(const Aws::String& value) { SetTemporaryPassword(value); return *this;}
 
@@ -563,9 +643,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline AdminCreateUserRequest& WithTemporaryPassword(Aws::String&& value) { SetTemporaryPassword(std::move(value)); return *this;}
 
@@ -577,9 +657,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline AdminCreateUserRequest& WithTemporaryPassword(const char* value) { SetTemporaryPassword(value); return *this;}
 

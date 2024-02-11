@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/compute-optimizer/model/MigrationEffort.h>
+#include <aws/compute-optimizer/model/GpuInfo.h>
+#include <aws/compute-optimizer/model/AutoScalingGroupSavingsOpportunityAfterDiscounts.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <utility>
 
@@ -379,6 +381,92 @@ namespace Model
      */
     inline AutoScalingGroupRecommendationOption& WithMigrationEffort(MigrationEffort&& value) { SetMigrationEffort(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline const GpuInfo& GetInstanceGpuInfo() const{ return m_instanceGpuInfo; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline bool InstanceGpuInfoHasBeenSet() const { return m_instanceGpuInfoHasBeenSet; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline void SetInstanceGpuInfo(const GpuInfo& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = value; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline void SetInstanceGpuInfo(GpuInfo&& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = std::move(value); }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline AutoScalingGroupRecommendationOption& WithInstanceGpuInfo(const GpuInfo& value) { SetInstanceGpuInfo(value); return *this;}
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline AutoScalingGroupRecommendationOption& WithInstanceGpuInfo(GpuInfo&& value) { SetInstanceGpuInfo(std::move(value)); return *this;}
+
+
+    /**
+     * <p> An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline const AutoScalingGroupSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const{ return m_savingsOpportunityAfterDiscounts; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline bool SavingsOpportunityAfterDiscountsHasBeenSet() const { return m_savingsOpportunityAfterDiscountsHasBeenSet; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline void SetSavingsOpportunityAfterDiscounts(const AutoScalingGroupSavingsOpportunityAfterDiscounts& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = value; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline void SetSavingsOpportunityAfterDiscounts(AutoScalingGroupSavingsOpportunityAfterDiscounts&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::move(value); }
+
+    /**
+     * <p> An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline AutoScalingGroupRecommendationOption& WithSavingsOpportunityAfterDiscounts(const AutoScalingGroupSavingsOpportunityAfterDiscounts& value) { SetSavingsOpportunityAfterDiscounts(value); return *this;}
+
+    /**
+     * <p> An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline AutoScalingGroupRecommendationOption& WithSavingsOpportunityAfterDiscounts(AutoScalingGroupSavingsOpportunityAfterDiscounts&& value) { SetSavingsOpportunityAfterDiscounts(std::move(value)); return *this;}
+
   private:
 
     AutoScalingGroupConfiguration m_configuration;
@@ -398,6 +486,12 @@ namespace Model
 
     MigrationEffort m_migrationEffort;
     bool m_migrationEffortHasBeenSet = false;
+
+    GpuInfo m_instanceGpuInfo;
+    bool m_instanceGpuInfoHasBeenSet = false;
+
+    AutoScalingGroupSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
+    bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
   };
 
 } // namespace Model

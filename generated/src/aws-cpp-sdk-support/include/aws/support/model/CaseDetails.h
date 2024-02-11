@@ -37,15 +37,16 @@ namespace Model
    * <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId</b> - The identifier
    * for the case on pages in the Amazon Web Services Support Center.</p> </li> <li>
    * <p> <b>language</b> - The language in which Amazon Web Services Support handles
-   * the case. Amazon Web Services Support currently supports English ("en") and
-   * Japanese ("ja"). You must specify the ISO 639-1 code for the
-   * <code>language</code> parameter if you want support in that language.</p> </li>
-   * <li> <p> <b>nextToken</b> - A resumption point for pagination.</p> </li> <li>
-   * <p> <b>recentCommunications</b> - One or more <a>Communication</a> objects.
-   * Fields of these objects are <code>attachments</code>, <code>body</code>,
-   * <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.</p>
-   * </li> <li> <p> <b>serviceCode</b> - The identifier for the Amazon Web Services
-   * service that corresponds to the service code defined in the call to
+   * the case. Amazon Web Services Support currently supports Chinese (“zh”), English
+   * ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code
+   * for the <code>language</code> parameter if you want support in that
+   * language.</p> </li> <li> <p> <b>nextToken</b> - A resumption point for
+   * pagination.</p> </li> <li> <p> <b>recentCommunications</b> - One or more
+   * <a>Communication</a> objects. Fields of these objects are
+   * <code>attachments</code>, <code>body</code>, <code>caseId</code>,
+   * <code>submittedBy</code>, and <code>timeCreated</code>.</p> </li> <li> <p>
+   * <b>serviceCode</b> - The identifier for the Amazon Web Services service that
+   * corresponds to the service code defined in the call to
    * <a>DescribeServices</a>.</p> </li> <li> <p> <b>severityCode</b> - The severity
    * code assigned to the case. Contains one of the values returned by the call to
    * <a>DescribeSeverityLevels</a>. The possible values are: <code>low</code>,
@@ -618,65 +619,65 @@ namespace Model
 
     /**
      * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
-     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
-     * want support in that language.</p>
+     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
+     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
 
     /**
      * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
-     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
-     * want support in that language.</p>
+     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
+     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language.</p>
      */
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
      * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
-     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
-     * want support in that language.</p>
+     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
+     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language.</p>
      */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
      * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
-     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
-     * want support in that language.</p>
+     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
+     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language.</p>
      */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
      * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
-     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
-     * want support in that language.</p>
+     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
+     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language.</p>
      */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
 
     /**
      * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
-     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
-     * want support in that language.</p>
+     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
+     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language.</p>
      */
     inline CaseDetails& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
 
     /**
      * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
-     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
-     * want support in that language.</p>
+     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
+     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language.</p>
      */
     inline CaseDetails& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
-     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
-     * want support in that language.</p>
+     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
+     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language.</p>
      */
     inline CaseDetails& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 

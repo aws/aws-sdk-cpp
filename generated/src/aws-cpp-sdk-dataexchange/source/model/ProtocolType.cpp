@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProtocolType::NOT_SET:
+            return {};
           case ProtocolType::REST:
             return "REST";
           default:

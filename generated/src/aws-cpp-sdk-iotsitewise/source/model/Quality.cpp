@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Quality::NOT_SET:
+            return {};
           case Quality::GOOD:
             return "GOOD";
           case Quality::BAD:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServerOsType::NOT_SET:
+            return {};
           case ServerOsType::WindowsServer:
             return "WindowsServer";
           case ServerOsType::AmazonLinux:

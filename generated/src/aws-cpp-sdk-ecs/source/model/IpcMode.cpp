@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpcMode::NOT_SET:
+            return {};
           case IpcMode::host:
             return "host";
           case IpcMode::task:

@@ -33,11 +33,11 @@ namespace Model
    * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
    * to inspect the request body, WAF inspects only the number of bytes of the body
    * up to the limit for the web ACL. By default, for regional web ACLs, this limit
-   * is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16 KB
-   * (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the
-   * web ACL <code>AssociationConfig</code>, for additional fees. If you know that
-   * the request body for your web requests should never exceed the inspection limit,
-   * you could use a size constraint statement to block requests that have a larger
+   * is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB (16,384
+   * bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
+   * <code>AssociationConfig</code>, for additional fees. If you know that the
+   * request body for your web requests should never exceed the inspection limit, you
+   * could use a size constraint statement to block requests that have a larger
    * request body size.</p> <p>If you choose URI for the value of Part of the request
    * to filter on, the slash (/) in the URI counts as one character. For example, the
    * URI <code>/logo.jpg</code> is nine characters long.</p><p><h3>See Also:</h3>  
@@ -143,81 +143,97 @@ namespace Model
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, WAF performs all transformations on the
-     * content of the request component identified by <code>FieldToMatch</code>,
-     * starting from the lowest priority setting, before inspecting the content for a
-     * match.</p>
+     * use in web requests in an effort to bypass detection. Text transformations are
+     * used in rule match statements, to transform the <code>FieldToMatch</code>
+     * request component before inspecting it, and they're used in rate-based rule
+     * statements, to transform request components before using them as custom
+     * aggregation keys. If you specify one or more transformations to apply, WAF
+     * performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline const Aws::Vector<TextTransformation>& GetTextTransformations() const{ return m_textTransformations; }
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, WAF performs all transformations on the
-     * content of the request component identified by <code>FieldToMatch</code>,
-     * starting from the lowest priority setting, before inspecting the content for a
-     * match.</p>
+     * use in web requests in an effort to bypass detection. Text transformations are
+     * used in rule match statements, to transform the <code>FieldToMatch</code>
+     * request component before inspecting it, and they're used in rate-based rule
+     * statements, to transform request components before using them as custom
+     * aggregation keys. If you specify one or more transformations to apply, WAF
+     * performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline bool TextTransformationsHasBeenSet() const { return m_textTransformationsHasBeenSet; }
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, WAF performs all transformations on the
-     * content of the request component identified by <code>FieldToMatch</code>,
-     * starting from the lowest priority setting, before inspecting the content for a
-     * match.</p>
+     * use in web requests in an effort to bypass detection. Text transformations are
+     * used in rule match statements, to transform the <code>FieldToMatch</code>
+     * request component before inspecting it, and they're used in rate-based rule
+     * statements, to transform request components before using them as custom
+     * aggregation keys. If you specify one or more transformations to apply, WAF
+     * performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline void SetTextTransformations(const Aws::Vector<TextTransformation>& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = value; }
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, WAF performs all transformations on the
-     * content of the request component identified by <code>FieldToMatch</code>,
-     * starting from the lowest priority setting, before inspecting the content for a
-     * match.</p>
+     * use in web requests in an effort to bypass detection. Text transformations are
+     * used in rule match statements, to transform the <code>FieldToMatch</code>
+     * request component before inspecting it, and they're used in rate-based rule
+     * statements, to transform request components before using them as custom
+     * aggregation keys. If you specify one or more transformations to apply, WAF
+     * performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline void SetTextTransformations(Aws::Vector<TextTransformation>&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::move(value); }
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, WAF performs all transformations on the
-     * content of the request component identified by <code>FieldToMatch</code>,
-     * starting from the lowest priority setting, before inspecting the content for a
-     * match.</p>
+     * use in web requests in an effort to bypass detection. Text transformations are
+     * used in rule match statements, to transform the <code>FieldToMatch</code>
+     * request component before inspecting it, and they're used in rate-based rule
+     * statements, to transform request components before using them as custom
+     * aggregation keys. If you specify one or more transformations to apply, WAF
+     * performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline SizeConstraintStatement& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, WAF performs all transformations on the
-     * content of the request component identified by <code>FieldToMatch</code>,
-     * starting from the lowest priority setting, before inspecting the content for a
-     * match.</p>
+     * use in web requests in an effort to bypass detection. Text transformations are
+     * used in rule match statements, to transform the <code>FieldToMatch</code>
+     * request component before inspecting it, and they're used in rate-based rule
+     * statements, to transform request components before using them as custom
+     * aggregation keys. If you specify one or more transformations to apply, WAF
+     * performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline SizeConstraintStatement& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, WAF performs all transformations on the
-     * content of the request component identified by <code>FieldToMatch</code>,
-     * starting from the lowest priority setting, before inspecting the content for a
-     * match.</p>
+     * use in web requests in an effort to bypass detection. Text transformations are
+     * used in rule match statements, to transform the <code>FieldToMatch</code>
+     * request component before inspecting it, and they're used in rate-based rule
+     * statements, to transform request components before using them as custom
+     * aggregation keys. If you specify one or more transformations to apply, WAF
+     * performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline SizeConstraintStatement& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, WAF performs all transformations on the
-     * content of the request component identified by <code>FieldToMatch</code>,
-     * starting from the lowest priority setting, before inspecting the content for a
-     * match.</p>
+     * use in web requests in an effort to bypass detection. Text transformations are
+     * used in rule match statements, to transform the <code>FieldToMatch</code>
+     * request component before inspecting it, and they're used in rate-based rule
+     * statements, to transform request components before using them as custom
+     * aggregation keys. If you specify one or more transformations to apply, WAF
+     * performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline SizeConstraintStatement& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
 

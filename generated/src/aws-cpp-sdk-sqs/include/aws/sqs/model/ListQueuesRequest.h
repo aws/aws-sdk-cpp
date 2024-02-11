@@ -34,10 +34,8 @@ namespace Model
 
     AWS_SQS_API Aws::String SerializePayload() const override;
 
-  protected:
-    AWS_SQS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SQS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-  public:
 
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name

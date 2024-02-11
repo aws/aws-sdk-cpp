@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservedNodeExchangeStatusType::NOT_SET:
+            return {};
           case ReservedNodeExchangeStatusType::REQUESTED:
             return "REQUESTED";
           case ReservedNodeExchangeStatusType::PENDING:

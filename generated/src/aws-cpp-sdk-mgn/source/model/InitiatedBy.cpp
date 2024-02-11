@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InitiatedBy::NOT_SET:
+            return {};
           case InitiatedBy::START_TEST:
             return "START_TEST";
           case InitiatedBy::START_CUTOVER:

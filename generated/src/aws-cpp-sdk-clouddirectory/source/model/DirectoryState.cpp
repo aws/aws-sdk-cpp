@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectoryState::NOT_SET:
+            return {};
           case DirectoryState::ENABLED:
             return "ENABLED";
           case DirectoryState::DISABLED:

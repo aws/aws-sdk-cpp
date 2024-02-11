@@ -9,6 +9,7 @@
 #include <aws/quicksight/model/ColumnIdentifier.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/quicksight/model/TimeGranularity.h>
+#include <aws/quicksight/model/RollingDateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -123,86 +124,100 @@ namespace Model
 
     /**
      * <p>The value of a <code>TimeEquality</code> filter.</p> <p>This field is
-     * mutually exclusive to <code>ParameterName</code>.</p>
+     * mutually exclusive to <code>RollingDate</code> and
+     * <code>ParameterName</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetValue() const{ return m_value; }
 
     /**
      * <p>The value of a <code>TimeEquality</code> filter.</p> <p>This field is
-     * mutually exclusive to <code>ParameterName</code>.</p>
+     * mutually exclusive to <code>RollingDate</code> and
+     * <code>ParameterName</code>.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of a <code>TimeEquality</code> filter.</p> <p>This field is
-     * mutually exclusive to <code>ParameterName</code>.</p>
+     * mutually exclusive to <code>RollingDate</code> and
+     * <code>ParameterName</code>.</p>
      */
     inline void SetValue(const Aws::Utils::DateTime& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The value of a <code>TimeEquality</code> filter.</p> <p>This field is
-     * mutually exclusive to <code>ParameterName</code>.</p>
+     * mutually exclusive to <code>RollingDate</code> and
+     * <code>ParameterName</code>.</p>
      */
     inline void SetValue(Aws::Utils::DateTime&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of a <code>TimeEquality</code> filter.</p> <p>This field is
-     * mutually exclusive to <code>ParameterName</code>.</p>
+     * mutually exclusive to <code>RollingDate</code> and
+     * <code>ParameterName</code>.</p>
      */
     inline TimeEqualityFilter& WithValue(const Aws::Utils::DateTime& value) { SetValue(value); return *this;}
 
     /**
      * <p>The value of a <code>TimeEquality</code> filter.</p> <p>This field is
-     * mutually exclusive to <code>ParameterName</code>.</p>
+     * mutually exclusive to <code>RollingDate</code> and
+     * <code>ParameterName</code>.</p>
      */
     inline TimeEqualityFilter& WithValue(Aws::Utils::DateTime&& value) { SetValue(std::move(value)); return *this;}
 
 
     /**
      * <p>The parameter whose value should be used for the filter value.</p> <p>This
-     * field is mutually exclusive to <code>Value</code>.</p>
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>RollingDate</code>.</p>
      */
     inline const Aws::String& GetParameterName() const{ return m_parameterName; }
 
     /**
      * <p>The parameter whose value should be used for the filter value.</p> <p>This
-     * field is mutually exclusive to <code>Value</code>.</p>
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>RollingDate</code>.</p>
      */
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
 
     /**
      * <p>The parameter whose value should be used for the filter value.</p> <p>This
-     * field is mutually exclusive to <code>Value</code>.</p>
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>RollingDate</code>.</p>
      */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
 
     /**
      * <p>The parameter whose value should be used for the filter value.</p> <p>This
-     * field is mutually exclusive to <code>Value</code>.</p>
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>RollingDate</code>.</p>
      */
     inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
 
     /**
      * <p>The parameter whose value should be used for the filter value.</p> <p>This
-     * field is mutually exclusive to <code>Value</code>.</p>
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>RollingDate</code>.</p>
      */
     inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
 
     /**
      * <p>The parameter whose value should be used for the filter value.</p> <p>This
-     * field is mutually exclusive to <code>Value</code>.</p>
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>RollingDate</code>.</p>
      */
     inline TimeEqualityFilter& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
 
     /**
      * <p>The parameter whose value should be used for the filter value.</p> <p>This
-     * field is mutually exclusive to <code>Value</code>.</p>
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>RollingDate</code>.</p>
      */
     inline TimeEqualityFilter& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
 
     /**
      * <p>The parameter whose value should be used for the filter value.</p> <p>This
-     * field is mutually exclusive to <code>Value</code>.</p>
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>RollingDate</code>.</p>
      */
     inline TimeEqualityFilter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
 
@@ -243,6 +258,49 @@ namespace Model
      */
     inline TimeEqualityFilter& WithTimeGranularity(TimeGranularity&& value) { SetTimeGranularity(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The rolling date input for the <code>TimeEquality</code> filter.</p> <p>This
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>ParameterName</code>.</p>
+     */
+    inline const RollingDateConfiguration& GetRollingDate() const{ return m_rollingDate; }
+
+    /**
+     * <p>The rolling date input for the <code>TimeEquality</code> filter.</p> <p>This
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>ParameterName</code>.</p>
+     */
+    inline bool RollingDateHasBeenSet() const { return m_rollingDateHasBeenSet; }
+
+    /**
+     * <p>The rolling date input for the <code>TimeEquality</code> filter.</p> <p>This
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>ParameterName</code>.</p>
+     */
+    inline void SetRollingDate(const RollingDateConfiguration& value) { m_rollingDateHasBeenSet = true; m_rollingDate = value; }
+
+    /**
+     * <p>The rolling date input for the <code>TimeEquality</code> filter.</p> <p>This
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>ParameterName</code>.</p>
+     */
+    inline void SetRollingDate(RollingDateConfiguration&& value) { m_rollingDateHasBeenSet = true; m_rollingDate = std::move(value); }
+
+    /**
+     * <p>The rolling date input for the <code>TimeEquality</code> filter.</p> <p>This
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>ParameterName</code>.</p>
+     */
+    inline TimeEqualityFilter& WithRollingDate(const RollingDateConfiguration& value) { SetRollingDate(value); return *this;}
+
+    /**
+     * <p>The rolling date input for the <code>TimeEquality</code> filter.</p> <p>This
+     * field is mutually exclusive to <code>Value</code> and
+     * <code>ParameterName</code>.</p>
+     */
+    inline TimeEqualityFilter& WithRollingDate(RollingDateConfiguration&& value) { SetRollingDate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_filterId;
@@ -259,6 +317,9 @@ namespace Model
 
     TimeGranularity m_timeGranularity;
     bool m_timeGranularityHasBeenSet = false;
+
+    RollingDateConfiguration m_rollingDate;
+    bool m_rollingDateHasBeenSet = false;
   };
 
 } // namespace Model

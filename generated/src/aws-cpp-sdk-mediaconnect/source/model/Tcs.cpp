@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Tcs::NOT_SET:
+            return {};
           case Tcs::SDR:
             return "SDR";
           case Tcs::PQ:

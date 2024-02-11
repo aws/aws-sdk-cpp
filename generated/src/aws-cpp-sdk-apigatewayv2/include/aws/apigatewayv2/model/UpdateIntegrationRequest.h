@@ -918,7 +918,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestParameters() const{ return m_requestParameters; }
@@ -953,7 +953,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline bool RequestParametersHasBeenSet() const { return m_requestParametersHasBeenSet; }
@@ -988,7 +988,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline void SetRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_requestParametersHasBeenSet = true; m_requestParameters = value; }
@@ -1023,7 +1023,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline void SetRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = std::move(value); }
@@ -1058,7 +1058,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& WithRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestParameters(value); return *this;}
@@ -1093,7 +1093,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& WithRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestParameters(std::move(value)); return *this;}
@@ -1128,7 +1128,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const Aws::String& key, const Aws::String& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
@@ -1163,7 +1163,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(Aws::String&& key, const Aws::String& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), value); return *this; }
@@ -1198,7 +1198,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const Aws::String& key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, std::move(value)); return *this; }
@@ -1233,7 +1233,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(Aws::String&& key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), std::move(value)); return *this; }
@@ -1268,7 +1268,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const char* key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, std::move(value)); return *this; }
@@ -1303,7 +1303,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(Aws::String&& key, const char* value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), value); return *this; }
@@ -1338,7 +1338,7 @@ namespace Model
      * be append, overwrite or remove. For values, you can provide static values, or
      * map request data, stage variables, or context variables that are evaluated at
      * runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
     inline UpdateIntegrationRequest& AddRequestParameters(const char* key, const char* value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }

@@ -70,6 +70,42 @@ namespace Model
     inline GetRecordResult& AddRecord(FeatureValue&& value) { m_record.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline const Aws::String& GetExpiresAt() const{ return m_expiresAt; }
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline void SetExpiresAt(const Aws::String& value) { m_expiresAt = value; }
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline void SetExpiresAt(Aws::String&& value) { m_expiresAt = std::move(value); }
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline void SetExpiresAt(const char* value) { m_expiresAt.assign(value); }
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline GetRecordResult& WithExpiresAt(const Aws::String& value) { SetExpiresAt(value); return *this;}
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline GetRecordResult& WithExpiresAt(Aws::String&& value) { SetExpiresAt(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+     */
+    inline GetRecordResult& WithExpiresAt(const char* value) { SetExpiresAt(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -94,6 +130,8 @@ namespace Model
   private:
 
     Aws::Vector<FeatureValue> m_record;
+
+    Aws::String m_expiresAt;
 
     Aws::String m_requestId;
   };

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int DROP_HASH = HashingUtils::HashString("DROP");
         static const int CONTINUE_HASH = HashingUtils::HashString("CONTINUE");
+        static const int REJECT_HASH = HashingUtils::HashString("REJECT");
 
 
         StreamExceptionPolicy GetStreamExceptionPolicyForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == CONTINUE_HASH)
           {
             return StreamExceptionPolicy::CONTINUE;
+          }
+          else if (hashCode == REJECT_HASH)
+          {
+            return StreamExceptionPolicy::REJECT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamExceptionPolicy::NOT_SET:
+            return {};
           case StreamExceptionPolicy::DROP:
             return "DROP";
           case StreamExceptionPolicy::CONTINUE:
             return "CONTINUE";
+          case StreamExceptionPolicy::REJECT:
+            return "REJECT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

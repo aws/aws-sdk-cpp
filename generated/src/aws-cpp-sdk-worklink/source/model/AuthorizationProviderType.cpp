@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthorizationProviderType::NOT_SET:
+            return {};
           case AuthorizationProviderType::SAML:
             return "SAML";
           default:

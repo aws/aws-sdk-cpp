@@ -24,6 +24,7 @@ namespace Aws
         static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
         static const int FLOAT_HASH = HashingUtils::HashString("FLOAT");
         static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
+        static const int DATETIME_HASH = HashingUtils::HashString("DATETIME");
 
 
         DataType GetDataTypeForName(const Aws::String& name)
@@ -45,6 +46,10 @@ namespace Aws
           {
             return DataType::BOOLEAN;
           }
+          else if (hashCode == DATETIME_HASH)
+          {
+            return DataType::DATETIME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -59,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataType::NOT_SET:
+            return {};
           case DataType::STRING:
             return "STRING";
           case DataType::INTEGER:
@@ -67,6 +74,8 @@ namespace Aws
             return "FLOAT";
           case DataType::BOOLEAN:
             return "BOOLEAN";
+          case DataType::DATETIME:
+            return "DATETIME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

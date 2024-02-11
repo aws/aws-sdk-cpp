@@ -8,6 +8,8 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/TelephonyConfig.h>
+#include <aws/connect/model/SignInConfig.h>
+#include <aws/connect/model/AgentConfig.h>
 #include <utility>
 
 namespace Aws
@@ -128,6 +130,74 @@ namespace Model
      */
     inline UpdateTrafficDistributionRequest& WithTelephonyConfig(TelephonyConfig&& value) { SetTelephonyConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
+     */
+    inline const SignInConfig& GetSignInConfig() const{ return m_signInConfig; }
+
+    /**
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
+     */
+    inline bool SignInConfigHasBeenSet() const { return m_signInConfigHasBeenSet; }
+
+    /**
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
+     */
+    inline void SetSignInConfig(const SignInConfig& value) { m_signInConfigHasBeenSet = true; m_signInConfig = value; }
+
+    /**
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
+     */
+    inline void SetSignInConfig(SignInConfig&& value) { m_signInConfigHasBeenSet = true; m_signInConfig = std::move(value); }
+
+    /**
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
+     */
+    inline UpdateTrafficDistributionRequest& WithSignInConfig(const SignInConfig& value) { SetSignInConfig(value); return *this;}
+
+    /**
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
+     */
+    inline UpdateTrafficDistributionRequest& WithSignInConfig(SignInConfig&& value) { SetSignInConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The distribution of agents between the instance and its replica(s).</p>
+     */
+    inline const AgentConfig& GetAgentConfig() const{ return m_agentConfig; }
+
+    /**
+     * <p>The distribution of agents between the instance and its replica(s).</p>
+     */
+    inline bool AgentConfigHasBeenSet() const { return m_agentConfigHasBeenSet; }
+
+    /**
+     * <p>The distribution of agents between the instance and its replica(s).</p>
+     */
+    inline void SetAgentConfig(const AgentConfig& value) { m_agentConfigHasBeenSet = true; m_agentConfig = value; }
+
+    /**
+     * <p>The distribution of agents between the instance and its replica(s).</p>
+     */
+    inline void SetAgentConfig(AgentConfig&& value) { m_agentConfigHasBeenSet = true; m_agentConfig = std::move(value); }
+
+    /**
+     * <p>The distribution of agents between the instance and its replica(s).</p>
+     */
+    inline UpdateTrafficDistributionRequest& WithAgentConfig(const AgentConfig& value) { SetAgentConfig(value); return *this;}
+
+    /**
+     * <p>The distribution of agents between the instance and its replica(s).</p>
+     */
+    inline UpdateTrafficDistributionRequest& WithAgentConfig(AgentConfig&& value) { SetAgentConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -135,6 +205,12 @@ namespace Model
 
     TelephonyConfig m_telephonyConfig;
     bool m_telephonyConfigHasBeenSet = false;
+
+    SignInConfig m_signInConfig;
+    bool m_signInConfigHasBeenSet = false;
+
+    AgentConfig m_agentConfig;
+    bool m_agentConfigHasBeenSet = false;
   };
 
 } // namespace Model

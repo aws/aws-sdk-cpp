@@ -14,19 +14,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateWorkflowRequest::CreateWorkflowRequest() : 
-    m_definitionUriHasBeenSet(false),
-    m_definitionZipHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_engine(WorkflowEngine::NOT_SET),
     m_engineHasBeenSet(false),
+    m_definitionZipHasBeenSet(false),
+    m_definitionUriHasBeenSet(false),
     m_mainHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_parameterTemplateHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::RandomUUID()),
-    m_requestIdHasBeenSet(true),
     m_storageCapacity(0),
     m_storageCapacityHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_requestIdHasBeenSet(true),
+    m_accelerators(Accelerators::NOT_SET),
+    m_acceleratorsHasBeenSet(false)
 {
 }
 
@@ -34,15 +36,10 @@ Aws::String CreateWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_definitionUriHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("definitionUri", m_definitionUri);
+   payload.WithString("name", m_name);
 
-  }
-
-  if(m_definitionZipHasBeenSet)
-  {
-   payload.WithString("definitionZip", HashingUtils::Base64Encode(m_definitionZip));
   }
 
   if(m_descriptionHasBeenSet)
@@ -56,15 +53,20 @@ Aws::String CreateWorkflowRequest::SerializePayload() const
    payload.WithString("engine", WorkflowEngineMapper::GetNameForWorkflowEngine(m_engine));
   }
 
-  if(m_mainHasBeenSet)
+  if(m_definitionZipHasBeenSet)
   {
-   payload.WithString("main", m_main);
+   payload.WithString("definitionZip", HashingUtils::Base64Encode(m_definitionZip));
+  }
+
+  if(m_definitionUriHasBeenSet)
+  {
+   payload.WithString("definitionUri", m_definitionUri);
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_mainHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("main", m_main);
 
   }
 
@@ -76,12 +78,6 @@ Aws::String CreateWorkflowRequest::SerializePayload() const
      parameterTemplateJsonMap.WithObject(parameterTemplateItem.first, parameterTemplateItem.second.Jsonize());
    }
    payload.WithObject("parameterTemplate", std::move(parameterTemplateJsonMap));
-
-  }
-
-  if(m_requestIdHasBeenSet)
-  {
-   payload.WithString("requestId", m_requestId);
 
   }
 
@@ -100,6 +96,17 @@ Aws::String CreateWorkflowRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_requestIdHasBeenSet)
+  {
+   payload.WithString("requestId", m_requestId);
+
+  }
+
+  if(m_acceleratorsHasBeenSet)
+  {
+   payload.WithString("accelerators", AcceleratorsMapper::GetNameForAccelerators(m_accelerators));
   }
 
   return payload.View().WriteReadable();

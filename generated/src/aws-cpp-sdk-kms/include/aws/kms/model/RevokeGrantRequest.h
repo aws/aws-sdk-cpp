@@ -187,6 +187,39 @@ namespace Model
      */
     inline RevokeGrantRequest& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline RevokeGrantRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
 
     Aws::String m_keyId;
@@ -194,6 +227,9 @@ namespace Model
 
     Aws::String m_grantId;
     bool m_grantIdHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

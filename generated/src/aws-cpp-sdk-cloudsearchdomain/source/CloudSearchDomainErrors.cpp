@@ -36,11 +36,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == DOCUMENT_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchDomainErrors::DOCUMENT_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchDomainErrors::DOCUMENT_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SEARCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchDomainErrors::SEARCH), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchDomainErrors::SEARCH), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

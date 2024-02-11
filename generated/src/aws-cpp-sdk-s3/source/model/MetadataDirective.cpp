@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetadataDirective::NOT_SET:
+            return {};
           case MetadataDirective::COPY:
             return "COPY";
           case MetadataDirective::REPLACE:

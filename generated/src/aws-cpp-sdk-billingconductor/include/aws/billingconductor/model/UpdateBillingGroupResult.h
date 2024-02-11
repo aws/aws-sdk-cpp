@@ -7,6 +7,7 @@
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/billingconductor/model/BillingGroupStatus.h>
+#include <aws/billingconductor/model/UpdateBillingGroupAccountGrouping.h>
 #include <utility>
 
 namespace Aws
@@ -326,6 +327,37 @@ namespace Model
     inline UpdateBillingGroupResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
 
+    /**
+     * <p>Specifies if the billing group has automatic account association
+     * (<code>AutoAssociate</code>) enabled.</p>
+     */
+    inline const UpdateBillingGroupAccountGrouping& GetAccountGrouping() const{ return m_accountGrouping; }
+
+    /**
+     * <p>Specifies if the billing group has automatic account association
+     * (<code>AutoAssociate</code>) enabled.</p>
+     */
+    inline void SetAccountGrouping(const UpdateBillingGroupAccountGrouping& value) { m_accountGrouping = value; }
+
+    /**
+     * <p>Specifies if the billing group has automatic account association
+     * (<code>AutoAssociate</code>) enabled.</p>
+     */
+    inline void SetAccountGrouping(UpdateBillingGroupAccountGrouping&& value) { m_accountGrouping = std::move(value); }
+
+    /**
+     * <p>Specifies if the billing group has automatic account association
+     * (<code>AutoAssociate</code>) enabled.</p>
+     */
+    inline UpdateBillingGroupResult& WithAccountGrouping(const UpdateBillingGroupAccountGrouping& value) { SetAccountGrouping(value); return *this;}
+
+    /**
+     * <p>Specifies if the billing group has automatic account association
+     * (<code>AutoAssociate</code>) enabled.</p>
+     */
+    inline UpdateBillingGroupResult& WithAccountGrouping(UpdateBillingGroupAccountGrouping&& value) { SetAccountGrouping(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -366,6 +398,8 @@ namespace Model
     BillingGroupStatus m_status;
 
     Aws::String m_statusReason;
+
+    UpdateBillingGroupAccountGrouping m_accountGrouping;
 
     Aws::String m_requestId;
   };

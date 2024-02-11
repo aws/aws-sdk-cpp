@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactStatus::NOT_SET:
+            return {};
           case ArtifactStatus::APPROVED:
             return "APPROVED";
           case ArtifactStatus::REJECTED:

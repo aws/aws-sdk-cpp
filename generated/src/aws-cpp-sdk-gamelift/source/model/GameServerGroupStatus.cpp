@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameServerGroupStatus::NOT_SET:
+            return {};
           case GameServerGroupStatus::NEW_:
             return "NEW";
           case GameServerGroupStatus::ACTIVATING:

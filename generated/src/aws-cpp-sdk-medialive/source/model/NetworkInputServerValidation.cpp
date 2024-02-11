@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkInputServerValidation::NOT_SET:
+            return {};
           case NetworkInputServerValidation::CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME:
             return "CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME";
           case NetworkInputServerValidation::CHECK_CRYPTOGRAPHY_ONLY:

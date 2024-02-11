@@ -31,6 +31,7 @@ namespace Aws
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETE_FAILED_FAS_EXPIRED_HASH = HashingUtils::HashString("DELETE_FAILED_FAS_EXPIRED");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 
 
         IpAddressStatus GetIpAddressStatusForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return IpAddressStatus::UPDATING;
           }
+          else if (hashCode == UPDATE_FAILED_HASH)
+          {
+            return IpAddressStatus::UPDATE_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -94,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpAddressStatus::NOT_SET:
+            return {};
           case IpAddressStatus::CREATING:
             return "CREATING";
           case IpAddressStatus::FAILED_CREATION:
@@ -116,6 +123,8 @@ namespace Aws
             return "DELETE_FAILED_FAS_EXPIRED";
           case IpAddressStatus::UPDATING:
             return "UPDATING";
+          case IpAddressStatus::UPDATE_FAILED:
+            return "UPDATE_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

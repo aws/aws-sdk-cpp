@@ -19,8 +19,8 @@ namespace Model
 
   /**
    * <p>Represents a request to return a list of all identities (email addresses and
-   * domains) that you have attempted to verify under your AWS account, regardless of
-   * verification status.</p><p><h3>See Also:</h3>   <a
+   * domains) that you have attempted to verify under your Amazon Web Services
+   * account, regardless of verification status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentitiesRequest">AWS
    * API Reference</a></p>
    */
@@ -44,37 +44,37 @@ namespace Model
 
     /**
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
-     * "Domain". If this parameter is omitted, then all identities will be listed.</p>
+     * "Domain". If this parameter is omitted, then all identities are listed.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
-     * "Domain". If this parameter is omitted, then all identities will be listed.</p>
+     * "Domain". If this parameter is omitted, then all identities are listed.</p>
      */
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
 
     /**
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
-     * "Domain". If this parameter is omitted, then all identities will be listed.</p>
+     * "Domain". If this parameter is omitted, then all identities are listed.</p>
      */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
-     * "Domain". If this parameter is omitted, then all identities will be listed.</p>
+     * "Domain". If this parameter is omitted, then all identities are listed.</p>
      */
     inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
-     * "Domain". If this parameter is omitted, then all identities will be listed.</p>
+     * "Domain". If this parameter is omitted, then all identities are listed.</p>
      */
     inline ListIdentitiesRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
-     * "Domain". If this parameter is omitted, then all identities will be listed.</p>
+     * "Domain". If this parameter is omitted, then all identities are listed.</p>
      */
     inline ListIdentitiesRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     POINT,
-    CLUSTER
+    CLUSTER,
+    HEATMAP
   };
 
 namespace GeospatialSelectedPointStyleMapper

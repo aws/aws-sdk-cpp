@@ -98,27 +98,32 @@ namespace Model
 
 
     /**
-     * <p>The collection of tagging definitions for the resource. </p>
+     * <p>The collection of tagging definitions for the resource. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline const TagInfoForResource& GetTagInfoForResource() const{ return m_tagInfoForResource; }
 
     /**
-     * <p>The collection of tagging definitions for the resource. </p>
+     * <p>The collection of tagging definitions for the resource. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline void SetTagInfoForResource(const TagInfoForResource& value) { m_tagInfoForResource = value; }
 
     /**
-     * <p>The collection of tagging definitions for the resource. </p>
+     * <p>The collection of tagging definitions for the resource. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline void SetTagInfoForResource(TagInfoForResource&& value) { m_tagInfoForResource = std::move(value); }
 
     /**
-     * <p>The collection of tagging definitions for the resource. </p>
+     * <p>The collection of tagging definitions for the resource. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline ListTagsForResourceResult& WithTagInfoForResource(const TagInfoForResource& value) { SetTagInfoForResource(value); return *this;}
 
     /**
-     * <p>The collection of tagging definitions for the resource. </p>
+     * <p>The collection of tagging definitions for the resource. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline ListTagsForResourceResult& WithTagInfoForResource(TagInfoForResource&& value) { SetTagInfoForResource(std::move(value)); return *this;}
 

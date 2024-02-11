@@ -122,6 +122,12 @@ GetRestApiResult& GetRestApiResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("rootResourceId"))
+  {
+    m_rootResourceId = jsonValue.GetString("rootResourceId");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

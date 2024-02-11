@@ -3,13 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/Version.h>
 
 using namespace Aws::Version;
 
-TEST(VersionTest, TestMajorMinorPatch)
+class VersionTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(VersionTest, TestMajorMinorPatch)
 {
     auto major = GetVersionMajor();
     auto minor = GetVersionMinor();
@@ -26,7 +30,7 @@ TEST(VersionTest, TestMajorMinorPatch)
     ASSERT_STREQ(versionString.c_str(), version.c_str());
 }
 
-TEST(VersionTest, TestCompilerVersionString)
+TEST_F(VersionTest, TestCompilerVersionString)
 {
     Aws::String compiler = GetCompilerVersionString();
 #if defined(_MSC_VER)

@@ -16,7 +16,9 @@ DescribeRuleGroupRequest::DescribeRuleGroupRequest() :
     m_ruleGroupNameHasBeenSet(false),
     m_ruleGroupArnHasBeenSet(false),
     m_type(RuleGroupType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_analyzeRuleGroup(false),
+    m_analyzeRuleGroupHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,12 @@ Aws::String DescribeRuleGroupRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", RuleGroupTypeMapper::GetNameForRuleGroupType(m_type));
+  }
+
+  if(m_analyzeRuleGroupHasBeenSet)
+  {
+   payload.WithBool("AnalyzeRuleGroup", m_analyzeRuleGroup);
+
   }
 
   return payload.View().WriteReadable();

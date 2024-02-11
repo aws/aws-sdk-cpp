@@ -7,8 +7,8 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AutoMLJobCompletionCriteria.h>
 #include <aws/sagemaker/model/AutoMLSecurityConfig.h>
-#include <aws/sagemaker/model/AutoMLDataSplitConfig.h>
 #include <aws/sagemaker/model/AutoMLCandidateGenerationConfig.h>
+#include <aws/sagemaker/model/AutoMLDataSplitConfig.h>
 #include <aws/sagemaker/model/AutoMLMode.h>
 #include <utility>
 
@@ -111,43 +111,6 @@ namespace Model
 
 
     /**
-     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
-     * AutoMLDataSplitConfig</p>
-     */
-    inline const AutoMLDataSplitConfig& GetDataSplitConfig() const{ return m_dataSplitConfig; }
-
-    /**
-     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
-     * AutoMLDataSplitConfig</p>
-     */
-    inline bool DataSplitConfigHasBeenSet() const { return m_dataSplitConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
-     * AutoMLDataSplitConfig</p>
-     */
-    inline void SetDataSplitConfig(const AutoMLDataSplitConfig& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = value; }
-
-    /**
-     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
-     * AutoMLDataSplitConfig</p>
-     */
-    inline void SetDataSplitConfig(AutoMLDataSplitConfig&& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = std::move(value); }
-
-    /**
-     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
-     * AutoMLDataSplitConfig</p>
-     */
-    inline AutoMLJobConfig& WithDataSplitConfig(const AutoMLDataSplitConfig& value) { SetDataSplitConfig(value); return *this;}
-
-    /**
-     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
-     * AutoMLDataSplitConfig</p>
-     */
-    inline AutoMLJobConfig& WithDataSplitConfig(AutoMLDataSplitConfig&& value) { SetDataSplitConfig(std::move(value)); return *this;}
-
-
-    /**
      * <p>The configuration for generating a candidate for an AutoML job (optional).
      * </p>
      */
@@ -185,6 +148,43 @@ namespace Model
 
 
     /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline const AutoMLDataSplitConfig& GetDataSplitConfig() const{ return m_dataSplitConfig; }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline bool DataSplitConfigHasBeenSet() const { return m_dataSplitConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline void SetDataSplitConfig(const AutoMLDataSplitConfig& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = value; }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline void SetDataSplitConfig(AutoMLDataSplitConfig&& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline AutoMLJobConfig& WithDataSplitConfig(const AutoMLDataSplitConfig& value) { SetDataSplitConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline AutoMLJobConfig& WithDataSplitConfig(AutoMLDataSplitConfig&& value) { SetDataSplitConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The method that Autopilot uses to train the data. You can either specify the
      * mode manually or let Autopilot choose for you based on the dataset size by
      * selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses
@@ -197,14 +197,14 @@ namespace Model
      * contributing members. A multi-stack ensemble model can provide better
      * performance over a single model by combining the predictive capabilities of
      * multiple models. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
      * (HPO) mode uses the best hyperparameters to train the best version of a model.
      * HPO automatically selects an algorithm for the type of problem you want to
      * solve. Then HPO finds the best hyperparameters according to your objective
      * metric. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>HYPERPARAMETER_TUNING</code> mode.</p>
      */
@@ -223,14 +223,14 @@ namespace Model
      * contributing members. A multi-stack ensemble model can provide better
      * performance over a single model by combining the predictive capabilities of
      * multiple models. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
      * (HPO) mode uses the best hyperparameters to train the best version of a model.
      * HPO automatically selects an algorithm for the type of problem you want to
      * solve. Then HPO finds the best hyperparameters according to your objective
      * metric. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>HYPERPARAMETER_TUNING</code> mode.</p>
      */
@@ -249,14 +249,14 @@ namespace Model
      * contributing members. A multi-stack ensemble model can provide better
      * performance over a single model by combining the predictive capabilities of
      * multiple models. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
      * (HPO) mode uses the best hyperparameters to train the best version of a model.
      * HPO automatically selects an algorithm for the type of problem you want to
      * solve. Then HPO finds the best hyperparameters according to your objective
      * metric. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>HYPERPARAMETER_TUNING</code> mode.</p>
      */
@@ -275,14 +275,14 @@ namespace Model
      * contributing members. A multi-stack ensemble model can provide better
      * performance over a single model by combining the predictive capabilities of
      * multiple models. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
      * (HPO) mode uses the best hyperparameters to train the best version of a model.
      * HPO automatically selects an algorithm for the type of problem you want to
      * solve. Then HPO finds the best hyperparameters according to your objective
      * metric. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>HYPERPARAMETER_TUNING</code> mode.</p>
      */
@@ -301,14 +301,14 @@ namespace Model
      * contributing members. A multi-stack ensemble model can provide better
      * performance over a single model by combining the predictive capabilities of
      * multiple models. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
      * (HPO) mode uses the best hyperparameters to train the best version of a model.
      * HPO automatically selects an algorithm for the type of problem you want to
      * solve. Then HPO finds the best hyperparameters according to your objective
      * metric. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>HYPERPARAMETER_TUNING</code> mode.</p>
      */
@@ -327,14 +327,14 @@ namespace Model
      * contributing members. A multi-stack ensemble model can provide better
      * performance over a single model by combining the predictive capabilities of
      * multiple models. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
      * (HPO) mode uses the best hyperparameters to train the best version of a model.
      * HPO automatically selects an algorithm for the type of problem you want to
      * solve. Then HPO finds the best hyperparameters according to your objective
      * metric. See <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
      * algorithm support</a> for a list of algorithms supported by
      * <code>HYPERPARAMETER_TUNING</code> mode.</p>
      */
@@ -348,11 +348,11 @@ namespace Model
     AutoMLSecurityConfig m_securityConfig;
     bool m_securityConfigHasBeenSet = false;
 
-    AutoMLDataSplitConfig m_dataSplitConfig;
-    bool m_dataSplitConfigHasBeenSet = false;
-
     AutoMLCandidateGenerationConfig m_candidateGenerationConfig;
     bool m_candidateGenerationConfigHasBeenSet = false;
+
+    AutoMLDataSplitConfig m_dataSplitConfig;
+    bool m_dataSplitConfigHasBeenSet = false;
 
     AutoMLMode m_mode;
     bool m_modeHasBeenSet = false;

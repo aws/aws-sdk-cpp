@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -790,6 +791,47 @@ namespace Model
      */
     inline AwsRdsDbClusterSnapshotDetails& WithIamDatabaseAuthenticationEnabled(bool value) { SetIamDatabaseAuthenticationEnabled(value); return *this;}
 
+
+    /**
+     * <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+     */
+    inline const Aws::Vector<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>& GetDbClusterSnapshotAttributes() const{ return m_dbClusterSnapshotAttributes; }
+
+    /**
+     * <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+     */
+    inline bool DbClusterSnapshotAttributesHasBeenSet() const { return m_dbClusterSnapshotAttributesHasBeenSet; }
+
+    /**
+     * <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+     */
+    inline void SetDbClusterSnapshotAttributes(const Aws::Vector<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>& value) { m_dbClusterSnapshotAttributesHasBeenSet = true; m_dbClusterSnapshotAttributes = value; }
+
+    /**
+     * <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+     */
+    inline void SetDbClusterSnapshotAttributes(Aws::Vector<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>&& value) { m_dbClusterSnapshotAttributesHasBeenSet = true; m_dbClusterSnapshotAttributes = std::move(value); }
+
+    /**
+     * <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+     */
+    inline AwsRdsDbClusterSnapshotDetails& WithDbClusterSnapshotAttributes(const Aws::Vector<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>& value) { SetDbClusterSnapshotAttributes(value); return *this;}
+
+    /**
+     * <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+     */
+    inline AwsRdsDbClusterSnapshotDetails& WithDbClusterSnapshotAttributes(Aws::Vector<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>&& value) { SetDbClusterSnapshotAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+     */
+    inline AwsRdsDbClusterSnapshotDetails& AddDbClusterSnapshotAttributes(const AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& value) { m_dbClusterSnapshotAttributesHasBeenSet = true; m_dbClusterSnapshotAttributes.push_back(value); return *this; }
+
+    /**
+     * <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+     */
+    inline AwsRdsDbClusterSnapshotDetails& AddDbClusterSnapshotAttributes(AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute&& value) { m_dbClusterSnapshotAttributesHasBeenSet = true; m_dbClusterSnapshotAttributes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -845,6 +887,9 @@ namespace Model
 
     bool m_iamDatabaseAuthenticationEnabled;
     bool m_iamDatabaseAuthenticationEnabledHasBeenSet = false;
+
+    Aws::Vector<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute> m_dbClusterSnapshotAttributes;
+    bool m_dbClusterSnapshotAttributesHasBeenSet = false;
   };
 
 } // namespace Model

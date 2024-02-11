@@ -23,6 +23,7 @@
 #include <aws/s3/model/CopyObjectResult.h>
 #include <aws/s3/model/CreateBucketResult.h>
 #include <aws/s3/model/CreateMultipartUploadResult.h>
+#include <aws/s3/model/CreateSessionResult.h>
 #include <aws/s3/model/DeleteObjectResult.h>
 #include <aws/s3/model/DeleteObjectTaggingResult.h>
 #include <aws/s3/model/DeleteObjectsResult.h>
@@ -55,6 +56,7 @@
 #include <aws/s3/model/GetObjectTaggingResult.h>
 #include <aws/s3/model/GetObjectTorrentResult.h>
 #include <aws/s3/model/GetPublicAccessBlockResult.h>
+#include <aws/s3/model/HeadBucketResult.h>
 #include <aws/s3/model/HeadObjectResult.h>
 #include <aws/s3/model/HeadBucketResult.h>
 #include <aws/s3/model/ListBucketAnalyticsConfigurationsResult.h>
@@ -62,6 +64,7 @@
 #include <aws/s3/model/ListBucketInventoryConfigurationsResult.h>
 #include <aws/s3/model/ListBucketMetricsConfigurationsResult.h>
 #include <aws/s3/model/ListBucketsResult.h>
+#include <aws/s3/model/ListDirectoryBucketsResult.h>
 #include <aws/s3/model/ListMultipartUploadsResult.h>
 #include <aws/s3/model/ListObjectVersionsResult.h>
 #include <aws/s3/model/ListObjectsResult.h>
@@ -121,6 +124,7 @@ namespace Aws
       class CopyObjectRequest;
       class CreateBucketRequest;
       class CreateMultipartUploadRequest;
+      class CreateSessionRequest;
       class DeleteBucketRequest;
       class DeleteBucketAnalyticsConfigurationRequest;
       class DeleteBucketCorsRequest;
@@ -173,6 +177,7 @@ namespace Aws
       class ListBucketIntelligentTieringConfigurationsRequest;
       class ListBucketInventoryConfigurationsRequest;
       class ListBucketMetricsConfigurationsRequest;
+      class ListDirectoryBucketsRequest;
       class ListMultipartUploadsRequest;
       class ListObjectVersionsRequest;
       class ListObjectsRequest;
@@ -216,6 +221,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CopyObjectResult, S3Error> CopyObjectOutcome;
       typedef Aws::Utils::Outcome<CreateBucketResult, S3Error> CreateBucketOutcome;
       typedef Aws::Utils::Outcome<CreateMultipartUploadResult, S3Error> CreateMultipartUploadOutcome;
+      typedef Aws::Utils::Outcome<CreateSessionResult, S3Error> CreateSessionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketAnalyticsConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> DeleteBucketCorsOutcome;
@@ -269,6 +275,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListBucketInventoryConfigurationsResult, S3Error> ListBucketInventoryConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListBucketMetricsConfigurationsResult, S3Error> ListBucketMetricsConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListBucketsResult, S3Error> ListBucketsOutcome;
+      typedef Aws::Utils::Outcome<ListDirectoryBucketsResult, S3Error> ListDirectoryBucketsOutcome;
       typedef Aws::Utils::Outcome<ListMultipartUploadsResult, S3Error> ListMultipartUploadsOutcome;
       typedef Aws::Utils::Outcome<ListObjectVersionsResult, S3Error> ListObjectVersionsOutcome;
       typedef Aws::Utils::Outcome<ListObjectsResult, S3Error> ListObjectsOutcome;
@@ -312,6 +319,7 @@ namespace Aws
       typedef std::future<CopyObjectOutcome> CopyObjectOutcomeCallable;
       typedef std::future<CreateBucketOutcome> CreateBucketOutcomeCallable;
       typedef std::future<CreateMultipartUploadOutcome> CreateMultipartUploadOutcomeCallable;
+      typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
       typedef std::future<DeleteBucketOutcome> DeleteBucketOutcomeCallable;
       typedef std::future<DeleteBucketAnalyticsConfigurationOutcome> DeleteBucketAnalyticsConfigurationOutcomeCallable;
       typedef std::future<DeleteBucketCorsOutcome> DeleteBucketCorsOutcomeCallable;
@@ -365,6 +373,7 @@ namespace Aws
       typedef std::future<ListBucketInventoryConfigurationsOutcome> ListBucketInventoryConfigurationsOutcomeCallable;
       typedef std::future<ListBucketMetricsConfigurationsOutcome> ListBucketMetricsConfigurationsOutcomeCallable;
       typedef std::future<ListBucketsOutcome> ListBucketsOutcomeCallable;
+      typedef std::future<ListDirectoryBucketsOutcome> ListDirectoryBucketsOutcomeCallable;
       typedef std::future<ListMultipartUploadsOutcome> ListMultipartUploadsOutcomeCallable;
       typedef std::future<ListObjectVersionsOutcome> ListObjectVersionsOutcomeCallable;
       typedef std::future<ListObjectsOutcome> ListObjectsOutcomeCallable;
@@ -411,6 +420,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::CopyObjectRequest&, const Model::CopyObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyObjectResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::CreateBucketRequest&, const Model::CreateBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBucketResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::CreateMultipartUploadRequest&, const Model::CreateMultipartUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultipartUploadResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::CreateSessionRequest&, const Model::CreateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSessionResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketRequest&, const Model::DeleteBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketAnalyticsConfigurationRequest&, const Model::DeleteBucketAnalyticsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketAnalyticsConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteBucketCorsRequest&, const Model::DeleteBucketCorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketCorsResponseReceivedHandler;
@@ -464,6 +474,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::ListBucketInventoryConfigurationsRequest&, const Model::ListBucketInventoryConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketInventoryConfigurationsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListBucketMetricsConfigurationsRequest&, const Model::ListBucketMetricsConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketMetricsConfigurationsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketsResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::ListDirectoryBucketsRequest&, const Model::ListDirectoryBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDirectoryBucketsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListMultipartUploadsRequest&, const Model::ListMultipartUploadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultipartUploadsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListObjectVersionsRequest&, const Model::ListObjectVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectVersionsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListObjectsRequest&, const Model::ListObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectsResponseReceivedHandler;

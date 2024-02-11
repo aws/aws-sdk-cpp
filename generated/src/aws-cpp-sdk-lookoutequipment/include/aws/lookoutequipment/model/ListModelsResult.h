@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of ML
-     * models. </p>
+     * <p> An opaque pagination token indicating where to continue the listing of
+     * machine learning models. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of ML
-     * models. </p>
+     * <p> An opaque pagination token indicating where to continue the listing of
+     * machine learning models. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of ML
-     * models. </p>
+     * <p> An opaque pagination token indicating where to continue the listing of
+     * machine learning models. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of ML
-     * models. </p>
+     * <p> An opaque pagination token indicating where to continue the listing of
+     * machine learning models. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of ML
-     * models. </p>
+     * <p> An opaque pagination token indicating where to continue the listing of
+     * machine learning models. </p>
      */
     inline ListModelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of ML
-     * models. </p>
+     * <p> An opaque pagination token indicating where to continue the listing of
+     * machine learning models. </p>
      */
     inline ListModelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of ML
-     * models. </p>
+     * <p> An opaque pagination token indicating where to continue the listing of
+     * machine learning models. </p>
      */
     inline ListModelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

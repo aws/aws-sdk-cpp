@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceType::NOT_SET:
+            return {};
           case DeviceType::QPU:
             return "QPU";
           case DeviceType::SIMULATOR:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashManifestStyle::NOT_SET:
+            return {};
           case DashManifestStyle::BASIC:
             return "BASIC";
           case DashManifestStyle::COMPACT:

@@ -48,6 +48,7 @@
 #include <aws/elasticmapreduce/model/ListStepsResult.h>
 #include <aws/elasticmapreduce/model/ListStudioSessionMappingsResult.h>
 #include <aws/elasticmapreduce/model/ListStudiosResult.h>
+#include <aws/elasticmapreduce/model/ListSupportedInstanceTypesResult.h>
 #include <aws/elasticmapreduce/model/ModifyClusterResult.h>
 #include <aws/elasticmapreduce/model/PutAutoScalingPolicyResult.h>
 #include <aws/elasticmapreduce/model/PutAutoTerminationPolicyResult.h>
@@ -133,6 +134,7 @@ namespace Aws
       class ListStepsRequest;
       class ListStudioSessionMappingsRequest;
       class ListStudiosRequest;
+      class ListSupportedInstanceTypesRequest;
       class ModifyClusterRequest;
       class ModifyInstanceFleetRequest;
       class ModifyInstanceGroupsRequest;
@@ -145,6 +147,7 @@ namespace Aws
       class RemoveManagedScalingPolicyRequest;
       class RemoveTagsRequest;
       class RunJobFlowRequest;
+      class SetKeepJobFlowAliveWhenNoStepsRequest;
       class SetTerminationProtectionRequest;
       class SetVisibleToAllUsersRequest;
       class StartNotebookExecutionRequest;
@@ -188,6 +191,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListStepsResult, EMRError> ListStepsOutcome;
       typedef Aws::Utils::Outcome<ListStudioSessionMappingsResult, EMRError> ListStudioSessionMappingsOutcome;
       typedef Aws::Utils::Outcome<ListStudiosResult, EMRError> ListStudiosOutcome;
+      typedef Aws::Utils::Outcome<ListSupportedInstanceTypesResult, EMRError> ListSupportedInstanceTypesOutcome;
       typedef Aws::Utils::Outcome<ModifyClusterResult, EMRError> ModifyClusterOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> ModifyInstanceFleetOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> ModifyInstanceGroupsOutcome;
@@ -200,6 +204,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RemoveManagedScalingPolicyResult, EMRError> RemoveManagedScalingPolicyOutcome;
       typedef Aws::Utils::Outcome<RemoveTagsResult, EMRError> RemoveTagsOutcome;
       typedef Aws::Utils::Outcome<RunJobFlowResult, EMRError> RunJobFlowOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetKeepJobFlowAliveWhenNoStepsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetTerminationProtectionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetVisibleToAllUsersOutcome;
       typedef Aws::Utils::Outcome<StartNotebookExecutionResult, EMRError> StartNotebookExecutionOutcome;
@@ -243,6 +248,7 @@ namespace Aws
       typedef std::future<ListStepsOutcome> ListStepsOutcomeCallable;
       typedef std::future<ListStudioSessionMappingsOutcome> ListStudioSessionMappingsOutcomeCallable;
       typedef std::future<ListStudiosOutcome> ListStudiosOutcomeCallable;
+      typedef std::future<ListSupportedInstanceTypesOutcome> ListSupportedInstanceTypesOutcomeCallable;
       typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
       typedef std::future<ModifyInstanceFleetOutcome> ModifyInstanceFleetOutcomeCallable;
       typedef std::future<ModifyInstanceGroupsOutcome> ModifyInstanceGroupsOutcomeCallable;
@@ -255,6 +261,7 @@ namespace Aws
       typedef std::future<RemoveManagedScalingPolicyOutcome> RemoveManagedScalingPolicyOutcomeCallable;
       typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
       typedef std::future<RunJobFlowOutcome> RunJobFlowOutcomeCallable;
+      typedef std::future<SetKeepJobFlowAliveWhenNoStepsOutcome> SetKeepJobFlowAliveWhenNoStepsOutcomeCallable;
       typedef std::future<SetTerminationProtectionOutcome> SetTerminationProtectionOutcomeCallable;
       typedef std::future<SetVisibleToAllUsersOutcome> SetVisibleToAllUsersOutcomeCallable;
       typedef std::future<StartNotebookExecutionOutcome> StartNotebookExecutionOutcomeCallable;
@@ -301,6 +308,7 @@ namespace Aws
     typedef std::function<void(const EMRClient*, const Model::ListStepsRequest&, const Model::ListStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStepsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListStudioSessionMappingsRequest&, const Model::ListStudioSessionMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudioSessionMappingsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListStudiosRequest&, const Model::ListStudiosOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudiosResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::ListSupportedInstanceTypesRequest&, const Model::ListSupportedInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSupportedInstanceTypesResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ModifyClusterRequest&, const Model::ModifyClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ModifyInstanceFleetRequest&, const Model::ModifyInstanceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceFleetResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ModifyInstanceGroupsRequest&, const Model::ModifyInstanceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceGroupsResponseReceivedHandler;
@@ -313,6 +321,7 @@ namespace Aws
     typedef std::function<void(const EMRClient*, const Model::RemoveManagedScalingPolicyRequest&, const Model::RemoveManagedScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveManagedScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RunJobFlowRequest&, const Model::RunJobFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunJobFlowResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::SetKeepJobFlowAliveWhenNoStepsRequest&, const Model::SetKeepJobFlowAliveWhenNoStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetKeepJobFlowAliveWhenNoStepsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::SetTerminationProtectionRequest&, const Model::SetTerminationProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTerminationProtectionResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::SetVisibleToAllUsersRequest&, const Model::SetVisibleToAllUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetVisibleToAllUsersResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::StartNotebookExecutionRequest&, const Model::StartNotebookExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNotebookExecutionResponseReceivedHandler;

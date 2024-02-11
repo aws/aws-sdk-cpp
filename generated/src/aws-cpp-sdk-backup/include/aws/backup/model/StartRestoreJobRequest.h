@@ -612,14 +612,17 @@ namespace Model
      * <p>Starts a job to restore a recovery point for one of the following
      * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
      * <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB
-     * compatibility)</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
+     * compatibility)</p> </li> <li> <p> <code>CloudFormation</code> for
+     * CloudFormation</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
      * </li> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li>
      * <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
      * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for Storage
-     * Gateway</p> </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon
+     * Redshift</p> </li> <li> <p> <code>Storage Gateway</code> for Storage Gateway</p>
+     * </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
      * <code>VirtualMachine</code> for virtual machines</p> </li> </ul>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
@@ -628,14 +631,17 @@ namespace Model
      * <p>Starts a job to restore a recovery point for one of the following
      * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
      * <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB
-     * compatibility)</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
+     * compatibility)</p> </li> <li> <p> <code>CloudFormation</code> for
+     * CloudFormation</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
      * </li> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li>
      * <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
      * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for Storage
-     * Gateway</p> </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon
+     * Redshift</p> </li> <li> <p> <code>Storage Gateway</code> for Storage Gateway</p>
+     * </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
      * <code>VirtualMachine</code> for virtual machines</p> </li> </ul>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -644,14 +650,17 @@ namespace Model
      * <p>Starts a job to restore a recovery point for one of the following
      * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
      * <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB
-     * compatibility)</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
+     * compatibility)</p> </li> <li> <p> <code>CloudFormation</code> for
+     * CloudFormation</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
      * </li> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li>
      * <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
      * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for Storage
-     * Gateway</p> </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon
+     * Redshift</p> </li> <li> <p> <code>Storage Gateway</code> for Storage Gateway</p>
+     * </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
      * <code>VirtualMachine</code> for virtual machines</p> </li> </ul>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
@@ -660,14 +669,17 @@ namespace Model
      * <p>Starts a job to restore a recovery point for one of the following
      * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
      * <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB
-     * compatibility)</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
+     * compatibility)</p> </li> <li> <p> <code>CloudFormation</code> for
+     * CloudFormation</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
      * </li> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li>
      * <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
      * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for Storage
-     * Gateway</p> </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon
+     * Redshift</p> </li> <li> <p> <code>Storage Gateway</code> for Storage Gateway</p>
+     * </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
      * <code>VirtualMachine</code> for virtual machines</p> </li> </ul>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
@@ -676,14 +688,17 @@ namespace Model
      * <p>Starts a job to restore a recovery point for one of the following
      * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
      * <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB
-     * compatibility)</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
+     * compatibility)</p> </li> <li> <p> <code>CloudFormation</code> for
+     * CloudFormation</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
      * </li> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li>
      * <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
      * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for Storage
-     * Gateway</p> </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon
+     * Redshift</p> </li> <li> <p> <code>Storage Gateway</code> for Storage Gateway</p>
+     * </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
      * <code>VirtualMachine</code> for virtual machines</p> </li> </ul>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
@@ -692,14 +707,17 @@ namespace Model
      * <p>Starts a job to restore a recovery point for one of the following
      * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
      * <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB
-     * compatibility)</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
+     * compatibility)</p> </li> <li> <p> <code>CloudFormation</code> for
+     * CloudFormation</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
      * </li> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li>
      * <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
      * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for Storage
-     * Gateway</p> </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon
+     * Redshift</p> </li> <li> <p> <code>Storage Gateway</code> for Storage Gateway</p>
+     * </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
      * <code>VirtualMachine</code> for virtual machines</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
@@ -708,14 +726,17 @@ namespace Model
      * <p>Starts a job to restore a recovery point for one of the following
      * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
      * <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB
-     * compatibility)</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
+     * compatibility)</p> </li> <li> <p> <code>CloudFormation</code> for
+     * CloudFormation</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
      * </li> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li>
      * <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
      * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for Storage
-     * Gateway</p> </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon
+     * Redshift</p> </li> <li> <p> <code>Storage Gateway</code> for Storage Gateway</p>
+     * </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
      * <code>VirtualMachine</code> for virtual machines</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
@@ -724,17 +745,49 @@ namespace Model
      * <p>Starts a job to restore a recovery point for one of the following
      * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
      * <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB
-     * compatibility)</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
+     * compatibility)</p> </li> <li> <p> <code>CloudFormation</code> for
+     * CloudFormation</p> </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p>
      * </li> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li>
      * <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
      * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for Storage
-     * Gateway</p> </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon
+     * Redshift</p> </li> <li> <p> <code>Storage Gateway</code> for Storage Gateway</p>
+     * </li> <li> <p> <code>S3</code> for Amazon S3</p> </li> <li> <p>
+     * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
      * <code>VirtualMachine</code> for virtual machines</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
+
+    /**
+     * <p>This is an optional parameter. If this equals <code>True</code>, tags
+     * included in the backup will be copied to the restored resource.</p> <p>This can
+     * only be applied to backups created through Backup.</p>
+     */
+    inline bool GetCopySourceTagsToRestoredResource() const{ return m_copySourceTagsToRestoredResource; }
+
+    /**
+     * <p>This is an optional parameter. If this equals <code>True</code>, tags
+     * included in the backup will be copied to the restored resource.</p> <p>This can
+     * only be applied to backups created through Backup.</p>
+     */
+    inline bool CopySourceTagsToRestoredResourceHasBeenSet() const { return m_copySourceTagsToRestoredResourceHasBeenSet; }
+
+    /**
+     * <p>This is an optional parameter. If this equals <code>True</code>, tags
+     * included in the backup will be copied to the restored resource.</p> <p>This can
+     * only be applied to backups created through Backup.</p>
+     */
+    inline void SetCopySourceTagsToRestoredResource(bool value) { m_copySourceTagsToRestoredResourceHasBeenSet = true; m_copySourceTagsToRestoredResource = value; }
+
+    /**
+     * <p>This is an optional parameter. If this equals <code>True</code>, tags
+     * included in the backup will be copied to the restored resource.</p> <p>This can
+     * only be applied to backups created through Backup.</p>
+     */
+    inline StartRestoreJobRequest& WithCopySourceTagsToRestoredResource(bool value) { SetCopySourceTagsToRestoredResource(value); return *this;}
 
   private:
 
@@ -752,6 +805,9 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
+
+    bool m_copySourceTagsToRestoredResource;
+    bool m_copySourceTagsToRestoredResourceHasBeenSet = false;
   };
 
 } // namespace Model

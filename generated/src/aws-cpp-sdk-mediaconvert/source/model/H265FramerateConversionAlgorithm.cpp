@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265FramerateConversionAlgorithm::NOT_SET:
+            return {};
           case H265FramerateConversionAlgorithm::DUPLICATE_DROP:
             return "DUPLICATE_DROP";
           case H265FramerateConversionAlgorithm::INTERPOLATE:

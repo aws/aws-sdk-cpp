@@ -10,6 +10,8 @@
 #include <aws/sagemaker/model/ProductionVariantInstanceType.h>
 #include <aws/sagemaker/model/ProductionVariantAcceleratorType.h>
 #include <aws/sagemaker/model/ProductionVariantServerlessConfig.h>
+#include <aws/sagemaker/model/ProductionVariantManagedInstanceScaling.h>
+#include <aws/sagemaker/model/ProductionVariantRoutingConfig.h>
 #include <aws/sagemaker/model/DeployedImage.h>
 #include <aws/sagemaker/model/ProductionVariantStatus.h>
 #include <utility>
@@ -31,10 +33,12 @@ namespace Model
 
   /**
    * <p>The production variant summary for a deployment when an endpoint is creating
-   * or updating with the <code> <a>CreateEndpoint</a> </code> or <code>
-   * <a>UpdateEndpoint</a> </code> operations. Describes the <code>VariantStatus
-   * </code>, weight and capacity for a production variant associated with an
-   * endpoint. </p><p><h3>See Also:</h3>   <a
+   * or updating with the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
+   * operations. Describes the <code>VariantStatus </code>, weight and capacity for a
+   * production variant associated with an endpoint. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PendingProductionVariantSummary">AWS
    * API Reference</a></p>
    */
@@ -169,28 +173,36 @@ namespace Model
     /**
      * <p>The requested weight for the variant in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline double GetDesiredWeight() const{ return m_desiredWeight; }
 
     /**
      * <p>The requested weight for the variant in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline bool DesiredWeightHasBeenSet() const { return m_desiredWeightHasBeenSet; }
 
     /**
      * <p>The requested weight for the variant in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline void SetDesiredWeight(double value) { m_desiredWeightHasBeenSet = true; m_desiredWeight = value; }
 
     /**
      * <p>The requested weight for the variant in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline PendingProductionVariantSummary& WithDesiredWeight(double value) { SetDesiredWeight(value); return *this;}
 
@@ -219,28 +231,36 @@ namespace Model
     /**
      * <p>The number of instances requested in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline int GetDesiredInstanceCount() const{ return m_desiredInstanceCount; }
 
     /**
      * <p>The number of instances requested in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline bool DesiredInstanceCountHasBeenSet() const { return m_desiredInstanceCountHasBeenSet; }
 
     /**
      * <p>The number of instances requested in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline void SetDesiredInstanceCount(int value) { m_desiredInstanceCountHasBeenSet = true; m_desiredInstanceCount = value; }
 
     /**
      * <p>The number of instances requested in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline PendingProductionVariantSummary& WithDesiredInstanceCount(int value) { SetDesiredInstanceCount(value); return *this;}
 
@@ -447,6 +467,80 @@ namespace Model
      */
     inline PendingProductionVariantSummary& WithDesiredServerlessConfig(ProductionVariantServerlessConfig&& value) { SetDesiredServerlessConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline const ProductionVariantManagedInstanceScaling& GetManagedInstanceScaling() const{ return m_managedInstanceScaling; }
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline bool ManagedInstanceScalingHasBeenSet() const { return m_managedInstanceScalingHasBeenSet; }
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline void SetManagedInstanceScaling(const ProductionVariantManagedInstanceScaling& value) { m_managedInstanceScalingHasBeenSet = true; m_managedInstanceScaling = value; }
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline void SetManagedInstanceScaling(ProductionVariantManagedInstanceScaling&& value) { m_managedInstanceScalingHasBeenSet = true; m_managedInstanceScaling = std::move(value); }
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline PendingProductionVariantSummary& WithManagedInstanceScaling(const ProductionVariantManagedInstanceScaling& value) { SetManagedInstanceScaling(value); return *this;}
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline PendingProductionVariantSummary& WithManagedInstanceScaling(ProductionVariantManagedInstanceScaling&& value) { SetManagedInstanceScaling(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline const ProductionVariantRoutingConfig& GetRoutingConfig() const{ return m_routingConfig; }
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline bool RoutingConfigHasBeenSet() const { return m_routingConfigHasBeenSet; }
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline void SetRoutingConfig(const ProductionVariantRoutingConfig& value) { m_routingConfigHasBeenSet = true; m_routingConfig = value; }
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline void SetRoutingConfig(ProductionVariantRoutingConfig&& value) { m_routingConfigHasBeenSet = true; m_routingConfig = std::move(value); }
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline PendingProductionVariantSummary& WithRoutingConfig(const ProductionVariantRoutingConfig& value) { SetRoutingConfig(value); return *this;}
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline PendingProductionVariantSummary& WithRoutingConfig(ProductionVariantRoutingConfig&& value) { SetRoutingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_variantName;
@@ -481,6 +575,12 @@ namespace Model
 
     ProductionVariantServerlessConfig m_desiredServerlessConfig;
     bool m_desiredServerlessConfigHasBeenSet = false;
+
+    ProductionVariantManagedInstanceScaling m_managedInstanceScaling;
+    bool m_managedInstanceScalingHasBeenSet = false;
+
+    ProductionVariantRoutingConfig m_routingConfig;
+    bool m_routingConfigHasBeenSet = false;
   };
 
 } // namespace Model

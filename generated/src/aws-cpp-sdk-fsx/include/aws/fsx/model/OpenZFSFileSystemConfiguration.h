@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/OpenZFSDeploymentType.h>
 #include <aws/fsx/model/DiskIopsConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -170,37 +171,43 @@ namespace Model
 
     /**
      * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
-     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+     * supports&#x2028; <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and
+     * <code>SINGLE_AZ_2</code>.</p>
      */
     inline const OpenZFSDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
      * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
-     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+     * supports&#x2028; <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and
+     * <code>SINGLE_AZ_2</code>.</p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
      * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
-     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+     * supports&#x2028; <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and
+     * <code>SINGLE_AZ_2</code>.</p>
      */
     inline void SetDeploymentType(const OpenZFSDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
      * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
-     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+     * supports&#x2028; <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and
+     * <code>SINGLE_AZ_2</code>.</p>
      */
     inline void SetDeploymentType(OpenZFSDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
      * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
-     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+     * supports&#x2028; <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and
+     * <code>SINGLE_AZ_2</code>.</p>
      */
     inline OpenZFSFileSystemConfiguration& WithDeploymentType(const OpenZFSDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
      * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
-     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+     * supports&#x2028; <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and
+     * <code>SINGLE_AZ_2</code>.</p>
      */
     inline OpenZFSFileSystemConfiguration& WithDeploymentType(OpenZFSDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
@@ -314,6 +321,240 @@ namespace Model
      */
     inline OpenZFSFileSystemConfiguration& WithRootVolumeId(const char* value) { SetRootVolumeId(value); return *this;}
 
+
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
+    inline const Aws::String& GetPreferredSubnetId() const{ return m_preferredSubnetId; }
+
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
+    inline bool PreferredSubnetIdHasBeenSet() const { return m_preferredSubnetIdHasBeenSet; }
+
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
+    inline void SetPreferredSubnetId(const Aws::String& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = value; }
+
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
+    inline void SetPreferredSubnetId(Aws::String&& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = std::move(value); }
+
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
+    inline void SetPreferredSubnetId(const char* value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId.assign(value); }
+
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& WithPreferredSubnetId(const Aws::String& value) { SetPreferredSubnetId(value); return *this;}
+
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& WithPreferredSubnetId(Aws::String&& value) { SetPreferredSubnetId(std::move(value)); return *this;}
+
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& WithPreferredSubnetId(const char* value) { SetPreferredSubnetId(value); return *this;}
+
+
+    /**
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default in the Amazon FSx API and
+     * Amazon FSx console, Amazon FSx selects an available /28 IP address range for you
+     * from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
+     * addresses for file systems deployed in the same VPC/route tables.</p>
+     */
+    inline const Aws::String& GetEndpointIpAddressRange() const{ return m_endpointIpAddressRange; }
+
+    /**
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default in the Amazon FSx API and
+     * Amazon FSx console, Amazon FSx selects an available /28 IP address range for you
+     * from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
+     * addresses for file systems deployed in the same VPC/route tables.</p>
+     */
+    inline bool EndpointIpAddressRangeHasBeenSet() const { return m_endpointIpAddressRangeHasBeenSet; }
+
+    /**
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default in the Amazon FSx API and
+     * Amazon FSx console, Amazon FSx selects an available /28 IP address range for you
+     * from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
+     * addresses for file systems deployed in the same VPC/route tables.</p>
+     */
+    inline void SetEndpointIpAddressRange(const Aws::String& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = value; }
+
+    /**
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default in the Amazon FSx API and
+     * Amazon FSx console, Amazon FSx selects an available /28 IP address range for you
+     * from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
+     * addresses for file systems deployed in the same VPC/route tables.</p>
+     */
+    inline void SetEndpointIpAddressRange(Aws::String&& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = std::move(value); }
+
+    /**
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default in the Amazon FSx API and
+     * Amazon FSx console, Amazon FSx selects an available /28 IP address range for you
+     * from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
+     * addresses for file systems deployed in the same VPC/route tables.</p>
+     */
+    inline void SetEndpointIpAddressRange(const char* value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange.assign(value); }
+
+    /**
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default in the Amazon FSx API and
+     * Amazon FSx console, Amazon FSx selects an available /28 IP address range for you
+     * from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
+     * addresses for file systems deployed in the same VPC/route tables.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& WithEndpointIpAddressRange(const Aws::String& value) { SetEndpointIpAddressRange(value); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default in the Amazon FSx API and
+     * Amazon FSx console, Amazon FSx selects an available /28 IP address range for you
+     * from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
+     * addresses for file systems deployed in the same VPC/route tables.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& WithEndpointIpAddressRange(Aws::String&& value) { SetEndpointIpAddressRange(std::move(value)); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default in the Amazon FSx API and
+     * Amazon FSx console, Amazon FSx selects an available /28 IP address range for you
+     * from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
+     * addresses for file systems deployed in the same VPC/route tables.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& WithEndpointIpAddressRange(const char* value) { SetEndpointIpAddressRange(value); return *this;}
+
+
+    /**
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
+
+    /**
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
+     */
+    inline bool RouteTableIdsHasBeenSet() const { return m_routeTableIdsHasBeenSet; }
+
+    /**
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
+     */
+    inline void SetRouteTableIds(const Aws::Vector<Aws::String>& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
+
+    /**
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
+     */
+    inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
+
+    /**
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& WithRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRouteTableIds(value); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& AddRouteTableIds(const Aws::String& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
+
+    /**
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The IP address of the endpoint that is used to access data or to manage the
+     * file system.</p>
+     */
+    inline const Aws::String& GetEndpointIpAddress() const{ return m_endpointIpAddress; }
+
+    /**
+     * <p>The IP address of the endpoint that is used to access data or to manage the
+     * file system.</p>
+     */
+    inline bool EndpointIpAddressHasBeenSet() const { return m_endpointIpAddressHasBeenSet; }
+
+    /**
+     * <p>The IP address of the endpoint that is used to access data or to manage the
+     * file system.</p>
+     */
+    inline void SetEndpointIpAddress(const Aws::String& value) { m_endpointIpAddressHasBeenSet = true; m_endpointIpAddress = value; }
+
+    /**
+     * <p>The IP address of the endpoint that is used to access data or to manage the
+     * file system.</p>
+     */
+    inline void SetEndpointIpAddress(Aws::String&& value) { m_endpointIpAddressHasBeenSet = true; m_endpointIpAddress = std::move(value); }
+
+    /**
+     * <p>The IP address of the endpoint that is used to access data or to manage the
+     * file system.</p>
+     */
+    inline void SetEndpointIpAddress(const char* value) { m_endpointIpAddressHasBeenSet = true; m_endpointIpAddress.assign(value); }
+
+    /**
+     * <p>The IP address of the endpoint that is used to access data or to manage the
+     * file system.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& WithEndpointIpAddress(const Aws::String& value) { SetEndpointIpAddress(value); return *this;}
+
+    /**
+     * <p>The IP address of the endpoint that is used to access data or to manage the
+     * file system.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& WithEndpointIpAddress(Aws::String&& value) { SetEndpointIpAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address of the endpoint that is used to access data or to manage the
+     * file system.</p>
+     */
+    inline OpenZFSFileSystemConfiguration& WithEndpointIpAddress(const char* value) { SetEndpointIpAddress(value); return *this;}
+
   private:
 
     int m_automaticBackupRetentionDays;
@@ -342,6 +583,18 @@ namespace Model
 
     Aws::String m_rootVolumeId;
     bool m_rootVolumeIdHasBeenSet = false;
+
+    Aws::String m_preferredSubnetId;
+    bool m_preferredSubnetIdHasBeenSet = false;
+
+    Aws::String m_endpointIpAddressRange;
+    bool m_endpointIpAddressRangeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_routeTableIds;
+    bool m_routeTableIdsHasBeenSet = false;
+
+    Aws::String m_endpointIpAddress;
+    bool m_endpointIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

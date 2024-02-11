@@ -8,6 +8,7 @@
 #include <aws/application-insights/ApplicationInsightsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/application-insights/model/Tier.h>
+#include <aws/application-insights/model/RecommendationType.h>
 #include <utility>
 
 namespace Aws
@@ -147,6 +148,78 @@ namespace Model
      */
     inline DescribeComponentConfigurationRecommendationRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline void SetWorkloadName(const Aws::String& value) { m_workloadNameHasBeenSet = true; m_workloadName = value; }
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline void SetWorkloadName(Aws::String&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::move(value); }
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline void SetWorkloadName(const char* value) { m_workloadNameHasBeenSet = true; m_workloadName.assign(value); }
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline DescribeComponentConfigurationRecommendationRequest& WithWorkloadName(const Aws::String& value) { SetWorkloadName(value); return *this;}
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline DescribeComponentConfigurationRecommendationRequest& WithWorkloadName(Aws::String&& value) { SetWorkloadName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline DescribeComponentConfigurationRecommendationRequest& WithWorkloadName(const char* value) { SetWorkloadName(value); return *this;}
+
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline const RecommendationType& GetRecommendationType() const{ return m_recommendationType; }
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline bool RecommendationTypeHasBeenSet() const { return m_recommendationTypeHasBeenSet; }
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline void SetRecommendationType(const RecommendationType& value) { m_recommendationTypeHasBeenSet = true; m_recommendationType = value; }
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline void SetRecommendationType(RecommendationType&& value) { m_recommendationTypeHasBeenSet = true; m_recommendationType = std::move(value); }
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline DescribeComponentConfigurationRecommendationRequest& WithRecommendationType(const RecommendationType& value) { SetRecommendationType(value); return *this;}
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline DescribeComponentConfigurationRecommendationRequest& WithRecommendationType(RecommendationType&& value) { SetRecommendationType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceGroupName;
@@ -157,6 +230,12 @@ namespace Model
 
     Tier m_tier;
     bool m_tierHasBeenSet = false;
+
+    Aws::String m_workloadName;
+    bool m_workloadNameHasBeenSet = false;
+
+    RecommendationType m_recommendationType;
+    bool m_recommendationTypeHasBeenSet = false;
   };
 
 } // namespace Model

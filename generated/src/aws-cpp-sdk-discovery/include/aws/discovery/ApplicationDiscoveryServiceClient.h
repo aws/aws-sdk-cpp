@@ -17,63 +17,63 @@ namespace ApplicationDiscoveryService
 {
   /**
    * <fullname>Amazon Web Services Application Discovery Service</fullname> <p>Amazon
-   * Web Services Application Discovery Service helps you plan application migration
-   * projects. It automatically identifies servers, virtual machines (VMs), and
-   * network dependencies in your on-premises data centers. For more information, see
-   * the <a href="http://aws.amazon.com/application-discovery/faqs/">Amazon Web
-   * Services Application Discovery Service FAQ</a>. Application Discovery Service
+   * Web Services Application Discovery Service (Application Discovery Service) helps
+   * you plan application migration projects. It automatically identifies servers,
+   * virtual machines (VMs), and network dependencies in your on-premises data
+   * centers. For more information, see the <a
+   * href="http://aws.amazon.com/application-discovery/faqs/">Amazon Web Services
+   * Application Discovery Service FAQ</a>. </p> <p>Application Discovery Service
    * offers three ways of performing discovery and collecting data about your
-   * on-premises servers:</p> <ul> <li> <p> <b>Agentless discovery</b> is recommended
-   * for environments that use VMware vCenter Server. This mode doesn't require you
-   * to install an agent on each host. It does not work in non-VMware
-   * environments.</p> <ul> <li> <p>Agentless discovery gathers server information
-   * regardless of the operating systems, which minimizes the time required for
-   * initial on-premises infrastructure assessment.</p> </li> <li> <p>Agentless
-   * discovery doesn't collect information about network dependencies, only
-   * agent-based discovery collects that information.</p> </li> </ul> </li> </ul>
-   * <ul> <li> <p> <b>Agent-based discovery</b> collects a richer set of data than
-   * agentless discovery by using the Amazon Web Services Application Discovery
-   * Agent, which you install on one or more hosts in your data center.</p> <ul> <li>
-   * <p> The agent captures infrastructure and application information, including an
-   * inventory of running processes, system performance information, resource
-   * utilization, and network dependencies.</p> </li> <li> <p>The information
-   * collected by agents is secured at rest and in transit to the Application
-   * Discovery Service database in the cloud. </p> </li> </ul> </li> </ul> <ul> <li>
-   * <p> <b>Amazon Web Services Partner Network (APN) solutions</b> integrate with
-   * Application Discovery Service, enabling you to import details of your
-   * on-premises environment directly into Migration Hub without using the discovery
-   * connector or discovery agent.</p> <ul> <li> <p>Third-party application discovery
-   * tools can query Amazon Web Services Application Discovery Service, and they can
-   * write to the Application Discovery Service database using the public API.</p>
-   * </li> <li> <p>In this way, you can import data into Migration Hub and view it,
-   * so that you can associate applications with servers and track migrations.</p>
-   * </li> </ul> </li> </ul> <p> <b>Recommendations</b> </p> <p>We recommend that you
-   * use agent-based discovery for non-VMware environments, and whenever you want to
-   * collect information about network dependencies. You can run agent-based and
-   * agentless discovery simultaneously. Use agentless discovery to complete the
-   * initial infrastructure assessment quickly, and then install agents on select
-   * hosts to collect additional information.</p> <p> <b>Working With This Guide</b>
-   * </p> <p>This API reference provides descriptions, syntax, and usage examples for
-   * each of the actions and data types for Application Discovery Service. The topic
-   * for each action shows the API request parameters and the response.
-   * Alternatively, you can use one of the Amazon Web Services SDKs to access an API
-   * that is tailored to the programming language or platform that you're using. For
-   * more information, see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web
-   * Services SDKs</a>.</p>  <ul> <li> <p>Remember that you must set your
-   * Migration Hub home region before you call any of these APIs.</p> </li> <li>
-   * <p>You must make API calls for write actions (create, notify, associate,
-   * disassociate, import, or put) while in your home region, or a
-   * <code>HomeRegionNotSetException</code> error is returned.</p> </li> <li> <p>API
-   * calls for read actions (list, describe, stop, and delete) are permitted outside
-   * of your home region.</p> </li> <li> <p>Although it is unlikely, the Migration
-   * Hub home region could change. If you call APIs outside the home region, an
-   * <code>InvalidInputException</code> is returned.</p> </li> <li> <p>You must call
-   * <code>GetHomeRegion</code> to obtain the latest Migration Hub home region.</p>
-   * </li> </ul>  <p>This guide is intended for use with the <a
-   * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">Amazon
+   * on-premises servers:</p> <ul> <li> <p> <b>Agentless discovery</b> using Amazon
+   * Web Services Application Discovery Service Agentless Collector (Agentless
+   * Collector), which doesn't require you to install an agent on each host.</p> <ul>
+   * <li> <p>Agentless Collector gathers server information regardless of the
+   * operating systems, which minimizes the time required for initial on-premises
+   * infrastructure assessment.</p> </li> <li> <p>Agentless Collector doesn't collect
+   * information about network dependencies, only agent-based discovery collects that
+   * information. </p> </li> </ul> </li> </ul> <ul> <li> <p> <b>Agent-based
+   * discovery</b> using the Amazon Web Services Application Discovery Agent
+   * (Application Discovery Agent) collects a richer set of data than agentless
+   * discovery, which you install on one or more hosts in your data center.</p> <ul>
+   * <li> <p> The agent captures infrastructure and application information,
+   * including an inventory of running processes, system performance information,
+   * resource utilization, and network dependencies.</p> </li> <li> <p>The
+   * information collected by agents is secured at rest and in transit to the
+   * Application Discovery Service database in the Amazon Web Services cloud. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-agent.html">Amazon
+   * Web Services Application Discovery Agent</a>.</p> </li> </ul> </li> </ul> <ul>
+   * <li> <p> <b>Amazon Web Services Partner Network (APN) solutions</b> integrate
+   * with Application Discovery Service, enabling you to import details of your
+   * on-premises environment directly into Amazon Web Services Migration Hub
+   * (Migration Hub) without using Agentless Collector or Application Discovery
+   * Agent.</p> <ul> <li> <p>Third-party application discovery tools can query Amazon
+   * Web Services Application Discovery Service, and they can write to the
+   * Application Discovery Service database using the public API.</p> </li> <li>
+   * <p>In this way, you can import data into Migration Hub and view it, so that you
+   * can associate applications with servers and track migrations.</p> </li> </ul>
+   * </li> </ul> <p> <b>Working With This Guide</b> </p> <p>This API reference
+   * provides descriptions, syntax, and usage examples for each of the actions and
+   * data types for Application Discovery Service. The topic for each action shows
+   * the API request parameters and the response. Alternatively, you can use one of
+   * the Amazon Web Services SDKs to access an API that is tailored to the
+   * programming language or platform that you're using. For more information, see <a
+   * href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.</p>
+   *  <ul> <li> <p>Remember that you must set your Migration Hub home Region
+   * before you call any of these APIs.</p> </li> <li> <p>You must make API calls for
+   * write actions (create, notify, associate, disassociate, import, or put) while in
+   * your home Region, or a <code>HomeRegionNotSetException</code> error is
+   * returned.</p> </li> <li> <p>API calls for read actions (list, describe, stop,
+   * and delete) are permitted outside of your home Region.</p> </li> <li>
+   * <p>Although it is unlikely, the Migration Hub home Region could change. If you
+   * call APIs outside the home Region, an <code>InvalidInputException</code> is
+   * returned.</p> </li> <li> <p>You must call <code>GetHomeRegion</code> to obtain
+   * the latest Migration Hub home Region.</p> </li> </ul>  <p>This guide is
+   * intended for use with the <a
+   * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/">Amazon
    * Web Services Application Discovery Service User Guide</a>.</p> 
    * <p>All data is handled according to the <a
-   * href="http://aws.amazon.com/privacy/">Amazon Web Services Privacy Policy</a>.
+   * href="https://aws.amazon.com/privacy/">Amazon Web Services Privacy Policy</a>.
    * You can operate Application Discovery Service offline to inspect collected data
    * before it is shared with the service.</p> 
    */
@@ -83,6 +83,9 @@ namespace ApplicationDiscoveryService
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef ApplicationDiscoveryServiceClientConfiguration ClientConfigurationType;
+      typedef ApplicationDiscoveryServiceEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -156,6 +159,34 @@ namespace ApplicationDiscoveryService
         void AssociateConfigurationItemsToApplicationAsync(const AssociateConfigurationItemsToApplicationRequestT& request, const AssociateConfigurationItemsToApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::AssociateConfigurationItemsToApplication, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes one or more agents or collectors as specified by ID. Deleting an
+         * agent or collector does not delete the previously discovered data. To delete the
+         * data collected, use <code>StartBatchDeleteConfigurationTask</code>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteAgents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteAgentsOutcome BatchDeleteAgents(const Model::BatchDeleteAgentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteAgents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDeleteAgentsRequestT = Model::BatchDeleteAgentsRequest>
+        Model::BatchDeleteAgentsOutcomeCallable BatchDeleteAgentsCallable(const BatchDeleteAgentsRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationDiscoveryServiceClient::BatchDeleteAgents, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDeleteAgents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDeleteAgentsRequestT = Model::BatchDeleteAgentsRequest>
+        void BatchDeleteAgentsAsync(const BatchDeleteAgentsRequestT& request, const BatchDeleteAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationDiscoveryServiceClient::BatchDeleteAgents, request, handler, context);
         }
 
         /**
@@ -299,8 +330,8 @@ namespace ApplicationDiscoveryService
         }
 
         /**
-         * <p>Lists agents or connectors as specified by ID or other filters. All
-         * agents/connectors associated with your user account can be listed if you call
+         * <p>Lists agents or collectors as specified by ID or other filters. All
+         * agents/collectors associated with your user can be listed if you call
          * <code>DescribeAgents</code> as is without passing any parameters.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">AWS
@@ -324,6 +355,32 @@ namespace ApplicationDiscoveryService
         void DescribeAgentsAsync(const DescribeAgentsRequestT& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::DescribeAgents, request, handler, context);
+        }
+
+        /**
+         * <p> Takes a unique deletion task identifier as input and returns metadata about
+         * a configuration deletion task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeBatchDeleteConfigurationTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBatchDeleteConfigurationTaskOutcome DescribeBatchDeleteConfigurationTask(const Model::DescribeBatchDeleteConfigurationTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeBatchDeleteConfigurationTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeBatchDeleteConfigurationTaskRequestT = Model::DescribeBatchDeleteConfigurationTaskRequest>
+        Model::DescribeBatchDeleteConfigurationTaskOutcomeCallable DescribeBatchDeleteConfigurationTaskCallable(const DescribeBatchDeleteConfigurationTaskRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationDiscoveryServiceClient::DescribeBatchDeleteConfigurationTask, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeBatchDeleteConfigurationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeBatchDeleteConfigurationTaskRequestT = Model::DescribeBatchDeleteConfigurationTaskRequest>
+        void DescribeBatchDeleteConfigurationTaskAsync(const DescribeBatchDeleteConfigurationTaskRequestT& request, const DescribeBatchDeleteConfigurationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationDiscoveryServiceClient::DescribeBatchDeleteConfigurationTask, request, handler, context);
         }
 
         /**
@@ -363,8 +420,8 @@ namespace ApplicationDiscoveryService
 
         /**
          * <p>Lists exports as specified by ID. All continuous exports associated with your
-         * user account can be listed if you call <code>DescribeContinuousExports</code> as
-         * is without passing any parameters.</p><p><h3>See Also:</h3>   <a
+         * user can be listed if you call <code>DescribeContinuousExports</code> as is
+         * without passing any parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeContinuousExports">AWS
          * API Reference</a></p>
          */
@@ -446,9 +503,9 @@ namespace ApplicationDiscoveryService
          * key-value pairs, name and value, passed to the optional parameter
          * <code>filters</code>.</p> <p>There are three valid tag filter names:</p> <ul>
          * <li> <p>tagKey</p> </li> <li> <p>tagValue</p> </li> <li> <p>configurationId</p>
-         * </li> </ul> <p>Also, all configuration items associated with your user account
-         * that have tags can be listed if you call <code>DescribeTags</code> as is without
-         * passing any parameters.</p><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>Also, all configuration items associated with your user that have
+         * tags can be listed if you call <code>DescribeTags</code> as is without passing
+         * any parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">AWS
          * API Reference</a></p>
          */
@@ -579,6 +636,33 @@ namespace ApplicationDiscoveryService
         }
 
         /**
+         * <p> Takes a list of configurationId as input and starts an asynchronous deletion
+         * task to remove the configurationItems. Returns a unique deletion task
+         * identifier. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartBatchDeleteConfigurationTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartBatchDeleteConfigurationTaskOutcome StartBatchDeleteConfigurationTask(const Model::StartBatchDeleteConfigurationTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartBatchDeleteConfigurationTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartBatchDeleteConfigurationTaskRequestT = Model::StartBatchDeleteConfigurationTaskRequest>
+        Model::StartBatchDeleteConfigurationTaskOutcomeCallable StartBatchDeleteConfigurationTaskCallable(const StartBatchDeleteConfigurationTaskRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationDiscoveryServiceClient::StartBatchDeleteConfigurationTask, request);
+        }
+
+        /**
+         * An Async wrapper for StartBatchDeleteConfigurationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartBatchDeleteConfigurationTaskRequestT = Model::StartBatchDeleteConfigurationTaskRequest>
+        void StartBatchDeleteConfigurationTaskAsync(const StartBatchDeleteConfigurationTaskRequestT& request, const StartBatchDeleteConfigurationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationDiscoveryServiceClient::StartBatchDeleteConfigurationTask, request, handler, context);
+        }
+
+        /**
          * <p>Start the continuous flow of agent's discovered data into Amazon
          * Athena.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartContinuousExport">AWS
@@ -605,8 +689,8 @@ namespace ApplicationDiscoveryService
         }
 
         /**
-         * <p>Instructs the specified agents or connectors to start collecting
-         * data.</p><p><h3>See Also:</h3>   <a
+         * <p>Instructs the specified agents to start collecting data.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">AWS
          * API Reference</a></p>
          */
@@ -631,16 +715,27 @@ namespace ApplicationDiscoveryService
         }
 
         /**
-         * <p> Begins the export of discovered data to an S3 bucket.</p> <p> If you specify
-         * <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed
-         * data collected by the identified Application Discovery Agent, including network,
-         * process, and performance details. A time range for exported agent data may be
-         * set by using <code>startTime</code> and <code>endTime</code>. Export of detailed
-         * agent data is limited to five concurrently running exports. </p> <p> If you do
-         * not include an <code>agentIds</code> filter, summary data is exported that
-         * includes both Amazon Web Services Agentless Discovery Connector data and summary
-         * data from Amazon Web Services Discovery Agents. Export of summary data is
-         * limited to two exports per day. </p><p><h3>See Also:</h3>   <a
+         * <p>Begins the export of a discovered data report to an Amazon S3 bucket managed
+         * by Amazon Web Services.</p>  <p>Exports might provide an estimate of fees
+         * and savings based on certain information that you provide. Fee estimates do not
+         * include any taxes that might apply. Your actual fees and savings depend on a
+         * variety of factors, including your actual usage of Amazon Web Services services,
+         * which might vary from the estimates provided in this report.</p>  <p>If
+         * you do not specify <code>preferences</code> or <code>agentIds</code> in the
+         * filter, a summary of all servers, applications, tags, and performance is
+         * generated. This data is an aggregation of all server data collected through
+         * on-premises tooling, file import, application grouping and applying tags.</p>
+         * <p>If you specify <code>agentIds</code> in a filter, the task exports up to 72
+         * hours of detailed data collected by the identified Application Discovery Agent,
+         * including network, process, and performance details. A time range for exported
+         * agent data may be set by using <code>startTime</code> and <code>endTime</code>.
+         * Export of detailed agent data is limited to five concurrently running exports.
+         * Export of detailed agent data is limited to two exports per day.</p> <p>If you
+         * enable <code>ec2RecommendationsPreferences</code> in <code>preferences</code> ,
+         * an Amazon EC2 instance matching the characteristics of each server in
+         * Application Discovery Service is generated. Changing the attributes of the
+         * <code>ec2RecommendationsPreferences</code> changes the criteria of the
+         * recommendation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">AWS
          * API Reference</a></p>
          */
@@ -667,13 +762,14 @@ namespace ApplicationDiscoveryService
         /**
          * <p>Starts an import task, which allows you to import details of your on-premises
          * environment directly into Amazon Web Services Migration Hub without having to
-         * use the Application Discovery Service (ADS) tools such as the Discovery
-         * Connector or Discovery Agent. This gives you the option to perform migration
-         * assessment and planning directly from your imported data, including the ability
-         * to group your devices as applications and track their migration status.</p>
-         * <p>To start an import request, do this:</p> <ol> <li> <p>Download the specially
-         * formatted comma separated value (CSV) import template, which you can find here:
-         * <a
+         * use the Amazon Web Services Application Discovery Service (Application Discovery
+         * Service) tools such as the Amazon Web Services Application Discovery Service
+         * Agentless Collector or Application Discovery Agent. This gives you the option to
+         * perform migration assessment and planning directly from your imported data,
+         * including the ability to group your devices as applications and track their
+         * migration status.</p> <p>To start an import request, do this:</p> <ol> <li>
+         * <p>Download the specially formatted comma separated value (CSV) import template,
+         * which you can find here: <a
          * href="https://s3.us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3.us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p>
          * </li> <li> <p>Fill out the template with your server and application data.</p>
          * </li> <li> <p>Upload your import file to an Amazon S3 bucket, and make a note of
@@ -741,8 +837,8 @@ namespace ApplicationDiscoveryService
         }
 
         /**
-         * <p>Instructs the specified agents or connectors to stop collecting
-         * data.</p><p><h3>See Also:</h3>   <a
+         * <p>Instructs the specified agents to stop collecting data.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">AWS
          * API Reference</a></p>
          */

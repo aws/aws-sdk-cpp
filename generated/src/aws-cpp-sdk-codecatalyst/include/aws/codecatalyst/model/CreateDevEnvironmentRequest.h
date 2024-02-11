@@ -278,7 +278,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline const Aws::Vector<IdeConfiguration>& GetIdes() const{ return m_ides; }
 
@@ -286,7 +286,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline bool IdesHasBeenSet() const { return m_idesHasBeenSet; }
 
@@ -294,7 +294,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline void SetIdes(const Aws::Vector<IdeConfiguration>& value) { m_idesHasBeenSet = true; m_ides = value; }
 
@@ -302,7 +302,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline void SetIdes(Aws::Vector<IdeConfiguration>&& value) { m_idesHasBeenSet = true; m_ides = std::move(value); }
 
@@ -310,7 +310,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline CreateDevEnvironmentRequest& WithIdes(const Aws::Vector<IdeConfiguration>& value) { SetIdes(value); return *this;}
 
@@ -318,7 +318,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline CreateDevEnvironmentRequest& WithIdes(Aws::Vector<IdeConfiguration>&& value) { SetIdes(std::move(value)); return *this;}
 
@@ -326,7 +326,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline CreateDevEnvironmentRequest& AddIdes(const IdeConfiguration& value) { m_idesHasBeenSet = true; m_ides.push_back(value); return *this; }
 
@@ -334,7 +334,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline CreateDevEnvironmentRequest& AddIdes(IdeConfiguration&& value) { m_idesHasBeenSet = true; m_ides.push_back(std::move(value)); return *this; }
 
@@ -459,6 +459,47 @@ namespace Model
      */
     inline CreateDevEnvironmentRequest& WithPersistentStorage(PersistentStorageConfiguration&& value) { SetPersistentStorage(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     */
+    inline const Aws::String& GetVpcConnectionName() const{ return m_vpcConnectionName; }
+
+    /**
+     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     */
+    inline bool VpcConnectionNameHasBeenSet() const { return m_vpcConnectionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     */
+    inline void SetVpcConnectionName(const Aws::String& value) { m_vpcConnectionNameHasBeenSet = true; m_vpcConnectionName = value; }
+
+    /**
+     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     */
+    inline void SetVpcConnectionName(Aws::String&& value) { m_vpcConnectionNameHasBeenSet = true; m_vpcConnectionName = std::move(value); }
+
+    /**
+     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     */
+    inline void SetVpcConnectionName(const char* value) { m_vpcConnectionNameHasBeenSet = true; m_vpcConnectionName.assign(value); }
+
+    /**
+     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     */
+    inline CreateDevEnvironmentRequest& WithVpcConnectionName(const Aws::String& value) { SetVpcConnectionName(value); return *this;}
+
+    /**
+     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     */
+    inline CreateDevEnvironmentRequest& WithVpcConnectionName(Aws::String&& value) { SetVpcConnectionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     */
+    inline CreateDevEnvironmentRequest& WithVpcConnectionName(const char* value) { SetVpcConnectionName(value); return *this;}
+
   private:
 
     Aws::String m_spaceName;
@@ -487,6 +528,9 @@ namespace Model
 
     PersistentStorageConfiguration m_persistentStorage;
     bool m_persistentStorageHasBeenSet = false;
+
+    Aws::String m_vpcConnectionName;
+    bool m_vpcConnectionNameHasBeenSet = false;
   };
 
 } // namespace Model

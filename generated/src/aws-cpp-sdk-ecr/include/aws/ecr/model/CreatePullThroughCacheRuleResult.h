@@ -7,6 +7,7 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ecr/model/UpstreamRegistry.h>
 #include <utility>
 
 namespace Aws
@@ -179,6 +180,80 @@ namespace Model
     inline CreatePullThroughCacheRuleResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
 
+    /**
+     * <p>The name of the upstream registry associated with the pull through cache
+     * rule.</p>
+     */
+    inline const UpstreamRegistry& GetUpstreamRegistry() const{ return m_upstreamRegistry; }
+
+    /**
+     * <p>The name of the upstream registry associated with the pull through cache
+     * rule.</p>
+     */
+    inline void SetUpstreamRegistry(const UpstreamRegistry& value) { m_upstreamRegistry = value; }
+
+    /**
+     * <p>The name of the upstream registry associated with the pull through cache
+     * rule.</p>
+     */
+    inline void SetUpstreamRegistry(UpstreamRegistry&& value) { m_upstreamRegistry = std::move(value); }
+
+    /**
+     * <p>The name of the upstream registry associated with the pull through cache
+     * rule.</p>
+     */
+    inline CreatePullThroughCacheRuleResult& WithUpstreamRegistry(const UpstreamRegistry& value) { SetUpstreamRegistry(value); return *this;}
+
+    /**
+     * <p>The name of the upstream registry associated with the pull through cache
+     * rule.</p>
+     */
+    inline CreatePullThroughCacheRuleResult& WithUpstreamRegistry(UpstreamRegistry&& value) { SetUpstreamRegistry(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret associated with the pull through cache rule.</p>
+     */
+    inline const Aws::String& GetCredentialArn() const{ return m_credentialArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret associated with the pull through cache rule.</p>
+     */
+    inline void SetCredentialArn(const Aws::String& value) { m_credentialArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret associated with the pull through cache rule.</p>
+     */
+    inline void SetCredentialArn(Aws::String&& value) { m_credentialArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret associated with the pull through cache rule.</p>
+     */
+    inline void SetCredentialArn(const char* value) { m_credentialArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret associated with the pull through cache rule.</p>
+     */
+    inline CreatePullThroughCacheRuleResult& WithCredentialArn(const Aws::String& value) { SetCredentialArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret associated with the pull through cache rule.</p>
+     */
+    inline CreatePullThroughCacheRuleResult& WithCredentialArn(Aws::String&& value) { SetCredentialArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret associated with the pull through cache rule.</p>
+     */
+    inline CreatePullThroughCacheRuleResult& WithCredentialArn(const char* value) { SetCredentialArn(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -209,6 +284,10 @@ namespace Model
     Aws::Utils::DateTime m_createdAt;
 
     Aws::String m_registryId;
+
+    UpstreamRegistry m_upstreamRegistry;
+
+    Aws::String m_credentialArn;
 
     Aws::String m_requestId;
   };

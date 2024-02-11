@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MaintenanceStatus::NOT_SET:
+            return {};
           case MaintenanceStatus::SUCCESS:
             return "SUCCESS";
           case MaintenanceStatus::FAILED:

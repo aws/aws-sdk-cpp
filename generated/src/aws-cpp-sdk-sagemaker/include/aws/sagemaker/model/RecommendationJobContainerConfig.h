@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/RecommendationJobPayloadConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/RecommendationJobSupportedEndpointType.h>
 #include <utility>
 
 namespace Aws
@@ -423,6 +424,55 @@ namespace Model
 
 
     /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline const RecommendationJobSupportedEndpointType& GetSupportedEndpointType() const{ return m_supportedEndpointType; }
+
+    /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline bool SupportedEndpointTypeHasBeenSet() const { return m_supportedEndpointTypeHasBeenSet; }
+
+    /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline void SetSupportedEndpointType(const RecommendationJobSupportedEndpointType& value) { m_supportedEndpointTypeHasBeenSet = true; m_supportedEndpointType = value; }
+
+    /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline void SetSupportedEndpointType(RecommendationJobSupportedEndpointType&& value) { m_supportedEndpointTypeHasBeenSet = true; m_supportedEndpointType = std::move(value); }
+
+    /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline RecommendationJobContainerConfig& WithSupportedEndpointType(const RecommendationJobSupportedEndpointType& value) { SetSupportedEndpointType(value); return *this;}
+
+    /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline RecommendationJobContainerConfig& WithSupportedEndpointType(RecommendationJobSupportedEndpointType&& value) { SetSupportedEndpointType(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the name and shape of the expected data inputs for your trained
      * model with a JSON dictionary form. This field is used for optimizing your model
      * using SageMaker Neo. For more information, see <a
@@ -486,6 +536,52 @@ namespace Model
      */
     inline RecommendationJobContainerConfig& WithDataInputConfig(const char* value) { SetDataInputConfig(value); return *this;}
 
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedResponseMIMETypes() const{ return m_supportedResponseMIMETypes; }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline bool SupportedResponseMIMETypesHasBeenSet() const { return m_supportedResponseMIMETypesHasBeenSet; }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline void SetSupportedResponseMIMETypes(const Aws::Vector<Aws::String>& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes = value; }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline void SetSupportedResponseMIMETypes(Aws::Vector<Aws::String>&& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes = std::move(value); }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline RecommendationJobContainerConfig& WithSupportedResponseMIMETypes(const Aws::Vector<Aws::String>& value) { SetSupportedResponseMIMETypes(value); return *this;}
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline RecommendationJobContainerConfig& WithSupportedResponseMIMETypes(Aws::Vector<Aws::String>&& value) { SetSupportedResponseMIMETypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline RecommendationJobContainerConfig& AddSupportedResponseMIMETypes(const Aws::String& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline RecommendationJobContainerConfig& AddSupportedResponseMIMETypes(Aws::String&& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline RecommendationJobContainerConfig& AddSupportedResponseMIMETypes(const char* value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_domain;
@@ -509,8 +605,14 @@ namespace Model
     Aws::Vector<Aws::String> m_supportedInstanceTypes;
     bool m_supportedInstanceTypesHasBeenSet = false;
 
+    RecommendationJobSupportedEndpointType m_supportedEndpointType;
+    bool m_supportedEndpointTypeHasBeenSet = false;
+
     Aws::String m_dataInputConfig;
     bool m_dataInputConfigHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_supportedResponseMIMETypes;
+    bool m_supportedResponseMIMETypesHasBeenSet = false;
   };
 
 } // namespace Model

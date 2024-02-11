@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Request to create a launch template for a fast-launch enabled Windows
+   * <p>Request to create a launch template for a Windows fast launch enabled
    * AMI.</p>  <p>Note - You can specify either the
    * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
    * both.</p> <p><h3>See Also:</h3>   <a
@@ -43,148 +43,148 @@ namespace Model
 
 
     /**
-     * <p>The ID of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the ID of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
 
     /**
-     * <p>The ID of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the ID of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
 
     /**
-     * <p>The ID of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the ID of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
-     * <p>The ID of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the ID of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
 
     /**
-     * <p>The ID of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the ID of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
 
     /**
-     * <p>The ID of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the ID of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline FastLaunchLaunchTemplateSpecificationRequest& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
 
     /**
-     * <p>The ID of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the ID of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline FastLaunchLaunchTemplateSpecificationRequest& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the ID of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline FastLaunchLaunchTemplateSpecificationRequest& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
 
 
     /**
-     * <p>The name of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the name of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
 
     /**
-     * <p>The name of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the name of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
     /**
-     * <p>The name of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the name of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
 
     /**
-     * <p>The name of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the name of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline void SetLaunchTemplateName(Aws::String&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::move(value); }
 
     /**
-     * <p>The name of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the name of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline void SetLaunchTemplateName(const char* value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName.assign(value); }
 
     /**
-     * <p>The name of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the name of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline FastLaunchLaunchTemplateSpecificationRequest& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the name of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline FastLaunchLaunchTemplateSpecificationRequest& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the name of the launch template that the AMI should use for Windows
+     * fast launch.</p>
      */
     inline FastLaunchLaunchTemplateSpecificationRequest& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
 
 
     /**
-     * <p>The version of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the version of the launch template that the AMI should use for
+     * Windows fast launch.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the version of the launch template that the AMI should use for
+     * Windows fast launch.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The version of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the version of the launch template that the AMI should use for
+     * Windows fast launch.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the version of the launch template that the AMI should use for
+     * Windows fast launch.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the version of the launch template that the AMI should use for
+     * Windows fast launch.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the version of the launch template that the AMI should use for
+     * Windows fast launch.</p>
      */
     inline FastLaunchLaunchTemplateSpecificationRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the version of the launch template that the AMI should use for
+     * Windows fast launch.</p>
      */
     inline FastLaunchLaunchTemplateSpecificationRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the launch template to use for faster launching for a Windows
-     * AMI.</p>
+     * <p>Specify the version of the launch template that the AMI should use for
+     * Windows fast launch.</p>
      */
     inline FastLaunchLaunchTemplateSpecificationRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 

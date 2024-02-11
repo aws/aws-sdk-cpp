@@ -42,38 +42,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
-     * ISO 8601 Format.</p>
+     * <p>Indicates at what date the object is to be moved or deleted. The date value
+     * must conform to the ISO 8601 format. The time is always midnight UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
 
     /**
-     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
-     * ISO 8601 Format.</p>
+     * <p>Indicates at what date the object is to be moved or deleted. The date value
+     * must conform to the ISO 8601 format. The time is always midnight UTC.</p>
      */
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
 
     /**
-     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
-     * ISO 8601 Format.</p>
+     * <p>Indicates at what date the object is to be moved or deleted. The date value
+     * must conform to the ISO 8601 format. The time is always midnight UTC.</p>
      */
     inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
-     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
-     * ISO 8601 Format.</p>
+     * <p>Indicates at what date the object is to be moved or deleted. The date value
+     * must conform to the ISO 8601 format. The time is always midnight UTC.</p>
      */
     inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
 
     /**
-     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
-     * ISO 8601 Format.</p>
+     * <p>Indicates at what date the object is to be moved or deleted. The date value
+     * must conform to the ISO 8601 format. The time is always midnight UTC.</p>
      */
     inline LifecycleExpiration& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
 
     /**
-     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
-     * ISO 8601 Format.</p>
+     * <p>Indicates at what date the object is to be moved or deleted. The date value
+     * must conform to the ISO 8601 format. The time is always midnight UTC.</p>
      */
     inline LifecycleExpiration& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
 

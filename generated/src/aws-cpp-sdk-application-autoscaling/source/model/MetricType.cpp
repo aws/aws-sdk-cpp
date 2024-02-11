@@ -41,6 +41,9 @@ namespace Aws
         static const int ElastiCacheReplicaEngineCPUUtilization_HASH = HashingUtils::HashString("ElastiCacheReplicaEngineCPUUtilization");
         static const int ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage_HASH = HashingUtils::HashString("ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage");
         static const int NeptuneReaderAverageCPUUtilization_HASH = HashingUtils::HashString("NeptuneReaderAverageCPUUtilization");
+        static const int SageMakerVariantProvisionedConcurrencyUtilization_HASH = HashingUtils::HashString("SageMakerVariantProvisionedConcurrencyUtilization");
+        static const int ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage_HASH = HashingUtils::HashString("ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage");
+        static const int SageMakerInferenceComponentInvocationsPerCopy_HASH = HashingUtils::HashString("SageMakerInferenceComponentInvocationsPerCopy");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
@@ -130,6 +133,18 @@ namespace Aws
           {
             return MetricType::NeptuneReaderAverageCPUUtilization;
           }
+          else if (hashCode == SageMakerVariantProvisionedConcurrencyUtilization_HASH)
+          {
+            return MetricType::SageMakerVariantProvisionedConcurrencyUtilization;
+          }
+          else if (hashCode == ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage_HASH)
+          {
+            return MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage;
+          }
+          else if (hashCode == SageMakerInferenceComponentInvocationsPerCopy_HASH)
+          {
+            return MetricType::SageMakerInferenceComponentInvocationsPerCopy;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -144,6 +159,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricType::NOT_SET:
+            return {};
           case MetricType::DynamoDBReadCapacityUtilization:
             return "DynamoDBReadCapacityUtilization";
           case MetricType::DynamoDBWriteCapacityUtilization:
@@ -186,6 +203,12 @@ namespace Aws
             return "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage";
           case MetricType::NeptuneReaderAverageCPUUtilization:
             return "NeptuneReaderAverageCPUUtilization";
+          case MetricType::SageMakerVariantProvisionedConcurrencyUtilization:
+            return "SageMakerVariantProvisionedConcurrencyUtilization";
+          case MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage:
+            return "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage";
+          case MetricType::SageMakerInferenceComponentInvocationsPerCopy:
+            return "SageMakerInferenceComponentInvocationsPerCopy";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

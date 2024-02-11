@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkEapMethod::NOT_SET:
+            return {};
           case NetworkEapMethod::EAP_TLS:
             return "EAP_TLS";
           default:

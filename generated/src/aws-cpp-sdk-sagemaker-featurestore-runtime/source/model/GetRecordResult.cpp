@@ -38,6 +38,12 @@ GetRecordResult& GetRecordResult::operator =(const Aws::AmazonWebServiceResult<J
     }
   }
 
+  if(jsonValue.ValueExists("ExpiresAt"))
+  {
+    m_expiresAt = jsonValue.GetString("ExpiresAt");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

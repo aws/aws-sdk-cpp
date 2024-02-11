@@ -187,27 +187,27 @@ namespace Model
 
 
     /**
-     * <p>Settings that configure the translation output.</p>
+     * <p>Optional settings that modify the translation output.</p>
      */
     inline const TranslationSettings& GetAppliedSettings() const{ return m_appliedSettings; }
 
     /**
-     * <p>Settings that configure the translation output.</p>
+     * <p>Optional settings that modify the translation output.</p>
      */
     inline void SetAppliedSettings(const TranslationSettings& value) { m_appliedSettings = value; }
 
     /**
-     * <p>Settings that configure the translation output.</p>
+     * <p>Optional settings that modify the translation output.</p>
      */
     inline void SetAppliedSettings(TranslationSettings&& value) { m_appliedSettings = std::move(value); }
 
     /**
-     * <p>Settings that configure the translation output.</p>
+     * <p>Optional settings that modify the translation output.</p>
      */
     inline TranslateTextResult& WithAppliedSettings(const TranslationSettings& value) { SetAppliedSettings(value); return *this;}
 
     /**
-     * <p>Settings that configure the translation output.</p>
+     * <p>Optional settings that modify the translation output.</p>
      */
     inline TranslateTextResult& WithAppliedSettings(TranslationSettings&& value) { SetAppliedSettings(std::move(value)); return *this;}
 

@@ -16,7 +16,9 @@ namespace Model
   enum class SchemaElement
   {
     NOT_SET,
-    RESOURCES
+    RESOURCES,
+    SPLIT_COST_ALLOCATION_DATA,
+    MANUAL_DISCOUNT_COMPATIBILITY
   };
 
 namespace SchemaElementMapper

@@ -19,7 +19,7 @@ NotifyUpdateProvisionedProductEngineWorkflowResultRequest::NotifyUpdateProvision
     m_statusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_outputsHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

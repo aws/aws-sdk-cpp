@@ -20,7 +20,7 @@ UpdateNodegroupVersionRequest::UpdateNodegroupVersionRequest() :
     m_launchTemplateHasBeenSet(false),
     m_force(false),
     m_forceHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

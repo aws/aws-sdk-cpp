@@ -72,7 +72,9 @@ DBCluster::DBCluster() :
     m_crossAccountCloneHasBeenSet(false),
     m_automaticRestartTimeHasBeenSet(false),
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
-    m_globalClusterIdentifierHasBeenSet(false)
+    m_globalClusterIdentifierHasBeenSet(false),
+    m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -128,7 +130,9 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_crossAccountCloneHasBeenSet(false),
     m_automaticRestartTimeHasBeenSet(false),
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
-    m_globalClusterIdentifierHasBeenSet(false)
+    m_globalClusterIdentifierHasBeenSet(false),
+    m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -439,6 +443,18 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_globalClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(globalClusterIdentifierNode.GetText());
       m_globalClusterIdentifierHasBeenSet = true;
     }
+    XmlNode iOOptimizedNextAllowedModificationTimeNode = resultNode.FirstChild("IOOptimizedNextAllowedModificationTime");
+    if(!iOOptimizedNextAllowedModificationTimeNode.IsNull())
+    {
+      m_iOOptimizedNextAllowedModificationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iOOptimizedNextAllowedModificationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_iOOptimizedNextAllowedModificationTimeHasBeenSet = true;
+    }
+    XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
+    if(!storageTypeNode.IsNull())
+    {
+      m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
+      m_storageTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -701,6 +717,16 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
   }
 
+  if(m_iOOptimizedNextAllowedModificationTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IOOptimizedNextAllowedModificationTime=" << StringUtils::URLEncode(m_iOOptimizedNextAllowedModificationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -916,6 +942,14 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_globalClusterIdentifierHasBeenSet)
   {
       oStream << location << ".GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
+  }
+  if(m_iOOptimizedNextAllowedModificationTimeHasBeenSet)
+  {
+      oStream << location << ".IOOptimizedNextAllowedModificationTime=" << StringUtils::URLEncode(m_iOOptimizedNextAllowedModificationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 }
 

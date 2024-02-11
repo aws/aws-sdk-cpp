@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     COLUMN_PERMISSION,
-    CELL_FILTER_PERMISSION
+    CELL_FILTER_PERMISSION,
+    NESTED_PERMISSION,
+    NESTED_CELL_PERMISSION
   };
 
 namespace PermissionTypeMapper

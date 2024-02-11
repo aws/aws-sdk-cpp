@@ -19,6 +19,9 @@
 #include <aws/ec2/model/FpgaInfo.h>
 #include <aws/ec2/model/PlacementGroupInfo.h>
 #include <aws/ec2/model/InferenceAcceleratorInfo.h>
+#include <aws/ec2/model/NitroEnclavesSupport.h>
+#include <aws/ec2/model/NitroTpmSupport.h>
+#include <aws/ec2/model/NitroTpmInfo.h>
 #include <aws/ec2/model/UsageClassType.h>
 #include <aws/ec2/model/RootDeviceType.h>
 #include <aws/ec2/model/VirtualizationType.h>
@@ -668,26 +671,34 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the instance type is a burstable performance instance
-     * type.</p>
+     * <p>Indicates whether the instance type is a burstable performance T instance
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * performance instances</a>.</p>
      */
     inline bool GetBurstablePerformanceSupported() const{ return m_burstablePerformanceSupported; }
 
     /**
-     * <p>Indicates whether the instance type is a burstable performance instance
-     * type.</p>
+     * <p>Indicates whether the instance type is a burstable performance T instance
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * performance instances</a>.</p>
      */
     inline bool BurstablePerformanceSupportedHasBeenSet() const { return m_burstablePerformanceSupportedHasBeenSet; }
 
     /**
-     * <p>Indicates whether the instance type is a burstable performance instance
-     * type.</p>
+     * <p>Indicates whether the instance type is a burstable performance T instance
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * performance instances</a>.</p>
      */
     inline void SetBurstablePerformanceSupported(bool value) { m_burstablePerformanceSupportedHasBeenSet = true; m_burstablePerformanceSupported = value; }
 
     /**
-     * <p>Indicates whether the instance type is a burstable performance instance
-     * type.</p>
+     * <p>Indicates whether the instance type is a burstable performance T instance
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * performance instances</a>.</p>
      */
     inline InstanceTypeInfo& WithBurstablePerformanceSupported(bool value) { SetBurstablePerformanceSupported(value); return *this;}
 
@@ -714,22 +725,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether auto recovery is supported.</p>
+     * <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
      */
     inline bool GetAutoRecoverySupported() const{ return m_autoRecoverySupported; }
 
     /**
-     * <p>Indicates whether auto recovery is supported.</p>
+     * <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
      */
     inline bool AutoRecoverySupportedHasBeenSet() const { return m_autoRecoverySupportedHasBeenSet; }
 
     /**
-     * <p>Indicates whether auto recovery is supported.</p>
+     * <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
      */
     inline void SetAutoRecoverySupported(bool value) { m_autoRecoverySupportedHasBeenSet = true; m_autoRecoverySupported = value; }
 
     /**
-     * <p>Indicates whether auto recovery is supported.</p>
+     * <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
      */
     inline InstanceTypeInfo& WithAutoRecoverySupported(bool value) { SetAutoRecoverySupported(value); return *this;}
 
@@ -789,6 +800,99 @@ namespace Model
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline InstanceTypeInfo& AddSupportedBootModes(BootModeType&& value) { m_supportedBootModesHasBeenSet = true; m_supportedBootModes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline const NitroEnclavesSupport& GetNitroEnclavesSupport() const{ return m_nitroEnclavesSupport; }
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline bool NitroEnclavesSupportHasBeenSet() const { return m_nitroEnclavesSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline void SetNitroEnclavesSupport(const NitroEnclavesSupport& value) { m_nitroEnclavesSupportHasBeenSet = true; m_nitroEnclavesSupport = value; }
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline void SetNitroEnclavesSupport(NitroEnclavesSupport&& value) { m_nitroEnclavesSupportHasBeenSet = true; m_nitroEnclavesSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline InstanceTypeInfo& WithNitroEnclavesSupport(const NitroEnclavesSupport& value) { SetNitroEnclavesSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline InstanceTypeInfo& WithNitroEnclavesSupport(NitroEnclavesSupport&& value) { SetNitroEnclavesSupport(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline const NitroTpmSupport& GetNitroTpmSupport() const{ return m_nitroTpmSupport; }
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline bool NitroTpmSupportHasBeenSet() const { return m_nitroTpmSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline void SetNitroTpmSupport(const NitroTpmSupport& value) { m_nitroTpmSupportHasBeenSet = true; m_nitroTpmSupport = value; }
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline void SetNitroTpmSupport(NitroTpmSupport&& value) { m_nitroTpmSupportHasBeenSet = true; m_nitroTpmSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline InstanceTypeInfo& WithNitroTpmSupport(const NitroTpmSupport& value) { SetNitroTpmSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether NitroTPM is supported.</p>
+     */
+    inline InstanceTypeInfo& WithNitroTpmSupport(NitroTpmSupport&& value) { SetNitroTpmSupport(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline const NitroTpmInfo& GetNitroTpmInfo() const{ return m_nitroTpmInfo; }
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline bool NitroTpmInfoHasBeenSet() const { return m_nitroTpmInfoHasBeenSet; }
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline void SetNitroTpmInfo(const NitroTpmInfo& value) { m_nitroTpmInfoHasBeenSet = true; m_nitroTpmInfo = value; }
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline void SetNitroTpmInfo(NitroTpmInfo&& value) { m_nitroTpmInfoHasBeenSet = true; m_nitroTpmInfo = std::move(value); }
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline InstanceTypeInfo& WithNitroTpmInfo(const NitroTpmInfo& value) { SetNitroTpmInfo(value); return *this;}
+
+    /**
+     * <p>Describes the supported NitroTPM versions for the instance type.</p>
+     */
+    inline InstanceTypeInfo& WithNitroTpmInfo(NitroTpmInfo&& value) { SetNitroTpmInfo(std::move(value)); return *this;}
 
   private:
 
@@ -863,6 +967,15 @@ namespace Model
 
     Aws::Vector<BootModeType> m_supportedBootModes;
     bool m_supportedBootModesHasBeenSet = false;
+
+    NitroEnclavesSupport m_nitroEnclavesSupport;
+    bool m_nitroEnclavesSupportHasBeenSet = false;
+
+    NitroTpmSupport m_nitroTpmSupport;
+    bool m_nitroTpmSupportHasBeenSet = false;
+
+    NitroTpmInfo m_nitroTpmInfo;
+    bool m_nitroTpmInfoHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportExportConfigType::NOT_SET:
+            return {};
           case ReportExportConfigType::S3:
             return "S3";
           case ReportExportConfigType::NO_EXPORT:

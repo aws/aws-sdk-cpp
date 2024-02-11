@@ -30,19 +30,19 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCatalogErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCatalogErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_NOT_SUPPORTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCatalogErrors::RESOURCE_NOT_SUPPORTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCatalogErrors::RESOURCE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCatalogErrors::INTERNAL_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCatalogErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCatalogErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCatalogErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

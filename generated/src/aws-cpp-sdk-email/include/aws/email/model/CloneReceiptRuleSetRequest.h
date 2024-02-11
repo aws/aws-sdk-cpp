@@ -20,7 +20,7 @@ namespace Model
    * <p>Represents a request to create a receipt rule set by cloning an existing one.
    * You use receipt rule sets to receive email with Amazon SES. For more
    * information, see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSetRequest">AWS
    * API Reference</a></p>
@@ -44,66 +44,74 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the rule set to create. The name must:</p> <ul> <li> <p>This
-     * value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-     * or dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p>
-     * </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the rule set to create. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Start and end with a
+     * letter or number.</p> </li> <li> <p>Contain 64 characters or fewer.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
 
     /**
-     * <p>The name of the rule set to create. The name must:</p> <ul> <li> <p>This
-     * value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-     * or dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p>
-     * </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the rule set to create. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Start and end with a
+     * letter or number.</p> </li> <li> <p>Contain 64 characters or fewer.</p> </li>
+     * </ul>
      */
     inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
 
     /**
-     * <p>The name of the rule set to create. The name must:</p> <ul> <li> <p>This
-     * value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-     * or dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p>
-     * </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the rule set to create. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Start and end with a
+     * letter or number.</p> </li> <li> <p>Contain 64 characters or fewer.</p> </li>
+     * </ul>
      */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**
-     * <p>The name of the rule set to create. The name must:</p> <ul> <li> <p>This
-     * value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-     * or dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p>
-     * </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the rule set to create. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Start and end with a
+     * letter or number.</p> </li> <li> <p>Contain 64 characters or fewer.</p> </li>
+     * </ul>
      */
     inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
 
     /**
-     * <p>The name of the rule set to create. The name must:</p> <ul> <li> <p>This
-     * value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-     * or dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p>
-     * </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the rule set to create. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Start and end with a
+     * letter or number.</p> </li> <li> <p>Contain 64 characters or fewer.</p> </li>
+     * </ul>
      */
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
 
     /**
-     * <p>The name of the rule set to create. The name must:</p> <ul> <li> <p>This
-     * value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-     * or dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p>
-     * </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the rule set to create. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Start and end with a
+     * letter or number.</p> </li> <li> <p>Contain 64 characters or fewer.</p> </li>
+     * </ul>
      */
     inline CloneReceiptRuleSetRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
 
     /**
-     * <p>The name of the rule set to create. The name must:</p> <ul> <li> <p>This
-     * value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-     * or dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p>
-     * </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the rule set to create. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Start and end with a
+     * letter or number.</p> </li> <li> <p>Contain 64 characters or fewer.</p> </li>
+     * </ul>
      */
     inline CloneReceiptRuleSetRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the rule set to create. The name must:</p> <ul> <li> <p>This
-     * value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-     * or dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p>
-     * </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the rule set to create. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Start and end with a
+     * letter or number.</p> </li> <li> <p>Contain 64 characters or fewer.</p> </li>
+     * </ul>
      */
     inline CloneReceiptRuleSetRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 

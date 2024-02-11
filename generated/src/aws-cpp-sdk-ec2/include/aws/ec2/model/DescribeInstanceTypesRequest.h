@@ -131,12 +131,13 @@ namespace Model
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether auto recovery
-     * is supported (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type
-     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a
-     * burstable performance instance type (<code>true</code> |
+     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether Amazon
+     * CloudWatch action based recovery is supported (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>bare-metal</code> - Indicates
+     * whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p>
+     * <code>burstable-performance-supported</code> - Indicates whether the instance
+     * type is a burstable performance T instance type (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
@@ -208,16 +209,23 @@ namespace Model
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
-     * example, "25 Gigabit").</p> </li> <li> <p>
+     * example, "25 Gigabit").</p> </li> <li> <p> <code>nitro-enclaves-support</code> -
+     * Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p> <code>nitro-tpm-support</code> -
+     * Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version
+     * (<code>2.0</code>).</p> </li> <li> <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
-     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
-     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
-     * | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
-     * <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>processor-info.supported-features</code>
+     * - The supported CPU features (<code>amd-sev-snp</code>).</p> </li> <li> <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> |
+     * <code>uefi</code>).</p> </li> <li> <p> <code>supported-root-device-type</code> -
+     * The root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+     * <li> <p> <code>supported-usage-class</code> - The usage class
+     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -235,12 +243,13 @@ namespace Model
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether auto recovery
-     * is supported (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type
-     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a
-     * burstable performance instance type (<code>true</code> |
+     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether Amazon
+     * CloudWatch action based recovery is supported (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>bare-metal</code> - Indicates
+     * whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p>
+     * <code>burstable-performance-supported</code> - Indicates whether the instance
+     * type is a burstable performance T instance type (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
@@ -312,16 +321,23 @@ namespace Model
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
-     * example, "25 Gigabit").</p> </li> <li> <p>
+     * example, "25 Gigabit").</p> </li> <li> <p> <code>nitro-enclaves-support</code> -
+     * Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p> <code>nitro-tpm-support</code> -
+     * Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version
+     * (<code>2.0</code>).</p> </li> <li> <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
-     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
-     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
-     * | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
-     * <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>processor-info.supported-features</code>
+     * - The supported CPU features (<code>amd-sev-snp</code>).</p> </li> <li> <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> |
+     * <code>uefi</code>).</p> </li> <li> <p> <code>supported-root-device-type</code> -
+     * The root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+     * <li> <p> <code>supported-usage-class</code> - The usage class
+     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -339,12 +355,13 @@ namespace Model
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether auto recovery
-     * is supported (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type
-     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a
-     * burstable performance instance type (<code>true</code> |
+     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether Amazon
+     * CloudWatch action based recovery is supported (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>bare-metal</code> - Indicates
+     * whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p>
+     * <code>burstable-performance-supported</code> - Indicates whether the instance
+     * type is a burstable performance T instance type (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
@@ -416,16 +433,23 @@ namespace Model
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
-     * example, "25 Gigabit").</p> </li> <li> <p>
+     * example, "25 Gigabit").</p> </li> <li> <p> <code>nitro-enclaves-support</code> -
+     * Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p> <code>nitro-tpm-support</code> -
+     * Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version
+     * (<code>2.0</code>).</p> </li> <li> <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
-     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
-     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
-     * | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
-     * <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>processor-info.supported-features</code>
+     * - The supported CPU features (<code>amd-sev-snp</code>).</p> </li> <li> <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> |
+     * <code>uefi</code>).</p> </li> <li> <p> <code>supported-root-device-type</code> -
+     * The root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+     * <li> <p> <code>supported-usage-class</code> - The usage class
+     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -443,12 +467,13 @@ namespace Model
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether auto recovery
-     * is supported (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type
-     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a
-     * burstable performance instance type (<code>true</code> |
+     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether Amazon
+     * CloudWatch action based recovery is supported (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>bare-metal</code> - Indicates
+     * whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p>
+     * <code>burstable-performance-supported</code> - Indicates whether the instance
+     * type is a burstable performance T instance type (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
@@ -520,16 +545,23 @@ namespace Model
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
-     * example, "25 Gigabit").</p> </li> <li> <p>
+     * example, "25 Gigabit").</p> </li> <li> <p> <code>nitro-enclaves-support</code> -
+     * Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p> <code>nitro-tpm-support</code> -
+     * Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version
+     * (<code>2.0</code>).</p> </li> <li> <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
-     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
-     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
-     * | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
-     * <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>processor-info.supported-features</code>
+     * - The supported CPU features (<code>amd-sev-snp</code>).</p> </li> <li> <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> |
+     * <code>uefi</code>).</p> </li> <li> <p> <code>supported-root-device-type</code> -
+     * The root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+     * <li> <p> <code>supported-usage-class</code> - The usage class
+     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -547,12 +579,13 @@ namespace Model
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether auto recovery
-     * is supported (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type
-     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a
-     * burstable performance instance type (<code>true</code> |
+     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether Amazon
+     * CloudWatch action based recovery is supported (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>bare-metal</code> - Indicates
+     * whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p>
+     * <code>burstable-performance-supported</code> - Indicates whether the instance
+     * type is a burstable performance T instance type (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
@@ -624,16 +657,23 @@ namespace Model
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
-     * example, "25 Gigabit").</p> </li> <li> <p>
+     * example, "25 Gigabit").</p> </li> <li> <p> <code>nitro-enclaves-support</code> -
+     * Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p> <code>nitro-tpm-support</code> -
+     * Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version
+     * (<code>2.0</code>).</p> </li> <li> <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
-     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
-     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
-     * | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
-     * <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>processor-info.supported-features</code>
+     * - The supported CPU features (<code>amd-sev-snp</code>).</p> </li> <li> <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> |
+     * <code>uefi</code>).</p> </li> <li> <p> <code>supported-root-device-type</code> -
+     * The root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+     * <li> <p> <code>supported-usage-class</code> - The usage class
+     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -651,12 +691,13 @@ namespace Model
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether auto recovery
-     * is supported (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type
-     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a
-     * burstable performance instance type (<code>true</code> |
+     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether Amazon
+     * CloudWatch action based recovery is supported (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>bare-metal</code> - Indicates
+     * whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p>
+     * <code>burstable-performance-supported</code> - Indicates whether the instance
+     * type is a burstable performance T instance type (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
@@ -728,16 +769,23 @@ namespace Model
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
-     * example, "25 Gigabit").</p> </li> <li> <p>
+     * example, "25 Gigabit").</p> </li> <li> <p> <code>nitro-enclaves-support</code> -
+     * Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p> <code>nitro-tpm-support</code> -
+     * Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version
+     * (<code>2.0</code>).</p> </li> <li> <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
-     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
-     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
-     * | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
-     * <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>processor-info.supported-features</code>
+     * - The supported CPU features (<code>amd-sev-snp</code>).</p> </li> <li> <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> |
+     * <code>uefi</code>).</p> </li> <li> <p> <code>supported-root-device-type</code> -
+     * The root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+     * <li> <p> <code>supported-usage-class</code> - The usage class
+     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -755,12 +803,13 @@ namespace Model
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether auto recovery
-     * is supported (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type
-     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a
-     * burstable performance instance type (<code>true</code> |
+     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether Amazon
+     * CloudWatch action based recovery is supported (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>bare-metal</code> - Indicates
+     * whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p>
+     * <code>burstable-performance-supported</code> - Indicates whether the instance
+     * type is a burstable performance T instance type (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
@@ -832,16 +881,23 @@ namespace Model
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
-     * example, "25 Gigabit").</p> </li> <li> <p>
+     * example, "25 Gigabit").</p> </li> <li> <p> <code>nitro-enclaves-support</code> -
+     * Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p> <code>nitro-tpm-support</code> -
+     * Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version
+     * (<code>2.0</code>).</p> </li> <li> <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
-     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
-     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
-     * | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
-     * <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>processor-info.supported-features</code>
+     * - The supported CPU features (<code>amd-sev-snp</code>).</p> </li> <li> <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> |
+     * <code>uefi</code>).</p> </li> <li> <p> <code>supported-root-device-type</code> -
+     * The root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+     * <li> <p> <code>supported-usage-class</code> - The usage class
+     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -859,12 +915,13 @@ namespace Model
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether auto recovery
-     * is supported (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type
-     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a
-     * burstable performance instance type (<code>true</code> |
+     * <li> <p> <code>auto-recovery-supported</code> - Indicates whether Amazon
+     * CloudWatch action based recovery is supported (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>bare-metal</code> - Indicates
+     * whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p>
+     * <code>burstable-performance-supported</code> - Indicates whether the instance
+     * type is a burstable performance T instance type (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
@@ -936,16 +993,23 @@ namespace Model
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
      * network interfaces per instance.</p> </li> <li> <p>
      * <code>network-info.network-performance</code> - The network performance (for
-     * example, "25 Gigabit").</p> </li> <li> <p>
+     * example, "25 Gigabit").</p> </li> <li> <p> <code>nitro-enclaves-support</code> -
+     * Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p> <code>nitro-tpm-support</code> -
+     * Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version
+     * (<code>2.0</code>).</p> </li> <li> <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
-     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
-     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
-     * | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
-     * <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>processor-info.supported-features</code>
+     * - The supported CPU features (<code>amd-sev-snp</code>).</p> </li> <li> <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> |
+     * <code>uefi</code>).</p> </li> <li> <p> <code>supported-root-device-type</code> -
+     * The root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+     * <li> <p> <code>supported-usage-class</code> - The usage class
+     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the

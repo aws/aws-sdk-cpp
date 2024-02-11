@@ -86,63 +86,72 @@ namespace Model
     /**
      * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
      * in the training dataset, the item is appended to the end of the reranked list.
-     * The maximum is 500.</p>
+     * If you are including metadata in recommendations, the maximum is 50. Otherwise,
+     * the maximum is 500.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInputList() const{ return m_inputList; }
 
     /**
      * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
      * in the training dataset, the item is appended to the end of the reranked list.
-     * The maximum is 500.</p>
+     * If you are including metadata in recommendations, the maximum is 50. Otherwise,
+     * the maximum is 500.</p>
      */
     inline bool InputListHasBeenSet() const { return m_inputListHasBeenSet; }
 
     /**
      * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
      * in the training dataset, the item is appended to the end of the reranked list.
-     * The maximum is 500.</p>
+     * If you are including metadata in recommendations, the maximum is 50. Otherwise,
+     * the maximum is 500.</p>
      */
     inline void SetInputList(const Aws::Vector<Aws::String>& value) { m_inputListHasBeenSet = true; m_inputList = value; }
 
     /**
      * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
      * in the training dataset, the item is appended to the end of the reranked list.
-     * The maximum is 500.</p>
+     * If you are including metadata in recommendations, the maximum is 50. Otherwise,
+     * the maximum is 500.</p>
      */
     inline void SetInputList(Aws::Vector<Aws::String>&& value) { m_inputListHasBeenSet = true; m_inputList = std::move(value); }
 
     /**
      * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
      * in the training dataset, the item is appended to the end of the reranked list.
-     * The maximum is 500.</p>
+     * If you are including metadata in recommendations, the maximum is 50. Otherwise,
+     * the maximum is 500.</p>
      */
     inline GetPersonalizedRankingRequest& WithInputList(const Aws::Vector<Aws::String>& value) { SetInputList(value); return *this;}
 
     /**
      * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
      * in the training dataset, the item is appended to the end of the reranked list.
-     * The maximum is 500.</p>
+     * If you are including metadata in recommendations, the maximum is 50. Otherwise,
+     * the maximum is 500.</p>
      */
     inline GetPersonalizedRankingRequest& WithInputList(Aws::Vector<Aws::String>&& value) { SetInputList(std::move(value)); return *this;}
 
     /**
      * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
      * in the training dataset, the item is appended to the end of the reranked list.
-     * The maximum is 500.</p>
+     * If you are including metadata in recommendations, the maximum is 50. Otherwise,
+     * the maximum is 500.</p>
      */
     inline GetPersonalizedRankingRequest& AddInputList(const Aws::String& value) { m_inputListHasBeenSet = true; m_inputList.push_back(value); return *this; }
 
     /**
      * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
      * in the training dataset, the item is appended to the end of the reranked list.
-     * The maximum is 500.</p>
+     * If you are including metadata in recommendations, the maximum is 50. Otherwise,
+     * the maximum is 500.</p>
      */
     inline GetPersonalizedRankingRequest& AddInputList(Aws::String&& value) { m_inputListHasBeenSet = true; m_inputList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of items (by <code>itemId</code>) to rank. If an item was not included
      * in the training dataset, the item is appended to the end of the reranked list.
-     * The maximum is 500.</p>
+     * If you are including metadata in recommendations, the maximum is 50. Otherwise,
+     * the maximum is 500.</p>
      */
     inline GetPersonalizedRankingRequest& AddInputList(const char* value) { m_inputListHasBeenSet = true; m_inputList.push_back(value); return *this; }
 
@@ -582,6 +591,151 @@ namespace Model
      */
     inline GetPersonalizedRankingRequest& AddFilterValues(const char* key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetMetadataColumns() const{ return m_metadataColumns; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline bool MetadataColumnsHasBeenSet() const { return m_metadataColumnsHasBeenSet; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline void SetMetadataColumns(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns = value; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline void SetMetadataColumns(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns = std::move(value); }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline GetPersonalizedRankingRequest& WithMetadataColumns(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetMetadataColumns(value); return *this;}
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline GetPersonalizedRankingRequest& WithMetadataColumns(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetMetadataColumns(std::move(value)); return *this;}
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline GetPersonalizedRankingRequest& AddMetadataColumns(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, value); return *this; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline GetPersonalizedRankingRequest& AddMetadataColumns(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline GetPersonalizedRankingRequest& AddMetadataColumns(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline GetPersonalizedRankingRequest& AddMetadataColumns(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline GetPersonalizedRankingRequest& AddMetadataColumns(const char* key, Aws::Vector<Aws::String>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>If you enabled metadata in recommendations when you created or updated the
+     * campaign, specify metadata columns from your Items dataset to include in the
+     * personalized ranking. The map key is <code>ITEMS</code> and the value is a list
+     * of column names from your Items dataset. The maximum number of columns you can
+     * provide is 10.</p> <p> For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+     * metadata in recommendations for a campaign</a>. </p>
+     */
+    inline GetPersonalizedRankingRequest& AddMetadataColumns(const char* key, const Aws::Vector<Aws::String>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_campaignArn;
@@ -601,6 +755,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_filterValues;
     bool m_filterValuesHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_metadataColumns;
+    bool m_metadataColumnsHasBeenSet = false;
   };
 
 } // namespace Model

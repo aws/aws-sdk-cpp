@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/ScaleInProtectedInstances.h>
 #include <aws/autoscaling/model/StandbyInstances.h>
+#include <aws/autoscaling/model/AlarmSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -43,46 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The amount of capacity in the Auto Scaling group that must pass your group's
-     * health checks to allow the operation to continue. The value is expressed as a
-     * percentage of the desired capacity of the Auto Scaling group (rounded up to the
-     * nearest integer). The default is <code>90</code>.</p> <p>Setting the minimum
-     * healthy percentage to 100 percent limits the rate of replacement to one instance
-     * at a time. In contrast, setting it to 0 percent has the effect of replacing all
-     * instances at the same time. </p>
+     * <p>Specifies the minimum percentage of the group to keep in service, healthy,
+     * and ready to use to support your workload to allow the operation to continue.
+     * The value is expressed as a percentage of the desired capacity of the Auto
+     * Scaling group. Value range is 0 to 100.</p> <p>If you do not specify this
+     * property, the default is 90 percent, or the percentage set in the instance
+     * maintenance policy for the Auto Scaling group, if defined.</p>
      */
     inline int GetMinHealthyPercentage() const{ return m_minHealthyPercentage; }
 
     /**
-     * <p>The amount of capacity in the Auto Scaling group that must pass your group's
-     * health checks to allow the operation to continue. The value is expressed as a
-     * percentage of the desired capacity of the Auto Scaling group (rounded up to the
-     * nearest integer). The default is <code>90</code>.</p> <p>Setting the minimum
-     * healthy percentage to 100 percent limits the rate of replacement to one instance
-     * at a time. In contrast, setting it to 0 percent has the effect of replacing all
-     * instances at the same time. </p>
+     * <p>Specifies the minimum percentage of the group to keep in service, healthy,
+     * and ready to use to support your workload to allow the operation to continue.
+     * The value is expressed as a percentage of the desired capacity of the Auto
+     * Scaling group. Value range is 0 to 100.</p> <p>If you do not specify this
+     * property, the default is 90 percent, or the percentage set in the instance
+     * maintenance policy for the Auto Scaling group, if defined.</p>
      */
     inline bool MinHealthyPercentageHasBeenSet() const { return m_minHealthyPercentageHasBeenSet; }
 
     /**
-     * <p>The amount of capacity in the Auto Scaling group that must pass your group's
-     * health checks to allow the operation to continue. The value is expressed as a
-     * percentage of the desired capacity of the Auto Scaling group (rounded up to the
-     * nearest integer). The default is <code>90</code>.</p> <p>Setting the minimum
-     * healthy percentage to 100 percent limits the rate of replacement to one instance
-     * at a time. In contrast, setting it to 0 percent has the effect of replacing all
-     * instances at the same time. </p>
+     * <p>Specifies the minimum percentage of the group to keep in service, healthy,
+     * and ready to use to support your workload to allow the operation to continue.
+     * The value is expressed as a percentage of the desired capacity of the Auto
+     * Scaling group. Value range is 0 to 100.</p> <p>If you do not specify this
+     * property, the default is 90 percent, or the percentage set in the instance
+     * maintenance policy for the Auto Scaling group, if defined.</p>
      */
     inline void SetMinHealthyPercentage(int value) { m_minHealthyPercentageHasBeenSet = true; m_minHealthyPercentage = value; }
 
     /**
-     * <p>The amount of capacity in the Auto Scaling group that must pass your group's
-     * health checks to allow the operation to continue. The value is expressed as a
-     * percentage of the desired capacity of the Auto Scaling group (rounded up to the
-     * nearest integer). The default is <code>90</code>.</p> <p>Setting the minimum
-     * healthy percentage to 100 percent limits the rate of replacement to one instance
-     * at a time. In contrast, setting it to 0 percent has the effect of replacing all
-     * instances at the same time. </p>
+     * <p>Specifies the minimum percentage of the group to keep in service, healthy,
+     * and ready to use to support your workload to allow the operation to continue.
+     * The value is expressed as a percentage of the desired capacity of the Auto
+     * Scaling group. Value range is 0 to 100.</p> <p>If you do not specify this
+     * property, the default is 90 percent, or the percentage set in the instance
+     * maintenance policy for the Auto Scaling group, if defined.</p>
      */
     inline RefreshPreferences& WithMinHealthyPercentage(int value) { SetMinHealthyPercentage(value); return *this;}
 
@@ -322,53 +319,69 @@ namespace Model
 
     /**
      * <p>(Optional) Indicates whether to roll back the Auto Scaling group to its
-     * previous configuration if the instance refresh fails. The default is
-     * <code>false</code>.</p> <p>A rollback is not supported in the following
-     * situations: </p> <ul> <li> <p>There is no desired configuration specified for
-     * the instance refresh.</p> </li> <li> <p>The Auto Scaling group has a launch
-     * template that uses an Amazon Web Services Systems Manager parameter instead of
-     * an AMI ID for the <code>ImageId</code> property.</p> </li> <li> <p>The Auto
-     * Scaling group uses the launch template's <code>$Latest</code> or
-     * <code>$Default</code> version.</p> </li> </ul>
+     * previous configuration if the instance refresh fails or a CloudWatch alarm
+     * threshold is met. The default is <code>false</code>.</p> <p>A rollback is not
+     * supported in the following situations: </p> <ul> <li> <p>There is no desired
+     * configuration specified for the instance refresh.</p> </li> <li> <p>The Auto
+     * Scaling group has a launch template that uses an Amazon Web Services Systems
+     * Manager parameter instead of an AMI ID for the <code>ImageId</code>
+     * property.</p> </li> <li> <p>The Auto Scaling group uses the launch template's
+     * <code>$Latest</code> or <code>$Default</code> version.</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo
+     * changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool GetAutoRollback() const{ return m_autoRollback; }
 
     /**
      * <p>(Optional) Indicates whether to roll back the Auto Scaling group to its
-     * previous configuration if the instance refresh fails. The default is
-     * <code>false</code>.</p> <p>A rollback is not supported in the following
-     * situations: </p> <ul> <li> <p>There is no desired configuration specified for
-     * the instance refresh.</p> </li> <li> <p>The Auto Scaling group has a launch
-     * template that uses an Amazon Web Services Systems Manager parameter instead of
-     * an AMI ID for the <code>ImageId</code> property.</p> </li> <li> <p>The Auto
-     * Scaling group uses the launch template's <code>$Latest</code> or
-     * <code>$Default</code> version.</p> </li> </ul>
+     * previous configuration if the instance refresh fails or a CloudWatch alarm
+     * threshold is met. The default is <code>false</code>.</p> <p>A rollback is not
+     * supported in the following situations: </p> <ul> <li> <p>There is no desired
+     * configuration specified for the instance refresh.</p> </li> <li> <p>The Auto
+     * Scaling group has a launch template that uses an Amazon Web Services Systems
+     * Manager parameter instead of an AMI ID for the <code>ImageId</code>
+     * property.</p> </li> <li> <p>The Auto Scaling group uses the launch template's
+     * <code>$Latest</code> or <code>$Default</code> version.</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo
+     * changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool AutoRollbackHasBeenSet() const { return m_autoRollbackHasBeenSet; }
 
     /**
      * <p>(Optional) Indicates whether to roll back the Auto Scaling group to its
-     * previous configuration if the instance refresh fails. The default is
-     * <code>false</code>.</p> <p>A rollback is not supported in the following
-     * situations: </p> <ul> <li> <p>There is no desired configuration specified for
-     * the instance refresh.</p> </li> <li> <p>The Auto Scaling group has a launch
-     * template that uses an Amazon Web Services Systems Manager parameter instead of
-     * an AMI ID for the <code>ImageId</code> property.</p> </li> <li> <p>The Auto
-     * Scaling group uses the launch template's <code>$Latest</code> or
-     * <code>$Default</code> version.</p> </li> </ul>
+     * previous configuration if the instance refresh fails or a CloudWatch alarm
+     * threshold is met. The default is <code>false</code>.</p> <p>A rollback is not
+     * supported in the following situations: </p> <ul> <li> <p>There is no desired
+     * configuration specified for the instance refresh.</p> </li> <li> <p>The Auto
+     * Scaling group has a launch template that uses an Amazon Web Services Systems
+     * Manager parameter instead of an AMI ID for the <code>ImageId</code>
+     * property.</p> </li> <li> <p>The Auto Scaling group uses the launch template's
+     * <code>$Latest</code> or <code>$Default</code> version.</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo
+     * changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetAutoRollback(bool value) { m_autoRollbackHasBeenSet = true; m_autoRollback = value; }
 
     /**
      * <p>(Optional) Indicates whether to roll back the Auto Scaling group to its
-     * previous configuration if the instance refresh fails. The default is
-     * <code>false</code>.</p> <p>A rollback is not supported in the following
-     * situations: </p> <ul> <li> <p>There is no desired configuration specified for
-     * the instance refresh.</p> </li> <li> <p>The Auto Scaling group has a launch
-     * template that uses an Amazon Web Services Systems Manager parameter instead of
-     * an AMI ID for the <code>ImageId</code> property.</p> </li> <li> <p>The Auto
-     * Scaling group uses the launch template's <code>$Latest</code> or
-     * <code>$Default</code> version.</p> </li> </ul>
+     * previous configuration if the instance refresh fails or a CloudWatch alarm
+     * threshold is met. The default is <code>false</code>.</p> <p>A rollback is not
+     * supported in the following situations: </p> <ul> <li> <p>There is no desired
+     * configuration specified for the instance refresh.</p> </li> <li> <p>The Auto
+     * Scaling group has a launch template that uses an Amazon Web Services Systems
+     * Manager parameter instead of an AMI ID for the <code>ImageId</code>
+     * property.</p> </li> <li> <p>The Auto Scaling group uses the launch template's
+     * <code>$Latest</code> or <code>$Default</code> version.</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo
+     * changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline RefreshPreferences& WithAutoRollback(bool value) { SetAutoRollback(value); return *this;}
 
@@ -524,6 +537,100 @@ namespace Model
      */
     inline RefreshPreferences& WithStandbyInstances(StandbyInstances&& value) { SetStandbyInstances(std::move(value)); return *this;}
 
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline const AlarmSpecification& GetAlarmSpecification() const{ return m_alarmSpecification; }
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline bool AlarmSpecificationHasBeenSet() const { return m_alarmSpecificationHasBeenSet; }
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline void SetAlarmSpecification(const AlarmSpecification& value) { m_alarmSpecificationHasBeenSet = true; m_alarmSpecification = value; }
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline void SetAlarmSpecification(AlarmSpecification&& value) { m_alarmSpecificationHasBeenSet = true; m_alarmSpecification = std::move(value); }
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline RefreshPreferences& WithAlarmSpecification(const AlarmSpecification& value) { SetAlarmSpecification(value); return *this;}
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline RefreshPreferences& WithAlarmSpecification(AlarmSpecification&& value) { SetAlarmSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the maximum percentage of the group that can be in service and
+     * healthy, or pending, to support your workload when replacing instances. The
+     * value is expressed as a percentage of the desired capacity of the Auto Scaling
+     * group. Value range is 100 to 200.</p> <p>If you specify
+     * <code>MaxHealthyPercentage</code>, you must also specify
+     * <code>MinHealthyPercentage</code>, and the difference between them cannot be
+     * greater than 100. A larger range increases the number of instances that can be
+     * replaced at the same time.</p> <p>If you do not specify this property, the
+     * default is 100 percent, or the percentage set in the instance maintenance policy
+     * for the Auto Scaling group, if defined.</p>
+     */
+    inline int GetMaxHealthyPercentage() const{ return m_maxHealthyPercentage; }
+
+    /**
+     * <p>Specifies the maximum percentage of the group that can be in service and
+     * healthy, or pending, to support your workload when replacing instances. The
+     * value is expressed as a percentage of the desired capacity of the Auto Scaling
+     * group. Value range is 100 to 200.</p> <p>If you specify
+     * <code>MaxHealthyPercentage</code>, you must also specify
+     * <code>MinHealthyPercentage</code>, and the difference between them cannot be
+     * greater than 100. A larger range increases the number of instances that can be
+     * replaced at the same time.</p> <p>If you do not specify this property, the
+     * default is 100 percent, or the percentage set in the instance maintenance policy
+     * for the Auto Scaling group, if defined.</p>
+     */
+    inline bool MaxHealthyPercentageHasBeenSet() const { return m_maxHealthyPercentageHasBeenSet; }
+
+    /**
+     * <p>Specifies the maximum percentage of the group that can be in service and
+     * healthy, or pending, to support your workload when replacing instances. The
+     * value is expressed as a percentage of the desired capacity of the Auto Scaling
+     * group. Value range is 100 to 200.</p> <p>If you specify
+     * <code>MaxHealthyPercentage</code>, you must also specify
+     * <code>MinHealthyPercentage</code>, and the difference between them cannot be
+     * greater than 100. A larger range increases the number of instances that can be
+     * replaced at the same time.</p> <p>If you do not specify this property, the
+     * default is 100 percent, or the percentage set in the instance maintenance policy
+     * for the Auto Scaling group, if defined.</p>
+     */
+    inline void SetMaxHealthyPercentage(int value) { m_maxHealthyPercentageHasBeenSet = true; m_maxHealthyPercentage = value; }
+
+    /**
+     * <p>Specifies the maximum percentage of the group that can be in service and
+     * healthy, or pending, to support your workload when replacing instances. The
+     * value is expressed as a percentage of the desired capacity of the Auto Scaling
+     * group. Value range is 100 to 200.</p> <p>If you specify
+     * <code>MaxHealthyPercentage</code>, you must also specify
+     * <code>MinHealthyPercentage</code>, and the difference between them cannot be
+     * greater than 100. A larger range increases the number of instances that can be
+     * replaced at the same time.</p> <p>If you do not specify this property, the
+     * default is 100 percent, or the percentage set in the instance maintenance policy
+     * for the Auto Scaling group, if defined.</p>
+     */
+    inline RefreshPreferences& WithMaxHealthyPercentage(int value) { SetMaxHealthyPercentage(value); return *this;}
+
   private:
 
     int m_minHealthyPercentage;
@@ -549,6 +656,12 @@ namespace Model
 
     StandbyInstances m_standbyInstances;
     bool m_standbyInstancesHasBeenSet = false;
+
+    AlarmSpecification m_alarmSpecification;
+    bool m_alarmSpecificationHasBeenSet = false;
+
+    int m_maxHealthyPercentage;
+    bool m_maxHealthyPercentageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,49 +75,49 @@ namespace Model
 
     /**
      * <p>The temporary session credentials vended at the last authenticating call with
-     * this Subject.</p>
+     * this subject.</p>
      */
     inline const Aws::Vector<CredentialSummary>& GetCredentials() const{ return m_credentials; }
 
     /**
      * <p>The temporary session credentials vended at the last authenticating call with
-     * this Subject.</p>
+     * this subject.</p>
      */
     inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
 
     /**
      * <p>The temporary session credentials vended at the last authenticating call with
-     * this Subject.</p>
+     * this subject.</p>
      */
     inline void SetCredentials(const Aws::Vector<CredentialSummary>& value) { m_credentialsHasBeenSet = true; m_credentials = value; }
 
     /**
      * <p>The temporary session credentials vended at the last authenticating call with
-     * this Subject.</p>
+     * this subject.</p>
      */
     inline void SetCredentials(Aws::Vector<CredentialSummary>&& value) { m_credentialsHasBeenSet = true; m_credentials = std::move(value); }
 
     /**
      * <p>The temporary session credentials vended at the last authenticating call with
-     * this Subject.</p>
+     * this subject.</p>
      */
     inline SubjectDetail& WithCredentials(const Aws::Vector<CredentialSummary>& value) { SetCredentials(value); return *this;}
 
     /**
      * <p>The temporary session credentials vended at the last authenticating call with
-     * this Subject.</p>
+     * this subject.</p>
      */
     inline SubjectDetail& WithCredentials(Aws::Vector<CredentialSummary>&& value) { SetCredentials(std::move(value)); return *this;}
 
     /**
      * <p>The temporary session credentials vended at the last authenticating call with
-     * this Subject.</p>
+     * this subject.</p>
      */
     inline SubjectDetail& AddCredentials(const CredentialSummary& value) { m_credentialsHasBeenSet = true; m_credentials.push_back(value); return *this; }
 
     /**
      * <p>The temporary session credentials vended at the last authenticating call with
-     * this Subject.</p>
+     * this subject.</p>
      */
     inline SubjectDetail& AddCredentials(CredentialSummary&& value) { m_credentialsHasBeenSet = true; m_credentials.push_back(std::move(value)); return *this; }
 
@@ -185,37 +185,37 @@ namespace Model
 
 
     /**
-     * <p>The ISO-8601 timestamp of the last time this Subject requested temporary
+     * <p>The ISO-8601 timestamp of the last time this subject requested temporary
      * session credentials.</p>
      */
     inline const Aws::Utils::DateTime& GetLastSeenAt() const{ return m_lastSeenAt; }
 
     /**
-     * <p>The ISO-8601 timestamp of the last time this Subject requested temporary
+     * <p>The ISO-8601 timestamp of the last time this subject requested temporary
      * session credentials.</p>
      */
     inline bool LastSeenAtHasBeenSet() const { return m_lastSeenAtHasBeenSet; }
 
     /**
-     * <p>The ISO-8601 timestamp of the last time this Subject requested temporary
+     * <p>The ISO-8601 timestamp of the last time this subject requested temporary
      * session credentials.</p>
      */
     inline void SetLastSeenAt(const Aws::Utils::DateTime& value) { m_lastSeenAtHasBeenSet = true; m_lastSeenAt = value; }
 
     /**
-     * <p>The ISO-8601 timestamp of the last time this Subject requested temporary
+     * <p>The ISO-8601 timestamp of the last time this subject requested temporary
      * session credentials.</p>
      */
     inline void SetLastSeenAt(Aws::Utils::DateTime&& value) { m_lastSeenAtHasBeenSet = true; m_lastSeenAt = std::move(value); }
 
     /**
-     * <p>The ISO-8601 timestamp of the last time this Subject requested temporary
+     * <p>The ISO-8601 timestamp of the last time this subject requested temporary
      * session credentials.</p>
      */
     inline SubjectDetail& WithLastSeenAt(const Aws::Utils::DateTime& value) { SetLastSeenAt(value); return *this;}
 
     /**
-     * <p>The ISO-8601 timestamp of the last time this Subject requested temporary
+     * <p>The ISO-8601 timestamp of the last time this subject requested temporary
      * session credentials.</p>
      */
     inline SubjectDetail& WithLastSeenAt(Aws::Utils::DateTime&& value) { SetLastSeenAt(std::move(value)); return *this;}

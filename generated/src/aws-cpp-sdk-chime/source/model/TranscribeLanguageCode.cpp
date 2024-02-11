@@ -32,6 +32,8 @@ namespace Aws
         static const int ja_JP_HASH = HashingUtils::HashString("ja-JP");
         static const int ko_KR_HASH = HashingUtils::HashString("ko-KR");
         static const int zh_CN_HASH = HashingUtils::HashString("zh-CN");
+        static const int th_TH_HASH = HashingUtils::HashString("th-TH");
+        static const int hi_IN_HASH = HashingUtils::HashString("hi-IN");
 
 
         TranscribeLanguageCode GetTranscribeLanguageCodeForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return TranscribeLanguageCode::zh_CN;
           }
+          else if (hashCode == th_TH_HASH)
+          {
+            return TranscribeLanguageCode::th_TH;
+          }
+          else if (hashCode == hi_IN_HASH)
+          {
+            return TranscribeLanguageCode::hi_IN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -99,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscribeLanguageCode::NOT_SET:
+            return {};
           case TranscribeLanguageCode::en_US:
             return "en-US";
           case TranscribeLanguageCode::en_GB:
@@ -123,6 +135,10 @@ namespace Aws
             return "ko-KR";
           case TranscribeLanguageCode::zh_CN:
             return "zh-CN";
+          case TranscribeLanguageCode::th_TH:
+            return "th-TH";
+          case TranscribeLanguageCode::hi_IN:
+            return "hi-IN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

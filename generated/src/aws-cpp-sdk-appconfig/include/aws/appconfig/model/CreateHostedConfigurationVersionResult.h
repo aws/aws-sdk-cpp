@@ -258,6 +258,56 @@ namespace Model
     inline CreateHostedConfigurationVersionResult& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
 
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key that was used to
+     * encrypt this specific version of the configuration data in the AppConfig hosted
+     * configuration store.</p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key that was used to
+     * encrypt this specific version of the configuration data in the AppConfig hosted
+     * configuration store.</p>
+     */
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key that was used to
+     * encrypt this specific version of the configuration data in the AppConfig hosted
+     * configuration store.</p>
+     */
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key that was used to
+     * encrypt this specific version of the configuration data in the AppConfig hosted
+     * configuration store.</p>
+     */
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key that was used to
+     * encrypt this specific version of the configuration data in the AppConfig hosted
+     * configuration store.</p>
+     */
+    inline CreateHostedConfigurationVersionResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key that was used to
+     * encrypt this specific version of the configuration data in the AppConfig hosted
+     * configuration store.</p>
+     */
+    inline CreateHostedConfigurationVersionResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key that was used to
+     * encrypt this specific version of the configuration data in the AppConfig hosted
+     * configuration store.</p>
+     */
+    inline CreateHostedConfigurationVersionResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -294,6 +344,8 @@ namespace Model
     Aws::String m_contentType;
 
     Aws::String m_versionLabel;
+
+    Aws::String m_kmsKeyArn;
 
     Aws::String m_requestId;
   };

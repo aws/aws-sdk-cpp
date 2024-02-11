@@ -21,7 +21,10 @@ namespace Model
     StepExecutionStatus,
     StepExecutionId,
     StepName,
-    Action
+    Action,
+    ParentStepExecutionId,
+    ParentStepIteration,
+    ParentStepIteratorValue
   };
 
 namespace StepExecutionFilterKeyMapper

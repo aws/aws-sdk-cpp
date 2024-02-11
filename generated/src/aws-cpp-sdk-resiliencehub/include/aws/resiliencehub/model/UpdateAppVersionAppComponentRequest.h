@@ -108,170 +108,178 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppVersionAppComponentRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppVersionAppComponentRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppVersionAppComponentRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
 
 
     /**
-     * <p>The identifier of the Application Component.</p>
+     * <p>Identifier of the Application Component.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the Application Component.</p>
+     * <p>Identifier of the Application Component.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The identifier of the Application Component.</p>
+     * <p>Identifier of the Application Component.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the Application Component.</p>
+     * <p>Identifier of the Application Component.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the Application Component.</p>
+     * <p>Identifier of the Application Component.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the Application Component.</p>
+     * <p>Identifier of the Application Component.</p>
      */
     inline UpdateAppVersionAppComponentRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the Application Component.</p>
+     * <p>Identifier of the Application Component.</p>
      */
     inline UpdateAppVersionAppComponentRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Application Component.</p>
+     * <p>Identifier of the Application Component.</p>
      */
     inline UpdateAppVersionAppComponentRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline UpdateAppVersionAppComponentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline UpdateAppVersionAppComponentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline UpdateAppVersionAppComponentRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The type of Application Component. For more information about the types of
+     * <p>Type of Application Component. For more information about the types of
      * Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p>
@@ -279,7 +287,7 @@ namespace Model
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of Application Component. For more information about the types of
+     * <p>Type of Application Component. For more information about the types of
      * Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p>
@@ -287,7 +295,7 @@ namespace Model
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of Application Component. For more information about the types of
+     * <p>Type of Application Component. For more information about the types of
      * Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p>
@@ -295,7 +303,7 @@ namespace Model
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of Application Component. For more information about the types of
+     * <p>Type of Application Component. For more information about the types of
      * Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p>
@@ -303,7 +311,7 @@ namespace Model
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of Application Component. For more information about the types of
+     * <p>Type of Application Component. For more information about the types of
      * Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p>
@@ -311,7 +319,7 @@ namespace Model
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of Application Component. For more information about the types of
+     * <p>Type of Application Component. For more information about the types of
      * Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p>
@@ -319,7 +327,7 @@ namespace Model
     inline UpdateAppVersionAppComponentRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of Application Component. For more information about the types of
+     * <p>Type of Application Component. For more information about the types of
      * Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p>
@@ -327,7 +335,7 @@ namespace Model
     inline UpdateAppVersionAppComponentRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of Application Component. For more information about the types of
+     * <p>Type of Application Component. For more information about the types of
      * Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p>

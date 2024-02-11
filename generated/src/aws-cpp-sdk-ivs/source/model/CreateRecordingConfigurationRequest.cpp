@@ -17,6 +17,7 @@ CreateRecordingConfigurationRequest::CreateRecordingConfigurationRequest() :
     m_nameHasBeenSet(false),
     m_recordingReconnectWindowSeconds(0),
     m_recordingReconnectWindowSecondsHasBeenSet(false),
+    m_renditionConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_thumbnailConfigurationHasBeenSet(false)
 {
@@ -41,6 +42,12 @@ Aws::String CreateRecordingConfigurationRequest::SerializePayload() const
   if(m_recordingReconnectWindowSecondsHasBeenSet)
   {
    payload.WithInteger("recordingReconnectWindowSeconds", m_recordingReconnectWindowSeconds);
+
+  }
+
+  if(m_renditionConfigurationHasBeenSet)
+  {
+   payload.WithObject("renditionConfiguration", m_renditionConfiguration.Jsonize());
 
   }
 

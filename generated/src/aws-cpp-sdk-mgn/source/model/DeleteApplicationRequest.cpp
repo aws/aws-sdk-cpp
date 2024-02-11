@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteApplicationRequest::DeleteApplicationRequest() : 
+    m_accountIDHasBeenSet(false),
     m_applicationIDHasBeenSet(false)
 {
 }
@@ -20,6 +21,12 @@ DeleteApplicationRequest::DeleteApplicationRequest() :
 Aws::String DeleteApplicationRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIDHasBeenSet)
+  {
+   payload.WithString("accountID", m_accountID);
+
+  }
 
   if(m_applicationIDHasBeenSet)
   {

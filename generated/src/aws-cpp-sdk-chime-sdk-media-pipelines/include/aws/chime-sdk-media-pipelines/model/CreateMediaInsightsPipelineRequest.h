@@ -228,32 +228,44 @@ namespace Model
 
 
     /**
-     * <p>The runtime configuration for the S3 recording sink.</p>
+     * <p>The runtime configuration for the S3 recording sink. If specified, the
+     * settings in this structure override any settings in
+     * <code>S3RecordingSinkConfiguration</code>.</p>
      */
     inline const S3RecordingSinkRuntimeConfiguration& GetS3RecordingSinkRuntimeConfiguration() const{ return m_s3RecordingSinkRuntimeConfiguration; }
 
     /**
-     * <p>The runtime configuration for the S3 recording sink.</p>
+     * <p>The runtime configuration for the S3 recording sink. If specified, the
+     * settings in this structure override any settings in
+     * <code>S3RecordingSinkConfiguration</code>.</p>
      */
     inline bool S3RecordingSinkRuntimeConfigurationHasBeenSet() const { return m_s3RecordingSinkRuntimeConfigurationHasBeenSet; }
 
     /**
-     * <p>The runtime configuration for the S3 recording sink.</p>
+     * <p>The runtime configuration for the S3 recording sink. If specified, the
+     * settings in this structure override any settings in
+     * <code>S3RecordingSinkConfiguration</code>.</p>
      */
     inline void SetS3RecordingSinkRuntimeConfiguration(const S3RecordingSinkRuntimeConfiguration& value) { m_s3RecordingSinkRuntimeConfigurationHasBeenSet = true; m_s3RecordingSinkRuntimeConfiguration = value; }
 
     /**
-     * <p>The runtime configuration for the S3 recording sink.</p>
+     * <p>The runtime configuration for the S3 recording sink. If specified, the
+     * settings in this structure override any settings in
+     * <code>S3RecordingSinkConfiguration</code>.</p>
      */
     inline void SetS3RecordingSinkRuntimeConfiguration(S3RecordingSinkRuntimeConfiguration&& value) { m_s3RecordingSinkRuntimeConfigurationHasBeenSet = true; m_s3RecordingSinkRuntimeConfiguration = std::move(value); }
 
     /**
-     * <p>The runtime configuration for the S3 recording sink.</p>
+     * <p>The runtime configuration for the S3 recording sink. If specified, the
+     * settings in this structure override any settings in
+     * <code>S3RecordingSinkConfiguration</code>.</p>
      */
     inline CreateMediaInsightsPipelineRequest& WithS3RecordingSinkRuntimeConfiguration(const S3RecordingSinkRuntimeConfiguration& value) { SetS3RecordingSinkRuntimeConfiguration(value); return *this;}
 
     /**
-     * <p>The runtime configuration for the S3 recording sink.</p>
+     * <p>The runtime configuration for the S3 recording sink. If specified, the
+     * settings in this structure override any settings in
+     * <code>S3RecordingSinkConfiguration</code>.</p>
      */
     inline CreateMediaInsightsPipelineRequest& WithS3RecordingSinkRuntimeConfiguration(S3RecordingSinkRuntimeConfiguration&& value) { SetS3RecordingSinkRuntimeConfiguration(std::move(value)); return *this;}
 

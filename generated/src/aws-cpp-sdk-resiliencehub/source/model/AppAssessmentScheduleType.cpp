@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppAssessmentScheduleType::NOT_SET:
+            return {};
           case AppAssessmentScheduleType::Disabled:
             return "Disabled";
           case AppAssessmentScheduleType::Daily:

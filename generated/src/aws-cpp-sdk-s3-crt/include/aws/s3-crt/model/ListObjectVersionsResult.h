@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3-crt/model/EncodingType.h>
+#include <aws/s3-crt/model/RequestCharged.h>
 #include <aws/s3-crt/model/ObjectVersion.h>
 #include <aws/s3-crt/model/DeleteMarkerEntry.h>
 #include <aws/s3-crt/model/CommonPrefix.h>
@@ -40,27 +41,27 @@ namespace Model
     /**
      * <p>A flag that indicates whether Amazon S3 returned all of the results that
      * satisfied the search criteria. If your results were truncated, you can make a
-     * follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
-     * response parameters as a starting place in another request to return the rest of
-     * the results.</p>
+     * follow-up paginated request by using the <code>NextKeyMarker</code> and
+     * <code>NextVersionIdMarker</code> response parameters as a starting place in
+     * another request to return the rest of the results.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether Amazon S3 returned all of the results that
      * satisfied the search criteria. If your results were truncated, you can make a
-     * follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
-     * response parameters as a starting place in another request to return the rest of
-     * the results.</p>
+     * follow-up paginated request by using the <code>NextKeyMarker</code> and
+     * <code>NextVersionIdMarker</code> response parameters as a starting place in
+     * another request to return the rest of the results.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether Amazon S3 returned all of the results that
      * satisfied the search criteria. If your results were truncated, you can make a
-     * follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
-     * response parameters as a starting place in another request to return the rest of
-     * the results.</p>
+     * follow-up paginated request by using the <code>NextKeyMarker</code> and
+     * <code>NextVersionIdMarker</code> response parameters as a starting place in
+     * another request to return the rest of the results.</p>
      */
     inline ListObjectVersionsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
@@ -197,56 +198,56 @@ namespace Model
     /**
      * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
      * <code>NextVersionIdMarker</code> specifies the first object version not returned
-     * that satisfies the search criteria. Use this value for the version-id-marker
-     * request parameter in a subsequent request.</p>
+     * that satisfies the search criteria. Use this value for the
+     * <code>version-id-marker</code> request parameter in a subsequent request.</p>
      */
     inline const Aws::String& GetNextVersionIdMarker() const{ return m_nextVersionIdMarker; }
 
     /**
      * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
      * <code>NextVersionIdMarker</code> specifies the first object version not returned
-     * that satisfies the search criteria. Use this value for the version-id-marker
-     * request parameter in a subsequent request.</p>
+     * that satisfies the search criteria. Use this value for the
+     * <code>version-id-marker</code> request parameter in a subsequent request.</p>
      */
     inline void SetNextVersionIdMarker(const Aws::String& value) { m_nextVersionIdMarker = value; }
 
     /**
      * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
      * <code>NextVersionIdMarker</code> specifies the first object version not returned
-     * that satisfies the search criteria. Use this value for the version-id-marker
-     * request parameter in a subsequent request.</p>
+     * that satisfies the search criteria. Use this value for the
+     * <code>version-id-marker</code> request parameter in a subsequent request.</p>
      */
     inline void SetNextVersionIdMarker(Aws::String&& value) { m_nextVersionIdMarker = std::move(value); }
 
     /**
      * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
      * <code>NextVersionIdMarker</code> specifies the first object version not returned
-     * that satisfies the search criteria. Use this value for the version-id-marker
-     * request parameter in a subsequent request.</p>
+     * that satisfies the search criteria. Use this value for the
+     * <code>version-id-marker</code> request parameter in a subsequent request.</p>
      */
     inline void SetNextVersionIdMarker(const char* value) { m_nextVersionIdMarker.assign(value); }
 
     /**
      * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
      * <code>NextVersionIdMarker</code> specifies the first object version not returned
-     * that satisfies the search criteria. Use this value for the version-id-marker
-     * request parameter in a subsequent request.</p>
+     * that satisfies the search criteria. Use this value for the
+     * <code>version-id-marker</code> request parameter in a subsequent request.</p>
      */
     inline ListObjectVersionsResult& WithNextVersionIdMarker(const Aws::String& value) { SetNextVersionIdMarker(value); return *this;}
 
     /**
      * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
      * <code>NextVersionIdMarker</code> specifies the first object version not returned
-     * that satisfies the search criteria. Use this value for the version-id-marker
-     * request parameter in a subsequent request.</p>
+     * that satisfies the search criteria. Use this value for the
+     * <code>version-id-marker</code> request parameter in a subsequent request.</p>
      */
     inline ListObjectVersionsResult& WithNextVersionIdMarker(Aws::String&& value) { SetNextVersionIdMarker(std::move(value)); return *this;}
 
     /**
      * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
      * <code>NextVersionIdMarker</code> specifies the first object version not returned
-     * that satisfies the search criteria. Use this value for the version-id-marker
-     * request parameter in a subsequent request.</p>
+     * that satisfies the search criteria. Use this value for the
+     * <code>version-id-marker</code> request parameter in a subsequent request.</p>
      */
     inline ListObjectVersionsResult& WithNextVersionIdMarker(const char* value) { SetNextVersionIdMarker(value); return *this;}
 
@@ -400,8 +401,8 @@ namespace Model
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
      * element in <code>CommonPrefixes</code>. These groups are counted as one result
-     * against the max-keys limitation. These keys are not returned elsewhere in the
-     * response.</p>
+     * against the <code>max-keys</code> limitation. These keys are not returned
+     * elsewhere in the response.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
@@ -410,8 +411,8 @@ namespace Model
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
      * element in <code>CommonPrefixes</code>. These groups are counted as one result
-     * against the max-keys limitation. These keys are not returned elsewhere in the
-     * response.</p>
+     * against the <code>max-keys</code> limitation. These keys are not returned
+     * elsewhere in the response.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
@@ -420,8 +421,8 @@ namespace Model
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
      * element in <code>CommonPrefixes</code>. These groups are counted as one result
-     * against the max-keys limitation. These keys are not returned elsewhere in the
-     * response.</p>
+     * against the <code>max-keys</code> limitation. These keys are not returned
+     * elsewhere in the response.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
@@ -430,8 +431,8 @@ namespace Model
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
      * element in <code>CommonPrefixes</code>. These groups are counted as one result
-     * against the max-keys limitation. These keys are not returned elsewhere in the
-     * response.</p>
+     * against the <code>max-keys</code> limitation. These keys are not returned
+     * elsewhere in the response.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
@@ -440,8 +441,8 @@ namespace Model
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
      * element in <code>CommonPrefixes</code>. These groups are counted as one result
-     * against the max-keys limitation. These keys are not returned elsewhere in the
-     * response.</p>
+     * against the <code>max-keys</code> limitation. These keys are not returned
+     * elsewhere in the response.</p>
      */
     inline ListObjectVersionsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
@@ -450,8 +451,8 @@ namespace Model
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
      * element in <code>CommonPrefixes</code>. These groups are counted as one result
-     * against the max-keys limitation. These keys are not returned elsewhere in the
-     * response.</p>
+     * against the <code>max-keys</code> limitation. These keys are not returned
+     * elsewhere in the response.</p>
      */
     inline ListObjectVersionsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
@@ -460,8 +461,8 @@ namespace Model
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
      * element in <code>CommonPrefixes</code>. These groups are counted as one result
-     * against the max-keys limitation. These keys are not returned elsewhere in the
-     * response.</p>
+     * against the <code>max-keys</code> limitation. These keys are not returned
+     * elsewhere in the response.</p>
      */
     inline ListObjectVersionsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
@@ -527,48 +528,64 @@ namespace Model
 
     /**
      * <p> Encoding type used by Amazon S3 to encode object key names in the XML
-     * response.</p> <p>If you specify encoding-type request parameter, Amazon S3
-     * includes this element in the response, and returns encoded key name values in
-     * the following response elements:</p> <p> <code>KeyMarker, NextKeyMarker, Prefix,
-     * Key</code>, and <code>Delimiter</code>.</p>
+     * response.</p> <p>If you specify the <code>encoding-type</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns encoded
+     * key name values in the following response elements:</p> <p> <code>KeyMarker,
+     * NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
      */
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
     /**
      * <p> Encoding type used by Amazon S3 to encode object key names in the XML
-     * response.</p> <p>If you specify encoding-type request parameter, Amazon S3
-     * includes this element in the response, and returns encoded key name values in
-     * the following response elements:</p> <p> <code>KeyMarker, NextKeyMarker, Prefix,
-     * Key</code>, and <code>Delimiter</code>.</p>
+     * response.</p> <p>If you specify the <code>encoding-type</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns encoded
+     * key name values in the following response elements:</p> <p> <code>KeyMarker,
+     * NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
      */
     inline void SetEncodingType(const EncodingType& value) { m_encodingType = value; }
 
     /**
      * <p> Encoding type used by Amazon S3 to encode object key names in the XML
-     * response.</p> <p>If you specify encoding-type request parameter, Amazon S3
-     * includes this element in the response, and returns encoded key name values in
-     * the following response elements:</p> <p> <code>KeyMarker, NextKeyMarker, Prefix,
-     * Key</code>, and <code>Delimiter</code>.</p>
+     * response.</p> <p>If you specify the <code>encoding-type</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns encoded
+     * key name values in the following response elements:</p> <p> <code>KeyMarker,
+     * NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
      */
     inline void SetEncodingType(EncodingType&& value) { m_encodingType = std::move(value); }
 
     /**
      * <p> Encoding type used by Amazon S3 to encode object key names in the XML
-     * response.</p> <p>If you specify encoding-type request parameter, Amazon S3
-     * includes this element in the response, and returns encoded key name values in
-     * the following response elements:</p> <p> <code>KeyMarker, NextKeyMarker, Prefix,
-     * Key</code>, and <code>Delimiter</code>.</p>
+     * response.</p> <p>If you specify the <code>encoding-type</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns encoded
+     * key name values in the following response elements:</p> <p> <code>KeyMarker,
+     * NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
      */
     inline ListObjectVersionsResult& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
 
     /**
      * <p> Encoding type used by Amazon S3 to encode object key names in the XML
-     * response.</p> <p>If you specify encoding-type request parameter, Amazon S3
-     * includes this element in the response, and returns encoded key name values in
-     * the following response elements:</p> <p> <code>KeyMarker, NextKeyMarker, Prefix,
-     * Key</code>, and <code>Delimiter</code>.</p>
+     * response.</p> <p>If you specify the <code>encoding-type</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns encoded
+     * key name values in the following response elements:</p> <p> <code>KeyMarker,
+     * NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
      */
     inline ListObjectVersionsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
+
+
+    
+    inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
+
+    
+    inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
+
+    
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
+
+    
+    inline ListObjectVersionsResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+
+    
+    inline ListObjectVersionsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
 
     
@@ -619,6 +636,8 @@ namespace Model
     Aws::Vector<CommonPrefix> m_commonPrefixes;
 
     EncodingType m_encodingType;
+
+    RequestCharged m_requestCharged;
 
     Aws::String m_requestId;
   };

@@ -23,6 +23,7 @@ namespace Aws
         static const int EC2_HASH = HashingUtils::HashString("EC2");
         static const int ECR_HASH = HashingUtils::HashString("ECR");
         static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
+        static const int LAMBDA_CODE_HASH = HashingUtils::HashString("LAMBDA_CODE");
 
 
         FreeTrialType GetFreeTrialTypeForName(const Aws::String& name)
@@ -40,6 +41,10 @@ namespace Aws
           {
             return FreeTrialType::LAMBDA;
           }
+          else if (hashCode == LAMBDA_CODE_HASH)
+          {
+            return FreeTrialType::LAMBDA_CODE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FreeTrialType::NOT_SET:
+            return {};
           case FreeTrialType::EC2:
             return "EC2";
           case FreeTrialType::ECR:
             return "ECR";
           case FreeTrialType::LAMBDA:
             return "LAMBDA";
+          case FreeTrialType::LAMBDA_CODE:
+            return "LAMBDA_CODE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

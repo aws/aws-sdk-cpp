@@ -21,9 +21,12 @@
         #else
             #define AWS_PINPOINTSMSVOICEV2_API __declspec(dllimport)
         #endif /* AWS_PINPOINTSMSVOICEV2_EXPORTS */
+        #define AWS_PINPOINTSMSVOICEV2_EXTERN
     #else
         #define AWS_PINPOINTSMSVOICEV2_API
+        #define AWS_PINPOINTSMSVOICEV2_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_PINPOINTSMSVOICEV2_API
+    #define AWS_PINPOINTSMSVOICEV2_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

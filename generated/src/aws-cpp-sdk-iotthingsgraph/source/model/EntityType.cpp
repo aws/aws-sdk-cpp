@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntityType::NOT_SET:
+            return {};
           case EntityType::DEVICE:
             return "DEVICE";
           case EntityType::SERVICE:

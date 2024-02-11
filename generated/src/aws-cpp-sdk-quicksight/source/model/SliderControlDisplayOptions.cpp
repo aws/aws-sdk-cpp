@@ -19,12 +19,14 @@ namespace Model
 {
 
 SliderControlDisplayOptions::SliderControlDisplayOptions() : 
-    m_titleOptionsHasBeenSet(false)
+    m_titleOptionsHasBeenSet(false),
+    m_infoIconLabelOptionsHasBeenSet(false)
 {
 }
 
 SliderControlDisplayOptions::SliderControlDisplayOptions(JsonView jsonValue) : 
-    m_titleOptionsHasBeenSet(false)
+    m_titleOptionsHasBeenSet(false),
+    m_infoIconLabelOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ SliderControlDisplayOptions& SliderControlDisplayOptions::operator =(JsonView js
     m_titleOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InfoIconLabelOptions"))
+  {
+    m_infoIconLabelOptions = jsonValue.GetObject("InfoIconLabelOptions");
+
+    m_infoIconLabelOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue SliderControlDisplayOptions::Jsonize() const
   if(m_titleOptionsHasBeenSet)
   {
    payload.WithObject("TitleOptions", m_titleOptions.Jsonize());
+
+  }
+
+  if(m_infoIconLabelOptionsHasBeenSet)
+  {
+   payload.WithObject("InfoIconLabelOptions", m_infoIconLabelOptions.Jsonize());
 
   }
 

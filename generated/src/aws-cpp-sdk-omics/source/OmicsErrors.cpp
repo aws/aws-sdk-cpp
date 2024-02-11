@@ -19,6 +19,7 @@ namespace OmicsErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int NOT_SUPPORTED_OPERATION_HASH = HashingUtils::HashString("NotSupportedOperationException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int RANGE_NOT_SATISFIABLE_HASH = HashingUtils::HashString("RangeNotSatisfiableException");
@@ -30,19 +31,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OmicsErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OmicsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == NOT_SUPPORTED_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OmicsErrors::NOT_SUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OmicsErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OmicsErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OmicsErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OmicsErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == RANGE_NOT_SATISFIABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OmicsErrors::RANGE_NOT_SATISFIABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OmicsErrors::RANGE_NOT_SATISFIABLE), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

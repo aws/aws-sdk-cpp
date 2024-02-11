@@ -7,6 +7,7 @@
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/wellarchitected/WellArchitectedRequest.h>
 #include <aws/wellarchitected/model/OrganizationSharingStatus.h>
+#include <aws/wellarchitected/model/DiscoveryIntegrationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -62,10 +63,44 @@ namespace Model
      */
     inline UpdateGlobalSettingsRequest& WithOrganizationSharingStatus(OrganizationSharingStatus&& value) { SetOrganizationSharingStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of discovery support settings.</p>
+     */
+    inline const DiscoveryIntegrationStatus& GetDiscoveryIntegrationStatus() const{ return m_discoveryIntegrationStatus; }
+
+    /**
+     * <p>The status of discovery support settings.</p>
+     */
+    inline bool DiscoveryIntegrationStatusHasBeenSet() const { return m_discoveryIntegrationStatusHasBeenSet; }
+
+    /**
+     * <p>The status of discovery support settings.</p>
+     */
+    inline void SetDiscoveryIntegrationStatus(const DiscoveryIntegrationStatus& value) { m_discoveryIntegrationStatusHasBeenSet = true; m_discoveryIntegrationStatus = value; }
+
+    /**
+     * <p>The status of discovery support settings.</p>
+     */
+    inline void SetDiscoveryIntegrationStatus(DiscoveryIntegrationStatus&& value) { m_discoveryIntegrationStatusHasBeenSet = true; m_discoveryIntegrationStatus = std::move(value); }
+
+    /**
+     * <p>The status of discovery support settings.</p>
+     */
+    inline UpdateGlobalSettingsRequest& WithDiscoveryIntegrationStatus(const DiscoveryIntegrationStatus& value) { SetDiscoveryIntegrationStatus(value); return *this;}
+
+    /**
+     * <p>The status of discovery support settings.</p>
+     */
+    inline UpdateGlobalSettingsRequest& WithDiscoveryIntegrationStatus(DiscoveryIntegrationStatus&& value) { SetDiscoveryIntegrationStatus(std::move(value)); return *this;}
+
   private:
 
     OrganizationSharingStatus m_organizationSharingStatus;
     bool m_organizationSharingStatusHasBeenSet = false;
+
+    DiscoveryIntegrationStatus m_discoveryIntegrationStatus;
+    bool m_discoveryIntegrationStatusHasBeenSet = false;
   };
 
 } // namespace Model

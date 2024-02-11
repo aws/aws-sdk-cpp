@@ -102,43 +102,67 @@ namespace Model
 
 
     /**
-     * <p>Indicates the beginning of the CAN message.</p>
+     * <p>Indicates the beginning of the CAN signal. This should always be the least
+     * significant bit (LSB).</p> <p>This value might be different from the value in a
+     * DBC file. For little endian signals, <code>startBit</code> is the same value as
+     * in the DBC file. For big endian signals in a DBC file, the start bit is the most
+     * significant bit (MSB). You will have to calculate the LSB instead and pass it as
+     * the <code>startBit</code>.</p>
      */
     inline int GetStartBit() const{ return m_startBit; }
 
     /**
-     * <p>Indicates the beginning of the CAN message.</p>
+     * <p>Indicates the beginning of the CAN signal. This should always be the least
+     * significant bit (LSB).</p> <p>This value might be different from the value in a
+     * DBC file. For little endian signals, <code>startBit</code> is the same value as
+     * in the DBC file. For big endian signals in a DBC file, the start bit is the most
+     * significant bit (MSB). You will have to calculate the LSB instead and pass it as
+     * the <code>startBit</code>.</p>
      */
     inline bool StartBitHasBeenSet() const { return m_startBitHasBeenSet; }
 
     /**
-     * <p>Indicates the beginning of the CAN message.</p>
+     * <p>Indicates the beginning of the CAN signal. This should always be the least
+     * significant bit (LSB).</p> <p>This value might be different from the value in a
+     * DBC file. For little endian signals, <code>startBit</code> is the same value as
+     * in the DBC file. For big endian signals in a DBC file, the start bit is the most
+     * significant bit (MSB). You will have to calculate the LSB instead and pass it as
+     * the <code>startBit</code>.</p>
      */
     inline void SetStartBit(int value) { m_startBitHasBeenSet = true; m_startBit = value; }
 
     /**
-     * <p>Indicates the beginning of the CAN message.</p>
+     * <p>Indicates the beginning of the CAN signal. This should always be the least
+     * significant bit (LSB).</p> <p>This value might be different from the value in a
+     * DBC file. For little endian signals, <code>startBit</code> is the same value as
+     * in the DBC file. For big endian signals in a DBC file, the start bit is the most
+     * significant bit (MSB). You will have to calculate the LSB instead and pass it as
+     * the <code>startBit</code>.</p>
      */
     inline CanSignal& WithStartBit(int value) { SetStartBit(value); return *this;}
 
 
     /**
-     * <p>Indicates where data appears in the CAN message.</p>
+     * <p>The offset used to calculate the signal value. Combined with factor, the
+     * calculation is <code>value = raw_value * factor + offset</code>.</p>
      */
     inline double GetOffset() const{ return m_offset; }
 
     /**
-     * <p>Indicates where data appears in the CAN message.</p>
+     * <p>The offset used to calculate the signal value. Combined with factor, the
+     * calculation is <code>value = raw_value * factor + offset</code>.</p>
      */
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
 
     /**
-     * <p>Indicates where data appears in the CAN message.</p>
+     * <p>The offset used to calculate the signal value. Combined with factor, the
+     * calculation is <code>value = raw_value * factor + offset</code>.</p>
      */
     inline void SetOffset(double value) { m_offsetHasBeenSet = true; m_offset = value; }
 
     /**
-     * <p>Indicates where data appears in the CAN message.</p>
+     * <p>The offset used to calculate the signal value. Combined with factor, the
+     * calculation is <code>value = raw_value * factor + offset</code>.</p>
      */
     inline CanSignal& WithOffset(double value) { SetOffset(value); return *this;}
 

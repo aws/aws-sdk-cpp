@@ -58,7 +58,11 @@ Cluster::Cluster() :
     m_stepConcurrencyLevel(0),
     m_stepConcurrencyLevelHasBeenSet(false),
     m_placementGroupsHasBeenSet(false),
-    m_oSReleaseLabelHasBeenSet(false)
+    m_oSReleaseLabelHasBeenSet(false),
+    m_ebsRootVolumeIops(0),
+    m_ebsRootVolumeIopsHasBeenSet(false),
+    m_ebsRootVolumeThroughput(0),
+    m_ebsRootVolumeThroughputHasBeenSet(false)
 {
 }
 
@@ -102,7 +106,11 @@ Cluster::Cluster(JsonView jsonValue) :
     m_stepConcurrencyLevel(0),
     m_stepConcurrencyLevelHasBeenSet(false),
     m_placementGroupsHasBeenSet(false),
-    m_oSReleaseLabelHasBeenSet(false)
+    m_oSReleaseLabelHasBeenSet(false),
+    m_ebsRootVolumeIops(0),
+    m_ebsRootVolumeIopsHasBeenSet(false),
+    m_ebsRootVolumeThroughput(0),
+    m_ebsRootVolumeThroughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -338,6 +346,20 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_oSReleaseLabelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EbsRootVolumeIops"))
+  {
+    m_ebsRootVolumeIops = jsonValue.GetInteger("EbsRootVolumeIops");
+
+    m_ebsRootVolumeIopsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EbsRootVolumeThroughput"))
+  {
+    m_ebsRootVolumeThroughput = jsonValue.GetInteger("EbsRootVolumeThroughput");
+
+    m_ebsRootVolumeThroughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -545,6 +567,18 @@ JsonValue Cluster::Jsonize() const
   if(m_oSReleaseLabelHasBeenSet)
   {
    payload.WithString("OSReleaseLabel", m_oSReleaseLabel);
+
+  }
+
+  if(m_ebsRootVolumeIopsHasBeenSet)
+  {
+   payload.WithInteger("EbsRootVolumeIops", m_ebsRootVolumeIops);
+
+  }
+
+  if(m_ebsRootVolumeThroughputHasBeenSet)
+  {
+   payload.WithInteger("EbsRootVolumeThroughput", m_ebsRootVolumeThroughput);
 
   }
 

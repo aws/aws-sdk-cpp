@@ -90,37 +90,37 @@ namespace Model
 
     /**
      * <p>The value of the attribute. This is a <code>Document</code> type. This type
-     * is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+     * is not supported by Java V1, Go V1, and older versions of the CLI.</p>
      */
     inline Aws::Utils::DocumentView GetAttributeValue() const{ return m_attributeValue; }
 
     /**
      * <p>The value of the attribute. This is a <code>Document</code> type. This type
-     * is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+     * is not supported by Java V1, Go V1, and older versions of the CLI.</p>
      */
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
 
     /**
      * <p>The value of the attribute. This is a <code>Document</code> type. This type
-     * is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+     * is not supported by Java V1, Go V1, and older versions of the CLI.</p>
      */
     inline void SetAttributeValue(const Aws::Utils::Document& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
 
     /**
      * <p>The value of the attribute. This is a <code>Document</code> type. This type
-     * is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+     * is not supported by Java V1, Go V1, and older versions of the CLI.</p>
      */
     inline void SetAttributeValue(Aws::Utils::Document&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
 
     /**
      * <p>The value of the attribute. This is a <code>Document</code> type. This type
-     * is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+     * is not supported by Java V1, Go V1, and older versions of the CLI.</p>
      */
     inline AttributeOperation& WithAttributeValue(const Aws::Utils::Document& value) { SetAttributeValue(value); return *this;}
 
     /**
      * <p>The value of the attribute. This is a <code>Document</code> type. This type
-     * is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+     * is not supported by Java V1, Go V1, and older versions of the CLI.</p>
      */
     inline AttributeOperation& WithAttributeValue(Aws::Utils::Document&& value) { SetAttributeValue(std::move(value)); return *this;}
 

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     jamf,
-    crowdstrike
+    crowdstrike,
+    jumpcloud
   };
 
 namespace DeviceTrustProviderTypeMapper

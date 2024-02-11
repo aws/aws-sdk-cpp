@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReceiptFilterPolicy::NOT_SET:
+            return {};
           case ReceiptFilterPolicy::Block:
             return "Block";
           case ReceiptFilterPolicy::Allow:

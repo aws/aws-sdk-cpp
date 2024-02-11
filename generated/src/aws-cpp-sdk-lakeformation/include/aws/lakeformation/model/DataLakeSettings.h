@@ -94,6 +94,63 @@ namespace Model
 
 
     /**
+     * <p>A list of Lake Formation principals with only view access to the resources,
+     * without the ability to make changes. Supported principals are IAM users or IAM
+     * roles.</p>
+     */
+    inline const Aws::Vector<DataLakePrincipal>& GetReadOnlyAdmins() const{ return m_readOnlyAdmins; }
+
+    /**
+     * <p>A list of Lake Formation principals with only view access to the resources,
+     * without the ability to make changes. Supported principals are IAM users or IAM
+     * roles.</p>
+     */
+    inline bool ReadOnlyAdminsHasBeenSet() const { return m_readOnlyAdminsHasBeenSet; }
+
+    /**
+     * <p>A list of Lake Formation principals with only view access to the resources,
+     * without the ability to make changes. Supported principals are IAM users or IAM
+     * roles.</p>
+     */
+    inline void SetReadOnlyAdmins(const Aws::Vector<DataLakePrincipal>& value) { m_readOnlyAdminsHasBeenSet = true; m_readOnlyAdmins = value; }
+
+    /**
+     * <p>A list of Lake Formation principals with only view access to the resources,
+     * without the ability to make changes. Supported principals are IAM users or IAM
+     * roles.</p>
+     */
+    inline void SetReadOnlyAdmins(Aws::Vector<DataLakePrincipal>&& value) { m_readOnlyAdminsHasBeenSet = true; m_readOnlyAdmins = std::move(value); }
+
+    /**
+     * <p>A list of Lake Formation principals with only view access to the resources,
+     * without the ability to make changes. Supported principals are IAM users or IAM
+     * roles.</p>
+     */
+    inline DataLakeSettings& WithReadOnlyAdmins(const Aws::Vector<DataLakePrincipal>& value) { SetReadOnlyAdmins(value); return *this;}
+
+    /**
+     * <p>A list of Lake Formation principals with only view access to the resources,
+     * without the ability to make changes. Supported principals are IAM users or IAM
+     * roles.</p>
+     */
+    inline DataLakeSettings& WithReadOnlyAdmins(Aws::Vector<DataLakePrincipal>&& value) { SetReadOnlyAdmins(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of Lake Formation principals with only view access to the resources,
+     * without the ability to make changes. Supported principals are IAM users or IAM
+     * roles.</p>
+     */
+    inline DataLakeSettings& AddReadOnlyAdmins(const DataLakePrincipal& value) { m_readOnlyAdminsHasBeenSet = true; m_readOnlyAdmins.push_back(value); return *this; }
+
+    /**
+     * <p>A list of Lake Formation principals with only view access to the resources,
+     * without the ability to make changes. Supported principals are IAM users or IAM
+     * roles.</p>
+     */
+    inline DataLakeSettings& AddReadOnlyAdmins(DataLakePrincipal&& value) { m_readOnlyAdminsHasBeenSet = true; m_readOnlyAdmins.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Specifies whether access control on newly created database is managed by Lake
      * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
      * indicates access control by Lake Formation permissions. A value that assigns ALL
@@ -337,92 +394,92 @@ namespace Model
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map that provides an additional configuration on your data lake.
-     * CrossAccountVersion is the key you can configure in the Parameters field.
-     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
      */
     inline DataLakeSettings& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -515,8 +572,8 @@ namespace Model
      * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
      * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
      * that are registered with Lake Formation.</p> <p>For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
-     * Allow Data Filtering on Amazon EMR</a>.</p>
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional)
+     * Allow external data filtering</a>.</p>
      */
     inline bool GetAllowExternalDataFiltering() const{ return m_allowExternalDataFiltering; }
 
@@ -526,8 +583,8 @@ namespace Model
      * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
      * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
      * that are registered with Lake Formation.</p> <p>For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
-     * Allow Data Filtering on Amazon EMR</a>.</p>
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional)
+     * Allow external data filtering</a>.</p>
      */
     inline bool AllowExternalDataFilteringHasBeenSet() const { return m_allowExternalDataFilteringHasBeenSet; }
 
@@ -537,8 +594,8 @@ namespace Model
      * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
      * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
      * that are registered with Lake Formation.</p> <p>For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
-     * Allow Data Filtering on Amazon EMR</a>.</p>
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional)
+     * Allow external data filtering</a>.</p>
      */
     inline void SetAllowExternalDataFiltering(bool value) { m_allowExternalDataFilteringHasBeenSet = true; m_allowExternalDataFiltering = value; }
 
@@ -548,10 +605,35 @@ namespace Model
      * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
      * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
      * that are registered with Lake Formation.</p> <p>For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
-     * Allow Data Filtering on Amazon EMR</a>.</p>
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional)
+     * Allow external data filtering</a>.</p>
      */
     inline DataLakeSettings& WithAllowExternalDataFiltering(bool value) { SetAllowExternalDataFiltering(value); return *this;}
+
+
+    /**
+     * <p>Whether to allow a third-party query engine to get data access credentials
+     * without session tags when a caller has full data access permissions.</p>
+     */
+    inline bool GetAllowFullTableExternalDataAccess() const{ return m_allowFullTableExternalDataAccess; }
+
+    /**
+     * <p>Whether to allow a third-party query engine to get data access credentials
+     * without session tags when a caller has full data access permissions.</p>
+     */
+    inline bool AllowFullTableExternalDataAccessHasBeenSet() const { return m_allowFullTableExternalDataAccessHasBeenSet; }
+
+    /**
+     * <p>Whether to allow a third-party query engine to get data access credentials
+     * without session tags when a caller has full data access permissions.</p>
+     */
+    inline void SetAllowFullTableExternalDataAccess(bool value) { m_allowFullTableExternalDataAccessHasBeenSet = true; m_allowFullTableExternalDataAccess = value; }
+
+    /**
+     * <p>Whether to allow a third-party query engine to get data access credentials
+     * without session tags when a caller has full data access permissions.</p>
+     */
+    inline DataLakeSettings& WithAllowFullTableExternalDataAccess(bool value) { SetAllowFullTableExternalDataAccess(value); return *this;}
 
 
     /**
@@ -698,6 +780,9 @@ namespace Model
     Aws::Vector<DataLakePrincipal> m_dataLakeAdmins;
     bool m_dataLakeAdminsHasBeenSet = false;
 
+    Aws::Vector<DataLakePrincipal> m_readOnlyAdmins;
+    bool m_readOnlyAdminsHasBeenSet = false;
+
     Aws::Vector<PrincipalPermissions> m_createDatabaseDefaultPermissions;
     bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
 
@@ -712,6 +797,9 @@ namespace Model
 
     bool m_allowExternalDataFiltering;
     bool m_allowExternalDataFilteringHasBeenSet = false;
+
+    bool m_allowFullTableExternalDataAccess;
+    bool m_allowFullTableExternalDataAccessHasBeenSet = false;
 
     Aws::Vector<DataLakePrincipal> m_externalDataFilteringAllowList;
     bool m_externalDataFilteringAllowListHasBeenSet = false;

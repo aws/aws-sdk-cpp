@@ -371,50 +371,50 @@ namespace Model
 
 
     /**
-     * <p>The URL of a resource external to AWS that is used when running the action
-     * (for example, an external repository URL).</p>
+     * <p>The URL of a resource external to Amazon Web Services that is used when
+     * running the action (for example, an external repository URL).</p>
      */
     inline const Aws::String& GetExternalExecutionUrl() const{ return m_externalExecutionUrl; }
 
     /**
-     * <p>The URL of a resource external to AWS that is used when running the action
-     * (for example, an external repository URL).</p>
+     * <p>The URL of a resource external to Amazon Web Services that is used when
+     * running the action (for example, an external repository URL).</p>
      */
     inline bool ExternalExecutionUrlHasBeenSet() const { return m_externalExecutionUrlHasBeenSet; }
 
     /**
-     * <p>The URL of a resource external to AWS that is used when running the action
-     * (for example, an external repository URL).</p>
+     * <p>The URL of a resource external to Amazon Web Services that is used when
+     * running the action (for example, an external repository URL).</p>
      */
     inline void SetExternalExecutionUrl(const Aws::String& value) { m_externalExecutionUrlHasBeenSet = true; m_externalExecutionUrl = value; }
 
     /**
-     * <p>The URL of a resource external to AWS that is used when running the action
-     * (for example, an external repository URL).</p>
+     * <p>The URL of a resource external to Amazon Web Services that is used when
+     * running the action (for example, an external repository URL).</p>
      */
     inline void SetExternalExecutionUrl(Aws::String&& value) { m_externalExecutionUrlHasBeenSet = true; m_externalExecutionUrl = std::move(value); }
 
     /**
-     * <p>The URL of a resource external to AWS that is used when running the action
-     * (for example, an external repository URL).</p>
+     * <p>The URL of a resource external to Amazon Web Services that is used when
+     * running the action (for example, an external repository URL).</p>
      */
     inline void SetExternalExecutionUrl(const char* value) { m_externalExecutionUrlHasBeenSet = true; m_externalExecutionUrl.assign(value); }
 
     /**
-     * <p>The URL of a resource external to AWS that is used when running the action
-     * (for example, an external repository URL).</p>
+     * <p>The URL of a resource external to Amazon Web Services that is used when
+     * running the action (for example, an external repository URL).</p>
      */
     inline ActionExecution& WithExternalExecutionUrl(const Aws::String& value) { SetExternalExecutionUrl(value); return *this;}
 
     /**
-     * <p>The URL of a resource external to AWS that is used when running the action
-     * (for example, an external repository URL).</p>
+     * <p>The URL of a resource external to Amazon Web Services that is used when
+     * running the action (for example, an external repository URL).</p>
      */
     inline ActionExecution& WithExternalExecutionUrl(Aws::String&& value) { SetExternalExecutionUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of a resource external to AWS that is used when running the action
-     * (for example, an external repository URL).</p>
+     * <p>The URL of a resource external to Amazon Web Services that is used when
+     * running the action (for example, an external repository URL).</p>
      */
     inline ActionExecution& WithExternalExecutionUrl(const char* value) { SetExternalExecutionUrl(value); return *this;}
 
@@ -441,32 +441,38 @@ namespace Model
 
 
     /**
-     * <p>The details of an error returned by a URL external to AWS.</p>
+     * <p>The details of an error returned by a URL external to Amazon Web
+     * Services.</p>
      */
     inline const ErrorDetails& GetErrorDetails() const{ return m_errorDetails; }
 
     /**
-     * <p>The details of an error returned by a URL external to AWS.</p>
+     * <p>The details of an error returned by a URL external to Amazon Web
+     * Services.</p>
      */
     inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
 
     /**
-     * <p>The details of an error returned by a URL external to AWS.</p>
+     * <p>The details of an error returned by a URL external to Amazon Web
+     * Services.</p>
      */
     inline void SetErrorDetails(const ErrorDetails& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
 
     /**
-     * <p>The details of an error returned by a URL external to AWS.</p>
+     * <p>The details of an error returned by a URL external to Amazon Web
+     * Services.</p>
      */
     inline void SetErrorDetails(ErrorDetails&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
 
     /**
-     * <p>The details of an error returned by a URL external to AWS.</p>
+     * <p>The details of an error returned by a URL external to Amazon Web
+     * Services.</p>
      */
     inline ActionExecution& WithErrorDetails(const ErrorDetails& value) { SetErrorDetails(value); return *this;}
 
     /**
-     * <p>The details of an error returned by a URL external to AWS.</p>
+     * <p>The details of an error returned by a URL external to Amazon Web
+     * Services.</p>
      */
     inline ActionExecution& WithErrorDetails(ErrorDetails&& value) { SetErrorDetails(std::move(value)); return *this;}
 

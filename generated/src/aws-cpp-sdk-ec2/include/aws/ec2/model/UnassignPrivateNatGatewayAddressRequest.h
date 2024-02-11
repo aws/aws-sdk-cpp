@@ -38,42 +38,42 @@ namespace Model
   public:
 
     /**
-     * <p>The NAT gateway ID.</p>
+     * <p>The ID of the NAT gateway.</p>
      */
     inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
 
     /**
-     * <p>The NAT gateway ID.</p>
+     * <p>The ID of the NAT gateway.</p>
      */
     inline bool NatGatewayIdHasBeenSet() const { return m_natGatewayIdHasBeenSet; }
 
     /**
-     * <p>The NAT gateway ID.</p>
+     * <p>The ID of the NAT gateway.</p>
      */
     inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
 
     /**
-     * <p>The NAT gateway ID.</p>
+     * <p>The ID of the NAT gateway.</p>
      */
     inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
 
     /**
-     * <p>The NAT gateway ID.</p>
+     * <p>The ID of the NAT gateway.</p>
      */
     inline void SetNatGatewayId(const char* value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId.assign(value); }
 
     /**
-     * <p>The NAT gateway ID.</p>
+     * <p>The ID of the NAT gateway.</p>
      */
     inline UnassignPrivateNatGatewayAddressRequest& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
 
     /**
-     * <p>The NAT gateway ID.</p>
+     * <p>The ID of the NAT gateway.</p>
      */
     inline UnassignPrivateNatGatewayAddressRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The NAT gateway ID.</p>
+     * <p>The ID of the NAT gateway.</p>
      */
     inline UnassignPrivateNatGatewayAddressRequest& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
 

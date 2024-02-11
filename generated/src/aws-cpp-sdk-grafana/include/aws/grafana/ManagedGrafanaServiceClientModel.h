@@ -29,6 +29,7 @@
 #include <aws/grafana/model/DisassociateLicenseResult.h>
 #include <aws/grafana/model/ListPermissionsResult.h>
 #include <aws/grafana/model/ListTagsForResourceResult.h>
+#include <aws/grafana/model/ListVersionsResult.h>
 #include <aws/grafana/model/ListWorkspacesResult.h>
 #include <aws/grafana/model/TagResourceResult.h>
 #include <aws/grafana/model/UntagResourceResult.h>
@@ -87,6 +88,7 @@ namespace Aws
       class DisassociateLicenseRequest;
       class ListPermissionsRequest;
       class ListTagsForResourceRequest;
+      class ListVersionsRequest;
       class ListWorkspacesRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -108,6 +110,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateLicenseResult, ManagedGrafanaError> DisassociateLicenseOutcome;
       typedef Aws::Utils::Outcome<ListPermissionsResult, ManagedGrafanaError> ListPermissionsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ManagedGrafanaError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ListVersionsResult, ManagedGrafanaError> ListVersionsOutcome;
       typedef Aws::Utils::Outcome<ListWorkspacesResult, ManagedGrafanaError> ListWorkspacesOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, ManagedGrafanaError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, ManagedGrafanaError> UntagResourceOutcome;
@@ -129,6 +132,7 @@ namespace Aws
       typedef std::future<DisassociateLicenseOutcome> DisassociateLicenseOutcomeCallable;
       typedef std::future<ListPermissionsOutcome> ListPermissionsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ListVersionsOutcome> ListVersionsOutcomeCallable;
       typedef std::future<ListWorkspacesOutcome> ListWorkspacesOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -153,6 +157,7 @@ namespace Aws
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DisassociateLicenseRequest&, const Model::DisassociateLicenseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLicenseResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::ListPermissionsRequest&, const Model::ListPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionsResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::ListVersionsRequest&, const Model::ListVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVersionsResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::ListWorkspacesRequest&, const Model::ListWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkspacesResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

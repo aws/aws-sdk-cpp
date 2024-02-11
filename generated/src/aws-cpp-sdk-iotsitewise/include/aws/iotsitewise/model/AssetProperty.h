@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/model/PropertyNotification.h>
 #include <aws/iotsitewise/model/PropertyDataType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotsitewise/model/AssetPropertyPathSegment.h>
 #include <utility>
 
 namespace Aws
@@ -373,6 +375,104 @@ namespace Model
      */
     inline AssetProperty& WithUnit(const char* value) { SetUnit(value); return *this;}
 
+
+    /**
+     * <p>The structured path to the property from the root of the asset.</p>
+     */
+    inline const Aws::Vector<AssetPropertyPathSegment>& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The structured path to the property from the root of the asset.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The structured path to the property from the root of the asset.</p>
+     */
+    inline void SetPath(const Aws::Vector<AssetPropertyPathSegment>& value) { m_pathHasBeenSet = true; m_path = value; }
+
+    /**
+     * <p>The structured path to the property from the root of the asset.</p>
+     */
+    inline void SetPath(Aws::Vector<AssetPropertyPathSegment>&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
+
+    /**
+     * <p>The structured path to the property from the root of the asset.</p>
+     */
+    inline AssetProperty& WithPath(const Aws::Vector<AssetPropertyPathSegment>& value) { SetPath(value); return *this;}
+
+    /**
+     * <p>The structured path to the property from the root of the asset.</p>
+     */
+    inline AssetProperty& WithPath(Aws::Vector<AssetPropertyPathSegment>&& value) { SetPath(std::move(value)); return *this;}
+
+    /**
+     * <p>The structured path to the property from the root of the asset.</p>
+     */
+    inline AssetProperty& AddPath(const AssetPropertyPathSegment& value) { m_pathHasBeenSet = true; m_path.push_back(value); return *this; }
+
+    /**
+     * <p>The structured path to the property from the root of the asset.</p>
+     */
+    inline AssetProperty& AddPath(AssetPropertyPathSegment&& value) { m_pathHasBeenSet = true; m_path.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * <p>The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+
+    /**
+     * <p>The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+
+    /**
+     * <p>The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+
+    /**
+     * <p>The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetProperty& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+
+    /**
+     * <p>The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetProperty& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetProperty& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -395,6 +495,12 @@ namespace Model
 
     Aws::String m_unit;
     bool m_unitHasBeenSet = false;
+
+    Aws::Vector<AssetPropertyPathSegment> m_path;
+    bool m_pathHasBeenSet = false;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/ebs/model/Status.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ebs/model/SSEType.h>
 #include <aws/ebs/model/Tag.h>
 #include <utility>
 
@@ -371,6 +372,32 @@ namespace Model
     inline StartSnapshotResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
 
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const SSEType& GetSseType() const{ return m_sseType; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetSseType(const SSEType& value) { m_sseType = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetSseType(SSEType&& value) { m_sseType = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline StartSnapshotResult& WithSseType(const SSEType& value) { SetSseType(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline StartSnapshotResult& WithSseType(SSEType&& value) { SetSseType(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -413,6 +440,8 @@ namespace Model
     Aws::String m_parentSnapshotId;
 
     Aws::String m_kmsKeyArn;
+
+    SSEType m_sseType;
 
     Aws::String m_requestId;
   };

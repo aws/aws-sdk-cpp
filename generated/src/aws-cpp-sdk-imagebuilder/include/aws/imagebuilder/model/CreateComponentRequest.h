@@ -241,57 +241,57 @@ namespace Model
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline const Aws::String& GetChangeDescription() const{ return m_changeDescription; }
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline bool ChangeDescriptionHasBeenSet() const { return m_changeDescriptionHasBeenSet; }
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline void SetChangeDescription(const Aws::String& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = value; }
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline void SetChangeDescription(Aws::String&& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = std::move(value); }
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline void SetChangeDescription(const char* value) { m_changeDescriptionHasBeenSet = true; m_changeDescription.assign(value); }
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline CreateComponentRequest& WithChangeDescription(const Aws::String& value) { SetChangeDescription(value); return *this;}
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline CreateComponentRequest& WithChangeDescription(Aws::String&& value) { SetChangeDescription(std::move(value)); return *this;}
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline CreateComponentRequest& WithChangeDescription(const char* value) { SetChangeDescription(value); return *this;}
 
@@ -645,42 +645,66 @@ namespace Model
 
 
     /**
-     * <p>The idempotency token of the component.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The idempotency token of the component.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The idempotency token of the component.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The idempotency token of the component.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The idempotency token of the component.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The idempotency token of the component.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline CreateComponentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The idempotency token of the component.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline CreateComponentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The idempotency token of the component.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline CreateComponentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

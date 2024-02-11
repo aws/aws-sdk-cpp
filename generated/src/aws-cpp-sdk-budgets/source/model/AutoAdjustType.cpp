@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoAdjustType::NOT_SET:
+            return {};
           case AutoAdjustType::HISTORICAL:
             return "HISTORICAL";
           case AutoAdjustType::FORECAST:

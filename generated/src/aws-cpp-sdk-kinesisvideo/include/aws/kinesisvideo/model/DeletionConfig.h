@@ -112,8 +112,8 @@ namespace Model
      * the <code>EdgeRetentionInHours</code>, or the
      * <code>MaxLocalMediaSizeInMB</code>, has been reached. </p> <p>Since the default
      * value is set to <code>true</code>, configure the uploader schedule such that the
-     * media files are not being deleted before they are initially uploaded to AWS
-     * cloud.</p>
+     * media files are not being deleted before they are initially uploaded to the
+     * Amazon Web Services cloud.</p>
      */
     inline bool GetDeleteAfterUpload() const{ return m_deleteAfterUpload; }
 
@@ -125,8 +125,8 @@ namespace Model
      * the <code>EdgeRetentionInHours</code>, or the
      * <code>MaxLocalMediaSizeInMB</code>, has been reached. </p> <p>Since the default
      * value is set to <code>true</code>, configure the uploader schedule such that the
-     * media files are not being deleted before they are initially uploaded to AWS
-     * cloud.</p>
+     * media files are not being deleted before they are initially uploaded to the
+     * Amazon Web Services cloud.</p>
      */
     inline bool DeleteAfterUploadHasBeenSet() const { return m_deleteAfterUploadHasBeenSet; }
 
@@ -138,8 +138,8 @@ namespace Model
      * the <code>EdgeRetentionInHours</code>, or the
      * <code>MaxLocalMediaSizeInMB</code>, has been reached. </p> <p>Since the default
      * value is set to <code>true</code>, configure the uploader schedule such that the
-     * media files are not being deleted before they are initially uploaded to AWS
-     * cloud.</p>
+     * media files are not being deleted before they are initially uploaded to the
+     * Amazon Web Services cloud.</p>
      */
     inline void SetDeleteAfterUpload(bool value) { m_deleteAfterUploadHasBeenSet = true; m_deleteAfterUpload = value; }
 
@@ -151,8 +151,8 @@ namespace Model
      * the <code>EdgeRetentionInHours</code>, or the
      * <code>MaxLocalMediaSizeInMB</code>, has been reached. </p> <p>Since the default
      * value is set to <code>true</code>, configure the uploader schedule such that the
-     * media files are not being deleted before they are initially uploaded to AWS
-     * cloud.</p>
+     * media files are not being deleted before they are initially uploaded to the
+     * Amazon Web Services cloud.</p>
      */
     inline DeletionConfig& WithDeleteAfterUpload(bool value) { SetDeleteAfterUpload(value); return *this;}
 

@@ -17,10 +17,10 @@ class AmazonWebServiceResult;
 
 namespace Utils
 {
-namespace Xml
+namespace Json
 {
-  class XmlDocument;
-} // namespace Xml
+  class JsonValue;
+} // namespace Json
 } // namespace Utils
 namespace SQS
 {
@@ -35,55 +35,55 @@ namespace Model
   {
   public:
     AWS_SQS_API ListQueuesResult();
-    AWS_SQS_API ListQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_SQS_API ListQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API ListQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SQS_API ListQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
-     * you sent in the request.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of
+     * <code>MaxResults</code> that you sent in the request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetQueueUrls() const{ return m_queueUrls; }
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
-     * you sent in the request.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of
+     * <code>MaxResults</code> that you sent in the request.</p>
      */
     inline void SetQueueUrls(const Aws::Vector<Aws::String>& value) { m_queueUrls = value; }
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
-     * you sent in the request.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of
+     * <code>MaxResults</code> that you sent in the request.</p>
      */
     inline void SetQueueUrls(Aws::Vector<Aws::String>&& value) { m_queueUrls = std::move(value); }
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
-     * you sent in the request.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of
+     * <code>MaxResults</code> that you sent in the request.</p>
      */
     inline ListQueuesResult& WithQueueUrls(const Aws::Vector<Aws::String>& value) { SetQueueUrls(value); return *this;}
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
-     * you sent in the request.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of
+     * <code>MaxResults</code> that you sent in the request.</p>
      */
     inline ListQueuesResult& WithQueueUrls(Aws::Vector<Aws::String>&& value) { SetQueueUrls(std::move(value)); return *this;}
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
-     * you sent in the request.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of
+     * <code>MaxResults</code> that you sent in the request.</p>
      */
     inline ListQueuesResult& AddQueueUrls(const Aws::String& value) { m_queueUrls.push_back(value); return *this; }
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
-     * you sent in the request.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of
+     * <code>MaxResults</code> that you sent in the request.</p>
      */
     inline ListQueuesResult& AddQueueUrls(Aws::String&& value) { m_queueUrls.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
-     * you sent in the request.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of
+     * <code>MaxResults</code> that you sent in the request.</p>
      */
     inline ListQueuesResult& AddQueueUrls(const char* value) { m_queueUrls.push_back(value); return *this; }
 
@@ -139,6 +139,28 @@ namespace Model
 
 
     
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListQueuesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListQueuesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListQueuesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
     
@@ -158,6 +180,8 @@ namespace Model
     Aws::Vector<Aws::String> m_queueUrls;
 
     Aws::String m_nextToken;
+
+    Aws::String m_requestId;
 
     ResponseMetadata m_responseMetadata;
   };

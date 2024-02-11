@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeInstanceStatus::NOT_SET:
+            return {};
           case NodeInstanceStatus::RUNNING:
             return "RUNNING";
           case NodeInstanceStatus::ERROR_:

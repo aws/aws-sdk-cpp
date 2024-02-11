@@ -55,50 +55,131 @@
     #set($hasEventStreamInputOperation = true)
 #end
 #end
+${className}::${className}(const ${className} &rhs) :
+    BASECLASS(rhs.m_clientConfiguration,
+        Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+            rhs.GetCredentialsProvider(),
+            rhs.m_clientConfiguration.identityProviderSupplier(*this),
+            SERVICE_NAME,
+            Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+            rhs.m_clientConfiguration.payloadSigningPolicy,
+            /*doubleEncodeValue*/ false),
+        Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
+    Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>(),
+    m_clientConfiguration(rhs.m_clientConfiguration),
+    m_executor(rhs.m_clientConfiguration.executor),
+    m_endpointProvider(rhs.m_endpointProvider),
+    m_identityProvider(rhs.m_identityProvider){}
+
+${className}& ${className}::operator=(const ${className} &rhs) {
+    m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+          rhs.GetCredentialsProvider(),
+          rhs.m_clientConfiguration.identityProviderSupplier(*this),
+          SERVICE_NAME,
+          Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+          rhs.m_clientConfiguration.payloadSigningPolicy,
+          /*doubleEncodeValue*/ false);
+    m_clientConfiguration = rhs.m_clientConfiguration;
+    m_executor = rhs.m_executor;
+    m_endpointProvider = rhs.m_endpointProvider;
+    init(m_clientConfiguration, m_credProvider);
+    return *this;
+}
+
+${className}::${className}(${className} &&rhs) :
+    BASECLASS(rhs.m_clientConfiguration,
+        Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+            rhs.GetCredentialsProvider(),
+            rhs.m_clientConfiguration.identityProviderSupplier(*this),
+            SERVICE_NAME,
+            Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+            rhs.m_clientConfiguration.payloadSigningPolicy,
+            /*doubleEncodeValue*/ false),
+            Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
+    Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>(),
+    m_clientConfiguration(std::move(rhs.m_clientConfiguration)),
+    m_executor(std::move(rhs.m_clientConfiguration.executor)),
+    m_endpointProvider(std::move(rhs.m_endpointProvider)) {}
+
+${className}& ${className}::operator=(${className} &&rhs) {
+  if (&rhs == this) {
+    return *this;
+  }
+  m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+        rhs.GetCredentialsProvider(),
+        rhs.m_clientConfiguration.identityProviderSupplier(*this),
+        SERVICE_NAME,
+        Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+        rhs.m_clientConfiguration.payloadSigningPolicy,
+        /*doubleEncodeValue*/ false);
+  m_clientConfiguration = std::move(rhs.m_clientConfiguration);
+  m_executor = std::move(rhs.m_executor);
+  m_endpointProvider = std::move(rhs.m_endpointProvider);
+  init(m_clientConfiguration, m_credProvider);
+  return *this;
+}
 
 #if($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
 ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}${credentialProviderArg}) :
-  BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, ${defaultCredentialsProviderChainParam},
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
+    BASECLASS(clientConfiguration,
+        Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+            Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, credentialsProvider),
+            Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this),
+            SERVICE_NAME,
+            Aws::Region::ComputeSignerRegion(clientConfiguration.region),
+            signPayloads,
+            false),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}
+    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember},
 #else
-    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
+    m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
 }
 
 ${className}::${className}(const AWSCredentials& credentials, const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
-  BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, ${simpleCredentialsProviderParam},
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
+    BASECLASS(clientConfiguration,
+        Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+            Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+            Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this),
+            SERVICE_NAME,
+            Aws::Region::ComputeSignerRegion(clientConfiguration.region),
+            signPayloads,
+            false),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}
+    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember},
 #else
-    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
+    m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
 }
 
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
   const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
-  BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
+    BASECLASS(clientConfiguration,
+        Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+            credentialsProvider,
+            Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this),
+            SERVICE_NAME,
+            Aws::Region::ComputeSignerRegion(clientConfiguration.region),
+            signPayloads,
+            false),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${credentialsProviderMember}
+    m_executor(clientConfiguration.executor)${credentialsProviderMember},
 #else
-    m_executor(clientConfiguration.executor)${credentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${credentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
+    m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -110,10 +191,11 @@ ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfigur
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}
+    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember},
 #else
-    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
+    m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -125,10 +207,11 @@ ${className}::${className}(const AWSCredentials& credentials, const ${clientConf
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}
+    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember},
 #else
-    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
+    m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -141,10 +224,11 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}
+    m_executor(clientConfiguration.executor)${virtualAddressingInit},
 #else
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}${credentialsProviderMember}
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}${credentialsProviderMember},
 #end
+    m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -157,10 +241,11 @@ ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvide
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}
+    m_executor(clientConfiguration.executor)${virtualAddressingInit},
 #else
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}
+    m_executor(clientConfiguration.executor)${virtualAddressingInit},
 #end
+    m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(m_clientConfiguration);
 }
@@ -170,8 +255,12 @@ ${className}::~${className}()
 {
 #if($serviceNamespace == "S3Crt")
   aws_s3_client_release(m_s3CrtClient);
-  m_clientShutdownSem->WaitOne(); // Wait aws_s3_client shutdown
+  if(m_clientShutdownSem)
+  {
+    m_clientShutdownSem->WaitOne(); // Wait aws_s3_client shutdown
+  }
 #end
+  ShutdownSdkClient(this, -1);
 }
 
 #if($serviceModel.endpointRules)
@@ -181,7 +270,8 @@ std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& ${className}::
 }
 
 #end
-void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config${credentialsArg})
+void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config,
+    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider)
 {
   AWSClient::SetServiceClientName("${metadata.serviceId}");
 #if($serviceModel.endpointRules)
@@ -244,6 +334,10 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   s3CrtConfig.region = Aws::Crt::ByteCursorFromCString(config.region.c_str());
   s3CrtConfig.connect_timeout_ms = config.connectTimeoutMs;
 
+  // Download flow-control configuration:
+  s3CrtConfig.enable_read_backpressure = (config.downloadMemoryUsageWindow > 0);
+  s3CrtConfig.initial_read_window = config.downloadMemoryUsageWindow;
+
   aws_s3_tcp_keep_alive_options tcp_keep_alive_options;
   if (config.enableTcpKeepAlive) {
     uint16_t configKeepAliveS = static_cast<uint16_t>(std::min(static_cast<unsigned long>(std::numeric_limits<uint16_t>::max()), config.tcpKeepAliveIntervalMs / 1000ul));
@@ -292,6 +386,8 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
      }, credentialsProvider)
   });
 
+  m_identityProvider = m_clientConfiguration.identityProviderSupplier(*this);
+
   aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromCString(config.region.c_str()), m_crtCredProvider->GetUnderlyingHandle());
   m_s3CrtSigningConfig.flags.use_double_uri_encode = false;
   s3CrtConfig.signing_config = &m_s3CrtSigningConfig;
@@ -299,24 +395,110 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   static const size_t DEFAULT_PART_SIZE = 5 * 1024 * 1024; // 5MB
   s3CrtConfig.part_size = config.partSize < DEFAULT_PART_SIZE ? DEFAULT_PART_SIZE : config.partSize;
 
-  Aws::Crt::Io::TlsConnectionOptions* tlsConnectionOptions = config.tlsConnectionOptions ? config.tlsConnectionOptions.get() : Aws::GetDefaultTlsConnectionOptions();
-  aws_tls_connection_options tlsOptions;
-  AWS_ZERO_STRUCT(tlsOptions);
-  if (tlsConnectionOptions)
+  Aws::UniquePtr<Aws::Crt::Io::TlsConnectionOptions> pTlsConnectionOptions;
+  if (config.tlsConnectionOptions)
   {
-    aws_tls_connection_options_copy(&tlsOptions, tlsConnectionOptions->GetUnderlyingHandle());
+    pTlsConnectionOptions = Aws::MakeUnique<Aws::Crt::Io::TlsConnectionOptions>(ALLOCATION_TAG, *config.tlsConnectionOptions);
+    if (!config.caPath.empty() || !config.caFile.empty())
+    {
+      AWS_LOGSTREAM_WARN(ALLOCATION_TAG, "caPath or caFile on client configuration are ignored in case of user-configured TlsConnectionOptions provided");
+    }
+  }
+
+  if (!pTlsConnectionOptions)
+  {
+    Aws::Crt::Io::TlsContextOptions crtTlsContextOptions = Aws::Crt::Io::TlsContextOptions::InitDefaultClient();
+    if (!config.caPath.empty() || !config.caFile.empty())
+    {
+      const char *caPath = config.caPath.empty() ? nullptr : config.caPath.c_str();
+      const char *caFile = config.caFile.empty() ? nullptr : config.caFile.c_str();
+      if(!crtTlsContextOptions.OverrideDefaultTrustStore(caPath, caFile)) {
+        AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize S3 Crt client: failed to set caPath/caFile");
+        m_isInitialized = false;
+        return;
+      }
+    }
+    Aws::Crt::Io::TlsContext crtTlsContext(crtTlsContextOptions, Aws::Crt::Io::TlsMode::CLIENT);
+    pTlsConnectionOptions = Aws::MakeUnique<Aws::Crt::Io::TlsConnectionOptions>(ALLOCATION_TAG, crtTlsContext.NewConnectionOptions());
+  }
+
+  aws_tls_connection_options nonConstTlsOptions;
+  AWS_ZERO_STRUCT(nonConstTlsOptions);
+  if (pTlsConnectionOptions)
+  {
     ResolveEndpointOutcome endpointOutcome = m_endpointProvider->ResolveEndpoint({});
     if (!endpointOutcome.IsSuccess())
     {
-      AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Failed to resolve base URI: " << endpointOutcome.GetError().GetMessage());
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize S3 Crt client: failed to resolve base URI: " << endpointOutcome.GetError().GetMessage());
+      m_isInitialized = false;
       return;
     }
-    tlsOptions.server_name = aws_string_new_from_c_str(Aws::get_aws_allocator(), endpointOutcome.GetResult().GetURL().c_str());
-    s3CrtConfig.tls_connection_options = &tlsOptions;
+    Aws::Crt::ByteCursor serverName = Aws::Crt::ByteCursorFromCString(endpointOutcome.GetResult().GetURI().GetAuthority().c_str());
+    pTlsConnectionOptions->SetServerName(serverName);
+    aws_tls_connection_options_copy(&nonConstTlsOptions, pTlsConnectionOptions->GetUnderlyingHandle());
+    s3CrtConfig.tls_connection_options = &nonConstTlsOptions;
   }
   else
   {
     s3CrtConfig.tls_connection_options = nullptr;
+  }
+
+  Aws::Crt::Http::HttpClientConnectionProxyOptions proxyOptions;
+  aws_http_proxy_options raw_proxy_options;
+
+  if (!config.proxyHost.empty())
+  {
+    if (!config.proxyUserName.empty() || !config.proxyPassword.empty())
+    {
+      Aws::Crt::Http::HttpProxyStrategyBasicAuthConfig basicAuthConfig;
+      basicAuthConfig.ConnectionType = Aws::Crt::Http::AwsHttpProxyConnectionType::Tunneling;
+      basicAuthConfig.Username = config.proxyUserName.c_str();
+      basicAuthConfig.Password = config.proxyPassword.c_str();
+      proxyOptions.ProxyStrategy = Aws::Crt::Http::HttpProxyStrategy::CreateBasicHttpProxyStrategy(basicAuthConfig, Aws::get_aws_allocator());
+    }
+
+    proxyOptions.HostName = config.proxyHost.c_str();
+
+    if (config.proxyPort != 0)
+    {
+      proxyOptions.Port = static_cast<uint16_t>(config.proxyPort);
+    }
+    else
+    {
+      proxyOptions.Port = config.proxyScheme == Scheme::HTTPS ? 443 : 80;
+    }
+
+    if (config.proxyScheme == Scheme::HTTPS)
+    {
+      Crt::Io::TlsContextOptions contextOptions = Crt::Io::TlsContextOptions::InitDefaultClient();
+
+      if (config.proxySSLKeyPassword.empty() && !config.proxySSLCertPath.empty())
+      {
+        const char* certPath = config.proxySSLCertPath.empty() ? nullptr : config.proxySSLCertPath.c_str();
+        const char* certFile = config.proxySSLKeyPath.empty() ? nullptr : config.proxySSLKeyPath.c_str();
+        contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtls(certPath, certFile);
+      }
+      else if (!config.proxySSLKeyPassword.empty())
+      {
+        const char* pkcs12CertFile = config.proxySSLKeyPath.empty() ? nullptr : config.proxySSLKeyPath.c_str();
+        const char* pkcs12Pwd = config.proxySSLKeyPassword.c_str();
+        contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtlsPkcs12(pkcs12CertFile, pkcs12Pwd);
+      }
+
+      if (!config.caFile.empty() || !config.caPath.empty())
+      {
+        const char* caPath = config.caPath.empty() ? nullptr : config.caPath.c_str();
+        const char* caFile = config.caFile.empty() ? nullptr : config.caFile.c_str();
+        contextOptions.OverrideDefaultTrustStore(caPath, caFile);
+      }
+
+      contextOptions.SetVerifyPeer(config.verifySSL);
+      Crt::Io::TlsContext context = Crt::Io::TlsContext(contextOptions, Crt::Io::TlsMode::CLIENT);
+      proxyOptions.TlsOptions = context.NewConnectionOptions();
+    }
+
+    proxyOptions.InitializeRawProxyOptions(raw_proxy_options);
+    s3CrtConfig.proxy_options = &raw_proxy_options;
   }
 
   s3CrtConfig.tls_mode = config.scheme == Aws::Http::Scheme::HTTPS ? AWS_MR_TLS_ENABLED : AWS_MR_TLS_DISABLED;
@@ -327,15 +509,19 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   m_wrappedData.clientShutdownSem = m_clientShutdownSem;
   s3CrtConfig.shutdown_callback = CrtClientShutdownCallback;
   s3CrtConfig.shutdown_callback_user_data = static_cast<void*>(&m_wrappedData);
+  s3CrtConfig.enable_s3express = !config.disableS3ExpressAuth;
+  s3CrtConfig.factory_user_data = static_cast<void *>(m_identityProvider.get());
+  s3CrtConfig.s3express_provider_override_factory = S3CrtIdentityProviderAdapter::ProviderFactory;
 
   m_s3CrtClient = aws_s3_client_new(Aws::get_aws_allocator(), &s3CrtConfig);
-  if (tlsConnectionOptions)
+  if (pTlsConnectionOptions)
   {
-    aws_tls_connection_options_clean_up(&tlsOptions);
+    aws_tls_connection_options_clean_up(&nonConstTlsOptions);
   }
   if (!m_s3CrtClient)
   {
     AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to allocate aws_s3_client instance, abort.");
+    m_isInitialized = false;
   }
 #end
 }

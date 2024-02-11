@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeCollectionResult::DescribeCollectionResult() : 
-    m_faceCount(0)
+    m_faceCount(0),
+    m_userCount(0)
 {
 }
 
 DescribeCollectionResult::DescribeCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_faceCount(0)
+    m_faceCount(0),
+    m_userCount(0)
 {
   *this = result;
 }
@@ -52,6 +54,12 @@ DescribeCollectionResult& DescribeCollectionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
+
+  }
+
+  if(jsonValue.ValueExists("UserCount"))
+  {
+    m_userCount = jsonValue.GetInt64("UserCount");
 
   }
 

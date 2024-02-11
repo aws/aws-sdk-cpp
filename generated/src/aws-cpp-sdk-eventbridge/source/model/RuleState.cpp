@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS_HASH = HashingUtils::HashString("ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS");
 
 
         RuleState GetRuleStateForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DISABLED_HASH)
           {
             return RuleState::DISABLED;
+          }
+          else if (hashCode == ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS_HASH)
+          {
+            return RuleState::ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleState::NOT_SET:
+            return {};
           case RuleState::ENABLED:
             return "ENABLED";
           case RuleState::DISABLED:
             return "DISABLED";
+          case RuleState::ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS:
+            return "ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -5,6 +5,7 @@
 
 #include <aws/transfer/TransferHandle.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/stl/SimpleStringStream.h>
 
 #include <cassert>
 
@@ -76,7 +77,7 @@ namespace Aws
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED),
             m_cancel(false),
-            m_handleId(Utils::UUID::RandomUUID()),
+            m_handleId(Utils::UUID::PseudoRandomUUID()),
             m_createDownloadStreamFn(),
             m_downloadStream(nullptr)
         {}
@@ -96,7 +97,7 @@ namespace Aws
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED),
             m_cancel(false),
-            m_handleId(Utils::UUID::RandomUUID()),
+            m_handleId(Utils::UUID::PseudoRandomUUID()),
             m_createDownloadStreamFn(),
             m_downloadStream(nullptr)
         {}
@@ -116,7 +117,7 @@ namespace Aws
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED),
             m_cancel(false),
-            m_handleId(Utils::UUID::RandomUUID()),
+            m_handleId(Utils::UUID::PseudoRandomUUID()),
             m_createDownloadStreamFn(createDownloadStreamFn),
             m_downloadStream(nullptr)
         {}
@@ -139,7 +140,7 @@ namespace Aws
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED),
             m_cancel(false),
-            m_handleId(Utils::UUID::RandomUUID()),
+            m_handleId(Utils::UUID::PseudoRandomUUID()),
             m_createDownloadStreamFn(createDownloadStreamFn),
             m_downloadStream(nullptr)
         {}
@@ -376,9 +377,10 @@ namespace Aws
             return !m_cancel.load();
         }
 
-        void TransferHandle::WritePartToDownloadStream(Aws::IOStream* partStream, uint64_t writeOffset)
+        Aws::String TransferHandle::WritePartToDownloadStream(Aws::IOStream* partStream, uint64_t writeOffset)
         {
             std::lock_guard<std::mutex> lock(m_downloadStreamLock);
+            Aws::SimpleStringStream ss;
 
             if(m_downloadStream == nullptr)
             {
@@ -388,9 +390,37 @@ namespace Aws
             }
 
             partStream->seekg(0);
+
             m_downloadStream->seekp(m_downloadStreamBaseOffset + writeOffset);
+            if (m_downloadStream->fail())
+            {
+                ss << "Failed to seek to (" << m_downloadStreamBaseOffset << " + " << writeOffset << ")"
+                   << " in '" << m_fileName << "' from " <<  m_bucket << "/" << m_key
+                   << " (eof: " << m_downloadStream->eof()
+                   << ", bad: " << m_downloadStream->bad() << ")";
+                return ss.str();
+            }
+
             (*m_downloadStream) << partStream->rdbuf();
+            if (m_downloadStream->fail())
+            {
+                ss << "Failed to write from " << m_bucket << "/" << m_key
+                   << " to '" <<  m_fileName << "'" << " at " << writeOffset
+                   << " (eof: " << m_downloadStream->eof()
+                   << ", bad: " << m_downloadStream->bad() << ")";
+                return ss.str();
+            }
+
             m_downloadStream->flush();
+            if (m_downloadStream->fail())
+            {
+                ss << "Failed to flush from " << m_bucket << "/" << m_key
+                   << " to '" << m_fileName << "'"
+                   << " (eof: " << m_downloadStream->eof()
+                   << ", bad: " << m_downloadStream->bad() << ")";
+                return ss.str();
+            }
+            return "";
         }
 
         void TransferHandle::ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig)

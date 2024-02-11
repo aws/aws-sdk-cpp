@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Operators::NOT_SET:
+            return {};
           case Operators::PROJECTION:
             return "PROJECTION";
           case Operators::LESS_THAN:

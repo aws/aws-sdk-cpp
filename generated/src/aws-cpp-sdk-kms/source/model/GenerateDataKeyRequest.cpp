@@ -19,7 +19,10 @@ GenerateDataKeyRequest::GenerateDataKeyRequest() :
     m_numberOfBytesHasBeenSet(false),
     m_keySpec(DataKeySpec::NOT_SET),
     m_keySpecHasBeenSet(false),
-    m_grantTokensHasBeenSet(false)
+    m_grantTokensHasBeenSet(false),
+    m_recipientHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -63,6 +66,18 @@ Aws::String GenerateDataKeyRequest::SerializePayload() const
      grantTokensJsonList[grantTokensIndex].AsString(m_grantTokens[grantTokensIndex]);
    }
    payload.WithArray("GrantTokens", std::move(grantTokensJsonList));
+
+  }
+
+  if(m_recipientHasBeenSet)
+  {
+   payload.WithObject("Recipient", m_recipient.Jsonize());
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 

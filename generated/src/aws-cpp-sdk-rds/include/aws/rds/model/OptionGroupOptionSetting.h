@@ -249,51 +249,51 @@ namespace Model
 
 
     /**
-     * <p>Boolean value where true indicates that this option group option can be
-     * changed from the default value.</p>
+     * <p>Indicates whether this option group option can be changed from the default
+     * value.</p>
      */
     inline bool GetIsModifiable() const{ return m_isModifiable; }
 
     /**
-     * <p>Boolean value where true indicates that this option group option can be
-     * changed from the default value.</p>
+     * <p>Indicates whether this option group option can be changed from the default
+     * value.</p>
      */
     inline bool IsModifiableHasBeenSet() const { return m_isModifiableHasBeenSet; }
 
     /**
-     * <p>Boolean value where true indicates that this option group option can be
-     * changed from the default value.</p>
+     * <p>Indicates whether this option group option can be changed from the default
+     * value.</p>
      */
     inline void SetIsModifiable(bool value) { m_isModifiableHasBeenSet = true; m_isModifiable = value; }
 
     /**
-     * <p>Boolean value where true indicates that this option group option can be
-     * changed from the default value.</p>
+     * <p>Indicates whether this option group option can be changed from the default
+     * value.</p>
      */
     inline OptionGroupOptionSetting& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
 
 
     /**
-     * <p>Boolean value where true indicates that a value must be specified for this
-     * option setting of the option group option.</p>
+     * <p>Indicates whether a value must be specified for this option setting of the
+     * option group option.</p>
      */
     inline bool GetIsRequired() const{ return m_isRequired; }
 
     /**
-     * <p>Boolean value where true indicates that a value must be specified for this
-     * option setting of the option group option.</p>
+     * <p>Indicates whether a value must be specified for this option setting of the
+     * option group option.</p>
      */
     inline bool IsRequiredHasBeenSet() const { return m_isRequiredHasBeenSet; }
 
     /**
-     * <p>Boolean value where true indicates that a value must be specified for this
-     * option setting of the option group option.</p>
+     * <p>Indicates whether a value must be specified for this option setting of the
+     * option group option.</p>
      */
     inline void SetIsRequired(bool value) { m_isRequiredHasBeenSet = true; m_isRequired = value; }
 
     /**
-     * <p>Boolean value where true indicates that a value must be specified for this
-     * option setting of the option group option.</p>
+     * <p>Indicates whether a value must be specified for this option setting of the
+     * option group option.</p>
      */
     inline OptionGroupOptionSetting& WithIsRequired(bool value) { SetIsRequired(value); return *this;}
 

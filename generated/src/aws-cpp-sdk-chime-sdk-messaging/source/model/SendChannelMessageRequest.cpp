@@ -21,13 +21,14 @@ SendChannelMessageRequest::SendChannelMessageRequest() :
     m_persistence(ChannelMessagePersistenceType::NOT_SET),
     m_persistenceHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_chimeBearerHasBeenSet(false),
     m_pushNotificationHasBeenSet(false),
     m_messageAttributesHasBeenSet(false),
     m_subChannelIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_targetHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,17 @@ Aws::String SendChannelMessageRequest::SerializePayload() const
   if(m_contentTypeHasBeenSet)
   {
    payload.WithString("ContentType", m_contentType);
+
+  }
+
+  if(m_targetHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> targetJsonList(m_target.size());
+   for(unsigned targetIndex = 0; targetIndex < targetJsonList.GetLength(); ++targetIndex)
+   {
+     targetJsonList[targetIndex].AsObject(m_target[targetIndex].Jsonize());
+   }
+   payload.WithArray("Target", std::move(targetJsonList));
 
   }
 

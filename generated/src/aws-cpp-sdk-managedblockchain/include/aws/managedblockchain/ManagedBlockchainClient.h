@@ -36,6 +36,9 @@ namespace ManagedBlockchain
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef ManagedBlockchainClientConfiguration ClientConfigurationType;
+      typedef ManagedBlockchainEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -85,9 +88,9 @@ namespace ManagedBlockchain
         virtual ~ManagedBlockchainClient();
 
         /**
-         * <p>Creates a new accessor for use with Managed Blockchain Ethereum nodes. An
-         * accessor contains information required for token based access to your Ethereum
-         * nodes.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new accessor for use with Amazon Managed Blockchain service that
+         * supports token based access. The accessor contains information required for
+         * token based access.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor">AWS
          * API Reference</a></p>
          */

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lexv2-models/model/WaitAndContinueSpecification.h>
 #include <aws/lexv2-models/model/SlotCaptureSetting.h>
+#include <aws/lexv2-models/model/SlotResolutionSetting.h>
 #include <aws/lexv2-models/model/SampleUtterance.h>
 #include <utility>
 
@@ -30,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the elicitation setting details for constituent sub slots of a
-   * composite slot.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the elicitation setting details eliciting a slot.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotValueElicitationSetting">AWS
    * API Reference</a></p>
    */
@@ -269,6 +270,43 @@ namespace Model
      */
     inline SlotValueElicitationSetting& WithSlotCaptureSetting(SlotCaptureSetting&& value) { SetSlotCaptureSetting(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object containing information about whether assisted slot resolution is
+     * turned on for the slot or not.</p>
+     */
+    inline const SlotResolutionSetting& GetSlotResolutionSetting() const{ return m_slotResolutionSetting; }
+
+    /**
+     * <p>An object containing information about whether assisted slot resolution is
+     * turned on for the slot or not.</p>
+     */
+    inline bool SlotResolutionSettingHasBeenSet() const { return m_slotResolutionSettingHasBeenSet; }
+
+    /**
+     * <p>An object containing information about whether assisted slot resolution is
+     * turned on for the slot or not.</p>
+     */
+    inline void SetSlotResolutionSetting(const SlotResolutionSetting& value) { m_slotResolutionSettingHasBeenSet = true; m_slotResolutionSetting = value; }
+
+    /**
+     * <p>An object containing information about whether assisted slot resolution is
+     * turned on for the slot or not.</p>
+     */
+    inline void SetSlotResolutionSetting(SlotResolutionSetting&& value) { m_slotResolutionSettingHasBeenSet = true; m_slotResolutionSetting = std::move(value); }
+
+    /**
+     * <p>An object containing information about whether assisted slot resolution is
+     * turned on for the slot or not.</p>
+     */
+    inline SlotValueElicitationSetting& WithSlotResolutionSetting(const SlotResolutionSetting& value) { SetSlotResolutionSetting(value); return *this;}
+
+    /**
+     * <p>An object containing information about whether assisted slot resolution is
+     * turned on for the slot or not.</p>
+     */
+    inline SlotValueElicitationSetting& WithSlotResolutionSetting(SlotResolutionSetting&& value) { SetSlotResolutionSetting(std::move(value)); return *this;}
+
   private:
 
     SlotDefaultValueSpecification m_defaultValueSpecification;
@@ -288,6 +326,9 @@ namespace Model
 
     SlotCaptureSetting m_slotCaptureSetting;
     bool m_slotCaptureSettingHasBeenSet = false;
+
+    SlotResolutionSetting m_slotResolutionSetting;
+    bool m_slotResolutionSettingHasBeenSet = false;
   };
 
 } // namespace Model

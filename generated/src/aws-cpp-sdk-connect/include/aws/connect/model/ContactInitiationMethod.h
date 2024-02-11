@@ -23,7 +23,8 @@ namespace Model
     CALLBACK,
     API,
     DISCONNECT,
-    MONITOR
+    MONITOR,
+    EXTERNAL_OUTBOUND
   };
 
 namespace ContactInitiationMethodMapper

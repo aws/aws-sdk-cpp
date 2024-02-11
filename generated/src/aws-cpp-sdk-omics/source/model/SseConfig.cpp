@@ -19,34 +19,34 @@ namespace Model
 {
 
 SseConfig::SseConfig() : 
-    m_keyArnHasBeenSet(false),
     m_type(EncryptionType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_keyArnHasBeenSet(false)
 {
 }
 
 SseConfig::SseConfig(JsonView jsonValue) : 
-    m_keyArnHasBeenSet(false),
     m_type(EncryptionType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_keyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 SseConfig& SseConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("keyArn"))
-  {
-    m_keyArn = jsonValue.GetString("keyArn");
-
-    m_keyArnHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("keyArn"))
+  {
+    m_keyArn = jsonValue.GetString("keyArn");
+
+    m_keyArnHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +56,15 @@ JsonValue SseConfig::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", EncryptionTypeMapper::GetNameForEncryptionType(m_type));
+  }
+
   if(m_keyArnHasBeenSet)
   {
    payload.WithString("keyArn", m_keyArn);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", EncryptionTypeMapper::GetNameForEncryptionType(m_type));
   }
 
   return payload;

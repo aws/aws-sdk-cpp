@@ -18,7 +18,9 @@ GetContentModerationRequest::GetContentModerationRequest() :
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_sortBy(ContentModerationSortBy::NOT_SET),
-    m_sortByHasBeenSet(false)
+    m_sortByHasBeenSet(false),
+    m_aggregateBy(ContentModerationAggregateBy::NOT_SET),
+    m_aggregateByHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,11 @@ Aws::String GetContentModerationRequest::SerializePayload() const
   if(m_sortByHasBeenSet)
   {
    payload.WithString("SortBy", ContentModerationSortByMapper::GetNameForContentModerationSortBy(m_sortBy));
+  }
+
+  if(m_aggregateByHasBeenSet)
+  {
+   payload.WithString("AggregateBy", ContentModerationAggregateByMapper::GetNameForContentModerationAggregateBy(m_aggregateBy));
   }
 
   return payload.View().WriteReadable();

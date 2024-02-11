@@ -78,51 +78,51 @@ namespace Model
 
 
     /**
-     * <p> The level of confidence that Comprehend Medical; has that the segment of
-     * text is correctly recognized as an attribute. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has that the segment
+     * of text is correctly recognized as an attribute. </p>
      */
     inline double GetScore() const{ return m_score; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical; has that the segment of
-     * text is correctly recognized as an attribute. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has that the segment
+     * of text is correctly recognized as an attribute. </p>
      */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical; has that the segment of
-     * text is correctly recognized as an attribute. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has that the segment
+     * of text is correctly recognized as an attribute. </p>
      */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical; has that the segment of
-     * text is correctly recognized as an attribute. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has that the segment
+     * of text is correctly recognized as an attribute. </p>
      */
     inline Attribute& WithScore(double value) { SetScore(value); return *this;}
 
 
     /**
-     * <p> The level of confidence that Comprehend Medical; has that this attribute is
-     * correctly related to this entity. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has that this
+     * attribute is correctly related to this entity. </p>
      */
     inline double GetRelationshipScore() const{ return m_relationshipScore; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical; has that this attribute is
-     * correctly related to this entity. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has that this
+     * attribute is correctly related to this entity. </p>
      */
     inline bool RelationshipScoreHasBeenSet() const { return m_relationshipScoreHasBeenSet; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical; has that this attribute is
-     * correctly related to this entity. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has that this
+     * attribute is correctly related to this entity. </p>
      */
     inline void SetRelationshipScore(double value) { m_relationshipScoreHasBeenSet = true; m_relationshipScore = value; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical; has that this attribute is
-     * correctly related to this entity. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has that this
+     * attribute is correctly related to this entity. </p>
      */
     inline Attribute& WithRelationshipScore(double value) { SetRelationshipScore(value); return *this;}
 

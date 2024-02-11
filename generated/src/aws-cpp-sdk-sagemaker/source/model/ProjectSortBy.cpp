@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProjectSortBy::NOT_SET:
+            return {};
           case ProjectSortBy::Name:
             return "Name";
           case ProjectSortBy::CreationTime:

@@ -7,8 +7,8 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ivs/IVSErrors.h>
 #include <aws/ivs/model/ConflictException.h>
-#include <aws/ivs/model/ServiceQuotaExceededException.h>
 #include <aws/ivs/model/ThrottlingException.h>
+#include <aws/ivs/model/ServiceQuotaExceededException.h>
 #include <aws/ivs/model/StreamUnavailable.h>
 #include <aws/ivs/model/ResourceNotFoundException.h>
 #include <aws/ivs/model/InternalServerException.h>
@@ -32,16 +32,16 @@ template<> AWS_IVS_API ConflictException IVSError::GetModeledError()
   return ConflictException(this->GetJsonPayload().View());
 }
 
-template<> AWS_IVS_API ServiceQuotaExceededException IVSError::GetModeledError()
-{
-  assert(this->GetErrorType() == IVSErrors::SERVICE_QUOTA_EXCEEDED);
-  return ServiceQuotaExceededException(this->GetJsonPayload().View());
-}
-
 template<> AWS_IVS_API ThrottlingException IVSError::GetModeledError()
 {
   assert(this->GetErrorType() == IVSErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_IVS_API ServiceQuotaExceededException IVSError::GetModeledError()
+{
+  assert(this->GetErrorType() == IVSErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
 template<> AWS_IVS_API StreamUnavailable IVSError::GetModeledError()
@@ -103,27 +103,27 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STREAM_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::STREAM_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::STREAM_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PENDING_VERIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::PENDING_VERIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::PENDING_VERIFICATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CHANNEL_NOT_BROADCASTING_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::CHANNEL_NOT_BROADCASTING), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::CHANNEL_NOT_BROADCASTING), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

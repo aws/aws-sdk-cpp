@@ -143,7 +143,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
@@ -163,7 +163,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
@@ -183,7 +183,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
@@ -203,7 +203,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
@@ -223,7 +223,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline ListedServer& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
@@ -243,7 +243,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline ListedServer& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}

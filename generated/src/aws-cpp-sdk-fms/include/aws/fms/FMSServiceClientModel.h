@@ -23,6 +23,7 @@
 #include <aws/fms/model/BatchDisassociateResourceResult.h>
 #include <aws/fms/model/DisassociateThirdPartyFirewallResult.h>
 #include <aws/fms/model/GetAdminAccountResult.h>
+#include <aws/fms/model/GetAdminScopeResult.h>
 #include <aws/fms/model/GetAppsListResult.h>
 #include <aws/fms/model/GetComplianceDetailResult.h>
 #include <aws/fms/model/GetNotificationChannelResult.h>
@@ -32,6 +33,8 @@
 #include <aws/fms/model/GetResourceSetResult.h>
 #include <aws/fms/model/GetThirdPartyFirewallAssociationStatusResult.h>
 #include <aws/fms/model/GetViolationDetailsResult.h>
+#include <aws/fms/model/ListAdminAccountsForOrganizationResult.h>
+#include <aws/fms/model/ListAdminsManagingAccountResult.h>
 #include <aws/fms/model/ListAppsListsResult.h>
 #include <aws/fms/model/ListComplianceStatusResult.h>
 #include <aws/fms/model/ListDiscoveredResourcesResult.h>
@@ -101,6 +104,7 @@ namespace Aws
       class DisassociateAdminAccountRequest;
       class DisassociateThirdPartyFirewallRequest;
       class GetAdminAccountRequest;
+      class GetAdminScopeRequest;
       class GetAppsListRequest;
       class GetComplianceDetailRequest;
       class GetNotificationChannelRequest;
@@ -110,6 +114,8 @@ namespace Aws
       class GetResourceSetRequest;
       class GetThirdPartyFirewallAssociationStatusRequest;
       class GetViolationDetailsRequest;
+      class ListAdminAccountsForOrganizationRequest;
+      class ListAdminsManagingAccountRequest;
       class ListAppsListsRequest;
       class ListComplianceStatusRequest;
       class ListDiscoveredResourcesRequest;
@@ -120,6 +126,7 @@ namespace Aws
       class ListResourceSetsRequest;
       class ListTagsForResourceRequest;
       class ListThirdPartyFirewallFirewallPoliciesRequest;
+      class PutAdminAccountRequest;
       class PutAppsListRequest;
       class PutNotificationChannelRequest;
       class PutPolicyRequest;
@@ -142,6 +149,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> DisassociateAdminAccountOutcome;
       typedef Aws::Utils::Outcome<DisassociateThirdPartyFirewallResult, FMSError> DisassociateThirdPartyFirewallOutcome;
       typedef Aws::Utils::Outcome<GetAdminAccountResult, FMSError> GetAdminAccountOutcome;
+      typedef Aws::Utils::Outcome<GetAdminScopeResult, FMSError> GetAdminScopeOutcome;
       typedef Aws::Utils::Outcome<GetAppsListResult, FMSError> GetAppsListOutcome;
       typedef Aws::Utils::Outcome<GetComplianceDetailResult, FMSError> GetComplianceDetailOutcome;
       typedef Aws::Utils::Outcome<GetNotificationChannelResult, FMSError> GetNotificationChannelOutcome;
@@ -151,6 +159,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetResourceSetResult, FMSError> GetResourceSetOutcome;
       typedef Aws::Utils::Outcome<GetThirdPartyFirewallAssociationStatusResult, FMSError> GetThirdPartyFirewallAssociationStatusOutcome;
       typedef Aws::Utils::Outcome<GetViolationDetailsResult, FMSError> GetViolationDetailsOutcome;
+      typedef Aws::Utils::Outcome<ListAdminAccountsForOrganizationResult, FMSError> ListAdminAccountsForOrganizationOutcome;
+      typedef Aws::Utils::Outcome<ListAdminsManagingAccountResult, FMSError> ListAdminsManagingAccountOutcome;
       typedef Aws::Utils::Outcome<ListAppsListsResult, FMSError> ListAppsListsOutcome;
       typedef Aws::Utils::Outcome<ListComplianceStatusResult, FMSError> ListComplianceStatusOutcome;
       typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, FMSError> ListDiscoveredResourcesOutcome;
@@ -161,6 +171,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListResourceSetsResult, FMSError> ListResourceSetsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, FMSError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListThirdPartyFirewallFirewallPoliciesResult, FMSError> ListThirdPartyFirewallFirewallPoliciesOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> PutAdminAccountOutcome;
       typedef Aws::Utils::Outcome<PutAppsListResult, FMSError> PutAppsListOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> PutNotificationChannelOutcome;
       typedef Aws::Utils::Outcome<PutPolicyResult, FMSError> PutPolicyOutcome;
@@ -183,6 +194,7 @@ namespace Aws
       typedef std::future<DisassociateAdminAccountOutcome> DisassociateAdminAccountOutcomeCallable;
       typedef std::future<DisassociateThirdPartyFirewallOutcome> DisassociateThirdPartyFirewallOutcomeCallable;
       typedef std::future<GetAdminAccountOutcome> GetAdminAccountOutcomeCallable;
+      typedef std::future<GetAdminScopeOutcome> GetAdminScopeOutcomeCallable;
       typedef std::future<GetAppsListOutcome> GetAppsListOutcomeCallable;
       typedef std::future<GetComplianceDetailOutcome> GetComplianceDetailOutcomeCallable;
       typedef std::future<GetNotificationChannelOutcome> GetNotificationChannelOutcomeCallable;
@@ -192,6 +204,8 @@ namespace Aws
       typedef std::future<GetResourceSetOutcome> GetResourceSetOutcomeCallable;
       typedef std::future<GetThirdPartyFirewallAssociationStatusOutcome> GetThirdPartyFirewallAssociationStatusOutcomeCallable;
       typedef std::future<GetViolationDetailsOutcome> GetViolationDetailsOutcomeCallable;
+      typedef std::future<ListAdminAccountsForOrganizationOutcome> ListAdminAccountsForOrganizationOutcomeCallable;
+      typedef std::future<ListAdminsManagingAccountOutcome> ListAdminsManagingAccountOutcomeCallable;
       typedef std::future<ListAppsListsOutcome> ListAppsListsOutcomeCallable;
       typedef std::future<ListComplianceStatusOutcome> ListComplianceStatusOutcomeCallable;
       typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
@@ -202,6 +216,7 @@ namespace Aws
       typedef std::future<ListResourceSetsOutcome> ListResourceSetsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListThirdPartyFirewallFirewallPoliciesOutcome> ListThirdPartyFirewallFirewallPoliciesOutcomeCallable;
+      typedef std::future<PutAdminAccountOutcome> PutAdminAccountOutcomeCallable;
       typedef std::future<PutAppsListOutcome> PutAppsListOutcomeCallable;
       typedef std::future<PutNotificationChannelOutcome> PutNotificationChannelOutcomeCallable;
       typedef std::future<PutPolicyOutcome> PutPolicyOutcomeCallable;
@@ -227,6 +242,7 @@ namespace Aws
     typedef std::function<void(const FMSClient*, const Model::DisassociateAdminAccountRequest&, const Model::DisassociateAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAdminAccountResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::DisassociateThirdPartyFirewallRequest&, const Model::DisassociateThirdPartyFirewallOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateThirdPartyFirewallResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetAdminAccountRequest&, const Model::GetAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdminAccountResponseReceivedHandler;
+    typedef std::function<void(const FMSClient*, const Model::GetAdminScopeRequest&, const Model::GetAdminScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdminScopeResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetAppsListRequest&, const Model::GetAppsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppsListResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetComplianceDetailRequest&, const Model::GetComplianceDetailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetNotificationChannelRequest&, const Model::GetNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNotificationChannelResponseReceivedHandler;
@@ -236,6 +252,8 @@ namespace Aws
     typedef std::function<void(const FMSClient*, const Model::GetResourceSetRequest&, const Model::GetResourceSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceSetResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetThirdPartyFirewallAssociationStatusRequest&, const Model::GetThirdPartyFirewallAssociationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThirdPartyFirewallAssociationStatusResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetViolationDetailsRequest&, const Model::GetViolationDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetViolationDetailsResponseReceivedHandler;
+    typedef std::function<void(const FMSClient*, const Model::ListAdminAccountsForOrganizationRequest&, const Model::ListAdminAccountsForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAdminAccountsForOrganizationResponseReceivedHandler;
+    typedef std::function<void(const FMSClient*, const Model::ListAdminsManagingAccountRequest&, const Model::ListAdminsManagingAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAdminsManagingAccountResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListAppsListsRequest&, const Model::ListAppsListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppsListsResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListComplianceStatusRequest&, const Model::ListComplianceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComplianceStatusResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListDiscoveredResourcesRequest&, const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoveredResourcesResponseReceivedHandler;
@@ -246,6 +264,7 @@ namespace Aws
     typedef std::function<void(const FMSClient*, const Model::ListResourceSetsRequest&, const Model::ListResourceSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceSetsResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListThirdPartyFirewallFirewallPoliciesRequest&, const Model::ListThirdPartyFirewallFirewallPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler;
+    typedef std::function<void(const FMSClient*, const Model::PutAdminAccountRequest&, const Model::PutAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAdminAccountResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::PutAppsListRequest&, const Model::PutAppsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAppsListResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::PutNotificationChannelRequest&, const Model::PutNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutNotificationChannelResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::PutPolicyRequest&, const Model::PutPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPolicyResponseReceivedHandler;

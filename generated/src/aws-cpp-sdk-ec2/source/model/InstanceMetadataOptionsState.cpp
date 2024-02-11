@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceMetadataOptionsState::NOT_SET:
+            return {};
           case InstanceMetadataOptionsState::pending:
             return "pending";
           case InstanceMetadataOptionsState::applied:

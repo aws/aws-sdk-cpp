@@ -60,7 +60,7 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
+     * <code>enable_case_sensitive_identifier</code>,
      * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
+     * <code>enable_case_sensitive_identifier</code>,
      * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
+     * <code>enable_case_sensitive_identifier</code>,
      * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
+     * <code>enable_case_sensitive_identifier</code>,
      * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
+     * <code>enable_case_sensitive_identifier</code>,
      * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
@@ -125,7 +125,7 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
+     * <code>enable_case_sensitive_identifier</code>,
      * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
@@ -138,7 +138,7 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
+     * <code>enable_case_sensitive_identifier</code>,
      * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
@@ -151,7 +151,7 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
+     * <code>enable_case_sensitive_identifier</code>,
      * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
@@ -189,6 +189,31 @@ namespace Model
      * your VPC.</p>
      */
     inline UpdateWorkgroupRequest& WithEnhancedVpcRouting(bool value) { SetEnhancedVpcRouting(value); return *this;}
+
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
+
+    /**
+     * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
+     * queries. The max capacity is specified in RPUs.</p>
+     */
+    inline UpdateWorkgroupRequest& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
 
 
     /**
@@ -391,6 +416,9 @@ namespace Model
 
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet = false;
+
+    int m_maxCapacity;
+    bool m_maxCapacityHasBeenSet = false;
 
     int m_port;
     bool m_portHasBeenSet = false;

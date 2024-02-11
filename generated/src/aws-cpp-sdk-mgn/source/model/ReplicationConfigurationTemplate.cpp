@@ -42,6 +42,8 @@ ReplicationConfigurationTemplate::ReplicationConfigurationTemplate() :
     m_tagsHasBeenSet(false),
     m_useDedicatedReplicationServer(false),
     m_useDedicatedReplicationServerHasBeenSet(false),
+    m_useFipsEndpoint(false),
+    m_useFipsEndpointHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
 }
@@ -69,6 +71,8 @@ ReplicationConfigurationTemplate::ReplicationConfigurationTemplate(JsonView json
     m_tagsHasBeenSet(false),
     m_useDedicatedReplicationServer(false),
     m_useDedicatedReplicationServerHasBeenSet(false),
+    m_useFipsEndpoint(false),
+    m_useFipsEndpointHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -190,6 +194,13 @@ ReplicationConfigurationTemplate& ReplicationConfigurationTemplate::operator =(J
     m_useDedicatedReplicationServerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("useFipsEndpoint"))
+  {
+    m_useFipsEndpoint = jsonValue.GetBool("useFipsEndpoint");
+
+    m_useFipsEndpointHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -296,6 +307,12 @@ JsonValue ReplicationConfigurationTemplate::Jsonize() const
   if(m_useDedicatedReplicationServerHasBeenSet)
   {
    payload.WithBool("useDedicatedReplicationServer", m_useDedicatedReplicationServer);
+
+  }
+
+  if(m_useFipsEndpointHasBeenSet)
+  {
+   payload.WithBool("useFipsEndpoint", m_useFipsEndpoint);
 
   }
 

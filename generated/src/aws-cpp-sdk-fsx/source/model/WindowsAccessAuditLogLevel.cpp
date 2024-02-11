@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WindowsAccessAuditLogLevel::NOT_SET:
+            return {};
           case WindowsAccessAuditLogLevel::DISABLED:
             return "DISABLED";
           case WindowsAccessAuditLogLevel::SUCCESS_ONLY:

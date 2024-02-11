@@ -25,6 +25,7 @@ ContainerDefinition::ContainerDefinition() :
     m_mode(ContainerMode::NOT_SET),
     m_modeHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
+    m_modelDataSourceHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_modelPackageNameHasBeenSet(false),
     m_inferenceSpecificationNameHasBeenSet(false),
@@ -39,6 +40,7 @@ ContainerDefinition::ContainerDefinition(JsonView jsonValue) :
     m_mode(ContainerMode::NOT_SET),
     m_modeHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
+    m_modelDataSourceHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_modelPackageNameHasBeenSet(false),
     m_inferenceSpecificationNameHasBeenSet(false),
@@ -82,6 +84,13 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_modelDataUrl = jsonValue.GetString("ModelDataUrl");
 
     m_modelDataUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModelDataSource"))
+  {
+    m_modelDataSource = jsonValue.GetObject("ModelDataSource");
+
+    m_modelDataSourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Environment"))
@@ -148,6 +157,12 @@ JsonValue ContainerDefinition::Jsonize() const
   if(m_modelDataUrlHasBeenSet)
   {
    payload.WithString("ModelDataUrl", m_modelDataUrl);
+
+  }
+
+  if(m_modelDataSourceHasBeenSet)
+  {
+   payload.WithObject("ModelDataSource", m_modelDataSource.Jsonize());
 
   }
 

@@ -20,6 +20,7 @@ namespace Model
 
 Place::Place() : 
     m_addressNumberHasBeenSet(false),
+    m_categoriesHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_geometryHasBeenSet(false),
     m_interpolated(false),
@@ -30,7 +31,9 @@ Place::Place() :
     m_postalCodeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_streetHasBeenSet(false),
+    m_subMunicipalityHasBeenSet(false),
     m_subRegionHasBeenSet(false),
+    m_supplementalCategoriesHasBeenSet(false),
     m_timeZoneHasBeenSet(false),
     m_unitNumberHasBeenSet(false),
     m_unitTypeHasBeenSet(false)
@@ -39,6 +42,7 @@ Place::Place() :
 
 Place::Place(JsonView jsonValue) : 
     m_addressNumberHasBeenSet(false),
+    m_categoriesHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_geometryHasBeenSet(false),
     m_interpolated(false),
@@ -49,7 +53,9 @@ Place::Place(JsonView jsonValue) :
     m_postalCodeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_streetHasBeenSet(false),
+    m_subMunicipalityHasBeenSet(false),
     m_subRegionHasBeenSet(false),
+    m_supplementalCategoriesHasBeenSet(false),
     m_timeZoneHasBeenSet(false),
     m_unitNumberHasBeenSet(false),
     m_unitTypeHasBeenSet(false)
@@ -64,6 +70,16 @@ Place& Place::operator =(JsonView jsonValue)
     m_addressNumber = jsonValue.GetString("AddressNumber");
 
     m_addressNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Categories"))
+  {
+    Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
+    for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
+    {
+      m_categories.push_back(categoriesJsonList[categoriesIndex].AsString());
+    }
+    m_categoriesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Country"))
@@ -129,11 +145,28 @@ Place& Place::operator =(JsonView jsonValue)
     m_streetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubMunicipality"))
+  {
+    m_subMunicipality = jsonValue.GetString("SubMunicipality");
+
+    m_subMunicipalityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SubRegion"))
   {
     m_subRegion = jsonValue.GetString("SubRegion");
 
     m_subRegionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SupplementalCategories"))
+  {
+    Aws::Utils::Array<JsonView> supplementalCategoriesJsonList = jsonValue.GetArray("SupplementalCategories");
+    for(unsigned supplementalCategoriesIndex = 0; supplementalCategoriesIndex < supplementalCategoriesJsonList.GetLength(); ++supplementalCategoriesIndex)
+    {
+      m_supplementalCategories.push_back(supplementalCategoriesJsonList[supplementalCategoriesIndex].AsString());
+    }
+    m_supplementalCategoriesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TimeZone"))
@@ -167,6 +200,17 @@ JsonValue Place::Jsonize() const
   if(m_addressNumberHasBeenSet)
   {
    payload.WithString("AddressNumber", m_addressNumber);
+
+  }
+
+  if(m_categoriesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> categoriesJsonList(m_categories.size());
+   for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
+   {
+     categoriesJsonList[categoriesIndex].AsString(m_categories[categoriesIndex]);
+   }
+   payload.WithArray("Categories", std::move(categoriesJsonList));
 
   }
 
@@ -224,9 +268,26 @@ JsonValue Place::Jsonize() const
 
   }
 
+  if(m_subMunicipalityHasBeenSet)
+  {
+   payload.WithString("SubMunicipality", m_subMunicipality);
+
+  }
+
   if(m_subRegionHasBeenSet)
   {
    payload.WithString("SubRegion", m_subRegion);
+
+  }
+
+  if(m_supplementalCategoriesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> supplementalCategoriesJsonList(m_supplementalCategories.size());
+   for(unsigned supplementalCategoriesIndex = 0; supplementalCategoriesIndex < supplementalCategoriesJsonList.GetLength(); ++supplementalCategoriesIndex)
+   {
+     supplementalCategoriesJsonList[supplementalCategoriesIndex].AsString(m_supplementalCategories[supplementalCategoriesIndex]);
+   }
+   payload.WithArray("SupplementalCategories", std::move(supplementalCategoriesJsonList));
 
   }
 

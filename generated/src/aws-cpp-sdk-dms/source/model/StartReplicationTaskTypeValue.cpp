@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StartReplicationTaskTypeValue::NOT_SET:
+            return {};
           case StartReplicationTaskTypeValue::start_replication:
             return "start-replication";
           case StartReplicationTaskTypeValue::resume_processing:

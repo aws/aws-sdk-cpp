@@ -237,37 +237,58 @@ namespace Model
 
 
     /**
-     * <p>The layer's compatible runtimes.</p>
+     * <p>The layer's compatible runtimes.</p> <p>The following list includes
+     * deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline const Aws::Vector<Runtime>& GetCompatibleRuntimes() const{ return m_compatibleRuntimes; }
 
     /**
-     * <p>The layer's compatible runtimes.</p>
+     * <p>The layer's compatible runtimes.</p> <p>The following list includes
+     * deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline void SetCompatibleRuntimes(const Aws::Vector<Runtime>& value) { m_compatibleRuntimes = value; }
 
     /**
-     * <p>The layer's compatible runtimes.</p>
+     * <p>The layer's compatible runtimes.</p> <p>The following list includes
+     * deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline void SetCompatibleRuntimes(Aws::Vector<Runtime>&& value) { m_compatibleRuntimes = std::move(value); }
 
     /**
-     * <p>The layer's compatible runtimes.</p>
+     * <p>The layer's compatible runtimes.</p> <p>The following list includes
+     * deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline GetLayerVersionByArnResult& WithCompatibleRuntimes(const Aws::Vector<Runtime>& value) { SetCompatibleRuntimes(value); return *this;}
 
     /**
-     * <p>The layer's compatible runtimes.</p>
+     * <p>The layer's compatible runtimes.</p> <p>The following list includes
+     * deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline GetLayerVersionByArnResult& WithCompatibleRuntimes(Aws::Vector<Runtime>&& value) { SetCompatibleRuntimes(std::move(value)); return *this;}
 
     /**
-     * <p>The layer's compatible runtimes.</p>
+     * <p>The layer's compatible runtimes.</p> <p>The following list includes
+     * deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline GetLayerVersionByArnResult& AddCompatibleRuntimes(const Runtime& value) { m_compatibleRuntimes.push_back(value); return *this; }
 
     /**
-     * <p>The layer's compatible runtimes.</p>
+     * <p>The layer's compatible runtimes.</p> <p>The following list includes
+     * deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline GetLayerVersionByArnResult& AddCompatibleRuntimes(Runtime&& value) { m_compatibleRuntimes.push_back(std::move(value)); return *this; }
 

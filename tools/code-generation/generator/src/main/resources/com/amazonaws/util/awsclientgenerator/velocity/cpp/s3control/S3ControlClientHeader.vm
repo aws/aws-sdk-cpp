@@ -54,6 +54,7 @@ namespace ${metadata.namespace}
         static const char* SERVICE_NAME;
         static const char* ALLOCATION_TAG;
 
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConfigTypeDeclarations.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 

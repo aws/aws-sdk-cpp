@@ -31,8 +31,12 @@ namespace Model
    * <p>The overrides that are sent to a container. An empty container override can
    * be passed in. An example of an empty container override is
    * <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is
-   * specified, the <code>name</code> parameter must be included.</p><p><h3>See
-   * Also:</h3>   <a
+   * specified, the <code>name</code> parameter must be included.</p> <p>You can use
+   * Secrets Manager or Amazon Web Services Systems Manager Parameter Store to store
+   * the sensitive data. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/secrets-envvar.html">Retrieve
+   * secrets through environment variables</a> in the Amazon ECS Developer
+   * Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerOverride">AWS
    * API Reference</a></p>
    */

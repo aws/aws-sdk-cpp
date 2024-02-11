@@ -21,7 +21,6 @@ namespace Aws
       {
 
         static const int ManagedInstance_HASH = HashingUtils::HashString("ManagedInstance");
-        static const int Document_HASH = HashingUtils::HashString("Document");
         static const int EC2Instance_HASH = HashingUtils::HashString("EC2Instance");
 
 
@@ -31,10 +30,6 @@ namespace Aws
           if (hashCode == ManagedInstance_HASH)
           {
             return ResourceType::ManagedInstance;
-          }
-          else if (hashCode == Document_HASH)
-          {
-            return ResourceType::Document;
           }
           else if (hashCode == EC2Instance_HASH)
           {
@@ -54,10 +49,10 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::ManagedInstance:
             return "ManagedInstance";
-          case ResourceType::Document:
-            return "Document";
           case ResourceType::EC2Instance:
             return "EC2Instance";
           default:

@@ -5,7 +5,6 @@
 
 #pragma once
 #include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
-#include <aws/sagemaker-geospatial/model/EojDataSourceConfigInput.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker-geospatial/model/RasterDataCollectionQueryOutput.h>
 #include <utility>
@@ -38,37 +37,6 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API InputConfigOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API InputConfigOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The location of the input data.</p>
-     */
-    inline const EojDataSourceConfigInput& GetDataSourceConfig() const{ return m_dataSourceConfig; }
-
-    /**
-     * <p>The location of the input data.</p>
-     */
-    inline bool DataSourceConfigHasBeenSet() const { return m_dataSourceConfigHasBeenSet; }
-
-    /**
-     * <p>The location of the input data.</p>
-     */
-    inline void SetDataSourceConfig(const EojDataSourceConfigInput& value) { m_dataSourceConfigHasBeenSet = true; m_dataSourceConfig = value; }
-
-    /**
-     * <p>The location of the input data.</p>
-     */
-    inline void SetDataSourceConfig(EojDataSourceConfigInput&& value) { m_dataSourceConfigHasBeenSet = true; m_dataSourceConfig = std::move(value); }
-
-    /**
-     * <p>The location of the input data.</p>
-     */
-    inline InputConfigOutput& WithDataSourceConfig(const EojDataSourceConfigInput& value) { SetDataSourceConfig(value); return *this;}
-
-    /**
-     * <p>The location of the input data.</p>
-     */
-    inline InputConfigOutput& WithDataSourceConfig(EojDataSourceConfigInput&& value) { SetDataSourceConfig(std::move(value)); return *this;}
 
 
     /**
@@ -155,9 +123,6 @@ namespace Model
     inline InputConfigOutput& WithRasterDataCollectionQuery(RasterDataCollectionQueryOutput&& value) { SetRasterDataCollectionQuery(std::move(value)); return *this;}
 
   private:
-
-    EojDataSourceConfigInput m_dataSourceConfig;
-    bool m_dataSourceConfigHasBeenSet = false;
 
     Aws::String m_previousEarthObservationJobArn;
     bool m_previousEarthObservationJobArnHasBeenSet = false;

@@ -98,6 +98,7 @@ namespace Aws
       class DescribeAssessmentRunsRequest;
       class DescribeAssessmentTargetsRequest;
       class DescribeAssessmentTemplatesRequest;
+      class DescribeCrossAccountAccessRoleRequest;
       class DescribeExclusionsRequest;
       class DescribeFindingsRequest;
       class DescribeResourceGroupsRequest;
@@ -220,7 +221,7 @@ namespace Aws
     typedef std::function<void(const InspectorClient*, const Model::DescribeAssessmentRunsRequest&, const Model::DescribeAssessmentRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssessmentRunsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DescribeAssessmentTargetsRequest&, const Model::DescribeAssessmentTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssessmentTargetsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DescribeAssessmentTemplatesRequest&, const Model::DescribeAssessmentTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssessmentTemplatesResponseReceivedHandler;
-    typedef std::function<void(const InspectorClient*, const Model::DescribeCrossAccountAccessRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCrossAccountAccessRoleResponseReceivedHandler;
+    typedef std::function<void(const InspectorClient*, const Model::DescribeCrossAccountAccessRoleRequest&, const Model::DescribeCrossAccountAccessRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCrossAccountAccessRoleResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DescribeExclusionsRequest&, const Model::DescribeExclusionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExclusionsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DescribeFindingsRequest&, const Model::DescribeFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFindingsResponseReceivedHandler;
     typedef std::function<void(const InspectorClient*, const Model::DescribeResourceGroupsRequest&, const Model::DescribeResourceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourceGroupsResponseReceivedHandler;

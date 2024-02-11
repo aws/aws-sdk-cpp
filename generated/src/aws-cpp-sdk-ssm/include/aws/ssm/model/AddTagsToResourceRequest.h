@@ -107,7 +107,8 @@ namespace Model
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
-     * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
+     * resource. If you're tagging a shared document, you must use the full ARN of the
+     * document.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
      * for on-premises managed nodes. You must specify the name of the managed node in
      * the following format: <code>mi-<i>ID_number</i> </code>. For example,
@@ -130,7 +131,8 @@ namespace Model
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
-     * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
+     * resource. If you're tagging a shared document, you must use the full ARN of the
+     * document.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
      * for on-premises managed nodes. You must specify the name of the managed node in
      * the following format: <code>mi-<i>ID_number</i> </code>. For example,
@@ -153,7 +155,8 @@ namespace Model
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
-     * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
+     * resource. If you're tagging a shared document, you must use the full ARN of the
+     * document.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
      * for on-premises managed nodes. You must specify the name of the managed node in
      * the following format: <code>mi-<i>ID_number</i> </code>. For example,
@@ -176,7 +179,8 @@ namespace Model
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
-     * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
+     * resource. If you're tagging a shared document, you must use the full ARN of the
+     * document.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
      * for on-premises managed nodes. You must specify the name of the managed node in
      * the following format: <code>mi-<i>ID_number</i> </code>. For example,
@@ -199,7 +203,8 @@ namespace Model
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
-     * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
+     * resource. If you're tagging a shared document, you must use the full ARN of the
+     * document.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
      * for on-premises managed nodes. You must specify the name of the managed node in
      * the following format: <code>mi-<i>ID_number</i> </code>. For example,
@@ -222,7 +227,8 @@ namespace Model
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
-     * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
+     * resource. If you're tagging a shared document, you must use the full ARN of the
+     * document.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
      * for on-premises managed nodes. You must specify the name of the managed node in
      * the following format: <code>mi-<i>ID_number</i> </code>. For example,
@@ -245,7 +251,8 @@ namespace Model
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
-     * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
+     * resource. If you're tagging a shared document, you must use the full ARN of the
+     * document.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
      * for on-premises managed nodes. You must specify the name of the managed node in
      * the following format: <code>mi-<i>ID_number</i> </code>. For example,
@@ -268,7 +275,8 @@ namespace Model
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
-     * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
+     * resource. If you're tagging a shared document, you must use the full ARN of the
+     * document.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
      * for on-premises managed nodes. You must specify the name of the managed node in
      * the following format: <code>mi-<i>ID_number</i> </code>. For example,

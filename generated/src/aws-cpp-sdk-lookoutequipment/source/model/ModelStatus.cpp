@@ -23,6 +23,7 @@ namespace Aws
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_IN_PROGRESS");
 
 
         ModelStatus GetModelStatusForName(const Aws::String& name)
@@ -40,6 +41,10 @@ namespace Aws
           {
             return ModelStatus::FAILED;
           }
+          else if (hashCode == IMPORT_IN_PROGRESS_HASH)
+          {
+            return ModelStatus::IMPORT_IN_PROGRESS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelStatus::NOT_SET:
+            return {};
           case ModelStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case ModelStatus::SUCCESS:
             return "SUCCESS";
           case ModelStatus::FAILED:
             return "FAILED";
+          case ModelStatus::IMPORT_IN_PROGRESS:
+            return "IMPORT_IN_PROGRESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

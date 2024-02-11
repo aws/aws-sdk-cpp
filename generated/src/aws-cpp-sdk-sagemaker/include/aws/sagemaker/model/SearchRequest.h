@@ -10,6 +10,9 @@
 #include <aws/sagemaker/model/SearchExpression.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/SearchSortOrder.h>
+#include <aws/sagemaker/model/CrossAccountFilterOption.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/VisibilityConditions.h>
 #include <utility>
 
 namespace Aws
@@ -300,6 +303,134 @@ namespace Model
      */
     inline SearchRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p> A cross account filter option. When the value is <code>"CrossAccount"</code>
+     * the search results will only include resources made discoverable to you from
+     * other accounts. When the value is <code>"SameAccount"</code> or
+     * <code>null</code> the search results will only include resources from your
+     * account. Default is <code>null</code>. For more information on searching for
+     * resources made discoverable to your account, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum
+     * number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+     */
+    inline const CrossAccountFilterOption& GetCrossAccountFilterOption() const{ return m_crossAccountFilterOption; }
+
+    /**
+     * <p> A cross account filter option. When the value is <code>"CrossAccount"</code>
+     * the search results will only include resources made discoverable to you from
+     * other accounts. When the value is <code>"SameAccount"</code> or
+     * <code>null</code> the search results will only include resources from your
+     * account. Default is <code>null</code>. For more information on searching for
+     * resources made discoverable to your account, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum
+     * number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+     */
+    inline bool CrossAccountFilterOptionHasBeenSet() const { return m_crossAccountFilterOptionHasBeenSet; }
+
+    /**
+     * <p> A cross account filter option. When the value is <code>"CrossAccount"</code>
+     * the search results will only include resources made discoverable to you from
+     * other accounts. When the value is <code>"SameAccount"</code> or
+     * <code>null</code> the search results will only include resources from your
+     * account. Default is <code>null</code>. For more information on searching for
+     * resources made discoverable to your account, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum
+     * number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+     */
+    inline void SetCrossAccountFilterOption(const CrossAccountFilterOption& value) { m_crossAccountFilterOptionHasBeenSet = true; m_crossAccountFilterOption = value; }
+
+    /**
+     * <p> A cross account filter option. When the value is <code>"CrossAccount"</code>
+     * the search results will only include resources made discoverable to you from
+     * other accounts. When the value is <code>"SameAccount"</code> or
+     * <code>null</code> the search results will only include resources from your
+     * account. Default is <code>null</code>. For more information on searching for
+     * resources made discoverable to your account, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum
+     * number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+     */
+    inline void SetCrossAccountFilterOption(CrossAccountFilterOption&& value) { m_crossAccountFilterOptionHasBeenSet = true; m_crossAccountFilterOption = std::move(value); }
+
+    /**
+     * <p> A cross account filter option. When the value is <code>"CrossAccount"</code>
+     * the search results will only include resources made discoverable to you from
+     * other accounts. When the value is <code>"SameAccount"</code> or
+     * <code>null</code> the search results will only include resources from your
+     * account. Default is <code>null</code>. For more information on searching for
+     * resources made discoverable to your account, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum
+     * number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+     */
+    inline SearchRequest& WithCrossAccountFilterOption(const CrossAccountFilterOption& value) { SetCrossAccountFilterOption(value); return *this;}
+
+    /**
+     * <p> A cross account filter option. When the value is <code>"CrossAccount"</code>
+     * the search results will only include resources made discoverable to you from
+     * other accounts. When the value is <code>"SameAccount"</code> or
+     * <code>null</code> the search results will only include resources from your
+     * account. Default is <code>null</code>. For more information on searching for
+     * resources made discoverable to your account, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum
+     * number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+     */
+    inline SearchRequest& WithCrossAccountFilterOption(CrossAccountFilterOption&& value) { SetCrossAccountFilterOption(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Limits the results of your search request to the resources that you can
+     * access. </p>
+     */
+    inline const Aws::Vector<VisibilityConditions>& GetVisibilityConditions() const{ return m_visibilityConditions; }
+
+    /**
+     * <p> Limits the results of your search request to the resources that you can
+     * access. </p>
+     */
+    inline bool VisibilityConditionsHasBeenSet() const { return m_visibilityConditionsHasBeenSet; }
+
+    /**
+     * <p> Limits the results of your search request to the resources that you can
+     * access. </p>
+     */
+    inline void SetVisibilityConditions(const Aws::Vector<VisibilityConditions>& value) { m_visibilityConditionsHasBeenSet = true; m_visibilityConditions = value; }
+
+    /**
+     * <p> Limits the results of your search request to the resources that you can
+     * access. </p>
+     */
+    inline void SetVisibilityConditions(Aws::Vector<VisibilityConditions>&& value) { m_visibilityConditionsHasBeenSet = true; m_visibilityConditions = std::move(value); }
+
+    /**
+     * <p> Limits the results of your search request to the resources that you can
+     * access. </p>
+     */
+    inline SearchRequest& WithVisibilityConditions(const Aws::Vector<VisibilityConditions>& value) { SetVisibilityConditions(value); return *this;}
+
+    /**
+     * <p> Limits the results of your search request to the resources that you can
+     * access. </p>
+     */
+    inline SearchRequest& WithVisibilityConditions(Aws::Vector<VisibilityConditions>&& value) { SetVisibilityConditions(std::move(value)); return *this;}
+
+    /**
+     * <p> Limits the results of your search request to the resources that you can
+     * access. </p>
+     */
+    inline SearchRequest& AddVisibilityConditions(const VisibilityConditions& value) { m_visibilityConditionsHasBeenSet = true; m_visibilityConditions.push_back(value); return *this; }
+
+    /**
+     * <p> Limits the results of your search request to the resources that you can
+     * access. </p>
+     */
+    inline SearchRequest& AddVisibilityConditions(VisibilityConditions&& value) { m_visibilityConditionsHasBeenSet = true; m_visibilityConditions.push_back(std::move(value)); return *this; }
+
   private:
 
     ResourceType m_resource;
@@ -319,6 +450,12 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    CrossAccountFilterOption m_crossAccountFilterOption;
+    bool m_crossAccountFilterOptionHasBeenSet = false;
+
+    Aws::Vector<VisibilityConditions> m_visibilityConditions;
+    bool m_visibilityConditionsHasBeenSet = false;
   };
 
 } // namespace Model

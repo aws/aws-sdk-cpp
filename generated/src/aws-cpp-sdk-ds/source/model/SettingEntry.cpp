@@ -29,7 +29,8 @@ SettingEntry::SettingEntry() :
     m_requestDetailedStatusHasBeenSet(false),
     m_requestStatusMessageHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_lastRequestedDateTimeHasBeenSet(false)
+    m_lastRequestedDateTimeHasBeenSet(false),
+    m_dataTypeHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ SettingEntry::SettingEntry(JsonView jsonValue) :
     m_requestDetailedStatusHasBeenSet(false),
     m_requestStatusMessageHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_lastRequestedDateTimeHasBeenSet(false)
+    m_lastRequestedDateTimeHasBeenSet(false),
+    m_dataTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +126,13 @@ SettingEntry& SettingEntry::operator =(JsonView jsonValue)
     m_lastRequestedDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataType"))
+  {
+    m_dataType = jsonValue.GetString("DataType");
+
+    m_dataTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -191,6 +200,12 @@ JsonValue SettingEntry::Jsonize() const
   if(m_lastRequestedDateTimeHasBeenSet)
   {
    payload.WithDouble("LastRequestedDateTime", m_lastRequestedDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_dataTypeHasBeenSet)
+  {
+   payload.WithString("DataType", m_dataType);
+
   }
 
   return payload;

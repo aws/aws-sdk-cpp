@@ -28,11 +28,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CLIENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BatchErrors::CLIENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BatchErrors::CLIENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BatchErrors::SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BatchErrors::SERVER), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

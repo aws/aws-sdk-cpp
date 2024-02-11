@@ -78,6 +78,47 @@ namespace Model
 
 
     /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline const Aws::String& GetExportBucketArn() const{ return m_exportBucketArn; }
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline bool ExportBucketArnHasBeenSet() const { return m_exportBucketArnHasBeenSet; }
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline void SetExportBucketArn(const Aws::String& value) { m_exportBucketArnHasBeenSet = true; m_exportBucketArn = value; }
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline void SetExportBucketArn(Aws::String&& value) { m_exportBucketArnHasBeenSet = true; m_exportBucketArn = std::move(value); }
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline void SetExportBucketArn(const char* value) { m_exportBucketArnHasBeenSet = true; m_exportBucketArn.assign(value); }
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline UpdateLaunchConfigurationTemplateRequest& WithExportBucketArn(const Aws::String& value) { SetExportBucketArn(value); return *this;}
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline UpdateLaunchConfigurationTemplateRequest& WithExportBucketArn(Aws::String&& value) { SetExportBucketArn(std::move(value)); return *this;}
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline UpdateLaunchConfigurationTemplateRequest& WithExportBucketArn(const char* value) { SetExportBucketArn(value); return *this;}
+
+
+    /**
      * <p>Launch Configuration Template ID.</p>
      */
     inline const Aws::String& GetLaunchConfigurationTemplateID() const{ return m_launchConfigurationTemplateID; }
@@ -150,6 +191,35 @@ namespace Model
 
 
     /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline bool GetLaunchIntoSourceInstance() const{ return m_launchIntoSourceInstance; }
+
+    /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline bool LaunchIntoSourceInstanceHasBeenSet() const { return m_launchIntoSourceInstanceHasBeenSet; }
+
+    /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline void SetLaunchIntoSourceInstance(bool value) { m_launchIntoSourceInstanceHasBeenSet = true; m_launchIntoSourceInstance = value; }
+
+    /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline UpdateLaunchConfigurationTemplateRequest& WithLaunchIntoSourceInstance(bool value) { SetLaunchIntoSourceInstance(value); return *this;}
+
+
+    /**
      * <p>Licensing.</p>
      */
     inline const Licensing& GetLicensing() const{ return m_licensing; }
@@ -178,6 +248,27 @@ namespace Model
      * <p>Licensing.</p>
      */
     inline UpdateLaunchConfigurationTemplateRequest& WithLicensing(Licensing&& value) { SetLicensing(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline bool GetPostLaunchEnabled() const{ return m_postLaunchEnabled; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline bool PostLaunchEnabledHasBeenSet() const { return m_postLaunchEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline void SetPostLaunchEnabled(bool value) { m_postLaunchEnabledHasBeenSet = true; m_postLaunchEnabled = value; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline UpdateLaunchConfigurationTemplateRequest& WithPostLaunchEnabled(bool value) { SetPostLaunchEnabled(value); return *this;}
 
 
     /**
@@ -218,14 +309,23 @@ namespace Model
     bool m_copyTags;
     bool m_copyTagsHasBeenSet = false;
 
+    Aws::String m_exportBucketArn;
+    bool m_exportBucketArnHasBeenSet = false;
+
     Aws::String m_launchConfigurationTemplateID;
     bool m_launchConfigurationTemplateIDHasBeenSet = false;
 
     LaunchDisposition m_launchDisposition;
     bool m_launchDispositionHasBeenSet = false;
 
+    bool m_launchIntoSourceInstance;
+    bool m_launchIntoSourceInstanceHasBeenSet = false;
+
     Licensing m_licensing;
     bool m_licensingHasBeenSet = false;
+
+    bool m_postLaunchEnabled;
+    bool m_postLaunchEnabledHasBeenSet = false;
 
     TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod;
     bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;

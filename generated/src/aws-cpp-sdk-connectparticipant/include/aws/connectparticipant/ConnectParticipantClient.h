@@ -34,6 +34,9 @@ namespace ConnectParticipant
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef ConnectParticipantClientConfiguration ClientConfigurationType;
+      typedef ConnectParticipantEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -161,6 +164,32 @@ namespace ConnectParticipant
         void CreateParticipantConnectionAsync(const CreateParticipantConnectionRequestT& request, const CreateParticipantConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectParticipantClient::CreateParticipantConnection, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the view for the specified view token.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DescribeView">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeViewOutcome DescribeView(const Model::DescribeViewRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeView that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeViewRequestT = Model::DescribeViewRequest>
+        Model::DescribeViewOutcomeCallable DescribeViewCallable(const DescribeViewRequestT& request) const
+        {
+            return SubmitCallable(&ConnectParticipantClient::DescribeView, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeView that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeViewRequestT = Model::DescribeViewRequest>
+        void DescribeViewAsync(const DescribeViewRequestT& request, const DescribeViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectParticipantClient::DescribeView, request, handler, context);
         }
 
         /**

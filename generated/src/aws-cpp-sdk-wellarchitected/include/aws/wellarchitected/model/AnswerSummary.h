@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wellarchitected/model/Risk.h>
 #include <aws/wellarchitected/model/AnswerReason.h>
+#include <aws/wellarchitected/model/QuestionType.h>
 #include <aws/wellarchitected/model/Choice.h>
 #include <aws/wellarchitected/model/ChoiceAnswerSummary.h>
 #include <utility>
@@ -274,6 +275,37 @@ namespace Model
      */
     inline AnswerSummary& WithReason(AnswerReason&& value) { SetReason(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of the question.</p>
+     */
+    inline const QuestionType& GetQuestionType() const{ return m_questionType; }
+
+    /**
+     * <p>The type of the question.</p>
+     */
+    inline bool QuestionTypeHasBeenSet() const { return m_questionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the question.</p>
+     */
+    inline void SetQuestionType(const QuestionType& value) { m_questionTypeHasBeenSet = true; m_questionType = value; }
+
+    /**
+     * <p>The type of the question.</p>
+     */
+    inline void SetQuestionType(QuestionType&& value) { m_questionTypeHasBeenSet = true; m_questionType = std::move(value); }
+
+    /**
+     * <p>The type of the question.</p>
+     */
+    inline AnswerSummary& WithQuestionType(const QuestionType& value) { SetQuestionType(value); return *this;}
+
+    /**
+     * <p>The type of the question.</p>
+     */
+    inline AnswerSummary& WithQuestionType(QuestionType&& value) { SetQuestionType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_questionId;
@@ -302,6 +334,9 @@ namespace Model
 
     AnswerReason m_reason;
     bool m_reasonHasBeenSet = false;
+
+    QuestionType m_questionType;
+    bool m_questionTypeHasBeenSet = false;
   };
 
 } // namespace Model

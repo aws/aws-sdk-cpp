@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GatewayType::NOT_SET:
+            return {};
           case GatewayType::virtualPrivateGateway:
             return "virtualPrivateGateway";
           case GatewayType::transitGateway:

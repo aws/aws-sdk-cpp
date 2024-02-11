@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReferrerPolicyList::NOT_SET:
+            return {};
           case ReferrerPolicyList::no_referrer:
             return "no-referrer";
           case ReferrerPolicyList::no_referrer_when_downgrade:

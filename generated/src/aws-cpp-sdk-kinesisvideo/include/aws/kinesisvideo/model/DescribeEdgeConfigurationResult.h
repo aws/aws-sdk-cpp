@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/kinesisvideo/model/SyncStatus.h>
 #include <aws/kinesisvideo/model/EdgeConfig.h>
+#include <aws/kinesisvideo/model/EdgeAgentStatus.h>
 #include <utility>
 
 namespace Aws
@@ -257,6 +258,42 @@ namespace Model
     inline DescribeEdgeConfigurationResult& WithEdgeConfig(EdgeConfig&& value) { SetEdgeConfig(std::move(value)); return *this;}
 
 
+    /**
+     * <p>An object that contains the latest status details for an edge agent's
+     * recorder and uploader jobs. Use this information to determine the current health
+     * of an edge agent.</p>
+     */
+    inline const EdgeAgentStatus& GetEdgeAgentStatus() const{ return m_edgeAgentStatus; }
+
+    /**
+     * <p>An object that contains the latest status details for an edge agent's
+     * recorder and uploader jobs. Use this information to determine the current health
+     * of an edge agent.</p>
+     */
+    inline void SetEdgeAgentStatus(const EdgeAgentStatus& value) { m_edgeAgentStatus = value; }
+
+    /**
+     * <p>An object that contains the latest status details for an edge agent's
+     * recorder and uploader jobs. Use this information to determine the current health
+     * of an edge agent.</p>
+     */
+    inline void SetEdgeAgentStatus(EdgeAgentStatus&& value) { m_edgeAgentStatus = std::move(value); }
+
+    /**
+     * <p>An object that contains the latest status details for an edge agent's
+     * recorder and uploader jobs. Use this information to determine the current health
+     * of an edge agent.</p>
+     */
+    inline DescribeEdgeConfigurationResult& WithEdgeAgentStatus(const EdgeAgentStatus& value) { SetEdgeAgentStatus(value); return *this;}
+
+    /**
+     * <p>An object that contains the latest status details for an edge agent's
+     * recorder and uploader jobs. Use this information to determine the current health
+     * of an edge agent.</p>
+     */
+    inline DescribeEdgeConfigurationResult& WithEdgeAgentStatus(EdgeAgentStatus&& value) { SetEdgeAgentStatus(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -293,6 +330,8 @@ namespace Model
     Aws::String m_failedStatusDetails;
 
     EdgeConfig m_edgeConfig;
+
+    EdgeAgentStatus m_edgeAgentStatus;
 
     Aws::String m_requestId;
   };

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WebhookAuthenticationType::NOT_SET:
+            return {};
           case WebhookAuthenticationType::GITHUB_HMAC:
             return "GITHUB_HMAC";
           case WebhookAuthenticationType::IP:

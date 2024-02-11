@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IndexState::NOT_SET:
+            return {};
           case IndexState::CREATING:
             return "CREATING";
           case IndexState::ACTIVE:

@@ -472,7 +472,7 @@ namespace Model
      * stores:</b> </p> <ul> <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of
      * the <code>XksProxyAuthenticationCredential</code> values is not valid on the
      * specified external key store proxy.</p> </li> <li> <p>
-     * <code>XKS_PROXY_ACCESS_DENIED</code> ��� KMS requests are denied access to the
+     * <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the
      * external key store proxy. If the external key store proxy has authorization
      * rules, verify that they permit KMS to communicate with the proxy on your
      * behalf.</p> </li> <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A
@@ -593,7 +593,7 @@ namespace Model
      * stores:</b> </p> <ul> <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of
      * the <code>XksProxyAuthenticationCredential</code> values is not valid on the
      * specified external key store proxy.</p> </li> <li> <p>
-     * <code>XKS_PROXY_ACCESS_DENIED</code> ��� KMS requests are denied access to the
+     * <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the
      * external key store proxy. If the external key store proxy has authorization
      * rules, verify that they permit KMS to communicate with the proxy on your
      * behalf.</p> </li> <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A
@@ -714,7 +714,7 @@ namespace Model
      * stores:</b> </p> <ul> <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of
      * the <code>XksProxyAuthenticationCredential</code> values is not valid on the
      * specified external key store proxy.</p> </li> <li> <p>
-     * <code>XKS_PROXY_ACCESS_DENIED</code> ��� KMS requests are denied access to the
+     * <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the
      * external key store proxy. If the external key store proxy has authorization
      * rules, verify that they permit KMS to communicate with the proxy on your
      * behalf.</p> </li> <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A
@@ -835,7 +835,7 @@ namespace Model
      * stores:</b> </p> <ul> <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of
      * the <code>XksProxyAuthenticationCredential</code> values is not valid on the
      * specified external key store proxy.</p> </li> <li> <p>
-     * <code>XKS_PROXY_ACCESS_DENIED</code> ��� KMS requests are denied access to the
+     * <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the
      * external key store proxy. If the external key store proxy has authorization
      * rules, verify that they permit KMS to communicate with the proxy on your
      * behalf.</p> </li> <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A
@@ -956,7 +956,7 @@ namespace Model
      * stores:</b> </p> <ul> <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of
      * the <code>XksProxyAuthenticationCredential</code> values is not valid on the
      * specified external key store proxy.</p> </li> <li> <p>
-     * <code>XKS_PROXY_ACCESS_DENIED</code> ��� KMS requests are denied access to the
+     * <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the
      * external key store proxy. If the external key store proxy has authorization
      * rules, verify that they permit KMS to communicate with the proxy on your
      * behalf.</p> </li> <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A
@@ -1077,7 +1077,7 @@ namespace Model
      * stores:</b> </p> <ul> <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of
      * the <code>XksProxyAuthenticationCredential</code> values is not valid on the
      * specified external key store proxy.</p> </li> <li> <p>
-     * <code>XKS_PROXY_ACCESS_DENIED</code> ��� KMS requests are denied access to the
+     * <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the
      * external key store proxy. If the external key store proxy has authorization
      * rules, verify that they permit KMS to communicate with the proxy on your
      * behalf.</p> </li> <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A

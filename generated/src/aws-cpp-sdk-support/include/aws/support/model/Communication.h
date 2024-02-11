@@ -150,73 +150,73 @@ namespace Model
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
-     * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
-     * from the Amazon Web Services Support team display "Amazon Web Services," and
-     * don't show an email address. </p>
+     * case. Customer entries include the IAM role as well as the email address (for
+     * example, "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon
+     * Web Services Support team display "Amazon Web Services," and don't show an email
+     * address. </p>
      */
     inline const Aws::String& GetSubmittedBy() const{ return m_submittedBy; }
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
-     * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
-     * from the Amazon Web Services Support team display "Amazon Web Services," and
-     * don't show an email address. </p>
+     * case. Customer entries include the IAM role as well as the email address (for
+     * example, "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon
+     * Web Services Support team display "Amazon Web Services," and don't show an email
+     * address. </p>
      */
     inline bool SubmittedByHasBeenSet() const { return m_submittedByHasBeenSet; }
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
-     * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
-     * from the Amazon Web Services Support team display "Amazon Web Services," and
-     * don't show an email address. </p>
+     * case. Customer entries include the IAM role as well as the email address (for
+     * example, "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon
+     * Web Services Support team display "Amazon Web Services," and don't show an email
+     * address. </p>
      */
     inline void SetSubmittedBy(const Aws::String& value) { m_submittedByHasBeenSet = true; m_submittedBy = value; }
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
-     * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
-     * from the Amazon Web Services Support team display "Amazon Web Services," and
-     * don't show an email address. </p>
+     * case. Customer entries include the IAM role as well as the email address (for
+     * example, "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon
+     * Web Services Support team display "Amazon Web Services," and don't show an email
+     * address. </p>
      */
     inline void SetSubmittedBy(Aws::String&& value) { m_submittedByHasBeenSet = true; m_submittedBy = std::move(value); }
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
-     * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
-     * from the Amazon Web Services Support team display "Amazon Web Services," and
-     * don't show an email address. </p>
+     * case. Customer entries include the IAM role as well as the email address (for
+     * example, "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon
+     * Web Services Support team display "Amazon Web Services," and don't show an email
+     * address. </p>
      */
     inline void SetSubmittedBy(const char* value) { m_submittedByHasBeenSet = true; m_submittedBy.assign(value); }
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
-     * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
-     * from the Amazon Web Services Support team display "Amazon Web Services," and
-     * don't show an email address. </p>
+     * case. Customer entries include the IAM role as well as the email address (for
+     * example, "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon
+     * Web Services Support team display "Amazon Web Services," and don't show an email
+     * address. </p>
      */
     inline Communication& WithSubmittedBy(const Aws::String& value) { SetSubmittedBy(value); return *this;}
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
-     * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
-     * from the Amazon Web Services Support team display "Amazon Web Services," and
-     * don't show an email address. </p>
+     * case. Customer entries include the IAM role as well as the email address (for
+     * example, "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon
+     * Web Services Support team display "Amazon Web Services," and don't show an email
+     * address. </p>
      */
     inline Communication& WithSubmittedBy(Aws::String&& value) { SetSubmittedBy(std::move(value)); return *this;}
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
-     * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
-     * from the Amazon Web Services Support team display "Amazon Web Services," and
-     * don't show an email address. </p>
+     * case. Customer entries include the IAM role as well as the email address (for
+     * example, "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon
+     * Web Services Support team display "Amazon Web Services," and don't show an email
+     * address. </p>
      */
     inline Communication& WithSubmittedBy(const char* value) { SetSubmittedBy(value); return *this;}
 

@@ -38,50 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon EKS cluster that the managed node group resides
-     * in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p>The name of the Amazon EKS cluster that the managed node group resides
-     * in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon EKS cluster that the managed node group resides
-     * in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>The name of the Amazon EKS cluster that the managed node group resides
-     * in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon EKS cluster that the managed node group resides
-     * in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p>The name of the Amazon EKS cluster that the managed node group resides
-     * in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline UpdateNodegroupConfigRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon EKS cluster that the managed node group resides
-     * in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline UpdateNodegroupConfigRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon EKS cluster that the managed node group resides
-     * in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline UpdateNodegroupConfigRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
@@ -128,38 +120,38 @@ namespace Model
 
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group after the
-     * update.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * after the update.</p>
      */
     inline const UpdateLabelsPayload& GetLabels() const{ return m_labels; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group after the
-     * update.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * after the update.</p>
      */
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group after the
-     * update.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * after the update.</p>
      */
     inline void SetLabels(const UpdateLabelsPayload& value) { m_labelsHasBeenSet = true; m_labels = value; }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group after the
-     * update.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * after the update.</p>
      */
     inline void SetLabels(UpdateLabelsPayload&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group after the
-     * update.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * after the update.</p>
      */
     inline UpdateNodegroupConfigRequest& WithLabels(const UpdateLabelsPayload& value) { SetLabels(value); return *this;}
 
     /**
-     * <p>The Kubernetes labels to be applied to the nodes in the node group after the
-     * update.</p>
+     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
+     * after the update.</p>
      */
     inline UpdateNodegroupConfigRequest& WithLabels(UpdateLabelsPayload&& value) { SetLabels(std::move(value)); return *this;}
 
@@ -282,50 +274,50 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateNodegroupConfigRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateNodegroupConfigRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateNodegroupConfigRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

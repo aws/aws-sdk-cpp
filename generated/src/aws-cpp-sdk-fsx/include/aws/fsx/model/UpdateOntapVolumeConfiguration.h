@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/SecurityStyle.h>
 #include <aws/fsx/model/TieringPolicy.h>
+#include <aws/fsx/model/UpdateSnaplockConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -98,37 +99,37 @@ namespace Model
 
 
     /**
-     * <p>The security style for the volume, which can be <code>UNIX</code>.
+     * <p>The security style for the volume, which can be <code>UNIX</code>,
      * <code>NTFS</code>, or <code>MIXED</code>.</p>
      */
     inline const SecurityStyle& GetSecurityStyle() const{ return m_securityStyle; }
 
     /**
-     * <p>The security style for the volume, which can be <code>UNIX</code>.
+     * <p>The security style for the volume, which can be <code>UNIX</code>,
      * <code>NTFS</code>, or <code>MIXED</code>.</p>
      */
     inline bool SecurityStyleHasBeenSet() const { return m_securityStyleHasBeenSet; }
 
     /**
-     * <p>The security style for the volume, which can be <code>UNIX</code>.
+     * <p>The security style for the volume, which can be <code>UNIX</code>,
      * <code>NTFS</code>, or <code>MIXED</code>.</p>
      */
     inline void SetSecurityStyle(const SecurityStyle& value) { m_securityStyleHasBeenSet = true; m_securityStyle = value; }
 
     /**
-     * <p>The security style for the volume, which can be <code>UNIX</code>.
+     * <p>The security style for the volume, which can be <code>UNIX</code>,
      * <code>NTFS</code>, or <code>MIXED</code>.</p>
      */
     inline void SetSecurityStyle(SecurityStyle&& value) { m_securityStyleHasBeenSet = true; m_securityStyle = std::move(value); }
 
     /**
-     * <p>The security style for the volume, which can be <code>UNIX</code>.
+     * <p>The security style for the volume, which can be <code>UNIX</code>,
      * <code>NTFS</code>, or <code>MIXED</code>.</p>
      */
     inline UpdateOntapVolumeConfiguration& WithSecurityStyle(const SecurityStyle& value) { SetSecurityStyle(value); return *this;}
 
     /**
-     * <p>The security style for the volume, which can be <code>UNIX</code>.
+     * <p>The security style for the volume, which can be <code>UNIX</code>,
      * <code>NTFS</code>, or <code>MIXED</code>.</p>
      */
     inline UpdateOntapVolumeConfiguration& WithSecurityStyle(SecurityStyle&& value) { SetSecurityStyle(std::move(value)); return *this;}
@@ -400,6 +401,64 @@ namespace Model
      */
     inline UpdateOntapVolumeConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
 
+
+    /**
+     * <p>The configuration object for updating the SnapLock configuration of an FSx
+     * for ONTAP SnapLock volume. </p>
+     */
+    inline const UpdateSnaplockConfiguration& GetSnaplockConfiguration() const{ return m_snaplockConfiguration; }
+
+    /**
+     * <p>The configuration object for updating the SnapLock configuration of an FSx
+     * for ONTAP SnapLock volume. </p>
+     */
+    inline bool SnaplockConfigurationHasBeenSet() const { return m_snaplockConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration object for updating the SnapLock configuration of an FSx
+     * for ONTAP SnapLock volume. </p>
+     */
+    inline void SetSnaplockConfiguration(const UpdateSnaplockConfiguration& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = value; }
+
+    /**
+     * <p>The configuration object for updating the SnapLock configuration of an FSx
+     * for ONTAP SnapLock volume. </p>
+     */
+    inline void SetSnaplockConfiguration(UpdateSnaplockConfiguration&& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration object for updating the SnapLock configuration of an FSx
+     * for ONTAP SnapLock volume. </p>
+     */
+    inline UpdateOntapVolumeConfiguration& WithSnaplockConfiguration(const UpdateSnaplockConfiguration& value) { SetSnaplockConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration object for updating the SnapLock configuration of an FSx
+     * for ONTAP SnapLock volume. </p>
+     */
+    inline UpdateOntapVolumeConfiguration& WithSnaplockConfiguration(UpdateSnaplockConfiguration&& value) { SetSnaplockConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline UpdateOntapVolumeConfiguration& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
+
   private:
 
     Aws::String m_junctionPath;
@@ -422,6 +481,12 @@ namespace Model
 
     bool m_copyTagsToBackups;
     bool m_copyTagsToBackupsHasBeenSet = false;
+
+    UpdateSnaplockConfiguration m_snaplockConfiguration;
+    bool m_snaplockConfigurationHasBeenSet = false;
+
+    long long m_sizeInBytes;
+    bool m_sizeInBytesHasBeenSet = false;
   };
 
 } // namespace Model

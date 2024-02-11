@@ -16,13 +16,14 @@ namespace Aws
 namespace RDSDataService
 {
   /**
-   * <p><fullname>Amazon RDS Data Service</fullname> <p>Amazon RDS provides an HTTP
-   * endpoint to run SQL statements on an Amazon Aurora Serverless v1 DB cluster. To
-   * run these statements, you work with the Data Service API.</p>  <p>The Data
-   * Service API isn't supported on Amazon Aurora Serverless v2 DB clusters.</p>
-   *  <p>For more information about the Data Service API, see <a
+   * <p><fullname>RDS Data API</fullname> <p>Amazon RDS provides an HTTP endpoint to
+   * run SQL statements on an Amazon Aurora DB cluster. To run these statements, you
+   * use the RDS Data API (Data API).</p> <p>Data API is available with the following
+   * types of Aurora databases:</p> <ul> <li> <p>Aurora PostgreSQL - Serverless v2,
+   * Serverless v1, and provisioned</p> </li> <li> <p>Aurora MySQL - Serverless v1
+   * only</p> </li> </ul> <p>For more information about the Data API, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-   * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p></p>
+   * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p></p>
    */
   class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RDSDataServiceClient>
   {
@@ -30,6 +31,9 @@ namespace RDSDataService
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef RDSDataServiceClientConfiguration ClientConfigurationType;
+      typedef RDSDataServiceEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config

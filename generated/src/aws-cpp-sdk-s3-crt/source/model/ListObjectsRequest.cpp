@@ -28,6 +28,7 @@ ListObjectsRequest::ListObjectsRequest() :
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_optionalObjectAttributesHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -110,6 +111,16 @@ Aws::Http::HeaderValueCollection ListObjectsRequest::GetRequestSpecificHeaders()
     ss.str("");
   }
 
+  if(m_optionalObjectAttributesHasBeenSet)
+  {
+    for(const auto& item : m_optionalObjectAttributes)
+    {
+      ss << OptionalObjectAttributesMapper::GetNameForOptionalObjectAttributes(item);
+      headers.emplace("x-amz-optional-object-attributes", ss.str());
+      ss.str("");
+    }
+  }
+
   return headers;
 }
 
@@ -119,6 +130,9 @@ ListObjectsRequest::EndpointParameters ListObjectsRequest::GetEndpointContextPar
     // Operation context parameters
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    if (PrefixHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Prefix"), this->GetPrefix(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
     }
     return parameters;
 }

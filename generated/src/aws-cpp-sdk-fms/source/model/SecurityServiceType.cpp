@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SecurityServiceType::NOT_SET:
+            return {};
           case SecurityServiceType::WAF:
             return "WAF";
           case SecurityServiceType::WAFV2:

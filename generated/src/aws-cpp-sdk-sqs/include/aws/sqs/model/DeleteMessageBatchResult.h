@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sqs/model/ResponseMetadata.h>
 #include <aws/sqs/model/DeleteMessageBatchResultEntry.h>
 #include <aws/sqs/model/BatchResultErrorEntry.h>
@@ -18,10 +19,10 @@ class AmazonWebServiceResult;
 
 namespace Utils
 {
-namespace Xml
+namespace Json
 {
-  class XmlDocument;
-} // namespace Xml
+  class JsonValue;
+} // namespace Json
 } // namespace Utils
 namespace SQS
 {
@@ -39,8 +40,8 @@ namespace Model
   {
   public:
     AWS_SQS_API DeleteMessageBatchResult();
-    AWS_SQS_API DeleteMessageBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_SQS_API DeleteMessageBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API DeleteMessageBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SQS_API DeleteMessageBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -116,6 +117,28 @@ namespace Model
 
 
     
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DeleteMessageBatchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DeleteMessageBatchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DeleteMessageBatchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
     
@@ -135,6 +158,8 @@ namespace Model
     Aws::Vector<DeleteMessageBatchResultEntry> m_successful;
 
     Aws::Vector<BatchResultErrorEntry> m_failed;
+
+    Aws::String m_requestId;
 
     ResponseMetadata m_responseMetadata;
   };

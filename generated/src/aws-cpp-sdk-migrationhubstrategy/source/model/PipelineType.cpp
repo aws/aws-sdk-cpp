@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PipelineType::NOT_SET:
+            return {};
           case PipelineType::AZURE_DEVOPS:
             return "AZURE_DEVOPS";
           default:

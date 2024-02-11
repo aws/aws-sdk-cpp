@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     AVAILABILITY,
-    PERFORMANCE
+    PERFORMANCE,
+    LOCAL_AVAILABILITY,
+    LOCAL_PERFORMANCE
   };
 
 namespace HealthEventImpactTypeMapper

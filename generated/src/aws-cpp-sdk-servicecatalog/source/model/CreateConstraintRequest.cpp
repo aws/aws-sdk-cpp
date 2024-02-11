@@ -19,7 +19,7 @@ CreateConstraintRequest::CreateConstraintRequest() :
     m_parametersHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

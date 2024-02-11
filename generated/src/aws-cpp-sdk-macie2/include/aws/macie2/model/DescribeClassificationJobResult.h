@@ -578,9 +578,9 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier that the
      * job is explicitly configured to include (use) or exclude (not use) when it
      * analyzes data. Inclusion or exclusion depends on the managed data identifier
-     * selection type specified for the job (managedDataIdentifierSelector). This value
-     * is null if the job's managed data identifier selection type is ALL or the job
-     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     * selection type specified for the job (managedDataIdentifierSelector).</p><p>This
+     * value is null if the job's managed data identifier selection type is ALL, NONE,
+     * or RECOMMENDED.</p>
      */
     inline const Aws::Vector<Aws::String>& GetManagedDataIdentifierIds() const{ return m_managedDataIdentifierIds; }
 
@@ -588,9 +588,9 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier that the
      * job is explicitly configured to include (use) or exclude (not use) when it
      * analyzes data. Inclusion or exclusion depends on the managed data identifier
-     * selection type specified for the job (managedDataIdentifierSelector). This value
-     * is null if the job's managed data identifier selection type is ALL or the job
-     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     * selection type specified for the job (managedDataIdentifierSelector).</p><p>This
+     * value is null if the job's managed data identifier selection type is ALL, NONE,
+     * or RECOMMENDED.</p>
      */
     inline void SetManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_managedDataIdentifierIds = value; }
 
@@ -598,9 +598,9 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier that the
      * job is explicitly configured to include (use) or exclude (not use) when it
      * analyzes data. Inclusion or exclusion depends on the managed data identifier
-     * selection type specified for the job (managedDataIdentifierSelector). This value
-     * is null if the job's managed data identifier selection type is ALL or the job
-     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     * selection type specified for the job (managedDataIdentifierSelector).</p><p>This
+     * value is null if the job's managed data identifier selection type is ALL, NONE,
+     * or RECOMMENDED.</p>
      */
     inline void SetManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_managedDataIdentifierIds = std::move(value); }
 
@@ -608,9 +608,9 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier that the
      * job is explicitly configured to include (use) or exclude (not use) when it
      * analyzes data. Inclusion or exclusion depends on the managed data identifier
-     * selection type specified for the job (managedDataIdentifierSelector). This value
-     * is null if the job's managed data identifier selection type is ALL or the job
-     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     * selection type specified for the job (managedDataIdentifierSelector).</p><p>This
+     * value is null if the job's managed data identifier selection type is ALL, NONE,
+     * or RECOMMENDED.</p>
      */
     inline DescribeClassificationJobResult& WithManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetManagedDataIdentifierIds(value); return *this;}
 
@@ -618,9 +618,9 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier that the
      * job is explicitly configured to include (use) or exclude (not use) when it
      * analyzes data. Inclusion or exclusion depends on the managed data identifier
-     * selection type specified for the job (managedDataIdentifierSelector). This value
-     * is null if the job's managed data identifier selection type is ALL or the job
-     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     * selection type specified for the job (managedDataIdentifierSelector).</p><p>This
+     * value is null if the job's managed data identifier selection type is ALL, NONE,
+     * or RECOMMENDED.</p>
      */
     inline DescribeClassificationJobResult& WithManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetManagedDataIdentifierIds(std::move(value)); return *this;}
 
@@ -628,9 +628,9 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier that the
      * job is explicitly configured to include (use) or exclude (not use) when it
      * analyzes data. Inclusion or exclusion depends on the managed data identifier
-     * selection type specified for the job (managedDataIdentifierSelector). This value
-     * is null if the job's managed data identifier selection type is ALL or the job
-     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     * selection type specified for the job (managedDataIdentifierSelector).</p><p>This
+     * value is null if the job's managed data identifier selection type is ALL, NONE,
+     * or RECOMMENDED.</p>
      */
     inline DescribeClassificationJobResult& AddManagedDataIdentifierIds(const Aws::String& value) { m_managedDataIdentifierIds.push_back(value); return *this; }
 
@@ -638,9 +638,9 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier that the
      * job is explicitly configured to include (use) or exclude (not use) when it
      * analyzes data. Inclusion or exclusion depends on the managed data identifier
-     * selection type specified for the job (managedDataIdentifierSelector). This value
-     * is null if the job's managed data identifier selection type is ALL or the job
-     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     * selection type specified for the job (managedDataIdentifierSelector).</p><p>This
+     * value is null if the job's managed data identifier selection type is ALL, NONE,
+     * or RECOMMENDED.</p>
      */
     inline DescribeClassificationJobResult& AddManagedDataIdentifierIds(Aws::String&& value) { m_managedDataIdentifierIds.push_back(std::move(value)); return *this; }
 
@@ -648,80 +648,130 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier that the
      * job is explicitly configured to include (use) or exclude (not use) when it
      * analyzes data. Inclusion or exclusion depends on the managed data identifier
-     * selection type specified for the job (managedDataIdentifierSelector). This value
-     * is null if the job's managed data identifier selection type is ALL or the job
-     * uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+     * selection type specified for the job (managedDataIdentifierSelector).</p><p>This
+     * value is null if the job's managed data identifier selection type is ALL, NONE,
+     * or RECOMMENDED.</p>
      */
     inline DescribeClassificationJobResult& AddManagedDataIdentifierIds(const char* value) { m_managedDataIdentifierIds.push_back(value); return *this; }
 
 
     /**
      * <p>The selection type that determines which managed data identifiers the job
-     * uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the
-     * managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE -
-     * Use all the managed data identifiers that Macie provides except the managed data
-     * identifiers specified by the managedDataIdentifierIds property.</p></li>
-     * <li><p>INCLUDE - Use only the managed data identifiers specified by the
-     * managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed
-     * data identifiers.</p></li></ul> <p>If this value is null, the job uses all
-     * managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring
-     * job, the job also uses new managed data identifiers as they are released.</p>
+     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL - Use all
+     * managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
+     * identifiers except the ones specified by the managedDataIdentifierIds
+     * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
+     * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
+     * use any managed data identifiers. Use only custom data identifiers
+     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED (default) - Use the
+     * recommended set of managed data identifiers.</p></li></ul> <p>If this value is
+     * null, the job uses the recommended set of managed data identifiers.</p> <p>If
+     * the job is a recurring job and this value is ALL or EXCLUDE, each job run
+     * automatically uses new managed data identifiers that are released. If this value
+     * is null or RECOMMENDED for a recurring job, each job run uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
+     * information about individual managed data identifiers or to determine which ones
+     * are in the recommended set, see <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
+     * managed data identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     * managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
      */
     inline const ManagedDataIdentifierSelector& GetManagedDataIdentifierSelector() const{ return m_managedDataIdentifierSelector; }
 
     /**
      * <p>The selection type that determines which managed data identifiers the job
-     * uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the
-     * managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE -
-     * Use all the managed data identifiers that Macie provides except the managed data
-     * identifiers specified by the managedDataIdentifierIds property.</p></li>
-     * <li><p>INCLUDE - Use only the managed data identifiers specified by the
-     * managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed
-     * data identifiers.</p></li></ul> <p>If this value is null, the job uses all
-     * managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring
-     * job, the job also uses new managed data identifiers as they are released.</p>
+     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL - Use all
+     * managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
+     * identifiers except the ones specified by the managedDataIdentifierIds
+     * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
+     * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
+     * use any managed data identifiers. Use only custom data identifiers
+     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED (default) - Use the
+     * recommended set of managed data identifiers.</p></li></ul> <p>If this value is
+     * null, the job uses the recommended set of managed data identifiers.</p> <p>If
+     * the job is a recurring job and this value is ALL or EXCLUDE, each job run
+     * automatically uses new managed data identifiers that are released. If this value
+     * is null or RECOMMENDED for a recurring job, each job run uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
+     * information about individual managed data identifiers or to determine which ones
+     * are in the recommended set, see <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
+     * managed data identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     * managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
      */
     inline void SetManagedDataIdentifierSelector(const ManagedDataIdentifierSelector& value) { m_managedDataIdentifierSelector = value; }
 
     /**
      * <p>The selection type that determines which managed data identifiers the job
-     * uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the
-     * managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE -
-     * Use all the managed data identifiers that Macie provides except the managed data
-     * identifiers specified by the managedDataIdentifierIds property.</p></li>
-     * <li><p>INCLUDE - Use only the managed data identifiers specified by the
-     * managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed
-     * data identifiers.</p></li></ul> <p>If this value is null, the job uses all
-     * managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring
-     * job, the job also uses new managed data identifiers as they are released.</p>
+     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL - Use all
+     * managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
+     * identifiers except the ones specified by the managedDataIdentifierIds
+     * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
+     * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
+     * use any managed data identifiers. Use only custom data identifiers
+     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED (default) - Use the
+     * recommended set of managed data identifiers.</p></li></ul> <p>If this value is
+     * null, the job uses the recommended set of managed data identifiers.</p> <p>If
+     * the job is a recurring job and this value is ALL or EXCLUDE, each job run
+     * automatically uses new managed data identifiers that are released. If this value
+     * is null or RECOMMENDED for a recurring job, each job run uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
+     * information about individual managed data identifiers or to determine which ones
+     * are in the recommended set, see <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
+     * managed data identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     * managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
      */
     inline void SetManagedDataIdentifierSelector(ManagedDataIdentifierSelector&& value) { m_managedDataIdentifierSelector = std::move(value); }
 
     /**
      * <p>The selection type that determines which managed data identifiers the job
-     * uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the
-     * managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE -
-     * Use all the managed data identifiers that Macie provides except the managed data
-     * identifiers specified by the managedDataIdentifierIds property.</p></li>
-     * <li><p>INCLUDE - Use only the managed data identifiers specified by the
-     * managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed
-     * data identifiers.</p></li></ul> <p>If this value is null, the job uses all
-     * managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring
-     * job, the job also uses new managed data identifiers as they are released.</p>
+     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL - Use all
+     * managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
+     * identifiers except the ones specified by the managedDataIdentifierIds
+     * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
+     * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
+     * use any managed data identifiers. Use only custom data identifiers
+     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED (default) - Use the
+     * recommended set of managed data identifiers.</p></li></ul> <p>If this value is
+     * null, the job uses the recommended set of managed data identifiers.</p> <p>If
+     * the job is a recurring job and this value is ALL or EXCLUDE, each job run
+     * automatically uses new managed data identifiers that are released. If this value
+     * is null or RECOMMENDED for a recurring job, each job run uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
+     * information about individual managed data identifiers or to determine which ones
+     * are in the recommended set, see <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
+     * managed data identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     * managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
      */
     inline DescribeClassificationJobResult& WithManagedDataIdentifierSelector(const ManagedDataIdentifierSelector& value) { SetManagedDataIdentifierSelector(value); return *this;}
 
     /**
      * <p>The selection type that determines which managed data identifiers the job
-     * uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the
-     * managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE -
-     * Use all the managed data identifiers that Macie provides except the managed data
-     * identifiers specified by the managedDataIdentifierIds property.</p></li>
-     * <li><p>INCLUDE - Use only the managed data identifiers specified by the
-     * managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed
-     * data identifiers.</p></li></ul> <p>If this value is null, the job uses all
-     * managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring
-     * job, the job also uses new managed data identifiers as they are released.</p>
+     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL - Use all
+     * managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
+     * identifiers except the ones specified by the managedDataIdentifierIds
+     * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
+     * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
+     * use any managed data identifiers. Use only custom data identifiers
+     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED (default) - Use the
+     * recommended set of managed data identifiers.</p></li></ul> <p>If this value is
+     * null, the job uses the recommended set of managed data identifiers.</p> <p>If
+     * the job is a recurring job and this value is ALL or EXCLUDE, each job run
+     * automatically uses new managed data identifiers that are released. If this value
+     * is null or RECOMMENDED for a recurring job, each job run uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
+     * information about individual managed data identifiers or to determine which ones
+     * are in the recommended set, see <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
+     * managed data identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     * managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
      */
     inline DescribeClassificationJobResult& WithManagedDataIdentifierSelector(ManagedDataIdentifierSelector&& value) { SetManagedDataIdentifierSelector(std::move(value)); return *this;}
 

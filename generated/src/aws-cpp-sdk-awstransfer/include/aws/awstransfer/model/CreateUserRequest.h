@@ -42,56 +42,72 @@ namespace Model
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/bucket_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
+     * <code>HomeDirectory</code> parameter is only used if
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/bucket_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
+     * <code>HomeDirectory</code> parameter is only used if
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/bucket_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
+     * <code>HomeDirectory</code> parameter is only used if
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/bucket_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
+     * <code>HomeDirectory</code> parameter is only used if
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/bucket_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
+     * <code>HomeDirectory</code> parameter is only used if
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/bucket_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
+     * <code>HomeDirectory</code> parameter is only used if
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline CreateUserRequest& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/bucket_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
+     * <code>HomeDirectory</code> parameter is only used if
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline CreateUserRequest& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/bucket_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
+     * <code>HomeDirectory</code> parameter is only used if
+     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
     inline CreateUserRequest& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
 
@@ -99,66 +115,102 @@ namespace Model
     /**
      * <p>The type of landing directory (folder) that you want your users' home
      * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
-     * as is in their file transfer protocol clients. If you set it
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS
+     * path as is in their file transfer protocol clients. If you set it to
      * <code>LOGICAL</code>, you need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-     * EFS paths visible to your users.</p>
+     * EFS paths visible to your users.</p>  <p>If <code>HomeDirectoryType</code>
+     * is <code>LOGICAL</code>, you must provide mappings, using the
+     * <code>HomeDirectoryMappings</code> parameter. If, on the other hand,
+     * <code>HomeDirectoryType</code> is <code>PATH</code>, you provide an absolute
+     * path using the <code>HomeDirectory</code> parameter. You cannot have both
+     * <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your
+     * template.</p> 
      */
     inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
 
     /**
      * <p>The type of landing directory (folder) that you want your users' home
      * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
-     * as is in their file transfer protocol clients. If you set it
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS
+     * path as is in their file transfer protocol clients. If you set it to
      * <code>LOGICAL</code>, you need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-     * EFS paths visible to your users.</p>
+     * EFS paths visible to your users.</p>  <p>If <code>HomeDirectoryType</code>
+     * is <code>LOGICAL</code>, you must provide mappings, using the
+     * <code>HomeDirectoryMappings</code> parameter. If, on the other hand,
+     * <code>HomeDirectoryType</code> is <code>PATH</code>, you provide an absolute
+     * path using the <code>HomeDirectory</code> parameter. You cannot have both
+     * <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your
+     * template.</p> 
      */
     inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
 
     /**
      * <p>The type of landing directory (folder) that you want your users' home
      * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
-     * as is in their file transfer protocol clients. If you set it
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS
+     * path as is in their file transfer protocol clients. If you set it to
      * <code>LOGICAL</code>, you need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-     * EFS paths visible to your users.</p>
+     * EFS paths visible to your users.</p>  <p>If <code>HomeDirectoryType</code>
+     * is <code>LOGICAL</code>, you must provide mappings, using the
+     * <code>HomeDirectoryMappings</code> parameter. If, on the other hand,
+     * <code>HomeDirectoryType</code> is <code>PATH</code>, you provide an absolute
+     * path using the <code>HomeDirectory</code> parameter. You cannot have both
+     * <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your
+     * template.</p> 
      */
     inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
 
     /**
      * <p>The type of landing directory (folder) that you want your users' home
      * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
-     * as is in their file transfer protocol clients. If you set it
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS
+     * path as is in their file transfer protocol clients. If you set it to
      * <code>LOGICAL</code>, you need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-     * EFS paths visible to your users.</p>
+     * EFS paths visible to your users.</p>  <p>If <code>HomeDirectoryType</code>
+     * is <code>LOGICAL</code>, you must provide mappings, using the
+     * <code>HomeDirectoryMappings</code> parameter. If, on the other hand,
+     * <code>HomeDirectoryType</code> is <code>PATH</code>, you provide an absolute
+     * path using the <code>HomeDirectory</code> parameter. You cannot have both
+     * <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your
+     * template.</p> 
      */
     inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
 
     /**
      * <p>The type of landing directory (folder) that you want your users' home
      * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
-     * as is in their file transfer protocol clients. If you set it
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS
+     * path as is in their file transfer protocol clients. If you set it to
      * <code>LOGICAL</code>, you need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-     * EFS paths visible to your users.</p>
+     * EFS paths visible to your users.</p>  <p>If <code>HomeDirectoryType</code>
+     * is <code>LOGICAL</code>, you must provide mappings, using the
+     * <code>HomeDirectoryMappings</code> parameter. If, on the other hand,
+     * <code>HomeDirectoryType</code> is <code>PATH</code>, you provide an absolute
+     * path using the <code>HomeDirectory</code> parameter. You cannot have both
+     * <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your
+     * template.</p> 
      */
     inline CreateUserRequest& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
 
     /**
      * <p>The type of landing directory (folder) that you want your users' home
      * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
-     * as is in their file transfer protocol clients. If you set it
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS
+     * path as is in their file transfer protocol clients. If you set it to
      * <code>LOGICAL</code>, you need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-     * EFS paths visible to your users.</p>
+     * EFS paths visible to your users.</p>  <p>If <code>HomeDirectoryType</code>
+     * is <code>LOGICAL</code>, you must provide mappings, using the
+     * <code>HomeDirectoryMappings</code> parameter. If, on the other hand,
+     * <code>HomeDirectoryType</code> is <code>PATH</code>, you provide an absolute
+     * path using the <code>HomeDirectory</code> parameter. You cannot have both
+     * <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your
+     * template.</p> 
      */
     inline CreateUserRequest& WithHomeDirectoryType(HomeDirectoryType&& value) { SetHomeDirectoryType(std::move(value)); return *this;}
 
@@ -177,10 +229,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const{ return m_homeDirectoryMappings; }
 
@@ -198,10 +251,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline bool HomeDirectoryMappingsHasBeenSet() const { return m_homeDirectoryMappingsHasBeenSet; }
 
@@ -219,10 +273,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline void SetHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = value; }
 
@@ -240,10 +295,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline void SetHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::move(value); }
 
@@ -261,10 +317,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline CreateUserRequest& WithHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { SetHomeDirectoryMappings(value); return *this;}
 
@@ -282,10 +339,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline CreateUserRequest& WithHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { SetHomeDirectoryMappings(std::move(value)); return *this;}
 
@@ -303,10 +361,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline CreateUserRequest& AddHomeDirectoryMappings(const HomeDirectoryMapEntry& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(value); return *this; }
 
@@ -324,10 +383,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline CreateUserRequest& AddHomeDirectoryMappings(HomeDirectoryMapEntry&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(std::move(value)); return *this; }
 

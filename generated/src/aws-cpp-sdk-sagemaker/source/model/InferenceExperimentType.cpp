@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InferenceExperimentType::NOT_SET:
+            return {};
           case InferenceExperimentType::ShadowMode:
             return "ShadowMode";
           default:

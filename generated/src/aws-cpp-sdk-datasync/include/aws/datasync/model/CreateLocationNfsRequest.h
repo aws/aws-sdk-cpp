@@ -42,418 +42,280 @@ namespace Model
 
 
     /**
-     * <p>The subdirectory in the NFS file system that is used to read data from the
-     * NFS source location or write data to the NFS destination. The NFS path should be
-     * a path that's exported by the NFS server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other NFS clients in your network.
-     * </p> <p>To see all the paths exported by your NFS server, run "<code>showmount
-     * -e nfs-server-name</code>" from an NFS client that has access to your server.
-     * You can specify any directory that appears in the results, and any subdirectory
-     * of that directory. Ensure that the NFS export is accessible without Kerberos
-     * authentication. </p> <p>To transfer all the data in the folder you specified,
-     * DataSync needs to have permissions to read all the data. To ensure this, either
-     * configure the NFS export with <code>no_root_squash,</code> or ensure that the
-     * permissions for all of the files that you want DataSync allow read access for
-     * all users. Doing either enables the agent to read the files. For the agent to
-     * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
-     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     * Hat Enterprise Linux documentation.</p>
+     * <p>Specifies the export path in your NFS file server that you want DataSync to
+     * mount.</p> <p>This path (or a subdirectory of the path) is where DataSync
+     * transfers data to or from. For information on configuring an export for
+     * DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing
+     * NFS file servers</a>.</p>
      */
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
 
     /**
-     * <p>The subdirectory in the NFS file system that is used to read data from the
-     * NFS source location or write data to the NFS destination. The NFS path should be
-     * a path that's exported by the NFS server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other NFS clients in your network.
-     * </p> <p>To see all the paths exported by your NFS server, run "<code>showmount
-     * -e nfs-server-name</code>" from an NFS client that has access to your server.
-     * You can specify any directory that appears in the results, and any subdirectory
-     * of that directory. Ensure that the NFS export is accessible without Kerberos
-     * authentication. </p> <p>To transfer all the data in the folder you specified,
-     * DataSync needs to have permissions to read all the data. To ensure this, either
-     * configure the NFS export with <code>no_root_squash,</code> or ensure that the
-     * permissions for all of the files that you want DataSync allow read access for
-     * all users. Doing either enables the agent to read the files. For the agent to
-     * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
-     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     * Hat Enterprise Linux documentation.</p>
+     * <p>Specifies the export path in your NFS file server that you want DataSync to
+     * mount.</p> <p>This path (or a subdirectory of the path) is where DataSync
+     * transfers data to or from. For information on configuring an export for
+     * DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing
+     * NFS file servers</a>.</p>
      */
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
 
     /**
-     * <p>The subdirectory in the NFS file system that is used to read data from the
-     * NFS source location or write data to the NFS destination. The NFS path should be
-     * a path that's exported by the NFS server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other NFS clients in your network.
-     * </p> <p>To see all the paths exported by your NFS server, run "<code>showmount
-     * -e nfs-server-name</code>" from an NFS client that has access to your server.
-     * You can specify any directory that appears in the results, and any subdirectory
-     * of that directory. Ensure that the NFS export is accessible without Kerberos
-     * authentication. </p> <p>To transfer all the data in the folder you specified,
-     * DataSync needs to have permissions to read all the data. To ensure this, either
-     * configure the NFS export with <code>no_root_squash,</code> or ensure that the
-     * permissions for all of the files that you want DataSync allow read access for
-     * all users. Doing either enables the agent to read the files. For the agent to
-     * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
-     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     * Hat Enterprise Linux documentation.</p>
+     * <p>Specifies the export path in your NFS file server that you want DataSync to
+     * mount.</p> <p>This path (or a subdirectory of the path) is where DataSync
+     * transfers data to or from. For information on configuring an export for
+     * DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing
+     * NFS file servers</a>.</p>
      */
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
     /**
-     * <p>The subdirectory in the NFS file system that is used to read data from the
-     * NFS source location or write data to the NFS destination. The NFS path should be
-     * a path that's exported by the NFS server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other NFS clients in your network.
-     * </p> <p>To see all the paths exported by your NFS server, run "<code>showmount
-     * -e nfs-server-name</code>" from an NFS client that has access to your server.
-     * You can specify any directory that appears in the results, and any subdirectory
-     * of that directory. Ensure that the NFS export is accessible without Kerberos
-     * authentication. </p> <p>To transfer all the data in the folder you specified,
-     * DataSync needs to have permissions to read all the data. To ensure this, either
-     * configure the NFS export with <code>no_root_squash,</code> or ensure that the
-     * permissions for all of the files that you want DataSync allow read access for
-     * all users. Doing either enables the agent to read the files. For the agent to
-     * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
-     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     * Hat Enterprise Linux documentation.</p>
+     * <p>Specifies the export path in your NFS file server that you want DataSync to
+     * mount.</p> <p>This path (or a subdirectory of the path) is where DataSync
+     * transfers data to or from. For information on configuring an export for
+     * DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing
+     * NFS file servers</a>.</p>
      */
     inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
 
     /**
-     * <p>The subdirectory in the NFS file system that is used to read data from the
-     * NFS source location or write data to the NFS destination. The NFS path should be
-     * a path that's exported by the NFS server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other NFS clients in your network.
-     * </p> <p>To see all the paths exported by your NFS server, run "<code>showmount
-     * -e nfs-server-name</code>" from an NFS client that has access to your server.
-     * You can specify any directory that appears in the results, and any subdirectory
-     * of that directory. Ensure that the NFS export is accessible without Kerberos
-     * authentication. </p> <p>To transfer all the data in the folder you specified,
-     * DataSync needs to have permissions to read all the data. To ensure this, either
-     * configure the NFS export with <code>no_root_squash,</code> or ensure that the
-     * permissions for all of the files that you want DataSync allow read access for
-     * all users. Doing either enables the agent to read the files. For the agent to
-     * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
-     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     * Hat Enterprise Linux documentation.</p>
+     * <p>Specifies the export path in your NFS file server that you want DataSync to
+     * mount.</p> <p>This path (or a subdirectory of the path) is where DataSync
+     * transfers data to or from. For information on configuring an export for
+     * DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing
+     * NFS file servers</a>.</p>
      */
     inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
 
     /**
-     * <p>The subdirectory in the NFS file system that is used to read data from the
-     * NFS source location or write data to the NFS destination. The NFS path should be
-     * a path that's exported by the NFS server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other NFS clients in your network.
-     * </p> <p>To see all the paths exported by your NFS server, run "<code>showmount
-     * -e nfs-server-name</code>" from an NFS client that has access to your server.
-     * You can specify any directory that appears in the results, and any subdirectory
-     * of that directory. Ensure that the NFS export is accessible without Kerberos
-     * authentication. </p> <p>To transfer all the data in the folder you specified,
-     * DataSync needs to have permissions to read all the data. To ensure this, either
-     * configure the NFS export with <code>no_root_squash,</code> or ensure that the
-     * permissions for all of the files that you want DataSync allow read access for
-     * all users. Doing either enables the agent to read the files. For the agent to
-     * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
-     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     * Hat Enterprise Linux documentation.</p>
+     * <p>Specifies the export path in your NFS file server that you want DataSync to
+     * mount.</p> <p>This path (or a subdirectory of the path) is where DataSync
+     * transfers data to or from. For information on configuring an export for
+     * DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing
+     * NFS file servers</a>.</p>
      */
     inline CreateLocationNfsRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
 
     /**
-     * <p>The subdirectory in the NFS file system that is used to read data from the
-     * NFS source location or write data to the NFS destination. The NFS path should be
-     * a path that's exported by the NFS server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other NFS clients in your network.
-     * </p> <p>To see all the paths exported by your NFS server, run "<code>showmount
-     * -e nfs-server-name</code>" from an NFS client that has access to your server.
-     * You can specify any directory that appears in the results, and any subdirectory
-     * of that directory. Ensure that the NFS export is accessible without Kerberos
-     * authentication. </p> <p>To transfer all the data in the folder you specified,
-     * DataSync needs to have permissions to read all the data. To ensure this, either
-     * configure the NFS export with <code>no_root_squash,</code> or ensure that the
-     * permissions for all of the files that you want DataSync allow read access for
-     * all users. Doing either enables the agent to read the files. For the agent to
-     * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
-     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     * Hat Enterprise Linux documentation.</p>
+     * <p>Specifies the export path in your NFS file server that you want DataSync to
+     * mount.</p> <p>This path (or a subdirectory of the path) is where DataSync
+     * transfers data to or from. For information on configuring an export for
+     * DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing
+     * NFS file servers</a>.</p>
      */
     inline CreateLocationNfsRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
 
     /**
-     * <p>The subdirectory in the NFS file system that is used to read data from the
-     * NFS source location or write data to the NFS destination. The NFS path should be
-     * a path that's exported by the NFS server, or a subdirectory of that path. The
-     * path should be such that it can be mounted by other NFS clients in your network.
-     * </p> <p>To see all the paths exported by your NFS server, run "<code>showmount
-     * -e nfs-server-name</code>" from an NFS client that has access to your server.
-     * You can specify any directory that appears in the results, and any subdirectory
-     * of that directory. Ensure that the NFS export is accessible without Kerberos
-     * authentication. </p> <p>To transfer all the data in the folder you specified,
-     * DataSync needs to have permissions to read all the data. To ensure this, either
-     * configure the NFS export with <code>no_root_squash,</code> or ensure that the
-     * permissions for all of the files that you want DataSync allow read access for
-     * all users. Doing either enables the agent to read the files. For the agent to
-     * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
-     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     * Hat Enterprise Linux documentation.</p>
+     * <p>Specifies the export path in your NFS file server that you want DataSync to
+     * mount.</p> <p>This path (or a subdirectory of the path) is where DataSync
+     * transfers data to or from. For information on configuring an export for
+     * DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing
+     * NFS file servers</a>.</p>
      */
     inline CreateLocationNfsRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
 
 
     /**
-     * <p>The name of the NFS server. This value is the IP address or Domain Name
-     * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this hostname to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>  <p>This name must either
-     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the
+     * NFS file server that your DataSync agent connects to.</p>
      */
     inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
 
     /**
-     * <p>The name of the NFS server. This value is the IP address or Domain Name
-     * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this hostname to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>  <p>This name must either
-     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the
+     * NFS file server that your DataSync agent connects to.</p>
      */
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
 
     /**
-     * <p>The name of the NFS server. This value is the IP address or Domain Name
-     * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this hostname to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>  <p>This name must either
-     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the
+     * NFS file server that your DataSync agent connects to.</p>
      */
     inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
 
     /**
-     * <p>The name of the NFS server. This value is the IP address or Domain Name
-     * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this hostname to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>  <p>This name must either
-     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the
+     * NFS file server that your DataSync agent connects to.</p>
      */
     inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
 
     /**
-     * <p>The name of the NFS server. This value is the IP address or Domain Name
-     * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this hostname to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>  <p>This name must either
-     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the
+     * NFS file server that your DataSync agent connects to.</p>
      */
     inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
 
     /**
-     * <p>The name of the NFS server. This value is the IP address or Domain Name
-     * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this hostname to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>  <p>This name must either
-     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the
+     * NFS file server that your DataSync agent connects to.</p>
      */
     inline CreateLocationNfsRequest& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
 
     /**
-     * <p>The name of the NFS server. This value is the IP address or Domain Name
-     * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this hostname to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>  <p>This name must either
-     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the
+     * NFS file server that your DataSync agent connects to.</p>
      */
     inline CreateLocationNfsRequest& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the NFS server. This value is the IP address or Domain Name
-     * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this hostname to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>  <p>This name must either
-     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the
+     * NFS file server that your DataSync agent connects to.</p>
      */
     inline CreateLocationNfsRequest& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
 
 
     /**
-     * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your
-     * Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to
+     * connect to your NFS file server.</p> <p>You can specify more than one agent. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
+     * multiple agents for transfers</a>.</p>
      */
     inline const OnPremConfig& GetOnPremConfig() const{ return m_onPremConfig; }
 
     /**
-     * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your
-     * Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to
+     * connect to your NFS file server.</p> <p>You can specify more than one agent. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
+     * multiple agents for transfers</a>.</p>
      */
     inline bool OnPremConfigHasBeenSet() const { return m_onPremConfigHasBeenSet; }
 
     /**
-     * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your
-     * Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to
+     * connect to your NFS file server.</p> <p>You can specify more than one agent. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
+     * multiple agents for transfers</a>.</p>
      */
     inline void SetOnPremConfig(const OnPremConfig& value) { m_onPremConfigHasBeenSet = true; m_onPremConfig = value; }
 
     /**
-     * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your
-     * Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to
+     * connect to your NFS file server.</p> <p>You can specify more than one agent. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
+     * multiple agents for transfers</a>.</p>
      */
     inline void SetOnPremConfig(OnPremConfig&& value) { m_onPremConfigHasBeenSet = true; m_onPremConfig = std::move(value); }
 
     /**
-     * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your
-     * Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to
+     * connect to your NFS file server.</p> <p>You can specify more than one agent. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
+     * multiple agents for transfers</a>.</p>
      */
     inline CreateLocationNfsRequest& WithOnPremConfig(const OnPremConfig& value) { SetOnPremConfig(value); return *this;}
 
     /**
-     * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your
-     * Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on Snowcone</a> for more information.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to
+     * connect to your NFS file server.</p> <p>You can specify more than one agent. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
+     * multiple agents for transfers</a>.</p>
      */
     inline CreateLocationNfsRequest& WithOnPremConfig(OnPremConfig&& value) { SetOnPremConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
+     * <p>Specifies the options that DataSync can use to mount your NFS file
+     * server.</p>
      */
     inline const NfsMountOptions& GetMountOptions() const{ return m_mountOptions; }
 
     /**
-     * <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
+     * <p>Specifies the options that DataSync can use to mount your NFS file
+     * server.</p>
      */
     inline bool MountOptionsHasBeenSet() const { return m_mountOptionsHasBeenSet; }
 
     /**
-     * <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
+     * <p>Specifies the options that DataSync can use to mount your NFS file
+     * server.</p>
      */
     inline void SetMountOptions(const NfsMountOptions& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = value; }
 
     /**
-     * <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
+     * <p>Specifies the options that DataSync can use to mount your NFS file
+     * server.</p>
      */
     inline void SetMountOptions(NfsMountOptions&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::move(value); }
 
     /**
-     * <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
+     * <p>Specifies the options that DataSync can use to mount your NFS file
+     * server.</p>
      */
     inline CreateLocationNfsRequest& WithMountOptions(const NfsMountOptions& value) { SetMountOptions(value); return *this;}
 
     /**
-     * <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
+     * <p>Specifies the options that DataSync can use to mount your NFS file
+     * server.</p>
      */
     inline CreateLocationNfsRequest& WithMountOptions(NfsMountOptions&& value) { SetMountOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * location. The value can be an empty string. We recommend using tags to name your
-     * resources.</p>
+     * <p>Specifies labels that help you categorize, filter, and search for your Amazon
+     * Web Services resources. We recommend creating at least a name tag for your
+     * location.</p>
      */
     inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * location. The value can be an empty string. We recommend using tags to name your
-     * resources.</p>
+     * <p>Specifies labels that help you categorize, filter, and search for your Amazon
+     * Web Services resources. We recommend creating at least a name tag for your
+     * location.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * location. The value can be an empty string. We recommend using tags to name your
-     * resources.</p>
+     * <p>Specifies labels that help you categorize, filter, and search for your Amazon
+     * Web Services resources. We recommend creating at least a name tag for your
+     * location.</p>
      */
     inline void SetTags(const Aws::Vector<TagListEntry>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * location. The value can be an empty string. We recommend using tags to name your
-     * resources.</p>
+     * <p>Specifies labels that help you categorize, filter, and search for your Amazon
+     * Web Services resources. We recommend creating at least a name tag for your
+     * location.</p>
      */
     inline void SetTags(Aws::Vector<TagListEntry>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * location. The value can be an empty string. We recommend using tags to name your
-     * resources.</p>
+     * <p>Specifies labels that help you categorize, filter, and search for your Amazon
+     * Web Services resources. We recommend creating at least a name tag for your
+     * location.</p>
      */
     inline CreateLocationNfsRequest& WithTags(const Aws::Vector<TagListEntry>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * location. The value can be an empty string. We recommend using tags to name your
-     * resources.</p>
+     * <p>Specifies labels that help you categorize, filter, and search for your Amazon
+     * Web Services resources. We recommend creating at least a name tag for your
+     * location.</p>
      */
     inline CreateLocationNfsRequest& WithTags(Aws::Vector<TagListEntry>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * location. The value can be an empty string. We recommend using tags to name your
-     * resources.</p>
+     * <p>Specifies labels that help you categorize, filter, and search for your Amazon
+     * Web Services resources. We recommend creating at least a name tag for your
+     * location.</p>
      */
     inline CreateLocationNfsRequest& AddTags(const TagListEntry& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * location. The value can be an empty string. We recommend using tags to name your
-     * resources.</p>
+     * <p>Specifies labels that help you categorize, filter, and search for your Amazon
+     * Web Services resources. We recommend creating at least a name tag for your
+     * location.</p>
      */
     inline CreateLocationNfsRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

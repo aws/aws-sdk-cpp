@@ -20,6 +20,7 @@ namespace Model
 
 UserSettings::UserSettings() : 
     m_associatedPortalArnsHasBeenSet(false),
+    m_cookieSynchronizationConfigurationHasBeenSet(false),
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
@@ -40,6 +41,7 @@ UserSettings::UserSettings() :
 
 UserSettings::UserSettings(JsonView jsonValue) : 
     m_associatedPortalArnsHasBeenSet(false),
+    m_cookieSynchronizationConfigurationHasBeenSet(false),
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
@@ -69,6 +71,13 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
       m_associatedPortalArns.push_back(associatedPortalArnsJsonList[associatedPortalArnsIndex].AsString());
     }
     m_associatedPortalArnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cookieSynchronizationConfiguration"))
+  {
+    m_cookieSynchronizationConfiguration = jsonValue.GetObject("cookieSynchronizationConfiguration");
+
+    m_cookieSynchronizationConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("copyAllowed"))
@@ -142,6 +151,12 @@ JsonValue UserSettings::Jsonize() const
      associatedPortalArnsJsonList[associatedPortalArnsIndex].AsString(m_associatedPortalArns[associatedPortalArnsIndex]);
    }
    payload.WithArray("associatedPortalArns", std::move(associatedPortalArnsJsonList));
+
+  }
+
+  if(m_cookieSynchronizationConfigurationHasBeenSet)
+  {
+   payload.WithObject("cookieSynchronizationConfiguration", m_cookieSynchronizationConfiguration.Jsonize());
 
   }
 

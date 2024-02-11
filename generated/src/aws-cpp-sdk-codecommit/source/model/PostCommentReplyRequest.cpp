@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 PostCommentReplyRequest::PostCommentReplyRequest() : 
     m_inReplyToHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_contentHasBeenSet(false)
 {

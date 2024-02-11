@@ -80,58 +80,58 @@ namespace Model
 
 
     /**
-     * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. Get this number from the
-     * response to a <a>GetThirdPartyJobDetails</a> request.</p>
+     * <p>A system-generated random number that CodePipeline uses to ensure that the
+     * job is being worked on by only one job worker. Get this number from the response
+     * to a <a>GetThirdPartyJobDetails</a> request.</p>
      */
     inline const Aws::String& GetNonce() const{ return m_nonce; }
 
     /**
-     * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. Get this number from the
-     * response to a <a>GetThirdPartyJobDetails</a> request.</p>
+     * <p>A system-generated random number that CodePipeline uses to ensure that the
+     * job is being worked on by only one job worker. Get this number from the response
+     * to a <a>GetThirdPartyJobDetails</a> request.</p>
      */
     inline bool NonceHasBeenSet() const { return m_nonceHasBeenSet; }
 
     /**
-     * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. Get this number from the
-     * response to a <a>GetThirdPartyJobDetails</a> request.</p>
+     * <p>A system-generated random number that CodePipeline uses to ensure that the
+     * job is being worked on by only one job worker. Get this number from the response
+     * to a <a>GetThirdPartyJobDetails</a> request.</p>
      */
     inline void SetNonce(const Aws::String& value) { m_nonceHasBeenSet = true; m_nonce = value; }
 
     /**
-     * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. Get this number from the
-     * response to a <a>GetThirdPartyJobDetails</a> request.</p>
+     * <p>A system-generated random number that CodePipeline uses to ensure that the
+     * job is being worked on by only one job worker. Get this number from the response
+     * to a <a>GetThirdPartyJobDetails</a> request.</p>
      */
     inline void SetNonce(Aws::String&& value) { m_nonceHasBeenSet = true; m_nonce = std::move(value); }
 
     /**
-     * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. Get this number from the
-     * response to a <a>GetThirdPartyJobDetails</a> request.</p>
+     * <p>A system-generated random number that CodePipeline uses to ensure that the
+     * job is being worked on by only one job worker. Get this number from the response
+     * to a <a>GetThirdPartyJobDetails</a> request.</p>
      */
     inline void SetNonce(const char* value) { m_nonceHasBeenSet = true; m_nonce.assign(value); }
 
     /**
-     * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. Get this number from the
-     * response to a <a>GetThirdPartyJobDetails</a> request.</p>
+     * <p>A system-generated random number that CodePipeline uses to ensure that the
+     * job is being worked on by only one job worker. Get this number from the response
+     * to a <a>GetThirdPartyJobDetails</a> request.</p>
      */
     inline AcknowledgeThirdPartyJobRequest& WithNonce(const Aws::String& value) { SetNonce(value); return *this;}
 
     /**
-     * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. Get this number from the
-     * response to a <a>GetThirdPartyJobDetails</a> request.</p>
+     * <p>A system-generated random number that CodePipeline uses to ensure that the
+     * job is being worked on by only one job worker. Get this number from the response
+     * to a <a>GetThirdPartyJobDetails</a> request.</p>
      */
     inline AcknowledgeThirdPartyJobRequest& WithNonce(Aws::String&& value) { SetNonce(std::move(value)); return *this;}
 
     /**
-     * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. Get this number from the
-     * response to a <a>GetThirdPartyJobDetails</a> request.</p>
+     * <p>A system-generated random number that CodePipeline uses to ensure that the
+     * job is being worked on by only one job worker. Get this number from the response
+     * to a <a>GetThirdPartyJobDetails</a> request.</p>
      */
     inline AcknowledgeThirdPartyJobRequest& WithNonce(const char* value) { SetNonce(value); return *this;}
 

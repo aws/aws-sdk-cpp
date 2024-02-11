@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactMethodStatus::NOT_SET:
+            return {};
           case ContactMethodStatus::PendingVerification:
             return "PendingVerification";
           case ContactMethodStatus::Valid:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ManagedTerminationProtection::NOT_SET:
+            return {};
           case ManagedTerminationProtection::ENABLED:
             return "ENABLED";
           case ManagedTerminationProtection::DISABLED:

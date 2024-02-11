@@ -21,14 +21,18 @@ namespace Model
 SecurityProfileSummary::SecurityProfileSummary() : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false)
 {
 }
 
 SecurityProfileSummary::SecurityProfileSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,20 @@ SecurityProfileSummary& SecurityProfileSummary::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedRegion"))
+  {
+    m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
+
+    m_lastModifiedRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +96,17 @@ JsonValue SecurityProfileSummary::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastModifiedRegionHasBeenSet)
+  {
+   payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
 
   }
 

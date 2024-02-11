@@ -29,6 +29,7 @@ namespace Aws
         static const int self_managed_opt_outs_enabled_HASH = HashingUtils::HashString("self-managed-opt-outs-enabled");
         static const int opt_out_list_name_HASH = HashingUtils::HashString("opt-out-list-name");
         static const int deletion_protection_enabled_HASH = HashingUtils::HashString("deletion-protection-enabled");
+        static const int two_way_channel_arn_HASH = HashingUtils::HashString("two-way-channel-arn");
 
 
         PhoneNumberFilterName GetPhoneNumberFilterNameForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return PhoneNumberFilterName::deletion_protection_enabled;
           }
+          else if (hashCode == two_way_channel_arn_HASH)
+          {
+            return PhoneNumberFilterName::two_way_channel_arn;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberFilterName::NOT_SET:
+            return {};
           case PhoneNumberFilterName::status:
             return "status";
           case PhoneNumberFilterName::iso_country_code:
@@ -102,6 +109,8 @@ namespace Aws
             return "opt-out-list-name";
           case PhoneNumberFilterName::deletion_protection_enabled:
             return "deletion-protection-enabled";
+          case PhoneNumberFilterName::two_way_channel_arn:
+            return "two-way-channel-arn";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

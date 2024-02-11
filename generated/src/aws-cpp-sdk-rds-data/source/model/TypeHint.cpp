@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TypeHint::NOT_SET:
+            return {};
           case TypeHint::JSON:
             return "JSON";
           case TypeHint::UUID:

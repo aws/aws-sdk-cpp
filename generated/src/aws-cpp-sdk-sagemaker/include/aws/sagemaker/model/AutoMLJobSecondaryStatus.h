@@ -17,23 +17,24 @@ namespace Model
   {
     NOT_SET,
     Starting,
-    AnalyzingData,
-    FeatureEngineering,
-    ModelTuning,
     MaxCandidatesReached,
     Failed,
     Stopped,
     MaxAutoMLJobRuntimeReached,
     Stopping,
     CandidateDefinitionsGenerated,
-    GeneratingExplainabilityReport,
     Completed,
     ExplainabilityError,
     DeployingModel,
     ModelDeploymentError,
     GeneratingModelInsightsReport,
     ModelInsightsError,
-    TrainingModels
+    AnalyzingData,
+    FeatureEngineering,
+    ModelTuning,
+    GeneratingExplainabilityReport,
+    TrainingModels,
+    PreTraining
   };
 
 namespace AutoMLJobSecondaryStatusMapper

@@ -28,7 +28,11 @@ AWS_CORE_API extern const char TYPE[]                   = "__type";
 
 AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const
 {
-    JsonValue exceptionPayload(httpResponse.GetResponseBody());
+    Aws::StringStream memoryStream;
+    std::copy(std::istreambuf_iterator<char>(httpResponse.GetResponseBody()), std::istreambuf_iterator<char>(), std::ostreambuf_iterator<char>(memoryStream));
+    Aws::String rawPayloadStr = memoryStream.str();
+
+    JsonValue exceptionPayload(rawPayloadStr);
     JsonView payloadView(exceptionPayload);
     AWSError<CoreErrors> error;
     if (exceptionPayload.WasParseSuccessful())
@@ -72,7 +76,9 @@ AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse
     }
     else
     {
-        error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", "Failed to parse error payload", false);
+        bool isRetryable = IsRetryableHttpResponseCode(httpResponse.GetResponseCode());
+        AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, "Failed to parse error payload: " << httpResponse.GetResponseCode() << ": " << rawPayloadStr);
+        error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", "Failed to parse error payload: " + rawPayloadStr, isRetryable);
     }
 
     error.SetRequestId(httpResponse.HasHeader(REQUEST_ID_HEADER) ? httpResponse.GetHeader(REQUEST_ID_HEADER) : "");

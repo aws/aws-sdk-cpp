@@ -7,6 +7,7 @@
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/ram/RAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ram/model/PermissionTypeFilter.h>
 #include <utility>
 
 namespace Aws
@@ -33,65 +34,73 @@ namespace Model
 
 
     /**
-     * <p>Specifies that you want to list permissions for only the specified resource
-     * type. For example, to list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * <p>Specifies that you want to list only those permissions that apply to the
+     * specified resource type. This parameter is not case sensitive.</p> <p>For
+     * example, to list only permissions that apply to Amazon EC2 subnets, specify
+     * <code>ec2:subnet</code>. You can use the <a>ListResourceTypes</a> operation to
      * get the specific string required.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>Specifies that you want to list permissions for only the specified resource
-     * type. For example, to list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * <p>Specifies that you want to list only those permissions that apply to the
+     * specified resource type. This parameter is not case sensitive.</p> <p>For
+     * example, to list only permissions that apply to Amazon EC2 subnets, specify
+     * <code>ec2:subnet</code>. You can use the <a>ListResourceTypes</a> operation to
      * get the specific string required.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>Specifies that you want to list permissions for only the specified resource
-     * type. For example, to list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * <p>Specifies that you want to list only those permissions that apply to the
+     * specified resource type. This parameter is not case sensitive.</p> <p>For
+     * example, to list only permissions that apply to Amazon EC2 subnets, specify
+     * <code>ec2:subnet</code>. You can use the <a>ListResourceTypes</a> operation to
      * get the specific string required.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>Specifies that you want to list permissions for only the specified resource
-     * type. For example, to list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * <p>Specifies that you want to list only those permissions that apply to the
+     * specified resource type. This parameter is not case sensitive.</p> <p>For
+     * example, to list only permissions that apply to Amazon EC2 subnets, specify
+     * <code>ec2:subnet</code>. You can use the <a>ListResourceTypes</a> operation to
      * get the specific string required.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>Specifies that you want to list permissions for only the specified resource
-     * type. For example, to list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * <p>Specifies that you want to list only those permissions that apply to the
+     * specified resource type. This parameter is not case sensitive.</p> <p>For
+     * example, to list only permissions that apply to Amazon EC2 subnets, specify
+     * <code>ec2:subnet</code>. You can use the <a>ListResourceTypes</a> operation to
      * get the specific string required.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>Specifies that you want to list permissions for only the specified resource
-     * type. For example, to list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * <p>Specifies that you want to list only those permissions that apply to the
+     * specified resource type. This parameter is not case sensitive.</p> <p>For
+     * example, to list only permissions that apply to Amazon EC2 subnets, specify
+     * <code>ec2:subnet</code>. You can use the <a>ListResourceTypes</a> operation to
      * get the specific string required.</p>
      */
     inline ListPermissionsRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>Specifies that you want to list permissions for only the specified resource
-     * type. For example, to list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * <p>Specifies that you want to list only those permissions that apply to the
+     * specified resource type. This parameter is not case sensitive.</p> <p>For
+     * example, to list only permissions that apply to Amazon EC2 subnets, specify
+     * <code>ec2:subnet</code>. You can use the <a>ListResourceTypes</a> operation to
      * get the specific string required.</p>
      */
     inline ListPermissionsRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies that you want to list permissions for only the specified resource
-     * type. For example, to list only permissions that apply to EC2 subnets, specify
-     * <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a> operation to
+     * <p>Specifies that you want to list only those permissions that apply to the
+     * specified resource type. This parameter is not case sensitive.</p> <p>For
+     * example, to list only permissions that apply to Amazon EC2 subnets, specify
+     * <code>ec2:subnet</code>. You can use the <a>ListResourceTypes</a> operation to
      * get the specific string required.</p>
      */
     inline ListPermissionsRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
@@ -222,6 +231,67 @@ namespace Model
      */
     inline ListPermissionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>Specifies that you want to list only permissions of this type:</p> <ul> <li>
+     * <p> <code>AWS</code> – returns only Amazon Web Services managed permissions.</p>
+     * </li> <li> <p> <code>LOCAL</code> – returns only customer managed
+     * permissions</p> </li> <li> <p> <code>ALL</code> – returns both Amazon Web
+     * Services managed permissions and customer managed permissions.</p> </li> </ul>
+     * <p>If you don't specify this parameter, the default is <code>All</code>.</p>
+     */
+    inline const PermissionTypeFilter& GetPermissionType() const{ return m_permissionType; }
+
+    /**
+     * <p>Specifies that you want to list only permissions of this type:</p> <ul> <li>
+     * <p> <code>AWS</code> – returns only Amazon Web Services managed permissions.</p>
+     * </li> <li> <p> <code>LOCAL</code> – returns only customer managed
+     * permissions</p> </li> <li> <p> <code>ALL</code> – returns both Amazon Web
+     * Services managed permissions and customer managed permissions.</p> </li> </ul>
+     * <p>If you don't specify this parameter, the default is <code>All</code>.</p>
+     */
+    inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies that you want to list only permissions of this type:</p> <ul> <li>
+     * <p> <code>AWS</code> – returns only Amazon Web Services managed permissions.</p>
+     * </li> <li> <p> <code>LOCAL</code> – returns only customer managed
+     * permissions</p> </li> <li> <p> <code>ALL</code> – returns both Amazon Web
+     * Services managed permissions and customer managed permissions.</p> </li> </ul>
+     * <p>If you don't specify this parameter, the default is <code>All</code>.</p>
+     */
+    inline void SetPermissionType(const PermissionTypeFilter& value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
+
+    /**
+     * <p>Specifies that you want to list only permissions of this type:</p> <ul> <li>
+     * <p> <code>AWS</code> – returns only Amazon Web Services managed permissions.</p>
+     * </li> <li> <p> <code>LOCAL</code> – returns only customer managed
+     * permissions</p> </li> <li> <p> <code>ALL</code> – returns both Amazon Web
+     * Services managed permissions and customer managed permissions.</p> </li> </ul>
+     * <p>If you don't specify this parameter, the default is <code>All</code>.</p>
+     */
+    inline void SetPermissionType(PermissionTypeFilter&& value) { m_permissionTypeHasBeenSet = true; m_permissionType = std::move(value); }
+
+    /**
+     * <p>Specifies that you want to list only permissions of this type:</p> <ul> <li>
+     * <p> <code>AWS</code> – returns only Amazon Web Services managed permissions.</p>
+     * </li> <li> <p> <code>LOCAL</code> – returns only customer managed
+     * permissions</p> </li> <li> <p> <code>ALL</code> – returns both Amazon Web
+     * Services managed permissions and customer managed permissions.</p> </li> </ul>
+     * <p>If you don't specify this parameter, the default is <code>All</code>.</p>
+     */
+    inline ListPermissionsRequest& WithPermissionType(const PermissionTypeFilter& value) { SetPermissionType(value); return *this;}
+
+    /**
+     * <p>Specifies that you want to list only permissions of this type:</p> <ul> <li>
+     * <p> <code>AWS</code> – returns only Amazon Web Services managed permissions.</p>
+     * </li> <li> <p> <code>LOCAL</code> – returns only customer managed
+     * permissions</p> </li> <li> <p> <code>ALL</code> – returns both Amazon Web
+     * Services managed permissions and customer managed permissions.</p> </li> </ul>
+     * <p>If you don't specify this parameter, the default is <code>All</code>.</p>
+     */
+    inline ListPermissionsRequest& WithPermissionType(PermissionTypeFilter&& value) { SetPermissionType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceType;
@@ -232,6 +302,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    PermissionTypeFilter m_permissionType;
+    bool m_permissionTypeHasBeenSet = false;
   };
 
 } // namespace Model

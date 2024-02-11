@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProtectiveEquipmentType::NOT_SET:
+            return {};
           case ProtectiveEquipmentType::FACE_COVER:
             return "FACE_COVER";
           case ProtectiveEquipmentType::HAND_COVER:

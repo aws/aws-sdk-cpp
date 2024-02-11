@@ -276,17 +276,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAuthParameters() const{ return m_authParameters; }
 
@@ -297,17 +302,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline bool AuthParametersHasBeenSet() const { return m_authParametersHasBeenSet; }
 
@@ -318,17 +328,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline void SetAuthParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_authParametersHasBeenSet = true; m_authParameters = value; }
 
@@ -339,17 +354,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline void SetAuthParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_authParametersHasBeenSet = true; m_authParameters = std::move(value); }
 
@@ -360,17 +380,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminInitiateAuthRequest& WithAuthParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetAuthParameters(value); return *this;}
 
@@ -381,17 +406,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminInitiateAuthRequest& WithAuthParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetAuthParameters(std::move(value)); return *this;}
 
@@ -402,17 +432,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(const Aws::String& key, const Aws::String& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, value); return *this; }
 
@@ -423,17 +458,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(Aws::String&& key, const Aws::String& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), value); return *this; }
 
@@ -444,17 +484,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(const Aws::String& key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, std::move(value)); return *this; }
 
@@ -465,17 +510,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(Aws::String&& key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -486,17 +536,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(const char* key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, std::move(value)); return *this; }
 
@@ -507,17 +562,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(Aws::String&& key, const char* value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), value); return *this; }
 
@@ -528,17 +588,22 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-     * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
-     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app
+     * client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+     * <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>:
+     * <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the
+     * app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code>. To start the authentication flow with password
      * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-     * SRP_A Value)</code>.</p> </li> </ul>
+     * SRP_A Value)</code>.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(const char* key, const char* value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, value); return *this; }
 
@@ -561,8 +626,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -594,8 +659,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -627,8 +692,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -660,8 +725,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -693,8 +758,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -726,8 +791,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -759,8 +824,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -792,8 +857,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -825,8 +890,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -858,8 +923,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -891,8 +956,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -924,8 +989,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -957,8 +1022,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata

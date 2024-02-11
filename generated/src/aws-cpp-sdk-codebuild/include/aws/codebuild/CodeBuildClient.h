@@ -35,6 +35,9 @@ namespace CodeBuild
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef CodeBuildClientConfiguration ClientConfigurationType;
+      typedef CodeBuildEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -1186,10 +1189,9 @@ namespace CodeBuild
          * Environment variables, source code, and other sensitive information may have
          * been output to the build logs and artifacts. You must be careful about what
          * information is output to the build logs. Some best practice are:</p> <ul> <li>
-         * <p>Do not store sensitive values, especially Amazon Web Services access key IDs
-         * and secret access keys, in environment variables. We recommend that you use an
-         * Amazon EC2 Systems Manager Parameter Store or Secrets Manager to store sensitive
-         * values.</p> </li> <li> <p>Follow <a
+         * <p>Do not store sensitive values in environment variables. We recommend that you
+         * use an Amazon EC2 Systems Manager Parameter Store or Secrets Manager to store
+         * sensitive values.</p> </li> <li> <p>Follow <a
          * href="https://docs.aws.amazon.com/codebuild/latest/userguide/webhooks.html#webhook-best-practices">Best
          * practices for using webhooks</a> in the <i>CodeBuild User Guide</i> to limit
          * which entities can trigger a build, and do not store the buildspec in the

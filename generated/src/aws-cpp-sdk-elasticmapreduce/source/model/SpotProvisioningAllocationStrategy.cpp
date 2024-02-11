@@ -21,6 +21,9 @@ namespace Aws
       {
 
         static const int capacity_optimized_HASH = HashingUtils::HashString("capacity-optimized");
+        static const int price_capacity_optimized_HASH = HashingUtils::HashString("price-capacity-optimized");
+        static const int lowest_price_HASH = HashingUtils::HashString("lowest-price");
+        static const int diversified_HASH = HashingUtils::HashString("diversified");
 
 
         SpotProvisioningAllocationStrategy GetSpotProvisioningAllocationStrategyForName(const Aws::String& name)
@@ -29,6 +32,18 @@ namespace Aws
           if (hashCode == capacity_optimized_HASH)
           {
             return SpotProvisioningAllocationStrategy::capacity_optimized;
+          }
+          else if (hashCode == price_capacity_optimized_HASH)
+          {
+            return SpotProvisioningAllocationStrategy::price_capacity_optimized;
+          }
+          else if (hashCode == lowest_price_HASH)
+          {
+            return SpotProvisioningAllocationStrategy::lowest_price;
+          }
+          else if (hashCode == diversified_HASH)
+          {
+            return SpotProvisioningAllocationStrategy::diversified;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpotProvisioningAllocationStrategy::NOT_SET:
+            return {};
           case SpotProvisioningAllocationStrategy::capacity_optimized:
             return "capacity-optimized";
+          case SpotProvisioningAllocationStrategy::price_capacity_optimized:
+            return "price-capacity-optimized";
+          case SpotProvisioningAllocationStrategy::lowest_price:
+            return "lowest-price";
+          case SpotProvisioningAllocationStrategy::diversified:
+            return "diversified";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

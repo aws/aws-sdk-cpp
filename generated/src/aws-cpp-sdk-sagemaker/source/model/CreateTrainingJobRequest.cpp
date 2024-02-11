@@ -37,7 +37,9 @@ CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_profilerConfigHasBeenSet(false),
     m_profilerRuleConfigurationsHasBeenSet(false),
     m_environmentHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false)
+    m_retryStrategyHasBeenSet(false),
+    m_remoteDebugConfigHasBeenSet(false),
+    m_infraCheckConfigHasBeenSet(false)
 {
 }
 
@@ -204,6 +206,18 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
   if(m_retryStrategyHasBeenSet)
   {
    payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
+
+  }
+
+  if(m_remoteDebugConfigHasBeenSet)
+  {
+   payload.WithObject("RemoteDebugConfig", m_remoteDebugConfig.Jsonize());
+
+  }
+
+  if(m_infraCheckConfigHasBeenSet)
+  {
+   payload.WithObject("InfraCheckConfig", m_infraCheckConfig.Jsonize());
 
   }
 

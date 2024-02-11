@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3MetadataDirective::NOT_SET:
+            return {};
           case S3MetadataDirective::COPY:
             return "COPY";
           case S3MetadataDirective::REPLACE:

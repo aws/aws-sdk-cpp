@@ -147,7 +147,7 @@ namespace Model
 
     /**
      * <p>The integer status code for an HTTP response of a corresponding
-     * <code>GetObject</code> request.</p> <p class="title"> <b>Status Codes</b> </p>
+     * <code>GetObject</code> request. The following is a list of status codes.</p>
      * <ul> <li> <p> <code>200 - OK</code> </p> </li> <li> <p> <code>206 - Partial
      * Content</code> </p> </li> <li> <p> <code>304 - Not Modified</code> </p> </li>
      * <li> <p> <code>400 - Bad Request</code> </p> </li> <li> <p> <code>401 -
@@ -163,7 +163,7 @@ namespace Model
 
     /**
      * <p>The integer status code for an HTTP response of a corresponding
-     * <code>GetObject</code> request.</p> <p class="title"> <b>Status Codes</b> </p>
+     * <code>GetObject</code> request. The following is a list of status codes.</p>
      * <ul> <li> <p> <code>200 - OK</code> </p> </li> <li> <p> <code>206 - Partial
      * Content</code> </p> </li> <li> <p> <code>304 - Not Modified</code> </p> </li>
      * <li> <p> <code>400 - Bad Request</code> </p> </li> <li> <p> <code>401 -
@@ -179,7 +179,7 @@ namespace Model
 
     /**
      * <p>The integer status code for an HTTP response of a corresponding
-     * <code>GetObject</code> request.</p> <p class="title"> <b>Status Codes</b> </p>
+     * <code>GetObject</code> request. The following is a list of status codes.</p>
      * <ul> <li> <p> <code>200 - OK</code> </p> </li> <li> <p> <code>206 - Partial
      * Content</code> </p> </li> <li> <p> <code>304 - Not Modified</code> </p> </li>
      * <li> <p> <code>400 - Bad Request</code> </p> </li> <li> <p> <code>401 -
@@ -195,7 +195,7 @@ namespace Model
 
     /**
      * <p>The integer status code for an HTTP response of a corresponding
-     * <code>GetObject</code> request.</p> <p class="title"> <b>Status Codes</b> </p>
+     * <code>GetObject</code> request. The following is a list of status codes.</p>
      * <ul> <li> <p> <code>200 - OK</code> </p> </li> <li> <p> <code>206 - Partial
      * Content</code> </p> </li> <li> <p> <code>304 - Not Modified</code> </p> </li>
      * <li> <p> <code>400 - Bad Request</code> </p> </li> <li> <p> <code>401 -
@@ -1761,58 +1761,66 @@ namespace Model
 
 
     /**
-     * <p> If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for stored in Amazon S3 object. </p>
+     * <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon
+     * Web Services Key Management Service (Amazon Web Services KMS) symmetric
+     * encryption customer managed key that was used for stored in Amazon S3 object.
+     * </p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p> If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for stored in Amazon S3 object. </p>
+     * <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon
+     * Web Services Key Management Service (Amazon Web Services KMS) symmetric
+     * encryption customer managed key that was used for stored in Amazon S3 object.
+     * </p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
-     * <p> If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for stored in Amazon S3 object. </p>
+     * <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon
+     * Web Services Key Management Service (Amazon Web Services KMS) symmetric
+     * encryption customer managed key that was used for stored in Amazon S3 object.
+     * </p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * <p> If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for stored in Amazon S3 object. </p>
+     * <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon
+     * Web Services Key Management Service (Amazon Web Services KMS) symmetric
+     * encryption customer managed key that was used for stored in Amazon S3 object.
+     * </p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p> If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for stored in Amazon S3 object. </p>
+     * <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon
+     * Web Services Key Management Service (Amazon Web Services KMS) symmetric
+     * encryption customer managed key that was used for stored in Amazon S3 object.
+     * </p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p> If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for stored in Amazon S3 object. </p>
+     * <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon
+     * Web Services Key Management Service (Amazon Web Services KMS) symmetric
+     * encryption customer managed key that was used for stored in Amazon S3 object.
+     * </p>
      */
     inline WriteGetObjectResponseRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p> If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for stored in Amazon S3 object. </p>
+     * <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon
+     * Web Services Key Management Service (Amazon Web Services KMS) symmetric
+     * encryption customer managed key that was used for stored in Amazon S3 object.
+     * </p>
      */
     inline WriteGetObjectResponseRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p> If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for stored in Amazon S3 object. </p>
+     * <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon
+     * Web Services Key Management Service (Amazon Web Services KMS) symmetric
+     * encryption customer managed key that was used for stored in Amazon S3 object.
+     * </p>
      */
     inline WriteGetObjectResponseRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

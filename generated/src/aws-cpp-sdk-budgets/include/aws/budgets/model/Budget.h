@@ -54,57 +54,57 @@ namespace Model
 
     /**
      * <p>The name of a budget. The name must be unique within an account. The
-     * <code>:</code> and <code>\</code> characters aren't allowed in
-     * <code>BudgetName</code>.</p>
+     * <code>:</code> and <code>\</code> characters, and the "/action/" substring,
+     * aren't allowed in <code>BudgetName</code>.</p>
      */
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
 
     /**
      * <p>The name of a budget. The name must be unique within an account. The
-     * <code>:</code> and <code>\</code> characters aren't allowed in
-     * <code>BudgetName</code>.</p>
+     * <code>:</code> and <code>\</code> characters, and the "/action/" substring,
+     * aren't allowed in <code>BudgetName</code>.</p>
      */
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
 
     /**
      * <p>The name of a budget. The name must be unique within an account. The
-     * <code>:</code> and <code>\</code> characters aren't allowed in
-     * <code>BudgetName</code>.</p>
+     * <code>:</code> and <code>\</code> characters, and the "/action/" substring,
+     * aren't allowed in <code>BudgetName</code>.</p>
      */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     /**
      * <p>The name of a budget. The name must be unique within an account. The
-     * <code>:</code> and <code>\</code> characters aren't allowed in
-     * <code>BudgetName</code>.</p>
+     * <code>:</code> and <code>\</code> characters, and the "/action/" substring,
+     * aren't allowed in <code>BudgetName</code>.</p>
      */
     inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
 
     /**
      * <p>The name of a budget. The name must be unique within an account. The
-     * <code>:</code> and <code>\</code> characters aren't allowed in
-     * <code>BudgetName</code>.</p>
+     * <code>:</code> and <code>\</code> characters, and the "/action/" substring,
+     * aren't allowed in <code>BudgetName</code>.</p>
      */
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
 
     /**
      * <p>The name of a budget. The name must be unique within an account. The
-     * <code>:</code> and <code>\</code> characters aren't allowed in
-     * <code>BudgetName</code>.</p>
+     * <code>:</code> and <code>\</code> characters, and the "/action/" substring,
+     * aren't allowed in <code>BudgetName</code>.</p>
      */
     inline Budget& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
 
     /**
      * <p>The name of a budget. The name must be unique within an account. The
-     * <code>:</code> and <code>\</code> characters aren't allowed in
-     * <code>BudgetName</code>.</p>
+     * <code>:</code> and <code>\</code> characters, and the "/action/" substring,
+     * aren't allowed in <code>BudgetName</code>.</p>
      */
     inline Budget& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a budget. The name must be unique within an account. The
-     * <code>:</code> and <code>\</code> characters aren't allowed in
-     * <code>BudgetName</code>.</p>
+     * <code>:</code> and <code>\</code> characters, and the "/action/" substring,
+     * aren't allowed in <code>BudgetName</code>.</p>
      */
     inline Budget& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
 

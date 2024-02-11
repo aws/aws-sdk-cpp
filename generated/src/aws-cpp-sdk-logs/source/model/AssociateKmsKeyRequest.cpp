@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 AssociateKmsKeyRequest::AssociateKmsKeyRequest() : 
     m_logGroupNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_resourceIdentifierHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String AssociateKmsKeyRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("kmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_resourceIdentifierHasBeenSet)
+  {
+   payload.WithString("resourceIdentifier", m_resourceIdentifier);
 
   }
 

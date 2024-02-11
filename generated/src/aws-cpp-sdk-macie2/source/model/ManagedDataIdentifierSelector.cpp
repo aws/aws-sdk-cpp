@@ -24,6 +24,7 @@ namespace Aws
         static const int EXCLUDE_HASH = HashingUtils::HashString("EXCLUDE");
         static const int INCLUDE_HASH = HashingUtils::HashString("INCLUDE");
         static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static const int RECOMMENDED_HASH = HashingUtils::HashString("RECOMMENDED");
 
 
         ManagedDataIdentifierSelector GetManagedDataIdentifierSelectorForName(const Aws::String& name)
@@ -45,6 +46,10 @@ namespace Aws
           {
             return ManagedDataIdentifierSelector::NONE;
           }
+          else if (hashCode == RECOMMENDED_HASH)
+          {
+            return ManagedDataIdentifierSelector::RECOMMENDED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -59,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ManagedDataIdentifierSelector::NOT_SET:
+            return {};
           case ManagedDataIdentifierSelector::ALL:
             return "ALL";
           case ManagedDataIdentifierSelector::EXCLUDE:
@@ -67,6 +74,8 @@ namespace Aws
             return "INCLUDE";
           case ManagedDataIdentifierSelector::NONE:
             return "NONE";
+          case ManagedDataIdentifierSelector::RECOMMENDED:
+            return "RECOMMENDED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

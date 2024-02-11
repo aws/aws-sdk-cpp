@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CLIENT_CREDENTIALS_HASH = HashingUtils::HashString("CLIENT_CREDENTIALS");
         static const int AUTHORIZATION_CODE_HASH = HashingUtils::HashString("AUTHORIZATION_CODE");
+        static const int JWT_BEARER_HASH = HashingUtils::HashString("JWT_BEARER");
 
 
         OAuth2GrantType GetOAuth2GrantTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == AUTHORIZATION_CODE_HASH)
           {
             return OAuth2GrantType::AUTHORIZATION_CODE;
+          }
+          else if (hashCode == JWT_BEARER_HASH)
+          {
+            return OAuth2GrantType::JWT_BEARER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OAuth2GrantType::NOT_SET:
+            return {};
           case OAuth2GrantType::CLIENT_CREDENTIALS:
             return "CLIENT_CREDENTIALS";
           case OAuth2GrantType::AUTHORIZATION_CODE:
             return "AUTHORIZATION_CODE";
+          case OAuth2GrantType::JWT_BEARER:
+            return "JWT_BEARER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * Required when you set (Profile) under
-   * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-   * XAVC_4K_INTRA_VBR.<p><h3>See Also:</h3>   <a
+   * Required when you set Profile to the value XAVC_4K_INTRA_VBR.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Xavc4kIntraVbrProfileSettings">AWS
    * API Reference</a></p>
    */

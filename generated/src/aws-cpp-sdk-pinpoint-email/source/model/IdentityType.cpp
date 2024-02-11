@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IdentityType::NOT_SET:
+            return {};
           case IdentityType::EMAIL_ADDRESS:
             return "EMAIL_ADDRESS";
           case IdentityType::DOMAIN_:

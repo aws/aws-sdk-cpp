@@ -31,18 +31,6 @@ StartReadSetExportJobResult::StartReadSetExportJobResult(const Aws::AmazonWebSer
 StartReadSetExportJobResult& StartReadSetExportJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
-  if(jsonValue.ValueExists("destination"))
-  {
-    m_destination = jsonValue.GetString("destination");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -55,9 +43,21 @@ StartReadSetExportJobResult& StartReadSetExportJobResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("destination"))
+  {
+    m_destination = jsonValue.GetString("destination");
+
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReadSetExportJobStatusMapper::GetReadSetExportJobStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
 
   }
 

@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
 #include <aws/ec2/model/EnaSrdSpecification.h>
+#include <aws/ec2/model/ConnectionTrackingSpecificationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -363,6 +364,106 @@ namespace Model
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithEnaSrdSpecification(EnaSrdSpecification&& value) { SetEnaSrdSpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If you’re modifying a network interface in a dual-stack or IPv6-only subnet,
+     * you have the option to assign a primary IPv6 IP address. A primary IPv6 address
+     * is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if the instance that this ENI will be
+     * attached to relies on its IPv6 address not changing. Amazon Web Services will
+     * automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to
+     * be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to
+     * be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address
+     * until the instance is terminated or the network interface is detached. If you
+     * have multiple IPv6 addresses associated with an ENI attached to your instance
+     * and you enable a primary IPv6 address, the first IPv6 GUA address associated
+     * with the ENI becomes the primary IPv6 address.</p>
+     */
+    inline bool GetEnablePrimaryIpv6() const{ return m_enablePrimaryIpv6; }
+
+    /**
+     * <p>If you’re modifying a network interface in a dual-stack or IPv6-only subnet,
+     * you have the option to assign a primary IPv6 IP address. A primary IPv6 address
+     * is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if the instance that this ENI will be
+     * attached to relies on its IPv6 address not changing. Amazon Web Services will
+     * automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to
+     * be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to
+     * be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address
+     * until the instance is terminated or the network interface is detached. If you
+     * have multiple IPv6 addresses associated with an ENI attached to your instance
+     * and you enable a primary IPv6 address, the first IPv6 GUA address associated
+     * with the ENI becomes the primary IPv6 address.</p>
+     */
+    inline bool EnablePrimaryIpv6HasBeenSet() const { return m_enablePrimaryIpv6HasBeenSet; }
+
+    /**
+     * <p>If you’re modifying a network interface in a dual-stack or IPv6-only subnet,
+     * you have the option to assign a primary IPv6 IP address. A primary IPv6 address
+     * is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if the instance that this ENI will be
+     * attached to relies on its IPv6 address not changing. Amazon Web Services will
+     * automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to
+     * be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to
+     * be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address
+     * until the instance is terminated or the network interface is detached. If you
+     * have multiple IPv6 addresses associated with an ENI attached to your instance
+     * and you enable a primary IPv6 address, the first IPv6 GUA address associated
+     * with the ENI becomes the primary IPv6 address.</p>
+     */
+    inline void SetEnablePrimaryIpv6(bool value) { m_enablePrimaryIpv6HasBeenSet = true; m_enablePrimaryIpv6 = value; }
+
+    /**
+     * <p>If you’re modifying a network interface in a dual-stack or IPv6-only subnet,
+     * you have the option to assign a primary IPv6 IP address. A primary IPv6 address
+     * is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if the instance that this ENI will be
+     * attached to relies on its IPv6 address not changing. Amazon Web Services will
+     * automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to
+     * be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to
+     * be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address
+     * until the instance is terminated or the network interface is detached. If you
+     * have multiple IPv6 addresses associated with an ENI attached to your instance
+     * and you enable a primary IPv6 address, the first IPv6 GUA address associated
+     * with the ENI becomes the primary IPv6 address.</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithEnablePrimaryIpv6(bool value) { SetEnablePrimaryIpv6(value); return *this;}
+
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline const ConnectionTrackingSpecificationRequest& GetConnectionTrackingSpecification() const{ return m_connectionTrackingSpecification; }
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline bool ConnectionTrackingSpecificationHasBeenSet() const { return m_connectionTrackingSpecificationHasBeenSet; }
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline void SetConnectionTrackingSpecification(const ConnectionTrackingSpecificationRequest& value) { m_connectionTrackingSpecificationHasBeenSet = true; m_connectionTrackingSpecification = value; }
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline void SetConnectionTrackingSpecification(ConnectionTrackingSpecificationRequest&& value) { m_connectionTrackingSpecificationHasBeenSet = true; m_connectionTrackingSpecification = std::move(value); }
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithConnectionTrackingSpecification(const ConnectionTrackingSpecificationRequest& value) { SetConnectionTrackingSpecification(value); return *this;}
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithConnectionTrackingSpecification(ConnectionTrackingSpecificationRequest&& value) { SetConnectionTrackingSpecification(std::move(value)); return *this;}
+
   private:
 
     NetworkInterfaceAttachmentChanges m_attachment;
@@ -385,6 +486,12 @@ namespace Model
 
     EnaSrdSpecification m_enaSrdSpecification;
     bool m_enaSrdSpecificationHasBeenSet = false;
+
+    bool m_enablePrimaryIpv6;
+    bool m_enablePrimaryIpv6HasBeenSet = false;
+
+    ConnectionTrackingSpecificationRequest m_connectionTrackingSpecification;
+    bool m_connectionTrackingSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

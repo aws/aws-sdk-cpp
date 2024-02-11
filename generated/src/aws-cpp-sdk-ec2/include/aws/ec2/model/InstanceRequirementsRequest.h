@@ -44,20 +44,30 @@ namespace Model
 
   /**
    * <p>The attributes for the instance types. When you specify instance attributes,
-   * Amazon EC2 will identify instance types with these attributes.</p> <p>When you
-   * specify multiple attributes, you get instance types that satisfy all of the
-   * specified attributes. If you specify multiple values for an attribute, you get
-   * instance types that satisfy any of the specified values.</p> <p>To limit the
-   * list of instance types from which Amazon EC2 can identify matching instance
+   * Amazon EC2 will identify instance types with these attributes.</p> <p>You must
+   * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+   * are optional. Any unspecified optional attribute is set to its default.</p>
+   * <p>When you specify multiple attributes, you get instance types that satisfy all
+   * of the specified attributes. If you specify multiple values for an attribute,
+   * you get instance types that satisfy any of the specified values.</p> <p>To limit
+   * the list of instance types from which Amazon EC2 can identify matching instance
    * types, you can use one of the following parameters, but not both in the same
    * request:</p> <ul> <li> <p> <code>AllowedInstanceTypes</code> - The instance
    * types to include in the list. All other instance types are ignored, even if they
    * match your specified attributes.</p> </li> <li> <p>
    * <code>ExcludedInstanceTypes</code> - The instance types to exclude from the
-   * list, even if they match your specified attributes.</p> </li> </ul> 
-   * <p>You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other
-   * attributes are optional. Any unspecified optional attribute is set to its
-   * default.</p>  <p>For more information, see <a
+   * list, even if they match your specified attributes.</p> </li> </ul>  <p>If
+   * you specify <code>InstanceRequirements</code>, you can't specify
+   * <code>InstanceType</code>.</p> <p>Attribute-based instance type selection is
+   * only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to
+   * launch instances. If you plan to use the launch template in the <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch
+   * instance wizard</a>, or with the <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+   * API or <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a>
+   * Amazon Web Services CloudFormation resource, you can't specify
+   * <code>InstanceRequirements</code>.</p>  <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
    * instance type selection for EC2 Fleet</a>, <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
@@ -1250,226 +1260,258 @@ namespace Model
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline const Aws::Vector<AcceleratorManufacturer>& GetAcceleratorManufacturers() const{ return m_acceleratorManufacturers; }
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline bool AcceleratorManufacturersHasBeenSet() const { return m_acceleratorManufacturersHasBeenSet; }
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline void SetAcceleratorManufacturers(const Aws::Vector<AcceleratorManufacturer>& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers = value; }
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline void SetAcceleratorManufacturers(Aws::Vector<AcceleratorManufacturer>&& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers = std::move(value); }
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline InstanceRequirementsRequest& WithAcceleratorManufacturers(const Aws::Vector<AcceleratorManufacturer>& value) { SetAcceleratorManufacturers(value); return *this;}
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline InstanceRequirementsRequest& WithAcceleratorManufacturers(Aws::Vector<AcceleratorManufacturer>&& value) { SetAcceleratorManufacturers(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline InstanceRequirementsRequest& AddAcceleratorManufacturers(const AcceleratorManufacturer& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers.push_back(value); return *this; }
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline InstanceRequirementsRequest& AddAcceleratorManufacturers(AcceleratorManufacturer&& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline const Aws::Vector<AcceleratorName>& GetAcceleratorNames() const{ return m_acceleratorNames; }
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline bool AcceleratorNamesHasBeenSet() const { return m_acceleratorNamesHasBeenSet; }
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline void SetAcceleratorNames(const Aws::Vector<AcceleratorName>& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames = value; }
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline void SetAcceleratorNames(Aws::Vector<AcceleratorName>&& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames = std::move(value); }
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline InstanceRequirementsRequest& WithAcceleratorNames(const Aws::Vector<AcceleratorName>& value) { SetAcceleratorNames(value); return *this;}
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline InstanceRequirementsRequest& WithAcceleratorNames(Aws::Vector<AcceleratorName>&& value) { SetAcceleratorNames(std::move(value)); return *this;}
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline InstanceRequirementsRequest& AddAcceleratorNames(const AcceleratorName& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames.push_back(value); return *this; }
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline InstanceRequirementsRequest& AddAcceleratorNames(AcceleratorName&& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames.push_back(std::move(value)); return *this; }
 
@@ -1512,38 +1554,56 @@ namespace Model
 
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline const NetworkBandwidthGbpsRequest& GetNetworkBandwidthGbps() const{ return m_networkBandwidthGbps; }
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline bool NetworkBandwidthGbpsHasBeenSet() const { return m_networkBandwidthGbpsHasBeenSet; }
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline void SetNetworkBandwidthGbps(const NetworkBandwidthGbpsRequest& value) { m_networkBandwidthGbpsHasBeenSet = true; m_networkBandwidthGbps = value; }
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline void SetNetworkBandwidthGbps(NetworkBandwidthGbpsRequest&& value) { m_networkBandwidthGbpsHasBeenSet = true; m_networkBandwidthGbps = std::move(value); }
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirementsRequest& WithNetworkBandwidthGbps(const NetworkBandwidthGbpsRequest& value) { SetNetworkBandwidthGbps(value); return *this;}
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirementsRequest& WithNetworkBandwidthGbps(NetworkBandwidthGbpsRequest&& value) { SetNetworkBandwidthGbps(std::move(value)); return *this;}
 

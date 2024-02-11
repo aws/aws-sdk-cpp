@@ -53,6 +53,10 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_deletionProtectionHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_domainIAMRoleNameHasBeenSet(false),
+    m_domainFqdnHasBeenSet(false),
+    m_domainOuHasBeenSet(false),
+    m_domainAuthSecretArnHasBeenSet(false),
+    m_domainDnsIpsHasBeenSet(false),
     m_replicaMode(ReplicaMode::NOT_SET),
     m_replicaModeHasBeenSet(false),
     m_maxAllocatedStorage(0),
@@ -66,6 +70,10 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_sourceDBClusterIdentifierHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_upgradeStorageConfig(false),
+    m_upgradeStorageConfigHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -246,6 +254,32 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
 
+  if(m_domainFqdnHasBeenSet)
+  {
+    ss << "DomainFqdn=" << StringUtils::URLEncode(m_domainFqdn.c_str()) << "&";
+  }
+
+  if(m_domainOuHasBeenSet)
+  {
+    ss << "DomainOu=" << StringUtils::URLEncode(m_domainOu.c_str()) << "&";
+  }
+
+  if(m_domainAuthSecretArnHasBeenSet)
+  {
+    ss << "DomainAuthSecretArn=" << StringUtils::URLEncode(m_domainAuthSecretArn.c_str()) << "&";
+  }
+
+  if(m_domainDnsIpsHasBeenSet)
+  {
+    unsigned domainDnsIpsCount = 1;
+    for(auto& item : m_domainDnsIps)
+    {
+      ss << "DomainDnsIps.member." << domainDnsIpsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      domainDnsIpsCount++;
+    }
+  }
+
   if(m_replicaModeHasBeenSet)
   {
     ss << "ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
@@ -284,6 +318,16 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_sourceDBClusterIdentifierHasBeenSet)
   {
     ss << "SourceDBClusterIdentifier=" << StringUtils::URLEncode(m_sourceDBClusterIdentifier.c_str()) << "&";
+  }
+
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+    ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+
+  if(m_upgradeStorageConfigHasBeenSet)
+  {
+    ss << "UpgradeStorageConfig=" << std::boolalpha << m_upgradeStorageConfig << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -2,7 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/testing/mocks/aws/auth/MockAWSHttpResourceClient.h>
 #include <fstream>
@@ -12,7 +12,11 @@ using namespace Aws::Config;
 
 static const char* const ALLOCATION_TAG = "EC2InstanceProfileConfigLoaderTest";
 
-TEST(EC2InstanceProfileConfigLoaderTest, TestSuccesfullyHitsService)
+class EC2InstanceProfileConfigLoaderTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(EC2InstanceProfileConfigLoaderTest, TestSuccesfullyHitsService)
 {
     std::shared_ptr<MockEC2MetadataClient> mockClient = Aws::MakeShared<MockEC2MetadataClient>(ALLOCATION_TAG);
     mockClient->SetCurrentRegionValue("us-east-1");
@@ -30,7 +34,7 @@ TEST(EC2InstanceProfileConfigLoaderTest, TestSuccesfullyHitsService)
     ASSERT_STREQ("us-east-1", profiles[Aws::Config::INSTANCE_PROFILE_KEY].GetRegion().c_str());
 }
 
-TEST(EC2InstanceProfileConfigLoaderTest, TestFailsToHitService)
+TEST_F(EC2InstanceProfileConfigLoaderTest, TestFailsToHitService)
 {
     std::shared_ptr<MockEC2MetadataClient> mockClient = Aws::MakeShared<MockEC2MetadataClient>(ALLOCATION_TAG);
     mockClient->SetCurrentRegionValue("");
@@ -41,7 +45,7 @@ TEST(EC2InstanceProfileConfigLoaderTest, TestFailsToHitService)
     ASSERT_EQ(0u, loader.GetProfiles().size());
 }
 
-TEST(EC2InstanceProfileConfigLoaderTest, TestBadJsonInResponse)
+TEST_F(EC2InstanceProfileConfigLoaderTest, TestBadJsonInResponse)
 {
     std::shared_ptr<MockEC2MetadataClient> mockClient = Aws::MakeShared<MockEC2MetadataClient>(ALLOCATION_TAG);
     mockClient->SetCurrentRegionValue("us-east-1");

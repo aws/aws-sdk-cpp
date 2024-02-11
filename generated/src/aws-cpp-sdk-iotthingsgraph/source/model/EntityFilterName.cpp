@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntityFilterName::NOT_SET:
+            return {};
           case EntityFilterName::NAME:
             return "NAME";
           case EntityFilterName::NAMESPACE:

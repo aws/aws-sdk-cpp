@@ -14,8 +14,9 @@ using namespace Aws::Utils;
 
 CreateJobRequest::CreateJobRequest() : 
     m_algorithmSpecificationHasBeenSet(false),
+    m_associationsHasBeenSet(false),
     m_checkpointConfigHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_deviceConfigHasBeenSet(false),
     m_hyperParametersHasBeenSet(false),
@@ -36,6 +37,17 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_algorithmSpecificationHasBeenSet)
   {
    payload.WithObject("algorithmSpecification", m_algorithmSpecification.Jsonize());
+
+  }
+
+  if(m_associationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> associationsJsonList(m_associations.size());
+   for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
+   {
+     associationsJsonList[associationsIndex].AsObject(m_associations[associationsIndex].Jsonize());
+   }
+   payload.WithArray("associations", std::move(associationsJsonList));
 
   }
 

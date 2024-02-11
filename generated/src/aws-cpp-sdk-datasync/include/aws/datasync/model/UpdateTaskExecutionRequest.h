@@ -36,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that is being
-     * updated. </p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
+     * updating.</p>
      */
     inline const Aws::String& GetTaskExecutionArn() const{ return m_taskExecutionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that is being
-     * updated. </p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
+     * updating.</p>
      */
     inline bool TaskExecutionArnHasBeenSet() const { return m_taskExecutionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that is being
-     * updated. </p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
+     * updating.</p>
      */
     inline void SetTaskExecutionArn(const Aws::String& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that is being
-     * updated. </p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
+     * updating.</p>
      */
     inline void SetTaskExecutionArn(Aws::String&& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that is being
-     * updated. </p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
+     * updating.</p>
      */
     inline void SetTaskExecutionArn(const char* value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that is being
-     * updated. </p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
+     * updating.</p>
      */
     inline UpdateTaskExecutionRequest& WithTaskExecutionArn(const Aws::String& value) { SetTaskExecutionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that is being
-     * updated. </p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
+     * updating.</p>
      */
     inline UpdateTaskExecutionRequest& WithTaskExecutionArn(Aws::String&& value) { SetTaskExecutionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that is being
-     * updated. </p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
+     * updating.</p>
      */
     inline UpdateTaskExecutionRequest& WithTaskExecutionArn(const char* value) { SetTaskExecutionArn(value); return *this;}
 

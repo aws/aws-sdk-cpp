@@ -727,7 +727,7 @@ namespace Model
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p> <p>This is required if
+     * keep running in your service.</p> <p>This is required if
      * <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      * <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
      * required.</p>
@@ -736,7 +736,7 @@ namespace Model
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p> <p>This is required if
+     * keep running in your service.</p> <p>This is required if
      * <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      * <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
      * required.</p>
@@ -745,7 +745,7 @@ namespace Model
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p> <p>This is required if
+     * keep running in your service.</p> <p>This is required if
      * <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      * <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
      * required.</p>
@@ -754,7 +754,7 @@ namespace Model
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p> <p>This is required if
+     * keep running in your service.</p> <p>This is required if
      * <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      * <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
      * required.</p>
@@ -764,49 +764,57 @@ namespace Model
 
     /**
      * <p>An identifier that you provide to ensure the idempotency of the request. It
-     * must be unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>An identifier that you provide to ensure the idempotency of the request. It
-     * must be unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>An identifier that you provide to ensure the idempotency of the request. It
-     * must be unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>An identifier that you provide to ensure the idempotency of the request. It
-     * must be unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>An identifier that you provide to ensure the idempotency of the request. It
-     * must be unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>An identifier that you provide to ensure the idempotency of the request. It
-     * must be unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline CreateServiceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>An identifier that you provide to ensure the idempotency of the request. It
-     * must be unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline CreateServiceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that you provide to ensure the idempotency of the request. It
-     * must be unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline CreateServiceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -1942,7 +1950,8 @@ namespace Model
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * Developer Guide</i>.</p> <p>When you use Amazon ECS managed tags, you need to
+     * set the <code>propagateTags</code> request parameter.</p>
      */
     inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
 
@@ -1951,7 +1960,8 @@ namespace Model
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * Developer Guide</i>.</p> <p>When you use Amazon ECS managed tags, you need to
+     * set the <code>propagateTags</code> request parameter.</p>
      */
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
 
@@ -1960,7 +1970,8 @@ namespace Model
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * Developer Guide</i>.</p> <p>When you use Amazon ECS managed tags, you need to
+     * set the <code>propagateTags</code> request parameter.</p>
      */
     inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
 
@@ -1969,7 +1980,8 @@ namespace Model
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * Developer Guide</i>.</p> <p>When you use Amazon ECS managed tags, you need to
+     * set the <code>propagateTags</code> request parameter.</p>
      */
     inline CreateServiceRequest& WithEnableECSManagedTags(bool value) { SetEnableECSManagedTags(value); return *this;}
 
@@ -1980,7 +1992,7 @@ namespace Model
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
-     * API action.</p>
+     * API action.</p> <p>The default is <code>NONE</code>.</p>
      */
     inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
 
@@ -1990,7 +2002,7 @@ namespace Model
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
-     * API action.</p>
+     * API action.</p> <p>The default is <code>NONE</code>.</p>
      */
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
@@ -2000,7 +2012,7 @@ namespace Model
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
-     * API action.</p>
+     * API action.</p> <p>The default is <code>NONE</code>.</p>
      */
     inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
 
@@ -2010,7 +2022,7 @@ namespace Model
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
-     * API action.</p>
+     * API action.</p> <p>The default is <code>NONE</code>.</p>
      */
     inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
 
@@ -2020,7 +2032,7 @@ namespace Model
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
-     * API action.</p>
+     * API action.</p> <p>The default is <code>NONE</code>.</p>
      */
     inline CreateServiceRequest& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
 
@@ -2030,7 +2042,7 @@ namespace Model
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
-     * API action.</p>
+     * API action.</p> <p>The default is <code>NONE</code>.</p>
      */
     inline CreateServiceRequest& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
 

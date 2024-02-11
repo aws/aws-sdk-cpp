@@ -132,7 +132,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
      * encryption of the results. This must be the ARN of an existing, symmetric
-     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * encryption KMS key that's enabled in the same Amazon Web Services Region as the
      * bucket.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
@@ -140,7 +140,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
      * encryption of the results. This must be the ARN of an existing, symmetric
-     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * encryption KMS key that's enabled in the same Amazon Web Services Region as the
      * bucket.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
@@ -148,7 +148,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
      * encryption of the results. This must be the ARN of an existing, symmetric
-     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * encryption KMS key that's enabled in the same Amazon Web Services Region as the
      * bucket.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
@@ -156,7 +156,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
      * encryption of the results. This must be the ARN of an existing, symmetric
-     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * encryption KMS key that's enabled in the same Amazon Web Services Region as the
      * bucket.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
      * encryption of the results. This must be the ARN of an existing, symmetric
-     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * encryption KMS key that's enabled in the same Amazon Web Services Region as the
      * bucket.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
      * encryption of the results. This must be the ARN of an existing, symmetric
-     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * encryption KMS key that's enabled in the same Amazon Web Services Region as the
      * bucket.</p>
      */
     inline S3Destination& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
@@ -180,7 +180,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
      * encryption of the results. This must be the ARN of an existing, symmetric
-     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * encryption KMS key that's enabled in the same Amazon Web Services Region as the
      * bucket.</p>
      */
     inline S3Destination& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
@@ -188,7 +188,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
      * encryption of the results. This must be the ARN of an existing, symmetric
-     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * encryption KMS key that's enabled in the same Amazon Web Services Region as the
      * bucket.</p>
      */
     inline S3Destination& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}

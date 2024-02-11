@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageBuilderStateChangeReasonCode::NOT_SET:
+            return {};
           case ImageBuilderStateChangeReasonCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           case ImageBuilderStateChangeReasonCode::IMAGE_UNAVAILABLE:

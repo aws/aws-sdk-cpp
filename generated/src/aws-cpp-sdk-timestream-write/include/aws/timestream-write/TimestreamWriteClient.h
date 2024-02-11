@@ -38,6 +38,9 @@ namespace TimestreamWrite
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef TimestreamWriteClientConfiguration ClientConfigurationType;
+      typedef TimestreamWriteEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -91,8 +94,9 @@ namespace TimestreamWrite
          * from a CSV source in an S3 location and writes to a Timestream table. A mapping
          * from source to target is defined in a batch load task. Errors and events are
          * written to a report at an S3 location. For the report, if the KMS key is not
-         * specified, the batch load task will be encrypted with a Timestream managed KMS
-         * key located in your account. For more information, see <a
+         * specified, the report will be encrypted with an S3 managed key when
+         * <code>SSE_S3</code> is the option. Otherwise an error is thrown. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
          * Web Services managed keys</a>. <a
          * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service

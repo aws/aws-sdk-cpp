@@ -35,7 +35,9 @@ LambdaFunctionRecommendation::LambdaFunctionRecommendation() :
     m_findingReasonCodesHasBeenSet(false),
     m_memorySizeRecommendationOptionsHasBeenSet(false),
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false)
+    m_currentPerformanceRiskHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ LambdaFunctionRecommendation::LambdaFunctionRecommendation(JsonView jsonValue) :
     m_findingReasonCodesHasBeenSet(false),
     m_memorySizeRecommendationOptionsHasBeenSet(false),
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false)
+    m_currentPerformanceRiskHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -156,6 +160,23 @@ LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator =(JsonView 
     m_currentPerformanceRiskHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
+  {
+    m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
+
+    m_effectiveRecommendationPreferencesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -245,6 +266,23 @@ JsonValue LambdaFunctionRecommendation::Jsonize() const
   if(m_currentPerformanceRiskHasBeenSet)
   {
    payload.WithString("currentPerformanceRisk", CurrentPerformanceRiskMapper::GetNameForCurrentPerformanceRisk(m_currentPerformanceRisk));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_effectiveRecommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
+
   }
 
   return payload;

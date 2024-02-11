@@ -21,14 +21,18 @@ namespace Model
 KubernetesUserDetails::KubernetesUserDetails() : 
     m_usernameHasBeenSet(false),
     m_uidHasBeenSet(false),
-    m_groupsHasBeenSet(false)
+    m_groupsHasBeenSet(false),
+    m_sessionNameHasBeenSet(false),
+    m_impersonatedUserHasBeenSet(false)
 {
 }
 
 KubernetesUserDetails::KubernetesUserDetails(JsonView jsonValue) : 
     m_usernameHasBeenSet(false),
     m_uidHasBeenSet(false),
-    m_groupsHasBeenSet(false)
+    m_groupsHasBeenSet(false),
+    m_sessionNameHasBeenSet(false),
+    m_impersonatedUserHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +63,23 @@ KubernetesUserDetails& KubernetesUserDetails::operator =(JsonView jsonValue)
     m_groupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sessionName"))
+  {
+    Aws::Utils::Array<JsonView> sessionNameJsonList = jsonValue.GetArray("sessionName");
+    for(unsigned sessionNameIndex = 0; sessionNameIndex < sessionNameJsonList.GetLength(); ++sessionNameIndex)
+    {
+      m_sessionName.push_back(sessionNameJsonList[sessionNameIndex].AsString());
+    }
+    m_sessionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("impersonatedUser"))
+  {
+    m_impersonatedUser = jsonValue.GetObject("impersonatedUser");
+
+    m_impersonatedUserHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +107,23 @@ JsonValue KubernetesUserDetails::Jsonize() const
      groupsJsonList[groupsIndex].AsString(m_groups[groupsIndex]);
    }
    payload.WithArray("groups", std::move(groupsJsonList));
+
+  }
+
+  if(m_sessionNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sessionNameJsonList(m_sessionName.size());
+   for(unsigned sessionNameIndex = 0; sessionNameIndex < sessionNameJsonList.GetLength(); ++sessionNameIndex)
+   {
+     sessionNameJsonList[sessionNameIndex].AsString(m_sessionName[sessionNameIndex]);
+   }
+   payload.WithArray("sessionName", std::move(sessionNameJsonList));
+
+  }
+
+  if(m_impersonatedUserHasBeenSet)
+  {
+   payload.WithObject("impersonatedUser", m_impersonatedUser.Jsonize());
 
   }
 

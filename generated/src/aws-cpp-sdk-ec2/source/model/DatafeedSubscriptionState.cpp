@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatafeedSubscriptionState::NOT_SET:
+            return {};
           case DatafeedSubscriptionState::Active:
             return "Active";
           case DatafeedSubscriptionState::Inactive:

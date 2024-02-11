@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iotsitewise/model/AssetModelStatus.h>
+#include <aws/iotsitewise/model/AssetModelType.h>
 #include <utility>
 
 namespace Aws
@@ -40,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+     * <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+     * <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+     * <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+     * <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+     * <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+     * <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
      */
     inline AssetModelSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+     * <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
      */
     inline AssetModelSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+     * <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
      */
     inline AssetModelSummary& WithId(const char* value) { SetId(value); return *this;}
 
@@ -327,6 +328,118 @@ namespace Model
      */
     inline AssetModelSummary& WithStatus(AssetModelStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline const AssetModelType& GetAssetModelType() const{ return m_assetModelType; }
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline bool AssetModelTypeHasBeenSet() const { return m_assetModelTypeHasBeenSet; }
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline void SetAssetModelType(const AssetModelType& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = value; }
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline void SetAssetModelType(AssetModelType&& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = std::move(value); }
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline AssetModelSummary& WithAssetModelType(const AssetModelType& value) { SetAssetModelType(value); return *this;}
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline AssetModelSummary& WithAssetModelType(AssetModelType&& value) { SetAssetModelType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * <p>The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+
+    /**
+     * <p>The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+
+    /**
+     * <p>The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+
+    /**
+     * <p>The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetModelSummary& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+
+    /**
+     * <p>The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetModelSummary& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetModelSummary& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -349,6 +462,12 @@ namespace Model
 
     AssetModelStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    AssetModelType m_assetModelType;
+    bool m_assetModelTypeHasBeenSet = false;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

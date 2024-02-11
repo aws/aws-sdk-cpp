@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProblemType::NOT_SET:
+            return {};
           case ProblemType::BinaryClassification:
             return "BinaryClassification";
           case ProblemType::MulticlassClassification:

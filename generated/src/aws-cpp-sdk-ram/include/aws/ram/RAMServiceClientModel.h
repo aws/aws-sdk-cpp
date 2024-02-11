@@ -21,7 +21,11 @@
 #include <aws/ram/model/AcceptResourceShareInvitationResult.h>
 #include <aws/ram/model/AssociateResourceShareResult.h>
 #include <aws/ram/model/AssociateResourceSharePermissionResult.h>
+#include <aws/ram/model/CreatePermissionResult.h>
+#include <aws/ram/model/CreatePermissionVersionResult.h>
 #include <aws/ram/model/CreateResourceShareResult.h>
+#include <aws/ram/model/DeletePermissionResult.h>
+#include <aws/ram/model/DeletePermissionVersionResult.h>
 #include <aws/ram/model/DeleteResourceShareResult.h>
 #include <aws/ram/model/DisassociateResourceShareResult.h>
 #include <aws/ram/model/DisassociateResourceSharePermissionResult.h>
@@ -32,14 +36,19 @@
 #include <aws/ram/model/GetResourceShareInvitationsResult.h>
 #include <aws/ram/model/GetResourceSharesResult.h>
 #include <aws/ram/model/ListPendingInvitationResourcesResult.h>
+#include <aws/ram/model/ListPermissionAssociationsResult.h>
 #include <aws/ram/model/ListPermissionVersionsResult.h>
 #include <aws/ram/model/ListPermissionsResult.h>
 #include <aws/ram/model/ListPrincipalsResult.h>
+#include <aws/ram/model/ListReplacePermissionAssociationsWorkResult.h>
 #include <aws/ram/model/ListResourceSharePermissionsResult.h>
 #include <aws/ram/model/ListResourceTypesResult.h>
 #include <aws/ram/model/ListResourcesResult.h>
+#include <aws/ram/model/PromotePermissionCreatedFromPolicyResult.h>
 #include <aws/ram/model/PromoteResourceShareCreatedFromPolicyResult.h>
 #include <aws/ram/model/RejectResourceShareInvitationResult.h>
+#include <aws/ram/model/ReplacePermissionAssociationsResult.h>
+#include <aws/ram/model/SetDefaultPermissionVersionResult.h>
 #include <aws/ram/model/TagResourceResult.h>
 #include <aws/ram/model/UntagResourceResult.h>
 #include <aws/ram/model/UpdateResourceShareResult.h>
@@ -86,7 +95,11 @@ namespace Aws
       class AcceptResourceShareInvitationRequest;
       class AssociateResourceShareRequest;
       class AssociateResourceSharePermissionRequest;
+      class CreatePermissionRequest;
+      class CreatePermissionVersionRequest;
       class CreateResourceShareRequest;
+      class DeletePermissionRequest;
+      class DeletePermissionVersionRequest;
       class DeleteResourceShareRequest;
       class DisassociateResourceShareRequest;
       class DisassociateResourceSharePermissionRequest;
@@ -97,14 +110,19 @@ namespace Aws
       class GetResourceShareInvitationsRequest;
       class GetResourceSharesRequest;
       class ListPendingInvitationResourcesRequest;
+      class ListPermissionAssociationsRequest;
       class ListPermissionVersionsRequest;
       class ListPermissionsRequest;
       class ListPrincipalsRequest;
+      class ListReplacePermissionAssociationsWorkRequest;
       class ListResourceSharePermissionsRequest;
       class ListResourceTypesRequest;
       class ListResourcesRequest;
+      class PromotePermissionCreatedFromPolicyRequest;
       class PromoteResourceShareCreatedFromPolicyRequest;
       class RejectResourceShareInvitationRequest;
+      class ReplacePermissionAssociationsRequest;
+      class SetDefaultPermissionVersionRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateResourceShareRequest;
@@ -114,7 +132,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<AcceptResourceShareInvitationResult, RAMError> AcceptResourceShareInvitationOutcome;
       typedef Aws::Utils::Outcome<AssociateResourceShareResult, RAMError> AssociateResourceShareOutcome;
       typedef Aws::Utils::Outcome<AssociateResourceSharePermissionResult, RAMError> AssociateResourceSharePermissionOutcome;
+      typedef Aws::Utils::Outcome<CreatePermissionResult, RAMError> CreatePermissionOutcome;
+      typedef Aws::Utils::Outcome<CreatePermissionVersionResult, RAMError> CreatePermissionVersionOutcome;
       typedef Aws::Utils::Outcome<CreateResourceShareResult, RAMError> CreateResourceShareOutcome;
+      typedef Aws::Utils::Outcome<DeletePermissionResult, RAMError> DeletePermissionOutcome;
+      typedef Aws::Utils::Outcome<DeletePermissionVersionResult, RAMError> DeletePermissionVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteResourceShareResult, RAMError> DeleteResourceShareOutcome;
       typedef Aws::Utils::Outcome<DisassociateResourceShareResult, RAMError> DisassociateResourceShareOutcome;
       typedef Aws::Utils::Outcome<DisassociateResourceSharePermissionResult, RAMError> DisassociateResourceSharePermissionOutcome;
@@ -125,14 +147,19 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetResourceShareInvitationsResult, RAMError> GetResourceShareInvitationsOutcome;
       typedef Aws::Utils::Outcome<GetResourceSharesResult, RAMError> GetResourceSharesOutcome;
       typedef Aws::Utils::Outcome<ListPendingInvitationResourcesResult, RAMError> ListPendingInvitationResourcesOutcome;
+      typedef Aws::Utils::Outcome<ListPermissionAssociationsResult, RAMError> ListPermissionAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListPermissionVersionsResult, RAMError> ListPermissionVersionsOutcome;
       typedef Aws::Utils::Outcome<ListPermissionsResult, RAMError> ListPermissionsOutcome;
       typedef Aws::Utils::Outcome<ListPrincipalsResult, RAMError> ListPrincipalsOutcome;
+      typedef Aws::Utils::Outcome<ListReplacePermissionAssociationsWorkResult, RAMError> ListReplacePermissionAssociationsWorkOutcome;
       typedef Aws::Utils::Outcome<ListResourceSharePermissionsResult, RAMError> ListResourceSharePermissionsOutcome;
       typedef Aws::Utils::Outcome<ListResourceTypesResult, RAMError> ListResourceTypesOutcome;
       typedef Aws::Utils::Outcome<ListResourcesResult, RAMError> ListResourcesOutcome;
+      typedef Aws::Utils::Outcome<PromotePermissionCreatedFromPolicyResult, RAMError> PromotePermissionCreatedFromPolicyOutcome;
       typedef Aws::Utils::Outcome<PromoteResourceShareCreatedFromPolicyResult, RAMError> PromoteResourceShareCreatedFromPolicyOutcome;
       typedef Aws::Utils::Outcome<RejectResourceShareInvitationResult, RAMError> RejectResourceShareInvitationOutcome;
+      typedef Aws::Utils::Outcome<ReplacePermissionAssociationsResult, RAMError> ReplacePermissionAssociationsOutcome;
+      typedef Aws::Utils::Outcome<SetDefaultPermissionVersionResult, RAMError> SetDefaultPermissionVersionOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, RAMError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, RAMError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateResourceShareResult, RAMError> UpdateResourceShareOutcome;
@@ -142,7 +169,11 @@ namespace Aws
       typedef std::future<AcceptResourceShareInvitationOutcome> AcceptResourceShareInvitationOutcomeCallable;
       typedef std::future<AssociateResourceShareOutcome> AssociateResourceShareOutcomeCallable;
       typedef std::future<AssociateResourceSharePermissionOutcome> AssociateResourceSharePermissionOutcomeCallable;
+      typedef std::future<CreatePermissionOutcome> CreatePermissionOutcomeCallable;
+      typedef std::future<CreatePermissionVersionOutcome> CreatePermissionVersionOutcomeCallable;
       typedef std::future<CreateResourceShareOutcome> CreateResourceShareOutcomeCallable;
+      typedef std::future<DeletePermissionOutcome> DeletePermissionOutcomeCallable;
+      typedef std::future<DeletePermissionVersionOutcome> DeletePermissionVersionOutcomeCallable;
       typedef std::future<DeleteResourceShareOutcome> DeleteResourceShareOutcomeCallable;
       typedef std::future<DisassociateResourceShareOutcome> DisassociateResourceShareOutcomeCallable;
       typedef std::future<DisassociateResourceSharePermissionOutcome> DisassociateResourceSharePermissionOutcomeCallable;
@@ -153,14 +184,19 @@ namespace Aws
       typedef std::future<GetResourceShareInvitationsOutcome> GetResourceShareInvitationsOutcomeCallable;
       typedef std::future<GetResourceSharesOutcome> GetResourceSharesOutcomeCallable;
       typedef std::future<ListPendingInvitationResourcesOutcome> ListPendingInvitationResourcesOutcomeCallable;
+      typedef std::future<ListPermissionAssociationsOutcome> ListPermissionAssociationsOutcomeCallable;
       typedef std::future<ListPermissionVersionsOutcome> ListPermissionVersionsOutcomeCallable;
       typedef std::future<ListPermissionsOutcome> ListPermissionsOutcomeCallable;
       typedef std::future<ListPrincipalsOutcome> ListPrincipalsOutcomeCallable;
+      typedef std::future<ListReplacePermissionAssociationsWorkOutcome> ListReplacePermissionAssociationsWorkOutcomeCallable;
       typedef std::future<ListResourceSharePermissionsOutcome> ListResourceSharePermissionsOutcomeCallable;
       typedef std::future<ListResourceTypesOutcome> ListResourceTypesOutcomeCallable;
       typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
+      typedef std::future<PromotePermissionCreatedFromPolicyOutcome> PromotePermissionCreatedFromPolicyOutcomeCallable;
       typedef std::future<PromoteResourceShareCreatedFromPolicyOutcome> PromoteResourceShareCreatedFromPolicyOutcomeCallable;
       typedef std::future<RejectResourceShareInvitationOutcome> RejectResourceShareInvitationOutcomeCallable;
+      typedef std::future<ReplacePermissionAssociationsOutcome> ReplacePermissionAssociationsOutcomeCallable;
+      typedef std::future<SetDefaultPermissionVersionOutcome> SetDefaultPermissionVersionOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateResourceShareOutcome> UpdateResourceShareOutcomeCallable;
@@ -173,7 +209,11 @@ namespace Aws
     typedef std::function<void(const RAMClient*, const Model::AcceptResourceShareInvitationRequest&, const Model::AcceptResourceShareInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptResourceShareInvitationResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::AssociateResourceShareRequest&, const Model::AssociateResourceShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateResourceShareResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::AssociateResourceSharePermissionRequest&, const Model::AssociateResourceSharePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateResourceSharePermissionResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::CreatePermissionRequest&, const Model::CreatePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePermissionResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::CreatePermissionVersionRequest&, const Model::CreatePermissionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePermissionVersionResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::CreateResourceShareRequest&, const Model::CreateResourceShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceShareResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::DeletePermissionRequest&, const Model::DeletePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePermissionResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::DeletePermissionVersionRequest&, const Model::DeletePermissionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePermissionVersionResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::DeleteResourceShareRequest&, const Model::DeleteResourceShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceShareResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::DisassociateResourceShareRequest&, const Model::DisassociateResourceShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateResourceShareResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::DisassociateResourceSharePermissionRequest&, const Model::DisassociateResourceSharePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateResourceSharePermissionResponseReceivedHandler;
@@ -184,14 +224,19 @@ namespace Aws
     typedef std::function<void(const RAMClient*, const Model::GetResourceShareInvitationsRequest&, const Model::GetResourceShareInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceShareInvitationsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::GetResourceSharesRequest&, const Model::GetResourceSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceSharesResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListPendingInvitationResourcesRequest&, const Model::ListPendingInvitationResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPendingInvitationResourcesResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::ListPermissionAssociationsRequest&, const Model::ListPermissionAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionAssociationsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListPermissionVersionsRequest&, const Model::ListPermissionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionVersionsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListPermissionsRequest&, const Model::ListPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListPrincipalsRequest&, const Model::ListPrincipalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPrincipalsResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::ListReplacePermissionAssociationsWorkRequest&, const Model::ListReplacePermissionAssociationsWorkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReplacePermissionAssociationsWorkResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListResourceSharePermissionsRequest&, const Model::ListResourceSharePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceSharePermissionsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListResourceTypesRequest&, const Model::ListResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceTypesResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListResourcesRequest&, const Model::ListResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::PromotePermissionCreatedFromPolicyRequest&, const Model::PromotePermissionCreatedFromPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PromotePermissionCreatedFromPolicyResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::PromoteResourceShareCreatedFromPolicyRequest&, const Model::PromoteResourceShareCreatedFromPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PromoteResourceShareCreatedFromPolicyResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::RejectResourceShareInvitationRequest&, const Model::RejectResourceShareInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectResourceShareInvitationResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::ReplacePermissionAssociationsRequest&, const Model::ReplacePermissionAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplacePermissionAssociationsResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::SetDefaultPermissionVersionRequest&, const Model::SetDefaultPermissionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetDefaultPermissionVersionResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::UpdateResourceShareRequest&, const Model::UpdateResourceShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceShareResponseReceivedHandler;

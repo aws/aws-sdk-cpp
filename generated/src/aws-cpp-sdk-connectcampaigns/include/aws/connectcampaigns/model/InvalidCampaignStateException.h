@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connectcampaigns/model/CampaignState.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,25 @@ namespace Model
 
 
     
+    inline const CampaignState& GetState() const{ return m_state; }
+
+    
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    
+    inline void SetState(const CampaignState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    
+    inline void SetState(CampaignState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    
+    inline InvalidCampaignStateException& WithState(const CampaignState& value) { SetState(value); return *this;}
+
+    
+    inline InvalidCampaignStateException& WithState(CampaignState&& value) { SetState(std::move(value)); return *this;}
+
+
+    
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     
@@ -62,25 +81,6 @@ namespace Model
 
     
     inline InvalidCampaignStateException& WithMessage(const char* value) { SetMessage(value); return *this;}
-
-
-    
-    inline const CampaignState& GetState() const{ return m_state; }
-
-    
-    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    
-    inline void SetState(const CampaignState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    
-    inline void SetState(CampaignState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    
-    inline InvalidCampaignStateException& WithState(const CampaignState& value) { SetState(value); return *this;}
-
-    
-    inline InvalidCampaignStateException& WithState(CampaignState&& value) { SetState(std::move(value)); return *this;}
 
 
     
@@ -109,11 +109,11 @@ namespace Model
 
   private:
 
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
-
     CampaignState m_state;
     bool m_stateHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_xAmzErrorType;
     bool m_xAmzErrorTypeHasBeenSet = false;

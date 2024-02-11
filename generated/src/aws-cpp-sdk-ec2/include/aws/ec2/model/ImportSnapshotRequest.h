@@ -260,15 +260,10 @@ namespace Model
      * key; if this parameter is not specified, the default KMS key for EBS is used. If
      * a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also
      * be set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -289,15 +284,10 @@ namespace Model
      * key; if this parameter is not specified, the default KMS key for EBS is used. If
      * a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also
      * be set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -318,15 +308,10 @@ namespace Model
      * key; if this parameter is not specified, the default KMS key for EBS is used. If
      * a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also
      * be set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -347,15 +332,10 @@ namespace Model
      * key; if this parameter is not specified, the default KMS key for EBS is used. If
      * a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also
      * be set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -376,15 +356,10 @@ namespace Model
      * key; if this parameter is not specified, the default KMS key for EBS is used. If
      * a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also
      * be set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -405,15 +380,10 @@ namespace Model
      * key; if this parameter is not specified, the default KMS key for EBS is used. If
      * a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also
      * be set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -434,15 +404,10 @@ namespace Model
      * key; if this parameter is not specified, the default KMS key for EBS is used. If
      * a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also
      * be set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -463,15 +428,10 @@ namespace Model
      * key; if this parameter is not specified, the default KMS key for EBS is used. If
      * a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also
      * be set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the

@@ -39,47 +39,47 @@ namespace Model
   public:
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVerifiedAccessInstanceIds() const{ return m_verifiedAccessInstanceIds; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline bool VerifiedAccessInstanceIdsHasBeenSet() const { return m_verifiedAccessInstanceIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline void SetVerifiedAccessInstanceIds(const Aws::Vector<Aws::String>& value) { m_verifiedAccessInstanceIdsHasBeenSet = true; m_verifiedAccessInstanceIds = value; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline void SetVerifiedAccessInstanceIds(Aws::Vector<Aws::String>&& value) { m_verifiedAccessInstanceIdsHasBeenSet = true; m_verifiedAccessInstanceIds = std::move(value); }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstanceLoggingConfigurationsRequest& WithVerifiedAccessInstanceIds(const Aws::Vector<Aws::String>& value) { SetVerifiedAccessInstanceIds(value); return *this;}
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstanceLoggingConfigurationsRequest& WithVerifiedAccessInstanceIds(Aws::Vector<Aws::String>&& value) { SetVerifiedAccessInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstanceLoggingConfigurationsRequest& AddVerifiedAccessInstanceIds(const Aws::String& value) { m_verifiedAccessInstanceIdsHasBeenSet = true; m_verifiedAccessInstanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstanceLoggingConfigurationsRequest& AddVerifiedAccessInstanceIds(Aws::String&& value) { m_verifiedAccessInstanceIdsHasBeenSet = true; m_verifiedAccessInstanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstanceLoggingConfigurationsRequest& AddVerifiedAccessInstanceIds(const char* value) { m_verifiedAccessInstanceIdsHasBeenSet = true; m_verifiedAccessInstanceIds.push_back(value); return *this; }
 

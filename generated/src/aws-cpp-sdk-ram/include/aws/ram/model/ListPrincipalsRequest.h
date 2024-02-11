@@ -93,7 +93,7 @@ namespace Model
      * <p>Specifies that you want to list principal information for the resource share
      * with the specified <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
@@ -101,7 +101,7 @@ namespace Model
      * <p>Specifies that you want to list principal information for the resource share
      * with the specified <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
@@ -109,7 +109,7 @@ namespace Model
      * <p>Specifies that you want to list principal information for the resource share
      * with the specified <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
@@ -117,7 +117,7 @@ namespace Model
      * <p>Specifies that you want to list principal information for the resource share
      * with the specified <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
@@ -125,7 +125,7 @@ namespace Model
      * <p>Specifies that you want to list principal information for the resource share
      * with the specified <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
@@ -133,7 +133,7 @@ namespace Model
      * <p>Specifies that you want to list principal information for the resource share
      * with the specified <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline ListPrincipalsRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
@@ -141,7 +141,7 @@ namespace Model
      * <p>Specifies that you want to list principal information for the resource share
      * with the specified <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline ListPrincipalsRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
@@ -149,7 +149,7 @@ namespace Model
      * <p>Specifies that you want to list principal information for the resource share
      * with the specified <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline ListPrincipalsRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
@@ -160,7 +160,7 @@ namespace Model
      * Amazon Web Services account ID, for example: <code>123456789012</code> </p>
      * </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -181,7 +181,7 @@ namespace Model
      * Amazon Web Services account ID, for example: <code>123456789012</code> </p>
      * </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -202,7 +202,7 @@ namespace Model
      * Amazon Web Services account ID, for example: <code>123456789012</code> </p>
      * </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -223,7 +223,7 @@ namespace Model
      * Amazon Web Services account ID, for example: <code>123456789012</code> </p>
      * </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -244,7 +244,7 @@ namespace Model
      * Amazon Web Services account ID, for example: <code>123456789012</code> </p>
      * </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -265,7 +265,7 @@ namespace Model
      * Amazon Web Services account ID, for example: <code>123456789012</code> </p>
      * </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -286,7 +286,7 @@ namespace Model
      * Amazon Web Services account ID, for example: <code>123456789012</code> </p>
      * </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -307,7 +307,7 @@ namespace Model
      * Amazon Web Services account ID, for example: <code>123456789012</code> </p>
      * </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
@@ -328,7 +328,7 @@ namespace Model
      * Amazon Web Services account ID, for example: <code>123456789012</code> </p>
      * </li> <li> <p>An <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations, for example:
+     * Resource Name (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
      * <li> <p>An ARN of an organizational unit (OU) in Organizations, for example:
      * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>

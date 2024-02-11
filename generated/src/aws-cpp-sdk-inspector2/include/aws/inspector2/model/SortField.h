@@ -31,7 +31,8 @@ namespace Model
     VULNERABILITY_ID,
     VULNERABILITY_SOURCE,
     INSPECTOR_SCORE,
-    VENDOR_SEVERITY
+    VENDOR_SEVERITY,
+    EPSS_SCORE
   };
 
 namespace SortFieldMapper

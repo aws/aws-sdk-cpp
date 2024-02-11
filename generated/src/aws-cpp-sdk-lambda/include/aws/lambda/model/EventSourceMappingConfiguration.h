@@ -93,86 +93,92 @@ namespace Model
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
-     * Amazon DocumentDB.</p>
+     * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
+     * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
+     * self-managed Apache Kafka.</p>
      */
     inline const EventSourcePosition& GetStartingPosition() const{ return m_startingPosition; }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
-     * Amazon DocumentDB.</p>
+     * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
+     * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
+     * self-managed Apache Kafka.</p>
      */
     inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
-     * Amazon DocumentDB.</p>
+     * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
+     * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
+     * self-managed Apache Kafka.</p>
      */
     inline void SetStartingPosition(const EventSourcePosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
-     * Amazon DocumentDB.</p>
+     * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
+     * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
+     * self-managed Apache Kafka.</p>
      */
     inline void SetStartingPosition(EventSourcePosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
-     * Amazon DocumentDB.</p>
+     * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
+     * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
+     * self-managed Apache Kafka.</p>
      */
     inline EventSourceMappingConfiguration& WithStartingPosition(const EventSourcePosition& value) { SetStartingPosition(value); return *this;}
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
-     * Amazon DocumentDB.</p>
+     * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
+     * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
+     * self-managed Apache Kafka.</p>
      */
     inline EventSourceMappingConfiguration& WithStartingPosition(EventSourcePosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 
 
     /**
      * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
-     * from which to start reading.</p>
+     * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
+     * the future.</p>
      */
     inline const Aws::Utils::DateTime& GetStartingPositionTimestamp() const{ return m_startingPositionTimestamp; }
 
     /**
      * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
-     * from which to start reading.</p>
+     * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
+     * the future.</p>
      */
     inline bool StartingPositionTimestampHasBeenSet() const { return m_startingPositionTimestampHasBeenSet; }
 
     /**
      * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
-     * from which to start reading.</p>
+     * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
+     * the future.</p>
      */
     inline void SetStartingPositionTimestamp(const Aws::Utils::DateTime& value) { m_startingPositionTimestampHasBeenSet = true; m_startingPositionTimestamp = value; }
 
     /**
      * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
-     * from which to start reading.</p>
+     * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
+     * the future.</p>
      */
     inline void SetStartingPositionTimestamp(Aws::Utils::DateTime&& value) { m_startingPositionTimestampHasBeenSet = true; m_startingPositionTimestamp = std::move(value); }
 
     /**
      * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
-     * from which to start reading.</p>
+     * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
+     * the future.</p>
      */
     inline EventSourceMappingConfiguration& WithStartingPositionTimestamp(const Aws::Utils::DateTime& value) { SetStartingPositionTimestamp(value); return *this;}
 
     /**
      * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
-     * from which to start reading.</p>
+     * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
+     * the future.</p>
      */
     inline EventSourceMappingConfiguration& WithStartingPositionTimestamp(Aws::Utils::DateTime&& value) { SetStartingPositionTimestamp(std::move(value)); return *this;}
 
@@ -861,7 +867,9 @@ namespace Model
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is -1, which sets the maximum age to infinite. When the
      * value is set to infinite, Lambda never discards old records.</p>  <p>The
-     * minimum value that can be set is 60 seconds.</p> 
+     * minimum valid value for maximum record age is 60s. Although values less than 60
+     * and greater than -1 fall within the parameter's absolute range, they are not
+     * allowed</p> 
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
@@ -869,7 +877,9 @@ namespace Model
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is -1, which sets the maximum age to infinite. When the
      * value is set to infinite, Lambda never discards old records.</p>  <p>The
-     * minimum value that can be set is 60 seconds.</p> 
+     * minimum valid value for maximum record age is 60s. Although values less than 60
+     * and greater than -1 fall within the parameter's absolute range, they are not
+     * allowed</p> 
      */
     inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
 
@@ -877,7 +887,9 @@ namespace Model
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is -1, which sets the maximum age to infinite. When the
      * value is set to infinite, Lambda never discards old records.</p>  <p>The
-     * minimum value that can be set is 60 seconds.</p> 
+     * minimum valid value for maximum record age is 60s. Although values less than 60
+     * and greater than -1 fall within the parameter's absolute range, they are not
+     * allowed</p> 
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSecondsHasBeenSet = true; m_maximumRecordAgeInSeconds = value; }
 
@@ -885,7 +897,9 @@ namespace Model
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is -1, which sets the maximum age to infinite. When the
      * value is set to infinite, Lambda never discards old records.</p>  <p>The
-     * minimum value that can be set is 60 seconds.</p> 
+     * minimum valid value for maximum record age is 60s. Although values less than 60
+     * and greater than -1 fall within the parameter's absolute range, they are not
+     * allowed</p> 
      */
     inline EventSourceMappingConfiguration& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 

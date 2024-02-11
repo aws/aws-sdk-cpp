@@ -45,32 +45,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the input to the operation was text or speech.</p>
+     * <p>Indicates whether the input to the operation was text, speech, or from a
+     * touch-tone keypad.</p>
      */
     inline const InputMode& GetInputMode() const{ return m_inputMode; }
 
     /**
-     * <p>Indicates whether the input to the operation was text or speech.</p>
+     * <p>Indicates whether the input to the operation was text, speech, or from a
+     * touch-tone keypad.</p>
      */
     inline bool InputModeHasBeenSet() const { return m_inputModeHasBeenSet; }
 
     /**
-     * <p>Indicates whether the input to the operation was text or speech.</p>
+     * <p>Indicates whether the input to the operation was text, speech, or from a
+     * touch-tone keypad.</p>
      */
     inline void SetInputMode(const InputMode& value) { m_inputModeHasBeenSet = true; m_inputMode = value; }
 
     /**
-     * <p>Indicates whether the input to the operation was text or speech.</p>
+     * <p>Indicates whether the input to the operation was text, speech, or from a
+     * touch-tone keypad.</p>
      */
     inline void SetInputMode(InputMode&& value) { m_inputModeHasBeenSet = true; m_inputMode = std::move(value); }
 
     /**
-     * <p>Indicates whether the input to the operation was text or speech.</p>
+     * <p>Indicates whether the input to the operation was text, speech, or from a
+     * touch-tone keypad.</p>
      */
     inline IntentResultEvent& WithInputMode(const InputMode& value) { SetInputMode(value); return *this;}
 
     /**
-     * <p>Indicates whether the input to the operation was text or speech.</p>
+     * <p>Indicates whether the input to the operation was text, speech, or from a
+     * touch-tone keypad.</p>
      */
     inline IntentResultEvent& WithInputMode(InputMode&& value) { SetInputMode(std::move(value)); return *this;}
 

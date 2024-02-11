@@ -81,7 +81,15 @@ CodeGenConfigurationNode::CodeGenConfigurationNode() :
     m_catalogDeltaSourceHasBeenSet(false),
     m_s3DeltaSourceHasBeenSet(false),
     m_s3DeltaCatalogTargetHasBeenSet(false),
-    m_s3DeltaDirectTargetHasBeenSet(false)
+    m_s3DeltaDirectTargetHasBeenSet(false),
+    m_amazonRedshiftSourceHasBeenSet(false),
+    m_amazonRedshiftTargetHasBeenSet(false),
+    m_evaluateDataQualityMultiFrameHasBeenSet(false),
+    m_recipeHasBeenSet(false),
+    m_snowflakeSourceHasBeenSet(false),
+    m_snowflakeTargetHasBeenSet(false),
+    m_connectorDataSourceHasBeenSet(false),
+    m_connectorDataTargetHasBeenSet(false)
 {
 }
 
@@ -148,7 +156,15 @@ CodeGenConfigurationNode::CodeGenConfigurationNode(JsonView jsonValue) :
     m_catalogDeltaSourceHasBeenSet(false),
     m_s3DeltaSourceHasBeenSet(false),
     m_s3DeltaCatalogTargetHasBeenSet(false),
-    m_s3DeltaDirectTargetHasBeenSet(false)
+    m_s3DeltaDirectTargetHasBeenSet(false),
+    m_amazonRedshiftSourceHasBeenSet(false),
+    m_amazonRedshiftTargetHasBeenSet(false),
+    m_evaluateDataQualityMultiFrameHasBeenSet(false),
+    m_recipeHasBeenSet(false),
+    m_snowflakeSourceHasBeenSet(false),
+    m_snowflakeTargetHasBeenSet(false),
+    m_connectorDataSourceHasBeenSet(false),
+    m_connectorDataTargetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -596,6 +612,62 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_s3DeltaDirectTargetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AmazonRedshiftSource"))
+  {
+    m_amazonRedshiftSource = jsonValue.GetObject("AmazonRedshiftSource");
+
+    m_amazonRedshiftSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AmazonRedshiftTarget"))
+  {
+    m_amazonRedshiftTarget = jsonValue.GetObject("AmazonRedshiftTarget");
+
+    m_amazonRedshiftTargetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EvaluateDataQualityMultiFrame"))
+  {
+    m_evaluateDataQualityMultiFrame = jsonValue.GetObject("EvaluateDataQualityMultiFrame");
+
+    m_evaluateDataQualityMultiFrameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Recipe"))
+  {
+    m_recipe = jsonValue.GetObject("Recipe");
+
+    m_recipeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SnowflakeSource"))
+  {
+    m_snowflakeSource = jsonValue.GetObject("SnowflakeSource");
+
+    m_snowflakeSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SnowflakeTarget"))
+  {
+    m_snowflakeTarget = jsonValue.GetObject("SnowflakeTarget");
+
+    m_snowflakeTargetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConnectorDataSource"))
+  {
+    m_connectorDataSource = jsonValue.GetObject("ConnectorDataSource");
+
+    m_connectorDataSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConnectorDataTarget"))
+  {
+    m_connectorDataTarget = jsonValue.GetObject("ConnectorDataTarget");
+
+    m_connectorDataTargetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -978,6 +1050,54 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
   if(m_s3DeltaDirectTargetHasBeenSet)
   {
    payload.WithObject("S3DeltaDirectTarget", m_s3DeltaDirectTarget.Jsonize());
+
+  }
+
+  if(m_amazonRedshiftSourceHasBeenSet)
+  {
+   payload.WithObject("AmazonRedshiftSource", m_amazonRedshiftSource.Jsonize());
+
+  }
+
+  if(m_amazonRedshiftTargetHasBeenSet)
+  {
+   payload.WithObject("AmazonRedshiftTarget", m_amazonRedshiftTarget.Jsonize());
+
+  }
+
+  if(m_evaluateDataQualityMultiFrameHasBeenSet)
+  {
+   payload.WithObject("EvaluateDataQualityMultiFrame", m_evaluateDataQualityMultiFrame.Jsonize());
+
+  }
+
+  if(m_recipeHasBeenSet)
+  {
+   payload.WithObject("Recipe", m_recipe.Jsonize());
+
+  }
+
+  if(m_snowflakeSourceHasBeenSet)
+  {
+   payload.WithObject("SnowflakeSource", m_snowflakeSource.Jsonize());
+
+  }
+
+  if(m_snowflakeTargetHasBeenSet)
+  {
+   payload.WithObject("SnowflakeTarget", m_snowflakeTarget.Jsonize());
+
+  }
+
+  if(m_connectorDataSourceHasBeenSet)
+  {
+   payload.WithObject("ConnectorDataSource", m_connectorDataSource.Jsonize());
+
+  }
+
+  if(m_connectorDataTargetHasBeenSet)
+  {
+   payload.WithObject("ConnectorDataTarget", m_connectorDataTarget.Jsonize());
 
   }
 

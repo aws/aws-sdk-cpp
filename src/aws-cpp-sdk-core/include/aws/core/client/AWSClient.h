@@ -100,49 +100,49 @@ namespace Aws
              * Generates a signed Uri using the injected signer. for the supplied uri and http method. expirationInSeconds defaults
              * to 0 which is the default 7 days. The implication of this function is using auth signer v4 to sign it.
              */
-            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds = 0);
+            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {});
 
             /**
              * Generates a signed Uri using the injected signer. for the supplied uri, http method and customized headers. expirationInSeconds defaults
              * to 0 which is the default 7 days. The implication of this function is using auth signer v4 to sign it.
              */
-            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0);
+            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {});
 
             /**
              * Generates a signed Uri using the injected signer. for the supplied uri and http method and region. expirationInSeconds defaults
              * to 0 which is the default 7 days.
              */
-            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, long long expirationInSeconds = 0) const;
+            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const;
 
             /**
              * Generates a signed Uri using the injected signer. for the supplied uri, http method and customized headers. expirationInSeconds defaults
              * to 0 which is the default 7 days.
              */
-            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0);
+            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {});
 
             /**
              * Generates a signed Uri using the injected signer. for the supplied uri and http method, region, and service name. expirationInSeconds defaults
              * to 0 which is the default 7 days.
              */
-            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds = 0) const;
+            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const;
 
             /**
              * Generates a signed Uri using the injected signer. for the supplied uri, http method and customized headers. expirationInSeconds defaults
              * to 0 which is the default 7 days.
              */
-            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0);
+            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {});
 
             /**
              * Generates a signed Uri using the injected signer. for the supplied uri and http method, region, service name and signer name. expirationInSeconds defaults
              * to 0 which is the default 7 days.
              */
-            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, long long expirationInSeconds = 0) const;
+            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const;
 
             /**
              * Generates a signed Uri using the injected signer. for the supplied uri, http method, region, service name, signer name and customized headers. expirationInSeconds defaults
              * to 0 which is the default 7 days.
              */
-            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0);
+            Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {});
 
             Aws::String GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,
                                              Aws::Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
@@ -150,19 +150,24 @@ namespace Aws
                                              uint64_t expirationInSeconds = 0,
                                              const char* signerName = Aws::Auth::SIGV4_SIGNER,
                                              const char* signerRegionOverride = nullptr,
-                                             const char* signerServiceNameOverride = nullptr);
+                                             const char* signerServiceNameOverride = nullptr,
+                                             const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {});
 
             Aws::String GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method,
-                                             const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0) const;
+                                             const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0,
+                                             const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const;
 
             Aws::String GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
-                                             const char* signerName, const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0) const;
+                                             const char* signerName, const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0,
+                                             const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const;
 
             Aws::String GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
-                                             const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0) const;
+                                             const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0,
+                                             const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const;
 
             Aws::String GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
-                                             const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0) const;
+                                             const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0,
+                                             const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const;
 
             /**
              * Stop all requests immediately.
@@ -183,6 +188,7 @@ namespace Aws
              */
             virtual void SetServiceClientName(const Aws::String& name);
 
+            void AppendToUserAgent(const Aws::String& valueToAppend);
         protected:
             /**
              * Calls AttemptOneRequest until it either, succeeds, runs out of retries from the retry strategy,
@@ -289,6 +295,10 @@ namespace Aws
             Aws::Client::AWSAuthSigner* GetSignerByName(const char* name) const;
 
             friend Aws::Client::AWSAuthSigner* AWSUrlPresigner::GetSignerByName(const char* name) const;
+
+            std::shared_ptr<Auth::AWSCredentialsProvider> GetCredentialsProvider() const {
+                 return m_signerProvider->GetCredentialsProvider();
+            }
         protected:
 
             /**
@@ -317,6 +327,8 @@ namespace Aws
 
             static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode);
             static bool DoesResponseGenerateError(const std::shared_ptr<Aws::Http::HttpResponse>& response);
+            std::shared_ptr<smithy::components::tracing::TelemetryProvider> m_telemetryProvider;
+            std::shared_ptr<Aws::Auth::AWSAuthSignerProvider> m_signerProvider;
         private:
             /**
              * Try to adjust signer's clock
@@ -331,17 +343,15 @@ namespace Aws
             std::shared_ptr<Aws::IOStream> GetBodyStream(const Aws::AmazonWebServiceRequest& request) const;
 
             std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
-            std::shared_ptr<Aws::Auth::AWSAuthSignerProvider> m_signerProvider;
             std::shared_ptr<AWSErrorMarshaller> m_errorMarshaller;
             std::shared_ptr<RetryStrategy> m_retryStrategy;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_writeRateLimiter;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_readRateLimiter;
             Aws::String m_userAgent;
-            bool m_customizedUserAgent;
             std::shared_ptr<Aws::Utils::Crypto::Hash> m_hash;
             long m_requestTimeoutMs;
             bool m_enableClockSkewAdjustment;
-            Aws::String m_serviceName;
+            Aws::String m_serviceName = "AWSBaseClient";
             Aws::Client::RequestCompressionConfig m_requestCompressionConfig;
             void AppendHeaderValueToRequest(
                 const std::shared_ptr<Http::HttpRequest> &request, String header,

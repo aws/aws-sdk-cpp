@@ -41,7 +41,7 @@ namespace Aws
 {
     namespace Client
     {
-        Aws::String ComputeUserAgentString();
+        Aws::String ComputeUserAgentString(ClientConfiguration const * const pConfig);
     }
 
     namespace Internal
@@ -79,7 +79,10 @@ namespace Aws
         }
 
         AWSHttpResourceClient::AWSHttpResourceClient(const Aws::Client::ClientConfiguration& clientConfiguration, const char* logtag)
-        : m_logtag(logtag), m_retryStrategy(clientConfiguration.retryStrategy), m_httpClient(nullptr)
+        : m_logtag(logtag),
+          m_userAgent(Aws::Client::ComputeUserAgentString(&clientConfiguration)),
+          m_retryStrategy(clientConfiguration.retryStrategy),
+          m_httpClient(nullptr)
         {
             AWS_LOGSTREAM_INFO(m_logtag.c_str(),
                                "Creating AWSHttpResourceClient with max connections "
@@ -115,7 +118,7 @@ namespace Aws
             std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
                                                                    Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
-            request->SetUserAgent(ComputeUserAgentString());
+            request->SetUserAgent(m_userAgent);
 
             if (authToken)
             {
@@ -184,7 +187,8 @@ namespace Aws
             AWSHttpResourceClient(clientConfiguration, EC2_METADATA_CLIENT_LOG_TAG),
             m_endpoint(endpoint),
             m_disableIMDS(clientConfiguration.disableIMDS),
-            m_tokenRequired(true)
+            m_tokenRequired(true),
+            m_disableIMDSV1(clientConfiguration.disableImdsV1)
         {
 
         }
@@ -204,6 +208,10 @@ namespace Aws
         {
             if (m_disableIMDS) {
                 AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Skipping call to IMDS Service");
+                return {};
+            }
+            if (m_disableIMDSV1) {
+                AWS_LOGSTREAM_INFO(m_logtag.c_str(), "Attempting to call IMDSv1 Service while disabled");
                 return {};
             }
             std::unique_lock<std::recursive_mutex> locker(m_tokenMutex);
@@ -256,7 +264,7 @@ namespace Aws
             }
             std::unique_lock<std::recursive_mutex> locker(m_tokenMutex);
 #if !defined(DISABLE_IMDSV1)
-            if (!m_tokenRequired) {
+            if (!m_disableIMDSV1 && !m_tokenRequired) {
                 return GetDefaultCredentials();
             }
 #endif
@@ -266,8 +274,7 @@ namespace Aws
             std::shared_ptr<HttpRequest> tokenRequest(CreateHttpRequest(ss.str(), HttpMethod::HTTP_PUT,
                                                                         Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
             tokenRequest->SetHeaderValue(EC2_IMDS_TOKEN_TTL_HEADER, EC2_IMDS_TOKEN_TTL_DEFAULT_VALUE);
-            auto userAgentString = ComputeUserAgentString();
-            tokenRequest->SetUserAgent(userAgentString);
+            tokenRequest->SetUserAgent(m_userAgent);
             AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Calling EC2MetadataService to get token");
             auto result = GetResourceWithAWSWebServiceResult(tokenRequest);
             Aws::String tokenString = result.GetPayload();
@@ -278,7 +285,7 @@ namespace Aws
                 return {};
             }
 #if !defined(DISABLE_IMDSV1)
-            else if (result.GetResponseCode() != HttpResponseCode::OK || trimmedTokenString.empty())
+            if (!m_disableIMDSV1 && (result.GetResponseCode() != HttpResponseCode::OK || trimmedTokenString.empty()))
             {
                 m_tokenRequired = false;
                 AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Calling EC2MetadataService to get token failed, falling back to less secure way.");
@@ -292,7 +299,7 @@ namespace Aws
             std::shared_ptr<HttpRequest> profileRequest(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
                                                                           Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
             profileRequest->SetHeaderValue(EC2_IMDS_TOKEN_HEADER, trimmedTokenString);
-            profileRequest->SetUserAgent(userAgentString);
+            profileRequest->SetUserAgent(m_userAgent);
             Aws::String profileString = GetResourceWithAWSWebServiceResult(profileRequest).GetPayload();
 
             Aws::String trimmedProfileString = StringUtils::Trim(profileString.c_str());
@@ -311,7 +318,7 @@ namespace Aws
             std::shared_ptr<HttpRequest> credentialsRequest(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
                                                                               Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
             credentialsRequest->SetHeaderValue(EC2_IMDS_TOKEN_HEADER, trimmedTokenString);
-            credentialsRequest->SetUserAgent(userAgentString);
+            credentialsRequest->SetUserAgent(m_userAgent);
             AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetadataService resource " << ss.str() << " with token.");
             return GetResourceWithAWSWebServiceResult(credentialsRequest).GetPayload();
         }
@@ -341,7 +348,7 @@ namespace Aws
                     regionRequest->SetHeaderValue(EC2_IMDS_TOKEN_HEADER, m_token);
                 }
             }
-            regionRequest->SetUserAgent(ComputeUserAgentString());
+            regionRequest->SetUserAgent(m_userAgent);
             Aws::String azString = GetResourceWithAWSWebServiceResult(regionRequest).GetPayload();
 
             if (azString.empty())
@@ -512,7 +519,7 @@ namespace Aws
             std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(m_endpoint, HttpMethod::HTTP_POST,
                                                                 Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
-            httpRequest->SetUserAgent(ComputeUserAgentString());
+            httpRequest->SetUserAgent(m_userAgent);
 
             std::shared_ptr<Aws::IOStream> body = Aws::MakeShared<Aws::StringStream>("STS_RESOURCE_CLIENT_LOG_TAG");
             *body << ss.str();
@@ -627,7 +634,7 @@ namespace Aws
 
             httpRequest->SetHeaderValue("x-amz-sso_bearer_token", request.m_accessToken);
 
-            httpRequest->SetUserAgent(ComputeUserAgentString());
+            httpRequest->SetUserAgent(m_userAgent);
 
             httpRequest->AddQueryStringParameter("account_id", Aws::Utils::StringUtils::URLEncode(request.m_ssoAccountId.c_str()));
             httpRequest->AddQueryStringParameter("role_name", Aws::Utils::StringUtils::URLEncode(request.m_ssoRoleName.c_str()));

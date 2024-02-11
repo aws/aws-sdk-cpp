@@ -1,28 +1,42 @@
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
+  AWS_OPERATION_GUARD(${operation.name});
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".${operation.name}",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
+    [&]()-> ${operation.name}Outcome {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
 #if($operation.result && $operation.result.shape.hasStreamMembers())
 #if($serviceModel.endpointRules)
-  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+      return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #else
-  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+      return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #end
 #elseif($operation.result && $operation.result.shape.hasEventStreamMembers())
-  request.SetResponseStreamFactory(
-      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
-  );
+      request.SetResponseStreamFactory(
+          [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+      );
 #if($serviceModel.endpointRules)
-  return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+      return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #else
-  return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+      return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #end
 #else
 #if($serviceModel.endpointRules)
-  return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}));
+      return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}));
 #else
-  return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}));
+      return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}));
 #end
 #end
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }

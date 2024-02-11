@@ -22,6 +22,7 @@ namespace Aws
 
         static const int OVERLAP_HASH = HashingUtils::HashString("OVERLAP");
         static const int SYSTEM_ORGAN_SITE_HASH = HashingUtils::HashString("SYSTEM_ORGAN_SITE");
+        static const int QUALITY_HASH = HashingUtils::HashString("QUALITY");
 
 
         ICD10CMRelationshipType GetICD10CMRelationshipTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == SYSTEM_ORGAN_SITE_HASH)
           {
             return ICD10CMRelationshipType::SYSTEM_ORGAN_SITE;
+          }
+          else if (hashCode == QUALITY_HASH)
+          {
+            return ICD10CMRelationshipType::QUALITY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ICD10CMRelationshipType::NOT_SET:
+            return {};
           case ICD10CMRelationshipType::OVERLAP:
             return "OVERLAP";
           case ICD10CMRelationshipType::SYSTEM_ORGAN_SITE:
             return "SYSTEM_ORGAN_SITE";
+          case ICD10CMRelationshipType::QUALITY:
+            return "QUALITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

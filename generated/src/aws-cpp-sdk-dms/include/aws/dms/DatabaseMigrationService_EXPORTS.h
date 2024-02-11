@@ -21,9 +21,12 @@
         #else
             #define AWS_DATABASEMIGRATIONSERVICE_API __declspec(dllimport)
         #endif /* AWS_DATABASEMIGRATIONSERVICE_EXPORTS */
+        #define AWS_DATABASEMIGRATIONSERVICE_EXTERN
     #else
         #define AWS_DATABASEMIGRATIONSERVICE_API
+        #define AWS_DATABASEMIGRATIONSERVICE_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_DATABASEMIGRATIONSERVICE_API
+    #define AWS_DATABASEMIGRATIONSERVICE_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

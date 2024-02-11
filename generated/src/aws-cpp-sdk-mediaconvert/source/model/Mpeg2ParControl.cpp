@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2ParControl::NOT_SET:
+            return {};
           case Mpeg2ParControl::INITIALIZE_FROM_SOURCE:
             return "INITIALIZE_FROM_SOURCE";
           case Mpeg2ParControl::SPECIFIED:

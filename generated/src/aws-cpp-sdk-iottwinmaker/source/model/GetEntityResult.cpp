@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetEntityResult::GetEntityResult() : 
-    m_hasChildEntities(false)
+    m_hasChildEntities(false),
+    m_areAllComponentsReturned(false)
 {
 }
 
 GetEntityResult::GetEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hasChildEntities(false)
+    m_hasChildEntities(false),
+    m_areAllComponentsReturned(false)
 {
   *this = result;
 }
@@ -103,6 +105,12 @@ GetEntityResult& GetEntityResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("syncSource"))
   {
     m_syncSource = jsonValue.GetString("syncSource");
+
+  }
+
+  if(jsonValue.ValueExists("areAllComponentsReturned"))
+  {
+    m_areAllComponentsReturned = jsonValue.GetBool("areAllComponentsReturned");
 
   }
 

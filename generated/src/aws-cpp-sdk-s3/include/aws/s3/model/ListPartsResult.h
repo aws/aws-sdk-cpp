@@ -47,9 +47,11 @@ namespace Model
      * when the initiated multipart upload will become eligible for abort operation.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-     * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the <code>x-amz-abort-rule-id</code> header that will
-     * provide the ID of the lifecycle configuration rule that defines this action.</p>
+     * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+     * <p>The response will also include the <code>x-amz-abort-rule-id</code> header
+     * that will provide the ID of the lifecycle configuration rule that defines this
+     * action.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline const Aws::Utils::DateTime& GetAbortDate() const{ return m_abortDate; }
 
@@ -60,9 +62,11 @@ namespace Model
      * when the initiated multipart upload will become eligible for abort operation.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-     * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the <code>x-amz-abort-rule-id</code> header that will
-     * provide the ID of the lifecycle configuration rule that defines this action.</p>
+     * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+     * <p>The response will also include the <code>x-amz-abort-rule-id</code> header
+     * that will provide the ID of the lifecycle configuration rule that defines this
+     * action.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetAbortDate(const Aws::Utils::DateTime& value) { m_abortDate = value; }
 
@@ -73,9 +77,11 @@ namespace Model
      * when the initiated multipart upload will become eligible for abort operation.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-     * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the <code>x-amz-abort-rule-id</code> header that will
-     * provide the ID of the lifecycle configuration rule that defines this action.</p>
+     * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+     * <p>The response will also include the <code>x-amz-abort-rule-id</code> header
+     * that will provide the ID of the lifecycle configuration rule that defines this
+     * action.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetAbortDate(Aws::Utils::DateTime&& value) { m_abortDate = std::move(value); }
 
@@ -86,9 +92,11 @@ namespace Model
      * when the initiated multipart upload will become eligible for abort operation.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-     * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the <code>x-amz-abort-rule-id</code> header that will
-     * provide the ID of the lifecycle configuration rule that defines this action.</p>
+     * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+     * <p>The response will also include the <code>x-amz-abort-rule-id</code> header
+     * that will provide the ID of the lifecycle configuration rule that defines this
+     * action.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline ListPartsResult& WithAbortDate(const Aws::Utils::DateTime& value) { SetAbortDate(value); return *this;}
 
@@ -99,9 +107,11 @@ namespace Model
      * when the initiated multipart upload will become eligible for abort operation.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-     * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the <code>x-amz-abort-rule-id</code> header that will
-     * provide the ID of the lifecycle configuration rule that defines this action.</p>
+     * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+     * <p>The response will also include the <code>x-amz-abort-rule-id</code> header
+     * that will provide the ID of the lifecycle configuration rule that defines this
+     * action.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline ListPartsResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(std::move(value)); return *this;}
 
@@ -109,49 +119,56 @@ namespace Model
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies applicable lifecycle configuration rule that defines the action to
-     * abort incomplete multipart uploads.</p>
+     * abort incomplete multipart uploads.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline const Aws::String& GetAbortRuleId() const{ return m_abortRuleId; }
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies applicable lifecycle configuration rule that defines the action to
-     * abort incomplete multipart uploads.</p>
+     * abort incomplete multipart uploads.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline void SetAbortRuleId(const Aws::String& value) { m_abortRuleId = value; }
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies applicable lifecycle configuration rule that defines the action to
-     * abort incomplete multipart uploads.</p>
+     * abort incomplete multipart uploads.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline void SetAbortRuleId(Aws::String&& value) { m_abortRuleId = std::move(value); }
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies applicable lifecycle configuration rule that defines the action to
-     * abort incomplete multipart uploads.</p>
+     * abort incomplete multipart uploads.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline void SetAbortRuleId(const char* value) { m_abortRuleId.assign(value); }
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies applicable lifecycle configuration rule that defines the action to
-     * abort incomplete multipart uploads.</p>
+     * abort incomplete multipart uploads.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline ListPartsResult& WithAbortRuleId(const Aws::String& value) { SetAbortRuleId(value); return *this;}
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies applicable lifecycle configuration rule that defines the action to
-     * abort incomplete multipart uploads.</p>
+     * abort incomplete multipart uploads.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline ListPartsResult& WithAbortRuleId(Aws::String&& value) { SetAbortRuleId(std::move(value)); return *this;}
 
     /**
      * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
      * It identifies applicable lifecycle configuration rule that defines the action to
-     * abort incomplete multipart uploads.</p>
+     * abort incomplete multipart uploads.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline ListPartsResult& WithAbortRuleId(const char* value) { SetAbortRuleId(value); return *this;}
 
@@ -295,22 +312,22 @@ namespace Model
 
     /**
      * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.</p>
+     * as well as the value to use for the <code>part-number-marker</code> request
+     * parameter in a subsequent request.</p>
      */
     inline int GetNextPartNumberMarker() const{ return m_nextPartNumberMarker; }
 
     /**
      * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.</p>
+     * as well as the value to use for the <code>part-number-marker</code> request
+     * parameter in a subsequent request.</p>
      */
     inline void SetNextPartNumberMarker(int value) { m_nextPartNumberMarker = value; }
 
     /**
      * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.</p>
+     * as well as the value to use for the <code>part-number-marker</code> request
+     * parameter in a subsequent request.</p>
      */
     inline ListPartsResult& WithNextPartNumberMarker(int value) { SetNextPartNumberMarker(value); return *this;}
 
@@ -354,43 +371,43 @@ namespace Model
 
 
     /**
-     * <p> Container for elements related to a particular part. A response can contain
+     * <p>Container for elements related to a particular part. A response can contain
      * zero or more <code>Part</code> elements.</p>
      */
     inline const Aws::Vector<Part>& GetParts() const{ return m_parts; }
 
     /**
-     * <p> Container for elements related to a particular part. A response can contain
+     * <p>Container for elements related to a particular part. A response can contain
      * zero or more <code>Part</code> elements.</p>
      */
     inline void SetParts(const Aws::Vector<Part>& value) { m_parts = value; }
 
     /**
-     * <p> Container for elements related to a particular part. A response can contain
+     * <p>Container for elements related to a particular part. A response can contain
      * zero or more <code>Part</code> elements.</p>
      */
     inline void SetParts(Aws::Vector<Part>&& value) { m_parts = std::move(value); }
 
     /**
-     * <p> Container for elements related to a particular part. A response can contain
+     * <p>Container for elements related to a particular part. A response can contain
      * zero or more <code>Part</code> elements.</p>
      */
     inline ListPartsResult& WithParts(const Aws::Vector<Part>& value) { SetParts(value); return *this;}
 
     /**
-     * <p> Container for elements related to a particular part. A response can contain
+     * <p>Container for elements related to a particular part. A response can contain
      * zero or more <code>Part</code> elements.</p>
      */
     inline ListPartsResult& WithParts(Aws::Vector<Part>&& value) { SetParts(std::move(value)); return *this;}
 
     /**
-     * <p> Container for elements related to a particular part. A response can contain
+     * <p>Container for elements related to a particular part. A response can contain
      * zero or more <code>Part</code> elements.</p>
      */
     inline ListPartsResult& AddParts(const Part& value) { m_parts.push_back(value); return *this; }
 
     /**
-     * <p> Container for elements related to a particular part. A response can contain
+     * <p>Container for elements related to a particular part. A response can contain
      * zero or more <code>Part</code> elements.</p>
      */
     inline ListPartsResult& AddParts(Part&& value) { m_parts.push_back(std::move(value)); return *this; }
@@ -438,68 +455,83 @@ namespace Model
 
 
     /**
-     * <p> Container element that identifies the object owner, after the object is
+     * <p>Container element that identifies the object owner, after the object is
      * created. If multipart upload is initiated by an IAM user, this element provides
-     * the parent account ID and display name.</p>
+     * the parent account ID and display name.</p>  <p> <b>Directory buckets</b>
+     * - The bucket owner is returned as the object owner for all the parts.</p>
+     * 
      */
     inline const Owner& GetOwner() const{ return m_owner; }
 
     /**
-     * <p> Container element that identifies the object owner, after the object is
+     * <p>Container element that identifies the object owner, after the object is
      * created. If multipart upload is initiated by an IAM user, this element provides
-     * the parent account ID and display name.</p>
+     * the parent account ID and display name.</p>  <p> <b>Directory buckets</b>
+     * - The bucket owner is returned as the object owner for all the parts.</p>
+     * 
      */
     inline void SetOwner(const Owner& value) { m_owner = value; }
 
     /**
-     * <p> Container element that identifies the object owner, after the object is
+     * <p>Container element that identifies the object owner, after the object is
      * created. If multipart upload is initiated by an IAM user, this element provides
-     * the parent account ID and display name.</p>
+     * the parent account ID and display name.</p>  <p> <b>Directory buckets</b>
+     * - The bucket owner is returned as the object owner for all the parts.</p>
+     * 
      */
     inline void SetOwner(Owner&& value) { m_owner = std::move(value); }
 
     /**
-     * <p> Container element that identifies the object owner, after the object is
+     * <p>Container element that identifies the object owner, after the object is
      * created. If multipart upload is initiated by an IAM user, this element provides
-     * the parent account ID and display name.</p>
+     * the parent account ID and display name.</p>  <p> <b>Directory buckets</b>
+     * - The bucket owner is returned as the object owner for all the parts.</p>
+     * 
      */
     inline ListPartsResult& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     /**
-     * <p> Container element that identifies the object owner, after the object is
+     * <p>Container element that identifies the object owner, after the object is
      * created. If multipart upload is initiated by an IAM user, this element provides
-     * the parent account ID and display name.</p>
+     * the parent account ID and display name.</p>  <p> <b>Directory buckets</b>
+     * - The bucket owner is returned as the object owner for all the parts.</p>
+     * 
      */
     inline ListPartsResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
 
     /**
-     * <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded
-     * object.</p>
+     * <p>The class of storage used to store the uploaded object.</p>  <p>
+     * <b>Directory buckets</b> - Only the S3 Express One Zone storage class is
+     * supported by directory buckets to store objects.</p> 
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded
-     * object.</p>
+     * <p>The class of storage used to store the uploaded object.</p>  <p>
+     * <b>Directory buckets</b> - Only the S3 Express One Zone storage class is
+     * supported by directory buckets to store objects.</p> 
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClass = value; }
 
     /**
-     * <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded
-     * object.</p>
+     * <p>The class of storage used to store the uploaded object.</p>  <p>
+     * <b>Directory buckets</b> - Only the S3 Express One Zone storage class is
+     * supported by directory buckets to store objects.</p> 
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClass = std::move(value); }
 
     /**
-     * <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded
-     * object.</p>
+     * <p>The class of storage used to store the uploaded object.</p>  <p>
+     * <b>Directory buckets</b> - Only the S3 Express One Zone storage class is
+     * supported by directory buckets to store objects.</p> 
      */
     inline ListPartsResult& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded
-     * object.</p>
+     * <p>The class of storage used to store the uploaded object.</p>  <p>
+     * <b>Directory buckets</b> - Only the S3 Express One Zone storage class is
+     * supported by directory buckets to store objects.</p> 
      */
     inline ListPartsResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 

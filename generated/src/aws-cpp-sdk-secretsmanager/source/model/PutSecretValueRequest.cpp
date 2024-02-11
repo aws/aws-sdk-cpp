@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 
 PutSecretValueRequest::PutSecretValueRequest() : 
     m_secretIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_secretBinaryHasBeenSet(false),
     m_secretStringHasBeenSet(false),

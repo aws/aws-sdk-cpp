@@ -10,6 +10,24 @@
 
 namespace ${rootNamespace}
 {
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control" || $serviceModel.clientContextParams)
+#ifndef AWS_${metadata.classNamePrefix.toUpperCase()}_EXPORTS // Except for Windows DLL
+namespace Endpoint
+{
+/**
+ * Instantiate endpoint providers
+ */
+template class Aws::Endpoint::EndpointProviderBase<${serviceNamespace}::Endpoint::${metadata.classNamePrefix}ClientConfiguration,
+    ${serviceNamespace}::Endpoint::${epBuiltInClassName},
+    ${serviceNamespace}::Endpoint::${epContextClassName}>;
+
+template class Aws::Endpoint::DefaultEndpointProvider<${serviceNamespace}::Endpoint::${metadata.classNamePrefix}ClientConfiguration,
+    ${serviceNamespace}::Endpoint::${epBuiltInClassName},
+    ${serviceNamespace}::Endpoint::${epContextClassName}>;
+} // namespace Endpoint
+#endif
+
+#end
 namespace ${serviceNamespace}
 {
 namespace Endpoint
@@ -60,6 +78,11 @@ namespace Endpoint
     static const char* AWS_S3_FORCE_PATH_STYLE = "ForcePathStyle";
     if (!config.useVirtualAddressing) {
       SetBooleanParameter(AWS_S3_FORCE_PATH_STYLE, true);
+    }
+
+    static const char* AWS_S3_DISABLE_EXPRESS_AUTH = "DisableS3ExpressSessionAuth";
+    if(config.disableS3ExpressAuth) {
+      SetBooleanParameter(AWS_S3_DISABLE_EXPRESS_AUTH, true);
     }
 #end
 #if($serviceModel.metadata.serviceId == "S3 Control")

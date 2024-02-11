@@ -94,9 +94,9 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
-     * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
-     * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID of a
+     * DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of the
+     * options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
      * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
      * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -112,9 +112,9 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
-     * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
-     * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID of a
+     * DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of the
+     * options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
      * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
      * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -130,9 +130,9 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
-     * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
-     * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID of a
+     * DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of the
+     * options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
      * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
      * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -148,9 +148,9 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
-     * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
-     * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID of a
+     * DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of the
+     * options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
      * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
      * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -166,9 +166,9 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
-     * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
-     * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID of a
+     * DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of the
+     * options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
      * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
      * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -184,9 +184,9 @@ namespace Model
     inline DescribeDhcpOptionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
-     * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
-     * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID of a
+     * DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of the
+     * options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
      * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
      * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -202,9 +202,9 @@ namespace Model
     inline DescribeDhcpOptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
-     * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
-     * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID of a
+     * DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of the
+     * options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
      * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
      * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -220,9 +220,9 @@ namespace Model
     inline DescribeDhcpOptionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
-     * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
-     * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID of a
+     * DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of the
+     * options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
      * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
      * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The

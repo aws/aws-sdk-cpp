@@ -69,22 +69,22 @@ namespace Model
      * then you need to enable the <code>auto-assign public IP address</code> setting
      * for the subnet. See <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-     * the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC
-     * User Guide</i>.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We
-     * couldn't find the IAM instance profile for your managed node group. You may be
-     * able to recreate an instance profile with the same settings to recover.</p>
-     * </li> <li> <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for
-     * your managed node group. You may be able to recreate an IAM role with the same
-     * settings to recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your
-     * Amazon Web Services account is unable to launch any more instances of the
-     * specified instance type. You may be able to request an Amazon EC2 instance limit
-     * increase to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or
-     * more of the subnets associated with your managed node group does not have enough
-     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
-     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
-     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
-     * register with your Amazon EKS cluster. Common causes of this failure are
-     * insufficient <a
+     * the public <code>IPv4</code> addressing attribute for your subnet</a> in the
+     * <i>Amazon VPC User Guide</i>.</p> </li> <li> <p>
+     * <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for
+     * your managed node group. You may be able to recreate an instance profile with
+     * the same settings to recover.</p> </li> <li> <p> <b>IamNodeRoleNotFound</b>: We
+     * couldn't find the IAM role for your managed node group. You may be able to
+     * recreate an IAM role with the same settings to recover.</p> </li> <li> <p>
+     * <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
+     * your managed node group does not have enough available IP addresses for new
+     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
+     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
+     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>
@@ -120,22 +120,22 @@ namespace Model
      * then you need to enable the <code>auto-assign public IP address</code> setting
      * for the subnet. See <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-     * the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC
-     * User Guide</i>.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We
-     * couldn't find the IAM instance profile for your managed node group. You may be
-     * able to recreate an instance profile with the same settings to recover.</p>
-     * </li> <li> <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for
-     * your managed node group. You may be able to recreate an IAM role with the same
-     * settings to recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your
-     * Amazon Web Services account is unable to launch any more instances of the
-     * specified instance type. You may be able to request an Amazon EC2 instance limit
-     * increase to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or
-     * more of the subnets associated with your managed node group does not have enough
-     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
-     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
-     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
-     * register with your Amazon EKS cluster. Common causes of this failure are
-     * insufficient <a
+     * the public <code>IPv4</code> addressing attribute for your subnet</a> in the
+     * <i>Amazon VPC User Guide</i>.</p> </li> <li> <p>
+     * <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for
+     * your managed node group. You may be able to recreate an instance profile with
+     * the same settings to recover.</p> </li> <li> <p> <b>IamNodeRoleNotFound</b>: We
+     * couldn't find the IAM role for your managed node group. You may be able to
+     * recreate an IAM role with the same settings to recover.</p> </li> <li> <p>
+     * <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
+     * your managed node group does not have enough available IP addresses for new
+     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
+     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
+     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>
@@ -171,22 +171,22 @@ namespace Model
      * then you need to enable the <code>auto-assign public IP address</code> setting
      * for the subnet. See <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-     * the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC
-     * User Guide</i>.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We
-     * couldn't find the IAM instance profile for your managed node group. You may be
-     * able to recreate an instance profile with the same settings to recover.</p>
-     * </li> <li> <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for
-     * your managed node group. You may be able to recreate an IAM role with the same
-     * settings to recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your
-     * Amazon Web Services account is unable to launch any more instances of the
-     * specified instance type. You may be able to request an Amazon EC2 instance limit
-     * increase to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or
-     * more of the subnets associated with your managed node group does not have enough
-     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
-     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
-     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
-     * register with your Amazon EKS cluster. Common causes of this failure are
-     * insufficient <a
+     * the public <code>IPv4</code> addressing attribute for your subnet</a> in the
+     * <i>Amazon VPC User Guide</i>.</p> </li> <li> <p>
+     * <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for
+     * your managed node group. You may be able to recreate an instance profile with
+     * the same settings to recover.</p> </li> <li> <p> <b>IamNodeRoleNotFound</b>: We
+     * couldn't find the IAM role for your managed node group. You may be able to
+     * recreate an IAM role with the same settings to recover.</p> </li> <li> <p>
+     * <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
+     * your managed node group does not have enough available IP addresses for new
+     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
+     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
+     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>
@@ -222,22 +222,22 @@ namespace Model
      * then you need to enable the <code>auto-assign public IP address</code> setting
      * for the subnet. See <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-     * the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC
-     * User Guide</i>.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We
-     * couldn't find the IAM instance profile for your managed node group. You may be
-     * able to recreate an instance profile with the same settings to recover.</p>
-     * </li> <li> <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for
-     * your managed node group. You may be able to recreate an IAM role with the same
-     * settings to recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your
-     * Amazon Web Services account is unable to launch any more instances of the
-     * specified instance type. You may be able to request an Amazon EC2 instance limit
-     * increase to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or
-     * more of the subnets associated with your managed node group does not have enough
-     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
-     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
-     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
-     * register with your Amazon EKS cluster. Common causes of this failure are
-     * insufficient <a
+     * the public <code>IPv4</code> addressing attribute for your subnet</a> in the
+     * <i>Amazon VPC User Guide</i>.</p> </li> <li> <p>
+     * <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for
+     * your managed node group. You may be able to recreate an instance profile with
+     * the same settings to recover.</p> </li> <li> <p> <b>IamNodeRoleNotFound</b>: We
+     * couldn't find the IAM role for your managed node group. You may be able to
+     * recreate an IAM role with the same settings to recover.</p> </li> <li> <p>
+     * <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
+     * your managed node group does not have enough available IP addresses for new
+     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
+     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
+     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>
@@ -273,22 +273,22 @@ namespace Model
      * then you need to enable the <code>auto-assign public IP address</code> setting
      * for the subnet. See <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-     * the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC
-     * User Guide</i>.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We
-     * couldn't find the IAM instance profile for your managed node group. You may be
-     * able to recreate an instance profile with the same settings to recover.</p>
-     * </li> <li> <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for
-     * your managed node group. You may be able to recreate an IAM role with the same
-     * settings to recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your
-     * Amazon Web Services account is unable to launch any more instances of the
-     * specified instance type. You may be able to request an Amazon EC2 instance limit
-     * increase to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or
-     * more of the subnets associated with your managed node group does not have enough
-     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
-     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
-     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
-     * register with your Amazon EKS cluster. Common causes of this failure are
-     * insufficient <a
+     * the public <code>IPv4</code> addressing attribute for your subnet</a> in the
+     * <i>Amazon VPC User Guide</i>.</p> </li> <li> <p>
+     * <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for
+     * your managed node group. You may be able to recreate an instance profile with
+     * the same settings to recover.</p> </li> <li> <p> <b>IamNodeRoleNotFound</b>: We
+     * couldn't find the IAM role for your managed node group. You may be able to
+     * recreate an IAM role with the same settings to recover.</p> </li> <li> <p>
+     * <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
+     * your managed node group does not have enough available IP addresses for new
+     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
+     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
+     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>
@@ -324,22 +324,22 @@ namespace Model
      * then you need to enable the <code>auto-assign public IP address</code> setting
      * for the subnet. See <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-     * the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC
-     * User Guide</i>.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We
-     * couldn't find the IAM instance profile for your managed node group. You may be
-     * able to recreate an instance profile with the same settings to recover.</p>
-     * </li> <li> <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for
-     * your managed node group. You may be able to recreate an IAM role with the same
-     * settings to recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your
-     * Amazon Web Services account is unable to launch any more instances of the
-     * specified instance type. You may be able to request an Amazon EC2 instance limit
-     * increase to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or
-     * more of the subnets associated with your managed node group does not have enough
-     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
-     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
-     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
-     * register with your Amazon EKS cluster. Common causes of this failure are
-     * insufficient <a
+     * the public <code>IPv4</code> addressing attribute for your subnet</a> in the
+     * <i>Amazon VPC User Guide</i>.</p> </li> <li> <p>
+     * <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for
+     * your managed node group. You may be able to recreate an instance profile with
+     * the same settings to recover.</p> </li> <li> <p> <b>IamNodeRoleNotFound</b>: We
+     * couldn't find the IAM role for your managed node group. You may be able to
+     * recreate an IAM role with the same settings to recover.</p> </li> <li> <p>
+     * <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
+     * your managed node group does not have enough available IP addresses for new
+     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
+     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
+     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>

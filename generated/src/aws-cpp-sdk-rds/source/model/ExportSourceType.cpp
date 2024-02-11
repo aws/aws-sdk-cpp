@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportSourceType::NOT_SET:
+            return {};
           case ExportSourceType::SNAPSHOT:
             return "SNAPSHOT";
           case ExportSourceType::CLUSTER:

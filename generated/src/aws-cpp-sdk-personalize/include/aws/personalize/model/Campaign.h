@@ -168,25 +168,37 @@ namespace Model
 
     /**
      * <p>Specifies the requested minimum provisioned transactions (recommendations)
-     * per second.</p>
+     * per second. A high <code>minProvisionedTPS</code> will increase your bill. We
+     * recommend starting with 1 for <code>minProvisionedTPS</code> (the default).
+     * Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.</p>
      */
     inline int GetMinProvisionedTPS() const{ return m_minProvisionedTPS; }
 
     /**
      * <p>Specifies the requested minimum provisioned transactions (recommendations)
-     * per second.</p>
+     * per second. A high <code>minProvisionedTPS</code> will increase your bill. We
+     * recommend starting with 1 for <code>minProvisionedTPS</code> (the default).
+     * Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.</p>
      */
     inline bool MinProvisionedTPSHasBeenSet() const { return m_minProvisionedTPSHasBeenSet; }
 
     /**
      * <p>Specifies the requested minimum provisioned transactions (recommendations)
-     * per second.</p>
+     * per second. A high <code>minProvisionedTPS</code> will increase your bill. We
+     * recommend starting with 1 for <code>minProvisionedTPS</code> (the default).
+     * Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.</p>
      */
     inline void SetMinProvisionedTPS(int value) { m_minProvisionedTPSHasBeenSet = true; m_minProvisionedTPS = value; }
 
     /**
      * <p>Specifies the requested minimum provisioned transactions (recommendations)
-     * per second.</p>
+     * per second. A high <code>minProvisionedTPS</code> will increase your bill. We
+     * recommend starting with 1 for <code>minProvisionedTPS</code> (the default).
+     * Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.</p>
      */
     inline Campaign& WithMinProvisionedTPS(int value) { SetMinProvisionedTPS(value); return *this;}
 

@@ -22,8 +22,6 @@ CreateOntapVolumeConfiguration::CreateOntapVolumeConfiguration() :
     m_junctionPathHasBeenSet(false),
     m_securityStyle(SecurityStyle::NOT_SET),
     m_securityStyleHasBeenSet(false),
-    m_sizeInMegabytes(0),
-    m_sizeInMegabytesHasBeenSet(false),
     m_storageEfficiencyEnabled(false),
     m_storageEfficiencyEnabledHasBeenSet(false),
     m_storageVirtualMachineIdHasBeenSet(false),
@@ -32,7 +30,13 @@ CreateOntapVolumeConfiguration::CreateOntapVolumeConfiguration() :
     m_ontapVolumeTypeHasBeenSet(false),
     m_snapshotPolicyHasBeenSet(false),
     m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false)
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_snaplockConfigurationHasBeenSet(false),
+    m_volumeStyle(VolumeStyle::NOT_SET),
+    m_volumeStyleHasBeenSet(false),
+    m_aggregateConfigurationHasBeenSet(false),
+    m_sizeInBytes(0),
+    m_sizeInBytesHasBeenSet(false)
 {
 }
 
@@ -40,8 +44,6 @@ CreateOntapVolumeConfiguration::CreateOntapVolumeConfiguration(JsonView jsonValu
     m_junctionPathHasBeenSet(false),
     m_securityStyle(SecurityStyle::NOT_SET),
     m_securityStyleHasBeenSet(false),
-    m_sizeInMegabytes(0),
-    m_sizeInMegabytesHasBeenSet(false),
     m_storageEfficiencyEnabled(false),
     m_storageEfficiencyEnabledHasBeenSet(false),
     m_storageVirtualMachineIdHasBeenSet(false),
@@ -50,7 +52,13 @@ CreateOntapVolumeConfiguration::CreateOntapVolumeConfiguration(JsonView jsonValu
     m_ontapVolumeTypeHasBeenSet(false),
     m_snapshotPolicyHasBeenSet(false),
     m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false)
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_snaplockConfigurationHasBeenSet(false),
+    m_volumeStyle(VolumeStyle::NOT_SET),
+    m_volumeStyleHasBeenSet(false),
+    m_aggregateConfigurationHasBeenSet(false),
+    m_sizeInBytes(0),
+    m_sizeInBytesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,13 +77,6 @@ CreateOntapVolumeConfiguration& CreateOntapVolumeConfiguration::operator =(JsonV
     m_securityStyle = SecurityStyleMapper::GetSecurityStyleForName(jsonValue.GetString("SecurityStyle"));
 
     m_securityStyleHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("SizeInMegabytes"))
-  {
-    m_sizeInMegabytes = jsonValue.GetInteger("SizeInMegabytes");
-
-    m_sizeInMegabytesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StorageEfficiencyEnabled"))
@@ -120,6 +121,34 @@ CreateOntapVolumeConfiguration& CreateOntapVolumeConfiguration::operator =(JsonV
     m_copyTagsToBackupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnaplockConfiguration"))
+  {
+    m_snaplockConfiguration = jsonValue.GetObject("SnaplockConfiguration");
+
+    m_snaplockConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VolumeStyle"))
+  {
+    m_volumeStyle = VolumeStyleMapper::GetVolumeStyleForName(jsonValue.GetString("VolumeStyle"));
+
+    m_volumeStyleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AggregateConfiguration"))
+  {
+    m_aggregateConfiguration = jsonValue.GetObject("AggregateConfiguration");
+
+    m_aggregateConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SizeInBytes"))
+  {
+    m_sizeInBytes = jsonValue.GetInt64("SizeInBytes");
+
+    m_sizeInBytesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,12 +165,6 @@ JsonValue CreateOntapVolumeConfiguration::Jsonize() const
   if(m_securityStyleHasBeenSet)
   {
    payload.WithString("SecurityStyle", SecurityStyleMapper::GetNameForSecurityStyle(m_securityStyle));
-  }
-
-  if(m_sizeInMegabytesHasBeenSet)
-  {
-   payload.WithInteger("SizeInMegabytes", m_sizeInMegabytes);
-
   }
 
   if(m_storageEfficiencyEnabledHasBeenSet)
@@ -176,6 +199,29 @@ JsonValue CreateOntapVolumeConfiguration::Jsonize() const
   if(m_copyTagsToBackupsHasBeenSet)
   {
    payload.WithBool("CopyTagsToBackups", m_copyTagsToBackups);
+
+  }
+
+  if(m_snaplockConfigurationHasBeenSet)
+  {
+   payload.WithObject("SnaplockConfiguration", m_snaplockConfiguration.Jsonize());
+
+  }
+
+  if(m_volumeStyleHasBeenSet)
+  {
+   payload.WithString("VolumeStyle", VolumeStyleMapper::GetNameForVolumeStyle(m_volumeStyle));
+  }
+
+  if(m_aggregateConfigurationHasBeenSet)
+  {
+   payload.WithObject("AggregateConfiguration", m_aggregateConfiguration.Jsonize());
+
+  }
+
+  if(m_sizeInBytesHasBeenSet)
+  {
+   payload.WithInt64("SizeInBytes", m_sizeInBytes);
 
   }
 

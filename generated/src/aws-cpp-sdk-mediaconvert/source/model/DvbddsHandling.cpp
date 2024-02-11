@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbddsHandling::NOT_SET:
+            return {};
           case DvbddsHandling::NONE:
             return "NONE";
           case DvbddsHandling::SPECIFIED:

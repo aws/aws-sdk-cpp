@@ -18,7 +18,7 @@ CreatePipelineRequest::CreatePipelineRequest() :
     m_pipelineDefinitionHasBeenSet(false),
     m_pipelineDefinitionS3LocationHasBeenSet(false),
     m_pipelineDescriptionHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),

@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointTests;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Data
+@Builder(toBuilder = true)
 public class ServiceModel {
     String version;
     String runtimeMajorVersion;
@@ -37,6 +39,8 @@ public class ServiceModel {
     @Getter(AccessLevel.PRIVATE)
     @Setter(AccessLevel.PRIVATE)
     Set<String> outputShapes = new HashSet<>();
+
+
 
     public boolean hasStreamingRequestShapes() {
         return shapes.values().parallelStream().anyMatch(shape -> shape.isRequest() && (shape.hasStreamMembers() || shape.hasEventStreamMembers()));

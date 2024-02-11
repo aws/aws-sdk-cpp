@@ -155,6 +155,15 @@ GetCampaignResult& GetCampaignResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("dataDestinationConfigs"))
+  {
+    Aws::Utils::Array<JsonView> dataDestinationConfigsJsonList = jsonValue.GetArray("dataDestinationConfigs");
+    for(unsigned dataDestinationConfigsIndex = 0; dataDestinationConfigsIndex < dataDestinationConfigsJsonList.GetLength(); ++dataDestinationConfigsIndex)
+    {
+      m_dataDestinationConfigs.push_back(dataDestinationConfigsJsonList[dataDestinationConfigsIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

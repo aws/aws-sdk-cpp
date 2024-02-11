@@ -24,9 +24,12 @@ PhysicalResource::PhysicalResource() :
     m_excluded(false),
     m_excludedHasBeenSet(false),
     m_logicalResourceIdHasBeenSet(false),
+    m_parentResourceNameHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_sourceType(ResourceSourceType::NOT_SET),
+    m_sourceTypeHasBeenSet(false)
 {
 }
 
@@ -36,9 +39,12 @@ PhysicalResource::PhysicalResource(JsonView jsonValue) :
     m_excluded(false),
     m_excludedHasBeenSet(false),
     m_logicalResourceIdHasBeenSet(false),
+    m_parentResourceNameHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_sourceType(ResourceSourceType::NOT_SET),
+    m_sourceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +92,13 @@ PhysicalResource& PhysicalResource::operator =(JsonView jsonValue)
     m_logicalResourceIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("parentResourceName"))
+  {
+    m_parentResourceName = jsonValue.GetString("parentResourceName");
+
+    m_parentResourceNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("physicalResourceId"))
   {
     m_physicalResourceId = jsonValue.GetObject("physicalResourceId");
@@ -105,6 +118,13 @@ PhysicalResource& PhysicalResource::operator =(JsonView jsonValue)
     m_resourceType = jsonValue.GetString("resourceType");
 
     m_resourceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceType"))
+  {
+    m_sourceType = ResourceSourceTypeMapper::GetResourceSourceTypeForName(jsonValue.GetString("sourceType"));
+
+    m_sourceTypeHasBeenSet = true;
   }
 
   return *this;
@@ -153,6 +173,12 @@ JsonValue PhysicalResource::Jsonize() const
 
   }
 
+  if(m_parentResourceNameHasBeenSet)
+  {
+   payload.WithString("parentResourceName", m_parentResourceName);
+
+  }
+
   if(m_physicalResourceIdHasBeenSet)
   {
    payload.WithObject("physicalResourceId", m_physicalResourceId.Jsonize());
@@ -169,6 +195,11 @@ JsonValue PhysicalResource::Jsonize() const
   {
    payload.WithString("resourceType", m_resourceType);
 
+  }
+
+  if(m_sourceTypeHasBeenSet)
+  {
+   payload.WithString("sourceType", ResourceSourceTypeMapper::GetNameForResourceSourceType(m_sourceType));
   }
 
   return payload;

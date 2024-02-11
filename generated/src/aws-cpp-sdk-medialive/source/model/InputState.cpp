@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputState::NOT_SET:
+            return {};
           case InputState::CREATING:
             return "CREATING";
           case InputState::DETACHED:

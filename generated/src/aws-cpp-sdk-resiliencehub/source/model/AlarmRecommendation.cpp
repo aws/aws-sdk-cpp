@@ -19,12 +19,14 @@ namespace Model
 {
 
 AlarmRecommendation::AlarmRecommendation() : 
-    m_appComponentNameHasBeenSet(false),
+    m_appComponentNamesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_itemsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_prerequisiteHasBeenSet(false),
     m_recommendationIdHasBeenSet(false),
+    m_recommendationStatus(RecommendationStatus::NOT_SET),
+    m_recommendationStatusHasBeenSet(false),
     m_referenceIdHasBeenSet(false),
     m_type(AlarmType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -32,12 +34,14 @@ AlarmRecommendation::AlarmRecommendation() :
 }
 
 AlarmRecommendation::AlarmRecommendation(JsonView jsonValue) : 
-    m_appComponentNameHasBeenSet(false),
+    m_appComponentNamesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_itemsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_prerequisiteHasBeenSet(false),
     m_recommendationIdHasBeenSet(false),
+    m_recommendationStatus(RecommendationStatus::NOT_SET),
+    m_recommendationStatusHasBeenSet(false),
     m_referenceIdHasBeenSet(false),
     m_type(AlarmType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -47,11 +51,14 @@ AlarmRecommendation::AlarmRecommendation(JsonView jsonValue) :
 
 AlarmRecommendation& AlarmRecommendation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("appComponentName"))
+  if(jsonValue.ValueExists("appComponentNames"))
   {
-    m_appComponentName = jsonValue.GetString("appComponentName");
-
-    m_appComponentNameHasBeenSet = true;
+    Aws::Utils::Array<JsonView> appComponentNamesJsonList = jsonValue.GetArray("appComponentNames");
+    for(unsigned appComponentNamesIndex = 0; appComponentNamesIndex < appComponentNamesJsonList.GetLength(); ++appComponentNamesIndex)
+    {
+      m_appComponentNames.push_back(appComponentNamesJsonList[appComponentNamesIndex].AsString());
+    }
+    m_appComponentNamesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -92,6 +99,13 @@ AlarmRecommendation& AlarmRecommendation::operator =(JsonView jsonValue)
     m_recommendationIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("recommendationStatus"))
+  {
+    m_recommendationStatus = RecommendationStatusMapper::GetRecommendationStatusForName(jsonValue.GetString("recommendationStatus"));
+
+    m_recommendationStatusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("referenceId"))
   {
     m_referenceId = jsonValue.GetString("referenceId");
@@ -113,9 +127,14 @@ JsonValue AlarmRecommendation::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_appComponentNameHasBeenSet)
+  if(m_appComponentNamesHasBeenSet)
   {
-   payload.WithString("appComponentName", m_appComponentName);
+   Aws::Utils::Array<JsonValue> appComponentNamesJsonList(m_appComponentNames.size());
+   for(unsigned appComponentNamesIndex = 0; appComponentNamesIndex < appComponentNamesJsonList.GetLength(); ++appComponentNamesIndex)
+   {
+     appComponentNamesJsonList[appComponentNamesIndex].AsString(m_appComponentNames[appComponentNamesIndex]);
+   }
+   payload.WithArray("appComponentNames", std::move(appComponentNamesJsonList));
 
   }
 
@@ -152,6 +171,11 @@ JsonValue AlarmRecommendation::Jsonize() const
   {
    payload.WithString("recommendationId", m_recommendationId);
 
+  }
+
+  if(m_recommendationStatusHasBeenSet)
+  {
+   payload.WithString("recommendationStatus", RecommendationStatusMapper::GetNameForRecommendationStatus(m_recommendationStatus));
   }
 
   if(m_referenceIdHasBeenSet)

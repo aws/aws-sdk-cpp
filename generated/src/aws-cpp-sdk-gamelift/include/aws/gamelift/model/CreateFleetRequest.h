@@ -16,6 +16,7 @@
 #include <aws/gamelift/model/CertificateConfiguration.h>
 #include <aws/gamelift/model/ComputeType.h>
 #include <aws/gamelift/model/AnywhereConfiguration.h>
+#include <aws/gamelift/model/InstanceRoleCredentialsProvider.h>
 #include <aws/gamelift/model/IpPermission.h>
 #include <aws/gamelift/model/LocationConfiguration.h>
 #include <aws/gamelift/model/Tag.h>
@@ -139,64 +140,64 @@ namespace Model
     /**
      * <p>The unique identifier for a custom game server build to be deployed on fleet
      * instances. You can use either the build ID or ARN. The build must be uploaded to
-     * GameLift and in <code>READY</code> status. This fleet property cannot be changed
-     * later.</p>
+     * Amazon GameLift and in <code>READY</code> status. This fleet property can't be
+     * changed after the fleet is created.</p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
      * <p>The unique identifier for a custom game server build to be deployed on fleet
      * instances. You can use either the build ID or ARN. The build must be uploaded to
-     * GameLift and in <code>READY</code> status. This fleet property cannot be changed
-     * later.</p>
+     * Amazon GameLift and in <code>READY</code> status. This fleet property can't be
+     * changed after the fleet is created.</p>
      */
     inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for a custom game server build to be deployed on fleet
      * instances. You can use either the build ID or ARN. The build must be uploaded to
-     * GameLift and in <code>READY</code> status. This fleet property cannot be changed
-     * later.</p>
+     * Amazon GameLift and in <code>READY</code> status. This fleet property can't be
+     * changed after the fleet is created.</p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
      * <p>The unique identifier for a custom game server build to be deployed on fleet
      * instances. You can use either the build ID or ARN. The build must be uploaded to
-     * GameLift and in <code>READY</code> status. This fleet property cannot be changed
-     * later.</p>
+     * Amazon GameLift and in <code>READY</code> status. This fleet property can't be
+     * changed after the fleet is created.</p>
      */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
 
     /**
      * <p>The unique identifier for a custom game server build to be deployed on fleet
      * instances. You can use either the build ID or ARN. The build must be uploaded to
-     * GameLift and in <code>READY</code> status. This fleet property cannot be changed
-     * later.</p>
+     * Amazon GameLift and in <code>READY</code> status. This fleet property can't be
+     * changed after the fleet is created.</p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
      * <p>The unique identifier for a custom game server build to be deployed on fleet
      * instances. You can use either the build ID or ARN. The build must be uploaded to
-     * GameLift and in <code>READY</code> status. This fleet property cannot be changed
-     * later.</p>
+     * Amazon GameLift and in <code>READY</code> status. This fleet property can't be
+     * changed after the fleet is created.</p>
      */
     inline CreateFleetRequest& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
      * <p>The unique identifier for a custom game server build to be deployed on fleet
      * instances. You can use either the build ID or ARN. The build must be uploaded to
-     * GameLift and in <code>READY</code> status. This fleet property cannot be changed
-     * later.</p>
+     * Amazon GameLift and in <code>READY</code> status. This fleet property can't be
+     * changed after the fleet is created.</p>
      */
     inline CreateFleetRequest& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for a custom game server build to be deployed on fleet
      * instances. You can use either the build ID or ARN. The build must be uploaded to
-     * GameLift and in <code>READY</code> status. This fleet property cannot be changed
-     * later.</p>
+     * Amazon GameLift and in <code>READY</code> status. This fleet property can't be
+     * changed after the fleet is created.</p>
      */
     inline CreateFleetRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
@@ -204,64 +205,64 @@ namespace Model
     /**
      * <p>The unique identifier for a Realtime configuration script to be deployed on
      * fleet instances. You can use either the script ID or ARN. Scripts must be
-     * uploaded to GameLift prior to creating the fleet. This fleet property cannot be
-     * changed later.</p>
+     * uploaded to Amazon GameLift prior to creating the fleet. This fleet property
+     * can't be changed after the fleet is created.</p>
      */
     inline const Aws::String& GetScriptId() const{ return m_scriptId; }
 
     /**
      * <p>The unique identifier for a Realtime configuration script to be deployed on
      * fleet instances. You can use either the script ID or ARN. Scripts must be
-     * uploaded to GameLift prior to creating the fleet. This fleet property cannot be
-     * changed later.</p>
+     * uploaded to Amazon GameLift prior to creating the fleet. This fleet property
+     * can't be changed after the fleet is created.</p>
      */
     inline bool ScriptIdHasBeenSet() const { return m_scriptIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for a Realtime configuration script to be deployed on
      * fleet instances. You can use either the script ID or ARN. Scripts must be
-     * uploaded to GameLift prior to creating the fleet. This fleet property cannot be
-     * changed later.</p>
+     * uploaded to Amazon GameLift prior to creating the fleet. This fleet property
+     * can't be changed after the fleet is created.</p>
      */
     inline void SetScriptId(const Aws::String& value) { m_scriptIdHasBeenSet = true; m_scriptId = value; }
 
     /**
      * <p>The unique identifier for a Realtime configuration script to be deployed on
      * fleet instances. You can use either the script ID or ARN. Scripts must be
-     * uploaded to GameLift prior to creating the fleet. This fleet property cannot be
-     * changed later.</p>
+     * uploaded to Amazon GameLift prior to creating the fleet. This fleet property
+     * can't be changed after the fleet is created.</p>
      */
     inline void SetScriptId(Aws::String&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::move(value); }
 
     /**
      * <p>The unique identifier for a Realtime configuration script to be deployed on
      * fleet instances. You can use either the script ID or ARN. Scripts must be
-     * uploaded to GameLift prior to creating the fleet. This fleet property cannot be
-     * changed later.</p>
+     * uploaded to Amazon GameLift prior to creating the fleet. This fleet property
+     * can't be changed after the fleet is created.</p>
      */
     inline void SetScriptId(const char* value) { m_scriptIdHasBeenSet = true; m_scriptId.assign(value); }
 
     /**
      * <p>The unique identifier for a Realtime configuration script to be deployed on
      * fleet instances. You can use either the script ID or ARN. Scripts must be
-     * uploaded to GameLift prior to creating the fleet. This fleet property cannot be
-     * changed later.</p>
+     * uploaded to Amazon GameLift prior to creating the fleet. This fleet property
+     * can't be changed after the fleet is created.</p>
      */
     inline CreateFleetRequest& WithScriptId(const Aws::String& value) { SetScriptId(value); return *this;}
 
     /**
      * <p>The unique identifier for a Realtime configuration script to be deployed on
      * fleet instances. You can use either the script ID or ARN. Scripts must be
-     * uploaded to GameLift prior to creating the fleet. This fleet property cannot be
-     * changed later.</p>
+     * uploaded to Amazon GameLift prior to creating the fleet. This fleet property
+     * can't be changed after the fleet is created.</p>
      */
     inline CreateFleetRequest& WithScriptId(Aws::String&& value) { SetScriptId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for a Realtime configuration script to be deployed on
      * fleet instances. You can use either the script ID or ARN. Scripts must be
-     * uploaded to GameLift prior to creating the fleet. This fleet property cannot be
-     * changed later.</p>
+     * uploaded to Amazon GameLift prior to creating the fleet. This fleet property
+     * can't be changed after the fleet is created.</p>
      */
     inline CreateFleetRequest& WithScriptId(const char* value) { SetScriptId(value); return *this;}
 
@@ -381,98 +382,98 @@ namespace Model
 
 
     /**
-     * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
-     * store log files once a server process shuts down, use the GameLift server API
-     * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. For more information, see <a
+     * <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
-     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
+     * the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogPaths() const{ return m_logPaths; }
 
     /**
-     * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
-     * store log files once a server process shuts down, use the GameLift server API
-     * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. For more information, see <a
+     * <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
-     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
+     * the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
      */
     inline bool LogPathsHasBeenSet() const { return m_logPathsHasBeenSet; }
 
     /**
-     * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
-     * store log files once a server process shuts down, use the GameLift server API
-     * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. For more information, see <a
+     * <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
-     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
+     * the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
      */
     inline void SetLogPaths(const Aws::Vector<Aws::String>& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
 
     /**
-     * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
-     * store log files once a server process shuts down, use the GameLift server API
-     * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. For more information, see <a
+     * <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
-     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
+     * the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
      */
     inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = std::move(value); }
 
     /**
-     * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
-     * store log files once a server process shuts down, use the GameLift server API
-     * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. For more information, see <a
+     * <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
-     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
+     * the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
      */
     inline CreateFleetRequest& WithLogPaths(const Aws::Vector<Aws::String>& value) { SetLogPaths(value); return *this;}
 
     /**
-     * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
-     * store log files once a server process shuts down, use the GameLift server API
-     * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. For more information, see <a
+     * <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
-     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
+     * the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
      */
     inline CreateFleetRequest& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(std::move(value)); return *this;}
 
     /**
-     * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
-     * store log files once a server process shuts down, use the GameLift server API
-     * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. For more information, see <a
+     * <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
-     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
+     * the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const Aws::String& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
     /**
-     * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
-     * store log files once a server process shuts down, use the GameLift server API
-     * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. For more information, see <a
+     * <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
-     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
+     * the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
-     * store log files once a server process shuts down, use the GameLift server API
-     * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. For more information, see <a
+     * <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
-     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
+     * the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
 
     /**
-     * <p>The GameLift-supported Amazon EC2 instance type to use for all fleet
+     * <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet
      * instances. Instance type determines the computing resources that will be used to
      * host your game servers, including CPU, memory, storage, and networking capacity.
      * See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute
@@ -482,7 +483,7 @@ namespace Model
     inline const EC2InstanceType& GetEC2InstanceType() const{ return m_eC2InstanceType; }
 
     /**
-     * <p>The GameLift-supported Amazon EC2 instance type to use for all fleet
+     * <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet
      * instances. Instance type determines the computing resources that will be used to
      * host your game servers, including CPU, memory, storage, and networking capacity.
      * See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute
@@ -492,7 +493,7 @@ namespace Model
     inline bool EC2InstanceTypeHasBeenSet() const { return m_eC2InstanceTypeHasBeenSet; }
 
     /**
-     * <p>The GameLift-supported Amazon EC2 instance type to use for all fleet
+     * <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet
      * instances. Instance type determines the computing resources that will be used to
      * host your game servers, including CPU, memory, storage, and networking capacity.
      * See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute
@@ -502,7 +503,7 @@ namespace Model
     inline void SetEC2InstanceType(const EC2InstanceType& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
 
     /**
-     * <p>The GameLift-supported Amazon EC2 instance type to use for all fleet
+     * <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet
      * instances. Instance type determines the computing resources that will be used to
      * host your game servers, including CPU, memory, storage, and networking capacity.
      * See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute
@@ -512,7 +513,7 @@ namespace Model
     inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = std::move(value); }
 
     /**
-     * <p>The GameLift-supported Amazon EC2 instance type to use for all fleet
+     * <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet
      * instances. Instance type determines the computing resources that will be used to
      * host your game servers, including CPU, memory, storage, and networking capacity.
      * See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute
@@ -522,7 +523,7 @@ namespace Model
     inline CreateFleetRequest& WithEC2InstanceType(const EC2InstanceType& value) { SetEC2InstanceType(value); return *this;}
 
     /**
-     * <p>The GameLift-supported Amazon EC2 instance type to use for all fleet
+     * <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet
      * instances. Instance type determines the computing resources that will be used to
      * host your game servers, including CPU, memory, storage, and networking capacity.
      * See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute
@@ -536,7 +537,8 @@ namespace Model
      * <p>The allowed IP address ranges and port settings that allow inbound traffic to
      * access game sessions on this fleet. If the fleet is hosting a custom game build,
      * this property must be set before players can connect to game sessions. For
-     * Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
+     * Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.
+     * </p>
      */
     inline const Aws::Vector<IpPermission>& GetEC2InboundPermissions() const{ return m_eC2InboundPermissions; }
 
@@ -544,7 +546,8 @@ namespace Model
      * <p>The allowed IP address ranges and port settings that allow inbound traffic to
      * access game sessions on this fleet. If the fleet is hosting a custom game build,
      * this property must be set before players can connect to game sessions. For
-     * Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
+     * Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.
+     * </p>
      */
     inline bool EC2InboundPermissionsHasBeenSet() const { return m_eC2InboundPermissionsHasBeenSet; }
 
@@ -552,7 +555,8 @@ namespace Model
      * <p>The allowed IP address ranges and port settings that allow inbound traffic to
      * access game sessions on this fleet. If the fleet is hosting a custom game build,
      * this property must be set before players can connect to game sessions. For
-     * Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
+     * Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.
+     * </p>
      */
     inline void SetEC2InboundPermissions(const Aws::Vector<IpPermission>& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions = value; }
 
@@ -560,7 +564,8 @@ namespace Model
      * <p>The allowed IP address ranges and port settings that allow inbound traffic to
      * access game sessions on this fleet. If the fleet is hosting a custom game build,
      * this property must be set before players can connect to game sessions. For
-     * Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
+     * Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.
+     * </p>
      */
     inline void SetEC2InboundPermissions(Aws::Vector<IpPermission>&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions = std::move(value); }
 
@@ -568,7 +573,8 @@ namespace Model
      * <p>The allowed IP address ranges and port settings that allow inbound traffic to
      * access game sessions on this fleet. If the fleet is hosting a custom game build,
      * this property must be set before players can connect to game sessions. For
-     * Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
+     * Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.
+     * </p>
      */
     inline CreateFleetRequest& WithEC2InboundPermissions(const Aws::Vector<IpPermission>& value) { SetEC2InboundPermissions(value); return *this;}
 
@@ -576,7 +582,8 @@ namespace Model
      * <p>The allowed IP address ranges and port settings that allow inbound traffic to
      * access game sessions on this fleet. If the fleet is hosting a custom game build,
      * this property must be set before players can connect to game sessions. For
-     * Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
+     * Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.
+     * </p>
      */
     inline CreateFleetRequest& WithEC2InboundPermissions(Aws::Vector<IpPermission>&& value) { SetEC2InboundPermissions(std::move(value)); return *this;}
 
@@ -584,7 +591,8 @@ namespace Model
      * <p>The allowed IP address ranges and port settings that allow inbound traffic to
      * access game sessions on this fleet. If the fleet is hosting a custom game build,
      * this property must be set before players can connect to game sessions. For
-     * Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
+     * Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.
+     * </p>
      */
     inline CreateFleetRequest& AddEC2InboundPermissions(const IpPermission& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions.push_back(value); return *this; }
 
@@ -592,7 +600,8 @@ namespace Model
      * <p>The allowed IP address ranges and port settings that allow inbound traffic to
      * access game sessions on this fleet. If the fleet is hosting a custom game build,
      * this property must be set before players can connect to game sessions. For
-     * Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
+     * Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.
+     * </p>
      */
     inline CreateFleetRequest& AddEC2InboundPermissions(IpPermission&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions.push_back(std::move(value)); return *this; }
 
@@ -854,139 +863,155 @@ namespace Model
 
 
     /**
-     * <p>Used when peering your GameLift fleet with a VPC, the unique identifier for
-     * the Amazon Web Services account that owns the VPC. You can find your account ID
-     * in the Amazon Web Services Management Console under account settings. </p>
+     * <p>Used when peering your Amazon GameLift fleet with a VPC, the unique
+     * identifier for the Amazon Web Services account that owns the VPC. You can find
+     * your account ID in the Amazon Web Services Management Console under account
+     * settings. </p>
      */
     inline const Aws::String& GetPeerVpcAwsAccountId() const{ return m_peerVpcAwsAccountId; }
 
     /**
-     * <p>Used when peering your GameLift fleet with a VPC, the unique identifier for
-     * the Amazon Web Services account that owns the VPC. You can find your account ID
-     * in the Amazon Web Services Management Console under account settings. </p>
+     * <p>Used when peering your Amazon GameLift fleet with a VPC, the unique
+     * identifier for the Amazon Web Services account that owns the VPC. You can find
+     * your account ID in the Amazon Web Services Management Console under account
+     * settings. </p>
      */
     inline bool PeerVpcAwsAccountIdHasBeenSet() const { return m_peerVpcAwsAccountIdHasBeenSet; }
 
     /**
-     * <p>Used when peering your GameLift fleet with a VPC, the unique identifier for
-     * the Amazon Web Services account that owns the VPC. You can find your account ID
-     * in the Amazon Web Services Management Console under account settings. </p>
+     * <p>Used when peering your Amazon GameLift fleet with a VPC, the unique
+     * identifier for the Amazon Web Services account that owns the VPC. You can find
+     * your account ID in the Amazon Web Services Management Console under account
+     * settings. </p>
      */
     inline void SetPeerVpcAwsAccountId(const Aws::String& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = value; }
 
     /**
-     * <p>Used when peering your GameLift fleet with a VPC, the unique identifier for
-     * the Amazon Web Services account that owns the VPC. You can find your account ID
-     * in the Amazon Web Services Management Console under account settings. </p>
+     * <p>Used when peering your Amazon GameLift fleet with a VPC, the unique
+     * identifier for the Amazon Web Services account that owns the VPC. You can find
+     * your account ID in the Amazon Web Services Management Console under account
+     * settings. </p>
      */
     inline void SetPeerVpcAwsAccountId(Aws::String&& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = std::move(value); }
 
     /**
-     * <p>Used when peering your GameLift fleet with a VPC, the unique identifier for
-     * the Amazon Web Services account that owns the VPC. You can find your account ID
-     * in the Amazon Web Services Management Console under account settings. </p>
+     * <p>Used when peering your Amazon GameLift fleet with a VPC, the unique
+     * identifier for the Amazon Web Services account that owns the VPC. You can find
+     * your account ID in the Amazon Web Services Management Console under account
+     * settings. </p>
      */
     inline void SetPeerVpcAwsAccountId(const char* value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId.assign(value); }
 
     /**
-     * <p>Used when peering your GameLift fleet with a VPC, the unique identifier for
-     * the Amazon Web Services account that owns the VPC. You can find your account ID
-     * in the Amazon Web Services Management Console under account settings. </p>
+     * <p>Used when peering your Amazon GameLift fleet with a VPC, the unique
+     * identifier for the Amazon Web Services account that owns the VPC. You can find
+     * your account ID in the Amazon Web Services Management Console under account
+     * settings. </p>
      */
     inline CreateFleetRequest& WithPeerVpcAwsAccountId(const Aws::String& value) { SetPeerVpcAwsAccountId(value); return *this;}
 
     /**
-     * <p>Used when peering your GameLift fleet with a VPC, the unique identifier for
-     * the Amazon Web Services account that owns the VPC. You can find your account ID
-     * in the Amazon Web Services Management Console under account settings. </p>
+     * <p>Used when peering your Amazon GameLift fleet with a VPC, the unique
+     * identifier for the Amazon Web Services account that owns the VPC. You can find
+     * your account ID in the Amazon Web Services Management Console under account
+     * settings. </p>
      */
     inline CreateFleetRequest& WithPeerVpcAwsAccountId(Aws::String&& value) { SetPeerVpcAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>Used when peering your GameLift fleet with a VPC, the unique identifier for
-     * the Amazon Web Services account that owns the VPC. You can find your account ID
-     * in the Amazon Web Services Management Console under account settings. </p>
+     * <p>Used when peering your Amazon GameLift fleet with a VPC, the unique
+     * identifier for the Amazon Web Services account that owns the VPC. You can find
+     * your account ID in the Amazon Web Services Management Console under account
+     * settings. </p>
      */
     inline CreateFleetRequest& WithPeerVpcAwsAccountId(const char* value) { SetPeerVpcAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
-     * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
-     * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * Amazon Web Services Management Console. Learn more about VPC peering in <a
+     * <p>A unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same Region as your fleet. To look up a
+     * VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a>
+     * in the Amazon Web Services Management Console. Learn more about VPC peering in
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>.</p>
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
 
     /**
-     * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
-     * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
-     * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * Amazon Web Services Management Console. Learn more about VPC peering in <a
+     * <p>A unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same Region as your fleet. To look up a
+     * VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a>
+     * in the Amazon Web Services Management Console. Learn more about VPC peering in
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>.</p>
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
-     * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
-     * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * Amazon Web Services Management Console. Learn more about VPC peering in <a
+     * <p>A unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same Region as your fleet. To look up a
+     * VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a>
+     * in the Amazon Web Services Management Console. Learn more about VPC peering in
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>.</p>
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
 
     /**
-     * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
-     * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
-     * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * Amazon Web Services Management Console. Learn more about VPC peering in <a
+     * <p>A unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same Region as your fleet. To look up a
+     * VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a>
+     * in the Amazon Web Services Management Console. Learn more about VPC peering in
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>.</p>
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
-     * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
-     * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * Amazon Web Services Management Console. Learn more about VPC peering in <a
+     * <p>A unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same Region as your fleet. To look up a
+     * VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a>
+     * in the Amazon Web Services Management Console. Learn more about VPC peering in
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>.</p>
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
 
     /**
-     * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
-     * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
-     * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * Amazon Web Services Management Console. Learn more about VPC peering in <a
+     * <p>A unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same Region as your fleet. To look up a
+     * VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a>
+     * in the Amazon Web Services Management Console. Learn more about VPC peering in
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>.</p>
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline CreateFleetRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
-     * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
-     * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * Amazon Web Services Management Console. Learn more about VPC peering in <a
+     * <p>A unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same Region as your fleet. To look up a
+     * VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a>
+     * in the Amazon Web Services Management Console. Learn more about VPC peering in
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>.</p>
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline CreateFleetRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
-     * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
-     * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * Amazon Web Services Management Console. Learn more about VPC peering in <a
+     * <p>A unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same Region as your fleet. To look up a
+     * VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a>
+     * in the Amazon Web Services Management Console. Learn more about VPC peering in
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>.</p>
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline CreateFleetRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
 
@@ -996,8 +1021,8 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline const FleetType& GetFleetType() const{ return m_fleetType; }
 
@@ -1006,8 +1031,8 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline bool FleetTypeHasBeenSet() const { return m_fleetTypeHasBeenSet; }
 
@@ -1016,8 +1041,8 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
 
@@ -1026,8 +1051,8 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
 
@@ -1036,8 +1061,8 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline CreateFleetRequest& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
 
@@ -1046,129 +1071,121 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline CreateFleetRequest& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>. This property cannot be
-     * changed after the fleet is created.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>. This
+     * fleet property can't be changed after the fleet is created.</p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>. This property cannot be
-     * changed after the fleet is created.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>. This
+     * fleet property can't be changed after the fleet is created.</p>
      */
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>. This property cannot be
-     * changed after the fleet is created.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>. This
+     * fleet property can't be changed after the fleet is created.</p>
      */
     inline void SetInstanceRoleArn(const Aws::String& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = value; }
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>. This property cannot be
-     * changed after the fleet is created.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>. This
+     * fleet property can't be changed after the fleet is created.</p>
      */
     inline void SetInstanceRoleArn(Aws::String&& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = std::move(value); }
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>. This property cannot be
-     * changed after the fleet is created.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>. This
+     * fleet property can't be changed after the fleet is created.</p>
      */
     inline void SetInstanceRoleArn(const char* value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn.assign(value); }
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>. This property cannot be
-     * changed after the fleet is created.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>. This
+     * fleet property can't be changed after the fleet is created.</p>
      */
     inline CreateFleetRequest& WithInstanceRoleArn(const Aws::String& value) { SetInstanceRoleArn(value); return *this;}
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>. This property cannot be
-     * changed after the fleet is created.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>. This
+     * fleet property can't be changed after the fleet is created.</p>
      */
     inline CreateFleetRequest& WithInstanceRoleArn(Aws::String&& value) { SetInstanceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>. This property cannot be
-     * changed after the fleet is created.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>. This
+     * fleet property can't be changed after the fleet is created.</p>
      */
     inline CreateFleetRequest& WithInstanceRoleArn(const char* value) { SetInstanceRoleArn(value); return *this;}
 
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
-     * uses the certificates to encrypt traffic between game clients and the game
-     * servers running on GameLift. By default, the
+     * <p>Prompts Amazon GameLift to generate a TLS/SSL certificate for the fleet.
+     * Amazon GameLift uses the certificates to encrypt traffic between game clients
+     * and the game servers running on Amazon GameLift. By default, the
      * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
      * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
      * certificates expire after 13 months. Certificate expiration can cause fleets to
@@ -1184,9 +1201,9 @@ namespace Model
     inline const CertificateConfiguration& GetCertificateConfiguration() const{ return m_certificateConfiguration; }
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
-     * uses the certificates to encrypt traffic between game clients and the game
-     * servers running on GameLift. By default, the
+     * <p>Prompts Amazon GameLift to generate a TLS/SSL certificate for the fleet.
+     * Amazon GameLift uses the certificates to encrypt traffic between game clients
+     * and the game servers running on Amazon GameLift. By default, the
      * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
      * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
      * certificates expire after 13 months. Certificate expiration can cause fleets to
@@ -1202,9 +1219,9 @@ namespace Model
     inline bool CertificateConfigurationHasBeenSet() const { return m_certificateConfigurationHasBeenSet; }
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
-     * uses the certificates to encrypt traffic between game clients and the game
-     * servers running on GameLift. By default, the
+     * <p>Prompts Amazon GameLift to generate a TLS/SSL certificate for the fleet.
+     * Amazon GameLift uses the certificates to encrypt traffic between game clients
+     * and the game servers running on Amazon GameLift. By default, the
      * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
      * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
      * certificates expire after 13 months. Certificate expiration can cause fleets to
@@ -1220,9 +1237,9 @@ namespace Model
     inline void SetCertificateConfiguration(const CertificateConfiguration& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = value; }
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
-     * uses the certificates to encrypt traffic between game clients and the game
-     * servers running on GameLift. By default, the
+     * <p>Prompts Amazon GameLift to generate a TLS/SSL certificate for the fleet.
+     * Amazon GameLift uses the certificates to encrypt traffic between game clients
+     * and the game servers running on Amazon GameLift. By default, the
      * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
      * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
      * certificates expire after 13 months. Certificate expiration can cause fleets to
@@ -1238,9 +1255,9 @@ namespace Model
     inline void SetCertificateConfiguration(CertificateConfiguration&& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = std::move(value); }
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
-     * uses the certificates to encrypt traffic between game clients and the game
-     * servers running on GameLift. By default, the
+     * <p>Prompts Amazon GameLift to generate a TLS/SSL certificate for the fleet.
+     * Amazon GameLift uses the certificates to encrypt traffic between game clients
+     * and the game servers running on Amazon GameLift. By default, the
      * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
      * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
      * certificates expire after 13 months. Certificate expiration can cause fleets to
@@ -1256,9 +1273,9 @@ namespace Model
     inline CreateFleetRequest& WithCertificateConfiguration(const CertificateConfiguration& value) { SetCertificateConfiguration(value); return *this;}
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
-     * uses the certificates to encrypt traffic between game clients and the game
-     * servers running on GameLift. By default, the
+     * <p>Prompts Amazon GameLift to generate a TLS/SSL certificate for the fleet.
+     * Amazon GameLift uses the certificates to encrypt traffic between game clients
+     * and the game servers running on Amazon GameLift. By default, the
      * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
      * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
      * certificates expire after 13 months. Certificate expiration can cause fleets to
@@ -1278,9 +1295,11 @@ namespace Model
      * <p>A set of remote locations to deploy additional instances to and manage as
      * part of the fleet. This parameter can only be used when creating fleets in
      * Amazon Web Services Regions that support multiple locations. You can add any
-     * GameLift-supported Amazon Web Services Region as a remote location, in the form
-     * of an Amazon Web Services Region code such as <code>us-west-2</code>. To create
-     * a fleet with instances in the home Region only, omit this parameter. </p>
+     * Amazon GameLift-supported Amazon Web Services Region as a remote location, in
+     * the form of an Amazon Web Services Region code such as <code>us-west-2</code>.
+     * To create a fleet with instances in the home Region only, don't use this
+     * parameter. </p> <p>To use this parameter, Amazon GameLift requires you to use
+     * your home location in the request.</p>
      */
     inline const Aws::Vector<LocationConfiguration>& GetLocations() const{ return m_locations; }
 
@@ -1288,9 +1307,11 @@ namespace Model
      * <p>A set of remote locations to deploy additional instances to and manage as
      * part of the fleet. This parameter can only be used when creating fleets in
      * Amazon Web Services Regions that support multiple locations. You can add any
-     * GameLift-supported Amazon Web Services Region as a remote location, in the form
-     * of an Amazon Web Services Region code such as <code>us-west-2</code>. To create
-     * a fleet with instances in the home Region only, omit this parameter. </p>
+     * Amazon GameLift-supported Amazon Web Services Region as a remote location, in
+     * the form of an Amazon Web Services Region code such as <code>us-west-2</code>.
+     * To create a fleet with instances in the home Region only, don't use this
+     * parameter. </p> <p>To use this parameter, Amazon GameLift requires you to use
+     * your home location in the request.</p>
      */
     inline bool LocationsHasBeenSet() const { return m_locationsHasBeenSet; }
 
@@ -1298,9 +1319,11 @@ namespace Model
      * <p>A set of remote locations to deploy additional instances to and manage as
      * part of the fleet. This parameter can only be used when creating fleets in
      * Amazon Web Services Regions that support multiple locations. You can add any
-     * GameLift-supported Amazon Web Services Region as a remote location, in the form
-     * of an Amazon Web Services Region code such as <code>us-west-2</code>. To create
-     * a fleet with instances in the home Region only, omit this parameter. </p>
+     * Amazon GameLift-supported Amazon Web Services Region as a remote location, in
+     * the form of an Amazon Web Services Region code such as <code>us-west-2</code>.
+     * To create a fleet with instances in the home Region only, don't use this
+     * parameter. </p> <p>To use this parameter, Amazon GameLift requires you to use
+     * your home location in the request.</p>
      */
     inline void SetLocations(const Aws::Vector<LocationConfiguration>& value) { m_locationsHasBeenSet = true; m_locations = value; }
 
@@ -1308,9 +1331,11 @@ namespace Model
      * <p>A set of remote locations to deploy additional instances to and manage as
      * part of the fleet. This parameter can only be used when creating fleets in
      * Amazon Web Services Regions that support multiple locations. You can add any
-     * GameLift-supported Amazon Web Services Region as a remote location, in the form
-     * of an Amazon Web Services Region code such as <code>us-west-2</code>. To create
-     * a fleet with instances in the home Region only, omit this parameter. </p>
+     * Amazon GameLift-supported Amazon Web Services Region as a remote location, in
+     * the form of an Amazon Web Services Region code such as <code>us-west-2</code>.
+     * To create a fleet with instances in the home Region only, don't use this
+     * parameter. </p> <p>To use this parameter, Amazon GameLift requires you to use
+     * your home location in the request.</p>
      */
     inline void SetLocations(Aws::Vector<LocationConfiguration>&& value) { m_locationsHasBeenSet = true; m_locations = std::move(value); }
 
@@ -1318,9 +1343,11 @@ namespace Model
      * <p>A set of remote locations to deploy additional instances to and manage as
      * part of the fleet. This parameter can only be used when creating fleets in
      * Amazon Web Services Regions that support multiple locations. You can add any
-     * GameLift-supported Amazon Web Services Region as a remote location, in the form
-     * of an Amazon Web Services Region code such as <code>us-west-2</code>. To create
-     * a fleet with instances in the home Region only, omit this parameter. </p>
+     * Amazon GameLift-supported Amazon Web Services Region as a remote location, in
+     * the form of an Amazon Web Services Region code such as <code>us-west-2</code>.
+     * To create a fleet with instances in the home Region only, don't use this
+     * parameter. </p> <p>To use this parameter, Amazon GameLift requires you to use
+     * your home location in the request.</p>
      */
     inline CreateFleetRequest& WithLocations(const Aws::Vector<LocationConfiguration>& value) { SetLocations(value); return *this;}
 
@@ -1328,9 +1355,11 @@ namespace Model
      * <p>A set of remote locations to deploy additional instances to and manage as
      * part of the fleet. This parameter can only be used when creating fleets in
      * Amazon Web Services Regions that support multiple locations. You can add any
-     * GameLift-supported Amazon Web Services Region as a remote location, in the form
-     * of an Amazon Web Services Region code such as <code>us-west-2</code>. To create
-     * a fleet with instances in the home Region only, omit this parameter. </p>
+     * Amazon GameLift-supported Amazon Web Services Region as a remote location, in
+     * the form of an Amazon Web Services Region code such as <code>us-west-2</code>.
+     * To create a fleet with instances in the home Region only, don't use this
+     * parameter. </p> <p>To use this parameter, Amazon GameLift requires you to use
+     * your home location in the request.</p>
      */
     inline CreateFleetRequest& WithLocations(Aws::Vector<LocationConfiguration>&& value) { SetLocations(std::move(value)); return *this;}
 
@@ -1338,9 +1367,11 @@ namespace Model
      * <p>A set of remote locations to deploy additional instances to and manage as
      * part of the fleet. This parameter can only be used when creating fleets in
      * Amazon Web Services Regions that support multiple locations. You can add any
-     * GameLift-supported Amazon Web Services Region as a remote location, in the form
-     * of an Amazon Web Services Region code such as <code>us-west-2</code>. To create
-     * a fleet with instances in the home Region only, omit this parameter. </p>
+     * Amazon GameLift-supported Amazon Web Services Region as a remote location, in
+     * the form of an Amazon Web Services Region code such as <code>us-west-2</code>.
+     * To create a fleet with instances in the home Region only, don't use this
+     * parameter. </p> <p>To use this parameter, Amazon GameLift requires you to use
+     * your home location in the request.</p>
      */
     inline CreateFleetRequest& AddLocations(const LocationConfiguration& value) { m_locationsHasBeenSet = true; m_locations.push_back(value); return *this; }
 
@@ -1348,9 +1379,11 @@ namespace Model
      * <p>A set of remote locations to deploy additional instances to and manage as
      * part of the fleet. This parameter can only be used when creating fleets in
      * Amazon Web Services Regions that support multiple locations. You can add any
-     * GameLift-supported Amazon Web Services Region as a remote location, in the form
-     * of an Amazon Web Services Region code such as <code>us-west-2</code>. To create
-     * a fleet with instances in the home Region only, omit this parameter. </p>
+     * Amazon GameLift-supported Amazon Web Services Region as a remote location, in
+     * the form of an Amazon Web Services Region code such as <code>us-west-2</code>.
+     * To create a fleet with instances in the home Region only, don't use this
+     * parameter. </p> <p>To use this parameter, Amazon GameLift requires you to use
+     * your home location in the request.</p>
      */
     inline CreateFleetRequest& AddLocations(LocationConfiguration&& value) { m_locationsHasBeenSet = true; m_locations.push_back(std::move(value)); return *this; }
 
@@ -1446,76 +1479,155 @@ namespace Model
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift. By default, this property is set to
+     * <code>EC2</code>.</p>
      */
     inline const ComputeType& GetComputeType() const{ return m_computeType; }
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift. By default, this property is set to
+     * <code>EC2</code>.</p>
      */
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift. By default, this property is set to
+     * <code>EC2</code>.</p>
      */
     inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift. By default, this property is set to
+     * <code>EC2</code>.</p>
      */
     inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift. By default, this property is set to
+     * <code>EC2</code>.</p>
      */
     inline CreateFleetRequest& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift. By default, this property is set to
+     * <code>EC2</code>.</p>
      */
     inline CreateFleetRequest& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline const AnywhereConfiguration& GetAnywhereConfiguration() const{ return m_anywhereConfiguration; }
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline bool AnywhereConfigurationHasBeenSet() const { return m_anywhereConfigurationHasBeenSet; }
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline void SetAnywhereConfiguration(const AnywhereConfiguration& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = value; }
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline void SetAnywhereConfiguration(AnywhereConfiguration&& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = std::move(value); }
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline CreateFleetRequest& WithAnywhereConfiguration(const AnywhereConfiguration& value) { SetAnywhereConfiguration(value); return *this;}
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline CreateFleetRequest& WithAnywhereConfiguration(AnywhereConfiguration&& value) { SetAnywhereConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. The shared credentials file is
+     * stored on each fleet instance and refreshed as needed. Use shared credentials
+     * for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline const InstanceRoleCredentialsProvider& GetInstanceRoleCredentialsProvider() const{ return m_instanceRoleCredentialsProvider; }
+
+    /**
+     * <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. The shared credentials file is
+     * stored on each fleet instance and refreshed as needed. Use shared credentials
+     * for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline bool InstanceRoleCredentialsProviderHasBeenSet() const { return m_instanceRoleCredentialsProviderHasBeenSet; }
+
+    /**
+     * <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. The shared credentials file is
+     * stored on each fleet instance and refreshed as needed. Use shared credentials
+     * for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline void SetInstanceRoleCredentialsProvider(const InstanceRoleCredentialsProvider& value) { m_instanceRoleCredentialsProviderHasBeenSet = true; m_instanceRoleCredentialsProvider = value; }
+
+    /**
+     * <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. The shared credentials file is
+     * stored on each fleet instance and refreshed as needed. Use shared credentials
+     * for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline void SetInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider&& value) { m_instanceRoleCredentialsProviderHasBeenSet = true; m_instanceRoleCredentialsProvider = std::move(value); }
+
+    /**
+     * <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. The shared credentials file is
+     * stored on each fleet instance and refreshed as needed. Use shared credentials
+     * for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline CreateFleetRequest& WithInstanceRoleCredentialsProvider(const InstanceRoleCredentialsProvider& value) { SetInstanceRoleCredentialsProvider(value); return *this;}
+
+    /**
+     * <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. The shared credentials file is
+     * stored on each fleet instance and refreshed as needed. Use shared credentials
+     * for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline CreateFleetRequest& WithInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider&& value) { SetInstanceRoleCredentialsProvider(std::move(value)); return *this;}
 
   private:
 
@@ -1584,6 +1696,9 @@ namespace Model
 
     AnywhereConfiguration m_anywhereConfiguration;
     bool m_anywhereConfigurationHasBeenSet = false;
+
+    InstanceRoleCredentialsProvider m_instanceRoleCredentialsProvider;
+    bool m_instanceRoleCredentialsProviderHasBeenSet = false;
   };
 
 } // namespace Model

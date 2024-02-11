@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessingS3DataType::NOT_SET:
+            return {};
           case ProcessingS3DataType::ManifestFile:
             return "ManifestFile";
           case ProcessingS3DataType::S3Prefix:

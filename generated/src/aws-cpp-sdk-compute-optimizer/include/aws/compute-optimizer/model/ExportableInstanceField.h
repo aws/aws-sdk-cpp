@@ -69,7 +69,24 @@ namespace Model
     InferredWorkloadTypes,
     RecommendationOptionsMigrationEffort,
     EffectiveRecommendationPreferencesExternalMetricsSource,
-    InstanceState
+    InstanceState,
+    Tags,
+    ExternalMetricStatusCode,
+    ExternalMetricStatusReason,
+    CurrentInstanceGpuInfo,
+    RecommendationOptionsInstanceGpuInfo,
+    UtilizationMetricsGpuPercentageMaximum,
+    UtilizationMetricsGpuMemoryPercentageMaximum,
+    RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum,
+    RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum,
+    Idle,
+    EffectiveRecommendationPreferencesPreferredResources,
+    EffectiveRecommendationPreferencesLookBackPeriod,
+    EffectiveRecommendationPreferencesUtilizationPreferences,
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
   };
 
 namespace ExportableInstanceFieldMapper

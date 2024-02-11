@@ -322,6 +322,59 @@ namespace Model
     inline DescribeMapRunResult& WithExecutionCounts(MapRunExecutionCounts&& value) { SetExecutionCounts(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The number of times you've redriven a Map Run. If you have not yet redriven a
+     * Map Run, the <code>redriveCount</code> is 0. This count is only updated if you
+     * successfully redrive a Map Run.</p>
+     */
+    inline int GetRedriveCount() const{ return m_redriveCount; }
+
+    /**
+     * <p>The number of times you've redriven a Map Run. If you have not yet redriven a
+     * Map Run, the <code>redriveCount</code> is 0. This count is only updated if you
+     * successfully redrive a Map Run.</p>
+     */
+    inline void SetRedriveCount(int value) { m_redriveCount = value; }
+
+    /**
+     * <p>The number of times you've redriven a Map Run. If you have not yet redriven a
+     * Map Run, the <code>redriveCount</code> is 0. This count is only updated if you
+     * successfully redrive a Map Run.</p>
+     */
+    inline DescribeMapRunResult& WithRedriveCount(int value) { SetRedriveCount(value); return *this;}
+
+
+    /**
+     * <p>The date a Map Run was last redriven. If you have not yet redriven a Map Run,
+     * the <code>redriveDate</code> is null.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRedriveDate() const{ return m_redriveDate; }
+
+    /**
+     * <p>The date a Map Run was last redriven. If you have not yet redriven a Map Run,
+     * the <code>redriveDate</code> is null.</p>
+     */
+    inline void SetRedriveDate(const Aws::Utils::DateTime& value) { m_redriveDate = value; }
+
+    /**
+     * <p>The date a Map Run was last redriven. If you have not yet redriven a Map Run,
+     * the <code>redriveDate</code> is null.</p>
+     */
+    inline void SetRedriveDate(Aws::Utils::DateTime&& value) { m_redriveDate = std::move(value); }
+
+    /**
+     * <p>The date a Map Run was last redriven. If you have not yet redriven a Map Run,
+     * the <code>redriveDate</code> is null.</p>
+     */
+    inline DescribeMapRunResult& WithRedriveDate(const Aws::Utils::DateTime& value) { SetRedriveDate(value); return *this;}
+
+    /**
+     * <p>The date a Map Run was last redriven. If you have not yet redriven a Map Run,
+     * the <code>redriveDate</code> is null.</p>
+     */
+    inline DescribeMapRunResult& WithRedriveDate(Aws::Utils::DateTime&& value) { SetRedriveDate(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -364,6 +417,10 @@ namespace Model
     MapRunItemCounts m_itemCounts;
 
     MapRunExecutionCounts m_executionCounts;
+
+    int m_redriveCount;
+
+    Aws::Utils::DateTime m_redriveDate;
 
     Aws::String m_requestId;
   };

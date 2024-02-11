@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
+#include <aws/sso-admin/model/InstanceAccessControlAttributeConfiguration.h>
 #include <aws/sso-admin/model/InstanceAccessControlAttributeConfigurationStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sso-admin/model/InstanceAccessControlAttributeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -32,6 +32,37 @@ namespace Model
     AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationResult();
     AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Gets the list of IAM Identity Center identity store attributes that have been
+     * added to your ABAC configuration.</p>
+     */
+    inline const InstanceAccessControlAttributeConfiguration& GetInstanceAccessControlAttributeConfiguration() const{ return m_instanceAccessControlAttributeConfiguration; }
+
+    /**
+     * <p>Gets the list of IAM Identity Center identity store attributes that have been
+     * added to your ABAC configuration.</p>
+     */
+    inline void SetInstanceAccessControlAttributeConfiguration(const InstanceAccessControlAttributeConfiguration& value) { m_instanceAccessControlAttributeConfiguration = value; }
+
+    /**
+     * <p>Gets the list of IAM Identity Center identity store attributes that have been
+     * added to your ABAC configuration.</p>
+     */
+    inline void SetInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration&& value) { m_instanceAccessControlAttributeConfiguration = std::move(value); }
+
+    /**
+     * <p>Gets the list of IAM Identity Center identity store attributes that have been
+     * added to your ABAC configuration.</p>
+     */
+    inline DescribeInstanceAccessControlAttributeConfigurationResult& WithInstanceAccessControlAttributeConfiguration(const InstanceAccessControlAttributeConfiguration& value) { SetInstanceAccessControlAttributeConfiguration(value); return *this;}
+
+    /**
+     * <p>Gets the list of IAM Identity Center identity store attributes that have been
+     * added to your ABAC configuration.</p>
+     */
+    inline DescribeInstanceAccessControlAttributeConfigurationResult& WithInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration&& value) { SetInstanceAccessControlAttributeConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -103,37 +134,6 @@ namespace Model
     inline DescribeInstanceAccessControlAttributeConfigurationResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
 
-    /**
-     * <p>Gets the list of IAM Identity Center identity store attributes that have been
-     * added to your ABAC configuration.</p>
-     */
-    inline const InstanceAccessControlAttributeConfiguration& GetInstanceAccessControlAttributeConfiguration() const{ return m_instanceAccessControlAttributeConfiguration; }
-
-    /**
-     * <p>Gets the list of IAM Identity Center identity store attributes that have been
-     * added to your ABAC configuration.</p>
-     */
-    inline void SetInstanceAccessControlAttributeConfiguration(const InstanceAccessControlAttributeConfiguration& value) { m_instanceAccessControlAttributeConfiguration = value; }
-
-    /**
-     * <p>Gets the list of IAM Identity Center identity store attributes that have been
-     * added to your ABAC configuration.</p>
-     */
-    inline void SetInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration&& value) { m_instanceAccessControlAttributeConfiguration = std::move(value); }
-
-    /**
-     * <p>Gets the list of IAM Identity Center identity store attributes that have been
-     * added to your ABAC configuration.</p>
-     */
-    inline DescribeInstanceAccessControlAttributeConfigurationResult& WithInstanceAccessControlAttributeConfiguration(const InstanceAccessControlAttributeConfiguration& value) { SetInstanceAccessControlAttributeConfiguration(value); return *this;}
-
-    /**
-     * <p>Gets the list of IAM Identity Center identity store attributes that have been
-     * added to your ABAC configuration.</p>
-     */
-    inline DescribeInstanceAccessControlAttributeConfigurationResult& WithInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration&& value) { SetInstanceAccessControlAttributeConfiguration(std::move(value)); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -157,11 +157,11 @@ namespace Model
 
   private:
 
+    InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
+
     InstanceAccessControlAttributeConfigurationStatus m_status;
 
     Aws::String m_statusReason;
-
-    InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
 
     Aws::String m_requestId;
   };

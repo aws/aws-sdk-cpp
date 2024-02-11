@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VmManagerType::NOT_SET:
+            return {};
           case VmManagerType::VSPHERE:
             return "VSPHERE";
           case VmManagerType::SCVMM:

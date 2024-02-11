@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VolumeType::NOT_SET:
+            return {};
           case VolumeType::ONTAP:
             return "ONTAP";
           case VolumeType::OPENZFS:

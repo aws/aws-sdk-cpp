@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeSetHooksStatus::NOT_SET:
+            return {};
           case ChangeSetHooksStatus::PLANNING:
             return "PLANNING";
           case ChangeSetHooksStatus::PLANNED:

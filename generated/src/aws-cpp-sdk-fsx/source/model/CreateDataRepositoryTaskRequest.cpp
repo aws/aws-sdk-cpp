@@ -18,11 +18,12 @@ CreateDataRepositoryTaskRequest::CreateDataRepositoryTaskRequest() :
     m_pathsHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
     m_reportHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_capacityToRelease(0),
-    m_capacityToReleaseHasBeenSet(false)
+    m_capacityToReleaseHasBeenSet(false),
+    m_releaseConfigurationHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,12 @@ Aws::String CreateDataRepositoryTaskRequest::SerializePayload() const
   if(m_capacityToReleaseHasBeenSet)
   {
    payload.WithInt64("CapacityToRelease", m_capacityToRelease);
+
+  }
+
+  if(m_releaseConfigurationHasBeenSet)
+  {
+   payload.WithObject("ReleaseConfiguration", m_releaseConfiguration.Jsonize());
 
   }
 

@@ -54,6 +54,36 @@
       ],
       "documentation":"<p>Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To get a list of query execution IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ from named (saved) queries. Use <a>BatchGetNamedQueryInput</a> to get details about named queries.</p>"
     },
+    "CancelCapacityReservation":{
+      "name":"CancelCapacityReservation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CancelCapacityReservationInput"},
+      "output":{"shape":"CancelCapacityReservationOutput"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Cancels the capacity reservation with the specified name. Cancelled reservations remain in your account and will be deleted 45 days after cancellation. During the 45 days, you cannot re-purpose or reuse a reservation that has been cancelled, but you can refer to its tags and view it for historical reference. </p>",
+      "idempotent":true
+    },
+    "CreateCapacityReservation":{
+      "name":"CreateCapacityReservation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateCapacityReservationInput"},
+      "output":{"shape":"CreateCapacityReservationOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"}
+      ],
+      "documentation":"<p>Creates a capacity reservation with the specified name and number of requested data processing units.</p>",
+      "idempotent":true
+    },
     "CreateDataCatalog":{
       "name":"CreateDataCatalog",
       "http":{
@@ -80,7 +110,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Creates a named query in the specified workgroup. Requires that you have access to the workgroup.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>",
+      "documentation":"<p>Creates a named query in the specified workgroup. Requires that you have access to the workgroup.</p>",
       "idempotent":true
     },
     "CreateNotebook":{
@@ -141,6 +171,21 @@
       ],
       "documentation":"<p>Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled workgroup or an Athena SQL workgroup.</p>"
     },
+    "DeleteCapacityReservation":{
+      "name":"DeleteCapacityReservation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteCapacityReservationInput"},
+      "output":{"shape":"DeleteCapacityReservationOutput"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Deletes a cancelled capacity reservation. A reservation must be cancelled before it can be deleted. A deleted reservation is immediately removed from your account and can no longer be referenced, including by its ARN. A deleted reservation cannot be called by <code>GetCapacityReservation</code>, and deleted reservations do not appear in the output of <code>ListCapacityReservations</code>.</p>",
+      "idempotent":true
+    },
     "DeleteDataCatalog":{
       "name":"DeleteDataCatalog",
       "http":{
@@ -167,7 +212,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Deletes the named query if you have access to the workgroup in which the query was saved.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>",
+      "documentation":"<p>Deletes the named query if you have access to the workgroup in which the query was saved.</p>",
       "idempotent":true
     },
     "DeleteNotebook":{
@@ -274,6 +319,34 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Gets the status of a current calculation.</p>"
+    },
+    "GetCapacityAssignmentConfiguration":{
+      "name":"GetCapacityAssignmentConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetCapacityAssignmentConfigurationInput"},
+      "output":{"shape":"GetCapacityAssignmentConfigurationOutput"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Gets the capacity assignment configuration for a capacity reservation, if one exists.</p>"
+    },
+    "GetCapacityReservation":{
+      "name":"GetCapacityReservation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetCapacityReservationInput"},
+      "output":{"shape":"GetCapacityReservationOutput"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Returns information about the capacity reservation with the specified name.</p>"
     },
     "GetDataCatalog":{
       "name":"GetDataCatalog",
@@ -495,6 +568,20 @@
       ],
       "documentation":"<p>Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed first; older calculations are listed later.</p>"
     },
+    "ListCapacityReservations":{
+      "name":"ListCapacityReservations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListCapacityReservationsInput"},
+      "output":{"shape":"ListCapacityReservationsOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"}
+      ],
+      "documentation":"<p>Lists the capacity reservations for the current account.</p>"
+    },
     "ListDataCatalogs":{
       "name":"ListDataCatalogs",
       "http":{
@@ -565,7 +652,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
+      "documentation":"<p>Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.</p>"
     },
     "ListNotebookMetadata":{
       "name":"ListNotebookMetadata",
@@ -623,7 +710,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Provides a list of available query execution IDs for the queries in the specified workgroup. If a workgroup is not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to the workgroup in which the queries ran.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
+      "documentation":"<p>Provides a list of available query execution IDs for the queries in the specified workgroup. Athena keeps a query history for 45 days. If a workgroup is not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to the workgroup in which the queries ran.</p>"
     },
     "ListSessions":{
       "name":"ListSessions",
@@ -668,7 +755,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Lists the tags associated with an Athena workgroup or data catalog resource.</p>"
+      "documentation":"<p>Lists the tags associated with an Athena resource.</p>"
     },
     "ListWorkGroups":{
       "name":"ListWorkGroups",
@@ -684,6 +771,21 @@
       ],
       "documentation":"<p>Lists available workgroups for the account.</p>"
     },
+    "PutCapacityAssignmentConfiguration":{
+      "name":"PutCapacityAssignmentConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutCapacityAssignmentConfigurationInput"},
+      "output":{"shape":"PutCapacityAssignmentConfigurationOutput"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Puts a new capacity assignment configuration for a specified capacity reservation. If a capacity assignment configuration already exists for the capacity reservation, replaces the existing capacity assignment configuration.</p>",
+      "idempotent":true
+    },
     "StartCalculationExecution":{
       "name":"StartCalculationExecution",
       "http":{
@@ -697,7 +799,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request.</p>"
+      "documentation":"<p>Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request.</p> <note> <p>The request syntax requires the <a>StartCalculationExecutionRequest$CodeBlock</a> parameter or the <a>CalculationConfiguration$CodeBlock</a> parameter, but not both. Because <a>CalculationConfiguration$CodeBlock</a> is deprecated, use the <a>StartCalculationExecutionRequest$CodeBlock</a> parameter instead.</p> </note>"
     },
     "StartQueryExecution":{
       "name":"StartQueryExecution",
@@ -759,7 +861,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Stops a query execution. Requires you to have access to the workgroup in which the query ran.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>",
+      "documentation":"<p>Stops a query execution. Requires you to have access to the workgroup in which the query ran.</p>",
       "idempotent":true
     },
     "TagResource":{
@@ -775,7 +877,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href=\"https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html\">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.</p>"
+      "documentation":"<p>Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups, data catalogs, or capacity reservations by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter the resources in your account. For best practices, see <a href=\"https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html\">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.</p>"
     },
     "TerminateSession":{
       "name":"TerminateSession",
@@ -805,7 +907,21 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Removes one or more tags from a data catalog or workgroup resource.</p>"
+      "documentation":"<p>Removes one or more tags from an Athena resource.</p>"
+    },
+    "UpdateCapacityReservation":{
+      "name":"UpdateCapacityReservation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateCapacityReservationInput"},
+      "output":{"shape":"UpdateCapacityReservationOutput"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Updates the number of requested data processing units for the capacity reservation with the specified name.</p>"
     },
     "UpdateDataCatalog":{
       "name":"UpdateDataCatalog",
@@ -913,6 +1029,11 @@
       "max":10080,
       "min":0
     },
+    "AllocatedDpusInteger":{
+      "type":"integer",
+      "box":true,
+      "min":0
+    },
     "AmazonResourceName":{
       "type":"string",
       "max":1011,
@@ -961,6 +1082,10 @@
     "AuthToken":{
       "type":"string",
       "max":2048
+    },
+    "AuthenticationType":{
+      "type":"string",
+      "enum":["DIRECTORY_IDENTITY"]
     },
     "AwsAccountId":{
       "type":"string",
@@ -1168,6 +1293,142 @@
       "max":100,
       "min":0
     },
+    "CancelCapacityReservationInput":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"CapacityReservationName",
+          "documentation":"<p>The name of the capacity reservation to cancel.</p>"
+        }
+      }
+    },
+    "CancelCapacityReservationOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "CapacityAllocation":{
+      "type":"structure",
+      "required":[
+        "Status",
+        "RequestTime"
+      ],
+      "members":{
+        "Status":{
+          "shape":"CapacityAllocationStatus",
+          "documentation":"<p>The status of the capacity allocation.</p>"
+        },
+        "StatusMessage":{
+          "shape":"String",
+          "documentation":"<p>The status message of the capacity allocation.</p>"
+        },
+        "RequestTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time when the capacity allocation was requested.</p>"
+        },
+        "RequestCompletionTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time when the capacity allocation request was completed.</p>"
+        }
+      },
+      "documentation":"<p>Contains the submission time of a single allocation request for a capacity reservation and the most recent status of the attempted allocation.</p>"
+    },
+    "CapacityAllocationStatus":{
+      "type":"string",
+      "enum":[
+        "PENDING",
+        "SUCCEEDED",
+        "FAILED"
+      ]
+    },
+    "CapacityAssignment":{
+      "type":"structure",
+      "members":{
+        "WorkGroupNames":{
+          "shape":"WorkGroupNamesList",
+          "documentation":"<p>The list of workgroup names for the capacity assignment.</p>"
+        }
+      },
+      "documentation":"<p>A mapping between one or more workgroups and a capacity reservation.</p>"
+    },
+    "CapacityAssignmentConfiguration":{
+      "type":"structure",
+      "members":{
+        "CapacityReservationName":{
+          "shape":"CapacityReservationName",
+          "documentation":"<p>The name of the reservation that the capacity assignment configuration is for.</p>"
+        },
+        "CapacityAssignments":{
+          "shape":"CapacityAssignmentsList",
+          "documentation":"<p>The list of assignments that make up the capacity assignment configuration.</p>"
+        }
+      },
+      "documentation":"<p>Assigns Athena workgroups (and hence their queries) to capacity reservations. A capacity reservation can have only one capacity assignment configuration, but the capacity assignment configuration can be made up of multiple individual assignments. Each assignment specifies how Athena queries can consume capacity from the capacity reservation that their workgroup is mapped to.</p>"
+    },
+    "CapacityAssignmentsList":{
+      "type":"list",
+      "member":{"shape":"CapacityAssignment"}
+    },
+    "CapacityReservation":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Status",
+        "TargetDpus",
+        "AllocatedDpus",
+        "CreationTime"
+      ],
+      "members":{
+        "Name":{
+          "shape":"CapacityReservationName",
+          "documentation":"<p>The name of the capacity reservation.</p>"
+        },
+        "Status":{
+          "shape":"CapacityReservationStatus",
+          "documentation":"<p>The status of the capacity reservation.</p>"
+        },
+        "TargetDpus":{
+          "shape":"TargetDpusInteger",
+          "documentation":"<p>The number of data processing units requested.</p>"
+        },
+        "AllocatedDpus":{
+          "shape":"AllocatedDpusInteger",
+          "documentation":"<p>The number of data processing units currently allocated.</p>"
+        },
+        "LastAllocation":{"shape":"CapacityAllocation"},
+        "LastSuccessfulAllocationTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time of the most recent capacity allocation that succeeded.</p>"
+        },
+        "CreationTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time in UTC epoch millis when the capacity reservation was created.</p>"
+        }
+      },
+      "documentation":"<p>A reservation for a specified number of data processing units (DPUs). When a reservation is initially created, it has no DPUs. Athena allocates DPUs until the allocated amount equals the requested amount.</p>"
+    },
+    "CapacityReservationName":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[a-zA-Z0-9._-]+"
+    },
+    "CapacityReservationStatus":{
+      "type":"string",
+      "enum":[
+        "PENDING",
+        "ACTIVE",
+        "CANCELLING",
+        "CANCELLED",
+        "FAILED",
+        "UPDATE_PENDING"
+      ]
+    },
+    "CapacityReservationsList":{
+      "type":"list",
+      "member":{"shape":"CapacityReservation"}
+    },
     "CatalogNameString":{
       "type":"string",
       "max":256,
@@ -1244,7 +1505,7 @@
         },
         "Nullable":{
           "shape":"ColumnNullable",
-          "documentation":"<p>Indicates the column's nullable status.</p>"
+          "documentation":"<p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>"
         },
         "CaseSensitive":{
           "shape":"Boolean",
@@ -1281,6 +1542,32 @@
       "max":1,
       "min":1
     },
+    "CreateCapacityReservationInput":{
+      "type":"structure",
+      "required":[
+        "TargetDpus",
+        "Name"
+      ],
+      "members":{
+        "TargetDpus":{
+          "shape":"TargetDpusInteger",
+          "documentation":"<p>The number of requested data processing units.</p>"
+        },
+        "Name":{
+          "shape":"CapacityReservationName",
+          "documentation":"<p>The name of the capacity reservation to create.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags for the capacity reservation.</p>"
+        }
+      }
+    },
+    "CreateCapacityReservationOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "CreateDataCatalogInput":{
       "type":"structure",
       "required":[
@@ -1302,7 +1589,7 @@
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p> <ul> <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li> <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p> <ul> <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li> <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li> </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li> <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li> </ul> </li> </ul>"
+          "documentation":"<p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p> <ul> <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li> <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p> <ul> <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li> <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li> </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li> </ul> </li> </ul>"
         },
         "Tags":{
           "shape":"TagList",
@@ -1485,10 +1772,10 @@
       "members":{
         "KmsKey":{
           "shape":"KmsKey",
-          "documentation":"<p>The KMS key that is used to encrypt the user's data stores in Athena.</p>"
+          "documentation":"<p>The customer managed KMS key that is used to encrypt the user's data stores in Athena.</p>"
         }
       },
-      "documentation":"<p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>"
+      "documentation":"<p>Specifies the customer managed KMS key that is used to encrypt the user's data stores in Athena. When an Amazon Web Services managed key is used, this value is null. This setting does not apply to Athena SQL workgroups.</p>"
     },
     "DataCatalog":{
       "type":"structure",
@@ -1511,7 +1798,7 @@
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>Specifies the Lambda function or functions to use for the data catalog. This is a mapping whose values depend on the catalog type. </p> <ul> <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li> <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p> <ul> <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li> <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li> </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li> </ul> </li> </ul>"
+          "documentation":"<p>Specifies the Lambda function or functions to use for the data catalog. This is a mapping whose values depend on the catalog type. </p> <ul> <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li> <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p> <ul> <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li> <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li> </ul> </li> <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li> </ul> </li> </ul>"
         }
       },
       "documentation":"<p>Contains information about a data catalog in an Amazon Web Services account.</p> <note> <p>In the Athena console, data catalogs are listed as \"data sources\" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p> </note>"
@@ -1586,6 +1873,21 @@
       "box":true,
       "max":1,
       "min":1
+    },
+    "DeleteCapacityReservationInput":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"CapacityReservationName",
+          "documentation":"<p>The name of the capacity reservation to delete.</p>"
+        }
+      }
+    },
+    "DeleteCapacityReservationOutput":{
+      "type":"structure",
+      "members":{
+      }
     },
     "DeleteDataCatalogInput":{
       "type":"structure",
@@ -1708,7 +2010,7 @@
       "members":{
         "CoordinatorDpuSize":{
           "shape":"CoordinatorDpuSize",
-          "documentation":"<p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>"
+          "documentation":"<p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>"
         },
         "MaxConcurrentDpus":{
           "shape":"MaxConcurrentDpus",
@@ -1716,11 +2018,15 @@
         },
         "DefaultExecutorDpuSize":{
           "shape":"DefaultExecutorDpuSize",
-          "documentation":"<p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>"
+          "documentation":"<p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>"
         },
         "AdditionalConfigs":{
           "shape":"ParametersMap",
           "documentation":"<p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>"
+        },
+        "SparkProperties":{
+          "shape":"ParametersMap",
+          "documentation":"<p>Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general Spark tuning.</p>"
         }
       },
       "documentation":"<p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>"
@@ -1956,6 +2262,46 @@
         }
       }
     },
+    "GetCapacityAssignmentConfigurationInput":{
+      "type":"structure",
+      "required":["CapacityReservationName"],
+      "members":{
+        "CapacityReservationName":{
+          "shape":"CapacityReservationName",
+          "documentation":"<p>The name of the capacity reservation to retrieve the capacity assignment configuration for.</p>"
+        }
+      }
+    },
+    "GetCapacityAssignmentConfigurationOutput":{
+      "type":"structure",
+      "required":["CapacityAssignmentConfiguration"],
+      "members":{
+        "CapacityAssignmentConfiguration":{
+          "shape":"CapacityAssignmentConfiguration",
+          "documentation":"<p>The requested capacity assignment configuration for the specified capacity reservation.</p>"
+        }
+      }
+    },
+    "GetCapacityReservationInput":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"CapacityReservationName",
+          "documentation":"<p>The name of the capacity reservation.</p>"
+        }
+      }
+    },
+    "GetCapacityReservationOutput":{
+      "type":"structure",
+      "required":["CapacityReservation"],
+      "members":{
+        "CapacityReservation":{
+          "shape":"CapacityReservation",
+          "documentation":"<p>The requested capacity reservation structure.</p>"
+        }
+      }
+    },
     "GetDataCatalogInput":{
       "type":"structure",
       "required":["Name"],
@@ -1963,6 +2309,10 @@
         "Name":{
           "shape":"CatalogNameString",
           "documentation":"<p>The name of the data catalog to return.</p>"
+        },
+        "WorkGroup":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The name of the workgroup. Required if making an IAM Identity Center request.</p>"
         }
       }
     },
@@ -1989,6 +2339,10 @@
         "DatabaseName":{
           "shape":"NameString",
           "documentation":"<p>The name of the database to return.</p>"
+        },
+        "WorkGroup":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>"
         }
       }
     },
@@ -2231,6 +2585,10 @@
         "TableName":{
           "shape":"NameString",
           "documentation":"<p>The name of the table for which metadata is returned.</p>"
+        },
+        "WorkGroup":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>"
         }
       }
     },
@@ -2266,6 +2624,32 @@
       "type":"string",
       "max":128,
       "min":32
+    },
+    "IdentityCenterApplicationArn":{
+      "type":"string",
+      "max":255,
+      "min":0,
+      "pattern":"^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}$"
+    },
+    "IdentityCenterConfiguration":{
+      "type":"structure",
+      "members":{
+        "EnableIdentityCenter":{
+          "shape":"BoxedBoolean",
+          "documentation":"<p>Specifies whether the workgroup is IAM Identity Center supported.</p>"
+        },
+        "IdentityCenterInstanceArn":{
+          "shape":"IdentityCenterInstanceArn",
+          "documentation":"<p>The IAM Identity Center instance ARN that the workgroup associates to.</p>"
+        }
+      },
+      "documentation":"<p>Specifies whether the workgroup is IAM Identity Center supported.</p>"
+    },
+    "IdentityCenterInstanceArn":{
+      "type":"string",
+      "max":255,
+      "min":0,
+      "pattern":"^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$"
     },
     "ImportNotebookInput":{
       "type":"structure",
@@ -2399,6 +2783,33 @@
         }
       }
     },
+    "ListCapacityReservationsInput":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxCapacityReservationsCount",
+          "documentation":"<p>Specifies the maximum number of results to return.</p>"
+        }
+      }
+    },
+    "ListCapacityReservationsOutput":{
+      "type":"structure",
+      "required":["CapacityReservations"],
+      "members":{
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>"
+        },
+        "CapacityReservations":{
+          "shape":"CapacityReservationsList",
+          "documentation":"<p>The capacity reservations for the current account.</p>"
+        }
+      }
+    },
     "ListDataCatalogsInput":{
       "type":"structure",
       "members":{
@@ -2409,6 +2820,10 @@
         "MaxResults":{
           "shape":"MaxDataCatalogsCount",
           "documentation":"<p>Specifies the maximum number of data catalogs to return.</p>"
+        },
+        "WorkGroup":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The name of the workgroup. Required if making an IAM Identity Center request.</p>"
         }
       }
     },
@@ -2440,6 +2855,10 @@
         "MaxResults":{
           "shape":"MaxDatabasesCount",
           "documentation":"<p>Specifies the maximum number of results to return.</p>"
+        },
+        "WorkGroup":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>"
         }
       }
     },
@@ -2741,6 +3160,10 @@
         "MaxResults":{
           "shape":"MaxTableMetadataCount",
           "documentation":"<p>Specifies the maximum number of results to return.</p>"
+        },
+        "WorkGroup":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>"
         }
       }
     },
@@ -2824,6 +3247,12 @@
       "type":"integer",
       "box":true,
       "max":100,
+      "min":1
+    },
+    "MaxCapacityReservationsCount":{
+      "type":"integer",
+      "box":true,
+      "max":50,
       "min":1
     },
     "MaxConcurrentDpus":{
@@ -3116,6 +3545,28 @@
       "max":50,
       "min":0
     },
+    "PutCapacityAssignmentConfigurationInput":{
+      "type":"structure",
+      "required":[
+        "CapacityReservationName",
+        "CapacityAssignments"
+      ],
+      "members":{
+        "CapacityReservationName":{
+          "shape":"CapacityReservationName",
+          "documentation":"<p>The name of the capacity reservation to put a capacity assignment configuration for.</p>"
+        },
+        "CapacityAssignments":{
+          "shape":"CapacityAssignmentsList",
+          "documentation":"<p>The list of assignments for the capacity assignment configuration.</p>"
+        }
+      }
+    },
+    "PutCapacityAssignmentConfigurationOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "QueryExecution":{
       "type":"structure",
       "members":{
@@ -3161,11 +3612,15 @@
         },
         "ExecutionParameters":{
           "shape":"ExecutionParameters",
-          "documentation":"<p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>"
+          "documentation":"<p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur. The list of parameters is not returned in the response.</p>"
         },
         "SubstatementType":{
           "shape":"String",
           "documentation":"<p>The kind of query statement that was run.</p>"
+        },
+        "QueryResultsS3AccessGrantsConfiguration":{
+          "shape":"QueryResultsS3AccessGrantsConfiguration",
+          "documentation":"<p>Specifies whether Amazon S3 access grants are enabled for query results.</p>"
         }
       },
       "documentation":"<p>Information about a single instance of a query execution.</p>"
@@ -3233,6 +3688,10 @@
           "shape":"Long",
           "documentation":"<p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>"
         },
+        "ServicePreProcessingTimeInMillis":{
+          "shape":"Long",
+          "documentation":"<p>The number of milliseconds that Athena took to preprocess the query before submitting the query to the query engine.</p>"
+        },
         "QueryPlanningTimeInMillis":{
           "shape":"Long",
           "documentation":"<p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>"
@@ -3274,6 +3733,28 @@
       },
       "documentation":"<p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>"
     },
+    "QueryResultsS3AccessGrantsConfiguration":{
+      "type":"structure",
+      "required":[
+        "EnableS3AccessGrants",
+        "AuthenticationType"
+      ],
+      "members":{
+        "EnableS3AccessGrants":{
+          "shape":"BoxedBoolean",
+          "documentation":"<p>Specifies whether Amazon S3 access grants are enabled for query results.</p>"
+        },
+        "CreateUserLevelPrefix":{
+          "shape":"BoxedBoolean",
+          "documentation":"<p>When enabled, appends the user ID as an Amazon S3 path prefix to the query result output location.</p>"
+        },
+        "AuthenticationType":{
+          "shape":"AuthenticationType",
+          "documentation":"<p>The authentication type used for Amazon S3 access grants. Currently, only <code>DIRECTORY_IDENTITY</code> is supported.</p>"
+        }
+      },
+      "documentation":"<p>Specifies whether Amazon S3 access grants are enabled for query results.</p>"
+    },
     "QueryRuntimeStatistics":{
       "type":"structure",
       "members":{
@@ -3314,6 +3795,10 @@
         "QueryQueueTimeInMillis":{
           "shape":"Long",
           "documentation":"<p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>"
+        },
+        "ServicePreProcessingTimeInMillis":{
+          "shape":"Long",
+          "documentation":"<p> The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine. </p>"
         },
         "QueryPlanningTimeInMillis":{
           "shape":"Long",
@@ -3586,7 +4071,7 @@
       "members":{
         "ExecutionRole":{
           "shape":"RoleArn",
-          "documentation":"<p>The ARN of the execution role used for the session.</p>"
+          "documentation":"<p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>"
         },
         "WorkingDirectory":{
           "shape":"ResultOutputLocation",
@@ -3720,7 +4205,7 @@
         },
         "CodeBlock":{
           "shape":"CodeBlock",
-          "documentation":"<p>A string that contains the code of the calculation.</p>"
+          "documentation":"<p>A string that contains the code of the calculation. Use this parameter instead of <a>CalculationConfiguration$CodeBlock</a>, which is deprecated.</p>"
         },
         "ClientRequestToken":{
           "shape":"IdempotencyToken",
@@ -3751,7 +4236,7 @@
         },
         "ClientRequestToken":{
           "shape":"IdempotencyToken",
-          "documentation":"<p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> </important>",
+          "documentation":"<p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. An error is returned if a parameter, such as <code>QueryString</code>, has changed. A call to <code>StartQueryExecution</code> that uses a previous client request token returns the same <code>QueryExecutionId</code> even if the requester doesn't have permission on the tables specified in <code>QueryString</code>.</p> <important> <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> </important>",
           "idempotencyToken":true
         },
         "QueryExecutionContext":{
@@ -3944,7 +4429,7 @@
           "documentation":"<p>A tag value. The tag value length is from 0 to 256 Unicode characters in UTF-8. You can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag values are case-sensitive. </p>"
         }
       },
-      "documentation":"<p>A label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href=\"https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html\">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas. </p>"
+      "documentation":"<p>A label that you assign to a resource. Athena resources include workgroups, data catalogs, and capacity reservations. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena resources by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter the resources in your account. For best practices, see <a href=\"https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html\">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas. </p>"
     },
     "TagKey":{
       "type":"string",
@@ -3968,11 +4453,11 @@
       "members":{
         "ResourceARN":{
           "shape":"AmazonResourceName",
-          "documentation":"<p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>"
+          "documentation":"<p>Specifies the ARN of the Athena resource to which tags are to be added.</p>"
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>"
+          "documentation":"<p>A collection of one or more tags, separated by commas, to be added to an Athena resource.</p>"
         }
       }
     },
@@ -3985,6 +4470,11 @@
       "type":"string",
       "max":256,
       "min":0
+    },
+    "TargetDpusInteger":{
+      "type":"integer",
+      "box":true,
+      "min":24
     },
     "TerminateSessionRequest":{
       "type":"structure",
@@ -4115,6 +4605,28 @@
       }
     },
     "UntagResourceOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "UpdateCapacityReservationInput":{
+      "type":"structure",
+      "required":[
+        "TargetDpus",
+        "Name"
+      ],
+      "members":{
+        "TargetDpus":{
+          "shape":"TargetDpusInteger",
+          "documentation":"<p>The new number of requested data processing units.</p>"
+        },
+        "Name":{
+          "shape":"CapacityReservationName",
+          "documentation":"<p>The name of the capacity reservation.</p>"
+        }
+      }
+    },
+    "UpdateCapacityReservationOutput":{
       "type":"structure",
       "members":{
       }
@@ -4322,6 +4834,10 @@
         "CreationTime":{
           "shape":"Date",
           "documentation":"<p>The date and time the workgroup was created.</p>"
+        },
+        "IdentityCenterApplicationArn":{
+          "shape":"IdentityCenterApplicationArn",
+          "documentation":"<p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>"
         }
       },
       "documentation":"<p>A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <a>WorkGroup$Configuration</a>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>"
@@ -4359,15 +4875,23 @@
         },
         "ExecutionRole":{
           "shape":"RoleArn",
-          "documentation":"<p>Role used in a session for accessing the user's resources.</p>"
+          "documentation":"<p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>"
         },
         "CustomerContentEncryptionConfiguration":{
           "shape":"CustomerContentEncryptionConfiguration",
-          "documentation":"<p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>"
+          "documentation":"<p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>"
         },
         "EnableMinimumEncryptionConfiguration":{
           "shape":"BoxedBoolean",
           "documentation":"<p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries.</p> <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>"
+        },
+        "IdentityCenterConfiguration":{
+          "shape":"IdentityCenterConfiguration",
+          "documentation":"<p>Specifies whether the workgroup is IAM Identity Center supported.</p>"
+        },
+        "QueryResultsS3AccessGrantsConfiguration":{
+          "shape":"QueryResultsS3AccessGrantsConfiguration",
+          "documentation":"<p>Specifies whether Amazon S3 access grants are enabled for query results.</p>"
         }
       },
       "documentation":"<p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption option, if any, used for query and calculation results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. </p>"
@@ -4405,7 +4929,7 @@
         },
         "RemoveCustomerContentEncryptionConfiguration":{
           "shape":"BoxedBoolean",
-          "documentation":"<p>Removes content encryption configuration for a workgroup.</p>"
+          "documentation":"<p>Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.</p>"
         },
         "AdditionalConfiguration":{
           "shape":"NameString",
@@ -4413,12 +4937,16 @@
         },
         "ExecutionRole":{
           "shape":"RoleArn",
-          "documentation":"<p>Contains the ARN of the execution role for the workgroup</p>"
+          "documentation":"<p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>"
         },
         "CustomerContentEncryptionConfiguration":{"shape":"CustomerContentEncryptionConfiguration"},
         "EnableMinimumEncryptionConfiguration":{
           "shape":"BoxedBoolean",
           "documentation":"<p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries. This setting does not apply to Spark-enabled workgroups.</p> <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>"
+        },
+        "QueryResultsS3AccessGrantsConfiguration":{
+          "shape":"QueryResultsS3AccessGrantsConfiguration",
+          "documentation":"<p>Specifies whether Amazon S3 access grants are enabled for query results.</p>"
         }
       },
       "documentation":"<p>The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.</p>"
@@ -4431,6 +4959,10 @@
     "WorkGroupName":{
       "type":"string",
       "pattern":"[a-zA-Z0-9._-]{1,128}"
+    },
+    "WorkGroupNamesList":{
+      "type":"list",
+      "member":{"shape":"WorkGroupName"}
     },
     "WorkGroupState":{
       "type":"string",
@@ -4461,6 +4993,10 @@
         "EngineVersion":{
           "shape":"EngineVersion",
           "documentation":"<p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>"
+        },
+        "IdentityCenterApplicationArn":{
+          "shape":"IdentityCenterApplicationArn",
+          "documentation":"<p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>"
         }
       },
       "documentation":"<p>The summary information for the workgroup, which includes its name, state, description, and the date and time it was created.</p>"
@@ -4477,5 +5013,5 @@
     },
     "datumString":{"type":"string"}
   },
-  "documentation":"<p>Amazon Athena is an interactive query service that lets you use standard SQL to analyze data directly in Amazon S3. You can point Athena at your data in Amazon S3 and run ad-hoc queries and get results in seconds. Athena is serverless, so there is no infrastructure to set up or manage. You pay only for the queries you run. Athena scales automatically—executing queries in parallel—so results are fast, even with large datasets and complex queries. For more information, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/what-is.html\">What is Amazon Athena</a> in the <i>Amazon Athena User Guide</i>.</p> <p>If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or later with the Amazon Athena API. Earlier version drivers do not support the API. For more information and to download the driver, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html\">Accessing Amazon Athena with JDBC</a>.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
+  "documentation":"<p>Amazon Athena is an interactive query service that lets you use standard SQL to analyze data directly in Amazon S3. You can point Athena at your data in Amazon S3 and run ad-hoc queries and get results in seconds. Athena is serverless, so there is no infrastructure to set up or manage. You pay only for the queries you run. Athena scales automatically—executing queries in parallel—so results are fast, even with large datasets and complex queries. For more information, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/what-is.html\">What is Amazon Athena</a> in the <i>Amazon Athena User Guide</i>.</p> <p>If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or later with the Amazon Athena API. Earlier version drivers do not support the API. For more information and to download the driver, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html\">Accessing Amazon Athena with JDBC</a>.</p>"
 }

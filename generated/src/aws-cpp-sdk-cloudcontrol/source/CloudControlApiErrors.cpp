@@ -45,79 +45,79 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == HANDLER_INTERNAL_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::HANDLER_INTERNAL_FAILURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::HANDLER_INTERNAL_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NETWORK_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::NETWORK_FAILURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::NETWORK_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == HANDLER_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::HANDLER_FAILURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::HANDLER_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GENERAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::GENERAL_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::GENERAL_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::CONCURRENT_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::CONCURRENT_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PRIVATE_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::PRIVATE_TYPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::PRIVATE_TYPE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::CONCURRENT_MODIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::SERVICE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::SERVICE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_UPDATABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::NOT_UPDATABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::NOT_UPDATABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TYPE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::TYPE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::TYPE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_ACTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::UNSUPPORTED_ACTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::UNSUPPORTED_ACTION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_STABILIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::NOT_STABILIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::NOT_STABILIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::RESOURCE_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CREDENTIALS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::INVALID_CREDENTIALS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::INVALID_CREDENTIALS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_INTERNAL_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::SERVICE_INTERNAL_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::SERVICE_INTERNAL_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLIENT_TOKEN_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::CLIENT_TOKEN_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::CLIENT_TOKEN_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REQUEST_TOKEN_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::REQUEST_TOKEN_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::REQUEST_TOKEN_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudControlApiErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

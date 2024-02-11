@@ -89,6 +89,21 @@
 #include <aws/securityhub/model/AwsWafv2WebAclDetails.h>
 #include <aws/securityhub/model/AwsWafv2RuleGroupDetails.h>
 #include <aws/securityhub/model/AwsEc2RouteTableDetails.h>
+#include <aws/securityhub/model/AwsAmazonMqBrokerDetails.h>
+#include <aws/securityhub/model/AwsAppSyncGraphQlApiDetails.h>
+#include <aws/securityhub/model/AwsEventSchemasRegistryDetails.h>
+#include <aws/securityhub/model/AwsGuardDutyDetectorDetails.h>
+#include <aws/securityhub/model/AwsStepFunctionStateMachineDetails.h>
+#include <aws/securityhub/model/AwsAthenaWorkGroupDetails.h>
+#include <aws/securityhub/model/AwsEventsEventbusDetails.h>
+#include <aws/securityhub/model/AwsDmsEndpointDetails.h>
+#include <aws/securityhub/model/AwsEventsEndpointDetails.h>
+#include <aws/securityhub/model/AwsDmsReplicationTaskDetails.h>
+#include <aws/securityhub/model/AwsDmsReplicationInstanceDetails.h>
+#include <aws/securityhub/model/AwsRoute53HostedZoneDetails.h>
+#include <aws/securityhub/model/AwsMskClusterDetails.h>
+#include <aws/securityhub/model/AwsS3AccessPointDetails.h>
+#include <aws/securityhub/model/AwsEc2ClientVpnEndpointDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -2900,6 +2915,633 @@ namespace Model
      */
     inline ResourceDetails& WithAwsEc2RouteTable(AwsEc2RouteTableDetails&& value) { SetAwsEc2RouteTable(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline const AwsAmazonMqBrokerDetails& GetAwsAmazonMqBroker() const{ return m_awsAmazonMqBroker; }
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline bool AwsAmazonMqBrokerHasBeenSet() const { return m_awsAmazonMqBrokerHasBeenSet; }
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline void SetAwsAmazonMqBroker(const AwsAmazonMqBrokerDetails& value) { m_awsAmazonMqBrokerHasBeenSet = true; m_awsAmazonMqBroker = value; }
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline void SetAwsAmazonMqBroker(AwsAmazonMqBrokerDetails&& value) { m_awsAmazonMqBrokerHasBeenSet = true; m_awsAmazonMqBroker = std::move(value); }
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline ResourceDetails& WithAwsAmazonMqBroker(const AwsAmazonMqBrokerDetails& value) { SetAwsAmazonMqBroker(value); return *this;}
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline ResourceDetails& WithAwsAmazonMqBroker(AwsAmazonMqBrokerDetails&& value) { SetAwsAmazonMqBroker(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline const AwsAppSyncGraphQlApiDetails& GetAwsAppSyncGraphQlApi() const{ return m_awsAppSyncGraphQlApi; }
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline bool AwsAppSyncGraphQlApiHasBeenSet() const { return m_awsAppSyncGraphQlApiHasBeenSet; }
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline void SetAwsAppSyncGraphQlApi(const AwsAppSyncGraphQlApiDetails& value) { m_awsAppSyncGraphQlApiHasBeenSet = true; m_awsAppSyncGraphQlApi = value; }
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline void SetAwsAppSyncGraphQlApi(AwsAppSyncGraphQlApiDetails&& value) { m_awsAppSyncGraphQlApiHasBeenSet = true; m_awsAppSyncGraphQlApi = std::move(value); }
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline ResourceDetails& WithAwsAppSyncGraphQlApi(const AwsAppSyncGraphQlApiDetails& value) { SetAwsAppSyncGraphQlApi(value); return *this;}
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline ResourceDetails& WithAwsAppSyncGraphQlApi(AwsAppSyncGraphQlApiDetails&& value) { SetAwsAppSyncGraphQlApi(std::move(value)); return *this;}
+
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline const AwsEventSchemasRegistryDetails& GetAwsEventSchemasRegistry() const{ return m_awsEventSchemasRegistry; }
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline bool AwsEventSchemasRegistryHasBeenSet() const { return m_awsEventSchemasRegistryHasBeenSet; }
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline void SetAwsEventSchemasRegistry(const AwsEventSchemasRegistryDetails& value) { m_awsEventSchemasRegistryHasBeenSet = true; m_awsEventSchemasRegistry = value; }
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline void SetAwsEventSchemasRegistry(AwsEventSchemasRegistryDetails&& value) { m_awsEventSchemasRegistryHasBeenSet = true; m_awsEventSchemasRegistry = std::move(value); }
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline ResourceDetails& WithAwsEventSchemasRegistry(const AwsEventSchemasRegistryDetails& value) { SetAwsEventSchemasRegistry(value); return *this;}
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline ResourceDetails& WithAwsEventSchemasRegistry(AwsEventSchemasRegistryDetails&& value) { SetAwsEventSchemasRegistry(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline const AwsGuardDutyDetectorDetails& GetAwsGuardDutyDetector() const{ return m_awsGuardDutyDetector; }
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline bool AwsGuardDutyDetectorHasBeenSet() const { return m_awsGuardDutyDetectorHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline void SetAwsGuardDutyDetector(const AwsGuardDutyDetectorDetails& value) { m_awsGuardDutyDetectorHasBeenSet = true; m_awsGuardDutyDetector = value; }
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline void SetAwsGuardDutyDetector(AwsGuardDutyDetectorDetails&& value) { m_awsGuardDutyDetectorHasBeenSet = true; m_awsGuardDutyDetector = std::move(value); }
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline ResourceDetails& WithAwsGuardDutyDetector(const AwsGuardDutyDetectorDetails& value) { SetAwsGuardDutyDetector(value); return *this;}
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline ResourceDetails& WithAwsGuardDutyDetector(AwsGuardDutyDetectorDetails&& value) { SetAwsGuardDutyDetector(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline const AwsStepFunctionStateMachineDetails& GetAwsStepFunctionStateMachine() const{ return m_awsStepFunctionStateMachine; }
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline bool AwsStepFunctionStateMachineHasBeenSet() const { return m_awsStepFunctionStateMachineHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline void SetAwsStepFunctionStateMachine(const AwsStepFunctionStateMachineDetails& value) { m_awsStepFunctionStateMachineHasBeenSet = true; m_awsStepFunctionStateMachine = value; }
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline void SetAwsStepFunctionStateMachine(AwsStepFunctionStateMachineDetails&& value) { m_awsStepFunctionStateMachineHasBeenSet = true; m_awsStepFunctionStateMachine = std::move(value); }
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline ResourceDetails& WithAwsStepFunctionStateMachine(const AwsStepFunctionStateMachineDetails& value) { SetAwsStepFunctionStateMachine(value); return *this;}
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline ResourceDetails& WithAwsStepFunctionStateMachine(AwsStepFunctionStateMachineDetails&& value) { SetAwsStepFunctionStateMachine(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline const AwsAthenaWorkGroupDetails& GetAwsAthenaWorkGroup() const{ return m_awsAthenaWorkGroup; }
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline bool AwsAthenaWorkGroupHasBeenSet() const { return m_awsAthenaWorkGroupHasBeenSet; }
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline void SetAwsAthenaWorkGroup(const AwsAthenaWorkGroupDetails& value) { m_awsAthenaWorkGroupHasBeenSet = true; m_awsAthenaWorkGroup = value; }
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline void SetAwsAthenaWorkGroup(AwsAthenaWorkGroupDetails&& value) { m_awsAthenaWorkGroupHasBeenSet = true; m_awsAthenaWorkGroup = std::move(value); }
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline ResourceDetails& WithAwsAthenaWorkGroup(const AwsAthenaWorkGroupDetails& value) { SetAwsAthenaWorkGroup(value); return *this;}
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline ResourceDetails& WithAwsAthenaWorkGroup(AwsAthenaWorkGroupDetails&& value) { SetAwsAthenaWorkGroup(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline const AwsEventsEventbusDetails& GetAwsEventsEventbus() const{ return m_awsEventsEventbus; }
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline bool AwsEventsEventbusHasBeenSet() const { return m_awsEventsEventbusHasBeenSet; }
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline void SetAwsEventsEventbus(const AwsEventsEventbusDetails& value) { m_awsEventsEventbusHasBeenSet = true; m_awsEventsEventbus = value; }
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline void SetAwsEventsEventbus(AwsEventsEventbusDetails&& value) { m_awsEventsEventbusHasBeenSet = true; m_awsEventsEventbus = std::move(value); }
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline ResourceDetails& WithAwsEventsEventbus(const AwsEventsEventbusDetails& value) { SetAwsEventsEventbus(value); return *this;}
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline ResourceDetails& WithAwsEventsEventbus(AwsEventsEventbusDetails&& value) { SetAwsEventsEventbus(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline const AwsDmsEndpointDetails& GetAwsDmsEndpoint() const{ return m_awsDmsEndpoint; }
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline bool AwsDmsEndpointHasBeenSet() const { return m_awsDmsEndpointHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline void SetAwsDmsEndpoint(const AwsDmsEndpointDetails& value) { m_awsDmsEndpointHasBeenSet = true; m_awsDmsEndpoint = value; }
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline void SetAwsDmsEndpoint(AwsDmsEndpointDetails&& value) { m_awsDmsEndpointHasBeenSet = true; m_awsDmsEndpoint = std::move(value); }
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline ResourceDetails& WithAwsDmsEndpoint(const AwsDmsEndpointDetails& value) { SetAwsDmsEndpoint(value); return *this;}
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline ResourceDetails& WithAwsDmsEndpoint(AwsDmsEndpointDetails&& value) { SetAwsDmsEndpoint(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline const AwsEventsEndpointDetails& GetAwsEventsEndpoint() const{ return m_awsEventsEndpoint; }
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline bool AwsEventsEndpointHasBeenSet() const { return m_awsEventsEndpointHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline void SetAwsEventsEndpoint(const AwsEventsEndpointDetails& value) { m_awsEventsEndpointHasBeenSet = true; m_awsEventsEndpoint = value; }
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline void SetAwsEventsEndpoint(AwsEventsEndpointDetails&& value) { m_awsEventsEndpointHasBeenSet = true; m_awsEventsEndpoint = std::move(value); }
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline ResourceDetails& WithAwsEventsEndpoint(const AwsEventsEndpointDetails& value) { SetAwsEventsEndpoint(value); return *this;}
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline ResourceDetails& WithAwsEventsEndpoint(AwsEventsEndpointDetails&& value) { SetAwsEventsEndpoint(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline const AwsDmsReplicationTaskDetails& GetAwsDmsReplicationTask() const{ return m_awsDmsReplicationTask; }
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline bool AwsDmsReplicationTaskHasBeenSet() const { return m_awsDmsReplicationTaskHasBeenSet; }
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline void SetAwsDmsReplicationTask(const AwsDmsReplicationTaskDetails& value) { m_awsDmsReplicationTaskHasBeenSet = true; m_awsDmsReplicationTask = value; }
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline void SetAwsDmsReplicationTask(AwsDmsReplicationTaskDetails&& value) { m_awsDmsReplicationTaskHasBeenSet = true; m_awsDmsReplicationTask = std::move(value); }
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline ResourceDetails& WithAwsDmsReplicationTask(const AwsDmsReplicationTaskDetails& value) { SetAwsDmsReplicationTask(value); return *this;}
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline ResourceDetails& WithAwsDmsReplicationTask(AwsDmsReplicationTaskDetails&& value) { SetAwsDmsReplicationTask(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline const AwsDmsReplicationInstanceDetails& GetAwsDmsReplicationInstance() const{ return m_awsDmsReplicationInstance; }
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline bool AwsDmsReplicationInstanceHasBeenSet() const { return m_awsDmsReplicationInstanceHasBeenSet; }
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline void SetAwsDmsReplicationInstance(const AwsDmsReplicationInstanceDetails& value) { m_awsDmsReplicationInstanceHasBeenSet = true; m_awsDmsReplicationInstance = value; }
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline void SetAwsDmsReplicationInstance(AwsDmsReplicationInstanceDetails&& value) { m_awsDmsReplicationInstanceHasBeenSet = true; m_awsDmsReplicationInstance = std::move(value); }
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline ResourceDetails& WithAwsDmsReplicationInstance(const AwsDmsReplicationInstanceDetails& value) { SetAwsDmsReplicationInstance(value); return *this;}
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline ResourceDetails& WithAwsDmsReplicationInstance(AwsDmsReplicationInstanceDetails&& value) { SetAwsDmsReplicationInstance(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline const AwsRoute53HostedZoneDetails& GetAwsRoute53HostedZone() const{ return m_awsRoute53HostedZone; }
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline bool AwsRoute53HostedZoneHasBeenSet() const { return m_awsRoute53HostedZoneHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline void SetAwsRoute53HostedZone(const AwsRoute53HostedZoneDetails& value) { m_awsRoute53HostedZoneHasBeenSet = true; m_awsRoute53HostedZone = value; }
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline void SetAwsRoute53HostedZone(AwsRoute53HostedZoneDetails&& value) { m_awsRoute53HostedZoneHasBeenSet = true; m_awsRoute53HostedZone = std::move(value); }
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline ResourceDetails& WithAwsRoute53HostedZone(const AwsRoute53HostedZoneDetails& value) { SetAwsRoute53HostedZone(value); return *this;}
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline ResourceDetails& WithAwsRoute53HostedZone(AwsRoute53HostedZoneDetails&& value) { SetAwsRoute53HostedZone(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline const AwsMskClusterDetails& GetAwsMskCluster() const{ return m_awsMskCluster; }
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline bool AwsMskClusterHasBeenSet() const { return m_awsMskClusterHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline void SetAwsMskCluster(const AwsMskClusterDetails& value) { m_awsMskClusterHasBeenSet = true; m_awsMskCluster = value; }
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline void SetAwsMskCluster(AwsMskClusterDetails&& value) { m_awsMskClusterHasBeenSet = true; m_awsMskCluster = std::move(value); }
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline ResourceDetails& WithAwsMskCluster(const AwsMskClusterDetails& value) { SetAwsMskCluster(value); return *this;}
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline ResourceDetails& WithAwsMskCluster(AwsMskClusterDetails&& value) { SetAwsMskCluster(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline const AwsS3AccessPointDetails& GetAwsS3AccessPoint() const{ return m_awsS3AccessPoint; }
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline bool AwsS3AccessPointHasBeenSet() const { return m_awsS3AccessPointHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline void SetAwsS3AccessPoint(const AwsS3AccessPointDetails& value) { m_awsS3AccessPointHasBeenSet = true; m_awsS3AccessPoint = value; }
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline void SetAwsS3AccessPoint(AwsS3AccessPointDetails&& value) { m_awsS3AccessPointHasBeenSet = true; m_awsS3AccessPoint = std::move(value); }
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline ResourceDetails& WithAwsS3AccessPoint(const AwsS3AccessPointDetails& value) { SetAwsS3AccessPoint(value); return *this;}
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline ResourceDetails& WithAwsS3AccessPoint(AwsS3AccessPointDetails&& value) { SetAwsS3AccessPoint(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline const AwsEc2ClientVpnEndpointDetails& GetAwsEc2ClientVpnEndpoint() const{ return m_awsEc2ClientVpnEndpoint; }
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline bool AwsEc2ClientVpnEndpointHasBeenSet() const { return m_awsEc2ClientVpnEndpointHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline void SetAwsEc2ClientVpnEndpoint(const AwsEc2ClientVpnEndpointDetails& value) { m_awsEc2ClientVpnEndpointHasBeenSet = true; m_awsEc2ClientVpnEndpoint = value; }
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline void SetAwsEc2ClientVpnEndpoint(AwsEc2ClientVpnEndpointDetails&& value) { m_awsEc2ClientVpnEndpointHasBeenSet = true; m_awsEc2ClientVpnEndpoint = std::move(value); }
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline ResourceDetails& WithAwsEc2ClientVpnEndpoint(const AwsEc2ClientVpnEndpointDetails& value) { SetAwsEc2ClientVpnEndpoint(value); return *this;}
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline ResourceDetails& WithAwsEc2ClientVpnEndpoint(AwsEc2ClientVpnEndpointDetails&& value) { SetAwsEc2ClientVpnEndpoint(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -3153,6 +3795,51 @@ namespace Model
 
     AwsEc2RouteTableDetails m_awsEc2RouteTable;
     bool m_awsEc2RouteTableHasBeenSet = false;
+
+    AwsAmazonMqBrokerDetails m_awsAmazonMqBroker;
+    bool m_awsAmazonMqBrokerHasBeenSet = false;
+
+    AwsAppSyncGraphQlApiDetails m_awsAppSyncGraphQlApi;
+    bool m_awsAppSyncGraphQlApiHasBeenSet = false;
+
+    AwsEventSchemasRegistryDetails m_awsEventSchemasRegistry;
+    bool m_awsEventSchemasRegistryHasBeenSet = false;
+
+    AwsGuardDutyDetectorDetails m_awsGuardDutyDetector;
+    bool m_awsGuardDutyDetectorHasBeenSet = false;
+
+    AwsStepFunctionStateMachineDetails m_awsStepFunctionStateMachine;
+    bool m_awsStepFunctionStateMachineHasBeenSet = false;
+
+    AwsAthenaWorkGroupDetails m_awsAthenaWorkGroup;
+    bool m_awsAthenaWorkGroupHasBeenSet = false;
+
+    AwsEventsEventbusDetails m_awsEventsEventbus;
+    bool m_awsEventsEventbusHasBeenSet = false;
+
+    AwsDmsEndpointDetails m_awsDmsEndpoint;
+    bool m_awsDmsEndpointHasBeenSet = false;
+
+    AwsEventsEndpointDetails m_awsEventsEndpoint;
+    bool m_awsEventsEndpointHasBeenSet = false;
+
+    AwsDmsReplicationTaskDetails m_awsDmsReplicationTask;
+    bool m_awsDmsReplicationTaskHasBeenSet = false;
+
+    AwsDmsReplicationInstanceDetails m_awsDmsReplicationInstance;
+    bool m_awsDmsReplicationInstanceHasBeenSet = false;
+
+    AwsRoute53HostedZoneDetails m_awsRoute53HostedZone;
+    bool m_awsRoute53HostedZoneHasBeenSet = false;
+
+    AwsMskClusterDetails m_awsMskCluster;
+    bool m_awsMskClusterHasBeenSet = false;
+
+    AwsS3AccessPointDetails m_awsS3AccessPoint;
+    bool m_awsS3AccessPointHasBeenSet = false;
+
+    AwsEc2ClientVpnEndpointDetails m_awsEc2ClientVpnEndpoint;
+    bool m_awsEc2ClientVpnEndpointHasBeenSet = false;
   };
 
 } // namespace Model

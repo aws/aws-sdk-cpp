@@ -72,47 +72,47 @@ namespace Model
 
 
     /**
-     * <p>A list of values for the specified field.</p>
+     * <p>A non-empty list of values for the specified field.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValue() const{ return m_value; }
 
     /**
-     * <p>A list of values for the specified field.</p>
+     * <p>A non-empty list of values for the specified field.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>A list of values for the specified field.</p>
+     * <p>A non-empty list of values for the specified field.</p>
      */
     inline void SetValue(const Aws::Vector<Aws::String>& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>A list of values for the specified field.</p>
+     * <p>A non-empty list of values for the specified field.</p>
      */
     inline void SetValue(Aws::Vector<Aws::String>&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>A list of values for the specified field.</p>
+     * <p>A non-empty list of values for the specified field.</p>
      */
     inline DescribePackagesFilter& WithValue(const Aws::Vector<Aws::String>& value) { SetValue(value); return *this;}
 
     /**
-     * <p>A list of values for the specified field.</p>
+     * <p>A non-empty list of values for the specified field.</p>
      */
     inline DescribePackagesFilter& WithValue(Aws::Vector<Aws::String>&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>A list of values for the specified field.</p>
+     * <p>A non-empty list of values for the specified field.</p>
      */
     inline DescribePackagesFilter& AddValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
 
     /**
-     * <p>A list of values for the specified field.</p>
+     * <p>A non-empty list of values for the specified field.</p>
      */
     inline DescribePackagesFilter& AddValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of values for the specified field.</p>
+     * <p>A non-empty list of values for the specified field.</p>
      */
     inline DescribePackagesFilter& AddValue(const char* value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
 

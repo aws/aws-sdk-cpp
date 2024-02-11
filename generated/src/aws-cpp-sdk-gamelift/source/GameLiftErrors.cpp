@@ -41,63 +41,63 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_GAME_SESSION_STATUS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::INVALID_GAME_SESSION_STATUS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::INVALID_GAME_SESSION_STATUS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::IDEMPOTENT_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == FLEET_CAPACITY_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::FLEET_CAPACITY_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::FLEET_CAPACITY_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::INTERNAL_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_REGION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::UNSUPPORTED_REGION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::UNSUPPORTED_REGION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TAGGING_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::TAGGING_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::TAGGING_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OUT_OF_CAPACITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::OUT_OF_CAPACITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::OUT_OF_CAPACITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNAUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::UNAUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_FLEET_STATUS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::INVALID_FLEET_STATUS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::INVALID_FLEET_STATUS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GAME_SESSION_FULL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::GAME_SESSION_FULL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::GAME_SESSION_FULL), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TERMINAL_ROUTING_STRATEGY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::TERMINAL_ROUTING_STRATEGY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::TERMINAL_ROUTING_STRATEGY), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BoxPlotFillStyle::NOT_SET:
+            return {};
           case BoxPlotFillStyle::SOLID:
             return "SOLID";
           case BoxPlotFillStyle::TRANSPARENT:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DnsResponseType::NOT_SET:
+            return {};
           case DnsResponseType::LOADBALANCER:
             return "LOADBALANCER";
           case DnsResponseType::ENDPOINTS:

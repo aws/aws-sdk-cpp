@@ -29,15 +29,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(HealthErrors::INVALID_PAGINATION_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(HealthErrors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_LOCALE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(HealthErrors::UNSUPPORTED_LOCALE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(HealthErrors::UNSUPPORTED_LOCALE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(HealthErrors::CONCURRENT_MODIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(HealthErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

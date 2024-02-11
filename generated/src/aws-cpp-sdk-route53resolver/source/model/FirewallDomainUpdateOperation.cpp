@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FirewallDomainUpdateOperation::NOT_SET:
+            return {};
           case FirewallDomainUpdateOperation::ADD:
             return "ADD";
           case FirewallDomainUpdateOperation::REMOVE:

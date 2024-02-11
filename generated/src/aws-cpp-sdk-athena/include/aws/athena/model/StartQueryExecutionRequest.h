@@ -84,12 +84,15 @@ namespace Model
      * <p>A unique case-sensitive string used to ensure the request to create the query
      * is idempotent (executes only once). If another <code>StartQueryExecution</code>
      * request is received, the same response is returned and another query is not
-     * created. If a parameter has changed, for example, the <code>QueryString</code>,
-     * an error is returned.</p>  <p>This token is listed as not required
-     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
-     * Java) auto-generate the token for users. If you are not using the Amazon Web
-     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
-     * action will fail.</p> 
+     * created. An error is returned if a parameter, such as <code>QueryString</code>,
+     * has changed. A call to <code>StartQueryExecution</code> that uses a previous
+     * client request token returns the same <code>QueryExecutionId</code> even if the
+     * requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.</p>  <p>This token is listed as not
+     * required because Amazon Web Services SDKs (for example the Amazon Web Services
+     * SDK for Java) auto-generate the token for users. If you are not using the Amazon
+     * Web Services SDK or the Amazon Web Services CLI, you must provide this token or
+     * the action will fail.</p> 
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -97,12 +100,15 @@ namespace Model
      * <p>A unique case-sensitive string used to ensure the request to create the query
      * is idempotent (executes only once). If another <code>StartQueryExecution</code>
      * request is received, the same response is returned and another query is not
-     * created. If a parameter has changed, for example, the <code>QueryString</code>,
-     * an error is returned.</p>  <p>This token is listed as not required
-     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
-     * Java) auto-generate the token for users. If you are not using the Amazon Web
-     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
-     * action will fail.</p> 
+     * created. An error is returned if a parameter, such as <code>QueryString</code>,
+     * has changed. A call to <code>StartQueryExecution</code> that uses a previous
+     * client request token returns the same <code>QueryExecutionId</code> even if the
+     * requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.</p>  <p>This token is listed as not
+     * required because Amazon Web Services SDKs (for example the Amazon Web Services
+     * SDK for Java) auto-generate the token for users. If you are not using the Amazon
+     * Web Services SDK or the Amazon Web Services CLI, you must provide this token or
+     * the action will fail.</p> 
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -110,12 +116,15 @@ namespace Model
      * <p>A unique case-sensitive string used to ensure the request to create the query
      * is idempotent (executes only once). If another <code>StartQueryExecution</code>
      * request is received, the same response is returned and another query is not
-     * created. If a parameter has changed, for example, the <code>QueryString</code>,
-     * an error is returned.</p>  <p>This token is listed as not required
-     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
-     * Java) auto-generate the token for users. If you are not using the Amazon Web
-     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
-     * action will fail.</p> 
+     * created. An error is returned if a parameter, such as <code>QueryString</code>,
+     * has changed. A call to <code>StartQueryExecution</code> that uses a previous
+     * client request token returns the same <code>QueryExecutionId</code> even if the
+     * requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.</p>  <p>This token is listed as not
+     * required because Amazon Web Services SDKs (for example the Amazon Web Services
+     * SDK for Java) auto-generate the token for users. If you are not using the Amazon
+     * Web Services SDK or the Amazon Web Services CLI, you must provide this token or
+     * the action will fail.</p> 
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -123,12 +132,15 @@ namespace Model
      * <p>A unique case-sensitive string used to ensure the request to create the query
      * is idempotent (executes only once). If another <code>StartQueryExecution</code>
      * request is received, the same response is returned and another query is not
-     * created. If a parameter has changed, for example, the <code>QueryString</code>,
-     * an error is returned.</p>  <p>This token is listed as not required
-     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
-     * Java) auto-generate the token for users. If you are not using the Amazon Web
-     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
-     * action will fail.</p> 
+     * created. An error is returned if a parameter, such as <code>QueryString</code>,
+     * has changed. A call to <code>StartQueryExecution</code> that uses a previous
+     * client request token returns the same <code>QueryExecutionId</code> even if the
+     * requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.</p>  <p>This token is listed as not
+     * required because Amazon Web Services SDKs (for example the Amazon Web Services
+     * SDK for Java) auto-generate the token for users. If you are not using the Amazon
+     * Web Services SDK or the Amazon Web Services CLI, you must provide this token or
+     * the action will fail.</p> 
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -136,12 +148,15 @@ namespace Model
      * <p>A unique case-sensitive string used to ensure the request to create the query
      * is idempotent (executes only once). If another <code>StartQueryExecution</code>
      * request is received, the same response is returned and another query is not
-     * created. If a parameter has changed, for example, the <code>QueryString</code>,
-     * an error is returned.</p>  <p>This token is listed as not required
-     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
-     * Java) auto-generate the token for users. If you are not using the Amazon Web
-     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
-     * action will fail.</p> 
+     * created. An error is returned if a parameter, such as <code>QueryString</code>,
+     * has changed. A call to <code>StartQueryExecution</code> that uses a previous
+     * client request token returns the same <code>QueryExecutionId</code> even if the
+     * requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.</p>  <p>This token is listed as not
+     * required because Amazon Web Services SDKs (for example the Amazon Web Services
+     * SDK for Java) auto-generate the token for users. If you are not using the Amazon
+     * Web Services SDK or the Amazon Web Services CLI, you must provide this token or
+     * the action will fail.</p> 
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -149,12 +164,15 @@ namespace Model
      * <p>A unique case-sensitive string used to ensure the request to create the query
      * is idempotent (executes only once). If another <code>StartQueryExecution</code>
      * request is received, the same response is returned and another query is not
-     * created. If a parameter has changed, for example, the <code>QueryString</code>,
-     * an error is returned.</p>  <p>This token is listed as not required
-     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
-     * Java) auto-generate the token for users. If you are not using the Amazon Web
-     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
-     * action will fail.</p> 
+     * created. An error is returned if a parameter, such as <code>QueryString</code>,
+     * has changed. A call to <code>StartQueryExecution</code> that uses a previous
+     * client request token returns the same <code>QueryExecutionId</code> even if the
+     * requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.</p>  <p>This token is listed as not
+     * required because Amazon Web Services SDKs (for example the Amazon Web Services
+     * SDK for Java) auto-generate the token for users. If you are not using the Amazon
+     * Web Services SDK or the Amazon Web Services CLI, you must provide this token or
+     * the action will fail.</p> 
      */
     inline StartQueryExecutionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -162,12 +180,15 @@ namespace Model
      * <p>A unique case-sensitive string used to ensure the request to create the query
      * is idempotent (executes only once). If another <code>StartQueryExecution</code>
      * request is received, the same response is returned and another query is not
-     * created. If a parameter has changed, for example, the <code>QueryString</code>,
-     * an error is returned.</p>  <p>This token is listed as not required
-     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
-     * Java) auto-generate the token for users. If you are not using the Amazon Web
-     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
-     * action will fail.</p> 
+     * created. An error is returned if a parameter, such as <code>QueryString</code>,
+     * has changed. A call to <code>StartQueryExecution</code> that uses a previous
+     * client request token returns the same <code>QueryExecutionId</code> even if the
+     * requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.</p>  <p>This token is listed as not
+     * required because Amazon Web Services SDKs (for example the Amazon Web Services
+     * SDK for Java) auto-generate the token for users. If you are not using the Amazon
+     * Web Services SDK or the Amazon Web Services CLI, you must provide this token or
+     * the action will fail.</p> 
      */
     inline StartQueryExecutionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -175,12 +196,15 @@ namespace Model
      * <p>A unique case-sensitive string used to ensure the request to create the query
      * is idempotent (executes only once). If another <code>StartQueryExecution</code>
      * request is received, the same response is returned and another query is not
-     * created. If a parameter has changed, for example, the <code>QueryString</code>,
-     * an error is returned.</p>  <p>This token is listed as not required
-     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
-     * Java) auto-generate the token for users. If you are not using the Amazon Web
-     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
-     * action will fail.</p> 
+     * created. An error is returned if a parameter, such as <code>QueryString</code>,
+     * has changed. A call to <code>StartQueryExecution</code> that uses a previous
+     * client request token returns the same <code>QueryExecutionId</code> even if the
+     * requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.</p>  <p>This token is listed as not
+     * required because Amazon Web Services SDKs (for example the Amazon Web Services
+     * SDK for Java) auto-generate the token for users. If you are not using the Amazon
+     * Web Services SDK or the Amazon Web Services CLI, you must provide this token or
+     * the action will fail.</p> 
      */
     inline StartQueryExecutionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

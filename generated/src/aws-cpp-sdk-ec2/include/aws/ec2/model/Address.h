@@ -126,134 +126,114 @@ namespace Model
 
 
     /**
-     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     * <p>The ID representing the allocation of the address.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
     /**
-     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     * <p>The ID representing the allocation of the address.</p>
      */
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
 
     /**
-     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     * <p>The ID representing the allocation of the address.</p>
      */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
-     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     * <p>The ID representing the allocation of the address.</p>
      */
     inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
 
     /**
-     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     * <p>The ID representing the allocation of the address.</p>
      */
     inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
 
     /**
-     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     * <p>The ID representing the allocation of the address.</p>
      */
     inline Address& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
 
     /**
-     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     * <p>The ID representing the allocation of the address.</p>
      */
     inline Address& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     * <p>The ID representing the allocation of the address.</p>
      */
     inline Address& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
 
     /**
-     * <p>The ID representing the association of the address with an instance in a
-     * VPC.</p>
+     * <p>The ID representing the association of the address with an instance.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
 
     /**
-     * <p>The ID representing the association of the address with an instance in a
-     * VPC.</p>
+     * <p>The ID representing the association of the address with an instance.</p>
      */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
 
     /**
-     * <p>The ID representing the association of the address with an instance in a
-     * VPC.</p>
+     * <p>The ID representing the association of the address with an instance.</p>
      */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
-     * <p>The ID representing the association of the address with an instance in a
-     * VPC.</p>
+     * <p>The ID representing the association of the address with an instance.</p>
      */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
-     * <p>The ID representing the association of the address with an instance in a
-     * VPC.</p>
+     * <p>The ID representing the association of the address with an instance.</p>
      */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
 
     /**
-     * <p>The ID representing the association of the address with an instance in a
-     * VPC.</p>
+     * <p>The ID representing the association of the address with an instance.</p>
      */
     inline Address& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
 
     /**
-     * <p>The ID representing the association of the address with an instance in a
-     * VPC.</p>
+     * <p>The ID representing the association of the address with an instance.</p>
      */
     inline Address& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID representing the association of the address with an instance in a
-     * VPC.</p>
+     * <p>The ID representing the association of the address with an instance.</p>
      */
     inline Address& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
 
     /**
-     * <p>Indicates whether this Elastic IP address is for use with instances in
-     * EC2-Classic (<code>standard</code>) or instances in a VPC
-     * (<code>vpc</code>).</p>
+     * <p>The network (<code>vpc</code>).</p>
      */
     inline const DomainType& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Indicates whether this Elastic IP address is for use with instances in
-     * EC2-Classic (<code>standard</code>) or instances in a VPC
-     * (<code>vpc</code>).</p>
+     * <p>The network (<code>vpc</code>).</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Indicates whether this Elastic IP address is for use with instances in
-     * EC2-Classic (<code>standard</code>) or instances in a VPC
-     * (<code>vpc</code>).</p>
+     * <p>The network (<code>vpc</code>).</p>
      */
     inline void SetDomain(const DomainType& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Indicates whether this Elastic IP address is for use with instances in
-     * EC2-Classic (<code>standard</code>) or instances in a VPC
-     * (<code>vpc</code>).</p>
+     * <p>The network (<code>vpc</code>).</p>
      */
     inline void SetDomain(DomainType&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Indicates whether this Elastic IP address is for use with instances in
-     * EC2-Classic (<code>standard</code>) or instances in a VPC
-     * (<code>vpc</code>).</p>
+     * <p>The network (<code>vpc</code>).</p>
      */
     inline Address& WithDomain(const DomainType& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Indicates whether this Elastic IP address is for use with instances in
-     * EC2-Classic (<code>standard</code>) or instances in a VPC
-     * (<code>vpc</code>).</p>
+     * <p>The network (<code>vpc</code>).</p>
      */
     inline Address& WithDomain(DomainType&& value) { SetDomain(std::move(value)); return *this;}
 

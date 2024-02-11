@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientAffinity::NOT_SET:
+            return {};
           case ClientAffinity::NONE:
             return "NONE";
           case ClientAffinity::SOURCE_IP:

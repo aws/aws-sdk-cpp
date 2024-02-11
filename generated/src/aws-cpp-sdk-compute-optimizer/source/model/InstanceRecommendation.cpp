@@ -37,7 +37,12 @@ InstanceRecommendation::InstanceRecommendation() :
     m_effectiveRecommendationPreferencesHasBeenSet(false),
     m_inferredWorkloadTypesHasBeenSet(false),
     m_instanceState(InstanceState::NOT_SET),
-    m_instanceStateHasBeenSet(false)
+    m_instanceStateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_externalMetricStatusHasBeenSet(false),
+    m_currentInstanceGpuInfoHasBeenSet(false),
+    m_idle(InstanceIdle::NOT_SET),
+    m_idleHasBeenSet(false)
 {
 }
 
@@ -60,7 +65,12 @@ InstanceRecommendation::InstanceRecommendation(JsonView jsonValue) :
     m_effectiveRecommendationPreferencesHasBeenSet(false),
     m_inferredWorkloadTypesHasBeenSet(false),
     m_instanceState(InstanceState::NOT_SET),
-    m_instanceStateHasBeenSet(false)
+    m_instanceStateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_externalMetricStatusHasBeenSet(false),
+    m_currentInstanceGpuInfoHasBeenSet(false),
+    m_idle(InstanceIdle::NOT_SET),
+    m_idleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -187,6 +197,37 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     m_instanceStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("externalMetricStatus"))
+  {
+    m_externalMetricStatus = jsonValue.GetObject("externalMetricStatus");
+
+    m_externalMetricStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("currentInstanceGpuInfo"))
+  {
+    m_currentInstanceGpuInfo = jsonValue.GetObject("currentInstanceGpuInfo");
+
+    m_currentInstanceGpuInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("idle"))
+  {
+    m_idle = InstanceIdleMapper::GetInstanceIdleForName(jsonValue.GetString("idle"));
+
+    m_idleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -303,6 +344,34 @@ JsonValue InstanceRecommendation::Jsonize() const
   if(m_instanceStateHasBeenSet)
   {
    payload.WithString("instanceState", InstanceStateMapper::GetNameForInstanceState(m_instanceState));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_externalMetricStatusHasBeenSet)
+  {
+   payload.WithObject("externalMetricStatus", m_externalMetricStatus.Jsonize());
+
+  }
+
+  if(m_currentInstanceGpuInfoHasBeenSet)
+  {
+   payload.WithObject("currentInstanceGpuInfo", m_currentInstanceGpuInfo.Jsonize());
+
+  }
+
+  if(m_idleHasBeenSet)
+  {
+   payload.WithString("idle", InstanceIdleMapper::GetNameForInstanceIdle(m_idle));
   }
 
   return payload;

@@ -106,44 +106,38 @@ namespace Model
 
 
     /**
-     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
-     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
-     * isn't allowed.
+     * Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra
+     * class to a different value, this object isn't allowed.
      */
     inline const AvcIntraUhdSettings& GetAvcIntraUhdSettings() const{ return m_avcIntraUhdSettings; }
 
     /**
-     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
-     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
-     * isn't allowed.
+     * Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra
+     * class to a different value, this object isn't allowed.
      */
     inline bool AvcIntraUhdSettingsHasBeenSet() const { return m_avcIntraUhdSettingsHasBeenSet; }
 
     /**
-     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
-     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
-     * isn't allowed.
+     * Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra
+     * class to a different value, this object isn't allowed.
      */
     inline void SetAvcIntraUhdSettings(const AvcIntraUhdSettings& value) { m_avcIntraUhdSettingsHasBeenSet = true; m_avcIntraUhdSettings = value; }
 
     /**
-     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
-     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
-     * isn't allowed.
+     * Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra
+     * class to a different value, this object isn't allowed.
      */
     inline void SetAvcIntraUhdSettings(AvcIntraUhdSettings&& value) { m_avcIntraUhdSettingsHasBeenSet = true; m_avcIntraUhdSettings = std::move(value); }
 
     /**
-     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
-     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
-     * isn't allowed.
+     * Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra
+     * class to a different value, this object isn't allowed.
      */
     inline AvcIntraSettings& WithAvcIntraUhdSettings(const AvcIntraUhdSettings& value) { SetAvcIntraUhdSettings(value); return *this;}
 
     /**
-     * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
-     * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
-     * isn't allowed.
+     * Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra
+     * class to a different value, this object isn't allowed.
      */
     inline AvcIntraSettings& WithAvcIntraUhdSettings(AvcIntraUhdSettings&& value) { SetAvcIntraUhdSettings(std::move(value)); return *this;}
 
@@ -154,12 +148,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline const AvcIntraFramerateControl& GetFramerateControl() const{ return m_framerateControl; }
 
@@ -169,12 +158,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
 
@@ -184,12 +168,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline void SetFramerateControl(const AvcIntraFramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
 
@@ -199,12 +178,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline void SetFramerateControl(AvcIntraFramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
 
@@ -214,12 +188,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline AvcIntraSettings& WithFramerateControl(const AvcIntraFramerateControl& value) { SetFramerateControl(value); return *this;}
 
@@ -229,97 +198,98 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline AvcIntraSettings& WithFramerateControl(AvcIntraFramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
 
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline const AvcIntraFramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline void SetFramerateConversionAlgorithm(const AvcIntraFramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline void SetFramerateConversionAlgorithm(AvcIntraFramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline AvcIntraSettings& WithFramerateConversionAlgorithm(const AvcIntraFramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline AvcIntraSettings& WithFramerateConversionAlgorithm(AvcIntraFramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
@@ -407,201 +377,183 @@ namespace Model
 
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline const AvcIntraInterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline void SetInterlaceMode(const AvcIntraInterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline void SetInterlaceMode(AvcIntraInterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline AvcIntraSettings& WithInterlaceMode(const AvcIntraInterlaceMode& value) { SetInterlaceMode(value); return *this;}
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline AvcIntraSettings& WithInterlaceMode(AvcIntraInterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
 
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline const AvcIntraScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline void SetScanTypeConversionMode(const AvcIntraScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline void SetScanTypeConversionMode(AvcIntraScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline AvcIntraSettings& WithScanTypeConversionMode(const AvcIntraScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline AvcIntraSettings& WithScanTypeConversionMode(AvcIntraScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
 
@@ -612,8 +564,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline const AvcIntraSlowPal& GetSlowPal() const{ return m_slowPal; }
 
@@ -623,8 +574,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
 
@@ -634,8 +584,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline void SetSlowPal(const AvcIntraSlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
 
@@ -645,8 +594,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline void SetSlowPal(AvcIntraSlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
 
@@ -656,8 +604,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline AvcIntraSettings& WithSlowPal(const AvcIntraSlowPal& value) { SetSlowPal(value); return *this;}
 
@@ -667,8 +614,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline AvcIntraSettings& WithSlowPal(AvcIntraSlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
 
@@ -676,54 +622,54 @@ namespace Model
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline const AvcIntraTelecine& GetTelecine() const{ return m_telecine; }
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline void SetTelecine(const AvcIntraTelecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline void SetTelecine(AvcIntraTelecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline AvcIntraSettings& WithTelecine(const AvcIntraTelecine& value) { SetTelecine(value); return *this;}
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline AvcIntraSettings& WithTelecine(AvcIntraTelecine&& value) { SetTelecine(std::move(value)); return *this;}
 

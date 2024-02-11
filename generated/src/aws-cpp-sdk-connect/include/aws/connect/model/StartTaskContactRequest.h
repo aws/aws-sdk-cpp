@@ -94,49 +94,73 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the previous chat, voice, or task contact. </p>
+     * <p>The identifier of the previous chat, voice, or task contact. Any updates to
+     * user-defined attributes to task contacts linked using the same
+     * <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.</p>
      */
     inline const Aws::String& GetPreviousContactId() const{ return m_previousContactId; }
 
     /**
-     * <p>The identifier of the previous chat, voice, or task contact. </p>
+     * <p>The identifier of the previous chat, voice, or task contact. Any updates to
+     * user-defined attributes to task contacts linked using the same
+     * <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.</p>
      */
     inline bool PreviousContactIdHasBeenSet() const { return m_previousContactIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the previous chat, voice, or task contact. </p>
+     * <p>The identifier of the previous chat, voice, or task contact. Any updates to
+     * user-defined attributes to task contacts linked using the same
+     * <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.</p>
      */
     inline void SetPreviousContactId(const Aws::String& value) { m_previousContactIdHasBeenSet = true; m_previousContactId = value; }
 
     /**
-     * <p>The identifier of the previous chat, voice, or task contact. </p>
+     * <p>The identifier of the previous chat, voice, or task contact. Any updates to
+     * user-defined attributes to task contacts linked using the same
+     * <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.</p>
      */
     inline void SetPreviousContactId(Aws::String&& value) { m_previousContactIdHasBeenSet = true; m_previousContactId = std::move(value); }
 
     /**
-     * <p>The identifier of the previous chat, voice, or task contact. </p>
+     * <p>The identifier of the previous chat, voice, or task contact. Any updates to
+     * user-defined attributes to task contacts linked using the same
+     * <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.</p>
      */
     inline void SetPreviousContactId(const char* value) { m_previousContactIdHasBeenSet = true; m_previousContactId.assign(value); }
 
     /**
-     * <p>The identifier of the previous chat, voice, or task contact. </p>
+     * <p>The identifier of the previous chat, voice, or task contact. Any updates to
+     * user-defined attributes to task contacts linked using the same
+     * <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.</p>
      */
     inline StartTaskContactRequest& WithPreviousContactId(const Aws::String& value) { SetPreviousContactId(value); return *this;}
 
     /**
-     * <p>The identifier of the previous chat, voice, or task contact. </p>
+     * <p>The identifier of the previous chat, voice, or task contact. Any updates to
+     * user-defined attributes to task contacts linked using the same
+     * <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.</p>
      */
     inline StartTaskContactRequest& WithPreviousContactId(Aws::String&& value) { SetPreviousContactId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the previous chat, voice, or task contact. </p>
+     * <p>The identifier of the previous chat, voice, or task contact. Any updates to
+     * user-defined attributes to task contacts linked using the same
+     * <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.</p>
      */
     inline StartTaskContactRequest& WithPreviousContactId(const char* value) { SetPreviousContactId(value); return *this;}
 
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -147,7 +171,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -158,7 +182,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -169,7 +193,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -180,7 +204,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -191,7 +215,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -202,7 +226,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -213,7 +237,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -391,74 +415,110 @@ namespace Model
 
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline const Aws::Map<Aws::String, Reference>& GetReferences() const{ return m_references; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline bool ReferencesHasBeenSet() const { return m_referencesHasBeenSet; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline void SetReferences(const Aws::Map<Aws::String, Reference>& value) { m_referencesHasBeenSet = true; m_references = value; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline void SetReferences(Aws::Map<Aws::String, Reference>&& value) { m_referencesHasBeenSet = true; m_references = std::move(value); }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline StartTaskContactRequest& WithReferences(const Aws::Map<Aws::String, Reference>& value) { SetReferences(value); return *this;}
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline StartTaskContactRequest& WithReferences(Aws::Map<Aws::String, Reference>&& value) { SetReferences(std::move(value)); return *this;}
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline StartTaskContactRequest& AddReferences(const Aws::String& key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(key, value); return *this; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline StartTaskContactRequest& AddReferences(Aws::String&& key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline StartTaskContactRequest& AddReferences(const Aws::String& key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline StartTaskContactRequest& AddReferences(Aws::String&& key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline StartTaskContactRequest& AddReferences(const char* key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
-     * (CCP).</p>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type
+     * during task creation.</p>
      */
     inline StartTaskContactRequest& AddReferences(const char* key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(key, value); return *this; }
 
@@ -629,83 +689,139 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the task template.</p>
+     * <p>A unique identifier for the task template. For more information about task
+     * templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create
+     * task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline const Aws::String& GetTaskTemplateId() const{ return m_taskTemplateId; }
 
     /**
-     * <p>A unique identifier for the task template.</p>
+     * <p>A unique identifier for the task template. For more information about task
+     * templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create
+     * task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline bool TaskTemplateIdHasBeenSet() const { return m_taskTemplateIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the task template.</p>
+     * <p>A unique identifier for the task template. For more information about task
+     * templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create
+     * task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline void SetTaskTemplateId(const Aws::String& value) { m_taskTemplateIdHasBeenSet = true; m_taskTemplateId = value; }
 
     /**
-     * <p>A unique identifier for the task template.</p>
+     * <p>A unique identifier for the task template. For more information about task
+     * templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create
+     * task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline void SetTaskTemplateId(Aws::String&& value) { m_taskTemplateIdHasBeenSet = true; m_taskTemplateId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the task template.</p>
+     * <p>A unique identifier for the task template. For more information about task
+     * templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create
+     * task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline void SetTaskTemplateId(const char* value) { m_taskTemplateIdHasBeenSet = true; m_taskTemplateId.assign(value); }
 
     /**
-     * <p>A unique identifier for the task template.</p>
+     * <p>A unique identifier for the task template. For more information about task
+     * templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create
+     * task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline StartTaskContactRequest& WithTaskTemplateId(const Aws::String& value) { SetTaskTemplateId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the task template.</p>
+     * <p>A unique identifier for the task template. For more information about task
+     * templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create
+     * task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline StartTaskContactRequest& WithTaskTemplateId(Aws::String&& value) { SetTaskTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the task template.</p>
+     * <p>A unique identifier for the task template. For more information about task
+     * templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create
+     * task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline StartTaskContactRequest& WithTaskTemplateId(const char* value) { SetTaskTemplateId(value); return *this;}
 
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. Tasks that are created by using
+     * <code>QuickConnectId</code> will use the flow that is defined on agent or queue
+     * quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create
+     * quick connects</a>.</p>
      */
     inline const Aws::String& GetQuickConnectId() const{ return m_quickConnectId; }
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. Tasks that are created by using
+     * <code>QuickConnectId</code> will use the flow that is defined on agent or queue
+     * quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create
+     * quick connects</a>.</p>
      */
     inline bool QuickConnectIdHasBeenSet() const { return m_quickConnectIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. Tasks that are created by using
+     * <code>QuickConnectId</code> will use the flow that is defined on agent or queue
+     * quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create
+     * quick connects</a>.</p>
      */
     inline void SetQuickConnectId(const Aws::String& value) { m_quickConnectIdHasBeenSet = true; m_quickConnectId = value; }
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. Tasks that are created by using
+     * <code>QuickConnectId</code> will use the flow that is defined on agent or queue
+     * quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create
+     * quick connects</a>.</p>
      */
     inline void SetQuickConnectId(Aws::String&& value) { m_quickConnectIdHasBeenSet = true; m_quickConnectId = std::move(value); }
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. Tasks that are created by using
+     * <code>QuickConnectId</code> will use the flow that is defined on agent or queue
+     * quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create
+     * quick connects</a>.</p>
      */
     inline void SetQuickConnectId(const char* value) { m_quickConnectIdHasBeenSet = true; m_quickConnectId.assign(value); }
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. Tasks that are created by using
+     * <code>QuickConnectId</code> will use the flow that is defined on agent or queue
+     * quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create
+     * quick connects</a>.</p>
      */
     inline StartTaskContactRequest& WithQuickConnectId(const Aws::String& value) { SetQuickConnectId(value); return *this;}
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. Tasks that are created by using
+     * <code>QuickConnectId</code> will use the flow that is defined on agent or queue
+     * quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create
+     * quick connects</a>.</p>
      */
     inline StartTaskContactRequest& WithQuickConnectId(Aws::String&& value) { SetQuickConnectId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. Tasks that are created by using
+     * <code>QuickConnectId</code> will use the flow that is defined on agent or queue
+     * quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create
+     * quick connects</a>.</p>
      */
     inline StartTaskContactRequest& WithQuickConnectId(const char* value) { SetQuickConnectId(value); return *this;}
 
@@ -713,56 +829,96 @@ namespace Model
     /**
      * <p>The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a>
-     * to this contact.</p>
+     * to this contact. Linking tasks together by using <code>RelatedContactID</code>
+     * copies over contact attributes from the related task contact to the new task
+     * contact. All updates to user-defined attributes in the new task contact are
+     * limited to the individual contact ID, unlike what happens when tasks are linked
+     * by using <code>PreviousContactID</code>. There are no limits to the number of
+     * contacts that can be linked by using <code>RelatedContactId</code>. </p>
      */
     inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
 
     /**
      * <p>The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a>
-     * to this contact.</p>
+     * to this contact. Linking tasks together by using <code>RelatedContactID</code>
+     * copies over contact attributes from the related task contact to the new task
+     * contact. All updates to user-defined attributes in the new task contact are
+     * limited to the individual contact ID, unlike what happens when tasks are linked
+     * by using <code>PreviousContactID</code>. There are no limits to the number of
+     * contacts that can be linked by using <code>RelatedContactId</code>. </p>
      */
     inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
 
     /**
      * <p>The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a>
-     * to this contact.</p>
+     * to this contact. Linking tasks together by using <code>RelatedContactID</code>
+     * copies over contact attributes from the related task contact to the new task
+     * contact. All updates to user-defined attributes in the new task contact are
+     * limited to the individual contact ID, unlike what happens when tasks are linked
+     * by using <code>PreviousContactID</code>. There are no limits to the number of
+     * contacts that can be linked by using <code>RelatedContactId</code>. </p>
      */
     inline void SetRelatedContactId(const Aws::String& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = value; }
 
     /**
      * <p>The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a>
-     * to this contact.</p>
+     * to this contact. Linking tasks together by using <code>RelatedContactID</code>
+     * copies over contact attributes from the related task contact to the new task
+     * contact. All updates to user-defined attributes in the new task contact are
+     * limited to the individual contact ID, unlike what happens when tasks are linked
+     * by using <code>PreviousContactID</code>. There are no limits to the number of
+     * contacts that can be linked by using <code>RelatedContactId</code>. </p>
      */
     inline void SetRelatedContactId(Aws::String&& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = std::move(value); }
 
     /**
      * <p>The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a>
-     * to this contact.</p>
+     * to this contact. Linking tasks together by using <code>RelatedContactID</code>
+     * copies over contact attributes from the related task contact to the new task
+     * contact. All updates to user-defined attributes in the new task contact are
+     * limited to the individual contact ID, unlike what happens when tasks are linked
+     * by using <code>PreviousContactID</code>. There are no limits to the number of
+     * contacts that can be linked by using <code>RelatedContactId</code>. </p>
      */
     inline void SetRelatedContactId(const char* value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId.assign(value); }
 
     /**
      * <p>The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a>
-     * to this contact.</p>
+     * to this contact. Linking tasks together by using <code>RelatedContactID</code>
+     * copies over contact attributes from the related task contact to the new task
+     * contact. All updates to user-defined attributes in the new task contact are
+     * limited to the individual contact ID, unlike what happens when tasks are linked
+     * by using <code>PreviousContactID</code>. There are no limits to the number of
+     * contacts that can be linked by using <code>RelatedContactId</code>. </p>
      */
     inline StartTaskContactRequest& WithRelatedContactId(const Aws::String& value) { SetRelatedContactId(value); return *this;}
 
     /**
      * <p>The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a>
-     * to this contact.</p>
+     * to this contact. Linking tasks together by using <code>RelatedContactID</code>
+     * copies over contact attributes from the related task contact to the new task
+     * contact. All updates to user-defined attributes in the new task contact are
+     * limited to the individual contact ID, unlike what happens when tasks are linked
+     * by using <code>PreviousContactID</code>. There are no limits to the number of
+     * contacts that can be linked by using <code>RelatedContactId</code>. </p>
      */
     inline StartTaskContactRequest& WithRelatedContactId(Aws::String&& value) { SetRelatedContactId(std::move(value)); return *this;}
 
     /**
      * <p>The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a>
-     * to this contact.</p>
+     * to this contact. Linking tasks together by using <code>RelatedContactID</code>
+     * copies over contact attributes from the related task contact to the new task
+     * contact. All updates to user-defined attributes in the new task contact are
+     * limited to the individual contact ID, unlike what happens when tasks are linked
+     * by using <code>PreviousContactID</code>. There are no limits to the number of
+     * contacts that can be linked by using <code>RelatedContactId</code>. </p>
      */
     inline StartTaskContactRequest& WithRelatedContactId(const char* value) { SetRelatedContactId(value); return *this;}
 

@@ -42,7 +42,10 @@ ExportDescription::ExportDescription() :
     m_billedSizeBytes(0),
     m_billedSizeBytesHasBeenSet(false),
     m_itemCount(0),
-    m_itemCountHasBeenSet(false)
+    m_itemCountHasBeenSet(false),
+    m_exportType(ExportType::NOT_SET),
+    m_exportTypeHasBeenSet(false),
+    m_incrementalExportSpecificationHasBeenSet(false)
 {
 }
 
@@ -70,7 +73,10 @@ ExportDescription::ExportDescription(JsonView jsonValue) :
     m_billedSizeBytes(0),
     m_billedSizeBytesHasBeenSet(false),
     m_itemCount(0),
-    m_itemCountHasBeenSet(false)
+    m_itemCountHasBeenSet(false),
+    m_exportType(ExportType::NOT_SET),
+    m_exportTypeHasBeenSet(false),
+    m_incrementalExportSpecificationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -210,6 +216,20 @@ ExportDescription& ExportDescription::operator =(JsonView jsonValue)
     m_itemCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExportType"))
+  {
+    m_exportType = ExportTypeMapper::GetExportTypeForName(jsonValue.GetString("ExportType"));
+
+    m_exportTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IncrementalExportSpecification"))
+  {
+    m_incrementalExportSpecification = jsonValue.GetObject("IncrementalExportSpecification");
+
+    m_incrementalExportSpecificationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -322,6 +342,17 @@ JsonValue ExportDescription::Jsonize() const
   if(m_itemCountHasBeenSet)
   {
    payload.WithInt64("ItemCount", m_itemCount);
+
+  }
+
+  if(m_exportTypeHasBeenSet)
+  {
+   payload.WithString("ExportType", ExportTypeMapper::GetNameForExportType(m_exportType));
+  }
+
+  if(m_incrementalExportSpecificationHasBeenSet)
+  {
+   payload.WithObject("IncrementalExportSpecification", m_incrementalExportSpecification.Jsonize());
 
   }
 

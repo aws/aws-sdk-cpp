@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The name of a context that must be active for an intent to be selected by
-   * Amazon Lex.</p><p><h3>See Also:</h3>   <a
+   * <p>A context that must be active for an intent to be selected by Amazon
+   * Lex.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/InputContext">AWS
    * API Reference</a></p>
    */

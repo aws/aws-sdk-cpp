@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/internetmonitor/model/MonitorConfigState.h>
 #include <aws/internetmonitor/model/InternetMeasurementsLogDelivery.h>
+#include <aws/internetmonitor/model/HealthEventsConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -79,90 +80,108 @@ namespace Model
 
     /**
      * <p>The resources to include in a monitor, which you provide as a set of Amazon
-     * Resource Names (ARNs).</p> <p>You can add a combination of Amazon Virtual
-     * Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon
-     * WorkSpaces directories. You can't add all three types of resources.</p> 
-     * <p>If you add only VPC resources, at least one VPC must have an Internet Gateway
+     * Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront
+     * distributions, or Amazon WorkSpaces directories.</p> <p>You can add a
+     * combination of VPCs and CloudFront distributions, or you can add WorkSpaces
+     * directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories
+     * together with any other resources.</p>  <p>If you add only Amazon Virtual
+     * Private Clouds resources, at least one VPC must have an Internet Gateway
      * attached to it, to make sure that it has internet connectivity.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetResourcesToAdd() const{ return m_resourcesToAdd; }
 
     /**
      * <p>The resources to include in a monitor, which you provide as a set of Amazon
-     * Resource Names (ARNs).</p> <p>You can add a combination of Amazon Virtual
-     * Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon
-     * WorkSpaces directories. You can't add all three types of resources.</p> 
-     * <p>If you add only VPC resources, at least one VPC must have an Internet Gateway
+     * Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront
+     * distributions, or Amazon WorkSpaces directories.</p> <p>You can add a
+     * combination of VPCs and CloudFront distributions, or you can add WorkSpaces
+     * directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories
+     * together with any other resources.</p>  <p>If you add only Amazon Virtual
+     * Private Clouds resources, at least one VPC must have an Internet Gateway
      * attached to it, to make sure that it has internet connectivity.</p> 
      */
     inline bool ResourcesToAddHasBeenSet() const { return m_resourcesToAddHasBeenSet; }
 
     /**
      * <p>The resources to include in a monitor, which you provide as a set of Amazon
-     * Resource Names (ARNs).</p> <p>You can add a combination of Amazon Virtual
-     * Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon
-     * WorkSpaces directories. You can't add all three types of resources.</p> 
-     * <p>If you add only VPC resources, at least one VPC must have an Internet Gateway
+     * Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront
+     * distributions, or Amazon WorkSpaces directories.</p> <p>You can add a
+     * combination of VPCs and CloudFront distributions, or you can add WorkSpaces
+     * directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories
+     * together with any other resources.</p>  <p>If you add only Amazon Virtual
+     * Private Clouds resources, at least one VPC must have an Internet Gateway
      * attached to it, to make sure that it has internet connectivity.</p> 
      */
     inline void SetResourcesToAdd(const Aws::Vector<Aws::String>& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd = value; }
 
     /**
      * <p>The resources to include in a monitor, which you provide as a set of Amazon
-     * Resource Names (ARNs).</p> <p>You can add a combination of Amazon Virtual
-     * Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon
-     * WorkSpaces directories. You can't add all three types of resources.</p> 
-     * <p>If you add only VPC resources, at least one VPC must have an Internet Gateway
+     * Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront
+     * distributions, or Amazon WorkSpaces directories.</p> <p>You can add a
+     * combination of VPCs and CloudFront distributions, or you can add WorkSpaces
+     * directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories
+     * together with any other resources.</p>  <p>If you add only Amazon Virtual
+     * Private Clouds resources, at least one VPC must have an Internet Gateway
      * attached to it, to make sure that it has internet connectivity.</p> 
      */
     inline void SetResourcesToAdd(Aws::Vector<Aws::String>&& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd = std::move(value); }
 
     /**
      * <p>The resources to include in a monitor, which you provide as a set of Amazon
-     * Resource Names (ARNs).</p> <p>You can add a combination of Amazon Virtual
-     * Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon
-     * WorkSpaces directories. You can't add all three types of resources.</p> 
-     * <p>If you add only VPC resources, at least one VPC must have an Internet Gateway
+     * Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront
+     * distributions, or Amazon WorkSpaces directories.</p> <p>You can add a
+     * combination of VPCs and CloudFront distributions, or you can add WorkSpaces
+     * directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories
+     * together with any other resources.</p>  <p>If you add only Amazon Virtual
+     * Private Clouds resources, at least one VPC must have an Internet Gateway
      * attached to it, to make sure that it has internet connectivity.</p> 
      */
     inline UpdateMonitorRequest& WithResourcesToAdd(const Aws::Vector<Aws::String>& value) { SetResourcesToAdd(value); return *this;}
 
     /**
      * <p>The resources to include in a monitor, which you provide as a set of Amazon
-     * Resource Names (ARNs).</p> <p>You can add a combination of Amazon Virtual
-     * Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon
-     * WorkSpaces directories. You can't add all three types of resources.</p> 
-     * <p>If you add only VPC resources, at least one VPC must have an Internet Gateway
+     * Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront
+     * distributions, or Amazon WorkSpaces directories.</p> <p>You can add a
+     * combination of VPCs and CloudFront distributions, or you can add WorkSpaces
+     * directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories
+     * together with any other resources.</p>  <p>If you add only Amazon Virtual
+     * Private Clouds resources, at least one VPC must have an Internet Gateway
      * attached to it, to make sure that it has internet connectivity.</p> 
      */
     inline UpdateMonitorRequest& WithResourcesToAdd(Aws::Vector<Aws::String>&& value) { SetResourcesToAdd(std::move(value)); return *this;}
 
     /**
      * <p>The resources to include in a monitor, which you provide as a set of Amazon
-     * Resource Names (ARNs).</p> <p>You can add a combination of Amazon Virtual
-     * Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon
-     * WorkSpaces directories. You can't add all three types of resources.</p> 
-     * <p>If you add only VPC resources, at least one VPC must have an Internet Gateway
+     * Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront
+     * distributions, or Amazon WorkSpaces directories.</p> <p>You can add a
+     * combination of VPCs and CloudFront distributions, or you can add WorkSpaces
+     * directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories
+     * together with any other resources.</p>  <p>If you add only Amazon Virtual
+     * Private Clouds resources, at least one VPC must have an Internet Gateway
      * attached to it, to make sure that it has internet connectivity.</p> 
      */
     inline UpdateMonitorRequest& AddResourcesToAdd(const Aws::String& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd.push_back(value); return *this; }
 
     /**
      * <p>The resources to include in a monitor, which you provide as a set of Amazon
-     * Resource Names (ARNs).</p> <p>You can add a combination of Amazon Virtual
-     * Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon
-     * WorkSpaces directories. You can't add all three types of resources.</p> 
-     * <p>If you add only VPC resources, at least one VPC must have an Internet Gateway
+     * Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront
+     * distributions, or Amazon WorkSpaces directories.</p> <p>You can add a
+     * combination of VPCs and CloudFront distributions, or you can add WorkSpaces
+     * directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories
+     * together with any other resources.</p>  <p>If you add only Amazon Virtual
+     * Private Clouds resources, at least one VPC must have an Internet Gateway
      * attached to it, to make sure that it has internet connectivity.</p> 
      */
     inline UpdateMonitorRequest& AddResourcesToAdd(Aws::String&& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The resources to include in a monitor, which you provide as a set of Amazon
-     * Resource Names (ARNs).</p> <p>You can add a combination of Amazon Virtual
-     * Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon
-     * WorkSpaces directories. You can't add all three types of resources.</p> 
-     * <p>If you add only VPC resources, at least one VPC must have an Internet Gateway
+     * Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront
+     * distributions, or Amazon WorkSpaces directories.</p> <p>You can add a
+     * combination of VPCs and CloudFront distributions, or you can add WorkSpaces
+     * directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories
+     * together with any other resources.</p>  <p>If you add only Amazon Virtual
+     * Private Clouds resources, at least one VPC must have an Internet Gateway
      * attached to it, to make sure that it has internet connectivity.</p> 
      */
     inline UpdateMonitorRequest& AddResourcesToAdd(const char* value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd.push_back(value); return *this; }
@@ -330,34 +349,38 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of city-networks to monitor for your resources. A
+     * <p>The maximum number of city-networks to monitor for your application. A
      * city-network is the location (city) where clients access your application
-     * resources from and the network or ASN, such as an internet service provider,
-     * that clients access the resources through.</p>
+     * resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. Setting this limit
+     * can help control billing costs.</p>
      */
     inline int GetMaxCityNetworksToMonitor() const{ return m_maxCityNetworksToMonitor; }
 
     /**
-     * <p>The maximum number of city-networks to monitor for your resources. A
+     * <p>The maximum number of city-networks to monitor for your application. A
      * city-network is the location (city) where clients access your application
-     * resources from and the network or ASN, such as an internet service provider,
-     * that clients access the resources through.</p>
+     * resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. Setting this limit
+     * can help control billing costs.</p>
      */
     inline bool MaxCityNetworksToMonitorHasBeenSet() const { return m_maxCityNetworksToMonitorHasBeenSet; }
 
     /**
-     * <p>The maximum number of city-networks to monitor for your resources. A
+     * <p>The maximum number of city-networks to monitor for your application. A
      * city-network is the location (city) where clients access your application
-     * resources from and the network or ASN, such as an internet service provider,
-     * that clients access the resources through.</p>
+     * resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. Setting this limit
+     * can help control billing costs.</p>
      */
     inline void SetMaxCityNetworksToMonitor(int value) { m_maxCityNetworksToMonitorHasBeenSet = true; m_maxCityNetworksToMonitor = value; }
 
     /**
-     * <p>The maximum number of city-networks to monitor for your resources. A
+     * <p>The maximum number of city-networks to monitor for your application. A
      * city-network is the location (city) where clients access your application
-     * resources from and the network or ASN, such as an internet service provider,
-     * that clients access the resources through.</p>
+     * resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. Setting this limit
+     * can help control billing costs.</p>
      */
     inline UpdateMonitorRequest& WithMaxCityNetworksToMonitor(int value) { SetMaxCityNetworksToMonitor(value); return *this;}
 
@@ -407,27 +430,114 @@ namespace Model
 
     /**
      * <p>The percentage of the internet-facing traffic for your application that you
-     * want to monitor with this monitor.</p>
+     * want to monitor with this monitor. If you set a city-networks maximum, that
+     * limit overrides the traffic percentage that you set.</p> <p>To learn more, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing
+     * an application traffic percentage to monitor </a> in the Amazon CloudWatch
+     * Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline int GetTrafficPercentageToMonitor() const{ return m_trafficPercentageToMonitor; }
 
     /**
      * <p>The percentage of the internet-facing traffic for your application that you
-     * want to monitor with this monitor.</p>
+     * want to monitor with this monitor. If you set a city-networks maximum, that
+     * limit overrides the traffic percentage that you set.</p> <p>To learn more, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing
+     * an application traffic percentage to monitor </a> in the Amazon CloudWatch
+     * Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline bool TrafficPercentageToMonitorHasBeenSet() const { return m_trafficPercentageToMonitorHasBeenSet; }
 
     /**
      * <p>The percentage of the internet-facing traffic for your application that you
-     * want to monitor with this monitor.</p>
+     * want to monitor with this monitor. If you set a city-networks maximum, that
+     * limit overrides the traffic percentage that you set.</p> <p>To learn more, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing
+     * an application traffic percentage to monitor </a> in the Amazon CloudWatch
+     * Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline void SetTrafficPercentageToMonitor(int value) { m_trafficPercentageToMonitorHasBeenSet = true; m_trafficPercentageToMonitor = value; }
 
     /**
      * <p>The percentage of the internet-facing traffic for your application that you
-     * want to monitor with this monitor.</p>
+     * want to monitor with this monitor. If you set a city-networks maximum, that
+     * limit overrides the traffic percentage that you set.</p> <p>To learn more, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing
+     * an application traffic percentage to monitor </a> in the Amazon CloudWatch
+     * Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline UpdateMonitorRequest& WithTrafficPercentageToMonitor(int value) { SetTrafficPercentageToMonitor(value); return *this;}
+
+
+    /**
+     * <p>The list of health score thresholds. A threshold percentage for health
+     * scores, along with other configuration information, determines when Internet
+     * Monitor creates a health event when there's an internet issue that affects your
+     * application end users.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+     * Change health event thresholds</a> in the Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.</p>
+     */
+    inline const HealthEventsConfig& GetHealthEventsConfig() const{ return m_healthEventsConfig; }
+
+    /**
+     * <p>The list of health score thresholds. A threshold percentage for health
+     * scores, along with other configuration information, determines when Internet
+     * Monitor creates a health event when there's an internet issue that affects your
+     * application end users.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+     * Change health event thresholds</a> in the Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.</p>
+     */
+    inline bool HealthEventsConfigHasBeenSet() const { return m_healthEventsConfigHasBeenSet; }
+
+    /**
+     * <p>The list of health score thresholds. A threshold percentage for health
+     * scores, along with other configuration information, determines when Internet
+     * Monitor creates a health event when there's an internet issue that affects your
+     * application end users.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+     * Change health event thresholds</a> in the Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.</p>
+     */
+    inline void SetHealthEventsConfig(const HealthEventsConfig& value) { m_healthEventsConfigHasBeenSet = true; m_healthEventsConfig = value; }
+
+    /**
+     * <p>The list of health score thresholds. A threshold percentage for health
+     * scores, along with other configuration information, determines when Internet
+     * Monitor creates a health event when there's an internet issue that affects your
+     * application end users.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+     * Change health event thresholds</a> in the Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.</p>
+     */
+    inline void SetHealthEventsConfig(HealthEventsConfig&& value) { m_healthEventsConfigHasBeenSet = true; m_healthEventsConfig = std::move(value); }
+
+    /**
+     * <p>The list of health score thresholds. A threshold percentage for health
+     * scores, along with other configuration information, determines when Internet
+     * Monitor creates a health event when there's an internet issue that affects your
+     * application end users.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+     * Change health event thresholds</a> in the Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.</p>
+     */
+    inline UpdateMonitorRequest& WithHealthEventsConfig(const HealthEventsConfig& value) { SetHealthEventsConfig(value); return *this;}
+
+    /**
+     * <p>The list of health score thresholds. A threshold percentage for health
+     * scores, along with other configuration information, determines when Internet
+     * Monitor creates a health event when there's an internet issue that affects your
+     * application end users.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+     * Change health event thresholds</a> in the Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.</p>
+     */
+    inline UpdateMonitorRequest& WithHealthEventsConfig(HealthEventsConfig&& value) { SetHealthEventsConfig(std::move(value)); return *this;}
 
   private:
 
@@ -454,6 +564,9 @@ namespace Model
 
     int m_trafficPercentageToMonitor;
     bool m_trafficPercentageToMonitorHasBeenSet = false;
+
+    HealthEventsConfig m_healthEventsConfig;
+    bool m_healthEventsConfigHasBeenSet = false;
   };
 
 } // namespace Model

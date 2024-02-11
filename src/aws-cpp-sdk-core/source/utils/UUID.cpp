@@ -9,6 +9,10 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/SecureRandom.h>
 #include <iomanip>
+#include <random>
+#include <chrono>
+#include <thread>
+#include <mutex>
 
 namespace Aws
 {
@@ -31,7 +35,7 @@ namespace Aws
             }
         }
 
-        UUID::UUID(const Aws::String& uuidToConvert)
+        Aws::Utils::UUID::UUID(const Aws::String& uuidToConvert)
         {
             //GUID has 2 characters per byte + 4 dashes = 36 bytes
             assert(uuidToConvert.length() == UUID_STR_SIZE);
@@ -43,12 +47,12 @@ namespace Aws
             memcpy(m_uuid, rawUuid.GetUnderlyingData(), rawUuid.GetLength());
         }
 
-        UUID::UUID(const unsigned char toCopy[UUID_BINARY_SIZE])
+        Aws::Utils::UUID::UUID(const unsigned char toCopy[UUID_BINARY_SIZE])
         {
             memcpy(m_uuid, toCopy, sizeof(m_uuid));
         }
 
-        UUID::operator Aws::String() const
+        Aws::Utils::UUID::operator Aws::String() const
         {
             Aws::String ss;
             ss.reserve(UUID_STR_SIZE);
@@ -69,7 +73,7 @@ namespace Aws
             return ss;
         }
 
-        UUID UUID::RandomUUID()
+        Aws::Utils::UUID UUID::RandomUUID()
         {
             auto secureRandom = Crypto::CreateSecureRandomBytesImplementation();
             assert(secureRandom);
@@ -84,7 +88,46 @@ namespace Aws
             //https://tools.ietf.org/html/rfc4122#section-4.1.1
             randomBytes[VARIANT_LOCATION] = (randomBytes[VARIANT_LOCATION] & VARIANT_MASK) | VARIANT;
 
-            return UUID(randomBytes);
+            return Aws::Utils::UUID(randomBytes);
+        }
+
+#ifdef UINT64_MAX
+        using MTEngine = std::mt19937_64;
+        using RandGenType = uint64_t;
+#else
+        using MTEngine = std::mt19937;
+        using RandGenType = unsigned int;
+#endif
+
+        static size_t GetCurrentThreadRandomSeed()
+        {
+            static size_t processRandomSeed = std::random_device{}();
+            static MTEngine threadRandomSeedGen(processRandomSeed);
+            // Threads can be re-used (esp. on OS X), generate a true random per-thread random seed
+            static std::mutex threadRandomSeedGenMtx;
+            std::unique_lock<std::mutex> lock(threadRandomSeedGenMtx);
+            return static_cast<size_t>(std::hash<std::thread::id>{}(std::this_thread::get_id()) ^ threadRandomSeedGen());
+        }
+
+        Aws::Utils::UUID UUID::PseudoRandomUUID()
+        {
+            static const thread_local size_t threadSeed = GetCurrentThreadRandomSeed();
+            static thread_local MTEngine gen(threadSeed);
+
+            unsigned char randomBytes[UUID_BINARY_SIZE] = {0};
+
+            for (size_t i = 0; i < UUID_BINARY_SIZE / sizeof(RandGenType); i++) {
+                reinterpret_cast<RandGenType*>(randomBytes)[i] = gen();
+            }
+
+            //Set version bits to 0100
+            //https://tools.ietf.org/html/rfc4122#section-4.1.3
+            randomBytes[VERSION_LOCATION] = (randomBytes[VERSION_LOCATION] & VERSION_MASK) | VERSION;
+            //set variant bits to 10
+            //https://tools.ietf.org/html/rfc4122#section-4.1.1
+            randomBytes[VARIANT_LOCATION] = (randomBytes[VARIANT_LOCATION] & VARIANT_MASK) | VARIANT;
+
+            return Aws::Utils::UUID(randomBytes);
         }
     }
 }

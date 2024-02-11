@@ -47,7 +47,9 @@ ModifyReplicationGroupRequest::ModifyReplicationGroupRequest() :
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false)
+    m_transitEncryptionModeHasBeenSet(false),
+    m_clusterMode(ClusterMode::NOT_SET),
+    m_clusterModeHasBeenSet(false)
 {
 }
 
@@ -217,6 +219,11 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
   if(m_transitEncryptionModeHasBeenSet)
   {
     ss << "TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+  }
+
+  if(m_clusterModeHasBeenSet)
+  {
+    ss << "ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
   }
 
   ss << "Version=2015-02-02";

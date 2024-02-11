@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> <b>[AMI policies only]</b> Specifies an AMI deprecation rule for AMIs
+   * <p> <b>[Custom AMI policies only]</b> Specifies an AMI deprecation rule for AMIs
    * created by an AMI lifecycle policy.</p> <p>For age-based schedules, you must
    * specify <b>Interval</b> and <b>IntervalUnit</b>. For count-based schedules, you
    * must specify <b>Count</b>.</p><p><h3>See Also:</h3>   <a

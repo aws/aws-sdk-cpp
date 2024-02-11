@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the S3 bucket where you saved your unsigned
+   * <p>Information about the Amazon S3 bucket where you saved your unsigned
    * code.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/S3Source">AWS API
    * Reference</a></p>

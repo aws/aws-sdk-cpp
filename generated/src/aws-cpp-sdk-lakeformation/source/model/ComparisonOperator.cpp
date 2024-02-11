@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComparisonOperator::NOT_SET:
+            return {};
           case ComparisonOperator::EQ:
             return "EQ";
           case ComparisonOperator::NE:

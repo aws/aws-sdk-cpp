@@ -376,41 +376,41 @@ namespace Model
 
     /**
      * <p>Defines the impact to the customers. Providing an impact overwrites the
-     * impact provided by a response plan.</p> <p class="title"> <b>Possible
-     * impacts:</b> </p> <ul> <li> <p> <code>5</code> - Severe impact</p> </li> <li>
-     * <p> <code>4</code> - High impact</p> </li> <li> <p> <code>3</code> - Medium
-     * impact</p> </li> <li> <p> <code>2</code> - Low impact</p> </li> <li> <p>
-     * <code>1</code> - No impact</p> </li> </ul>
+     * impact provided by a response plan.</p> <p class="title"> <b>Supported impact
+     * codes</b> </p> <ul> <li> <p> <code>1</code> - Critical</p> </li> <li> <p>
+     * <code>2</code> - High</p> </li> <li> <p> <code>3</code> - Medium</p> </li> <li>
+     * <p> <code>4</code> - Low</p> </li> <li> <p> <code>5</code> - No Impact</p> </li>
+     * </ul>
      */
     inline int GetIncidentTemplateImpact() const{ return m_incidentTemplateImpact; }
 
     /**
      * <p>Defines the impact to the customers. Providing an impact overwrites the
-     * impact provided by a response plan.</p> <p class="title"> <b>Possible
-     * impacts:</b> </p> <ul> <li> <p> <code>5</code> - Severe impact</p> </li> <li>
-     * <p> <code>4</code> - High impact</p> </li> <li> <p> <code>3</code> - Medium
-     * impact</p> </li> <li> <p> <code>2</code> - Low impact</p> </li> <li> <p>
-     * <code>1</code> - No impact</p> </li> </ul>
+     * impact provided by a response plan.</p> <p class="title"> <b>Supported impact
+     * codes</b> </p> <ul> <li> <p> <code>1</code> - Critical</p> </li> <li> <p>
+     * <code>2</code> - High</p> </li> <li> <p> <code>3</code> - Medium</p> </li> <li>
+     * <p> <code>4</code> - Low</p> </li> <li> <p> <code>5</code> - No Impact</p> </li>
+     * </ul>
      */
     inline bool IncidentTemplateImpactHasBeenSet() const { return m_incidentTemplateImpactHasBeenSet; }
 
     /**
      * <p>Defines the impact to the customers. Providing an impact overwrites the
-     * impact provided by a response plan.</p> <p class="title"> <b>Possible
-     * impacts:</b> </p> <ul> <li> <p> <code>5</code> - Severe impact</p> </li> <li>
-     * <p> <code>4</code> - High impact</p> </li> <li> <p> <code>3</code> - Medium
-     * impact</p> </li> <li> <p> <code>2</code> - Low impact</p> </li> <li> <p>
-     * <code>1</code> - No impact</p> </li> </ul>
+     * impact provided by a response plan.</p> <p class="title"> <b>Supported impact
+     * codes</b> </p> <ul> <li> <p> <code>1</code> - Critical</p> </li> <li> <p>
+     * <code>2</code> - High</p> </li> <li> <p> <code>3</code> - Medium</p> </li> <li>
+     * <p> <code>4</code> - Low</p> </li> <li> <p> <code>5</code> - No Impact</p> </li>
+     * </ul>
      */
     inline void SetIncidentTemplateImpact(int value) { m_incidentTemplateImpactHasBeenSet = true; m_incidentTemplateImpact = value; }
 
     /**
      * <p>Defines the impact to the customers. Providing an impact overwrites the
-     * impact provided by a response plan.</p> <p class="title"> <b>Possible
-     * impacts:</b> </p> <ul> <li> <p> <code>5</code> - Severe impact</p> </li> <li>
-     * <p> <code>4</code> - High impact</p> </li> <li> <p> <code>3</code> - Medium
-     * impact</p> </li> <li> <p> <code>2</code> - Low impact</p> </li> <li> <p>
-     * <code>1</code> - No impact</p> </li> </ul>
+     * impact provided by a response plan.</p> <p class="title"> <b>Supported impact
+     * codes</b> </p> <ul> <li> <p> <code>1</code> - Critical</p> </li> <li> <p>
+     * <code>2</code> - High</p> </li> <li> <p> <code>3</code> - Medium</p> </li> <li>
+     * <p> <code>4</code> - Low</p> </li> <li> <p> <code>5</code> - No Impact</p> </li>
+     * </ul>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateImpact(int value) { SetIncidentTemplateImpact(value); return *this;}
 

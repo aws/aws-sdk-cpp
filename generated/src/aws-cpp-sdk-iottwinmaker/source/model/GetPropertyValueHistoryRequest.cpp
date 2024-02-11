@@ -16,6 +16,7 @@ GetPropertyValueHistoryRequest::GetPropertyValueHistoryRequest() :
     m_workspaceIdHasBeenSet(false),
     m_entityIdHasBeenSet(false),
     m_componentNameHasBeenSet(false),
+    m_componentPathHasBeenSet(false),
     m_componentTypeIdHasBeenSet(false),
     m_selectedPropertiesHasBeenSet(false),
     m_propertyFiltersHasBeenSet(false),
@@ -43,6 +44,12 @@ Aws::String GetPropertyValueHistoryRequest::SerializePayload() const
   if(m_componentNameHasBeenSet)
   {
    payload.WithString("componentName", m_componentName);
+
+  }
+
+  if(m_componentPathHasBeenSet)
+  {
+   payload.WithString("componentPath", m_componentPath);
 
   }
 

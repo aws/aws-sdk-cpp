@@ -681,46 +681,82 @@ namespace Model
 
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifier = value; }
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifier = std::move(value); }
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifier.assign(value); }
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline StartDeploymentResult& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline StartDeploymentResult& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline StartDeploymentResult& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(const Aws::String& value) { m_versionLabel = value; }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabel = std::move(value); }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(const char* value) { m_versionLabel.assign(value); }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline StartDeploymentResult& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline StartDeploymentResult& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline StartDeploymentResult& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
 
     
@@ -787,6 +823,8 @@ namespace Model
     Aws::String m_kmsKeyArn;
 
     Aws::String m_kmsKeyIdentifier;
+
+    Aws::String m_versionLabel;
 
     Aws::String m_requestId;
   };

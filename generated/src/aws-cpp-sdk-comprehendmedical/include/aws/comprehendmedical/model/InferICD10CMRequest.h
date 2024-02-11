@@ -35,50 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The input text used for analysis. The input for InferICD10CM is a string from
-     * 1 to 10000 characters.</p>
+     * <p>The input text used for analysis.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
-     * <p>The input text used for analysis. The input for InferICD10CM is a string from
-     * 1 to 10000 characters.</p>
+     * <p>The input text used for analysis.</p>
      */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
-     * <p>The input text used for analysis. The input for InferICD10CM is a string from
-     * 1 to 10000 characters.</p>
+     * <p>The input text used for analysis.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
-     * <p>The input text used for analysis. The input for InferICD10CM is a string from
-     * 1 to 10000 characters.</p>
+     * <p>The input text used for analysis.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
-     * <p>The input text used for analysis. The input for InferICD10CM is a string from
-     * 1 to 10000 characters.</p>
+     * <p>The input text used for analysis.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
-     * <p>The input text used for analysis. The input for InferICD10CM is a string from
-     * 1 to 10000 characters.</p>
+     * <p>The input text used for analysis.</p>
      */
     inline InferICD10CMRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
-     * <p>The input text used for analysis. The input for InferICD10CM is a string from
-     * 1 to 10000 characters.</p>
+     * <p>The input text used for analysis.</p>
      */
     inline InferICD10CMRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
-     * <p>The input text used for analysis. The input for InferICD10CM is a string from
-     * 1 to 10000 characters.</p>
+     * <p>The input text used for analysis.</p>
      */
     inline InferICD10CMRequest& WithText(const char* value) { SetText(value); return *this;}
 

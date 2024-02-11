@@ -35,7 +35,9 @@ Policy::Policy() :
     m_includeMapHasBeenSet(false),
     m_excludeMapHasBeenSet(false),
     m_resourceSetIdsHasBeenSet(false),
-    m_policyDescriptionHasBeenSet(false)
+    m_policyDescriptionHasBeenSet(false),
+    m_policyStatus(CustomerPolicyStatus::NOT_SET),
+    m_policyStatusHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ Policy::Policy(JsonView jsonValue) :
     m_includeMapHasBeenSet(false),
     m_excludeMapHasBeenSet(false),
     m_resourceSetIdsHasBeenSet(false),
-    m_policyDescriptionHasBeenSet(false)
+    m_policyDescriptionHasBeenSet(false),
+    m_policyStatus(CustomerPolicyStatus::NOT_SET),
+    m_policyStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -190,6 +194,13 @@ Policy& Policy::operator =(JsonView jsonValue)
     m_policyDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PolicyStatus"))
+  {
+    m_policyStatus = CustomerPolicyStatusMapper::GetCustomerPolicyStatusForName(jsonValue.GetString("PolicyStatus"));
+
+    m_policyStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -314,6 +325,11 @@ JsonValue Policy::Jsonize() const
   {
    payload.WithString("PolicyDescription", m_policyDescription);
 
+  }
+
+  if(m_policyStatusHasBeenSet)
+  {
+   payload.WithString("PolicyStatus", CustomerPolicyStatusMapper::GetNameForCustomerPolicyStatus(m_policyStatus));
   }
 
   return payload;

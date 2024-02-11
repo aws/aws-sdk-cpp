@@ -14,6 +14,7 @@
 #include <aws/athena/model/QueryExecutionStatistics.h>
 #include <aws/athena/model/EngineVersion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/athena/model/QueryResultsS3AccessGrantsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -449,63 +450,63 @@ namespace Model
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExecutionParameters() const{ return m_executionParameters; }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline bool ExecutionParametersHasBeenSet() const { return m_executionParametersHasBeenSet; }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline void SetExecutionParameters(const Aws::Vector<Aws::String>& value) { m_executionParametersHasBeenSet = true; m_executionParameters = value; }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline void SetExecutionParameters(Aws::Vector<Aws::String>&& value) { m_executionParametersHasBeenSet = true; m_executionParameters = std::move(value); }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline QueryExecution& WithExecutionParameters(const Aws::Vector<Aws::String>& value) { SetExecutionParameters(value); return *this;}
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline QueryExecution& WithExecutionParameters(Aws::Vector<Aws::String>&& value) { SetExecutionParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline QueryExecution& AddExecutionParameters(const Aws::String& value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline QueryExecution& AddExecutionParameters(Aws::String&& value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline QueryExecution& AddExecutionParameters(const char* value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
 
@@ -550,6 +551,37 @@ namespace Model
      */
     inline QueryExecution& WithSubstatementType(const char* value) { SetSubstatementType(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline const QueryResultsS3AccessGrantsConfiguration& GetQueryResultsS3AccessGrantsConfiguration() const{ return m_queryResultsS3AccessGrantsConfiguration; }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline bool QueryResultsS3AccessGrantsConfigurationHasBeenSet() const { return m_queryResultsS3AccessGrantsConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline void SetQueryResultsS3AccessGrantsConfiguration(const QueryResultsS3AccessGrantsConfiguration& value) { m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true; m_queryResultsS3AccessGrantsConfiguration = value; }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline void SetQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration&& value) { m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true; m_queryResultsS3AccessGrantsConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline QueryExecution& WithQueryResultsS3AccessGrantsConfiguration(const QueryResultsS3AccessGrantsConfiguration& value) { SetQueryResultsS3AccessGrantsConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline QueryExecution& WithQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration&& value) { SetQueryResultsS3AccessGrantsConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_queryExecutionId;
@@ -587,6 +619,9 @@ namespace Model
 
     Aws::String m_substatementType;
     bool m_substatementTypeHasBeenSet = false;
+
+    QueryResultsS3AccessGrantsConfiguration m_queryResultsS3AccessGrantsConfiguration;
+    bool m_queryResultsS3AccessGrantsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,51 +35,58 @@ namespace Model
 
 
     /**
-     * <p>A list of <a>HyperParameterTuningJobSummary</a> objects that describe the
-     * tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a>
+     * objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.</p>
      */
     inline const Aws::Vector<HyperParameterTuningJobSummary>& GetHyperParameterTuningJobSummaries() const{ return m_hyperParameterTuningJobSummaries; }
 
     /**
-     * <p>A list of <a>HyperParameterTuningJobSummary</a> objects that describe the
-     * tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a>
+     * objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.</p>
      */
     inline void SetHyperParameterTuningJobSummaries(const Aws::Vector<HyperParameterTuningJobSummary>& value) { m_hyperParameterTuningJobSummaries = value; }
 
     /**
-     * <p>A list of <a>HyperParameterTuningJobSummary</a> objects that describe the
-     * tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a>
+     * objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.</p>
      */
     inline void SetHyperParameterTuningJobSummaries(Aws::Vector<HyperParameterTuningJobSummary>&& value) { m_hyperParameterTuningJobSummaries = std::move(value); }
 
     /**
-     * <p>A list of <a>HyperParameterTuningJobSummary</a> objects that describe the
-     * tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a>
+     * objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.</p>
      */
     inline ListHyperParameterTuningJobsResult& WithHyperParameterTuningJobSummaries(const Aws::Vector<HyperParameterTuningJobSummary>& value) { SetHyperParameterTuningJobSummaries(value); return *this;}
 
     /**
-     * <p>A list of <a>HyperParameterTuningJobSummary</a> objects that describe the
-     * tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a>
+     * objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.</p>
      */
     inline ListHyperParameterTuningJobsResult& WithHyperParameterTuningJobSummaries(Aws::Vector<HyperParameterTuningJobSummary>&& value) { SetHyperParameterTuningJobSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <a>HyperParameterTuningJobSummary</a> objects that describe the
-     * tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a>
+     * objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.</p>
      */
     inline ListHyperParameterTuningJobsResult& AddHyperParameterTuningJobSummaries(const HyperParameterTuningJobSummary& value) { m_hyperParameterTuningJobSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>HyperParameterTuningJobSummary</a> objects that describe the
-     * tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a>
+     * objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.</p>
      */
     inline ListHyperParameterTuningJobsResult& AddHyperParameterTuningJobSummaries(HyperParameterTuningJobSummary&& value) { m_hyperParameterTuningJobSummaries.push_back(std::move(value)); return *this; }
 

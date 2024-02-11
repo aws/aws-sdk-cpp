@@ -13,11 +13,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreatePermissionSetRequest::CreatePermissionSetRequest() : 
-    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_instanceArnHasBeenSet(false),
-    m_sessionDurationHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_relayStateHasBeenSet(false),
+    m_sessionDurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -25,12 +25,6 @@ CreatePermissionSetRequest::CreatePermissionSetRequest() :
 Aws::String CreatePermissionSetRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
-  }
 
   if(m_descriptionHasBeenSet)
   {
@@ -44,15 +38,21 @@ Aws::String CreatePermissionSetRequest::SerializePayload() const
 
   }
 
-  if(m_sessionDurationHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("SessionDuration", m_sessionDuration);
+   payload.WithString("Name", m_name);
 
   }
 
   if(m_relayStateHasBeenSet)
   {
    payload.WithString("RelayState", m_relayState);
+
+  }
+
+  if(m_sessionDurationHasBeenSet)
+  {
+   payload.WithString("SessionDuration", m_sessionDuration);
 
   }
 

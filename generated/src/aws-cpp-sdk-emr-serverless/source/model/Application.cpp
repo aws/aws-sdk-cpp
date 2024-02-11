@@ -38,7 +38,9 @@ Application::Application() :
     m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
     m_imageConfigurationHasBeenSet(false),
-    m_workerTypeSpecificationsHasBeenSet(false)
+    m_workerTypeSpecificationsHasBeenSet(false),
+    m_runtimeConfigurationHasBeenSet(false),
+    m_monitoringConfigurationHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ Application::Application(JsonView jsonValue) :
     m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
     m_imageConfigurationHasBeenSet(false),
-    m_workerTypeSpecificationsHasBeenSet(false)
+    m_workerTypeSpecificationsHasBeenSet(false),
+    m_runtimeConfigurationHasBeenSet(false),
+    m_monitoringConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -204,6 +208,23 @@ Application& Application::operator =(JsonView jsonValue)
     m_workerTypeSpecificationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("runtimeConfiguration"))
+  {
+    Aws::Utils::Array<JsonView> runtimeConfigurationJsonList = jsonValue.GetArray("runtimeConfiguration");
+    for(unsigned runtimeConfigurationIndex = 0; runtimeConfigurationIndex < runtimeConfigurationJsonList.GetLength(); ++runtimeConfigurationIndex)
+    {
+      m_runtimeConfiguration.push_back(runtimeConfigurationJsonList[runtimeConfigurationIndex].AsObject());
+    }
+    m_runtimeConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("monitoringConfiguration"))
+  {
+    m_monitoringConfiguration = jsonValue.GetObject("monitoringConfiguration");
+
+    m_monitoringConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -327,6 +348,23 @@ JsonValue Application::Jsonize() const
      workerTypeSpecificationsJsonMap.WithObject(workerTypeSpecificationsItem.first, workerTypeSpecificationsItem.second.Jsonize());
    }
    payload.WithObject("workerTypeSpecifications", std::move(workerTypeSpecificationsJsonMap));
+
+  }
+
+  if(m_runtimeConfigurationHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> runtimeConfigurationJsonList(m_runtimeConfiguration.size());
+   for(unsigned runtimeConfigurationIndex = 0; runtimeConfigurationIndex < runtimeConfigurationJsonList.GetLength(); ++runtimeConfigurationIndex)
+   {
+     runtimeConfigurationJsonList[runtimeConfigurationIndex].AsObject(m_runtimeConfiguration[runtimeConfigurationIndex].Jsonize());
+   }
+   payload.WithArray("runtimeConfiguration", std::move(runtimeConfigurationJsonList));
+
+  }
+
+  if(m_monitoringConfigurationHasBeenSet)
+  {
+   payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
 
   }
 

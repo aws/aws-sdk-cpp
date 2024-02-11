@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationHealthStatus::NOT_SET:
+            return {};
           case ApplicationHealthStatus::HEALTHY:
             return "HEALTHY";
           case ApplicationHealthStatus::LAGGING:

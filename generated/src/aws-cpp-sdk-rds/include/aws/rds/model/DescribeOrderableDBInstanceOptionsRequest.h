@@ -42,375 +42,371 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
-     * <p>The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version.</p>
+     * <p>A filter to include only the available options for the specified engine
+     * version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version.</p>
+     * <p>A filter to include only the available options for the specified engine
+     * version.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version.</p>
+     * <p>A filter to include only the available options for the specified engine
+     * version.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version.</p>
+     * <p>A filter to include only the available options for the specified engine
+     * version.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version.</p>
+     * <p>A filter to include only the available options for the specified engine
+     * version.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version.</p>
+     * <p>A filter to include only the available options for the specified engine
+     * version.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version.</p>
+     * <p>A filter to include only the available options for the specified engine
+     * version.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version.</p>
+     * <p>A filter to include only the available options for the specified engine
+     * version.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
 
     /**
-     * <p>The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class.</p>
+     * <p>A filter to include only the available options for the specified DB instance
+     * class.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p>The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class.</p>
+     * <p>A filter to include only the available options for the specified DB instance
+     * class.</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
-     * <p>The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class.</p>
+     * <p>A filter to include only the available options for the specified DB instance
+     * class.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p>The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class.</p>
+     * <p>A filter to include only the available options for the specified DB instance
+     * class.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p>The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class.</p>
+     * <p>A filter to include only the available options for the specified DB instance
+     * class.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p>The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class.</p>
+     * <p>A filter to include only the available options for the specified DB instance
+     * class.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p>The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class.</p>
+     * <p>A filter to include only the available options for the specified DB instance
+     * class.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class.</p>
+     * <p>A filter to include only the available options for the specified DB instance
+     * class.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
 
     /**
-     * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p> <p>RDS Custom
-     * supports only the BYOL licensing model.</p>
+     * <p>A filter to include only the available options for the specified license
+     * model.</p> <p>RDS Custom supports only the BYOL licensing model.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
-     * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p> <p>RDS Custom
-     * supports only the BYOL licensing model.</p>
+     * <p>A filter to include only the available options for the specified license
+     * model.</p> <p>RDS Custom supports only the BYOL licensing model.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
-     * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p> <p>RDS Custom
-     * supports only the BYOL licensing model.</p>
+     * <p>A filter to include only the available options for the specified license
+     * model.</p> <p>RDS Custom supports only the BYOL licensing model.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
-     * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p> <p>RDS Custom
-     * supports only the BYOL licensing model.</p>
+     * <p>A filter to include only the available options for the specified license
+     * model.</p> <p>RDS Custom supports only the BYOL licensing model.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
-     * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p> <p>RDS Custom
-     * supports only the BYOL licensing model.</p>
+     * <p>A filter to include only the available options for the specified license
+     * model.</p> <p>RDS Custom supports only the BYOL licensing model.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
-     * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p> <p>RDS Custom
-     * supports only the BYOL licensing model.</p>
+     * <p>A filter to include only the available options for the specified license
+     * model.</p> <p>RDS Custom supports only the BYOL licensing model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
-     * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p> <p>RDS Custom
-     * supports only the BYOL licensing model.</p>
+     * <p>A filter to include only the available options for the specified license
+     * model.</p> <p>RDS Custom supports only the BYOL licensing model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
-     * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p> <p>RDS Custom
-     * supports only the BYOL licensing model.</p>
+     * <p>A filter to include only the available options for the specified license
+     * model.</p> <p>RDS Custom supports only the BYOL licensing model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
-     * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter to retrieve available options for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available options in the specified Amazon Web
+     * Services Region.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline const Aws::String& GetAvailabilityZoneGroup() const{ return m_availabilityZoneGroup; }
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
-     * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter to retrieve available options for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available options in the specified Amazon Web
+     * Services Region.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline bool AvailabilityZoneGroupHasBeenSet() const { return m_availabilityZoneGroupHasBeenSet; }
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
-     * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter to retrieve available options for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available options in the specified Amazon Web
+     * Services Region.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline void SetAvailabilityZoneGroup(const Aws::String& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
-     * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter to retrieve available options for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available options in the specified Amazon Web
+     * Services Region.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::move(value); }
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
-     * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter to retrieve available options for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available options in the specified Amazon Web
+     * Services Region.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline void SetAvailabilityZoneGroup(const char* value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup.assign(value); }
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
-     * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter to retrieve available options for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available options in the specified Amazon Web
+     * Services Region.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const Aws::String& value) { SetAvailabilityZoneGroup(value); return *this;}
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
-     * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter to retrieve available options for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available options in the specified Amazon Web
+     * Services Region.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
-     * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter to retrieve available options for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available options in the specified Amazon Web
+     * Services Region.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
-     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
-     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
-     * VPC offerings.</p>
+     * <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports
+     * only VPC offerings.</p> <p>RDS Custom supports only VPC offerings. If you
+     * describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
      */
     inline bool GetVpc() const{ return m_vpc; }
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
-     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
-     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
-     * VPC offerings.</p>
+     * <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports
+     * only VPC offerings.</p> <p>RDS Custom supports only VPC offerings. If you
+     * describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
      */
     inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
-     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
-     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
-     * VPC offerings.</p>
+     * <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports
+     * only VPC offerings.</p> <p>RDS Custom supports only VPC offerings. If you
+     * describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
      */
     inline void SetVpc(bool value) { m_vpcHasBeenSet = true; m_vpc = value; }
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
-     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
-     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
-     * VPC offerings.</p>
+     * <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports
+     * only VPC offerings.</p> <p>RDS Custom supports only VPC offerings. If you
+     * describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithVpc(bool value) { SetVpc(value); return *this;}
 

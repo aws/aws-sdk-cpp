@@ -24,7 +24,8 @@ RoutingControl::RoutingControl() :
     m_routingControlArnHasBeenSet(false),
     m_routingControlNameHasBeenSet(false),
     m_routingControlState(RoutingControlState::NOT_SET),
-    m_routingControlStateHasBeenSet(false)
+    m_routingControlStateHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ RoutingControl::RoutingControl(JsonView jsonValue) :
     m_routingControlArnHasBeenSet(false),
     m_routingControlNameHasBeenSet(false),
     m_routingControlState(RoutingControlState::NOT_SET),
-    m_routingControlStateHasBeenSet(false)
+    m_routingControlStateHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ RoutingControl& RoutingControl::operator =(JsonView jsonValue)
     m_routingControlStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Owner"))
+  {
+    m_owner = jsonValue.GetString("Owner");
+
+    m_ownerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +119,12 @@ JsonValue RoutingControl::Jsonize() const
   if(m_routingControlStateHasBeenSet)
   {
    payload.WithString("RoutingControlState", RoutingControlStateMapper::GetNameForRoutingControlState(m_routingControlState));
+  }
+
+  if(m_ownerHasBeenSet)
+  {
+   payload.WithString("Owner", m_owner);
+
   }
 
   return payload;

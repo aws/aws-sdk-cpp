@@ -3,11 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <service/S3PutObject.h>
+#include <service/S3Utils.h>
 #include <Util.h>
 #include <metric/Metrics.h>
-#include <aws/core/Aws.h>
 #include <aws/core/utils/UUID.h>
-#include <aws/s3/S3Client.h>
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
@@ -22,17 +21,23 @@ using namespace Aws::S3;
 using namespace Aws::S3::Model;
 using namespace std::chrono;
 
-const static char *ALLOC_TAG = "PUT_OBJECT_BENCHMARK";
-
 Benchmark::TestFunction Benchmark::S3PutObject::CreateTestFunction() {
     return [](const Configuration &configuration, const std::shared_ptr<MetricsEmitter> metricsEmitter) -> void {
         //Create Bucket
-        auto s3 = Aws::MakeUnique<S3Client>(ALLOC_TAG);
-        const auto bucketName = "put-bucket-benchmark-" + RandomString(8);
+        const auto dimensions = configuration.GetConfiguration().dimensions;
+        auto s3 = S3Utils::makeClient(dimensions);
+        const auto bucketName = "put-bucket-benchmark-" +
+                                StringUtils::ToLower(static_cast<Aws::String>(UUID::RandomUUID()).c_str()).substr(10) +
+                                S3Utils::getBucketPrefix(dimensions);
         metricsEmitter->EmitMetricForOp("CreateBucket",
-            {{"Service", "S3"}, {"Operation", "CreateBucket"}},
+            S3Utils::getMetricDimensions(dimensions, {{"Service", "S3"}, {"Operation", "CreateBucket"}}),
             [&]() -> bool {
                 auto response = s3->CreateBucket(CreateBucketRequest().WithBucket(bucketName));
+                if (!response.IsSuccess()) {
+                    std::cout << "Create Bucket Failed With: "
+                              << response.GetError().GetMessage()
+                              << "\n";
+                }
                 return response.IsSuccess();
             });
 
@@ -50,9 +55,14 @@ Benchmark::TestFunction Benchmark::S3PutObject::CreateTestFunction() {
             putObjectRequest.SetBody(inputData);
             metricsEmitter->EmitMetricForOp(
                 "PutObject",
-                {{"Service", "S3"}, {"Operation", "PutObject"}},
+                S3Utils::getMetricDimensions(dimensions, {{"Service", "S3"}, {"Operation", "PutObject"}}),
                 [&]() -> bool {
                     auto response = s3->PutObject(putObjectRequest);
+                    if (!response.IsSuccess()) {
+                        std::cout << "Put Failed With: "
+                                  << response.GetError().GetMessage()
+                                  << "\n";;
+                    }
                     return response.IsSuccess();
                 });
         }
@@ -60,17 +70,28 @@ Benchmark::TestFunction Benchmark::S3PutObject::CreateTestFunction() {
         // Clean up
         std::for_each(keysToDelete.begin(), keysToDelete.end(), [&](const std::string &key) {
             metricsEmitter->EmitMetricForOp("DeleteObject",
-                {{"Service", "S3"}, {"Operation", "DeleteObject"}},
+                S3Utils::getMetricDimensions(dimensions, {{"Service", "S3"}, {"Operation", "DeleteObject"}}),
                 [&]() -> bool {
                     auto response = s3->DeleteObject(DeleteObjectRequest().WithBucket(bucketName).WithKey(key));
+                    if (!response.IsSuccess()) {
+                        std::cout << "Delete Object Failed With: "
+                                  << response.GetError().GetMessage()
+                                  << "\n";;
+                    }
                     return response.IsSuccess();
                 });
         });
 
         metricsEmitter->EmitMetricForOp(
             "DeleteBucket",
-            {{"Service", "S3"}, {"Operation", "DeleteBucket"}}, [&]() -> bool {
+            S3Utils::getMetricDimensions(dimensions, {{"Service", "S3"}, {"Operation", "DeleteBucket"}}),
+            [&]() -> bool {
                 auto response = s3->DeleteBucket(DeleteBucketRequest().WithBucket(bucketName));
+                if (!response.IsSuccess()) {
+                    std::cout << "Delete Bucket Failed With: "
+                              << response.GetError().GetMessage()
+                              << "\n";;
+                }
                 return response.IsSuccess();
             });
     };

@@ -16,7 +16,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 UpdateVirtualGatewayRequest::UpdateVirtualGatewayRequest() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_meshNameHasBeenSet(false),
     m_meshOwnerHasBeenSet(false),

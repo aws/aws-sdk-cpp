@@ -53,23 +53,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PAYLOAD_TOO_LARGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::PAYLOAD_TOO_LARGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::PAYLOAD_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

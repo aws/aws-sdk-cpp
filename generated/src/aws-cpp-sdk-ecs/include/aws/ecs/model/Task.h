@@ -1635,9 +1635,12 @@ namespace Model
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p> <p>The
-     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
-     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>stoppedReason</code> might contain additional details. </p> <p>For more
+     * information about stop code, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
+     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
+     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
      * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
      * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
      * <code>SpotInterruption</code> </p> </li> </ul>
@@ -1646,9 +1649,12 @@ namespace Model
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p> <p>The
-     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
-     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>stoppedReason</code> might contain additional details. </p> <p>For more
+     * information about stop code, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
+     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
+     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
      * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
      * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
      * <code>SpotInterruption</code> </p> </li> </ul>
@@ -1657,9 +1663,12 @@ namespace Model
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p> <p>The
-     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
-     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>stoppedReason</code> might contain additional details. </p> <p>For more
+     * information about stop code, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
+     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
+     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
      * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
      * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
      * <code>SpotInterruption</code> </p> </li> </ul>
@@ -1668,9 +1677,12 @@ namespace Model
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p> <p>The
-     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
-     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>stoppedReason</code> might contain additional details. </p> <p>For more
+     * information about stop code, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
+     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
+     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
      * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
      * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
      * <code>SpotInterruption</code> </p> </li> </ul>
@@ -1679,9 +1691,12 @@ namespace Model
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p> <p>The
-     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
-     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>stoppedReason</code> might contain additional details. </p> <p>For more
+     * information about stop code, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
+     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
+     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
      * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
      * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
      * <code>SpotInterruption</code> </p> </li> </ul>
@@ -1690,9 +1705,12 @@ namespace Model
 
     /**
      * <p>The stop code indicating why a task was stopped. The
-     * <code>stoppedReason</code> might contain additional details.</p> <p>The
-     * following are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code>
-     * </p> </li> <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
+     * <code>stoppedReason</code> might contain additional details. </p> <p>For more
+     * information about stop code, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
+     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
+     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
      * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
      * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
      * <code>SpotInterruption</code> </p> </li> </ul>
@@ -1787,42 +1805,42 @@ namespace Model
     /**
      * <p>The Unix timestamp for the time when the task stops. More specifically, it's
      * for the time when the task transitions from the <code>RUNNING</code> state to
-     * <code>STOPPED</code>.</p>
+     * <code>STOPPING</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetStoppingAt() const{ return m_stoppingAt; }
 
     /**
      * <p>The Unix timestamp for the time when the task stops. More specifically, it's
      * for the time when the task transitions from the <code>RUNNING</code> state to
-     * <code>STOPPED</code>.</p>
+     * <code>STOPPING</code>.</p>
      */
     inline bool StoppingAtHasBeenSet() const { return m_stoppingAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp for the time when the task stops. More specifically, it's
      * for the time when the task transitions from the <code>RUNNING</code> state to
-     * <code>STOPPED</code>.</p>
+     * <code>STOPPING</code>.</p>
      */
     inline void SetStoppingAt(const Aws::Utils::DateTime& value) { m_stoppingAtHasBeenSet = true; m_stoppingAt = value; }
 
     /**
      * <p>The Unix timestamp for the time when the task stops. More specifically, it's
      * for the time when the task transitions from the <code>RUNNING</code> state to
-     * <code>STOPPED</code>.</p>
+     * <code>STOPPING</code>.</p>
      */
     inline void SetStoppingAt(Aws::Utils::DateTime&& value) { m_stoppingAtHasBeenSet = true; m_stoppingAt = std::move(value); }
 
     /**
      * <p>The Unix timestamp for the time when the task stops. More specifically, it's
      * for the time when the task transitions from the <code>RUNNING</code> state to
-     * <code>STOPPED</code>.</p>
+     * <code>STOPPING</code>.</p>
      */
     inline Task& WithStoppingAt(const Aws::Utils::DateTime& value) { SetStoppingAt(value); return *this;}
 
     /**
      * <p>The Unix timestamp for the time when the task stops. More specifically, it's
      * for the time when the task transitions from the <code>RUNNING</code> state to
-     * <code>STOPPED</code>.</p>
+     * <code>STOPPING</code>.</p>
      */
     inline Task& WithStoppingAt(Aws::Utils::DateTime&& value) { SetStoppingAt(std::move(value)); return *this;}
 

@@ -20,6 +20,7 @@
 #include <aws/mediaconvert/model/M2tsKlvMetadata.h>
 #include <aws/mediaconvert/model/M2tsNielsenId3.h>
 #include <aws/mediaconvert/model/M2tsPcrControl.h>
+#include <aws/mediaconvert/model/TsPtsOffset.h>
 #include <aws/mediaconvert/model/M2tsRateMode.h>
 #include <aws/mediaconvert/model/M2tsScte35Esam.h>
 #include <aws/mediaconvert/model/M2tsScte35Source.h>
@@ -44,14 +45,14 @@ namespace Model
 
   /**
    * MPEG-2 TS container settings. These apply to outputs in a File output group when
-   * the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In
-   * these assets, data is organized by the program map table (PMT). Each transport
-   * stream program contains subsets of data, including audio, video, and metadata.
-   * Each of these subsets of data has a numerical label called a packet identifier
-   * (PID). Each transport stream program corresponds to one MediaConvert output. The
-   * PMT lists the types of data in a program along with their PID. Downstream
-   * systems and players use the program map table to look up the PID for each type
-   * of data it accesses and then uses the PIDs to locate specific data within the
+   * the output's container is MPEG-2 Transport Stream (M2TS). In these assets, data
+   * is organized by the program map table (PMT). Each transport stream program
+   * contains subsets of data, including audio, video, and metadata. Each of these
+   * subsets of data has a numerical label called a packet identifier (PID). Each
+   * transport stream program corresponds to one MediaConvert output. The PMT lists
+   * the types of data in a program along with their PID. Downstream systems and
+   * players use the program map table to look up the PID for each type of data it
+   * accesses and then uses the PIDs to locate specific data within the
    * asset.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/M2tsSettings">AWS
    * API Reference</a></p>
@@ -99,102 +100,96 @@ namespace Model
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline const M2tsAudioDuration& GetAudioDuration() const{ return m_audioDuration; }
 
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline bool AudioDurationHasBeenSet() const { return m_audioDurationHasBeenSet; }
 
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline void SetAudioDuration(const M2tsAudioDuration& value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
 
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline void SetAudioDuration(M2tsAudioDuration&& value) { m_audioDurationHasBeenSet = true; m_audioDuration = std::move(value); }
 
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline M2tsSettings& WithAudioDuration(const M2tsAudioDuration& value) { SetAudioDuration(value); return *this;}
 
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline M2tsSettings& WithAudioDuration(M2tsAudioDuration&& value) { SetAudioDuration(std::move(value)); return *this;}
 
@@ -352,7 +347,7 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value to allow all PTS values.
      */
     inline const M2tsDataPtsControl& GetDataPTSControl() const{ return m_dataPTSControl; }
 
@@ -360,7 +355,7 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value to allow all PTS values.
      */
     inline bool DataPTSControlHasBeenSet() const { return m_dataPTSControlHasBeenSet; }
 
@@ -368,7 +363,7 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value to allow all PTS values.
      */
     inline void SetDataPTSControl(const M2tsDataPtsControl& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = value; }
 
@@ -376,7 +371,7 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value to allow all PTS values.
      */
     inline void SetDataPTSControl(M2tsDataPtsControl&& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = std::move(value); }
 
@@ -384,7 +379,7 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value to allow all PTS values.
      */
     inline M2tsSettings& WithDataPTSControl(const M2tsDataPtsControl& value) { SetDataPTSControl(value); return *this;}
 
@@ -392,105 +387,81 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value to allow all PTS values.
      */
     inline M2tsSettings& WithDataPTSControl(M2tsDataPtsControl&& value) { SetDataPTSControl(std::move(value)); return *this;}
 
 
     /**
      * Use these settings to insert a DVB Network Information Table (NIT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline const DvbNitSettings& GetDvbNitSettings() const{ return m_dvbNitSettings; }
 
     /**
      * Use these settings to insert a DVB Network Information Table (NIT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline bool DvbNitSettingsHasBeenSet() const { return m_dvbNitSettingsHasBeenSet; }
 
     /**
      * Use these settings to insert a DVB Network Information Table (NIT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline void SetDvbNitSettings(const DvbNitSettings& value) { m_dvbNitSettingsHasBeenSet = true; m_dvbNitSettings = value; }
 
     /**
      * Use these settings to insert a DVB Network Information Table (NIT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline void SetDvbNitSettings(DvbNitSettings&& value) { m_dvbNitSettingsHasBeenSet = true; m_dvbNitSettings = std::move(value); }
 
     /**
      * Use these settings to insert a DVB Network Information Table (NIT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline M2tsSettings& WithDvbNitSettings(const DvbNitSettings& value) { SetDvbNitSettings(value); return *this;}
 
     /**
      * Use these settings to insert a DVB Network Information Table (NIT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline M2tsSettings& WithDvbNitSettings(DvbNitSettings&& value) { SetDvbNitSettings(std::move(value)); return *this;}
 
 
     /**
      * Use these settings to insert a DVB Service Description Table (SDT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline const DvbSdtSettings& GetDvbSdtSettings() const{ return m_dvbSdtSettings; }
 
     /**
      * Use these settings to insert a DVB Service Description Table (SDT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline bool DvbSdtSettingsHasBeenSet() const { return m_dvbSdtSettingsHasBeenSet; }
 
     /**
      * Use these settings to insert a DVB Service Description Table (SDT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline void SetDvbSdtSettings(const DvbSdtSettings& value) { m_dvbSdtSettingsHasBeenSet = true; m_dvbSdtSettings = value; }
 
     /**
      * Use these settings to insert a DVB Service Description Table (SDT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline void SetDvbSdtSettings(DvbSdtSettings&& value) { m_dvbSdtSettingsHasBeenSet = true; m_dvbSdtSettings = std::move(value); }
 
     /**
      * Use these settings to insert a DVB Service Description Table (SDT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline M2tsSettings& WithDvbSdtSettings(const DvbSdtSettings& value) { SetDvbSdtSettings(value); return *this;}
 
     /**
      * Use these settings to insert a DVB Service Description Table (SDT) in the
-     * transport stream of this output. When you work directly in your JSON job
-     * specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * transport stream of this output.
      */
     inline M2tsSettings& WithDvbSdtSettings(DvbSdtSettings&& value) { SetDvbSdtSettings(std::move(value)); return *this;}
 
@@ -540,49 +511,37 @@ namespace Model
 
     /**
      * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
-     * stream of this output. When you work directly in your JSON job specification,
-     * include this object only when your job has a transport stream output and the
-     * container settings contain the object M2tsSettings.
+     * stream of this output.
      */
     inline const DvbTdtSettings& GetDvbTdtSettings() const{ return m_dvbTdtSettings; }
 
     /**
      * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
-     * stream of this output. When you work directly in your JSON job specification,
-     * include this object only when your job has a transport stream output and the
-     * container settings contain the object M2tsSettings.
+     * stream of this output.
      */
     inline bool DvbTdtSettingsHasBeenSet() const { return m_dvbTdtSettingsHasBeenSet; }
 
     /**
      * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
-     * stream of this output. When you work directly in your JSON job specification,
-     * include this object only when your job has a transport stream output and the
-     * container settings contain the object M2tsSettings.
+     * stream of this output.
      */
     inline void SetDvbTdtSettings(const DvbTdtSettings& value) { m_dvbTdtSettingsHasBeenSet = true; m_dvbTdtSettings = value; }
 
     /**
      * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
-     * stream of this output. When you work directly in your JSON job specification,
-     * include this object only when your job has a transport stream output and the
-     * container settings contain the object M2tsSettings.
+     * stream of this output.
      */
     inline void SetDvbTdtSettings(DvbTdtSettings&& value) { m_dvbTdtSettingsHasBeenSet = true; m_dvbTdtSettings = std::move(value); }
 
     /**
      * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
-     * stream of this output. When you work directly in your JSON job specification,
-     * include this object only when your job has a transport stream output and the
-     * container settings contain the object M2tsSettings.
+     * stream of this output.
      */
     inline M2tsSettings& WithDvbTdtSettings(const DvbTdtSettings& value) { SetDvbTdtSettings(value); return *this;}
 
     /**
      * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
-     * stream of this output. When you work directly in your JSON job specification,
-     * include this object only when your job has a transport stream output and the
-     * container settings contain the object M2tsSettings.
+     * stream of this output.
      */
     inline M2tsSettings& WithDvbTdtSettings(DvbTdtSettings&& value) { SetDvbTdtSettings(std::move(value)); return *this;}
 
@@ -754,44 +713,44 @@ namespace Model
 
 
     /**
-     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * Keep the default value unless you know that your audio EBP markers are
      * incorrectly appearing before your video EBP markers. To correct this problem,
-     * set this value to Force (FORCE).
+     * set this value to Force.
      */
     inline const M2tsForceTsVideoEbpOrder& GetForceTsVideoEbpOrder() const{ return m_forceTsVideoEbpOrder; }
 
     /**
-     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * Keep the default value unless you know that your audio EBP markers are
      * incorrectly appearing before your video EBP markers. To correct this problem,
-     * set this value to Force (FORCE).
+     * set this value to Force.
      */
     inline bool ForceTsVideoEbpOrderHasBeenSet() const { return m_forceTsVideoEbpOrderHasBeenSet; }
 
     /**
-     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * Keep the default value unless you know that your audio EBP markers are
      * incorrectly appearing before your video EBP markers. To correct this problem,
-     * set this value to Force (FORCE).
+     * set this value to Force.
      */
     inline void SetForceTsVideoEbpOrder(const M2tsForceTsVideoEbpOrder& value) { m_forceTsVideoEbpOrderHasBeenSet = true; m_forceTsVideoEbpOrder = value; }
 
     /**
-     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * Keep the default value unless you know that your audio EBP markers are
      * incorrectly appearing before your video EBP markers. To correct this problem,
-     * set this value to Force (FORCE).
+     * set this value to Force.
      */
     inline void SetForceTsVideoEbpOrder(M2tsForceTsVideoEbpOrder&& value) { m_forceTsVideoEbpOrderHasBeenSet = true; m_forceTsVideoEbpOrder = std::move(value); }
 
     /**
-     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * Keep the default value unless you know that your audio EBP markers are
      * incorrectly appearing before your video EBP markers. To correct this problem,
-     * set this value to Force (FORCE).
+     * set this value to Force.
      */
     inline M2tsSettings& WithForceTsVideoEbpOrder(const M2tsForceTsVideoEbpOrder& value) { SetForceTsVideoEbpOrder(value); return *this;}
 
     /**
-     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * Keep the default value unless you know that your audio EBP markers are
      * incorrectly appearing before your video EBP markers. To correct this problem,
-     * set this value to Force (FORCE).
+     * set this value to Force.
      */
     inline M2tsSettings& WithForceTsVideoEbpOrder(M2tsForceTsVideoEbpOrder&& value) { SetForceTsVideoEbpOrder(std::move(value)); return *this;}
 
@@ -1069,28 +1028,28 @@ namespace Model
     /**
      * Specify the packet identifier (PID) for the program clock reference (PCR) in
      * this output. If you do not specify a value, the service will use the value for
-     * Video PID (VideoPid).
+     * Video PID.
      */
     inline int GetPcrPid() const{ return m_pcrPid; }
 
     /**
      * Specify the packet identifier (PID) for the program clock reference (PCR) in
      * this output. If you do not specify a value, the service will use the value for
-     * Video PID (VideoPid).
+     * Video PID.
      */
     inline bool PcrPidHasBeenSet() const { return m_pcrPidHasBeenSet; }
 
     /**
      * Specify the packet identifier (PID) for the program clock reference (PCR) in
      * this output. If you do not specify a value, the service will use the value for
-     * Video PID (VideoPid).
+     * Video PID.
      */
     inline void SetPcrPid(int value) { m_pcrPidHasBeenSet = true; m_pcrPid = value; }
 
     /**
      * Specify the packet identifier (PID) for the program clock reference (PCR) in
      * this output. If you do not specify a value, the service will use the value for
-     * Video PID (VideoPid).
+     * Video PID.
      */
     inline M2tsSettings& WithPcrPid(int value) { SetPcrPid(value); return *this;}
 
@@ -1171,36 +1130,128 @@ namespace Model
 
 
     /**
-     * Use Program number (programNumber) to specify the program number used in the
-     * program map table (PMT) for this output. Default is 1. Program numbers and
-     * program map tables are parts of MPEG-2 transport stream containers, used for
-     * organizing data.
+     * Use Program number to specify the program number used in the program map table
+     * (PMT) for this output. Default is 1. Program numbers and program map tables are
+     * parts of MPEG-2 transport stream containers, used for organizing data.
      */
     inline int GetProgramNumber() const{ return m_programNumber; }
 
     /**
-     * Use Program number (programNumber) to specify the program number used in the
-     * program map table (PMT) for this output. Default is 1. Program numbers and
-     * program map tables are parts of MPEG-2 transport stream containers, used for
-     * organizing data.
+     * Use Program number to specify the program number used in the program map table
+     * (PMT) for this output. Default is 1. Program numbers and program map tables are
+     * parts of MPEG-2 transport stream containers, used for organizing data.
      */
     inline bool ProgramNumberHasBeenSet() const { return m_programNumberHasBeenSet; }
 
     /**
-     * Use Program number (programNumber) to specify the program number used in the
-     * program map table (PMT) for this output. Default is 1. Program numbers and
-     * program map tables are parts of MPEG-2 transport stream containers, used for
-     * organizing data.
+     * Use Program number to specify the program number used in the program map table
+     * (PMT) for this output. Default is 1. Program numbers and program map tables are
+     * parts of MPEG-2 transport stream containers, used for organizing data.
      */
     inline void SetProgramNumber(int value) { m_programNumberHasBeenSet = true; m_programNumber = value; }
 
     /**
-     * Use Program number (programNumber) to specify the program number used in the
-     * program map table (PMT) for this output. Default is 1. Program numbers and
-     * program map tables are parts of MPEG-2 transport stream containers, used for
-     * organizing data.
+     * Use Program number to specify the program number used in the program map table
+     * (PMT) for this output. Default is 1. Program numbers and program map tables are
+     * parts of MPEG-2 transport stream containers, used for organizing data.
      */
     inline M2tsSettings& WithProgramNumber(int value) { SetProgramNumber(value); return *this;}
+
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to
+     * Seconds. Enter an integer from 0 to 3600. Leave blank to keep the default value
+     * 2.
+     */
+    inline int GetPtsOffset() const{ return m_ptsOffset; }
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to
+     * Seconds. Enter an integer from 0 to 3600. Leave blank to keep the default value
+     * 2.
+     */
+    inline bool PtsOffsetHasBeenSet() const { return m_ptsOffsetHasBeenSet; }
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to
+     * Seconds. Enter an integer from 0 to 3600. Leave blank to keep the default value
+     * 2.
+     */
+    inline void SetPtsOffset(int value) { m_ptsOffsetHasBeenSet = true; m_ptsOffset = value; }
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to
+     * Seconds. Enter an integer from 0 to 3600. Leave blank to keep the default value
+     * 2.
+     */
+    inline M2tsSettings& WithPtsOffset(int value) { SetPtsOffset(value); return *this;}
+
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline const TsPtsOffset& GetPtsOffsetMode() const{ return m_ptsOffsetMode; }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline bool PtsOffsetModeHasBeenSet() const { return m_ptsOffsetModeHasBeenSet; }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline void SetPtsOffsetMode(const TsPtsOffset& value) { m_ptsOffsetModeHasBeenSet = true; m_ptsOffsetMode = value; }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline void SetPtsOffsetMode(TsPtsOffset&& value) { m_ptsOffsetModeHasBeenSet = true; m_ptsOffsetMode = std::move(value); }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline M2tsSettings& WithPtsOffsetMode(const TsPtsOffset& value) { SetPtsOffsetMode(value); return *this;}
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline M2tsSettings& WithPtsOffsetMode(TsPtsOffset&& value) { SetPtsOffsetMode(std::move(value)); return *this;}
 
 
     /**
@@ -1249,42 +1300,42 @@ namespace Model
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and
      * transport stream outputs at the insertion points that you specify in an ESAM XML
-     * document. Provide the document in the setting SCC XML (sccXml).
+     * document. Provide the document in the setting SCC XML.
      */
     inline const M2tsScte35Esam& GetScte35Esam() const{ return m_scte35Esam; }
 
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and
      * transport stream outputs at the insertion points that you specify in an ESAM XML
-     * document. Provide the document in the setting SCC XML (sccXml).
+     * document. Provide the document in the setting SCC XML.
      */
     inline bool Scte35EsamHasBeenSet() const { return m_scte35EsamHasBeenSet; }
 
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and
      * transport stream outputs at the insertion points that you specify in an ESAM XML
-     * document. Provide the document in the setting SCC XML (sccXml).
+     * document. Provide the document in the setting SCC XML.
      */
     inline void SetScte35Esam(const M2tsScte35Esam& value) { m_scte35EsamHasBeenSet = true; m_scte35Esam = value; }
 
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and
      * transport stream outputs at the insertion points that you specify in an ESAM XML
-     * document. Provide the document in the setting SCC XML (sccXml).
+     * document. Provide the document in the setting SCC XML.
      */
     inline void SetScte35Esam(M2tsScte35Esam&& value) { m_scte35EsamHasBeenSet = true; m_scte35Esam = std::move(value); }
 
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and
      * transport stream outputs at the insertion points that you specify in an ESAM XML
-     * document. Provide the document in the setting SCC XML (sccXml).
+     * document. Provide the document in the setting SCC XML.
      */
     inline M2tsSettings& WithScte35Esam(const M2tsScte35Esam& value) { SetScte35Esam(value); return *this;}
 
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and
      * transport stream outputs at the insertion points that you specify in an ESAM XML
-     * document. Provide the document in the setting SCC XML (sccXml).
+     * document. Provide the document in the setting SCC XML.
      */
     inline M2tsSettings& WithScte35Esam(M2tsScte35Esam&& value) { SetScte35Esam(std::move(value)); return *this;}
 
@@ -1315,62 +1366,62 @@ namespace Model
 
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
-     * XML as a string in the setting Signal processing notification XML (sccXml). Also
-     * enable ESAM SCTE-35 (include the property scte35Esam).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None. Also provide the ESAM XML as a string in the setting
+     * Signal processing notification XML. Also enable ESAM SCTE-35 (include the
+     * property scte35Esam).
      */
     inline const M2tsScte35Source& GetScte35Source() const{ return m_scte35Source; }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
-     * XML as a string in the setting Signal processing notification XML (sccXml). Also
-     * enable ESAM SCTE-35 (include the property scte35Esam).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None. Also provide the ESAM XML as a string in the setting
+     * Signal processing notification XML. Also enable ESAM SCTE-35 (include the
+     * property scte35Esam).
      */
     inline bool Scte35SourceHasBeenSet() const { return m_scte35SourceHasBeenSet; }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
-     * XML as a string in the setting Signal processing notification XML (sccXml). Also
-     * enable ESAM SCTE-35 (include the property scte35Esam).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None. Also provide the ESAM XML as a string in the setting
+     * Signal processing notification XML. Also enable ESAM SCTE-35 (include the
+     * property scte35Esam).
      */
     inline void SetScte35Source(const M2tsScte35Source& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
-     * XML as a string in the setting Signal processing notification XML (sccXml). Also
-     * enable ESAM SCTE-35 (include the property scte35Esam).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None. Also provide the ESAM XML as a string in the setting
+     * Signal processing notification XML. Also enable ESAM SCTE-35 (include the
+     * property scte35Esam).
      */
     inline void SetScte35Source(M2tsScte35Source&& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = std::move(value); }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
-     * XML as a string in the setting Signal processing notification XML (sccXml). Also
-     * enable ESAM SCTE-35 (include the property scte35Esam).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None. Also provide the ESAM XML as a string in the setting
+     * Signal processing notification XML. Also enable ESAM SCTE-35 (include the
+     * property scte35Esam).
      */
     inline M2tsSettings& WithScte35Source(const M2tsScte35Source& value) { SetScte35Source(value); return *this;}
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
-     * XML as a string in the setting Signal processing notification XML (sccXml). Also
-     * enable ESAM SCTE-35 (include the property scte35Esam).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None. Also provide the ESAM XML as a string in the setting
+     * Signal processing notification XML. Also enable ESAM SCTE-35 (include the
+     * property scte35Esam).
      */
     inline M2tsSettings& WithScte35Source(M2tsScte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
 
@@ -1720,6 +1771,12 @@ namespace Model
 
     int m_programNumber;
     bool m_programNumberHasBeenSet = false;
+
+    int m_ptsOffset;
+    bool m_ptsOffsetHasBeenSet = false;
+
+    TsPtsOffset m_ptsOffsetMode;
+    bool m_ptsOffsetModeHasBeenSet = false;
 
     M2tsRateMode m_rateMode;
     bool m_rateModeHasBeenSet = false;

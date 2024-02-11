@@ -27,8 +27,9 @@ namespace OpenSearchServiceErrorMapper
 {
 
 static const int DISABLED_OPERATION_HASH = HashingUtils::HashString("DisabledOperationException");
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int DEPENDENCY_FAILURE_HASH = HashingUtils::HashString("DependencyFailureException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int BASE_HASH = HashingUtils::HashString("BaseException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -43,39 +44,43 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == DISABLED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::DISABLED_OPERATION), false);
-  }
-  else if (hashCode == INTERNAL_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::INTERNAL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::DISABLED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INTERNAL_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::INTERNAL), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == DEPENDENCY_FAILURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::DEPENDENCY_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BASE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::BASE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::BASE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::INVALID_TYPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::INVALID_TYPE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SLOT_NOT_AVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::SLOT_NOT_AVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::SLOT_NOT_AVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::INVALID_PAGINATION_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

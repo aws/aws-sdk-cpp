@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265QualityTuningLevel::NOT_SET:
+            return {};
           case H265QualityTuningLevel::SINGLE_PASS:
             return "SINGLE_PASS";
           case H265QualityTuningLevel::SINGLE_PASS_HQ:

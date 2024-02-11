@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VocabularyState::NOT_SET:
+            return {};
           case VocabularyState::PENDING:
             return "PENDING";
           case VocabularyState::READY:

@@ -27,6 +27,9 @@ ListObjectVersionsRequest::ListObjectVersionsRequest() :
     m_prefixHasBeenSet(false),
     m_versionIdMarkerHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
+    m_requestPayerHasBeenSet(false),
+    m_optionalObjectAttributesHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -111,6 +114,21 @@ Aws::Http::HeaderValueCollection ListObjectVersionsRequest::GetRequestSpecificHe
     ss.str("");
   }
 
+  if(m_requestPayerHasBeenSet)
+  {
+    headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
+  }
+
+  if(m_optionalObjectAttributesHasBeenSet)
+  {
+    for(const auto& item : m_optionalObjectAttributes)
+    {
+      ss << OptionalObjectAttributesMapper::GetNameForOptionalObjectAttributes(item);
+      headers.emplace("x-amz-optional-object-attributes", ss.str());
+      ss.str("");
+    }
+  }
+
   return headers;
 }
 
@@ -120,6 +138,9 @@ ListObjectVersionsRequest::EndpointParameters ListObjectVersionsRequest::GetEndp
     // Operation context parameters
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    if (PrefixHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Prefix"), this->GetPrefix(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
     }
     return parameters;
 }

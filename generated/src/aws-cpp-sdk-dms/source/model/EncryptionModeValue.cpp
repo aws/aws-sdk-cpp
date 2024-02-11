@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionModeValue::NOT_SET:
+            return {};
           case EncryptionModeValue::sse_s3:
             return "sse-s3";
           case EncryptionModeValue::sse_kms:

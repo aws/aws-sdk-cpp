@@ -19,12 +19,18 @@ namespace Model
 {
 
 RecoveryPointMember::RecoveryPointMember() : 
-    m_recoveryPointArnHasBeenSet(false)
+    m_recoveryPointArnHasBeenSet(false),
+    m_resourceArnHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_backupVaultNameHasBeenSet(false)
 {
 }
 
 RecoveryPointMember::RecoveryPointMember(JsonView jsonValue) : 
-    m_recoveryPointArnHasBeenSet(false)
+    m_recoveryPointArnHasBeenSet(false),
+    m_resourceArnHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_backupVaultNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +44,27 @@ RecoveryPointMember& RecoveryPointMember::operator =(JsonView jsonValue)
     m_recoveryPointArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceArn"))
+  {
+    m_resourceArn = jsonValue.GetString("ResourceArn");
+
+    m_resourceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceType"))
+  {
+    m_resourceType = jsonValue.GetString("ResourceType");
+
+    m_resourceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BackupVaultName"))
+  {
+    m_backupVaultName = jsonValue.GetString("BackupVaultName");
+
+    m_backupVaultNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +75,24 @@ JsonValue RecoveryPointMember::Jsonize() const
   if(m_recoveryPointArnHasBeenSet)
   {
    payload.WithString("RecoveryPointArn", m_recoveryPointArn);
+
+  }
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("ResourceArn", m_resourceArn);
+
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", m_resourceType);
+
+  }
+
+  if(m_backupVaultNameHasBeenSet)
+  {
+   payload.WithString("BackupVaultName", m_backupVaultName);
 
   }
 

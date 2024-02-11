@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime-sdk-identity/model/Configuration.h>
 #include <utility>
 
 namespace Aws
@@ -154,6 +155,37 @@ namespace Model
      */
     inline UpdateAppInstanceBotRequest& WithMetadata(const char* value) { SetMetadata(value); return *this;}
 
+
+    /**
+     * <p>The configuration for the bot update.</p>
+     */
+    inline const Configuration& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>The configuration for the bot update.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for the bot update.</p>
+     */
+    inline void SetConfiguration(const Configuration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+
+    /**
+     * <p>The configuration for the bot update.</p>
+     */
+    inline void SetConfiguration(Configuration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+
+    /**
+     * <p>The configuration for the bot update.</p>
+     */
+    inline UpdateAppInstanceBotRequest& WithConfiguration(const Configuration& value) { SetConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for the bot update.</p>
+     */
+    inline UpdateAppInstanceBotRequest& WithConfiguration(Configuration&& value) { SetConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appInstanceBotArn;
@@ -164,6 +196,9 @@ namespace Model
 
     Aws::String m_metadata;
     bool m_metadataHasBeenSet = false;
+
+    Configuration m_configuration;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

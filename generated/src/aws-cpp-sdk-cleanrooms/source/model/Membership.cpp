@@ -32,7 +32,9 @@ Membership::Membership() :
     m_statusHasBeenSet(false),
     m_memberAbilitiesHasBeenSet(false),
     m_queryLogStatus(MembershipQueryLogStatus::NOT_SET),
-    m_queryLogStatusHasBeenSet(false)
+    m_queryLogStatusHasBeenSet(false),
+    m_defaultResultConfigurationHasBeenSet(false),
+    m_paymentConfigurationHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ Membership::Membership(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_memberAbilitiesHasBeenSet(false),
     m_queryLogStatus(MembershipQueryLogStatus::NOT_SET),
-    m_queryLogStatusHasBeenSet(false)
+    m_queryLogStatusHasBeenSet(false),
+    m_defaultResultConfigurationHasBeenSet(false),
+    m_paymentConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -144,6 +148,20 @@ Membership& Membership::operator =(JsonView jsonValue)
     m_queryLogStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("defaultResultConfiguration"))
+  {
+    m_defaultResultConfiguration = jsonValue.GetObject("defaultResultConfiguration");
+
+    m_defaultResultConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("paymentConfiguration"))
+  {
+    m_paymentConfiguration = jsonValue.GetObject("paymentConfiguration");
+
+    m_paymentConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -222,6 +240,18 @@ JsonValue Membership::Jsonize() const
   if(m_queryLogStatusHasBeenSet)
   {
    payload.WithString("queryLogStatus", MembershipQueryLogStatusMapper::GetNameForMembershipQueryLogStatus(m_queryLogStatus));
+  }
+
+  if(m_defaultResultConfigurationHasBeenSet)
+  {
+   payload.WithObject("defaultResultConfiguration", m_defaultResultConfiguration.Jsonize());
+
+  }
+
+  if(m_paymentConfigurationHasBeenSet)
+  {
+   payload.WithObject("paymentConfiguration", m_paymentConfiguration.Jsonize());
+
   }
 
   return payload;

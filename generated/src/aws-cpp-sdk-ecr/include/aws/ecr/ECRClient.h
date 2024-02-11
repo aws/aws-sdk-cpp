@@ -35,6 +35,9 @@ namespace ECR
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef ECRClientConfiguration ClientConfigurationType;
+      typedef ECREndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -233,8 +236,11 @@ namespace ECR
 
         /**
          * <p>Creates a pull through cache rule. A pull through cache rule provides a way
-         * to cache images from an external public registry in your Amazon ECR private
-         * registry.</p><p><h3>See Also:</h3>   <a
+         * to cache images from an upstream registry source in your Amazon ECR private
+         * registry. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html">Using
+         * pull through cache rules</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreatePullThroughCacheRule">AWS
          * API Reference</a></p>
          */
@@ -363,9 +369,10 @@ namespace ECR
         }
 
         /**
-         * <p>Deletes a repository. If the repository contains images, you must either
-         * delete all images in the repository or use the <code>force</code> option to
-         * delete the repository.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a repository. If the repository isn't empty, you must either delete
+         * the contents of the repository or use the <code>force</code> option to delete
+         * the repository and have Amazon ECR delete all of its contents on your
+         * behalf.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">AWS
          * API Reference</a></p>
          */
@@ -1209,6 +1216,31 @@ namespace ECR
         }
 
         /**
+         * <p>Updates an existing pull through cache rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdatePullThroughCacheRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePullThroughCacheRuleOutcome UpdatePullThroughCacheRule(const Model::UpdatePullThroughCacheRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePullThroughCacheRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePullThroughCacheRuleRequestT = Model::UpdatePullThroughCacheRuleRequest>
+        Model::UpdatePullThroughCacheRuleOutcomeCallable UpdatePullThroughCacheRuleCallable(const UpdatePullThroughCacheRuleRequestT& request) const
+        {
+            return SubmitCallable(&ECRClient::UpdatePullThroughCacheRule, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePullThroughCacheRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePullThroughCacheRuleRequestT = Model::UpdatePullThroughCacheRuleRequest>
+        void UpdatePullThroughCacheRuleAsync(const UpdatePullThroughCacheRuleRequestT& request, const UpdatePullThroughCacheRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECRClient::UpdatePullThroughCacheRule, request, handler, context);
+        }
+
+        /**
          * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
          * each new image layer is uploaded in parts. The maximum size of each image layer
          * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
@@ -1237,6 +1269,35 @@ namespace ECR
         void UploadLayerPartAsync(const UploadLayerPartRequestT& request, const UploadLayerPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ECRClient::UploadLayerPart, request, handler, context);
+        }
+
+        /**
+         * <p>Validates an existing pull through cache rule for an upstream registry that
+         * requires authentication. This will retrieve the contents of the Amazon Web
+         * Services Secrets Manager secret, verify the syntax, and then validate that
+         * authentication to the upstream registry is successful.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ValidatePullThroughCacheRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ValidatePullThroughCacheRuleOutcome ValidatePullThroughCacheRule(const Model::ValidatePullThroughCacheRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for ValidatePullThroughCacheRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ValidatePullThroughCacheRuleRequestT = Model::ValidatePullThroughCacheRuleRequest>
+        Model::ValidatePullThroughCacheRuleOutcomeCallable ValidatePullThroughCacheRuleCallable(const ValidatePullThroughCacheRuleRequestT& request) const
+        {
+            return SubmitCallable(&ECRClient::ValidatePullThroughCacheRule, request);
+        }
+
+        /**
+         * An Async wrapper for ValidatePullThroughCacheRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ValidatePullThroughCacheRuleRequestT = Model::ValidatePullThroughCacheRuleRequest>
+        void ValidatePullThroughCacheRuleAsync(const ValidatePullThroughCacheRuleRequestT& request, const ValidatePullThroughCacheRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECRClient::ValidatePullThroughCacheRule, request, handler, context);
         }
 
 

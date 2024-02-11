@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     DETECTIVE_CORE,
-    EKS_AUDIT
+    EKS_AUDIT,
+    ASFF_SECURITYHUB_FINDING
   };
 
 namespace DatasourcePackageMapper

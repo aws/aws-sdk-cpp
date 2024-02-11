@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputType::NOT_SET:
+            return {};
           case InputType::UDP_PUSH:
             return "UDP_PUSH";
           case InputType::RTP_PUSH:

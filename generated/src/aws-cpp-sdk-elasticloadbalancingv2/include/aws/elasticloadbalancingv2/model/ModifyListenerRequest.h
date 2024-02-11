@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancingv2/model/ProtocolEnum.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancingv2/model/MutualAuthenticationAttributes.h>
 #include <aws/elasticloadbalancingv2/model/Certificate.h>
 #include <aws/elasticloadbalancingv2/model/Action.h>
 #include <utility>
@@ -448,6 +449,37 @@ namespace Model
      */
     inline ModifyListenerRequest& AddAlpnPolicy(const char* value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(value); return *this; }
 
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline const MutualAuthenticationAttributes& GetMutualAuthentication() const{ return m_mutualAuthentication; }
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline bool MutualAuthenticationHasBeenSet() const { return m_mutualAuthenticationHasBeenSet; }
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline void SetMutualAuthentication(const MutualAuthenticationAttributes& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = value; }
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline void SetMutualAuthentication(MutualAuthenticationAttributes&& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = std::move(value); }
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline ModifyListenerRequest& WithMutualAuthentication(const MutualAuthenticationAttributes& value) { SetMutualAuthentication(value); return *this;}
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline ModifyListenerRequest& WithMutualAuthentication(MutualAuthenticationAttributes&& value) { SetMutualAuthentication(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_listenerArn;
@@ -470,6 +502,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_alpnPolicy;
     bool m_alpnPolicyHasBeenSet = false;
+
+    MutualAuthenticationAttributes m_mutualAuthentication;
+    bool m_mutualAuthenticationHasBeenSet = false;
   };
 
 } // namespace Model

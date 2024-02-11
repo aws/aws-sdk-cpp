@@ -83,34 +83,30 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to reset all parameters in the DB cluster
-     * parameter group to their default values. You can't use this parameter if there
-     * is a list of parameter names specified for the <code>Parameters</code>
-     * parameter.</p>
+     * <p>Specifies whether to reset all parameters in the DB cluster parameter group
+     * to their default values. You can't use this parameter if there is a list of
+     * parameter names specified for the <code>Parameters</code> parameter.</p>
      */
     inline bool GetResetAllParameters() const{ return m_resetAllParameters; }
 
     /**
-     * <p>A value that indicates whether to reset all parameters in the DB cluster
-     * parameter group to their default values. You can't use this parameter if there
-     * is a list of parameter names specified for the <code>Parameters</code>
-     * parameter.</p>
+     * <p>Specifies whether to reset all parameters in the DB cluster parameter group
+     * to their default values. You can't use this parameter if there is a list of
+     * parameter names specified for the <code>Parameters</code> parameter.</p>
      */
     inline bool ResetAllParametersHasBeenSet() const { return m_resetAllParametersHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to reset all parameters in the DB cluster
-     * parameter group to their default values. You can't use this parameter if there
-     * is a list of parameter names specified for the <code>Parameters</code>
-     * parameter.</p>
+     * <p>Specifies whether to reset all parameters in the DB cluster parameter group
+     * to their default values. You can't use this parameter if there is a list of
+     * parameter names specified for the <code>Parameters</code> parameter.</p>
      */
     inline void SetResetAllParameters(bool value) { m_resetAllParametersHasBeenSet = true; m_resetAllParameters = value; }
 
     /**
-     * <p>A value that indicates whether to reset all parameters in the DB cluster
-     * parameter group to their default values. You can't use this parameter if there
-     * is a list of parameter names specified for the <code>Parameters</code>
-     * parameter.</p>
+     * <p>Specifies whether to reset all parameters in the DB cluster parameter group
+     * to their default values. You can't use this parameter if there is a list of
+     * parameter names specified for the <code>Parameters</code> parameter.</p>
      */
     inline ResetDBClusterParameterGroupRequest& WithResetAllParameters(bool value) { SetResetAllParameters(value); return *this;}
 

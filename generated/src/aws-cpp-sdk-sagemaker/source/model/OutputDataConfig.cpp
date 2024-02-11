@@ -20,13 +20,17 @@ namespace Model
 
 OutputDataConfig::OutputDataConfig() : 
     m_kmsKeyIdHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false)
+    m_s3OutputPathHasBeenSet(false),
+    m_compressionType(OutputCompressionType::NOT_SET),
+    m_compressionTypeHasBeenSet(false)
 {
 }
 
 OutputDataConfig::OutputDataConfig(JsonView jsonValue) : 
     m_kmsKeyIdHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false)
+    m_s3OutputPathHasBeenSet(false),
+    m_compressionType(OutputCompressionType::NOT_SET),
+    m_compressionTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ OutputDataConfig& OutputDataConfig::operator =(JsonView jsonValue)
     m_s3OutputPathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CompressionType"))
+  {
+    m_compressionType = OutputCompressionTypeMapper::GetOutputCompressionTypeForName(jsonValue.GetString("CompressionType"));
+
+    m_compressionTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +75,11 @@ JsonValue OutputDataConfig::Jsonize() const
   {
    payload.WithString("S3OutputPath", m_s3OutputPath);
 
+  }
+
+  if(m_compressionTypeHasBeenSet)
+  {
+   payload.WithString("CompressionType", OutputCompressionTypeMapper::GetNameForOutputCompressionType(m_compressionType));
   }
 
   return payload;

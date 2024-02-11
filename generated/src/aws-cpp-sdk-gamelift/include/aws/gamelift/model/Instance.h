@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents an EC2 instance of virtual computing resources that hosts one or
-   * more game servers. In GameLift, a fleet can contain zero or more instances.</p>
-   * <p> <b>Related actions</b> </p><p><h3>See Also:</h3>   <a
+   * <p>Represents a virtual computing instance that runs game server processes and
+   * hosts game sessions. In Amazon GameLift, one or more instances make up a managed
+   * EC2 fleet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Instance">AWS
    * API Reference</a></p>
    */
@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline Instance& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline Instance& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline Instance& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
@@ -87,8 +87,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
@@ -96,8 +96,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
@@ -105,8 +105,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
@@ -114,8 +114,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
@@ -123,8 +123,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
@@ -132,8 +132,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline Instance& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
@@ -141,8 +141,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline Instance& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
@@ -150,8 +150,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline Instance& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
@@ -247,9 +247,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
 
@@ -261,9 +261,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
 
@@ -275,9 +275,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
@@ -289,9 +289,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
 
@@ -303,9 +303,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
 
@@ -317,9 +317,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline Instance& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
 
@@ -331,9 +331,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline Instance& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
 
@@ -345,77 +345,71 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline Instance& WithDnsName(const char* value) { SetDnsName(value); return *this;}
 
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline Instance& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline Instance& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline const EC2InstanceType& GetType() const{ return m_type; }
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline void SetType(const EC2InstanceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline void SetType(EC2InstanceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline Instance& WithType(const EC2InstanceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline Instance& WithType(EC2InstanceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -426,10 +420,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline const InstanceStatus& GetStatus() const{ return m_status; }
@@ -440,10 +434,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -454,10 +448,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline void SetStatus(const InstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
@@ -468,10 +462,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
@@ -482,10 +476,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline Instance& WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
@@ -496,10 +490,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline Instance& WithStatus(InstanceStatus&& value) { SetStatus(std::move(value)); return *this;}

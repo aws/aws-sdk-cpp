@@ -208,11 +208,11 @@ namespace Model
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the number of bytes of the body
      * up to the limit for the web ACL. By default, for regional web ACLs, this limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16 KB
-     * (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the
-     * web ACL <code>AssociationConfig</code>, for additional fees. If you know that
-     * the request body for your web requests should never exceed the inspection limit,
-     * you could use a size constraint statement to block requests that have a larger
+     * is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB (16,384
+     * bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
+     * <code>AssociationConfig</code>, for additional fees. If you know that the
+     * request body for your web requests should never exceed the inspection limit, you
+     * could use a size constraint statement to block requests that have a larger
      * request body size.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -226,11 +226,11 @@ namespace Model
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the number of bytes of the body
      * up to the limit for the web ACL. By default, for regional web ACLs, this limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16 KB
-     * (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the
-     * web ACL <code>AssociationConfig</code>, for additional fees. If you know that
-     * the request body for your web requests should never exceed the inspection limit,
-     * you could use a size constraint statement to block requests that have a larger
+     * is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB (16,384
+     * bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
+     * <code>AssociationConfig</code>, for additional fees. If you know that the
+     * request body for your web requests should never exceed the inspection limit, you
+     * could use a size constraint statement to block requests that have a larger
      * request body size.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -244,11 +244,11 @@ namespace Model
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the number of bytes of the body
      * up to the limit for the web ACL. By default, for regional web ACLs, this limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16 KB
-     * (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the
-     * web ACL <code>AssociationConfig</code>, for additional fees. If you know that
-     * the request body for your web requests should never exceed the inspection limit,
-     * you could use a size constraint statement to block requests that have a larger
+     * is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB (16,384
+     * bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
+     * <code>AssociationConfig</code>, for additional fees. If you know that the
+     * request body for your web requests should never exceed the inspection limit, you
+     * could use a size constraint statement to block requests that have a larger
      * request body size.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -262,11 +262,11 @@ namespace Model
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the number of bytes of the body
      * up to the limit for the web ACL. By default, for regional web ACLs, this limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16 KB
-     * (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the
-     * web ACL <code>AssociationConfig</code>, for additional fees. If you know that
-     * the request body for your web requests should never exceed the inspection limit,
-     * you could use a size constraint statement to block requests that have a larger
+     * is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB (16,384
+     * bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
+     * <code>AssociationConfig</code>, for additional fees. If you know that the
+     * request body for your web requests should never exceed the inspection limit, you
+     * could use a size constraint statement to block requests that have a larger
      * request body size.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -280,11 +280,11 @@ namespace Model
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the number of bytes of the body
      * up to the limit for the web ACL. By default, for regional web ACLs, this limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16 KB
-     * (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the
-     * web ACL <code>AssociationConfig</code>, for additional fees. If you know that
-     * the request body for your web requests should never exceed the inspection limit,
-     * you could use a size constraint statement to block requests that have a larger
+     * is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB (16,384
+     * bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
+     * <code>AssociationConfig</code>, for additional fees. If you know that the
+     * request body for your web requests should never exceed the inspection limit, you
+     * could use a size constraint statement to block requests that have a larger
      * request body size.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -298,11 +298,11 @@ namespace Model
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the number of bytes of the body
      * up to the limit for the web ACL. By default, for regional web ACLs, this limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16 KB
-     * (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the
-     * web ACL <code>AssociationConfig</code>, for additional fees. If you know that
-     * the request body for your web requests should never exceed the inspection limit,
-     * you could use a size constraint statement to block requests that have a larger
+     * is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB (16,384
+     * bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
+     * <code>AssociationConfig</code>, for additional fees. If you know that the
+     * request body for your web requests should never exceed the inspection limit, you
+     * could use a size constraint statement to block requests that have a larger
      * request body size.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -484,8 +484,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline const RuleGroupReferenceStatement& GetRuleGroupReferenceStatement() const{ return m_ruleGroupReferenceStatement; }
 
@@ -494,8 +496,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline bool RuleGroupReferenceStatementHasBeenSet() const { return m_ruleGroupReferenceStatementHasBeenSet; }
 
@@ -504,8 +508,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline void SetRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = value; }
 
@@ -514,8 +520,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline void SetRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = std::move(value); }
 
@@ -524,8 +532,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline Statement& WithRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { SetRuleGroupReferenceStatement(value); return *this;}
 
@@ -534,8 +544,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline Statement& WithRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { SetRuleGroupReferenceStatement(std::move(value)); return *this;}
 
@@ -699,200 +711,374 @@ namespace Model
 
 
     /**
-     * <p>A rate-based rule tracks the rate of requests for each originating IP
-     * address, and triggers the rule action when the rate exceeds a limit that you
-     * specify on the number of requests in any 5-minute time span. You can use this to
-     * put a temporary block on requests from an IP address that is sending excessive
-     * requests. </p> <p>WAF tracks and manages web requests separately for each
-     * instance of a rate-based rule that you use. For example, if you provide the same
-     * rate-based rule settings in two web ACLs, each of the two rule statements
-     * represents a separate instance of the rate-based rule and gets its own tracking
-     * and management by WAF. If you define a rate-based rule inside a rule group, and
-     * then use that rule group in multiple places, each use creates a separate
-     * instance of the rate-based rule that gets its own tracking and management by
-     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
-     * the IP address until the request rate falls below the limit.</p> <p>You can
-     * optionally nest another statement inside the rate-based statement, to narrow the
-     * scope of the rule so that it only counts requests that match the nested
-     * statement. For example, based on recent requests that you have seen from an
-     * attacker, you might create a rate-based rule with a nested AND rule statement
-     * that contains the following nested statements:</p> <ul> <li> <p>An IP match
-     * statement with an IP set that specifies the address 192.0.2.44.</p> </li> <li>
-     * <p>A string match statement that searches in the User-Agent header for the
-     * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
-     * criteria of both of the nested statements are counted. If the count exceeds
-     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
-     * meet the criteria of both of the nested statements are not counted towards the
-     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
-     * <code>RateBasedStatement</code> inside another statement, for example inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
-     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
+     * <p>A rate-based rule counts incoming requests and rate limits requests when they
+     * are coming at too fast a rate. The rule categorizes requests according to your
+     * aggregation criteria, collects them into aggregation instances, and counts and
+     * rate limits the requests for each instance. </p> <p>You can specify individual
+     * aggregation keys, like IP address or HTTP method. You can also specify
+     * aggregation key combinations, like IP address and HTTP method, or HTTP method,
+     * query argument, and cookie. </p> <p>Each unique set of values for the
+     * aggregation keys that you specify is a separate aggregation instance, with the
+     * value from each key contributing to the aggregation instance definition. </p>
+     * <p>For example, assume the rule evaluates web requests with the following IP
+     * address and HTTP method values: </p> <ul> <li> <p>IP address 10.1.1.1, HTTP
+     * method POST</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET</p> </li>
+     * <li> <p>IP address 127.0.0.0, HTTP method POST</p> </li> <li> <p>IP address
+     * 10.1.1.1, HTTP method GET</p> </li> </ul> <p>The rule would create different
+     * aggregation instances according to your aggregation criteria, for example: </p>
+     * <ul> <li> <p>If the aggregation criteria is just the IP address, then each
+     * individual address is an aggregation instance, and WAF counts requests
+     * separately for each. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>IP address 10.1.1.1: count
+     * 3</p> </li> <li> <p>IP address 127.0.0.0: count 1</p> </li> </ul> </li> <li>
+     * <p>If the aggregation criteria is HTTP method, then each individual HTTP method
+     * is an aggregation instance. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>HTTP method POST: count 2</p>
+     * </li> <li> <p>HTTP method GET: count 2</p> </li> </ul> </li> <li> <p>If the
+     * aggregation criteria is IP address and HTTP method, then each IP address and
+     * each HTTP method would contribute to the combined aggregation instance. The
+     * aggregation instances and request counts for our example would be the following:
+     * </p> <ul> <li> <p>IP address 10.1.1.1, HTTP method POST: count 1</p> </li> <li>
+     * <p>IP address 10.1.1.1, HTTP method GET: count 2</p> </li> <li> <p>IP address
+     * 127.0.0.0, HTTP method POST: count 1</p> </li> </ul> </li> </ul> <p>For any
+     * n-tuple of aggregation keys, each unique combination of values for the keys
+     * defines a separate aggregation instance, which WAF counts and rate-limits
+     * individually. </p> <p>You can optionally nest another statement inside the
+     * rate-based statement, to narrow the scope of the rule so that it only counts and
+     * rate limits requests that match the nested statement. You can use this nested
+     * scope-down statement in conjunction with your aggregation key specifications or
+     * you can just count and rate limit all requests that match the scope-down
+     * statement, without additional aggregation. When you choose to just manage all
+     * requests that match a scope-down statement, the aggregation instance is singular
+     * for the rule. </p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p> <p>For additional information
+     * about the options, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rate-based-rules.html">Rate
+     * limiting web requests using rate-based rules</a> in the <i>WAF Developer
+     * Guide</i>. </p> <p>If you only aggregate on the individual IP address or
+     * forwarded IP address, you can retrieve the list of IP addresses that WAF is
+     * currently rate limiting for a rule through the API call
+     * <code>GetRateBasedStatementManagedKeys</code>. This option is not available for
+     * other aggregation configurations.</p> <p>WAF tracks and manages web requests
+     * separately for each instance of a rate-based rule that you use. For example, if
+     * you provide the same rate-based rule settings in two web ACLs, each of the two
+     * rule statements represents a separate instance of the rate-based rule and gets
+     * its own tracking and management by WAF. If you define a rate-based rule inside a
+     * rule group, and then use that rule group in multiple places, each use creates a
+     * separate instance of the rate-based rule that gets its own tracking and
+     * management by WAF. </p>
      */
     AWS_WAFV2_API const RateBasedStatement& GetRateBasedStatement() const;
 
     /**
-     * <p>A rate-based rule tracks the rate of requests for each originating IP
-     * address, and triggers the rule action when the rate exceeds a limit that you
-     * specify on the number of requests in any 5-minute time span. You can use this to
-     * put a temporary block on requests from an IP address that is sending excessive
-     * requests. </p> <p>WAF tracks and manages web requests separately for each
-     * instance of a rate-based rule that you use. For example, if you provide the same
-     * rate-based rule settings in two web ACLs, each of the two rule statements
-     * represents a separate instance of the rate-based rule and gets its own tracking
-     * and management by WAF. If you define a rate-based rule inside a rule group, and
-     * then use that rule group in multiple places, each use creates a separate
-     * instance of the rate-based rule that gets its own tracking and management by
-     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
-     * the IP address until the request rate falls below the limit.</p> <p>You can
-     * optionally nest another statement inside the rate-based statement, to narrow the
-     * scope of the rule so that it only counts requests that match the nested
-     * statement. For example, based on recent requests that you have seen from an
-     * attacker, you might create a rate-based rule with a nested AND rule statement
-     * that contains the following nested statements:</p> <ul> <li> <p>An IP match
-     * statement with an IP set that specifies the address 192.0.2.44.</p> </li> <li>
-     * <p>A string match statement that searches in the User-Agent header for the
-     * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
-     * criteria of both of the nested statements are counted. If the count exceeds
-     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
-     * meet the criteria of both of the nested statements are not counted towards the
-     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
-     * <code>RateBasedStatement</code> inside another statement, for example inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
-     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
+     * <p>A rate-based rule counts incoming requests and rate limits requests when they
+     * are coming at too fast a rate. The rule categorizes requests according to your
+     * aggregation criteria, collects them into aggregation instances, and counts and
+     * rate limits the requests for each instance. </p> <p>You can specify individual
+     * aggregation keys, like IP address or HTTP method. You can also specify
+     * aggregation key combinations, like IP address and HTTP method, or HTTP method,
+     * query argument, and cookie. </p> <p>Each unique set of values for the
+     * aggregation keys that you specify is a separate aggregation instance, with the
+     * value from each key contributing to the aggregation instance definition. </p>
+     * <p>For example, assume the rule evaluates web requests with the following IP
+     * address and HTTP method values: </p> <ul> <li> <p>IP address 10.1.1.1, HTTP
+     * method POST</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET</p> </li>
+     * <li> <p>IP address 127.0.0.0, HTTP method POST</p> </li> <li> <p>IP address
+     * 10.1.1.1, HTTP method GET</p> </li> </ul> <p>The rule would create different
+     * aggregation instances according to your aggregation criteria, for example: </p>
+     * <ul> <li> <p>If the aggregation criteria is just the IP address, then each
+     * individual address is an aggregation instance, and WAF counts requests
+     * separately for each. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>IP address 10.1.1.1: count
+     * 3</p> </li> <li> <p>IP address 127.0.0.0: count 1</p> </li> </ul> </li> <li>
+     * <p>If the aggregation criteria is HTTP method, then each individual HTTP method
+     * is an aggregation instance. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>HTTP method POST: count 2</p>
+     * </li> <li> <p>HTTP method GET: count 2</p> </li> </ul> </li> <li> <p>If the
+     * aggregation criteria is IP address and HTTP method, then each IP address and
+     * each HTTP method would contribute to the combined aggregation instance. The
+     * aggregation instances and request counts for our example would be the following:
+     * </p> <ul> <li> <p>IP address 10.1.1.1, HTTP method POST: count 1</p> </li> <li>
+     * <p>IP address 10.1.1.1, HTTP method GET: count 2</p> </li> <li> <p>IP address
+     * 127.0.0.0, HTTP method POST: count 1</p> </li> </ul> </li> </ul> <p>For any
+     * n-tuple of aggregation keys, each unique combination of values for the keys
+     * defines a separate aggregation instance, which WAF counts and rate-limits
+     * individually. </p> <p>You can optionally nest another statement inside the
+     * rate-based statement, to narrow the scope of the rule so that it only counts and
+     * rate limits requests that match the nested statement. You can use this nested
+     * scope-down statement in conjunction with your aggregation key specifications or
+     * you can just count and rate limit all requests that match the scope-down
+     * statement, without additional aggregation. When you choose to just manage all
+     * requests that match a scope-down statement, the aggregation instance is singular
+     * for the rule. </p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p> <p>For additional information
+     * about the options, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rate-based-rules.html">Rate
+     * limiting web requests using rate-based rules</a> in the <i>WAF Developer
+     * Guide</i>. </p> <p>If you only aggregate on the individual IP address or
+     * forwarded IP address, you can retrieve the list of IP addresses that WAF is
+     * currently rate limiting for a rule through the API call
+     * <code>GetRateBasedStatementManagedKeys</code>. This option is not available for
+     * other aggregation configurations.</p> <p>WAF tracks and manages web requests
+     * separately for each instance of a rate-based rule that you use. For example, if
+     * you provide the same rate-based rule settings in two web ACLs, each of the two
+     * rule statements represents a separate instance of the rate-based rule and gets
+     * its own tracking and management by WAF. If you define a rate-based rule inside a
+     * rule group, and then use that rule group in multiple places, each use creates a
+     * separate instance of the rate-based rule that gets its own tracking and
+     * management by WAF. </p>
      */
     AWS_WAFV2_API bool RateBasedStatementHasBeenSet() const;
 
     /**
-     * <p>A rate-based rule tracks the rate of requests for each originating IP
-     * address, and triggers the rule action when the rate exceeds a limit that you
-     * specify on the number of requests in any 5-minute time span. You can use this to
-     * put a temporary block on requests from an IP address that is sending excessive
-     * requests. </p> <p>WAF tracks and manages web requests separately for each
-     * instance of a rate-based rule that you use. For example, if you provide the same
-     * rate-based rule settings in two web ACLs, each of the two rule statements
-     * represents a separate instance of the rate-based rule and gets its own tracking
-     * and management by WAF. If you define a rate-based rule inside a rule group, and
-     * then use that rule group in multiple places, each use creates a separate
-     * instance of the rate-based rule that gets its own tracking and management by
-     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
-     * the IP address until the request rate falls below the limit.</p> <p>You can
-     * optionally nest another statement inside the rate-based statement, to narrow the
-     * scope of the rule so that it only counts requests that match the nested
-     * statement. For example, based on recent requests that you have seen from an
-     * attacker, you might create a rate-based rule with a nested AND rule statement
-     * that contains the following nested statements:</p> <ul> <li> <p>An IP match
-     * statement with an IP set that specifies the address 192.0.2.44.</p> </li> <li>
-     * <p>A string match statement that searches in the User-Agent header for the
-     * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
-     * criteria of both of the nested statements are counted. If the count exceeds
-     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
-     * meet the criteria of both of the nested statements are not counted towards the
-     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
-     * <code>RateBasedStatement</code> inside another statement, for example inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
-     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
+     * <p>A rate-based rule counts incoming requests and rate limits requests when they
+     * are coming at too fast a rate. The rule categorizes requests according to your
+     * aggregation criteria, collects them into aggregation instances, and counts and
+     * rate limits the requests for each instance. </p> <p>You can specify individual
+     * aggregation keys, like IP address or HTTP method. You can also specify
+     * aggregation key combinations, like IP address and HTTP method, or HTTP method,
+     * query argument, and cookie. </p> <p>Each unique set of values for the
+     * aggregation keys that you specify is a separate aggregation instance, with the
+     * value from each key contributing to the aggregation instance definition. </p>
+     * <p>For example, assume the rule evaluates web requests with the following IP
+     * address and HTTP method values: </p> <ul> <li> <p>IP address 10.1.1.1, HTTP
+     * method POST</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET</p> </li>
+     * <li> <p>IP address 127.0.0.0, HTTP method POST</p> </li> <li> <p>IP address
+     * 10.1.1.1, HTTP method GET</p> </li> </ul> <p>The rule would create different
+     * aggregation instances according to your aggregation criteria, for example: </p>
+     * <ul> <li> <p>If the aggregation criteria is just the IP address, then each
+     * individual address is an aggregation instance, and WAF counts requests
+     * separately for each. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>IP address 10.1.1.1: count
+     * 3</p> </li> <li> <p>IP address 127.0.0.0: count 1</p> </li> </ul> </li> <li>
+     * <p>If the aggregation criteria is HTTP method, then each individual HTTP method
+     * is an aggregation instance. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>HTTP method POST: count 2</p>
+     * </li> <li> <p>HTTP method GET: count 2</p> </li> </ul> </li> <li> <p>If the
+     * aggregation criteria is IP address and HTTP method, then each IP address and
+     * each HTTP method would contribute to the combined aggregation instance. The
+     * aggregation instances and request counts for our example would be the following:
+     * </p> <ul> <li> <p>IP address 10.1.1.1, HTTP method POST: count 1</p> </li> <li>
+     * <p>IP address 10.1.1.1, HTTP method GET: count 2</p> </li> <li> <p>IP address
+     * 127.0.0.0, HTTP method POST: count 1</p> </li> </ul> </li> </ul> <p>For any
+     * n-tuple of aggregation keys, each unique combination of values for the keys
+     * defines a separate aggregation instance, which WAF counts and rate-limits
+     * individually. </p> <p>You can optionally nest another statement inside the
+     * rate-based statement, to narrow the scope of the rule so that it only counts and
+     * rate limits requests that match the nested statement. You can use this nested
+     * scope-down statement in conjunction with your aggregation key specifications or
+     * you can just count and rate limit all requests that match the scope-down
+     * statement, without additional aggregation. When you choose to just manage all
+     * requests that match a scope-down statement, the aggregation instance is singular
+     * for the rule. </p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p> <p>For additional information
+     * about the options, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rate-based-rules.html">Rate
+     * limiting web requests using rate-based rules</a> in the <i>WAF Developer
+     * Guide</i>. </p> <p>If you only aggregate on the individual IP address or
+     * forwarded IP address, you can retrieve the list of IP addresses that WAF is
+     * currently rate limiting for a rule through the API call
+     * <code>GetRateBasedStatementManagedKeys</code>. This option is not available for
+     * other aggregation configurations.</p> <p>WAF tracks and manages web requests
+     * separately for each instance of a rate-based rule that you use. For example, if
+     * you provide the same rate-based rule settings in two web ACLs, each of the two
+     * rule statements represents a separate instance of the rate-based rule and gets
+     * its own tracking and management by WAF. If you define a rate-based rule inside a
+     * rule group, and then use that rule group in multiple places, each use creates a
+     * separate instance of the rate-based rule that gets its own tracking and
+     * management by WAF. </p>
      */
     AWS_WAFV2_API void SetRateBasedStatement(const RateBasedStatement& value);
 
     /**
-     * <p>A rate-based rule tracks the rate of requests for each originating IP
-     * address, and triggers the rule action when the rate exceeds a limit that you
-     * specify on the number of requests in any 5-minute time span. You can use this to
-     * put a temporary block on requests from an IP address that is sending excessive
-     * requests. </p> <p>WAF tracks and manages web requests separately for each
-     * instance of a rate-based rule that you use. For example, if you provide the same
-     * rate-based rule settings in two web ACLs, each of the two rule statements
-     * represents a separate instance of the rate-based rule and gets its own tracking
-     * and management by WAF. If you define a rate-based rule inside a rule group, and
-     * then use that rule group in multiple places, each use creates a separate
-     * instance of the rate-based rule that gets its own tracking and management by
-     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
-     * the IP address until the request rate falls below the limit.</p> <p>You can
-     * optionally nest another statement inside the rate-based statement, to narrow the
-     * scope of the rule so that it only counts requests that match the nested
-     * statement. For example, based on recent requests that you have seen from an
-     * attacker, you might create a rate-based rule with a nested AND rule statement
-     * that contains the following nested statements:</p> <ul> <li> <p>An IP match
-     * statement with an IP set that specifies the address 192.0.2.44.</p> </li> <li>
-     * <p>A string match statement that searches in the User-Agent header for the
-     * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
-     * criteria of both of the nested statements are counted. If the count exceeds
-     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
-     * meet the criteria of both of the nested statements are not counted towards the
-     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
-     * <code>RateBasedStatement</code> inside another statement, for example inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
-     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
+     * <p>A rate-based rule counts incoming requests and rate limits requests when they
+     * are coming at too fast a rate. The rule categorizes requests according to your
+     * aggregation criteria, collects them into aggregation instances, and counts and
+     * rate limits the requests for each instance. </p> <p>You can specify individual
+     * aggregation keys, like IP address or HTTP method. You can also specify
+     * aggregation key combinations, like IP address and HTTP method, or HTTP method,
+     * query argument, and cookie. </p> <p>Each unique set of values for the
+     * aggregation keys that you specify is a separate aggregation instance, with the
+     * value from each key contributing to the aggregation instance definition. </p>
+     * <p>For example, assume the rule evaluates web requests with the following IP
+     * address and HTTP method values: </p> <ul> <li> <p>IP address 10.1.1.1, HTTP
+     * method POST</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET</p> </li>
+     * <li> <p>IP address 127.0.0.0, HTTP method POST</p> </li> <li> <p>IP address
+     * 10.1.1.1, HTTP method GET</p> </li> </ul> <p>The rule would create different
+     * aggregation instances according to your aggregation criteria, for example: </p>
+     * <ul> <li> <p>If the aggregation criteria is just the IP address, then each
+     * individual address is an aggregation instance, and WAF counts requests
+     * separately for each. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>IP address 10.1.1.1: count
+     * 3</p> </li> <li> <p>IP address 127.0.0.0: count 1</p> </li> </ul> </li> <li>
+     * <p>If the aggregation criteria is HTTP method, then each individual HTTP method
+     * is an aggregation instance. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>HTTP method POST: count 2</p>
+     * </li> <li> <p>HTTP method GET: count 2</p> </li> </ul> </li> <li> <p>If the
+     * aggregation criteria is IP address and HTTP method, then each IP address and
+     * each HTTP method would contribute to the combined aggregation instance. The
+     * aggregation instances and request counts for our example would be the following:
+     * </p> <ul> <li> <p>IP address 10.1.1.1, HTTP method POST: count 1</p> </li> <li>
+     * <p>IP address 10.1.1.1, HTTP method GET: count 2</p> </li> <li> <p>IP address
+     * 127.0.0.0, HTTP method POST: count 1</p> </li> </ul> </li> </ul> <p>For any
+     * n-tuple of aggregation keys, each unique combination of values for the keys
+     * defines a separate aggregation instance, which WAF counts and rate-limits
+     * individually. </p> <p>You can optionally nest another statement inside the
+     * rate-based statement, to narrow the scope of the rule so that it only counts and
+     * rate limits requests that match the nested statement. You can use this nested
+     * scope-down statement in conjunction with your aggregation key specifications or
+     * you can just count and rate limit all requests that match the scope-down
+     * statement, without additional aggregation. When you choose to just manage all
+     * requests that match a scope-down statement, the aggregation instance is singular
+     * for the rule. </p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p> <p>For additional information
+     * about the options, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rate-based-rules.html">Rate
+     * limiting web requests using rate-based rules</a> in the <i>WAF Developer
+     * Guide</i>. </p> <p>If you only aggregate on the individual IP address or
+     * forwarded IP address, you can retrieve the list of IP addresses that WAF is
+     * currently rate limiting for a rule through the API call
+     * <code>GetRateBasedStatementManagedKeys</code>. This option is not available for
+     * other aggregation configurations.</p> <p>WAF tracks and manages web requests
+     * separately for each instance of a rate-based rule that you use. For example, if
+     * you provide the same rate-based rule settings in two web ACLs, each of the two
+     * rule statements represents a separate instance of the rate-based rule and gets
+     * its own tracking and management by WAF. If you define a rate-based rule inside a
+     * rule group, and then use that rule group in multiple places, each use creates a
+     * separate instance of the rate-based rule that gets its own tracking and
+     * management by WAF. </p>
      */
     AWS_WAFV2_API void SetRateBasedStatement(RateBasedStatement&& value);
 
     /**
-     * <p>A rate-based rule tracks the rate of requests for each originating IP
-     * address, and triggers the rule action when the rate exceeds a limit that you
-     * specify on the number of requests in any 5-minute time span. You can use this to
-     * put a temporary block on requests from an IP address that is sending excessive
-     * requests. </p> <p>WAF tracks and manages web requests separately for each
-     * instance of a rate-based rule that you use. For example, if you provide the same
-     * rate-based rule settings in two web ACLs, each of the two rule statements
-     * represents a separate instance of the rate-based rule and gets its own tracking
-     * and management by WAF. If you define a rate-based rule inside a rule group, and
-     * then use that rule group in multiple places, each use creates a separate
-     * instance of the rate-based rule that gets its own tracking and management by
-     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
-     * the IP address until the request rate falls below the limit.</p> <p>You can
-     * optionally nest another statement inside the rate-based statement, to narrow the
-     * scope of the rule so that it only counts requests that match the nested
-     * statement. For example, based on recent requests that you have seen from an
-     * attacker, you might create a rate-based rule with a nested AND rule statement
-     * that contains the following nested statements:</p> <ul> <li> <p>An IP match
-     * statement with an IP set that specifies the address 192.0.2.44.</p> </li> <li>
-     * <p>A string match statement that searches in the User-Agent header for the
-     * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
-     * criteria of both of the nested statements are counted. If the count exceeds
-     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
-     * meet the criteria of both of the nested statements are not counted towards the
-     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
-     * <code>RateBasedStatement</code> inside another statement, for example inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
-     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
+     * <p>A rate-based rule counts incoming requests and rate limits requests when they
+     * are coming at too fast a rate. The rule categorizes requests according to your
+     * aggregation criteria, collects them into aggregation instances, and counts and
+     * rate limits the requests for each instance. </p> <p>You can specify individual
+     * aggregation keys, like IP address or HTTP method. You can also specify
+     * aggregation key combinations, like IP address and HTTP method, or HTTP method,
+     * query argument, and cookie. </p> <p>Each unique set of values for the
+     * aggregation keys that you specify is a separate aggregation instance, with the
+     * value from each key contributing to the aggregation instance definition. </p>
+     * <p>For example, assume the rule evaluates web requests with the following IP
+     * address and HTTP method values: </p> <ul> <li> <p>IP address 10.1.1.1, HTTP
+     * method POST</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET</p> </li>
+     * <li> <p>IP address 127.0.0.0, HTTP method POST</p> </li> <li> <p>IP address
+     * 10.1.1.1, HTTP method GET</p> </li> </ul> <p>The rule would create different
+     * aggregation instances according to your aggregation criteria, for example: </p>
+     * <ul> <li> <p>If the aggregation criteria is just the IP address, then each
+     * individual address is an aggregation instance, and WAF counts requests
+     * separately for each. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>IP address 10.1.1.1: count
+     * 3</p> </li> <li> <p>IP address 127.0.0.0: count 1</p> </li> </ul> </li> <li>
+     * <p>If the aggregation criteria is HTTP method, then each individual HTTP method
+     * is an aggregation instance. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>HTTP method POST: count 2</p>
+     * </li> <li> <p>HTTP method GET: count 2</p> </li> </ul> </li> <li> <p>If the
+     * aggregation criteria is IP address and HTTP method, then each IP address and
+     * each HTTP method would contribute to the combined aggregation instance. The
+     * aggregation instances and request counts for our example would be the following:
+     * </p> <ul> <li> <p>IP address 10.1.1.1, HTTP method POST: count 1</p> </li> <li>
+     * <p>IP address 10.1.1.1, HTTP method GET: count 2</p> </li> <li> <p>IP address
+     * 127.0.0.0, HTTP method POST: count 1</p> </li> </ul> </li> </ul> <p>For any
+     * n-tuple of aggregation keys, each unique combination of values for the keys
+     * defines a separate aggregation instance, which WAF counts and rate-limits
+     * individually. </p> <p>You can optionally nest another statement inside the
+     * rate-based statement, to narrow the scope of the rule so that it only counts and
+     * rate limits requests that match the nested statement. You can use this nested
+     * scope-down statement in conjunction with your aggregation key specifications or
+     * you can just count and rate limit all requests that match the scope-down
+     * statement, without additional aggregation. When you choose to just manage all
+     * requests that match a scope-down statement, the aggregation instance is singular
+     * for the rule. </p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p> <p>For additional information
+     * about the options, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rate-based-rules.html">Rate
+     * limiting web requests using rate-based rules</a> in the <i>WAF Developer
+     * Guide</i>. </p> <p>If you only aggregate on the individual IP address or
+     * forwarded IP address, you can retrieve the list of IP addresses that WAF is
+     * currently rate limiting for a rule through the API call
+     * <code>GetRateBasedStatementManagedKeys</code>. This option is not available for
+     * other aggregation configurations.</p> <p>WAF tracks and manages web requests
+     * separately for each instance of a rate-based rule that you use. For example, if
+     * you provide the same rate-based rule settings in two web ACLs, each of the two
+     * rule statements represents a separate instance of the rate-based rule and gets
+     * its own tracking and management by WAF. If you define a rate-based rule inside a
+     * rule group, and then use that rule group in multiple places, each use creates a
+     * separate instance of the rate-based rule that gets its own tracking and
+     * management by WAF. </p>
      */
     AWS_WAFV2_API Statement& WithRateBasedStatement(const RateBasedStatement& value);
 
     /**
-     * <p>A rate-based rule tracks the rate of requests for each originating IP
-     * address, and triggers the rule action when the rate exceeds a limit that you
-     * specify on the number of requests in any 5-minute time span. You can use this to
-     * put a temporary block on requests from an IP address that is sending excessive
-     * requests. </p> <p>WAF tracks and manages web requests separately for each
-     * instance of a rate-based rule that you use. For example, if you provide the same
-     * rate-based rule settings in two web ACLs, each of the two rule statements
-     * represents a separate instance of the rate-based rule and gets its own tracking
-     * and management by WAF. If you define a rate-based rule inside a rule group, and
-     * then use that rule group in multiple places, each use creates a separate
-     * instance of the rate-based rule that gets its own tracking and management by
-     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
-     * the IP address until the request rate falls below the limit.</p> <p>You can
-     * optionally nest another statement inside the rate-based statement, to narrow the
-     * scope of the rule so that it only counts requests that match the nested
-     * statement. For example, based on recent requests that you have seen from an
-     * attacker, you might create a rate-based rule with a nested AND rule statement
-     * that contains the following nested statements:</p> <ul> <li> <p>An IP match
-     * statement with an IP set that specifies the address 192.0.2.44.</p> </li> <li>
-     * <p>A string match statement that searches in the User-Agent header for the
-     * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
-     * criteria of both of the nested statements are counted. If the count exceeds
-     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
-     * meet the criteria of both of the nested statements are not counted towards the
-     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
-     * <code>RateBasedStatement</code> inside another statement, for example inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
-     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
+     * <p>A rate-based rule counts incoming requests and rate limits requests when they
+     * are coming at too fast a rate. The rule categorizes requests according to your
+     * aggregation criteria, collects them into aggregation instances, and counts and
+     * rate limits the requests for each instance. </p> <p>You can specify individual
+     * aggregation keys, like IP address or HTTP method. You can also specify
+     * aggregation key combinations, like IP address and HTTP method, or HTTP method,
+     * query argument, and cookie. </p> <p>Each unique set of values for the
+     * aggregation keys that you specify is a separate aggregation instance, with the
+     * value from each key contributing to the aggregation instance definition. </p>
+     * <p>For example, assume the rule evaluates web requests with the following IP
+     * address and HTTP method values: </p> <ul> <li> <p>IP address 10.1.1.1, HTTP
+     * method POST</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET</p> </li>
+     * <li> <p>IP address 127.0.0.0, HTTP method POST</p> </li> <li> <p>IP address
+     * 10.1.1.1, HTTP method GET</p> </li> </ul> <p>The rule would create different
+     * aggregation instances according to your aggregation criteria, for example: </p>
+     * <ul> <li> <p>If the aggregation criteria is just the IP address, then each
+     * individual address is an aggregation instance, and WAF counts requests
+     * separately for each. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>IP address 10.1.1.1: count
+     * 3</p> </li> <li> <p>IP address 127.0.0.0: count 1</p> </li> </ul> </li> <li>
+     * <p>If the aggregation criteria is HTTP method, then each individual HTTP method
+     * is an aggregation instance. The aggregation instances and request counts for our
+     * example would be the following: </p> <ul> <li> <p>HTTP method POST: count 2</p>
+     * </li> <li> <p>HTTP method GET: count 2</p> </li> </ul> </li> <li> <p>If the
+     * aggregation criteria is IP address and HTTP method, then each IP address and
+     * each HTTP method would contribute to the combined aggregation instance. The
+     * aggregation instances and request counts for our example would be the following:
+     * </p> <ul> <li> <p>IP address 10.1.1.1, HTTP method POST: count 1</p> </li> <li>
+     * <p>IP address 10.1.1.1, HTTP method GET: count 2</p> </li> <li> <p>IP address
+     * 127.0.0.0, HTTP method POST: count 1</p> </li> </ul> </li> </ul> <p>For any
+     * n-tuple of aggregation keys, each unique combination of values for the keys
+     * defines a separate aggregation instance, which WAF counts and rate-limits
+     * individually. </p> <p>You can optionally nest another statement inside the
+     * rate-based statement, to narrow the scope of the rule so that it only counts and
+     * rate limits requests that match the nested statement. You can use this nested
+     * scope-down statement in conjunction with your aggregation key specifications or
+     * you can just count and rate limit all requests that match the scope-down
+     * statement, without additional aggregation. When you choose to just manage all
+     * requests that match a scope-down statement, the aggregation instance is singular
+     * for the rule. </p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p> <p>For additional information
+     * about the options, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rate-based-rules.html">Rate
+     * limiting web requests using rate-based rules</a> in the <i>WAF Developer
+     * Guide</i>. </p> <p>If you only aggregate on the individual IP address or
+     * forwarded IP address, you can retrieve the list of IP addresses that WAF is
+     * currently rate limiting for a rule through the API call
+     * <code>GetRateBasedStatementManagedKeys</code>. This option is not available for
+     * other aggregation configurations.</p> <p>WAF tracks and manages web requests
+     * separately for each instance of a rate-based rule that you use. For example, if
+     * you provide the same rate-based rule settings in two web ACLs, each of the two
+     * rule statements represents a separate instance of the rate-based rule and gets
+     * its own tracking and management by WAF. If you define a rate-based rule inside a
+     * rule group, and then use that rule group in multiple places, each use creates a
+     * separate instance of the rate-based rule that gets its own tracking and
+     * management by WAF. </p>
      */
     AWS_WAFV2_API Statement& WithRateBasedStatement(RateBasedStatement&& value);
 
@@ -1032,12 +1218,15 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API const ManagedRuleGroupStatement& GetManagedRuleGroupStatement() const;
@@ -1048,12 +1237,15 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API bool ManagedRuleGroupStatementHasBeenSet() const;
@@ -1064,12 +1256,15 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API void SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
@@ -1080,12 +1275,15 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API void SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
@@ -1096,12 +1294,15 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API Statement& WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
@@ -1112,12 +1313,15 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API Statement& WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);

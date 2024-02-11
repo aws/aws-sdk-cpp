@@ -204,6 +204,42 @@ namespace Model
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const char* key, const char* value) { m_restoreMetadata.emplace(key, value); return *this; }
 
 
+    /**
+     * <p>This is the resource type associated with the recovery point.</p>
+     */
+    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>This is the resource type associated with the recovery point.</p>
+     */
+    inline void SetResourceType(const Aws::String& value) { m_resourceType = value; }
+
+    /**
+     * <p>This is the resource type associated with the recovery point.</p>
+     */
+    inline void SetResourceType(Aws::String&& value) { m_resourceType = std::move(value); }
+
+    /**
+     * <p>This is the resource type associated with the recovery point.</p>
+     */
+    inline void SetResourceType(const char* value) { m_resourceType.assign(value); }
+
+    /**
+     * <p>This is the resource type associated with the recovery point.</p>
+     */
+    inline GetRecoveryPointRestoreMetadataResult& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
+
+    /**
+     * <p>This is the resource type associated with the recovery point.</p>
+     */
+    inline GetRecoveryPointRestoreMetadataResult& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the resource type associated with the recovery point.</p>
+     */
+    inline GetRecoveryPointRestoreMetadataResult& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -232,6 +268,8 @@ namespace Model
     Aws::String m_recoveryPointArn;
 
     Aws::Map<Aws::String, Aws::String> m_restoreMetadata;
+
+    Aws::String m_resourceType;
 
     Aws::String m_requestId;
   };

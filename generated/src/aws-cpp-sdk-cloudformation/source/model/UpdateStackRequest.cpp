@@ -29,7 +29,9 @@ UpdateStackRequest::UpdateStackRequest() :
     m_tagsHasBeenSet(false),
     m_disableRollback(false),
     m_disableRollbackHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_retainExceptOnCreate(false),
+    m_retainExceptOnCreateHasBeenSet(false)
 {
 }
 
@@ -148,6 +150,11 @@ Aws::String UpdateStackRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
+  }
+
+  if(m_retainExceptOnCreateHasBeenSet)
+  {
+    ss << "RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
   }
 
   ss << "Version=2010-05-15";

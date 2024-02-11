@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobState::NOT_SET:
+            return {};
           case JobState::New:
             return "New";
           case JobState::PreparingAppliance:

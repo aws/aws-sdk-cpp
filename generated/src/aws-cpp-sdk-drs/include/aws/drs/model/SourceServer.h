@@ -41,6 +41,47 @@ namespace Model
 
 
     /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline SourceServer& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline SourceServer& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline SourceServer& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
+
+    /**
      * <p>The ARN of the Source Server.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -335,6 +376,55 @@ namespace Model
 
 
     /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline const Aws::String& GetSourceNetworkID() const{ return m_sourceNetworkID; }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline bool SourceNetworkIDHasBeenSet() const { return m_sourceNetworkIDHasBeenSet; }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline void SetSourceNetworkID(const Aws::String& value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID = value; }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline void SetSourceNetworkID(Aws::String&& value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID = std::move(value); }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline void SetSourceNetworkID(const char* value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID.assign(value); }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline SourceServer& WithSourceNetworkID(const Aws::String& value) { SetSourceNetworkID(value); return *this;}
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline SourceServer& WithSourceNetworkID(Aws::String&& value) { SetSourceNetworkID(std::move(value)); return *this;}
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline SourceServer& WithSourceNetworkID(const char* value) { SetSourceNetworkID(value); return *this;}
+
+
+    /**
      * <p>The source properties of the Source Server.</p>
      */
     inline const SourceProperties& GetSourceProperties() const{ return m_sourceProperties; }
@@ -529,6 +619,9 @@ namespace Model
 
   private:
 
+    Aws::String m_agentVersion;
+    bool m_agentVersionHasBeenSet = false;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
@@ -552,6 +645,9 @@ namespace Model
 
     SourceCloudProperties m_sourceCloudProperties;
     bool m_sourceCloudPropertiesHasBeenSet = false;
+
+    Aws::String m_sourceNetworkID;
+    bool m_sourceNetworkIDHasBeenSet = false;
 
     SourceProperties m_sourceProperties;
     bool m_sourcePropertiesHasBeenSet = false;

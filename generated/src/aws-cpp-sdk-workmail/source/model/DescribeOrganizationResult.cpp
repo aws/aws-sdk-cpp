@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOrganizationResult::DescribeOrganizationResult()
+DescribeOrganizationResult::DescribeOrganizationResult() : 
+    m_interoperabilityEnabled(false)
 {
 }
 
-DescribeOrganizationResult::DescribeOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeOrganizationResult::DescribeOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_interoperabilityEnabled(false)
 {
   *this = result;
 }
@@ -80,6 +82,18 @@ DescribeOrganizationResult& DescribeOrganizationResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
+
+  }
+
+  if(jsonValue.ValueExists("MigrationAdmin"))
+  {
+    m_migrationAdmin = jsonValue.GetString("MigrationAdmin");
+
+  }
+
+  if(jsonValue.ValueExists("InteroperabilityEnabled"))
+  {
+    m_interoperabilityEnabled = jsonValue.GetBool("InteroperabilityEnabled");
 
   }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3PhaseControl::NOT_SET:
+            return {};
           case Eac3PhaseControl::SHIFT_90_DEGREES:
             return "SHIFT_90_DEGREES";
           case Eac3PhaseControl::NO_SHIFT:

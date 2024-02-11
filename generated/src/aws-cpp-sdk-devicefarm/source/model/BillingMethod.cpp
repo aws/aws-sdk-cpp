@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BillingMethod::NOT_SET:
+            return {};
           case BillingMethod::METERED:
             return "METERED";
           case BillingMethod::UNMETERED:

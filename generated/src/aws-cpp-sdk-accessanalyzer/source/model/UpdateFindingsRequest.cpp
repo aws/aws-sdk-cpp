@@ -18,7 +18,7 @@ UpdateFindingsRequest::UpdateFindingsRequest() :
     m_statusHasBeenSet(false),
     m_idsHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

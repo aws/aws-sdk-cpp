@@ -8,6 +8,7 @@
 #include <aws/ssm-sap/SsmSapRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm-sap/model/BackintConfig.h>
 #include <aws/ssm-sap/model/ApplicationCredential.h>
 #include <utility>
 
@@ -156,6 +157,86 @@ namespace Model
      */
     inline UpdateApplicationSettingsRequest& AddCredentialsToRemove(ApplicationCredential&& value) { m_credentialsToRemoveHasBeenSet = true; m_credentialsToRemove.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Installation of AWS Backint Agent for SAP HANA.</p>
+     */
+    inline const BackintConfig& GetBackint() const{ return m_backint; }
+
+    /**
+     * <p>Installation of AWS Backint Agent for SAP HANA.</p>
+     */
+    inline bool BackintHasBeenSet() const { return m_backintHasBeenSet; }
+
+    /**
+     * <p>Installation of AWS Backint Agent for SAP HANA.</p>
+     */
+    inline void SetBackint(const BackintConfig& value) { m_backintHasBeenSet = true; m_backint = value; }
+
+    /**
+     * <p>Installation of AWS Backint Agent for SAP HANA.</p>
+     */
+    inline void SetBackint(BackintConfig&& value) { m_backintHasBeenSet = true; m_backint = std::move(value); }
+
+    /**
+     * <p>Installation of AWS Backint Agent for SAP HANA.</p>
+     */
+    inline UpdateApplicationSettingsRequest& WithBackint(const BackintConfig& value) { SetBackint(value); return *this;}
+
+    /**
+     * <p>Installation of AWS Backint Agent for SAP HANA.</p>
+     */
+    inline UpdateApplicationSettingsRequest& WithBackint(BackintConfig&& value) { SetBackint(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline const Aws::String& GetDatabaseArn() const{ return m_databaseArn; }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline bool DatabaseArnHasBeenSet() const { return m_databaseArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline void SetDatabaseArn(const Aws::String& value) { m_databaseArnHasBeenSet = true; m_databaseArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline void SetDatabaseArn(Aws::String&& value) { m_databaseArnHasBeenSet = true; m_databaseArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline void SetDatabaseArn(const char* value) { m_databaseArnHasBeenSet = true; m_databaseArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline UpdateApplicationSettingsRequest& WithDatabaseArn(const Aws::String& value) { SetDatabaseArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline UpdateApplicationSettingsRequest& WithDatabaseArn(Aws::String&& value) { SetDatabaseArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database that replaces the current
+     * SAP HANA connection with the SAP_ABAP application.</p>
+     */
+    inline UpdateApplicationSettingsRequest& WithDatabaseArn(const char* value) { SetDatabaseArn(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -166,6 +247,12 @@ namespace Model
 
     Aws::Vector<ApplicationCredential> m_credentialsToRemove;
     bool m_credentialsToRemoveHasBeenSet = false;
+
+    BackintConfig m_backint;
+    bool m_backintHasBeenSet = false;
+
+    Aws::String m_databaseArn;
+    bool m_databaseArnHasBeenSet = false;
   };
 
 } // namespace Model

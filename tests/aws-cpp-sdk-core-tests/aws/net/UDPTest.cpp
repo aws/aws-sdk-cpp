@@ -4,8 +4,8 @@
  */
 
 
-#include <gtest/gtest.h>
-#include <aws/core/utils/threading/Executor.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <aws/core/utils/threading/DefaultExecutor.h>
 #include <aws/core/utils/threading/Semaphore.h>
 #include <aws/core/net/SimpleUDP.h>
 #include <aws/core/utils/DateTime.h>
@@ -17,7 +17,7 @@ using namespace Aws::Utils::Threading;
 static const int counter = 100;
 static const short udpPort = 6666;
 
-TEST(UDPTEST, TestBlockingUDPSendReceivePacketsSequencialy)
+TEST_F(UDPTEST, TestBlockingUDPSendReceivePacketsSequencialy)
 {
     static Semaphore sockEv(0, 1);
     static Semaphore dataSendEv(1, 1);
@@ -74,7 +74,7 @@ TEST(UDPTEST, TestBlockingUDPSendReceivePacketsSequencialy)
     exec.Submit(sender);
 }
 
-TEST(UDPTEST, TestUDPSendReceivePacketsNonblockingBatch)
+TEST_F(UDPTEST, TestUDPSendReceivePacketsNonblockingBatch)
 {
     static Semaphore sockEv(0, 1);
     srand(static_cast<unsigned int>(time(NULL)));

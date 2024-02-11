@@ -35,6 +35,19 @@ namespace Aws
         static const int VHL_HASH = HashingUtils::HashString("VHL");
         static const int VHC_HASH = HashingUtils::HashString("VHC");
         static const int VHR_HASH = HashingUtils::HashString("VHR");
+        static const int TBL_HASH = HashingUtils::HashString("TBL");
+        static const int TBC_HASH = HashingUtils::HashString("TBC");
+        static const int TBR_HASH = HashingUtils::HashString("TBR");
+        static const int RSL_HASH = HashingUtils::HashString("RSL");
+        static const int RSR_HASH = HashingUtils::HashString("RSR");
+        static const int LW_HASH = HashingUtils::HashString("LW");
+        static const int RW_HASH = HashingUtils::HashString("RW");
+        static const int LFE2_HASH = HashingUtils::HashString("LFE2");
+        static const int LT_HASH = HashingUtils::HashString("LT");
+        static const int RT_HASH = HashingUtils::HashString("RT");
+        static const int HI_HASH = HashingUtils::HashString("HI");
+        static const int NAR_HASH = HashingUtils::HashString("NAR");
+        static const int M_HASH = HashingUtils::HashString("M");
 
 
         AudioChannelTag GetAudioChannelTagForName(const Aws::String& name)
@@ -100,6 +113,58 @@ namespace Aws
           {
             return AudioChannelTag::VHR;
           }
+          else if (hashCode == TBL_HASH)
+          {
+            return AudioChannelTag::TBL;
+          }
+          else if (hashCode == TBC_HASH)
+          {
+            return AudioChannelTag::TBC;
+          }
+          else if (hashCode == TBR_HASH)
+          {
+            return AudioChannelTag::TBR;
+          }
+          else if (hashCode == RSL_HASH)
+          {
+            return AudioChannelTag::RSL;
+          }
+          else if (hashCode == RSR_HASH)
+          {
+            return AudioChannelTag::RSR;
+          }
+          else if (hashCode == LW_HASH)
+          {
+            return AudioChannelTag::LW;
+          }
+          else if (hashCode == RW_HASH)
+          {
+            return AudioChannelTag::RW;
+          }
+          else if (hashCode == LFE2_HASH)
+          {
+            return AudioChannelTag::LFE2;
+          }
+          else if (hashCode == LT_HASH)
+          {
+            return AudioChannelTag::LT;
+          }
+          else if (hashCode == RT_HASH)
+          {
+            return AudioChannelTag::RT;
+          }
+          else if (hashCode == HI_HASH)
+          {
+            return AudioChannelTag::HI;
+          }
+          else if (hashCode == NAR_HASH)
+          {
+            return AudioChannelTag::NAR;
+          }
+          else if (hashCode == M_HASH)
+          {
+            return AudioChannelTag::M;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -114,6 +179,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioChannelTag::NOT_SET:
+            return {};
           case AudioChannelTag::L:
             return "L";
           case AudioChannelTag::R:
@@ -144,6 +211,32 @@ namespace Aws
             return "VHC";
           case AudioChannelTag::VHR:
             return "VHR";
+          case AudioChannelTag::TBL:
+            return "TBL";
+          case AudioChannelTag::TBC:
+            return "TBC";
+          case AudioChannelTag::TBR:
+            return "TBR";
+          case AudioChannelTag::RSL:
+            return "RSL";
+          case AudioChannelTag::RSR:
+            return "RSR";
+          case AudioChannelTag::LW:
+            return "LW";
+          case AudioChannelTag::RW:
+            return "RW";
+          case AudioChannelTag::LFE2:
+            return "LFE2";
+          case AudioChannelTag::LT:
+            return "LT";
+          case AudioChannelTag::RT:
+            return "RT";
+          case AudioChannelTag::HI:
+            return "HI";
+          case AudioChannelTag::NAR:
+            return "NAR";
+          case AudioChannelTag::M:
+            return "M";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

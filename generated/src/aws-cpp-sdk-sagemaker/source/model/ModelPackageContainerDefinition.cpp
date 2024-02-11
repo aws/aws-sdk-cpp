@@ -28,7 +28,8 @@ ModelPackageContainerDefinition::ModelPackageContainerDefinition() :
     m_modelInputHasBeenSet(false),
     m_frameworkHasBeenSet(false),
     m_frameworkVersionHasBeenSet(false),
-    m_nearestModelNameHasBeenSet(false)
+    m_nearestModelNameHasBeenSet(false),
+    m_additionalS3DataSourceHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ModelPackageContainerDefinition::ModelPackageContainerDefinition(JsonView jsonVa
     m_modelInputHasBeenSet(false),
     m_frameworkHasBeenSet(false),
     m_frameworkVersionHasBeenSet(false),
-    m_nearestModelNameHasBeenSet(false)
+    m_nearestModelNameHasBeenSet(false),
+    m_additionalS3DataSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +124,13 @@ ModelPackageContainerDefinition& ModelPackageContainerDefinition::operator =(Jso
     m_nearestModelNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalS3DataSource"))
+  {
+    m_additionalS3DataSource = jsonValue.GetObject("AdditionalS3DataSource");
+
+    m_additionalS3DataSourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -191,6 +200,12 @@ JsonValue ModelPackageContainerDefinition::Jsonize() const
   if(m_nearestModelNameHasBeenSet)
   {
    payload.WithString("NearestModelName", m_nearestModelName);
+
+  }
+
+  if(m_additionalS3DataSourceHasBeenSet)
+  {
+   payload.WithObject("AdditionalS3DataSource", m_additionalS3DataSource.Jsonize());
 
   }
 

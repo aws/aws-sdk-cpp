@@ -77,42 +77,50 @@ namespace Model
 
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
      */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
      */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
      */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
      */
     inline UpdateConfigurationRequest& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
      */
     inline UpdateConfigurationRequest& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * <p>Required. The base64-encoded XML configuration.</p>
+     * <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for
+     * RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
      */
     inline UpdateConfigurationRequest& WithData(const char* value) { SetData(value); return *this;}
 

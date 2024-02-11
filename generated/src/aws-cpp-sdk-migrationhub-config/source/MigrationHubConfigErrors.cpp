@@ -36,11 +36,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == DRY_RUN_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubConfigErrors::DRY_RUN_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubConfigErrors::DRY_RUN_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_INPUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubConfigErrors::INVALID_INPUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubConfigErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

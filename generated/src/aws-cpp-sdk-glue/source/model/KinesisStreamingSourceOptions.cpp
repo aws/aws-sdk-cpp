@@ -49,7 +49,8 @@ KinesisStreamingSourceOptions::KinesisStreamingSourceOptions() :
     m_roleArnHasBeenSet(false),
     m_roleSessionNameHasBeenSet(false),
     m_addRecordTimestampHasBeenSet(false),
-    m_emitConsumerLagMetricsHasBeenSet(false)
+    m_emitConsumerLagMetricsHasBeenSet(false),
+    m_startingTimestampHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ KinesisStreamingSourceOptions::KinesisStreamingSourceOptions(JsonView jsonValue)
     m_roleArnHasBeenSet(false),
     m_roleSessionNameHasBeenSet(false),
     m_addRecordTimestampHasBeenSet(false),
-    m_emitConsumerLagMetricsHasBeenSet(false)
+    m_emitConsumerLagMetricsHasBeenSet(false),
+    m_startingTimestampHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -231,6 +233,13 @@ KinesisStreamingSourceOptions& KinesisStreamingSourceOptions::operator =(JsonVie
     m_emitConsumerLagMetricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StartingTimestamp"))
+  {
+    m_startingTimestamp = jsonValue.GetString("StartingTimestamp");
+
+    m_startingTimestampHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -355,6 +364,11 @@ JsonValue KinesisStreamingSourceOptions::Jsonize() const
   {
    payload.WithString("EmitConsumerLagMetrics", m_emitConsumerLagMetrics);
 
+  }
+
+  if(m_startingTimestampHasBeenSet)
+  {
+   payload.WithString("StartingTimestamp", m_startingTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

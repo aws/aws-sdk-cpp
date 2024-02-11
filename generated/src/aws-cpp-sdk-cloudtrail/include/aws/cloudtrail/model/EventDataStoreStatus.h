@@ -18,7 +18,10 @@ namespace Model
     NOT_SET,
     CREATED,
     ENABLED,
-    PENDING_DELETION
+    PENDING_DELETION,
+    STARTING_INGESTION,
+    STOPPING_INGESTION,
+    STOPPED_INGESTION
   };
 
 namespace EventDataStoreStatusMapper

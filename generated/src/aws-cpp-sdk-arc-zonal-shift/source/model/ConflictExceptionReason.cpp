@@ -23,6 +23,9 @@ namespace Aws
         static const int ZonalShiftAlreadyExists_HASH = HashingUtils::HashString("ZonalShiftAlreadyExists");
         static const int ZonalShiftStatusNotActive_HASH = HashingUtils::HashString("ZonalShiftStatusNotActive");
         static const int SimultaneousZonalShiftsConflict_HASH = HashingUtils::HashString("SimultaneousZonalShiftsConflict");
+        static const int PracticeConfigurationAlreadyExists_HASH = HashingUtils::HashString("PracticeConfigurationAlreadyExists");
+        static const int AutoShiftEnabled_HASH = HashingUtils::HashString("AutoShiftEnabled");
+        static const int PracticeConfigurationDoesNotExist_HASH = HashingUtils::HashString("PracticeConfigurationDoesNotExist");
 
 
         ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name)
@@ -40,6 +43,18 @@ namespace Aws
           {
             return ConflictExceptionReason::SimultaneousZonalShiftsConflict;
           }
+          else if (hashCode == PracticeConfigurationAlreadyExists_HASH)
+          {
+            return ConflictExceptionReason::PracticeConfigurationAlreadyExists;
+          }
+          else if (hashCode == AutoShiftEnabled_HASH)
+          {
+            return ConflictExceptionReason::AutoShiftEnabled;
+          }
+          else if (hashCode == PracticeConfigurationDoesNotExist_HASH)
+          {
+            return ConflictExceptionReason::PracticeConfigurationDoesNotExist;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +69,20 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictExceptionReason::NOT_SET:
+            return {};
           case ConflictExceptionReason::ZonalShiftAlreadyExists:
             return "ZonalShiftAlreadyExists";
           case ConflictExceptionReason::ZonalShiftStatusNotActive:
             return "ZonalShiftStatusNotActive";
           case ConflictExceptionReason::SimultaneousZonalShiftsConflict:
             return "SimultaneousZonalShiftsConflict";
+          case ConflictExceptionReason::PracticeConfigurationAlreadyExists:
+            return "PracticeConfigurationAlreadyExists";
+          case ConflictExceptionReason::AutoShiftEnabled:
+            return "AutoShiftEnabled";
+          case ConflictExceptionReason::PracticeConfigurationDoesNotExist:
+            return "PracticeConfigurationDoesNotExist";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

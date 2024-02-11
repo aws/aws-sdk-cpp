@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     Bitbucket,
     GitHub,
-    GitHubEnterpriseServer
+    GitHubEnterpriseServer,
+    GitLab,
+    GitLabSelfManaged
   };
 
 namespace ProviderTypeMapper

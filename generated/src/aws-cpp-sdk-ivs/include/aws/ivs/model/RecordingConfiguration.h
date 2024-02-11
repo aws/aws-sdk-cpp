@@ -7,6 +7,7 @@
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs/model/DestinationConfiguration.h>
+#include <aws/ivs/model/RenditionConfiguration.h>
 #include <aws/ivs/model/RecordingConfigurationState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ivs/model/ThumbnailConfiguration.h>
@@ -188,6 +189,37 @@ namespace Model
      * Default: 0.</p>
      */
     inline RecordingConfiguration& WithRecordingReconnectWindowSeconds(int value) { SetRecordingReconnectWindowSeconds(value); return *this;}
+
+
+    /**
+     * <p>Object that describes which renditions should be recorded for a stream.</p>
+     */
+    inline const RenditionConfiguration& GetRenditionConfiguration() const{ return m_renditionConfiguration; }
+
+    /**
+     * <p>Object that describes which renditions should be recorded for a stream.</p>
+     */
+    inline bool RenditionConfigurationHasBeenSet() const { return m_renditionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Object that describes which renditions should be recorded for a stream.</p>
+     */
+    inline void SetRenditionConfiguration(const RenditionConfiguration& value) { m_renditionConfigurationHasBeenSet = true; m_renditionConfiguration = value; }
+
+    /**
+     * <p>Object that describes which renditions should be recorded for a stream.</p>
+     */
+    inline void SetRenditionConfiguration(RenditionConfiguration&& value) { m_renditionConfigurationHasBeenSet = true; m_renditionConfiguration = std::move(value); }
+
+    /**
+     * <p>Object that describes which renditions should be recorded for a stream.</p>
+     */
+    inline RecordingConfiguration& WithRenditionConfiguration(const RenditionConfiguration& value) { SetRenditionConfiguration(value); return *this;}
+
+    /**
+     * <p>Object that describes which renditions should be recorded for a stream.</p>
+     */
+    inline RecordingConfiguration& WithRenditionConfiguration(RenditionConfiguration&& value) { SetRenditionConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -419,6 +451,9 @@ namespace Model
 
     int m_recordingReconnectWindowSeconds;
     bool m_recordingReconnectWindowSecondsHasBeenSet = false;
+
+    RenditionConfiguration m_renditionConfiguration;
+    bool m_renditionConfigurationHasBeenSet = false;
 
     RecordingConfigurationState m_state;
     bool m_stateHasBeenSet = false;

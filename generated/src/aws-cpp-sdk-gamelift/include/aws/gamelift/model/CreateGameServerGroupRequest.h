@@ -43,65 +43,65 @@ namespace Model
 
     /**
      * <p>An identifier for the new game server group. This value is used to generate
-     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift
-     * FleetIQ game server group. The name must be unique per Region per Amazon Web
-     * Services account.</p>
+     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon
+     * GameLift FleetIQ game server group. The name must be unique per Region per
+     * Amazon Web Services account.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
      * <p>An identifier for the new game server group. This value is used to generate
-     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift
-     * FleetIQ game server group. The name must be unique per Region per Amazon Web
-     * Services account.</p>
+     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon
+     * GameLift FleetIQ game server group. The name must be unique per Region per
+     * Amazon Web Services account.</p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
      * <p>An identifier for the new game server group. This value is used to generate
-     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift
-     * FleetIQ game server group. The name must be unique per Region per Amazon Web
-     * Services account.</p>
+     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon
+     * GameLift FleetIQ game server group. The name must be unique per Region per
+     * Amazon Web Services account.</p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
      * <p>An identifier for the new game server group. This value is used to generate
-     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift
-     * FleetIQ game server group. The name must be unique per Region per Amazon Web
-     * Services account.</p>
+     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon
+     * GameLift FleetIQ game server group. The name must be unique per Region per
+     * Amazon Web Services account.</p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
      * <p>An identifier for the new game server group. This value is used to generate
-     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift
-     * FleetIQ game server group. The name must be unique per Region per Amazon Web
-     * Services account.</p>
+     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon
+     * GameLift FleetIQ game server group. The name must be unique per Region per
+     * Amazon Web Services account.</p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
      * <p>An identifier for the new game server group. This value is used to generate
-     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift
-     * FleetIQ game server group. The name must be unique per Region per Amazon Web
-     * Services account.</p>
+     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon
+     * GameLift FleetIQ game server group. The name must be unique per Region per
+     * Amazon Web Services account.</p>
      */
     inline CreateGameServerGroupRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
      * <p>An identifier for the new game server group. This value is used to generate
-     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift
-     * FleetIQ game server group. The name must be unique per Region per Amazon Web
-     * Services account.</p>
+     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon
+     * GameLift FleetIQ game server group. The name must be unique per Region per
+     * Amazon Web Services account.</p>
      */
     inline CreateGameServerGroupRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
      * <p>An identifier for the new game server group. This value is used to generate
-     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift
-     * FleetIQ game server group. The name must be unique per Region per Amazon Web
-     * Services account.</p>
+     * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon
+     * GameLift FleetIQ game server group. The name must be unique per Region per
+     * Amazon Web Services account.</p>
      */
     inline CreateGameServerGroupRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 
@@ -173,74 +173,78 @@ namespace Model
 
     /**
      * <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group.
-     * During automatic scaling events, GameLift FleetIQ and Amazon EC2 do not scale
-     * down the group below this minimum. In production, this value should be set to at
-     * least 1. After the Auto Scaling group is created, update this value directly in
-     * the Auto Scaling group using the Amazon Web Services console or APIs.</p>
+     * During automatic scaling events, Amazon GameLift FleetIQ and Amazon EC2 do not
+     * scale down the group below this minimum. In production, this value should be set
+     * to at least 1. After the Auto Scaling group is created, update this value
+     * directly in the Auto Scaling group using the Amazon Web Services console or
+     * APIs.</p>
      */
     inline int GetMinSize() const{ return m_minSize; }
 
     /**
      * <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group.
-     * During automatic scaling events, GameLift FleetIQ and Amazon EC2 do not scale
-     * down the group below this minimum. In production, this value should be set to at
-     * least 1. After the Auto Scaling group is created, update this value directly in
-     * the Auto Scaling group using the Amazon Web Services console or APIs.</p>
+     * During automatic scaling events, Amazon GameLift FleetIQ and Amazon EC2 do not
+     * scale down the group below this minimum. In production, this value should be set
+     * to at least 1. After the Auto Scaling group is created, update this value
+     * directly in the Auto Scaling group using the Amazon Web Services console or
+     * APIs.</p>
      */
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
 
     /**
      * <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group.
-     * During automatic scaling events, GameLift FleetIQ and Amazon EC2 do not scale
-     * down the group below this minimum. In production, this value should be set to at
-     * least 1. After the Auto Scaling group is created, update this value directly in
-     * the Auto Scaling group using the Amazon Web Services console or APIs.</p>
+     * During automatic scaling events, Amazon GameLift FleetIQ and Amazon EC2 do not
+     * scale down the group below this minimum. In production, this value should be set
+     * to at least 1. After the Auto Scaling group is created, update this value
+     * directly in the Auto Scaling group using the Amazon Web Services console or
+     * APIs.</p>
      */
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
      * <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group.
-     * During automatic scaling events, GameLift FleetIQ and Amazon EC2 do not scale
-     * down the group below this minimum. In production, this value should be set to at
-     * least 1. After the Auto Scaling group is created, update this value directly in
-     * the Auto Scaling group using the Amazon Web Services console or APIs.</p>
+     * During automatic scaling events, Amazon GameLift FleetIQ and Amazon EC2 do not
+     * scale down the group below this minimum. In production, this value should be set
+     * to at least 1. After the Auto Scaling group is created, update this value
+     * directly in the Auto Scaling group using the Amazon Web Services console or
+     * APIs.</p>
      */
     inline CreateGameServerGroupRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
 
 
     /**
      * <p>The maximum number of instances allowed in the Amazon EC2 Auto Scaling group.
-     * During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the
-     * group above this maximum. After the Auto Scaling group is created, update this
-     * value directly in the Auto Scaling group using the Amazon Web Services console
-     * or APIs.</p>
+     * During automatic scaling events, Amazon GameLift FleetIQ and EC2 do not scale up
+     * the group above this maximum. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the Amazon Web Services
+     * console or APIs.</p>
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
      * <p>The maximum number of instances allowed in the Amazon EC2 Auto Scaling group.
-     * During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the
-     * group above this maximum. After the Auto Scaling group is created, update this
-     * value directly in the Auto Scaling group using the Amazon Web Services console
-     * or APIs.</p>
+     * During automatic scaling events, Amazon GameLift FleetIQ and EC2 do not scale up
+     * the group above this maximum. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the Amazon Web Services
+     * console or APIs.</p>
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of instances allowed in the Amazon EC2 Auto Scaling group.
-     * During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the
-     * group above this maximum. After the Auto Scaling group is created, update this
-     * value directly in the Auto Scaling group using the Amazon Web Services console
-     * or APIs.</p>
+     * During automatic scaling events, Amazon GameLift FleetIQ and EC2 do not scale up
+     * the group above this maximum. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the Amazon Web Services
+     * console or APIs.</p>
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
      * <p>The maximum number of instances allowed in the Amazon EC2 Auto Scaling group.
-     * During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the
-     * group above this maximum. After the Auto Scaling group is created, update this
-     * value directly in the Auto Scaling group using the Amazon Web Services console
-     * or APIs.</p>
+     * During automatic scaling events, Amazon GameLift FleetIQ and EC2 do not scale up
+     * the group above this maximum. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the Amazon Web Services
+     * console or APIs.</p>
      */
     inline CreateGameServerGroupRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
@@ -257,8 +261,8 @@ namespace Model
      * Services console or APIs.</p>  <p>If you specify network interfaces in
      * your launch template, you must explicitly set the property
      * <code>AssociatePublicIpAddress</code> to "true". If no network interface is
-     * specified in the launch template, GameLift FleetIQ uses your account's default
-     * VPC.</p> 
+     * specified in the launch template, Amazon GameLift FleetIQ uses your account's
+     * default VPC.</p> 
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
 
@@ -274,8 +278,8 @@ namespace Model
      * Services console or APIs.</p>  <p>If you specify network interfaces in
      * your launch template, you must explicitly set the property
      * <code>AssociatePublicIpAddress</code> to "true". If no network interface is
-     * specified in the launch template, GameLift FleetIQ uses your account's default
-     * VPC.</p> 
+     * specified in the launch template, Amazon GameLift FleetIQ uses your account's
+     * default VPC.</p> 
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
@@ -291,8 +295,8 @@ namespace Model
      * Services console or APIs.</p>  <p>If you specify network interfaces in
      * your launch template, you must explicitly set the property
      * <code>AssociatePublicIpAddress</code> to "true". If no network interface is
-     * specified in the launch template, GameLift FleetIQ uses your account's default
-     * VPC.</p> 
+     * specified in the launch template, Amazon GameLift FleetIQ uses your account's
+     * default VPC.</p> 
      */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
@@ -308,8 +312,8 @@ namespace Model
      * Services console or APIs.</p>  <p>If you specify network interfaces in
      * your launch template, you must explicitly set the property
      * <code>AssociatePublicIpAddress</code> to "true". If no network interface is
-     * specified in the launch template, GameLift FleetIQ uses your account's default
-     * VPC.</p> 
+     * specified in the launch template, Amazon GameLift FleetIQ uses your account's
+     * default VPC.</p> 
      */
     inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
@@ -325,8 +329,8 @@ namespace Model
      * Services console or APIs.</p>  <p>If you specify network interfaces in
      * your launch template, you must explicitly set the property
      * <code>AssociatePublicIpAddress</code> to "true". If no network interface is
-     * specified in the launch template, GameLift FleetIQ uses your account's default
-     * VPC.</p> 
+     * specified in the launch template, Amazon GameLift FleetIQ uses your account's
+     * default VPC.</p> 
      */
     inline CreateGameServerGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
 
@@ -342,8 +346,8 @@ namespace Model
      * Services console or APIs.</p>  <p>If you specify network interfaces in
      * your launch template, you must explicitly set the property
      * <code>AssociatePublicIpAddress</code> to "true". If no network interface is
-     * specified in the launch template, GameLift FleetIQ uses your account's default
-     * VPC.</p> 
+     * specified in the launch template, Amazon GameLift FleetIQ uses your account's
+     * default VPC.</p> 
      */
     inline CreateGameServerGroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
@@ -351,7 +355,8 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The
      * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. For more information on instance types, see <a
+     * supported by Amazon GameLift FleetIQ. For more information on instance types,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You
      * can optionally specify capacity weighting for each instance type. If no weight
@@ -366,7 +371,8 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The
      * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. For more information on instance types, see <a
+     * supported by Amazon GameLift FleetIQ. For more information on instance types,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You
      * can optionally specify capacity weighting for each instance type. If no weight
@@ -381,7 +387,8 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The
      * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. For more information on instance types, see <a
+     * supported by Amazon GameLift FleetIQ. For more information on instance types,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You
      * can optionally specify capacity weighting for each instance type. If no weight
@@ -396,7 +403,8 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The
      * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. For more information on instance types, see <a
+     * supported by Amazon GameLift FleetIQ. For more information on instance types,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You
      * can optionally specify capacity weighting for each instance type. If no weight
@@ -411,7 +419,8 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The
      * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. For more information on instance types, see <a
+     * supported by Amazon GameLift FleetIQ. For more information on instance types,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You
      * can optionally specify capacity weighting for each instance type. If no weight
@@ -426,7 +435,8 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The
      * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. For more information on instance types, see <a
+     * supported by Amazon GameLift FleetIQ. For more information on instance types,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You
      * can optionally specify capacity weighting for each instance type. If no weight
@@ -441,7 +451,8 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The
      * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. For more information on instance types, see <a
+     * supported by Amazon GameLift FleetIQ. For more information on instance types,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You
      * can optionally specify capacity weighting for each instance type. If no weight
@@ -456,7 +467,8 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The
      * instance definitions must specify at least two different instance types that are
-     * supported by GameLift FleetIQ. For more information on instance types, see <a
+     * supported by Amazon GameLift FleetIQ. For more information on instance types,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You
      * can optionally specify capacity weighting for each instance type. If no weight
@@ -531,7 +543,7 @@ namespace Model
 
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -551,7 +563,7 @@ namespace Model
     inline const BalancingStrategy& GetBalancingStrategy() const{ return m_balancingStrategy; }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -571,7 +583,7 @@ namespace Model
     inline bool BalancingStrategyHasBeenSet() const { return m_balancingStrategyHasBeenSet; }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -591,7 +603,7 @@ namespace Model
     inline void SetBalancingStrategy(const BalancingStrategy& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = value; }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -611,7 +623,7 @@ namespace Model
     inline void SetBalancingStrategy(BalancingStrategy&& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = std::move(value); }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -631,7 +643,7 @@ namespace Model
     inline CreateGameServerGroupRequest& WithBalancingStrategy(const BalancingStrategy& value) { SetBalancingStrategy(value); return *this;}
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -726,91 +738,100 @@ namespace Model
 
     /**
      * <p>A list of virtual private cloud (VPC) subnets to use with instances in the
-     * game server group. By default, all GameLift FleetIQ-supported Availability Zones
-     * are used. You can use this parameter to specify VPCs that you've set up. This
-     * property cannot be updated after the game server group is created, and the
-     * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly.</p>
+     * game server group. By default, all Amazon GameLift FleetIQ-supported
+     * Availability Zones are used. You can use this parameter to specify VPCs that
+     * you've set up. This property cannot be updated after the game server group is
+     * created, and the corresponding Auto Scaling group will always use the property
+     * value that is set with this request, even if the Auto Scaling group is updated
+     * directly.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSubnets() const{ return m_vpcSubnets; }
 
     /**
      * <p>A list of virtual private cloud (VPC) subnets to use with instances in the
-     * game server group. By default, all GameLift FleetIQ-supported Availability Zones
-     * are used. You can use this parameter to specify VPCs that you've set up. This
-     * property cannot be updated after the game server group is created, and the
-     * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly.</p>
+     * game server group. By default, all Amazon GameLift FleetIQ-supported
+     * Availability Zones are used. You can use this parameter to specify VPCs that
+     * you've set up. This property cannot be updated after the game server group is
+     * created, and the corresponding Auto Scaling group will always use the property
+     * value that is set with this request, even if the Auto Scaling group is updated
+     * directly.</p>
      */
     inline bool VpcSubnetsHasBeenSet() const { return m_vpcSubnetsHasBeenSet; }
 
     /**
      * <p>A list of virtual private cloud (VPC) subnets to use with instances in the
-     * game server group. By default, all GameLift FleetIQ-supported Availability Zones
-     * are used. You can use this parameter to specify VPCs that you've set up. This
-     * property cannot be updated after the game server group is created, and the
-     * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly.</p>
+     * game server group. By default, all Amazon GameLift FleetIQ-supported
+     * Availability Zones are used. You can use this parameter to specify VPCs that
+     * you've set up. This property cannot be updated after the game server group is
+     * created, and the corresponding Auto Scaling group will always use the property
+     * value that is set with this request, even if the Auto Scaling group is updated
+     * directly.</p>
      */
     inline void SetVpcSubnets(const Aws::Vector<Aws::String>& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets = value; }
 
     /**
      * <p>A list of virtual private cloud (VPC) subnets to use with instances in the
-     * game server group. By default, all GameLift FleetIQ-supported Availability Zones
-     * are used. You can use this parameter to specify VPCs that you've set up. This
-     * property cannot be updated after the game server group is created, and the
-     * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly.</p>
+     * game server group. By default, all Amazon GameLift FleetIQ-supported
+     * Availability Zones are used. You can use this parameter to specify VPCs that
+     * you've set up. This property cannot be updated after the game server group is
+     * created, and the corresponding Auto Scaling group will always use the property
+     * value that is set with this request, even if the Auto Scaling group is updated
+     * directly.</p>
      */
     inline void SetVpcSubnets(Aws::Vector<Aws::String>&& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets = std::move(value); }
 
     /**
      * <p>A list of virtual private cloud (VPC) subnets to use with instances in the
-     * game server group. By default, all GameLift FleetIQ-supported Availability Zones
-     * are used. You can use this parameter to specify VPCs that you've set up. This
-     * property cannot be updated after the game server group is created, and the
-     * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly.</p>
+     * game server group. By default, all Amazon GameLift FleetIQ-supported
+     * Availability Zones are used. You can use this parameter to specify VPCs that
+     * you've set up. This property cannot be updated after the game server group is
+     * created, and the corresponding Auto Scaling group will always use the property
+     * value that is set with this request, even if the Auto Scaling group is updated
+     * directly.</p>
      */
     inline CreateGameServerGroupRequest& WithVpcSubnets(const Aws::Vector<Aws::String>& value) { SetVpcSubnets(value); return *this;}
 
     /**
      * <p>A list of virtual private cloud (VPC) subnets to use with instances in the
-     * game server group. By default, all GameLift FleetIQ-supported Availability Zones
-     * are used. You can use this parameter to specify VPCs that you've set up. This
-     * property cannot be updated after the game server group is created, and the
-     * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly.</p>
+     * game server group. By default, all Amazon GameLift FleetIQ-supported
+     * Availability Zones are used. You can use this parameter to specify VPCs that
+     * you've set up. This property cannot be updated after the game server group is
+     * created, and the corresponding Auto Scaling group will always use the property
+     * value that is set with this request, even if the Auto Scaling group is updated
+     * directly.</p>
      */
     inline CreateGameServerGroupRequest& WithVpcSubnets(Aws::Vector<Aws::String>&& value) { SetVpcSubnets(std::move(value)); return *this;}
 
     /**
      * <p>A list of virtual private cloud (VPC) subnets to use with instances in the
-     * game server group. By default, all GameLift FleetIQ-supported Availability Zones
-     * are used. You can use this parameter to specify VPCs that you've set up. This
-     * property cannot be updated after the game server group is created, and the
-     * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly.</p>
+     * game server group. By default, all Amazon GameLift FleetIQ-supported
+     * Availability Zones are used. You can use this parameter to specify VPCs that
+     * you've set up. This property cannot be updated after the game server group is
+     * created, and the corresponding Auto Scaling group will always use the property
+     * value that is set with this request, even if the Auto Scaling group is updated
+     * directly.</p>
      */
     inline CreateGameServerGroupRequest& AddVpcSubnets(const Aws::String& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets.push_back(value); return *this; }
 
     /**
      * <p>A list of virtual private cloud (VPC) subnets to use with instances in the
-     * game server group. By default, all GameLift FleetIQ-supported Availability Zones
-     * are used. You can use this parameter to specify VPCs that you've set up. This
-     * property cannot be updated after the game server group is created, and the
-     * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly.</p>
+     * game server group. By default, all Amazon GameLift FleetIQ-supported
+     * Availability Zones are used. You can use this parameter to specify VPCs that
+     * you've set up. This property cannot be updated after the game server group is
+     * created, and the corresponding Auto Scaling group will always use the property
+     * value that is set with this request, even if the Auto Scaling group is updated
+     * directly.</p>
      */
     inline CreateGameServerGroupRequest& AddVpcSubnets(Aws::String&& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of virtual private cloud (VPC) subnets to use with instances in the
-     * game server group. By default, all GameLift FleetIQ-supported Availability Zones
-     * are used. You can use this parameter to specify VPCs that you've set up. This
-     * property cannot be updated after the game server group is created, and the
-     * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly.</p>
+     * game server group. By default, all Amazon GameLift FleetIQ-supported
+     * Availability Zones are used. You can use this parameter to specify VPCs that
+     * you've set up. This property cannot be updated after the game server group is
+     * created, and the corresponding Auto Scaling group will always use the property
+     * value that is set with this request, even if the Auto Scaling group is updated
+     * directly.</p>
      */
     inline CreateGameServerGroupRequest& AddVpcSubnets(const char* value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets.push_back(value); return *this; }
 

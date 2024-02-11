@@ -34,7 +34,7 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
 #if($serviceModel.endpointRules)
-  m_executor->Submit([this, &endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
+  m_executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
 #else
   m_executor->Submit([this, uri, &request, handler, handlerContext] () mutable {
 #end

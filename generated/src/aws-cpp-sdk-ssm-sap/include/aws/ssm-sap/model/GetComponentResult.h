@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/ssm-sap/model/Component.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -64,6 +65,67 @@ namespace Model
     inline GetComponentResult& WithComponent(Component&& value) { SetComponent(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline GetComponentResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline GetComponentResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline GetComponentResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline GetComponentResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline GetComponentResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline GetComponentResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline GetComponentResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline GetComponentResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags of a component.</p>
+     */
+    inline GetComponentResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -88,6 +150,8 @@ namespace Model
   private:
 
     Component m_component;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::String m_requestId;
   };

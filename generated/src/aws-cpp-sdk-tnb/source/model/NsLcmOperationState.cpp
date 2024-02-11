@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NsLcmOperationState::NOT_SET:
+            return {};
           case NsLcmOperationState::PROCESSING:
             return "PROCESSING";
           case NsLcmOperationState::COMPLETED:

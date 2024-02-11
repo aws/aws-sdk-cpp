@@ -39,47 +39,47 @@ namespace Model
   public:
 
     /**
-     * <p>Details for one or more Windows AMI image IDs.</p>
+     * <p>Specify one or more Windows AMI image IDs for the request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetImageIds() const{ return m_imageIds; }
 
     /**
-     * <p>Details for one or more Windows AMI image IDs.</p>
+     * <p>Specify one or more Windows AMI image IDs for the request.</p>
      */
     inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
 
     /**
-     * <p>Details for one or more Windows AMI image IDs.</p>
+     * <p>Specify one or more Windows AMI image IDs for the request.</p>
      */
     inline void SetImageIds(const Aws::Vector<Aws::String>& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
 
     /**
-     * <p>Details for one or more Windows AMI image IDs.</p>
+     * <p>Specify one or more Windows AMI image IDs for the request.</p>
      */
     inline void SetImageIds(Aws::Vector<Aws::String>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::move(value); }
 
     /**
-     * <p>Details for one or more Windows AMI image IDs.</p>
+     * <p>Specify one or more Windows AMI image IDs for the request.</p>
      */
     inline DescribeFastLaunchImagesRequest& WithImageIds(const Aws::Vector<Aws::String>& value) { SetImageIds(value); return *this;}
 
     /**
-     * <p>Details for one or more Windows AMI image IDs.</p>
+     * <p>Specify one or more Windows AMI image IDs for the request.</p>
      */
     inline DescribeFastLaunchImagesRequest& WithImageIds(Aws::Vector<Aws::String>&& value) { SetImageIds(std::move(value)); return *this;}
 
     /**
-     * <p>Details for one or more Windows AMI image IDs.</p>
+     * <p>Specify one or more Windows AMI image IDs for the request.</p>
      */
     inline DescribeFastLaunchImagesRequest& AddImageIds(const Aws::String& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
 
     /**
-     * <p>Details for one or more Windows AMI image IDs.</p>
+     * <p>Specify one or more Windows AMI image IDs for the request.</p>
      */
     inline DescribeFastLaunchImagesRequest& AddImageIds(Aws::String&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Details for one or more Windows AMI image IDs.</p>
+     * <p>Specify one or more Windows AMI image IDs for the request.</p>
      */
     inline DescribeFastLaunchImagesRequest& AddImageIds(const char* value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
 
@@ -87,88 +87,72 @@ namespace Model
     /**
      * <p>Use the following filters to streamline results.</p> <ul> <li> <p>
      * <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-     * <li> <p> <code>launch-template</code> - The launch template that is associated
-     * with the pre-provisioned Windows AMI.</p> </li> <li> <p> <code>owner-id</code> -
-     * The owner ID for the pre-provisioning resource.</p> </li> <li> <p>
-     * <code>state</code> - The current state of fast launching for the Windows
-     * AMI.</p> </li> </ul>
+     * <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning
+     * resource.</p> </li> <li> <p> <code>state</code> - The current state of fast
+     * launching for the Windows AMI.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Use the following filters to streamline results.</p> <ul> <li> <p>
      * <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-     * <li> <p> <code>launch-template</code> - The launch template that is associated
-     * with the pre-provisioned Windows AMI.</p> </li> <li> <p> <code>owner-id</code> -
-     * The owner ID for the pre-provisioning resource.</p> </li> <li> <p>
-     * <code>state</code> - The current state of fast launching for the Windows
-     * AMI.</p> </li> </ul>
+     * <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning
+     * resource.</p> </li> <li> <p> <code>state</code> - The current state of fast
+     * launching for the Windows AMI.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Use the following filters to streamline results.</p> <ul> <li> <p>
      * <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-     * <li> <p> <code>launch-template</code> - The launch template that is associated
-     * with the pre-provisioned Windows AMI.</p> </li> <li> <p> <code>owner-id</code> -
-     * The owner ID for the pre-provisioning resource.</p> </li> <li> <p>
-     * <code>state</code> - The current state of fast launching for the Windows
-     * AMI.</p> </li> </ul>
+     * <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning
+     * resource.</p> </li> <li> <p> <code>state</code> - The current state of fast
+     * launching for the Windows AMI.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Use the following filters to streamline results.</p> <ul> <li> <p>
      * <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-     * <li> <p> <code>launch-template</code> - The launch template that is associated
-     * with the pre-provisioned Windows AMI.</p> </li> <li> <p> <code>owner-id</code> -
-     * The owner ID for the pre-provisioning resource.</p> </li> <li> <p>
-     * <code>state</code> - The current state of fast launching for the Windows
-     * AMI.</p> </li> </ul>
+     * <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning
+     * resource.</p> </li> <li> <p> <code>state</code> - The current state of fast
+     * launching for the Windows AMI.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Use the following filters to streamline results.</p> <ul> <li> <p>
      * <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-     * <li> <p> <code>launch-template</code> - The launch template that is associated
-     * with the pre-provisioned Windows AMI.</p> </li> <li> <p> <code>owner-id</code> -
-     * The owner ID for the pre-provisioning resource.</p> </li> <li> <p>
-     * <code>state</code> - The current state of fast launching for the Windows
-     * AMI.</p> </li> </ul>
+     * <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning
+     * resource.</p> </li> <li> <p> <code>state</code> - The current state of fast
+     * launching for the Windows AMI.</p> </li> </ul>
      */
     inline DescribeFastLaunchImagesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Use the following filters to streamline results.</p> <ul> <li> <p>
      * <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-     * <li> <p> <code>launch-template</code> - The launch template that is associated
-     * with the pre-provisioned Windows AMI.</p> </li> <li> <p> <code>owner-id</code> -
-     * The owner ID for the pre-provisioning resource.</p> </li> <li> <p>
-     * <code>state</code> - The current state of fast launching for the Windows
-     * AMI.</p> </li> </ul>
+     * <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning
+     * resource.</p> </li> <li> <p> <code>state</code> - The current state of fast
+     * launching for the Windows AMI.</p> </li> </ul>
      */
     inline DescribeFastLaunchImagesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Use the following filters to streamline results.</p> <ul> <li> <p>
      * <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-     * <li> <p> <code>launch-template</code> - The launch template that is associated
-     * with the pre-provisioned Windows AMI.</p> </li> <li> <p> <code>owner-id</code> -
-     * The owner ID for the pre-provisioning resource.</p> </li> <li> <p>
-     * <code>state</code> - The current state of fast launching for the Windows
-     * AMI.</p> </li> </ul>
+     * <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning
+     * resource.</p> </li> <li> <p> <code>state</code> - The current state of fast
+     * launching for the Windows AMI.</p> </li> </ul>
      */
     inline DescribeFastLaunchImagesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Use the following filters to streamline results.</p> <ul> <li> <p>
      * <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-     * <li> <p> <code>launch-template</code> - The launch template that is associated
-     * with the pre-provisioned Windows AMI.</p> </li> <li> <p> <code>owner-id</code> -
-     * The owner ID for the pre-provisioning resource.</p> </li> <li> <p>
-     * <code>state</code> - The current state of fast launching for the Windows
-     * AMI.</p> </li> </ul>
+     * <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning
+     * resource.</p> </li> <li> <p> <code>state</code> - The current state of fast
+     * launching for the Windows AMI.</p> </li> </ul>
      */
     inline DescribeFastLaunchImagesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

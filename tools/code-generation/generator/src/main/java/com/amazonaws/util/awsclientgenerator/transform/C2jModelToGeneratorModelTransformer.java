@@ -13,6 +13,10 @@ import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerat
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import lombok.Value;
 import org.apache.commons.lang.WordUtils;
 
 import java.util.*;
@@ -99,13 +103,45 @@ public class C2jModelToGeneratorModelTransformer {
         LEGACY_SERVICE_IDS.add("dynamodbstreams");
     }
 
+    /**
+     * Type representing what a member should be remapped to and services that it
+     * cannot be renamed to, to preserve backwards compat.
+     */
+    @Value
+    private static class MemberMapping {
+        String remappingName;
+        Set<String> servicesToSkip;
+    }
+
+    private static final Map<String, MemberMapping> RESERVED_REQUEST_MEMBER_MAPPING = ImmutableMap.of(
+        "body", new MemberMapping("requestBody", ImmutableSet.of("amplifyuibuilder", "apigateway", "apigateway2", "bedrock-runtime", "glacier", "repostspace")),
+        "headers", new MemberMapping("headerValues", ImmutableSet.of("apigateway"))
+    );
+
+    /**
+     * There was a bug with namespace collision detection where customers
+     * renamed their models instead of this bug being fixed. This list exists
+     * only to capture these old APIs. This list should never be added to
+     * under any circumstances and only exists to preserve backwards compat.
+     */
+    private static List<String> LEGACY_RENAMED_APIS = ImmutableList.of(
+            "GeneratedPolicyResult"
+    );
+
+    private static List<String> SHAPE_SDK_RESULT_SUFFIX = ImmutableList.of(
+            "Result", "SdkResult", "CppSdkResult"
+    );
+    private static List<String> SHAPE_SDK_REQUEST_SUFFIX = ImmutableList.of(
+            "Request", "SdkRequest", "CppSdkRequest"
+    );
+
     public C2jModelToGeneratorModelTransformer(C2jServiceModel c2jServiceModel, boolean standalone) {
         this.c2jServiceModel = c2jServiceModel;
         this.standalone = standalone;
     }
 
     public ServiceModel convert() {
-        ServiceModel serviceModel = new ServiceModel();
+        ServiceModel serviceModel = ServiceModel.builder().build();
         serviceModel.setMetadata(convertMetadata());
         serviceModel.setVersion(c2jServiceModel.getVersion());
         serviceModel.setDocumentation(formatDocumentation(c2jServiceModel.getDocumentation(), 3));
@@ -473,7 +509,7 @@ public class C2jModelToGeneratorModelTransformer {
 
     void convertOperations() {
         allErrors = new HashSet<>();
-        operations = new LinkedHashMap<>(c2jServiceModel.getOperations().size());
+        operations = new TreeMap<>();
         removedOperations = new HashSet<>();
         for (Map.Entry<String, C2jOperation> entry : c2jServiceModel.getOperations().entrySet()) {
             if(!entry.getValue().isDeprecated()) {
@@ -537,8 +573,8 @@ public class C2jModelToGeneratorModelTransformer {
 
         // input
         if (c2jOperation.getInput() != null) {
-            String requestName = c2jOperation.getName() + "Request";
-            Shape requestShape = renameShape(shapes.get(c2jOperation.getInput().getShape()), requestName);
+            Shape requestShape = renameShape(shapes.get(c2jOperation.getInput().getShape()), c2jOperation.getName(), SHAPE_SDK_REQUEST_SUFFIX);
+
             requestShape.setRequest(true);
             requestShape.setReferenced(true);
             requestShape.getReferencedBy().add(c2jOperation.getName());
@@ -551,7 +587,7 @@ public class C2jModelToGeneratorModelTransformer {
             }
             if(requestShape.getLocationName() != null && requestShape.getLocationName().length() > 0 &&
                     (requestShape.getPayload() == null || requestShape.getPayload().length() == 0) ) {
-                requestShape.setPayload(requestName);
+                requestShape.setPayload(requestShape.getName());
             }
 
             requestShape.setSignBody(true);
@@ -586,8 +622,8 @@ public class C2jModelToGeneratorModelTransformer {
 
         // output
         if (c2jOperation.getOutput() != null) {
-            String resultName = c2jOperation.getName() + "Result";
-            Shape resultShape = renameShape(shapes.get(c2jOperation.getOutput().getShape()), resultName);
+            Shape resultShape = renameShape(shapes.get(c2jOperation.getOutput().getShape()), c2jOperation.getName(), SHAPE_SDK_RESULT_SUFFIX);
+
             resultShape.setResult(true);
             resultShape.setReferenced(true);
             resultShape.getReferencedBy().add(c2jOperation.getName());
@@ -640,43 +676,73 @@ public class C2jModelToGeneratorModelTransformer {
         return operation;
     }
 
-    Shape renameShape(Shape shape, String name) {
-        if (shape.getName().equals(name)) {
-            return shape;
-        }
+    Shape renameShape(Shape shape, String baseName, List<String> suffixOptions) {
+        String newName = null;
+        Iterator<String> suffixIt = suffixOptions.iterator();
+        while (suffixIt.hasNext()) {
+            newName = baseName + suffixIt.next();
 
-        // Detect any conflicts with shape name defined by service team, need to rename it if so.
-        Optional<String> conflicted = shapes.keySet().stream().filter(shapeName ->
-            name.equals(shapeName) || shape.getMembers().values().stream().anyMatch(shapeMember ->
-                shapeMember.getShape().getName().equals(shapeName) && (name.equals("Get" + shapeName) || name.equals("Set" + shapeName)))).findFirst();
-        if (conflicted.isPresent()) {
-            String originalShapeName = conflicted.get();
-            String newShapeName = "";
-            switch(originalShapeName) {
-                case "CopyObjectResult":
+            if (shape.getName().equals(newName)) {
+                renameReservedFields(shape);
+                return shape;
+            }
+
+            // Detect any conflicts with shape name defined by service team, need to rename it if so.
+            String finalNewName = newName;
+            Optional<String> conflicted = shapes.keySet().stream()
+                    .filter(shapeName -> finalNewName.equals(shapeName) ||
+                            (shape.getMembers().keySet().stream().anyMatch(memberName -> memberName.equals(shapeName) ||
+                                    shape.getMembers().values().stream().anyMatch(shapeMember -> LEGACY_RENAMED_APIS.contains(shapeMember.getShape().getName()))) &&
+                                    (finalNewName.equals("Get" + shapeName) || finalNewName.equals("Set" + shapeName)))).findFirst();
+            if (!conflicted.isPresent()) {
+                break;
+            } else {
+                String originalShapeName = conflicted.get();
+                String newShapeName = "";
+                if (originalShapeName.equals("CopyObjectResult")) {
                     newShapeName = "CopyObjectResultDetails";
                     renameShapeMember(shape, "CopyObjectResult", originalShapeName, newShapeName, newShapeName, true);
                     break;
-                case "BatchUpdateScheduleResult":
+                } else if (originalShapeName.equals("BatchUpdateScheduleResult")) {
                     shapes.remove(originalShapeName);
                     break;
-                case "GeneratedPolicyResult":
+                } else if (originalShapeName.equals("GeneratedPolicyResult")) {
                     newShapeName = "GeneratedPolicyResults";
                     renameShapeMember(shape, "generatedPolicyResult", originalShapeName, newShapeName, newShapeName, false);
                     break;
-                case "SearchResult":
+                } else if (originalShapeName.equals("SearchResult")) {
                     newShapeName = "SearchResultDetails";
                     renameShapeMember(shape, "results", originalShapeName, "results", newShapeName, true);
                     break;
-                default:
-                    throw new RuntimeException("Unhandled shape name conflict: " + name);
+                }
+                if (!suffixIt.hasNext())
+                    throw new RuntimeException("Unhandled shape name conflict: " + newName);
             }
         }
 
         Shape cloned = cloneShape(shape);
-        cloned.setName(name);
-        shapes.put(name, cloned);
+        cloned.setName(newName);
+        renameReservedFields(cloned);
+        shapes.put(newName, cloned);
         return cloned;
+    }
+
+    void renameReservedFields(Shape shape) {
+        if (shape.getName().endsWith("Request")) {
+            final Map<String, ShapeMember> members = shape.getMembers();
+            RESERVED_REQUEST_MEMBER_MAPPING.entrySet().stream()
+                .filter(reservedMapping -> members.containsKey(reservedMapping.getKey()))
+                .filter(reservedMapping -> !reservedMapping.getValue().servicesToSkip.contains(c2jServiceModel.getServiceName()))
+                .forEach(reservedMapping -> {
+                    final ShapeMember member = members.get(reservedMapping.getKey());
+                    renameShapeMember(shape,
+                            reservedMapping.getKey(),
+                            member.getShape().getName(),
+                            reservedMapping.getValue().remappingName,
+                            member.getShape().getName(),
+                            false);
+                });
+        }
     }
 
     Shape cloneShape(Shape shape) {
@@ -728,11 +794,17 @@ public class C2jModelToGeneratorModelTransformer {
             throw new NoSuchElementException("Requested to rename non-existent child shape key "
                     + originalMemberKey + " of a Shape type " + originalShapeName);
         }
-        shapes.get(originalShapeName).setName(newShapeName);
-        shapes.put(newShapeName, shapes.get(originalShapeName));
-        shapes.remove(originalShapeName);
-        parentShape.getMembers().put(newMemberKey, parentShape.getMembers().get(originalMemberKey));
-        parentShape.RemoveMember(originalMemberKey);
+        if (!Objects.equals(originalShapeName, newShapeName)) {
+            shapes.get(originalShapeName).setName(newShapeName);
+            shapes.put(newShapeName, shapes.get(originalShapeName));
+            shapes.remove(originalShapeName);
+        }
+        if (!Objects.equals(originalMemberKey, newMemberKey)) {
+            final ShapeMember member = parentShape.getMembers().get(originalMemberKey);
+            member.setLocationName(originalMemberKey);
+            parentShape.getMembers().put(newMemberKey, member);
+            parentShape.RemoveMember(originalMemberKey);
+        }
         if (isPayload)
         {
             parentShape.setPayload(newMemberKey);
@@ -790,8 +862,9 @@ public class C2jModelToGeneratorModelTransformer {
                 error.setModeled(true);
             }
 
-            if (shape.getRetryable() != null && shape.getRetryable().getOrDefault("throttling", false)) {
+            if (shape.getRetryable() != null) {
                 error.setRetryable(true);
+                error.setThrottling(shape.getRetryable().getOrDefault("throttling", false));
             }
         }
         error.setDocumentation(formatDocumentation(c2jError.getDocumentation(), 3));

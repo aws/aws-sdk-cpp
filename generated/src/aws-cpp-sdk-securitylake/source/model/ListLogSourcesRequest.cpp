@@ -13,13 +13,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListLogSourcesRequest::ListLogSourcesRequest() : 
-    m_inputOrderHasBeenSet(false),
-    m_listAllDimensionsHasBeenSet(false),
-    m_listSingleDimensionHasBeenSet(false),
-    m_listTwoDimensionsHasBeenSet(false),
+    m_accountsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_regionsHasBeenSet(false),
+    m_sourcesHasBeenSet(false)
 {
 }
 
@@ -27,62 +26,14 @@ Aws::String ListLogSourcesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_inputOrderHasBeenSet)
+  if(m_accountsHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> inputOrderJsonList(m_inputOrder.size());
-   for(unsigned inputOrderIndex = 0; inputOrderIndex < inputOrderJsonList.GetLength(); ++inputOrderIndex)
+   Aws::Utils::Array<JsonValue> accountsJsonList(m_accounts.size());
+   for(unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex)
    {
-     inputOrderJsonList[inputOrderIndex].AsString(DimensionMapper::GetNameForDimension(m_inputOrder[inputOrderIndex]));
+     accountsJsonList[accountsIndex].AsString(m_accounts[accountsIndex]);
    }
-   payload.WithArray("inputOrder", std::move(inputOrderJsonList));
-
-  }
-
-  if(m_listAllDimensionsHasBeenSet)
-  {
-   JsonValue listAllDimensionsJsonMap;
-   for(auto& listAllDimensionsItem : m_listAllDimensions)
-   {
-     JsonValue twoDimensionsMapJsonMap;
-     for(auto& twoDimensionsMapItem : listAllDimensionsItem.second)
-     {
-       Aws::Utils::Array<JsonValue> valueSetJsonList(twoDimensionsMapItem.second.size());
-       for(unsigned valueSetIndex = 0; valueSetIndex < valueSetJsonList.GetLength(); ++valueSetIndex)
-       {
-         valueSetJsonList[valueSetIndex].AsString(twoDimensionsMapItem.second[valueSetIndex]);
-       }
-       twoDimensionsMapJsonMap.WithArray(twoDimensionsMapItem.first, std::move(valueSetJsonList));
-     }
-     listAllDimensionsJsonMap.WithObject(listAllDimensionsItem.first, std::move(twoDimensionsMapJsonMap));
-   }
-   payload.WithObject("listAllDimensions", std::move(listAllDimensionsJsonMap));
-
-  }
-
-  if(m_listSingleDimensionHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> listSingleDimensionJsonList(m_listSingleDimension.size());
-   for(unsigned listSingleDimensionIndex = 0; listSingleDimensionIndex < listSingleDimensionJsonList.GetLength(); ++listSingleDimensionIndex)
-   {
-     listSingleDimensionJsonList[listSingleDimensionIndex].AsString(m_listSingleDimension[listSingleDimensionIndex]);
-   }
-   payload.WithArray("listSingleDimension", std::move(listSingleDimensionJsonList));
-
-  }
-
-  if(m_listTwoDimensionsHasBeenSet)
-  {
-   JsonValue listTwoDimensionsJsonMap;
-   for(auto& listTwoDimensionsItem : m_listTwoDimensions)
-   {
-     Aws::Utils::Array<JsonValue> valueSetJsonList(listTwoDimensionsItem.second.size());
-     for(unsigned valueSetIndex = 0; valueSetIndex < valueSetJsonList.GetLength(); ++valueSetIndex)
-     {
-       valueSetJsonList[valueSetIndex].AsString(listTwoDimensionsItem.second[valueSetIndex]);
-     }
-     listTwoDimensionsJsonMap.WithArray(listTwoDimensionsItem.first, std::move(valueSetJsonList));
-   }
-   payload.WithObject("listTwoDimensions", std::move(listTwoDimensionsJsonMap));
+   payload.WithArray("accounts", std::move(accountsJsonList));
 
   }
 
@@ -95,6 +46,28 @@ Aws::String ListLogSourcesRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_regionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> regionsJsonList(m_regions.size());
+   for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
+   {
+     regionsJsonList[regionsIndex].AsString(m_regions[regionsIndex]);
+   }
+   payload.WithArray("regions", std::move(regionsJsonList));
+
+  }
+
+  if(m_sourcesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
+   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+   {
+     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
+   }
+   payload.WithArray("sources", std::move(sourcesJsonList));
 
   }
 

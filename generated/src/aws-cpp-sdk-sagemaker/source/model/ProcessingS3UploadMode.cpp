@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessingS3UploadMode::NOT_SET:
+            return {};
           case ProcessingS3UploadMode::Continuous:
             return "Continuous";
           case ProcessingS3UploadMode::EndOfJob:

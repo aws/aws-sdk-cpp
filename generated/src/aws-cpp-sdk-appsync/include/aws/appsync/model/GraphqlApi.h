@@ -13,6 +13,9 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appsync/model/LambdaAuthorizerConfig.h>
+#include <aws/appsync/model/GraphQLApiVisibility.h>
+#include <aws/appsync/model/GraphQLApiType.h>
+#include <aws/appsync/model/GraphQLApiIntrospectionConfig.h>
 #include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <utility>
 
@@ -577,6 +580,466 @@ namespace Model
      */
     inline GraphqlApi& WithLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetDns() const{ return m_dns; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline bool DnsHasBeenSet() const { return m_dnsHasBeenSet; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline void SetDns(const Aws::Map<Aws::String, Aws::String>& value) { m_dnsHasBeenSet = true; m_dns = value; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline void SetDns(Aws::Map<Aws::String, Aws::String>&& value) { m_dnsHasBeenSet = true; m_dns = std::move(value); }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& WithDns(const Aws::Map<Aws::String, Aws::String>& value) { SetDns(value); return *this;}
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& WithDns(Aws::Map<Aws::String, Aws::String>&& value) { SetDns(std::move(value)); return *this;}
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(const Aws::String& key, const Aws::String& value) { m_dnsHasBeenSet = true; m_dns.emplace(key, value); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(Aws::String&& key, const Aws::String& value) { m_dnsHasBeenSet = true; m_dns.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(const Aws::String& key, Aws::String&& value) { m_dnsHasBeenSet = true; m_dns.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(Aws::String&& key, Aws::String&& value) { m_dnsHasBeenSet = true; m_dns.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(const char* key, Aws::String&& value) { m_dnsHasBeenSet = true; m_dns.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(Aws::String&& key, const char* value) { m_dnsHasBeenSet = true; m_dns.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(const char* key, const char* value) { m_dnsHasBeenSet = true; m_dns.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline const GraphQLApiVisibility& GetVisibility() const{ return m_visibility; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline void SetVisibility(const GraphQLApiVisibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline void SetVisibility(GraphQLApiVisibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline GraphqlApi& WithVisibility(const GraphQLApiVisibility& value) { SetVisibility(value); return *this;}
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline GraphqlApi& WithVisibility(GraphQLApiVisibility&& value) { SetVisibility(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline const GraphQLApiType& GetApiType() const{ return m_apiType; }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline bool ApiTypeHasBeenSet() const { return m_apiTypeHasBeenSet; }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline void SetApiType(const GraphQLApiType& value) { m_apiTypeHasBeenSet = true; m_apiType = value; }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline void SetApiType(GraphQLApiType&& value) { m_apiTypeHasBeenSet = true; m_apiType = std::move(value); }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline GraphqlApi& WithApiType(const GraphQLApiType& value) { SetApiType(value); return *this;}
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline GraphqlApi& WithApiType(GraphQLApiType&& value) { SetApiType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline const Aws::String& GetMergedApiExecutionRoleArn() const{ return m_mergedApiExecutionRoleArn; }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline bool MergedApiExecutionRoleArnHasBeenSet() const { return m_mergedApiExecutionRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline void SetMergedApiExecutionRoleArn(const Aws::String& value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn = value; }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline void SetMergedApiExecutionRoleArn(Aws::String&& value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn = std::move(value); }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline void SetMergedApiExecutionRoleArn(const char* value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn.assign(value); }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline GraphqlApi& WithMergedApiExecutionRoleArn(const Aws::String& value) { SetMergedApiExecutionRoleArn(value); return *this;}
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline GraphqlApi& WithMergedApiExecutionRoleArn(Aws::String&& value) { SetMergedApiExecutionRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline GraphqlApi& WithMergedApiExecutionRoleArn(const char* value) { SetMergedApiExecutionRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline GraphqlApi& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline GraphqlApi& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline GraphqlApi& WithOwner(const char* value) { SetOwner(value); return *this;}
+
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline const Aws::String& GetOwnerContact() const{ return m_ownerContact; }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline bool OwnerContactHasBeenSet() const { return m_ownerContactHasBeenSet; }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline void SetOwnerContact(const Aws::String& value) { m_ownerContactHasBeenSet = true; m_ownerContact = value; }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline void SetOwnerContact(Aws::String&& value) { m_ownerContactHasBeenSet = true; m_ownerContact = std::move(value); }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline void SetOwnerContact(const char* value) { m_ownerContactHasBeenSet = true; m_ownerContact.assign(value); }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline GraphqlApi& WithOwnerContact(const Aws::String& value) { SetOwnerContact(value); return *this;}
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline GraphqlApi& WithOwnerContact(Aws::String&& value) { SetOwnerContact(std::move(value)); return *this;}
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline GraphqlApi& WithOwnerContact(const char* value) { SetOwnerContact(value); return *this;}
+
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline const GraphQLApiIntrospectionConfig& GetIntrospectionConfig() const{ return m_introspectionConfig; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline bool IntrospectionConfigHasBeenSet() const { return m_introspectionConfigHasBeenSet; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline void SetIntrospectionConfig(const GraphQLApiIntrospectionConfig& value) { m_introspectionConfigHasBeenSet = true; m_introspectionConfig = value; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline void SetIntrospectionConfig(GraphQLApiIntrospectionConfig&& value) { m_introspectionConfigHasBeenSet = true; m_introspectionConfig = std::move(value); }
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline GraphqlApi& WithIntrospectionConfig(const GraphQLApiIntrospectionConfig& value) { SetIntrospectionConfig(value); return *this;}
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline GraphqlApi& WithIntrospectionConfig(GraphQLApiIntrospectionConfig&& value) { SetIntrospectionConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum depth a query can have in a single request. Depth refers to the
+     * amount of nested levels allowed in the body of query. The default value is
+     * <code>0</code> (or unspecified), which indicates there's no depth limit. If you
+     * set a limit, it can be between <code>1</code> and <code>75</code> nested levels.
+     * This field will produce a limit error if the operation falls out of bounds.</p>
+     * <p>Note that fields can still be set to nullable or non-nullable. If a
+     * non-nullable field produces an error, the error will be thrown upwards to the
+     * first nullable field available.</p>
+     */
+    inline int GetQueryDepthLimit() const{ return m_queryDepthLimit; }
+
+    /**
+     * <p>The maximum depth a query can have in a single request. Depth refers to the
+     * amount of nested levels allowed in the body of query. The default value is
+     * <code>0</code> (or unspecified), which indicates there's no depth limit. If you
+     * set a limit, it can be between <code>1</code> and <code>75</code> nested levels.
+     * This field will produce a limit error if the operation falls out of bounds.</p>
+     * <p>Note that fields can still be set to nullable or non-nullable. If a
+     * non-nullable field produces an error, the error will be thrown upwards to the
+     * first nullable field available.</p>
+     */
+    inline bool QueryDepthLimitHasBeenSet() const { return m_queryDepthLimitHasBeenSet; }
+
+    /**
+     * <p>The maximum depth a query can have in a single request. Depth refers to the
+     * amount of nested levels allowed in the body of query. The default value is
+     * <code>0</code> (or unspecified), which indicates there's no depth limit. If you
+     * set a limit, it can be between <code>1</code> and <code>75</code> nested levels.
+     * This field will produce a limit error if the operation falls out of bounds.</p>
+     * <p>Note that fields can still be set to nullable or non-nullable. If a
+     * non-nullable field produces an error, the error will be thrown upwards to the
+     * first nullable field available.</p>
+     */
+    inline void SetQueryDepthLimit(int value) { m_queryDepthLimitHasBeenSet = true; m_queryDepthLimit = value; }
+
+    /**
+     * <p>The maximum depth a query can have in a single request. Depth refers to the
+     * amount of nested levels allowed in the body of query. The default value is
+     * <code>0</code> (or unspecified), which indicates there's no depth limit. If you
+     * set a limit, it can be between <code>1</code> and <code>75</code> nested levels.
+     * This field will produce a limit error if the operation falls out of bounds.</p>
+     * <p>Note that fields can still be set to nullable or non-nullable. If a
+     * non-nullable field produces an error, the error will be thrown upwards to the
+     * first nullable field available.</p>
+     */
+    inline GraphqlApi& WithQueryDepthLimit(int value) { SetQueryDepthLimit(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of resolvers that can be invoked in a single request. The
+     * default value is <code>0</code> (or unspecified), which will set the limit to
+     * <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if
+     * the operation falls out of bounds.</p>
+     */
+    inline int GetResolverCountLimit() const{ return m_resolverCountLimit; }
+
+    /**
+     * <p>The maximum number of resolvers that can be invoked in a single request. The
+     * default value is <code>0</code> (or unspecified), which will set the limit to
+     * <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if
+     * the operation falls out of bounds.</p>
+     */
+    inline bool ResolverCountLimitHasBeenSet() const { return m_resolverCountLimitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of resolvers that can be invoked in a single request. The
+     * default value is <code>0</code> (or unspecified), which will set the limit to
+     * <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if
+     * the operation falls out of bounds.</p>
+     */
+    inline void SetResolverCountLimit(int value) { m_resolverCountLimitHasBeenSet = true; m_resolverCountLimit = value; }
+
+    /**
+     * <p>The maximum number of resolvers that can be invoked in a single request. The
+     * default value is <code>0</code> (or unspecified), which will set the limit to
+     * <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if
+     * the operation falls out of bounds.</p>
+     */
+    inline GraphqlApi& WithResolverCountLimit(int value) { SetResolverCountLimit(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -617,6 +1080,33 @@ namespace Model
 
     LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
     bool m_lambdaAuthorizerConfigHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_dns;
+    bool m_dnsHasBeenSet = false;
+
+    GraphQLApiVisibility m_visibility;
+    bool m_visibilityHasBeenSet = false;
+
+    GraphQLApiType m_apiType;
+    bool m_apiTypeHasBeenSet = false;
+
+    Aws::String m_mergedApiExecutionRoleArn;
+    bool m_mergedApiExecutionRoleArnHasBeenSet = false;
+
+    Aws::String m_owner;
+    bool m_ownerHasBeenSet = false;
+
+    Aws::String m_ownerContact;
+    bool m_ownerContactHasBeenSet = false;
+
+    GraphQLApiIntrospectionConfig m_introspectionConfig;
+    bool m_introspectionConfigHasBeenSet = false;
+
+    int m_queryDepthLimit;
+    bool m_queryDepthLimitHasBeenSet = false;
+
+    int m_resolverCountLimit;
+    bool m_resolverCountLimitHasBeenSet = false;
   };
 
 } // namespace Model

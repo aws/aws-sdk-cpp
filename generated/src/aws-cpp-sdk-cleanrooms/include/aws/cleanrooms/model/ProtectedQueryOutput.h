@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/ProtectedQueryS3Output.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/ProtectedQuerySingleMemberOutput.h>
 #include <utility>
 
 namespace Aws
@@ -68,10 +70,62 @@ namespace Model
      */
     inline ProtectedQueryOutput& WithS3(ProtectedQueryS3Output&& value) { SetS3(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The list of member Amazon Web Services account(s) that received the results
+     * of the query. </p>
+     */
+    inline const Aws::Vector<ProtectedQuerySingleMemberOutput>& GetMemberList() const{ return m_memberList; }
+
+    /**
+     * <p>The list of member Amazon Web Services account(s) that received the results
+     * of the query. </p>
+     */
+    inline bool MemberListHasBeenSet() const { return m_memberListHasBeenSet; }
+
+    /**
+     * <p>The list of member Amazon Web Services account(s) that received the results
+     * of the query. </p>
+     */
+    inline void SetMemberList(const Aws::Vector<ProtectedQuerySingleMemberOutput>& value) { m_memberListHasBeenSet = true; m_memberList = value; }
+
+    /**
+     * <p>The list of member Amazon Web Services account(s) that received the results
+     * of the query. </p>
+     */
+    inline void SetMemberList(Aws::Vector<ProtectedQuerySingleMemberOutput>&& value) { m_memberListHasBeenSet = true; m_memberList = std::move(value); }
+
+    /**
+     * <p>The list of member Amazon Web Services account(s) that received the results
+     * of the query. </p>
+     */
+    inline ProtectedQueryOutput& WithMemberList(const Aws::Vector<ProtectedQuerySingleMemberOutput>& value) { SetMemberList(value); return *this;}
+
+    /**
+     * <p>The list of member Amazon Web Services account(s) that received the results
+     * of the query. </p>
+     */
+    inline ProtectedQueryOutput& WithMemberList(Aws::Vector<ProtectedQuerySingleMemberOutput>&& value) { SetMemberList(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of member Amazon Web Services account(s) that received the results
+     * of the query. </p>
+     */
+    inline ProtectedQueryOutput& AddMemberList(const ProtectedQuerySingleMemberOutput& value) { m_memberListHasBeenSet = true; m_memberList.push_back(value); return *this; }
+
+    /**
+     * <p>The list of member Amazon Web Services account(s) that received the results
+     * of the query. </p>
+     */
+    inline ProtectedQueryOutput& AddMemberList(ProtectedQuerySingleMemberOutput&& value) { m_memberListHasBeenSet = true; m_memberList.push_back(std::move(value)); return *this; }
+
   private:
 
     ProtectedQueryS3Output m_s3;
     bool m_s3HasBeenSet = false;
+
+    Aws::Vector<ProtectedQuerySingleMemberOutput> m_memberList;
+    bool m_memberListHasBeenSet = false;
   };
 
 } // namespace Model

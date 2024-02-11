@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionResultCode::NOT_SET:
+            return {};
           case ExecutionResultCode::PARSING_FAILED:
             return "PARSING_FAILED";
           case ExecutionResultCode::VPC_ENDPOINT_SETUP_FAILED:

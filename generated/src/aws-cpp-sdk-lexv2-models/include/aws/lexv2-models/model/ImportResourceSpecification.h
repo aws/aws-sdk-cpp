@@ -8,6 +8,7 @@
 #include <aws/lexv2-models/model/BotImportSpecification.h>
 #include <aws/lexv2-models/model/BotLocaleImportSpecification.h>
 #include <aws/lexv2-models/model/CustomVocabularyImportSpecification.h>
+#include <aws/lexv2-models/model/TestSetImportResourceSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -122,6 +123,37 @@ namespace Model
     
     inline ImportResourceSpecification& WithCustomVocabularyImportSpecification(CustomVocabularyImportSpecification&& value) { SetCustomVocabularyImportSpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifications for the test set that is imported.</p>
+     */
+    inline const TestSetImportResourceSpecification& GetTestSetImportResourceSpecification() const{ return m_testSetImportResourceSpecification; }
+
+    /**
+     * <p>Specifications for the test set that is imported.</p>
+     */
+    inline bool TestSetImportResourceSpecificationHasBeenSet() const { return m_testSetImportResourceSpecificationHasBeenSet; }
+
+    /**
+     * <p>Specifications for the test set that is imported.</p>
+     */
+    inline void SetTestSetImportResourceSpecification(const TestSetImportResourceSpecification& value) { m_testSetImportResourceSpecificationHasBeenSet = true; m_testSetImportResourceSpecification = value; }
+
+    /**
+     * <p>Specifications for the test set that is imported.</p>
+     */
+    inline void SetTestSetImportResourceSpecification(TestSetImportResourceSpecification&& value) { m_testSetImportResourceSpecificationHasBeenSet = true; m_testSetImportResourceSpecification = std::move(value); }
+
+    /**
+     * <p>Specifications for the test set that is imported.</p>
+     */
+    inline ImportResourceSpecification& WithTestSetImportResourceSpecification(const TestSetImportResourceSpecification& value) { SetTestSetImportResourceSpecification(value); return *this;}
+
+    /**
+     * <p>Specifications for the test set that is imported.</p>
+     */
+    inline ImportResourceSpecification& WithTestSetImportResourceSpecification(TestSetImportResourceSpecification&& value) { SetTestSetImportResourceSpecification(std::move(value)); return *this;}
+
   private:
 
     BotImportSpecification m_botImportSpecification;
@@ -132,6 +164,9 @@ namespace Model
 
     CustomVocabularyImportSpecification m_customVocabularyImportSpecification;
     bool m_customVocabularyImportSpecificationHasBeenSet = false;
+
+    TestSetImportResourceSpecification m_testSetImportResourceSpecification;
+    bool m_testSetImportResourceSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

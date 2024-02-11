@@ -24,7 +24,9 @@ EbsVolumeScanDetails::EbsVolumeScanDetails() :
     m_scanCompletedAtHasBeenSet(false),
     m_triggerFindingIdHasBeenSet(false),
     m_sourcesHasBeenSet(false),
-    m_scanDetectionsHasBeenSet(false)
+    m_scanDetectionsHasBeenSet(false),
+    m_scanType(ScanType::NOT_SET),
+    m_scanTypeHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ EbsVolumeScanDetails::EbsVolumeScanDetails(JsonView jsonValue) :
     m_scanCompletedAtHasBeenSet(false),
     m_triggerFindingIdHasBeenSet(false),
     m_sourcesHasBeenSet(false),
-    m_scanDetectionsHasBeenSet(false)
+    m_scanDetectionsHasBeenSet(false),
+    m_scanType(ScanType::NOT_SET),
+    m_scanTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +90,13 @@ EbsVolumeScanDetails& EbsVolumeScanDetails::operator =(JsonView jsonValue)
     m_scanDetectionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scanType"))
+  {
+    m_scanType = ScanTypeMapper::GetScanTypeForName(jsonValue.GetString("scanType"));
+
+    m_scanTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -130,6 +141,11 @@ JsonValue EbsVolumeScanDetails::Jsonize() const
   {
    payload.WithObject("scanDetections", m_scanDetections.Jsonize());
 
+  }
+
+  if(m_scanTypeHasBeenSet)
+  {
+   payload.WithString("scanType", ScanTypeMapper::GetNameForScanType(m_scanType));
   }
 
   return payload;

@@ -610,46 +610,46 @@ namespace Model
 
 
     /**
-     * <p>Whether the proxy includes detailed information about SQL statements in its
-     * logs. This information helps you to debug issues involving SQL behavior or the
-     * performance and scalability of the proxy connections. The debug information
-     * includes the text of SQL statements that you submit through the proxy. Thus,
-     * only enable this setting when needed for debugging, and only when you have
-     * security measures in place to safeguard any sensitive information that appears
-     * in the logs.</p>
+     * <p>Indicates whether the proxy includes detailed information about SQL
+     * statements in its logs. This information helps you to debug issues involving SQL
+     * behavior or the performance and scalability of the proxy connections. The debug
+     * information includes the text of SQL statements that you submit through the
+     * proxy. Thus, only enable this setting when needed for debugging, and only when
+     * you have security measures in place to safeguard any sensitive information that
+     * appears in the logs.</p>
      */
     inline bool GetDebugLogging() const{ return m_debugLogging; }
 
     /**
-     * <p>Whether the proxy includes detailed information about SQL statements in its
-     * logs. This information helps you to debug issues involving SQL behavior or the
-     * performance and scalability of the proxy connections. The debug information
-     * includes the text of SQL statements that you submit through the proxy. Thus,
-     * only enable this setting when needed for debugging, and only when you have
-     * security measures in place to safeguard any sensitive information that appears
-     * in the logs.</p>
+     * <p>Indicates whether the proxy includes detailed information about SQL
+     * statements in its logs. This information helps you to debug issues involving SQL
+     * behavior or the performance and scalability of the proxy connections. The debug
+     * information includes the text of SQL statements that you submit through the
+     * proxy. Thus, only enable this setting when needed for debugging, and only when
+     * you have security measures in place to safeguard any sensitive information that
+     * appears in the logs.</p>
      */
     inline bool DebugLoggingHasBeenSet() const { return m_debugLoggingHasBeenSet; }
 
     /**
-     * <p>Whether the proxy includes detailed information about SQL statements in its
-     * logs. This information helps you to debug issues involving SQL behavior or the
-     * performance and scalability of the proxy connections. The debug information
-     * includes the text of SQL statements that you submit through the proxy. Thus,
-     * only enable this setting when needed for debugging, and only when you have
-     * security measures in place to safeguard any sensitive information that appears
-     * in the logs.</p>
+     * <p>Indicates whether the proxy includes detailed information about SQL
+     * statements in its logs. This information helps you to debug issues involving SQL
+     * behavior or the performance and scalability of the proxy connections. The debug
+     * information includes the text of SQL statements that you submit through the
+     * proxy. Thus, only enable this setting when needed for debugging, and only when
+     * you have security measures in place to safeguard any sensitive information that
+     * appears in the logs.</p>
      */
     inline void SetDebugLogging(bool value) { m_debugLoggingHasBeenSet = true; m_debugLogging = value; }
 
     /**
-     * <p>Whether the proxy includes detailed information about SQL statements in its
-     * logs. This information helps you to debug issues involving SQL behavior or the
-     * performance and scalability of the proxy connections. The debug information
-     * includes the text of SQL statements that you submit through the proxy. Thus,
-     * only enable this setting when needed for debugging, and only when you have
-     * security measures in place to safeguard any sensitive information that appears
-     * in the logs.</p>
+     * <p>Indicates whether the proxy includes detailed information about SQL
+     * statements in its logs. This information helps you to debug issues involving SQL
+     * behavior or the performance and scalability of the proxy connections. The debug
+     * information includes the text of SQL statements that you submit through the
+     * proxy. Thus, only enable this setting when needed for debugging, and only when
+     * you have security measures in place to safeguard any sensitive information that
+     * appears in the logs.</p>
      */
     inline DBProxy& WithDebugLogging(bool value) { SetDebugLogging(value); return *this;}
 

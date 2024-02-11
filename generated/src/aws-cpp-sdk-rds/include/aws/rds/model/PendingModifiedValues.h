@@ -196,26 +196,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates that the Single-AZ DB instance will change to a
-     * Multi-AZ deployment.</p>
+     * <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ
+     * deployment.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>A value that indicates that the Single-AZ DB instance will change to a
-     * Multi-AZ deployment.</p>
+     * <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ
+     * deployment.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>A value that indicates that the Single-AZ DB instance will change to a
-     * Multi-AZ deployment.</p>
+     * <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ
+     * deployment.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>A value that indicates that the Single-AZ DB instance will change to a
-     * Multi-AZ deployment.</p>
+     * <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ
+     * deployment.</p>
      */
     inline PendingModifiedValues& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -628,26 +628,26 @@ namespace Model
 
 
     /**
-     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline PendingModifiedValues& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
@@ -770,6 +770,97 @@ namespace Model
      */
     inline PendingModifiedValues& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
 
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline PendingModifiedValues& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline PendingModifiedValues& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline PendingModifiedValues& WithEngine(const char* value) { SetEngine(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.&gt;</p>
+     */
+    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.&gt;</p>
+     */
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.&gt;</p>
+     */
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.&gt;</p>
+     */
+    inline PendingModifiedValues& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the DB instance will change to the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+     */
+    inline bool GetMultiTenant() const{ return m_multiTenant; }
+
+    /**
+     * <p>Indicates whether the DB instance will change to the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+     */
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB instance will change to the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+     */
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+
+    /**
+     * <p>Indicates whether the DB instance will change to the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+     */
+    inline PendingModifiedValues& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceClass;
@@ -828,6 +919,15 @@ namespace Model
 
     int m_storageThroughput;
     bool m_storageThroughputHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
+
+    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolumeHasBeenSet = false;
+
+    bool m_multiTenant;
+    bool m_multiTenantHasBeenSet = false;
   };
 
 } // namespace Model

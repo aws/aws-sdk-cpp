@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WakeWord::NOT_SET:
+            return {};
           case WakeWord::ALEXA:
             return "ALEXA";
           case WakeWord::AMAZON:

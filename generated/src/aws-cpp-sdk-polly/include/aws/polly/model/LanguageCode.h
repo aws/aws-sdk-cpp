@@ -51,7 +51,10 @@ namespace Model
     de_AT,
     yue_CN,
     ar_AE,
-    fi_FI
+    fi_FI,
+    en_IE,
+    nl_BE,
+    fr_BE
   };
 
 namespace LanguageCodeMapper

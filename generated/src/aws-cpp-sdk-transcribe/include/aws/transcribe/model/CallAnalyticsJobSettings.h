@@ -10,6 +10,7 @@
 #include <aws/transcribe/model/ContentRedaction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/transcribe/model/Summarization.h>
 #include <aws/transcribe/model/LanguageCode.h>
 #include <aws/transcribe/model/LanguageIdSettings.h>
 #include <utility>
@@ -214,7 +215,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline const Aws::String& GetLanguageModelName() const{ return m_languageModelName; }
@@ -224,7 +225,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline bool LanguageModelNameHasBeenSet() const { return m_languageModelNameHasBeenSet; }
@@ -234,7 +235,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline void SetLanguageModelName(const Aws::String& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = value; }
@@ -244,7 +245,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline void SetLanguageModelName(Aws::String&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::move(value); }
@@ -254,7 +255,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline void SetLanguageModelName(const char* value) { m_languageModelNameHasBeenSet = true; m_languageModelName.assign(value); }
@@ -264,7 +265,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline CallAnalyticsJobSettings& WithLanguageModelName(const Aws::String& value) { SetLanguageModelName(value); return *this;}
@@ -274,7 +275,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline CallAnalyticsJobSettings& WithLanguageModelName(Aws::String&& value) { SetLanguageModelName(std::move(value)); return *this;}
@@ -284,7 +285,7 @@ namespace Model
      * Call Analytics job. Note that custom language model names are case
      * sensitive.</p> <p>The language of the specified custom language model must match
      * the language code that you specify in your transcription request. If the
-     * languages don't match, the custom language model isn't applied. There are no
+     * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
     inline CallAnalyticsJobSettings& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}
@@ -712,6 +713,49 @@ namespace Model
      */
     inline CallAnalyticsJobSettings& AddLanguageIdSettings(LanguageCode&& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), std::move(value)); return *this; }
 
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline const Summarization& GetSummarization() const{ return m_summarization; }
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline bool SummarizationHasBeenSet() const { return m_summarizationHasBeenSet; }
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline void SetSummarization(const Summarization& value) { m_summarizationHasBeenSet = true; m_summarization = value; }
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline void SetSummarization(Summarization&& value) { m_summarizationHasBeenSet = true; m_summarization = std::move(value); }
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline CallAnalyticsJobSettings& WithSummarization(const Summarization& value) { SetSummarization(value); return *this;}
+
+    /**
+     * <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required
+     * parameter if you want to enable Generative call summarization in your Call
+     * Analytics request.</p>
+     */
+    inline CallAnalyticsJobSettings& WithSummarization(Summarization&& value) { SetSummarization(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_vocabularyName;
@@ -734,6 +778,9 @@ namespace Model
 
     Aws::Map<LanguageCode, LanguageIdSettings> m_languageIdSettings;
     bool m_languageIdSettingsHasBeenSet = false;
+
+    Summarization m_summarization;
+    bool m_summarizationHasBeenSet = false;
   };
 
 } // namespace Model

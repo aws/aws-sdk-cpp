@@ -21,7 +21,6 @@ namespace Aws
       {
 
         static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int GRAPHML_HASH = HashingUtils::HashString("GRAPHML");
 
 
         ExportDataFormat GetExportDataFormatForName(const Aws::String& name)
@@ -30,10 +29,6 @@ namespace Aws
           if (hashCode == CSV_HASH)
           {
             return ExportDataFormat::CSV;
-          }
-          else if (hashCode == GRAPHML_HASH)
-          {
-            return ExportDataFormat::GRAPHML;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +44,10 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportDataFormat::NOT_SET:
+            return {};
           case ExportDataFormat::CSV:
             return "CSV";
-          case ExportDataFormat::GRAPHML:
-            return "GRAPHML";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricType::NOT_SET:
+            return {};
           case MetricType::WORKLOAD:
             return "WORKLOAD";
           default:

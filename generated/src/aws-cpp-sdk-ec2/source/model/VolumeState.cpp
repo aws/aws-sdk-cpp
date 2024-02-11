@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VolumeState::NOT_SET:
+            return {};
           case VolumeState::creating:
             return "creating";
           case VolumeState::available:

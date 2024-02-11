@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FieldNamespace::NOT_SET:
+            return {};
           case FieldNamespace::System:
             return "System";
           case FieldNamespace::Custom:

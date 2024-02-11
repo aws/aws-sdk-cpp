@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GeneratedManifestFormat::NOT_SET:
+            return {};
           case GeneratedManifestFormat::S3InventoryReport_CSV_20211130:
             return "S3InventoryReport_CSV_20211130";
           default:

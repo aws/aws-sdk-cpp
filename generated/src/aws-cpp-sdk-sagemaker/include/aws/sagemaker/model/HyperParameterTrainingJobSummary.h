@@ -463,44 +463,50 @@ namespace Model
 
 
     /**
-     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
-     * the value of the objective metric of the tuning job that launched this training
-     * job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a>
+     * object that specifies the value of the objective metric of the tuning job that
+     * launched this training job.</p>
      */
     inline const FinalHyperParameterTuningJobObjectiveMetric& GetFinalHyperParameterTuningJobObjectiveMetric() const{ return m_finalHyperParameterTuningJobObjectiveMetric; }
 
     /**
-     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
-     * the value of the objective metric of the tuning job that launched this training
-     * job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a>
+     * object that specifies the value of the objective metric of the tuning job that
+     * launched this training job.</p>
      */
     inline bool FinalHyperParameterTuningJobObjectiveMetricHasBeenSet() const { return m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet; }
 
     /**
-     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
-     * the value of the objective metric of the tuning job that launched this training
-     * job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a>
+     * object that specifies the value of the objective metric of the tuning job that
+     * launched this training job.</p>
      */
     inline void SetFinalHyperParameterTuningJobObjectiveMetric(const FinalHyperParameterTuningJobObjectiveMetric& value) { m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet = true; m_finalHyperParameterTuningJobObjectiveMetric = value; }
 
     /**
-     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
-     * the value of the objective metric of the tuning job that launched this training
-     * job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a>
+     * object that specifies the value of the objective metric of the tuning job that
+     * launched this training job.</p>
      */
     inline void SetFinalHyperParameterTuningJobObjectiveMetric(FinalHyperParameterTuningJobObjectiveMetric&& value) { m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet = true; m_finalHyperParameterTuningJobObjectiveMetric = std::move(value); }
 
     /**
-     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
-     * the value of the objective metric of the tuning job that launched this training
-     * job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a>
+     * object that specifies the value of the objective metric of the tuning job that
+     * launched this training job.</p>
      */
     inline HyperParameterTrainingJobSummary& WithFinalHyperParameterTuningJobObjectiveMetric(const FinalHyperParameterTuningJobObjectiveMetric& value) { SetFinalHyperParameterTuningJobObjectiveMetric(value); return *this;}
 
     /**
-     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
-     * the value of the objective metric of the tuning job that launched this training
-     * job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a>
+     * object that specifies the value of the objective metric of the tuning job that
+     * launched this training job.</p>
      */
     inline HyperParameterTrainingJobSummary& WithFinalHyperParameterTuningJobObjectiveMetric(FinalHyperParameterTuningJobObjectiveMetric&& value) { SetFinalHyperParameterTuningJobObjectiveMetric(std::move(value)); return *this;}
 

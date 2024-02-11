@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/ReadSetExportJobStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/ExportReadSetDetail.h>
 #include <utility>
 
@@ -34,94 +34,6 @@ namespace Model
     AWS_OMICS_API GetReadSetExportJobResult();
     AWS_OMICS_API GetReadSetExportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API GetReadSetExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline GetReadSetExportJobResult& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline GetReadSetExportJobResult& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline GetReadSetExportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline GetReadSetExportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The job's destination in Amazon S3.</p>
-     */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
-
-    /**
-     * <p>The job's destination in Amazon S3.</p>
-     */
-    inline void SetDestination(const Aws::String& value) { m_destination = value; }
-
-    /**
-     * <p>The job's destination in Amazon S3.</p>
-     */
-    inline void SetDestination(Aws::String&& value) { m_destination = std::move(value); }
-
-    /**
-     * <p>The job's destination in Amazon S3.</p>
-     */
-    inline void SetDestination(const char* value) { m_destination.assign(value); }
-
-    /**
-     * <p>The job's destination in Amazon S3.</p>
-     */
-    inline GetReadSetExportJobResult& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-
-    /**
-     * <p>The job's destination in Amazon S3.</p>
-     */
-    inline GetReadSetExportJobResult& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's destination in Amazon S3.</p>
-     */
-    inline GetReadSetExportJobResult& WithDestination(const char* value) { SetDestination(value); return *this;}
 
 
     /**
@@ -161,42 +73,6 @@ namespace Model
 
 
     /**
-     * <p>The job's read sets.</p>
-     */
-    inline const Aws::Vector<ExportReadSetDetail>& GetReadSets() const{ return m_readSets; }
-
-    /**
-     * <p>The job's read sets.</p>
-     */
-    inline void SetReadSets(const Aws::Vector<ExportReadSetDetail>& value) { m_readSets = value; }
-
-    /**
-     * <p>The job's read sets.</p>
-     */
-    inline void SetReadSets(Aws::Vector<ExportReadSetDetail>&& value) { m_readSets = std::move(value); }
-
-    /**
-     * <p>The job's read sets.</p>
-     */
-    inline GetReadSetExportJobResult& WithReadSets(const Aws::Vector<ExportReadSetDetail>& value) { SetReadSets(value); return *this;}
-
-    /**
-     * <p>The job's read sets.</p>
-     */
-    inline GetReadSetExportJobResult& WithReadSets(Aws::Vector<ExportReadSetDetail>&& value) { SetReadSets(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's read sets.</p>
-     */
-    inline GetReadSetExportJobResult& AddReadSets(const ExportReadSetDetail& value) { m_readSets.push_back(value); return *this; }
-
-    /**
-     * <p>The job's read sets.</p>
-     */
-    inline GetReadSetExportJobResult& AddReadSets(ExportReadSetDetail&& value) { m_readSets.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>The job's sequence store ID.</p>
      */
     inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
@@ -230,6 +106,42 @@ namespace Model
      * <p>The job's sequence store ID.</p>
      */
     inline GetReadSetExportJobResult& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
+
+
+    /**
+     * <p>The job's destination in Amazon S3.</p>
+     */
+    inline const Aws::String& GetDestination() const{ return m_destination; }
+
+    /**
+     * <p>The job's destination in Amazon S3.</p>
+     */
+    inline void SetDestination(const Aws::String& value) { m_destination = value; }
+
+    /**
+     * <p>The job's destination in Amazon S3.</p>
+     */
+    inline void SetDestination(Aws::String&& value) { m_destination = std::move(value); }
+
+    /**
+     * <p>The job's destination in Amazon S3.</p>
+     */
+    inline void SetDestination(const char* value) { m_destination.assign(value); }
+
+    /**
+     * <p>The job's destination in Amazon S3.</p>
+     */
+    inline GetReadSetExportJobResult& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
+
+    /**
+     * <p>The job's destination in Amazon S3.</p>
+     */
+    inline GetReadSetExportJobResult& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
+
+    /**
+     * <p>The job's destination in Amazon S3.</p>
+     */
+    inline GetReadSetExportJobResult& WithDestination(const char* value) { SetDestination(value); return *this;}
 
 
     /**
@@ -294,6 +206,94 @@ namespace Model
     inline GetReadSetExportJobResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline GetReadSetExportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline GetReadSetExportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline GetReadSetExportJobResult& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline GetReadSetExportJobResult& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The job's read sets.</p>
+     */
+    inline const Aws::Vector<ExportReadSetDetail>& GetReadSets() const{ return m_readSets; }
+
+    /**
+     * <p>The job's read sets.</p>
+     */
+    inline void SetReadSets(const Aws::Vector<ExportReadSetDetail>& value) { m_readSets = value; }
+
+    /**
+     * <p>The job's read sets.</p>
+     */
+    inline void SetReadSets(Aws::Vector<ExportReadSetDetail>&& value) { m_readSets = std::move(value); }
+
+    /**
+     * <p>The job's read sets.</p>
+     */
+    inline GetReadSetExportJobResult& WithReadSets(const Aws::Vector<ExportReadSetDetail>& value) { SetReadSets(value); return *this;}
+
+    /**
+     * <p>The job's read sets.</p>
+     */
+    inline GetReadSetExportJobResult& WithReadSets(Aws::Vector<ExportReadSetDetail>&& value) { SetReadSets(std::move(value)); return *this;}
+
+    /**
+     * <p>The job's read sets.</p>
+     */
+    inline GetReadSetExportJobResult& AddReadSets(const ExportReadSetDetail& value) { m_readSets.push_back(value); return *this; }
+
+    /**
+     * <p>The job's read sets.</p>
+     */
+    inline GetReadSetExportJobResult& AddReadSets(ExportReadSetDetail&& value) { m_readSets.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -317,21 +317,21 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_completionTime;
-
-    Aws::Utils::DateTime m_creationTime;
-
-    Aws::String m_destination;
-
     Aws::String m_id;
 
-    Aws::Vector<ExportReadSetDetail> m_readSets;
-
     Aws::String m_sequenceStoreId;
+
+    Aws::String m_destination;
 
     ReadSetExportJobStatus m_status;
 
     Aws::String m_statusMessage;
+
+    Aws::Utils::DateTime m_creationTime;
+
+    Aws::Utils::DateTime m_completionTime;
+
+    Aws::Vector<ExportReadSetDetail> m_readSets;
 
     Aws::String m_requestId;
   };

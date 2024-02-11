@@ -27,6 +27,9 @@ namespace SsmSap
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef SsmSapClientConfiguration ClientConfigurationType;
+      typedef SsmSapEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -442,6 +445,31 @@ namespace SsmSap
         void RegisterApplicationAsync(const RegisterApplicationRequestT& request, const RegisterApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SsmSapClient::RegisterApplication, request, handler, context);
+        }
+
+        /**
+         * <p>Refreshes a registered application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartApplicationRefreshOutcome StartApplicationRefresh(const Model::StartApplicationRefreshRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartApplicationRefresh that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartApplicationRefreshRequestT = Model::StartApplicationRefreshRequest>
+        Model::StartApplicationRefreshOutcomeCallable StartApplicationRefreshCallable(const StartApplicationRefreshRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::StartApplicationRefresh, request);
+        }
+
+        /**
+         * An Async wrapper for StartApplicationRefresh that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartApplicationRefreshRequestT = Model::StartApplicationRefreshRequest>
+        void StartApplicationRefreshAsync(const StartApplicationRefreshRequestT& request, const StartApplicationRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::StartApplicationRefresh, request, handler, context);
         }
 
         /**

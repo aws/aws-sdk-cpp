@@ -331,47 +331,43 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that, when true, indicates the option setting can be modified
-     * from the default.</p>
+     * <p>Indicates whether the option setting can be modified from the default.</p>
      */
     inline bool GetIsModifiable() const{ return m_isModifiable; }
 
     /**
-     * <p>A Boolean value that, when true, indicates the option setting can be modified
-     * from the default.</p>
+     * <p>Indicates whether the option setting can be modified from the default.</p>
      */
     inline bool IsModifiableHasBeenSet() const { return m_isModifiableHasBeenSet; }
 
     /**
-     * <p>A Boolean value that, when true, indicates the option setting can be modified
-     * from the default.</p>
+     * <p>Indicates whether the option setting can be modified from the default.</p>
      */
     inline void SetIsModifiable(bool value) { m_isModifiableHasBeenSet = true; m_isModifiable = value; }
 
     /**
-     * <p>A Boolean value that, when true, indicates the option setting can be modified
-     * from the default.</p>
+     * <p>Indicates whether the option setting can be modified from the default.</p>
      */
     inline OptionSetting& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
 
 
     /**
-     * <p>Indicates if the option setting is part of a collection.</p>
+     * <p>Indicates whether the option setting is part of a collection.</p>
      */
     inline bool GetIsCollection() const{ return m_isCollection; }
 
     /**
-     * <p>Indicates if the option setting is part of a collection.</p>
+     * <p>Indicates whether the option setting is part of a collection.</p>
      */
     inline bool IsCollectionHasBeenSet() const { return m_isCollectionHasBeenSet; }
 
     /**
-     * <p>Indicates if the option setting is part of a collection.</p>
+     * <p>Indicates whether the option setting is part of a collection.</p>
      */
     inline void SetIsCollection(bool value) { m_isCollectionHasBeenSet = true; m_isCollection = value; }
 
     /**
-     * <p>Indicates if the option setting is part of a collection.</p>
+     * <p>Indicates whether the option setting is part of a collection.</p>
      */
     inline OptionSetting& WithIsCollection(bool value) { SetIsCollection(value); return *this;}
 

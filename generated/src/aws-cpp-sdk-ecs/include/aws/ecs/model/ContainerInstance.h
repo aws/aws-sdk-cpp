@@ -738,26 +738,26 @@ namespace Model
 
 
     /**
-     * <p>The number of tasks on the container instance that are in the
-     * <code>RUNNING</code> status.</p>
+     * <p>The number of tasks on the container instance that have a desired status
+     * (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
      */
     inline int GetRunningTasksCount() const{ return m_runningTasksCount; }
 
     /**
-     * <p>The number of tasks on the container instance that are in the
-     * <code>RUNNING</code> status.</p>
+     * <p>The number of tasks on the container instance that have a desired status
+     * (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
      */
     inline bool RunningTasksCountHasBeenSet() const { return m_runningTasksCountHasBeenSet; }
 
     /**
-     * <p>The number of tasks on the container instance that are in the
-     * <code>RUNNING</code> status.</p>
+     * <p>The number of tasks on the container instance that have a desired status
+     * (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
      */
     inline void SetRunningTasksCount(int value) { m_runningTasksCountHasBeenSet = true; m_runningTasksCount = value; }
 
     /**
-     * <p>The number of tasks on the container instance that are in the
-     * <code>RUNNING</code> status.</p>
+     * <p>The number of tasks on the container instance that have a desired status
+     * (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
      */
     inline ContainerInstance& WithRunningTasksCount(int value) { SetRunningTasksCount(value); return *this;}
 

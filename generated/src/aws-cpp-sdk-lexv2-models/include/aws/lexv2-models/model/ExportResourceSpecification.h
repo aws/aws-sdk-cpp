@@ -8,6 +8,7 @@
 #include <aws/lexv2-models/model/BotExportSpecification.h>
 #include <aws/lexv2-models/model/BotLocaleExportSpecification.h>
 #include <aws/lexv2-models/model/CustomVocabularyExportSpecification.h>
+#include <aws/lexv2-models/model/TestSetExportSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +135,37 @@ namespace Model
      */
     inline ExportResourceSpecification& WithCustomVocabularyExportSpecification(CustomVocabularyExportSpecification&& value) { SetCustomVocabularyExportSpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifications for the test set that is exported as a resource.</p>
+     */
+    inline const TestSetExportSpecification& GetTestSetExportSpecification() const{ return m_testSetExportSpecification; }
+
+    /**
+     * <p>Specifications for the test set that is exported as a resource.</p>
+     */
+    inline bool TestSetExportSpecificationHasBeenSet() const { return m_testSetExportSpecificationHasBeenSet; }
+
+    /**
+     * <p>Specifications for the test set that is exported as a resource.</p>
+     */
+    inline void SetTestSetExportSpecification(const TestSetExportSpecification& value) { m_testSetExportSpecificationHasBeenSet = true; m_testSetExportSpecification = value; }
+
+    /**
+     * <p>Specifications for the test set that is exported as a resource.</p>
+     */
+    inline void SetTestSetExportSpecification(TestSetExportSpecification&& value) { m_testSetExportSpecificationHasBeenSet = true; m_testSetExportSpecification = std::move(value); }
+
+    /**
+     * <p>Specifications for the test set that is exported as a resource.</p>
+     */
+    inline ExportResourceSpecification& WithTestSetExportSpecification(const TestSetExportSpecification& value) { SetTestSetExportSpecification(value); return *this;}
+
+    /**
+     * <p>Specifications for the test set that is exported as a resource.</p>
+     */
+    inline ExportResourceSpecification& WithTestSetExportSpecification(TestSetExportSpecification&& value) { SetTestSetExportSpecification(std::move(value)); return *this;}
+
   private:
 
     BotExportSpecification m_botExportSpecification;
@@ -144,6 +176,9 @@ namespace Model
 
     CustomVocabularyExportSpecification m_customVocabularyExportSpecification;
     bool m_customVocabularyExportSpecificationHasBeenSet = false;
+
+    TestSetExportSpecification m_testSetExportSpecification;
+    bool m_testSetExportSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

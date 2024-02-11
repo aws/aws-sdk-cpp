@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Platform::NOT_SET:
+            return {};
           case Platform::OSX:
             return "OSX";
           case Platform::WINDOWS:

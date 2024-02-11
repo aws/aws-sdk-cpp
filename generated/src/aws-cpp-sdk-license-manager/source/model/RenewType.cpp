@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RenewType::NOT_SET:
+            return {};
           case RenewType::None:
             return "None";
           case RenewType::Weekly:

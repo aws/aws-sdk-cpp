@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SupportedSavingsPlansType::NOT_SET:
+            return {};
           case SupportedSavingsPlansType::COMPUTE_SP:
             return "COMPUTE_SP";
           case SupportedSavingsPlansType::EC2_INSTANCE_SP:

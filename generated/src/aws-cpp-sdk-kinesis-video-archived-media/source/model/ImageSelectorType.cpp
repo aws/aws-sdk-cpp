@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageSelectorType::NOT_SET:
+            return {};
           case ImageSelectorType::PRODUCER_TIMESTAMP:
             return "PRODUCER_TIMESTAMP";
           case ImageSelectorType::SERVER_TIMESTAMP:

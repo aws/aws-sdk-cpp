@@ -20,6 +20,7 @@ namespace Aws
       namespace TableFormatMapper
       {
 
+        static const int Default_HASH = HashingUtils::HashString("Default");
         static const int Glue_HASH = HashingUtils::HashString("Glue");
         static const int Iceberg_HASH = HashingUtils::HashString("Iceberg");
 
@@ -27,7 +28,11 @@ namespace Aws
         TableFormat GetTableFormatForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Glue_HASH)
+          if (hashCode == Default_HASH)
+          {
+            return TableFormat::Default;
+          }
+          else if (hashCode == Glue_HASH)
           {
             return TableFormat::Glue;
           }
@@ -49,6 +54,10 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableFormat::NOT_SET:
+            return {};
+          case TableFormat::Default:
+            return "Default";
           case TableFormat::Glue:
             return "Glue";
           case TableFormat::Iceberg:

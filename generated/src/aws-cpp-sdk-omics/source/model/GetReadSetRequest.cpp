@@ -16,12 +16,12 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 GetReadSetRequest::GetReadSetRequest() : 
+    m_idHasBeenSet(false),
+    m_sequenceStoreIdHasBeenSet(false),
     m_file(ReadSetFile::NOT_SET),
     m_fileHasBeenSet(false),
-    m_idHasBeenSet(false),
     m_partNumber(0),
-    m_partNumberHasBeenSet(false),
-    m_sequenceStoreIdHasBeenSet(false)
+    m_partNumberHasBeenSet(false)
 {
 }
 

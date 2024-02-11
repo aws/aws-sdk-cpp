@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExperimentType::NOT_SET:
+            return {};
           case ExperimentType::aws_evidently_onlineab:
             return "aws.evidently.onlineab";
           default:

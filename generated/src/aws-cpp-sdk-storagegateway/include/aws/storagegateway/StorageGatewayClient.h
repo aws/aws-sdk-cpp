@@ -68,6 +68,9 @@ namespace StorageGateway
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef StorageGatewayClientConfiguration ClientConfigurationType;
+      typedef StorageGatewayEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -1259,10 +1262,10 @@ namespace StorageGateway
         }
 
         /**
-         * <p>Returns metadata about a gateway such as its name, network interfaces,
-         * configured time zone, and the state (whether the gateway is running or not). To
-         * specify which gateway to describe, use the Amazon Resource Name (ARN) of the
-         * gateway in your request.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns metadata about a gateway such as its name, network interfaces, time
+         * zone, status, and software version. To specify which gateway to describe, use
+         * the Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation">AWS
          * API Reference</a></p>
          */
@@ -1717,8 +1720,15 @@ namespace StorageGateway
 
         /**
          * <p>Adds a file gateway to an Active Directory domain. This operation is only
-         * supported for file gateways that support the SMB file protocol.</p><p><h3>See
-         * Also:</h3>   <a
+         * supported for file gateways that support the SMB file protocol.</p> 
+         * <p>Joining a domain creates an Active Directory computer account in the default
+         * organizational unit, using the gateway's <b>Gateway ID</b> as the account name
+         * (for example, SGW-1234ADE). If your Active Directory environment requires that
+         * you pre-stage accounts to facilitate the join domain process, you will need to
+         * create this account ahead of time.</p> <p>To create the gateway's computer
+         * account in an organizational unit other than the default, you must specify the
+         * organizational unit when joining the domain.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomain">AWS
          * API Reference</a></p>
          */
@@ -1772,8 +1782,8 @@ namespace StorageGateway
 
         /**
          * <p>Gets a list of the file shares for a specific S3 File Gateway, or the list of
-         * file shares that belong to the calling user account. This operation is only
-         * supported for S3 File Gateways.</p><p><h3>See Also:</h3>   <a
+         * file shares that belong to the calling Amazon Web Services account. This
+         * operation is only supported for S3 File Gateways.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">AWS
          * API Reference</a></p>
          */
@@ -2087,8 +2097,8 @@ namespace StorageGateway
          * Events to send the notification through event targets such as Amazon SNS or
          * Lambda function. This operation is only supported for S3 File Gateways.</p>
          * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification">Getting
-         * file upload notification</a> in the <i>Storage Gateway User
+         * href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting
+         * file upload notification</a> in the <i>Amazon S3 File Gateway User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">AWS
          * API Reference</a></p>
@@ -2138,10 +2148,8 @@ namespace StorageGateway
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
          * notified about file operations</a> in the <i>Storage Gateway User Guide</i>.</p>
          *  <ul> <li> <p>Wait at least 60 seconds between consecutive
-         * RefreshCache API requests.</p> </li> <li> <p>RefreshCache does not evict cache
-         * entries if invoked consecutively within 60 seconds of a previous RefreshCache
-         * request.</p> </li> <li> <p>If you invoke the RefreshCache API when two requests
-         * are already being processed, any new request will cause an
+         * RefreshCache API requests.</p> </li> <li> <p>If you invoke the RefreshCache API
+         * when two requests are already being processed, any new request will cause an
          * <code>InvalidGatewayRequestException</code> error because too many requests were
          * sent to the server.</p> </li> </ul>   <p>The S3 bucket name
          * does not need to be included when entering the list of folders in the FolderList
@@ -2529,9 +2537,10 @@ namespace StorageGateway
          * <p> Updates the bandwidth rate limit schedule for a specified gateway. By
          * default, gateways do not have bandwidth rate limit schedules, which means no
          * bandwidth rate limiting is in effect. Use this to initiate or update a gateway's
-         * bandwidth rate limit schedule. This operation is supported only for volume, tape
-         * and S3 file gateways. FSx file gateways do not support bandwidth rate
-         * limits.</p><p><h3>See Also:</h3>   <a
+         * bandwidth rate limit schedule. This operation is supported for volume, tape, and
+         * S3 file gateways. S3 file gateways support bandwidth rate limits for upload
+         * only. FSx file gateways do not support bandwidth rate limits.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">AWS
          * API Reference</a></p>
          */

@@ -76,6 +76,9 @@ namespace Lambda
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef LambdaClientConfiguration ClientConfigurationType;
+      typedef LambdaEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -520,10 +523,11 @@ namespace Lambda
         /**
          * <p>Deletes a Lambda function. To delete a specific function version, use the
          * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
-         * deleted.</p> <p>To delete Lambda event source mappings that invoke a function,
-         * use <a>DeleteEventSourceMapping</a>. For Amazon Web Services and resources that
-         * invoke your function directly, delete the trigger in the service where you
-         * originally configured it.</p><p><h3>See Also:</h3>   <a
+         * deleted. This doesn't require the user to have explicit permissions for
+         * <a>DeleteAlias</a>.</p> <p>To delete Lambda event source mappings that invoke a
+         * function, use <a>DeleteEventSourceMapping</a>. For Amazon Web Services and
+         * resources that invoke your function directly, delete the trigger in the service
+         * where you originally configured it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
          * API Reference</a></p>
          */
@@ -1147,8 +1151,12 @@ namespace Lambda
 
         /**
          * <p>Invokes a Lambda function. You can invoke a function synchronously (and wait
-         * for the response), or asynchronously. To invoke a function asynchronously, set
-         * <code>InvocationType</code> to <code>Event</code>.</p> <p>For <a
+         * for the response), or asynchronously. By default, Lambda invokes your function
+         * synchronously (i.e. the<code>InvocationType</code> is
+         * <code>RequestResponse</code>). To invoke a function asynchronously, set
+         * <code>InvocationType</code> to <code>Event</code>. Lambda passes the
+         * <code>ClientContext</code> object to your function for synchronous invocations
+         * only.</p> <p>For <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
          * invocation</a>, details about the function response, including errors, are
          * included in the response body and headers. For either invocation type, you can

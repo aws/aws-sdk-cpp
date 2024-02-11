@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InterpolationType::NOT_SET:
+            return {};
           case InterpolationType::LINEAR:
             return "LINEAR";
           default:

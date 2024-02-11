@@ -25,7 +25,7 @@ CreateProductRequest::CreateProductRequest() :
     m_productTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_provisioningArtifactParametersHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true),
     m_sourceConnectionHasBeenSet(false)
 {

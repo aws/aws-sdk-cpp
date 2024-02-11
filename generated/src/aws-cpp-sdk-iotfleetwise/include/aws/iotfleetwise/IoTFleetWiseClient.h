@@ -33,6 +33,9 @@ namespace IoTFleetWise
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef IoTFleetWiseClientConfiguration ClientConfigurationType;
+      typedef IoTFleetWiseEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -318,7 +321,7 @@ namespace IoTFleetWise
          * <p> Creates a vehicle, which is an instance of a vehicle model (model manifest).
          * Vehicles created from the same vehicle model consist of the same signals
          * inherited from the vehicle model.</p>  <p> If you have an existing Amazon
-         * Web Services IoT Thing, you can use Amazon Web Services IoT FleetWise to create
+         * Web Services IoT thing, you can use Amazon Web Services IoT FleetWise to create
          * a vehicle and collect data from your thing. </p>  <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/create-vehicle-cli.html">Create
@@ -591,6 +594,32 @@ namespace IoTFleetWise
         void GetDecoderManifestAsync(const GetDecoderManifestRequestT& request, const GetDecoderManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTFleetWiseClient::GetDecoderManifest, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the encryption configuration for resources and data in Amazon Web
+         * Services IoT FleetWise.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEncryptionConfigurationOutcome GetEncryptionConfiguration(const Model::GetEncryptionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEncryptionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEncryptionConfigurationRequestT = Model::GetEncryptionConfigurationRequest>
+        Model::GetEncryptionConfigurationOutcomeCallable GetEncryptionConfigurationCallable(const GetEncryptionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IoTFleetWiseClient::GetEncryptionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetEncryptionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEncryptionConfigurationRequestT = Model::GetEncryptionConfigurationRequest>
+        void GetEncryptionConfigurationAsync(const GetEncryptionConfigurationRequestT& request, const GetEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTFleetWiseClient::GetEncryptionConfiguration, request, handler, context);
         }
 
         /**
@@ -1188,6 +1217,37 @@ namespace IoTFleetWise
         }
 
         /**
+         * <p>Creates or updates the encryption configuration. Amazon Web Services IoT
+         * FleetWise can encrypt your data and resources using an Amazon Web Services
+         * managed key. Or, you can use a KMS key that you own and manage. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/data-encryption.html">Data
+         * encryption</a> in the <i>Amazon Web Services IoT FleetWise Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutEncryptionConfigurationOutcome PutEncryptionConfiguration(const Model::PutEncryptionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutEncryptionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutEncryptionConfigurationRequestT = Model::PutEncryptionConfigurationRequest>
+        Model::PutEncryptionConfigurationOutcomeCallable PutEncryptionConfigurationCallable(const PutEncryptionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IoTFleetWiseClient::PutEncryptionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for PutEncryptionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutEncryptionConfigurationRequestT = Model::PutEncryptionConfigurationRequest>
+        void PutEncryptionConfigurationAsync(const PutEncryptionConfigurationRequestT& request, const PutEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTFleetWiseClient::PutEncryptionConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Creates or updates the logging option.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutLoggingOptions">AWS
          * API Reference</a></p>
@@ -1213,13 +1273,29 @@ namespace IoTFleetWise
         }
 
         /**
+         *  <p>This API operation contains deprecated parameters. Register your
+         * account again without the Timestream resources parameter so that Amazon Web
+         * Services IoT FleetWise can remove the Timestream metadata stored. You should
+         * then pass the data destination into the <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateCampaign.html">CreateCampaign</a>
+         * API operation.</p> <p>You must delete any existing campaigns that include an
+         * empty data destination before you register your account again. For more
+         * information, see the <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DeleteCampaign.html">DeleteCampaign</a>
+         * API operation.</p> <p>If you want to delete the Timestream inline policy from
+         * the service-linked role, such as to mitigate an overly permissive policy, you
+         * must first delete any existing campaigns. Then delete the service-linked role
+         * and register your account again to enable CloudWatch metrics. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a>
+         * in the <i>Identity and Access Management API Reference</i>.</p> 
          * <p>Registers your Amazon Web Services account, IAM, and Amazon Timestream
          * resources so Amazon Web Services IoT FleetWise can transfer your vehicle data to
          * the Amazon Web Services Cloud. For more information, including step-by-step
          * procedures, see <a
          * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/setting-up.html">Setting
          * up Amazon Web Services IoT FleetWise</a>. </p>  <p>An Amazon Web Services
-         * account is <b>not</b> the same thing as a "user account". An <a
+         * account is <b>not</b> the same thing as a "user." An <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_identity-management.html#intro-identity-users">Amazon
          * Web Services user</a> is an identity that you create using Identity and Access
          * Management (IAM) and takes the form of either an <a

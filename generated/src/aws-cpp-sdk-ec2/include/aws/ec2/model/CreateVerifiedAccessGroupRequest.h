@@ -8,6 +8,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/VerifiedAccessSseSpecificationRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -40,165 +41,165 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline const Aws::String& GetVerifiedAccessInstanceId() const{ return m_verifiedAccessInstanceId; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline bool VerifiedAccessInstanceIdHasBeenSet() const { return m_verifiedAccessInstanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline void SetVerifiedAccessInstanceId(const Aws::String& value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline void SetVerifiedAccessInstanceId(Aws::String&& value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline void SetVerifiedAccessInstanceId(const char* value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithVerifiedAccessInstanceId(const Aws::String& value) { SetVerifiedAccessInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithVerifiedAccessInstanceId(Aws::String&& value) { SetVerifiedAccessInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithVerifiedAccessInstanceId(const char* value) { SetVerifiedAccessInstanceId(value); return *this;}
 
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access group.</p>
+     * <p>A description for the Verified Access group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access group.</p>
+     * <p>A description for the Verified Access group.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access group.</p>
+     * <p>A description for the Verified Access group.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access group.</p>
+     * <p>A description for the Verified Access group.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access group.</p>
+     * <p>A description for the Verified Access group.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access group.</p>
+     * <p>A description for the Verified Access group.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access group.</p>
+     * <p>A description for the Verified Access group.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access group.</p>
+     * <p>A description for the Verified Access group.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access group.</p>
+     * <p>The tags to assign to the Verified Access group.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access group.</p>
+     * <p>The tags to assign to the Verified Access group.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access group.</p>
+     * <p>The tags to assign to the Verified Access group.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access group.</p>
+     * <p>The tags to assign to the Verified Access group.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access group.</p>
+     * <p>The tags to assign to the Verified Access group.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access group.</p>
+     * <p>The tags to assign to the Verified Access group.</p>
      */
     inline CreateVerifiedAccessGroupRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access group.</p>
+     * <p>The tags to assign to the Verified Access group.</p>
      */
     inline CreateVerifiedAccessGroupRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access group.</p>
+     * <p>The tags to assign to the Verified Access group.</p>
      */
     inline CreateVerifiedAccessGroupRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
@@ -300,6 +301,37 @@ namespace Model
      */
     inline CreateVerifiedAccessGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline const VerifiedAccessSseSpecificationRequest& GetSseSpecification() const{ return m_sseSpecification; }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline bool SseSpecificationHasBeenSet() const { return m_sseSpecificationHasBeenSet; }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline void SetSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = value; }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline void SetSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::move(value); }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline CreateVerifiedAccessGroupRequest& WithSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { SetSseSpecification(value); return *this;}
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline CreateVerifiedAccessGroupRequest& WithSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { SetSseSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_verifiedAccessInstanceId;
@@ -319,6 +351,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    VerifiedAccessSseSpecificationRequest m_sseSpecification;
+    bool m_sseSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

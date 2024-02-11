@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResponseHeadersPolicyType::NOT_SET:
+            return {};
           case ResponseHeadersPolicyType::managed:
             return "managed";
           case ResponseHeadersPolicyType::custom:

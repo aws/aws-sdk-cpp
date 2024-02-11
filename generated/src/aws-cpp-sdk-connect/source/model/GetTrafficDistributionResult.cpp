@@ -47,6 +47,18 @@ GetTrafficDistributionResult& GetTrafficDistributionResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("SignInConfig"))
+  {
+    m_signInConfig = jsonValue.GetObject("SignInConfig");
+
+  }
+
+  if(jsonValue.ValueExists("AgentConfig"))
+  {
+    m_agentConfig = jsonValue.GetObject("AgentConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

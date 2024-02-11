@@ -41,7 +41,8 @@ AwsRdsDbClusterSnapshotDetails::AwsRdsDbClusterSnapshotDetails() :
     m_dbClusterIdentifierHasBeenSet(false),
     m_dbClusterSnapshotIdentifierHasBeenSet(false),
     m_iamDatabaseAuthenticationEnabled(false),
-    m_iamDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iamDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_dbClusterSnapshotAttributesHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ AwsRdsDbClusterSnapshotDetails::AwsRdsDbClusterSnapshotDetails(JsonView jsonValu
     m_dbClusterIdentifierHasBeenSet(false),
     m_dbClusterSnapshotIdentifierHasBeenSet(false),
     m_iamDatabaseAuthenticationEnabled(false),
-    m_iamDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iamDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_dbClusterSnapshotAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -204,6 +206,16 @@ AwsRdsDbClusterSnapshotDetails& AwsRdsDbClusterSnapshotDetails::operator =(JsonV
     m_iamDatabaseAuthenticationEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DbClusterSnapshotAttributes"))
+  {
+    Aws::Utils::Array<JsonView> dbClusterSnapshotAttributesJsonList = jsonValue.GetArray("DbClusterSnapshotAttributes");
+    for(unsigned dbClusterSnapshotAttributesIndex = 0; dbClusterSnapshotAttributesIndex < dbClusterSnapshotAttributesJsonList.GetLength(); ++dbClusterSnapshotAttributesIndex)
+    {
+      m_dbClusterSnapshotAttributes.push_back(dbClusterSnapshotAttributesJsonList[dbClusterSnapshotAttributesIndex].AsObject());
+    }
+    m_dbClusterSnapshotAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -321,6 +333,17 @@ JsonValue AwsRdsDbClusterSnapshotDetails::Jsonize() const
   if(m_iamDatabaseAuthenticationEnabledHasBeenSet)
   {
    payload.WithBool("IamDatabaseAuthenticationEnabled", m_iamDatabaseAuthenticationEnabled);
+
+  }
+
+  if(m_dbClusterSnapshotAttributesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dbClusterSnapshotAttributesJsonList(m_dbClusterSnapshotAttributes.size());
+   for(unsigned dbClusterSnapshotAttributesIndex = 0; dbClusterSnapshotAttributesIndex < dbClusterSnapshotAttributesJsonList.GetLength(); ++dbClusterSnapshotAttributesIndex)
+   {
+     dbClusterSnapshotAttributesJsonList[dbClusterSnapshotAttributesIndex].AsObject(m_dbClusterSnapshotAttributes[dbClusterSnapshotAttributesIndex].Jsonize());
+   }
+   payload.WithArray("DbClusterSnapshotAttributes", std::move(dbClusterSnapshotAttributesJsonList));
 
   }
 

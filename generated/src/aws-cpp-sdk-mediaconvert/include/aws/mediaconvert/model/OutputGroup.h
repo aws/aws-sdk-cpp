@@ -79,64 +79,64 @@ namespace Model
 
 
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This
-     * value is displayed on the console and can make your job settings JSON more
+     * Use Custom Group Name to specify a name for the output group. This value is
+     * displayed on the console and can make your job settings JSON more
      * human-readable. It does not affect your outputs. Use up to twelve characters
      * that are either letters, numbers, spaces, or underscores.
      */
     inline const Aws::String& GetCustomName() const{ return m_customName; }
 
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This
-     * value is displayed on the console and can make your job settings JSON more
+     * Use Custom Group Name to specify a name for the output group. This value is
+     * displayed on the console and can make your job settings JSON more
      * human-readable. It does not affect your outputs. Use up to twelve characters
      * that are either letters, numbers, spaces, or underscores.
      */
     inline bool CustomNameHasBeenSet() const { return m_customNameHasBeenSet; }
 
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This
-     * value is displayed on the console and can make your job settings JSON more
+     * Use Custom Group Name to specify a name for the output group. This value is
+     * displayed on the console and can make your job settings JSON more
      * human-readable. It does not affect your outputs. Use up to twelve characters
      * that are either letters, numbers, spaces, or underscores.
      */
     inline void SetCustomName(const Aws::String& value) { m_customNameHasBeenSet = true; m_customName = value; }
 
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This
-     * value is displayed on the console and can make your job settings JSON more
+     * Use Custom Group Name to specify a name for the output group. This value is
+     * displayed on the console and can make your job settings JSON more
      * human-readable. It does not affect your outputs. Use up to twelve characters
      * that are either letters, numbers, spaces, or underscores.
      */
     inline void SetCustomName(Aws::String&& value) { m_customNameHasBeenSet = true; m_customName = std::move(value); }
 
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This
-     * value is displayed on the console and can make your job settings JSON more
+     * Use Custom Group Name to specify a name for the output group. This value is
+     * displayed on the console and can make your job settings JSON more
      * human-readable. It does not affect your outputs. Use up to twelve characters
      * that are either letters, numbers, spaces, or underscores.
      */
     inline void SetCustomName(const char* value) { m_customNameHasBeenSet = true; m_customName.assign(value); }
 
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This
-     * value is displayed on the console and can make your job settings JSON more
+     * Use Custom Group Name to specify a name for the output group. This value is
+     * displayed on the console and can make your job settings JSON more
      * human-readable. It does not affect your outputs. Use up to twelve characters
      * that are either letters, numbers, spaces, or underscores.
      */
     inline OutputGroup& WithCustomName(const Aws::String& value) { SetCustomName(value); return *this;}
 
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This
-     * value is displayed on the console and can make your job settings JSON more
+     * Use Custom Group Name to specify a name for the output group. This value is
+     * displayed on the console and can make your job settings JSON more
      * human-readable. It does not affect your outputs. Use up to twelve characters
      * that are either letters, numbers, spaces, or underscores.
      */
     inline OutputGroup& WithCustomName(Aws::String&& value) { SetCustomName(std::move(value)); return *this;}
 
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This
-     * value is displayed on the console and can make your job settings JSON more
+     * Use Custom Group Name to specify a name for the output group. This value is
+     * displayed on the console and can make your job settings JSON more
      * human-readable. It does not affect your outputs. Use up to twelve characters
      * that are either letters, numbers, spaces, or underscores.
      */

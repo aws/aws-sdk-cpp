@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BarsArrangement::NOT_SET:
+            return {};
           case BarsArrangement::CLUSTERED:
             return "CLUSTERED";
           case BarsArrangement::STACKED:

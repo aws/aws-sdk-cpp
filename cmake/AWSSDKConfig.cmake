@@ -24,7 +24,6 @@ if(AWSSDK_FOUND)
     return()
 endif()
 
-include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/compiler_settings.cmake)
@@ -99,14 +98,18 @@ if (NOT AWSSDK_CORE_HEADER_FILE)
     message(FATAL_ERROR "AWS SDK for C++ is missing, please install it first")
 endif()
 
-# based on core header file path, inspects the actual AWSSDK_ROOT_DIR
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_CORE_HEADER_FILE}" PATH)
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
+if (IS_ABSOLUTE ${AWSSDK_INSTALL_LIBDIR})
+    set(AWSSDK_ROOT_DIR "")
+else()
+    # based on core header file path, inspects the actual AWSSDK_ROOT_DIR
+    get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_CORE_HEADER_FILE}" PATH)
+    get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
+    get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
+    get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
 
-if (NOT AWSSDK_ROOT_DIR)
-    message(FATAL_ERROR "AWSSDK_ROOT_DIR is not set or can't be calculated from the path of core header file")
+    if (NOT AWSSDK_ROOT_DIR)
+        message(FATAL_ERROR "AWSSDK_ROOT_DIR is not set or can't be calculated from the path of core header file")
+    endif()
 endif()
 
 
@@ -162,7 +165,7 @@ if (AWSSDK_ADDITIONAL_LIBS)
     set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_ADDITIONAL_LIBS}")
 endif()
 
-message(STATUS "Found AWS SDK for C++, Version: ${PACKAGE_VERSION}, Install Root:${AWSSDK_ROOT_DIR}, Platform Prefix:${AWSSDK_PLATFORM_PREFIX}, Platform Dependent Libraries: ${AWSSDK_PLATFORM_DEPS}")
+message(STATUS "Found AWS SDK for C++, Version: ${AWSSDK_VERSION}, Install Root:${AWSSDK_ROOT_DIR}, Platform Prefix:${AWSSDK_PLATFORM_PREFIX}, Platform Dependent Libraries: ${AWSSDK_PLATFORM_DEPS}")
 
 
 # copy libs of services in SERVICE_LIST and all there dependent libs to DEST_DIR

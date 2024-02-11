@@ -5,10 +5,12 @@
 
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediatailor/model/MessageType.h>
 #include <aws/mediatailor/model/SlateSource.h>
 #include <aws/mediatailor/model/SpliceInsertMessage.h>
 #include <aws/mediatailor/model/TimeSignalMessage.h>
+#include <aws/mediatailor/model/KeyValuePair.h>
 #include <utility>
 
 namespace Aws
@@ -38,6 +40,55 @@ namespace Model
     AWS_MEDIATAILOR_API AdBreak(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API AdBreak& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Defines a list of key/value pairs that MediaTailor generates within the
+     * <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+     */
+    inline const Aws::Vector<KeyValuePair>& GetAdBreakMetadata() const{ return m_adBreakMetadata; }
+
+    /**
+     * <p>Defines a list of key/value pairs that MediaTailor generates within the
+     * <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+     */
+    inline bool AdBreakMetadataHasBeenSet() const { return m_adBreakMetadataHasBeenSet; }
+
+    /**
+     * <p>Defines a list of key/value pairs that MediaTailor generates within the
+     * <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+     */
+    inline void SetAdBreakMetadata(const Aws::Vector<KeyValuePair>& value) { m_adBreakMetadataHasBeenSet = true; m_adBreakMetadata = value; }
+
+    /**
+     * <p>Defines a list of key/value pairs that MediaTailor generates within the
+     * <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+     */
+    inline void SetAdBreakMetadata(Aws::Vector<KeyValuePair>&& value) { m_adBreakMetadataHasBeenSet = true; m_adBreakMetadata = std::move(value); }
+
+    /**
+     * <p>Defines a list of key/value pairs that MediaTailor generates within the
+     * <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+     */
+    inline AdBreak& WithAdBreakMetadata(const Aws::Vector<KeyValuePair>& value) { SetAdBreakMetadata(value); return *this;}
+
+    /**
+     * <p>Defines a list of key/value pairs that MediaTailor generates within the
+     * <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+     */
+    inline AdBreak& WithAdBreakMetadata(Aws::Vector<KeyValuePair>&& value) { SetAdBreakMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>Defines a list of key/value pairs that MediaTailor generates within the
+     * <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+     */
+    inline AdBreak& AddAdBreakMetadata(const KeyValuePair& value) { m_adBreakMetadataHasBeenSet = true; m_adBreakMetadata.push_back(value); return *this; }
+
+    /**
+     * <p>Defines a list of key/value pairs that MediaTailor generates within the
+     * <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+     */
+    inline AdBreak& AddAdBreakMetadata(KeyValuePair&& value) { m_adBreakMetadataHasBeenSet = true; m_adBreakMetadata.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -235,6 +286,9 @@ namespace Model
     inline AdBreak& WithTimeSignalMessage(TimeSignalMessage&& value) { SetTimeSignalMessage(std::move(value)); return *this;}
 
   private:
+
+    Aws::Vector<KeyValuePair> m_adBreakMetadata;
+    bool m_adBreakMetadataHasBeenSet = false;
 
     MessageType m_messageType;
     bool m_messageTypeHasBeenSet = false;

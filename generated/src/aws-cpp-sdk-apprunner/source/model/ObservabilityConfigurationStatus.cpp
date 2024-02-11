@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObservabilityConfigurationStatus::NOT_SET:
+            return {};
           case ObservabilityConfigurationStatus::ACTIVE:
             return "ACTIVE";
           case ObservabilityConfigurationStatus::INACTIVE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BucketLogsPermission::NOT_SET:
+            return {};
           case BucketLogsPermission::FULL_CONTROL:
             return "FULL_CONTROL";
           case BucketLogsPermission::READ:

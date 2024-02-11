@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameServerHealthCheck::NOT_SET:
+            return {};
           case GameServerHealthCheck::HEALTHY:
             return "HEALTHY";
           default:

@@ -61,7 +61,10 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_ipDiscovery(IpDiscovery::NOT_SET),
     m_ipDiscoveryHasBeenSet(false),
     m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false)
+    m_transitEncryptionModeHasBeenSet(false),
+    m_clusterMode(ClusterMode::NOT_SET),
+    m_clusterModeHasBeenSet(false),
+    m_serverlessCacheSnapshotNameHasBeenSet(false)
 {
 }
 
@@ -297,6 +300,16 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   if(m_transitEncryptionModeHasBeenSet)
   {
     ss << "TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+  }
+
+  if(m_clusterModeHasBeenSet)
+  {
+    ss << "ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
+  }
+
+  if(m_serverlessCacheSnapshotNameHasBeenSet)
+  {
+    ss << "ServerlessCacheSnapshotName=" << StringUtils::URLEncode(m_serverlessCacheSnapshotName.c_str()) << "&";
   }
 
   ss << "Version=2015-02-02";

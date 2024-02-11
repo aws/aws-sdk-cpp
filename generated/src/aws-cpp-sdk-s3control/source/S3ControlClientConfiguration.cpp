@@ -26,8 +26,8 @@ void S3ControlClientConfiguration::LoadS3ControlSpecificConfig(const Aws::String
   }
 }
 
-S3ControlClientConfiguration::S3ControlClientConfiguration()
-: BaseClientConfigClass()
+S3ControlClientConfiguration::S3ControlClientConfiguration(const Client::ClientConfigurationInitValues &configuration)
+: BaseClientConfigClass(configuration)
 {
   LoadS3ControlSpecificConfig(this->profileName);
 }

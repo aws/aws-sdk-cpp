@@ -25,6 +25,25 @@
       ],
       "documentation":"<p>Allows the destination Amazon OpenSearch Service domain owner to accept an inbound cross-cluster search connection request. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html\">Cross-cluster search for Amazon OpenSearch Service</a>.</p>"
     },
+    "AddDataSource":{
+      "name":"AddDataSource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/dataSource"
+      },
+      "input":{"shape":"AddDataSourceRequest"},
+      "output":{"shape":"AddDataSourceResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"DisabledOperationException"},
+        {"shape":"DependencyFailureException"},
+        {"shape":"LimitExceededException"}
+      ],
+      "documentation":"<p>Creates a new direct-query data source to the specified domain. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html\">Creating Amazon OpenSearch Service data source integrations with Amazon S3</a>.</p>"
+    },
     "AddTags":{
       "name":"AddTags",
       "http":{
@@ -163,6 +182,24 @@
         {"shape":"BaseException"}
       ],
       "documentation":"<p>Creates an Amazon OpenSearch Service-managed VPC endpoint.</p>"
+    },
+    "DeleteDataSource":{
+      "name":"DeleteDataSource",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/dataSource/{DataSourceName}"
+      },
+      "input":{"shape":"DeleteDataSourceRequest"},
+      "output":{"shape":"DeleteDataSourceResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"DisabledOperationException"},
+        {"shape":"DependencyFailureException"}
+      ],
+      "documentation":"<p>Deletes a direct-query data source. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-delete.html\">Deleting an Amazon OpenSearch Service data source with Amazon S3</a>.</p>"
     },
     "DeleteDomain":{
       "name":"DeleteDomain",
@@ -305,6 +342,41 @@
         {"shape":"ValidationException"}
       ],
       "documentation":"<p>Returns the configuration of an Amazon OpenSearch Service domain.</p>"
+    },
+    "DescribeDomainHealth":{
+      "name":"DescribeDomainHealth",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/health"
+      },
+      "input":{"shape":"DescribeDomainHealthRequest"},
+      "output":{"shape":"DescribeDomainHealthResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"DisabledOperationException"}
+      ],
+      "documentation":"<p>Returns information about domain and node health, the standby Availability Zone, number of nodes per Availability Zone, and shard count per node.</p>"
+    },
+    "DescribeDomainNodes":{
+      "name":"DescribeDomainNodes",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/nodes"
+      },
+      "input":{"shape":"DescribeDomainNodesRequest"},
+      "output":{"shape":"DescribeDomainNodesResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"DisabledOperationException"},
+        {"shape":"DependencyFailureException"}
+      ],
+      "documentation":"<p>Returns information about domain and nodes, including data nodes, master nodes, ultrawarm nodes, Availability Zone(s), standby nodes, node configurations, and node states.</p>"
     },
     "DescribeDomains":{
       "name":"DescribeDomains",
@@ -484,6 +556,41 @@
       ],
       "documentation":"<p>Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>"
     },
+    "GetDataSource":{
+      "name":"GetDataSource",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/dataSource/{DataSourceName}"
+      },
+      "input":{"shape":"GetDataSourceRequest"},
+      "output":{"shape":"GetDataSourceResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"DisabledOperationException"},
+        {"shape":"DependencyFailureException"}
+      ],
+      "documentation":"<p>Retrieves information about a direct query data source.</p>"
+    },
+    "GetDomainMaintenanceStatus":{
+      "name":"GetDomainMaintenanceStatus",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/domainMaintenance"
+      },
+      "input":{"shape":"GetDomainMaintenanceStatusRequest"},
+      "output":{"shape":"GetDomainMaintenanceStatusResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"DisabledOperationException"}
+      ],
+      "documentation":"<p>The status of the maintenance action.</p>"
+    },
     "GetPackageVersionHistory":{
       "name":"GetPackageVersionHistory",
       "http":{
@@ -499,7 +606,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Returns a list of Amazon OpenSearch Service package versions, along with their creation time and commit message. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html\">Custom packages for Amazon OpenSearch Service</a>.</p>"
+      "documentation":"<p>Returns a list of Amazon OpenSearch Service package versions, along with their creation time, commit message, and plugin properties (if the package is a zip plugin package). For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html\">Custom packages for Amazon OpenSearch Service</a>.</p>"
     },
     "GetUpgradeHistory":{
       "name":"GetUpgradeHistory",
@@ -534,6 +641,41 @@
         {"shape":"InternalException"}
       ],
       "documentation":"<p>Returns the most recent status of the last upgrade or upgrade eligibility check performed on an Amazon OpenSearch Service domain.</p>"
+    },
+    "ListDataSources":{
+      "name":"ListDataSources",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/dataSource"
+      },
+      "input":{"shape":"ListDataSourcesRequest"},
+      "output":{"shape":"ListDataSourcesResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"DisabledOperationException"},
+        {"shape":"DependencyFailureException"}
+      ],
+      "documentation":"<p>Lists direct-query data sources for a specific domain. For more information, see For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3.html\">Working with Amazon OpenSearch Service direct queries with Amazon S3</a>.</p>"
+    },
+    "ListDomainMaintenances":{
+      "name":"ListDomainMaintenances",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/domainMaintenances"
+      },
+      "input":{"shape":"ListDomainMaintenancesRequest"},
+      "output":{"shape":"ListDomainMaintenancesResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"DisabledOperationException"}
+      ],
+      "documentation":"<p>A list of maintenance actions for the domain.</p>"
     },
     "ListDomainNames":{
       "name":"ListDomainNames",
@@ -758,6 +900,23 @@
       ],
       "documentation":"<p>Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.</p>"
     },
+    "StartDomainMaintenance":{
+      "name":"StartDomainMaintenance",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/domainMaintenance"
+      },
+      "input":{"shape":"StartDomainMaintenanceRequest"},
+      "output":{"shape":"StartDomainMaintenanceResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"DisabledOperationException"}
+      ],
+      "documentation":"<p>Starts the node maintenance process on the data node. These processes can include a node reboot, an Opensearch or Elasticsearch process restart, or a Dashboard or Kibana restart.</p>"
+    },
     "StartServiceSoftwareUpdate":{
       "name":"StartServiceSoftwareUpdate",
       "http":{
@@ -773,6 +932,24 @@
         {"shape":"ValidationException"}
       ],
       "documentation":"<p>Schedules a service software update for an Amazon OpenSearch Service domain. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html\">Service software updates in Amazon OpenSearch Service</a>.</p>"
+    },
+    "UpdateDataSource":{
+      "name":"UpdateDataSource",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/dataSource/{DataSourceName}"
+      },
+      "input":{"shape":"UpdateDataSourceRequest"},
+      "output":{"shape":"UpdateDataSourceResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"DisabledOperationException"},
+        {"shape":"DependencyFailureException"}
+      ],
+      "documentation":"<p>Updates a direct-query data source. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html\">Working with Amazon OpenSearch Service data source integrations with Amazon S3</a>.</p>"
     },
     "UpdateDomainConfig":{
       "name":"UpdateDomainConfig",
@@ -972,6 +1149,45 @@
         "JVM_HEAP_SIZE_TUNING",
         "JVM_YOUNG_GEN_TUNING"
       ]
+    },
+    "AddDataSourceRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "Name",
+        "DataSourceType"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain to add the data source to.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "Name":{
+          "shape":"DataSourceName",
+          "documentation":"<p>A name for the data source.</p>"
+        },
+        "DataSourceType":{
+          "shape":"DataSourceType",
+          "documentation":"<p>The type of data source.</p>"
+        },
+        "Description":{
+          "shape":"DataSourceDescription",
+          "documentation":"<p>A description of the data source.</p>"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code>AddDataSource</code> operation.</p>"
+    },
+    "AddDataSourceResponse":{
+      "type":"structure",
+      "members":{
+        "Message":{
+          "shape":"String",
+          "documentation":"<p>A message associated with creation of the data source.</p>"
+        }
+      },
+      "documentation":"<p>The result of an <code>AddDataSource</code> operation.</p>"
     },
     "AddTagsRequest":{
       "type":"structure",
@@ -1372,6 +1588,49 @@
       "documentation":"<p>Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.</p>",
       "enum":["SCHEDULED_ACTION"]
     },
+    "AvailabilityZone":{
+      "type":"string",
+      "max":15,
+      "min":1
+    },
+    "AvailabilityZoneInfo":{
+      "type":"structure",
+      "members":{
+        "AvailabilityZoneName":{
+          "shape":"AvailabilityZone",
+          "documentation":"<p>The name of the Availability Zone.</p>"
+        },
+        "ZoneStatus":{
+          "shape":"ZoneStatus",
+          "documentation":"<p>The current state of the Availability Zone. Current options are <code>Active</code> and <code>StandBy</code>.</p> <ul> <li> <p> <code>Active</code> - Data nodes in the Availability Zone are in use.</p> </li> <li> <p> <code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p> </li> <li> <p> <code>NotAvailable</code> - Unable to retrieve information.</p> </li> </ul>"
+        },
+        "ConfiguredDataNodeCount":{
+          "shape":"NumberOfNodes",
+          "documentation":"<p>The total number of data nodes configured in the Availability Zone.</p>"
+        },
+        "AvailableDataNodeCount":{
+          "shape":"NumberOfNodes",
+          "documentation":"<p>The number of data nodes active in the Availability Zone.</p>"
+        },
+        "TotalShards":{
+          "shape":"NumberOfShards",
+          "documentation":"<p>The total number of primary and replica shards in the Availability Zone.</p>"
+        },
+        "TotalUnAssignedShards":{
+          "shape":"NumberOfShards",
+          "documentation":"<p>The total number of primary and replica shards that aren't allocated to any of the nodes in the Availability Zone.</p>"
+        }
+      },
+      "documentation":"<p>Information about an Availability Zone on a domain.</p>"
+    },
+    "AvailabilityZoneInfoList":{
+      "type":"list",
+      "member":{"shape":"AvailabilityZoneInfo"}
+    },
+    "AvailabilityZoneList":{
+      "type":"list",
+      "member":{"shape":"AvailabilityZone"}
+    },
     "BackendRole":{
       "type":"string",
       "max":256,
@@ -1516,7 +1775,7 @@
         },
         "InstanceCount":{
           "shape":"IntegerClass",
-          "documentation":"<p>Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>"
+          "documentation":"<p>Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>"
         },
         "DedicatedMasterEnabled":{
           "shape":"Boolean",
@@ -1536,7 +1795,7 @@
         },
         "DedicatedMasterCount":{
           "shape":"IntegerClass",
-          "documentation":"<p>Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>"
+          "documentation":"<p>Number of dedicated master nodes in the cluster. This number must be greater than 2 and not 4, otherwise you receive a validation exception.</p>"
         },
         "WarmEnabled":{
           "shape":"Boolean",
@@ -1553,6 +1812,10 @@
         "ColdStorageOptions":{
           "shape":"ColdStorageOptions",
           "documentation":"<p>Container for cold storage configuration options.</p>"
+        },
+        "MultiAZWithStandbyEnabled":{
+          "shape":"Boolean",
+          "documentation":"<p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html\">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>. </p>"
         }
       },
       "documentation":"<p>Container for the cluster configuration of an OpenSearch Service domain. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html\">Creating and managing Amazon OpenSearch Service domains</a>.</p>"
@@ -1681,7 +1944,11 @@
       "members":{
         "Endpoint":{
           "shape":"Endpoint",
-          "documentation":"<p>The endpoint of the remote domain.</p>"
+          "documentation":"<important> <p>The Endpoint attribute cannot be modified. </p> </important> <p>The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.</p>"
+        },
+        "CrossClusterSearch":{
+          "shape":"CrossClusterSearchConnectionProperties",
+          "documentation":"<p>The connection properties for cross cluster search.</p>"
         }
       },
       "documentation":"<p>The connection properties of an outbound connection.</p>"
@@ -1711,6 +1978,10 @@
           "shape":"PolicyDocument",
           "documentation":"<p>Identity and Access Management (IAM) policy document specifying the access policies for the new domain.</p>"
         },
+        "IPAddressType":{
+          "shape":"IPAddressType",
+          "documentation":"<p>The type of IP addresses supported by the endpoint for the domain.</p>"
+        },
         "SnapshotOptions":{
           "shape":"SnapshotOptions",
           "documentation":"<p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>"
@@ -1737,7 +2008,7 @@
         },
         "LogPublishingOptions":{
           "shape":"LogPublishingOptions",
-          "documentation":"<p>Key-value pairs to configure slow log publishing.</p>"
+          "documentation":"<p>Key-value pairs to configure log publishing.</p>"
         },
         "DomainEndpointOptions":{
           "shape":"DomainEndpointOptions",
@@ -1798,6 +2069,10 @@
         "ConnectionMode":{
           "shape":"ConnectionMode",
           "documentation":"<p>The connection mode.</p>"
+        },
+        "ConnectionProperties":{
+          "shape":"ConnectionProperties",
+          "documentation":"<p>The <code>ConnectionProperties</code> for the outbound connection.</p>"
         }
       },
       "documentation":"<p>Container for the parameters to the <code>CreateOutboundConnection</code> operation.</p>"
@@ -1850,7 +2125,7 @@
         },
         "PackageType":{
           "shape":"PackageType",
-          "documentation":"<p>Type of package.</p>"
+          "documentation":"<p>The type of package.</p>"
         },
         "PackageDescription":{
           "shape":"PackageDescription",
@@ -1905,6 +2180,92 @@
       }
     },
     "CreatedAt":{"type":"timestamp"},
+    "CrossClusterSearchConnectionProperties":{
+      "type":"structure",
+      "members":{
+        "SkipUnavailable":{
+          "shape":"SkipUnavailableStatus",
+          "documentation":"<p>The status of the <code>SkipUnavailable</code> setting for the outbound connection. This feature allows you to specify some clusters as optional and ensure that your cross-cluster queries return partial results despite failures on one or more remote clusters.</p>"
+        }
+      },
+      "documentation":"<p>Cross-cluster search specific connection properties.</p>"
+    },
+    "DataSourceDescription":{
+      "type":"string",
+      "max":1000,
+      "pattern":"^([a-zA-Z0-9_])*[\\\\a-zA-Z0-9_@#%*+=:?./!\\s-]*$"
+    },
+    "DataSourceDetails":{
+      "type":"structure",
+      "members":{
+        "DataSourceType":{
+          "shape":"DataSourceType",
+          "documentation":"<p>The type of data source.</p>"
+        },
+        "Name":{
+          "shape":"DataSourceName",
+          "documentation":"<p>The name of the data source.</p>"
+        },
+        "Description":{
+          "shape":"DataSourceDescription",
+          "documentation":"<p>A description of the data source.</p>"
+        }
+      },
+      "documentation":"<p>Details about a direct-query data source.</p>"
+    },
+    "DataSourceList":{
+      "type":"list",
+      "member":{"shape":"DataSourceDetails"}
+    },
+    "DataSourceName":{
+      "type":"string",
+      "max":80,
+      "min":3,
+      "pattern":"[a-z][a-z0-9_]+"
+    },
+    "DataSourceType":{
+      "type":"structure",
+      "members":{
+        "S3GlueDataCatalog":{
+          "shape":"S3GlueDataCatalog",
+          "documentation":"<p>An Amazon S3 data source.</p>"
+        }
+      },
+      "documentation":"<p>The type of data source.</p>",
+      "union":true
+    },
+    "DeleteDataSourceRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "Name"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "Name":{
+          "shape":"DataSourceName",
+          "documentation":"<p>The name of the data source to delete.</p>",
+          "location":"uri",
+          "locationName":"DataSourceName"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code>DeleteDataSource</code> operation.</p>"
+    },
+    "DeleteDataSourceResponse":{
+      "type":"structure",
+      "members":{
+        "Message":{
+          "shape":"String",
+          "documentation":"<p>A message associated with deletion of the data source.</p>"
+        }
+      },
+      "documentation":"<p>The result of a <code>GetDataSource</code> operation.</p>"
+    },
     "DeleteDomainRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -2019,6 +2380,14 @@
         }
       }
     },
+    "DependencyFailureException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>An exception for when a failure in one of the dependencies results in the service being unable to fetch details about the resource.</p>",
+      "error":{"httpStatusCode":424},
+      "exception":true
+    },
     "DeploymentCloseDateTimeStamp":{"type":"timestamp"},
     "DeploymentStatus":{
       "type":"string",
@@ -2123,6 +2492,100 @@
       },
       "documentation":"<p>Contains the configuration information of the requested domain.</p>"
     },
+    "DescribeDomainHealthRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code>DescribeDomainHealth</code> operation.</p>"
+    },
+    "DescribeDomainHealthResponse":{
+      "type":"structure",
+      "members":{
+        "DomainState":{
+          "shape":"DomainState",
+          "documentation":"<p>The current state of the domain.</p> <ul> <li> <p> <code>Processing</code> - The domain has updates in progress.</p> </li> <li> <p> <code>Active</code> - Requested changes have been processed and deployed to the domain.</p> </li> </ul>"
+        },
+        "AvailabilityZoneCount":{
+          "shape":"NumberOfAZs",
+          "documentation":"<p>The number of Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>"
+        },
+        "ActiveAvailabilityZoneCount":{
+          "shape":"NumberOfAZs",
+          "documentation":"<p>The number of active Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>"
+        },
+        "StandByAvailabilityZoneCount":{
+          "shape":"NumberOfAZs",
+          "documentation":"<p>The number of standby Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>"
+        },
+        "DataNodeCount":{
+          "shape":"NumberOfNodes",
+          "documentation":"<p>The number of data nodes configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>"
+        },
+        "DedicatedMaster":{
+          "shape":"Boolean",
+          "documentation":"<p>A boolean that indicates if dedicated master nodes are activated for the domain.</p>"
+        },
+        "MasterEligibleNodeCount":{
+          "shape":"NumberOfNodes",
+          "documentation":"<p>The number of nodes that can be elected as a master node. If dedicated master nodes is turned on, this value is the number of dedicated master nodes configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>"
+        },
+        "WarmNodeCount":{
+          "shape":"NumberOfNodes",
+          "documentation":"<p>The number of warm nodes configured for the domain.</p>"
+        },
+        "MasterNode":{
+          "shape":"MasterNodeStatus",
+          "documentation":"<p>Indicates whether the domain has an elected master node.</p> <ul> <li> <p> <b>Available</b> - The domain has an elected master node.</p> </li> <li> <p> <b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p> </li> </ul>"
+        },
+        "ClusterHealth":{
+          "shape":"DomainHealth",
+          "documentation":"<p>The current health status of your cluster.</p> <ul> <li> <p> <code>Red</code> - At least one primary shard is not allocated to any node.</p> </li> <li> <p> <code>Yellow</code> - All primary shards are allocated to nodes, but some replicas aren’t.</p> </li> <li> <p> <code>Green</code> - All primary shards and their replicas are allocated to nodes.</p> </li> <li> <p> <code>NotAvailable</code> - Unable to retrieve cluster health.</p> </li> </ul>"
+        },
+        "TotalShards":{
+          "shape":"NumberOfShards",
+          "documentation":"<p>The total number of primary and replica shards for the domain.</p>"
+        },
+        "TotalUnAssignedShards":{
+          "shape":"NumberOfShards",
+          "documentation":"<p>The total number of primary and replica shards not allocated to any of the nodes for the cluster.</p>"
+        },
+        "EnvironmentInformation":{
+          "shape":"EnvironmentInfoList",
+          "documentation":"<p>A list of <code>EnvironmentInfo</code> for the domain. </p>"
+        }
+      },
+      "documentation":"<p>The result of a <code>DescribeDomainHealth</code> request. Contains health information for the requested domain.</p>"
+    },
+    "DescribeDomainNodesRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code>DescribeDomainNodes</code> operation.</p>"
+    },
+    "DescribeDomainNodesResponse":{
+      "type":"structure",
+      "members":{
+        "DomainNodesStatusList":{
+          "shape":"DomainNodesStatusList",
+          "documentation":"<p>Contains nodes information list <code>DomainNodesStatusList</code> with details about the all nodes on the requested domain.</p>"
+        }
+      },
+      "documentation":"<p>The result of a <code>DescribeDomainNodes</code> request. Contains information about the nodes on the requested domain. </p>"
+    },
     "DescribeDomainRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -2153,7 +2616,7 @@
       "members":{
         "DomainNames":{
           "shape":"DomainNameList",
-          "documentation":"<p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>"
+          "documentation":"<p>Array of OpenSearch Service domain names that you want information about. You must specify at least one domain name.</p>"
         }
       },
       "documentation":"<p>Container for the parameters to the <code>DescribeDomains</code> operation.</p>"
@@ -2321,7 +2784,7 @@
         },
         "Value":{
           "shape":"DescribePackagesFilterValues",
-          "documentation":"<p>A list of values for the specified filter field.</p>"
+          "documentation":"<p>A non-empty list of values for the specified filter field.</p>"
         }
       },
       "documentation":"<p>A filter to apply to the <code>DescribePackage</code> response.</p>"
@@ -2336,16 +2799,19 @@
       "enum":[
         "PackageID",
         "PackageName",
-        "PackageStatus"
+        "PackageStatus",
+        "PackageType",
+        "EngineVersion"
       ]
     },
     "DescribePackagesFilterValue":{
       "type":"string",
-      "pattern":"^[0-9a-zA-Z\\*\\.\\\\/\\?-]*$"
+      "pattern":"^[0-9a-zA-Z\\*\\.\\_\\\\\\/\\?-]+$"
     },
     "DescribePackagesFilterValues":{
       "type":"list",
-      "member":{"shape":"DescribePackagesFilterValue"}
+      "member":{"shape":"DescribePackagesFilterValue"},
+      "min":1
     },
     "DescribePackagesRequest":{
       "type":"structure",
@@ -2488,7 +2954,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p>An error occured because the client wanted to access a not supported operation.</p>",
+      "documentation":"<p>An error occured because the client wanted to access an unsupported operation.</p>",
       "error":{"httpStatusCode":409},
       "exception":true
     },
@@ -2549,6 +3015,10 @@
           "shape":"AccessPoliciesStatus",
           "documentation":"<p>Specifies the access policies for the domain.</p>"
         },
+        "IPAddressType":{
+          "shape":"IPAddressTypeStatus",
+          "documentation":"<p>The type of IP addresses supported by the endpoint for the domain.</p>"
+        },
         "SnapshotOptions":{
           "shape":"SnapshotOptionsStatus",
           "documentation":"<p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>"
@@ -2575,7 +3045,7 @@
         },
         "LogPublishingOptions":{
           "shape":"LogPublishingOptionsStatus",
-          "documentation":"<p>Key-value pairs to configure slow log publishing.</p>"
+          "documentation":"<p>Key-value pairs to configure log publishing.</p>"
         },
         "DomainEndpointOptions":{
           "shape":"DomainEndpointOptionsStatus",
@@ -2613,7 +3083,7 @@
         },
         "TLSSecurityPolicy":{
           "shape":"TLSSecurityPolicy",
-          "documentation":"<p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2 </p> </li> </ul>"
+          "documentation":"<p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain. The policy can be one of the following values:</p> <ul> <li> <p> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version 1.0 to TLS version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy that supports only TLS version 1.2</p> </li> </ul>"
         },
         "CustomEndpointEnabled":{
           "shape":"Boolean",
@@ -2647,6 +3117,15 @@
         }
       },
       "documentation":"<p>The configured endpoint options for a domain and their current status.</p>"
+    },
+    "DomainHealth":{
+      "type":"string",
+      "enum":[
+        "Red",
+        "Yellow",
+        "Green",
+        "NotAvailable"
+      ]
     },
     "DomainId":{
       "type":"string",
@@ -2683,6 +3162,48 @@
       },
       "documentation":"<p>Container for information about an OpenSearch Service domain.</p>"
     },
+    "DomainMaintenanceDetails":{
+      "type":"structure",
+      "members":{
+        "MaintenanceId":{
+          "shape":"RequestId",
+          "documentation":"<p>The ID of the requested action.</p>"
+        },
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>"
+        },
+        "Action":{
+          "shape":"MaintenanceType",
+          "documentation":"<p>The name of the action.</p>"
+        },
+        "NodeId":{
+          "shape":"NodeId",
+          "documentation":"<p>The ID of the data node.</p>"
+        },
+        "Status":{
+          "shape":"MaintenanceStatus",
+          "documentation":"<p>The status of the action.</p>"
+        },
+        "StatusMessage":{
+          "shape":"MaintenanceStatusMessage",
+          "documentation":"<p>The status message for the action.</p>"
+        },
+        "CreatedAt":{
+          "shape":"UpdateTimestamp",
+          "documentation":"<p>The time at which the action was created.</p>"
+        },
+        "UpdatedAt":{
+          "shape":"UpdateTimestamp",
+          "documentation":"<p>The time at which the action was updated.</p>"
+        }
+      },
+      "documentation":"<p>Container for the domain maintenance details.</p>"
+    },
+    "DomainMaintenanceList":{
+      "type":"list",
+      "member":{"shape":"DomainMaintenanceDetails"}
+    },
     "DomainName":{
       "type":"string",
       "documentation":"<p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>",
@@ -2700,6 +3221,49 @@
       "type":"list",
       "member":{"shape":"DomainName"},
       "documentation":"<p>A list of OpenSearch Service domain names.</p>"
+    },
+    "DomainNodesStatus":{
+      "type":"structure",
+      "members":{
+        "NodeId":{
+          "shape":"NodeId",
+          "documentation":"<p>The ID of the node.</p>"
+        },
+        "NodeType":{
+          "shape":"NodeType",
+          "documentation":"<p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>"
+        },
+        "AvailabilityZone":{
+          "shape":"AvailabilityZone",
+          "documentation":"<p>The Availability Zone of the node.</p>"
+        },
+        "InstanceType":{
+          "shape":"OpenSearchPartitionInstanceType",
+          "documentation":"<p>The instance type information of the node.</p>"
+        },
+        "NodeStatus":{
+          "shape":"NodeStatus",
+          "documentation":"<p>Indicates if the node is active or in standby.</p>"
+        },
+        "StorageType":{
+          "shape":"StorageTypeName",
+          "documentation":"<p>Indicates if the node has EBS or instance storage. </p>"
+        },
+        "StorageVolumeType":{
+          "shape":"VolumeType",
+          "documentation":"<p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes. </p>"
+        },
+        "StorageSize":{
+          "shape":"VolumeSize",
+          "documentation":"<p>The storage size of the node, in GiB.</p>"
+        }
+      },
+      "documentation":"<p>Container for information about nodes on the domain.</p>"
+    },
+    "DomainNodesStatusList":{
+      "type":"list",
+      "member":{"shape":"DomainNodesStatus"},
+      "documentation":"<p>List of <code>DomainNodesStatus</code> with details about nodes on the requested domain.</p>"
     },
     "DomainPackageDetails":{
       "type":"structure",
@@ -2734,7 +3298,7 @@
         },
         "ReferencePath":{
           "shape":"ReferencePath",
-          "documentation":"<p>Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as <code>synonym_path</code> for dictionary files.</p>"
+          "documentation":"<p>The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when the package is for synonym files.</p>"
         },
         "ErrorDetails":{
           "shape":"ErrorDetails",
@@ -2755,6 +3319,14 @@
         "ACTIVE",
         "DISSOCIATING",
         "DISSOCIATION_FAILED"
+      ]
+    },
+    "DomainState":{
+      "type":"string",
+      "enum":[
+        "Active",
+        "Processing",
+        "NotAvailable"
       ]
     },
     "DomainStatus":{
@@ -2790,6 +3362,7 @@
           "shape":"ServiceUrl",
           "documentation":"<p>Domain-specific endpoint used to submit index, search, and data upload requests to the domain.</p>"
         },
+        "EndpointV2":{"shape":"ServiceUrl"},
         "Endpoints":{
           "shape":"EndpointsMap",
           "documentation":"<p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>"
@@ -2817,6 +3390,10 @@
         "AccessPolicies":{
           "shape":"PolicyDocument",
           "documentation":"<p>Identity and Access Management (IAM) policy document specifying the access policies for the domain.</p>"
+        },
+        "IPAddressType":{
+          "shape":"IPAddressType",
+          "documentation":"<p>The type of IP addresses supported by the endpoint for the domain.</p>"
         },
         "SnapshotOptions":{
           "shape":"SnapshotOptions",
@@ -3049,6 +3626,24 @@
         "Elasticsearch"
       ]
     },
+    "EngineVersion":{
+      "type":"string",
+      "pattern":"^Elasticsearch_[0-9]{1}\\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\\.[0-9]{1,2}$"
+    },
+    "EnvironmentInfo":{
+      "type":"structure",
+      "members":{
+        "AvailabilityZoneInformation":{
+          "shape":"AvailabilityZoneInfoList",
+          "documentation":"<p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>"
+        }
+      },
+      "documentation":"<p>Information about the active domain environment.</p>"
+    },
+    "EnvironmentInfoList":{
+      "type":"list",
+      "member":{"shape":"EnvironmentInfo"}
+    },
     "ErrorDetails":{
       "type":"structure",
       "members":{
@@ -3110,6 +3705,98 @@
         }
       },
       "documentation":"<p>Container for the response returned by the <code>GetCompatibleVersions</code> operation.</p>"
+    },
+    "GetDataSourceRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "Name"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "Name":{
+          "shape":"DataSourceName",
+          "documentation":"<p>The name of the data source to get information about.</p>",
+          "location":"uri",
+          "locationName":"DataSourceName"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code>GetDataSource</code> operation.</p>"
+    },
+    "GetDataSourceResponse":{
+      "type":"structure",
+      "members":{
+        "DataSourceType":{
+          "shape":"DataSourceType",
+          "documentation":"<p>The type of data source.</p>"
+        },
+        "Name":{
+          "shape":"DataSourceName",
+          "documentation":"<p>The name of the data source.</p>"
+        },
+        "Description":{
+          "shape":"DataSourceDescription",
+          "documentation":"<p>A description of the data source.</p>"
+        }
+      },
+      "documentation":"<p>The result of a <code>GetDataSource</code> operation.</p>"
+    },
+    "GetDomainMaintenanceStatusRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "MaintenanceId"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "MaintenanceId":{
+          "shape":"RequestId",
+          "documentation":"<p>The request ID of the maintenance action.</p>",
+          "location":"querystring",
+          "locationName":"maintenanceId"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code>GetDomainMaintenanceStatus</code> operation.</p>"
+    },
+    "GetDomainMaintenanceStatusResponse":{
+      "type":"structure",
+      "members":{
+        "Status":{
+          "shape":"MaintenanceStatus",
+          "documentation":"<p>The status of the maintenance action.</p>"
+        },
+        "StatusMessage":{
+          "shape":"MaintenanceStatusMessage",
+          "documentation":"<p>The status message of the maintenance action.</p>"
+        },
+        "NodeId":{
+          "shape":"NodeId",
+          "documentation":"<p>The node ID of the maintenance action.</p>"
+        },
+        "Action":{
+          "shape":"MaintenanceType",
+          "documentation":"<p>The action name.</p>"
+        },
+        "CreatedAt":{
+          "shape":"UpdateTimestamp",
+          "documentation":"<p>The time at which the action was created.</p>"
+        },
+        "UpdatedAt":{
+          "shape":"UpdateTimestamp",
+          "documentation":"<p>The time at which the action was updated.</p>"
+        }
+      },
+      "documentation":"<p>The result of a <code>GetDomainMaintenanceStatus</code> request that information about the requested action.</p>"
     },
     "GetPackageVersionHistoryRequest":{
       "type":"structure",
@@ -3223,6 +3910,28 @@
         }
       },
       "documentation":"<p>Container for the response returned by the <code>GetUpgradeStatus</code> operation.</p>"
+    },
+    "IPAddressType":{
+      "type":"string",
+      "enum":[
+        "ipv4",
+        "dualstack"
+      ]
+    },
+    "IPAddressTypeStatus":{
+      "type":"structure",
+      "required":[
+        "Options",
+        "Status"
+      ],
+      "members":{
+        "Options":{
+          "shape":"IPAddressType",
+          "documentation":"<p>The IP address options for the domain.</p>"
+        },
+        "Status":{"shape":"OptionStatus"}
+      },
+      "documentation":"<p>The IP address type status for the domain.</p>"
     },
     "IdentityPoolId":{
       "type":"string",
@@ -3351,6 +4060,10 @@
         "InstanceRole":{
           "shape":"InstanceRoleList",
           "documentation":"<p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>"
+        },
+        "AvailabilityZones":{
+          "shape":"AvailabilityZoneList",
+          "documentation":"<p>The supported Availability Zones for the instance type.</p>"
         }
       },
       "documentation":"<p>Lists all instance types and available features for a given OpenSearch or Elasticsearch version.</p>"
@@ -3358,6 +4071,12 @@
     "InstanceTypeDetailsList":{
       "type":"list",
       "member":{"shape":"InstanceTypeDetails"}
+    },
+    "InstanceTypeString":{
+      "type":"string",
+      "max":40,
+      "min":10,
+      "pattern":"^.*\\..*\\.search$"
     },
     "Integer":{"type":"integer"},
     "IntegerClass":{"type":"integer"},
@@ -3373,7 +4092,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p>The request processing has failed because you provided an invalid pagination token.</p>",
+      "documentation":"<p>Request processing failed because you provided an invalid pagination token.</p>",
       "error":{"httpStatusCode":400},
       "exception":true
     },
@@ -3434,6 +4153,80 @@
       "key":{"shape":"InstanceRole"},
       "value":{"shape":"Limits"},
       "documentation":"<p> The role of a given instance and all applicable limits. The role performed by a given OpenSearch instance can be one of the following: </p> <ul> <li> <p> <b>data</b> - A data node.</p> </li> <li> <p> <b>master</b> - A dedicated master node.</p> </li> <li> <p> <b>ultra_warm</b> - An UltraWarm node.</p> </li> </ul>"
+    },
+    "ListDataSourcesRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code>ListDataSources</code> operation.</p>"
+    },
+    "ListDataSourcesResponse":{
+      "type":"structure",
+      "members":{
+        "DataSources":{
+          "shape":"DataSourceList",
+          "documentation":"<p>A list of data sources associated with specified domain.</p>"
+        }
+      },
+      "documentation":"<p>The result of a <code>ListDataSources</code> operation.</p>"
+    },
+    "ListDomainMaintenancesRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "Action":{
+          "shape":"MaintenanceType",
+          "documentation":"<p>The name of the action.</p>",
+          "location":"querystring",
+          "locationName":"action"
+        },
+        "Status":{
+          "shape":"MaintenanceStatus",
+          "documentation":"<p>The status of the action.</p>",
+          "location":"querystring",
+          "locationName":"status"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>, include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code> operations, which returns results in the next page.</p>",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code>ListDomainMaintenances</code> operation.</p>"
+    },
+    "ListDomainMaintenancesResponse":{
+      "type":"structure",
+      "members":{
+        "DomainMaintenances":{
+          "shape":"DomainMaintenanceList",
+          "documentation":"<p>A list of the submitted maintenance actions.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>"
+        }
+      },
+      "documentation":"<p>The result of a <code>ListDomainMaintenances</code> request that contains information about the requested actions. </p>"
     },
     "ListDomainNamesRequest":{
       "type":"structure",
@@ -3502,13 +4295,13 @@
       "members":{
         "EngineVersion":{
           "shape":"VersionString",
-          "documentation":"<p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>",
+          "documentation":"<p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>",
           "location":"uri",
           "locationName":"EngineVersion"
         },
         "DomainName":{
           "shape":"DomainName",
-          "documentation":"<p>Name of the domain to list instance type details for.</p>",
+          "documentation":"<p>The name of the domain.</p>",
           "location":"querystring",
           "locationName":"domainName"
         },
@@ -3523,6 +4316,18 @@
           "documentation":"<p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>",
           "location":"querystring",
           "locationName":"nextToken"
+        },
+        "RetrieveAZs":{
+          "shape":"Boolean",
+          "documentation":"<p>An optional parameter that specifies the Availability Zones for the domain.</p>",
+          "location":"querystring",
+          "locationName":"retrieveAZs"
+        },
+        "InstanceType":{
+          "shape":"InstanceTypeString",
+          "documentation":"<p>An optional parameter that lists information for a given instance type.</p>",
+          "location":"querystring",
+          "locationName":"instanceType"
         }
       }
     },
@@ -3812,6 +4617,37 @@
       ]
     },
     "Long":{"type":"long"},
+    "MaintenanceStatus":{
+      "type":"string",
+      "enum":[
+        "PENDING",
+        "IN_PROGRESS",
+        "COMPLETED",
+        "FAILED",
+        "TIMED_OUT"
+      ]
+    },
+    "MaintenanceStatusMessage":{
+      "type":"string",
+      "max":1000,
+      "min":0,
+      "pattern":"^([\\s\\S]*)$"
+    },
+    "MaintenanceType":{
+      "type":"string",
+      "enum":[
+        "REBOOT_NODE",
+        "RESTART_SEARCH_PROCESS",
+        "RESTART_DASHBOARD"
+      ]
+    },
+    "MasterNodeStatus":{
+      "type":"string",
+      "enum":[
+        "Available",
+        "UnAvailable"
+      ]
+    },
     "MasterUserOptions":{
       "type":"structure",
       "members":{
@@ -3852,6 +4688,19 @@
       "type":"string",
       "documentation":"<p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>"
     },
+    "NodeId":{
+      "type":"string",
+      "max":40,
+      "min":10
+    },
+    "NodeStatus":{
+      "type":"string",
+      "enum":[
+        "Active",
+        "StandBy",
+        "NotAvailable"
+      ]
+    },
     "NodeToNodeEncryptionOptions":{
       "type":"structure",
       "members":{
@@ -3880,11 +4729,31 @@
       },
       "documentation":"<p>Status of the node-to-node encryption options for the specified domain.</p>"
     },
+    "NodeType":{
+      "type":"string",
+      "enum":[
+        "Data",
+        "Ultrawarm",
+        "Master"
+      ]
+    },
     "NonEmptyString":{
       "type":"string",
       "max":100,
       "min":1,
       "pattern":"[a-zA-Z0-9\\-\\_\\.]+"
+    },
+    "NumberOfAZs":{
+      "type":"string",
+      "pattern":"^((\\d+)|(NotAvailable))$"
+    },
+    "NumberOfNodes":{
+      "type":"string",
+      "pattern":"^((\\d+)|(NotAvailable))$"
+    },
+    "NumberOfShards":{
+      "type":"string",
+      "pattern":"^((\\d+)|(NotAvailable))$"
     },
     "OffPeakWindow":{
       "type":"structure",
@@ -3901,7 +4770,7 @@
       "members":{
         "Enabled":{
           "shape":"Boolean",
-          "documentation":"<p>Whether to enable an off-peak window.</p> <p>This option is only available when modifying a domain created prior to February 13, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>"
+          "documentation":"<p>Whether to enable an off-peak window.</p> <p>This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>"
         },
         "OffPeakWindow":{
           "shape":"OffPeakWindow",
@@ -4168,7 +5037,7 @@
         },
         "PackageName":{
           "shape":"PackageName",
-          "documentation":"<p>User-specified name of the package.</p>"
+          "documentation":"<p>The user-specified name of the package.</p>"
         },
         "PackageType":{
           "shape":"PackageType",
@@ -4180,7 +5049,7 @@
         },
         "PackageStatus":{
           "shape":"PackageStatus",
-          "documentation":"<p>Current status of the package.</p>"
+          "documentation":"<p>The current status of the package. The available options are <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>"
         },
         "CreatedAt":{
           "shape":"CreatedAt",
@@ -4197,6 +5066,14 @@
         "ErrorDetails":{
           "shape":"ErrorDetails",
           "documentation":"<p>Additional information if the package is in an error state. Null otherwise.</p>"
+        },
+        "EngineVersion":{
+          "shape":"EngineVersion",
+          "documentation":"<p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>"
+        },
+        "AvailablePluginProperties":{
+          "shape":"PluginProperties",
+          "documentation":"<p>If the package is a <code>ZIP-PLUGIN</code> package, additional information about plugin properties.</p>"
         }
       },
       "documentation":"<p>Basic information about a package.</p>"
@@ -4205,10 +5082,13 @@
       "type":"list",
       "member":{"shape":"PackageDetails"}
     },
-    "PackageID":{"type":"string"},
+    "PackageID":{
+      "type":"string",
+      "pattern":"^([FG][0-9]+)$"
+    },
     "PackageName":{
       "type":"string",
-      "max":28,
+      "max":256,
       "min":3,
       "pattern":"[a-z][a-z0-9\\-]+"
     },
@@ -4241,7 +5121,10 @@
     },
     "PackageType":{
       "type":"string",
-      "enum":["TXT-DICTIONARY"]
+      "enum":[
+        "TXT-DICTIONARY",
+        "ZIP-PLUGIN"
+      ]
     },
     "PackageVersion":{"type":"string"},
     "PackageVersionHistory":{
@@ -4258,6 +5141,10 @@
         "CreatedAt":{
           "shape":"CreatedAt",
           "documentation":"<p>The date and time when the package was created.</p>"
+        },
+        "PluginProperties":{
+          "shape":"PluginProperties",
+          "documentation":"<p>Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.</p>"
         }
       },
       "documentation":"<p>Details about a package version.</p>"
@@ -4272,6 +5159,48 @@
       "min":8,
       "pattern":".*",
       "sensitive":true
+    },
+    "PluginClassName":{
+      "type":"string",
+      "max":1024
+    },
+    "PluginDescription":{
+      "type":"string",
+      "max":1024
+    },
+    "PluginName":{
+      "type":"string",
+      "max":1024
+    },
+    "PluginProperties":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"PluginName",
+          "documentation":"<p>The name of the plugin.</p>"
+        },
+        "Description":{
+          "shape":"PluginDescription",
+          "documentation":"<p>The description of the plugin.</p>"
+        },
+        "Version":{
+          "shape":"PluginVersion",
+          "documentation":"<p>The version of the plugin.</p>"
+        },
+        "ClassName":{
+          "shape":"PluginClassName",
+          "documentation":"<p>The name of the class to load.</p>"
+        },
+        "UncompressedSizeInBytes":{
+          "shape":"UncompressedPluginSizeInBytes",
+          "documentation":"<p>The uncompressed size of the plugin.</p>"
+        }
+      },
+      "documentation":"<p>Basic information about the plugin.</p>"
+    },
+    "PluginVersion":{
+      "type":"string",
+      "max":1024
     },
     "PolicyDocument":{
       "type":"string",
@@ -4388,6 +5317,12 @@
         }
       },
       "documentation":"<p>Container for the request parameters to the <code>RemoveTags</code> operation.</p>"
+    },
+    "RequestId":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":"^([\\s\\S]*)$"
     },
     "ReservationToken":{
       "type":"string",
@@ -4523,7 +5458,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p>An exception for accessing or deleting a resource that does not exist..</p>",
+      "documentation":"<p>An exception for accessing or deleting a resource that doesn't exist.</p>",
       "error":{"httpStatusCode":409},
       "exception":true
     },
@@ -4569,6 +5504,16 @@
       "type":"string",
       "max":63,
       "min":3
+    },
+    "S3GlueDataCatalog":{
+      "type":"structure",
+      "members":{
+        "RoleArn":{
+          "shape":"RoleArn",
+          "documentation":"<p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>"
+        }
+      },
+      "documentation":"<p>Information about the Amazon S3 Glue Data Catalog.</p>"
     },
     "S3Key":{
       "type":"string",
@@ -4815,6 +5760,14 @@
       "type":"string",
       "documentation":"<p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>"
     },
+    "SkipUnavailableStatus":{
+      "type":"string",
+      "documentation":"<p>The status of <code>SkipUnavailable</code> setting for the outbound connection.</p> <ul> <li> <p> <b>ENABLED</b> - The <code>SkipUnavailable</code> setting is enabled for the connection.</p> </li> <li> <p> <b>DISABLED</b> - The <code>SkipUnavailable</code> setting is disabled for the connection.</p> </li> </ul>",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
     "SlotList":{
       "type":"list",
       "member":{"shape":"Long"}
@@ -4884,6 +5837,40 @@
       "documentation":"<p>The status of the service software options for a domain.</p>"
     },
     "StartAt":{"type":"timestamp"},
+    "StartDomainMaintenanceRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "Action"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "Action":{
+          "shape":"MaintenanceType",
+          "documentation":"<p>The name of the action.</p>"
+        },
+        "NodeId":{
+          "shape":"NodeId",
+          "documentation":"<p>The ID of the data node.</p>"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code>StartDomainMaintenance</code> operation.</p>"
+    },
+    "StartDomainMaintenanceResponse":{
+      "type":"structure",
+      "members":{
+        "MaintenanceId":{
+          "shape":"RequestId",
+          "documentation":"<p>The request ID of requested action.</p>"
+        }
+      },
+      "documentation":"<p>The result of a <code>StartDomainMaintenance</code> request that information about the requested action. </p>"
+    },
     "StartServiceSoftwareUpdateRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -5031,6 +6018,48 @@
       "type":"integer",
       "min":0
     },
+    "UncompressedPluginSizeInBytes":{"type":"long"},
+    "UpdateDataSourceRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "Name",
+        "DataSourceType"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "Name":{
+          "shape":"DataSourceName",
+          "documentation":"<p>The name of the data source to modify.</p>",
+          "location":"uri",
+          "locationName":"DataSourceName"
+        },
+        "DataSourceType":{
+          "shape":"DataSourceType",
+          "documentation":"<p>The type of data source.</p>"
+        },
+        "Description":{
+          "shape":"DataSourceDescription",
+          "documentation":"<p>A new description of the data source.</p>"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code>UpdateDataSource</code> operation.</p>"
+    },
+    "UpdateDataSourceResponse":{
+      "type":"structure",
+      "members":{
+        "Message":{
+          "shape":"String",
+          "documentation":"<p>A message associated with the updated data source.</p>"
+        }
+      },
+      "documentation":"<p>The result of an <code>UpdateDataSource</code> operation.</p>"
+    },
     "UpdateDomainConfigRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -5063,11 +6092,15 @@
         },
         "AdvancedOptions":{
           "shape":"AdvancedOptions",
-          "documentation":"<p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p> <ul> <li> <p> <code>\"rest.action.multi.allow_explicit_index\": \"true\" | \"false\"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li> <li> <p> <code>\"indices.fielddata.cache.size\": \"80\" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li> <li> <p> <code>\"indices.query.bool.max_clause_count\": \"1024\"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li> <p> <code>\"override_main_response_version\": \"true\" | \"false\"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options\">Advanced cluster parameters</a>.</p>"
+          "documentation":"<p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p> <ul> <li> <p> <code>\"rest.action.multi.allow_explicit_index\": \"true\" | \"false\"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li> <li> <p> <code>\"indices.fielddata.cache.size\": \"80\" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li> <li> <p> <code>\"indices.query.bool.max_clause_count\": \"1024\"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options\">Advanced cluster parameters</a>.</p>"
         },
         "AccessPolicies":{
           "shape":"PolicyDocument",
           "documentation":"<p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>"
+        },
+        "IPAddressType":{
+          "shape":"IPAddressType",
+          "documentation":"<p>The type of IP addresses supported by the endpoint for the domain.</p>"
         },
         "LogPublishingOptions":{
           "shape":"LogPublishingOptions",
@@ -5490,6 +6523,7 @@
       "min":14,
       "pattern":"^Elasticsearch_[0-9]{1}\\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\\.[0-9]{1,2}$"
     },
+    "VolumeSize":{"type":"string"},
     "VolumeType":{
       "type":"string",
       "documentation":"<p>The type of EBS volume that a domain uses. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-createupdatedomains.html#opensearch-createdomain-configure-ebs\">Configuring EBS-based storage</a>.</p>",
@@ -5638,6 +6672,14 @@
         }
       },
       "documentation":"<p>The zone awareness configuration for an Amazon OpenSearch Service domain.</p>"
+    },
+    "ZoneStatus":{
+      "type":"string",
+      "enum":[
+        "Active",
+        "StandBy",
+        "NotAvailable"
+      ]
     }
   },
   "documentation":"<p>Use the Amazon OpenSearch Service configuration API to create, configure, and manage OpenSearch Service domains.</p> <p>For sample code that uses the configuration API, see the <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-configuration-samples.html\"> <i>Amazon OpenSearch Service Developer Guide</i> </a>. The guide also contains <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html\">sample code</a> for sending signed HTTP requests to the OpenSearch APIs. The endpoint for configuration service requests is Region specific: es.<i>region</i>.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported Regions and endpoints, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions\">Amazon Web Services service endpoints</a>.</p>"

@@ -48,7 +48,9 @@ ModelPackage::ModelPackage() :
     m_additionalInferenceSpecificationsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_customerMetadataPropertiesHasBeenSet(false),
-    m_driftCheckBaselinesHasBeenSet(false)
+    m_driftCheckBaselinesHasBeenSet(false),
+    m_skipModelValidation(SkipModelValidation::NOT_SET),
+    m_skipModelValidationHasBeenSet(false)
 {
 }
 
@@ -82,7 +84,9 @@ ModelPackage::ModelPackage(JsonView jsonValue) :
     m_additionalInferenceSpecificationsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_customerMetadataPropertiesHasBeenSet(false),
-    m_driftCheckBaselinesHasBeenSet(false)
+    m_driftCheckBaselinesHasBeenSet(false),
+    m_skipModelValidation(SkipModelValidation::NOT_SET),
+    m_skipModelValidationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -280,6 +284,13 @@ ModelPackage& ModelPackage::operator =(JsonView jsonValue)
     m_driftCheckBaselinesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SkipModelValidation"))
+  {
+    m_skipModelValidation = SkipModelValidationMapper::GetSkipModelValidationForName(jsonValue.GetString("SkipModelValidation"));
+
+    m_skipModelValidationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -452,6 +463,11 @@ JsonValue ModelPackage::Jsonize() const
   {
    payload.WithObject("DriftCheckBaselines", m_driftCheckBaselines.Jsonize());
 
+  }
+
+  if(m_skipModelValidationHasBeenSet)
+  {
+   payload.WithString("SkipModelValidation", SkipModelValidationMapper::GetNameForSkipModelValidation(m_skipModelValidation));
   }
 
   return payload;

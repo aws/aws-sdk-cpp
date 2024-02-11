@@ -50,7 +50,8 @@ ContainerDetail::ContainerDetail() :
     m_secretsHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_fargatePlatformConfigurationHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_runtimePlatformHasBeenSet(false)
 {
 }
 
@@ -86,7 +87,8 @@ ContainerDetail::ContainerDetail(JsonView jsonValue) :
     m_secretsHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_fargatePlatformConfigurationHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_runtimePlatformHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -306,6 +308,13 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     m_ephemeralStorageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("runtimePlatform"))
+  {
+    m_runtimePlatform = jsonValue.GetObject("runtimePlatform");
+
+    m_runtimePlatformHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -512,6 +521,12 @@ JsonValue ContainerDetail::Jsonize() const
   if(m_ephemeralStorageHasBeenSet)
   {
    payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
+
+  }
+
+  if(m_runtimePlatformHasBeenSet)
+  {
+   payload.WithObject("runtimePlatform", m_runtimePlatform.Jsonize());
 
   }
 

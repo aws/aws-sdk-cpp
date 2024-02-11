@@ -45,7 +45,9 @@ RestoreDBClusterToPointInTimeRequest::RestoreDBClusterToPointInTimeRequest() :
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+    m_networkTypeHasBeenSet(false),
+    m_sourceDbClusterResourceIdHasBeenSet(false),
+    m_rdsCustomClusterConfigurationHasBeenSet(false)
 {
 }
 
@@ -203,6 +205,16 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
   if(m_networkTypeHasBeenSet)
   {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
+  if(m_sourceDbClusterResourceIdHasBeenSet)
+  {
+    ss << "SourceDbClusterResourceId=" << StringUtils::URLEncode(m_sourceDbClusterResourceId.c_str()) << "&";
+  }
+
+  if(m_rdsCustomClusterConfigurationHasBeenSet)
+  {
+    m_rdsCustomClusterConfiguration.OutputToStream(ss, "RdsCustomClusterConfiguration");
   }
 
   ss << "Version=2014-10-31";

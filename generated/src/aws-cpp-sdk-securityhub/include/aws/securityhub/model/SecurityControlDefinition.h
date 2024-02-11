@@ -8,6 +8,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/SeverityRating.h>
 #include <aws/securityhub/model/RegionAvailabilityStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/securityhub/model/SecurityControlProperty.h>
+#include <aws/securityhub/model/ParameterDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -371,6 +375,148 @@ namespace Model
      */
     inline SecurityControlDefinition& WithCurrentRegionAvailability(RegionAvailabilityStatus&& value) { SetCurrentRegionAvailability(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Security control properties that you can customize. Currently, only
+     * parameter customization is supported for select controls. An empty array is
+     * returned for controls that don’t support custom properties. </p>
+     */
+    inline const Aws::Vector<SecurityControlProperty>& GetCustomizableProperties() const{ return m_customizableProperties; }
+
+    /**
+     * <p> Security control properties that you can customize. Currently, only
+     * parameter customization is supported for select controls. An empty array is
+     * returned for controls that don’t support custom properties. </p>
+     */
+    inline bool CustomizablePropertiesHasBeenSet() const { return m_customizablePropertiesHasBeenSet; }
+
+    /**
+     * <p> Security control properties that you can customize. Currently, only
+     * parameter customization is supported for select controls. An empty array is
+     * returned for controls that don’t support custom properties. </p>
+     */
+    inline void SetCustomizableProperties(const Aws::Vector<SecurityControlProperty>& value) { m_customizablePropertiesHasBeenSet = true; m_customizableProperties = value; }
+
+    /**
+     * <p> Security control properties that you can customize. Currently, only
+     * parameter customization is supported for select controls. An empty array is
+     * returned for controls that don’t support custom properties. </p>
+     */
+    inline void SetCustomizableProperties(Aws::Vector<SecurityControlProperty>&& value) { m_customizablePropertiesHasBeenSet = true; m_customizableProperties = std::move(value); }
+
+    /**
+     * <p> Security control properties that you can customize. Currently, only
+     * parameter customization is supported for select controls. An empty array is
+     * returned for controls that don’t support custom properties. </p>
+     */
+    inline SecurityControlDefinition& WithCustomizableProperties(const Aws::Vector<SecurityControlProperty>& value) { SetCustomizableProperties(value); return *this;}
+
+    /**
+     * <p> Security control properties that you can customize. Currently, only
+     * parameter customization is supported for select controls. An empty array is
+     * returned for controls that don’t support custom properties. </p>
+     */
+    inline SecurityControlDefinition& WithCustomizableProperties(Aws::Vector<SecurityControlProperty>&& value) { SetCustomizableProperties(std::move(value)); return *this;}
+
+    /**
+     * <p> Security control properties that you can customize. Currently, only
+     * parameter customization is supported for select controls. An empty array is
+     * returned for controls that don’t support custom properties. </p>
+     */
+    inline SecurityControlDefinition& AddCustomizableProperties(const SecurityControlProperty& value) { m_customizablePropertiesHasBeenSet = true; m_customizableProperties.push_back(value); return *this; }
+
+    /**
+     * <p> Security control properties that you can customize. Currently, only
+     * parameter customization is supported for select controls. An empty array is
+     * returned for controls that don’t support custom properties. </p>
+     */
+    inline SecurityControlDefinition& AddCustomizableProperties(SecurityControlProperty&& value) { m_customizablePropertiesHasBeenSet = true; m_customizableProperties.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline const Aws::Map<Aws::String, ParameterDefinition>& GetParameterDefinitions() const{ return m_parameterDefinitions; }
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline bool ParameterDefinitionsHasBeenSet() const { return m_parameterDefinitionsHasBeenSet; }
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline void SetParameterDefinitions(const Aws::Map<Aws::String, ParameterDefinition>& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions = value; }
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline void SetParameterDefinitions(Aws::Map<Aws::String, ParameterDefinition>&& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions = std::move(value); }
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline SecurityControlDefinition& WithParameterDefinitions(const Aws::Map<Aws::String, ParameterDefinition>& value) { SetParameterDefinitions(value); return *this;}
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline SecurityControlDefinition& WithParameterDefinitions(Aws::Map<Aws::String, ParameterDefinition>&& value) { SetParameterDefinitions(std::move(value)); return *this;}
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline SecurityControlDefinition& AddParameterDefinitions(const Aws::String& key, const ParameterDefinition& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions.emplace(key, value); return *this; }
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline SecurityControlDefinition& AddParameterDefinitions(Aws::String&& key, const ParameterDefinition& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline SecurityControlDefinition& AddParameterDefinitions(const Aws::String& key, ParameterDefinition&& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline SecurityControlDefinition& AddParameterDefinitions(Aws::String&& key, ParameterDefinition&& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline SecurityControlDefinition& AddParameterDefinitions(const char* key, ParameterDefinition&& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> An object that provides a security control parameter name, description, and
+     * the options for customizing it. This object is excluded for a control that
+     * doesn't support custom parameters. </p>
+     */
+    inline SecurityControlDefinition& AddParameterDefinitions(const char* key, const ParameterDefinition& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_securityControlId;
@@ -390,6 +536,12 @@ namespace Model
 
     RegionAvailabilityStatus m_currentRegionAvailability;
     bool m_currentRegionAvailabilityHasBeenSet = false;
+
+    Aws::Vector<SecurityControlProperty> m_customizableProperties;
+    bool m_customizablePropertiesHasBeenSet = false;
+
+    Aws::Map<Aws::String, ParameterDefinition> m_parameterDefinitions;
+    bool m_parameterDefinitionsHasBeenSet = false;
   };
 
 } // namespace Model

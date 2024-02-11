@@ -16,7 +16,8 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 using EpParam = Aws::Endpoint::EndpointParameter;
 using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store test expectations
-using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<EpProp>>;
+using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp>>>;
+using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
 class EFSEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
@@ -30,6 +31,7 @@ struct EFSEndpointProviderEndpointTestCase
         struct Endpoint
         {
             Aws::String url;
+            ExpEpAuthScheme authScheme;
             ExpEpProps properties;
             ExpEpHeaders headers;
         } endpoint;
@@ -59,6 +61,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.af-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -67,6 +70,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.af-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -75,6 +79,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.ap-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -83,6 +88,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.ap-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -91,6 +97,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.ap-northeast-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -99,6 +106,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.ap-northeast-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -107,6 +115,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.ap-northeast-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -115,6 +124,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.ap-northeast-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -123,6 +133,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.ap-northeast-3.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -131,6 +142,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.ap-northeast-3.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -139,6 +151,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.ap-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -147,6 +160,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.ap-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -155,6 +169,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.ap-southeast-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -163,6 +178,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.ap-southeast-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -171,6 +187,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.ap-southeast-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -179,6 +196,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.ap-southeast-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -187,6 +205,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.ap-southeast-3.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -195,6 +214,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.ap-southeast-3.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -203,6 +223,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.ca-central-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -211,6 +232,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.ca-central-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -219,6 +241,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.eu-central-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -227,6 +250,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.eu-central-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -235,6 +259,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.eu-north-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -243,6 +268,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.eu-north-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -251,6 +277,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "eu-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.eu-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -259,6 +286,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "eu-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.eu-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -267,6 +295,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.eu-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -275,6 +304,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.eu-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -283,6 +313,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.eu-west-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -291,6 +322,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.eu-west-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -299,6 +331,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.eu-west-3.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -307,6 +340,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.eu-west-3.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -315,6 +349,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "me-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.me-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -323,6 +358,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "me-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.me-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -331,6 +367,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.sa-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -339,6 +376,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.sa-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -347,6 +385,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -355,6 +394,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -363,6 +403,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.us-east-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -371,6 +412,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.us-east-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -379,6 +421,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.us-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -387,6 +430,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.us-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -395,6 +439,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -403,6 +448,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -411,6 +457,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -419,6 +466,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.us-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -427,6 +475,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -435,6 +484,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -443,6 +493,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.cn-northwest-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -451,6 +502,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.cn-northwest-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -459,6 +511,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -467,6 +520,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -475,6 +529,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -483,6 +538,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -491,6 +547,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.us-gov-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -499,6 +556,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.us-gov-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -507,6 +565,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -515,6 +574,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -523,6 +583,7 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -531,55 +592,87 @@ static const Aws::Vector<EFSEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 60*/
+  {"For region us-iso-east-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
+  },
+  /*TEST CASE 61*/
+  {"For region us-iso-east-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
+  },
+  /*TEST CASE 62*/
   {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://elasticfilesystem.us-isob-east-1.sc2s.sgov.gov",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 61*/
-  {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticfilesystem-fips.us-isob-east-1.sc2s.sgov.gov",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 62*/
-  {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 63*/
-  {"For custom endpoint with region not set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", false)}, // params
+  {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
+    {{/*epUrl*/"https://elasticfilesystem-fips.us-isob-east-1.sc2s.sgov.gov",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 64*/
+  {"For region us-isob-east-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
+  },
+  /*TEST CASE 65*/
+  {"For region us-isob-east-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
+  },
+  /*TEST CASE 66*/
+  {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 67*/
+  {"For custom endpoint with region not set and fips disabled and dualstack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 68*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 65*/
+  /*TEST CASE 69*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 70*/
+  {"Missing region", // documentation
+    {}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   }
 };
 
@@ -594,6 +687,8 @@ Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
         sdkSigner = "NullSigner";
     } else if (rulesSignerName == "bearer") {
         sdkSigner = "Bearer";
+    } else if (rulesSignerName == "s3Express") {
+        sdkSigner = "S3ExpressSigner";
     } else {
         sdkSigner = rulesSignerName;
     }
@@ -615,9 +710,23 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const EFSEndpointPro
         const auto expAuthSchemesIt = expect.endpoint.properties.find("authSchemes");
         if (expAuthSchemesIt != expect.endpoint.properties.end())
         {
+            // in the list of AuthSchemes, select the one with a highest priority
+            const Aws::Vector<Aws::String> priotityList = {"s3Express", "sigv4a", "sigv4", "bearer", "none", ""};
+            const auto expectedAuthSchemePropsIt = std::find_first_of(expAuthSchemesIt->second.begin(), expAuthSchemesIt->second.end(),
+                                                                    priotityList.begin(), priotityList.end(), [](const Aws::Vector<EpProp>& props, const Aws::String& expName)
+                                                                    {
+                                                                        const auto& propNameIt = std::find_if(props.begin(), props.end(), [](const EpProp& prop)
+                                                                        {
+                                                                            return prop.GetName() == "name";
+                                                                        });
+                                                                        assert(propNameIt != props.end());
+                                                                        return propNameIt->GetStrValueNoCheck() == expName;
+                                                                    });
+            assert(expectedAuthSchemePropsIt != expAuthSchemesIt->second.end());
+
             const auto& endpointResultAttrs = outcome.GetResult().GetAttributes();
             ASSERT_TRUE(endpointResultAttrs) << "Expected non-empty EndpointAttributes (authSchemes)";
-            for (const auto& expProperty : expAuthSchemesIt->second)
+            for (const auto& expProperty : *expectedAuthSchemePropsIt)
             {
                 if (expProperty.GetName() == "name") {
                     ASSERT_TRUE(!endpointResultAttrs->authScheme.GetName().empty());

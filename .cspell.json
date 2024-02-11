@@ -11,7 +11,7 @@
         "Bodyless", "HTTPGET", "ratelimiter", "Ratelimiter", "STDMETHODCALLTYPE", "CANTSAVE", "OLECHAR", "DISPID",
         "UNKNOWNNAME", "DISPPARAMS", "XMLHTTP", "comptr", "Metadataservice", "Streamfn", "HWAVEOUT", "matdesc",
         "Presigner", "xindex", "errortype", "waveout", "WAVEOUTCAPSA", "ALLOWSYNC", "WAVEHDR", "MMSYSERR",
-        "WAVEFORMATEX", "Unprepare", "DDISABLE_IMDSV1",
+        "WAVEFORMATEX", "Unprepare", "DDISABLE_IMDSV1", "threadpool",
         // AWS general
         "Arns", "AMZN", "amzn", "Paulo", "Ningxia", "ISOB", "isob", "AWSXML", "IMDSV",
         // AWS Signature
@@ -22,7 +22,7 @@
         "PythonInterp", "DWAVE", "Winmm", "DPULSE", "pulseaudio", "MSVC", "NOTFOUND", "libpulse", "COREAUDIO",
         "devel", "AUDIOTOOLBOX", "DCORE", "CONCAT", "DNON", "FULLPATCH", "setopt", "CURLOPT", "SSLCERT",
         "CROSSCOMPILING", "nullptr", "DWORD", "lpsz", "commoncrypto", "COMMONCRYPTO", "endforeach", "pkgconfig",
-        "MGMT", "DENABLED",
+        "MGMT", "DENABLED", "DENFORCE",
         // Compiler and linker
         "Wpedantic", "Wextra", "Werror", "xldscope", "Wtype", "Wunused", "RTTI", "ffunction", "fdata", "fsanitize",
         "pathconf", "unistd", "umask", "GNUCXX", "libasan", "SUNPRO", "gnustl", "libgnustl", "Wmissing",
@@ -59,7 +59,9 @@
         // Aws common runtime libraries
         "mqtt",
         // Aws common runtime API
-        "Mtls"
+        "Mtls",
+	    // Opentelemetry
+	    "Otel", "opentelemetry", "nostd", "OPTEL", "tparam","OTLP"
     ],
     "ignoreWords": [
         // variables defined in ConcurrentStreamBuf

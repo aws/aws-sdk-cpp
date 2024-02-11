@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VoteValue::NOT_SET:
+            return {};
           case VoteValue::YES:
             return "YES";
           case VoteValue::NO:

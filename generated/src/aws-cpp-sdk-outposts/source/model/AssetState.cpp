@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int RETIRING_HASH = HashingUtils::HashString("RETIRING");
+        static const int ISOLATED_HASH = HashingUtils::HashString("ISOLATED");
 
 
         AssetState GetAssetStateForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == RETIRING_HASH)
           {
             return AssetState::RETIRING;
+          }
+          else if (hashCode == ISOLATED_HASH)
+          {
+            return AssetState::ISOLATED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetState::NOT_SET:
+            return {};
           case AssetState::ACTIVE:
             return "ACTIVE";
           case AssetState::RETIRING:
             return "RETIRING";
+          case AssetState::ISOLATED:
+            return "ISOLATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

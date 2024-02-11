@@ -29,6 +29,9 @@ namespace MQ
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef MQClientConfiguration ClientConfigurationType;
+      typedef MQEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -95,8 +98,8 @@ namespace MQ
          * <li><p>ec2:DescribeSecurityGroups</p></li> <li><p>ec2:DescribeSubnets</p></li>
          * <li><p>ec2:DescribeVpcs</p></li></ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create
-         * an IAM User and Get Your AWS Credentials</a> and <a
-         * href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
+         * an IAM User and Get Your Amazon Web Services Credentials</a> and <a
+         * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
          * Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ
          * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker">AWS API
@@ -175,7 +178,11 @@ namespace MQ
         }
 
         /**
-         * <p>Creates an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an ActiveMQ user.</p> <p>Do not add personally
+         * identifiable information (PII) or other confidential or sensitive information in
+         * broker usernames. Broker usernames are accessible to other Amazon Web Services
+         * services, including CloudWatch Logs. Broker usernames are not intended to be
+         * used for private or sensitive data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser">AWS API
          * Reference</a></p>
          */
@@ -550,6 +557,32 @@ namespace MQ
         void ListUsersAsync(const ListUsersRequestT& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MQClient::ListUsers, request, handler, context);
+        }
+
+        /**
+         * <p>Promotes a data replication replica broker to the primary broker
+         * role.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Promote">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::PromoteOutcome Promote(const Model::PromoteRequest& request) const;
+
+        /**
+         * A Callable wrapper for Promote that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PromoteRequestT = Model::PromoteRequest>
+        Model::PromoteOutcomeCallable PromoteCallable(const PromoteRequestT& request) const
+        {
+            return SubmitCallable(&MQClient::Promote, request);
+        }
+
+        /**
+         * An Async wrapper for Promote that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PromoteRequestT = Model::PromoteRequest>
+        void PromoteAsync(const PromoteRequestT& request, const PromoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MQClient::Promote, request, handler, context);
         }
 
         /**

@@ -26,7 +26,9 @@ TrafficDistributionGroup::TrafficDistributionGroup() :
     m_instanceArnHasBeenSet(false),
     m_status(TrafficDistributionGroupStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ TrafficDistributionGroup::TrafficDistributionGroup(JsonView jsonValue) :
     m_instanceArnHasBeenSet(false),
     m_status(TrafficDistributionGroupStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +101,13 @@ TrafficDistributionGroup& TrafficDistributionGroup::operator =(JsonView jsonValu
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IsDefault"))
+  {
+    m_isDefault = jsonValue.GetBool("IsDefault");
+
+    m_isDefaultHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -147,6 +158,12 @@ JsonValue TrafficDistributionGroup::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_isDefaultHasBeenSet)
+  {
+   payload.WithBool("IsDefault", m_isDefault);
 
   }
 

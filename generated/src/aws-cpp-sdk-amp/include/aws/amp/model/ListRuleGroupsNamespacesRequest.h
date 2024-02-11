@@ -43,24 +43,44 @@ namespace Model
 
 
     /**
-     * <p>Maximum results to return in response (default=100, maximum=1000).</p>
+     * <p>The ID of the workspace.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
 
     /**
-     * <p>Maximum results to return in response (default=100, maximum=1000).</p>
+     * <p>The ID of the workspace.</p>
      */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
 
     /**
-     * <p>Maximum results to return in response (default=100, maximum=1000).</p>
+     * <p>The ID of the workspace.</p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
-     * <p>Maximum results to return in response (default=100, maximum=1000).</p>
+     * <p>The ID of the workspace.</p>
      */
-    inline ListRuleGroupsNamespacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline ListRuleGroupsNamespacesRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline ListRuleGroupsNamespacesRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline ListRuleGroupsNamespacesRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
 
     /**
@@ -162,49 +182,29 @@ namespace Model
 
 
     /**
-     * <p>The ID of the workspace.</p>
+     * <p>Maximum results to return in response (default=100, maximum=1000).</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The ID of the workspace.</p>
+     * <p>Maximum results to return in response (default=100, maximum=1000).</p>
      */
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The ID of the workspace.</p>
+     * <p>Maximum results to return in response (default=100, maximum=1000).</p>
      */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The ID of the workspace.</p>
+     * <p>Maximum results to return in response (default=100, maximum=1000).</p>
      */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline ListRuleGroupsNamespacesRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline ListRuleGroupsNamespacesRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline ListRuleGroupsNamespacesRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    inline ListRuleGroupsNamespacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -212,8 +212,8 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

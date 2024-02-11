@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EndPointType::NOT_SET:
+            return {};
           case EndPointType::KAFKA_BOOTSTRAP_SERVERS:
             return "KAFKA_BOOTSTRAP_SERVERS";
           default:

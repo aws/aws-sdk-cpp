@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/SelectedFieldOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/ColumnIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -145,6 +146,47 @@ namespace Model
      */
     inline FilterOperationSelectedFieldsConfiguration& WithSelectedFieldOptions(SelectedFieldOptions&& value) { SetSelectedFieldOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The selected columns of a dataset.</p>
+     */
+    inline const Aws::Vector<ColumnIdentifier>& GetSelectedColumns() const{ return m_selectedColumns; }
+
+    /**
+     * <p>The selected columns of a dataset.</p>
+     */
+    inline bool SelectedColumnsHasBeenSet() const { return m_selectedColumnsHasBeenSet; }
+
+    /**
+     * <p>The selected columns of a dataset.</p>
+     */
+    inline void SetSelectedColumns(const Aws::Vector<ColumnIdentifier>& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns = value; }
+
+    /**
+     * <p>The selected columns of a dataset.</p>
+     */
+    inline void SetSelectedColumns(Aws::Vector<ColumnIdentifier>&& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns = std::move(value); }
+
+    /**
+     * <p>The selected columns of a dataset.</p>
+     */
+    inline FilterOperationSelectedFieldsConfiguration& WithSelectedColumns(const Aws::Vector<ColumnIdentifier>& value) { SetSelectedColumns(value); return *this;}
+
+    /**
+     * <p>The selected columns of a dataset.</p>
+     */
+    inline FilterOperationSelectedFieldsConfiguration& WithSelectedColumns(Aws::Vector<ColumnIdentifier>&& value) { SetSelectedColumns(std::move(value)); return *this;}
+
+    /**
+     * <p>The selected columns of a dataset.</p>
+     */
+    inline FilterOperationSelectedFieldsConfiguration& AddSelectedColumns(const ColumnIdentifier& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns.push_back(value); return *this; }
+
+    /**
+     * <p>The selected columns of a dataset.</p>
+     */
+    inline FilterOperationSelectedFieldsConfiguration& AddSelectedColumns(ColumnIdentifier&& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_selectedFields;
@@ -152,6 +194,9 @@ namespace Model
 
     SelectedFieldOptions m_selectedFieldOptions;
     bool m_selectedFieldOptionsHasBeenSet = false;
+
+    Aws::Vector<ColumnIdentifier> m_selectedColumns;
+    bool m_selectedColumnsHasBeenSet = false;
   };
 
 } // namespace Model

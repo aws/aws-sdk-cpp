@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProtocolType::NOT_SET:
+            return {};
           case ProtocolType::WEBSOCKET:
             return "WEBSOCKET";
           case ProtocolType::HTTP:

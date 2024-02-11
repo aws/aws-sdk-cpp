@@ -87,5 +87,8 @@ GetObjectAclRequest::EndpointParameters GetObjectAclRequest::GetEndpointContextP
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
     }
+    if (KeyHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Key"), this->GetKey(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
     return parameters;
 }

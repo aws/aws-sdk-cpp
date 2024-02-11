@@ -40,56 +40,62 @@ namespace Model
 
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline const DeinterlaceAlgorithm& GetAlgorithm() const{ return m_algorithm; }
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline void SetAlgorithm(const DeinterlaceAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline void SetAlgorithm(DeinterlaceAlgorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline Deinterlacer& WithAlgorithm(const DeinterlaceAlgorithm& value) { SetAlgorithm(value); return *this;}
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline Deinterlacer& WithAlgorithm(DeinterlaceAlgorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
 
@@ -168,50 +174,68 @@ namespace Model
 
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline const DeinterlacerMode& GetMode() const{ return m_mode; }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline void SetMode(const DeinterlacerMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline void SetMode(DeinterlacerMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline Deinterlacer& WithMode(const DeinterlacerMode& value) { SetMode(value); return *this;}
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline Deinterlacer& WithMode(DeinterlacerMode&& value) { SetMode(std::move(value)); return *this;}
 

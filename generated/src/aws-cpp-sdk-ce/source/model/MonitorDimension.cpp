@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitorDimension::NOT_SET:
+            return {};
           case MonitorDimension::SERVICE:
             return "SERVICE";
           default:

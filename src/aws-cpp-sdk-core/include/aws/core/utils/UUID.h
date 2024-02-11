@@ -43,7 +43,12 @@ namespace Aws
              * Generates a UUID. It will always try to prefer a random implementation from the entropy source on the machine. If none, is available, it will
              * fallback to the mac address and timestamp implementation.
              */
-            static UUID RandomUUID();
+            static Aws::Utils::UUID RandomUUID();
+
+            /**
+             * Generates a pseudo-random UUID.
+             */
+            static Aws::Utils::UUID PseudoRandomUUID();
 
         private:
             unsigned char m_uuid[UUID_BINARY_SIZE];

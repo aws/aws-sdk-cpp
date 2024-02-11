@@ -23,6 +23,7 @@ namespace Aws
         static const int IAM_AND_QUICKSIGHT_HASH = HashingUtils::HashString("IAM_AND_QUICKSIGHT");
         static const int IAM_ONLY_HASH = HashingUtils::HashString("IAM_ONLY");
         static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ACTIVE_DIRECTORY");
+        static const int IAM_IDENTITY_CENTER_HASH = HashingUtils::HashString("IAM_IDENTITY_CENTER");
 
 
         AuthenticationMethodOption GetAuthenticationMethodOptionForName(const Aws::String& name)
@@ -40,6 +41,10 @@ namespace Aws
           {
             return AuthenticationMethodOption::ACTIVE_DIRECTORY;
           }
+          else if (hashCode == IAM_IDENTITY_CENTER_HASH)
+          {
+            return AuthenticationMethodOption::IAM_IDENTITY_CENTER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticationMethodOption::NOT_SET:
+            return {};
           case AuthenticationMethodOption::IAM_AND_QUICKSIGHT:
             return "IAM_AND_QUICKSIGHT";
           case AuthenticationMethodOption::IAM_ONLY:
             return "IAM_ONLY";
           case AuthenticationMethodOption::ACTIVE_DIRECTORY:
             return "ACTIVE_DIRECTORY";
+          case AuthenticationMethodOption::IAM_IDENTITY_CENTER:
+            return "IAM_IDENTITY_CENTER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

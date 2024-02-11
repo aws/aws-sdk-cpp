@@ -3,12 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/DateTime.h>
 
 using namespace Aws::Utils;
 
-TEST(DateTimeTest, TestDefault)
+class DateTimeTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(DateTimeTest, TestDefault)
 {
     DateTime defaultDate;
     ASSERT_TRUE(defaultDate.WasParseSuccessful());
@@ -22,7 +26,7 @@ TEST(DateTimeTest, TestDefault)
     ASSERT_EQ("Thu, 01 Jan 1970 00:00:00 GMT", defaultDate.ToGmtString(DateFormat::RFC822));
 }
 
-TEST(DateTimeTest, TestRFC822Parsing)
+TEST_F(DateTimeTest, TestRFC822Parsing)
 {
     const char* gmtDateStr = "Wed, 02 Oct 2002 08:05:09 GMT";
     const char* twoDigitYearVersion = "Wed, 02 Oct 02 08:05:09 GMT";
@@ -42,21 +46,21 @@ TEST(DateTimeTest, TestRFC822Parsing)
     ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::RFC822));
 }
 
-TEST(DateTimeTest, TestRFC822Parsing_DOS_Stopped)
+TEST_F(DateTimeTest, TestRFC822Parsing_DOS_Stopped)
 {
     const char* gmtDateStr = "Weddkasdiweijbnawei8eriojngsdgasdgsdf1gasd8asdgfasdfgsdikweisdfksdnsdksdklasdfsdklasdfdfsdfsdfsdfsadfasdafsdfgjjfgghdfgsdfsfsdfsdfasdfsdfasdfsdfasdfsdf";
     DateTime date(gmtDateStr, DateFormat::RFC822);
     ASSERT_FALSE(date.WasParseSuccessful());
 }
 
-TEST(DateTimeTest, TestRFC822Parsing_WrongFormat)
+TEST_F(DateTimeTest, TestRFC822Parsing_WrongFormat)
 {
     const char* gmtDateStr = "Wed, 02 Oct 2002";
     DateTime gmtDate(gmtDateStr, DateFormat::RFC822);
     ASSERT_FALSE(gmtDate.WasParseSuccessful());
 }
 
-TEST(DateTimeTest, TestISO_8601Parsing)
+TEST_F(DateTimeTest, TestISO_8601Parsing)
 {
     const char* gmtDateStr = "2002-10-02T08:05:09Z";
     const char* utcOffsetVersion = "2002-10-02T08:05:09+00:00";
@@ -74,7 +78,7 @@ TEST(DateTimeTest, TestISO_8601Parsing)
     ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601));
 }
 
-TEST(DateTimeTest, TestISO_8601BasicParsing)
+TEST_F(DateTimeTest, TestISO_8601BasicParsing)
 {
     const char* gmtDateStr = "20021002T080509Z";
     const char* utcOffsetVersion = "20021002T080509+0000";
@@ -92,7 +96,7 @@ TEST(DateTimeTest, TestISO_8601BasicParsing)
     ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601_BASIC));
 }
 
-TEST(DateTimeTest, TestISO_8601ParsingMSPrecision)
+TEST_F(DateTimeTest, TestISO_8601ParsingMSPrecision)
 {
     const char* gmtDateStr = "2002-10-02T08:05:09.000Z";
     const char* utcOffsetVersion = "2002-10-02T08:05:09.000+00:00";
@@ -110,7 +114,7 @@ TEST(DateTimeTest, TestISO_8601ParsingMSPrecision)
     ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601));
 }
 
-TEST(DateTimeTest, TestISO_8601ParsingNSPrecision)
+TEST_F(DateTimeTest, TestISO_8601ParsingNSPrecision)
 {
     const char* gmtDateStr = "2002-10-02T08:05:09.123456789Z";
     const char* utcOffsetVersion = "2002-10-02T08:05:09.123456789+00:00";
@@ -128,21 +132,21 @@ TEST(DateTimeTest, TestISO_8601ParsingNSPrecision)
     ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601));
 }
 
-TEST(DateTimeTest, TestISO_8601ParsingTooLowPrecision)
+TEST_F(DateTimeTest, TestISO_8601ParsingTooLowPrecision)
 {
     const char* gmtDateStr = "2002-10-02T08:05:09.12Z";
     DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
     ASSERT_FALSE(gmtDate.WasParseSuccessful());
 }
 
-TEST(DateTimeTest, TestISO_8601ParsingTooHighPrecision)
+TEST_F(DateTimeTest, TestISO_8601ParsingTooHighPrecision)
 {
     const char* gmtDateStr = "2002-10-02T08:05:09.1234567890Z";
     DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
     ASSERT_FALSE(gmtDate.WasParseSuccessful());
 }
 
-TEST(DateTimeTest, TestISO_8601BasicParsingMSPrecision)
+TEST_F(DateTimeTest, TestISO_8601BasicParsingMSPrecision)
 {
     const char* gmtDateStr = "20021002T080509000Z";
     const char* utcOffsetVersion = "20021002T080509000+0000";
@@ -160,35 +164,35 @@ TEST(DateTimeTest, TestISO_8601BasicParsingMSPrecision)
     ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601_BASIC));
 }
 
-TEST(DateTimeTest, TestISO_8601Parsing_DOS_Stopped)
+TEST_F(DateTimeTest, TestISO_8601Parsing_DOS_Stopped)
 {
     const char* gmtDateStr = "Weddkasdiweijbnawei8eriojngsdgasdgsdf1gasd8asdgfasdfgsdikweisdfksdnsdksdklasdfsdklasdfdfsdfsdfsdfsadfasdafsdfgjjfgghdfgsdfsfsdfsdfasdfsdfasdfsdfasdfsdf";
     DateTime date(gmtDateStr, DateFormat::ISO_8601);
     ASSERT_FALSE(date.WasParseSuccessful());
 }
 
-TEST(DateTimeTest, TestISO_8601BasicParsing_DOS_Stopped)
+TEST_F(DateTimeTest, TestISO_8601BasicParsing_DOS_Stopped)
 {
     const char* gmtDateStr = "Weddkasdiweijbnawei8eriojngsdgasdgsdf1gasd8asdgfasdfgsdikweisdfksdnsdksdklasdfsdklasdfdfsdfsdfsdfsadfasdafsdfgjjfgghdfgsdfsfsdfsdfasdfsdfasdfsdfasdfsdf";
     DateTime date(gmtDateStr, DateFormat::ISO_8601_BASIC);
     ASSERT_FALSE(date.WasParseSuccessful());
 }
 
-TEST(DateTimeTest, TestISO_8601Parsing_WrongFormat)
+TEST_F(DateTimeTest, TestISO_8601Parsing_WrongFormat)
 {
     const char* gmtDateStr = "2002-10-02";
     DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
     ASSERT_FALSE(gmtDate.WasParseSuccessful());
 }
 
-TEST(DateTimeTest, TestISO_8601BasicParsing_WrongFormat)
+TEST_F(DateTimeTest, TestISO_8601BasicParsing_WrongFormat)
 {
     const char* gmtDateStr = "2002-10-02";
     DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601_BASIC);
     ASSERT_FALSE(gmtDate.WasParseSuccessful());
 }
 
-TEST(DateTimeTest, TestUNIX_EPOCHParsing)
+TEST_F(DateTimeTest, TestUNIX_EPOCHParsing)
 {
     double gmtDateDbl = 1033545909;
     DateTime gmtDate(gmtDateDbl);
@@ -205,7 +209,7 @@ TEST(DateTimeTest, TestUNIX_EPOCHParsing)
     ASSERT_EQ("20021002T080509Z", gmtDate.ToGmtString(DateFormat::ISO_8601_BASIC));
 }
 
-TEST(DateTimeTest, TestMillisParsing)
+TEST_F(DateTimeTest, TestMillisParsing)
 {
     int64_t gmtDateMillis = 1033545909000;
     DateTime gmtDate(gmtDateMillis);
@@ -223,7 +227,7 @@ TEST(DateTimeTest, TestMillisParsing)
     ASSERT_EQ("20021002T080509Z", gmtDate.ToGmtString(DateFormat::ISO_8601_BASIC));
 }
 
-TEST(DateTimeTest, TestFormatAutoDetect)
+TEST_F(DateTimeTest, TestFormatAutoDetect)
 {
     const char rfcDate[] = "Wed, 02 Oct 2002 08:05:09 GMT";
     DateTime parsedRFCDate(rfcDate, DateFormat::AutoDetect);

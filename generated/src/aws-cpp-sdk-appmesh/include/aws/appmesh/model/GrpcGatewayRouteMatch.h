@@ -114,22 +114,22 @@ namespace Model
 
 
     /**
-     * <p>The port number to match from the request.</p>
+     * <p>The gateway route port to be matched on.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port number to match from the request.</p>
+     * <p>The gateway route port to be matched on.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The port number to match from the request.</p>
+     * <p>The gateway route port to be matched on.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port number to match from the request.</p>
+     * <p>The gateway route port to be matched on.</p>
      */
     inline GrpcGatewayRouteMatch& WithPort(int value) { SetPort(value); return *this;}
 

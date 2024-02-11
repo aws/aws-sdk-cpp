@@ -84,32 +84,32 @@ namespace Model
 
 
     /**
-     * <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline const ConfiguredTableAnalysisRuleType& GetAnalysisRuleType() const{ return m_analysisRuleType; }
 
     /**
-     * <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline bool AnalysisRuleTypeHasBeenSet() const { return m_analysisRuleTypeHasBeenSet; }
 
     /**
-     * <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline void SetAnalysisRuleType(const ConfiguredTableAnalysisRuleType& value) { m_analysisRuleTypeHasBeenSet = true; m_analysisRuleType = value; }
 
     /**
-     * <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline void SetAnalysisRuleType(ConfiguredTableAnalysisRuleType&& value) { m_analysisRuleTypeHasBeenSet = true; m_analysisRuleType = std::move(value); }
 
     /**
-     * <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline CreateConfiguredTableAnalysisRuleRequest& WithAnalysisRuleType(const ConfiguredTableAnalysisRuleType& value) { SetAnalysisRuleType(value); return *this;}
 
     /**
-     * <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline CreateConfiguredTableAnalysisRuleRequest& WithAnalysisRuleType(ConfiguredTableAnalysisRuleType&& value) { SetAnalysisRuleType(std::move(value)); return *this;}
 

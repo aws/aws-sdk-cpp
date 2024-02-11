@@ -33,6 +33,7 @@
 #include <aws/m2/model/GetDataSetImportTaskResult.h>
 #include <aws/m2/model/GetDeploymentResult.h>
 #include <aws/m2/model/GetEnvironmentResult.h>
+#include <aws/m2/model/GetSignedBluinsightsUrlResult.h>
 #include <aws/m2/model/ListApplicationVersionsResult.h>
 #include <aws/m2/model/ListApplicationsResult.h>
 #include <aws/m2/model/ListBatchJobDefinitionsResult.h>
@@ -105,6 +106,7 @@ namespace Aws
       class GetDataSetImportTaskRequest;
       class GetDeploymentRequest;
       class GetEnvironmentRequest;
+      class GetSignedBluinsightsUrlRequest;
       class ListApplicationVersionsRequest;
       class ListApplicationsRequest;
       class ListBatchJobDefinitionsRequest;
@@ -140,6 +142,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetDataSetImportTaskResult, MainframeModernizationError> GetDataSetImportTaskOutcome;
       typedef Aws::Utils::Outcome<GetDeploymentResult, MainframeModernizationError> GetDeploymentOutcome;
       typedef Aws::Utils::Outcome<GetEnvironmentResult, MainframeModernizationError> GetEnvironmentOutcome;
+      typedef Aws::Utils::Outcome<GetSignedBluinsightsUrlResult, MainframeModernizationError> GetSignedBluinsightsUrlOutcome;
       typedef Aws::Utils::Outcome<ListApplicationVersionsResult, MainframeModernizationError> ListApplicationVersionsOutcome;
       typedef Aws::Utils::Outcome<ListApplicationsResult, MainframeModernizationError> ListApplicationsOutcome;
       typedef Aws::Utils::Outcome<ListBatchJobDefinitionsResult, MainframeModernizationError> ListBatchJobDefinitionsOutcome;
@@ -175,6 +178,7 @@ namespace Aws
       typedef std::future<GetDataSetImportTaskOutcome> GetDataSetImportTaskOutcomeCallable;
       typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
       typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
+      typedef std::future<GetSignedBluinsightsUrlOutcome> GetSignedBluinsightsUrlOutcomeCallable;
       typedef std::future<ListApplicationVersionsOutcome> ListApplicationVersionsOutcomeCallable;
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
       typedef std::future<ListBatchJobDefinitionsOutcome> ListBatchJobDefinitionsOutcomeCallable;
@@ -213,6 +217,7 @@ namespace Aws
     typedef std::function<void(const MainframeModernizationClient*, const Model::GetDataSetImportTaskRequest&, const Model::GetDataSetImportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSetImportTaskResponseReceivedHandler;
     typedef std::function<void(const MainframeModernizationClient*, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentResponseReceivedHandler;
     typedef std::function<void(const MainframeModernizationClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentResponseReceivedHandler;
+    typedef std::function<void(const MainframeModernizationClient*, const Model::GetSignedBluinsightsUrlRequest&, const Model::GetSignedBluinsightsUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSignedBluinsightsUrlResponseReceivedHandler;
     typedef std::function<void(const MainframeModernizationClient*, const Model::ListApplicationVersionsRequest&, const Model::ListApplicationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationVersionsResponseReceivedHandler;
     typedef std::function<void(const MainframeModernizationClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const MainframeModernizationClient*, const Model::ListBatchJobDefinitionsRequest&, const Model::ListBatchJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBatchJobDefinitionsResponseReceivedHandler;

@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The databse engine used for your source or target endpoint.</p>
+     * <p>The database engine used for your source or target endpoint.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p>The databse engine used for your source or target endpoint.</p>
+     * <p>The database engine used for your source or target endpoint.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
-     * <p>The databse engine used for your source or target endpoint.</p>
+     * <p>The database engine used for your source or target endpoint.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p>The databse engine used for your source or target endpoint.</p>
+     * <p>The database engine used for your source or target endpoint.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
-     * <p>The databse engine used for your source or target endpoint.</p>
+     * <p>The database engine used for your source or target endpoint.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p>The databse engine used for your source or target endpoint.</p>
+     * <p>The database engine used for your source or target endpoint.</p>
      */
     inline DescribeEndpointSettingsRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p>The databse engine used for your source or target endpoint.</p>
+     * <p>The database engine used for your source or target endpoint.</p>
      */
     inline DescribeEndpointSettingsRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
-     * <p>The databse engine used for your source or target endpoint.</p>
+     * <p>The database engine used for your source or target endpoint.</p>
      */
     inline DescribeEndpointSettingsRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 

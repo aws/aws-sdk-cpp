@@ -16,7 +16,7 @@ CreateServiceProfileRequest::CreateServiceProfileRequest() :
     m_nameHasBeenSet(false),
     m_loRaWANHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

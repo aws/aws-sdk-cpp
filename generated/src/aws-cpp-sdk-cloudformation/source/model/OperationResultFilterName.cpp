@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationResultFilterName::NOT_SET:
+            return {};
           case OperationResultFilterName::OPERATION_RESULT_STATUS:
             return "OPERATION_RESULT_STATUS";
           default:

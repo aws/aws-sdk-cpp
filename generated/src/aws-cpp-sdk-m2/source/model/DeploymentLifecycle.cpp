@@ -23,6 +23,7 @@ namespace Aws
         static const int Deploying_HASH = HashingUtils::HashString("Deploying");
         static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int Updating_Deployment_HASH = HashingUtils::HashString("Updating Deployment");
 
 
         DeploymentLifecycle GetDeploymentLifecycleForName(const Aws::String& name)
@@ -40,6 +41,10 @@ namespace Aws
           {
             return DeploymentLifecycle::Failed;
           }
+          else if (hashCode == Updating_Deployment_HASH)
+          {
+            return DeploymentLifecycle::Updating_Deployment;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentLifecycle::NOT_SET:
+            return {};
           case DeploymentLifecycle::Deploying:
             return "Deploying";
           case DeploymentLifecycle::Succeeded:
             return "Succeeded";
           case DeploymentLifecycle::Failed:
             return "Failed";
+          case DeploymentLifecycle::Updating_Deployment:
+            return "Updating Deployment";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

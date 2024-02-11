@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterCondition::NOT_SET:
+            return {};
           case FilterCondition::EQ:
             return "EQ";
           case FilterCondition::IN:

@@ -87,15 +87,21 @@ DescribeSimulationResult& DescribeSimulationResult::operator =(const Aws::Amazon
 
   }
 
-  if(jsonValue.ValueExists("SchemaError"))
-  {
-    m_schemaError = jsonValue.GetString("SchemaError");
-
-  }
-
   if(jsonValue.ValueExists("SchemaS3Location"))
   {
     m_schemaS3Location = jsonValue.GetObject("SchemaS3Location");
+
+  }
+
+  if(jsonValue.ValueExists("SnapshotS3Location"))
+  {
+    m_snapshotS3Location = jsonValue.GetObject("SnapshotS3Location");
+
+  }
+
+  if(jsonValue.ValueExists("StartError"))
+  {
+    m_startError = jsonValue.GetString("StartError");
 
   }
 

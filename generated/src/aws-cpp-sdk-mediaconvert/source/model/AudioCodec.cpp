@@ -31,6 +31,7 @@ namespace Aws
         static const int VORBIS_HASH = HashingUtils::HashString("VORBIS");
         static const int OPUS_HASH = HashingUtils::HashString("OPUS");
         static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
+        static const int FLAC_HASH = HashingUtils::HashString("FLAC");
 
 
         AudioCodec GetAudioCodecForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return AudioCodec::PASSTHROUGH;
           }
+          else if (hashCode == FLAC_HASH)
+          {
+            return AudioCodec::FLAC;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -94,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioCodec::NOT_SET:
+            return {};
           case AudioCodec::AAC:
             return "AAC";
           case AudioCodec::MP2:
@@ -116,6 +123,8 @@ namespace Aws
             return "OPUS";
           case AudioCodec::PASSTHROUGH:
             return "PASSTHROUGH";
+          case AudioCodec::FLAC:
+            return "FLAC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

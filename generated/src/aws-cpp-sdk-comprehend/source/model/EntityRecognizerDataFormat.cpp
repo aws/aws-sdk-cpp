@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntityRecognizerDataFormat::NOT_SET:
+            return {};
           case EntityRecognizerDataFormat::COMPREHEND_CSV:
             return "COMPREHEND_CSV";
           case EntityRecognizerDataFormat::AUGMENTED_MANIFEST:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scte35SegmentationCancelIndicator::NOT_SET:
+            return {};
           case Scte35SegmentationCancelIndicator::SEGMENTATION_EVENT_NOT_CANCELED:
             return "SEGMENTATION_EVENT_NOT_CANCELED";
           case Scte35SegmentationCancelIndicator::SEGMENTATION_EVENT_CANCELED:

@@ -919,38 +919,68 @@ namespace Model
 
 
     /**
-     * <p>Enables advanced security risk detection. Set the key
-     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
 
     /**
-     * <p>Enables advanced security risk detection. Set the key
-     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline bool UserPoolAddOnsHasBeenSet() const { return m_userPoolAddOnsHasBeenSet; }
 
     /**
-     * <p>Enables advanced security risk detection. Set the key
-     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline void SetUserPoolAddOns(const UserPoolAddOnsType& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = value; }
 
     /**
-     * <p>Enables advanced security risk detection. Set the key
-     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline void SetUserPoolAddOns(UserPoolAddOnsType&& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = std::move(value); }
 
     /**
-     * <p>Enables advanced security risk detection. Set the key
-     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline UpdateUserPoolRequest& WithUserPoolAddOns(const UserPoolAddOnsType& value) { SetUserPoolAddOns(value); return *this;}
 
     /**
-     * <p>Enables advanced security risk detection. Set the key
-     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     * <p>User pool add-ons. Contains settings for activation of advanced security
+     * features. To log user security information but take no action, set to
+     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
+     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+     * advanced security to a user pool</a>.</p>
      */
     inline UpdateUserPoolRequest& WithUserPoolAddOns(UserPoolAddOnsType&& value) { SetUserPoolAddOns(std::move(value)); return *this;}
 

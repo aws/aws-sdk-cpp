@@ -36,6 +36,7 @@ namespace Aws
         static const int VULNERABILITY_SOURCE_HASH = HashingUtils::HashString("VULNERABILITY_SOURCE");
         static const int INSPECTOR_SCORE_HASH = HashingUtils::HashString("INSPECTOR_SCORE");
         static const int VENDOR_SEVERITY_HASH = HashingUtils::HashString("VENDOR_SEVERITY");
+        static const int EPSS_SCORE_HASH = HashingUtils::HashString("EPSS_SCORE");
 
 
         SortField GetSortFieldForName(const Aws::String& name)
@@ -105,6 +106,10 @@ namespace Aws
           {
             return SortField::VENDOR_SEVERITY;
           }
+          else if (hashCode == EPSS_SCORE_HASH)
+          {
+            return SortField::EPSS_SCORE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -119,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortField::NOT_SET:
+            return {};
           case SortField::AWS_ACCOUNT_ID:
             return "AWS_ACCOUNT_ID";
           case SortField::FINDING_TYPE:
@@ -151,6 +158,8 @@ namespace Aws
             return "INSPECTOR_SCORE";
           case SortField::VENDOR_SEVERITY:
             return "VENDOR_SEVERITY";
+          case SortField::EPSS_SCORE:
+            return "EPSS_SCORE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

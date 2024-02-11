@@ -10,9 +10,11 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/compute-optimizer/model/LambdaFunctionRecommendationFinding.h>
 #include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
+#include <aws/compute-optimizer/model/LambdaEffectiveRecommendationPreferences.h>
 #include <aws/compute-optimizer/model/LambdaFunctionUtilizationMetric.h>
 #include <aws/compute-optimizer/model/LambdaFunctionRecommendationFindingReasonCode.h>
 #include <aws/compute-optimizer/model/LambdaFunctionMemoryRecommendationOption.h>
+#include <aws/compute-optimizer/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -779,6 +781,84 @@ namespace Model
      */
     inline LambdaFunctionRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
 
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline LambdaFunctionRecommendation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline LambdaFunctionRecommendation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline LambdaFunctionRecommendation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline LambdaFunctionRecommendation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> Describes the effective recommendation preferences for Lambda functions.
+     * </p>
+     */
+    inline const LambdaEffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const{ return m_effectiveRecommendationPreferences; }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Lambda functions.
+     * </p>
+     */
+    inline bool EffectiveRecommendationPreferencesHasBeenSet() const { return m_effectiveRecommendationPreferencesHasBeenSet; }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Lambda functions.
+     * </p>
+     */
+    inline void SetEffectiveRecommendationPreferences(const LambdaEffectiveRecommendationPreferences& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = value; }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Lambda functions.
+     * </p>
+     */
+    inline void SetEffectiveRecommendationPreferences(LambdaEffectiveRecommendationPreferences&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::move(value); }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Lambda functions.
+     * </p>
+     */
+    inline LambdaFunctionRecommendation& WithEffectiveRecommendationPreferences(const LambdaEffectiveRecommendationPreferences& value) { SetEffectiveRecommendationPreferences(value); return *this;}
+
+    /**
+     * <p> Describes the effective recommendation preferences for Lambda functions.
+     * </p>
+     */
+    inline LambdaFunctionRecommendation& WithEffectiveRecommendationPreferences(LambdaEffectiveRecommendationPreferences&& value) { SetEffectiveRecommendationPreferences(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_functionArn;
@@ -816,6 +896,12 @@ namespace Model
 
     CurrentPerformanceRisk m_currentPerformanceRisk;
     bool m_currentPerformanceRiskHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    LambdaEffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
+    bool m_effectiveRecommendationPreferencesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FHIRVersion::NOT_SET:
+            return {};
           case FHIRVersion::R4:
             return "R4";
           default:

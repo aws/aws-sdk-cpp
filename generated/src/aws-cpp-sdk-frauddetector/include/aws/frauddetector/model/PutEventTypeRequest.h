@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/frauddetector/model/EventIngestion.h>
+#include <aws/frauddetector/model/EventOrchestration.h>
 #include <aws/frauddetector/model/Tag.h>
 #include <utility>
 
@@ -267,32 +268,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     * <p>Specifies if ingestion is enabled or disabled.</p>
      */
     inline const EventIngestion& GetEventIngestion() const{ return m_eventIngestion; }
 
     /**
-     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     * <p>Specifies if ingestion is enabled or disabled.</p>
      */
     inline bool EventIngestionHasBeenSet() const { return m_eventIngestionHasBeenSet; }
 
     /**
-     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     * <p>Specifies if ingestion is enabled or disabled.</p>
      */
     inline void SetEventIngestion(const EventIngestion& value) { m_eventIngestionHasBeenSet = true; m_eventIngestion = value; }
 
     /**
-     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     * <p>Specifies if ingestion is enabled or disabled.</p>
      */
     inline void SetEventIngestion(EventIngestion&& value) { m_eventIngestionHasBeenSet = true; m_eventIngestion = std::move(value); }
 
     /**
-     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     * <p>Specifies if ingestion is enabled or disabled.</p>
      */
     inline PutEventTypeRequest& WithEventIngestion(const EventIngestion& value) { SetEventIngestion(value); return *this;}
 
     /**
-     * <p>Specifies if ingenstion is enabled or disabled.</p>
+     * <p>Specifies if ingestion is enabled or disabled.</p>
      */
     inline PutEventTypeRequest& WithEventIngestion(EventIngestion&& value) { SetEventIngestion(std::move(value)); return *this;}
 
@@ -337,6 +338,43 @@ namespace Model
      */
     inline PutEventTypeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Enables or disables event orchestration. If enabled, you can send event
+     * predictions to select AWS services for downstream processing of the events.</p>
+     */
+    inline const EventOrchestration& GetEventOrchestration() const{ return m_eventOrchestration; }
+
+    /**
+     * <p>Enables or disables event orchestration. If enabled, you can send event
+     * predictions to select AWS services for downstream processing of the events.</p>
+     */
+    inline bool EventOrchestrationHasBeenSet() const { return m_eventOrchestrationHasBeenSet; }
+
+    /**
+     * <p>Enables or disables event orchestration. If enabled, you can send event
+     * predictions to select AWS services for downstream processing of the events.</p>
+     */
+    inline void SetEventOrchestration(const EventOrchestration& value) { m_eventOrchestrationHasBeenSet = true; m_eventOrchestration = value; }
+
+    /**
+     * <p>Enables or disables event orchestration. If enabled, you can send event
+     * predictions to select AWS services for downstream processing of the events.</p>
+     */
+    inline void SetEventOrchestration(EventOrchestration&& value) { m_eventOrchestrationHasBeenSet = true; m_eventOrchestration = std::move(value); }
+
+    /**
+     * <p>Enables or disables event orchestration. If enabled, you can send event
+     * predictions to select AWS services for downstream processing of the events.</p>
+     */
+    inline PutEventTypeRequest& WithEventOrchestration(const EventOrchestration& value) { SetEventOrchestration(value); return *this;}
+
+    /**
+     * <p>Enables or disables event orchestration. If enabled, you can send event
+     * predictions to select AWS services for downstream processing of the events.</p>
+     */
+    inline PutEventTypeRequest& WithEventOrchestration(EventOrchestration&& value) { SetEventOrchestration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -359,6 +397,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    EventOrchestration m_eventOrchestration;
+    bool m_eventOrchestrationHasBeenSet = false;
   };
 
 } // namespace Model

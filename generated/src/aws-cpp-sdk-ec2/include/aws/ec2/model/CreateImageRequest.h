@@ -40,58 +40,114 @@ namespace Model
   public:
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline CreateImageRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline CreateImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline CreateImageRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>The block device mappings. This parameter cannot be used to modify the
-     * encryption status of existing volumes or snapshots. To create an AMI with
-     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline CreateImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
@@ -269,62 +325,58 @@ namespace Model
 
 
     /**
-     * <p>By default, when Amazon EC2 creates the new AMI, it reboots the instance so
-     * that it can take snapshots of the attached volumes while data is at rest, in
-     * order to ensure a consistent state. You can set the <code>NoReboot</code>
-     * parameter to <code>true</code> in the API request, or use the
-     * <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting
-     * down and rebooting the instance.</p>  <p>If you choose to bypass the
-     * shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     * <code>true</code> in the API request, or by using the <code>--no-reboot</code>
-     * option in the CLI, we can't guarantee the file system integrity of the created
-     * image.</p>  <p>Default: <code>false</code> (follow standard reboot
-     * process)</p>
+     * <p>Indicates whether or not the instance should be automatically rebooted before
+     * creating the image. Specify one of the following values:</p> <ul> <li> <p>
+     * <code>true</code> - The instance is not rebooted before creating the image. This
+     * creates crash-consistent snapshots that include only the data that has been
+     * written to the volumes at the time the snapshots are created. Buffered data and
+     * data in memory that has not yet been written to the volumes is not included in
+     * the snapshots.</p> </li> <li> <p> <code>false</code> - The instance is rebooted
+     * before creating the image. This ensures that all buffered data and data in
+     * memory is written to the volumes before the snapshots are created.</p> </li>
+     * </ul> <p>Default: <code>false</code> </p>
      */
     inline bool GetNoReboot() const{ return m_noReboot; }
 
     /**
-     * <p>By default, when Amazon EC2 creates the new AMI, it reboots the instance so
-     * that it can take snapshots of the attached volumes while data is at rest, in
-     * order to ensure a consistent state. You can set the <code>NoReboot</code>
-     * parameter to <code>true</code> in the API request, or use the
-     * <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting
-     * down and rebooting the instance.</p>  <p>If you choose to bypass the
-     * shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     * <code>true</code> in the API request, or by using the <code>--no-reboot</code>
-     * option in the CLI, we can't guarantee the file system integrity of the created
-     * image.</p>  <p>Default: <code>false</code> (follow standard reboot
-     * process)</p>
+     * <p>Indicates whether or not the instance should be automatically rebooted before
+     * creating the image. Specify one of the following values:</p> <ul> <li> <p>
+     * <code>true</code> - The instance is not rebooted before creating the image. This
+     * creates crash-consistent snapshots that include only the data that has been
+     * written to the volumes at the time the snapshots are created. Buffered data and
+     * data in memory that has not yet been written to the volumes is not included in
+     * the snapshots.</p> </li> <li> <p> <code>false</code> - The instance is rebooted
+     * before creating the image. This ensures that all buffered data and data in
+     * memory is written to the volumes before the snapshots are created.</p> </li>
+     * </ul> <p>Default: <code>false</code> </p>
      */
     inline bool NoRebootHasBeenSet() const { return m_noRebootHasBeenSet; }
 
     /**
-     * <p>By default, when Amazon EC2 creates the new AMI, it reboots the instance so
-     * that it can take snapshots of the attached volumes while data is at rest, in
-     * order to ensure a consistent state. You can set the <code>NoReboot</code>
-     * parameter to <code>true</code> in the API request, or use the
-     * <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting
-     * down and rebooting the instance.</p>  <p>If you choose to bypass the
-     * shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     * <code>true</code> in the API request, or by using the <code>--no-reboot</code>
-     * option in the CLI, we can't guarantee the file system integrity of the created
-     * image.</p>  <p>Default: <code>false</code> (follow standard reboot
-     * process)</p>
+     * <p>Indicates whether or not the instance should be automatically rebooted before
+     * creating the image. Specify one of the following values:</p> <ul> <li> <p>
+     * <code>true</code> - The instance is not rebooted before creating the image. This
+     * creates crash-consistent snapshots that include only the data that has been
+     * written to the volumes at the time the snapshots are created. Buffered data and
+     * data in memory that has not yet been written to the volumes is not included in
+     * the snapshots.</p> </li> <li> <p> <code>false</code> - The instance is rebooted
+     * before creating the image. This ensures that all buffered data and data in
+     * memory is written to the volumes before the snapshots are created.</p> </li>
+     * </ul> <p>Default: <code>false</code> </p>
      */
     inline void SetNoReboot(bool value) { m_noRebootHasBeenSet = true; m_noReboot = value; }
 
     /**
-     * <p>By default, when Amazon EC2 creates the new AMI, it reboots the instance so
-     * that it can take snapshots of the attached volumes while data is at rest, in
-     * order to ensure a consistent state. You can set the <code>NoReboot</code>
-     * parameter to <code>true</code> in the API request, or use the
-     * <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting
-     * down and rebooting the instance.</p>  <p>If you choose to bypass the
-     * shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     * <code>true</code> in the API request, or by using the <code>--no-reboot</code>
-     * option in the CLI, we can't guarantee the file system integrity of the created
-     * image.</p>  <p>Default: <code>false</code> (follow standard reboot
-     * process)</p>
+     * <p>Indicates whether or not the instance should be automatically rebooted before
+     * creating the image. Specify one of the following values:</p> <ul> <li> <p>
+     * <code>true</code> - The instance is not rebooted before creating the image. This
+     * creates crash-consistent snapshots that include only the data that has been
+     * written to the volumes at the time the snapshots are created. Buffered data and
+     * data in memory that has not yet been written to the volumes is not included in
+     * the snapshots.</p> </li> <li> <p> <code>false</code> - The instance is rebooted
+     * before creating the image. This ensures that all buffered data and data in
+     * memory is written to the volumes before the snapshots are created.</p> </li>
+     * </ul> <p>Default: <code>false</code> </p>
      */
     inline CreateImageRequest& WithNoReboot(bool value) { SetNoReboot(value); return *this;}
 

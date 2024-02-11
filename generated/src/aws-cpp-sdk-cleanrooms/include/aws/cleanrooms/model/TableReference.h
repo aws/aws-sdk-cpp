@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>A pointer to the dataset that underlies this table. Currently, this can only
-   * be an AWS Glue table.</p><p><h3>See Also:</h3>   <a
+   * be an Glue table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/TableReference">AWS
    * API Reference</a></p>
    */
@@ -39,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>If present, a reference to the AWS Glue table referred to by this table
+     * <p>If present, a reference to the Glue table referred to by this table
      * reference.</p>
      */
     inline const GlueTableReference& GetGlue() const{ return m_glue; }
 
     /**
-     * <p>If present, a reference to the AWS Glue table referred to by this table
+     * <p>If present, a reference to the Glue table referred to by this table
      * reference.</p>
      */
     inline bool GlueHasBeenSet() const { return m_glueHasBeenSet; }
 
     /**
-     * <p>If present, a reference to the AWS Glue table referred to by this table
+     * <p>If present, a reference to the Glue table referred to by this table
      * reference.</p>
      */
     inline void SetGlue(const GlueTableReference& value) { m_glueHasBeenSet = true; m_glue = value; }
 
     /**
-     * <p>If present, a reference to the AWS Glue table referred to by this table
+     * <p>If present, a reference to the Glue table referred to by this table
      * reference.</p>
      */
     inline void SetGlue(GlueTableReference&& value) { m_glueHasBeenSet = true; m_glue = std::move(value); }
 
     /**
-     * <p>If present, a reference to the AWS Glue table referred to by this table
+     * <p>If present, a reference to the Glue table referred to by this table
      * reference.</p>
      */
     inline TableReference& WithGlue(const GlueTableReference& value) { SetGlue(value); return *this;}
 
     /**
-     * <p>If present, a reference to the AWS Glue table referred to by this table
+     * <p>If present, a reference to the Glue table referred to by this table
      * reference.</p>
      */
     inline TableReference& WithGlue(GlueTableReference&& value) { SetGlue(std::move(value)); return *this;}

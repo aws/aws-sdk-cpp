@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputResolution::NOT_SET:
+            return {};
           case InputResolution::SD:
             return "SD";
           case InputResolution::HD:

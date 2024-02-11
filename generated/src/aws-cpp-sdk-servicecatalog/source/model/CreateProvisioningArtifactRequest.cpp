@@ -16,7 +16,7 @@ CreateProvisioningArtifactRequest::CreateProvisioningArtifactRequest() :
     m_acceptLanguageHasBeenSet(false),
     m_productIdHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

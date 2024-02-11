@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrustAnchorType::NOT_SET:
+            return {};
           case TrustAnchorType::AWS_ACM_PCA:
             return "AWS_ACM_PCA";
           case TrustAnchorType::CERTIFICATE_BUNDLE:

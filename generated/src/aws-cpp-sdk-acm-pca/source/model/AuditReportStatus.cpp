@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuditReportStatus::NOT_SET:
+            return {};
           case AuditReportStatus::CREATING:
             return "CREATING";
           case AuditReportStatus::SUCCESS:

@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/InferenceExecutionConfig.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/DeploymentRecommendation.h>
 #include <utility>
 
 namespace Aws
@@ -220,40 +221,50 @@ namespace Model
 
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
-     * to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this model has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
-     * to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this model has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
-     * to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this model has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
-     * to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this model has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
      */
     inline DescribeModelResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
-     * to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this model has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
      */
@@ -341,6 +352,32 @@ namespace Model
     inline DescribeModelResult& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
 
 
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline const DeploymentRecommendation& GetDeploymentRecommendation() const{ return m_deploymentRecommendation; }
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline void SetDeploymentRecommendation(const DeploymentRecommendation& value) { m_deploymentRecommendation = value; }
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline void SetDeploymentRecommendation(DeploymentRecommendation&& value) { m_deploymentRecommendation = std::move(value); }
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline DescribeModelResult& WithDeploymentRecommendation(const DeploymentRecommendation& value) { SetDeploymentRecommendation(value); return *this;}
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline DescribeModelResult& WithDeploymentRecommendation(DeploymentRecommendation&& value) { SetDeploymentRecommendation(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -381,6 +418,8 @@ namespace Model
     Aws::String m_modelArn;
 
     bool m_enableNetworkIsolation;
+
+    DeploymentRecommendation m_deploymentRecommendation;
 
     Aws::String m_requestId;
   };

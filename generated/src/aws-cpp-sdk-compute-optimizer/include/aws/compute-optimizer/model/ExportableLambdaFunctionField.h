@@ -41,7 +41,12 @@ namespace Model
     CurrentPerformanceRisk,
     RecommendationOptionsSavingsOpportunityPercentage,
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
-    RecommendationOptionsEstimatedMonthlySavingsValue
+    RecommendationOptionsEstimatedMonthlySavingsValue,
+    Tags,
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
   };
 
 namespace ExportableLambdaFunctionFieldMapper

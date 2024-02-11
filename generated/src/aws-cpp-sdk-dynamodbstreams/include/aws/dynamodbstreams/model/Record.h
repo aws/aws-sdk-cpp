@@ -227,50 +227,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <code>aws:dynamodb</code>.</p>
+     * <p>The Amazon Web Services service from which the stream record originated. For
+     * DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline const Aws::String& GetEventSource() const{ return m_eventSource; }
 
     /**
-     * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <code>aws:dynamodb</code>.</p>
+     * <p>The Amazon Web Services service from which the stream record originated. For
+     * DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
 
     /**
-     * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <code>aws:dynamodb</code>.</p>
+     * <p>The Amazon Web Services service from which the stream record originated. For
+     * DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline void SetEventSource(const Aws::String& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
 
     /**
-     * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <code>aws:dynamodb</code>.</p>
+     * <p>The Amazon Web Services service from which the stream record originated. For
+     * DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
 
     /**
-     * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <code>aws:dynamodb</code>.</p>
+     * <p>The Amazon Web Services service from which the stream record originated. For
+     * DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline void SetEventSource(const char* value) { m_eventSourceHasBeenSet = true; m_eventSource.assign(value); }
 
     /**
-     * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <code>aws:dynamodb</code>.</p>
+     * <p>The Amazon Web Services service from which the stream record originated. For
+     * DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline Record& WithEventSource(const Aws::String& value) { SetEventSource(value); return *this;}
 
     /**
-     * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <code>aws:dynamodb</code>.</p>
+     * <p>The Amazon Web Services service from which the stream record originated. For
+     * DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline Record& WithEventSource(Aws::String&& value) { SetEventSource(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <code>aws:dynamodb</code>.</p>
+     * <p>The Amazon Web Services service from which the stream record originated. For
+     * DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline Record& WithEventSource(const char* value) { SetEventSource(value); return *this;}
 

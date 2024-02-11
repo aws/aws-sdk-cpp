@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BehaviorType::NOT_SET:
+            return {};
           case BehaviorType::ROUTE_CURRENT_CHANNEL_ONLY:
             return "ROUTE_CURRENT_CHANNEL_ONLY";
           case BehaviorType::ROUTE_ANY_CHANNEL:

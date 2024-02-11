@@ -87,6 +87,9 @@ namespace Aws
         static const int TOKEN_DOMAIN_HASH = HashingUtils::HashString("TOKEN_DOMAIN");
         static const int ATP_RULE_SET_RESPONSE_INSPECTION_HASH = HashingUtils::HashString("ATP_RULE_SET_RESPONSE_INSPECTION");
         static const int ASSOCIATED_RESOURCE_TYPE_HASH = HashingUtils::HashString("ASSOCIATED_RESOURCE_TYPE");
+        static const int SCOPE_DOWN_HASH = HashingUtils::HashString("SCOPE_DOWN");
+        static const int CUSTOM_KEYS_HASH = HashingUtils::HashString("CUSTOM_KEYS");
+        static const int ACP_RULE_SET_RESPONSE_INSPECTION_HASH = HashingUtils::HashString("ACP_RULE_SET_RESPONSE_INSPECTION");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -360,6 +363,18 @@ namespace Aws
           {
             return ParameterExceptionField::ASSOCIATED_RESOURCE_TYPE;
           }
+          else if (hashCode == SCOPE_DOWN_HASH)
+          {
+            return ParameterExceptionField::SCOPE_DOWN;
+          }
+          else if (hashCode == CUSTOM_KEYS_HASH)
+          {
+            return ParameterExceptionField::CUSTOM_KEYS;
+          }
+          else if (hashCode == ACP_RULE_SET_RESPONSE_INSPECTION_HASH)
+          {
+            return ParameterExceptionField::ACP_RULE_SET_RESPONSE_INSPECTION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -374,6 +389,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParameterExceptionField::NOT_SET:
+            return {};
           case ParameterExceptionField::WEB_ACL:
             return "WEB_ACL";
           case ParameterExceptionField::RULE_GROUP:
@@ -508,6 +525,12 @@ namespace Aws
             return "ATP_RULE_SET_RESPONSE_INSPECTION";
           case ParameterExceptionField::ASSOCIATED_RESOURCE_TYPE:
             return "ASSOCIATED_RESOURCE_TYPE";
+          case ParameterExceptionField::SCOPE_DOWN:
+            return "SCOPE_DOWN";
+          case ParameterExceptionField::CUSTOM_KEYS:
+            return "CUSTOM_KEYS";
+          case ParameterExceptionField::ACP_RULE_SET_RESPONSE_INSPECTION:
+            return "ACP_RULE_SET_RESPONSE_INSPECTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

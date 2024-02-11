@@ -141,22 +141,52 @@ namespace Model
     inline QueueSearchCriteria& AddAndConditions(QueueSearchCriteria&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>A leaf node condition which can be used to specify a string condition.</p>
+     *  <p>The currently supported values for <code>FieldName</code> are
+     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
+     * 
+     */
     inline const StringCondition& GetStringCondition() const{ return m_stringCondition; }
 
-    
+    /**
+     * <p>A leaf node condition which can be used to specify a string condition.</p>
+     *  <p>The currently supported values for <code>FieldName</code> are
+     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
+     * 
+     */
     inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
 
-    
+    /**
+     * <p>A leaf node condition which can be used to specify a string condition.</p>
+     *  <p>The currently supported values for <code>FieldName</code> are
+     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
+     * 
+     */
     inline void SetStringCondition(const StringCondition& value) { m_stringConditionHasBeenSet = true; m_stringCondition = value; }
 
-    
+    /**
+     * <p>A leaf node condition which can be used to specify a string condition.</p>
+     *  <p>The currently supported values for <code>FieldName</code> are
+     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
+     * 
+     */
     inline void SetStringCondition(StringCondition&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::move(value); }
 
-    
+    /**
+     * <p>A leaf node condition which can be used to specify a string condition.</p>
+     *  <p>The currently supported values for <code>FieldName</code> are
+     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
+     * 
+     */
     inline QueueSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
 
-    
+    /**
+     * <p>A leaf node condition which can be used to specify a string condition.</p>
+     *  <p>The currently supported values for <code>FieldName</code> are
+     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
+     * 
+     */
     inline QueueSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
 
 

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RedshiftResultCompressionType::NOT_SET:
+            return {};
           case RedshiftResultCompressionType::None:
             return "None";
           case RedshiftResultCompressionType::GZIP:

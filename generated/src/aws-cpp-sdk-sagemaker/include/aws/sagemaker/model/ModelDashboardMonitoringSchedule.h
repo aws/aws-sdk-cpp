@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/MonitoringScheduleConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/MonitoringExecutionSummary.h>
+#include <aws/sagemaker/model/BatchTransformInput.h>
 #include <aws/sagemaker/model/MonitoringAlertSummary.h>
 #include <utility>
 
@@ -411,6 +412,25 @@ namespace Model
     
     inline ModelDashboardMonitoringSchedule& WithLastMonitoringExecutionSummary(MonitoringExecutionSummary&& value) { SetLastMonitoringExecutionSummary(std::move(value)); return *this;}
 
+
+    
+    inline const BatchTransformInput& GetBatchTransformInput() const{ return m_batchTransformInput; }
+
+    
+    inline bool BatchTransformInputHasBeenSet() const { return m_batchTransformInputHasBeenSet; }
+
+    
+    inline void SetBatchTransformInput(const BatchTransformInput& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = value; }
+
+    
+    inline void SetBatchTransformInput(BatchTransformInput&& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = std::move(value); }
+
+    
+    inline ModelDashboardMonitoringSchedule& WithBatchTransformInput(const BatchTransformInput& value) { SetBatchTransformInput(value); return *this;}
+
+    
+    inline ModelDashboardMonitoringSchedule& WithBatchTransformInput(BatchTransformInput&& value) { SetBatchTransformInput(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_monitoringScheduleArn;
@@ -445,6 +465,9 @@ namespace Model
 
     MonitoringExecutionSummary m_lastMonitoringExecutionSummary;
     bool m_lastMonitoringExecutionSummaryHasBeenSet = false;
+
+    BatchTransformInput m_batchTransformInput;
+    bool m_batchTransformInputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateRecommendationTemplateRequest::CreateRecommendationTemplateRequest() : 
     m_assessmentArnHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_format(TemplateFormat::NOT_SET),
     m_formatHasBeenSet(false),

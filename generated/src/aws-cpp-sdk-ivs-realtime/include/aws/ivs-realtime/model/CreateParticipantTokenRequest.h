@@ -203,26 +203,26 @@ namespace Model
 
 
     /**
-     * <p>Duration (in minutes), after which the token expires. Default: 60 (1
-     * hour).</p>
+     * <p>Duration (in minutes), after which the token expires. Default: 720 (12
+     * hours).</p>
      */
     inline int GetDuration() const{ return m_duration; }
 
     /**
-     * <p>Duration (in minutes), after which the token expires. Default: 60 (1
-     * hour).</p>
+     * <p>Duration (in minutes), after which the token expires. Default: 720 (12
+     * hours).</p>
      */
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
 
     /**
-     * <p>Duration (in minutes), after which the token expires. Default: 60 (1
-     * hour).</p>
+     * <p>Duration (in minutes), after which the token expires. Default: 720 (12
+     * hours).</p>
      */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
-     * <p>Duration (in minutes), after which the token expires. Default: 60 (1
-     * hour).</p>
+     * <p>Duration (in minutes), after which the token expires. Default: 720 (12
+     * hours).</p>
      */
     inline CreateParticipantTokenRequest& WithDuration(int value) { SetDuration(value); return *this;}
 

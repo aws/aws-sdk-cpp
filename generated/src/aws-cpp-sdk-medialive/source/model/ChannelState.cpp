@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelState::NOT_SET:
+            return {};
           case ChannelState::CREATING:
             return "CREATING";
           case ChannelState::CREATE_FAILED:

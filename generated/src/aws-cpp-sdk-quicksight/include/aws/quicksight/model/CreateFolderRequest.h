@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/FolderType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/SharingModel.h>
 #include <aws/quicksight/model/ResourcePermission.h>
 #include <aws/quicksight/model/Tag.h>
 #include <utility>
@@ -358,6 +359,43 @@ namespace Model
      */
     inline CreateFolderRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An optional parameter that determines the sharing scope of the folder. The
+     * default value for this parameter is <code>ACCOUNT</code>.</p>
+     */
+    inline const SharingModel& GetSharingModel() const{ return m_sharingModel; }
+
+    /**
+     * <p>An optional parameter that determines the sharing scope of the folder. The
+     * default value for this parameter is <code>ACCOUNT</code>.</p>
+     */
+    inline bool SharingModelHasBeenSet() const { return m_sharingModelHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that determines the sharing scope of the folder. The
+     * default value for this parameter is <code>ACCOUNT</code>.</p>
+     */
+    inline void SetSharingModel(const SharingModel& value) { m_sharingModelHasBeenSet = true; m_sharingModel = value; }
+
+    /**
+     * <p>An optional parameter that determines the sharing scope of the folder. The
+     * default value for this parameter is <code>ACCOUNT</code>.</p>
+     */
+    inline void SetSharingModel(SharingModel&& value) { m_sharingModelHasBeenSet = true; m_sharingModel = std::move(value); }
+
+    /**
+     * <p>An optional parameter that determines the sharing scope of the folder. The
+     * default value for this parameter is <code>ACCOUNT</code>.</p>
+     */
+    inline CreateFolderRequest& WithSharingModel(const SharingModel& value) { SetSharingModel(value); return *this;}
+
+    /**
+     * <p>An optional parameter that determines the sharing scope of the folder. The
+     * default value for this parameter is <code>ACCOUNT</code>.</p>
+     */
+    inline CreateFolderRequest& WithSharingModel(SharingModel&& value) { SetSharingModel(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_awsAccountId;
@@ -380,6 +418,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    SharingModel m_sharingModel;
+    bool m_sharingModelHasBeenSet = false;
   };
 
 } // namespace Model

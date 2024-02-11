@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
+#include <aws/rds/model/RdsCustomClusterConfiguration.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
 
@@ -122,11 +123,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline const Aws::String& GetRestoreType() const{ return m_restoreType; }
 
@@ -135,11 +135,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline bool RestoreTypeHasBeenSet() const { return m_restoreTypeHasBeenSet; }
 
@@ -148,11 +147,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetRestoreType(const Aws::String& value) { m_restoreTypeHasBeenSet = true; m_restoreType = value; }
 
@@ -161,11 +159,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetRestoreType(Aws::String&& value) { m_restoreTypeHasBeenSet = true; m_restoreType = std::move(value); }
 
@@ -174,11 +171,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetRestoreType(const char* value) { m_restoreTypeHasBeenSet = true; m_restoreType.assign(value); }
 
@@ -187,11 +183,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const Aws::String& value) { SetRestoreType(value); return *this;}
 
@@ -200,11 +195,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(Aws::String&& value) { SetRestoreType(std::move(value)); return *this;}
 
@@ -213,11 +207,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const char* value) { SetRestoreType(value); return *this;}
 
@@ -373,38 +366,38 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to restore the DB cluster to the latest
-     * restorable backup time. By default, the DB cluster isn't restored to the latest
-     * restorable backup time.</p> <p>Constraints: Can't be specified if
-     * <code>RestoreToTime</code> parameter is provided.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to restore the DB cluster to the latest restorable backup
+     * time. By default, the DB cluster isn't restored to the latest restorable backup
+     * time.</p> <p>Constraints: Can't be specified if <code>RestoreToTime</code>
+     * parameter is provided.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline bool GetUseLatestRestorableTime() const{ return m_useLatestRestorableTime; }
 
     /**
-     * <p>A value that indicates whether to restore the DB cluster to the latest
-     * restorable backup time. By default, the DB cluster isn't restored to the latest
-     * restorable backup time.</p> <p>Constraints: Can't be specified if
-     * <code>RestoreToTime</code> parameter is provided.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to restore the DB cluster to the latest restorable backup
+     * time. By default, the DB cluster isn't restored to the latest restorable backup
+     * time.</p> <p>Constraints: Can't be specified if <code>RestoreToTime</code>
+     * parameter is provided.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline bool UseLatestRestorableTimeHasBeenSet() const { return m_useLatestRestorableTimeHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to restore the DB cluster to the latest
-     * restorable backup time. By default, the DB cluster isn't restored to the latest
-     * restorable backup time.</p> <p>Constraints: Can't be specified if
-     * <code>RestoreToTime</code> parameter is provided.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to restore the DB cluster to the latest restorable backup
+     * time. By default, the DB cluster isn't restored to the latest restorable backup
+     * time.</p> <p>Constraints: Can't be specified if <code>RestoreToTime</code>
+     * parameter is provided.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetUseLatestRestorableTime(bool value) { m_useLatestRestorableTimeHasBeenSet = true; m_useLatestRestorableTime = value; }
 
     /**
-     * <p>A value that indicates whether to restore the DB cluster to the latest
-     * restorable backup time. By default, the DB cluster isn't restored to the latest
-     * restorable backup time.</p> <p>Constraints: Can't be specified if
-     * <code>RestoreToTime</code> parameter is provided.</p> <p>Valid for: Aurora DB
-     * clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to restore the DB cluster to the latest restorable backup
+     * time. By default, the DB cluster isn't restored to the latest restorable backup
+     * time.</p> <p>Constraints: Can't be specified if <code>RestoreToTime</code>
+     * parameter is provided.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithUseLatestRestorableTime(bool value) { SetUseLatestRestorableTime(value); return *this;}
 
@@ -790,9 +783,9 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
@@ -800,9 +793,9 @@ namespace Model
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
@@ -810,9 +803,9 @@ namespace Model
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
@@ -820,9 +813,9 @@ namespace Model
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
@@ -1054,169 +1047,177 @@ namespace Model
 
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters
-     * and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters and
+     * Multi-AZ DB clusters</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters
-     * and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters and
+     * Multi-AZ DB clusters</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters
-     * and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters and
+     * Multi-AZ DB clusters</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters
-     * and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters and
+     * Multi-AZ DB clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p> <p>Valid for:
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p> <p>Valid for:
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p> <p>Valid for:
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p> <p>Valid for:
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
-     * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB cluster. For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation.</p> <p>For Amazon Aurora DB clusters,
+     * Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
@@ -1224,10 +1225,10 @@ namespace Model
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
-     * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB cluster. For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation.</p> <p>For Amazon Aurora DB clusters,
+     * Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
@@ -1235,10 +1236,10 @@ namespace Model
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
-     * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB cluster. For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation.</p> <p>For Amazon Aurora DB clusters,
+     * Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
@@ -1246,10 +1247,10 @@ namespace Model
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
-     * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB cluster. For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation.</p> <p>For Amazon Aurora DB clusters,
+     * Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
@@ -1257,10 +1258,10 @@ namespace Model
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
-     * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB cluster. For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation.</p> <p>For Amazon Aurora DB clusters,
+     * Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
@@ -1268,10 +1269,10 @@ namespace Model
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
-     * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB cluster. For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation.</p> <p>For Amazon Aurora DB clusters,
+     * Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
@@ -1279,10 +1280,10 @@ namespace Model
     inline RestoreDBClusterToPointInTimeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
-     * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB cluster. For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation.</p> <p>For Amazon Aurora DB clusters,
+     * Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
@@ -1290,10 +1291,10 @@ namespace Model
     inline RestoreDBClusterToPointInTimeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
-     * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB cluster. For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation.</p> <p>For Amazon Aurora DB clusters,
+     * Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
@@ -1302,50 +1303,50 @@ namespace Model
 
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
@@ -1482,7 +1483,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline const Aws::String& GetDBClusterInstanceClass() const{ return m_dBClusterInstanceClass; }
@@ -1493,7 +1494,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline bool DBClusterInstanceClassHasBeenSet() const { return m_dBClusterInstanceClassHasBeenSet; }
@@ -1504,7 +1505,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline void SetDBClusterInstanceClass(const Aws::String& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = value; }
@@ -1515,7 +1516,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline void SetDBClusterInstanceClass(Aws::String&& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = std::move(value); }
@@ -1526,7 +1527,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline void SetDBClusterInstanceClass(const char* value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass.assign(value); }
@@ -1537,7 +1538,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterInstanceClass(const Aws::String& value) { SetDBClusterInstanceClass(value); return *this;}
@@ -1548,7 +1549,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterInstanceClass(Aws::String&& value) { SetDBClusterInstanceClass(std::move(value)); return *this;}
@@ -1559,88 +1560,104 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterInstanceClass(const char* value) { SetDBClusterInstanceClass(value); return *this;}
 
 
     /**
-     * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
-     * specified, a value for the <code>Iops</code> parameter is required.</p>
-     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
-     * specified, a value for the <code>Iops</code> parameter is required.</p>
-     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
-     * specified, a value for the <code>Iops</code> parameter is required.</p>
-     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
-     * specified, a value for the <code>Iops</code> parameter is required.</p>
-     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
-     * specified, a value for the <code>Iops</code> parameter is required.</p>
-     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
-     * specified, a value for the <code>Iops</code> parameter is required.</p>
-     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
-     * specified, a value for the <code>Iops</code> parameter is required.</p>
-     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
-     * specified, a value for the <code>Iops</code> parameter is required.</p>
-     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB cluster is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access is not permitted if the security group
-     * assigned to the DB cluster doesn't permit it.</p> <p>When the DB cluster isn't
-     * publicly accessible, it is an internal DB cluster with a DNS name that resolves
-     * to a private IP address.</p> <p>Default: The default behavior varies depending
-     * on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <p>Specifies whether the DB cluster is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB cluster isn't publicly
+     * accessible, it is an internal DB cluster with a DNS name that resolves to a
+     * private IP address.</p> <p>Default: The default behavior varies depending on
+     * whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
      * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
@@ -1656,16 +1673,16 @@ namespace Model
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB cluster is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access is not permitted if the security group
-     * assigned to the DB cluster doesn't permit it.</p> <p>When the DB cluster isn't
-     * publicly accessible, it is an internal DB cluster with a DNS name that resolves
-     * to a private IP address.</p> <p>Default: The default behavior varies depending
-     * on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <p>Specifies whether the DB cluster is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB cluster isn't publicly
+     * accessible, it is an internal DB cluster with a DNS name that resolves to a
+     * private IP address.</p> <p>Default: The default behavior varies depending on
+     * whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
      * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
@@ -1681,16 +1698,16 @@ namespace Model
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB cluster is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access is not permitted if the security group
-     * assigned to the DB cluster doesn't permit it.</p> <p>When the DB cluster isn't
-     * publicly accessible, it is an internal DB cluster with a DNS name that resolves
-     * to a private IP address.</p> <p>Default: The default behavior varies depending
-     * on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <p>Specifies whether the DB cluster is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB cluster isn't publicly
+     * accessible, it is an internal DB cluster with a DNS name that resolves to a
+     * private IP address.</p> <p>Default: The default behavior varies depending on
+     * whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
      * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
@@ -1706,16 +1723,16 @@ namespace Model
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB cluster is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access is not permitted if the security group
-     * assigned to the DB cluster doesn't permit it.</p> <p>When the DB cluster isn't
-     * publicly accessible, it is an internal DB cluster with a DNS name that resolves
-     * to a private IP address.</p> <p>Default: The default behavior varies depending
-     * on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <p>Specifies whether the DB cluster is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB cluster isn't publicly
+     * accessible, it is an internal DB cluster with a DNS name that resolves to a
+     * private IP address.</p> <p>Default: The default behavior varies depending on
+     * whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
      * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
@@ -1796,7 +1813,7 @@ namespace Model
 
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1809,7 +1826,7 @@ namespace Model
     inline const Aws::String& GetNetworkType() const{ return m_networkType; }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1822,7 +1839,7 @@ namespace Model
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1835,7 +1852,7 @@ namespace Model
     inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1848,7 +1865,7 @@ namespace Model
     inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1861,7 +1878,7 @@ namespace Model
     inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1874,7 +1891,7 @@ namespace Model
     inline RestoreDBClusterToPointInTimeRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1887,7 +1904,7 @@ namespace Model
     inline RestoreDBClusterToPointInTimeRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1898,6 +1915,78 @@ namespace Model
      * </p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline const Aws::String& GetSourceDbClusterResourceId() const{ return m_sourceDbClusterResourceId; }
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline bool SourceDbClusterResourceIdHasBeenSet() const { return m_sourceDbClusterResourceIdHasBeenSet; }
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline void SetSourceDbClusterResourceId(const Aws::String& value) { m_sourceDbClusterResourceIdHasBeenSet = true; m_sourceDbClusterResourceId = value; }
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline void SetSourceDbClusterResourceId(Aws::String&& value) { m_sourceDbClusterResourceIdHasBeenSet = true; m_sourceDbClusterResourceId = std::move(value); }
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline void SetSourceDbClusterResourceId(const char* value) { m_sourceDbClusterResourceIdHasBeenSet = true; m_sourceDbClusterResourceId.assign(value); }
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithSourceDbClusterResourceId(const Aws::String& value) { SetSourceDbClusterResourceId(value); return *this;}
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithSourceDbClusterResourceId(Aws::String&& value) { SetSourceDbClusterResourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithSourceDbClusterResourceId(const char* value) { SetSourceDbClusterResourceId(value); return *this;}
+
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const RdsCustomClusterConfiguration& GetRdsCustomClusterConfiguration() const{ return m_rdsCustomClusterConfiguration; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool RdsCustomClusterConfigurationHasBeenSet() const { return m_rdsCustomClusterConfigurationHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { SetRdsCustomClusterConfiguration(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { SetRdsCustomClusterConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -1981,6 +2070,12 @@ namespace Model
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
+
+    Aws::String m_sourceDbClusterResourceId;
+    bool m_sourceDbClusterResourceIdHasBeenSet = false;
+
+    RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
+    bool m_rdsCustomClusterConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

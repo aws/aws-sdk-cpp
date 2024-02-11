@@ -7,6 +7,7 @@
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/wellarchitected/WellArchitectedRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wellarchitected/model/QuestionPriority.h>
 #include <utility>
 
 namespace Aws
@@ -174,6 +175,37 @@ namespace Model
      */
     inline ListAnswersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The priority of the question.</p>
+     */
+    inline const QuestionPriority& GetQuestionPriority() const{ return m_questionPriority; }
+
+    /**
+     * <p>The priority of the question.</p>
+     */
+    inline bool QuestionPriorityHasBeenSet() const { return m_questionPriorityHasBeenSet; }
+
+    /**
+     * <p>The priority of the question.</p>
+     */
+    inline void SetQuestionPriority(const QuestionPriority& value) { m_questionPriorityHasBeenSet = true; m_questionPriority = value; }
+
+    /**
+     * <p>The priority of the question.</p>
+     */
+    inline void SetQuestionPriority(QuestionPriority&& value) { m_questionPriorityHasBeenSet = true; m_questionPriority = std::move(value); }
+
+    /**
+     * <p>The priority of the question.</p>
+     */
+    inline ListAnswersRequest& WithQuestionPriority(const QuestionPriority& value) { SetQuestionPriority(value); return *this;}
+
+    /**
+     * <p>The priority of the question.</p>
+     */
+    inline ListAnswersRequest& WithQuestionPriority(QuestionPriority&& value) { SetQuestionPriority(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workloadId;
@@ -193,6 +225,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    QuestionPriority m_questionPriority;
+    bool m_questionPriorityHasBeenSet = false;
   };
 
 } // namespace Model

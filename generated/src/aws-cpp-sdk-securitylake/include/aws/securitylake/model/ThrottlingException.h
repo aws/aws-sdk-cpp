@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The limit on the number of requests per second was exceeded. </p><p><h3>See
+   * <p>The limit on the number of requests per second was exceeded.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ThrottlingException">AWS
    * API Reference</a></p>
@@ -113,22 +113,22 @@ namespace Model
 
 
     /**
-     * <p>Retry the request after the specified time. </p>
+     * <p>Retry the request after the specified time.</p>
      */
     inline int GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
 
     /**
-     * <p>Retry the request after the specified time. </p>
+     * <p>Retry the request after the specified time.</p>
      */
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
 
     /**
-     * <p>Retry the request after the specified time. </p>
+     * <p>Retry the request after the specified time.</p>
      */
     inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
 
     /**
-     * <p>Retry the request after the specified time. </p>
+     * <p>Retry the request after the specified time.</p>
      */
     inline ThrottlingException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
 

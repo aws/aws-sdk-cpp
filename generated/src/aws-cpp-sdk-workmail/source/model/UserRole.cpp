@@ -23,6 +23,7 @@ namespace Aws
         static const int USER_HASH = HashingUtils::HashString("USER");
         static const int RESOURCE_HASH = HashingUtils::HashString("RESOURCE");
         static const int SYSTEM_USER_HASH = HashingUtils::HashString("SYSTEM_USER");
+        static const int REMOTE_USER_HASH = HashingUtils::HashString("REMOTE_USER");
 
 
         UserRole GetUserRoleForName(const Aws::String& name)
@@ -40,6 +41,10 @@ namespace Aws
           {
             return UserRole::SYSTEM_USER;
           }
+          else if (hashCode == REMOTE_USER_HASH)
+          {
+            return UserRole::REMOTE_USER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserRole::NOT_SET:
+            return {};
           case UserRole::USER:
             return "USER";
           case UserRole::RESOURCE:
             return "RESOURCE";
           case UserRole::SYSTEM_USER:
             return "SYSTEM_USER";
+          case UserRole::REMOTE_USER:
+            return "REMOTE_USER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

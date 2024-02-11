@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanrooms/model/MembershipQueryLogStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/cleanrooms/model/MembershipProtectedQueryResultConfiguration.h>
+#include <aws/cleanrooms/model/MembershipPaymentConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -77,37 +79,37 @@ namespace Model
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline const MembershipQueryLogStatus& GetQueryLogStatus() const{ return m_queryLogStatus; }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline bool QueryLogStatusHasBeenSet() const { return m_queryLogStatusHasBeenSet; }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline void SetQueryLogStatus(const MembershipQueryLogStatus& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = value; }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline void SetQueryLogStatus(MembershipQueryLogStatus&& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = std::move(value); }
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline CreateMembershipRequest& WithQueryLogStatus(const MembershipQueryLogStatus& value) { SetQueryLogStatus(value); return *this;}
 
     /**
      * <p>An indicator as to whether query logging has been enabled or disabled for the
-     * collaboration.</p>
+     * membership.</p>
      */
     inline CreateMembershipRequest& WithQueryLogStatus(MembershipQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
 
@@ -216,6 +218,92 @@ namespace Model
      */
     inline CreateMembershipRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline const MembershipProtectedQueryResultConfiguration& GetDefaultResultConfiguration() const{ return m_defaultResultConfiguration; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline bool DefaultResultConfigurationHasBeenSet() const { return m_defaultResultConfigurationHasBeenSet; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline void SetDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = value; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline void SetDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = std::move(value); }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline CreateMembershipRequest& WithDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { SetDefaultResultConfiguration(value); return *this;}
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline CreateMembershipRequest& WithDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { SetDefaultResultConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p> <p>Not
+     * required if the collaboration member has the member ability to run queries. </p>
+     * <p>Required if the collaboration member doesn't have the member ability to run
+     * queries but is configured as a payer by the collaboration creator. </p>
+     */
+    inline const MembershipPaymentConfiguration& GetPaymentConfiguration() const{ return m_paymentConfiguration; }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p> <p>Not
+     * required if the collaboration member has the member ability to run queries. </p>
+     * <p>Required if the collaboration member doesn't have the member ability to run
+     * queries but is configured as a payer by the collaboration creator. </p>
+     */
+    inline bool PaymentConfigurationHasBeenSet() const { return m_paymentConfigurationHasBeenSet; }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p> <p>Not
+     * required if the collaboration member has the member ability to run queries. </p>
+     * <p>Required if the collaboration member doesn't have the member ability to run
+     * queries but is configured as a payer by the collaboration creator. </p>
+     */
+    inline void SetPaymentConfiguration(const MembershipPaymentConfiguration& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = value; }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p> <p>Not
+     * required if the collaboration member has the member ability to run queries. </p>
+     * <p>Required if the collaboration member doesn't have the member ability to run
+     * queries but is configured as a payer by the collaboration creator. </p>
+     */
+    inline void SetPaymentConfiguration(MembershipPaymentConfiguration&& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = std::move(value); }
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p> <p>Not
+     * required if the collaboration member has the member ability to run queries. </p>
+     * <p>Required if the collaboration member doesn't have the member ability to run
+     * queries but is configured as a payer by the collaboration creator. </p>
+     */
+    inline CreateMembershipRequest& WithPaymentConfiguration(const MembershipPaymentConfiguration& value) { SetPaymentConfiguration(value); return *this;}
+
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member.</p> <p>Not
+     * required if the collaboration member has the member ability to run queries. </p>
+     * <p>Required if the collaboration member doesn't have the member ability to run
+     * queries but is configured as a payer by the collaboration creator. </p>
+     */
+    inline CreateMembershipRequest& WithPaymentConfiguration(MembershipPaymentConfiguration&& value) { SetPaymentConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_collaborationIdentifier;
@@ -226,6 +314,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;
+    bool m_defaultResultConfigurationHasBeenSet = false;
+
+    MembershipPaymentConfiguration m_paymentConfiguration;
+    bool m_paymentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

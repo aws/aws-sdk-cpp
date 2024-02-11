@@ -7,6 +7,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/model/ClaimFilterOption.h>
 #include <utility>
 
 namespace Aws
@@ -37,121 +38,121 @@ namespace Model
     /**
      * <p>A unique identifier for the game server group where the game server is
      * running. If you are not specifying a game server to claim, this value identifies
-     * where you want GameLift FleetIQ to look for an available game server to claim.
-     * </p>
+     * where you want Amazon GameLift FleetIQ to look for an available game server to
+     * claim. </p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
      * running. If you are not specifying a game server to claim, this value identifies
-     * where you want GameLift FleetIQ to look for an available game server to claim.
-     * </p>
+     * where you want Amazon GameLift FleetIQ to look for an available game server to
+     * claim. </p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
      * running. If you are not specifying a game server to claim, this value identifies
-     * where you want GameLift FleetIQ to look for an available game server to claim.
-     * </p>
+     * where you want Amazon GameLift FleetIQ to look for an available game server to
+     * claim. </p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
      * running. If you are not specifying a game server to claim, this value identifies
-     * where you want GameLift FleetIQ to look for an available game server to claim.
-     * </p>
+     * where you want Amazon GameLift FleetIQ to look for an available game server to
+     * claim. </p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
      * running. If you are not specifying a game server to claim, this value identifies
-     * where you want GameLift FleetIQ to look for an available game server to claim.
-     * </p>
+     * where you want Amazon GameLift FleetIQ to look for an available game server to
+     * claim. </p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
      * running. If you are not specifying a game server to claim, this value identifies
-     * where you want GameLift FleetIQ to look for an available game server to claim.
-     * </p>
+     * where you want Amazon GameLift FleetIQ to look for an available game server to
+     * claim. </p>
      */
     inline ClaimGameServerRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
      * <p>A unique identifier for the game server group where the game server is
      * running. If you are not specifying a game server to claim, this value identifies
-     * where you want GameLift FleetIQ to look for an available game server to claim.
-     * </p>
+     * where you want Amazon GameLift FleetIQ to look for an available game server to
+     * claim. </p>
      */
     inline ClaimGameServerRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the game server group where the game server is
      * running. If you are not specifying a game server to claim, this value identifies
-     * where you want GameLift FleetIQ to look for an available game server to claim.
-     * </p>
+     * where you want Amazon GameLift FleetIQ to look for an available game server to
+     * claim. </p>
      */
     inline ClaimGameServerRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 
 
     /**
      * <p>A custom string that uniquely identifies the game server to claim. If this
-     * parameter is left empty, GameLift FleetIQ searches for an available game server
-     * in the specified game server group.</p>
+     * parameter is left empty, Amazon GameLift FleetIQ searches for an available game
+     * server in the specified game server group.</p>
      */
     inline const Aws::String& GetGameServerId() const{ return m_gameServerId; }
 
     /**
      * <p>A custom string that uniquely identifies the game server to claim. If this
-     * parameter is left empty, GameLift FleetIQ searches for an available game server
-     * in the specified game server group.</p>
+     * parameter is left empty, Amazon GameLift FleetIQ searches for an available game
+     * server in the specified game server group.</p>
      */
     inline bool GameServerIdHasBeenSet() const { return m_gameServerIdHasBeenSet; }
 
     /**
      * <p>A custom string that uniquely identifies the game server to claim. If this
-     * parameter is left empty, GameLift FleetIQ searches for an available game server
-     * in the specified game server group.</p>
+     * parameter is left empty, Amazon GameLift FleetIQ searches for an available game
+     * server in the specified game server group.</p>
      */
     inline void SetGameServerId(const Aws::String& value) { m_gameServerIdHasBeenSet = true; m_gameServerId = value; }
 
     /**
      * <p>A custom string that uniquely identifies the game server to claim. If this
-     * parameter is left empty, GameLift FleetIQ searches for an available game server
-     * in the specified game server group.</p>
+     * parameter is left empty, Amazon GameLift FleetIQ searches for an available game
+     * server in the specified game server group.</p>
      */
     inline void SetGameServerId(Aws::String&& value) { m_gameServerIdHasBeenSet = true; m_gameServerId = std::move(value); }
 
     /**
      * <p>A custom string that uniquely identifies the game server to claim. If this
-     * parameter is left empty, GameLift FleetIQ searches for an available game server
-     * in the specified game server group.</p>
+     * parameter is left empty, Amazon GameLift FleetIQ searches for an available game
+     * server in the specified game server group.</p>
      */
     inline void SetGameServerId(const char* value) { m_gameServerIdHasBeenSet = true; m_gameServerId.assign(value); }
 
     /**
      * <p>A custom string that uniquely identifies the game server to claim. If this
-     * parameter is left empty, GameLift FleetIQ searches for an available game server
-     * in the specified game server group.</p>
+     * parameter is left empty, Amazon GameLift FleetIQ searches for an available game
+     * server in the specified game server group.</p>
      */
     inline ClaimGameServerRequest& WithGameServerId(const Aws::String& value) { SetGameServerId(value); return *this;}
 
     /**
      * <p>A custom string that uniquely identifies the game server to claim. If this
-     * parameter is left empty, GameLift FleetIQ searches for an available game server
-     * in the specified game server group.</p>
+     * parameter is left empty, Amazon GameLift FleetIQ searches for an available game
+     * server in the specified game server group.</p>
      */
     inline ClaimGameServerRequest& WithGameServerId(Aws::String&& value) { SetGameServerId(std::move(value)); return *this;}
 
     /**
      * <p>A custom string that uniquely identifies the game server to claim. If this
-     * parameter is left empty, GameLift FleetIQ searches for an available game server
-     * in the specified game server group.</p>
+     * parameter is left empty, Amazon GameLift FleetIQ searches for an available game
+     * server in the specified game server group.</p>
      */
     inline ClaimGameServerRequest& WithGameServerId(const char* value) { SetGameServerId(value); return *this;}
 
@@ -212,6 +213,37 @@ namespace Model
      */
     inline ClaimGameServerRequest& WithGameServerData(const char* value) { SetGameServerData(value); return *this;}
 
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline const ClaimFilterOption& GetFilterOption() const{ return m_filterOption; }
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline bool FilterOptionHasBeenSet() const { return m_filterOptionHasBeenSet; }
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline void SetFilterOption(const ClaimFilterOption& value) { m_filterOptionHasBeenSet = true; m_filterOption = value; }
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline void SetFilterOption(ClaimFilterOption&& value) { m_filterOptionHasBeenSet = true; m_filterOption = std::move(value); }
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline ClaimGameServerRequest& WithFilterOption(const ClaimFilterOption& value) { SetFilterOption(value); return *this;}
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline ClaimGameServerRequest& WithFilterOption(ClaimFilterOption&& value) { SetFilterOption(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_gameServerGroupName;
@@ -222,6 +254,9 @@ namespace Model
 
     Aws::String m_gameServerData;
     bool m_gameServerDataHasBeenSet = false;
+
+    ClaimFilterOption m_filterOption;
+    bool m_filterOptionHasBeenSet = false;
   };
 
 } // namespace Model

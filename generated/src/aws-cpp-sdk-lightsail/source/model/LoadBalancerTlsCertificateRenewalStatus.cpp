@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerTlsCertificateRenewalStatus::NOT_SET:
+            return {};
           case LoadBalancerTlsCertificateRenewalStatus::PENDING_AUTO_RENEWAL:
             return "PENDING_AUTO_RENEWAL";
           case LoadBalancerTlsCertificateRenewalStatus::PENDING_VALIDATION:

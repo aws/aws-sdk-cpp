@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeletableCertificateBasedAuthProperty::NOT_SET:
+            return {};
           case DeletableCertificateBasedAuthProperty::CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN:
             return "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN";
           default:

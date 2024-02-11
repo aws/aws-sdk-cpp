@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RespondToAfd::NOT_SET:
+            return {};
           case RespondToAfd::NONE:
             return "NONE";
           case RespondToAfd::RESPOND:

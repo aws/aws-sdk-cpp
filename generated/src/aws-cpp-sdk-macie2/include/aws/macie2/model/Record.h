@@ -46,8 +46,8 @@ namespace Model
      * path to the field or array that contains the data. If the data is a value in an
      * array, the path also indicates which value contains the data.</p> <p>If Amazon
      * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 20 characters, Macie truncates the
-     * name by removing characters from the beginning of the name. If the resulting
+     * this field. If the name of an element exceeds 240 characters, Macie truncates
+     * the name by removing characters from the beginning of the name. If the resulting
      * full path exceeds 250 characters, Macie also truncates the path, starting with
      * the first element in the path, until the path contains 250 or fewer
      * characters.</p>
@@ -61,8 +61,8 @@ namespace Model
      * path to the field or array that contains the data. If the data is a value in an
      * array, the path also indicates which value contains the data.</p> <p>If Amazon
      * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 20 characters, Macie truncates the
-     * name by removing characters from the beginning of the name. If the resulting
+     * this field. If the name of an element exceeds 240 characters, Macie truncates
+     * the name by removing characters from the beginning of the name. If the resulting
      * full path exceeds 250 characters, Macie also truncates the path, starting with
      * the first element in the path, until the path contains 250 or fewer
      * characters.</p>
@@ -76,8 +76,8 @@ namespace Model
      * path to the field or array that contains the data. If the data is a value in an
      * array, the path also indicates which value contains the data.</p> <p>If Amazon
      * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 20 characters, Macie truncates the
-     * name by removing characters from the beginning of the name. If the resulting
+     * this field. If the name of an element exceeds 240 characters, Macie truncates
+     * the name by removing characters from the beginning of the name. If the resulting
      * full path exceeds 250 characters, Macie also truncates the path, starting with
      * the first element in the path, until the path contains 250 or fewer
      * characters.</p>
@@ -91,8 +91,8 @@ namespace Model
      * path to the field or array that contains the data. If the data is a value in an
      * array, the path also indicates which value contains the data.</p> <p>If Amazon
      * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 20 characters, Macie truncates the
-     * name by removing characters from the beginning of the name. If the resulting
+     * this field. If the name of an element exceeds 240 characters, Macie truncates
+     * the name by removing characters from the beginning of the name. If the resulting
      * full path exceeds 250 characters, Macie also truncates the path, starting with
      * the first element in the path, until the path contains 250 or fewer
      * characters.</p>
@@ -106,8 +106,8 @@ namespace Model
      * path to the field or array that contains the data. If the data is a value in an
      * array, the path also indicates which value contains the data.</p> <p>If Amazon
      * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 20 characters, Macie truncates the
-     * name by removing characters from the beginning of the name. If the resulting
+     * this field. If the name of an element exceeds 240 characters, Macie truncates
+     * the name by removing characters from the beginning of the name. If the resulting
      * full path exceeds 250 characters, Macie also truncates the path, starting with
      * the first element in the path, until the path contains 250 or fewer
      * characters.</p>
@@ -121,8 +121,8 @@ namespace Model
      * path to the field or array that contains the data. If the data is a value in an
      * array, the path also indicates which value contains the data.</p> <p>If Amazon
      * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 20 characters, Macie truncates the
-     * name by removing characters from the beginning of the name. If the resulting
+     * this field. If the name of an element exceeds 240 characters, Macie truncates
+     * the name by removing characters from the beginning of the name. If the resulting
      * full path exceeds 250 characters, Macie also truncates the path, starting with
      * the first element in the path, until the path contains 250 or fewer
      * characters.</p>
@@ -136,8 +136,8 @@ namespace Model
      * path to the field or array that contains the data. If the data is a value in an
      * array, the path also indicates which value contains the data.</p> <p>If Amazon
      * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 20 characters, Macie truncates the
-     * name by removing characters from the beginning of the name. If the resulting
+     * this field. If the name of an element exceeds 240 characters, Macie truncates
+     * the name by removing characters from the beginning of the name. If the resulting
      * full path exceeds 250 characters, Macie also truncates the path, starting with
      * the first element in the path, until the path contains 250 or fewer
      * characters.</p>
@@ -151,8 +151,8 @@ namespace Model
      * path to the field or array that contains the data. If the data is a value in an
      * array, the path also indicates which value contains the data.</p> <p>If Amazon
      * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 20 characters, Macie truncates the
-     * name by removing characters from the beginning of the name. If the resulting
+     * this field. If the name of an element exceeds 240 characters, Macie truncates
+     * the name by removing characters from the beginning of the name. If the resulting
      * full path exceeds 250 characters, Macie also truncates the path, starting with
      * the first element in the path, until the path contains 250 or fewer
      * characters.</p>

@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 RotateSecretRequest::RotateSecretRequest() : 
     m_secretIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_rotationLambdaARNHasBeenSet(false),
     m_rotationRulesHasBeenSet(false),

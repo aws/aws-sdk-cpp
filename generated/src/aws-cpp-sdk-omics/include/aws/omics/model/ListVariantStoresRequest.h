@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/omics/model/ListVariantStoresFilter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/ListVariantStoresFilter.h>
 #include <utility>
 
 namespace Aws
@@ -41,34 +41,24 @@ namespace Model
 
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The maximum number of stores to return in one page of results.</p>
      */
-    inline const ListVariantStoresFilter& GetFilter() const{ return m_filter; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The maximum number of stores to return in one page of results.</p>
      */
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The maximum number of stores to return in one page of results.</p>
      */
-    inline void SetFilter(const ListVariantStoresFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The maximum number of stores to return in one page of results.</p>
      */
-    inline void SetFilter(ListVariantStoresFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline ListVariantStoresRequest& WithFilter(const ListVariantStoresFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline ListVariantStoresRequest& WithFilter(ListVariantStoresFilter&& value) { SetFilter(std::move(value)); return *this;}
+    inline ListVariantStoresRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -115,27 +105,6 @@ namespace Model
      * <p>A list of store IDs.</p>
      */
     inline ListVariantStoresRequest& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
-
-
-    /**
-     * <p>The maximum number of stores to return in one page of results.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of stores to return in one page of results.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of stores to return in one page of results.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of stores to return in one page of results.</p>
-     */
-    inline ListVariantStoresRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -186,19 +155,50 @@ namespace Model
      */
     inline ListVariantStoresRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline const ListVariantStoresFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline void SetFilter(const ListVariantStoresFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline void SetFilter(ListVariantStoresFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline ListVariantStoresRequest& WithFilter(const ListVariantStoresFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline ListVariantStoresRequest& WithFilter(ListVariantStoresFilter&& value) { SetFilter(std::move(value)); return *this;}
+
   private:
-
-    ListVariantStoresFilter m_filter;
-    bool m_filterHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_ids;
-    bool m_idsHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_ids;
+    bool m_idsHasBeenSet = false;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    ListVariantStoresFilter m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

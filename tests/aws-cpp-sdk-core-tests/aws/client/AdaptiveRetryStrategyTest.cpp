@@ -4,7 +4,7 @@
  */
 
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/client/AdaptiveRetryStrategy.h>
 #include <aws/core/utils/Outcome.h>
 
@@ -123,12 +123,16 @@ void TestCUBIC(const CUBICTestCaseParams& tc)
     }
 }
 
-TEST(AdaptiveRetryStrategyTest, TestAdaptiveRetryStrategyCUBIC1)
+class AdaptiveRetryStrategyTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(AdaptiveRetryStrategyTest, TestAdaptiveRetryStrategyCUBIC1)
 {
     return TestCUBIC(TEST_CASE_1);
 }
 
-TEST(AdaptiveRetryStrategyTest, TestAdaptiveRetryStrategyCUBIC2)
+TEST_F(AdaptiveRetryStrategyTest, TestAdaptiveRetryStrategyCUBIC2)
 {
     return TestCUBIC(TEST_CASE_2);
 }
@@ -168,7 +172,7 @@ static const UpdateClientSendingRateTestCaseParams TEST_CASE_3 = {
          { true, 3.4, 4.333056, 3.452226 }}
 };
 
-TEST(AdaptiveRetryStrategyTest, TestAdaptiveRetryStrategyUpdateClientSendingRate)
+TEST_F(AdaptiveRetryStrategyTest, TestAdaptiveRetryStrategyUpdateClientSendingRate)
 {
     MockRetryTokenBucket retryTokenBucket(TEST_CASE_3.startConditions.newTokenBucketRate,
                                           0,
@@ -192,7 +196,7 @@ TEST(AdaptiveRetryStrategyTest, TestAdaptiveRetryStrategyUpdateClientSendingRate
     }
 }
 
-TEST(AdaptiveRetryStrategyTest, TestRetryTokenBucketDateInFutureRuns) {
+TEST_F(AdaptiveRetryStrategyTest, TestRetryTokenBucketDateInFutureRuns) {
     RetryTokenBucket retryTokenBucket;
     ASSERT_TRUE(retryTokenBucket.Acquire(1));
     auto oneDayMillis = 86400000;

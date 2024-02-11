@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PositionConfigurationFec::NOT_SET:
+            return {};
           case PositionConfigurationFec::ROSE:
             return "ROSE";
           case PositionConfigurationFec::NONE:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FlywheelStatus::NOT_SET:
+            return {};
           case FlywheelStatus::CREATING:
             return "CREATING";
           case FlywheelStatus::ACTIVE:

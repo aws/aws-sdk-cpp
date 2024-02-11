@@ -12,6 +12,7 @@
 #include <aws/connect/model/AgentInfo.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/connect/model/WisdomInfo.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -435,7 +436,10 @@ namespace Model
      * <code>OUTBOUND</code>, this is when the agent began dialing. For
      * <code>CALLBACK</code>, this is when the callback contact was created. For
      * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
-     * was initiated. For <code>API</code>, this is when the request arrived.</p>
+     * was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
+     * started listening to a contact.</p>
      */
     inline const Aws::Utils::DateTime& GetInitiationTimestamp() const{ return m_initiationTimestamp; }
 
@@ -445,7 +449,10 @@ namespace Model
      * <code>OUTBOUND</code>, this is when the agent began dialing. For
      * <code>CALLBACK</code>, this is when the callback contact was created. For
      * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
-     * was initiated. For <code>API</code>, this is when the request arrived.</p>
+     * was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
+     * started listening to a contact.</p>
      */
     inline bool InitiationTimestampHasBeenSet() const { return m_initiationTimestampHasBeenSet; }
 
@@ -455,7 +462,10 @@ namespace Model
      * <code>OUTBOUND</code>, this is when the agent began dialing. For
      * <code>CALLBACK</code>, this is when the callback contact was created. For
      * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
-     * was initiated. For <code>API</code>, this is when the request arrived.</p>
+     * was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
+     * started listening to a contact.</p>
      */
     inline void SetInitiationTimestamp(const Aws::Utils::DateTime& value) { m_initiationTimestampHasBeenSet = true; m_initiationTimestamp = value; }
 
@@ -465,7 +475,10 @@ namespace Model
      * <code>OUTBOUND</code>, this is when the agent began dialing. For
      * <code>CALLBACK</code>, this is when the callback contact was created. For
      * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
-     * was initiated. For <code>API</code>, this is when the request arrived.</p>
+     * was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
+     * started listening to a contact.</p>
      */
     inline void SetInitiationTimestamp(Aws::Utils::DateTime&& value) { m_initiationTimestampHasBeenSet = true; m_initiationTimestamp = std::move(value); }
 
@@ -475,7 +488,10 @@ namespace Model
      * <code>OUTBOUND</code>, this is when the agent began dialing. For
      * <code>CALLBACK</code>, this is when the callback contact was created. For
      * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
-     * was initiated. For <code>API</code>, this is when the request arrived.</p>
+     * was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
+     * started listening to a contact.</p>
      */
     inline Contact& WithInitiationTimestamp(const Aws::Utils::DateTime& value) { SetInitiationTimestamp(value); return *this;}
 
@@ -485,7 +501,10 @@ namespace Model
      * <code>OUTBOUND</code>, this is when the agent began dialing. For
      * <code>CALLBACK</code>, this is when the callback contact was created. For
      * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
-     * was initiated. For <code>API</code>, this is when the request arrived.</p>
+     * was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
+     * started listening to a contact.</p>
      */
     inline Contact& WithInitiationTimestamp(Aws::Utils::DateTime&& value) { SetInitiationTimestamp(std::move(value)); return *this;}
 
@@ -556,6 +575,110 @@ namespace Model
      * <p>The timestamp when contact was last updated.</p>
      */
     inline Contact& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastPausedTimestamp() const{ return m_lastPausedTimestamp; }
+
+    /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline bool LastPausedTimestampHasBeenSet() const { return m_lastPausedTimestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline void SetLastPausedTimestamp(const Aws::Utils::DateTime& value) { m_lastPausedTimestampHasBeenSet = true; m_lastPausedTimestamp = value; }
+
+    /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline void SetLastPausedTimestamp(Aws::Utils::DateTime&& value) { m_lastPausedTimestampHasBeenSet = true; m_lastPausedTimestamp = std::move(value); }
+
+    /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline Contact& WithLastPausedTimestamp(const Aws::Utils::DateTime& value) { SetLastPausedTimestamp(value); return *this;}
+
+    /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline Contact& WithLastPausedTimestamp(Aws::Utils::DateTime&& value) { SetLastPausedTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastResumedTimestamp() const{ return m_lastResumedTimestamp; }
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline bool LastResumedTimestampHasBeenSet() const { return m_lastResumedTimestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline void SetLastResumedTimestamp(const Aws::Utils::DateTime& value) { m_lastResumedTimestampHasBeenSet = true; m_lastResumedTimestamp = value; }
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline void SetLastResumedTimestamp(Aws::Utils::DateTime&& value) { m_lastResumedTimestampHasBeenSet = true; m_lastResumedTimestamp = std::move(value); }
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline Contact& WithLastResumedTimestamp(const Aws::Utils::DateTime& value) { SetLastResumedTimestamp(value); return *this;}
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline Contact& WithLastResumedTimestamp(Aws::Utils::DateTime&& value) { SetLastResumedTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Total pause count for a contact.</p>
+     */
+    inline int GetTotalPauseCount() const{ return m_totalPauseCount; }
+
+    /**
+     * <p>Total pause count for a contact.</p>
+     */
+    inline bool TotalPauseCountHasBeenSet() const { return m_totalPauseCountHasBeenSet; }
+
+    /**
+     * <p>Total pause count for a contact.</p>
+     */
+    inline void SetTotalPauseCount(int value) { m_totalPauseCountHasBeenSet = true; m_totalPauseCount = value; }
+
+    /**
+     * <p>Total pause count for a contact.</p>
+     */
+    inline Contact& WithTotalPauseCount(int value) { SetTotalPauseCount(value); return *this;}
+
+
+    /**
+     * <p>Total pause duration for a contact in seconds.</p>
+     */
+    inline int GetTotalPauseDurationInSeconds() const{ return m_totalPauseDurationInSeconds; }
+
+    /**
+     * <p>Total pause duration for a contact in seconds.</p>
+     */
+    inline bool TotalPauseDurationInSecondsHasBeenSet() const { return m_totalPauseDurationInSecondsHasBeenSet; }
+
+    /**
+     * <p>Total pause duration for a contact in seconds.</p>
+     */
+    inline void SetTotalPauseDurationInSeconds(int value) { m_totalPauseDurationInSecondsHasBeenSet = true; m_totalPauseDurationInSeconds = value; }
+
+    /**
+     * <p>Total pause duration for a contact in seconds.</p>
+     */
+    inline Contact& WithTotalPauseDurationInSeconds(int value) { SetTotalPauseDurationInSeconds(value); return *this;}
 
 
     /**
@@ -682,6 +805,151 @@ namespace Model
      */
     inline Contact& WithWisdomInfo(WisdomInfo&& value) { SetWisdomInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An integer that represents the queue time adjust to be applied to the
+     * contact, in seconds (longer / larger queue time are routed preferentially).
+     * Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.</p>
+     */
+    inline int GetQueueTimeAdjustmentSeconds() const{ return m_queueTimeAdjustmentSeconds; }
+
+    /**
+     * <p>An integer that represents the queue time adjust to be applied to the
+     * contact, in seconds (longer / larger queue time are routed preferentially).
+     * Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.</p>
+     */
+    inline bool QueueTimeAdjustmentSecondsHasBeenSet() const { return m_queueTimeAdjustmentSecondsHasBeenSet; }
+
+    /**
+     * <p>An integer that represents the queue time adjust to be applied to the
+     * contact, in seconds (longer / larger queue time are routed preferentially).
+     * Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.</p>
+     */
+    inline void SetQueueTimeAdjustmentSeconds(int value) { m_queueTimeAdjustmentSecondsHasBeenSet = true; m_queueTimeAdjustmentSeconds = value; }
+
+    /**
+     * <p>An integer that represents the queue time adjust to be applied to the
+     * contact, in seconds (longer / larger queue time are routed preferentially).
+     * Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.</p>
+     */
+    inline Contact& WithQueueTimeAdjustmentSeconds(int value) { SetQueueTimeAdjustmentSeconds(value); return *this;}
+
+
+    /**
+     * <p>An integer that represents the queue priority to be applied to the contact
+     * (lower priorities are routed preferentially). Cannot be specified if the
+     * QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be
+     * larger than zero, and a valid integer value. Default Value is 5.</p>
+     */
+    inline long long GetQueuePriority() const{ return m_queuePriority; }
+
+    /**
+     * <p>An integer that represents the queue priority to be applied to the contact
+     * (lower priorities are routed preferentially). Cannot be specified if the
+     * QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be
+     * larger than zero, and a valid integer value. Default Value is 5.</p>
+     */
+    inline bool QueuePriorityHasBeenSet() const { return m_queuePriorityHasBeenSet; }
+
+    /**
+     * <p>An integer that represents the queue priority to be applied to the contact
+     * (lower priorities are routed preferentially). Cannot be specified if the
+     * QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be
+     * larger than zero, and a valid integer value. Default Value is 5.</p>
+     */
+    inline void SetQueuePriority(long long value) { m_queuePriorityHasBeenSet = true; m_queuePriority = value; }
+
+    /**
+     * <p>An integer that represents the queue priority to be applied to the contact
+     * (lower priorities are routed preferentially). Cannot be specified if the
+     * QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be
+     * larger than zero, and a valid integer value. Default Value is 5.</p>
+     */
+    inline Contact& WithQueuePriority(long long value) { SetQueuePriority(value); return *this;}
+
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline Contact& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline Contact& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline Contact& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline Contact& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline Contact& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline Contact& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline Contact& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline Contact& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags associated with the contact. This contains both Amazon Web Services
+     * generated and user-defined tags.</p>
+     */
+    inline Contact& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -723,6 +991,18 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdateTimestamp;
     bool m_lastUpdateTimestampHasBeenSet = false;
 
+    Aws::Utils::DateTime m_lastPausedTimestamp;
+    bool m_lastPausedTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastResumedTimestamp;
+    bool m_lastResumedTimestampHasBeenSet = false;
+
+    int m_totalPauseCount;
+    bool m_totalPauseCountHasBeenSet = false;
+
+    int m_totalPauseDurationInSeconds;
+    bool m_totalPauseDurationInSecondsHasBeenSet = false;
+
     Aws::Utils::DateTime m_scheduledTimestamp;
     bool m_scheduledTimestampHasBeenSet = false;
 
@@ -731,6 +1011,15 @@ namespace Model
 
     WisdomInfo m_wisdomInfo;
     bool m_wisdomInfoHasBeenSet = false;
+
+    int m_queueTimeAdjustmentSeconds;
+    bool m_queueTimeAdjustmentSecondsHasBeenSet = false;
+
+    long long m_queuePriority;
+    bool m_queuePriorityHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

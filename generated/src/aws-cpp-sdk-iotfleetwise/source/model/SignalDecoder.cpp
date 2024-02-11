@@ -24,7 +24,8 @@ SignalDecoder::SignalDecoder() :
     m_typeHasBeenSet(false),
     m_interfaceIdHasBeenSet(false),
     m_canSignalHasBeenSet(false),
-    m_obdSignalHasBeenSet(false)
+    m_obdSignalHasBeenSet(false),
+    m_messageSignalHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ SignalDecoder::SignalDecoder(JsonView jsonValue) :
     m_typeHasBeenSet(false),
     m_interfaceIdHasBeenSet(false),
     m_canSignalHasBeenSet(false),
-    m_obdSignalHasBeenSet(false)
+    m_obdSignalHasBeenSet(false),
+    m_messageSignalHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ SignalDecoder& SignalDecoder::operator =(JsonView jsonValue)
     m_obdSignalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("messageSignal"))
+  {
+    m_messageSignal = jsonValue.GetObject("messageSignal");
+
+    m_messageSignalHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +118,12 @@ JsonValue SignalDecoder::Jsonize() const
   if(m_obdSignalHasBeenSet)
   {
    payload.WithObject("obdSignal", m_obdSignal.Jsonize());
+
+  }
+
+  if(m_messageSignalHasBeenSet)
+  {
+   payload.WithObject("messageSignal", m_messageSignal.Jsonize());
 
   }
 

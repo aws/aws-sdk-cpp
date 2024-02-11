@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduleFrequencyType::NOT_SET:
+            return {};
           case ScheduleFrequencyType::BYMINUTE:
             return "BYMINUTE";
           case ScheduleFrequencyType::HOURLY:

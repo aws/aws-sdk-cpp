@@ -82,42 +82,74 @@ namespace Model
 
 
     /**
-     * <p>The message content.</p>
+     * <p>The message content. For Amazon Lex V2 bot responses, this field holds a list
+     * of messages originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>The message content.</p>
+     * <p>The message content. For Amazon Lex V2 bot responses, this field holds a list
+     * of messages originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
-     * <p>The message content.</p>
+     * <p>The message content. For Amazon Lex V2 bot responses, this field holds a list
+     * of messages originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>The message content.</p>
+     * <p>The message content. For Amazon Lex V2 bot responses, this field holds a list
+     * of messages originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p>The message content.</p>
+     * <p>The message content. For Amazon Lex V2 bot responses, this field holds a list
+     * of messages originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>The message content.</p>
+     * <p>The message content. For Amazon Lex V2 bot responses, this field holds a list
+     * of messages originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>The message content.</p>
+     * <p>The message content. For Amazon Lex V2 bot responses, this field holds a list
+     * of messages originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>The message content.</p>
+     * <p>The message content. For Amazon Lex V2 bot responses, this field holds a list
+     * of messages originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& WithContent(const char* value) { SetContent(value); return *this;}
 
@@ -195,86 +227,122 @@ namespace Model
 
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline bool MessageAttributesHasBeenSet() const { return m_messageAttributesHasBeenSet; }
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::move(value); }
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& WithMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { SetMessageAttributes(value); return *this;}
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The attributes for the message, used for message filtering along with a
-     * <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.
-     * </p>
+     * <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the
+     * attributes are mapped to specific fields from the bot. For more information,
+     * refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
@@ -321,42 +389,90 @@ namespace Model
 
 
     /**
-     * <p>The content type of the call-back message.</p>
+     * <p>The content type of the call-back message. For Amazon Lex V2 bot responses,
+     * the content type is <code>application/amz-chime-lex-msgs</code> for success
+     * responses and <code>application/amz-chime-lex-error</code> for failure
+     * responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
     /**
-     * <p>The content type of the call-back message.</p>
+     * <p>The content type of the call-back message. For Amazon Lex V2 bot responses,
+     * the content type is <code>application/amz-chime-lex-msgs</code> for success
+     * responses and <code>application/amz-chime-lex-error</code> for failure
+     * responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
-     * <p>The content type of the call-back message.</p>
+     * <p>The content type of the call-back message. For Amazon Lex V2 bot responses,
+     * the content type is <code>application/amz-chime-lex-msgs</code> for success
+     * responses and <code>application/amz-chime-lex-error</code> for failure
+     * responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
-     * <p>The content type of the call-back message.</p>
+     * <p>The content type of the call-back message. For Amazon Lex V2 bot responses,
+     * the content type is <code>application/amz-chime-lex-msgs</code> for success
+     * responses and <code>application/amz-chime-lex-error</code> for failure
+     * responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
 
     /**
-     * <p>The content type of the call-back message.</p>
+     * <p>The content type of the call-back message. For Amazon Lex V2 bot responses,
+     * the content type is <code>application/amz-chime-lex-msgs</code> for success
+     * responses and <code>application/amz-chime-lex-error</code> for failure
+     * responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
 
     /**
-     * <p>The content type of the call-back message.</p>
+     * <p>The content type of the call-back message. For Amazon Lex V2 bot responses,
+     * the content type is <code>application/amz-chime-lex-msgs</code> for success
+     * responses and <code>application/amz-chime-lex-error</code> for failure
+     * responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
     /**
-     * <p>The content type of the call-back message.</p>
+     * <p>The content type of the call-back message. For Amazon Lex V2 bot responses,
+     * the content type is <code>application/amz-chime-lex-msgs</code> for success
+     * responses and <code>application/amz-chime-lex-error</code> for failure
+     * responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
-     * <p>The content type of the call-back message.</p>
+     * <p>The content type of the call-back message. For Amazon Lex V2 bot responses,
+     * the content type is <code>application/amz-chime-lex-msgs</code> for success
+     * responses and <code>application/amz-chime-lex-error</code> for failure
+     * responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
+     * Developer Guide</i>.</p>
      */
     inline ChannelMessageCallback& WithContentType(const char* value) { SetContentType(value); return *this;}
 

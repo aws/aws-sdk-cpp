@@ -343,6 +343,37 @@ namespace Model
      */
     inline DataLabelOptions& WithOverlap(DataLabelOverlap&& value) { SetOverlap(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Determines the visibility of the total.</p>
+     */
+    inline const Visibility& GetTotalsVisibility() const{ return m_totalsVisibility; }
+
+    /**
+     * <p>Determines the visibility of the total.</p>
+     */
+    inline bool TotalsVisibilityHasBeenSet() const { return m_totalsVisibilityHasBeenSet; }
+
+    /**
+     * <p>Determines the visibility of the total.</p>
+     */
+    inline void SetTotalsVisibility(const Visibility& value) { m_totalsVisibilityHasBeenSet = true; m_totalsVisibility = value; }
+
+    /**
+     * <p>Determines the visibility of the total.</p>
+     */
+    inline void SetTotalsVisibility(Visibility&& value) { m_totalsVisibilityHasBeenSet = true; m_totalsVisibility = std::move(value); }
+
+    /**
+     * <p>Determines the visibility of the total.</p>
+     */
+    inline DataLabelOptions& WithTotalsVisibility(const Visibility& value) { SetTotalsVisibility(value); return *this;}
+
+    /**
+     * <p>Determines the visibility of the total.</p>
+     */
+    inline DataLabelOptions& WithTotalsVisibility(Visibility&& value) { SetTotalsVisibility(std::move(value)); return *this;}
+
   private:
 
     Visibility m_visibility;
@@ -371,6 +402,9 @@ namespace Model
 
     DataLabelOverlap m_overlap;
     bool m_overlapHasBeenSet = false;
+
+    Visibility m_totalsVisibility;
+    bool m_totalsVisibilityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanResult::NOT_SET:
+            return {};
           case ScanResult::CLEAN:
             return "CLEAN";
           case ScanResult::INFECTED:

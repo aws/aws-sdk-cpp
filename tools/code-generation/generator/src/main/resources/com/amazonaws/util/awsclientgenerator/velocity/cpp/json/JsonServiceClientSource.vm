@@ -35,13 +35,16 @@ using namespace ${rootNamespace}::${serviceNamespace};
 using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
 #if($serviceModel.endpointRules)
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 #end
 
+#if(!${onlyGeneratedOperations})
 const char* ${className}::SERVICE_NAME = "${metadata.signingName}";
 const char* ${className}::ALLOCATION_TAG = "${className}";
 
 #parseOverrideOrDefault( "ServiceClientSourceInit_template" "com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
+#end
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/JsonServiceOperationsSource.vm")

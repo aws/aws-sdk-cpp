@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetStore::NOT_SET:
+            return {};
           case TargetStore::OnlineStore:
             return "OnlineStore";
           case TargetStore::OfflineStore:

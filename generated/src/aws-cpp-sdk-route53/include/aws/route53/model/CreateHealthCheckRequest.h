@@ -53,7 +53,10 @@ namespace Model
      * different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
      * error.</p> </li> <li> <p>If you send a <code>CreateHealthCheck</code> request
      * with a unique <code>CallerReference</code> but settings identical to an existing
-     * health check, Route 53 creates the health check.</p> </li> </ul>
+     * health check, Route 53 creates the health check.</p> </li> </ul> <p> Route 53
+     * does not store the <code>CallerReference</code> for a deleted health check
+     * indefinitely. The <code>CallerReference</code> for a deleted health check will
+     * be deleted after a number of days.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
@@ -73,7 +76,10 @@ namespace Model
      * different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
      * error.</p> </li> <li> <p>If you send a <code>CreateHealthCheck</code> request
      * with a unique <code>CallerReference</code> but settings identical to an existing
-     * health check, Route 53 creates the health check.</p> </li> </ul>
+     * health check, Route 53 creates the health check.</p> </li> </ul> <p> Route 53
+     * does not store the <code>CallerReference</code> for a deleted health check
+     * indefinitely. The <code>CallerReference</code> for a deleted health check will
+     * be deleted after a number of days.</p>
      */
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
 
@@ -93,7 +99,10 @@ namespace Model
      * different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
      * error.</p> </li> <li> <p>If you send a <code>CreateHealthCheck</code> request
      * with a unique <code>CallerReference</code> but settings identical to an existing
-     * health check, Route 53 creates the health check.</p> </li> </ul>
+     * health check, Route 53 creates the health check.</p> </li> </ul> <p> Route 53
+     * does not store the <code>CallerReference</code> for a deleted health check
+     * indefinitely. The <code>CallerReference</code> for a deleted health check will
+     * be deleted after a number of days.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
@@ -113,7 +122,10 @@ namespace Model
      * different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
      * error.</p> </li> <li> <p>If you send a <code>CreateHealthCheck</code> request
      * with a unique <code>CallerReference</code> but settings identical to an existing
-     * health check, Route 53 creates the health check.</p> </li> </ul>
+     * health check, Route 53 creates the health check.</p> </li> </ul> <p> Route 53
+     * does not store the <code>CallerReference</code> for a deleted health check
+     * indefinitely. The <code>CallerReference</code> for a deleted health check will
+     * be deleted after a number of days.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
@@ -133,7 +145,10 @@ namespace Model
      * different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
      * error.</p> </li> <li> <p>If you send a <code>CreateHealthCheck</code> request
      * with a unique <code>CallerReference</code> but settings identical to an existing
-     * health check, Route 53 creates the health check.</p> </li> </ul>
+     * health check, Route 53 creates the health check.</p> </li> </ul> <p> Route 53
+     * does not store the <code>CallerReference</code> for a deleted health check
+     * indefinitely. The <code>CallerReference</code> for a deleted health check will
+     * be deleted after a number of days.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
@@ -153,7 +168,10 @@ namespace Model
      * different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
      * error.</p> </li> <li> <p>If you send a <code>CreateHealthCheck</code> request
      * with a unique <code>CallerReference</code> but settings identical to an existing
-     * health check, Route 53 creates the health check.</p> </li> </ul>
+     * health check, Route 53 creates the health check.</p> </li> </ul> <p> Route 53
+     * does not store the <code>CallerReference</code> for a deleted health check
+     * indefinitely. The <code>CallerReference</code> for a deleted health check will
+     * be deleted after a number of days.</p>
      */
     inline CreateHealthCheckRequest& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
@@ -173,7 +191,10 @@ namespace Model
      * different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
      * error.</p> </li> <li> <p>If you send a <code>CreateHealthCheck</code> request
      * with a unique <code>CallerReference</code> but settings identical to an existing
-     * health check, Route 53 creates the health check.</p> </li> </ul>
+     * health check, Route 53 creates the health check.</p> </li> </ul> <p> Route 53
+     * does not store the <code>CallerReference</code> for a deleted health check
+     * indefinitely. The <code>CallerReference</code> for a deleted health check will
+     * be deleted after a number of days.</p>
      */
     inline CreateHealthCheckRequest& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
@@ -193,7 +214,10 @@ namespace Model
      * different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
      * error.</p> </li> <li> <p>If you send a <code>CreateHealthCheck</code> request
      * with a unique <code>CallerReference</code> but settings identical to an existing
-     * health check, Route 53 creates the health check.</p> </li> </ul>
+     * health check, Route 53 creates the health check.</p> </li> </ul> <p> Route 53
+     * does not store the <code>CallerReference</code> for a deleted health check
+     * indefinitely. The <code>CallerReference</code> for a deleted health check will
+     * be deleted after a number of days.</p>
      */
     inline CreateHealthCheckRequest& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 

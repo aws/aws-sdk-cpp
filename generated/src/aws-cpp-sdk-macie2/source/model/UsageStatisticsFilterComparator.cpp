@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageStatisticsFilterComparator::NOT_SET:
+            return {};
           case UsageStatisticsFilterComparator::GT:
             return "GT";
           case UsageStatisticsFilterComparator::GTE:

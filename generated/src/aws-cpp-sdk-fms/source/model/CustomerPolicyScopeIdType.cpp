@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomerPolicyScopeIdType::NOT_SET:
+            return {};
           case CustomerPolicyScopeIdType::ACCOUNT:
             return "ACCOUNT";
           case CustomerPolicyScopeIdType::ORG_UNIT:

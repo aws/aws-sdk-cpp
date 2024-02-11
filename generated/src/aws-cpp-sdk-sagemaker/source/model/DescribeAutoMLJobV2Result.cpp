@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeAutoMLJobV2Result::DescribeAutoMLJobV2Result() : 
+    m_autoMLProblemTypeConfigName(AutoMLProblemTypeConfigName::NOT_SET),
     m_autoMLJobStatus(AutoMLJobStatus::NOT_SET),
     m_autoMLJobSecondaryStatus(AutoMLJobSecondaryStatus::NOT_SET)
 {
 }
 
 DescribeAutoMLJobV2Result::DescribeAutoMLJobV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_autoMLProblemTypeConfigName(AutoMLProblemTypeConfigName::NOT_SET),
     m_autoMLJobStatus(AutoMLJobStatus::NOT_SET),
     m_autoMLJobSecondaryStatus(AutoMLJobSecondaryStatus::NOT_SET)
 {
@@ -78,6 +80,12 @@ DescribeAutoMLJobV2Result& DescribeAutoMLJobV2Result::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("AutoMLProblemTypeConfigName"))
+  {
+    m_autoMLProblemTypeConfigName = AutoMLProblemTypeConfigNameMapper::GetAutoMLProblemTypeConfigNameForName(jsonValue.GetString("AutoMLProblemTypeConfigName"));
+
+  }
+
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
@@ -126,6 +134,18 @@ DescribeAutoMLJobV2Result& DescribeAutoMLJobV2Result::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("AutoMLJobSecondaryStatus"))
   {
     m_autoMLJobSecondaryStatus = AutoMLJobSecondaryStatusMapper::GetAutoMLJobSecondaryStatusForName(jsonValue.GetString("AutoMLJobSecondaryStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("AutoMLJobArtifacts"))
+  {
+    m_autoMLJobArtifacts = jsonValue.GetObject("AutoMLJobArtifacts");
+
+  }
+
+  if(jsonValue.ValueExists("ResolvedAttributes"))
+  {
+    m_resolvedAttributes = jsonValue.GetObject("ResolvedAttributes");
 
   }
 

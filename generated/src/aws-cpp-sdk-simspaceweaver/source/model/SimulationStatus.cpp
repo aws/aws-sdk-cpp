@@ -28,6 +28,7 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int SNAPSHOT_IN_PROGRESS_HASH = HashingUtils::HashString("SNAPSHOT_IN_PROGRESS");
 
 
         SimulationStatus GetSimulationStatusForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return SimulationStatus::DELETED;
           }
+          else if (hashCode == SNAPSHOT_IN_PROGRESS_HASH)
+          {
+            return SimulationStatus::SNAPSHOT_IN_PROGRESS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -79,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SimulationStatus::NOT_SET:
+            return {};
           case SimulationStatus::UNKNOWN:
             return "UNKNOWN";
           case SimulationStatus::STARTING:
@@ -95,6 +102,8 @@ namespace Aws
             return "DELETING";
           case SimulationStatus::DELETED:
             return "DELETED";
+          case SimulationStatus::SNAPSHOT_IN_PROGRESS:
+            return "SNAPSHOT_IN_PROGRESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

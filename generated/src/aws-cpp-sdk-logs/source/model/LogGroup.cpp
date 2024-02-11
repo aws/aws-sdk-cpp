@@ -31,7 +31,10 @@ LogGroup::LogGroup() :
     m_storedBytesHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dataProtectionStatus(DataProtectionStatus::NOT_SET),
-    m_dataProtectionStatusHasBeenSet(false)
+    m_dataProtectionStatusHasBeenSet(false),
+    m_inheritedPropertiesHasBeenSet(false),
+    m_logGroupClass(LogGroupClass::NOT_SET),
+    m_logGroupClassHasBeenSet(false)
 {
 }
 
@@ -48,7 +51,10 @@ LogGroup::LogGroup(JsonView jsonValue) :
     m_storedBytesHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dataProtectionStatus(DataProtectionStatus::NOT_SET),
-    m_dataProtectionStatusHasBeenSet(false)
+    m_dataProtectionStatusHasBeenSet(false),
+    m_inheritedPropertiesHasBeenSet(false),
+    m_logGroupClass(LogGroupClass::NOT_SET),
+    m_logGroupClassHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +117,23 @@ LogGroup& LogGroup::operator =(JsonView jsonValue)
     m_dataProtectionStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("inheritedProperties"))
+  {
+    Aws::Utils::Array<JsonView> inheritedPropertiesJsonList = jsonValue.GetArray("inheritedProperties");
+    for(unsigned inheritedPropertiesIndex = 0; inheritedPropertiesIndex < inheritedPropertiesJsonList.GetLength(); ++inheritedPropertiesIndex)
+    {
+      m_inheritedProperties.push_back(InheritedPropertyMapper::GetInheritedPropertyForName(inheritedPropertiesJsonList[inheritedPropertiesIndex].AsString()));
+    }
+    m_inheritedPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("logGroupClass"))
+  {
+    m_logGroupClass = LogGroupClassMapper::GetLogGroupClassForName(jsonValue.GetString("logGroupClass"));
+
+    m_logGroupClassHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +186,22 @@ JsonValue LogGroup::Jsonize() const
   if(m_dataProtectionStatusHasBeenSet)
   {
    payload.WithString("dataProtectionStatus", DataProtectionStatusMapper::GetNameForDataProtectionStatus(m_dataProtectionStatus));
+  }
+
+  if(m_inheritedPropertiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> inheritedPropertiesJsonList(m_inheritedProperties.size());
+   for(unsigned inheritedPropertiesIndex = 0; inheritedPropertiesIndex < inheritedPropertiesJsonList.GetLength(); ++inheritedPropertiesIndex)
+   {
+     inheritedPropertiesJsonList[inheritedPropertiesIndex].AsString(InheritedPropertyMapper::GetNameForInheritedProperty(m_inheritedProperties[inheritedPropertiesIndex]));
+   }
+   payload.WithArray("inheritedProperties", std::move(inheritedPropertiesJsonList));
+
+  }
+
+  if(m_logGroupClassHasBeenSet)
+  {
+   payload.WithString("logGroupClass", LogGroupClassMapper::GetNameForLogGroupClass(m_logGroupClass));
   }
 
   return payload;

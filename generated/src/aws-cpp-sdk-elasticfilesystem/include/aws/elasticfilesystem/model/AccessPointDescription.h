@@ -349,38 +349,38 @@ namespace Model
 
 
     /**
-     * <p>The directory on the Amazon EFS file system that the access point exposes as
-     * the root directory to NFS clients using the access point.</p>
+     * <p>The directory on the EFS file system that the access point exposes as the
+     * root directory to NFS clients using the access point.</p>
      */
     inline const RootDirectory& GetRootDirectory() const{ return m_rootDirectory; }
 
     /**
-     * <p>The directory on the Amazon EFS file system that the access point exposes as
-     * the root directory to NFS clients using the access point.</p>
+     * <p>The directory on the EFS file system that the access point exposes as the
+     * root directory to NFS clients using the access point.</p>
      */
     inline bool RootDirectoryHasBeenSet() const { return m_rootDirectoryHasBeenSet; }
 
     /**
-     * <p>The directory on the Amazon EFS file system that the access point exposes as
-     * the root directory to NFS clients using the access point.</p>
+     * <p>The directory on the EFS file system that the access point exposes as the
+     * root directory to NFS clients using the access point.</p>
      */
     inline void SetRootDirectory(const RootDirectory& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = value; }
 
     /**
-     * <p>The directory on the Amazon EFS file system that the access point exposes as
-     * the root directory to NFS clients using the access point.</p>
+     * <p>The directory on the EFS file system that the access point exposes as the
+     * root directory to NFS clients using the access point.</p>
      */
     inline void SetRootDirectory(RootDirectory&& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = std::move(value); }
 
     /**
-     * <p>The directory on the Amazon EFS file system that the access point exposes as
-     * the root directory to NFS clients using the access point.</p>
+     * <p>The directory on the EFS file system that the access point exposes as the
+     * root directory to NFS clients using the access point.</p>
      */
     inline AccessPointDescription& WithRootDirectory(const RootDirectory& value) { SetRootDirectory(value); return *this;}
 
     /**
-     * <p>The directory on the Amazon EFS file system that the access point exposes as
-     * the root directory to NFS clients using the access point.</p>
+     * <p>The directory on the EFS file system that the access point exposes as the
+     * root directory to NFS clients using the access point.</p>
      */
     inline AccessPointDescription& WithRootDirectory(RootDirectory&& value) { SetRootDirectory(std::move(value)); return *this;}
 

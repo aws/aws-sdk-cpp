@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionMode::NOT_SET:
+            return {};
           case ConnectionMode::DIRECT:
             return "DIRECT";
           case ConnectionMode::VPC_ENDPOINT:

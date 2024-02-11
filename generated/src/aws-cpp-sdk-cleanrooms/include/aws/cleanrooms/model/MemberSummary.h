@@ -9,6 +9,7 @@
 #include <aws/cleanrooms/model/MemberStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cleanrooms/model/PaymentConfiguration.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
 #include <utility>
 
@@ -43,86 +44,80 @@ namespace Model
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline MemberSummary& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline MemberSummary& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline MemberSummary& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and
-     * `REMOVED`.</p>
+     * <p>The status of the member. </p>
      */
     inline const MemberStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and
-     * `REMOVED`.</p>
+     * <p>The status of the member. </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and
-     * `REMOVED`.</p>
+     * <p>The status of the member. </p>
      */
     inline void SetStatus(const MemberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and
-     * `REMOVED`.</p>
+     * <p>The status of the member. </p>
      */
     inline void SetStatus(MemberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and
-     * `REMOVED`.</p>
+     * <p>The status of the member. </p>
      */
     inline MemberSummary& WithStatus(const MemberStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and
-     * `REMOVED`.</p>
+     * <p>The status of the member. </p>
      */
     inline MemberSummary& WithStatus(MemberStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -352,6 +347,43 @@ namespace Model
      */
     inline MemberSummary& WithMembershipArn(const char* value) { SetMembershipArn(value); return *this;}
 
+
+    /**
+     * <p>The collaboration member's payment responsibilities set by the collaboration
+     * creator. </p>
+     */
+    inline const PaymentConfiguration& GetPaymentConfiguration() const{ return m_paymentConfiguration; }
+
+    /**
+     * <p>The collaboration member's payment responsibilities set by the collaboration
+     * creator. </p>
+     */
+    inline bool PaymentConfigurationHasBeenSet() const { return m_paymentConfigurationHasBeenSet; }
+
+    /**
+     * <p>The collaboration member's payment responsibilities set by the collaboration
+     * creator. </p>
+     */
+    inline void SetPaymentConfiguration(const PaymentConfiguration& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = value; }
+
+    /**
+     * <p>The collaboration member's payment responsibilities set by the collaboration
+     * creator. </p>
+     */
+    inline void SetPaymentConfiguration(PaymentConfiguration&& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = std::move(value); }
+
+    /**
+     * <p>The collaboration member's payment responsibilities set by the collaboration
+     * creator. </p>
+     */
+    inline MemberSummary& WithPaymentConfiguration(const PaymentConfiguration& value) { SetPaymentConfiguration(value); return *this;}
+
+    /**
+     * <p>The collaboration member's payment responsibilities set by the collaboration
+     * creator. </p>
+     */
+    inline MemberSummary& WithPaymentConfiguration(PaymentConfiguration&& value) { SetPaymentConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -377,6 +409,9 @@ namespace Model
 
     Aws::String m_membershipArn;
     bool m_membershipArnHasBeenSet = false;
+
+    PaymentConfiguration m_paymentConfiguration;
+    bool m_paymentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

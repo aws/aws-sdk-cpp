@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NoiseFilterPostTemporalSharpeningStrength::NOT_SET:
+            return {};
           case NoiseFilterPostTemporalSharpeningStrength::LOW:
             return "LOW";
           case NoiseFilterPostTemporalSharpeningStrength::MEDIUM:

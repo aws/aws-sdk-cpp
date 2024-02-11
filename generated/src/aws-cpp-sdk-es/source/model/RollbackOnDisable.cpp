@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RollbackOnDisable::NOT_SET:
+            return {};
           case RollbackOnDisable::NO_ROLLBACK:
             return "NO_ROLLBACK";
           case RollbackOnDisable::DEFAULT_ROLLBACK:

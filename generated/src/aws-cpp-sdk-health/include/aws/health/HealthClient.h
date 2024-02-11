@@ -10,31 +10,40 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/health/HealthServiceClientModel.h>
+#include <aws/health/model/DescribeHealthServiceStatusForOrganizationRequest.h>
+#include <aws/health/model/DisableHealthServiceAccessForOrganizationRequest.h>
+#include <aws/health/model/EnableHealthServiceAccessForOrganizationRequest.h>
 
 namespace Aws
 {
 namespace Health
 {
   /**
-   * <fullname>Health</fullname> <p>The Health API provides programmatic access to
-   * the Health information that appears in the <a
-   * href="https://phd.aws.amazon.com/phd/home#/">Personal Health Dashboard</a>. You
-   * can use the API operations to get information about events that might affect
-   * your Amazon Web Services services and resources.</p>  <ul> <li> <p>You
-   * must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a
+   * <fullname>Health</fullname> <p>The Health API provides access to the Health
+   * information that appears in the <a
+   * href="https://health.aws.amazon.com/health/home">Health Dashboard</a>. You can
+   * use the API operations to get information about events that might affect your
+   * Amazon Web Services and resources.</p> <p>You must have a Business, Enterprise
+   * On-Ramp, or Enterprise Support plan from <a
    * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to
    * use the Health API. If you call the Health API from an Amazon Web Services
    * account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support
-   * plan, you receive a <code>SubscriptionRequiredException</code> error.</p> </li>
-   * <li> <p>You can use the Health endpoint health.us-east-1.amazonaws.com (HTTPS)
-   * to call the Health API operations. Health supports a multi-Region application
-   * architecture and has two regional endpoints in an active-passive configuration.
-   * You can use the high availability endpoint example to determine which Amazon Web
-   * Services Region is active, so that you can get the latest information from the
-   * API. For more information, see <a
+   * plan, you receive a <code>SubscriptionRequiredException</code> error.</p> <p>For
+   * API access, you need an access key ID and a secret access key. Use temporary
+   * credentials instead of long-term access keys when possible. Temporary
+   * credentials include an access key ID, a secret access key, and a security token
+   * that indicates when the credentials expire. For more information, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+   * practices for managing Amazon Web Services access keys</a> in the <i>Amazon Web
+   * Services General Reference</i>.</p> <p>You can use the Health endpoint
+   * health.us-east-1.amazonaws.com (HTTPS) to call the Health API operations. Health
+   * supports a multi-Region application architecture and has two regional endpoints
+   * in an active-passive configuration. You can use the high availability endpoint
+   * example to determine which Amazon Web Services Region is active, so that you can
+   * get the latest information from the API. For more information, see <a
    * href="https://docs.aws.amazon.com/health/latest/ug/health-api.html">Accessing
-   * the Health API</a> in the <i>Health User Guide</i>.</p> </li> </ul> 
-   * <p>For authentication of requests, Health uses the <a
+   * the Health API</a> in the <i>Health User Guide</i>.</p> <p>For authentication of
+   * requests, Health uses the <a
    * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4 Signing Process</a>.</p> <p>If your Amazon Web Services account is
    * part of Organizations, you can use the Health organizational view feature. This
@@ -62,6 +71,9 @@ namespace Health
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef HealthClientConfiguration ClientConfigurationType;
+      typedef HealthEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -149,14 +161,14 @@ namespace Health
          * <p>Returns a list of entities that have been affected by the specified events,
          * based on the specified filter criteria. Entities can refer to individual
          * customer resources, groups of customer resources, or any other construct,
-         * depending on the Amazon Web Services service. Events that have impact beyond
-         * that of the affected entities, or where the extent of impact is unknown, include
-         * at least one entity indicating this.</p> <p>At least one event ARN is
-         * required.</p>  <ul> <li> <p>This API operation uses pagination. Specify
-         * the <code>nextToken</code> parameter in the next request to return more
-         * results.</p> </li> <li> <p>This operation supports resource-level permissions.
-         * You can use this operation to allow or deny access to specific Health events.
-         * For more information, see <a
+         * depending on the Amazon Web Service. Events that have impact beyond that of the
+         * affected entities, or where the extent of impact is unknown, include at least
+         * one entity indicating this.</p> <p>At least one event ARN is required.</p>
+         *  <ul> <li> <p>This API operation uses pagination. Specify the
+         * <code>nextToken</code> parameter in the next request to return more results.</p>
+         * </li> <li> <p>This operation supports resource-level permissions. You can use
+         * this operation to allow or deny access to specific Health events. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource-
          * and action-based conditions</a> in the <i>Health User Guide</i>.</p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
@@ -187,8 +199,8 @@ namespace Health
          * <p>Returns a list of entities that have been affected by one or more events for
          * one or more accounts in your organization in Organizations, based on the filter
          * criteria. Entities can refer to individual customer resources, groups of
-         * customer resources, or any other construct, depending on the Amazon Web Services
-         * service.</p> <p>At least one event Amazon Resource Name (ARN) and account ID are
+         * customer resources, or any other construct, depending on the Amazon Web
+         * Service.</p> <p>At least one event Amazon Resource Name (ARN) and account ID are
          * required.</p> <p>Before you can call this operation, you must first enable
          * Health to work with Organizations. To do this, call the <a
          * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
@@ -248,6 +260,32 @@ namespace Health
         void DescribeEntityAggregatesAsync(const DescribeEntityAggregatesRequestT& request, const DescribeEntityAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&HealthClient::DescribeEntityAggregates, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of entity aggregates for your Organizations that are affected
+         * by each of the specified events.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregatesForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEntityAggregatesForOrganizationOutcome DescribeEntityAggregatesForOrganization(const Model::DescribeEntityAggregatesForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEntityAggregatesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeEntityAggregatesForOrganizationRequestT = Model::DescribeEntityAggregatesForOrganizationRequest>
+        Model::DescribeEntityAggregatesForOrganizationOutcomeCallable DescribeEntityAggregatesForOrganizationCallable(const DescribeEntityAggregatesForOrganizationRequestT& request) const
+        {
+            return SubmitCallable(&HealthClient::DescribeEntityAggregatesForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeEntityAggregatesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeEntityAggregatesForOrganizationRequestT = Model::DescribeEntityAggregatesForOrganizationRequest>
+        void DescribeEntityAggregatesForOrganizationAsync(const DescribeEntityAggregatesForOrganizationRequestT& request, const DescribeEntityAggregatesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&HealthClient::DescribeEntityAggregatesForOrganization, request, handler, context);
         }
 
         /**
@@ -374,8 +412,8 @@ namespace Health
         /**
          * <p>Returns the event types that meet the specified filter criteria. You can use
          * this API operation to find information about the Health event, such as the
-         * category, Amazon Web Services service, and event code. The metadata for each
-         * event appears in the <a
+         * category, Amazon Web Service, and event code. The metadata for each event
+         * appears in the <a
          * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a>
          * object. </p> <p>If you don't specify a filter criteria, the API operation
          * returns all event types, in no particular order. </p>  <p>This API
@@ -499,36 +537,35 @@ namespace Health
 
         /**
          * <p>This operation provides status information on enabling or disabling Health to
-         * work with your organization. To call this operation, you must sign in as an IAM
-         * user, assume an IAM role, or sign in as the root user (not recommended) in the
+         * work with your organization. To call this operation, you must use the
          * organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeHealthServiceStatusForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeHealthServiceStatusForOrganizationOutcome DescribeHealthServiceStatusForOrganization() const;
+        virtual Model::DescribeHealthServiceStatusForOrganizationOutcome DescribeHealthServiceStatusForOrganization(const Model::DescribeHealthServiceStatusForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeHealthServiceStatusForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeHealthServiceStatusForOrganizationOutcomeCallable DescribeHealthServiceStatusForOrganizationCallable() const
+        template<typename DescribeHealthServiceStatusForOrganizationRequestT = Model::DescribeHealthServiceStatusForOrganizationRequest>
+        Model::DescribeHealthServiceStatusForOrganizationOutcomeCallable DescribeHealthServiceStatusForOrganizationCallable(const DescribeHealthServiceStatusForOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&HealthClient::DescribeHealthServiceStatusForOrganization);
+            return SubmitCallable(&HealthClient::DescribeHealthServiceStatusForOrganization, request);
         }
 
         /**
          * An Async wrapper for DescribeHealthServiceStatusForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeHealthServiceStatusForOrganizationAsync(const DescribeHealthServiceStatusForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeHealthServiceStatusForOrganizationRequestT = Model::DescribeHealthServiceStatusForOrganizationRequest>
+        void DescribeHealthServiceStatusForOrganizationAsync(const DescribeHealthServiceStatusForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeHealthServiceStatusForOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&HealthClient::DescribeHealthServiceStatusForOrganization, handler, context);
+            return SubmitAsync(&HealthClient::DescribeHealthServiceStatusForOrganization, request, handler, context);
         }
+
         /**
          * <p>Disables Health from working with Organizations. To call this operation, you
-         * must sign in as an Identity and Access Management (IAM) user, assume an IAM
-         * role, or sign in as the root user (not recommended) in the organization's
-         * management account. For more information, see <a
+         * must sign in to the organization's management account. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating
          * Health events</a> in the <i>Health User Guide</i>.</p> <p>This operation doesn't
          * remove the service-linked role from the management account in your organization.
@@ -546,25 +583,26 @@ namespace Health
          * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableHealthServiceAccessForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisableHealthServiceAccessForOrganizationOutcome DisableHealthServiceAccessForOrganization() const;
+        virtual Model::DisableHealthServiceAccessForOrganizationOutcome DisableHealthServiceAccessForOrganization(const Model::DisableHealthServiceAccessForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DisableHealthServiceAccessForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DisableHealthServiceAccessForOrganizationOutcomeCallable DisableHealthServiceAccessForOrganizationCallable() const
+        template<typename DisableHealthServiceAccessForOrganizationRequestT = Model::DisableHealthServiceAccessForOrganizationRequest>
+        Model::DisableHealthServiceAccessForOrganizationOutcomeCallable DisableHealthServiceAccessForOrganizationCallable(const DisableHealthServiceAccessForOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&HealthClient::DisableHealthServiceAccessForOrganization);
+            return SubmitCallable(&HealthClient::DisableHealthServiceAccessForOrganization, request);
         }
 
         /**
          * An Async wrapper for DisableHealthServiceAccessForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DisableHealthServiceAccessForOrganizationAsync(const DisableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DisableHealthServiceAccessForOrganizationRequestT = Model::DisableHealthServiceAccessForOrganizationRequest>
+        void DisableHealthServiceAccessForOrganizationAsync(const DisableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableHealthServiceAccessForOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&HealthClient::DisableHealthServiceAccessForOrganization, handler, context);
+            return SubmitAsync(&HealthClient::DisableHealthServiceAccessForOrganization, request, handler, context);
         }
+
         /**
          * <p>Enables Health to work with Organizations. You can use the organizational
          * view feature to aggregate events from all Amazon Web Services accounts in your
@@ -587,25 +625,26 @@ namespace Health
          * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableHealthServiceAccessForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::EnableHealthServiceAccessForOrganizationOutcome EnableHealthServiceAccessForOrganization() const;
+        virtual Model::EnableHealthServiceAccessForOrganizationOutcome EnableHealthServiceAccessForOrganization(const Model::EnableHealthServiceAccessForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for EnableHealthServiceAccessForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::EnableHealthServiceAccessForOrganizationOutcomeCallable EnableHealthServiceAccessForOrganizationCallable() const
+        template<typename EnableHealthServiceAccessForOrganizationRequestT = Model::EnableHealthServiceAccessForOrganizationRequest>
+        Model::EnableHealthServiceAccessForOrganizationOutcomeCallable EnableHealthServiceAccessForOrganizationCallable(const EnableHealthServiceAccessForOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&HealthClient::EnableHealthServiceAccessForOrganization);
+            return SubmitCallable(&HealthClient::EnableHealthServiceAccessForOrganization, request);
         }
 
         /**
          * An Async wrapper for EnableHealthServiceAccessForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void EnableHealthServiceAccessForOrganizationAsync(const EnableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename EnableHealthServiceAccessForOrganizationRequestT = Model::EnableHealthServiceAccessForOrganizationRequest>
+        void EnableHealthServiceAccessForOrganizationAsync(const EnableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableHealthServiceAccessForOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&HealthClient::EnableHealthServiceAccessForOrganization, handler, context);
+            return SubmitAsync(&HealthClient::EnableHealthServiceAccessForOrganization, request, handler, context);
         }
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<HealthEndpointProviderBase>& accessEndpointProvider();

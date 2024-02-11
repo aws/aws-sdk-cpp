@@ -161,8 +161,10 @@ namespace Model
 
     /**
      * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
-     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * Comprehend uses to encrypt the output results from an analysis job. Specify the
+     * Key Id of a symmetric key, because you cannot use an asymmetric key for
+     * uploading data to S3.</p> <p>The KmsKeyId can be one of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -175,8 +177,10 @@ namespace Model
 
     /**
      * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
-     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * Comprehend uses to encrypt the output results from an analysis job. Specify the
+     * Key Id of a symmetric key, because you cannot use an asymmetric key for
+     * uploading data to S3.</p> <p>The KmsKeyId can be one of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -189,8 +193,10 @@ namespace Model
 
     /**
      * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
-     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * Comprehend uses to encrypt the output results from an analysis job. Specify the
+     * Key Id of a symmetric key, because you cannot use an asymmetric key for
+     * uploading data to S3.</p> <p>The KmsKeyId can be one of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -203,8 +209,10 @@ namespace Model
 
     /**
      * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
-     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * Comprehend uses to encrypt the output results from an analysis job. Specify the
+     * Key Id of a symmetric key, because you cannot use an asymmetric key for
+     * uploading data to S3.</p> <p>The KmsKeyId can be one of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -217,8 +225,10 @@ namespace Model
 
     /**
      * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
-     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * Comprehend uses to encrypt the output results from an analysis job. Specify the
+     * Key Id of a symmetric key, because you cannot use an asymmetric key for
+     * uploading data to S3.</p> <p>The KmsKeyId can be one of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -231,8 +241,10 @@ namespace Model
 
     /**
      * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
-     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * Comprehend uses to encrypt the output results from an analysis job. Specify the
+     * Key Id of a symmetric key, because you cannot use an asymmetric key for
+     * uploading data to S3.</p> <p>The KmsKeyId can be one of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -245,8 +257,10 @@ namespace Model
 
     /**
      * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
-     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * Comprehend uses to encrypt the output results from an analysis job. Specify the
+     * Key Id of a symmetric key, because you cannot use an asymmetric key for
+     * uploading data to S3.</p> <p>The KmsKeyId can be one of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -259,8 +273,10 @@ namespace Model
 
     /**
      * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
-     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * Comprehend uses to encrypt the output results from an analysis job. Specify the
+     * Key Id of a symmetric key, because you cannot use an asymmetric key for
+     * uploading data to S3.</p> <p>The KmsKeyId can be one of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>

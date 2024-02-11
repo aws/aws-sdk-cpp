@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/PublicAccess.h>
+#include <aws/kafka/model/VpcConnectivity.h>
 #include <utility>
 
 namespace Aws
@@ -82,10 +83,56 @@ namespace Model
      */
     inline ConnectivityInfo& WithPublicAccess(PublicAccess&& value) { SetPublicAccess(std::move(value)); return *this;}
 
+
+    /**
+     * 
+            <p>VPC connectivity access control for brokers.</p>
+         
+     */
+    inline const VpcConnectivity& GetVpcConnectivity() const{ return m_vpcConnectivity; }
+
+    /**
+     * 
+            <p>VPC connectivity access control for brokers.</p>
+         
+     */
+    inline bool VpcConnectivityHasBeenSet() const { return m_vpcConnectivityHasBeenSet; }
+
+    /**
+     * 
+            <p>VPC connectivity access control for brokers.</p>
+         
+     */
+    inline void SetVpcConnectivity(const VpcConnectivity& value) { m_vpcConnectivityHasBeenSet = true; m_vpcConnectivity = value; }
+
+    /**
+     * 
+            <p>VPC connectivity access control for brokers.</p>
+         
+     */
+    inline void SetVpcConnectivity(VpcConnectivity&& value) { m_vpcConnectivityHasBeenSet = true; m_vpcConnectivity = std::move(value); }
+
+    /**
+     * 
+            <p>VPC connectivity access control for brokers.</p>
+         
+     */
+    inline ConnectivityInfo& WithVpcConnectivity(const VpcConnectivity& value) { SetVpcConnectivity(value); return *this;}
+
+    /**
+     * 
+            <p>VPC connectivity access control for brokers.</p>
+         
+     */
+    inline ConnectivityInfo& WithVpcConnectivity(VpcConnectivity&& value) { SetVpcConnectivity(std::move(value)); return *this;}
+
   private:
 
     PublicAccess m_publicAccess;
     bool m_publicAccessHasBeenSet = false;
+
+    VpcConnectivity m_vpcConnectivity;
+    bool m_vpcConnectivityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -113,6 +113,7 @@ static const int DUPLICATE_DOCUMENT_VERSION_NAME_HASH = HashingUtils::HashString
 static const int OPS_METADATA_INVALID_ARGUMENT_HASH = HashingUtils::HashString("OpsMetadataInvalidArgumentException");
 static const int INVALID_TYPE_NAME_HASH = HashingUtils::HashString("InvalidTypeNameException");
 static const int UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH = HashingUtils::HashString("UnsupportedInventorySchemaVersionException");
+static const int OPS_ITEM_CONFLICT_HASH = HashingUtils::HashString("OpsItemConflictException");
 static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
 static const int ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationLimitExceeded");
 static const int INVALID_OPTION_HASH = HashingUtils::HashString("InvalidOptionException");
@@ -242,612 +243,612 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == INVALID_OUTPUT_LOCATION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OUTPUT_LOCATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OUTPUT_LOCATION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_COUNT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_COUNT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PARAMETER_VERSION_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_VERSION_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_VERSION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_POLICY_TYPE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_POLICY_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_POLICY_TYPE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_AGGREGATOR_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AGGREGATOR), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AGGREGATOR), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INVENTORY_REQUEST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_REQUEST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_REQUEST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DUPLICATE_DOCUMENT_VERSION_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_VERSION_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_VERSION_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_METADATA_INVALID_ARGUMENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_INVALID_ARGUMENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_INVALID_ARGUMENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_TYPE_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TYPE_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TYPE_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_INVENTORY_SCHEMA_VERSION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_INVENTORY_SCHEMA_VERSION), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == OPS_ITEM_CONFLICT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_CONFLICT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ASSOCIATION_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ASSOCIATION_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_OPTION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OPTION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OPTION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PARAMETER_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SUB_TYPE_COUNT_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SUB_TYPE_COUNT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SUB_TYPE_COUNT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_VERSION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_VERSION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PERMISSION_TYPE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PERMISSION_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PERMISSION_TYPE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INCOMPATIBLE_POLICY_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INCOMPATIBLE_POLICY), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INCOMPATIBLE_POLICY), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ASSOCIATION_VERSION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ASSOCIATION_VERSION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ASSOCIATION_VERSION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PARAMETER_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DOCUMENT_TYPE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_TYPE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_POLICY_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_POLICY_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_POLICY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_POLICY_CONFLICT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_POLICY_CONFLICT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_POLICY_CONFLICT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PARAMETER_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::HIERARCHY_LEVEL_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::HIERARCHY_LEVEL_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DOCUMENT_VERSION_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_VERSION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_VERSION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_DATA_SYNC_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_FILTER_VALUE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_VALUE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_VALUE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_ITEM_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DELETE_INVENTORY_PARAMETERS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DELETE_INVENTORY_PARAMETERS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DELETE_INVENTORY_PARAMETERS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_METADATA_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FEATURE_NOT_AVAILABLE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::FEATURE_NOT_AVAILABLE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::FEATURE_NOT_AVAILABLE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PLUGIN_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PLUGIN_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PLUGIN_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DOCUMENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_AUTOMATION_SIGNAL_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_SIGNAL), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_SIGNAL), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_POLICY_INVALID_PARAMETER_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_POLICY_INVALID_PARAMETER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_POLICY_INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == AUTOMATION_DEFINITION_NOT_APPROVED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_NOT_APPROVED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_NOT_APPROVED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == AUTOMATION_EXECUTION_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_EXECUTION_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_EXECUTION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INVENTORY_ITEM_CONTEXT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_ITEM_CONTEXT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_ITEM_CONTEXT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_IN_USE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ASSOCIATION_EXECUTION_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_EXECUTION_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_EXECUTION_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_RESOURCE_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INSTANCE_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INSTANCE_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INSTANCE_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ASSOCIATED_INSTANCES_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATED_INSTANCES), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATED_INSTANCES), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_METADATA_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TARGET_IN_USE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TARGET_IN_USE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TARGET_IN_USE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_KEY_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_KEY_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_KEY_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ITEM_SIZE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ITEM_SIZE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ITEM_SIZE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_METADATA_TOO_MANY_UPDATES_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_TOO_MANY_UPDATES), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_TOO_MANY_UPDATES), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_RESOURCE_TYPE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_TYPE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DOCUMENT_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ASSOCIATION_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NEXT_TOKEN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == UNSUPPORTED_OPERATING_SYSTEM_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_OPERATING_SYSTEM), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_OPERATING_SYSTEM), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == AUTOMATION_EXECUTION_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_EXECUTION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_EXECUTION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DELETION_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DELETION_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DELETION_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_TARGET_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TARGET), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TARGET), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DOCUMENT_CONTENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_CONTENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_CONTENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == UNSUPPORTED_INVENTORY_ITEM_CONTEXT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_INVENTORY_ITEM_CONTEXT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_INVENTORY_ITEM_CONTEXT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_POLICY_ATTRIBUTE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_POLICY_ATTRIBUTE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_POLICY_ATTRIBUTE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == AUTOMATION_DEFINITION_VERSION_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_VERSION_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_VERSION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PARAMETER_MAX_VERSION_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_MAX_VERSION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_MAX_VERSION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_ITEM_ACCESS_DENIED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_ACCESS_DENIED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == AUTOMATION_STEP_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_STEP_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_STEP_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_DATA_SYNC_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_RESULT_ATTRIBUTE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESULT_ATTRIBUTE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESULT_ATTRIBUTE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == UNSUPPORTED_FEATURE_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_FEATURE_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_FEATURE_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == STATUS_UNCHANGED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::STATUS_UNCHANGED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::STATUS_UNCHANGED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_ITEM_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DUPLICATE_INSTANCE_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_INSTANCE_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_INSTANCE_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DUPLICATE_DOCUMENT_CONTENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_CONTENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_CONTENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_OUTPUT_FOLDER_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OUTPUT_FOLDER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OUTPUT_FOLDER), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TOO_MANY_UPDATES_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOO_MANY_UPDATES), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOO_MANY_UPDATES), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DOCUMENT_SCHEMA_VERSION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_SCHEMA_VERSION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_SCHEMA_VERSION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_AUTOMATION_STATUS_UPDATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_STATUS_UPDATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_STATUS_UPDATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_AUTOMATION_EXECUTION_PARAMETERS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_EXECUTION_PARAMETERS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_EXECUTION_PARAMETERS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ITEM_CONTENT_MISMATCH_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ITEM_CONTENT_MISMATCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ITEM_CONTENT_MISMATCH), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PARAMETER_PATTERN_MISMATCH_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_PATTERN_MISMATCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_PATTERN_MISMATCH), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INSTANCE_INFORMATION_FILTER_VALUE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INSTANCE_INFORMATION_FILTER_VALUE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_COMMAND_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_COMMAND_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_COMMAND_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_TARGET_MAPS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TARGET_MAPS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TARGET_MAPS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVOCATION_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVOCATION_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVOCATION_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TOTAL_SIZE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOTAL_SIZE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOTAL_SIZE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == AUTOMATION_DEFINITION_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::CUSTOM_SCHEMA_COUNT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ALLOWED_PATTERN_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ALLOWED_PATTERN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ALLOWED_PATTERN), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ROLE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ROLE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ROLE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PARAMETERS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PARAMETERS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PARAMETERS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOO_MANY_TAGS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ACTIVATION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_DATA_SYNC_INVALID_CONFIGURATION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_INVALID_CONFIGURATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_INVALID_CONFIGURATION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ASSOCIATION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ASSOCIATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ASSOCIATION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == HIERARCHY_TYPE_MISMATCH_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::HIERARCHY_TYPE_MISMATCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::HIERARCHY_TYPE_MISMATCH), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DOCUMENT_OPERATION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_OPERATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_OPERATION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_METADATA_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_ITEM_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_UPDATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_UPDATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_UPDATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_FILTER_OPTION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_OPTION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_OPTION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ITEM_CONTENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ITEM_CONTENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ITEM_CONTENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TARGET_NOT_CONNECTED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TARGET_NOT_CONNECTED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TARGET_NOT_CONNECTED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DOCUMENT_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == UNSUPPORTED_CALENDAR_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_CALENDAR), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_CALENDAR), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DOCUMENT_VERSION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_VERSION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_VERSION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_NOTIFICATION_CONFIG_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NOTIFICATION_CONFIG), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NOTIFICATION_CONFIG), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_TAG_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TAG), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TAG), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SCHEDULE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_SCHEDULE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_SCHEDULE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ACTIVATION_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_DATA_SYNC_CONFLICT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_CONFLICT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_CONFLICT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_METADATA_KEY_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_KEY_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_KEY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_FILTER_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPS_ITEM_INVALID_PARAMETER_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_INVALID_PARAMETER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INVENTORY_GROUP_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_GROUP), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_GROUP), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == POLICIES_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::POLICIES_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::POLICIES_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == UNSUPPORTED_PARAMETER_TYPE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_PARAMETER_TYPE), false);
-    return true;
-  }
-  else if (hashCode == MAX_DOCUMENT_SIZE_EXCEEDED_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::MAX_DOCUMENT_SIZE_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_PARAMETER_TYPE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   return false;
@@ -855,29 +856,34 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == INVALID_FILTER_KEY_HASH)
+  if (hashCode == MAX_DOCUMENT_SIZE_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_KEY), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::MAX_DOCUMENT_SIZE_EXCEEDED), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == INVALID_FILTER_KEY_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_KEY), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::IDEMPOTENT_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == UNSUPPORTED_PLATFORM_TYPE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_PLATFORM_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_PLATFORM_TYPE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SERVICE_SETTING_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SERVICE_SETTING_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SERVICE_SETTING_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DOCUMENT_PERMISSION_LIMIT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_PERMISSION_LIMIT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_PERMISSION_LIMIT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   return false;

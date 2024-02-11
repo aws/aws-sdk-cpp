@@ -88,58 +88,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region of the S3 bucket where images will be delivered. This
-     * <code>DestinationRegion</code> must match the Region where the stream is
-     * located.</p>
+     * <p>The Amazon Web Services Region of the S3 bucket where images will be
+     * delivered. This <code>DestinationRegion</code> must match the Region where the
+     * stream is located.</p>
      */
     inline const Aws::String& GetDestinationRegion() const{ return m_destinationRegion; }
 
     /**
-     * <p>The AWS Region of the S3 bucket where images will be delivered. This
-     * <code>DestinationRegion</code> must match the Region where the stream is
-     * located.</p>
+     * <p>The Amazon Web Services Region of the S3 bucket where images will be
+     * delivered. This <code>DestinationRegion</code> must match the Region where the
+     * stream is located.</p>
      */
     inline bool DestinationRegionHasBeenSet() const { return m_destinationRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region of the S3 bucket where images will be delivered. This
-     * <code>DestinationRegion</code> must match the Region where the stream is
-     * located.</p>
+     * <p>The Amazon Web Services Region of the S3 bucket where images will be
+     * delivered. This <code>DestinationRegion</code> must match the Region where the
+     * stream is located.</p>
      */
     inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
 
     /**
-     * <p>The AWS Region of the S3 bucket where images will be delivered. This
-     * <code>DestinationRegion</code> must match the Region where the stream is
-     * located.</p>
+     * <p>The Amazon Web Services Region of the S3 bucket where images will be
+     * delivered. This <code>DestinationRegion</code> must match the Region where the
+     * stream is located.</p>
      */
     inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region of the S3 bucket where images will be delivered. This
-     * <code>DestinationRegion</code> must match the Region where the stream is
-     * located.</p>
+     * <p>The Amazon Web Services Region of the S3 bucket where images will be
+     * delivered. This <code>DestinationRegion</code> must match the Region where the
+     * stream is located.</p>
      */
     inline void SetDestinationRegion(const char* value) { m_destinationRegionHasBeenSet = true; m_destinationRegion.assign(value); }
 
     /**
-     * <p>The AWS Region of the S3 bucket where images will be delivered. This
-     * <code>DestinationRegion</code> must match the Region where the stream is
-     * located.</p>
+     * <p>The Amazon Web Services Region of the S3 bucket where images will be
+     * delivered. This <code>DestinationRegion</code> must match the Region where the
+     * stream is located.</p>
      */
     inline ImageGenerationDestinationConfig& WithDestinationRegion(const Aws::String& value) { SetDestinationRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region of the S3 bucket where images will be delivered. This
-     * <code>DestinationRegion</code> must match the Region where the stream is
-     * located.</p>
+     * <p>The Amazon Web Services Region of the S3 bucket where images will be
+     * delivered. This <code>DestinationRegion</code> must match the Region where the
+     * stream is located.</p>
      */
     inline ImageGenerationDestinationConfig& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region of the S3 bucket where images will be delivered. This
-     * <code>DestinationRegion</code> must match the Region where the stream is
-     * located.</p>
+     * <p>The Amazon Web Services Region of the S3 bucket where images will be
+     * delivered. This <code>DestinationRegion</code> must match the Region where the
+     * stream is located.</p>
      */
     inline ImageGenerationDestinationConfig& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}
 

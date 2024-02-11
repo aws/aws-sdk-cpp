@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 ImportLensRequest::ImportLensRequest() : 
     m_lensAliasHasBeenSet(false),
     m_jSONStringHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/ReadSetImportJobStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -32,32 +32,6 @@ namespace Model
     AWS_OMICS_API StartReadSetImportJobResult();
     AWS_OMICS_API StartReadSetImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API StartReadSetImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline StartReadSetImportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline StartReadSetImportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -97,42 +71,6 @@ namespace Model
 
 
     /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline StartReadSetImportJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline StartReadSetImportJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline StartReadSetImportJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
-
-    /**
      * <p>The read set's sequence store ID.</p>
      */
     inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
@@ -169,6 +107,42 @@ namespace Model
 
 
     /**
+     * <p>The job's service role ARN.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The job's service role ARN.</p>
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+
+    /**
+     * <p>The job's service role ARN.</p>
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
+
+    /**
+     * <p>The job's service role ARN.</p>
+     */
+    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
+
+    /**
+     * <p>The job's service role ARN.</p>
+     */
+    inline StartReadSetImportJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p>The job's service role ARN.</p>
+     */
+    inline StartReadSetImportJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The job's service role ARN.</p>
+     */
+    inline StartReadSetImportJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
      * <p>The job's status.</p>
      */
     inline const ReadSetImportJobStatus& GetStatus() const{ return m_status; }
@@ -194,6 +168,32 @@ namespace Model
     inline StartReadSetImportJobResult& WithStatus(ReadSetImportJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline StartReadSetImportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline StartReadSetImportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -217,15 +217,15 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_creationTime;
-
     Aws::String m_id;
-
-    Aws::String m_roleArn;
 
     Aws::String m_sequenceStoreId;
 
+    Aws::String m_roleArn;
+
     ReadSetImportJobStatus m_status;
+
+    Aws::Utils::DateTime m_creationTime;
 
     Aws::String m_requestId;
   };

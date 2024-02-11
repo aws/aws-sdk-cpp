@@ -71,6 +71,42 @@ namespace Model
 
 
     /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountId = std::move(value); }
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountId.assign(value); }
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline ListLogPatternsResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline ListLogPatternsResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID for the resource group owner.</p>
+     */
+    inline ListLogPatternsResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+
+    /**
      * <p>The list of log patterns.</p>
      */
     inline const Aws::Vector<LogPattern>& GetLogPatterns() const{ return m_logPatterns; }
@@ -173,6 +209,8 @@ namespace Model
   private:
 
     Aws::String m_resourceGroupName;
+
+    Aws::String m_accountId;
 
     Aws::Vector<LogPattern> m_logPatterns;
 

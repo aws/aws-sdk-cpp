@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AacRawFormat::NOT_SET:
+            return {};
           case AacRawFormat::LATM_LOAS:
             return "LATM_LOAS";
           case AacRawFormat::NONE:

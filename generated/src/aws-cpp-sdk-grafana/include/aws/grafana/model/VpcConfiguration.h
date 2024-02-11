@@ -28,7 +28,8 @@ namespace Model
    * <p>The configuration settings for an Amazon VPC that contains data sources for
    * your Grafana workspace to connect to.</p>  <p>Provided
    * <code>securityGroupIds</code> and <code>subnetIds</code> must be part of the
-   * same VPC.</p> <p><h3>See Also:</h3>   <a
+   * same VPC.</p> <p>Connecting to a private VPC is not yet available in the Asia
+   * Pacific (Seoul) Region (ap-northeast-2).</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/VpcConfiguration">AWS
    * API Reference</a></p>
    */

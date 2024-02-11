@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SavingsPlanOfferingPropertyKey::NOT_SET:
+            return {};
           case SavingsPlanOfferingPropertyKey::region:
             return "region";
           case SavingsPlanOfferingPropertyKey::instanceFamily:

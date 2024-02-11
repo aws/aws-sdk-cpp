@@ -79,7 +79,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_minStorageThroughputPerIops(0.0),
     m_minStorageThroughputPerIopsHasBeenSet(false),
     m_maxStorageThroughputPerIops(0.0),
-    m_maxStorageThroughputPerIopsHasBeenSet(false)
+    m_maxStorageThroughputPerIopsHasBeenSet(false),
+    m_supportsDedicatedLogVolume(false),
+    m_supportsDedicatedLogVolumeHasBeenSet(false)
 {
 }
 
@@ -142,7 +144,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_minStorageThroughputPerIops(0.0),
     m_minStorageThroughputPerIopsHasBeenSet(false),
     m_maxStorageThroughputPerIops(0.0),
-    m_maxStorageThroughputPerIopsHasBeenSet(false)
+    m_maxStorageThroughputPerIopsHasBeenSet(false),
+    m_supportsDedicatedLogVolume(false),
+    m_supportsDedicatedLogVolumeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -393,6 +397,12 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_maxStorageThroughputPerIops = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxStorageThroughputPerIopsNode.GetText()).c_str()).c_str());
       m_maxStorageThroughputPerIopsHasBeenSet = true;
     }
+    XmlNode supportsDedicatedLogVolumeNode = resultNode.FirstChild("SupportsDedicatedLogVolume");
+    if(!supportsDedicatedLogVolumeNode.IsNull())
+    {
+      m_supportsDedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsDedicatedLogVolumeNode.GetText()).c_str()).c_str());
+      m_supportsDedicatedLogVolumeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -599,6 +609,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
         oStream << location << index << locationValue << ".MaxStorageThroughputPerIops=" << StringUtils::URLEncode(m_maxStorageThroughputPerIops) << "&";
   }
 
+  if(m_supportsDedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsDedicatedLogVolume=" << std::boolalpha << m_supportsDedicatedLogVolume << "&";
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -766,6 +781,10 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_maxStorageThroughputPerIopsHasBeenSet)
   {
         oStream << location << ".MaxStorageThroughputPerIops=" << StringUtils::URLEncode(m_maxStorageThroughputPerIops) << "&";
+  }
+  if(m_supportsDedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << ".SupportsDedicatedLogVolume=" << std::boolalpha << m_supportsDedicatedLogVolume << "&";
   }
 }
 

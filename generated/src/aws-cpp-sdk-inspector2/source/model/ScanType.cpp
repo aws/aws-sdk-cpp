@@ -22,6 +22,7 @@ namespace Aws
 
         static const int NETWORK_HASH = HashingUtils::HashString("NETWORK");
         static const int PACKAGE_HASH = HashingUtils::HashString("PACKAGE");
+        static const int CODE_HASH = HashingUtils::HashString("CODE");
 
 
         ScanType GetScanTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == PACKAGE_HASH)
           {
             return ScanType::PACKAGE;
+          }
+          else if (hashCode == CODE_HASH)
+          {
+            return ScanType::CODE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanType::NOT_SET:
+            return {};
           case ScanType::NETWORK:
             return "NETWORK";
           case ScanType::PACKAGE:
             return "PACKAGE";
+          case ScanType::CODE:
+            return "CODE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -16,7 +16,7 @@ CreatePullRequestRequest::CreatePullRequestRequest() :
     m_titleHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_targetsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

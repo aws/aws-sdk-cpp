@@ -189,6 +189,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LandmarkType::NOT_SET:
+            return {};
           case LandmarkType::eyeLeft:
             return "eyeLeft";
           case LandmarkType::eyeRight:

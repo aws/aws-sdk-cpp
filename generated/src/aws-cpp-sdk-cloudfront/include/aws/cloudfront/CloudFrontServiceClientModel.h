@@ -29,6 +29,7 @@
 #include <aws/cloudfront/model/CreateFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateInvalidation2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateKeyGroup2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateKeyValueStore2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateMonitoringSubscription2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateOriginAccessControl2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateOriginRequestPolicy2020_05_31Result.h>
@@ -39,6 +40,7 @@
 #include <aws/cloudfront/model/CreateStreamingDistributionWithTags2020_05_31Result.h>
 #include <aws/cloudfront/model/DeleteMonitoringSubscription2020_05_31Result.h>
 #include <aws/cloudfront/model/DescribeFunction2020_05_31Result.h>
+#include <aws/cloudfront/model/DescribeKeyValueStore2020_05_31Result.h>
 #include <aws/cloudfront/model/GetCachePolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/GetCachePolicyConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2020_05_31Result.h>
@@ -83,6 +85,7 @@
 #include <aws/cloudfront/model/ListFunctions2020_05_31Result.h>
 #include <aws/cloudfront/model/ListInvalidations2020_05_31Result.h>
 #include <aws/cloudfront/model/ListKeyGroups2020_05_31Result.h>
+#include <aws/cloudfront/model/ListKeyValueStores2020_05_31Result.h>
 #include <aws/cloudfront/model/ListOriginAccessControls2020_05_31Result.h>
 #include <aws/cloudfront/model/ListOriginRequestPolicies2020_05_31Result.h>
 #include <aws/cloudfront/model/ListPublicKeys2020_05_31Result.h>
@@ -101,6 +104,7 @@
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateKeyGroup2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateKeyValueStore2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateOriginAccessControl2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateOriginRequestPolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdatePublicKey2020_05_31Result.h>
@@ -160,6 +164,7 @@ namespace Aws
       class CreateFunction2020_05_31Request;
       class CreateInvalidation2020_05_31Request;
       class CreateKeyGroup2020_05_31Request;
+      class CreateKeyValueStore2020_05_31Request;
       class CreateMonitoringSubscription2020_05_31Request;
       class CreateOriginAccessControl2020_05_31Request;
       class CreateOriginRequestPolicy2020_05_31Request;
@@ -176,6 +181,7 @@ namespace Aws
       class DeleteFieldLevelEncryptionProfile2020_05_31Request;
       class DeleteFunction2020_05_31Request;
       class DeleteKeyGroup2020_05_31Request;
+      class DeleteKeyValueStore2020_05_31Request;
       class DeleteMonitoringSubscription2020_05_31Request;
       class DeleteOriginAccessControl2020_05_31Request;
       class DeleteOriginRequestPolicy2020_05_31Request;
@@ -184,6 +190,7 @@ namespace Aws
       class DeleteResponseHeadersPolicy2020_05_31Request;
       class DeleteStreamingDistribution2020_05_31Request;
       class DescribeFunction2020_05_31Request;
+      class DescribeKeyValueStore2020_05_31Request;
       class GetCachePolicy2020_05_31Request;
       class GetCachePolicyConfig2020_05_31Request;
       class GetCloudFrontOriginAccessIdentity2020_05_31Request;
@@ -228,6 +235,7 @@ namespace Aws
       class ListFunctions2020_05_31Request;
       class ListInvalidations2020_05_31Request;
       class ListKeyGroups2020_05_31Request;
+      class ListKeyValueStores2020_05_31Request;
       class ListOriginAccessControls2020_05_31Request;
       class ListOriginRequestPolicies2020_05_31Request;
       class ListPublicKeys2020_05_31Request;
@@ -248,6 +256,7 @@ namespace Aws
       class UpdateFieldLevelEncryptionProfile2020_05_31Request;
       class UpdateFunction2020_05_31Request;
       class UpdateKeyGroup2020_05_31Request;
+      class UpdateKeyValueStore2020_05_31Request;
       class UpdateOriginAccessControl2020_05_31Request;
       class UpdateOriginRequestPolicy2020_05_31Request;
       class UpdatePublicKey2020_05_31Request;
@@ -269,6 +278,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateFunction2020_05_31Result, CloudFrontError> CreateFunction2020_05_31Outcome;
       typedef Aws::Utils::Outcome<CreateInvalidation2020_05_31Result, CloudFrontError> CreateInvalidation2020_05_31Outcome;
       typedef Aws::Utils::Outcome<CreateKeyGroup2020_05_31Result, CloudFrontError> CreateKeyGroup2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<CreateKeyValueStore2020_05_31Result, CloudFrontError> CreateKeyValueStore2020_05_31Outcome;
       typedef Aws::Utils::Outcome<CreateMonitoringSubscription2020_05_31Result, CloudFrontError> CreateMonitoringSubscription2020_05_31Outcome;
       typedef Aws::Utils::Outcome<CreateOriginAccessControl2020_05_31Result, CloudFrontError> CreateOriginAccessControl2020_05_31Outcome;
       typedef Aws::Utils::Outcome<CreateOriginRequestPolicy2020_05_31Result, CloudFrontError> CreateOriginRequestPolicy2020_05_31Outcome;
@@ -285,6 +295,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteFieldLevelEncryptionProfile2020_05_31Outcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteFunction2020_05_31Outcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteKeyGroup2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteKeyValueStore2020_05_31Outcome;
       typedef Aws::Utils::Outcome<DeleteMonitoringSubscription2020_05_31Result, CloudFrontError> DeleteMonitoringSubscription2020_05_31Outcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteOriginAccessControl2020_05_31Outcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteOriginRequestPolicy2020_05_31Outcome;
@@ -293,6 +304,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteResponseHeadersPolicy2020_05_31Outcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteStreamingDistribution2020_05_31Outcome;
       typedef Aws::Utils::Outcome<DescribeFunction2020_05_31Result, CloudFrontError> DescribeFunction2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<DescribeKeyValueStore2020_05_31Result, CloudFrontError> DescribeKeyValueStore2020_05_31Outcome;
       typedef Aws::Utils::Outcome<GetCachePolicy2020_05_31Result, CloudFrontError> GetCachePolicy2020_05_31Outcome;
       typedef Aws::Utils::Outcome<GetCachePolicyConfig2020_05_31Result, CloudFrontError> GetCachePolicyConfig2020_05_31Outcome;
       typedef Aws::Utils::Outcome<GetCloudFrontOriginAccessIdentity2020_05_31Result, CloudFrontError> GetCloudFrontOriginAccessIdentity2020_05_31Outcome;
@@ -337,6 +349,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListFunctions2020_05_31Result, CloudFrontError> ListFunctions2020_05_31Outcome;
       typedef Aws::Utils::Outcome<ListInvalidations2020_05_31Result, CloudFrontError> ListInvalidations2020_05_31Outcome;
       typedef Aws::Utils::Outcome<ListKeyGroups2020_05_31Result, CloudFrontError> ListKeyGroups2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<ListKeyValueStores2020_05_31Result, CloudFrontError> ListKeyValueStores2020_05_31Outcome;
       typedef Aws::Utils::Outcome<ListOriginAccessControls2020_05_31Result, CloudFrontError> ListOriginAccessControls2020_05_31Outcome;
       typedef Aws::Utils::Outcome<ListOriginRequestPolicies2020_05_31Result, CloudFrontError> ListOriginRequestPolicies2020_05_31Outcome;
       typedef Aws::Utils::Outcome<ListPublicKeys2020_05_31Result, CloudFrontError> ListPublicKeys2020_05_31Outcome;
@@ -357,6 +370,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateFieldLevelEncryptionProfile2020_05_31Result, CloudFrontError> UpdateFieldLevelEncryptionProfile2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateFunction2020_05_31Result, CloudFrontError> UpdateFunction2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateKeyGroup2020_05_31Result, CloudFrontError> UpdateKeyGroup2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<UpdateKeyValueStore2020_05_31Result, CloudFrontError> UpdateKeyValueStore2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateOriginAccessControl2020_05_31Result, CloudFrontError> UpdateOriginAccessControl2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateOriginRequestPolicy2020_05_31Result, CloudFrontError> UpdateOriginRequestPolicy2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdatePublicKey2020_05_31Result, CloudFrontError> UpdatePublicKey2020_05_31Outcome;
@@ -378,6 +392,7 @@ namespace Aws
       typedef std::future<CreateFunction2020_05_31Outcome> CreateFunction2020_05_31OutcomeCallable;
       typedef std::future<CreateInvalidation2020_05_31Outcome> CreateInvalidation2020_05_31OutcomeCallable;
       typedef std::future<CreateKeyGroup2020_05_31Outcome> CreateKeyGroup2020_05_31OutcomeCallable;
+      typedef std::future<CreateKeyValueStore2020_05_31Outcome> CreateKeyValueStore2020_05_31OutcomeCallable;
       typedef std::future<CreateMonitoringSubscription2020_05_31Outcome> CreateMonitoringSubscription2020_05_31OutcomeCallable;
       typedef std::future<CreateOriginAccessControl2020_05_31Outcome> CreateOriginAccessControl2020_05_31OutcomeCallable;
       typedef std::future<CreateOriginRequestPolicy2020_05_31Outcome> CreateOriginRequestPolicy2020_05_31OutcomeCallable;
@@ -394,6 +409,7 @@ namespace Aws
       typedef std::future<DeleteFieldLevelEncryptionProfile2020_05_31Outcome> DeleteFieldLevelEncryptionProfile2020_05_31OutcomeCallable;
       typedef std::future<DeleteFunction2020_05_31Outcome> DeleteFunction2020_05_31OutcomeCallable;
       typedef std::future<DeleteKeyGroup2020_05_31Outcome> DeleteKeyGroup2020_05_31OutcomeCallable;
+      typedef std::future<DeleteKeyValueStore2020_05_31Outcome> DeleteKeyValueStore2020_05_31OutcomeCallable;
       typedef std::future<DeleteMonitoringSubscription2020_05_31Outcome> DeleteMonitoringSubscription2020_05_31OutcomeCallable;
       typedef std::future<DeleteOriginAccessControl2020_05_31Outcome> DeleteOriginAccessControl2020_05_31OutcomeCallable;
       typedef std::future<DeleteOriginRequestPolicy2020_05_31Outcome> DeleteOriginRequestPolicy2020_05_31OutcomeCallable;
@@ -402,6 +418,7 @@ namespace Aws
       typedef std::future<DeleteResponseHeadersPolicy2020_05_31Outcome> DeleteResponseHeadersPolicy2020_05_31OutcomeCallable;
       typedef std::future<DeleteStreamingDistribution2020_05_31Outcome> DeleteStreamingDistribution2020_05_31OutcomeCallable;
       typedef std::future<DescribeFunction2020_05_31Outcome> DescribeFunction2020_05_31OutcomeCallable;
+      typedef std::future<DescribeKeyValueStore2020_05_31Outcome> DescribeKeyValueStore2020_05_31OutcomeCallable;
       typedef std::future<GetCachePolicy2020_05_31Outcome> GetCachePolicy2020_05_31OutcomeCallable;
       typedef std::future<GetCachePolicyConfig2020_05_31Outcome> GetCachePolicyConfig2020_05_31OutcomeCallable;
       typedef std::future<GetCloudFrontOriginAccessIdentity2020_05_31Outcome> GetCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
@@ -446,6 +463,7 @@ namespace Aws
       typedef std::future<ListFunctions2020_05_31Outcome> ListFunctions2020_05_31OutcomeCallable;
       typedef std::future<ListInvalidations2020_05_31Outcome> ListInvalidations2020_05_31OutcomeCallable;
       typedef std::future<ListKeyGroups2020_05_31Outcome> ListKeyGroups2020_05_31OutcomeCallable;
+      typedef std::future<ListKeyValueStores2020_05_31Outcome> ListKeyValueStores2020_05_31OutcomeCallable;
       typedef std::future<ListOriginAccessControls2020_05_31Outcome> ListOriginAccessControls2020_05_31OutcomeCallable;
       typedef std::future<ListOriginRequestPolicies2020_05_31Outcome> ListOriginRequestPolicies2020_05_31OutcomeCallable;
       typedef std::future<ListPublicKeys2020_05_31Outcome> ListPublicKeys2020_05_31OutcomeCallable;
@@ -466,6 +484,7 @@ namespace Aws
       typedef std::future<UpdateFieldLevelEncryptionProfile2020_05_31Outcome> UpdateFieldLevelEncryptionProfile2020_05_31OutcomeCallable;
       typedef std::future<UpdateFunction2020_05_31Outcome> UpdateFunction2020_05_31OutcomeCallable;
       typedef std::future<UpdateKeyGroup2020_05_31Outcome> UpdateKeyGroup2020_05_31OutcomeCallable;
+      typedef std::future<UpdateKeyValueStore2020_05_31Outcome> UpdateKeyValueStore2020_05_31OutcomeCallable;
       typedef std::future<UpdateOriginAccessControl2020_05_31Outcome> UpdateOriginAccessControl2020_05_31OutcomeCallable;
       typedef std::future<UpdateOriginRequestPolicy2020_05_31Outcome> UpdateOriginRequestPolicy2020_05_31OutcomeCallable;
       typedef std::future<UpdatePublicKey2020_05_31Outcome> UpdatePublicKey2020_05_31OutcomeCallable;
@@ -490,6 +509,7 @@ namespace Aws
     typedef std::function<void(const CloudFrontClient*, const Model::CreateFunction2020_05_31Request&, const Model::CreateFunction2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFunction2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateInvalidation2020_05_31Request&, const Model::CreateInvalidation2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInvalidation2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateKeyGroup2020_05_31Request&, const Model::CreateKeyGroup2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeyGroup2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateKeyValueStore2020_05_31Request&, const Model::CreateKeyValueStore2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeyValueStore2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateMonitoringSubscription2020_05_31Request&, const Model::CreateMonitoringSubscription2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMonitoringSubscription2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateOriginAccessControl2020_05_31Request&, const Model::CreateOriginAccessControl2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOriginAccessControl2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateOriginRequestPolicy2020_05_31Request&, const Model::CreateOriginRequestPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOriginRequestPolicy2020_05_31ResponseReceivedHandler;
@@ -506,6 +526,7 @@ namespace Aws
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteFieldLevelEncryptionProfile2020_05_31Request&, const Model::DeleteFieldLevelEncryptionProfile2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteFunction2020_05_31Request&, const Model::DeleteFunction2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunction2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteKeyGroup2020_05_31Request&, const Model::DeleteKeyGroup2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeyGroup2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DeleteKeyValueStore2020_05_31Request&, const Model::DeleteKeyValueStore2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeyValueStore2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteMonitoringSubscription2020_05_31Request&, const Model::DeleteMonitoringSubscription2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMonitoringSubscription2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteOriginAccessControl2020_05_31Request&, const Model::DeleteOriginAccessControl2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOriginAccessControl2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteOriginRequestPolicy2020_05_31Request&, const Model::DeleteOriginRequestPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOriginRequestPolicy2020_05_31ResponseReceivedHandler;
@@ -514,6 +535,7 @@ namespace Aws
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteResponseHeadersPolicy2020_05_31Request&, const Model::DeleteResponseHeadersPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResponseHeadersPolicy2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteStreamingDistribution2020_05_31Request&, const Model::DeleteStreamingDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamingDistribution2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DescribeFunction2020_05_31Request&, const Model::DescribeFunction2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFunction2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DescribeKeyValueStore2020_05_31Request&, const Model::DescribeKeyValueStore2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKeyValueStore2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::GetCachePolicy2020_05_31Request&, const Model::GetCachePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCachePolicy2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::GetCachePolicyConfig2020_05_31Request&, const Model::GetCachePolicyConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCachePolicyConfig2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::GetCloudFrontOriginAccessIdentity2020_05_31Request&, const Model::GetCloudFrontOriginAccessIdentity2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler;
@@ -558,6 +580,7 @@ namespace Aws
     typedef std::function<void(const CloudFrontClient*, const Model::ListFunctions2020_05_31Request&, const Model::ListFunctions2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFunctions2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListInvalidations2020_05_31Request&, const Model::ListInvalidations2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvalidations2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListKeyGroups2020_05_31Request&, const Model::ListKeyGroups2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeyGroups2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListKeyValueStores2020_05_31Request&, const Model::ListKeyValueStores2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeyValueStores2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListOriginAccessControls2020_05_31Request&, const Model::ListOriginAccessControls2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOriginAccessControls2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListOriginRequestPolicies2020_05_31Request&, const Model::ListOriginRequestPolicies2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOriginRequestPolicies2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListPublicKeys2020_05_31Request&, const Model::ListPublicKeys2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublicKeys2020_05_31ResponseReceivedHandler;
@@ -578,6 +601,7 @@ namespace Aws
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateFieldLevelEncryptionProfile2020_05_31Request&, const Model::UpdateFieldLevelEncryptionProfile2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateFunction2020_05_31Request&, const Model::UpdateFunction2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunction2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateKeyGroup2020_05_31Request&, const Model::UpdateKeyGroup2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKeyGroup2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UpdateKeyValueStore2020_05_31Request&, const Model::UpdateKeyValueStore2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKeyValueStore2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateOriginAccessControl2020_05_31Request&, const Model::UpdateOriginAccessControl2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOriginAccessControl2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateOriginRequestPolicy2020_05_31Request&, const Model::UpdateOriginRequestPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOriginRequestPolicy2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdatePublicKey2020_05_31Request&, const Model::UpdatePublicKey2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePublicKey2020_05_31ResponseReceivedHandler;

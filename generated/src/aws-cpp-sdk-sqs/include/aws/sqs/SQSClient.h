@@ -6,10 +6,9 @@
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sqs/SQSServiceClientModel.h>
 
 namespace Aws
@@ -43,12 +42,15 @@ namespace SQS
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
    * and Endpoints</a> </p> </li> </ul> </li> </ul>
    */
-  class AWS_SQS_API SQSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>
+  class AWS_SQS_API SQSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>
   {
     public:
-      typedef Aws::Client::AWSXMLClient BASECLASS;
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef SQSClientConfiguration ClientConfigurationType;
+      typedef SQSEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -98,13 +100,6 @@ namespace SQS
         /* End of legacy constructors due deprecation */
         virtual ~SQSClient();
 
-
-       /**
-        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
-        */
-        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
-
-
         /**
          * <p>Adds a permission to a queue for a specific <a
          * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>.
@@ -120,18 +115,15 @@ namespace SQS
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
          * Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon
          * SQS Developer Guide</i>.</p> </li> <li> <p>An Amazon SQS policy can have a
-         * maximum of 7 actions.</p> </li> <li> <p>To remove the ability to change queue
-         * permissions, you must deny permission to the <code>AddPermission</code>,
-         * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
-         * your IAM policy.</p> </li> </ul>  <p>Some actions take lists of
-         * parameters. These lists are specified using the <code>param.n</code> notation.
-         * Values of <code>n</code> are integers starting from 1. For example, a parameter
-         * list with two elements looks like this:</p> <p>
-         * <code>&amp;AttributeName.1=first</code> </p> <p>
-         * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
-         * permissions don't apply to this action. For more information, see <a
+         * maximum of seven actions per statement.</p> </li> <li> <p>To remove the ability
+         * to change queue permissions, you must deny permission to the
+         * <code>AddPermission</code>, <code>RemovePermission</code>, and
+         * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> <li>
+         * <p>Amazon SQS <code>AddPermission</code> does not support adding a non-account
+         * principal.</p> </li> </ul>   <p>Cross-account permissions don't
+         * apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
          * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
@@ -157,28 +149,66 @@ namespace SQS
         }
 
         /**
+         * <p>Cancels a specified message movement task. A message movement can only be
+         * cancelled when the current status is RUNNING. Cancelling a message movement task
+         * does not revert the messages that have already been moved. It can only stop the
+         * messages that have not been moved yet.</p>  <ul> <li> <p>This action is
+         * currently limited to supporting message redrive from <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
+         * queues (DLQs)</a> only. In this context, the source queue is the dead-letter
+         * queue (DLQ), while the destination queue can be the original source queue (from
+         * which the messages were driven to the dead-letter-queue), or a custom
+         * destination queue. </p> </li> <li> <p>Currently, only standard queues are
+         * supported.</p> </li> <li> <p>Only one active message movement task is supported
+         * per queue at any given time.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CancelMessageMoveTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelMessageMoveTaskOutcome CancelMessageMoveTask(const Model::CancelMessageMoveTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelMessageMoveTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelMessageMoveTaskRequestT = Model::CancelMessageMoveTaskRequest>
+        Model::CancelMessageMoveTaskOutcomeCallable CancelMessageMoveTaskCallable(const CancelMessageMoveTaskRequestT& request) const
+        {
+            return SubmitCallable(&SQSClient::CancelMessageMoveTask, request);
+        }
+
+        /**
+         * An Async wrapper for CancelMessageMoveTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelMessageMoveTaskRequestT = Model::CancelMessageMoveTaskRequest>
+        void CancelMessageMoveTaskAsync(const CancelMessageMoveTaskRequestT& request, const CancelMessageMoveTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SQSClient::CancelMessageMoveTask, request, handler, context);
+        }
+
+        /**
          * <p>Changes the visibility timeout of a specified message in a queue to a new
          * value. The default visibility timeout for a message is 30 seconds. The minimum
          * is 0 seconds. The maximum is 12 hours. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>For example, you
-         * have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
-         * <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can
-         * continue to call <code>ChangeMessageVisibility</code> to extend the visibility
-         * timeout to the maximum allowed time. If you try to extend the visibility timeout
-         * beyond the maximum, your request is rejected.</p> <p>An Amazon SQS message has
-         * three basic states:</p> <ol> <li> <p>Sent to a queue by a producer.</p> </li>
-         * <li> <p>Received from the queue by a consumer.</p> </li> <li> <p>Deleted from
-         * the queue.</p> </li> </ol> <p>A message is considered to be <i>stored</i> after
-         * it is sent to a queue by a producer, but not yet received from the queue by a
+         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>For example, if the
+         * default timeout for a queue is 60 seconds, 15 seconds have elapsed since you
+         * received the message, and you send a ChangeMessageVisibility call with
+         * <code>VisibilityTimeout</code> set to 10 seconds, the 10 seconds begin to count
+         * from the time that you make the <code>ChangeMessageVisibility</code> call. Thus,
+         * any attempt to change the visibility timeout or to delete that message 10
+         * seconds after you initially change the visibility timeout (a total of 25
+         * seconds) might result in an error.</p> <p>An Amazon SQS message has three basic
+         * states:</p> <ol> <li> <p>Sent to a queue by a producer.</p> </li> <li>
+         * <p>Received from the queue by a consumer.</p> </li> <li> <p>Deleted from the
+         * queue.</p> </li> </ol> <p>A message is considered to be <i>stored</i> after it
+         * is sent to a queue by a producer, but not yet received from the queue by a
          * consumer (that is, between states 1 and 2). There is no limit to the number of
          * stored messages. A message is considered to be <i>in flight</i> after it is
          * received from a queue by a consumer, but not yet deleted from the queue (that
-         * is, between states 2 and 3). There is a limit to the number of inflight
-         * messages.</p> <p>Limits that apply to inflight messages are unrelated to the
+         * is, between states 2 and 3). There is a limit to the number of in flight
+         * messages.</p> <p>Limits that apply to in flight messages are unrelated to the
          * <i>unlimited</i> number of stored messages.</p> <p>For most standard queues
          * (depending on queue traffic and message backlog), there can be a maximum of
-         * approximately 120,000 inflight messages (received from a queue by a consumer,
+         * approximately 120,000 in flight messages (received from a queue by a consumer,
          * but not yet deleted from the queue). If you reach this limit, Amazon SQS returns
          * the <code>OverLimit</code> error message. To avoid reaching the limit, you
          * should delete messages from the queue after they're processed. You can also
@@ -186,16 +216,16 @@ namespace SQS
          * limit increase, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sqs">file
          * a support request</a>.</p> <p>For FIFO queues, there can be a maximum of 20,000
-         * inflight messages (received from a queue by a consumer, but not yet deleted from
-         * the queue). If you reach this limit, Amazon SQS returns no error messages.</p>
-         *  <p>If you attempt to set the <code>VisibilityTimeout</code> to a
-         * value greater than the maximum time left, Amazon SQS returns an error. Amazon
-         * SQS doesn't automatically recalculate and increase the timeout to the maximum
-         * remaining time.</p> <p>Unlike with a queue, when you change the visibility
-         * timeout for a specific message the timeout value is applied immediately but
-         * isn't saved in memory for that message. If you don't delete a message after it
-         * is received, the visibility timeout for the message reverts to the original
-         * timeout value (not to the value you set using the
+         * in flight messages (received from a queue by a consumer, but not yet deleted
+         * from the queue). If you reach this limit, Amazon SQS returns no error
+         * messages.</p>  <p>If you attempt to set the
+         * <code>VisibilityTimeout</code> to a value greater than the maximum time left,
+         * Amazon SQS returns an error. Amazon SQS doesn't automatically recalculate and
+         * increase the timeout to the maximum remaining time.</p> <p>Unlike with a queue,
+         * when you change the visibility timeout for a specific message the timeout value
+         * is applied immediately but isn't saved in memory for that message. If you don't
+         * delete a message after it is received, the visibility timeout for the message
+         * reverts to the original timeout value (not to the value you set using the
          * <code>ChangeMessageVisibility</code> action) the next time the message is
          * received.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">AWS
@@ -229,12 +259,7 @@ namespace SQS
          * <code>ChangeMessageVisibilityBatch</code> action.</p>  <p>Because the
          * batch request can result in a combination of successful and unsuccessful
          * actions, you should check for batch errors even when the call returns an HTTP
-         * status code of <code>200</code>.</p>  <p>Some actions take lists of
-         * parameters. These lists are specified using the <code>param.n</code> notation.
-         * Values of <code>n</code> are integers starting from 1. For example, a parameter
-         * list with two elements looks like this:</p> <p>
-         * <code>&amp;AttributeName.1=first</code> </p> <p>
-         * <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * status code of <code>200</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">AWS
          * API Reference</a></p>
          */
@@ -284,14 +309,10 @@ namespace SQS
          * <code>CreateQueue</code> returns the queue URL for the existing queue.</p> </li>
          * <li> <p>If the queue name, attribute names, or attribute values don't match an
          * existing queue, <code>CreateQueue</code> returns an error.</p> </li> </ul>
-         * <p>Some actions take lists of parameters. These lists are specified using the
-         * <code>param.n</code> notation. Values of <code>n</code> are integers starting
-         * from 1. For example, a parameter list with two elements looks like this:</p> <p>
-         * <code>&amp;AttributeName.1=first</code> </p> <p>
-         * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
-         * permissions don't apply to this action. For more information, see <a
+         *  <p>Cross-account permissions don't apply to this action. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
          * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">AWS API
          * Reference</a></p>
@@ -328,7 +349,7 @@ namespace SQS
          * than once, the <code>ReceiptHandle</code> is different each time you receive a
          * message. When you use the <code>DeleteMessage</code> action, you must provide
          * the most recently received <code>ReceiptHandle</code> for the message
-         * (otherwise, the request succeeds, but the message might not be deleted).</p>
+         * (otherwise, the request succeeds, but the message will not be deleted).</p>
          * <p>For standard queues, it is possible to receive a message even after you
          * delete it. This might happen on rare occasions if one of the servers which
          * stores a copy of the message is unavailable when you send the request to delete
@@ -365,11 +386,7 @@ namespace SQS
          * is reported individually in the response.</p>  <p>Because the batch
          * request can result in a combination of successful and unsuccessful actions, you
          * should check for batch errors even when the call returns an HTTP status code of
-         * <code>200</code>.</p>  <p>Some actions take lists of parameters.
-         * These lists are specified using the <code>param.n</code> notation. Values of
-         * <code>n</code> are integers starting from 1. For example, a parameter list with
-         * two elements looks like this:</p> <p> <code>&amp;AttributeName.1=first</code>
-         * </p> <p> <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * <code>200</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">AWS
          * API Reference</a></p>
          */
@@ -406,8 +423,9 @@ namespace SQS
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
-         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p>The delete operation uses the HTTP <code>GET</code>
+         * verb.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
          * Reference</a></p>
          */
@@ -531,6 +549,40 @@ namespace SQS
         }
 
         /**
+         * <p>Gets the most recent message movement tasks (up to 10) under a specific
+         * source queue.</p>  <ul> <li> <p>This action is currently limited to
+         * supporting message redrive from <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
+         * queues (DLQs)</a> only. In this context, the source queue is the dead-letter
+         * queue (DLQ), while the destination queue can be the original source queue (from
+         * which the messages were driven to the dead-letter-queue), or a custom
+         * destination queue. </p> </li> <li> <p>Currently, only standard queues are
+         * supported.</p> </li> <li> <p>Only one active message movement task is supported
+         * per queue at any given time.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListMessageMoveTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMessageMoveTasksOutcome ListMessageMoveTasks(const Model::ListMessageMoveTasksRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMessageMoveTasks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMessageMoveTasksRequestT = Model::ListMessageMoveTasksRequest>
+        Model::ListMessageMoveTasksOutcomeCallable ListMessageMoveTasksCallable(const ListMessageMoveTasksRequestT& request) const
+        {
+            return SubmitCallable(&SQSClient::ListMessageMoveTasks, request);
+        }
+
+        /**
+         * An Async wrapper for ListMessageMoveTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMessageMoveTasksRequestT = Model::ListMessageMoveTasksRequest>
+        void ListMessageMoveTasksAsync(const ListMessageMoveTasksRequestT& request, const ListMessageMoveTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SQSClient::ListMessageMoveTasks, request, handler, context);
+        }
+
+        /**
          * <p>List all cost allocation tags added to the specified Amazon SQS queue. For an
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
@@ -538,7 +590,7 @@ namespace SQS
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
          * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
          * API Reference</a></p>
@@ -578,7 +630,7 @@ namespace SQS
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
          * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
@@ -604,13 +656,14 @@ namespace SQS
         }
 
         /**
-         * <p>Deletes the messages in a queue specified by the <code>QueueURL</code>
-         * parameter.</p>  <p>When you use the <code>PurgeQueue</code> action,
-         * you can't retrieve any messages deleted from a queue.</p> <p>The message
-         * deletion process takes up to 60 seconds. We recommend waiting for 60 seconds
-         * regardless of your queue's size. </p>  <p>Messages sent to the queue
-         * <i>before</i> you call <code>PurgeQueue</code> might be received but are deleted
-         * within the next minute.</p> <p>Messages sent to the queue <i>after</i> you call
+         * <p>Deletes available messages in a queue (including in-flight messages)
+         * specified by the <code>QueueURL</code> parameter.</p>  <p>When you
+         * use the <code>PurgeQueue</code> action, you can't retrieve any messages deleted
+         * from a queue.</p> <p>The message deletion process takes up to 60 seconds. We
+         * recommend waiting for 60 seconds regardless of your queue's size. </p>
+         *  <p>Messages sent to the queue <i>before</i> you call
+         * <code>PurgeQueue</code> might be received but are deleted within the next
+         * minute.</p> <p>Messages sent to the queue <i>after</i> you call
          * <code>PurgeQueue</code> might be deleted while the queue is being
          * purged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">AWS API
@@ -701,7 +754,7 @@ namespace SQS
          * can remove permissions from it.</p> </li> <li> <p>Cross-account permissions
          * don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
          * Developer Guide</i>.</p> </li> <li> <p>To remove the ability to change queue
          * permissions, you must deny permission to the <code>AddPermission</code>,
          * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
@@ -762,15 +815,17 @@ namespace SQS
         }
 
         /**
-         * <p>Delivers up to ten messages to the specified queue. This is a batch version
-         * of <code> <a>SendMessage</a>.</code> For a FIFO queue, multiple messages within
-         * a single batch are enqueued in the order they are sent.</p> <p>The result of
-         * sending each message is reported individually in the response. Because the batch
-         * request can result in a combination of successful and unsuccessful actions, you
-         * should check for batch errors even when the call returns an HTTP status code of
+         * <p>You can use <code>SendMessageBatch</code> to send up to 10 messages to the
+         * specified queue by assigning either identical or different values to each
+         * message (or by not assigning values at all). This is a batch version of <code>
+         * <a>SendMessage</a>.</code> For a FIFO queue, multiple messages within a single
+         * batch are enqueued in the order they are sent.</p> <p>The result of sending each
+         * message is reported individually in the response. Because the batch request can
+         * result in a combination of successful and unsuccessful actions, you should check
+         * for batch errors even when the call returns an HTTP status code of
          * <code>200</code>.</p> <p>The maximum allowed individual message size and the
          * maximum total payload size (the sum of the individual lengths of all of the
-         * batched messages) are both 256 KB (262,144 bytes).</p>  <p>A message
+         * batched messages) are both 256 KiB (262,144 bytes).</p>  <p>A message
          * can include only XML, JSON, and unformatted text. The following Unicode
          * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
          * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
@@ -780,11 +835,7 @@ namespace SQS
          * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
          * characters</a>.</p>  <p>If you don't specify the
          * <code>DelaySeconds</code> parameter for an entry, Amazon SQS uses the default
-         * value for the queue.</p> <p>Some actions take lists of parameters. These lists
-         * are specified using the <code>param.n</code> notation. Values of <code>n</code>
-         * are integers starting from 1. For example, a parameter list with two elements
-         * looks like this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
-         * <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * value for the queue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">AWS
          * API Reference</a></p>
          */
@@ -812,13 +863,16 @@ namespace SQS
          * <p>Sets the value of one or more queue attributes. When you change a queue's
          * attributes, the change can take up to 60 seconds for most of the attributes to
          * propagate throughout the Amazon SQS system. Changes made to the
-         * <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes.</p>
-         *  <ul> <li> <p>In the future, new attributes might be added. If you write
-         * code that calls this action, we recommend that you structure your code so that
-         * it can handle new attributes gracefully.</p> </li> <li> <p>Cross-account
-         * permissions don't apply to this action. For more information, see <a
+         * <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and will
+         * impact existing messages in the queue potentially causing them to be expired and
+         * deleted if the <code>MessageRetentionPeriod</code> is reduced below the age of
+         * existing messages.</p>  <ul> <li> <p>In the future, new attributes might
+         * be added. If you write code that calls this action, we recommend that you
+         * structure your code so that it can handle new attributes gracefully.</p> </li>
+         * <li> <p>Cross-account permissions don't apply to this action. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
          * Developer Guide</i>.</p> </li> <li> <p>To remove the ability to change queue
          * permissions, you must deny permission to the <code>AddPermission</code>,
          * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
@@ -847,6 +901,43 @@ namespace SQS
         }
 
         /**
+         * <p>Starts an asynchronous task to move messages from a specified source queue to
+         * a specified destination queue.</p>  <ul> <li> <p>This action is currently
+         * limited to supporting message redrive from queues that are configured as <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
+         * queues (DLQs)</a> of other Amazon SQS queues only. Non-SQS queue sources of
+         * dead-letter queues, such as Lambda or Amazon SNS topics, are currently not
+         * supported.</p> </li> <li> <p>In dead-letter queues redrive context, the
+         * <code>StartMessageMoveTask</code> the source queue is the DLQ, while the
+         * destination queue can be the original source queue (from which the messages were
+         * driven to the dead-letter-queue), or a custom destination queue.</p> </li> <li>
+         * <p>Currently, only standard queues support redrive. FIFO queues don't support
+         * redrive.</p> </li> <li> <p>Only one active message movement task is supported
+         * per queue at any given time.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/StartMessageMoveTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMessageMoveTaskOutcome StartMessageMoveTask(const Model::StartMessageMoveTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMessageMoveTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMessageMoveTaskRequestT = Model::StartMessageMoveTaskRequest>
+        Model::StartMessageMoveTaskOutcomeCallable StartMessageMoveTaskCallable(const StartMessageMoveTaskRequestT& request) const
+        {
+            return SubmitCallable(&SQSClient::StartMessageMoveTask, request);
+        }
+
+        /**
+         * An Async wrapper for StartMessageMoveTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMessageMoveTaskRequestT = Model::StartMessageMoveTaskRequest>
+        void StartMessageMoveTaskAsync(const StartMessageMoveTaskRequestT& request, const StartMessageMoveTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SQSClient::StartMessageMoveTask, request, handler, context);
+        }
+
+        /**
          * <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
@@ -862,7 +953,7 @@ namespace SQS
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
          * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
          * Reference</a></p>
@@ -895,7 +986,7 @@ namespace SQS
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
          * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
          * Reference</a></p>
@@ -921,15 +1012,15 @@ namespace SQS
         }
 
 
-        void OverrideEndpoint(const Aws::String& endpoint);
-        std::shared_ptr<SQSEndpointProviderBase>& accessEndpointProvider();
-  private:
-        friend class Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>;
-        void init(const SQSClientConfiguration& clientConfiguration);
+      void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SQSEndpointProviderBase>& accessEndpointProvider();
+    private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>;
+      void init(const SQSClientConfiguration& clientConfiguration);
 
-        SQSClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
-        std::shared_ptr<SQSEndpointProviderBase> m_endpointProvider;
+      SQSClientConfiguration m_clientConfiguration;
+      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SQSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SQS

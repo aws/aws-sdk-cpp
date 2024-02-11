@@ -32,6 +32,7 @@ PipelineExecution::PipelineExecution() :
     m_createdByHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_parallelismConfigurationHasBeenSet(false),
+    m_selectiveExecutionConfigHasBeenSet(false),
     m_pipelineParametersHasBeenSet(false)
 {
 }
@@ -50,6 +51,7 @@ PipelineExecution::PipelineExecution(JsonView jsonValue) :
     m_createdByHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_parallelismConfigurationHasBeenSet(false),
+    m_selectiveExecutionConfigHasBeenSet(false),
     m_pipelineParametersHasBeenSet(false)
 {
   *this = jsonValue;
@@ -141,6 +143,13 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     m_parallelismConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SelectiveExecutionConfig"))
+  {
+    m_selectiveExecutionConfig = jsonValue.GetObject("SelectiveExecutionConfig");
+
+    m_selectiveExecutionConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PipelineParameters"))
   {
     Aws::Utils::Array<JsonView> pipelineParametersJsonList = jsonValue.GetArray("PipelineParameters");
@@ -224,6 +233,12 @@ JsonValue PipelineExecution::Jsonize() const
   if(m_parallelismConfigurationHasBeenSet)
   {
    payload.WithObject("ParallelismConfiguration", m_parallelismConfiguration.Jsonize());
+
+  }
+
+  if(m_selectiveExecutionConfigHasBeenSet)
+  {
+   payload.WithObject("SelectiveExecutionConfig", m_selectiveExecutionConfig.Jsonize());
 
   }
 

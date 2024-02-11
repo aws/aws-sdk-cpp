@@ -23,6 +23,7 @@ namespace Aws
         static const int PresenterOnly_HASH = HashingUtils::HashString("PresenterOnly");
         static const int Horizontal_HASH = HashingUtils::HashString("Horizontal");
         static const int Vertical_HASH = HashingUtils::HashString("Vertical");
+        static const int ActiveSpeakerOnly_HASH = HashingUtils::HashString("ActiveSpeakerOnly");
 
 
         ContentShareLayoutOption GetContentShareLayoutOptionForName(const Aws::String& name)
@@ -40,6 +41,10 @@ namespace Aws
           {
             return ContentShareLayoutOption::Vertical;
           }
+          else if (hashCode == ActiveSpeakerOnly_HASH)
+          {
+            return ContentShareLayoutOption::ActiveSpeakerOnly;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentShareLayoutOption::NOT_SET:
+            return {};
           case ContentShareLayoutOption::PresenterOnly:
             return "PresenterOnly";
           case ContentShareLayoutOption::Horizontal:
             return "Horizontal";
           case ContentShareLayoutOption::Vertical:
             return "Vertical";
+          case ContentShareLayoutOption::ActiveSpeakerOnly:
+            return "ActiveSpeakerOnly";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

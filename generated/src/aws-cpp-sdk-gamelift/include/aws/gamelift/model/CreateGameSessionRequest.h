@@ -225,155 +225,195 @@ namespace Model
 
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example,
+     * see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create
+     * a game session with custom properties</a>. </p>
      */
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example,
+     * see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create
+     * a game session with custom properties</a>. </p>
      */
     inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example,
+     * see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create
+     * a game session with custom properties</a>. </p>
      */
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example,
+     * see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create
+     * a game session with custom properties</a>. </p>
      */
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example,
+     * see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create
+     * a game session with custom properties</a>. </p>
      */
     inline CreateGameSessionRequest& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example,
+     * see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create
+     * a game session with custom properties</a>. </p>
      */
     inline CreateGameSessionRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example,
+     * see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create
+     * a game session with custom properties</a>. </p>
      */
     inline CreateGameSessionRequest& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example,
+     * see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create
+     * a game session with custom properties</a>. </p>
      */
     inline CreateGameSessionRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline const Aws::String& GetCreatorId() const{ return m_creatorId; }
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline bool CreatorIdHasBeenSet() const { return m_creatorIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline void SetCreatorId(const Aws::String& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline void SetCreatorId(Aws::String&& value) { m_creatorIdHasBeenSet = true; m_creatorId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline void SetCreatorId(const char* value) { m_creatorIdHasBeenSet = true; m_creatorId.assign(value); }
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline CreateGameSessionRequest& WithCreatorId(const Aws::String& value) { SetCreatorId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline CreateGameSessionRequest& WithCreatorId(Aws::String&& value) { SetCreatorId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline CreateGameSessionRequest& WithCreatorId(const char* value) { SetCreatorId(value); return *this;}
 
@@ -633,7 +673,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -641,7 +682,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
@@ -649,7 +691,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
@@ -657,7 +700,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
@@ -665,7 +709,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
@@ -673,7 +718,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline CreateGameSessionRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
@@ -681,7 +727,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline CreateGameSessionRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -689,7 +736,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline CreateGameSessionRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 

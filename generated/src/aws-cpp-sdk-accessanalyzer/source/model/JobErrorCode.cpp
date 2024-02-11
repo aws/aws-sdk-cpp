@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobErrorCode::NOT_SET:
+            return {};
           case JobErrorCode::AUTHORIZATION_ERROR:
             return "AUTHORIZATION_ERROR";
           case JobErrorCode::RESOURCE_NOT_FOUND_ERROR:

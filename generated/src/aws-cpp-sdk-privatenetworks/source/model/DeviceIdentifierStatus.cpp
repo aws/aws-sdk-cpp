@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceIdentifierStatus::NOT_SET:
+            return {};
           case DeviceIdentifierStatus::ACTIVE:
             return "ACTIVE";
           case DeviceIdentifierStatus::INACTIVE:

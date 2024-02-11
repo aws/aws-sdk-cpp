@@ -13,6 +13,7 @@
 #include <aws/elasticache/model/UserGroupsUpdateStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/TransitEncryptionMode.h>
+#include <aws/elasticache/model/ClusterMode.h>
 #include <aws/elasticache/model/PendingLogDeliveryConfiguration.h>
 #include <utility>
 
@@ -332,6 +333,61 @@ namespace Model
      */
     inline ReplicationGroupPendingModifiedValues& WithTransitEncryptionMode(TransitEncryptionMode&& value) { SetTransitEncryptionMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline const ClusterMode& GetClusterMode() const{ return m_clusterMode; }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline bool ClusterModeHasBeenSet() const { return m_clusterModeHasBeenSet; }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline void SetClusterMode(const ClusterMode& value) { m_clusterModeHasBeenSet = true; m_clusterMode = value; }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline void SetClusterMode(ClusterMode&& value) { m_clusterModeHasBeenSet = true; m_clusterMode = std::move(value); }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithClusterMode(const ClusterMode& value) { SetClusterMode(value); return *this;}
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithClusterMode(ClusterMode&& value) { SetClusterMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_primaryClusterId;
@@ -357,6 +413,9 @@ namespace Model
 
     TransitEncryptionMode m_transitEncryptionMode;
     bool m_transitEncryptionModeHasBeenSet = false;
+
+    ClusterMode m_clusterMode;
+    bool m_clusterModeHasBeenSet = false;
   };
 
 } // namespace Model

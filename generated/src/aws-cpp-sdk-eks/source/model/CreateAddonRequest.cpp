@@ -19,7 +19,7 @@ CreateAddonRequest::CreateAddonRequest() :
     m_serviceAccountRoleArnHasBeenSet(false),
     m_resolveConflicts(ResolveConflicts::NOT_SET),
     m_resolveConflictsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_configurationValuesHasBeenSet(false)

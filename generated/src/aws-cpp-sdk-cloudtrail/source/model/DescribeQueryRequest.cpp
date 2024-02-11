@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeQueryRequest::DescribeQueryRequest() : 
-    m_queryIdHasBeenSet(false)
+    m_queryIdHasBeenSet(false),
+    m_queryAliasHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String DescribeQueryRequest::SerializePayload() const
   if(m_queryIdHasBeenSet)
   {
    payload.WithString("QueryId", m_queryId);
+
+  }
+
+  if(m_queryAliasHasBeenSet)
+  {
+   payload.WithString("QueryAlias", m_queryAlias);
 
   }
 

@@ -33,7 +33,21 @@ GraphqlApi::GraphqlApi() :
     m_xrayEnabled(false),
     m_xrayEnabledHasBeenSet(false),
     m_wafWebAclArnHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false)
+    m_lambdaAuthorizerConfigHasBeenSet(false),
+    m_dnsHasBeenSet(false),
+    m_visibility(GraphQLApiVisibility::NOT_SET),
+    m_visibilityHasBeenSet(false),
+    m_apiType(GraphQLApiType::NOT_SET),
+    m_apiTypeHasBeenSet(false),
+    m_mergedApiExecutionRoleArnHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_ownerContactHasBeenSet(false),
+    m_introspectionConfig(GraphQLApiIntrospectionConfig::NOT_SET),
+    m_introspectionConfigHasBeenSet(false),
+    m_queryDepthLimit(0),
+    m_queryDepthLimitHasBeenSet(false),
+    m_resolverCountLimit(0),
+    m_resolverCountLimitHasBeenSet(false)
 {
 }
 
@@ -52,7 +66,21 @@ GraphqlApi::GraphqlApi(JsonView jsonValue) :
     m_xrayEnabled(false),
     m_xrayEnabledHasBeenSet(false),
     m_wafWebAclArnHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false)
+    m_lambdaAuthorizerConfigHasBeenSet(false),
+    m_dnsHasBeenSet(false),
+    m_visibility(GraphQLApiVisibility::NOT_SET),
+    m_visibilityHasBeenSet(false),
+    m_apiType(GraphQLApiType::NOT_SET),
+    m_apiTypeHasBeenSet(false),
+    m_mergedApiExecutionRoleArnHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_ownerContactHasBeenSet(false),
+    m_introspectionConfig(GraphQLApiIntrospectionConfig::NOT_SET),
+    m_introspectionConfigHasBeenSet(false),
+    m_queryDepthLimit(0),
+    m_queryDepthLimitHasBeenSet(false),
+    m_resolverCountLimit(0),
+    m_resolverCountLimitHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -159,6 +187,72 @@ GraphqlApi& GraphqlApi::operator =(JsonView jsonValue)
     m_lambdaAuthorizerConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dns"))
+  {
+    Aws::Map<Aws::String, JsonView> dnsJsonMap = jsonValue.GetObject("dns").GetAllObjects();
+    for(auto& dnsItem : dnsJsonMap)
+    {
+      m_dns[dnsItem.first] = dnsItem.second.AsString();
+    }
+    m_dnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("visibility"))
+  {
+    m_visibility = GraphQLApiVisibilityMapper::GetGraphQLApiVisibilityForName(jsonValue.GetString("visibility"));
+
+    m_visibilityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("apiType"))
+  {
+    m_apiType = GraphQLApiTypeMapper::GetGraphQLApiTypeForName(jsonValue.GetString("apiType"));
+
+    m_apiTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mergedApiExecutionRoleArn"))
+  {
+    m_mergedApiExecutionRoleArn = jsonValue.GetString("mergedApiExecutionRoleArn");
+
+    m_mergedApiExecutionRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("owner"))
+  {
+    m_owner = jsonValue.GetString("owner");
+
+    m_ownerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ownerContact"))
+  {
+    m_ownerContact = jsonValue.GetString("ownerContact");
+
+    m_ownerContactHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("introspectionConfig"))
+  {
+    m_introspectionConfig = GraphQLApiIntrospectionConfigMapper::GetGraphQLApiIntrospectionConfigForName(jsonValue.GetString("introspectionConfig"));
+
+    m_introspectionConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("queryDepthLimit"))
+  {
+    m_queryDepthLimit = jsonValue.GetInteger("queryDepthLimit");
+
+    m_queryDepthLimitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resolverCountLimit"))
+  {
+    m_resolverCountLimit = jsonValue.GetInteger("resolverCountLimit");
+
+    m_resolverCountLimitHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -255,6 +349,62 @@ JsonValue GraphqlApi::Jsonize() const
   if(m_lambdaAuthorizerConfigHasBeenSet)
   {
    payload.WithObject("lambdaAuthorizerConfig", m_lambdaAuthorizerConfig.Jsonize());
+
+  }
+
+  if(m_dnsHasBeenSet)
+  {
+   JsonValue dnsJsonMap;
+   for(auto& dnsItem : m_dns)
+   {
+     dnsJsonMap.WithString(dnsItem.first, dnsItem.second);
+   }
+   payload.WithObject("dns", std::move(dnsJsonMap));
+
+  }
+
+  if(m_visibilityHasBeenSet)
+  {
+   payload.WithString("visibility", GraphQLApiVisibilityMapper::GetNameForGraphQLApiVisibility(m_visibility));
+  }
+
+  if(m_apiTypeHasBeenSet)
+  {
+   payload.WithString("apiType", GraphQLApiTypeMapper::GetNameForGraphQLApiType(m_apiType));
+  }
+
+  if(m_mergedApiExecutionRoleArnHasBeenSet)
+  {
+   payload.WithString("mergedApiExecutionRoleArn", m_mergedApiExecutionRoleArn);
+
+  }
+
+  if(m_ownerHasBeenSet)
+  {
+   payload.WithString("owner", m_owner);
+
+  }
+
+  if(m_ownerContactHasBeenSet)
+  {
+   payload.WithString("ownerContact", m_ownerContact);
+
+  }
+
+  if(m_introspectionConfigHasBeenSet)
+  {
+   payload.WithString("introspectionConfig", GraphQLApiIntrospectionConfigMapper::GetNameForGraphQLApiIntrospectionConfig(m_introspectionConfig));
+  }
+
+  if(m_queryDepthLimitHasBeenSet)
+  {
+   payload.WithInteger("queryDepthLimit", m_queryDepthLimit);
+
+  }
+
+  if(m_resolverCountLimitHasBeenSet)
+  {
+   payload.WithInteger("resolverCountLimit", m_resolverCountLimit);
 
   }
 

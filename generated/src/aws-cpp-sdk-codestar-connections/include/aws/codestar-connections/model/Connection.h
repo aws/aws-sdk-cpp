@@ -27,8 +27,8 @@ namespace Model
 
   /**
    * <p>A resource that is used to connect third-party source providers with services
-   * like AWS CodePipeline.</p> <p>Note: A connection created through CloudFormation,
-   * the CLI, or the SDK is in `PENDING` status by default. You can make its status
+   * like CodePipeline.</p> <p>Note: A connection created through CloudFormation, the
+   * CLI, or the SDK is in `PENDING` status by default. You can make its status
    * `AVAILABLE` by updating the connection in the console.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/Connection">AWS
@@ -44,107 +44,115 @@ namespace Model
 
 
     /**
-     * <p>The name of the connection. Connection names must be unique in an AWS user
-     * account.</p>
+     * <p>The name of the connection. Connection names must be unique in an Amazon Web
+     * Services account.</p>
      */
     inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
 
     /**
-     * <p>The name of the connection. Connection names must be unique in an AWS user
-     * account.</p>
+     * <p>The name of the connection. Connection names must be unique in an Amazon Web
+     * Services account.</p>
      */
     inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
 
     /**
-     * <p>The name of the connection. Connection names must be unique in an AWS user
-     * account.</p>
+     * <p>The name of the connection. Connection names must be unique in an Amazon Web
+     * Services account.</p>
      */
     inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
 
     /**
-     * <p>The name of the connection. Connection names must be unique in an AWS user
-     * account.</p>
+     * <p>The name of the connection. Connection names must be unique in an Amazon Web
+     * Services account.</p>
      */
     inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
 
     /**
-     * <p>The name of the connection. Connection names must be unique in an AWS user
-     * account.</p>
+     * <p>The name of the connection. Connection names must be unique in an Amazon Web
+     * Services account.</p>
      */
     inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
 
     /**
-     * <p>The name of the connection. Connection names must be unique in an AWS user
-     * account.</p>
+     * <p>The name of the connection. Connection names must be unique in an Amazon Web
+     * Services account.</p>
      */
     inline Connection& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
 
     /**
-     * <p>The name of the connection. Connection names must be unique in an AWS user
-     * account.</p>
+     * <p>The name of the connection. Connection names must be unique in an Amazon Web
+     * Services account.</p>
      */
     inline Connection& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the connection. Connection names must be unique in an AWS user
-     * account.</p>
+     * <p>The name of the connection. Connection names must be unique in an Amazon Web
+     * Services account.</p>
      */
     inline Connection& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the
-     * connection reference when the connection is shared between AWS services.</p>
-     *  <p>The ARN is never reused if the connection is deleted.</p> 
+     * connection reference when the connection is shared between Amazon Web
+     * Services.</p>  <p>The ARN is never reused if the connection is
+     * deleted.</p> 
      */
     inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the
-     * connection reference when the connection is shared between AWS services.</p>
-     *  <p>The ARN is never reused if the connection is deleted.</p> 
+     * connection reference when the connection is shared between Amazon Web
+     * Services.</p>  <p>The ARN is never reused if the connection is
+     * deleted.</p> 
      */
     inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the
-     * connection reference when the connection is shared between AWS services.</p>
-     *  <p>The ARN is never reused if the connection is deleted.</p> 
+     * connection reference when the connection is shared between Amazon Web
+     * Services.</p>  <p>The ARN is never reused if the connection is
+     * deleted.</p> 
      */
     inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the
-     * connection reference when the connection is shared between AWS services.</p>
-     *  <p>The ARN is never reused if the connection is deleted.</p> 
+     * connection reference when the connection is shared between Amazon Web
+     * Services.</p>  <p>The ARN is never reused if the connection is
+     * deleted.</p> 
      */
     inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the
-     * connection reference when the connection is shared between AWS services.</p>
-     *  <p>The ARN is never reused if the connection is deleted.</p> 
+     * connection reference when the connection is shared between Amazon Web
+     * Services.</p>  <p>The ARN is never reused if the connection is
+     * deleted.</p> 
      */
     inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the
-     * connection reference when the connection is shared between AWS services.</p>
-     *  <p>The ARN is never reused if the connection is deleted.</p> 
+     * connection reference when the connection is shared between Amazon Web
+     * Services.</p>  <p>The ARN is never reused if the connection is
+     * deleted.</p> 
      */
     inline Connection& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the
-     * connection reference when the connection is shared between AWS services.</p>
-     *  <p>The ARN is never reused if the connection is deleted.</p> 
+     * connection reference when the connection is shared between Amazon Web
+     * Services.</p>  <p>The ARN is never reused if the connection is
+     * deleted.</p> 
      */
     inline Connection& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the
-     * connection reference when the connection is shared between AWS services.</p>
-     *  <p>The ARN is never reused if the connection is deleted.</p> 
+     * connection reference when the connection is shared between Amazon Web
+     * Services.</p>  <p>The ARN is never reused if the connection is
+     * deleted.</p> 
      */
     inline Connection& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
 

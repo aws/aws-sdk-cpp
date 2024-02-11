@@ -13,10 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateAwsLogSourceRequest::CreateAwsLogSourceRequest() : 
-    m_enableAllDimensionsHasBeenSet(false),
-    m_enableSingleDimensionHasBeenSet(false),
-    m_enableTwoDimensionsHasBeenSet(false),
-    m_inputOrderHasBeenSet(false)
+    m_sourcesHasBeenSet(false)
 {
 }
 
@@ -24,62 +21,14 @@ Aws::String CreateAwsLogSourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_enableAllDimensionsHasBeenSet)
+  if(m_sourcesHasBeenSet)
   {
-   JsonValue enableAllDimensionsJsonMap;
-   for(auto& enableAllDimensionsItem : m_enableAllDimensions)
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
+   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
-     JsonValue twoDimensionsMapJsonMap;
-     for(auto& twoDimensionsMapItem : enableAllDimensionsItem.second)
-     {
-       Aws::Utils::Array<JsonValue> valueSetJsonList(twoDimensionsMapItem.second.size());
-       for(unsigned valueSetIndex = 0; valueSetIndex < valueSetJsonList.GetLength(); ++valueSetIndex)
-       {
-         valueSetJsonList[valueSetIndex].AsString(twoDimensionsMapItem.second[valueSetIndex]);
-       }
-       twoDimensionsMapJsonMap.WithArray(twoDimensionsMapItem.first, std::move(valueSetJsonList));
-     }
-     enableAllDimensionsJsonMap.WithObject(enableAllDimensionsItem.first, std::move(twoDimensionsMapJsonMap));
+     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
    }
-   payload.WithObject("enableAllDimensions", std::move(enableAllDimensionsJsonMap));
-
-  }
-
-  if(m_enableSingleDimensionHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> enableSingleDimensionJsonList(m_enableSingleDimension.size());
-   for(unsigned enableSingleDimensionIndex = 0; enableSingleDimensionIndex < enableSingleDimensionJsonList.GetLength(); ++enableSingleDimensionIndex)
-   {
-     enableSingleDimensionJsonList[enableSingleDimensionIndex].AsString(m_enableSingleDimension[enableSingleDimensionIndex]);
-   }
-   payload.WithArray("enableSingleDimension", std::move(enableSingleDimensionJsonList));
-
-  }
-
-  if(m_enableTwoDimensionsHasBeenSet)
-  {
-   JsonValue enableTwoDimensionsJsonMap;
-   for(auto& enableTwoDimensionsItem : m_enableTwoDimensions)
-   {
-     Aws::Utils::Array<JsonValue> valueSetJsonList(enableTwoDimensionsItem.second.size());
-     for(unsigned valueSetIndex = 0; valueSetIndex < valueSetJsonList.GetLength(); ++valueSetIndex)
-     {
-       valueSetJsonList[valueSetIndex].AsString(enableTwoDimensionsItem.second[valueSetIndex]);
-     }
-     enableTwoDimensionsJsonMap.WithArray(enableTwoDimensionsItem.first, std::move(valueSetJsonList));
-   }
-   payload.WithObject("enableTwoDimensions", std::move(enableTwoDimensionsJsonMap));
-
-  }
-
-  if(m_inputOrderHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inputOrderJsonList(m_inputOrder.size());
-   for(unsigned inputOrderIndex = 0; inputOrderIndex < inputOrderJsonList.GetLength(); ++inputOrderIndex)
-   {
-     inputOrderJsonList[inputOrderIndex].AsString(DimensionMapper::GetNameForDimension(m_inputOrder[inputOrderIndex]));
-   }
-   payload.WithArray("inputOrder", std::move(inputOrderJsonList));
+   payload.WithArray("sources", std::move(sourcesJsonList));
 
   }
 

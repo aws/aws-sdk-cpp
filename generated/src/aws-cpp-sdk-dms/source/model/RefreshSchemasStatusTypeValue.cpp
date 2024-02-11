@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RefreshSchemasStatusTypeValue::NOT_SET:
+            return {};
           case RefreshSchemasStatusTypeValue::successful:
             return "successful";
           case RefreshSchemasStatusTypeValue::failed:

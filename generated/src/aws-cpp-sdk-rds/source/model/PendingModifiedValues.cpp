@@ -47,7 +47,12 @@ PendingModifiedValues::PendingModifiedValues() :
     m_automationModeHasBeenSet(false),
     m_resumeFullAutomationModeTimeHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_engineHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
 }
 
@@ -78,7 +83,12 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_automationModeHasBeenSet(false),
     m_resumeFullAutomationModeTimeHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_engineHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -209,6 +219,24 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
       m_storageThroughputHasBeenSet = true;
     }
+    XmlNode engineNode = resultNode.FirstChild("Engine");
+    if(!engineNode.IsNull())
+    {
+      m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
+      m_engineHasBeenSet = true;
+    }
+    XmlNode dedicatedLogVolumeNode = resultNode.FirstChild("DedicatedLogVolume");
+    if(!dedicatedLogVolumeNode.IsNull())
+    {
+      m_dedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dedicatedLogVolumeNode.GetText()).c_str()).c_str());
+      m_dedicatedLogVolumeHasBeenSet = true;
+    }
+    XmlNode multiTenantNode = resultNode.FirstChild("MultiTenant");
+    if(!multiTenantNode.IsNull())
+    {
+      m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
+      m_multiTenantHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -319,6 +347,21 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 
+  if(m_engineHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -406,6 +449,18 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_storageThroughputHasBeenSet)
   {
       oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+  if(m_engineHasBeenSet)
+  {
+      oStream << location << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 }
 

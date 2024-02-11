@@ -50,7 +50,19 @@ namespace Model
      * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
      * return recommendations with a specific finding reason code (for example,
-     * <code>MemoryUnderprovisioned</code>).</p>
+     * <code>MemoryUnderprovisioned</code>).</p> <p>You can filter your Lambda function
+     * recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Lambda function recommendations. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all Lambda function
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Lambda function recommendations. Use this filter
+     * to find all of your Lambda function recommendations that have a tag with a
+     * specific key. This doesn’t consider the tag value. For example, you can find
+     * your Lambda function recommendations with a tag key value of <code>Owner</code>
+     * or without any tag keys assigned.</p>
      */
     inline const LambdaFunctionRecommendationFilterName& GetName() const{ return m_name; }
 
@@ -59,7 +71,19 @@ namespace Model
      * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
      * return recommendations with a specific finding reason code (for example,
-     * <code>MemoryUnderprovisioned</code>).</p>
+     * <code>MemoryUnderprovisioned</code>).</p> <p>You can filter your Lambda function
+     * recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Lambda function recommendations. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all Lambda function
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Lambda function recommendations. Use this filter
+     * to find all of your Lambda function recommendations that have a tag with a
+     * specific key. This doesn’t consider the tag value. For example, you can find
+     * your Lambda function recommendations with a tag key value of <code>Owner</code>
+     * or without any tag keys assigned.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -68,7 +92,19 @@ namespace Model
      * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
      * return recommendations with a specific finding reason code (for example,
-     * <code>MemoryUnderprovisioned</code>).</p>
+     * <code>MemoryUnderprovisioned</code>).</p> <p>You can filter your Lambda function
+     * recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Lambda function recommendations. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all Lambda function
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Lambda function recommendations. Use this filter
+     * to find all of your Lambda function recommendations that have a tag with a
+     * specific key. This doesn’t consider the tag value. For example, you can find
+     * your Lambda function recommendations with a tag key value of <code>Owner</code>
+     * or without any tag keys assigned.</p>
      */
     inline void SetName(const LambdaFunctionRecommendationFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -77,7 +113,19 @@ namespace Model
      * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
      * return recommendations with a specific finding reason code (for example,
-     * <code>MemoryUnderprovisioned</code>).</p>
+     * <code>MemoryUnderprovisioned</code>).</p> <p>You can filter your Lambda function
+     * recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Lambda function recommendations. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all Lambda function
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Lambda function recommendations. Use this filter
+     * to find all of your Lambda function recommendations that have a tag with a
+     * specific key. This doesn’t consider the tag value. For example, you can find
+     * your Lambda function recommendations with a tag key value of <code>Owner</code>
+     * or without any tag keys assigned.</p>
      */
     inline void SetName(LambdaFunctionRecommendationFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -86,7 +134,19 @@ namespace Model
      * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
      * return recommendations with a specific finding reason code (for example,
-     * <code>MemoryUnderprovisioned</code>).</p>
+     * <code>MemoryUnderprovisioned</code>).</p> <p>You can filter your Lambda function
+     * recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Lambda function recommendations. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all Lambda function
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Lambda function recommendations. Use this filter
+     * to find all of your Lambda function recommendations that have a tag with a
+     * specific key. This doesn’t consider the tag value. For example, you can find
+     * your Lambda function recommendations with a tag key value of <code>Owner</code>
+     * or without any tag keys assigned.</p>
      */
     inline LambdaFunctionRecommendationFilter& WithName(const LambdaFunctionRecommendationFilterName& value) { SetName(value); return *this;}
 
@@ -95,7 +155,19 @@ namespace Model
      * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
      * return recommendations with a specific finding reason code (for example,
-     * <code>MemoryUnderprovisioned</code>).</p>
+     * <code>MemoryUnderprovisioned</code>).</p> <p>You can filter your Lambda function
+     * recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Lambda function recommendations. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all Lambda function
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Lambda function recommendations. Use this filter
+     * to find all of your Lambda function recommendations that have a tag with a
+     * specific key. This doesn’t consider the tag value. For example, you can find
+     * your Lambda function recommendations with a tag key value of <code>Owner</code>
+     * or without any tag keys assigned.</p>
      */
     inline LambdaFunctionRecommendationFilter& WithName(LambdaFunctionRecommendationFilterName&& value) { SetName(std::move(value)); return *this;}
 

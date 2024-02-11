@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the GameLift FleetIQ and game server
+   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
    * groups.</b> </p> <p>Properties that describe a game server group resource. A
    * game server group manages certain properties related to a corresponding Amazon
    * EC2 Auto Scaling group. </p> <p>A game server group is created by a successful
@@ -208,64 +208,64 @@ namespace Model
 
 
     /**
-     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
-     * balancing and automatically scaling instances in the corresponding Auto Scaling
-     * group. </p>
+     * <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use
+     * when balancing and automatically scaling instances in the corresponding Auto
+     * Scaling group. </p>
      */
     inline const Aws::Vector<InstanceDefinition>& GetInstanceDefinitions() const{ return m_instanceDefinitions; }
 
     /**
-     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
-     * balancing and automatically scaling instances in the corresponding Auto Scaling
-     * group. </p>
+     * <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use
+     * when balancing and automatically scaling instances in the corresponding Auto
+     * Scaling group. </p>
      */
     inline bool InstanceDefinitionsHasBeenSet() const { return m_instanceDefinitionsHasBeenSet; }
 
     /**
-     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
-     * balancing and automatically scaling instances in the corresponding Auto Scaling
-     * group. </p>
+     * <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use
+     * when balancing and automatically scaling instances in the corresponding Auto
+     * Scaling group. </p>
      */
     inline void SetInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = value; }
 
     /**
-     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
-     * balancing and automatically scaling instances in the corresponding Auto Scaling
-     * group. </p>
+     * <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use
+     * when balancing and automatically scaling instances in the corresponding Auto
+     * Scaling group. </p>
      */
     inline void SetInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = std::move(value); }
 
     /**
-     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
-     * balancing and automatically scaling instances in the corresponding Auto Scaling
-     * group. </p>
+     * <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use
+     * when balancing and automatically scaling instances in the corresponding Auto
+     * Scaling group. </p>
      */
     inline GameServerGroup& WithInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { SetInstanceDefinitions(value); return *this;}
 
     /**
-     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
-     * balancing and automatically scaling instances in the corresponding Auto Scaling
-     * group. </p>
+     * <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use
+     * when balancing and automatically scaling instances in the corresponding Auto
+     * Scaling group. </p>
      */
     inline GameServerGroup& WithInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { SetInstanceDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
-     * balancing and automatically scaling instances in the corresponding Auto Scaling
-     * group. </p>
+     * <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use
+     * when balancing and automatically scaling instances in the corresponding Auto
+     * Scaling group. </p>
      */
     inline GameServerGroup& AddInstanceDefinitions(const InstanceDefinition& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when
-     * balancing and automatically scaling instances in the corresponding Auto Scaling
-     * group. </p>
+     * <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use
+     * when balancing and automatically scaling instances in the corresponding Auto
+     * Scaling group. </p>
      */
     inline GameServerGroup& AddInstanceDefinitions(InstanceDefinition&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -285,7 +285,7 @@ namespace Model
     inline const BalancingStrategy& GetBalancingStrategy() const{ return m_balancingStrategy; }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -305,7 +305,7 @@ namespace Model
     inline bool BalancingStrategyHasBeenSet() const { return m_balancingStrategyHasBeenSet; }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -325,7 +325,7 @@ namespace Model
     inline void SetBalancingStrategy(const BalancingStrategy& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = value; }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -345,7 +345,7 @@ namespace Model
     inline void SetBalancingStrategy(BalancingStrategy&& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = std::move(value); }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -365,7 +365,7 @@ namespace Model
     inline GameServerGroup& WithBalancingStrategy(const BalancingStrategy& value) { SetBalancingStrategy(value); return *this;}
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -503,115 +503,121 @@ namespace Model
 
     /**
      * <p>The current status of the game server group. Possible statuses include:</p>
-     * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
+     * <ul> <li> <p> <code>NEW</code> - Amazon GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
-     * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * <code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server
+     * group, which includes creating an Auto Scaling group in your Amazon Web Services
      * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
      * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
      * request to delete the game server group has been received. </p> </li> <li> <p>
-     * <code>DELETING</code> - GameLift FleetIQ has received a valid
-     * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
-     * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
-     * group and the game server group. </p> </li> <li> <p> <code>DELETED</code> - The
-     * game server group has been successfully deleted. </p> </li> <li> <p>
-     * <code>ERROR</code> - The asynchronous processes of activating or deleting a game
-     * server group has failed, resulting in an error state.</p> </li> </ul>
+     * <code>DELETING</code> - Amazon GameLift FleetIQ has received a valid
+     * <code>DeleteGameServerGroup()</code> request and is processing it. Amazon
+     * GameLift FleetIQ must first complete and release hosts before it deletes the
+     * Auto Scaling group and the game server group. </p> </li> <li> <p>
+     * <code>DELETED</code> - The game server group has been successfully deleted. </p>
+     * </li> <li> <p> <code>ERROR</code> - The asynchronous processes of activating or
+     * deleting a game server group has failed, resulting in an error state.</p> </li>
+     * </ul>
      */
     inline const GameServerGroupStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current status of the game server group. Possible statuses include:</p>
-     * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
+     * <ul> <li> <p> <code>NEW</code> - Amazon GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
-     * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * <code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server
+     * group, which includes creating an Auto Scaling group in your Amazon Web Services
      * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
      * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
      * request to delete the game server group has been received. </p> </li> <li> <p>
-     * <code>DELETING</code> - GameLift FleetIQ has received a valid
-     * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
-     * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
-     * group and the game server group. </p> </li> <li> <p> <code>DELETED</code> - The
-     * game server group has been successfully deleted. </p> </li> <li> <p>
-     * <code>ERROR</code> - The asynchronous processes of activating or deleting a game
-     * server group has failed, resulting in an error state.</p> </li> </ul>
+     * <code>DELETING</code> - Amazon GameLift FleetIQ has received a valid
+     * <code>DeleteGameServerGroup()</code> request and is processing it. Amazon
+     * GameLift FleetIQ must first complete and release hosts before it deletes the
+     * Auto Scaling group and the game server group. </p> </li> <li> <p>
+     * <code>DELETED</code> - The game server group has been successfully deleted. </p>
+     * </li> <li> <p> <code>ERROR</code> - The asynchronous processes of activating or
+     * deleting a game server group has failed, resulting in an error state.</p> </li>
+     * </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status of the game server group. Possible statuses include:</p>
-     * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
+     * <ul> <li> <p> <code>NEW</code> - Amazon GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
-     * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * <code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server
+     * group, which includes creating an Auto Scaling group in your Amazon Web Services
      * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
      * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
      * request to delete the game server group has been received. </p> </li> <li> <p>
-     * <code>DELETING</code> - GameLift FleetIQ has received a valid
-     * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
-     * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
-     * group and the game server group. </p> </li> <li> <p> <code>DELETED</code> - The
-     * game server group has been successfully deleted. </p> </li> <li> <p>
-     * <code>ERROR</code> - The asynchronous processes of activating or deleting a game
-     * server group has failed, resulting in an error state.</p> </li> </ul>
+     * <code>DELETING</code> - Amazon GameLift FleetIQ has received a valid
+     * <code>DeleteGameServerGroup()</code> request and is processing it. Amazon
+     * GameLift FleetIQ must first complete and release hosts before it deletes the
+     * Auto Scaling group and the game server group. </p> </li> <li> <p>
+     * <code>DELETED</code> - The game server group has been successfully deleted. </p>
+     * </li> <li> <p> <code>ERROR</code> - The asynchronous processes of activating or
+     * deleting a game server group has failed, resulting in an error state.</p> </li>
+     * </ul>
      */
     inline void SetStatus(const GameServerGroupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current status of the game server group. Possible statuses include:</p>
-     * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
+     * <ul> <li> <p> <code>NEW</code> - Amazon GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
-     * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * <code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server
+     * group, which includes creating an Auto Scaling group in your Amazon Web Services
      * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
      * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
      * request to delete the game server group has been received. </p> </li> <li> <p>
-     * <code>DELETING</code> - GameLift FleetIQ has received a valid
-     * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
-     * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
-     * group and the game server group. </p> </li> <li> <p> <code>DELETED</code> - The
-     * game server group has been successfully deleted. </p> </li> <li> <p>
-     * <code>ERROR</code> - The asynchronous processes of activating or deleting a game
-     * server group has failed, resulting in an error state.</p> </li> </ul>
+     * <code>DELETING</code> - Amazon GameLift FleetIQ has received a valid
+     * <code>DeleteGameServerGroup()</code> request and is processing it. Amazon
+     * GameLift FleetIQ must first complete and release hosts before it deletes the
+     * Auto Scaling group and the game server group. </p> </li> <li> <p>
+     * <code>DELETED</code> - The game server group has been successfully deleted. </p>
+     * </li> <li> <p> <code>ERROR</code> - The asynchronous processes of activating or
+     * deleting a game server group has failed, resulting in an error state.</p> </li>
+     * </ul>
      */
     inline void SetStatus(GameServerGroupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status of the game server group. Possible statuses include:</p>
-     * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
+     * <ul> <li> <p> <code>NEW</code> - Amazon GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
-     * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * <code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server
+     * group, which includes creating an Auto Scaling group in your Amazon Web Services
      * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
      * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
      * request to delete the game server group has been received. </p> </li> <li> <p>
-     * <code>DELETING</code> - GameLift FleetIQ has received a valid
-     * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
-     * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
-     * group and the game server group. </p> </li> <li> <p> <code>DELETED</code> - The
-     * game server group has been successfully deleted. </p> </li> <li> <p>
-     * <code>ERROR</code> - The asynchronous processes of activating or deleting a game
-     * server group has failed, resulting in an error state.</p> </li> </ul>
+     * <code>DELETING</code> - Amazon GameLift FleetIQ has received a valid
+     * <code>DeleteGameServerGroup()</code> request and is processing it. Amazon
+     * GameLift FleetIQ must first complete and release hosts before it deletes the
+     * Auto Scaling group and the game server group. </p> </li> <li> <p>
+     * <code>DELETED</code> - The game server group has been successfully deleted. </p>
+     * </li> <li> <p> <code>ERROR</code> - The asynchronous processes of activating or
+     * deleting a game server group has failed, resulting in an error state.</p> </li>
+     * </ul>
      */
     inline GameServerGroup& WithStatus(const GameServerGroupStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status of the game server group. Possible statuses include:</p>
-     * <ul> <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the
+     * <ul> <li> <p> <code>NEW</code> - Amazon GameLift FleetIQ has validated the
      * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
-     * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group,
-     * which includes creating an Auto Scaling group in your Amazon Web Services
+     * <code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server
+     * group, which includes creating an Auto Scaling group in your Amazon Web Services
      * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
      * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
      * request to delete the game server group has been received. </p> </li> <li> <p>
-     * <code>DELETING</code> - GameLift FleetIQ has received a valid
-     * <code>DeleteGameServerGroup()</code> request and is processing it. GameLift
-     * FleetIQ must first complete and release hosts before it deletes the Auto Scaling
-     * group and the game server group. </p> </li> <li> <p> <code>DELETED</code> - The
-     * game server group has been successfully deleted. </p> </li> <li> <p>
-     * <code>ERROR</code> - The asynchronous processes of activating or deleting a game
-     * server group has failed, resulting in an error state.</p> </li> </ul>
+     * <code>DELETING</code> - Amazon GameLift FleetIQ has received a valid
+     * <code>DeleteGameServerGroup()</code> request and is processing it. Amazon
+     * GameLift FleetIQ must first complete and release hosts before it deletes the
+     * Auto Scaling group and the game server group. </p> </li> <li> <p>
+     * <code>DELETED</code> - The game server group has been successfully deleted. </p>
+     * </li> <li> <p> <code>ERROR</code> - The asynchronous processes of activating or
+     * deleting a game server group has failed, resulting in an error state.</p> </li>
+     * </ul>
      */
     inline GameServerGroup& WithStatus(GameServerGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
 

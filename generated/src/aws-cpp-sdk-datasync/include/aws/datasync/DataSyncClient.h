@@ -16,12 +16,12 @@ namespace Aws
 namespace DataSync
 {
   /**
-   * <fullname>DataSync</fullname> <p>DataSync is a managed data transfer service
-   * that makes it simpler for you to automate moving data between on-premises
-   * storage and Amazon Web Services storage services. You also can use DataSync to
-   * transfer data between other cloud providers and Amazon Web Services storage
-   * services.</p> <p>This API interface reference includes documentation for using
-   * DataSync programmatically. For complete information, see the <i> <a
+   * <fullname>DataSync</fullname> <p>DataSync is an online data movement and
+   * discovery service that simplifies data migration and helps you quickly, easily,
+   * and securely transfer your file or object data to, from, and between Amazon Web
+   * Services storage services.</p> <p>This API interface reference includes
+   * documentation for using DataSync programmatically. For complete information, see
+   * the <i> <a
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html">DataSync
    * User Guide</a> </i>.</p>
    */
@@ -31,6 +31,9 @@ namespace DataSync
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef DataSyncClientConfiguration ClientConfigurationType;
+      typedef DataSyncEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -81,6 +84,33 @@ namespace DataSync
         virtual ~DataSyncClient();
 
         /**
+         * <p>Creates an Amazon Web Services resource for an on-premises storage system
+         * that you want DataSync Discovery to collect information about.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/AddStorageSystem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddStorageSystemOutcome AddStorageSystem(const Model::AddStorageSystemRequest& request) const;
+
+        /**
+         * A Callable wrapper for AddStorageSystem that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AddStorageSystemRequestT = Model::AddStorageSystemRequest>
+        Model::AddStorageSystemOutcomeCallable AddStorageSystemCallable(const AddStorageSystemRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::AddStorageSystem, request);
+        }
+
+        /**
+         * An Async wrapper for AddStorageSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AddStorageSystemRequestT = Model::AddStorageSystemRequest>
+        void AddStorageSystemAsync(const AddStorageSystemRequestT& request, const AddStorageSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::AddStorageSystem, request, handler, context);
+        }
+
+        /**
          * <p>Stops an DataSync task execution that's in progress. The transfer of some
          * files are abruptly interrupted. File contents that're transferred to the
          * destination might be incomplete or inconsistent with the source files.</p>
@@ -113,21 +143,16 @@ namespace DataSync
         }
 
         /**
-         * <p>Activates an DataSync agent that you have deployed in your storage
-         * environment. The activation process associates your agent with your account. In
-         * the activation process, you specify information such as the Amazon Web Services
-         * Region that you want to activate the agent in. You activate the agent in the
-         * Amazon Web Services Region where your target locations (in Amazon S3 or Amazon
-         * EFS) reside. Your tasks are created in this Amazon Web Services Region.</p>
-         * <p>You can activate the agent in a VPC (virtual private cloud) or provide the
-         * agent access to a VPC endpoint so you can run tasks without going over the
-         * public internet.</p> <p>You can use an agent for more than one location. If a
-         * task uses multiple agents, all of them need to have status AVAILABLE for the
-         * task to run. If you use multiple agents for a source location, the status of all
-         * the agents must be AVAILABLE for the task to run. </p> <p>Agents are
-         * automatically updated by Amazon Web Services on a regular basis, using a
-         * mechanism that ensures minimal interruption to your tasks.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Activates an DataSync agent that you've deployed in your storage environment.
+         * The activation process associates the agent with your Amazon Web Services
+         * account.</p> <p>If you haven't deployed an agent yet, see the following topics
+         * to learn more:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/agent-requirements.html">Agent
+         * requirements</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-agent.html">Create
+         * an agent</a> </p> </li> </ul>  <p>If you're transferring between Amazon
+         * Web Services storage services, you don't need a DataSync agent. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">AWS
          * API Reference</a></p>
          */
@@ -149,6 +174,41 @@ namespace DataSync
         void CreateAgentAsync(const CreateAgentRequestT& request, const CreateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataSyncClient::CreateAgent, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an endpoint for a Microsoft Azure Blob Storage container that
+         * DataSync can use as a transfer source or destination.</p> <p>Before you begin,
+         * make sure you know <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
+         * DataSync accesses Azure Blob Storage</a> and works with <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">access
+         * tiers</a> and <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
+         * types</a>. You also need a <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
+         * agent</a> that can connect to your container.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocationAzureBlobOutcome CreateLocationAzureBlob(const Model::CreateLocationAzureBlobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLocationAzureBlob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLocationAzureBlobRequestT = Model::CreateLocationAzureBlobRequest>
+        Model::CreateLocationAzureBlobOutcomeCallable CreateLocationAzureBlobCallable(const CreateLocationAzureBlobRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::CreateLocationAzureBlob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLocationAzureBlob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLocationAzureBlobRequestT = Model::CreateLocationAzureBlobRequest>
+        void CreateLocationAzureBlobAsync(const CreateLocationAzureBlobRequestT& request, const CreateLocationAzureBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::CreateLocationAzureBlob, request, handler, context);
         }
 
         /**
@@ -207,9 +267,10 @@ namespace DataSync
 
         /**
          * <p>Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that
-         * DataSync can access for a transfer. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Creating
-         * a location for FSx for ONTAP</a>.</p><p><h3>See Also:</h3>   <a
+         * DataSync can use for a data transfer.</p> <p>Before you begin, make sure that
+         * you understand how DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">accesses
+         * an FSx for ONTAP file system</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOntap">AWS
          * API Reference</a></p>
          */
@@ -264,8 +325,11 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for an Amazon FSx for Windows File Server file
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an endpoint for an Amazon FSx for Windows File Server file system
+         * that DataSync can use for a data transfer.</p> <p>Before you begin, make sure
+         * that you understand how DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-location-access">accesses
+         * an FSx for Windows File Server</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">AWS
          * API Reference</a></p>
          */
@@ -316,8 +380,15 @@ namespace DataSync
         }
 
         /**
-         * <p>Defines a file system on a Network File System (NFS) server that can be read
-         * from or written to.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an endpoint for a Network File System (NFS) file server that DataSync
+         * can use for a data transfer.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
+         * transfers to or from an NFS file server</a>.</p>  <p>If you're copying
+         * data to or from an Snowcone device, you can also use
+         * <code>CreateLocationNfs</code> to create your transfer location. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/nfs-on-snowcone.html">Configuring
+         * transfers with Snowcone</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">AWS
          * API Reference</a></p>
          */
@@ -370,9 +441,16 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for an Amazon S3 bucket that DataSync can access for a
-         * transfer. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create
+         * <p>A <i>location</i> is an endpoint for an Amazon S3 bucket. DataSync can use
+         * the location as a source or destination for copying data.</p> 
+         * <p>Before you create your location, make sure that you read the following
+         * sections:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage
+         * class considerations with Amazon S3 locations</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">Evaluating
+         * S3 request costs when using DataSync</a> </p> </li> </ul>  <p> For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Creating
          * an Amazon S3 location</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
@@ -399,9 +477,10 @@ namespace DataSync
 
         /**
          * <p>Creates an endpoint for a Server Message Block (SMB) file server that
-         * DataSync can access for a transfer. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
-         * an SMB location</a>.</p><p><h3>See Also:</h3>   <a
+         * DataSync can use for a data transfer.</p> <p>Before you begin, make sure that
+         * you understand how DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses
+         * an SMB file server</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          */
@@ -426,10 +505,15 @@ namespace DataSync
         }
 
         /**
-         * <p>Configures a task, which defines where and how DataSync transfers your
-         * data.</p> <p>A task includes a source location, a destination location, and the
-         * preferences for how and when you want to transfer your data (such as bandwidth
-         * limits, scheduling, among other options).</p><p><h3>See Also:</h3>   <a
+         * <p>Configures a transfer task, which defines where and how DataSync moves your
+         * data.</p> <p>A task includes a source location, destination location, and the
+         * options for how and when you want to transfer your data (such as bandwidth
+         * limits, scheduling, among other options).</p>  <p>If you're planning
+         * to transfer data to or from an Amazon S3 location, review <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how
+         * DataSync can affect your S3 request charges</a> and the <a
+         * href="http://aws.amazon.com/datasync/pricing/">DataSync pricing page</a> before
+         * you begin.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
          * API Reference</a></p>
          */
@@ -454,11 +538,13 @@ namespace DataSync
         }
 
         /**
-         * <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource
-         * Name (ARN) of the agent in your request. The operation disassociates the agent
-         * from your Amazon Web Services account. However, it doesn't delete the agent
-         * virtual machine (VM) from your on-premises environment.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Removes an DataSync agent resource from your Amazon Web Services account.</p>
+         * <p>Keep in mind that this operation (which can't be undone) doesn't remove the
+         * agent's virtual machine (VM) or Amazon EC2 instance from your storage
+         * environment. For next steps, you can delete the VM or instance from your storage
+         * environment or reuse it to <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activate
+         * a new agent</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">AWS
          * API Reference</a></p>
          */
@@ -509,7 +595,7 @@ namespace DataSync
         }
 
         /**
-         * <p>Deletes an DataSync task.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an DataSync transfer task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteTask">AWS
          * API Reference</a></p>
          */
@@ -534,8 +620,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata about an DataSync agent, such as its name, endpoint type,
-         * and status.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about an DataSync agent, such as its name, service
+         * endpoint type, and status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeAgent">AWS
          * API Reference</a></p>
          */
@@ -557,6 +643,58 @@ namespace DataSync
         void DescribeAgentAsync(const DescribeAgentRequestT& request, const DescribeAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataSyncClient::DescribeAgent, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a DataSync discovery job.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeDiscoveryJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDiscoveryJobOutcome DescribeDiscoveryJob(const Model::DescribeDiscoveryJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDiscoveryJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDiscoveryJobRequestT = Model::DescribeDiscoveryJobRequest>
+        Model::DescribeDiscoveryJobOutcomeCallable DescribeDiscoveryJobCallable(const DescribeDiscoveryJobRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::DescribeDiscoveryJob, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDiscoveryJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDiscoveryJobRequestT = Model::DescribeDiscoveryJobRequest>
+        void DescribeDiscoveryJobAsync(const DescribeDiscoveryJobRequestT& request, const DescribeDiscoveryJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::DescribeDiscoveryJob, request, handler, context);
+        }
+
+        /**
+         * <p>Provides details about how an DataSync transfer location for Microsoft Azure
+         * Blob Storage is configured.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLocationAzureBlobOutcome DescribeLocationAzureBlob(const Model::DescribeLocationAzureBlobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeLocationAzureBlob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeLocationAzureBlobRequestT = Model::DescribeLocationAzureBlobRequest>
+        Model::DescribeLocationAzureBlobOutcomeCallable DescribeLocationAzureBlobCallable(const DescribeLocationAzureBlobRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::DescribeLocationAzureBlob, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeLocationAzureBlob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeLocationAzureBlobRequestT = Model::DescribeLocationAzureBlobRequest>
+        void DescribeLocationAzureBlobAsync(const DescribeLocationAzureBlobRequestT& request, const DescribeLocationAzureBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::DescribeLocationAzureBlob, request, handler, context);
         }
 
         /**
@@ -721,8 +859,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata, such as the path information, about an NFS
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about how an DataSync transfer location for a Network File
+         * System (NFS) file server is configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationNfs">AWS
          * API Reference</a></p>
          */
@@ -825,7 +963,87 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata about a task.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about an on-premises storage system that you're using
+         * with DataSync Discovery.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStorageSystemOutcome DescribeStorageSystem(const Model::DescribeStorageSystemRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeStorageSystem that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeStorageSystemRequestT = Model::DescribeStorageSystemRequest>
+        Model::DescribeStorageSystemOutcomeCallable DescribeStorageSystemCallable(const DescribeStorageSystemRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::DescribeStorageSystem, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeStorageSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeStorageSystemRequestT = Model::DescribeStorageSystemRequest>
+        void DescribeStorageSystemAsync(const DescribeStorageSystemRequestT& request, const DescribeStorageSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::DescribeStorageSystem, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information, including performance data and capacity usage, which
+         * DataSync Discovery collects about a specific resource in your-premises storage
+         * system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResourceMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStorageSystemResourceMetricsOutcome DescribeStorageSystemResourceMetrics(const Model::DescribeStorageSystemResourceMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeStorageSystemResourceMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeStorageSystemResourceMetricsRequestT = Model::DescribeStorageSystemResourceMetricsRequest>
+        Model::DescribeStorageSystemResourceMetricsOutcomeCallable DescribeStorageSystemResourceMetricsCallable(const DescribeStorageSystemResourceMetricsRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::DescribeStorageSystemResourceMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeStorageSystemResourceMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeStorageSystemResourceMetricsRequestT = Model::DescribeStorageSystemResourceMetricsRequest>
+        void DescribeStorageSystemResourceMetricsAsync(const DescribeStorageSystemResourceMetricsRequestT& request, const DescribeStorageSystemResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::DescribeStorageSystemResourceMetrics, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information that DataSync Discovery collects about resources in your
+         * on-premises storage system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStorageSystemResourcesOutcome DescribeStorageSystemResources(const Model::DescribeStorageSystemResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeStorageSystemResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeStorageSystemResourcesRequestT = Model::DescribeStorageSystemResourcesRequest>
+        Model::DescribeStorageSystemResourcesOutcomeCallable DescribeStorageSystemResourcesCallable(const DescribeStorageSystemResourcesRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::DescribeStorageSystemResources, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeStorageSystemResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeStorageSystemResourcesRequestT = Model::DescribeStorageSystemResourcesRequest>
+        void DescribeStorageSystemResourcesAsync(const DescribeStorageSystemResourcesRequestT& request, const DescribeStorageSystemResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::DescribeStorageSystemResources, request, handler, context);
+        }
+
+        /**
+         * <p>Provides information about an DataSync transfer task.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTask">AWS
          * API Reference</a></p>
          */
@@ -850,8 +1068,9 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns detailed metadata about a task that is being executed.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides information about an execution of your DataSync task. You can use
+         * this operation to help monitor the progress of an ongoing transfer or check the
+         * results of the transfer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecution">AWS
          * API Reference</a></p>
          */
@@ -873,6 +1092,39 @@ namespace DataSync
         void DescribeTaskExecutionAsync(const DescribeTaskExecutionRequestT& request, const DescribeTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataSyncClient::DescribeTaskExecution, request, handler, context);
+        }
+
+        /**
+         * <p>Creates recommendations about where to migrate your data to in Amazon Web
+         * Services. Recommendations are generated based on information that DataSync
+         * Discovery collects about your on-premises storage system's resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations
+         * provided by DataSync Discovery</a>.</p> <p>Once generated, you can view your
+         * recommendations by using the <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResources.html">DescribeStorageSystemResources</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/GenerateRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GenerateRecommendationsOutcome GenerateRecommendations(const Model::GenerateRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GenerateRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GenerateRecommendationsRequestT = Model::GenerateRecommendationsRequest>
+        Model::GenerateRecommendationsOutcomeCallable GenerateRecommendationsCallable(const GenerateRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::GenerateRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for GenerateRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GenerateRecommendationsRequestT = Model::GenerateRecommendationsRequest>
+        void GenerateRecommendationsAsync(const GenerateRecommendationsRequestT& request, const GenerateRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::GenerateRecommendations, request, handler, context);
         }
 
         /**
@@ -914,6 +1166,33 @@ namespace DataSync
         }
 
         /**
+         * <p>Provides a list of the existing discovery jobs in the Amazon Web Services
+         * Region and Amazon Web Services account where you're using DataSync
+         * Discovery.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListDiscoveryJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDiscoveryJobsOutcome ListDiscoveryJobs(const Model::ListDiscoveryJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDiscoveryJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDiscoveryJobsRequestT = Model::ListDiscoveryJobsRequest>
+        Model::ListDiscoveryJobsOutcomeCallable ListDiscoveryJobsCallable(const ListDiscoveryJobsRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::ListDiscoveryJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListDiscoveryJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDiscoveryJobsRequestT = Model::ListDiscoveryJobsRequest>
+        void ListDiscoveryJobsAsync(const ListDiscoveryJobsRequestT& request, const ListDiscoveryJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::ListDiscoveryJobs, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of source and destination locations.</p> <p>If you have more
          * locations than are returned in a response (that is, the response returns only a
          * truncated list of your agents), the response contains a token that you can
@@ -940,6 +1219,32 @@ namespace DataSync
         void ListLocationsAsync(const ListLocationsRequestT& request, const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataSyncClient::ListLocations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the on-premises storage systems that you're using with DataSync
+         * Discovery.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListStorageSystems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStorageSystemsOutcome ListStorageSystems(const Model::ListStorageSystemsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListStorageSystems that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListStorageSystemsRequestT = Model::ListStorageSystemsRequest>
+        Model::ListStorageSystemsOutcomeCallable ListStorageSystemsCallable(const ListStorageSystemsRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::ListStorageSystems, request);
+        }
+
+        /**
+         * An Async wrapper for ListStorageSystems that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListStorageSystemsRequestT = Model::ListStorageSystemsRequest>
+        void ListStorageSystemsAsync(const ListStorageSystemsRequestT& request, const ListStorageSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::ListStorageSystems, request, handler, context);
         }
 
         /**
@@ -1020,11 +1325,72 @@ namespace DataSync
         }
 
         /**
-         * <p>Starts an DataSync task. For each task, you can only run one task execution
-         * at a time.</p> <p>There are several phases to a task execution. For more
-         * information, see <a
+         * <p>Permanently removes a storage system resource from DataSync Discovery,
+         * including the associated discovery jobs, collected data, and
+         * recommendations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/RemoveStorageSystem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveStorageSystemOutcome RemoveStorageSystem(const Model::RemoveStorageSystemRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemoveStorageSystem that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RemoveStorageSystemRequestT = Model::RemoveStorageSystemRequest>
+        Model::RemoveStorageSystemOutcomeCallable RemoveStorageSystemCallable(const RemoveStorageSystemRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::RemoveStorageSystem, request);
+        }
+
+        /**
+         * An Async wrapper for RemoveStorageSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RemoveStorageSystemRequestT = Model::RemoveStorageSystemRequest>
+        void RemoveStorageSystemAsync(const RemoveStorageSystemRequestT& request, const RemoveStorageSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::RemoveStorageSystem, request, handler, context);
+        }
+
+        /**
+         * <p>Runs a DataSync discovery job on your on-premises storage system. If you
+         * haven't added the storage system to DataSync Discovery yet, do this first by
+         * using the <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_AddStorageSystem.html">AddStorageSystem</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartDiscoveryJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDiscoveryJobOutcome StartDiscoveryJob(const Model::StartDiscoveryJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartDiscoveryJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartDiscoveryJobRequestT = Model::StartDiscoveryJobRequest>
+        Model::StartDiscoveryJobOutcomeCallable StartDiscoveryJobCallable(const StartDiscoveryJobRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::StartDiscoveryJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartDiscoveryJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartDiscoveryJobRequestT = Model::StartDiscoveryJobRequest>
+        void StartDiscoveryJobAsync(const StartDiscoveryJobRequestT& request, const StartDiscoveryJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::StartDiscoveryJob, request, handler, context);
+        }
+
+        /**
+         * <p>Starts an DataSync transfer task. For each task, you can only run one task
+         * execution at a time.</p> <p>There are several phases to a task execution. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task
-         * execution statuses</a>.</p><p><h3>See Also:</h3>   <a
+         * execution statuses</a>.</p>  <p>If you're planning to transfer data
+         * to or from an Amazon S3 location, review <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how
+         * DataSync can affect your S3 request charges</a> and the <a
+         * href="http://aws.amazon.com/datasync/pricing/">DataSync pricing page</a> before
+         * you begin.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">AWS
          * API Reference</a></p>
          */
@@ -1046,6 +1412,36 @@ namespace DataSync
         void StartTaskExecutionAsync(const StartTaskExecutionRequestT& request, const StartTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataSyncClient::StartTaskExecution, request, handler, context);
+        }
+
+        /**
+         * <p>Stops a running DataSync discovery job.</p> <p>You can stop a discovery job
+         * anytime. A job that's stopped before it's scheduled to end likely will provide
+         * you some information about your on-premises storage system resources. To get
+         * recommendations for a stopped job, you must use the <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_GenerateRecommendations.html">GenerateRecommendations</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StopDiscoveryJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopDiscoveryJobOutcome StopDiscoveryJob(const Model::StopDiscoveryJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopDiscoveryJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopDiscoveryJobRequestT = Model::StopDiscoveryJobRequest>
+        Model::StopDiscoveryJobOutcomeCallable StopDiscoveryJobCallable(const StopDiscoveryJobRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::StopDiscoveryJob, request);
+        }
+
+        /**
+         * An Async wrapper for StopDiscoveryJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopDiscoveryJobRequestT = Model::StopDiscoveryJobRequest>
+        void StopDiscoveryJobAsync(const StopDiscoveryJobRequestT& request, const StopDiscoveryJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::StopDiscoveryJob, request, handler, context);
         }
 
         /**
@@ -1103,7 +1499,7 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates the name of an agent.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the name of an DataSync agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateAgent">AWS
          * API Reference</a></p>
          */
@@ -1125,6 +1521,57 @@ namespace DataSync
         void UpdateAgentAsync(const UpdateAgentRequestT& request, const UpdateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataSyncClient::UpdateAgent, request, handler, context);
+        }
+
+        /**
+         * <p>Edits a DataSync discovery job configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateDiscoveryJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDiscoveryJobOutcome UpdateDiscoveryJob(const Model::UpdateDiscoveryJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDiscoveryJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDiscoveryJobRequestT = Model::UpdateDiscoveryJobRequest>
+        Model::UpdateDiscoveryJobOutcomeCallable UpdateDiscoveryJobCallable(const UpdateDiscoveryJobRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::UpdateDiscoveryJob, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDiscoveryJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDiscoveryJobRequestT = Model::UpdateDiscoveryJobRequest>
+        void UpdateDiscoveryJobAsync(const UpdateDiscoveryJobRequestT& request, const UpdateDiscoveryJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::UpdateDiscoveryJob, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies some configurations of the Microsoft Azure Blob Storage transfer
+         * location that you're using with DataSync.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLocationAzureBlobOutcome UpdateLocationAzureBlob(const Model::UpdateLocationAzureBlobRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLocationAzureBlob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateLocationAzureBlobRequestT = Model::UpdateLocationAzureBlobRequest>
+        Model::UpdateLocationAzureBlobOutcomeCallable UpdateLocationAzureBlobCallable(const UpdateLocationAzureBlobRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::UpdateLocationAzureBlob, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateLocationAzureBlob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateLocationAzureBlobRequestT = Model::UpdateLocationAzureBlobRequest>
+        void UpdateLocationAzureBlobAsync(const UpdateLocationAzureBlobRequestT& request, const UpdateLocationAzureBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::UpdateLocationAzureBlob, request, handler, context);
         }
 
         /**
@@ -1154,10 +1601,10 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates some of the parameters of a previously created location for Network
-         * File System (NFS) access. For information about creating an NFS location, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating
-         * a location for NFS</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies some configurations of the Network File System (NFS) transfer
+         * location that you're using with DataSync.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
+         * transfers to or from an NFS file server</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">AWS
          * API Reference</a></p>
          */
@@ -1211,11 +1658,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates some of the parameters of a previously created location for Server
-         * Message Block (SMB) file system access. For information about creating an SMB
-         * location, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
-         * a location for SMB</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates some of the parameters of a Server Message Block (SMB) file server
+         * location that you can use for DataSync transfers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">AWS
          * API Reference</a></p>
          */
@@ -1240,7 +1684,34 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates the metadata associated with a task.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies some configurations of an on-premises storage system resource that
+         * you're using with DataSync Discovery.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateStorageSystem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateStorageSystemOutcome UpdateStorageSystem(const Model::UpdateStorageSystemRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateStorageSystem that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateStorageSystemRequestT = Model::UpdateStorageSystemRequest>
+        Model::UpdateStorageSystemOutcomeCallable UpdateStorageSystemCallable(const UpdateStorageSystemRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::UpdateStorageSystem, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateStorageSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateStorageSystemRequestT = Model::UpdateStorageSystemRequest>
+        void UpdateStorageSystemAsync(const UpdateStorageSystemRequestT& request, const UpdateStorageSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::UpdateStorageSystem, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the configuration of a DataSync transfer task.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">AWS
          * API Reference</a></p>
          */
@@ -1265,14 +1736,12 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates execution of a task.</p> <p>You can modify bandwidth throttling for a
-         * task execution that is running or queued. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
-         * Bandwidth Throttling for a Task Execution</a>.</p>  <p>The only
-         * <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
-         * <code> <a
+         * <p>Updates the configuration of a running DataSync task execution.</p> 
+         * <p>Currently, the only <code>Option</code> that you can modify with
+         * <code>UpdateTaskExecution</code> is <code> <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
-         * </code>.</p> <p><h3>See Also:</h3>   <a
+         * </code>, which throttles bandwidth for a running or queued task execution.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">AWS
          * API Reference</a></p>
          */

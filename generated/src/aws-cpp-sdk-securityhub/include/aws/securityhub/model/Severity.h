@@ -45,7 +45,7 @@ namespace Model
 
 
     /**
-     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <p>Deprecated. This attribute isn't included in findings. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
      * as defined by the Amazon Web Services service or integrated partner product that
      * generated the finding.</p>
@@ -53,7 +53,7 @@ namespace Model
     inline double GetProduct() const{ return m_product; }
 
     /**
-     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <p>Deprecated. This attribute isn't included in findings. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
      * as defined by the Amazon Web Services service or integrated partner product that
      * generated the finding.</p>
@@ -61,7 +61,7 @@ namespace Model
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
 
     /**
-     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <p>Deprecated. This attribute isn't included in findings. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
      * as defined by the Amazon Web Services service or integrated partner product that
      * generated the finding.</p>
@@ -69,7 +69,7 @@ namespace Model
     inline void SetProduct(double value) { m_productHasBeenSet = true; m_product = value; }
 
     /**
-     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <p>Deprecated. This attribute isn't included in findings. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
      * as defined by the Amazon Web Services service or integrated partner product that
      * generated the finding.</p>
@@ -175,50 +175,46 @@ namespace Model
 
 
     /**
-     * <p>Deprecated. The normalized severity of a finding. This attribute is being
-     * deprecated. Instead of providing <code>Normalized</code>, provide
-     * <code>Label</code>.</p> <p>If you provide <code>Label</code> and do not provide
-     * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
-     * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
-     * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>
-     * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
-     * </li> </ul>
+     * <p>Deprecated. The normalized severity of a finding. Instead of providing
+     * <code>Normalized</code>, provide <code>Label</code>.</p> <p>If you provide
+     * <code>Label</code> and do not provide <code>Normalized</code>, then
+     * <code>Normalized</code> is set automatically as follows.</p> <ul> <li> <p>
+     * <code>INFORMATIONAL</code> - 0</p> </li> <li> <p> <code>LOW</code> - 1</p> </li>
+     * <li> <p> <code>MEDIUM</code> - 40</p> </li> <li> <p> <code>HIGH</code> - 70</p>
+     * </li> <li> <p> <code>CRITICAL</code> - 90</p> </li> </ul>
      */
     inline int GetNormalized() const{ return m_normalized; }
 
     /**
-     * <p>Deprecated. The normalized severity of a finding. This attribute is being
-     * deprecated. Instead of providing <code>Normalized</code>, provide
-     * <code>Label</code>.</p> <p>If you provide <code>Label</code> and do not provide
-     * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
-     * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
-     * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>
-     * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
-     * </li> </ul>
+     * <p>Deprecated. The normalized severity of a finding. Instead of providing
+     * <code>Normalized</code>, provide <code>Label</code>.</p> <p>If you provide
+     * <code>Label</code> and do not provide <code>Normalized</code>, then
+     * <code>Normalized</code> is set automatically as follows.</p> <ul> <li> <p>
+     * <code>INFORMATIONAL</code> - 0</p> </li> <li> <p> <code>LOW</code> - 1</p> </li>
+     * <li> <p> <code>MEDIUM</code> - 40</p> </li> <li> <p> <code>HIGH</code> - 70</p>
+     * </li> <li> <p> <code>CRITICAL</code> - 90</p> </li> </ul>
      */
     inline bool NormalizedHasBeenSet() const { return m_normalizedHasBeenSet; }
 
     /**
-     * <p>Deprecated. The normalized severity of a finding. This attribute is being
-     * deprecated. Instead of providing <code>Normalized</code>, provide
-     * <code>Label</code>.</p> <p>If you provide <code>Label</code> and do not provide
-     * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
-     * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
-     * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>
-     * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
-     * </li> </ul>
+     * <p>Deprecated. The normalized severity of a finding. Instead of providing
+     * <code>Normalized</code>, provide <code>Label</code>.</p> <p>If you provide
+     * <code>Label</code> and do not provide <code>Normalized</code>, then
+     * <code>Normalized</code> is set automatically as follows.</p> <ul> <li> <p>
+     * <code>INFORMATIONAL</code> - 0</p> </li> <li> <p> <code>LOW</code> - 1</p> </li>
+     * <li> <p> <code>MEDIUM</code> - 40</p> </li> <li> <p> <code>HIGH</code> - 70</p>
+     * </li> <li> <p> <code>CRITICAL</code> - 90</p> </li> </ul>
      */
     inline void SetNormalized(int value) { m_normalizedHasBeenSet = true; m_normalized = value; }
 
     /**
-     * <p>Deprecated. The normalized severity of a finding. This attribute is being
-     * deprecated. Instead of providing <code>Normalized</code>, provide
-     * <code>Label</code>.</p> <p>If you provide <code>Label</code> and do not provide
-     * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
-     * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
-     * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>
-     * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
-     * </li> </ul>
+     * <p>Deprecated. The normalized severity of a finding. Instead of providing
+     * <code>Normalized</code>, provide <code>Label</code>.</p> <p>If you provide
+     * <code>Label</code> and do not provide <code>Normalized</code>, then
+     * <code>Normalized</code> is set automatically as follows.</p> <ul> <li> <p>
+     * <code>INFORMATIONAL</code> - 0</p> </li> <li> <p> <code>LOW</code> - 1</p> </li>
+     * <li> <p> <code>MEDIUM</code> - 40</p> </li> <li> <p> <code>HIGH</code> - 70</p>
+     * </li> <li> <p> <code>CRITICAL</code> - 90</p> </li> </ul>
      */
     inline Severity& WithNormalized(int value) { SetNormalized(value); return *this;}
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduleEntryType::NOT_SET:
+            return {};
           case ScheduleEntryType::PROGRAM:
             return "PROGRAM";
           case ScheduleEntryType::FILLER_SLATE:

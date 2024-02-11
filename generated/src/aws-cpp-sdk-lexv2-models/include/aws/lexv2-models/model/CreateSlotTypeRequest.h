@@ -38,50 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The name for the slot. A slot type name must be unique within the
-     * account.</p>
+     * <p>The name for the slot. A slot type name must be unique within the intent.</p>
      */
     inline const Aws::String& GetSlotTypeName() const{ return m_slotTypeName; }
 
     /**
-     * <p>The name for the slot. A slot type name must be unique within the
-     * account.</p>
+     * <p>The name for the slot. A slot type name must be unique within the intent.</p>
      */
     inline bool SlotTypeNameHasBeenSet() const { return m_slotTypeNameHasBeenSet; }
 
     /**
-     * <p>The name for the slot. A slot type name must be unique within the
-     * account.</p>
+     * <p>The name for the slot. A slot type name must be unique within the intent.</p>
      */
     inline void SetSlotTypeName(const Aws::String& value) { m_slotTypeNameHasBeenSet = true; m_slotTypeName = value; }
 
     /**
-     * <p>The name for the slot. A slot type name must be unique within the
-     * account.</p>
+     * <p>The name for the slot. A slot type name must be unique within the intent.</p>
      */
     inline void SetSlotTypeName(Aws::String&& value) { m_slotTypeNameHasBeenSet = true; m_slotTypeName = std::move(value); }
 
     /**
-     * <p>The name for the slot. A slot type name must be unique within the
-     * account.</p>
+     * <p>The name for the slot. A slot type name must be unique within the intent.</p>
      */
     inline void SetSlotTypeName(const char* value) { m_slotTypeNameHasBeenSet = true; m_slotTypeName.assign(value); }
 
     /**
-     * <p>The name for the slot. A slot type name must be unique within the
-     * account.</p>
+     * <p>The name for the slot. A slot type name must be unique within the intent.</p>
      */
     inline CreateSlotTypeRequest& WithSlotTypeName(const Aws::String& value) { SetSlotTypeName(value); return *this;}
 
     /**
-     * <p>The name for the slot. A slot type name must be unique within the
-     * account.</p>
+     * <p>The name for the slot. A slot type name must be unique within the intent.</p>
      */
     inline CreateSlotTypeRequest& WithSlotTypeName(Aws::String&& value) { SetSlotTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the slot. A slot type name must be unique within the
-     * account.</p>
+     * <p>The name for the slot. A slot type name must be unique within the intent.</p>
      */
     inline CreateSlotTypeRequest& WithSlotTypeName(const char* value) { SetSlotTypeName(value); return *this;}
 
@@ -203,78 +195,78 @@ namespace Model
     /**
      * <p>Determines the strategy that Amazon Lex uses to select a value from the list
      * of possible values. The field can be set to one of the following values:</p>
-     * <ul> <li> <p> <code>OriginalValue</code> - Returns the value entered by the
+     * <ul> <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the
      * user, if the user value is similar to the slot value.</p> </li> <li> <p>
-     * <code>TopResolution</code> - If there is a resolution list for the slot, return
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
      * the first value in the resolution list. If there is no resolution list, return
      * null.</p> </li> </ul> <p>If you don't specify the
      * <code>valueSelectionSetting</code> parameter, the default is
-     * <code>OriginalValue</code>.</p>
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline const SlotValueSelectionSetting& GetValueSelectionSetting() const{ return m_valueSelectionSetting; }
 
     /**
      * <p>Determines the strategy that Amazon Lex uses to select a value from the list
      * of possible values. The field can be set to one of the following values:</p>
-     * <ul> <li> <p> <code>OriginalValue</code> - Returns the value entered by the
+     * <ul> <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the
      * user, if the user value is similar to the slot value.</p> </li> <li> <p>
-     * <code>TopResolution</code> - If there is a resolution list for the slot, return
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
      * the first value in the resolution list. If there is no resolution list, return
      * null.</p> </li> </ul> <p>If you don't specify the
      * <code>valueSelectionSetting</code> parameter, the default is
-     * <code>OriginalValue</code>.</p>
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline bool ValueSelectionSettingHasBeenSet() const { return m_valueSelectionSettingHasBeenSet; }
 
     /**
      * <p>Determines the strategy that Amazon Lex uses to select a value from the list
      * of possible values. The field can be set to one of the following values:</p>
-     * <ul> <li> <p> <code>OriginalValue</code> - Returns the value entered by the
+     * <ul> <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the
      * user, if the user value is similar to the slot value.</p> </li> <li> <p>
-     * <code>TopResolution</code> - If there is a resolution list for the slot, return
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
      * the first value in the resolution list. If there is no resolution list, return
      * null.</p> </li> </ul> <p>If you don't specify the
      * <code>valueSelectionSetting</code> parameter, the default is
-     * <code>OriginalValue</code>.</p>
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline void SetValueSelectionSetting(const SlotValueSelectionSetting& value) { m_valueSelectionSettingHasBeenSet = true; m_valueSelectionSetting = value; }
 
     /**
      * <p>Determines the strategy that Amazon Lex uses to select a value from the list
      * of possible values. The field can be set to one of the following values:</p>
-     * <ul> <li> <p> <code>OriginalValue</code> - Returns the value entered by the
+     * <ul> <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the
      * user, if the user value is similar to the slot value.</p> </li> <li> <p>
-     * <code>TopResolution</code> - If there is a resolution list for the slot, return
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
      * the first value in the resolution list. If there is no resolution list, return
      * null.</p> </li> </ul> <p>If you don't specify the
      * <code>valueSelectionSetting</code> parameter, the default is
-     * <code>OriginalValue</code>.</p>
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline void SetValueSelectionSetting(SlotValueSelectionSetting&& value) { m_valueSelectionSettingHasBeenSet = true; m_valueSelectionSetting = std::move(value); }
 
     /**
      * <p>Determines the strategy that Amazon Lex uses to select a value from the list
      * of possible values. The field can be set to one of the following values:</p>
-     * <ul> <li> <p> <code>OriginalValue</code> - Returns the value entered by the
+     * <ul> <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the
      * user, if the user value is similar to the slot value.</p> </li> <li> <p>
-     * <code>TopResolution</code> - If there is a resolution list for the slot, return
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
      * the first value in the resolution list. If there is no resolution list, return
      * null.</p> </li> </ul> <p>If you don't specify the
      * <code>valueSelectionSetting</code> parameter, the default is
-     * <code>OriginalValue</code>.</p>
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline CreateSlotTypeRequest& WithValueSelectionSetting(const SlotValueSelectionSetting& value) { SetValueSelectionSetting(value); return *this;}
 
     /**
      * <p>Determines the strategy that Amazon Lex uses to select a value from the list
      * of possible values. The field can be set to one of the following values:</p>
-     * <ul> <li> <p> <code>OriginalValue</code> - Returns the value entered by the
+     * <ul> <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the
      * user, if the user value is similar to the slot value.</p> </li> <li> <p>
-     * <code>TopResolution</code> - If there is a resolution list for the slot, return
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
      * the first value in the resolution list. If there is no resolution list, return
      * null.</p> </li> </ul> <p>If you don't specify the
      * <code>valueSelectionSetting</code> parameter, the default is
-     * <code>OriginalValue</code>.</p>
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline CreateSlotTypeRequest& WithValueSelectionSetting(SlotValueSelectionSetting&& value) { SetValueSelectionSetting(std::move(value)); return *this;}
 

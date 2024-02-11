@@ -87,107 +87,107 @@ namespace Model
 
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * <p>The ContinuationToken that represents a placeholder from where this request
-     * should begin.</p>
+     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
+     * this request should begin.</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 

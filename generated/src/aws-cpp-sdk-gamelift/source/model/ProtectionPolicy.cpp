@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProtectionPolicy::NOT_SET:
+            return {};
           case ProtectionPolicy::NoProtection:
             return "NoProtection";
           case ProtectionPolicy::FullProtection:

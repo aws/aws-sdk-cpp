@@ -28,6 +28,7 @@ namespace Aws
         static const int PostgreSql_HASH = HashingUtils::HashString("PostgreSql");
         static const int Redis_HASH = HashingUtils::HashString("Redis");
         static const int Kafka_HASH = HashingUtils::HashString("Kafka");
+        static const int SQLServer_HASH = HashingUtils::HashString("SQLServer");
 
 
         InferredWorkloadType GetInferredWorkloadTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return InferredWorkloadType::Kafka;
           }
+          else if (hashCode == SQLServer_HASH)
+          {
+            return InferredWorkloadType::SQLServer;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -79,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InferredWorkloadType::NOT_SET:
+            return {};
           case InferredWorkloadType::AmazonEmr:
             return "AmazonEmr";
           case InferredWorkloadType::ApacheCassandra:
@@ -95,6 +102,8 @@ namespace Aws
             return "Redis";
           case InferredWorkloadType::Kafka:
             return "Kafka";
+          case InferredWorkloadType::SQLServer:
+            return "SQLServer";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

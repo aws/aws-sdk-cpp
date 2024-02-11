@@ -93,37 +93,37 @@ namespace Model
 
     /**
      * <p>The time to set as the center of the query. If you specify <code>time</code>,
-     * the 15 minutes before this time are queries. If you omit <code>time</code>, the
-     * 8 minutes before and 8 minutes after this time are searched.</p> <p>The
-     * <code>time</code> value is specified as epoch time, which is the number of
-     * seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
+     * the 8 minutes before and 8 minutes after this time are searched. If you omit
+     * <code>time</code>, the most recent 15 minutes up to the current time are
+     * searched.</p> <p>The <code>time</code> value is specified as epoch time, which
+     * is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
      */
     inline long long GetTime() const{ return m_time; }
 
     /**
      * <p>The time to set as the center of the query. If you specify <code>time</code>,
-     * the 15 minutes before this time are queries. If you omit <code>time</code>, the
-     * 8 minutes before and 8 minutes after this time are searched.</p> <p>The
-     * <code>time</code> value is specified as epoch time, which is the number of
-     * seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
+     * the 8 minutes before and 8 minutes after this time are searched. If you omit
+     * <code>time</code>, the most recent 15 minutes up to the current time are
+     * searched.</p> <p>The <code>time</code> value is specified as epoch time, which
+     * is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
      */
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
 
     /**
      * <p>The time to set as the center of the query. If you specify <code>time</code>,
-     * the 15 minutes before this time are queries. If you omit <code>time</code>, the
-     * 8 minutes before and 8 minutes after this time are searched.</p> <p>The
-     * <code>time</code> value is specified as epoch time, which is the number of
-     * seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
+     * the 8 minutes before and 8 minutes after this time are searched. If you omit
+     * <code>time</code>, the most recent 15 minutes up to the current time are
+     * searched.</p> <p>The <code>time</code> value is specified as epoch time, which
+     * is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
      */
     inline void SetTime(long long value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
      * <p>The time to set as the center of the query. If you specify <code>time</code>,
-     * the 15 minutes before this time are queries. If you omit <code>time</code>, the
-     * 8 minutes before and 8 minutes after this time are searched.</p> <p>The
-     * <code>time</code> value is specified as epoch time, which is the number of
-     * seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
+     * the 8 minutes before and 8 minutes after this time are searched. If you omit
+     * <code>time</code>, the most recent 15 minutes up to the current time are
+     * searched.</p> <p>The <code>time</code> value is specified as epoch time, which
+     * is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
      */
     inline GetLogGroupFieldsRequest& WithTime(long long value) { SetTime(value); return *this;}
 

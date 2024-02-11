@@ -129,6 +129,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PartOfSpeechTagType::NOT_SET:
+            return {};
           case PartOfSpeechTagType::ADJ:
             return "ADJ";
           case PartOfSpeechTagType::ADP:

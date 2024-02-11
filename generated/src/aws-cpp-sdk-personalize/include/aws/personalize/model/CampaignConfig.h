@@ -181,10 +181,58 @@ namespace Model
      */
     inline CampaignConfig& AddItemExplorationConfig(const char* key, const char* value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Whether metadata with recommendations is enabled for the campaign. If
+     * enabled, you can specify the columns from your Items dataset in your request for
+     * recommendations. Amazon Personalize returns this data for each item in the
+     * recommendation response. </p> <p> If you enable metadata in recommendations, you
+     * will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * pricing</a>. </p>
+     */
+    inline bool GetEnableMetadataWithRecommendations() const{ return m_enableMetadataWithRecommendations; }
+
+    /**
+     * <p>Whether metadata with recommendations is enabled for the campaign. If
+     * enabled, you can specify the columns from your Items dataset in your request for
+     * recommendations. Amazon Personalize returns this data for each item in the
+     * recommendation response. </p> <p> If you enable metadata in recommendations, you
+     * will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * pricing</a>. </p>
+     */
+    inline bool EnableMetadataWithRecommendationsHasBeenSet() const { return m_enableMetadataWithRecommendationsHasBeenSet; }
+
+    /**
+     * <p>Whether metadata with recommendations is enabled for the campaign. If
+     * enabled, you can specify the columns from your Items dataset in your request for
+     * recommendations. Amazon Personalize returns this data for each item in the
+     * recommendation response. </p> <p> If you enable metadata in recommendations, you
+     * will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * pricing</a>. </p>
+     */
+    inline void SetEnableMetadataWithRecommendations(bool value) { m_enableMetadataWithRecommendationsHasBeenSet = true; m_enableMetadataWithRecommendations = value; }
+
+    /**
+     * <p>Whether metadata with recommendations is enabled for the campaign. If
+     * enabled, you can specify the columns from your Items dataset in your request for
+     * recommendations. Amazon Personalize returns this data for each item in the
+     * recommendation response. </p> <p> If you enable metadata in recommendations, you
+     * will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * pricing</a>. </p>
+     */
+    inline CampaignConfig& WithEnableMetadataWithRecommendations(bool value) { SetEnableMetadataWithRecommendations(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
     bool m_itemExplorationConfigHasBeenSet = false;
+
+    bool m_enableMetadataWithRecommendations;
+    bool m_enableMetadataWithRecommendationsHasBeenSet = false;
   };
 
 } // namespace Model

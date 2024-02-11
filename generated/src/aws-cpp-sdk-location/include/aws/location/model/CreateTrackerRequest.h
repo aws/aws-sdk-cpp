@@ -76,6 +76,104 @@ namespace Model
 
 
     /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline bool GetEventBridgeEnabled() const{ return m_eventBridgeEnabled; }
+
+    /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline bool EventBridgeEnabledHasBeenSet() const { return m_eventBridgeEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabledHasBeenSet = true; m_eventBridgeEnabled = value; }
+
+    /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline CreateTrackerRequest& WithEventBridgeEnabled(bool value) { SetEventBridgeEnabled(value); return *this;}
+
+
+    /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>  <p>If you wish to encrypt
+     * your data using your own KMS customer managed key, then the Bounding Polygon
+     * Queries feature will be disabled by default. This is because by using this
+     * feature, a representation of your device positions will not be encrypted using
+     * the your KMS managed key. The exact device position, however; is still encrypted
+     * using your managed key.</p> <p>You can choose to opt-in to the Bounding Polygon
+     * Quseries feature. This is done by setting the
+     * <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or
+     * updating a Tracker.</p> 
+     */
+    inline bool GetKmsKeyEnableGeospatialQueries() const{ return m_kmsKeyEnableGeospatialQueries; }
+
+    /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>  <p>If you wish to encrypt
+     * your data using your own KMS customer managed key, then the Bounding Polygon
+     * Queries feature will be disabled by default. This is because by using this
+     * feature, a representation of your device positions will not be encrypted using
+     * the your KMS managed key. The exact device position, however; is still encrypted
+     * using your managed key.</p> <p>You can choose to opt-in to the Bounding Polygon
+     * Quseries feature. This is done by setting the
+     * <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or
+     * updating a Tracker.</p> 
+     */
+    inline bool KmsKeyEnableGeospatialQueriesHasBeenSet() const { return m_kmsKeyEnableGeospatialQueriesHasBeenSet; }
+
+    /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>  <p>If you wish to encrypt
+     * your data using your own KMS customer managed key, then the Bounding Polygon
+     * Queries feature will be disabled by default. This is because by using this
+     * feature, a representation of your device positions will not be encrypted using
+     * the your KMS managed key. The exact device position, however; is still encrypted
+     * using your managed key.</p> <p>You can choose to opt-in to the Bounding Polygon
+     * Quseries feature. This is done by setting the
+     * <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or
+     * updating a Tracker.</p> 
+     */
+    inline void SetKmsKeyEnableGeospatialQueries(bool value) { m_kmsKeyEnableGeospatialQueriesHasBeenSet = true; m_kmsKeyEnableGeospatialQueries = value; }
+
+    /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>  <p>If you wish to encrypt
+     * your data using your own KMS customer managed key, then the Bounding Polygon
+     * Queries feature will be disabled by default. This is because by using this
+     * feature, a representation of your device positions will not be encrypted using
+     * the your KMS managed key. The exact device position, however; is still encrypted
+     * using your managed key.</p> <p>You can choose to opt-in to the Bounding Polygon
+     * Quseries feature. This is done by setting the
+     * <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or
+     * updating a Tracker.</p> 
+     */
+    inline CreateTrackerRequest& WithKmsKeyEnableGeospatialQueries(bool value) { SetKmsKeyEnableGeospatialQueries(value); return *this;}
+
+
+    /**
      * <p>A key identifier for an <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
      * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
@@ -293,7 +391,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -306,7 +404,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -319,7 +417,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -332,7 +430,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -345,7 +443,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
@@ -358,7 +456,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
@@ -371,7 +469,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -384,7 +482,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -397,7 +495,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -410,7 +508,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
@@ -423,7 +521,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -436,7 +534,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -449,7 +547,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -531,6 +629,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    bool m_eventBridgeEnabled;
+    bool m_eventBridgeEnabledHasBeenSet = false;
+
+    bool m_kmsKeyEnableGeospatialQueries;
+    bool m_kmsKeyEnableGeospatialQueriesHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;

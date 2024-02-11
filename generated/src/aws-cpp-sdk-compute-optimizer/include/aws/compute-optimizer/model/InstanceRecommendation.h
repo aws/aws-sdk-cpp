@@ -12,11 +12,15 @@
 #include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
 #include <aws/compute-optimizer/model/EffectiveRecommendationPreferences.h>
 #include <aws/compute-optimizer/model/InstanceState.h>
+#include <aws/compute-optimizer/model/ExternalMetricStatus.h>
+#include <aws/compute-optimizer/model/GpuInfo.h>
+#include <aws/compute-optimizer/model/InstanceIdle.h>
 #include <aws/compute-optimizer/model/InstanceRecommendationFindingReasonCode.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/compute-optimizer/model/InstanceRecommendationOption.h>
 #include <aws/compute-optimizer/model/RecommendationSource.h>
 #include <aws/compute-optimizer/model/InferredWorkloadType.h>
+#include <aws/compute-optimizer/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -367,14 +371,14 @@ namespace Model
      * EBS throughput configuration doesn't meet the performance requirements of your
      * workload and there is an alternative instance type that provides better EBS
      * throughput performance. This is identified by analyzing the
-     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
-     * EBS volumes attached to the current instance during the look-back period.</p>
-     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
-     * IOPS configuration can be sized down while still meeting the performance
-     * requirements of your workload. This is identified by analyzing the
-     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
-     * attached to the current instance during the look-back period.</p> </li> <li> <p>
-     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS
+     * configuration can be sized down while still meeting the performance requirements
+     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
+     * and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
+     * instance during the look-back period.</p> </li> <li> <p> <b>
+     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
      * This is identified by analyzing the <code>VolumeReadOps</code> and
@@ -474,14 +478,14 @@ namespace Model
      * EBS throughput configuration doesn't meet the performance requirements of your
      * workload and there is an alternative instance type that provides better EBS
      * throughput performance. This is identified by analyzing the
-     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
-     * EBS volumes attached to the current instance during the look-back period.</p>
-     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
-     * IOPS configuration can be sized down while still meeting the performance
-     * requirements of your workload. This is identified by analyzing the
-     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
-     * attached to the current instance during the look-back period.</p> </li> <li> <p>
-     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS
+     * configuration can be sized down while still meeting the performance requirements
+     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
+     * and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
+     * instance during the look-back period.</p> </li> <li> <p> <b>
+     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
      * This is identified by analyzing the <code>VolumeReadOps</code> and
@@ -581,14 +585,14 @@ namespace Model
      * EBS throughput configuration doesn't meet the performance requirements of your
      * workload and there is an alternative instance type that provides better EBS
      * throughput performance. This is identified by analyzing the
-     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
-     * EBS volumes attached to the current instance during the look-back period.</p>
-     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
-     * IOPS configuration can be sized down while still meeting the performance
-     * requirements of your workload. This is identified by analyzing the
-     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
-     * attached to the current instance during the look-back period.</p> </li> <li> <p>
-     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS
+     * configuration can be sized down while still meeting the performance requirements
+     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
+     * and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
+     * instance during the look-back period.</p> </li> <li> <p> <b>
+     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
      * This is identified by analyzing the <code>VolumeReadOps</code> and
@@ -688,14 +692,14 @@ namespace Model
      * EBS throughput configuration doesn't meet the performance requirements of your
      * workload and there is an alternative instance type that provides better EBS
      * throughput performance. This is identified by analyzing the
-     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
-     * EBS volumes attached to the current instance during the look-back period.</p>
-     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
-     * IOPS configuration can be sized down while still meeting the performance
-     * requirements of your workload. This is identified by analyzing the
-     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
-     * attached to the current instance during the look-back period.</p> </li> <li> <p>
-     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS
+     * configuration can be sized down while still meeting the performance requirements
+     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
+     * and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
+     * instance during the look-back period.</p> </li> <li> <p> <b>
+     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
      * This is identified by analyzing the <code>VolumeReadOps</code> and
@@ -795,14 +799,14 @@ namespace Model
      * EBS throughput configuration doesn't meet the performance requirements of your
      * workload and there is an alternative instance type that provides better EBS
      * throughput performance. This is identified by analyzing the
-     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
-     * EBS volumes attached to the current instance during the look-back period.</p>
-     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
-     * IOPS configuration can be sized down while still meeting the performance
-     * requirements of your workload. This is identified by analyzing the
-     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
-     * attached to the current instance during the look-back period.</p> </li> <li> <p>
-     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS
+     * configuration can be sized down while still meeting the performance requirements
+     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
+     * and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
+     * instance during the look-back period.</p> </li> <li> <p> <b>
+     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
      * This is identified by analyzing the <code>VolumeReadOps</code> and
@@ -902,14 +906,14 @@ namespace Model
      * EBS throughput configuration doesn't meet the performance requirements of your
      * workload and there is an alternative instance type that provides better EBS
      * throughput performance. This is identified by analyzing the
-     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
-     * EBS volumes attached to the current instance during the look-back period.</p>
-     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
-     * IOPS configuration can be sized down while still meeting the performance
-     * requirements of your workload. This is identified by analyzing the
-     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
-     * attached to the current instance during the look-back period.</p> </li> <li> <p>
-     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS
+     * configuration can be sized down while still meeting the performance requirements
+     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
+     * and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
+     * instance during the look-back period.</p> </li> <li> <p> <b>
+     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
      * This is identified by analyzing the <code>VolumeReadOps</code> and
@@ -1009,14 +1013,14 @@ namespace Model
      * EBS throughput configuration doesn't meet the performance requirements of your
      * workload and there is an alternative instance type that provides better EBS
      * throughput performance. This is identified by analyzing the
-     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
-     * EBS volumes attached to the current instance during the look-back period.</p>
-     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
-     * IOPS configuration can be sized down while still meeting the performance
-     * requirements of your workload. This is identified by analyzing the
-     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
-     * attached to the current instance during the look-back period.</p> </li> <li> <p>
-     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS
+     * configuration can be sized down while still meeting the performance requirements
+     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
+     * and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
+     * instance during the look-back period.</p> </li> <li> <p> <b>
+     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
      * This is identified by analyzing the <code>VolumeReadOps</code> and
@@ -1116,14 +1120,14 @@ namespace Model
      * EBS throughput configuration doesn't meet the performance requirements of your
      * workload and there is an alternative instance type that provides better EBS
      * throughput performance. This is identified by analyzing the
-     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
-     * EBS volumes attached to the current instance during the look-back period.</p>
-     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
-     * IOPS configuration can be sized down while still meeting the performance
-     * requirements of your workload. This is identified by analyzing the
-     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
-     * attached to the current instance during the look-back period.</p> </li> <li> <p>
-     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS
+     * configuration can be sized down while still meeting the performance requirements
+     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
+     * and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
+     * instance during the look-back period.</p> </li> <li> <p> <b>
+     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
      * This is identified by analyzing the <code>VolumeReadOps</code> and
@@ -1482,7 +1486,9 @@ namespace Model
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
      * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
-     * Kafka might be running on the instance.</p> </li> </ul>
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const{ return m_inferredWorkloadTypes; }
 
@@ -1500,7 +1506,9 @@ namespace Model
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
      * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
-     * Kafka might be running on the instance.</p> </li> </ul>
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }
 
@@ -1518,7 +1526,9 @@ namespace Model
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
      * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
-     * Kafka might be running on the instance.</p> </li> </ul>
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline void SetInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
 
@@ -1536,7 +1546,9 @@ namespace Model
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
      * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
-     * Kafka might be running on the instance.</p> </li> </ul>
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline void SetInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::move(value); }
 
@@ -1554,7 +1566,9 @@ namespace Model
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
      * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
-     * Kafka might be running on the instance.</p> </li> </ul>
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline InstanceRecommendation& WithInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { SetInferredWorkloadTypes(value); return *this;}
 
@@ -1572,7 +1586,9 @@ namespace Model
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
      * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
-     * Kafka might be running on the instance.</p> </li> </ul>
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline InstanceRecommendation& WithInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
 
@@ -1590,7 +1606,9 @@ namespace Model
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
      * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
-     * Kafka might be running on the instance.</p> </li> </ul>
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline InstanceRecommendation& AddInferredWorkloadTypes(const InferredWorkloadType& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
 
@@ -1608,7 +1626,9 @@ namespace Model
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
      * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
-     * Kafka might be running on the instance.</p> </li> </ul>
+     * Kafka might be running on the instance.</p> </li> <li> <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the
+     * instance.</p> </li> </ul>
      */
     inline InstanceRecommendation& AddInferredWorkloadTypes(InferredWorkloadType&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(std::move(value)); return *this; }
 
@@ -1642,6 +1662,146 @@ namespace Model
      * <p> The state of the instance when the recommendation was generated. </p>
      */
     inline InstanceRecommendation& WithInstanceState(InstanceState&& value) { SetInstanceState(std::move(value)); return *this;}
+
+
+    /**
+     * <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+     */
+    inline InstanceRecommendation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+     */
+    inline InstanceRecommendation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+     */
+    inline InstanceRecommendation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+     */
+    inline InstanceRecommendation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline const ExternalMetricStatus& GetExternalMetricStatus() const{ return m_externalMetricStatus; }
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline bool ExternalMetricStatusHasBeenSet() const { return m_externalMetricStatusHasBeenSet; }
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline void SetExternalMetricStatus(const ExternalMetricStatus& value) { m_externalMetricStatusHasBeenSet = true; m_externalMetricStatus = value; }
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline void SetExternalMetricStatus(ExternalMetricStatus&& value) { m_externalMetricStatusHasBeenSet = true; m_externalMetricStatus = std::move(value); }
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline InstanceRecommendation& WithExternalMetricStatus(const ExternalMetricStatus& value) { SetExternalMetricStatus(value); return *this;}
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline InstanceRecommendation& WithExternalMetricStatus(ExternalMetricStatus&& value) { SetExternalMetricStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline const GpuInfo& GetCurrentInstanceGpuInfo() const{ return m_currentInstanceGpuInfo; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline bool CurrentInstanceGpuInfoHasBeenSet() const { return m_currentInstanceGpuInfoHasBeenSet; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline void SetCurrentInstanceGpuInfo(const GpuInfo& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = value; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline void SetCurrentInstanceGpuInfo(GpuInfo&& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = std::move(value); }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline InstanceRecommendation& WithCurrentInstanceGpuInfo(const GpuInfo& value) { SetCurrentInstanceGpuInfo(value); return *this;}
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline InstanceRecommendation& WithCurrentInstanceGpuInfo(GpuInfo&& value) { SetCurrentInstanceGpuInfo(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline const InstanceIdle& GetIdle() const{ return m_idle; }
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline bool IdleHasBeenSet() const { return m_idleHasBeenSet; }
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline void SetIdle(const InstanceIdle& value) { m_idleHasBeenSet = true; m_idle = value; }
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline void SetIdle(InstanceIdle&& value) { m_idleHasBeenSet = true; m_idle = std::move(value); }
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline InstanceRecommendation& WithIdle(const InstanceIdle& value) { SetIdle(value); return *this;}
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline InstanceRecommendation& WithIdle(InstanceIdle&& value) { SetIdle(std::move(value)); return *this;}
 
   private:
 
@@ -1689,6 +1849,18 @@ namespace Model
 
     InstanceState m_instanceState;
     bool m_instanceStateHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    ExternalMetricStatus m_externalMetricStatus;
+    bool m_externalMetricStatusHasBeenSet = false;
+
+    GpuInfo m_currentInstanceGpuInfo;
+    bool m_currentInstanceGpuInfoHasBeenSet = false;
+
+    InstanceIdle m_idle;
+    bool m_idleHasBeenSet = false;
   };
 
 } // namespace Model

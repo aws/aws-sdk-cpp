@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataRepositoryTaskLifecycle::NOT_SET:
+            return {};
           case DataRepositoryTaskLifecycle::PENDING:
             return "PENDING";
           case DataRepositoryTaskLifecycle::EXECUTING:

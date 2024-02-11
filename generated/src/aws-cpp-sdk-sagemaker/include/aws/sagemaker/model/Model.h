@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/InferenceExecutionConfig.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/DeploymentRecommendation.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -30,8 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>The properties of a model as returned by the <a>Search</a> API.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The properties of a model as returned by the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Model">AWS API
    * Reference</a></p>
    */
@@ -401,6 +403,37 @@ namespace Model
      */
     inline Model& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline const DeploymentRecommendation& GetDeploymentRecommendation() const{ return m_deploymentRecommendation; }
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline bool DeploymentRecommendationHasBeenSet() const { return m_deploymentRecommendationHasBeenSet; }
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline void SetDeploymentRecommendation(const DeploymentRecommendation& value) { m_deploymentRecommendationHasBeenSet = true; m_deploymentRecommendation = value; }
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline void SetDeploymentRecommendation(DeploymentRecommendation&& value) { m_deploymentRecommendationHasBeenSet = true; m_deploymentRecommendation = std::move(value); }
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline Model& WithDeploymentRecommendation(const DeploymentRecommendation& value) { SetDeploymentRecommendation(value); return *this;}
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline Model& WithDeploymentRecommendation(DeploymentRecommendation&& value) { SetDeploymentRecommendation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelName;
@@ -432,6 +465,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    DeploymentRecommendation m_deploymentRecommendation;
+    bool m_deploymentRecommendationHasBeenSet = false;
   };
 
 } // namespace Model

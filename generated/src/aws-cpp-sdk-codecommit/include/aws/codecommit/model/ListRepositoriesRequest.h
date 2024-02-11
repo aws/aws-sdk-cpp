@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to AWS CodeCommit, another page of 1,000 records is
+     * sends the token back to CodeCommit, another page of 1,000 records is
      * retrieved.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to AWS CodeCommit, another page of 1,000 records is
+     * sends the token back to CodeCommit, another page of 1,000 records is
      * retrieved.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to AWS CodeCommit, another page of 1,000 records is
+     * sends the token back to CodeCommit, another page of 1,000 records is
      * retrieved.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to AWS CodeCommit, another page of 1,000 records is
+     * sends the token back to CodeCommit, another page of 1,000 records is
      * retrieved.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to AWS CodeCommit, another page of 1,000 records is
+     * sends the token back to CodeCommit, another page of 1,000 records is
      * retrieved.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to AWS CodeCommit, another page of 1,000 records is
+     * sends the token back to CodeCommit, another page of 1,000 records is
      * retrieved.</p>
      */
     inline ListRepositoriesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -91,7 +91,7 @@ namespace Model
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to AWS CodeCommit, another page of 1,000 records is
+     * sends the token back to CodeCommit, another page of 1,000 records is
      * retrieved.</p>
      */
     inline ListRepositoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to AWS CodeCommit, another page of 1,000 records is
+     * sends the token back to CodeCommit, another page of 1,000 records is
      * retrieved.</p>
      */
     inline ListRepositoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

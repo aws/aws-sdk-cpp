@@ -7,6 +7,7 @@
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/resiliencehub/model/RecommendationStatus.h>
 #include <aws/resiliencehub/model/SopServiceType.h>
 #include <aws/resiliencehub/model/RecommendationItem.h>
 #include <utility>
@@ -42,83 +43,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline const Aws::String& GetAppComponentName() const{ return m_appComponentName; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline bool AppComponentNameHasBeenSet() const { return m_appComponentNameHasBeenSet; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetAppComponentName(const Aws::String& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = value; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetAppComponentName(Aws::String&& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = std::move(value); }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetAppComponentName(const char* value) { m_appComponentNameHasBeenSet = true; m_appComponentName.assign(value); }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline SopRecommendation& WithAppComponentName(const Aws::String& value) { SetAppComponentName(value); return *this;}
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline SopRecommendation& WithAppComponentName(Aws::String&& value) { SetAppComponentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline SopRecommendation& WithAppComponentName(const char* value) { SetAppComponentName(value); return *this;}
 
 
     /**
-     * <p>The description of the SOP recommendation.</p>
+     * <p>Description of the SOP recommendation.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the SOP recommendation.</p>
+     * <p>Description of the SOP recommendation.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the SOP recommendation.</p>
+     * <p>Description of the SOP recommendation.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the SOP recommendation.</p>
+     * <p>Description of the SOP recommendation.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the SOP recommendation.</p>
+     * <p>Description of the SOP recommendation.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the SOP recommendation.</p>
+     * <p>Description of the SOP recommendation.</p>
      */
     inline SopRecommendation& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the SOP recommendation.</p>
+     * <p>Description of the SOP recommendation.</p>
      */
     inline SopRecommendation& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the SOP recommendation.</p>
+     * <p>Description of the SOP recommendation.</p>
      */
     inline SopRecommendation& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -165,83 +166,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the SOP recommendation.</p>
+     * <p>Name of the SOP recommendation.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the SOP recommendation.</p>
+     * <p>Name of the SOP recommendation.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the SOP recommendation.</p>
+     * <p>Name of the SOP recommendation.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the SOP recommendation.</p>
+     * <p>Name of the SOP recommendation.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the SOP recommendation.</p>
+     * <p>Name of the SOP recommendation.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the SOP recommendation.</p>
+     * <p>Name of the SOP recommendation.</p>
      */
     inline SopRecommendation& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the SOP recommendation.</p>
+     * <p>Name of the SOP recommendation.</p>
      */
     inline SopRecommendation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the SOP recommendation.</p>
+     * <p>Name of the SOP recommendation.</p>
      */
     inline SopRecommendation& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The prerequisite for the SOP recommendation.</p>
+     * <p>Prerequisite for the SOP recommendation.</p>
      */
     inline const Aws::String& GetPrerequisite() const{ return m_prerequisite; }
 
     /**
-     * <p>The prerequisite for the SOP recommendation.</p>
+     * <p>Prerequisite for the SOP recommendation.</p>
      */
     inline bool PrerequisiteHasBeenSet() const { return m_prerequisiteHasBeenSet; }
 
     /**
-     * <p>The prerequisite for the SOP recommendation.</p>
+     * <p>Prerequisite for the SOP recommendation.</p>
      */
     inline void SetPrerequisite(const Aws::String& value) { m_prerequisiteHasBeenSet = true; m_prerequisite = value; }
 
     /**
-     * <p>The prerequisite for the SOP recommendation.</p>
+     * <p>Prerequisite for the SOP recommendation.</p>
      */
     inline void SetPrerequisite(Aws::String&& value) { m_prerequisiteHasBeenSet = true; m_prerequisite = std::move(value); }
 
     /**
-     * <p>The prerequisite for the SOP recommendation.</p>
+     * <p>Prerequisite for the SOP recommendation.</p>
      */
     inline void SetPrerequisite(const char* value) { m_prerequisiteHasBeenSet = true; m_prerequisite.assign(value); }
 
     /**
-     * <p>The prerequisite for the SOP recommendation.</p>
+     * <p>Prerequisite for the SOP recommendation.</p>
      */
     inline SopRecommendation& WithPrerequisite(const Aws::String& value) { SetPrerequisite(value); return *this;}
 
     /**
-     * <p>The prerequisite for the SOP recommendation.</p>
+     * <p>Prerequisite for the SOP recommendation.</p>
      */
     inline SopRecommendation& WithPrerequisite(Aws::String&& value) { SetPrerequisite(std::move(value)); return *this;}
 
     /**
-     * <p>The prerequisite for the SOP recommendation.</p>
+     * <p>Prerequisite for the SOP recommendation.</p>
      */
     inline SopRecommendation& WithPrerequisite(const char* value) { SetPrerequisite(value); return *this;}
 
@@ -288,42 +289,73 @@ namespace Model
 
 
     /**
-     * <p>The reference identifier for the SOP recommendation.</p>
+     * <p>Status of the recommended standard operating procedure.</p>
+     */
+    inline const RecommendationStatus& GetRecommendationStatus() const{ return m_recommendationStatus; }
+
+    /**
+     * <p>Status of the recommended standard operating procedure.</p>
+     */
+    inline bool RecommendationStatusHasBeenSet() const { return m_recommendationStatusHasBeenSet; }
+
+    /**
+     * <p>Status of the recommended standard operating procedure.</p>
+     */
+    inline void SetRecommendationStatus(const RecommendationStatus& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = value; }
+
+    /**
+     * <p>Status of the recommended standard operating procedure.</p>
+     */
+    inline void SetRecommendationStatus(RecommendationStatus&& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = std::move(value); }
+
+    /**
+     * <p>Status of the recommended standard operating procedure.</p>
+     */
+    inline SopRecommendation& WithRecommendationStatus(const RecommendationStatus& value) { SetRecommendationStatus(value); return *this;}
+
+    /**
+     * <p>Status of the recommended standard operating procedure.</p>
+     */
+    inline SopRecommendation& WithRecommendationStatus(RecommendationStatus&& value) { SetRecommendationStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Reference identifier for the SOP recommendation.</p>
      */
     inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
 
     /**
-     * <p>The reference identifier for the SOP recommendation.</p>
+     * <p>Reference identifier for the SOP recommendation.</p>
      */
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
 
     /**
-     * <p>The reference identifier for the SOP recommendation.</p>
+     * <p>Reference identifier for the SOP recommendation.</p>
      */
     inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
 
     /**
-     * <p>The reference identifier for the SOP recommendation.</p>
+     * <p>Reference identifier for the SOP recommendation.</p>
      */
     inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
 
     /**
-     * <p>The reference identifier for the SOP recommendation.</p>
+     * <p>Reference identifier for the SOP recommendation.</p>
      */
     inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
 
     /**
-     * <p>The reference identifier for the SOP recommendation.</p>
+     * <p>Reference identifier for the SOP recommendation.</p>
      */
     inline SopRecommendation& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
 
     /**
-     * <p>The reference identifier for the SOP recommendation.</p>
+     * <p>Reference identifier for the SOP recommendation.</p>
      */
     inline SopRecommendation& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
 
     /**
-     * <p>The reference identifier for the SOP recommendation.</p>
+     * <p>Reference identifier for the SOP recommendation.</p>
      */
     inline SopRecommendation& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
 
@@ -377,6 +409,9 @@ namespace Model
 
     Aws::String m_recommendationId;
     bool m_recommendationIdHasBeenSet = false;
+
+    RecommendationStatus m_recommendationStatus;
+    bool m_recommendationStatusHasBeenSet = false;
 
     Aws::String m_referenceId;
     bool m_referenceIdHasBeenSet = false;

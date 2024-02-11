@@ -96,88 +96,88 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
-     * name&gt;</code>. In a GameLift game session queue ARN, the resource ID matches
-     * the <i>Name</i> value.</p>
+     * name&gt;</code>. In a Amazon GameLift game session queue ARN, the resource ID
+     * matches the <i>Name</i> value.</p>
      */
     inline const Aws::String& GetGameSessionQueueArn() const{ return m_gameSessionQueueArn; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
-     * name&gt;</code>. In a GameLift game session queue ARN, the resource ID matches
-     * the <i>Name</i> value.</p>
+     * name&gt;</code>. In a Amazon GameLift game session queue ARN, the resource ID
+     * matches the <i>Name</i> value.</p>
      */
     inline bool GameSessionQueueArnHasBeenSet() const { return m_gameSessionQueueArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
-     * name&gt;</code>. In a GameLift game session queue ARN, the resource ID matches
-     * the <i>Name</i> value.</p>
+     * name&gt;</code>. In a Amazon GameLift game session queue ARN, the resource ID
+     * matches the <i>Name</i> value.</p>
      */
     inline void SetGameSessionQueueArn(const Aws::String& value) { m_gameSessionQueueArnHasBeenSet = true; m_gameSessionQueueArn = value; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
-     * name&gt;</code>. In a GameLift game session queue ARN, the resource ID matches
-     * the <i>Name</i> value.</p>
+     * name&gt;</code>. In a Amazon GameLift game session queue ARN, the resource ID
+     * matches the <i>Name</i> value.</p>
      */
     inline void SetGameSessionQueueArn(Aws::String&& value) { m_gameSessionQueueArnHasBeenSet = true; m_gameSessionQueueArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
-     * name&gt;</code>. In a GameLift game session queue ARN, the resource ID matches
-     * the <i>Name</i> value.</p>
+     * name&gt;</code>. In a Amazon GameLift game session queue ARN, the resource ID
+     * matches the <i>Name</i> value.</p>
      */
     inline void SetGameSessionQueueArn(const char* value) { m_gameSessionQueueArnHasBeenSet = true; m_gameSessionQueueArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
-     * name&gt;</code>. In a GameLift game session queue ARN, the resource ID matches
-     * the <i>Name</i> value.</p>
+     * name&gt;</code>. In a Amazon GameLift game session queue ARN, the resource ID
+     * matches the <i>Name</i> value.</p>
      */
     inline GameSessionQueue& WithGameSessionQueueArn(const Aws::String& value) { SetGameSessionQueueArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
-     * name&gt;</code>. In a GameLift game session queue ARN, the resource ID matches
-     * the <i>Name</i> value.</p>
+     * name&gt;</code>. In a Amazon GameLift game session queue ARN, the resource ID
+     * matches the <i>Name</i> value.</p>
      */
     inline GameSessionQueue& WithGameSessionQueueArn(Aws::String&& value) { SetGameSessionQueueArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
-     * name&gt;</code>. In a GameLift game session queue ARN, the resource ID matches
-     * the <i>Name</i> value.</p>
+     * name&gt;</code>. In a Amazon GameLift game session queue ARN, the resource ID
+     * matches the <i>Name</i> value.</p>
      */
     inline GameSessionQueue& WithGameSessionQueueArn(const char* value) { SetGameSessionQueueArn(value); return *this;}
 
@@ -185,28 +185,32 @@ namespace Model
     /**
      * <p>The maximum time, in seconds, that a new game session placement request
      * remains in the queue. When a request exceeds this time, the game session
-     * placement changes to a <code>TIMED_OUT</code> status.</p>
+     * placement changes to a <code>TIMED_OUT</code> status. By default, this property
+     * is set to <code>600</code>.</p>
      */
     inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
 
     /**
      * <p>The maximum time, in seconds, that a new game session placement request
      * remains in the queue. When a request exceeds this time, the game session
-     * placement changes to a <code>TIMED_OUT</code> status.</p>
+     * placement changes to a <code>TIMED_OUT</code> status. By default, this property
+     * is set to <code>600</code>.</p>
      */
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
 
     /**
      * <p>The maximum time, in seconds, that a new game session placement request
      * remains in the queue. When a request exceeds this time, the game session
-     * placement changes to a <code>TIMED_OUT</code> status.</p>
+     * placement changes to a <code>TIMED_OUT</code> status. By default, this property
+     * is set to <code>600</code>.</p>
      */
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
 
     /**
      * <p>The maximum time, in seconds, that a new game session placement request
      * remains in the queue. When a request exceeds this time, the game session
-     * placement changes to a <code>TIMED_OUT</code> status.</p>
+     * placement changes to a <code>TIMED_OUT</code> status. By default, this property
+     * is set to <code>600</code>.</p>
      */
     inline GameSessionQueue& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
 

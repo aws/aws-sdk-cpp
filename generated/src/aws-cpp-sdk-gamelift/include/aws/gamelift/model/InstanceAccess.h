@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Information required to remotely connect to a fleet instance. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information and credentials that you can use to remotely connect to an
+   * instance in an EC2 managed fleet. This data type is returned in response to a
+   * call to <a>GetInstanceAccess</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceAccess">AWS
    * API Reference</a></p>
    */
@@ -41,124 +42,124 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for the fleet containing the instance to be accessed.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for the fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for the fleet containing the instance to be accessed.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for the fleet containing the instance to be accessed.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for the fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for the fleet containing the instance to be accessed.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for the fleet containing the instance to be accessed.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for the fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for the fleet containing the instance to be accessed.</p>
      */
     inline InstanceAccess& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for the fleet containing the instance to be accessed.</p>
      */
     inline InstanceAccess& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for the fleet containing the instance to be accessed.</p>
      */
     inline InstanceAccess& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>A unique identifier for the instance being accessed.</p>
+     * <p>A unique identifier for the instance to be accessed.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>A unique identifier for the instance being accessed.</p>
+     * <p>A unique identifier for the instance to be accessed.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the instance being accessed.</p>
+     * <p>A unique identifier for the instance to be accessed.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>A unique identifier for the instance being accessed.</p>
+     * <p>A unique identifier for the instance to be accessed.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the instance being accessed.</p>
+     * <p>A unique identifier for the instance to be accessed.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>A unique identifier for the instance being accessed.</p>
+     * <p>A unique identifier for the instance to be accessed.</p>
      */
     inline InstanceAccess& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the instance being accessed.</p>
+     * <p>A unique identifier for the instance to be accessed.</p>
      */
     inline InstanceAccess& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the instance being accessed.</p>
+     * <p>A unique identifier for the instance to be accessed.</p>
      */
     inline InstanceAccess& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>IP address that is assigned to the instance.</p>
+     * <p>IP address assigned to the instance.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>IP address that is assigned to the instance.</p>
+     * <p>IP address assigned to the instance.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>IP address that is assigned to the instance.</p>
+     * <p>IP address assigned to the instance.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>IP address that is assigned to the instance.</p>
+     * <p>IP address assigned to the instance.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>IP address that is assigned to the instance.</p>
+     * <p>IP address assigned to the instance.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>IP address that is assigned to the instance.</p>
+     * <p>IP address assigned to the instance.</p>
      */
     inline InstanceAccess& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>IP address that is assigned to the instance.</p>
+     * <p>IP address assigned to the instance.</p>
      */
     inline InstanceAccess& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>IP address that is assigned to the instance.</p>
+     * <p>IP address assigned to the instance.</p>
      */
     inline InstanceAccess& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
@@ -195,32 +196,32 @@ namespace Model
 
 
     /**
-     * <p>Credentials required to access the instance.</p>
+     * <p>Security credentials that are required to access the instance.</p>
      */
     inline const InstanceCredentials& GetCredentials() const{ return m_credentials; }
 
     /**
-     * <p>Credentials required to access the instance.</p>
+     * <p>Security credentials that are required to access the instance.</p>
      */
     inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
 
     /**
-     * <p>Credentials required to access the instance.</p>
+     * <p>Security credentials that are required to access the instance.</p>
      */
     inline void SetCredentials(const InstanceCredentials& value) { m_credentialsHasBeenSet = true; m_credentials = value; }
 
     /**
-     * <p>Credentials required to access the instance.</p>
+     * <p>Security credentials that are required to access the instance.</p>
      */
     inline void SetCredentials(InstanceCredentials&& value) { m_credentialsHasBeenSet = true; m_credentials = std::move(value); }
 
     /**
-     * <p>Credentials required to access the instance.</p>
+     * <p>Security credentials that are required to access the instance.</p>
      */
     inline InstanceAccess& WithCredentials(const InstanceCredentials& value) { SetCredentials(value); return *this;}
 
     /**
-     * <p>Credentials required to access the instance.</p>
+     * <p>Security credentials that are required to access the instance.</p>
      */
     inline InstanceAccess& WithCredentials(InstanceCredentials&& value) { SetCredentials(std::move(value)); return *this;}
 

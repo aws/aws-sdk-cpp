@@ -70,42 +70,42 @@ namespace Model
 
 
     /**
-     * <p>Contains more details about the messasge status.</p>
+     * <p>Contains more details about the message status.</p>
      */
     inline const Aws::String& GetDetail() const{ return m_detail; }
 
     /**
-     * <p>Contains more details about the messasge status.</p>
+     * <p>Contains more details about the message status.</p>
      */
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
 
     /**
-     * <p>Contains more details about the messasge status.</p>
+     * <p>Contains more details about the message status.</p>
      */
     inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
 
     /**
-     * <p>Contains more details about the messasge status.</p>
+     * <p>Contains more details about the message status.</p>
      */
     inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
 
     /**
-     * <p>Contains more details about the messasge status.</p>
+     * <p>Contains more details about the message status.</p>
      */
     inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
 
     /**
-     * <p>Contains more details about the messasge status.</p>
+     * <p>Contains more details about the message status.</p>
      */
     inline ChannelMessageStatusStructure& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
 
     /**
-     * <p>Contains more details about the messasge status.</p>
+     * <p>Contains more details about the message status.</p>
      */
     inline ChannelMessageStatusStructure& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
 
     /**
-     * <p>Contains more details about the messasge status.</p>
+     * <p>Contains more details about the message status.</p>
      */
     inline ChannelMessageStatusStructure& WithDetail(const char* value) { SetDetail(value); return *this;}
 

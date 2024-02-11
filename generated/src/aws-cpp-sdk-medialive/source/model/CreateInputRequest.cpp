@@ -18,7 +18,7 @@ CreateInputRequest::CreateInputRequest() :
     m_inputSecurityGroupsHasBeenSet(false),
     m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::RandomUUID()),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_requestIdHasBeenSet(true),
     m_roleArnHasBeenSet(false),
     m_sourcesHasBeenSet(false),

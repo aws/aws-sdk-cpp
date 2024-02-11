@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileFormatType::NOT_SET:
+            return {};
           case FileFormatType::JSON:
             return "JSON";
           case FileFormatType::PARQUET:

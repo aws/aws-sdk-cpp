@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InventoryFrequency::NOT_SET:
+            return {};
           case InventoryFrequency::Daily:
             return "Daily";
           case InventoryFrequency::Weekly:

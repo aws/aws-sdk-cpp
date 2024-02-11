@@ -14,6 +14,7 @@
 #include <aws/sagemaker/model/InputConfig.h>
 #include <aws/sagemaker/model/OutputConfig.h>
 #include <aws/sagemaker/model/NeoVpcConfig.h>
+#include <aws/sagemaker/model/DerivedInformation.h>
 #include <utility>
 
 namespace Aws
@@ -141,55 +142,50 @@ namespace Model
     /**
      * <p>The time when the model compilation job started the
      * <code>CompilationJob</code> instances. </p> <p>You are billed for the time
-     * between this timestamp and the timestamp in the
-     * <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon
-     * CloudWatch Logs, the start time might be later than this time. That's because it
-     * takes time to download the compilation job, which depends on the size of the
-     * compilation job container. </p>
+     * between this timestamp and the timestamp in the <code>CompilationEndTime</code>
+     * field. In Amazon CloudWatch Logs, the start time might be later than this time.
+     * That's because it takes time to download the compilation job, which depends on
+     * the size of the compilation job container. </p>
      */
     inline const Aws::Utils::DateTime& GetCompilationStartTime() const{ return m_compilationStartTime; }
 
     /**
      * <p>The time when the model compilation job started the
      * <code>CompilationJob</code> instances. </p> <p>You are billed for the time
-     * between this timestamp and the timestamp in the
-     * <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon
-     * CloudWatch Logs, the start time might be later than this time. That's because it
-     * takes time to download the compilation job, which depends on the size of the
-     * compilation job container. </p>
+     * between this timestamp and the timestamp in the <code>CompilationEndTime</code>
+     * field. In Amazon CloudWatch Logs, the start time might be later than this time.
+     * That's because it takes time to download the compilation job, which depends on
+     * the size of the compilation job container. </p>
      */
     inline void SetCompilationStartTime(const Aws::Utils::DateTime& value) { m_compilationStartTime = value; }
 
     /**
      * <p>The time when the model compilation job started the
      * <code>CompilationJob</code> instances. </p> <p>You are billed for the time
-     * between this timestamp and the timestamp in the
-     * <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon
-     * CloudWatch Logs, the start time might be later than this time. That's because it
-     * takes time to download the compilation job, which depends on the size of the
-     * compilation job container. </p>
+     * between this timestamp and the timestamp in the <code>CompilationEndTime</code>
+     * field. In Amazon CloudWatch Logs, the start time might be later than this time.
+     * That's because it takes time to download the compilation job, which depends on
+     * the size of the compilation job container. </p>
      */
     inline void SetCompilationStartTime(Aws::Utils::DateTime&& value) { m_compilationStartTime = std::move(value); }
 
     /**
      * <p>The time when the model compilation job started the
      * <code>CompilationJob</code> instances. </p> <p>You are billed for the time
-     * between this timestamp and the timestamp in the
-     * <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon
-     * CloudWatch Logs, the start time might be later than this time. That's because it
-     * takes time to download the compilation job, which depends on the size of the
-     * compilation job container. </p>
+     * between this timestamp and the timestamp in the <code>CompilationEndTime</code>
+     * field. In Amazon CloudWatch Logs, the start time might be later than this time.
+     * That's because it takes time to download the compilation job, which depends on
+     * the size of the compilation job container. </p>
      */
     inline DescribeCompilationJobResult& WithCompilationStartTime(const Aws::Utils::DateTime& value) { SetCompilationStartTime(value); return *this;}
 
     /**
      * <p>The time when the model compilation job started the
      * <code>CompilationJob</code> instances. </p> <p>You are billed for the time
-     * between this timestamp and the timestamp in the
-     * <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon
-     * CloudWatch Logs, the start time might be later than this time. That's because it
-     * takes time to download the compilation job, which depends on the size of the
-     * compilation job container. </p>
+     * between this timestamp and the timestamp in the <code>CompilationEndTime</code>
+     * field. In Amazon CloudWatch Logs, the start time might be later than this time.
+     * That's because it takes time to download the compilation job, which depends on
+     * the size of the compilation job container. </p>
      */
     inline DescribeCompilationJobResult& WithCompilationStartTime(Aws::Utils::DateTime&& value) { SetCompilationStartTime(std::move(value)); return *this;}
 
@@ -618,49 +614,80 @@ namespace Model
 
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-     * compilation job to connect to. Control access to your models by configuring the
-     * VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your compilation job to connect to.
+     * Control access to your models by configuring the VPC. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
      * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const NeoVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-     * compilation job to connect to. Control access to your models by configuring the
-     * VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your compilation job to connect to.
+     * Control access to your models by configuring the VPC. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
      * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const NeoVpcConfig& value) { m_vpcConfig = value; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-     * compilation job to connect to. Control access to your models by configuring the
-     * VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your compilation job to connect to.
+     * Control access to your models by configuring the VPC. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
      * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(NeoVpcConfig&& value) { m_vpcConfig = std::move(value); }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-     * compilation job to connect to. Control access to your models by configuring the
-     * VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your compilation job to connect to.
+     * Control access to your models by configuring the VPC. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
      * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline DescribeCompilationJobResult& WithVpcConfig(const NeoVpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-     * compilation job to connect to. Control access to your models by configuring the
-     * VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your compilation job to connect to.
+     * Control access to your models by configuring the VPC. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
      * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline DescribeCompilationJobResult& WithVpcConfig(NeoVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information that SageMaker Neo automatically derived about the model.</p>
+     */
+    inline const DerivedInformation& GetDerivedInformation() const{ return m_derivedInformation; }
+
+    /**
+     * <p>Information that SageMaker Neo automatically derived about the model.</p>
+     */
+    inline void SetDerivedInformation(const DerivedInformation& value) { m_derivedInformation = value; }
+
+    /**
+     * <p>Information that SageMaker Neo automatically derived about the model.</p>
+     */
+    inline void SetDerivedInformation(DerivedInformation&& value) { m_derivedInformation = std::move(value); }
+
+    /**
+     * <p>Information that SageMaker Neo automatically derived about the model.</p>
+     */
+    inline DescribeCompilationJobResult& WithDerivedInformation(const DerivedInformation& value) { SetDerivedInformation(value); return *this;}
+
+    /**
+     * <p>Information that SageMaker Neo automatically derived about the model.</p>
+     */
+    inline DescribeCompilationJobResult& WithDerivedInformation(DerivedInformation&& value) { SetDerivedInformation(std::move(value)); return *this;}
 
 
     
@@ -719,6 +746,8 @@ namespace Model
     OutputConfig m_outputConfig;
 
     NeoVpcConfig m_vpcConfig;
+
+    DerivedInformation m_derivedInformation;
 
     Aws::String m_requestId;
   };

@@ -42,22 +42,22 @@ namespace Model
 
     /**
      * <p>The name of the challenge that you're responding to with this call. This name
-     * is returned in the <code>AdminInitiateAuth</code> response if you must pass
-     * another challenge.</p> <p>Valid values include the following:</p>  <p>All
-     * of the following challenges require <code>USERNAME</code> and
-     * <code>SECRET_HASH</code> (if applicable) in the parameters.</p>  <ul>
-     * <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an
-     * <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
-     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
-     * and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
-     * <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom
-     * authentication flow determines that the user should pass another challenge
-     * before tokens are issued.</p> </li> <li> <p> <code>DEVICE_SRP_AUTH</code>: If
-     * device tracking was activated on your user pool and the previous challenges were
-     * passed, this challenge is returned so that Amazon Cognito can start tracking
-     * this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar
-     * to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
+     * is returned in the <code>InitiateAuth</code> response if you must pass another
+     * challenge.</p> <p>Valid values include the following:</p>  <p>All of the
+     * following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code>
+     * (if applicable) in the parameters.</p>  <ul> <li> <p>
+     * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>,
+     * delivered via SMS.</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next
+     * challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the
+     * client-side SRP calculations.</p> </li> <li> <p> <code>CUSTOM_CHALLENGE</code>:
+     * This is returned if your custom authentication flow determines that the user
+     * should pass another challenge before tokens are issued.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool
+     * and the previous challenges were passed, this challenge is returned so that
+     * Amazon Cognito can start tracking this device.</p> </li> <li> <p>
+     * <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to
+     * <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
      * passwords after successful first login. </p> <p>Respond to this challenge with
      * <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
@@ -73,8 +73,8 @@ namespace Model
      * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
      * users who are required to setup an MFA factor before they can sign in. The MFA
      * types activated for the user pool will be listed in the challenge parameters
-     * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
-     * session returned here from <code>InitiateAuth</code> as an input to
+     * <code>MFAS_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use
+     * the session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>. Use the session returned by
      * <code>VerifySoftwareToken</code> as an input to
      * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
@@ -86,22 +86,22 @@ namespace Model
 
     /**
      * <p>The name of the challenge that you're responding to with this call. This name
-     * is returned in the <code>AdminInitiateAuth</code> response if you must pass
-     * another challenge.</p> <p>Valid values include the following:</p>  <p>All
-     * of the following challenges require <code>USERNAME</code> and
-     * <code>SECRET_HASH</code> (if applicable) in the parameters.</p>  <ul>
-     * <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an
-     * <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
-     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
-     * and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
-     * <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom
-     * authentication flow determines that the user should pass another challenge
-     * before tokens are issued.</p> </li> <li> <p> <code>DEVICE_SRP_AUTH</code>: If
-     * device tracking was activated on your user pool and the previous challenges were
-     * passed, this challenge is returned so that Amazon Cognito can start tracking
-     * this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar
-     * to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
+     * is returned in the <code>InitiateAuth</code> response if you must pass another
+     * challenge.</p> <p>Valid values include the following:</p>  <p>All of the
+     * following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code>
+     * (if applicable) in the parameters.</p>  <ul> <li> <p>
+     * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>,
+     * delivered via SMS.</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next
+     * challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the
+     * client-side SRP calculations.</p> </li> <li> <p> <code>CUSTOM_CHALLENGE</code>:
+     * This is returned if your custom authentication flow determines that the user
+     * should pass another challenge before tokens are issued.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool
+     * and the previous challenges were passed, this challenge is returned so that
+     * Amazon Cognito can start tracking this device.</p> </li> <li> <p>
+     * <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to
+     * <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
      * passwords after successful first login. </p> <p>Respond to this challenge with
      * <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
@@ -117,8 +117,8 @@ namespace Model
      * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
      * users who are required to setup an MFA factor before they can sign in. The MFA
      * types activated for the user pool will be listed in the challenge parameters
-     * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
-     * session returned here from <code>InitiateAuth</code> as an input to
+     * <code>MFAS_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use
+     * the session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>. Use the session returned by
      * <code>VerifySoftwareToken</code> as an input to
      * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
@@ -130,22 +130,22 @@ namespace Model
 
     /**
      * <p>The name of the challenge that you're responding to with this call. This name
-     * is returned in the <code>AdminInitiateAuth</code> response if you must pass
-     * another challenge.</p> <p>Valid values include the following:</p>  <p>All
-     * of the following challenges require <code>USERNAME</code> and
-     * <code>SECRET_HASH</code> (if applicable) in the parameters.</p>  <ul>
-     * <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an
-     * <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
-     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
-     * and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
-     * <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom
-     * authentication flow determines that the user should pass another challenge
-     * before tokens are issued.</p> </li> <li> <p> <code>DEVICE_SRP_AUTH</code>: If
-     * device tracking was activated on your user pool and the previous challenges were
-     * passed, this challenge is returned so that Amazon Cognito can start tracking
-     * this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar
-     * to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
+     * is returned in the <code>InitiateAuth</code> response if you must pass another
+     * challenge.</p> <p>Valid values include the following:</p>  <p>All of the
+     * following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code>
+     * (if applicable) in the parameters.</p>  <ul> <li> <p>
+     * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>,
+     * delivered via SMS.</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next
+     * challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the
+     * client-side SRP calculations.</p> </li> <li> <p> <code>CUSTOM_CHALLENGE</code>:
+     * This is returned if your custom authentication flow determines that the user
+     * should pass another challenge before tokens are issued.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool
+     * and the previous challenges were passed, this challenge is returned so that
+     * Amazon Cognito can start tracking this device.</p> </li> <li> <p>
+     * <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to
+     * <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
      * passwords after successful first login. </p> <p>Respond to this challenge with
      * <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
@@ -161,8 +161,8 @@ namespace Model
      * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
      * users who are required to setup an MFA factor before they can sign in. The MFA
      * types activated for the user pool will be listed in the challenge parameters
-     * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
-     * session returned here from <code>InitiateAuth</code> as an input to
+     * <code>MFAS_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use
+     * the session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>. Use the session returned by
      * <code>VerifySoftwareToken</code> as an input to
      * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
@@ -174,22 +174,22 @@ namespace Model
 
     /**
      * <p>The name of the challenge that you're responding to with this call. This name
-     * is returned in the <code>AdminInitiateAuth</code> response if you must pass
-     * another challenge.</p> <p>Valid values include the following:</p>  <p>All
-     * of the following challenges require <code>USERNAME</code> and
-     * <code>SECRET_HASH</code> (if applicable) in the parameters.</p>  <ul>
-     * <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an
-     * <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
-     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
-     * and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
-     * <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom
-     * authentication flow determines that the user should pass another challenge
-     * before tokens are issued.</p> </li> <li> <p> <code>DEVICE_SRP_AUTH</code>: If
-     * device tracking was activated on your user pool and the previous challenges were
-     * passed, this challenge is returned so that Amazon Cognito can start tracking
-     * this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar
-     * to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
+     * is returned in the <code>InitiateAuth</code> response if you must pass another
+     * challenge.</p> <p>Valid values include the following:</p>  <p>All of the
+     * following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code>
+     * (if applicable) in the parameters.</p>  <ul> <li> <p>
+     * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>,
+     * delivered via SMS.</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next
+     * challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the
+     * client-side SRP calculations.</p> </li> <li> <p> <code>CUSTOM_CHALLENGE</code>:
+     * This is returned if your custom authentication flow determines that the user
+     * should pass another challenge before tokens are issued.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool
+     * and the previous challenges were passed, this challenge is returned so that
+     * Amazon Cognito can start tracking this device.</p> </li> <li> <p>
+     * <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to
+     * <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
      * passwords after successful first login. </p> <p>Respond to this challenge with
      * <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
@@ -205,8 +205,8 @@ namespace Model
      * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
      * users who are required to setup an MFA factor before they can sign in. The MFA
      * types activated for the user pool will be listed in the challenge parameters
-     * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
-     * session returned here from <code>InitiateAuth</code> as an input to
+     * <code>MFAS_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use
+     * the session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>. Use the session returned by
      * <code>VerifySoftwareToken</code> as an input to
      * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
@@ -218,22 +218,22 @@ namespace Model
 
     /**
      * <p>The name of the challenge that you're responding to with this call. This name
-     * is returned in the <code>AdminInitiateAuth</code> response if you must pass
-     * another challenge.</p> <p>Valid values include the following:</p>  <p>All
-     * of the following challenges require <code>USERNAME</code> and
-     * <code>SECRET_HASH</code> (if applicable) in the parameters.</p>  <ul>
-     * <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an
-     * <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
-     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
-     * and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
-     * <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom
-     * authentication flow determines that the user should pass another challenge
-     * before tokens are issued.</p> </li> <li> <p> <code>DEVICE_SRP_AUTH</code>: If
-     * device tracking was activated on your user pool and the previous challenges were
-     * passed, this challenge is returned so that Amazon Cognito can start tracking
-     * this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar
-     * to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
+     * is returned in the <code>InitiateAuth</code> response if you must pass another
+     * challenge.</p> <p>Valid values include the following:</p>  <p>All of the
+     * following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code>
+     * (if applicable) in the parameters.</p>  <ul> <li> <p>
+     * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>,
+     * delivered via SMS.</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next
+     * challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the
+     * client-side SRP calculations.</p> </li> <li> <p> <code>CUSTOM_CHALLENGE</code>:
+     * This is returned if your custom authentication flow determines that the user
+     * should pass another challenge before tokens are issued.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool
+     * and the previous challenges were passed, this challenge is returned so that
+     * Amazon Cognito can start tracking this device.</p> </li> <li> <p>
+     * <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to
+     * <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
      * passwords after successful first login. </p> <p>Respond to this challenge with
      * <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
@@ -249,8 +249,8 @@ namespace Model
      * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
      * users who are required to setup an MFA factor before they can sign in. The MFA
      * types activated for the user pool will be listed in the challenge parameters
-     * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
-     * session returned here from <code>InitiateAuth</code> as an input to
+     * <code>MFAS_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use
+     * the session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>. Use the session returned by
      * <code>VerifySoftwareToken</code> as an input to
      * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>

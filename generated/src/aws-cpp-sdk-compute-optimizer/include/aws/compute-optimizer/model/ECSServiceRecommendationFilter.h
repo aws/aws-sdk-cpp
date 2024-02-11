@@ -45,7 +45,19 @@ namespace Model
      * <p> The name of the filter. </p> <p> Specify <code>Finding</code> to return
      * recommendations with a specific finding classification. </p> <p> Specify
      * <code>FindingReasonCode</code> to return recommendations with a specific finding
-     * reason code. </p>
+     * reason code. </p> <p>You can filter your Amazon ECS service recommendations by
+     * <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Amazon ECS service recommendations. Use the tag key in the filter name and the
+     * tag value as the filter value. For example, to find all Amazon ECS service
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Amazon ECS service recommendations. Use this
+     * filter to find all of your Amazon ECS service recommendations that have a tag
+     * with a specific key. This doesn’t consider the tag value. For example, you can
+     * find your Amazon ECS service recommendations with a tag key value of
+     * <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline const ECSServiceRecommendationFilterName& GetName() const{ return m_name; }
 
@@ -53,7 +65,19 @@ namespace Model
      * <p> The name of the filter. </p> <p> Specify <code>Finding</code> to return
      * recommendations with a specific finding classification. </p> <p> Specify
      * <code>FindingReasonCode</code> to return recommendations with a specific finding
-     * reason code. </p>
+     * reason code. </p> <p>You can filter your Amazon ECS service recommendations by
+     * <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Amazon ECS service recommendations. Use the tag key in the filter name and the
+     * tag value as the filter value. For example, to find all Amazon ECS service
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Amazon ECS service recommendations. Use this
+     * filter to find all of your Amazon ECS service recommendations that have a tag
+     * with a specific key. This doesn’t consider the tag value. For example, you can
+     * find your Amazon ECS service recommendations with a tag key value of
+     * <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -61,7 +85,19 @@ namespace Model
      * <p> The name of the filter. </p> <p> Specify <code>Finding</code> to return
      * recommendations with a specific finding classification. </p> <p> Specify
      * <code>FindingReasonCode</code> to return recommendations with a specific finding
-     * reason code. </p>
+     * reason code. </p> <p>You can filter your Amazon ECS service recommendations by
+     * <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Amazon ECS service recommendations. Use the tag key in the filter name and the
+     * tag value as the filter value. For example, to find all Amazon ECS service
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Amazon ECS service recommendations. Use this
+     * filter to find all of your Amazon ECS service recommendations that have a tag
+     * with a specific key. This doesn’t consider the tag value. For example, you can
+     * find your Amazon ECS service recommendations with a tag key value of
+     * <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline void SetName(const ECSServiceRecommendationFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -69,7 +105,19 @@ namespace Model
      * <p> The name of the filter. </p> <p> Specify <code>Finding</code> to return
      * recommendations with a specific finding classification. </p> <p> Specify
      * <code>FindingReasonCode</code> to return recommendations with a specific finding
-     * reason code. </p>
+     * reason code. </p> <p>You can filter your Amazon ECS service recommendations by
+     * <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Amazon ECS service recommendations. Use the tag key in the filter name and the
+     * tag value as the filter value. For example, to find all Amazon ECS service
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Amazon ECS service recommendations. Use this
+     * filter to find all of your Amazon ECS service recommendations that have a tag
+     * with a specific key. This doesn’t consider the tag value. For example, you can
+     * find your Amazon ECS service recommendations with a tag key value of
+     * <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline void SetName(ECSServiceRecommendationFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -77,7 +125,19 @@ namespace Model
      * <p> The name of the filter. </p> <p> Specify <code>Finding</code> to return
      * recommendations with a specific finding classification. </p> <p> Specify
      * <code>FindingReasonCode</code> to return recommendations with a specific finding
-     * reason code. </p>
+     * reason code. </p> <p>You can filter your Amazon ECS service recommendations by
+     * <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Amazon ECS service recommendations. Use the tag key in the filter name and the
+     * tag value as the filter value. For example, to find all Amazon ECS service
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Amazon ECS service recommendations. Use this
+     * filter to find all of your Amazon ECS service recommendations that have a tag
+     * with a specific key. This doesn’t consider the tag value. For example, you can
+     * find your Amazon ECS service recommendations with a tag key value of
+     * <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline ECSServiceRecommendationFilter& WithName(const ECSServiceRecommendationFilterName& value) { SetName(value); return *this;}
 
@@ -85,7 +145,19 @@ namespace Model
      * <p> The name of the filter. </p> <p> Specify <code>Finding</code> to return
      * recommendations with a specific finding classification. </p> <p> Specify
      * <code>FindingReasonCode</code> to return recommendations with a specific finding
-     * reason code. </p>
+     * reason code. </p> <p>You can filter your Amazon ECS service recommendations by
+     * <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
+     * <code>tag:key</code> is a key and value combination of a tag assigned to your
+     * Amazon ECS service recommendations. Use the tag key in the filter name and the
+     * tag value as the filter value. For example, to find all Amazon ECS service
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your Amazon ECS service recommendations. Use this
+     * filter to find all of your Amazon ECS service recommendations that have a tag
+     * with a specific key. This doesn’t consider the tag value. For example, you can
+     * find your Amazon ECS service recommendations with a tag key value of
+     * <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline ECSServiceRecommendationFilter& WithName(ECSServiceRecommendationFilterName&& value) { SetName(std::move(value)); return *this;}
 

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceEvaluationStatus::NOT_SET:
+            return {};
           case ResourceEvaluationStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case ResourceEvaluationStatus::FAILED:

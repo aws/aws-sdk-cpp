@@ -14,9 +14,9 @@
 #include <aws/sagemaker/model/ConditionStepMetadata.h>
 #include <aws/sagemaker/model/CallbackStepMetadata.h>
 #include <aws/sagemaker/model/LambdaStepMetadata.h>
+#include <aws/sagemaker/model/EMRStepMetadata.h>
 #include <aws/sagemaker/model/QualityCheckStepMetadata.h>
 #include <aws/sagemaker/model/ClarifyCheckStepMetadata.h>
-#include <aws/sagemaker/model/EMRStepMetadata.h>
 #include <aws/sagemaker/model/FailStepMetadata.h>
 #include <aws/sagemaker/model/AutoMLJobStepMetadata.h>
 #include <utility>
@@ -384,6 +384,37 @@ namespace Model
 
 
     /**
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
+     */
+    inline const EMRStepMetadata& GetEMR() const{ return m_eMR; }
+
+    /**
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
+     */
+    inline bool EMRHasBeenSet() const { return m_eMRHasBeenSet; }
+
+    /**
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
+     */
+    inline void SetEMR(const EMRStepMetadata& value) { m_eMRHasBeenSet = true; m_eMR = value; }
+
+    /**
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
+     */
+    inline void SetEMR(EMRStepMetadata&& value) { m_eMRHasBeenSet = true; m_eMR = std::move(value); }
+
+    /**
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithEMR(const EMRStepMetadata& value) { SetEMR(value); return *this;}
+
+    /**
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithEMR(EMRStepMetadata&& value) { SetEMR(std::move(value)); return *this;}
+
+
+    /**
      * <p>The configurations and outcomes of the check step execution. This includes:
      * </p> <ul> <li> <p>The type of the check conducted.</p> </li> <li> <p>The Amazon
      * S3 URIs of baseline constraints and statistics files to be used for the drift
@@ -572,37 +603,6 @@ namespace Model
 
 
     /**
-     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-     */
-    inline const EMRStepMetadata& GetEMR() const{ return m_eMR; }
-
-    /**
-     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-     */
-    inline bool EMRHasBeenSet() const { return m_eMRHasBeenSet; }
-
-    /**
-     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-     */
-    inline void SetEMR(const EMRStepMetadata& value) { m_eMRHasBeenSet = true; m_eMR = value; }
-
-    /**
-     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-     */
-    inline void SetEMR(EMRStepMetadata&& value) { m_eMRHasBeenSet = true; m_eMR = std::move(value); }
-
-    /**
-     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-     */
-    inline PipelineExecutionStepMetadata& WithEMR(const EMRStepMetadata& value) { SetEMR(value); return *this;}
-
-    /**
-     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-     */
-    inline PipelineExecutionStepMetadata& WithEMR(EMRStepMetadata&& value) { SetEMR(std::move(value)); return *this;}
-
-
-    /**
      * <p>The configurations and outcomes of a Fail step execution.</p>
      */
     inline const FailStepMetadata& GetFail() const{ return m_fail; }
@@ -698,14 +698,14 @@ namespace Model
     LambdaStepMetadata m_lambda;
     bool m_lambdaHasBeenSet = false;
 
+    EMRStepMetadata m_eMR;
+    bool m_eMRHasBeenSet = false;
+
     QualityCheckStepMetadata m_qualityCheck;
     bool m_qualityCheckHasBeenSet = false;
 
     ClarifyCheckStepMetadata m_clarifyCheck;
     bool m_clarifyCheckHasBeenSet = false;
-
-    EMRStepMetadata m_eMR;
-    bool m_eMRHasBeenSet = false;
 
     FailStepMetadata m_fail;
     bool m_failHasBeenSet = false;

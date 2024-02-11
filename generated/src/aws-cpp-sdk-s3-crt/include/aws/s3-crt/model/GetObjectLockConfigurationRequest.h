@@ -46,9 +46,11 @@ namespace Model
     AWS_S3CRT_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
-     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>When
-     * using this action with an access point, you must direct requests to the access
-     * point hostname. The access point hostname takes the form
+     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>
+     * <b>Access points</b> - When you use this action with an access point, you must
+     * provide the alias of the access point in place of the bucket name or specify the
+     * access point ARN. When using the access point ARN, you must direct requests to
+     * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -59,9 +61,11 @@ namespace Model
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>When
-     * using this action with an access point, you must direct requests to the access
-     * point hostname. The access point hostname takes the form
+     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>
+     * <b>Access points</b> - When you use this action with an access point, you must
+     * provide the alias of the access point in place of the bucket name or specify the
+     * access point ARN. When using the access point ARN, you must direct requests to
+     * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -72,9 +76,11 @@ namespace Model
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>When
-     * using this action with an access point, you must direct requests to the access
-     * point hostname. The access point hostname takes the form
+     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>
+     * <b>Access points</b> - When you use this action with an access point, you must
+     * provide the alias of the access point in place of the bucket name or specify the
+     * access point ARN. When using the access point ARN, you must direct requests to
+     * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -85,9 +91,11 @@ namespace Model
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>When
-     * using this action with an access point, you must direct requests to the access
-     * point hostname. The access point hostname takes the form
+     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>
+     * <b>Access points</b> - When you use this action with an access point, you must
+     * provide the alias of the access point in place of the bucket name or specify the
+     * access point ARN. When using the access point ARN, you must direct requests to
+     * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -98,9 +106,11 @@ namespace Model
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>When
-     * using this action with an access point, you must direct requests to the access
-     * point hostname. The access point hostname takes the form
+     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>
+     * <b>Access points</b> - When you use this action with an access point, you must
+     * provide the alias of the access point in place of the bucket name or specify the
+     * access point ARN. When using the access point ARN, you must direct requests to
+     * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -111,9 +121,11 @@ namespace Model
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>When
-     * using this action with an access point, you must direct requests to the access
-     * point hostname. The access point hostname takes the form
+     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>
+     * <b>Access points</b> - When you use this action with an access point, you must
+     * provide the alias of the access point in place of the bucket name or specify the
+     * access point ARN. When using the access point ARN, you must direct requests to
+     * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -124,9 +136,11 @@ namespace Model
     inline GetObjectLockConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>When
-     * using this action with an access point, you must direct requests to the access
-     * point hostname. The access point hostname takes the form
+     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>
+     * <b>Access points</b> - When you use this action with an access point, you must
+     * provide the alias of the access point in place of the bucket name or specify the
+     * access point ARN. When using the access point ARN, you must direct requests to
+     * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -137,9 +151,11 @@ namespace Model
     inline GetObjectLockConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>When
-     * using this action with an access point, you must direct requests to the access
-     * point hostname. The access point hostname takes the form
+     * <p>The bucket whose Object Lock configuration you want to retrieve.</p> <p>
+     * <b>Access points</b> - When you use this action with an access point, you must
+     * provide the alias of the access point in place of the bucket name or specify the
+     * access point ARN. When using the access point ARN, you must direct requests to
+     * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -151,58 +167,58 @@ namespace Model
 
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline GetObjectLockConfigurationRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline GetObjectLockConfigurationRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline GetObjectLockConfigurationRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 

@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 UpdateApplicationRequest::UpdateApplicationRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_initialCapacityHasBeenSet(false),
     m_maximumCapacityHasBeenSet(false),
@@ -24,7 +24,10 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
     m_imageConfigurationHasBeenSet(false),
-    m_workerTypeSpecificationsHasBeenSet(false)
+    m_workerTypeSpecificationsHasBeenSet(false),
+    m_releaseLabelHasBeenSet(false),
+    m_runtimeConfigurationHasBeenSet(false),
+    m_monitoringConfigurationHasBeenSet(false)
 {
 }
 
@@ -92,6 +95,29 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
      workerTypeSpecificationsJsonMap.WithObject(workerTypeSpecificationsItem.first, workerTypeSpecificationsItem.second.Jsonize());
    }
    payload.WithObject("workerTypeSpecifications", std::move(workerTypeSpecificationsJsonMap));
+
+  }
+
+  if(m_releaseLabelHasBeenSet)
+  {
+   payload.WithString("releaseLabel", m_releaseLabel);
+
+  }
+
+  if(m_runtimeConfigurationHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> runtimeConfigurationJsonList(m_runtimeConfiguration.size());
+   for(unsigned runtimeConfigurationIndex = 0; runtimeConfigurationIndex < runtimeConfigurationJsonList.GetLength(); ++runtimeConfigurationIndex)
+   {
+     runtimeConfigurationJsonList[runtimeConfigurationIndex].AsObject(m_runtimeConfiguration[runtimeConfigurationIndex].Jsonize());
+   }
+   payload.WithArray("runtimeConfiguration", std::move(runtimeConfigurationJsonList));
+
+  }
+
+  if(m_monitoringConfigurationHasBeenSet)
+  {
+   payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
 
   }
 

@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/StepStatus.h>
 #include <aws/sagemaker/model/CacheHitResult.h>
 #include <aws/sagemaker/model/PipelineExecutionStepMetadata.h>
+#include <aws/sagemaker/model/SelectiveExecutionResult.h>
 #include <utility>
 
 namespace Aws
@@ -289,35 +290,6 @@ namespace Model
 
 
     /**
-     * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for SageMaker Pipelines steps</a>.</p>
-     */
-    inline int GetAttemptCount() const{ return m_attemptCount; }
-
-    /**
-     * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for SageMaker Pipelines steps</a>.</p>
-     */
-    inline bool AttemptCountHasBeenSet() const { return m_attemptCountHasBeenSet; }
-
-    /**
-     * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for SageMaker Pipelines steps</a>.</p>
-     */
-    inline void SetAttemptCount(int value) { m_attemptCountHasBeenSet = true; m_attemptCount = value; }
-
-    /**
-     * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for SageMaker Pipelines steps</a>.</p>
-     */
-    inline PipelineExecutionStep& WithAttemptCount(int value) { SetAttemptCount(value); return *this;}
-
-
-    /**
      * <p>The reason why the step failed execution. This is only returned if the step
      * failed its execution.</p>
      */
@@ -396,6 +368,72 @@ namespace Model
      */
     inline PipelineExecutionStep& WithMetadata(PipelineExecutionStepMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
+     */
+    inline int GetAttemptCount() const{ return m_attemptCount; }
+
+    /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
+     */
+    inline bool AttemptCountHasBeenSet() const { return m_attemptCountHasBeenSet; }
+
+    /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
+     */
+    inline void SetAttemptCount(int value) { m_attemptCountHasBeenSet = true; m_attemptCount = value; }
+
+    /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
+     */
+    inline PipelineExecutionStep& WithAttemptCount(int value) { SetAttemptCount(value); return *this;}
+
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline const SelectiveExecutionResult& GetSelectiveExecutionResult() const{ return m_selectiveExecutionResult; }
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline bool SelectiveExecutionResultHasBeenSet() const { return m_selectiveExecutionResultHasBeenSet; }
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline void SetSelectiveExecutionResult(const SelectiveExecutionResult& value) { m_selectiveExecutionResultHasBeenSet = true; m_selectiveExecutionResult = value; }
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline void SetSelectiveExecutionResult(SelectiveExecutionResult&& value) { m_selectiveExecutionResultHasBeenSet = true; m_selectiveExecutionResult = std::move(value); }
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline PipelineExecutionStep& WithSelectiveExecutionResult(const SelectiveExecutionResult& value) { SetSelectiveExecutionResult(value); return *this;}
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline PipelineExecutionStep& WithSelectiveExecutionResult(SelectiveExecutionResult&& value) { SetSelectiveExecutionResult(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stepName;
@@ -419,14 +457,17 @@ namespace Model
     CacheHitResult m_cacheHitResult;
     bool m_cacheHitResultHasBeenSet = false;
 
-    int m_attemptCount;
-    bool m_attemptCountHasBeenSet = false;
-
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
 
     PipelineExecutionStepMetadata m_metadata;
     bool m_metadataHasBeenSet = false;
+
+    int m_attemptCount;
+    bool m_attemptCountHasBeenSet = false;
+
+    SelectiveExecutionResult m_selectiveExecutionResult;
+    bool m_selectiveExecutionResultHasBeenSet = false;
   };
 
 } // namespace Model

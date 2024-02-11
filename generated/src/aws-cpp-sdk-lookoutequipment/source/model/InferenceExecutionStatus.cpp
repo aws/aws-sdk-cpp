@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InferenceExecutionStatus::NOT_SET:
+            return {};
           case InferenceExecutionStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case InferenceExecutionStatus::SUCCESS:

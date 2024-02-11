@@ -36,7 +36,8 @@ StartTranscriptionJobRequest::StartTranscriptionJobRequest() :
     m_languageOptionsHasBeenSet(false),
     m_subtitlesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_languageIdSettingsHasBeenSet(false)
+    m_languageIdSettingsHasBeenSet(false),
+    m_toxicityDetectionHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,17 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
      languageIdSettingsJsonMap.WithObject(LanguageCodeMapper::GetNameForLanguageCode(languageIdSettingsItem.first), languageIdSettingsItem.second.Jsonize());
    }
    payload.WithObject("LanguageIdSettings", std::move(languageIdSettingsJsonMap));
+
+  }
+
+  if(m_toxicityDetectionHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> toxicityDetectionJsonList(m_toxicityDetection.size());
+   for(unsigned toxicityDetectionIndex = 0; toxicityDetectionIndex < toxicityDetectionJsonList.GetLength(); ++toxicityDetectionIndex)
+   {
+     toxicityDetectionJsonList[toxicityDetectionIndex].AsObject(m_toxicityDetection[toxicityDetectionIndex].Jsonize());
+   }
+   payload.WithArray("ToxicityDetection", std::move(toxicityDetectionJsonList));
 
   }
 

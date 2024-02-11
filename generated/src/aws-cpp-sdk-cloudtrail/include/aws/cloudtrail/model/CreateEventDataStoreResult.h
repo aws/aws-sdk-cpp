@@ -9,6 +9,7 @@
 #include <aws/cloudtrail/model/EventDataStoreStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cloudtrail/model/BillingMode.h>
 #include <aws/cloudtrail/model/AdvancedEventSelector.h>
 #include <aws/cloudtrail/model/Tag.h>
 #include <utility>
@@ -179,20 +180,20 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the event data store collects events from all regions, or
-     * only from the region in which it was created.</p>
+     * <p>Indicates whether the event data store collects events from all Regions, or
+     * only from the Region in which it was created.</p>
      */
     inline bool GetMultiRegionEnabled() const{ return m_multiRegionEnabled; }
 
     /**
-     * <p>Indicates whether the event data store collects events from all regions, or
-     * only from the region in which it was created.</p>
+     * <p>Indicates whether the event data store collects events from all Regions, or
+     * only from the Region in which it was created.</p>
      */
     inline void SetMultiRegionEnabled(bool value) { m_multiRegionEnabled = value; }
 
     /**
-     * <p>Indicates whether the event data store collects events from all regions, or
-     * only from the region in which it was created.</p>
+     * <p>Indicates whether the event data store collects events from all Regions, or
+     * only from the Region in which it was created.</p>
      */
     inline CreateEventDataStoreResult& WithMultiRegionEnabled(bool value) { SetMultiRegionEnabled(value); return *this;}
 
@@ -392,6 +393,32 @@ namespace Model
     inline CreateEventDataStoreResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
+    /**
+     * <p>The billing mode for the event data store.</p>
+     */
+    inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
+
+    /**
+     * <p>The billing mode for the event data store.</p>
+     */
+    inline void SetBillingMode(const BillingMode& value) { m_billingMode = value; }
+
+    /**
+     * <p>The billing mode for the event data store.</p>
+     */
+    inline void SetBillingMode(BillingMode&& value) { m_billingMode = std::move(value); }
+
+    /**
+     * <p>The billing mode for the event data store.</p>
+     */
+    inline CreateEventDataStoreResult& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
+
+    /**
+     * <p>The billing mode for the event data store.</p>
+     */
+    inline CreateEventDataStoreResult& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -438,6 +465,8 @@ namespace Model
     Aws::Utils::DateTime m_updatedTimestamp;
 
     Aws::String m_kmsKeyId;
+
+    BillingMode m_billingMode;
 
     Aws::String m_requestId;
   };

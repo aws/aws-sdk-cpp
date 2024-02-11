@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RadiusStatus::NOT_SET:
+            return {};
           case RadiusStatus::Creating:
             return "Creating";
           case RadiusStatus::Completed:

@@ -29,10 +29,7 @@ namespace Athena
    * Amazon Athena API. Earlier version drivers do not support the API. For more
    * information and to download the driver, see <a
    * href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing
-   * Amazon Athena with JDBC</a>.</p> <p>For code samples using the Amazon Web
-   * Services SDK for Java, see <a
-   * href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-   * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
+   * Amazon Athena with JDBC</a>.</p>
    */
   class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>
   {
@@ -40,6 +37,9 @@ namespace Athena
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef AthenaClientConfiguration ClientConfigurationType;
+      typedef AthenaEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -185,6 +185,61 @@ namespace Athena
         }
 
         /**
+         * <p>Cancels the capacity reservation with the specified name. Cancelled
+         * reservations remain in your account and will be deleted 45 days after
+         * cancellation. During the 45 days, you cannot re-purpose or reuse a reservation
+         * that has been cancelled, but you can refer to its tags and view it for
+         * historical reference. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelCapacityReservationOutcome CancelCapacityReservation(const Model::CancelCapacityReservationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelCapacityReservationRequestT = Model::CancelCapacityReservationRequest>
+        Model::CancelCapacityReservationOutcomeCallable CancelCapacityReservationCallable(const CancelCapacityReservationRequestT& request) const
+        {
+            return SubmitCallable(&AthenaClient::CancelCapacityReservation, request);
+        }
+
+        /**
+         * An Async wrapper for CancelCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelCapacityReservationRequestT = Model::CancelCapacityReservationRequest>
+        void CancelCapacityReservationAsync(const CancelCapacityReservationRequestT& request, const CancelCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AthenaClient::CancelCapacityReservation, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a capacity reservation with the specified name and number of
+         * requested data processing units.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCapacityReservationOutcome CreateCapacityReservation(const Model::CreateCapacityReservationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCapacityReservationRequestT = Model::CreateCapacityReservationRequest>
+        Model::CreateCapacityReservationOutcomeCallable CreateCapacityReservationCallable(const CreateCapacityReservationRequestT& request) const
+        {
+            return SubmitCallable(&AthenaClient::CreateCapacityReservation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCapacityReservationRequestT = Model::CreateCapacityReservationRequest>
+        void CreateCapacityReservationAsync(const CreateCapacityReservationRequestT& request, const CreateCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AthenaClient::CreateCapacityReservation, request, handler, context);
+        }
+
+        /**
          * <p>Creates (registers) a data catalog with the specified name and properties.
          * Catalogs created are visible to all users of the same Amazon Web Services
          * account.</p><p><h3>See Also:</h3>   <a
@@ -213,11 +268,7 @@ namespace Athena
 
         /**
          * <p>Creates a named query in the specified workgroup. Requires that you have
-         * access to the workgroup.</p> <p>For code samples using the Amazon Web Services
-         * SDK for Java, see <a
-         * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-         * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * access to the workgroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNamedQuery">AWS
          * API Reference</a></p>
          */
@@ -352,6 +403,36 @@ namespace Athena
         }
 
         /**
+         * <p>Deletes a cancelled capacity reservation. A reservation must be cancelled
+         * before it can be deleted. A deleted reservation is immediately removed from your
+         * account and can no longer be referenced, including by its ARN. A deleted
+         * reservation cannot be called by <code>GetCapacityReservation</code>, and deleted
+         * reservations do not appear in the output of
+         * <code>ListCapacityReservations</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCapacityReservationOutcome DeleteCapacityReservation(const Model::DeleteCapacityReservationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCapacityReservationRequestT = Model::DeleteCapacityReservationRequest>
+        Model::DeleteCapacityReservationOutcomeCallable DeleteCapacityReservationCallable(const DeleteCapacityReservationRequestT& request) const
+        {
+            return SubmitCallable(&AthenaClient::DeleteCapacityReservation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCapacityReservationRequestT = Model::DeleteCapacityReservationRequest>
+        void DeleteCapacityReservationAsync(const DeleteCapacityReservationRequestT& request, const DeleteCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AthenaClient::DeleteCapacityReservation, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a data catalog.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog">AWS
          * API Reference</a></p>
@@ -378,11 +459,7 @@ namespace Athena
 
         /**
          * <p>Deletes the named query if you have access to the workgroup in which the
-         * query was saved.</p> <p>For code samples using the Amazon Web Services SDK for
-         * Java, see <a
-         * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-         * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * query was saved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">AWS
          * API Reference</a></p>
          */
@@ -584,6 +661,58 @@ namespace Athena
         void GetCalculationExecutionStatusAsync(const GetCalculationExecutionStatusRequestT& request, const GetCalculationExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AthenaClient::GetCalculationExecutionStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the capacity assignment configuration for a capacity reservation, if one
+         * exists.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCapacityAssignmentConfigurationOutcome GetCapacityAssignmentConfiguration(const Model::GetCapacityAssignmentConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCapacityAssignmentConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCapacityAssignmentConfigurationRequestT = Model::GetCapacityAssignmentConfigurationRequest>
+        Model::GetCapacityAssignmentConfigurationOutcomeCallable GetCapacityAssignmentConfigurationCallable(const GetCapacityAssignmentConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&AthenaClient::GetCapacityAssignmentConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetCapacityAssignmentConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCapacityAssignmentConfigurationRequestT = Model::GetCapacityAssignmentConfigurationRequest>
+        void GetCapacityAssignmentConfigurationAsync(const GetCapacityAssignmentConfigurationRequestT& request, const GetCapacityAssignmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AthenaClient::GetCapacityAssignmentConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about the capacity reservation with the specified
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCapacityReservationOutcome GetCapacityReservation(const Model::GetCapacityReservationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCapacityReservationRequestT = Model::GetCapacityReservationRequest>
+        Model::GetCapacityReservationOutcomeCallable GetCapacityReservationCallable(const GetCapacityReservationRequestT& request) const
+        {
+            return SubmitCallable(&AthenaClient::GetCapacityReservation, request);
+        }
+
+        /**
+         * An Async wrapper for GetCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCapacityReservationRequestT = Model::GetCapacityReservationRequest>
+        void GetCapacityReservationAsync(const GetCapacityReservationRequestT& request, const GetCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AthenaClient::GetCapacityReservation, request, handler, context);
         }
 
         /**
@@ -998,6 +1127,32 @@ namespace Athena
         }
 
         /**
+         * <p>Lists the capacity reservations for the current account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCapacityReservationsOutcome ListCapacityReservations(const Model::ListCapacityReservationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCapacityReservations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCapacityReservationsRequestT = Model::ListCapacityReservationsRequest>
+        Model::ListCapacityReservationsOutcomeCallable ListCapacityReservationsCallable(const ListCapacityReservationsRequestT& request) const
+        {
+            return SubmitCallable(&AthenaClient::ListCapacityReservations, request);
+        }
+
+        /**
+         * An Async wrapper for ListCapacityReservations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCapacityReservationsRequestT = Model::ListCapacityReservationsRequest>
+        void ListCapacityReservationsAsync(const ListCapacityReservationsRequestT& request, const ListCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AthenaClient::ListCapacityReservations, request, handler, context);
+        }
+
+        /**
          * <p>Lists the data catalogs in the current Amazon Web Services account.</p>
          *  <p>In the Athena console, data catalogs are listed as "data sources" on
          * the <b>Data sources</b> page under the <b>Data source name</b> column.</p>
@@ -1108,11 +1263,7 @@ namespace Athena
          * <p>Provides a list of available query IDs only for queries saved in the
          * specified workgroup. Requires that you have access to the specified workgroup.
          * If a workgroup is not specified, lists the saved queries for the primary
-         * workgroup.</p> <p>For code samples using the Amazon Web Services SDK for Java,
-         * see <a
-         * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-         * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * workgroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">AWS
          * API Reference</a></p>
          */
@@ -1218,13 +1369,10 @@ namespace Athena
 
         /**
          * <p>Provides a list of available query execution IDs for the queries in the
-         * specified workgroup. If a workgroup is not specified, returns a list of query
-         * execution IDs for the primary workgroup. Requires you to have access to the
-         * workgroup in which the queries ran.</p> <p>For code samples using the Amazon Web
-         * Services SDK for Java, see <a
-         * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-         * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * specified workgroup. Athena keeps a query history for 45 days. If a workgroup is
+         * not specified, returns a list of query execution IDs for the primary workgroup.
+         * Requires you to have access to the workgroup in which the queries
+         * ran.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">AWS
          * API Reference</a></p>
          */
@@ -1303,8 +1451,8 @@ namespace Athena
         }
 
         /**
-         * <p>Lists the tags associated with an Athena workgroup or data catalog
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags associated with an Athena resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -1354,8 +1502,41 @@ namespace Athena
         }
 
         /**
+         * <p>Puts a new capacity assignment configuration for a specified capacity
+         * reservation. If a capacity assignment configuration already exists for the
+         * capacity reservation, replaces the existing capacity assignment
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutCapacityAssignmentConfigurationOutcome PutCapacityAssignmentConfiguration(const Model::PutCapacityAssignmentConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutCapacityAssignmentConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutCapacityAssignmentConfigurationRequestT = Model::PutCapacityAssignmentConfigurationRequest>
+        Model::PutCapacityAssignmentConfigurationOutcomeCallable PutCapacityAssignmentConfigurationCallable(const PutCapacityAssignmentConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&AthenaClient::PutCapacityAssignmentConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for PutCapacityAssignmentConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutCapacityAssignmentConfigurationRequestT = Model::PutCapacityAssignmentConfigurationRequest>
+        void PutCapacityAssignmentConfigurationAsync(const PutCapacityAssignmentConfigurationRequestT& request, const PutCapacityAssignmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AthenaClient::PutCapacityAssignmentConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Submits calculations for execution within a session. You can supply the code
-         * to run as an inline code block within the request.</p><p><h3>See Also:</h3>   <a
+         * to run as an inline code block within the request.</p>  <p>The request
+         * syntax requires the <a>StartCalculationExecutionRequest$CodeBlock</a> parameter
+         * or the <a>CalculationConfiguration$CodeBlock</a> parameter, but not both.
+         * Because <a>CalculationConfiguration$CodeBlock</a> is deprecated, use the
+         * <a>StartCalculationExecutionRequest$CodeBlock</a> parameter instead.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution">AWS
          * API Reference</a></p>
          */
@@ -1471,11 +1652,7 @@ namespace Athena
 
         /**
          * <p>Stops a query execution. Requires you to have access to the workgroup in
-         * which the query ran.</p> <p>For code samples using the Amazon Web Services SDK
-         * for Java, see <a
-         * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-         * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * which the query ran.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopQueryExecution">AWS
          * API Reference</a></p>
          */
@@ -1501,12 +1678,11 @@ namespace Athena
 
         /**
          * <p>Adds one or more tags to an Athena resource. A tag is a label that you assign
-         * to a resource. In Athena, a resource can be a workgroup or data catalog. Each
-         * tag consists of a key and an optional value, both of which you define. For
-         * example, you can use tags to categorize Athena workgroups or data catalogs by
-         * purpose, owner, or environment. Use a consistent set of tag keys to make it
-         * easier to search and filter workgroups or data catalogs in your account. For
-         * best practices, see <a
+         * to a resource. Each tag consists of a key and an optional value, both of which
+         * you define. For example, you can use tags to categorize Athena workgroups, data
+         * catalogs, or capacity reservations by purpose, owner, or environment. Use a
+         * consistent set of tag keys to make it easier to search and filter the resources
+         * in your account. For best practices, see <a
          * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
          * Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and
          * tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters
@@ -1568,8 +1744,8 @@ namespace Athena
         }
 
         /**
-         * <p>Removes one or more tags from a data catalog or workgroup
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more tags from an Athena resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1591,6 +1767,32 @@ namespace Athena
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AthenaClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the number of requested data processing units for the capacity
+         * reservation with the specified name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCapacityReservationOutcome UpdateCapacityReservation(const Model::UpdateCapacityReservationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCapacityReservationRequestT = Model::UpdateCapacityReservationRequest>
+        Model::UpdateCapacityReservationOutcomeCallable UpdateCapacityReservationCallable(const UpdateCapacityReservationRequestT& request) const
+        {
+            return SubmitCallable(&AthenaClient::UpdateCapacityReservation, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCapacityReservationRequestT = Model::UpdateCapacityReservationRequest>
+        void UpdateCapacityReservationAsync(const UpdateCapacityReservationRequestT& request, const UpdateCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AthenaClient::UpdateCapacityReservation, request, handler, context);
         }
 
         /**

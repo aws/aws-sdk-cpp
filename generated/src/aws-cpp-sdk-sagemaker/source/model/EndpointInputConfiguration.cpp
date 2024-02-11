@@ -21,6 +21,7 @@ namespace Model
 EndpointInputConfiguration::EndpointInputConfiguration() : 
     m_instanceType(ProductionVariantInstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
+    m_serverlessConfigHasBeenSet(false),
     m_inferenceSpecificationNameHasBeenSet(false),
     m_environmentParameterRangesHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ EndpointInputConfiguration::EndpointInputConfiguration() :
 EndpointInputConfiguration::EndpointInputConfiguration(JsonView jsonValue) : 
     m_instanceType(ProductionVariantInstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
+    m_serverlessConfigHasBeenSet(false),
     m_inferenceSpecificationNameHasBeenSet(false),
     m_environmentParameterRangesHasBeenSet(false)
 {
@@ -42,6 +44,13 @@ EndpointInputConfiguration& EndpointInputConfiguration::operator =(JsonView json
     m_instanceType = ProductionVariantInstanceTypeMapper::GetProductionVariantInstanceTypeForName(jsonValue.GetString("InstanceType"));
 
     m_instanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServerlessConfig"))
+  {
+    m_serverlessConfig = jsonValue.GetObject("ServerlessConfig");
+
+    m_serverlessConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InferenceSpecificationName"))
@@ -68,6 +77,12 @@ JsonValue EndpointInputConfiguration::Jsonize() const
   if(m_instanceTypeHasBeenSet)
   {
    payload.WithString("InstanceType", ProductionVariantInstanceTypeMapper::GetNameForProductionVariantInstanceType(m_instanceType));
+  }
+
+  if(m_serverlessConfigHasBeenSet)
+  {
+   payload.WithObject("ServerlessConfig", m_serverlessConfig.Jsonize());
+
   }
 
   if(m_inferenceSpecificationNameHasBeenSet)

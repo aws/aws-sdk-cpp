@@ -40,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>One or more Spot Instance requests.</p>
+     * <p>The Spot Instance requests.</p>
      */
     inline const Aws::Vector<SpotInstanceRequest>& GetSpotInstanceRequests() const{ return m_spotInstanceRequests; }
 
     /**
-     * <p>One or more Spot Instance requests.</p>
+     * <p>The Spot Instance requests.</p>
      */
     inline void SetSpotInstanceRequests(const Aws::Vector<SpotInstanceRequest>& value) { m_spotInstanceRequests = value; }
 
     /**
-     * <p>One or more Spot Instance requests.</p>
+     * <p>The Spot Instance requests.</p>
      */
     inline void SetSpotInstanceRequests(Aws::Vector<SpotInstanceRequest>&& value) { m_spotInstanceRequests = std::move(value); }
 
     /**
-     * <p>One or more Spot Instance requests.</p>
+     * <p>The Spot Instance requests.</p>
      */
     inline RequestSpotInstancesResponse& WithSpotInstanceRequests(const Aws::Vector<SpotInstanceRequest>& value) { SetSpotInstanceRequests(value); return *this;}
 
     /**
-     * <p>One or more Spot Instance requests.</p>
+     * <p>The Spot Instance requests.</p>
      */
     inline RequestSpotInstancesResponse& WithSpotInstanceRequests(Aws::Vector<SpotInstanceRequest>&& value) { SetSpotInstanceRequests(std::move(value)); return *this;}
 
     /**
-     * <p>One or more Spot Instance requests.</p>
+     * <p>The Spot Instance requests.</p>
      */
     inline RequestSpotInstancesResponse& AddSpotInstanceRequests(const SpotInstanceRequest& value) { m_spotInstanceRequests.push_back(value); return *this; }
 
     /**
-     * <p>One or more Spot Instance requests.</p>
+     * <p>The Spot Instance requests.</p>
      */
     inline RequestSpotInstancesResponse& AddSpotInstanceRequests(SpotInstanceRequest&& value) { m_spotInstanceRequests.push_back(std::move(value)); return *this; }
 

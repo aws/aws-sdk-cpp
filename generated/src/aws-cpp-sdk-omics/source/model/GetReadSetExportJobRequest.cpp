@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetReadSetExportJobRequest::GetReadSetExportJobRequest() : 
-    m_idHasBeenSet(false),
-    m_sequenceStoreIdHasBeenSet(false)
+    m_sequenceStoreIdHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 

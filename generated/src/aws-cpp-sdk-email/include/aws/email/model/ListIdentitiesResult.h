@@ -27,8 +27,9 @@ namespace SES
 namespace Model
 {
   /**
-   * <p>A list of all identities that you have attempted to verify under your AWS
-   * account, regardless of verification status.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of all identities that you have attempted to verify under your Amazon
+   * Web Services account, regardless of verification status.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentitiesResponse">AWS
    * API Reference</a></p>
    */

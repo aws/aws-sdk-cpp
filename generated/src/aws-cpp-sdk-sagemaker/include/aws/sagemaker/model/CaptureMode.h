@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Input,
-    Output
+    Output,
+    InputAndOutput
   };
 
 namespace CaptureModeMapper

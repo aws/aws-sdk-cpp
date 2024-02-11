@@ -8,6 +8,7 @@
 #include <aws/ivs/IVSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs/model/ChannelLatencyMode.h>
+#include <aws/ivs/model/TranscodePreset.h>
 #include <aws/ivs/model/ChannelType.h>
 #include <utility>
 
@@ -212,6 +213,67 @@ namespace Model
 
 
     /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline const TranscodePreset& GetPreset() const{ return m_preset; }
+
+    /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline bool PresetHasBeenSet() const { return m_presetHasBeenSet; }
+
+    /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline void SetPreset(const TranscodePreset& value) { m_presetHasBeenSet = true; m_preset = value; }
+
+    /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline void SetPreset(TranscodePreset&& value) { m_presetHasBeenSet = true; m_preset = std::move(value); }
+
+    /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline UpdateChannelRequest& WithPreset(const TranscodePreset& value) { SetPreset(value); return *this;}
+
+    /**
+     * <p>Optional transcode preset for the channel. This is selectable only for
+     * <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those
+     * channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types
+     * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
+     * string (<code>""</code>).</p>
+     */
+    inline UpdateChannelRequest& WithPreset(TranscodePreset&& value) { SetPreset(std::move(value)); return *this;}
+
+
+    /**
      * <p>Recording-configuration ARN. If this is set to an empty string, recording is
      * disabled. A value other than an empty string indicates that recording is
      * enabled</p>
@@ -270,103 +332,55 @@ namespace Model
 
     /**
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated
-     * from the original input, to automatically give viewers the best experience for
-     * their devices and network conditions. Transcoding allows higher playback quality
-     * across a range of download speeds. Resolution can be up to 1080p and bitrate can
-     * be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through. This is the default.</p> </li> <li> <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input
-     * to viewers. The viewer’s video-quality choice is limited to the original input.
-     * Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up
-     * to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> </ul>
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
      */
     inline const ChannelType& GetType() const{ return m_type; }
 
     /**
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated
-     * from the original input, to automatically give viewers the best experience for
-     * their devices and network conditions. Transcoding allows higher playback quality
-     * across a range of download speeds. Resolution can be up to 1080p and bitrate can
-     * be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through. This is the default.</p> </li> <li> <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input
-     * to viewers. The viewer’s video-quality choice is limited to the original input.
-     * Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up
-     * to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> </ul>
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated
-     * from the original input, to automatically give viewers the best experience for
-     * their devices and network conditions. Transcoding allows higher playback quality
-     * across a range of download speeds. Resolution can be up to 1080p and bitrate can
-     * be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through. This is the default.</p> </li> <li> <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input
-     * to viewers. The viewer’s video-quality choice is limited to the original input.
-     * Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up
-     * to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> </ul>
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
      */
     inline void SetType(const ChannelType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated
-     * from the original input, to automatically give viewers the best experience for
-     * their devices and network conditions. Transcoding allows higher playback quality
-     * across a range of download speeds. Resolution can be up to 1080p and bitrate can
-     * be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through. This is the default.</p> </li> <li> <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input
-     * to viewers. The viewer’s video-quality choice is limited to the original input.
-     * Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up
-     * to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> </ul>
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
      */
     inline void SetType(ChannelType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated
-     * from the original input, to automatically give viewers the best experience for
-     * their devices and network conditions. Transcoding allows higher playback quality
-     * across a range of download speeds. Resolution can be up to 1080p and bitrate can
-     * be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through. This is the default.</p> </li> <li> <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input
-     * to viewers. The viewer’s video-quality choice is limited to the original input.
-     * Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up
-     * to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> </ul>
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
      */
     inline UpdateChannelRequest& WithType(const ChannelType& value) { SetType(value); return *this;}
 
     /**
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated
-     * from the original input, to automatically give viewers the best experience for
-     * their devices and network conditions. Transcoding allows higher playback quality
-     * across a range of download speeds. Resolution can be up to 1080p and bitrate can
-     * be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through. This is the default.</p> </li> <li> <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input
-     * to viewers. The viewer’s video-quality choice is limited to the original input.
-     * Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up
-     * to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> </ul>
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
      */
     inline UpdateChannelRequest& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
 
@@ -386,6 +400,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    TranscodePreset m_preset;
+    bool m_presetHasBeenSet = false;
 
     Aws::String m_recordingConfigurationArn;
     bool m_recordingConfigurationArnHasBeenSet = false;

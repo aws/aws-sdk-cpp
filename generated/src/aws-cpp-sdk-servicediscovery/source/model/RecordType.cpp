@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecordType::NOT_SET:
+            return {};
           case RecordType::SRV:
             return "SRV";
           case RecordType::A:

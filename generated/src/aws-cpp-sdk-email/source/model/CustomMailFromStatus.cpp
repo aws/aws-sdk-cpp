@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomMailFromStatus::NOT_SET:
+            return {};
           case CustomMailFromStatus::Pending:
             return "Pending";
           case CustomMailFromStatus::Success:

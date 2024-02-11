@@ -8,6 +8,7 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/DirectoryType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -228,6 +229,85 @@ namespace Model
      */
     inline CreateInstanceRequest& WithOutboundCallsEnabled(bool value) { SetOutboundCallsEnabled(value); return *this;}
 
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline CreateInstanceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline CreateInstanceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline CreateInstanceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline CreateInstanceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline CreateInstanceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline CreateInstanceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline CreateInstanceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline CreateInstanceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+     */
+    inline CreateInstanceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_clientToken;
@@ -247,6 +327,9 @@ namespace Model
 
     bool m_outboundCallsEnabled;
     bool m_outboundCallsEnabledHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

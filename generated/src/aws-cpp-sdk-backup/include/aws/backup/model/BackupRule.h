@@ -256,28 +256,56 @@ namespace Model
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
      * if it doesn't start successfully. This value is optional. If this value is
-     * included, it must be at least 60 minutes to avoid errors.</p>
+     * included, it must be at least 60 minutes to avoid errors.</p> <p>During the
+     * start window, the backup job status remains in <code>CREATED</code> status until
+     * it has successfully begun or until the start window time has run out. If within
+     * the start window time Backup receives an error that allows the job to be
+     * retried, Backup will automatically retry to begin the job at least every 10
+     * minutes until the backup successfully begins (the job status changes to
+     * <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code>
+     * (which is expected to occur when the start window time is over).</p>
      */
     inline long long GetStartWindowMinutes() const{ return m_startWindowMinutes; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
      * if it doesn't start successfully. This value is optional. If this value is
-     * included, it must be at least 60 minutes to avoid errors.</p>
+     * included, it must be at least 60 minutes to avoid errors.</p> <p>During the
+     * start window, the backup job status remains in <code>CREATED</code> status until
+     * it has successfully begun or until the start window time has run out. If within
+     * the start window time Backup receives an error that allows the job to be
+     * retried, Backup will automatically retry to begin the job at least every 10
+     * minutes until the backup successfully begins (the job status changes to
+     * <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code>
+     * (which is expected to occur when the start window time is over).</p>
      */
     inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
      * if it doesn't start successfully. This value is optional. If this value is
-     * included, it must be at least 60 minutes to avoid errors.</p>
+     * included, it must be at least 60 minutes to avoid errors.</p> <p>During the
+     * start window, the backup job status remains in <code>CREATED</code> status until
+     * it has successfully begun or until the start window time has run out. If within
+     * the start window time Backup receives an error that allows the job to be
+     * retried, Backup will automatically retry to begin the job at least every 10
+     * minutes until the backup successfully begins (the job status changes to
+     * <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code>
+     * (which is expected to occur when the start window time is over).</p>
      */
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
      * if it doesn't start successfully. This value is optional. If this value is
-     * included, it must be at least 60 minutes to avoid errors.</p>
+     * included, it must be at least 60 minutes to avoid errors.</p> <p>During the
+     * start window, the backup job status remains in <code>CREATED</code> status until
+     * it has successfully begun or until the start window time has run out. If within
+     * the start window time Backup receives an error that allows the job to be
+     * retried, Backup will automatically retry to begin the job at least every 10
+     * minutes until the backup successfully begins (the job status changes to
+     * <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code>
+     * (which is expected to occur when the start window time is over).</p>
      */
     inline BackupRule& WithStartWindowMinutes(long long value) { SetStartWindowMinutes(value); return *this;}
 
@@ -609,6 +637,55 @@ namespace Model
      */
     inline BackupRule& WithEnableContinuousBackup(bool value) { SetEnableContinuousBackup(value); return *this;}
 
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline const Aws::String& GetScheduleExpressionTimezone() const{ return m_scheduleExpressionTimezone; }
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline bool ScheduleExpressionTimezoneHasBeenSet() const { return m_scheduleExpressionTimezoneHasBeenSet; }
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline void SetScheduleExpressionTimezone(const Aws::String& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = value; }
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline void SetScheduleExpressionTimezone(Aws::String&& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = std::move(value); }
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline void SetScheduleExpressionTimezone(const char* value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone.assign(value); }
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline BackupRule& WithScheduleExpressionTimezone(const Aws::String& value) { SetScheduleExpressionTimezone(value); return *this;}
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline BackupRule& WithScheduleExpressionTimezone(Aws::String&& value) { SetScheduleExpressionTimezone(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline BackupRule& WithScheduleExpressionTimezone(const char* value) { SetScheduleExpressionTimezone(value); return *this;}
+
   private:
 
     Aws::String m_ruleName;
@@ -640,6 +717,9 @@ namespace Model
 
     bool m_enableContinuousBackup;
     bool m_enableContinuousBackupHasBeenSet = false;
+
+    Aws::String m_scheduleExpressionTimezone;
+    bool m_scheduleExpressionTimezoneHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostEstimationServiceResourceState::NOT_SET:
+            return {};
           case CostEstimationServiceResourceState::ACTIVE:
             return "ACTIVE";
           case CostEstimationServiceResourceState::INACTIVE:

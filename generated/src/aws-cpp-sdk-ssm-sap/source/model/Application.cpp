@@ -26,6 +26,8 @@ Application::Application() :
     m_appRegistryArnHasBeenSet(false),
     m_status(ApplicationStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_discoveryStatus(ApplicationDiscoveryStatus::NOT_SET),
+    m_discoveryStatusHasBeenSet(false),
     m_componentsHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_statusMessageHasBeenSet(false)
@@ -40,6 +42,8 @@ Application::Application(JsonView jsonValue) :
     m_appRegistryArnHasBeenSet(false),
     m_status(ApplicationStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_discoveryStatus(ApplicationDiscoveryStatus::NOT_SET),
+    m_discoveryStatusHasBeenSet(false),
     m_componentsHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_statusMessageHasBeenSet(false)
@@ -82,6 +86,13 @@ Application& Application::operator =(JsonView jsonValue)
     m_status = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("Status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DiscoveryStatus"))
+  {
+    m_discoveryStatus = ApplicationDiscoveryStatusMapper::GetApplicationDiscoveryStatusForName(jsonValue.GetString("DiscoveryStatus"));
+
+    m_discoveryStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Components"))
@@ -141,6 +152,11 @@ JsonValue Application::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", ApplicationStatusMapper::GetNameForApplicationStatus(m_status));
+  }
+
+  if(m_discoveryStatusHasBeenSet)
+  {
+   payload.WithString("DiscoveryStatus", ApplicationDiscoveryStatusMapper::GetNameForApplicationDiscoveryStatus(m_discoveryStatus));
   }
 
   if(m_componentsHasBeenSet)

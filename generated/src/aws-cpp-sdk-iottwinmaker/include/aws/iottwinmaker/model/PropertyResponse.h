@@ -100,6 +100,35 @@ namespace Model
      */
     inline PropertyResponse& WithValue(DataValue&& value) { SetValue(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This flag notes whether all values of a list or map type property are
+     * returned in the API response. The maximum number of values per property returned
+     * is 50.</p>
+     */
+    inline bool GetAreAllPropertyValuesReturned() const{ return m_areAllPropertyValuesReturned; }
+
+    /**
+     * <p>This flag notes whether all values of a list or map type property are
+     * returned in the API response. The maximum number of values per property returned
+     * is 50.</p>
+     */
+    inline bool AreAllPropertyValuesReturnedHasBeenSet() const { return m_areAllPropertyValuesReturnedHasBeenSet; }
+
+    /**
+     * <p>This flag notes whether all values of a list or map type property are
+     * returned in the API response. The maximum number of values per property returned
+     * is 50.</p>
+     */
+    inline void SetAreAllPropertyValuesReturned(bool value) { m_areAllPropertyValuesReturnedHasBeenSet = true; m_areAllPropertyValuesReturned = value; }
+
+    /**
+     * <p>This flag notes whether all values of a list or map type property are
+     * returned in the API response. The maximum number of values per property returned
+     * is 50.</p>
+     */
+    inline PropertyResponse& WithAreAllPropertyValuesReturned(bool value) { SetAreAllPropertyValuesReturned(value); return *this;}
+
   private:
 
     PropertyDefinitionResponse m_definition;
@@ -107,6 +136,9 @@ namespace Model
 
     DataValue m_value;
     bool m_valueHasBeenSet = false;
+
+    bool m_areAllPropertyValuesReturned;
+    bool m_areAllPropertyValuesReturnedHasBeenSet = false;
   };
 
 } // namespace Model

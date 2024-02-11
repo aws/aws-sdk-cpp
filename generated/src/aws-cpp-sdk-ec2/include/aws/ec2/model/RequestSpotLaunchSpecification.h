@@ -48,111 +48,93 @@ namespace Model
 
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline RequestSpotLaunchSpecification& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline RequestSpotLaunchSpecification& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline RequestSpotLaunchSpecification& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline RequestSpotLaunchSpecification& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline RequestSpotLaunchSpecification& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>Not supported.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>Not supported.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>Not supported.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>Not supported.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>Not supported.</p>
      */
     inline RequestSpotLaunchSpecification& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>Not supported.</p>
      */
     inline RequestSpotLaunchSpecification& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>Not supported.</p>
      */
     inline RequestSpotLaunchSpecification& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>Not supported.</p>
      */
     inline RequestSpotLaunchSpecification& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>Not supported.</p>
      */
     inline RequestSpotLaunchSpecification& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
@@ -199,65 +181,65 @@ namespace Model
 
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * <p>The block device mapping entries. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on
+     * creation. If a snapshot is the basis for a volume, it is not blank and its
      * encryption status is used for the volume encryption status.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * <p>The block device mapping entries. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on
+     * creation. If a snapshot is the basis for a volume, it is not blank and its
      * encryption status is used for the volume encryption status.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * <p>The block device mapping entries. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on
+     * creation. If a snapshot is the basis for a volume, it is not blank and its
      * encryption status is used for the volume encryption status.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * <p>The block device mapping entries. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on
+     * creation. If a snapshot is the basis for a volume, it is not blank and its
      * encryption status is used for the volume encryption status.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * <p>The block device mapping entries. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on
+     * creation. If a snapshot is the basis for a volume, it is not blank and its
      * encryption status is used for the volume encryption status.</p>
      */
     inline RequestSpotLaunchSpecification& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * <p>The block device mapping entries. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on
+     * creation. If a snapshot is the basis for a volume, it is not blank and its
      * encryption status is used for the volume encryption status.</p>
      */
     inline RequestSpotLaunchSpecification& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * <p>The block device mapping entries. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on
+     * creation. If a snapshot is the basis for a volume, it is not blank and its
      * encryption status is used for the volume encryption status.</p>
      */
     inline RequestSpotLaunchSpecification& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * <p>The block device mapping entries. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on
+     * creation. If a snapshot is the basis for a volume, it is not blank and its
      * encryption status is used for the volume encryption status.</p>
      */
     inline RequestSpotLaunchSpecification& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
@@ -523,50 +505,50 @@ namespace Model
 
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline RequestSpotLaunchSpecification& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline RequestSpotLaunchSpecification& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline RequestSpotLaunchSpecification& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline RequestSpotLaunchSpecification& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 

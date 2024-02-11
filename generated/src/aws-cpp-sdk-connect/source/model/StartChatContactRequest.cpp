@@ -18,13 +18,14 @@ StartChatContactRequest::StartChatContactRequest() :
     m_attributesHasBeenSet(false),
     m_participantDetailsHasBeenSet(false),
     m_initialMessageHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_chatDurationInMinutes(0),
     m_chatDurationInMinutesHasBeenSet(false),
     m_supportedMessagingContentTypesHasBeenSet(false),
     m_persistentChatHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false)
+    m_relatedContactIdHasBeenSet(false),
+    m_segmentAttributesHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,17 @@ Aws::String StartChatContactRequest::SerializePayload() const
   if(m_relatedContactIdHasBeenSet)
   {
    payload.WithString("RelatedContactId", m_relatedContactId);
+
+  }
+
+  if(m_segmentAttributesHasBeenSet)
+  {
+   JsonValue segmentAttributesJsonMap;
+   for(auto& segmentAttributesItem : m_segmentAttributes)
+   {
+     segmentAttributesJsonMap.WithObject(segmentAttributesItem.first, segmentAttributesItem.second.Jsonize());
+   }
+   payload.WithObject("SegmentAttributes", std::move(segmentAttributesJsonMap));
 
   }
 

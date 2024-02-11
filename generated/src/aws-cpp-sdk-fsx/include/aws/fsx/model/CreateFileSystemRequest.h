@@ -160,14 +160,15 @@ namespace Model
      * systems.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment type, valid
      * values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>
      * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can
-     * configure is from 1024 GiB up to 196,608 GiB (192 TiB).</p> <p> <b>FSx for
-     * OpenZFS file systems</b> - The amount of storage capacity that you can configure
-     * is from 64 GiB up to 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File
-     * Server file systems</b> - The amount of storage capacity that you can configure
-     * depends on the value that you set for <code>StorageType</code> as follows:</p>
-     * <ul> <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p>
-     * </li> <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64
-     * TiB).</p> </li> </ul>
+     * configure depends on the value of the <code>HAPairs</code> property. The minimum
+     * value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated
+     * as 524,288 * <code>HAPairs</code>..</p> <p> <b>FSx for OpenZFS file systems</b>
+     * - The amount of storage capacity that you can configure is from 64 GiB up to
+     * 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file systems</b> -
+     * The amount of storage capacity that you can configure depends on the value that
+     * you set for <code>StorageType</code> as follows:</p> <ul> <li> <p>For SSD
+     * storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li> <p>For HDD
+     * storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li> </ul>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
@@ -184,14 +185,15 @@ namespace Model
      * systems.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment type, valid
      * values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>
      * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can
-     * configure is from 1024 GiB up to 196,608 GiB (192 TiB).</p> <p> <b>FSx for
-     * OpenZFS file systems</b> - The amount of storage capacity that you can configure
-     * is from 64 GiB up to 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File
-     * Server file systems</b> - The amount of storage capacity that you can configure
-     * depends on the value that you set for <code>StorageType</code> as follows:</p>
-     * <ul> <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p>
-     * </li> <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64
-     * TiB).</p> </li> </ul>
+     * configure depends on the value of the <code>HAPairs</code> property. The minimum
+     * value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated
+     * as 524,288 * <code>HAPairs</code>..</p> <p> <b>FSx for OpenZFS file systems</b>
+     * - The amount of storage capacity that you can configure is from 64 GiB up to
+     * 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file systems</b> -
+     * The amount of storage capacity that you can configure depends on the value that
+     * you set for <code>StorageType</code> as follows:</p> <ul> <li> <p>For SSD
+     * storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li> <p>For HDD
+     * storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li> </ul>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
@@ -208,14 +210,15 @@ namespace Model
      * systems.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment type, valid
      * values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>
      * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can
-     * configure is from 1024 GiB up to 196,608 GiB (192 TiB).</p> <p> <b>FSx for
-     * OpenZFS file systems</b> - The amount of storage capacity that you can configure
-     * is from 64 GiB up to 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File
-     * Server file systems</b> - The amount of storage capacity that you can configure
-     * depends on the value that you set for <code>StorageType</code> as follows:</p>
-     * <ul> <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p>
-     * </li> <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64
-     * TiB).</p> </li> </ul>
+     * configure depends on the value of the <code>HAPairs</code> property. The minimum
+     * value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated
+     * as 524,288 * <code>HAPairs</code>..</p> <p> <b>FSx for OpenZFS file systems</b>
+     * - The amount of storage capacity that you can configure is from 64 GiB up to
+     * 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file systems</b> -
+     * The amount of storage capacity that you can configure depends on the value that
+     * you set for <code>StorageType</code> as follows:</p> <ul> <li> <p>For SSD
+     * storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li> <p>For HDD
+     * storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li> </ul>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
@@ -232,14 +235,15 @@ namespace Model
      * systems.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment type, valid
      * values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>
      * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can
-     * configure is from 1024 GiB up to 196,608 GiB (192 TiB).</p> <p> <b>FSx for
-     * OpenZFS file systems</b> - The amount of storage capacity that you can configure
-     * is from 64 GiB up to 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File
-     * Server file systems</b> - The amount of storage capacity that you can configure
-     * depends on the value that you set for <code>StorageType</code> as follows:</p>
-     * <ul> <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p>
-     * </li> <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64
-     * TiB).</p> </li> </ul>
+     * configure depends on the value of the <code>HAPairs</code> property. The minimum
+     * value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated
+     * as 524,288 * <code>HAPairs</code>..</p> <p> <b>FSx for OpenZFS file systems</b>
+     * - The amount of storage capacity that you can configure is from 64 GiB up to
+     * 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file systems</b> -
+     * The amount of storage capacity that you can configure depends on the value that
+     * you set for <code>StorageType</code> as follows:</p> <ul> <li> <p>For SSD
+     * storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li> <p>For HDD
+     * storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li> </ul>
      */
     inline CreateFileSystemRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 
@@ -664,38 +668,38 @@ namespace Model
 
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline const CreateFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline void SetWindowsConfiguration(const CreateFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline void SetWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::move(value); }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline CreateFileSystemRequest& WithWindowsConfiguration(const CreateFileSystemWindowsConfiguration& value) { SetWindowsConfiguration(value); return *this;}
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline CreateFileSystemRequest& WithWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
 
@@ -740,11 +744,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -755,11 +760,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -770,11 +776,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -785,11 +792,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -800,11 +808,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -815,11 +824,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -830,11 +840,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -845,11 +856,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for

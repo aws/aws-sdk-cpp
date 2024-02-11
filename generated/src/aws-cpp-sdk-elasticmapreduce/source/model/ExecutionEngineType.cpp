@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionEngineType::NOT_SET:
+            return {};
           case ExecutionEngineType::EMR:
             return "EMR";
           default:

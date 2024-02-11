@@ -20,13 +20,15 @@ namespace Model
 
 DeviceUnderTest::DeviceUnderTest() : 
     m_thingArnHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
+    m_certificateArnHasBeenSet(false),
+    m_deviceRoleArnHasBeenSet(false)
 {
 }
 
 DeviceUnderTest::DeviceUnderTest(JsonView jsonValue) : 
     m_thingArnHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
+    m_certificateArnHasBeenSet(false),
+    m_deviceRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ DeviceUnderTest& DeviceUnderTest::operator =(JsonView jsonValue)
     m_certificateArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deviceRoleArn"))
+  {
+    m_deviceRoleArn = jsonValue.GetString("deviceRoleArn");
+
+    m_deviceRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue DeviceUnderTest::Jsonize() const
   if(m_certificateArnHasBeenSet)
   {
    payload.WithString("certificateArn", m_certificateArn);
+
+  }
+
+  if(m_deviceRoleArnHasBeenSet)
+  {
+   payload.WithString("deviceRoleArn", m_deviceRoleArn);
 
   }
 

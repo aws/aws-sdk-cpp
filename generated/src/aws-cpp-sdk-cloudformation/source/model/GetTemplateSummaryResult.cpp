@@ -113,6 +113,11 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const Aws::Amazon
       }
 
     }
+    XmlNode warningsNode = resultNode.FirstChild("Warnings");
+    if(!warningsNode.IsNull())
+    {
+      m_warnings = warningsNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

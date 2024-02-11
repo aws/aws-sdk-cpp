@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpeakerEnrollmentJobStatus::NOT_SET:
+            return {};
           case SpeakerEnrollmentJobStatus::SUBMITTED:
             return "SUBMITTED";
           case SpeakerEnrollmentJobStatus::IN_PROGRESS:

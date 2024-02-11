@@ -291,6 +291,63 @@ namespace Model
 
 
     /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
+     * get a list of supported version, use the <code>ListVersions</code>
+     * operation.</p>
+     */
+    inline const Aws::String& GetGrafanaVersion() const{ return m_grafanaVersion; }
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
+     * get a list of supported version, use the <code>ListVersions</code>
+     * operation.</p>
+     */
+    inline bool GrafanaVersionHasBeenSet() const { return m_grafanaVersionHasBeenSet; }
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
+     * get a list of supported version, use the <code>ListVersions</code>
+     * operation.</p>
+     */
+    inline void SetGrafanaVersion(const Aws::String& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = value; }
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
+     * get a list of supported version, use the <code>ListVersions</code>
+     * operation.</p>
+     */
+    inline void SetGrafanaVersion(Aws::String&& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = std::move(value); }
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
+     * get a list of supported version, use the <code>ListVersions</code>
+     * operation.</p>
+     */
+    inline void SetGrafanaVersion(const char* value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion.assign(value); }
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
+     * get a list of supported version, use the <code>ListVersions</code>
+     * operation.</p>
+     */
+    inline CreateWorkspaceRequest& WithGrafanaVersion(const Aws::String& value) { SetGrafanaVersion(value); return *this;}
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
+     * get a list of supported version, use the <code>ListVersions</code>
+     * operation.</p>
+     */
+    inline CreateWorkspaceRequest& WithGrafanaVersion(Aws::String&& value) { SetGrafanaVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
+     * get a list of supported version, use the <code>ListVersions</code>
+     * operation.</p>
+     */
+    inline CreateWorkspaceRequest& WithGrafanaVersion(const char* value) { SetGrafanaVersion(value); return *this;}
+
+
+    /**
      * <p>Configuration for network access to your workspace.</p> <p>When this is
      * configured, only listed IP addresses and VPC endpoints will be able to access
      * your workspace. Standard Grafana authentication and authorization will still be
@@ -640,37 +697,49 @@ namespace Model
 
     /**
      * <p>The configuration settings for an Amazon VPC that contains data sources for
-     * your Grafana workspace to connect to.</p>
+     * your Grafana workspace to connect to.</p>  <p>Connecting to a private VPC
+     * is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+     * 
      */
     inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
      * <p>The configuration settings for an Amazon VPC that contains data sources for
-     * your Grafana workspace to connect to.</p>
+     * your Grafana workspace to connect to.</p>  <p>Connecting to a private VPC
+     * is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+     * 
      */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration settings for an Amazon VPC that contains data sources for
-     * your Grafana workspace to connect to.</p>
+     * your Grafana workspace to connect to.</p>  <p>Connecting to a private VPC
+     * is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+     * 
      */
     inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
 
     /**
      * <p>The configuration settings for an Amazon VPC that contains data sources for
-     * your Grafana workspace to connect to.</p>
+     * your Grafana workspace to connect to.</p>  <p>Connecting to a private VPC
+     * is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+     * 
      */
     inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
 
     /**
      * <p>The configuration settings for an Amazon VPC that contains data sources for
-     * your Grafana workspace to connect to.</p>
+     * your Grafana workspace to connect to.</p>  <p>Connecting to a private VPC
+     * is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+     * 
      */
     inline CreateWorkspaceRequest& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
      * <p>The configuration settings for an Amazon VPC that contains data sources for
-     * your Grafana workspace to connect to.</p>
+     * your Grafana workspace to connect to.</p>  <p>Connecting to a private VPC
+     * is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+     * 
      */
     inline CreateWorkspaceRequest& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
@@ -1020,6 +1089,9 @@ namespace Model
 
     Aws::String m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    Aws::String m_grafanaVersion;
+    bool m_grafanaVersionHasBeenSet = false;
 
     NetworkAccessConfiguration m_networkAccessControl;
     bool m_networkAccessControlHasBeenSet = false;

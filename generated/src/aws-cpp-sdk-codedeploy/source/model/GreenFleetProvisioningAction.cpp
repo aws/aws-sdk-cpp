@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GreenFleetProvisioningAction::NOT_SET:
+            return {};
           case GreenFleetProvisioningAction::DISCOVER_EXISTING:
             return "DISCOVER_EXISTING";
           case GreenFleetProvisioningAction::COPY_AUTO_SCALING_GROUP:

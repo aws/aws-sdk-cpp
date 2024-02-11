@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-timestream-query-tests 
+add_project(aws-cpp-sdk-timestream-query-integration-tests
     "Tests for the AWS Timestream-query C++ SDK" 
     aws-cpp-sdk-core 
     aws-cpp-sdk-timestream-query 

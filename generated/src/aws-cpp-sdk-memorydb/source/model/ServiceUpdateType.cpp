@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceUpdateType::NOT_SET:
+            return {};
           case ServiceUpdateType::security_update:
             return "security-update";
           default:

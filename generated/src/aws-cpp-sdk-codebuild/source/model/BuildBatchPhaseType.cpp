@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BuildBatchPhaseType::NOT_SET:
+            return {};
           case BuildBatchPhaseType::SUBMITTED:
             return "SUBMITTED";
           case BuildBatchPhaseType::DOWNLOAD_BATCHSPEC:

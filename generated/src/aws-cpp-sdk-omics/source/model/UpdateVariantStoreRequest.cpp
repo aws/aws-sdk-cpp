@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateVariantStoreRequest::UpdateVariantStoreRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InterfaceProtocolType::NOT_SET:
+            return {};
           case InterfaceProtocolType::VLAN:
             return "VLAN";
           case InterfaceProtocolType::GRE:

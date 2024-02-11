@@ -15,7 +15,9 @@ ExecuteChangeSetRequest::ExecuteChangeSetRequest() :
     m_stackNameHasBeenSet(false),
     m_clientRequestTokenHasBeenSet(false),
     m_disableRollback(false),
-    m_disableRollbackHasBeenSet(false)
+    m_disableRollbackHasBeenSet(false),
+    m_retainExceptOnCreate(false),
+    m_retainExceptOnCreateHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,11 @@ Aws::String ExecuteChangeSetRequest::SerializePayload() const
   if(m_disableRollbackHasBeenSet)
   {
     ss << "DisableRollback=" << std::boolalpha << m_disableRollback << "&";
+  }
+
+  if(m_retainExceptOnCreateHasBeenSet)
+  {
+    ss << "RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
   }
 
   ss << "Version=2010-05-15";

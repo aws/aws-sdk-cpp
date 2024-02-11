@@ -233,136 +233,142 @@ namespace Model
 
 
     /**
-     * <p>Represents an AWS session credentials object. These credentials are temporary
-     * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the S3 bucket used to store artifacts
-     * for the pipeline in AWS CodePipeline.</p>
+     * <p>Represents an Amazon Web Services session credentials object. These
+     * credentials are temporary credentials that are issued by Amazon Web Services
+     * Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifacts for the pipeline in
+     * CodePipeline.</p>
      */
     inline const AWSSessionCredentials& GetArtifactCredentials() const{ return m_artifactCredentials; }
 
     /**
-     * <p>Represents an AWS session credentials object. These credentials are temporary
-     * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the S3 bucket used to store artifacts
-     * for the pipeline in AWS CodePipeline.</p>
+     * <p>Represents an Amazon Web Services session credentials object. These
+     * credentials are temporary credentials that are issued by Amazon Web Services
+     * Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifacts for the pipeline in
+     * CodePipeline.</p>
      */
     inline bool ArtifactCredentialsHasBeenSet() const { return m_artifactCredentialsHasBeenSet; }
 
     /**
-     * <p>Represents an AWS session credentials object. These credentials are temporary
-     * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the S3 bucket used to store artifacts
-     * for the pipeline in AWS CodePipeline.</p>
+     * <p>Represents an Amazon Web Services session credentials object. These
+     * credentials are temporary credentials that are issued by Amazon Web Services
+     * Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifacts for the pipeline in
+     * CodePipeline.</p>
      */
     inline void SetArtifactCredentials(const AWSSessionCredentials& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = value; }
 
     /**
-     * <p>Represents an AWS session credentials object. These credentials are temporary
-     * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the S3 bucket used to store artifacts
-     * for the pipeline in AWS CodePipeline.</p>
+     * <p>Represents an Amazon Web Services session credentials object. These
+     * credentials are temporary credentials that are issued by Amazon Web Services
+     * Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifacts for the pipeline in
+     * CodePipeline.</p>
      */
     inline void SetArtifactCredentials(AWSSessionCredentials&& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = std::move(value); }
 
     /**
-     * <p>Represents an AWS session credentials object. These credentials are temporary
-     * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the S3 bucket used to store artifacts
-     * for the pipeline in AWS CodePipeline.</p>
+     * <p>Represents an Amazon Web Services session credentials object. These
+     * credentials are temporary credentials that are issued by Amazon Web Services
+     * Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifacts for the pipeline in
+     * CodePipeline.</p>
      */
     inline JobData& WithArtifactCredentials(const AWSSessionCredentials& value) { SetArtifactCredentials(value); return *this;}
 
     /**
-     * <p>Represents an AWS session credentials object. These credentials are temporary
-     * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the S3 bucket used to store artifacts
-     * for the pipeline in AWS CodePipeline.</p>
+     * <p>Represents an Amazon Web Services session credentials object. These
+     * credentials are temporary credentials that are issued by Amazon Web Services
+     * Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifacts for the pipeline in
+     * CodePipeline.</p>
      */
     inline JobData& WithArtifactCredentials(AWSSessionCredentials&& value) { SetArtifactCredentials(std::move(value)); return *this;}
 
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
-     * a job to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a deployment ID, required by a job to
+     * continue the job asynchronously.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
-     * a job to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a deployment ID, required by a job to
+     * continue the job asynchronously.</p>
      */
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
-     * a job to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a deployment ID, required by a job to
+     * continue the job asynchronously.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
-     * a job to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a deployment ID, required by a job to
+     * continue the job asynchronously.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
-     * a job to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a deployment ID, required by a job to
+     * continue the job asynchronously.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
-     * a job to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a deployment ID, required by a job to
+     * continue the job asynchronously.</p>
      */
     inline JobData& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
-     * a job to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a deployment ID, required by a job to
+     * continue the job asynchronously.</p>
      */
     inline JobData& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
-     * a job to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a deployment ID, required by a job to
+     * continue the job asynchronously.</p>
      */
     inline JobData& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
 
     /**
      * <p>Represents information about the key used to encrypt data in the artifact
-     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     * store, such as an KMS key. </p>
      */
     inline const EncryptionKey& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
      * <p>Represents information about the key used to encrypt data in the artifact
-     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     * store, such as an KMS key. </p>
      */
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
      * <p>Represents information about the key used to encrypt data in the artifact
-     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     * store, such as an KMS key. </p>
      */
     inline void SetEncryptionKey(const EncryptionKey& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
      * <p>Represents information about the key used to encrypt data in the artifact
-     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     * store, such as an KMS key. </p>
      */
     inline void SetEncryptionKey(EncryptionKey&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
      * <p>Represents information about the key used to encrypt data in the artifact
-     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     * store, such as an KMS key. </p>
      */
     inline JobData& WithEncryptionKey(const EncryptionKey& value) { SetEncryptionKey(value); return *this;}
 
     /**
      * <p>Represents information about the key used to encrypt data in the artifact
-     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     * store, such as an KMS key. </p>
      */
     inline JobData& WithEncryptionKey(EncryptionKey&& value) { SetEncryptionKey(std::move(value)); return *this;}
 

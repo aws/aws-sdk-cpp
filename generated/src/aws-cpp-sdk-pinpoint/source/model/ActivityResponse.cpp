@@ -35,7 +35,8 @@ ActivityResponse::ActivityResponse() :
     m_timezonesTotalCountHasBeenSet(false),
     m_totalEndpointCount(0),
     m_totalEndpointCountHasBeenSet(false),
-    m_treatmentIdHasBeenSet(false)
+    m_treatmentIdHasBeenSet(false),
+    m_executionMetricsHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ ActivityResponse::ActivityResponse(JsonView jsonValue) :
     m_timezonesTotalCountHasBeenSet(false),
     m_totalEndpointCount(0),
     m_totalEndpointCountHasBeenSet(false),
-    m_treatmentIdHasBeenSet(false)
+    m_treatmentIdHasBeenSet(false),
+    m_executionMetricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -154,6 +156,16 @@ ActivityResponse& ActivityResponse::operator =(JsonView jsonValue)
     m_treatmentIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExecutionMetrics"))
+  {
+    Aws::Map<Aws::String, JsonView> executionMetricsJsonMap = jsonValue.GetObject("ExecutionMetrics").GetAllObjects();
+    for(auto& executionMetricsItem : executionMetricsJsonMap)
+    {
+      m_executionMetrics[executionMetricsItem.first] = executionMetricsItem.second.AsString();
+    }
+    m_executionMetricsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -236,6 +248,17 @@ JsonValue ActivityResponse::Jsonize() const
   if(m_treatmentIdHasBeenSet)
   {
    payload.WithString("TreatmentId", m_treatmentId);
+
+  }
+
+  if(m_executionMetricsHasBeenSet)
+  {
+   JsonValue executionMetricsJsonMap;
+   for(auto& executionMetricsItem : m_executionMetrics)
+   {
+     executionMetricsJsonMap.WithString(executionMetricsItem.first, executionMetricsItem.second);
+   }
+   payload.WithObject("ExecutionMetrics", std::move(executionMetricsJsonMap));
 
   }
 

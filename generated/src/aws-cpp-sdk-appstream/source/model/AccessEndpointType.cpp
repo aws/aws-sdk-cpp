@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessEndpointType::NOT_SET:
+            return {};
           case AccessEndpointType::STREAMING:
             return "STREAMING";
           default:

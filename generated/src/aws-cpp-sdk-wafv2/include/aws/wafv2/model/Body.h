@@ -44,16 +44,16 @@ namespace Model
      * support inspecting the entire contents of the web request body if the body
      * exceeds the limit for the resource type. If the body is larger than the limit,
      * the underlying host service only forwards the contents that are below the limit
-     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 kilobytes) for
-     * regional resources and 16 KB (16,384 kilobytes) for CloudFront distributions.
-     * For CloudFront distributions, you can increase the limit in the web ACL
+     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 bytes) for
+     * regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For
+     * CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees. </p> <p>The
      * options for oversize handling are the following:</p> <ul> <li> <p>
-     * <code>CONTINUE</code> - Inspect the body normally, according to the rule
-     * inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat the web
-     * request as matching the rule statement. WAF applies the rule action to the
-     * request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not
-     * matching the rule statement.</p> </li> </ul> <p>You can combine the
+     * <code>CONTINUE</code> - Inspect the available body contents normally, according
+     * to the rule inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat
+     * the web request as matching the rule statement. WAF applies the rule action to
+     * the request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as
+     * not matching the rule statement.</p> </li> </ul> <p>You can combine the
      * <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with
      * your rule and web ACL action settings, so that you block any request whose body
      * is over the limit. </p> <p>Default: <code>CONTINUE</code> </p>
@@ -65,16 +65,16 @@ namespace Model
      * support inspecting the entire contents of the web request body if the body
      * exceeds the limit for the resource type. If the body is larger than the limit,
      * the underlying host service only forwards the contents that are below the limit
-     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 kilobytes) for
-     * regional resources and 16 KB (16,384 kilobytes) for CloudFront distributions.
-     * For CloudFront distributions, you can increase the limit in the web ACL
+     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 bytes) for
+     * regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For
+     * CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees. </p> <p>The
      * options for oversize handling are the following:</p> <ul> <li> <p>
-     * <code>CONTINUE</code> - Inspect the body normally, according to the rule
-     * inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat the web
-     * request as matching the rule statement. WAF applies the rule action to the
-     * request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not
-     * matching the rule statement.</p> </li> </ul> <p>You can combine the
+     * <code>CONTINUE</code> - Inspect the available body contents normally, according
+     * to the rule inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat
+     * the web request as matching the rule statement. WAF applies the rule action to
+     * the request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as
+     * not matching the rule statement.</p> </li> </ul> <p>You can combine the
      * <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with
      * your rule and web ACL action settings, so that you block any request whose body
      * is over the limit. </p> <p>Default: <code>CONTINUE</code> </p>
@@ -86,16 +86,16 @@ namespace Model
      * support inspecting the entire contents of the web request body if the body
      * exceeds the limit for the resource type. If the body is larger than the limit,
      * the underlying host service only forwards the contents that are below the limit
-     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 kilobytes) for
-     * regional resources and 16 KB (16,384 kilobytes) for CloudFront distributions.
-     * For CloudFront distributions, you can increase the limit in the web ACL
+     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 bytes) for
+     * regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For
+     * CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees. </p> <p>The
      * options for oversize handling are the following:</p> <ul> <li> <p>
-     * <code>CONTINUE</code> - Inspect the body normally, according to the rule
-     * inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat the web
-     * request as matching the rule statement. WAF applies the rule action to the
-     * request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not
-     * matching the rule statement.</p> </li> </ul> <p>You can combine the
+     * <code>CONTINUE</code> - Inspect the available body contents normally, according
+     * to the rule inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat
+     * the web request as matching the rule statement. WAF applies the rule action to
+     * the request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as
+     * not matching the rule statement.</p> </li> </ul> <p>You can combine the
      * <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with
      * your rule and web ACL action settings, so that you block any request whose body
      * is over the limit. </p> <p>Default: <code>CONTINUE</code> </p>
@@ -107,16 +107,16 @@ namespace Model
      * support inspecting the entire contents of the web request body if the body
      * exceeds the limit for the resource type. If the body is larger than the limit,
      * the underlying host service only forwards the contents that are below the limit
-     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 kilobytes) for
-     * regional resources and 16 KB (16,384 kilobytes) for CloudFront distributions.
-     * For CloudFront distributions, you can increase the limit in the web ACL
+     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 bytes) for
+     * regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For
+     * CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees. </p> <p>The
      * options for oversize handling are the following:</p> <ul> <li> <p>
-     * <code>CONTINUE</code> - Inspect the body normally, according to the rule
-     * inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat the web
-     * request as matching the rule statement. WAF applies the rule action to the
-     * request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not
-     * matching the rule statement.</p> </li> </ul> <p>You can combine the
+     * <code>CONTINUE</code> - Inspect the available body contents normally, according
+     * to the rule inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat
+     * the web request as matching the rule statement. WAF applies the rule action to
+     * the request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as
+     * not matching the rule statement.</p> </li> </ul> <p>You can combine the
      * <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with
      * your rule and web ACL action settings, so that you block any request whose body
      * is over the limit. </p> <p>Default: <code>CONTINUE</code> </p>
@@ -128,16 +128,16 @@ namespace Model
      * support inspecting the entire contents of the web request body if the body
      * exceeds the limit for the resource type. If the body is larger than the limit,
      * the underlying host service only forwards the contents that are below the limit
-     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 kilobytes) for
-     * regional resources and 16 KB (16,384 kilobytes) for CloudFront distributions.
-     * For CloudFront distributions, you can increase the limit in the web ACL
+     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 bytes) for
+     * regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For
+     * CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees. </p> <p>The
      * options for oversize handling are the following:</p> <ul> <li> <p>
-     * <code>CONTINUE</code> - Inspect the body normally, according to the rule
-     * inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat the web
-     * request as matching the rule statement. WAF applies the rule action to the
-     * request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not
-     * matching the rule statement.</p> </li> </ul> <p>You can combine the
+     * <code>CONTINUE</code> - Inspect the available body contents normally, according
+     * to the rule inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat
+     * the web request as matching the rule statement. WAF applies the rule action to
+     * the request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as
+     * not matching the rule statement.</p> </li> </ul> <p>You can combine the
      * <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with
      * your rule and web ACL action settings, so that you block any request whose body
      * is over the limit. </p> <p>Default: <code>CONTINUE</code> </p>
@@ -149,16 +149,16 @@ namespace Model
      * support inspecting the entire contents of the web request body if the body
      * exceeds the limit for the resource type. If the body is larger than the limit,
      * the underlying host service only forwards the contents that are below the limit
-     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 kilobytes) for
-     * regional resources and 16 KB (16,384 kilobytes) for CloudFront distributions.
-     * For CloudFront distributions, you can increase the limit in the web ACL
+     * to WAF for inspection. </p> <p>The default limit is 8 KB (8,192 bytes) for
+     * regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For
+     * CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees. </p> <p>The
      * options for oversize handling are the following:</p> <ul> <li> <p>
-     * <code>CONTINUE</code> - Inspect the body normally, according to the rule
-     * inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat the web
-     * request as matching the rule statement. WAF applies the rule action to the
-     * request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not
-     * matching the rule statement.</p> </li> </ul> <p>You can combine the
+     * <code>CONTINUE</code> - Inspect the available body contents normally, according
+     * to the rule inspection criteria. </p> </li> <li> <p> <code>MATCH</code> - Treat
+     * the web request as matching the rule statement. WAF applies the rule action to
+     * the request.</p> </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as
+     * not matching the rule statement.</p> </li> </ul> <p>You can combine the
      * <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with
      * your rule and web ACL action settings, so that you block any request whose body
      * is over the limit. </p> <p>Default: <code>CONTINUE</code> </p>

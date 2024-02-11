@@ -3,17 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
-
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/mocks/aws/auth/MockAWSHttpResourceClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/FileSystem.h>
-#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/AWSError.h>
@@ -21,7 +18,6 @@
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/auth/STSCredentialsProvider.h>
 #include <aws/core/client/SpecifiedRetryableErrorsRetryStrategy.h>
-#include <stdlib.h>
 #include <thread>
 #include <fstream>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -36,7 +32,7 @@ using namespace Aws::FileSystem;
 using namespace Aws::Http;
 using namespace Aws::Http::Standard;
 
-class ProfileConfigFileAWSCredentialsProviderTest : public ::testing::Test
+class ProfileConfigFileAWSCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 public:
     void SetUp()
@@ -122,7 +118,7 @@ TEST_F(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 }
 
-class EnvironmentModifyingTest : public ::testing::Test
+class EnvironmentModifyingTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 public:
 
@@ -134,7 +130,6 @@ public:
         SaveEnvironmentVariable("AWS_PROFILE");
         SaveEnvironmentVariable("AWS_ACCESS_KEY_ID");
         SaveEnvironmentVariable("AWS_SECRET_ACCESS_KEY");
-        SaveEnvironmentVariable("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
         SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");
 
         Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
@@ -296,26 +291,11 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
-TEST_F(EnvironmentModifyingTest, TestProvidersNumberInCredentialsProvidersChain)
+class InstanceProfileCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
-    Aws::Environment::UnSetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
-    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_DISABLED");
+};
 
-    DefaultAWSCredentialsProviderChain providersChainWith6ProvidersEC2;
-    ASSERT_EQ(6u, providersChainWith6ProvidersEC2.GetProviders().size()); //With EC2 instance metadata, without ECS task role.
-
-    Aws::Environment::SetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", "TestVar", 1);
-    DefaultAWSCredentialsProviderChain providersChainWith6ProvidersECS;
-    ASSERT_EQ(6u, providersChainWith6ProvidersECS.GetProviders().size()); //With ECS task role, without ec2
-
-    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "TruE", 1);
-    Aws::Environment::UnSetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI"); //Without ECS task role, without ec2
-    DefaultAWSCredentialsProviderChain providersChainWith5Providers;
-    ASSERT_EQ(5u, providersChainWith5Providers.GetProviders().size());
-}
-
-
-TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodData)
+TEST_F(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodData)
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
@@ -328,7 +308,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodDat
 }
 
 
-TEST(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
+TEST_F(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
@@ -346,7 +326,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
     ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
-TEST(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForCredentialsInPast)
+TEST_F(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForCredentialsInPast)
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
@@ -365,7 +345,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForCreden
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());;
 }
 
-TEST(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForFailedCall)
+TEST_F(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForFailedCall)
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
@@ -384,7 +364,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForFailed
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());;
 }
 
-TEST(InstanceProfileCredentialsProviderTest, TestCredentialsWhenExpirationAndCodeAreMissing)
+TEST_F(InstanceProfileCredentialsProviderTest, TestCredentialsWhenExpirationAndCodeAreMissing)
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
@@ -396,7 +376,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestCredentialsWhenExpirationAndCod
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
-TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientCouldntFindCredentials)
+TEST_F(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientCouldntFindCredentials)
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
     const char* emptyCredentials = "";
@@ -412,111 +392,13 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientCouldntFindCre
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
-TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsBadData)
+TEST_F(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsBadData)
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
     const char* badData = "blah blah blah, I'm bad";
     mockClient->SetMockedCredentialsValue(badData);
 
     InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 1000 * 60 * 15);
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
-}
-
-
-TEST(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsGoodData)
-{
-    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
-
-    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2020-02-25T06:03:31Z\" }";
-    mockClient->SetMockedCredentialsValue(validCredentials);
-
-    TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
-    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    ASSERT_EQ("goodToken", provider.GetAWSCredentials().GetSessionToken());
-}
-
-
-TEST(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
-{
-    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
-
-    Aws::String goodCredentialsPrefix("{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": ");
-    Aws::String betterCredentialsPrefix("{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\", \"Expiration\": ");
-    DateTime now = DateTime::Now();
-    Aws::String dateStringNow = now.ToGmtString(DateFormat::ISO_8601);
-
-    DateTime after = now.Millis() + 1000;
-    Aws::String dateStringAfter = after.ToGmtString(DateFormat::ISO_8601);
-
-    // Set the current credentials expiration date to now, which expires immediately.
-    // Next time when calling GetAWSCredentials, the credentials will be refreshed.
-    Aws::StringStream validCredentials;
-    validCredentials << goodCredentialsPrefix << "\"" << dateStringNow << "\" }";
-
-    mockClient->SetMockedCredentialsValue(validCredentials.str());
-
-    TaskRoleCredentialsProvider provider(mockClient, 10);
-    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-
-    Aws::StringStream nextSetOfCredentials;
-    nextSetOfCredentials << betterCredentialsPrefix << "\"" << dateStringAfter << "\" }";
-    mockClient->SetMockedCredentialsValue(nextSetOfCredentials.str());
-
-    ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-}
-
-TEST(TaskRoleCredentialsProviderTest, TestThatProviderDontRefresh)
-{
-    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
-
-    Aws::String goodCredentialsPrefix("{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": ");
-    DateTime after = DateTime::Now().Millis() + 60 * 1000;
-    Aws::String dateStringAfter = after.ToGmtString(DateFormat::ISO_8601);
-
-    // Set the credentials expiration date to 60 seconds from now on.
-    Aws::StringStream validCredentials;
-    validCredentials << goodCredentialsPrefix << "\"" << dateStringAfter << "\" }";
-
-    mockClient->SetMockedCredentialsValue(validCredentials.str());
-
-    // Set the refresh frequency to 0s, immediately trying refresh each time GetAWSCredentials() get called.
-    // If the credential has not expired, it will not be refreshed.
-    TaskRoleCredentialsProvider provider(mockClient, 0);
-    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-
-    // After sleeping for 3 seconds, the credentials will not be refreshed.
-    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-}
-
-TEST(TaskRoleCredentialsProviderTest, TestECSCrendentialsClientCouldntFindCredentials)
-{
-    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
-    const char* emptyCredentials = "";
-    mockClient->SetMockedCredentialsValue(emptyCredentials);
-
-    TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
-
-    const char* missingInfo = "{ }";
-    mockClient->SetMockedCredentialsValue(missingInfo);
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
-}
-
-TEST(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsBadData)
-{
-    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
-    const char* badData = "blah blah blah, I'm bad";
-    mockClient->SetMockedCredentialsValue(badData);
-
-    TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }
@@ -530,7 +412,7 @@ static Aws::String WrapEchoStringWithSingleQuoteForUnixShell(Aws::String str)
     return str;
 }
 
-class ProcessCredentialsProviderTest : public ::testing::Test
+class ProcessCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 public:
     void SetUp()
@@ -1179,7 +1061,11 @@ sso_start_url = https://d-92671207e4.awsapps.com/start
     ASSERT_TRUE(mockHttpClient->GetAllRequestsMade().empty());
 }
 
-TEST(AWSCredentialsTest, TestDefaultState)
+class AWSCredentialsTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(AWSCredentialsTest, TestDefaultState)
 {
     AWSCredentials credentials;
     ASSERT_TRUE(credentials.IsEmpty());
@@ -1187,7 +1073,7 @@ TEST(AWSCredentialsTest, TestDefaultState)
     ASSERT_TRUE(credentials.IsExpiredOrEmpty());
 }
 
-TEST(AWSCredentialsTest, TestValidState)
+TEST_F(AWSCredentialsTest, TestValidState)
 {
     AWSCredentials credentials;
     credentials.SetAWSAccessKeyId("a");
@@ -1197,7 +1083,7 @@ TEST(AWSCredentialsTest, TestValidState)
     ASSERT_FALSE(credentials.IsExpiredOrEmpty());
 }
 
-TEST(AWSCredentialsTest, TestExpiredState)
+TEST_F(AWSCredentialsTest, TestExpiredState)
 {
     AWSCredentials credentials;
     credentials.SetExpiration(DateTime::Now() - std::chrono::minutes(1));
@@ -1212,4 +1098,130 @@ TEST(AWSCredentialsTest, TestExpiredState)
     ASSERT_FALSE(credentials.IsEmpty());
     ASSERT_TRUE(credentials.IsExpired());
     ASSERT_TRUE(credentials.IsExpiredOrEmpty());
+}
+
+class AWSCachedCredentialsTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+public:
+    class MockCredentialsProvider : public AWSCredentialsProvider {
+    public:
+        AWSCredentials GetAWSCredentials() override {
+          if (!responseQueue.empty()) {
+            auto creds = responseQueue.front();
+            responseQueue.pop();
+            return creds;
+          }
+          return {};
+        }
+
+        void PushResponse(AWSCredentials &&creds) {
+          responseQueue.emplace(std::forward<AWSCredentials>(creds));
+        }
+
+    private:
+        std::queue<AWSCredentials> responseQueue;
+    };
+
+    class MockCredentialsProviderChain : public AWSCredentialsProviderChain {
+    public:
+        void AddMockProvider(std::shared_ptr<MockCredentialsProvider> provider) {
+          AddProvider(provider);
+        }
+    };
+
+    void SetUp() override {
+      cachedProviderChain = Aws::MakeShared<MockCredentialsProviderChain>(AllocationTag);
+    }
+
+    std::shared_ptr<MockCredentialsProviderChain> cachedProviderChain;
+};
+
+TEST_F(AWSCachedCredentialsTest, ShouldSkipCredentialsChainForCachedValue)
+{
+  auto failFirstProvider = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  failFirstProvider->PushResponse({});
+  failFirstProvider->PushResponse({"never", "see", "this"});
+
+  auto cachedProvider = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  cachedProvider->PushResponse({"sbiscigl", "was", "here"});
+  cachedProvider->PushResponse({"sbiscigl", "was", "here"});
+  cachedProvider->PushResponse({"sbiscigl", "was", "here"});
+  cachedProvider->PushResponse({"sbiscigl", "was", "here"});
+
+  cachedProviderChain->AddMockProvider(failFirstProvider);
+  cachedProviderChain->AddMockProvider(cachedProvider);
+
+  for (int i = 0; i < 4; ++i) {
+    auto creds = cachedProviderChain->GetAWSCredentials();
+    ASSERT_EQ("sbiscigl", creds.GetAWSAccessKeyId());
+    ASSERT_EQ("was", creds.GetAWSSecretKey());
+    ASSERT_EQ("here", creds.GetSessionToken());
+  }
+}
+
+TEST_F(AWSCachedCredentialsTest, ShouldReplaceCachedWhenProviderFails)
+{
+  auto failFirstProvider = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  failFirstProvider->PushResponse({});
+  failFirstProvider->PushResponse({"and", "no", "alarms"});
+  failFirstProvider->PushResponse({"and", "no", "surprises"});
+
+  auto cachedFailingProvider = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  cachedFailingProvider->PushResponse({"sbiscigl", "was", "here"});
+  cachedFailingProvider->PushResponse({});
+
+  cachedProviderChain->AddMockProvider(failFirstProvider);
+  cachedProviderChain->AddMockProvider(cachedFailingProvider);
+
+  auto creds = cachedProviderChain->GetAWSCredentials();
+  ASSERT_EQ("sbiscigl", creds.GetAWSAccessKeyId());
+  ASSERT_EQ("was", creds.GetAWSSecretKey());
+  ASSERT_EQ("here", creds.GetSessionToken());
+
+  creds = cachedProviderChain->GetAWSCredentials();
+  ASSERT_EQ("and", creds.GetAWSAccessKeyId());
+  ASSERT_EQ("no", creds.GetAWSSecretKey());
+  ASSERT_EQ("alarms", creds.GetSessionToken());
+
+  creds = cachedProviderChain->GetAWSCredentials();
+  ASSERT_EQ("and", creds.GetAWSAccessKeyId());
+  ASSERT_EQ("no", creds.GetAWSSecretKey());
+  ASSERT_EQ("surprises", creds.GetSessionToken());
+}
+
+TEST_F(AWSCachedCredentialsTest, ShouldCacheCredenitalAsync)
+{
+  auto cachedProvider = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  cachedProvider->PushResponse({"and", "no", "alarms"});
+  cachedProvider->PushResponse({"and", "no", "surprises"});
+
+  auto fallback = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  fallback->PushResponse({"a", "quiet", "life"});
+
+  cachedProviderChain->AddMockProvider(cachedProvider);
+  cachedProviderChain->AddMockProvider(fallback);
+
+  auto getCredentials = [](std::shared_ptr<MockCredentialsProviderChain> provider) -> AWSCredentials {
+      return provider->GetAWSCredentials();
+  };
+
+  std::vector<std::future<AWSCredentials>> futures;
+  futures.push_back(std::async(std::launch::async, getCredentials, cachedProviderChain));
+  futures.push_back(std::async(std::launch::async, getCredentials, cachedProviderChain));
+
+  std::vector<AWSCredentials> creds;
+  for (auto &future: futures) {
+    creds.push_back(future.get());
+  }
+
+  auto containCredentials = [](std::vector<AWSCredentials> &found,
+      const AWSCredentials &credentials) -> bool {
+      return std::any_of(found.begin(), found.end(), [&credentials](const AWSCredentials& cred) -> bool {
+          return cred == credentials;
+      });
+  };
+
+  ASSERT_TRUE(containCredentials(creds, {"and", "no", "alarms"}));
+  ASSERT_TRUE(containCredentials(creds, {"and", "no", "surprises"}));
+  ASSERT_FALSE(containCredentials(creds, {"a", "quiet", "life"}));
 }

@@ -5,14 +5,18 @@
 
 #include <aws/location/model/CalculateRouteRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 CalculateRouteRequest::CalculateRouteRequest() : 
+    m_arrivalTimeHasBeenSet(false),
     m_calculatorNameHasBeenSet(false),
     m_carModeOptionsHasBeenSet(false),
     m_departNow(false),
@@ -24,6 +28,9 @@ CalculateRouteRequest::CalculateRouteRequest() :
     m_distanceUnitHasBeenSet(false),
     m_includeLegGeometry(false),
     m_includeLegGeometryHasBeenSet(false),
+    m_keyHasBeenSet(false),
+    m_optimizeFor(OptimizationMode::NOT_SET),
+    m_optimizeForHasBeenSet(false),
     m_travelMode(TravelMode::NOT_SET),
     m_travelModeHasBeenSet(false),
     m_truckModeOptionsHasBeenSet(false),
@@ -34,6 +41,11 @@ CalculateRouteRequest::CalculateRouteRequest() :
 Aws::String CalculateRouteRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_arrivalTimeHasBeenSet)
+  {
+   payload.WithString("ArrivalTime", m_arrivalTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
   if(m_carModeOptionsHasBeenSet)
   {
@@ -85,6 +97,11 @@ Aws::String CalculateRouteRequest::SerializePayload() const
 
   }
 
+  if(m_optimizeForHasBeenSet)
+  {
+   payload.WithString("OptimizeFor", OptimizationModeMapper::GetNameForOptimizationMode(m_optimizeFor));
+  }
+
   if(m_travelModeHasBeenSet)
   {
    payload.WithString("TravelMode", TravelModeMapper::GetNameForTravelMode(m_travelMode));
@@ -115,6 +132,17 @@ Aws::String CalculateRouteRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
+void CalculateRouteRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_keyHasBeenSet)
+    {
+      ss << m_key;
+      uri.AddQueryStringParameter("key", ss.str());
+      ss.str("");
+    }
+
+}
 
 
 

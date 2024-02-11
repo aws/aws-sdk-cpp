@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/ReadSetActivationJobStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +36,37 @@ namespace Model
     AWS_OMICS_API ActivateReadSetFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ActivateReadSetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The filter's status.</p>
+     */
+    inline const ReadSetActivationJobStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The filter's status.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The filter's status.</p>
+     */
+    inline void SetStatus(const ReadSetActivationJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The filter's status.</p>
+     */
+    inline void SetStatus(ReadSetActivationJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The filter's status.</p>
+     */
+    inline ActivateReadSetFilter& WithStatus(const ReadSetActivationJobStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The filter's status.</p>
+     */
+    inline ActivateReadSetFilter& WithStatus(ReadSetActivationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -99,47 +130,16 @@ namespace Model
      */
     inline ActivateReadSetFilter& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The filter's status.</p>
-     */
-    inline const ReadSetActivationJobStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The filter's status.</p>
-     */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The filter's status.</p>
-     */
-    inline void SetStatus(const ReadSetActivationJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The filter's status.</p>
-     */
-    inline void SetStatus(ReadSetActivationJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The filter's status.</p>
-     */
-    inline ActivateReadSetFilter& WithStatus(const ReadSetActivationJobStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The filter's status.</p>
-     */
-    inline ActivateReadSetFilter& WithStatus(ReadSetActivationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
-
   private:
+
+    ReadSetActivationJobStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
     bool m_createdAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
     bool m_createdBeforeHasBeenSet = false;
-
-    ReadSetActivationJobStatus m_status;
-    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

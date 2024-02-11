@@ -27,6 +27,7 @@ struct TestingMonitoringMetrics
 
 bool TestingMonitoringMetrics::Config::s_enablePayload;
 
+std::mutex s_lastMutex;
 Aws::String TestingMonitoringMetrics::s_lastUriString;
 Aws::String TestingMonitoringMetrics::s_lastSigningRegion;
 Aws::String TestingMonitoringMetrics::s_lastSigningServiceName;
@@ -81,6 +82,8 @@ public:
         AWS_UNREFERENCED_PARAM(serviceName);
         AWS_UNREFERENCED_PARAM(requestName);
         AWS_UNREFERENCED_PARAM(context);
+        std::unique_lock<std::mutex> locker(s_lastMutex);
+
         TestingMonitoringMetrics::s_lastUriString = request->GetUri().GetURIString().c_str();
         TestingMonitoringMetrics::s_lastSigningRegion = request->GetSigningRegion().c_str();
         Aws::Vector<Aws::String> authComponents = request->HasAwsAuthorization() ?
@@ -153,6 +156,7 @@ public:
 private:
     static void Init()
     {
+        std::unique_lock<std::mutex> locker(s_lastMutex);
         TestingMonitoringMetrics::Config::s_enablePayload = false;
 
         TestingMonitoringMetrics::s_lastUriString = "";

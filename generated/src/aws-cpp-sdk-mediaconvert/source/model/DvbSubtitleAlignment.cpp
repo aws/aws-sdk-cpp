@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubtitleAlignment::NOT_SET:
+            return {};
           case DvbSubtitleAlignment::CENTERED:
             return "CENTERED";
           case DvbSubtitleAlignment::LEFT:

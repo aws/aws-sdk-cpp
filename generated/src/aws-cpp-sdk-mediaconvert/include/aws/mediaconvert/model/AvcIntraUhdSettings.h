@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K
-   * (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object
-   * isn't allowed.<p><h3>See Also:</h3>   <a
+   * Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra
+   * class to a different value, this object isn't allowed.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AvcIntraUhdSettings">AWS
    * API Reference</a></p>
    */
@@ -40,62 +39,62 @@ namespace Model
 
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how many
-     * transcoding passes MediaConvert does with your video. When you choose Multi-pass
-     * (MULTI_PASS), your video quality is better and your output bitrate is more
-     * accurate. That is, the actual bitrate of your output is closer to the target
-     * bitrate defined in the specification. When you choose Single-pass (SINGLE_PASS),
-     * your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
+     * Optional. Use Quality tuning level to choose how many transcoding passes
+     * MediaConvert does with your video. When you choose Multi-pass, your video
+     * quality is better and your output bitrate is more accurate. That is, the actual
+     * bitrate of your output is closer to the target bitrate defined in the
+     * specification. When you choose Single-pass, your encoding time is faster. The
+     * default behavior is Single-pass.
      */
     inline const AvcIntraUhdQualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how many
-     * transcoding passes MediaConvert does with your video. When you choose Multi-pass
-     * (MULTI_PASS), your video quality is better and your output bitrate is more
-     * accurate. That is, the actual bitrate of your output is closer to the target
-     * bitrate defined in the specification. When you choose Single-pass (SINGLE_PASS),
-     * your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
+     * Optional. Use Quality tuning level to choose how many transcoding passes
+     * MediaConvert does with your video. When you choose Multi-pass, your video
+     * quality is better and your output bitrate is more accurate. That is, the actual
+     * bitrate of your output is closer to the target bitrate defined in the
+     * specification. When you choose Single-pass, your encoding time is faster. The
+     * default behavior is Single-pass.
      */
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how many
-     * transcoding passes MediaConvert does with your video. When you choose Multi-pass
-     * (MULTI_PASS), your video quality is better and your output bitrate is more
-     * accurate. That is, the actual bitrate of your output is closer to the target
-     * bitrate defined in the specification. When you choose Single-pass (SINGLE_PASS),
-     * your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
+     * Optional. Use Quality tuning level to choose how many transcoding passes
+     * MediaConvert does with your video. When you choose Multi-pass, your video
+     * quality is better and your output bitrate is more accurate. That is, the actual
+     * bitrate of your output is closer to the target bitrate defined in the
+     * specification. When you choose Single-pass, your encoding time is faster. The
+     * default behavior is Single-pass.
      */
     inline void SetQualityTuningLevel(const AvcIntraUhdQualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how many
-     * transcoding passes MediaConvert does with your video. When you choose Multi-pass
-     * (MULTI_PASS), your video quality is better and your output bitrate is more
-     * accurate. That is, the actual bitrate of your output is closer to the target
-     * bitrate defined in the specification. When you choose Single-pass (SINGLE_PASS),
-     * your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
+     * Optional. Use Quality tuning level to choose how many transcoding passes
+     * MediaConvert does with your video. When you choose Multi-pass, your video
+     * quality is better and your output bitrate is more accurate. That is, the actual
+     * bitrate of your output is closer to the target bitrate defined in the
+     * specification. When you choose Single-pass, your encoding time is faster. The
+     * default behavior is Single-pass.
      */
     inline void SetQualityTuningLevel(AvcIntraUhdQualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how many
-     * transcoding passes MediaConvert does with your video. When you choose Multi-pass
-     * (MULTI_PASS), your video quality is better and your output bitrate is more
-     * accurate. That is, the actual bitrate of your output is closer to the target
-     * bitrate defined in the specification. When you choose Single-pass (SINGLE_PASS),
-     * your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
+     * Optional. Use Quality tuning level to choose how many transcoding passes
+     * MediaConvert does with your video. When you choose Multi-pass, your video
+     * quality is better and your output bitrate is more accurate. That is, the actual
+     * bitrate of your output is closer to the target bitrate defined in the
+     * specification. When you choose Single-pass, your encoding time is faster. The
+     * default behavior is Single-pass.
      */
     inline AvcIntraUhdSettings& WithQualityTuningLevel(const AvcIntraUhdQualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how many
-     * transcoding passes MediaConvert does with your video. When you choose Multi-pass
-     * (MULTI_PASS), your video quality is better and your output bitrate is more
-     * accurate. That is, the actual bitrate of your output is closer to the target
-     * bitrate defined in the specification. When you choose Single-pass (SINGLE_PASS),
-     * your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
+     * Optional. Use Quality tuning level to choose how many transcoding passes
+     * MediaConvert does with your video. When you choose Multi-pass, your video
+     * quality is better and your output bitrate is more accurate. That is, the actual
+     * bitrate of your output is closer to the target bitrate defined in the
+     * specification. When you choose Single-pass, your encoding time is faster. The
+     * default behavior is Single-pass.
      */
     inline AvcIntraUhdSettings& WithQualityTuningLevel(AvcIntraUhdQualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
 

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SavingsPlanRateUnit::NOT_SET:
+            return {};
           case SavingsPlanRateUnit::Hrs:
             return "Hrs";
           case SavingsPlanRateUnit::Lambda_GB_Second:

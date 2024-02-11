@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateExperimentTemplateRequest::CreateExperimentTemplateRequest() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),
     m_stopConditionsHasBeenSet(false),
@@ -21,7 +21,8 @@ CreateExperimentTemplateRequest::CreateExperimentTemplateRequest() :
     m_actionsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+    m_logConfigurationHasBeenSet(false),
+    m_experimentOptionsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,12 @@ Aws::String CreateExperimentTemplateRequest::SerializePayload() const
   if(m_logConfigurationHasBeenSet)
   {
    payload.WithObject("logConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
+  if(m_experimentOptionsHasBeenSet)
+  {
+   payload.WithObject("experimentOptions", m_experimentOptions.Jsonize());
 
   }
 

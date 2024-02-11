@@ -89,8 +89,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -100,8 +100,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -111,8 +111,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -122,8 +122,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -133,8 +133,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -144,8 +144,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -155,8 +155,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -166,8 +166,8 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -179,8 +179,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -191,8 +191,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -203,8 +203,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -215,8 +215,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -227,8 +227,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -239,8 +239,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -251,8 +251,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -263,8 +263,8 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
      */
@@ -579,7 +579,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -590,9 +590,9 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
@@ -602,9 +602,10 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
@@ -640,7 +641,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -651,9 +652,9 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
@@ -663,9 +664,10 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
@@ -701,7 +703,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -712,9 +714,9 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
@@ -724,9 +726,10 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
@@ -762,7 +765,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -773,9 +776,9 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
@@ -785,9 +788,10 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
@@ -823,7 +827,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -834,9 +838,9 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
@@ -846,9 +850,10 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline UpdateStackRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
@@ -884,7 +889,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -895,9 +900,9 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
@@ -907,9 +912,10 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline UpdateStackRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
@@ -945,7 +951,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -956,9 +962,9 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
@@ -968,9 +974,10 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline UpdateStackRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
@@ -1006,7 +1013,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -1017,9 +1024,9 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
@@ -1029,9 +1036,10 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline UpdateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
@@ -1046,7 +1054,9 @@ namespace Model
      * CloudFormation-specific condition keys in IAM policies. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
 
@@ -1060,7 +1070,9 @@ namespace Model
      * CloudFormation-specific condition keys in IAM policies. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
 
@@ -1074,7 +1086,9 @@ namespace Model
      * CloudFormation-specific condition keys in IAM policies. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
@@ -1088,7 +1102,9 @@ namespace Model
      * CloudFormation-specific condition keys in IAM policies. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
@@ -1102,7 +1118,9 @@ namespace Model
      * CloudFormation-specific condition keys in IAM policies. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline UpdateStackRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
 
@@ -1116,7 +1134,9 @@ namespace Model
      * CloudFormation-specific condition keys in IAM policies. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline UpdateStackRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
@@ -1130,7 +1150,9 @@ namespace Model
      * CloudFormation-specific condition keys in IAM policies. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline UpdateStackRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
@@ -1144,7 +1166,9 @@ namespace Model
      * CloudFormation-specific condition keys in IAM policies. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline UpdateStackRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
@@ -1158,7 +1182,9 @@ namespace Model
      * CloudFormation-specific condition keys in IAM policies. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline UpdateStackRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
@@ -1797,6 +1823,35 @@ namespace Model
      */
     inline UpdateStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetRetainExceptOnCreate() const{ return m_retainExceptOnCreate; }
+
+    /**
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool RetainExceptOnCreateHasBeenSet() const { return m_retainExceptOnCreateHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetRetainExceptOnCreate(bool value) { m_retainExceptOnCreateHasBeenSet = true; m_retainExceptOnCreate = value; }
+
+    /**
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline UpdateStackRequest& WithRetainExceptOnCreate(bool value) { SetRetainExceptOnCreate(value); return *this;}
+
   private:
 
     Aws::String m_stackName;
@@ -1849,6 +1904,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
+
+    bool m_retainExceptOnCreate;
+    bool m_retainExceptOnCreateHasBeenSet = false;
   };
 
 } // namespace Model

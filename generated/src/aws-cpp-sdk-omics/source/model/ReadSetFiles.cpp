@@ -19,29 +19,22 @@ namespace Model
 {
 
 ReadSetFiles::ReadSetFiles() : 
-    m_indexHasBeenSet(false),
     m_source1HasBeenSet(false),
-    m_source2HasBeenSet(false)
+    m_source2HasBeenSet(false),
+    m_indexHasBeenSet(false)
 {
 }
 
 ReadSetFiles::ReadSetFiles(JsonView jsonValue) : 
-    m_indexHasBeenSet(false),
     m_source1HasBeenSet(false),
-    m_source2HasBeenSet(false)
+    m_source2HasBeenSet(false),
+    m_indexHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ReadSetFiles& ReadSetFiles::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("index"))
-  {
-    m_index = jsonValue.GetObject("index");
-
-    m_indexHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("source1"))
   {
     m_source1 = jsonValue.GetObject("source1");
@@ -56,18 +49,19 @@ ReadSetFiles& ReadSetFiles::operator =(JsonView jsonValue)
     m_source2HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("index"))
+  {
+    m_index = jsonValue.GetObject("index");
+
+    m_indexHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ReadSetFiles::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_indexHasBeenSet)
-  {
-   payload.WithObject("index", m_index.Jsonize());
-
-  }
 
   if(m_source1HasBeenSet)
   {
@@ -78,6 +72,12 @@ JsonValue ReadSetFiles::Jsonize() const
   if(m_source2HasBeenSet)
   {
    payload.WithObject("source2", m_source2.Jsonize());
+
+  }
+
+  if(m_indexHasBeenSet)
+  {
+   payload.WithObject("index", m_index.Jsonize());
 
   }
 

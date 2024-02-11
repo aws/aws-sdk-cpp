@@ -42,49 +42,73 @@ namespace Model
 
     /**
      * <p>A name for the recommendation job. The name must be unique within the Amazon
-     * Web Services Region and within your Amazon Web Services account.</p>
+     * Web Services Region and within your Amazon Web Services account. The job name is
+     * passed down to the resources created by the recommendation job. The names of
+     * resources (such as the model, endpoint configuration, endpoint, and compilation)
+     * that are prefixed with the job name are truncated at 40 characters.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
      * <p>A name for the recommendation job. The name must be unique within the Amazon
-     * Web Services Region and within your Amazon Web Services account.</p>
+     * Web Services Region and within your Amazon Web Services account. The job name is
+     * passed down to the resources created by the recommendation job. The names of
+     * resources (such as the model, endpoint configuration, endpoint, and compilation)
+     * that are prefixed with the job name are truncated at 40 characters.</p>
      */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
      * <p>A name for the recommendation job. The name must be unique within the Amazon
-     * Web Services Region and within your Amazon Web Services account.</p>
+     * Web Services Region and within your Amazon Web Services account. The job name is
+     * passed down to the resources created by the recommendation job. The names of
+     * resources (such as the model, endpoint configuration, endpoint, and compilation)
+     * that are prefixed with the job name are truncated at 40 characters.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
      * <p>A name for the recommendation job. The name must be unique within the Amazon
-     * Web Services Region and within your Amazon Web Services account.</p>
+     * Web Services Region and within your Amazon Web Services account. The job name is
+     * passed down to the resources created by the recommendation job. The names of
+     * resources (such as the model, endpoint configuration, endpoint, and compilation)
+     * that are prefixed with the job name are truncated at 40 characters.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
      * <p>A name for the recommendation job. The name must be unique within the Amazon
-     * Web Services Region and within your Amazon Web Services account.</p>
+     * Web Services Region and within your Amazon Web Services account. The job name is
+     * passed down to the resources created by the recommendation job. The names of
+     * resources (such as the model, endpoint configuration, endpoint, and compilation)
+     * that are prefixed with the job name are truncated at 40 characters.</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
      * <p>A name for the recommendation job. The name must be unique within the Amazon
-     * Web Services Region and within your Amazon Web Services account.</p>
+     * Web Services Region and within your Amazon Web Services account. The job name is
+     * passed down to the resources created by the recommendation job. The names of
+     * resources (such as the model, endpoint configuration, endpoint, and compilation)
+     * that are prefixed with the job name are truncated at 40 characters.</p>
      */
     inline CreateInferenceRecommendationsJobRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
      * <p>A name for the recommendation job. The name must be unique within the Amazon
-     * Web Services Region and within your Amazon Web Services account.</p>
+     * Web Services Region and within your Amazon Web Services account. The job name is
+     * passed down to the resources created by the recommendation job. The names of
+     * resources (such as the model, endpoint configuration, endpoint, and compilation)
+     * that are prefixed with the job name are truncated at 40 characters.</p>
      */
     inline CreateInferenceRecommendationsJobRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the recommendation job. The name must be unique within the Amazon
-     * Web Services Region and within your Amazon Web Services account.</p>
+     * Web Services Region and within your Amazon Web Services account. The job name is
+     * passed down to the resources created by the recommendation job. The names of
+     * resources (such as the model, endpoint configuration, endpoint, and compilation)
+     * that are prefixed with the job name are truncated at 40 characters.</p>
      */
     inline CreateInferenceRecommendationsJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 

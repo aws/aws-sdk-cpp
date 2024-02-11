@@ -828,7 +828,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can
@@ -863,7 +863,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can
@@ -898,7 +898,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can
@@ -933,7 +933,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can
@@ -968,7 +968,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can
@@ -1003,7 +1003,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can
@@ -1038,7 +1038,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can
@@ -1073,7 +1073,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can
@@ -1108,7 +1108,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can
@@ -1143,7 +1143,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can
@@ -1178,7 +1178,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can
@@ -1213,7 +1213,7 @@ namespace Model
      * runtime. To learn more, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
      * with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API
-     * itegrations, without a specified integrationSubtype request parameters are a
+     * integrations, without a specified integrationSubtype request parameters are a
      * key-value map specifying how to transform HTTP requests before sending them to
      * backend integrations. The key should follow the pattern
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can

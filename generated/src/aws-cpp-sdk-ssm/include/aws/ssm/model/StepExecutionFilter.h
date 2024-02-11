@@ -41,44 +41,32 @@ namespace Model
 
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: StepName, Action, StepExecutionId, StepExecutionStatus,
-     * StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline const StepExecutionFilterKey& GetKey() const{ return m_key; }
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: StepName, Action, StepExecutionId, StepExecutionStatus,
-     * StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: StepName, Action, StepExecutionId, StepExecutionStatus,
-     * StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline void SetKey(const StepExecutionFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: StepName, Action, StepExecutionId, StepExecutionStatus,
-     * StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline void SetKey(StepExecutionFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: StepName, Action, StepExecutionId, StepExecutionStatus,
-     * StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline StepExecutionFilter& WithKey(const StepExecutionFilterKey& value) { SetKey(value); return *this;}
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: StepName, Action, StepExecutionId, StepExecutionStatus,
-     * StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline StepExecutionFilter& WithKey(StepExecutionFilterKey&& value) { SetKey(std::move(value)); return *this;}
 

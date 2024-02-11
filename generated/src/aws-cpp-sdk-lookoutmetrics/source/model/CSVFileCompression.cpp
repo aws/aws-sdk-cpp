@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CSVFileCompression::NOT_SET:
+            return {};
           case CSVFileCompression::NONE:
             return "NONE";
           case CSVFileCompression::GZIP:

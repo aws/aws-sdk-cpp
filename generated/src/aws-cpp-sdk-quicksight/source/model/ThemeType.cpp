@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThemeType::NOT_SET:
+            return {};
           case ThemeType::QUICKSIGHT:
             return "QUICKSIGHT";
           case ThemeType::CUSTOM:

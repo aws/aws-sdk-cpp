@@ -26,6 +26,9 @@ namespace Personalize
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef PersonalizeClientConfiguration ClientConfigurationType;
+      typedef PersonalizeEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -75,10 +78,24 @@ namespace Personalize
         virtual ~PersonalizeClient();
 
         /**
-         * <p>Creates a batch inference job. The operation can handle up to 50 million
-         * records and the input file must be in JSON format. For more information, see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/creating-batch-inference-job.html">Creating
-         * a batch inference job</a>. </p><p><h3>See Also:</h3>   <a
+         * <p>Generates batch recommendations based on a list of items or users stored in
+         * Amazon S3 and exports the recommendations to an Amazon S3 bucket.</p> <p>To
+         * generate batch recommendations, specify the ARN of a solution version and an
+         * Amazon S3 URI for the input and output data. For user personalization, popular
+         * items, and personalized ranking solutions, the batch inference job generates a
+         * list of recommended items for each user ID in the input file. For related items
+         * solutions, the job generates a list of recommended items for each item ID in the
+         * input file.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/getting-batch-recommendations.html">Creating
+         * a batch inference job </a>.</p> <p> If you use the Similar-Items recipe, Amazon
+         * Personalize can add descriptive themes to batch recommendations. To generate
+         * themes, set the job's mode to <code>THEME_GENERATION</code> and specify the name
+         * of the field that contains item names in the input data.</p> <p> For more
+         * information about generating themes, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/themed-batch-recommendations.html">Batch
+         * recommendations with themes from Content Generator </a>. </p> <p>You can't get
+         * batch recommendations with the Trending-Now or Next-Best-Action
+         * recipes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">AWS
          * API Reference</a></p>
          */
@@ -137,7 +154,11 @@ namespace Personalize
          * and <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a>
          * APIs, a campaign is specified in the request.</p> <p> <b>Minimum Provisioned TPS
-         * and Auto-Scaling</b> </p> <p>A transaction is a single
+         * and Auto-Scaling</b> </p>  <p> A high <code>minProvisionedTPS</code>
+         * will increase your bill. We recommend starting with 1 for
+         * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
+         * CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as
+         * necessary.</p>  <p>A transaction is a single
          * <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code> call.
          * Transactions per second (TPS) is the throughput and unit of billing for Amazon
          * Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>)
@@ -193,15 +214,16 @@ namespace Personalize
         /**
          * <p>Creates an empty dataset and adds it to the specified dataset group. Use <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
-         * to import your training data to a dataset.</p> <p>There are three types of
-         * datasets:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-         * <p>Users</p> </li> </ul> <p>Each dataset type has an associated schema with
-         * required field types. Only the <code>Interactions</code> dataset is required in
-         * order to train a model (also referred to as creating a solution).</p> <p>A
-         * dataset can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING
-         * &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE
-         * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status of the
-         * dataset, call <a
+         * to import your training data to a dataset.</p> <p>There are 5 types of
+         * datasets:</p> <ul> <li> <p>Item interactions</p> </li> <li> <p>Items</p> </li>
+         * <li> <p>Users</p> </li> <li> <p>Action interactions</p> </li> <li>
+         * <p>Actions</p> </li> </ul> <p>Each dataset type has an associated schema with
+         * required field types. Only the <code>Item interactions</code> dataset is
+         * required in order to train a model (also referred to as creating a
+         * solution).</p> <p>A dataset can be in one of the following states:</p> <ul> <li>
+         * <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
+         * </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get
+         * the status of the dataset, call <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a>.</p>
          * <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
@@ -276,17 +298,18 @@ namespace Personalize
         /**
          * <p>Creates an empty dataset group. A dataset group is a container for Amazon
          * Personalize resources. A dataset group can contain at most three datasets, one
-         * for each type of dataset:</p> <ul> <li> <p>Interactions</p> </li> <li>
-         * <p>Items</p> </li> <li> <p>Users</p> </li> </ul> <p> A dataset group can be a
-         * Domain dataset group, where you specify a domain and use pre-configured
-         * resources like recommenders, or a Custom dataset group, where you use custom
-         * resources, such as a solution with a solution version, that you deploy with a
-         * campaign. If you start with a Domain dataset group, you can still add custom
-         * resources such as solutions and solution versions trained with recipes for
-         * custom use cases and deployed with campaigns. </p> <p>A dataset group can be in
-         * one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
-         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING</p>
-         * </li> </ul> <p>To get the status of the dataset group, call <a
+         * for each type of dataset:</p> <ul> <li> <p>Item interactions</p> </li> <li>
+         * <p>Items</p> </li> <li> <p>Users</p> </li> <li> <p>Actions</p> </li> <li>
+         * <p>Action interactions</p> </li> </ul> <p> A dataset group can be a Domain
+         * dataset group, where you specify a domain and use pre-configured resources like
+         * recommenders, or a Custom dataset group, where you use custom resources, such as
+         * a solution with a solution version, that you deploy with a campaign. If you
+         * start with a Domain dataset group, you can still add custom resources such as
+         * solutions and solution versions trained with recipes for custom use cases and
+         * deployed with campaigns. </p> <p>A dataset group can be in one of the following
+         * states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or-
+         * CREATE FAILED</p> </li> <li> <p>DELETE PENDING</p> </li> </ul> <p>To get the
+         * status of the dataset group, call <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>.
          * If the status shows as CREATE FAILED, the response includes a
          * <code>failureReason</code> key, which describes why the creation failed.</p>
@@ -340,7 +363,12 @@ namespace Personalize
          * processes it internally. For information on granting access to your Amazon S3
          * bucket, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
-         * Amazon Personalize Access to Amazon S3 Resources</a>. </p>  <p>By
+         * Amazon Personalize Access to Amazon S3 Resources</a>. </p> <p>If you already
+         * created a recommender or deployed a custom solution version with a campaign, how
+         * new bulk records influence recommendations depends on the domain use case or
+         * recipe that you use. For more information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/how-new-data-influences-recommendations.html">How
+         * new data influences real-time recommendations</a>.</p>  <p>By
          * default, a dataset import job replaces any existing data in the dataset that you
          * imported in bulk. To add new records without replacing existing data, specify
          * INCREMENTAL for the import mode in the CreateDatasetImportJob operation.</p>
@@ -392,12 +420,12 @@ namespace Personalize
          * create an event tracker, the response includes a tracking ID, which you pass as
          * a parameter when you use the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
-         * operation. Amazon Personalize then appends the event data to the Interactions
-         * dataset of the dataset group you specify in your event tracker. </p> <p>The
-         * event tracker can be in one of the following states:</p> <ul> <li> <p>CREATE
-         * PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li>
-         * <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status
-         * of the event tracker, call <a
+         * operation. Amazon Personalize then appends the event data to the Item
+         * interactions dataset of the dataset group you specify in your event tracker.
+         * </p> <p>The event tracker can be in one of the following states:</p> <ul> <li>
+         * <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
+         * </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get
+         * the status of the event tracker, call <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a>.</p>
          *  <p>The event tracker must be in the ACTIVE state before using the
          * tracking ID.</p>  <p class="title"> <b>Related APIs</b> </p> <ul> <li>
@@ -493,8 +521,13 @@ namespace Personalize
          * specify. You create recommenders for a Domain dataset group and specify the
          * recommender's Amazon Resource Name (ARN) when you make a <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
-         * request. </p> <p> <b>Minimum recommendation requests per second</b> </p> <p>When
-         * you create a recommender, you can configure the recommender's minimum
+         * request. </p> <p> <b>Minimum recommendation requests per second</b> </p>
+         *  <p>A high <code>minRecommendationRequestsPerSecond</code> will
+         * increase your bill. We recommend starting with 1 for
+         * <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage
+         * using Amazon CloudWatch metrics, and increase the
+         * <code>minRecommendationRequestsPerSecond</code> as necessary.</p> 
+         * <p>When you create a recommender, you can configure the recommender's minimum
          * recommendation requests per second. The minimum recommendation requests per
          * second (<code>minRecommendationRequestsPerSecond</code>) specifies the baseline
          * recommendation request throughput provisioned by Amazon Personalize. The default
@@ -595,8 +628,8 @@ namespace Personalize
 
         /**
          * <p>Creates the configuration for training a model. A trained model is known as a
-         * solution. After the configuration is created, you train the model (create a
-         * solution) by calling the <a
+         * solution version. After the configuration is created, you train the model
+         * (create a solution version) by calling the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
          * operation. Every time you call <code>CreateSolutionVersion</code>, a new version
          * of the solution is created.</p> <p>After creating a solution version, you check
@@ -610,9 +643,7 @@ namespace Personalize
          * recipe. The training data comes from the dataset group that you provide in the
          * request. A recipe specifies the training algorithm and a feature transformation.
          * You can specify one of the predefined recipes provided by Amazon Personalize.
-         * Alternatively, you can specify <code>performAutoML</code> and Amazon Personalize
-         * will analyze your data and select the optimum USER_PERSONALIZATION recipe for
-         * you.</p>  <p>Amazon Personalize doesn't support configuring the
+         * </p>  <p>Amazon Personalize doesn't support configuring the
          * <code>hpoObjective</code> for solution hyperparameter optimization at this
          * time.</p>  <p> <b>Status</b> </p> <p>A solution can be in one of the
          * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
@@ -797,9 +828,8 @@ namespace Personalize
         }
 
         /**
-         * <p>Deletes the event tracker. Does not delete the event-interactions dataset
-         * from the associated dataset group. For more information on event trackers, see
-         * <a
+         * <p>Deletes the event tracker. Does not delete the dataset from the dataset
+         * group. For more information on event trackers, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteEventTracker">AWS
@@ -1924,7 +1954,7 @@ namespace Personalize
 
         /**
          * <p>Get a list of <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
          * attached to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -2061,7 +2091,7 @@ namespace Personalize
 
         /**
          * <p>Remove <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
          * that are attached to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UntagResource">AWS
          * API Reference</a></p>
@@ -2087,18 +2117,21 @@ namespace Personalize
         }
 
         /**
-         * <p>Updates a campaign by either deploying a new solution or changing the value
-         * of the campaign's <code>minProvisionedTPS</code> parameter.</p> <p>To update a
-         * campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
-         * campaign status using the <a
+         * <p> Updates a campaign to deploy a retrained solution version with an existing
+         * campaign, change your campaign's <code>minProvisionedTPS</code>, or modify your
+         * campaign's configuration, such as the exploration configuration. </p> <p>To
+         * update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check
+         * the campaign status using the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
          * operation.</p>  <p>You can still get recommendations from a campaign while
          * an update is in progress. The campaign will use the previous solution version
          * and campaign configuration to generate recommendations until the latest campaign
-         * update status is <code>Active</code>. </p>  <p>For more information on
-         * campaigns, see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * update status is <code>Active</code>. </p>  <p>For more information about
+         * updating a campaign, including code samples, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/update-campaigns.html">Updating
+         * a campaign</a>. For more information about campaigns, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html">Creating
+         * a campaign</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateCampaign">AWS
          * API Reference</a></p>
          */
@@ -2120,6 +2153,34 @@ namespace Personalize
         void UpdateCampaignAsync(const UpdateCampaignRequestT& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PersonalizeClient::UpdateCampaign, request, handler, context);
+        }
+
+        /**
+         * <p>Update a dataset to replace its schema with a new or existing one. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/updating-dataset-schema.html">Replacing
+         * a dataset's schema</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDatasetOutcome UpdateDataset(const Model::UpdateDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDatasetRequestT = Model::UpdateDatasetRequest>
+        Model::UpdateDatasetOutcomeCallable UpdateDatasetCallable(const UpdateDatasetRequestT& request) const
+        {
+            return SubmitCallable(&PersonalizeClient::UpdateDataset, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDatasetRequestT = Model::UpdateDatasetRequest>
+        void UpdateDatasetAsync(const UpdateDatasetRequestT& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PersonalizeClient::UpdateDataset, request, handler, context);
         }
 
         /**
@@ -2148,8 +2209,15 @@ namespace Personalize
         }
 
         /**
-         * <p>Updates the recommender to modify the recommender
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the recommender to modify the recommender configuration. If you
+         * update the recommender to modify the columns used in training, Amazon
+         * Personalize automatically starts a full retraining of the models backing your
+         * recommender. While the update completes, you can still get recommendations from
+         * the recommender. The recommender uses the previous configuration until the
+         * update completes. To track the status of this update, use the
+         * <code>latestRecommenderUpdate</code> returned in the <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+         * operation. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateRecommender">AWS
          * API Reference</a></p>
          */

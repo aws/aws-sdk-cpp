@@ -40,57 +40,57 @@ namespace Model
 
     /**
      * <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> 
-     * <p>GameLift doesn't support uploading from Amazon S3 buckets with names that
-     * contain a dot (.).</p> 
+     * <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names
+     * that contain a dot (.).</p> 
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
      * <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> 
-     * <p>GameLift doesn't support uploading from Amazon S3 buckets with names that
-     * contain a dot (.).</p> 
+     * <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names
+     * that contain a dot (.).</p> 
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
      * <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> 
-     * <p>GameLift doesn't support uploading from Amazon S3 buckets with names that
-     * contain a dot (.).</p> 
+     * <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names
+     * that contain a dot (.).</p> 
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
      * <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> 
-     * <p>GameLift doesn't support uploading from Amazon S3 buckets with names that
-     * contain a dot (.).</p> 
+     * <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names
+     * that contain a dot (.).</p> 
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> 
-     * <p>GameLift doesn't support uploading from Amazon S3 buckets with names that
-     * contain a dot (.).</p> 
+     * <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names
+     * that contain a dot (.).</p> 
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
      * <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> 
-     * <p>GameLift doesn't support uploading from Amazon S3 buckets with names that
-     * contain a dot (.).</p> 
+     * <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names
+     * that contain a dot (.).</p> 
      */
     inline S3Location& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
      * <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> 
-     * <p>GameLift doesn't support uploading from Amazon S3 buckets with names that
-     * contain a dot (.).</p> 
+     * <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names
+     * that contain a dot (.).</p> 
      */
     inline S3Location& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> 
-     * <p>GameLift doesn't support uploading from Amazon S3 buckets with names that
-     * contain a dot (.).</p> 
+     * <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names
+     * that contain a dot (.).</p> 
      */
     inline S3Location& WithBucket(const char* value) { SetBucket(value); return *this;}
 

@@ -12,9 +12,11 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/compute-optimizer/model/ECSServiceRecommendationFinding.h>
 #include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
+#include <aws/compute-optimizer/model/ECSEffectiveRecommendationPreferences.h>
 #include <aws/compute-optimizer/model/ECSServiceUtilizationMetric.h>
 #include <aws/compute-optimizer/model/ECSServiceRecommendationFindingReasonCode.h>
 #include <aws/compute-optimizer/model/ECSServiceRecommendationOption.h>
+#include <aws/compute-optimizer/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -341,7 +343,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -356,7 +358,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -371,7 +373,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -386,7 +388,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -401,7 +403,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -416,7 +418,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -683,6 +685,84 @@ namespace Model
      */
     inline ECSServiceRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
 
+
+    /**
+     * <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+     */
+    inline ECSServiceRecommendation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+     */
+    inline ECSServiceRecommendation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+     */
+    inline ECSServiceRecommendation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+     */
+    inline ECSServiceRecommendation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline const ECSEffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const{ return m_effectiveRecommendationPreferences; }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline bool EffectiveRecommendationPreferencesHasBeenSet() const { return m_effectiveRecommendationPreferencesHasBeenSet; }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline void SetEffectiveRecommendationPreferences(const ECSEffectiveRecommendationPreferences& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = value; }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline void SetEffectiveRecommendationPreferences(ECSEffectiveRecommendationPreferences&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::move(value); }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline ECSServiceRecommendation& WithEffectiveRecommendationPreferences(const ECSEffectiveRecommendationPreferences& value) { SetEffectiveRecommendationPreferences(value); return *this;}
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline ECSServiceRecommendation& WithEffectiveRecommendationPreferences(ECSEffectiveRecommendationPreferences&& value) { SetEffectiveRecommendationPreferences(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceArn;
@@ -717,6 +797,12 @@ namespace Model
 
     CurrentPerformanceRisk m_currentPerformanceRisk;
     bool m_currentPerformanceRiskHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    ECSEffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
+    bool m_effectiveRecommendationPreferencesHasBeenSet = false;
   };
 
 } // namespace Model

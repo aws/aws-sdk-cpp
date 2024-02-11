@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetCapacityReservationUsageStrategy::NOT_SET:
+            return {};
           case FleetCapacityReservationUsageStrategy::use_capacity_reservations_first:
             return "use-capacity-reservations-first";
           default:

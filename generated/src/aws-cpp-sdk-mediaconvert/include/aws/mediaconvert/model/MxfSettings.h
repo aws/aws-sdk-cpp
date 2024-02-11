@@ -42,80 +42,80 @@ namespace Model
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline const MxfAfdSignaling& GetAfdSignaling() const{ return m_afdSignaling; }
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline bool AfdSignalingHasBeenSet() const { return m_afdSignalingHasBeenSet; }
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline void SetAfdSignaling(const MxfAfdSignaling& value) { m_afdSignalingHasBeenSet = true; m_afdSignaling = value; }
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline void SetAfdSignaling(MxfAfdSignaling&& value) { m_afdSignalingHasBeenSet = true; m_afdSignaling = std::move(value); }
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline MxfSettings& WithAfdSignaling(const MxfAfdSignaling& value) { SetAfdSignaling(value); return *this;}
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline MxfSettings& WithAfdSignaling(MxfAfdSignaling&& value) { SetAfdSignaling(std::move(value)); return *this;}
 
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -123,9 +123,9 @@ namespace Model
     inline const MxfProfile& GetProfile() const{ return m_profile; }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -133,9 +133,9 @@ namespace Model
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -143,9 +143,9 @@ namespace Model
     inline void SetProfile(const MxfProfile& value) { m_profileHasBeenSet = true; m_profile = value; }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -153,9 +153,9 @@ namespace Model
     inline void SetProfile(MxfProfile&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -163,9 +163,9 @@ namespace Model
     inline MxfSettings& WithProfile(const MxfProfile& value) { SetProfile(value); return *this;}
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.

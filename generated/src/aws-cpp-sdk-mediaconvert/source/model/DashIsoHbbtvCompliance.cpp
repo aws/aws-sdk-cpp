@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoHbbtvCompliance::NOT_SET:
+            return {};
           case DashIsoHbbtvCompliance::HBBTV_1_5:
             return "HBBTV_1_5";
           case DashIsoHbbtvCompliance::NONE:

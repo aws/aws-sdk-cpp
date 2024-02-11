@@ -10,6 +10,7 @@
 #include <aws/glue/model/AuditContext.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/Segment.h>
+#include <aws/glue/model/QuerySessionContext.h>
 #include <aws/glue/model/PermissionType.h>
 #include <utility>
 
@@ -36,6 +37,55 @@ namespace Model
     AWS_GLUE_API Aws::String SerializePayload() const override;
 
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>Specified only if the base tables belong to a different Amazon Web Services
+     * Region.</p>
+     */
+    inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>Specified only if the base tables belong to a different Amazon Web Services
+     * Region.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>Specified only if the base tables belong to a different Amazon Web Services
+     * Region.</p>
+     */
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>Specified only if the base tables belong to a different Amazon Web Services
+     * Region.</p>
+     */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>Specified only if the base tables belong to a different Amazon Web Services
+     * Region.</p>
+     */
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
+
+    /**
+     * <p>Specified only if the base tables belong to a different Amazon Web Services
+     * Region.</p>
+     */
+    inline GetUnfilteredPartitionsMetadataRequest& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>Specified only if the base tables belong to a different Amazon Web Services
+     * Region.</p>
+     */
+    inline GetUnfilteredPartitionsMetadataRequest& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specified only if the base tables belong to a different Amazon Web Services
+     * Region.</p>
+     */
+    inline GetUnfilteredPartitionsMetadataRequest& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
@@ -614,7 +664,53 @@ namespace Model
      */
     inline GetUnfilteredPartitionsMetadataRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline const QuerySessionContext& GetQuerySessionContext() const{ return m_querySessionContext; }
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline bool QuerySessionContextHasBeenSet() const { return m_querySessionContextHasBeenSet; }
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline void SetQuerySessionContext(const QuerySessionContext& value) { m_querySessionContextHasBeenSet = true; m_querySessionContext = value; }
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline void SetQuerySessionContext(QuerySessionContext&& value) { m_querySessionContextHasBeenSet = true; m_querySessionContext = std::move(value); }
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline GetUnfilteredPartitionsMetadataRequest& WithQuerySessionContext(const QuerySessionContext& value) { SetQuerySessionContext(value); return *this;}
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline GetUnfilteredPartitionsMetadataRequest& WithQuerySessionContext(QuerySessionContext&& value) { SetQuerySessionContext(std::move(value)); return *this;}
+
   private:
+
+    Aws::String m_region;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet = false;
@@ -642,6 +738,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    QuerySessionContext m_querySessionContext;
+    bool m_querySessionContextHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A schedule configures how often and when a pipeline will automatically create
+   * <p>A schedule configures when and how often a pipeline will automatically create
    * a new image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Schedule">AWS
    * API Reference</a></p>

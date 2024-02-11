@@ -29,7 +29,7 @@ namespace Model
    * notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For
    * information about sending a bounce message in response to a received email, see
    * the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-action-bounce.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/BounceAction">AWS
    * API Reference</a></p>
@@ -47,9 +47,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * bounce action is taken. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -57,9 +58,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * bounce action is taken. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -67,9 +69,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * bounce action is taken. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -77,9 +80,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * bounce action is taken. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -87,9 +91,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * bounce action is taken. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -97,9 +102,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * bounce action is taken. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -107,9 +113,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * bounce action is taken. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -117,9 +124,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * bounce action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * bounce action is taken. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -267,49 +275,49 @@ namespace Model
 
     /**
      * <p>The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.</p>
+     * from which the bounce message is sent.</p>
      */
     inline const Aws::String& GetSender() const{ return m_sender; }
 
     /**
      * <p>The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.</p>
+     * from which the bounce message is sent.</p>
      */
     inline bool SenderHasBeenSet() const { return m_senderHasBeenSet; }
 
     /**
      * <p>The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.</p>
+     * from which the bounce message is sent.</p>
      */
     inline void SetSender(const Aws::String& value) { m_senderHasBeenSet = true; m_sender = value; }
 
     /**
      * <p>The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.</p>
+     * from which the bounce message is sent.</p>
      */
     inline void SetSender(Aws::String&& value) { m_senderHasBeenSet = true; m_sender = std::move(value); }
 
     /**
      * <p>The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.</p>
+     * from which the bounce message is sent.</p>
      */
     inline void SetSender(const char* value) { m_senderHasBeenSet = true; m_sender.assign(value); }
 
     /**
      * <p>The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.</p>
+     * from which the bounce message is sent.</p>
      */
     inline BounceAction& WithSender(const Aws::String& value) { SetSender(value); return *this;}
 
     /**
      * <p>The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.</p>
+     * from which the bounce message is sent.</p>
      */
     inline BounceAction& WithSender(Aws::String&& value) { SetSender(std::move(value)); return *this;}
 
     /**
      * <p>The email address of the sender of the bounced email. This is the address
-     * from which the bounce message will be sent.</p>
+     * from which the bounce message is sent.</p>
      */
     inline BounceAction& WithSender(const char* value) { SetSender(value); return *this;}
 

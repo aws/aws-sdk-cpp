@@ -118,8 +118,8 @@ namespace Model
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action.</p> <p>To
-     * grant permission to another account, specify the account ID as the Principal, a
+     * customer account that are needed to successfully run an action.</p> <p>To grant
+     * permission to another account, specify the account ID as the Principal, a
      * domain-style identifier defined by the service, for example
      * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
      * JSON policy document cannot exceed 2048 characters.</p> 
@@ -128,8 +128,8 @@ namespace Model
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action.</p> <p>To
-     * grant permission to another account, specify the account ID as the Principal, a
+     * customer account that are needed to successfully run an action.</p> <p>To grant
+     * permission to another account, specify the account ID as the Principal, a
      * domain-style identifier defined by the service, for example
      * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
      * JSON policy document cannot exceed 2048 characters.</p> 
@@ -138,8 +138,8 @@ namespace Model
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action.</p> <p>To
-     * grant permission to another account, specify the account ID as the Principal, a
+     * customer account that are needed to successfully run an action.</p> <p>To grant
+     * permission to another account, specify the account ID as the Principal, a
      * domain-style identifier defined by the service, for example
      * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
      * JSON policy document cannot exceed 2048 characters.</p> 
@@ -148,8 +148,8 @@ namespace Model
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action.</p> <p>To
-     * grant permission to another account, specify the account ID as the Principal, a
+     * customer account that are needed to successfully run an action.</p> <p>To grant
+     * permission to another account, specify the account ID as the Principal, a
      * domain-style identifier defined by the service, for example
      * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
      * JSON policy document cannot exceed 2048 characters.</p> 
@@ -158,8 +158,8 @@ namespace Model
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action.</p> <p>To
-     * grant permission to another account, specify the account ID as the Principal, a
+     * customer account that are needed to successfully run an action.</p> <p>To grant
+     * permission to another account, specify the account ID as the Principal, a
      * domain-style identifier defined by the service, for example
      * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
      * JSON policy document cannot exceed 2048 characters.</p> 
@@ -168,8 +168,8 @@ namespace Model
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action.</p> <p>To
-     * grant permission to another account, specify the account ID as the Principal, a
+     * customer account that are needed to successfully run an action.</p> <p>To grant
+     * permission to another account, specify the account ID as the Principal, a
      * domain-style identifier defined by the service, for example
      * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
      * JSON policy document cannot exceed 2048 characters.</p> 
@@ -178,8 +178,8 @@ namespace Model
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action.</p> <p>To
-     * grant permission to another account, specify the account ID as the Principal, a
+     * customer account that are needed to successfully run an action.</p> <p>To grant
+     * permission to another account, specify the account ID as the Principal, a
      * domain-style identifier defined by the service, for example
      * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
      * JSON policy document cannot exceed 2048 characters.</p> 
@@ -188,8 +188,8 @@ namespace Model
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action.</p> <p>To
-     * grant permission to another account, specify the account ID as the Principal, a
+     * customer account that are needed to successfully run an action.</p> <p>To grant
+     * permission to another account, specify the account ID as the Principal, a
      * domain-style identifier defined by the service, for example
      * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
      * JSON policy document cannot exceed 2048 characters.</p> 

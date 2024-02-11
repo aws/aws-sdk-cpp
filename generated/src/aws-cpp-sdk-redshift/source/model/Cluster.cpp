@@ -81,7 +81,15 @@ Cluster::Cluster() :
     m_totalStorageCapacityInMegaBytesHasBeenSet(false),
     m_aquaConfigurationHasBeenSet(false),
     m_defaultIamRoleArnHasBeenSet(false),
-    m_reservedNodeExchangeStatusHasBeenSet(false)
+    m_reservedNodeExchangeStatusHasBeenSet(false),
+    m_customDomainNameHasBeenSet(false),
+    m_customDomainCertificateArnHasBeenSet(false),
+    m_customDomainCertificateExpiryDateHasBeenSet(false),
+    m_masterPasswordSecretArnHasBeenSet(false),
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
+    m_ipAddressTypeHasBeenSet(false),
+    m_multiAZHasBeenSet(false),
+    m_multiAZSecondaryHasBeenSet(false)
 {
 }
 
@@ -146,7 +154,15 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_totalStorageCapacityInMegaBytesHasBeenSet(false),
     m_aquaConfigurationHasBeenSet(false),
     m_defaultIamRoleArnHasBeenSet(false),
-    m_reservedNodeExchangeStatusHasBeenSet(false)
+    m_reservedNodeExchangeStatusHasBeenSet(false),
+    m_customDomainNameHasBeenSet(false),
+    m_customDomainCertificateArnHasBeenSet(false),
+    m_customDomainCertificateExpiryDateHasBeenSet(false),
+    m_masterPasswordSecretArnHasBeenSet(false),
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
+    m_ipAddressTypeHasBeenSet(false),
+    m_multiAZHasBeenSet(false),
+    m_multiAZSecondaryHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -517,6 +533,54 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_reservedNodeExchangeStatus = reservedNodeExchangeStatusNode;
       m_reservedNodeExchangeStatusHasBeenSet = true;
     }
+    XmlNode customDomainNameNode = resultNode.FirstChild("CustomDomainName");
+    if(!customDomainNameNode.IsNull())
+    {
+      m_customDomainName = Aws::Utils::Xml::DecodeEscapedXmlText(customDomainNameNode.GetText());
+      m_customDomainNameHasBeenSet = true;
+    }
+    XmlNode customDomainCertificateArnNode = resultNode.FirstChild("CustomDomainCertificateArn");
+    if(!customDomainCertificateArnNode.IsNull())
+    {
+      m_customDomainCertificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(customDomainCertificateArnNode.GetText());
+      m_customDomainCertificateArnHasBeenSet = true;
+    }
+    XmlNode customDomainCertificateExpiryDateNode = resultNode.FirstChild("CustomDomainCertificateExpiryDate");
+    if(!customDomainCertificateExpiryDateNode.IsNull())
+    {
+      m_customDomainCertificateExpiryDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customDomainCertificateExpiryDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_customDomainCertificateExpiryDateHasBeenSet = true;
+    }
+    XmlNode masterPasswordSecretArnNode = resultNode.FirstChild("MasterPasswordSecretArn");
+    if(!masterPasswordSecretArnNode.IsNull())
+    {
+      m_masterPasswordSecretArn = Aws::Utils::Xml::DecodeEscapedXmlText(masterPasswordSecretArnNode.GetText());
+      m_masterPasswordSecretArnHasBeenSet = true;
+    }
+    XmlNode masterPasswordSecretKmsKeyIdNode = resultNode.FirstChild("MasterPasswordSecretKmsKeyId");
+    if(!masterPasswordSecretKmsKeyIdNode.IsNull())
+    {
+      m_masterPasswordSecretKmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(masterPasswordSecretKmsKeyIdNode.GetText());
+      m_masterPasswordSecretKmsKeyIdHasBeenSet = true;
+    }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
+    if(!ipAddressTypeNode.IsNull())
+    {
+      m_ipAddressType = Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText());
+      m_ipAddressTypeHasBeenSet = true;
+    }
+    XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
+    if(!multiAZNode.IsNull())
+    {
+      m_multiAZ = Aws::Utils::Xml::DecodeEscapedXmlText(multiAZNode.GetText());
+      m_multiAZHasBeenSet = true;
+    }
+    XmlNode multiAZSecondaryNode = resultNode.FirstChild("MultiAZSecondary");
+    if(!multiAZSecondaryNode.IsNull())
+    {
+      m_multiAZSecondary = multiAZSecondaryNode;
+      m_multiAZSecondaryHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -850,6 +914,48 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       m_reservedNodeExchangeStatus.OutputToStream(oStream, reservedNodeExchangeStatusLocationAndMemberSs.str().c_str());
   }
 
+  if(m_customDomainNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomDomainName=" << StringUtils::URLEncode(m_customDomainName.c_str()) << "&";
+  }
+
+  if(m_customDomainCertificateArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomDomainCertificateArn=" << StringUtils::URLEncode(m_customDomainCertificateArn.c_str()) << "&";
+  }
+
+  if(m_customDomainCertificateExpiryDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomDomainCertificateExpiryDate=" << StringUtils::URLEncode(m_customDomainCertificateExpiryDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_masterPasswordSecretArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MasterPasswordSecretArn=" << StringUtils::URLEncode(m_masterPasswordSecretArn.c_str()) << "&";
+  }
+
+  if(m_masterPasswordSecretKmsKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddressType=" << StringUtils::URLEncode(m_ipAddressType.c_str()) << "&";
+  }
+
+  if(m_multiAZHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MultiAZ=" << StringUtils::URLEncode(m_multiAZ.c_str()) << "&";
+  }
+
+  if(m_multiAZSecondaryHasBeenSet)
+  {
+      Aws::StringStream multiAZSecondaryLocationAndMemberSs;
+      multiAZSecondaryLocationAndMemberSs << location << index << locationValue << ".MultiAZSecondary";
+      m_multiAZSecondary.OutputToStream(oStream, multiAZSecondaryLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1127,6 +1233,40 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String reservedNodeExchangeStatusLocationAndMember(location);
       reservedNodeExchangeStatusLocationAndMember += ".ReservedNodeExchangeStatus";
       m_reservedNodeExchangeStatus.OutputToStream(oStream, reservedNodeExchangeStatusLocationAndMember.c_str());
+  }
+  if(m_customDomainNameHasBeenSet)
+  {
+      oStream << location << ".CustomDomainName=" << StringUtils::URLEncode(m_customDomainName.c_str()) << "&";
+  }
+  if(m_customDomainCertificateArnHasBeenSet)
+  {
+      oStream << location << ".CustomDomainCertificateArn=" << StringUtils::URLEncode(m_customDomainCertificateArn.c_str()) << "&";
+  }
+  if(m_customDomainCertificateExpiryDateHasBeenSet)
+  {
+      oStream << location << ".CustomDomainCertificateExpiryDate=" << StringUtils::URLEncode(m_customDomainCertificateExpiryDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_masterPasswordSecretArnHasBeenSet)
+  {
+      oStream << location << ".MasterPasswordSecretArn=" << StringUtils::URLEncode(m_masterPasswordSecretArn.c_str()) << "&";
+  }
+  if(m_masterPasswordSecretKmsKeyIdHasBeenSet)
+  {
+      oStream << location << ".MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
+  }
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << ".IpAddressType=" << StringUtils::URLEncode(m_ipAddressType.c_str()) << "&";
+  }
+  if(m_multiAZHasBeenSet)
+  {
+      oStream << location << ".MultiAZ=" << StringUtils::URLEncode(m_multiAZ.c_str()) << "&";
+  }
+  if(m_multiAZSecondaryHasBeenSet)
+  {
+      Aws::String multiAZSecondaryLocationAndMember(location);
+      multiAZSecondaryLocationAndMember += ".MultiAZSecondary";
+      m_multiAZSecondary.OutputToStream(oStream, multiAZSecondaryLocationAndMember.c_str());
   }
 }
 

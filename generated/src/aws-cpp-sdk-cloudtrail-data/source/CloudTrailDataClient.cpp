@@ -23,6 +23,9 @@
 #include <aws/cloudtrail-data/CloudTrailDataEndpointProvider.h>
 #include <aws/cloudtrail-data/model/PutAuditEventsRequest.h>
 
+#include <smithy/tracing/TracingUtils.h>
+
+
 using namespace Aws;
 using namespace Aws::Auth;
 using namespace Aws::Client;
@@ -30,6 +33,7 @@ using namespace Aws::CloudTrailData;
 using namespace Aws::CloudTrailData::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 const char* CloudTrailDataClient::SERVICE_NAME = "cloudtrail-data";
@@ -130,6 +134,7 @@ CloudTrailDataClient::CloudTrailDataClient(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 CloudTrailDataClient::~CloudTrailDataClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CloudTrailDataEndpointProviderBase>& CloudTrailDataClient::accessEndpointProvider()
@@ -152,15 +157,33 @@ void CloudTrailDataClient::OverrideEndpoint(const Aws::String& endpoint)
 
 PutAuditEventsOutcome CloudTrailDataClient::PutAuditEvents(const PutAuditEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAuditEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAuditEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutAuditEvents", "Required field: ChannelArn, is not set");
     return PutAuditEventsOutcome(Aws::Client::AWSError<CloudTrailDataErrors>(CloudTrailDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
   }
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAuditEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/PutAuditEvents");
-  return PutAuditEventsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutAuditEvents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutAuditEvents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutAuditEvents",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutAuditEventsOutcome>(
+    [&]()-> PutAuditEventsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAuditEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/PutAuditEvents");
+      return PutAuditEventsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 

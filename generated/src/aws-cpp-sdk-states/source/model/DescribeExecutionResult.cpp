@@ -18,12 +18,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeExecutionResult::DescribeExecutionResult() : 
-    m_status(ExecutionStatus::NOT_SET)
+    m_status(ExecutionStatus::NOT_SET),
+    m_redriveCount(0),
+    m_redriveStatus(ExecutionRedriveStatus::NOT_SET)
 {
 }
 
 DescribeExecutionResult::DescribeExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ExecutionStatus::NOT_SET)
+    m_status(ExecutionStatus::NOT_SET),
+    m_redriveCount(0),
+    m_redriveStatus(ExecutionRedriveStatus::NOT_SET)
 {
   *this = result;
 }
@@ -112,6 +116,42 @@ DescribeExecutionResult& DescribeExecutionResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = jsonValue.GetString("cause");
+
+  }
+
+  if(jsonValue.ValueExists("stateMachineVersionArn"))
+  {
+    m_stateMachineVersionArn = jsonValue.GetString("stateMachineVersionArn");
+
+  }
+
+  if(jsonValue.ValueExists("stateMachineAliasArn"))
+  {
+    m_stateMachineAliasArn = jsonValue.GetString("stateMachineAliasArn");
+
+  }
+
+  if(jsonValue.ValueExists("redriveCount"))
+  {
+    m_redriveCount = jsonValue.GetInteger("redriveCount");
+
+  }
+
+  if(jsonValue.ValueExists("redriveDate"))
+  {
+    m_redriveDate = jsonValue.GetDouble("redriveDate");
+
+  }
+
+  if(jsonValue.ValueExists("redriveStatus"))
+  {
+    m_redriveStatus = ExecutionRedriveStatusMapper::GetExecutionRedriveStatusForName(jsonValue.GetString("redriveStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("redriveStatusReason"))
+  {
+    m_redriveStatusReason = jsonValue.GetString("redriveStatusReason");
 
   }
 

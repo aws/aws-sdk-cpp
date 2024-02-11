@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/OutputDataConfig.h>
 #include <aws/sagemaker/model/ResourceConfig.h>
+#include <aws/sagemaker/model/WarmPoolStatus.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/core/utils/DateTime.h>
@@ -24,7 +25,8 @@
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/ProfilingStatus.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
-#include <aws/sagemaker/model/WarmPoolStatus.h>
+#include <aws/sagemaker/model/RemoteDebugConfig.h>
+#include <aws/sagemaker/model/InfraCheckConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
 #include <aws/sagemaker/model/MetricData.h>
@@ -352,7 +354,8 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information on the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
      * <p>SageMaker provides primary statuses and secondary statuses that apply to each
      * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
@@ -384,7 +387,8 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information on the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
      * <p>SageMaker provides primary statuses and secondary statuses that apply to each
      * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
@@ -416,7 +420,8 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information on the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
      * <p>SageMaker provides primary statuses and secondary statuses that apply to each
      * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
@@ -448,7 +453,8 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information on the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
      * <p>SageMaker provides primary statuses and secondary statuses that apply to each
      * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
@@ -480,7 +486,8 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information on the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
      * <p>SageMaker provides primary statuses and secondary statuses that apply to each
      * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
@@ -787,40 +794,76 @@ namespace Model
 
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline const WarmPoolStatus& GetWarmPoolStatus() const{ return m_warmPoolStatus; }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline void SetWarmPoolStatus(const WarmPoolStatus& value) { m_warmPoolStatus = value; }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline void SetWarmPoolStatus(WarmPoolStatus&& value) { m_warmPoolStatus = std::move(value); }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithWarmPoolStatus(const WarmPoolStatus& value) { SetWarmPoolStatus(value); return *this;}
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithWarmPoolStatus(WarmPoolStatus&& value) { SetWarmPoolStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this training job has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this training job has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this training job has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this training job has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline DescribeTrainingJobResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this training job has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
@@ -1538,37 +1581,6 @@ namespace Model
 
 
     /**
-     * <p>The number of times to retry the job when the job fails due to an
-     * <code>InternalServerError</code>.</p>
-     */
-    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
-
-    /**
-     * <p>The number of times to retry the job when the job fails due to an
-     * <code>InternalServerError</code>.</p>
-     */
-    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategy = value; }
-
-    /**
-     * <p>The number of times to retry the job when the job fails due to an
-     * <code>InternalServerError</code>.</p>
-     */
-    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategy = std::move(value); }
-
-    /**
-     * <p>The number of times to retry the job when the job fails due to an
-     * <code>InternalServerError</code>.</p>
-     */
-    inline DescribeTrainingJobResult& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
-
-    /**
-     * <p>The number of times to retry the job when the job fails due to an
-     * <code>InternalServerError</code>.</p>
-     */
-    inline DescribeTrainingJobResult& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
-
-
-    /**
      * <p>The environment variables to set in the Docker container.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
@@ -1630,29 +1642,111 @@ namespace Model
 
 
     /**
-     * <p>The status of the warm pool associated with the training job.</p>
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
      */
-    inline const WarmPoolStatus& GetWarmPoolStatus() const{ return m_warmPoolStatus; }
+    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
 
     /**
-     * <p>The status of the warm pool associated with the training job.</p>
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
      */
-    inline void SetWarmPoolStatus(const WarmPoolStatus& value) { m_warmPoolStatus = value; }
+    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategy = value; }
 
     /**
-     * <p>The status of the warm pool associated with the training job.</p>
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
      */
-    inline void SetWarmPoolStatus(WarmPoolStatus&& value) { m_warmPoolStatus = std::move(value); }
+    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategy = std::move(value); }
 
     /**
-     * <p>The status of the warm pool associated with the training job.</p>
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
      */
-    inline DescribeTrainingJobResult& WithWarmPoolStatus(const WarmPoolStatus& value) { SetWarmPoolStatus(value); return *this;}
+    inline DescribeTrainingJobResult& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
 
     /**
-     * <p>The status of the warm pool associated with the training job.</p>
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
      */
-    inline DescribeTrainingJobResult& WithWarmPoolStatus(WarmPoolStatus&& value) { SetWarmPoolStatus(std::move(value)); return *this;}
+    inline DescribeTrainingJobResult& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline const RemoteDebugConfig& GetRemoteDebugConfig() const{ return m_remoteDebugConfig; }
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline void SetRemoteDebugConfig(const RemoteDebugConfig& value) { m_remoteDebugConfig = value; }
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline void SetRemoteDebugConfig(RemoteDebugConfig&& value) { m_remoteDebugConfig = std::move(value); }
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline DescribeTrainingJobResult& WithRemoteDebugConfig(const RemoteDebugConfig& value) { SetRemoteDebugConfig(value); return *this;}
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline DescribeTrainingJobResult& WithRemoteDebugConfig(RemoteDebugConfig&& value) { SetRemoteDebugConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline const InfraCheckConfig& GetInfraCheckConfig() const{ return m_infraCheckConfig; }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline void SetInfraCheckConfig(const InfraCheckConfig& value) { m_infraCheckConfig = value; }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline void SetInfraCheckConfig(InfraCheckConfig&& value) { m_infraCheckConfig = std::move(value); }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithInfraCheckConfig(const InfraCheckConfig& value) { SetInfraCheckConfig(value); return *this;}
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithInfraCheckConfig(InfraCheckConfig&& value) { SetInfraCheckConfig(std::move(value)); return *this;}
 
 
     
@@ -1708,6 +1802,8 @@ namespace Model
 
     ResourceConfig m_resourceConfig;
 
+    WarmPoolStatus m_warmPoolStatus;
+
     VpcConfig m_vpcConfig;
 
     StoppingCondition m_stoppingCondition;
@@ -1754,11 +1850,13 @@ namespace Model
 
     ProfilingStatus m_profilingStatus;
 
-    RetryStrategy m_retryStrategy;
-
     Aws::Map<Aws::String, Aws::String> m_environment;
 
-    WarmPoolStatus m_warmPoolStatus;
+    RetryStrategy m_retryStrategy;
+
+    RemoteDebugConfig m_remoteDebugConfig;
+
+    InfraCheckConfig m_infraCheckConfig;
 
     Aws::String m_requestId;
   };

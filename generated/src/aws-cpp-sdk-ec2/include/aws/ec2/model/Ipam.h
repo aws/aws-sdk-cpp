@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpamState.h>
+#include <aws/ec2/model/IpamTier.h>
 #include <aws/ec2/model/IpamOperatingRegion.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -655,6 +656,96 @@ namespace Model
      */
     inline Ipam& WithResourceDiscoveryAssociationCount(int value) { SetResourceDiscoveryAssociationCount(value); return *this;}
 
+
+    /**
+     * <p>The state message.</p>
+     */
+    inline const Aws::String& GetStateMessage() const{ return m_stateMessage; }
+
+    /**
+     * <p>The state message.</p>
+     */
+    inline bool StateMessageHasBeenSet() const { return m_stateMessageHasBeenSet; }
+
+    /**
+     * <p>The state message.</p>
+     */
+    inline void SetStateMessage(const Aws::String& value) { m_stateMessageHasBeenSet = true; m_stateMessage = value; }
+
+    /**
+     * <p>The state message.</p>
+     */
+    inline void SetStateMessage(Aws::String&& value) { m_stateMessageHasBeenSet = true; m_stateMessage = std::move(value); }
+
+    /**
+     * <p>The state message.</p>
+     */
+    inline void SetStateMessage(const char* value) { m_stateMessageHasBeenSet = true; m_stateMessage.assign(value); }
+
+    /**
+     * <p>The state message.</p>
+     */
+    inline Ipam& WithStateMessage(const Aws::String& value) { SetStateMessage(value); return *this;}
+
+    /**
+     * <p>The state message.</p>
+     */
+    inline Ipam& WithStateMessage(Aws::String&& value) { SetStateMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The state message.</p>
+     */
+    inline Ipam& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
+
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline const IpamTier& GetTier() const{ return m_tier; }
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline void SetTier(const IpamTier& value) { m_tierHasBeenSet = true; m_tier = value; }
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline void SetTier(IpamTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline Ipam& WithTier(const IpamTier& value) { SetTier(value); return *this;}
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline Ipam& WithTier(IpamTier&& value) { SetTier(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ownerId;
@@ -698,6 +789,12 @@ namespace Model
 
     int m_resourceDiscoveryAssociationCount;
     bool m_resourceDiscoveryAssociationCountHasBeenSet = false;
+
+    Aws::String m_stateMessage;
+    bool m_stateMessageHasBeenSet = false;
+
+    IpamTier m_tier;
+    bool m_tierHasBeenSet = false;
   };
 
 } // namespace Model

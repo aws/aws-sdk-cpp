@@ -24,26 +24,38 @@ namespace Model
 {
 
   /**
-   * <p> <b>[Snapshot and AMI policies only]</b> Specifies a retention rule for
-   * snapshots created by snapshot policies, or for AMIs created by AMI policies.</p>
-   *  <p>For snapshot policies that have an <a>ArchiveRule</a>, this retention
-   * rule applies to standard tier retention. When the retention threshold is met,
-   * snapshots are moved from the standard to the archive tier.</p> <p>For snapshot
-   * policies that do not have an <b>ArchiveRule</b>, snapshots are permanently
-   * deleted when this retention threshold is met.</p>  <p>You can retain
-   * snapshots based on either a count or a time interval.</p> <ul> <li> <p>
+   * <p> <b>[Custom snapshot and AMI policies only]</b> Specifies a retention rule
+   * for snapshots created by snapshot policies, or for AMIs created by AMI
+   * policies.</p>  <p>For snapshot policies that have an <a
+   * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>,
+   * this retention rule applies to standard tier retention. When the retention
+   * threshold is met, snapshots are moved from the standard to the archive tier.</p>
+   * <p>For snapshot policies that do not have an <b>ArchiveRule</b>, snapshots are
+   * permanently deleted when this retention threshold is met.</p>  <p>You can
+   * retain snapshots based on either a count or a time interval.</p> <ul> <li> <p>
    * <b>Count-based retention</b> </p> <p>You must specify <b>Count</b>. If you
-   * specify an <a>ArchiveRule</a> for the schedule, then you can specify a retention
-   * count of <code>0</code> to archive snapshots immediately after creation. If you
-   * specify a <a>FastRestoreRule</a>, <a>ShareRule</a>, or a
-   * <a>CrossRegionCopyRule</a>, then you must specify a retention count of
-   * <code>1</code> or more.</p> </li> <li> <p> <b>Age-based retention</b> </p>
-   * <p>You must specify <b>Interval</b> and <b>IntervalUnit</b>. If you specify an
-   * <a>ArchiveRule</a> for the schedule, then you can specify a retention interval
-   * of <code>0</code> days to archive snapshots immediately after creation. If you
-   * specify a <a>FastRestoreRule</a>, <a>ShareRule</a>, or a
-   * <a>CrossRegionCopyRule</a>, then you must specify a retention interval of
-   * <code>1</code> day or more.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * specify an <a
+   * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>
+   * for the schedule, then you can specify a retention count of <code>0</code> to
+   * archive snapshots immediately after creation. If you specify a <a
+   * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_FastRestoreRule.html">FastRestoreRule</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ShareRule.html">ShareRule</a>,
+   * or a <a
+   * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_CrossRegionCopyRule.html">CrossRegionCopyRule</a>,
+   * then you must specify a retention count of <code>1</code> or more.</p> </li>
+   * <li> <p> <b>Age-based retention</b> </p> <p>You must specify <b>Interval</b> and
+   * <b>IntervalUnit</b>. If you specify an <a
+   * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>
+   * for the schedule, then you can specify a retention interval of <code>0</code>
+   * days to archive snapshots immediately after creation. If you specify a <a
+   * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_FastRestoreRule.html">FastRestoreRule</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ShareRule.html">ShareRule</a>,
+   * or a <a
+   * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_CrossRegionCopyRule.html">CrossRegionCopyRule</a>,
+   * then you must specify a retention interval of <code>1</code> day or more.</p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/RetainRule">AWS API
    * Reference</a></p>
    */
@@ -61,7 +73,8 @@ namespace Model
      * For example if you want to retain a maximum of three snapshots, specify
      * <code>3</code>. When the fourth snapshot is created, the oldest retained
      * snapshot is deleted, or it is moved to the archive tier if you have specified an
-     * <a>ArchiveRule</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
     inline int GetCount() const{ return m_count; }
 
@@ -70,7 +83,8 @@ namespace Model
      * For example if you want to retain a maximum of three snapshots, specify
      * <code>3</code>. When the fourth snapshot is created, the oldest retained
      * snapshot is deleted, or it is moved to the archive tier if you have specified an
-     * <a>ArchiveRule</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
@@ -79,7 +93,8 @@ namespace Model
      * For example if you want to retain a maximum of three snapshots, specify
      * <code>3</code>. When the fourth snapshot is created, the oldest retained
      * snapshot is deleted, or it is moved to the archive tier if you have specified an
-     * <a>ArchiveRule</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
@@ -88,7 +103,8 @@ namespace Model
      * For example if you want to retain a maximum of three snapshots, specify
      * <code>3</code>. When the fourth snapshot is created, the oldest retained
      * snapshot is deleted, or it is moved to the archive tier if you have specified an
-     * <a>ArchiveRule</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
     inline RetainRule& WithCount(int value) { SetCount(value); return *this;}
 
@@ -123,7 +139,8 @@ namespace Model
      * for 3 months, specify <code>Interval=3</code> and
      * <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3
      * months, it is deleted, or it is moved to the archive tier if you have specified
-     * an <a>ArchiveRule</a>.</p>
+     * an <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
     inline const RetentionIntervalUnitValues& GetIntervalUnit() const{ return m_intervalUnit; }
 
@@ -132,7 +149,8 @@ namespace Model
      * for 3 months, specify <code>Interval=3</code> and
      * <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3
      * months, it is deleted, or it is moved to the archive tier if you have specified
-     * an <a>ArchiveRule</a>.</p>
+     * an <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
     inline bool IntervalUnitHasBeenSet() const { return m_intervalUnitHasBeenSet; }
 
@@ -141,7 +159,8 @@ namespace Model
      * for 3 months, specify <code>Interval=3</code> and
      * <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3
      * months, it is deleted, or it is moved to the archive tier if you have specified
-     * an <a>ArchiveRule</a>.</p>
+     * an <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
     inline void SetIntervalUnit(const RetentionIntervalUnitValues& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
 
@@ -150,7 +169,8 @@ namespace Model
      * for 3 months, specify <code>Interval=3</code> and
      * <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3
      * months, it is deleted, or it is moved to the archive tier if you have specified
-     * an <a>ArchiveRule</a>.</p>
+     * an <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
     inline void SetIntervalUnit(RetentionIntervalUnitValues&& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = std::move(value); }
 
@@ -159,7 +179,8 @@ namespace Model
      * for 3 months, specify <code>Interval=3</code> and
      * <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3
      * months, it is deleted, or it is moved to the archive tier if you have specified
-     * an <a>ArchiveRule</a>.</p>
+     * an <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
     inline RetainRule& WithIntervalUnit(const RetentionIntervalUnitValues& value) { SetIntervalUnit(value); return *this;}
 
@@ -168,7 +189,8 @@ namespace Model
      * for 3 months, specify <code>Interval=3</code> and
      * <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3
      * months, it is deleted, or it is moved to the archive tier if you have specified
-     * an <a>ArchiveRule</a>.</p>
+     * an <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
     inline RetainRule& WithIntervalUnit(RetentionIntervalUnitValues&& value) { SetIntervalUnit(std::move(value)); return *this;}
 

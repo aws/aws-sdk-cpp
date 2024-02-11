@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColumnName::NOT_SET:
+            return {};
           case ColumnName::ALIAS:
             return "ALIAS";
           case ColumnName::ASSET_ID:

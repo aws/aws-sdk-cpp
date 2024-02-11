@@ -18,6 +18,8 @@ namespace Model
     NOT_SET,
     CREATING,
     DELETING,
+    FAILED,
+    ERROR_,
     SCALING,
     READY
   };

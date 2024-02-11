@@ -42,9 +42,9 @@ namespace Model
 
     /**
      * <p>Describes whether email sending is enabled or disabled for the configuration
-     * set. If the value is <code>true</code>, then Amazon SES will send emails that
-     * use the configuration set. If the value is <code>false</code>, Amazon SES will
-     * not send emails that use the configuration set. The default value is
+     * set. If the value is <code>true</code>, then Amazon SES sends emails that use
+     * the configuration set. If the value is <code>false</code>, Amazon SES does not
+     * send emails that use the configuration set. The default value is
      * <code>true</code>. You can change this setting using
      * <a>UpdateConfigurationSetSendingEnabled</a>.</p>
      */
@@ -52,9 +52,9 @@ namespace Model
 
     /**
      * <p>Describes whether email sending is enabled or disabled for the configuration
-     * set. If the value is <code>true</code>, then Amazon SES will send emails that
-     * use the configuration set. If the value is <code>false</code>, Amazon SES will
-     * not send emails that use the configuration set. The default value is
+     * set. If the value is <code>true</code>, then Amazon SES sends emails that use
+     * the configuration set. If the value is <code>false</code>, Amazon SES does not
+     * send emails that use the configuration set. The default value is
      * <code>true</code>. You can change this setting using
      * <a>UpdateConfigurationSetSendingEnabled</a>.</p>
      */
@@ -62,9 +62,9 @@ namespace Model
 
     /**
      * <p>Describes whether email sending is enabled or disabled for the configuration
-     * set. If the value is <code>true</code>, then Amazon SES will send emails that
-     * use the configuration set. If the value is <code>false</code>, Amazon SES will
-     * not send emails that use the configuration set. The default value is
+     * set. If the value is <code>true</code>, then Amazon SES sends emails that use
+     * the configuration set. If the value is <code>false</code>, Amazon SES does not
+     * send emails that use the configuration set. The default value is
      * <code>true</code>. You can change this setting using
      * <a>UpdateConfigurationSetSendingEnabled</a>.</p>
      */
@@ -72,9 +72,9 @@ namespace Model
 
     /**
      * <p>Describes whether email sending is enabled or disabled for the configuration
-     * set. If the value is <code>true</code>, then Amazon SES will send emails that
-     * use the configuration set. If the value is <code>false</code>, Amazon SES will
-     * not send emails that use the configuration set. The default value is
+     * set. If the value is <code>true</code>, then Amazon SES sends emails that use
+     * the configuration set. If the value is <code>false</code>, Amazon SES does not
+     * send emails that use the configuration set. The default value is
      * <code>true</code>. You can change this setting using
      * <a>UpdateConfigurationSetSendingEnabled</a>.</p>
      */

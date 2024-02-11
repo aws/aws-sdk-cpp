@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackSetOperationStatus::NOT_SET:
+            return {};
           case StackSetOperationStatus::RUNNING:
             return "RUNNING";
           case StackSetOperationStatus::SUCCEEDED:

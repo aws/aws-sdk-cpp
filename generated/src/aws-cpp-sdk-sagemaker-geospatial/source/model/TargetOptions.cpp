@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetOptions::NOT_SET:
+            return {};
           case TargetOptions::INPUT:
             return "INPUT";
           case TargetOptions::OUTPUT:

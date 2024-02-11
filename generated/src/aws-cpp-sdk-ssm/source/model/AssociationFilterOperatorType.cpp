@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationFilterOperatorType::NOT_SET:
+            return {};
           case AssociationFilterOperatorType::EQUAL:
             return "EQUAL";
           case AssociationFilterOperatorType::LESS_THAN:

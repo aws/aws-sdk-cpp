@@ -17,6 +17,7 @@
 #include <aws/gamelift/model/CertificateConfiguration.h>
 #include <aws/gamelift/model/ComputeType.h>
 #include <aws/gamelift/model/AnywhereConfiguration.h>
+#include <aws/gamelift/model/InstanceRoleCredentialsProvider.h>
 #include <aws/gamelift/model/FleetAction.h>
 #include <utility>
 
@@ -36,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a GameLift fleet of game hosting resources.</p> <p> <b>Related
-   * actions</b> </p><p><h3>See Also:</h3>   <a
+   * <p>Describes a Amazon GameLift fleet of game hosting resources.</p> <p>
+   * <b>Related actions</b> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes">AWS
    * API Reference</a></p>
    */
@@ -94,8 +95,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
      * value.</p>
@@ -105,8 +106,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
      * value.</p>
@@ -116,8 +117,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
      * value.</p>
@@ -127,8 +128,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
      * value.</p>
@@ -138,8 +139,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
      * value.</p>
@@ -149,8 +150,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
      * value.</p>
@@ -160,8 +161,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
      * value.</p>
@@ -171,8 +172,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
      * value.</p>
@@ -185,8 +186,8 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline const FleetType& GetFleetType() const{ return m_fleetType; }
 
@@ -195,8 +196,8 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline bool FleetTypeHasBeenSet() const { return m_fleetTypeHasBeenSet; }
 
@@ -205,8 +206,8 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
 
@@ -215,8 +216,8 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
 
@@ -225,8 +226,8 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline FleetAttributes& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
 
@@ -235,8 +236,8 @@ namespace Model
      * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
      * to use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
-     * fleet is created.</p>
+     * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
+     * the fleet is created.</p>
      */
     inline FleetAttributes& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
 
@@ -476,9 +477,9 @@ namespace Model
      * <p>Current status of the fleet. Possible fleet statuses include the
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the
-     * new fleet, creating new instances with the game build or Realtime script and
-     * starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
      * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
      * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
@@ -490,9 +491,9 @@ namespace Model
      * <p>Current status of the fleet. Possible fleet statuses include the
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the
-     * new fleet, creating new instances with the game build or Realtime script and
-     * starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
      * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
      * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
@@ -504,9 +505,9 @@ namespace Model
      * <p>Current status of the fleet. Possible fleet statuses include the
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the
-     * new fleet, creating new instances with the game build or Realtime script and
-     * starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
      * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
      * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
@@ -518,9 +519,9 @@ namespace Model
      * <p>Current status of the fleet. Possible fleet statuses include the
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the
-     * new fleet, creating new instances with the game build or Realtime script and
-     * starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
      * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
      * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
@@ -532,9 +533,9 @@ namespace Model
      * <p>Current status of the fleet. Possible fleet statuses include the
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the
-     * new fleet, creating new instances with the game build or Realtime script and
-     * starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
      * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
      * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
@@ -546,9 +547,9 @@ namespace Model
      * <p>Current status of the fleet. Possible fleet statuses include the
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the
-     * new fleet, creating new instances with the game build or Realtime script and
-     * starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
      * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
      * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
@@ -609,8 +610,8 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in
-     * this fleet. In a GameLift build ARN, the resource ID matches the
+     * associated with the Amazon GameLift build resource that is deployed on instances
+     * in this fleet. In a GameLift build ARN, the resource ID matches the
      * <code>BuildId</code> value.</p>
      */
     inline const Aws::String& GetBuildArn() const{ return m_buildArn; }
@@ -618,8 +619,8 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in
-     * this fleet. In a GameLift build ARN, the resource ID matches the
+     * associated with the Amazon GameLift build resource that is deployed on instances
+     * in this fleet. In a GameLift build ARN, the resource ID matches the
      * <code>BuildId</code> value.</p>
      */
     inline bool BuildArnHasBeenSet() const { return m_buildArnHasBeenSet; }
@@ -627,8 +628,8 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in
-     * this fleet. In a GameLift build ARN, the resource ID matches the
+     * associated with the Amazon GameLift build resource that is deployed on instances
+     * in this fleet. In a GameLift build ARN, the resource ID matches the
      * <code>BuildId</code> value.</p>
      */
     inline void SetBuildArn(const Aws::String& value) { m_buildArnHasBeenSet = true; m_buildArn = value; }
@@ -636,8 +637,8 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in
-     * this fleet. In a GameLift build ARN, the resource ID matches the
+     * associated with the Amazon GameLift build resource that is deployed on instances
+     * in this fleet. In a GameLift build ARN, the resource ID matches the
      * <code>BuildId</code> value.</p>
      */
     inline void SetBuildArn(Aws::String&& value) { m_buildArnHasBeenSet = true; m_buildArn = std::move(value); }
@@ -645,8 +646,8 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in
-     * this fleet. In a GameLift build ARN, the resource ID matches the
+     * associated with the Amazon GameLift build resource that is deployed on instances
+     * in this fleet. In a GameLift build ARN, the resource ID matches the
      * <code>BuildId</code> value.</p>
      */
     inline void SetBuildArn(const char* value) { m_buildArnHasBeenSet = true; m_buildArn.assign(value); }
@@ -654,8 +655,8 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in
-     * this fleet. In a GameLift build ARN, the resource ID matches the
+     * associated with the Amazon GameLift build resource that is deployed on instances
+     * in this fleet. In a GameLift build ARN, the resource ID matches the
      * <code>BuildId</code> value.</p>
      */
     inline FleetAttributes& WithBuildArn(const Aws::String& value) { SetBuildArn(value); return *this;}
@@ -663,8 +664,8 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in
-     * this fleet. In a GameLift build ARN, the resource ID matches the
+     * associated with the Amazon GameLift build resource that is deployed on instances
+     * in this fleet. In a GameLift build ARN, the resource ID matches the
      * <code>BuildId</code> value.</p>
      */
     inline FleetAttributes& WithBuildArn(Aws::String&& value) { SetBuildArn(std::move(value)); return *this;}
@@ -672,8 +673,8 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in
-     * this fleet. In a GameLift build ARN, the resource ID matches the
+     * associated with the Amazon GameLift build resource that is deployed on instances
+     * in this fleet. In a GameLift build ARN, the resource ID matches the
      * <code>BuildId</code> value.</p>
      */
     inline FleetAttributes& WithBuildArn(const char* value) { SetBuildArn(value); return *this;}
@@ -925,7 +926,7 @@ namespace Model
 
     /**
      * <p> <b>This parameter is no longer used.</b> Game session log paths are now
-     * defined using the GameLift server API <code>ProcessReady()</code>
+     * defined using the Amazon GameLift server API <code>ProcessReady()</code>
      * <code>logParameters</code>. See more information in the <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
@@ -934,7 +935,7 @@ namespace Model
 
     /**
      * <p> <b>This parameter is no longer used.</b> Game session log paths are now
-     * defined using the GameLift server API <code>ProcessReady()</code>
+     * defined using the Amazon GameLift server API <code>ProcessReady()</code>
      * <code>logParameters</code>. See more information in the <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
@@ -943,7 +944,7 @@ namespace Model
 
     /**
      * <p> <b>This parameter is no longer used.</b> Game session log paths are now
-     * defined using the GameLift server API <code>ProcessReady()</code>
+     * defined using the Amazon GameLift server API <code>ProcessReady()</code>
      * <code>logParameters</code>. See more information in the <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
@@ -952,7 +953,7 @@ namespace Model
 
     /**
      * <p> <b>This parameter is no longer used.</b> Game session log paths are now
-     * defined using the GameLift server API <code>ProcessReady()</code>
+     * defined using the Amazon GameLift server API <code>ProcessReady()</code>
      * <code>logParameters</code>. See more information in the <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
@@ -961,7 +962,7 @@ namespace Model
 
     /**
      * <p> <b>This parameter is no longer used.</b> Game session log paths are now
-     * defined using the GameLift server API <code>ProcessReady()</code>
+     * defined using the Amazon GameLift server API <code>ProcessReady()</code>
      * <code>logParameters</code>. See more information in the <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
@@ -970,7 +971,7 @@ namespace Model
 
     /**
      * <p> <b>This parameter is no longer used.</b> Game session log paths are now
-     * defined using the GameLift server API <code>ProcessReady()</code>
+     * defined using the Amazon GameLift server API <code>ProcessReady()</code>
      * <code>logParameters</code>. See more information in the <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
@@ -979,7 +980,7 @@ namespace Model
 
     /**
      * <p> <b>This parameter is no longer used.</b> Game session log paths are now
-     * defined using the GameLift server API <code>ProcessReady()</code>
+     * defined using the Amazon GameLift server API <code>ProcessReady()</code>
      * <code>logParameters</code>. See more information in the <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
@@ -988,7 +989,7 @@ namespace Model
 
     /**
      * <p> <b>This parameter is no longer used.</b> Game session log paths are now
-     * defined using the GameLift server API <code>ProcessReady()</code>
+     * defined using the Amazon GameLift server API <code>ProcessReady()</code>
      * <code>logParameters</code>. See more information in the <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
@@ -997,7 +998,7 @@ namespace Model
 
     /**
      * <p> <b>This parameter is no longer used.</b> Game session log paths are now
-     * defined using the GameLift server API <code>ProcessReady()</code>
+     * defined using the Amazon GameLift server API <code>ProcessReady()</code>
      * <code>logParameters</code>. See more information in the <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
@@ -1244,106 +1245,98 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
      */
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
      */
     inline void SetInstanceRoleArn(const Aws::String& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = value; }
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
      */
     inline void SetInstanceRoleArn(Aws::String&& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = std::move(value); }
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
      */
     inline void SetInstanceRoleArn(const char* value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn.assign(value); }
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(const Aws::String& value) { SetInstanceRoleArn(value); return *this;}
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(Aws::String&& value) { SetInstanceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
-     * Services services. With an instance role ARN set, any application that runs on
-     * an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about using on-box
-     * credentials for your game servers at <a
+     * <p>A unique identifier for an IAM role with access permissions to other Amazon
+     * Web Services services. Any application that runs on an instance in the
+     * fleet--including install scripts, server processes, and other processes--can use
+     * these permissions to interact with Amazon Web Services resources that you own or
+     * have access to. For more information about using the role with your game server
+     * builds, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(const char* value) { SetInstanceRoleArn(value); return *this;}
 
@@ -1369,43 +1362,43 @@ namespace Model
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift.</p>
      */
     inline const ComputeType& GetComputeType() const{ return m_computeType; }
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift.</p>
      */
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift.</p>
      */
     inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift.</p>
      */
     inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift.</p>
      */
     inline FleetAttributes& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
 
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
-     * managed GameLift.</p>
+     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
+     * with managed Amazon GameLift.</p>
      */
     inline FleetAttributes& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
@@ -1427,6 +1420,79 @@ namespace Model
 
     
     inline FleetAttributes& WithAnywhereConfiguration(AnywhereConfiguration&& value) { SetAnywhereConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates that fleet instances maintain a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. Shared credentials allow
+     * applications that are deployed with the game server executable to communicate
+     * with other Amazon Web Services resources. This property is used only when the
+     * game server is integrated with the server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline const InstanceRoleCredentialsProvider& GetInstanceRoleCredentialsProvider() const{ return m_instanceRoleCredentialsProvider; }
+
+    /**
+     * <p>Indicates that fleet instances maintain a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. Shared credentials allow
+     * applications that are deployed with the game server executable to communicate
+     * with other Amazon Web Services resources. This property is used only when the
+     * game server is integrated with the server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline bool InstanceRoleCredentialsProviderHasBeenSet() const { return m_instanceRoleCredentialsProviderHasBeenSet; }
+
+    /**
+     * <p>Indicates that fleet instances maintain a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. Shared credentials allow
+     * applications that are deployed with the game server executable to communicate
+     * with other Amazon Web Services resources. This property is used only when the
+     * game server is integrated with the server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline void SetInstanceRoleCredentialsProvider(const InstanceRoleCredentialsProvider& value) { m_instanceRoleCredentialsProviderHasBeenSet = true; m_instanceRoleCredentialsProvider = value; }
+
+    /**
+     * <p>Indicates that fleet instances maintain a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. Shared credentials allow
+     * applications that are deployed with the game server executable to communicate
+     * with other Amazon Web Services resources. This property is used only when the
+     * game server is integrated with the server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline void SetInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider&& value) { m_instanceRoleCredentialsProviderHasBeenSet = true; m_instanceRoleCredentialsProvider = std::move(value); }
+
+    /**
+     * <p>Indicates that fleet instances maintain a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. Shared credentials allow
+     * applications that are deployed with the game server executable to communicate
+     * with other Amazon Web Services resources. This property is used only when the
+     * game server is integrated with the server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline FleetAttributes& WithInstanceRoleCredentialsProvider(const InstanceRoleCredentialsProvider& value) { SetInstanceRoleCredentialsProvider(value); return *this;}
+
+    /**
+     * <p>Indicates that fleet instances maintain a shared credentials file for the IAM
+     * role defined in <code>InstanceRoleArn</code>. Shared credentials allow
+     * applications that are deployed with the game server executable to communicate
+     * with other Amazon Web Services resources. This property is used only when the
+     * game server is integrated with the server SDK version 5.x. For more information
+     * about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+     */
+    inline FleetAttributes& WithInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider&& value) { SetInstanceRoleCredentialsProvider(std::move(value)); return *this;}
 
   private:
 
@@ -1504,6 +1570,9 @@ namespace Model
 
     AnywhereConfiguration m_anywhereConfiguration;
     bool m_anywhereConfigurationHasBeenSet = false;
+
+    InstanceRoleCredentialsProvider m_instanceRoleCredentialsProvider;
+    bool m_instanceRoleCredentialsProviderHasBeenSet = false;
   };
 
 } // namespace Model

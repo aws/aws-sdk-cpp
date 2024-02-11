@@ -22,8 +22,7 @@ namespace Model
 {
 
   /**
-   * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
-   * value MP2.<p><h3>See Also:</h3>   <a
+   * Required when you set Codec to the value MP2.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Mp2Settings">AWS
    * API Reference</a></p>
    */
@@ -59,50 +58,50 @@ namespace Model
 
     /**
      * Set Channels to specify the number of channels in this output audio track.
-     * Choosing Mono in the console will give you 1 output channel; choosing Stereo
-     * will give you 2. In the API, valid values are 1 and 2.
+     * Choosing Mono in will give you 1 output channel; choosing Stereo will give you
+     * 2. In the API, valid values are 1 and 2.
      */
     inline int GetChannels() const{ return m_channels; }
 
     /**
      * Set Channels to specify the number of channels in this output audio track.
-     * Choosing Mono in the console will give you 1 output channel; choosing Stereo
-     * will give you 2. In the API, valid values are 1 and 2.
+     * Choosing Mono in will give you 1 output channel; choosing Stereo will give you
+     * 2. In the API, valid values are 1 and 2.
      */
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
 
     /**
      * Set Channels to specify the number of channels in this output audio track.
-     * Choosing Mono in the console will give you 1 output channel; choosing Stereo
-     * will give you 2. In the API, valid values are 1 and 2.
+     * Choosing Mono in will give you 1 output channel; choosing Stereo will give you
+     * 2. In the API, valid values are 1 and 2.
      */
     inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
 
     /**
      * Set Channels to specify the number of channels in this output audio track.
-     * Choosing Mono in the console will give you 1 output channel; choosing Stereo
-     * will give you 2. In the API, valid values are 1 and 2.
+     * Choosing Mono in will give you 1 output channel; choosing Stereo will give you
+     * 2. In the API, valid values are 1 and 2.
      */
     inline Mp2Settings& WithChannels(int value) { SetChannels(value); return *this;}
 
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      */
     inline Mp2Settings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
 

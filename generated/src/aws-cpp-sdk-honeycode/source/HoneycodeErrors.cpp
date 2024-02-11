@@ -30,19 +30,19 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(HoneycodeErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(HoneycodeErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(HoneycodeErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(HoneycodeErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == AUTOMATION_EXECUTION_TIMEOUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(HoneycodeErrors::AUTOMATION_EXECUTION_TIMEOUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(HoneycodeErrors::AUTOMATION_EXECUTION_TIMEOUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == AUTOMATION_EXECUTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(HoneycodeErrors::AUTOMATION_EXECUTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(HoneycodeErrors::AUTOMATION_EXECUTION), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

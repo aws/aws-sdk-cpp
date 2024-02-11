@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for
-     * encrypting audio log files stored in an S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management
+     * Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for
-     * encrypting audio log files stored in an S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management
+     * Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for
-     * encrypting audio log files stored in an S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management
+     * Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for
-     * encrypting audio log files stored in an S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management
+     * Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for
-     * encrypting audio log files stored in an S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management
+     * Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for
-     * encrypting audio log files stored in an S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management
+     * Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
      */
     inline S3BucketLogDestination& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for
-     * encrypting audio log files stored in an S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management
+     * Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
      */
     inline S3BucketLogDestination& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for
-     * encrypting audio log files stored in an S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management
+     * Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
      */
     inline S3BucketLogDestination& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

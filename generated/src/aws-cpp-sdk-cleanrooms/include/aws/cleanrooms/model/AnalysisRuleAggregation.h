@@ -9,6 +9,7 @@
 #include <aws/cleanrooms/model/JoinRequiredOption.h>
 #include <aws/cleanrooms/model/AggregateColumn.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cleanrooms/model/JoinOperator.h>
 #include <aws/cleanrooms/model/ScalarFunctions.h>
 #include <aws/cleanrooms/model/AggregationConstraint.h>
 #include <utility>
@@ -29,8 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>Enables query structure and specified queries that product aggregate
-   * statistics.</p><p><h3>See Also:</h3>   <a
+   * <p>A type of analysis rule that enables query structure and specified queries
+   * that produce aggregate statistics.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/AnalysisRuleAggregation">AWS
    * API Reference</a></p>
    */
@@ -141,39 +142,88 @@ namespace Model
 
     /**
      * <p>Control that requires member who runs query to do a join with their
-     * configured table and/or other configured table in query</p>
+     * configured table and/or other configured table in query.</p>
      */
     inline const JoinRequiredOption& GetJoinRequired() const{ return m_joinRequired; }
 
     /**
      * <p>Control that requires member who runs query to do a join with their
-     * configured table and/or other configured table in query</p>
+     * configured table and/or other configured table in query.</p>
      */
     inline bool JoinRequiredHasBeenSet() const { return m_joinRequiredHasBeenSet; }
 
     /**
      * <p>Control that requires member who runs query to do a join with their
-     * configured table and/or other configured table in query</p>
+     * configured table and/or other configured table in query.</p>
      */
     inline void SetJoinRequired(const JoinRequiredOption& value) { m_joinRequiredHasBeenSet = true; m_joinRequired = value; }
 
     /**
      * <p>Control that requires member who runs query to do a join with their
-     * configured table and/or other configured table in query</p>
+     * configured table and/or other configured table in query.</p>
      */
     inline void SetJoinRequired(JoinRequiredOption&& value) { m_joinRequiredHasBeenSet = true; m_joinRequired = std::move(value); }
 
     /**
      * <p>Control that requires member who runs query to do a join with their
-     * configured table and/or other configured table in query</p>
+     * configured table and/or other configured table in query.</p>
      */
     inline AnalysisRuleAggregation& WithJoinRequired(const JoinRequiredOption& value) { SetJoinRequired(value); return *this;}
 
     /**
      * <p>Control that requires member who runs query to do a join with their
-     * configured table and/or other configured table in query</p>
+     * configured table and/or other configured table in query.</p>
      */
     inline AnalysisRuleAggregation& WithJoinRequired(JoinRequiredOption&& value) { SetJoinRequired(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * condition. Default is <code>AND</code>.</p>
+     */
+    inline const Aws::Vector<JoinOperator>& GetAllowedJoinOperators() const{ return m_allowedJoinOperators; }
+
+    /**
+     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * condition. Default is <code>AND</code>.</p>
+     */
+    inline bool AllowedJoinOperatorsHasBeenSet() const { return m_allowedJoinOperatorsHasBeenSet; }
+
+    /**
+     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * condition. Default is <code>AND</code>.</p>
+     */
+    inline void SetAllowedJoinOperators(const Aws::Vector<JoinOperator>& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = value; }
+
+    /**
+     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * condition. Default is <code>AND</code>.</p>
+     */
+    inline void SetAllowedJoinOperators(Aws::Vector<JoinOperator>&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = std::move(value); }
+
+    /**
+     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * condition. Default is <code>AND</code>.</p>
+     */
+    inline AnalysisRuleAggregation& WithAllowedJoinOperators(const Aws::Vector<JoinOperator>& value) { SetAllowedJoinOperators(value); return *this;}
+
+    /**
+     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * condition. Default is <code>AND</code>.</p>
+     */
+    inline AnalysisRuleAggregation& WithAllowedJoinOperators(Aws::Vector<JoinOperator>&& value) { SetAllowedJoinOperators(std::move(value)); return *this;}
+
+    /**
+     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * condition. Default is <code>AND</code>.</p>
+     */
+    inline AnalysisRuleAggregation& AddAllowedJoinOperators(const JoinOperator& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(value); return *this; }
+
+    /**
+     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * condition. Default is <code>AND</code>.</p>
+     */
+    inline AnalysisRuleAggregation& AddAllowedJoinOperators(JoinOperator&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -338,6 +388,9 @@ namespace Model
 
     JoinRequiredOption m_joinRequired;
     bool m_joinRequiredHasBeenSet = false;
+
+    Aws::Vector<JoinOperator> m_allowedJoinOperators;
+    bool m_allowedJoinOperatorsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dimensionColumns;
     bool m_dimensionColumnsHasBeenSet = false;

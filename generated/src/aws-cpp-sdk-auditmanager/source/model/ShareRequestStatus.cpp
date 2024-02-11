@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShareRequestStatus::NOT_SET:
+            return {};
           case ShareRequestStatus::ACTIVE:
             return "ACTIVE";
           case ShareRequestStatus::REPLICATING:

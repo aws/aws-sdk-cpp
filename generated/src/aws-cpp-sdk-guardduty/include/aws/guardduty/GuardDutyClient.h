@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/guardduty/GuardDutyServiceClientModel.h>
+#include <aws/guardduty/model/GetOrganizationStatisticsRequest.h>
 
 namespace Aws
 {
@@ -17,23 +18,25 @@ namespace GuardDuty
 {
   /**
    * <p>Amazon GuardDuty is a continuous security monitoring service that analyzes
-   * and processes the following data sources: VPC flow logs, Amazon Web Services
-   * CloudTrail management event logs, CloudTrail S3 data event logs, EKS audit logs,
-   * DNS logs, and Amazon EBS volume data. It uses threat intelligence feeds, such as
-   * lists of malicious IPs and domains, and machine learning to identify unexpected,
-   * potentially unauthorized, and malicious activity within your Amazon Web Services
-   * environment. This can include issues like escalations of privileges, uses of
-   * exposed credentials, or communication with malicious IPs, domains, or presence
-   * of malware on your Amazon EC2 instances and container workloads. For example,
-   * GuardDuty can detect compromised EC2 instances and container workloads serving
-   * malware, or mining bitcoin. </p> <p>GuardDuty also monitors Amazon Web Services
-   * account access behavior for signs of compromise, such as unauthorized
-   * infrastructure deployments like EC2 instances deployed in a Region that has
-   * never been used, or unusual API calls like a password policy change to reduce
-   * password strength. </p> <p>GuardDuty informs you about the status of your Amazon
-   * Web Services environment by producing security findings that you can view in the
-   * GuardDuty console or through Amazon EventBridge. For more information, see the
-   * <i> <a
+   * and processes the following foundational data sources - VPC flow logs, Amazon
+   * Web Services CloudTrail management event logs, CloudTrail S3 data event logs,
+   * EKS audit logs, DNS logs, Amazon EBS volume data, runtime activity belonging to
+   * container workloads, such as Amazon EKS, Amazon ECS (including Amazon Web
+   * Services Fargate), and Amazon EC2 instances. It uses threat intelligence feeds,
+   * such as lists of malicious IPs and domains, and machine learning to identify
+   * unexpected, potentially unauthorized, and malicious activity within your Amazon
+   * Web Services environment. This can include issues like escalations of
+   * privileges, uses of exposed credentials, or communication with malicious IPs,
+   * domains, or presence of malware on your Amazon EC2 instances and container
+   * workloads. For example, GuardDuty can detect compromised EC2 instances and
+   * container workloads serving malware, or mining bitcoin. </p> <p>GuardDuty also
+   * monitors Amazon Web Services account access behavior for signs of compromise,
+   * such as unauthorized infrastructure deployments like EC2 instances deployed in a
+   * Region that has never been used, or unusual API calls like a password policy
+   * change to reduce password strength. </p> <p>GuardDuty informs you about the
+   * status of your Amazon Web Services environment by producing security findings
+   * that you can view in the GuardDuty console or through Amazon EventBridge. For
+   * more information, see the <i> <a
    * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon
    * GuardDuty User Guide</a> </i>. </p>
    */
@@ -43,6 +46,9 @@ namespace GuardDuty
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef GuardDutyClientConfiguration ClientConfigurationType;
+      typedef GuardDutyEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -243,14 +249,29 @@ namespace GuardDuty
          * <p>Creates member accounts of the current Amazon Web Services account by
          * specifying a list of Amazon Web Services account IDs. This step is a
          * prerequisite for managing the associated member accounts either by invitation or
-         * through an organization.</p> <p>When using <code>Create Members</code> as an
-         * organizations delegated administrator this action will enable GuardDuty in the
-         * added member accounts, with the exception of the organization delegated
-         * administrator account, which must enable GuardDuty prior to being added as a
-         * member.</p> <p>If you are adding accounts by invitation, use this action after
-         * GuardDuty has bee enabled in potential member accounts and before using <a
-         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * through an organization.</p> <p>As a delegated administrator, using
+         * <code>CreateMembers</code> will enable GuardDuty in the added member accounts,
+         * with the exception of the organization delegated administrator account. A
+         * delegated administrator must enable GuardDuty prior to being added as a
+         * member.</p> <p>When you use CreateMembers as an Organizations delegated
+         * administrator, GuardDuty applies your organization's auto-enable settings to the
+         * member accounts in this request, irrespective of the accounts being new or
+         * existing members. For more information about the existing auto-enable settings
+         * for your organization, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeOrganizationConfiguration.html">DescribeOrganizationConfiguration</a>.</p>
+         * <p>If you are adding accounts by invitation, before using <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>,
+         * use <code>CreateMembers</code> after GuardDuty has been enabled in potential
+         * member accounts.</p> <p>If you disassociate a member from a GuardDuty delegated
+         * administrator, the member account details obtained from this API, including the
+         * associated email addresses, will be retained. This is done so that the delegated
+         * administrator can invoke the <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
+         * API without the need to invoke the CreateMembers API again. To remove the
+         * details associated with a member account, the delegated administrator must
+         * invoke the <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>
+         * API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">AWS
          * API Reference</a></p>
          */
@@ -655,8 +676,9 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Disables an Amazon Web Services account within the Organization as the
-         * GuardDuty delegated administrator.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the existing GuardDuty delegated administrator of the organization.
+         * Only the organization's management account can run this API
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
@@ -682,8 +704,18 @@ namespace GuardDuty
 
         /**
          * <p>Disassociates the current GuardDuty member account from its administrator
-         * account.</p> <p>With <code>autoEnableOrganizationMembers</code> configuration
-         * for your organization set to <code>ALL</code>, you'll receive an error if you
+         * account.</p> <p>When you disassociate an invited member from a GuardDuty
+         * delegated administrator, the member account details obtained from the <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a>
+         * API, including the associated email addresses, are retained. This is done so
+         * that the delegated administrator can invoke the <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
+         * API without the need to invoke the CreateMembers API again. To remove the
+         * details associated with a member account, the delegated administrator must
+         * invoke the <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>
+         * API. </p> <p>With <code>autoEnableOrganizationMembers</code> configuration for
+         * your organization set to <code>ALL</code>, you'll receive an error if you
          * attempt to disable GuardDuty in a member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromAdministratorAccount">AWS
          * API Reference</a></p>
@@ -709,11 +741,21 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Disassociates GuardDuty member accounts (to the current administrator
-         * account) specified by the account IDs.</p> <p>With
-         * <code>autoEnableOrganizationMembers</code> configuration for your organization
-         * set to <code>ALL</code>, you'll receive an error if you attempt to disassociate
-         * a member account before removing them from your Amazon Web Services
+         * <p>Disassociates GuardDuty member accounts (from the current administrator
+         * account) specified by the account IDs.</p> <p>When you disassociate an invited
+         * member from a GuardDuty delegated administrator, the member account details
+         * obtained from the <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a>
+         * API, including the associated email addresses, are retained. This is done so
+         * that the delegated administrator can invoke the <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
+         * API without the need to invoke the CreateMembers API again. To remove the
+         * details associated with a member account, the delegated administrator must
+         * invoke the <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>
+         * API. </p> <p>With <code>autoEnableOrganizationMembers</code> configuration for
+         * your organization set to <code>ALL</code>, you'll receive an error if you
+         * attempt to disassociate a member account before removing them from your
          * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">AWS
          * API Reference</a></p>
@@ -739,8 +781,9 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Enables an Amazon Web Services account within the organization as the
-         * GuardDuty delegated administrator.</p><p><h3>See Also:</h3>   <a
+         * <p>Designates an Amazon Web Services account within the organization as your
+         * GuardDuty delegated administrator. Only the organization's management account
+         * can run this API operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
@@ -765,8 +808,11 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Provides the details for the GuardDuty administrator account associated with
-         * the current GuardDuty member account.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides the details of the GuardDuty administrator account associated with
+         * the current GuardDuty member account.</p>  <p>If the organization's
+         * management account or a delegated administrator runs this API, it will return
+         * success (<code>HTTP 200</code>) but no content.</p> <p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetAdministratorAccount">AWS
          * API Reference</a></p>
          */
@@ -793,9 +839,9 @@ namespace GuardDuty
         /**
          * <p>Retrieves aggregated statistics for your account. If you are a GuardDuty
          * administrator, you can retrieve the statistics for all the resources associated
-         * with the active member accounts in your organization who have enabled EKS
-         * Runtime Monitoring and have the GuardDuty agent running on their EKS
-         * nodes.</p><p><h3>See Also:</h3>   <a
+         * with the active member accounts in your organization who have enabled Runtime
+         * Monitoring and have the GuardDuty security agent running on their
+         * resources.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">AWS
          * API Reference</a></p>
          */
@@ -1067,6 +1113,36 @@ namespace GuardDuty
         }
 
         /**
+         * <p>Retrieves how many active member accounts in your Amazon Web Services
+         * organization have each feature enabled within GuardDuty. Only a delegated
+         * GuardDuty administrator of an organization can run this API.</p> <p>When you
+         * create a new Amazon Web Services organization, it might take up to 24 hours to
+         * generate the statistics for the entire organization.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetOrganizationStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetOrganizationStatisticsOutcome GetOrganizationStatistics(const Model::GetOrganizationStatisticsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetOrganizationStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetOrganizationStatisticsRequestT = Model::GetOrganizationStatisticsRequest>
+        Model::GetOrganizationStatisticsOutcomeCallable GetOrganizationStatisticsCallable(const GetOrganizationStatisticsRequestT& request = {}) const
+        {
+            return SubmitCallable(&GuardDutyClient::GetOrganizationStatistics, request);
+        }
+
+        /**
+         * An Async wrapper for GetOrganizationStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetOrganizationStatisticsRequestT = Model::GetOrganizationStatisticsRequest>
+        void GetOrganizationStatisticsAsync(const GetOrganizationStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetOrganizationStatisticsRequestT& request = {}) const
+        {
+            return SubmitAsync(&GuardDutyClient::GetOrganizationStatistics, request, handler, context);
+        }
+
+        /**
          * <p>Provides the number of days left for each data source used in the free trial
          * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetRemainingFreeTrialDays">AWS
@@ -1150,11 +1226,31 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Invites other Amazon Web Services accounts (created as members of the current
-         * Amazon Web Services account by CreateMembers) to enable GuardDuty, and allow the
-         * current Amazon Web Services account to view and manage these accounts' findings
-         * on their behalf as the GuardDuty administrator account.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Invites Amazon Web Services accounts to become members of an organization
+         * administered by the Amazon Web Services account that invokes this API. If you
+         * are using Amazon Web Services Organizations to manage your GuardDuty
+         * environment, this step is not needed. For more information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing
+         * accounts with organizations</a>.</p> <p>To invite Amazon Web Services accounts,
+         * the first step is to ensure that GuardDuty has been enabled in the potential
+         * member accounts. You can now invoke this API to add accounts by invitation. The
+         * invited accounts can either accept or decline the invitation from their
+         * GuardDuty accounts. Each invited Amazon Web Services account can choose to
+         * accept the invitation from only one Amazon Web Services account. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Managing
+         * GuardDuty accounts by invitation</a>.</p> <p>After the invite has been accepted
+         * and you choose to disassociate a member account (by using <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisassociateMembers.html">DisassociateMembers</a>)
+         * from your account, the details of the member account obtained by invoking <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a>,
+         * including the associated email addresses, will be retained. This is done so that
+         * you can invoke InviteMembers without the need to invoke <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a>
+         * again. To remove the details associated with a member account, you must also
+         * invoke <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers">AWS
          * API Reference</a></p>
          */
@@ -1181,8 +1277,8 @@ namespace GuardDuty
         /**
          * <p>Lists coverage details for your GuardDuty account. If you're a GuardDuty
          * administrator, you can retrieve all resources associated with the active member
-         * accounts in your organization.</p> <p>Make sure the accounts have EKS Runtime
-         * Monitoring enabled and GuardDuty agent running on their EKS nodes.</p><p><h3>See
+         * accounts in your organization.</p> <p>Make sure the accounts have Runtime
+         * Monitoring enabled and GuardDuty agent running on their resources.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage">AWS
          * API Reference</a></p>
@@ -1365,8 +1461,9 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Lists the accounts configured as GuardDuty delegated
-         * administrators.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the accounts designated as GuardDuty delegated administrators. Only the
+         * organization's management account can run this API operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
          */
@@ -1418,9 +1515,9 @@ namespace GuardDuty
 
         /**
          * <p>Lists tags for a resource. Tagging is currently supported for detectors,
-         * finding filters, IP sets, and threat intel sets, with a limit of 50 tags per
-         * resource. When invoked, this operation returns all assigned tags for a given
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * finding filters, IP sets, threat intel sets, and publishing destination, with a
+         * limit of 50 tags per resource. When invoked, this operation returns all assigned
+         * tags for a given resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -1470,6 +1567,34 @@ namespace GuardDuty
         void ListThreatIntelSetsAsync(const ListThreatIntelSetsRequestT& request, const ListThreatIntelSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GuardDutyClient::ListThreatIntelSets, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates the malware scan. Invoking this API will automatically create the
+         * <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html">Service-linked
+         * role </a> in the corresponding account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMalwareScan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMalwareScanOutcome StartMalwareScan(const Model::StartMalwareScanRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMalwareScan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMalwareScanRequestT = Model::StartMalwareScanRequest>
+        Model::StartMalwareScanOutcomeCallable StartMalwareScanCallable(const StartMalwareScanRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::StartMalwareScan, request);
+        }
+
+        /**
+         * An Async wrapper for StartMalwareScan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMalwareScanRequestT = Model::StartMalwareScanRequest>
+        void StartMalwareScanAsync(const StartMalwareScanRequestT& request, const StartMalwareScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::StartMalwareScan, request, handler, context);
         }
 
         /**
@@ -1775,10 +1900,11 @@ namespace GuardDuty
 
         /**
          * <p>Configures the delegated administrator account with the provided values. You
-         * must provide the value for either <code>autoEnableOrganizationMembers</code> or
-         * <code>autoEnable</code>. </p> <p>There might be regional differences because
-         * some data sources might not be available in all the Amazon Web Services Regions
-         * where GuardDuty is presently supported. For more information, see <a
+         * must provide a value for either <code>autoEnableOrganizationMembers</code> or
+         * <code>autoEnable</code>, but not both. </p> <p>There might be regional
+         * differences because some data sources might not be available in all the Amazon
+         * Web Services Regions where GuardDuty is presently supported. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
          * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateOrganizationConfiguration">AWS

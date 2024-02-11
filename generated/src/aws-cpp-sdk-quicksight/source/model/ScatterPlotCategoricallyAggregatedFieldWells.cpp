@@ -22,7 +22,8 @@ ScatterPlotCategoricallyAggregatedFieldWells::ScatterPlotCategoricallyAggregated
     m_xAxisHasBeenSet(false),
     m_yAxisHasBeenSet(false),
     m_categoryHasBeenSet(false),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ScatterPlotCategoricallyAggregatedFieldWells::ScatterPlotCategoricallyAggregated
     m_xAxisHasBeenSet(false),
     m_yAxisHasBeenSet(false),
     m_categoryHasBeenSet(false),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +77,16 @@ ScatterPlotCategoricallyAggregatedFieldWells& ScatterPlotCategoricallyAggregated
       m_size.push_back(sizeJsonList[sizeIndex].AsObject());
     }
     m_sizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Label"))
+  {
+    Aws::Utils::Array<JsonView> labelJsonList = jsonValue.GetArray("Label");
+    for(unsigned labelIndex = 0; labelIndex < labelJsonList.GetLength(); ++labelIndex)
+    {
+      m_label.push_back(labelJsonList[labelIndex].AsObject());
+    }
+    m_labelHasBeenSet = true;
   }
 
   return *this;
@@ -125,6 +137,17 @@ JsonValue ScatterPlotCategoricallyAggregatedFieldWells::Jsonize() const
      sizeJsonList[sizeIndex].AsObject(m_size[sizeIndex].Jsonize());
    }
    payload.WithArray("Size", std::move(sizeJsonList));
+
+  }
+
+  if(m_labelHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> labelJsonList(m_label.size());
+   for(unsigned labelIndex = 0; labelIndex < labelJsonList.GetLength(); ++labelIndex)
+   {
+     labelJsonList[labelIndex].AsObject(m_label[labelIndex].Jsonize());
+   }
+   payload.WithArray("Label", std::move(labelJsonList));
 
   }
 

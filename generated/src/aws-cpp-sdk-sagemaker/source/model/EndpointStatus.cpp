@@ -28,6 +28,7 @@ namespace Aws
         static const int InService_HASH = HashingUtils::HashString("InService");
         static const int Deleting_HASH = HashingUtils::HashString("Deleting");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int UpdateRollbackFailed_HASH = HashingUtils::HashString("UpdateRollbackFailed");
 
 
         EndpointStatus GetEndpointStatusForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return EndpointStatus::Failed;
           }
+          else if (hashCode == UpdateRollbackFailed_HASH)
+          {
+            return EndpointStatus::UpdateRollbackFailed;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -79,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EndpointStatus::NOT_SET:
+            return {};
           case EndpointStatus::OutOfService:
             return "OutOfService";
           case EndpointStatus::Creating:
@@ -95,6 +102,8 @@ namespace Aws
             return "Deleting";
           case EndpointStatus::Failed:
             return "Failed";
+          case EndpointStatus::UpdateRollbackFailed:
+            return "UpdateRollbackFailed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

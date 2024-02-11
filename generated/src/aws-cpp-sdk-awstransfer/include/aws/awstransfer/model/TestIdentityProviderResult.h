@@ -33,53 +33,63 @@ namespace Model
 
 
     /**
-     * <p>The response that is returned from your API Gateway.</p>
+     * <p>The response that is returned from your API Gateway or your Lambda
+     * function.</p>
      */
     inline const Aws::String& GetResponse() const{ return m_response; }
 
     /**
-     * <p>The response that is returned from your API Gateway.</p>
+     * <p>The response that is returned from your API Gateway or your Lambda
+     * function.</p>
      */
     inline void SetResponse(const Aws::String& value) { m_response = value; }
 
     /**
-     * <p>The response that is returned from your API Gateway.</p>
+     * <p>The response that is returned from your API Gateway or your Lambda
+     * function.</p>
      */
     inline void SetResponse(Aws::String&& value) { m_response = std::move(value); }
 
     /**
-     * <p>The response that is returned from your API Gateway.</p>
+     * <p>The response that is returned from your API Gateway or your Lambda
+     * function.</p>
      */
     inline void SetResponse(const char* value) { m_response.assign(value); }
 
     /**
-     * <p>The response that is returned from your API Gateway.</p>
+     * <p>The response that is returned from your API Gateway or your Lambda
+     * function.</p>
      */
     inline TestIdentityProviderResult& WithResponse(const Aws::String& value) { SetResponse(value); return *this;}
 
     /**
-     * <p>The response that is returned from your API Gateway.</p>
+     * <p>The response that is returned from your API Gateway or your Lambda
+     * function.</p>
      */
     inline TestIdentityProviderResult& WithResponse(Aws::String&& value) { SetResponse(std::move(value)); return *this;}
 
     /**
-     * <p>The response that is returned from your API Gateway.</p>
+     * <p>The response that is returned from your API Gateway or your Lambda
+     * function.</p>
      */
     inline TestIdentityProviderResult& WithResponse(const char* value) { SetResponse(value); return *this;}
 
 
     /**
-     * <p>The HTTP status code that is the response from your API Gateway.</p>
+     * <p>The HTTP status code that is the response from your API Gateway or your
+     * Lambda function.</p>
      */
     inline int GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * <p>The HTTP status code that is the response from your API Gateway.</p>
+     * <p>The HTTP status code that is the response from your API Gateway or your
+     * Lambda function.</p>
      */
     inline void SetStatusCode(int value) { m_statusCode = value; }
 
     /**
-     * <p>The HTTP status code that is the response from your API Gateway.</p>
+     * <p>The HTTP status code that is the response from your API Gateway or your
+     * Lambda function.</p>
      */
     inline TestIdentityProviderResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
 

@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The name, Arn, <code>CreationTime</code>, <code>FeatureGroup</code> values,
+   * <p>The name, ARN, <code>CreationTime</code>, <code>FeatureGroup</code> values,
    * <code>LastUpdatedTime</code> and <code>EnableOnlineStorage</code> status of a
    * <code>FeatureGroup</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FeatureGroupSummary">AWS

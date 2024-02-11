@@ -13,6 +13,7 @@
 #include <aws/cleanrooms/model/ProtectedQueryStatistics.h>
 #include <aws/cleanrooms/model/ProtectedQueryResult.h>
 #include <aws/cleanrooms/model/ProtectedQueryError.h>
+#include <aws/cleanrooms/model/DifferentialPrivacyParameters.h>
 #include <utility>
 
 namespace Aws
@@ -31,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>The parameters for an AWS Clean Rooms protected query.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The parameters for an Clean Rooms protected query.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ProtectedQuery">AWS
    * API Reference</a></p>
    */
@@ -384,6 +385,43 @@ namespace Model
      */
     inline ProtectedQuery& WithError(ProtectedQueryError&& value) { SetError(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The sensitivity parameters of the differential privacy results of the
+     * protected query.</p>
+     */
+    inline const DifferentialPrivacyParameters& GetDifferentialPrivacy() const{ return m_differentialPrivacy; }
+
+    /**
+     * <p>The sensitivity parameters of the differential privacy results of the
+     * protected query.</p>
+     */
+    inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
+
+    /**
+     * <p>The sensitivity parameters of the differential privacy results of the
+     * protected query.</p>
+     */
+    inline void SetDifferentialPrivacy(const DifferentialPrivacyParameters& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = value; }
+
+    /**
+     * <p>The sensitivity parameters of the differential privacy results of the
+     * protected query.</p>
+     */
+    inline void SetDifferentialPrivacy(DifferentialPrivacyParameters&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::move(value); }
+
+    /**
+     * <p>The sensitivity parameters of the differential privacy results of the
+     * protected query.</p>
+     */
+    inline ProtectedQuery& WithDifferentialPrivacy(const DifferentialPrivacyParameters& value) { SetDifferentialPrivacy(value); return *this;}
+
+    /**
+     * <p>The sensitivity parameters of the differential privacy results of the
+     * protected query.</p>
+     */
+    inline ProtectedQuery& WithDifferentialPrivacy(DifferentialPrivacyParameters&& value) { SetDifferentialPrivacy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -415,6 +453,9 @@ namespace Model
 
     ProtectedQueryError m_error;
     bool m_errorHasBeenSet = false;
+
+    DifferentialPrivacyParameters m_differentialPrivacy;
+    bool m_differentialPrivacyHasBeenSet = false;
   };
 
 } // namespace Model

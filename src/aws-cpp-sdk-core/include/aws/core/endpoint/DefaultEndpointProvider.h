@@ -110,7 +110,13 @@ namespace Aws
             BuiltInParametersT m_builtInParameters;
         };
 
-        // Export symbol from the DLL:
-        template class AWS_CORE_API DefaultEndpointProvider<Aws::Client::GenericClientConfiguration</*HasEndpointDiscovery*/ true> >;
+        /**
+         * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+         */
+        AWS_CORE_EXTERN template class AWS_CORE_API DefaultEndpointProvider<Aws::Client::GenericClientConfiguration<false>,
+            Aws::Endpoint::BuiltInParameters,
+            Aws::Endpoint::ClientContextParameters>;
+        
+        AWS_CORE_EXTERN template class AWS_CORE_API DefaultEndpointProvider<Aws::Client::GenericClientConfiguration<true>>;
     } // namespace Endpoint
 } // namespace Aws

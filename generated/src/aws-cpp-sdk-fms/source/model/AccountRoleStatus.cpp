@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountRoleStatus::NOT_SET:
+            return {};
           case AccountRoleStatus::READY:
             return "READY";
           case AccountRoleStatus::CREATING:

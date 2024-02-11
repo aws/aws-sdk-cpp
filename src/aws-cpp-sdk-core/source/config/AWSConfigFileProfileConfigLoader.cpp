@@ -119,6 +119,11 @@ namespace Aws
                 Aws::String rawLine;
                 while(std::getline(stream, rawLine) && currentState != FAILURE)
                 {
+                    // Handle CR/LF line endings ("\r\n")
+                    if (!rawLine.empty() && rawLine.back() == '\r') {
+                        rawLine.pop_back(); // Remove carriage return character ('\r')
+                    }
+
                     Aws::String line = rawLine.substr(0, rawLine.find_first_of(COMMENT_START)); // ignore comments
                     if (line.empty() || line.length() < ASSUME_EMPTY_LEN || line.find_first_not_of(WHITESPACE_CHARACTERS) == Aws::String::npos)
                     {
@@ -559,7 +564,7 @@ namespace Aws
 
                     AWS_LOGSTREAM_DEBUG(CONFIG_FILE_LOADER, "Writing profile " << profile.first << " to disk.");
 
-                    outputFile << LEFT_BRACKET << prefix << " " << profile.second.GetName() << RIGHT_BRACKET << std::endl;
+                    outputFile << LEFT_BRACKET << prefix << (m_useProfilePrefix ? " " : "") << profile.second.GetName() << RIGHT_BRACKET << std::endl;
                     const Aws::Auth::AWSCredentials& credentials = profile.second.GetCredentials();
                     if (!credentials.GetAWSAccessKeyId().empty()) {
                         outputFile << ACCESS_KEY_ID_KEY << EQ << credentials.GetAWSAccessKeyId() << std::endl;

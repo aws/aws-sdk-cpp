@@ -104,15 +104,15 @@
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${memberVarName}.AddToNode(${lowerCaseVarName}Node);
 #elseif($member.shape.list)
-#if($member.flattened)
-  ${spaces}XmlNode ${lowerCaseVarName}ParentNode = parentNode.CreateChildElement("${memberName}");
-#elseif(!($member.locationName && $member.shape.flattened))
+#if(!($member.locationName && $member.shape.flattened) && !(${member.shape.listMember.locationName} && ${member.isFlattened()}))
   ${spaces}XmlNode ${lowerCaseVarName}ParentNode = parentNode.CreateChildElement("${serializationName}");
 #end
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
 #if($member.locationName && $member.shape.flattened)
     ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${member.locationName}");
+#elseif(${member.shape.listMember.locationName} && ${member.isFlattened()})
+    ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${member.shape.listMember.locationName}");
 #elseif(${member.shape.listMember.locationName})
     ${spaces}XmlNode ${lowerCaseVarName}Node = ${lowerCaseVarName}ParentNode.CreateChildElement("${member.shape.listMember.locationName}");
 #else

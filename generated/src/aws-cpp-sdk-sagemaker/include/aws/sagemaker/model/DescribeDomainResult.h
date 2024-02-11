@@ -10,9 +10,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/AuthMode.h>
 #include <aws/sagemaker/model/UserSettings.h>
+#include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/sagemaker/model/AppSecurityGroupManagement.h>
 #include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <utility>
@@ -222,6 +222,49 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after October 1, 2023.</p>
+     */
+    inline const Aws::String& GetSingleSignOnApplicationArn() const{ return m_singleSignOnApplicationArn; }
+
+    /**
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after October 1, 2023.</p>
+     */
+    inline void SetSingleSignOnApplicationArn(const Aws::String& value) { m_singleSignOnApplicationArn = value; }
+
+    /**
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after October 1, 2023.</p>
+     */
+    inline void SetSingleSignOnApplicationArn(Aws::String&& value) { m_singleSignOnApplicationArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after October 1, 2023.</p>
+     */
+    inline void SetSingleSignOnApplicationArn(const char* value) { m_singleSignOnApplicationArn.assign(value); }
+
+    /**
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after October 1, 2023.</p>
+     */
+    inline DescribeDomainResult& WithSingleSignOnApplicationArn(const Aws::String& value) { SetSingleSignOnApplicationArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after October 1, 2023.</p>
+     */
+    inline DescribeDomainResult& WithSingleSignOnApplicationArn(Aws::String&& value) { SetSingleSignOnApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
+     * value is only returned for domains created after October 1, 2023.</p>
+     */
+    inline DescribeDomainResult& WithSingleSignOnApplicationArn(const char* value) { SetSingleSignOnApplicationArn(value); return *this;}
+
+
+    /**
      * <p>The status.</p>
      */
     inline const DomainStatus& GetStatus() const{ return m_status; }
@@ -336,6 +379,49 @@ namespace Model
 
 
     /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline const Aws::String& GetSecurityGroupIdForDomainBoundary() const{ return m_securityGroupIdForDomainBoundary; }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetSecurityGroupIdForDomainBoundary(const Aws::String& value) { m_securityGroupIdForDomainBoundary = value; }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetSecurityGroupIdForDomainBoundary(Aws::String&& value) { m_securityGroupIdForDomainBoundary = std::move(value); }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetSecurityGroupIdForDomainBoundary(const char* value) { m_securityGroupIdForDomainBoundary.assign(value); }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(const Aws::String& value) { SetSecurityGroupIdForDomainBoundary(value); return *this;}
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(Aws::String&& value) { SetSecurityGroupIdForDomainBoundary(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(const char* value) { SetSecurityGroupIdForDomainBoundary(value); return *this;}
+
+
+    /**
      * <p>The domain's authentication mode.</p>
      */
     inline const AuthMode& GetAuthMode() const{ return m_authMode; }
@@ -393,12 +479,38 @@ namespace Model
 
 
     /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettings = value; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettings = std::move(value); }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline DescribeDomainResult& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline DescribeDomainResult& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the VPC used for non-EFS traffic. The default value is
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline const AppNetworkAccessType& GetAppNetworkAccessType() const{ return m_appNetworkAccessType; }
 
@@ -407,8 +519,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline void SetAppNetworkAccessType(const AppNetworkAccessType& value) { m_appNetworkAccessType = value; }
 
@@ -417,8 +529,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline void SetAppNetworkAccessType(AppNetworkAccessType&& value) { m_appNetworkAccessType = std::move(value); }
 
@@ -427,8 +539,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline DescribeDomainResult& WithAppNetworkAccessType(const AppNetworkAccessType& value) { SetAppNetworkAccessType(value); return *this;}
 
@@ -437,49 +549,49 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline DescribeDomainResult& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIds = value; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIds = std::move(value); }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline DescribeDomainResult& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline DescribeDomainResult& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline DescribeDomainResult& AddSubnetIds(const Aws::String& value) { m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline DescribeDomainResult& AddSubnetIds(Aws::String&& value) { m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline DescribeDomainResult& AddSubnetIds(const char* value) { m_subnetIds.push_back(value); return *this; }
 
@@ -521,43 +633,43 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline DescribeDomainResult& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline DescribeDomainResult& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline DescribeDomainResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
@@ -607,32 +719,6 @@ namespace Model
 
 
     /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettings = value; }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettings = std::move(value); }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline DescribeDomainResult& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline DescribeDomainResult& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
-
-
-    /**
      * <p>The entity that creates and manages the required security groups for
      * inter-app communication in <code>VPCOnly</code> mode. Required when
      * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
@@ -676,49 +762,6 @@ namespace Model
      * is provided.</p>
      */
     inline DescribeDomainResult& WithAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { SetAppSecurityGroupManagement(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline const Aws::String& GetSecurityGroupIdForDomainBoundary() const{ return m_securityGroupIdForDomainBoundary; }
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline void SetSecurityGroupIdForDomainBoundary(const Aws::String& value) { m_securityGroupIdForDomainBoundary = value; }
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline void SetSecurityGroupIdForDomainBoundary(Aws::String&& value) { m_securityGroupIdForDomainBoundary = std::move(value); }
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline void SetSecurityGroupIdForDomainBoundary(const char* value) { m_securityGroupIdForDomainBoundary.assign(value); }
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(const Aws::String& value) { SetSecurityGroupIdForDomainBoundary(value); return *this;}
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(Aws::String&& value) { SetSecurityGroupIdForDomainBoundary(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(const char* value) { SetSecurityGroupIdForDomainBoundary(value); return *this;}
 
 
     /**
@@ -780,6 +823,8 @@ namespace Model
 
     Aws::String m_singleSignOnManagedApplicationInstanceId;
 
+    Aws::String m_singleSignOnApplicationArn;
+
     DomainStatus m_status;
 
     Aws::Utils::DateTime m_creationTime;
@@ -788,9 +833,13 @@ namespace Model
 
     Aws::String m_failureReason;
 
+    Aws::String m_securityGroupIdForDomainBoundary;
+
     AuthMode m_authMode;
 
     UserSettings m_defaultUserSettings;
+
+    DomainSettings m_domainSettings;
 
     AppNetworkAccessType m_appNetworkAccessType;
 
@@ -802,11 +851,7 @@ namespace Model
 
     Aws::String m_kmsKeyId;
 
-    DomainSettings m_domainSettings;
-
     AppSecurityGroupManagement m_appSecurityGroupManagement;
-
-    Aws::String m_securityGroupIdForDomainBoundary;
 
     DefaultSpaceSettings m_defaultSpaceSettings;
 

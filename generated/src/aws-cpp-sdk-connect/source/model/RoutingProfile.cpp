@@ -30,7 +30,13 @@ RoutingProfile::RoutingProfile() :
     m_numberOfAssociatedQueues(0),
     m_numberOfAssociatedQueuesHasBeenSet(false),
     m_numberOfAssociatedUsers(0),
-    m_numberOfAssociatedUsersHasBeenSet(false)
+    m_numberOfAssociatedUsersHasBeenSet(false),
+    m_agentAvailabilityTimer(AgentAvailabilityTimer::NOT_SET),
+    m_agentAvailabilityTimerHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false)
 {
 }
 
@@ -46,7 +52,13 @@ RoutingProfile::RoutingProfile(JsonView jsonValue) :
     m_numberOfAssociatedQueues(0),
     m_numberOfAssociatedQueuesHasBeenSet(false),
     m_numberOfAssociatedUsers(0),
-    m_numberOfAssociatedUsersHasBeenSet(false)
+    m_numberOfAssociatedUsersHasBeenSet(false),
+    m_agentAvailabilityTimer(AgentAvailabilityTimer::NOT_SET),
+    m_agentAvailabilityTimerHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -129,6 +141,34 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
     m_numberOfAssociatedUsersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AgentAvailabilityTimer"))
+  {
+    m_agentAvailabilityTimer = AgentAvailabilityTimerMapper::GetAgentAvailabilityTimerForName(jsonValue.GetString("AgentAvailabilityTimer"));
+
+    m_agentAvailabilityTimerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedRegion"))
+  {
+    m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
+
+    m_lastModifiedRegionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsDefault"))
+  {
+    m_isDefault = jsonValue.GetBool("IsDefault");
+
+    m_isDefaultHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -203,6 +243,28 @@ JsonValue RoutingProfile::Jsonize() const
   if(m_numberOfAssociatedUsersHasBeenSet)
   {
    payload.WithInt64("NumberOfAssociatedUsers", m_numberOfAssociatedUsers);
+
+  }
+
+  if(m_agentAvailabilityTimerHasBeenSet)
+  {
+   payload.WithString("AgentAvailabilityTimer", AgentAvailabilityTimerMapper::GetNameForAgentAvailabilityTimer(m_agentAvailabilityTimer));
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastModifiedRegionHasBeenSet)
+  {
+   payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
+
+  }
+
+  if(m_isDefaultHasBeenSet)
+  {
+   payload.WithBool("IsDefault", m_isDefault);
 
   }
 

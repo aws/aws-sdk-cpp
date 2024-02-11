@@ -302,38 +302,44 @@ namespace Model
 
 
     /**
-     * <p>Enables the addition of output results configuration parameters for custom
-     * classifier jobs.</p>
+     * <p>Specifies the location for the output files from a custom classifier job.
+     * This parameter is required for a request that creates a native document
+     * model.</p>
      */
     inline const DocumentClassifierOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
-     * <p>Enables the addition of output results configuration parameters for custom
-     * classifier jobs.</p>
+     * <p>Specifies the location for the output files from a custom classifier job.
+     * This parameter is required for a request that creates a native document
+     * model.</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
-     * <p>Enables the addition of output results configuration parameters for custom
-     * classifier jobs.</p>
+     * <p>Specifies the location for the output files from a custom classifier job.
+     * This parameter is required for a request that creates a native document
+     * model.</p>
      */
     inline void SetOutputDataConfig(const DocumentClassifierOutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
-     * <p>Enables the addition of output results configuration parameters for custom
-     * classifier jobs.</p>
+     * <p>Specifies the location for the output files from a custom classifier job.
+     * This parameter is required for a request that creates a native document
+     * model.</p>
      */
     inline void SetOutputDataConfig(DocumentClassifierOutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
-     * <p>Enables the addition of output results configuration parameters for custom
-     * classifier jobs.</p>
+     * <p>Specifies the location for the output files from a custom classifier job.
+     * This parameter is required for a request that creates a native document
+     * model.</p>
      */
     inline CreateDocumentClassifierRequest& WithOutputDataConfig(const DocumentClassifierOutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
-     * <p>Enables the addition of output results configuration parameters for custom
-     * classifier jobs.</p>
+     * <p>Specifies the location for the output files from a custom classifier job.
+     * This parameter is required for a request that creates a native document
+     * model.</p>
      */
     inline CreateDocumentClassifierRequest& WithOutputDataConfig(DocumentClassifierOutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 
@@ -578,61 +584,61 @@ namespace Model
 
     /**
      * <p>Indicates the mode in which the classifier will be trained. The classifier
-     * can be trained in multi-class mode, which identifies one and only one class for
-     * each document, or multi-label mode, which identifies one or more labels for each
-     * document. In multi-label mode, multiple labels for an individual document are
-     * separated by a delimiter. The default delimiter between labels is a pipe
-     * (|).</p>
+     * can be trained in multi-class (single-label) mode or multi-label mode.
+     * Multi-class mode identifies a single class label for each document and
+     * multi-label mode identifies one or more class labels for each document. Multiple
+     * labels for an individual document are separated by a delimiter. The default
+     * delimiter between labels is a pipe (|).</p>
      */
     inline const DocumentClassifierMode& GetMode() const{ return m_mode; }
 
     /**
      * <p>Indicates the mode in which the classifier will be trained. The classifier
-     * can be trained in multi-class mode, which identifies one and only one class for
-     * each document, or multi-label mode, which identifies one or more labels for each
-     * document. In multi-label mode, multiple labels for an individual document are
-     * separated by a delimiter. The default delimiter between labels is a pipe
-     * (|).</p>
+     * can be trained in multi-class (single-label) mode or multi-label mode.
+     * Multi-class mode identifies a single class label for each document and
+     * multi-label mode identifies one or more class labels for each document. Multiple
+     * labels for an individual document are separated by a delimiter. The default
+     * delimiter between labels is a pipe (|).</p>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
      * <p>Indicates the mode in which the classifier will be trained. The classifier
-     * can be trained in multi-class mode, which identifies one and only one class for
-     * each document, or multi-label mode, which identifies one or more labels for each
-     * document. In multi-label mode, multiple labels for an individual document are
-     * separated by a delimiter. The default delimiter between labels is a pipe
-     * (|).</p>
+     * can be trained in multi-class (single-label) mode or multi-label mode.
+     * Multi-class mode identifies a single class label for each document and
+     * multi-label mode identifies one or more class labels for each document. Multiple
+     * labels for an individual document are separated by a delimiter. The default
+     * delimiter between labels is a pipe (|).</p>
      */
     inline void SetMode(const DocumentClassifierMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
      * <p>Indicates the mode in which the classifier will be trained. The classifier
-     * can be trained in multi-class mode, which identifies one and only one class for
-     * each document, or multi-label mode, which identifies one or more labels for each
-     * document. In multi-label mode, multiple labels for an individual document are
-     * separated by a delimiter. The default delimiter between labels is a pipe
-     * (|).</p>
+     * can be trained in multi-class (single-label) mode or multi-label mode.
+     * Multi-class mode identifies a single class label for each document and
+     * multi-label mode identifies one or more class labels for each document. Multiple
+     * labels for an individual document are separated by a delimiter. The default
+     * delimiter between labels is a pipe (|).</p>
      */
     inline void SetMode(DocumentClassifierMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
      * <p>Indicates the mode in which the classifier will be trained. The classifier
-     * can be trained in multi-class mode, which identifies one and only one class for
-     * each document, or multi-label mode, which identifies one or more labels for each
-     * document. In multi-label mode, multiple labels for an individual document are
-     * separated by a delimiter. The default delimiter between labels is a pipe
-     * (|).</p>
+     * can be trained in multi-class (single-label) mode or multi-label mode.
+     * Multi-class mode identifies a single class label for each document and
+     * multi-label mode identifies one or more class labels for each document. Multiple
+     * labels for an individual document are separated by a delimiter. The default
+     * delimiter between labels is a pipe (|).</p>
      */
     inline CreateDocumentClassifierRequest& WithMode(const DocumentClassifierMode& value) { SetMode(value); return *this;}
 
     /**
      * <p>Indicates the mode in which the classifier will be trained. The classifier
-     * can be trained in multi-class mode, which identifies one and only one class for
-     * each document, or multi-label mode, which identifies one or more labels for each
-     * document. In multi-label mode, multiple labels for an individual document are
-     * separated by a delimiter. The default delimiter between labels is a pipe
-     * (|).</p>
+     * can be trained in multi-class (single-label) mode or multi-label mode.
+     * Multi-class mode identifies a single class label for each document and
+     * multi-label mode identifies one or more class labels for each document. Multiple
+     * labels for an individual document are separated by a delimiter. The default
+     * delimiter between labels is a pipe (|).</p>
      */
     inline CreateDocumentClassifierRequest& WithMode(DocumentClassifierMode&& value) { SetMode(std::move(value)); return *this;}
 

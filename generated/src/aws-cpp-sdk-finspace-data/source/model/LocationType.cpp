@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocationType::NOT_SET:
+            return {};
           case LocationType::INGESTION:
             return "INGESTION";
           case LocationType::SAGEMAKER:

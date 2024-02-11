@@ -39,47 +39,47 @@ namespace Model
   public:
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVerifiedAccessTrustProviderIds() const{ return m_verifiedAccessTrustProviderIds; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline bool VerifiedAccessTrustProviderIdsHasBeenSet() const { return m_verifiedAccessTrustProviderIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline void SetVerifiedAccessTrustProviderIds(const Aws::Vector<Aws::String>& value) { m_verifiedAccessTrustProviderIdsHasBeenSet = true; m_verifiedAccessTrustProviderIds = value; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline void SetVerifiedAccessTrustProviderIds(Aws::Vector<Aws::String>&& value) { m_verifiedAccessTrustProviderIdsHasBeenSet = true; m_verifiedAccessTrustProviderIds = std::move(value); }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline DescribeVerifiedAccessTrustProvidersRequest& WithVerifiedAccessTrustProviderIds(const Aws::Vector<Aws::String>& value) { SetVerifiedAccessTrustProviderIds(value); return *this;}
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline DescribeVerifiedAccessTrustProvidersRequest& WithVerifiedAccessTrustProviderIds(Aws::Vector<Aws::String>&& value) { SetVerifiedAccessTrustProviderIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline DescribeVerifiedAccessTrustProvidersRequest& AddVerifiedAccessTrustProviderIds(const Aws::String& value) { m_verifiedAccessTrustProviderIdsHasBeenSet = true; m_verifiedAccessTrustProviderIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline DescribeVerifiedAccessTrustProvidersRequest& AddVerifiedAccessTrustProviderIds(Aws::String&& value) { m_verifiedAccessTrustProviderIdsHasBeenSet = true; m_verifiedAccessTrustProviderIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline DescribeVerifiedAccessTrustProvidersRequest& AddVerifiedAccessTrustProviderIds(const char* value) { m_verifiedAccessTrustProviderIdsHasBeenSet = true; m_verifiedAccessTrustProviderIds.push_back(value); return *this; }
 

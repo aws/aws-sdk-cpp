@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Finding::NOT_SET:
+            return {};
           case Finding::Underprovisioned:
             return "Underprovisioned";
           case Finding::Overprovisioned:

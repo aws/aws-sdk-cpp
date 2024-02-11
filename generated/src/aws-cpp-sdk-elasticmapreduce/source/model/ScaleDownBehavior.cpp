@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScaleDownBehavior::NOT_SET:
+            return {};
           case ScaleDownBehavior::TERMINATE_AT_INSTANCE_HOUR:
             return "TERMINATE_AT_INSTANCE_HOUR";
           case ScaleDownBehavior::TERMINATE_AT_TASK_COMPLETION:

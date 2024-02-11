@@ -21,6 +21,7 @@
 #include <aws/sagemaker/model/DebugHookConfig.h>
 #include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/sagemaker/model/TensorBoardOutputConfig.h>
+#include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
@@ -391,7 +392,8 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
      * <p>SageMaker provides primary statuses and secondary statuses that apply to each
      * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
@@ -420,7 +422,8 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
      * <p>SageMaker provides primary statuses and secondary statuses that apply to each
      * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
@@ -449,7 +452,8 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
      * <p>SageMaker provides primary statuses and secondary statuses that apply to each
      * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
@@ -478,7 +482,8 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
      * <p>SageMaker provides primary statuses and secondary statuses that apply to each
      * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
@@ -507,7 +512,8 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
      * <p>SageMaker provides primary statuses and secondary statuses that apply to each
      * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
@@ -536,7 +542,8 @@ namespace Model
     /**
      * <p> Provides detailed information about the state of the training job. For
      * detailed information about the secondary status of the training job, see
-     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p>
+     * <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
      * <p>SageMaker provides primary statuses and secondary statuses that apply to each
      * of them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
      * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
@@ -758,49 +765,57 @@ namespace Model
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline const Aws::Vector<Channel>& GetInputDataConfig() const{ return m_inputDataConfig; }
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline void SetInputDataConfig(const Aws::Vector<Channel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline void SetInputDataConfig(Aws::Vector<Channel>&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline TrainingJob& WithInputDataConfig(const Aws::Vector<Channel>& value) { SetInputDataConfig(value); return *this;}
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline TrainingJob& WithInputDataConfig(Aws::Vector<Channel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline TrainingJob& AddInputDataConfig(const Channel& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline TrainingJob& AddInputDataConfig(Channel&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(std::move(value)); return *this; }
 
@@ -880,48 +895,60 @@ namespace Model
 
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this training job has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this training job has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this training job has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this training job has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this training job has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline TrainingJob& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that this training job has access to. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
@@ -1578,6 +1605,25 @@ namespace Model
     inline TrainingJob& AddDebugRuleEvaluationStatuses(DebugRuleEvaluationStatus&& value) { m_debugRuleEvaluationStatusesHasBeenSet = true; m_debugRuleEvaluationStatuses.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const ProfilerConfig& GetProfilerConfig() const{ return m_profilerConfig; }
+
+    
+    inline bool ProfilerConfigHasBeenSet() const { return m_profilerConfigHasBeenSet; }
+
+    
+    inline void SetProfilerConfig(const ProfilerConfig& value) { m_profilerConfigHasBeenSet = true; m_profilerConfig = value; }
+
+    
+    inline void SetProfilerConfig(ProfilerConfig&& value) { m_profilerConfigHasBeenSet = true; m_profilerConfig = std::move(value); }
+
+    
+    inline TrainingJob& WithProfilerConfig(const ProfilerConfig& value) { SetProfilerConfig(value); return *this;}
+
+    
+    inline TrainingJob& WithProfilerConfig(ProfilerConfig&& value) { SetProfilerConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>The environment variables to set in the Docker container.</p>
      */
@@ -1856,6 +1902,9 @@ namespace Model
 
     Aws::Vector<DebugRuleEvaluationStatus> m_debugRuleEvaluationStatuses;
     bool m_debugRuleEvaluationStatusesHasBeenSet = false;
+
+    ProfilerConfig m_profilerConfig;
+    bool m_profilerConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
     bool m_environmentHasBeenSet = false;

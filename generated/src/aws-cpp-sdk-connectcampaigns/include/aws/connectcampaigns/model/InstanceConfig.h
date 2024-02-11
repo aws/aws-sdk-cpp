@@ -64,25 +64,6 @@ namespace Model
 
 
     
-    inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
-
-    
-    inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
-
-    
-    inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
-
-    
-    inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
-
-    
-    inline InstanceConfig& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
-
-    
-    inline InstanceConfig& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
-
-
-    
     inline const Aws::String& GetServiceLinkedRoleArn() const{ return m_serviceLinkedRoleArn; }
 
     
@@ -106,16 +87,35 @@ namespace Model
     
     inline InstanceConfig& WithServiceLinkedRoleArn(const char* value) { SetServiceLinkedRoleArn(value); return *this;}
 
+
+    
+    inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
+
+    
+    inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
+
+    
+    inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
+
+    
+    inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
+
+    
+    inline InstanceConfig& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
+
+    
+    inline InstanceConfig& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_connectInstanceId;
     bool m_connectInstanceIdHasBeenSet = false;
 
-    EncryptionConfig m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet = false;
-
     Aws::String m_serviceLinkedRoleArn;
     bool m_serviceLinkedRoleArnHasBeenSet = false;
+
+    EncryptionConfig m_encryptionConfig;
+    bool m_encryptionConfigHasBeenSet = false;
   };
 
 } // namespace Model

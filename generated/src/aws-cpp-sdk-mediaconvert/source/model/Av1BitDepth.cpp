@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Av1BitDepth::NOT_SET:
+            return {};
           case Av1BitDepth::BIT_8:
             return "BIT_8";
           case Av1BitDepth::BIT_10:

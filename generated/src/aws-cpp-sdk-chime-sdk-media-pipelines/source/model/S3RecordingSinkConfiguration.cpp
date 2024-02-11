@@ -19,12 +19,16 @@ namespace Model
 {
 
 S3RecordingSinkConfiguration::S3RecordingSinkConfiguration() : 
-    m_destinationHasBeenSet(false)
+    m_destinationHasBeenSet(false),
+    m_recordingFileFormat(RecordingFileFormat::NOT_SET),
+    m_recordingFileFormatHasBeenSet(false)
 {
 }
 
 S3RecordingSinkConfiguration::S3RecordingSinkConfiguration(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false)
+    m_destinationHasBeenSet(false),
+    m_recordingFileFormat(RecordingFileFormat::NOT_SET),
+    m_recordingFileFormatHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,13 @@ S3RecordingSinkConfiguration& S3RecordingSinkConfiguration::operator =(JsonView 
     m_destinationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RecordingFileFormat"))
+  {
+    m_recordingFileFormat = RecordingFileFormatMapper::GetRecordingFileFormatForName(jsonValue.GetString("RecordingFileFormat"));
+
+    m_recordingFileFormatHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +60,11 @@ JsonValue S3RecordingSinkConfiguration::Jsonize() const
   {
    payload.WithString("Destination", m_destination);
 
+  }
+
+  if(m_recordingFileFormatHasBeenSet)
+  {
+   payload.WithString("RecordingFileFormat", RecordingFileFormatMapper::GetNameForRecordingFileFormat(m_recordingFileFormat));
   }
 
   return payload;

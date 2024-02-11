@@ -24,14 +24,16 @@ namespace Model
 {
 
   /**
-   * <p>Set of key-value pairs that contain information about a game session. When
-   * included in a game session request, these properties communicate details to be
-   * used when setting up the new game session. For example, a game property might
-   * specify a game mode, level, or map. Game properties are passed to the game
-   * server process when initiating a new game session. For more information, see the
-   * <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create">
-   * GameLift Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>This key-value pair can store custom data about a game session. For example,
+   * you might use a <code>GameProperty</code> to track a game session's map, level
+   * of difficulty, or remaining time. The difficulty level could be specified like
+   * this: <code>{"Key": "difficulty", "Value":"Novice"}</code>. </p> <p> You can set
+   * game properties when creating a game session. You can also modify game
+   * properties of an active game session. When searching for game sessions, you can
+   * filter on game property keys and values. You can't delete game properties from a
+   * game session. </p> <p>For examples of working with game properties, see <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties">Create
+   * a game session with properties</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameProperty">AWS
    * API Reference</a></p>
    */

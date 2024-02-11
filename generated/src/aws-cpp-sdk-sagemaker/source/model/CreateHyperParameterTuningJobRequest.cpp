@@ -18,7 +18,8 @@ CreateHyperParameterTuningJobRequest::CreateHyperParameterTuningJobRequest() :
     m_trainingJobDefinitionHasBeenSet(false),
     m_trainingJobDefinitionsHasBeenSet(false),
     m_warmStartConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_autotuneHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,12 @@ Aws::String CreateHyperParameterTuningJobRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_autotuneHasBeenSet)
+  {
+   payload.WithObject("Autotune", m_autotune.Jsonize());
 
   }
 

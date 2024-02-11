@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamingInstanceType::NOT_SET:
+            return {};
           case StreamingInstanceType::g4dn_xlarge:
             return "g4dn.xlarge";
           case StreamingInstanceType::g4dn_2xlarge:

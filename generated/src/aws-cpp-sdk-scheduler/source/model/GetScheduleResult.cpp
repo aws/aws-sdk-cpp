@@ -18,11 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetScheduleResult::GetScheduleResult() : 
+    m_actionAfterCompletion(ActionAfterCompletion::NOT_SET),
     m_state(ScheduleState::NOT_SET)
 {
 }
 
 GetScheduleResult::GetScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_actionAfterCompletion(ActionAfterCompletion::NOT_SET),
     m_state(ScheduleState::NOT_SET)
 {
   *this = result;
@@ -31,6 +33,12 @@ GetScheduleResult::GetScheduleResult(const Aws::AmazonWebServiceResult<JsonValue
 GetScheduleResult& GetScheduleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("ActionAfterCompletion"))
+  {
+    m_actionAfterCompletion = ActionAfterCompletionMapper::GetActionAfterCompletionForName(jsonValue.GetString("ActionAfterCompletion"));
+
+  }
+
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");

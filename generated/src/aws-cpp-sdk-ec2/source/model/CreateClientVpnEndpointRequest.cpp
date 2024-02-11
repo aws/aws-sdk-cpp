@@ -25,7 +25,7 @@ CreateClientVpnEndpointRequest::CreateClientVpnEndpointRequest() :
     m_splitTunnelHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagSpecificationsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),

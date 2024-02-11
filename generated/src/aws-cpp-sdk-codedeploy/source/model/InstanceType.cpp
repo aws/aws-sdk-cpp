@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceType::NOT_SET:
+            return {};
           case InstanceType::Blue:
             return "Blue";
           case InstanceType::Green:

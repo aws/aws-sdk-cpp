@@ -65,12 +65,15 @@ file(GLOB UTILS_JSON_HEADERS "include/aws/core/utils/json/*.h")
 file(GLOB UTILS_THREADING_HEADERS "include/aws/core/utils/threading/*.h")
 file(GLOB UTILS_XML_HEADERS "include/aws/core/utils/xml/*.h")
 file(GLOB UTILS_MEMORY_HEADERS "include/aws/core/utils/memory/*.h")
+file(GLOB UTILS_COMPONENT_REGISTRY_HEADERS "include/aws/core/utils/component-registry/*.h")
 file(GLOB UTILS_STL_HEADERS "include/aws/core/utils/memory/stl/*.h")
 file(GLOB UTILS_LOGGING_HEADERS "include/aws/core/utils/logging/*.h")
 file(GLOB UTILS_RATE_LIMITER_HEADERS "include/aws/core/utils/ratelimiter/*.h")
 file(GLOB UTILS_STREAM_HEADERS "include/aws/core/utils/stream/*.h")
 file(GLOB CJSON_HEADERS "include/aws/core/external/cjson/*.h")
 file(GLOB TINYXML2_HEADERS "include/aws/core/external/tinyxml2/tinyxml2.h")
+file(GLOB SMITHY_HEADERS "include/smithy/*.h")
+file(GLOB SMITHY_TRACING_HEADERS "include/smithy/tracing/*.h")
 
 file(GLOB AWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp")
 file(GLOB AWS_TINYXML2_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/tinyxml2/*.cpp")
@@ -98,9 +101,12 @@ file(GLOB UTILS_THREADING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/threa
 file(GLOB UTILS_XML_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/xml/*.cpp")
 file(GLOB UTILS_LOGGING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/logging/*.cpp")
 file(GLOB UTILS_MEMORY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/memory/*.cpp")
+file(GLOB UTILS_COMPONENT_REGISTRY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/component-registry/*.cpp")
 file(GLOB UTILS_MEMORY_STL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/memory/stl/*.cpp")
 file(GLOB UTILS_STREAM_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/stream/*.cpp")
 file(GLOB UTILS_CRYPTO_FACTORY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/factory/*.cpp")
+file(GLOB SMITHY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/*.cpp")
+file(GLOB SMITHY_TRACING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/tracing/*.cpp")
 
 include(CheckCSourceCompiles)
 include(CheckCXXSourceCompiles)
@@ -223,6 +229,10 @@ elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
     file(GLOB UTILS_CRYPTO_COMMONCRYPTO_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/commoncrypto/*.cpp")
 endif()
 
+if (BUILD_OPTEL)
+    file(GLOB OPTEL_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/smithy/tracing/impl/opentelemetry/*.h")
+    file(GLOB OPTEL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/tracing/impl/opentelemetry/*.cpp")
+endif ()
 
 file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${AWS_TINYXML2_SOURCE}
@@ -245,9 +255,12 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${UTILS_STREAM_SOURCE}
     ${UTILS_LOGGING_SOURCE}
     ${UTILS_MEMORY_SOURCE}
+    ${UTILS_COMPONENT_REGISTRY_SOURCE}
     ${UTILS_MEMORY_STL_SOURCE}
     ${UTILS_CRYPTO_OPENSSL_SOURCE}
     ${UTILS_CRYPTO_COMMONCRYPTO_SOURCE}
+    ${SMITHY_SOURCE}
+    ${SMITHY_TRACING_SOURCE}
 )
 
 file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
@@ -278,6 +291,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${UTILS_XML_HEADERS}
   ${UTILS_LOGGING_HEADERS}
   ${UTILS_MEMORY_HEADERS}
+  ${UTILS_COMPONENT_REGISTRY_HEADERS}
   ${UTILS_STL_HEADERS}
   ${UTILS_STREAM_HEADERS}
   ${UTILS_RATE_LIMITER_HEADERS}
@@ -288,6 +302,9 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${UTILS_CRYPTO_BCRYPT_HEADERS}
   ${UTILS_CRYPTO_OPENSSL_HEADERS}
   ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS}
+  ${SMITHY_HEADERS}
+  ${SMITHY_TRACING_HEADERS}
+  ${OPTEL_HEADERS}
 )
 
 # misc platform-specific, not related to features (encryption/http clients)
@@ -341,6 +358,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${CJSON_SOURCE}
     ${AWS_NATIVE_SDK_CUSTOM_SRC}
     ${UTILS_CRYPTO_SOURCE}
+    ${OPTEL_SOURCE}
 )
 
 file(GLOB AWS_NATIVE_SDK_UNITY_SRC
@@ -394,11 +412,14 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\utils\\xml" FILES ${UTILS_XML_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\logging" FILES ${UTILS_LOGGING_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\memory" FILES ${UTILS_MEMORY_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\component-registry" FILES ${UTILS_COMPONENT_REGISTRY_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\memory\\stl" FILES ${UTILS_STL_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\stream" FILES ${UTILS_STREAM_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\ratelimiter" FILES ${UTILS_RATE_LIMITER_HEADERS})
     source_group("Header Files\\aws\\core\\external\\cjson" FILES ${CJSON_HEADERS})
     source_group("Header Files\\aws\\core\\external\\tinyxml2" FILES ${TINYXML2_HEADERS})
+    source_group("Header Files\\smithy" FILES ${SMITHY_HEADERS})
+    source_group("Header Files\\smithy\\tracing" FILES ${SMITHY_TRACING_HEADERS})
 
     # http client conditional headers
     if(ENABLE_CURL_CLIENT)
@@ -417,6 +438,10 @@ if(MSVC)
     elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
         source_group("Header Files\\aws\\core\\utils\\crypto\\commoncrypto" FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS})
     endif()
+
+    if (BUILD_OPTEL)
+        source_group("Header Files\\smithy\\tracing\\impl\\opentelemetry" FILES ${OPTEL_HEADERS})
+    endif ()
 
     source_group("Source Files" FILES ${AWS_SOURCE})
     source_group("Source Files\\external\\cjson" FILES ${CJSON_SOURCE})
@@ -448,7 +473,10 @@ if(MSVC)
     source_group("Source Files\\utils\\stream" FILES ${UTILS_STREAM_SOURCE})
     source_group("Source Files\\utils\\logging" FILES ${UTILS_LOGGING_SOURCE})
     source_group("Source Files\\utils\\memory" FILES ${UTILS_MEMORY_SOURCE})
+    source_group("Source Files\\utils\\component-registry" FILES ${UTILS_COMPONENT_REGISTRY_SOURCE})
     source_group("Source Files\\utils\\memory\\stl" FILES ${UTILS_MEMORY_STL_SOURCE})
+    source_group("Source Files\\smithy" FILES ${SMITHY_SOURCE})
+    source_group("Source Files\\smithy\\tracing" FILES ${SMITHY_TRACING_SOURCE})
 
     # http client conditional source
     if(ENABLE_CURL_CLIENT)
@@ -468,6 +496,10 @@ if(MSVC)
     elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
             source_group("Source Files\\utils\\crypto\\commoncrypto" FILES ${UTILS_CRYPTO_COMMONCRYPTO_SOURCE})
     endif()
+
+    if (BUILD_OPTEL)
+        source_group("Source Files\\smithy\\tracing\\impl\\opentelemetry" FILES ${OPTEL_SOURCE})
+    endif ()
 
 
 endif(MSVC)
@@ -521,6 +553,10 @@ if(BUILD_OPENSSL)
     target_include_directories(${PROJECT_NAME} PRIVATE "${OPENSSL_INCLUDE_DIR}")
 endif()
 
+if (BUILD_OPTEL)
+    target_include_directories(${PROJECT_NAME} PRIVATE ${OPENTELEMETRY_CPP_INCLUDE_DIRS})
+endif ()
+
 set(PKG_CONFIG_LIB "-l${PROJECT_NAME}")
 
 if (ENABLE_CURL_LOGGING)
@@ -555,13 +591,21 @@ if (ENABLE_ZLIB_REQUEST_COMPRESSION)
     target_link_libraries(${PROJECT_NAME} PRIVATE ZLIB::ZLIB)
 endif()
 
+if (BUILD_OPTEL)
+    target_link_libraries(${PROJECT_NAME} PRIVATE ${OPENTELEMETRY_CPP_LIBRARIES})
+endif ()
+
 if(USE_WINDOWS_DLL_SEMANTICS)
     target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_WINDOWS_DLL_SEMANTICS")
 
     if(BUILD_SHARED_LIBS)
         target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_IMPORT_EXPORT=1")
         target_compile_definitions(${PROJECT_NAME} PRIVATE "AWS_CORE_EXPORTS=1")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE "SMITHY_EXPORTS=1")
     endif()
+elseif (BUILD_SHARED_LIBS)
+    target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_IMPORT_EXPORT=1")
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "SMITHY_EXPORTS=1")
 endif()
 
 set_compiler_flags(${PROJECT_NAME})
@@ -624,17 +668,24 @@ install (FILES ${UTILS_RETRY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/
 install (FILES ${UTILS_XML_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/xml)
 install (FILES ${UTILS_LOGGING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/logging)
 install (FILES ${UTILS_MEMORY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/memory)
+install (FILES ${UTILS_COMPONENT_REGISTRY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/component-registry)
 install (FILES ${UTILS_STL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/memory/stl)
 install (FILES ${UTILS_RATE_LIMITER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/ratelimiter)
 install (FILES ${UTILS_STREAM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/stream)
 install (FILES ${UTILS_THREADING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/threading)
 install (FILES ${CJSON_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/external/cjson)
 install (FILES ${TINYXML2_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/external/tinyxml2)
+install (FILES ${SMITHY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy)
+install (FILES ${SMITHY_TRACING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/tracing)
 
 # android logcat headers
 if(PLATFORM_ANDROID)
     install (FILES ${UTILS_LOGGING_ANDROID_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/logging/android)
 endif()
+
+if (BUILD_OPTEL)
+    install (FILES ${OPTEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/tracing/impl/opentelemetry)
+endif ()
 
 # http client headers
 if(ENABLE_CURL_CLIENT)

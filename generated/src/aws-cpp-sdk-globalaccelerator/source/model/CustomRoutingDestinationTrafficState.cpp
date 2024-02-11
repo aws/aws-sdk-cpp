@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomRoutingDestinationTrafficState::NOT_SET:
+            return {};
           case CustomRoutingDestinationTrafficState::ALLOW:
             return "ALLOW";
           case CustomRoutingDestinationTrafficState::DENY:

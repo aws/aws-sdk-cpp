@@ -469,7 +469,7 @@ namespace Model
 
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -477,7 +477,7 @@ namespace Model
     inline const Aws::String& GetEndTimeOffset() const{ return m_endTimeOffset; }
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -485,7 +485,7 @@ namespace Model
     inline bool EndTimeOffsetHasBeenSet() const { return m_endTimeOffsetHasBeenSet; }
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -493,7 +493,7 @@ namespace Model
     inline void SetEndTimeOffset(const Aws::String& value) { m_endTimeOffsetHasBeenSet = true; m_endTimeOffset = value; }
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -501,7 +501,7 @@ namespace Model
     inline void SetEndTimeOffset(Aws::String&& value) { m_endTimeOffsetHasBeenSet = true; m_endTimeOffset = std::move(value); }
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -509,7 +509,7 @@ namespace Model
     inline void SetEndTimeOffset(const char* value) { m_endTimeOffsetHasBeenSet = true; m_endTimeOffset.assign(value); }
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -517,7 +517,7 @@ namespace Model
     inline BatchTransformInput& WithEndTimeOffset(const Aws::String& value) { SetEndTimeOffset(value); return *this;}
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -525,12 +525,53 @@ namespace Model
     inline BatchTransformInput& WithEndTimeOffset(Aws::String&& value) { SetEndTimeOffset(std::move(value)); return *this;}
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
      */
     inline BatchTransformInput& WithEndTimeOffset(const char* value) { SetEndTimeOffset(value); return *this;}
+
+
+    /**
+     * <p>The attributes of the input data to exclude from the analysis.</p>
+     */
+    inline const Aws::String& GetExcludeFeaturesAttribute() const{ return m_excludeFeaturesAttribute; }
+
+    /**
+     * <p>The attributes of the input data to exclude from the analysis.</p>
+     */
+    inline bool ExcludeFeaturesAttributeHasBeenSet() const { return m_excludeFeaturesAttributeHasBeenSet; }
+
+    /**
+     * <p>The attributes of the input data to exclude from the analysis.</p>
+     */
+    inline void SetExcludeFeaturesAttribute(const Aws::String& value) { m_excludeFeaturesAttributeHasBeenSet = true; m_excludeFeaturesAttribute = value; }
+
+    /**
+     * <p>The attributes of the input data to exclude from the analysis.</p>
+     */
+    inline void SetExcludeFeaturesAttribute(Aws::String&& value) { m_excludeFeaturesAttributeHasBeenSet = true; m_excludeFeaturesAttribute = std::move(value); }
+
+    /**
+     * <p>The attributes of the input data to exclude from the analysis.</p>
+     */
+    inline void SetExcludeFeaturesAttribute(const char* value) { m_excludeFeaturesAttributeHasBeenSet = true; m_excludeFeaturesAttribute.assign(value); }
+
+    /**
+     * <p>The attributes of the input data to exclude from the analysis.</p>
+     */
+    inline BatchTransformInput& WithExcludeFeaturesAttribute(const Aws::String& value) { SetExcludeFeaturesAttribute(value); return *this;}
+
+    /**
+     * <p>The attributes of the input data to exclude from the analysis.</p>
+     */
+    inline BatchTransformInput& WithExcludeFeaturesAttribute(Aws::String&& value) { SetExcludeFeaturesAttribute(std::move(value)); return *this;}
+
+    /**
+     * <p>The attributes of the input data to exclude from the analysis.</p>
+     */
+    inline BatchTransformInput& WithExcludeFeaturesAttribute(const char* value) { SetExcludeFeaturesAttribute(value); return *this;}
 
   private:
 
@@ -566,6 +607,9 @@ namespace Model
 
     Aws::String m_endTimeOffset;
     bool m_endTimeOffsetHasBeenSet = false;
+
+    Aws::String m_excludeFeaturesAttribute;
+    bool m_excludeFeaturesAttributeHasBeenSet = false;
   };
 
 } // namespace Model

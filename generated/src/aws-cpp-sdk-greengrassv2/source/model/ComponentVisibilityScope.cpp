@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComponentVisibilityScope::NOT_SET:
+            return {};
           case ComponentVisibilityScope::PRIVATE_:
             return "PRIVATE";
           case ComponentVisibilityScope::PUBLIC_:

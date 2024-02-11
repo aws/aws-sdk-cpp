@@ -24,6 +24,8 @@ namespace Aws
         static const int PREFIX_HASH = HashingUtils::HashString("PREFIX");
         static const int NOT_EQUALS_HASH = HashingUtils::HashString("NOT_EQUALS");
         static const int PREFIX_NOT_EQUALS_HASH = HashingUtils::HashString("PREFIX_NOT_EQUALS");
+        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
+        static const int NOT_CONTAINS_HASH = HashingUtils::HashString("NOT_CONTAINS");
 
 
         StringFilterComparison GetStringFilterComparisonForName(const Aws::String& name)
@@ -45,6 +47,14 @@ namespace Aws
           {
             return StringFilterComparison::PREFIX_NOT_EQUALS;
           }
+          else if (hashCode == CONTAINS_HASH)
+          {
+            return StringFilterComparison::CONTAINS;
+          }
+          else if (hashCode == NOT_CONTAINS_HASH)
+          {
+            return StringFilterComparison::NOT_CONTAINS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -59,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StringFilterComparison::NOT_SET:
+            return {};
           case StringFilterComparison::EQUALS:
             return "EQUALS";
           case StringFilterComparison::PREFIX:
@@ -67,6 +79,10 @@ namespace Aws
             return "NOT_EQUALS";
           case StringFilterComparison::PREFIX_NOT_EQUALS:
             return "PREFIX_NOT_EQUALS";
+          case StringFilterComparison::CONTAINS:
+            return "CONTAINS";
+          case StringFilterComparison::NOT_CONTAINS:
+            return "NOT_CONTAINS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

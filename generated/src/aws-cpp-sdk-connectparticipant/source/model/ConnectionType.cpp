@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionType::NOT_SET:
+            return {};
           case ConnectionType::WEBSOCKET:
             return "WEBSOCKET";
           case ConnectionType::CONNECTION_CREDENTIALS:

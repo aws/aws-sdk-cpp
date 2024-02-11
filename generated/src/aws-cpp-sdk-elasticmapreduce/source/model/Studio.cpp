@@ -36,7 +36,13 @@ Studio::Studio() :
     m_defaultS3LocationHasBeenSet(false),
     m_idpAuthUrlHasBeenSet(false),
     m_idpRelayStateParameterNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_idcInstanceArnHasBeenSet(false),
+    m_trustedIdentityPropagationEnabled(false),
+    m_trustedIdentityPropagationEnabledHasBeenSet(false),
+    m_idcUserAssignment(IdcUserAssignment::NOT_SET),
+    m_idcUserAssignmentHasBeenSet(false),
+    m_encryptionKeyArnHasBeenSet(false)
 {
 }
 
@@ -58,7 +64,13 @@ Studio::Studio(JsonView jsonValue) :
     m_defaultS3LocationHasBeenSet(false),
     m_idpAuthUrlHasBeenSet(false),
     m_idpRelayStateParameterNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_idcInstanceArnHasBeenSet(false),
+    m_trustedIdentityPropagationEnabled(false),
+    m_trustedIdentityPropagationEnabledHasBeenSet(false),
+    m_idcUserAssignment(IdcUserAssignment::NOT_SET),
+    m_idcUserAssignmentHasBeenSet(false),
+    m_encryptionKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -190,6 +202,34 @@ Studio& Studio::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdcInstanceArn"))
+  {
+    m_idcInstanceArn = jsonValue.GetString("IdcInstanceArn");
+
+    m_idcInstanceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TrustedIdentityPropagationEnabled"))
+  {
+    m_trustedIdentityPropagationEnabled = jsonValue.GetBool("TrustedIdentityPropagationEnabled");
+
+    m_trustedIdentityPropagationEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdcUserAssignment"))
+  {
+    m_idcUserAssignment = IdcUserAssignmentMapper::GetIdcUserAssignmentForName(jsonValue.GetString("IdcUserAssignment"));
+
+    m_idcUserAssignmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EncryptionKeyArn"))
+  {
+    m_encryptionKeyArn = jsonValue.GetString("EncryptionKeyArn");
+
+    m_encryptionKeyArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -304,6 +344,29 @@ JsonValue Studio::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_idcInstanceArnHasBeenSet)
+  {
+   payload.WithString("IdcInstanceArn", m_idcInstanceArn);
+
+  }
+
+  if(m_trustedIdentityPropagationEnabledHasBeenSet)
+  {
+   payload.WithBool("TrustedIdentityPropagationEnabled", m_trustedIdentityPropagationEnabled);
+
+  }
+
+  if(m_idcUserAssignmentHasBeenSet)
+  {
+   payload.WithString("IdcUserAssignment", IdcUserAssignmentMapper::GetNameForIdcUserAssignment(m_idcUserAssignment));
+  }
+
+  if(m_encryptionKeyArnHasBeenSet)
+  {
+   payload.WithString("EncryptionKeyArn", m_encryptionKeyArn);
 
   }
 

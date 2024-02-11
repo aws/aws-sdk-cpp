@@ -92,38 +92,38 @@ namespace Model
 
 
     /**
-     * <p> The type of the dataset. Specify <code>train</code> to create a training
-     * dataset. Specify <code>test</code> to create a test dataset. </p>
+     * <p> The type of the dataset. Specify <code>TRAIN</code> to create a training
+     * dataset. Specify <code>TEST</code> to create a test dataset. </p>
      */
     inline const DatasetType& GetDatasetType() const{ return m_datasetType; }
 
     /**
-     * <p> The type of the dataset. Specify <code>train</code> to create a training
-     * dataset. Specify <code>test</code> to create a test dataset. </p>
+     * <p> The type of the dataset. Specify <code>TRAIN</code> to create a training
+     * dataset. Specify <code>TEST</code> to create a test dataset. </p>
      */
     inline bool DatasetTypeHasBeenSet() const { return m_datasetTypeHasBeenSet; }
 
     /**
-     * <p> The type of the dataset. Specify <code>train</code> to create a training
-     * dataset. Specify <code>test</code> to create a test dataset. </p>
+     * <p> The type of the dataset. Specify <code>TRAIN</code> to create a training
+     * dataset. Specify <code>TEST</code> to create a test dataset. </p>
      */
     inline void SetDatasetType(const DatasetType& value) { m_datasetTypeHasBeenSet = true; m_datasetType = value; }
 
     /**
-     * <p> The type of the dataset. Specify <code>train</code> to create a training
-     * dataset. Specify <code>test</code> to create a test dataset. </p>
+     * <p> The type of the dataset. Specify <code>TRAIN</code> to create a training
+     * dataset. Specify <code>TEST</code> to create a test dataset. </p>
      */
     inline void SetDatasetType(DatasetType&& value) { m_datasetTypeHasBeenSet = true; m_datasetType = std::move(value); }
 
     /**
-     * <p> The type of the dataset. Specify <code>train</code> to create a training
-     * dataset. Specify <code>test</code> to create a test dataset. </p>
+     * <p> The type of the dataset. Specify <code>TRAIN</code> to create a training
+     * dataset. Specify <code>TEST</code> to create a test dataset. </p>
      */
     inline CreateDatasetRequest& WithDatasetType(const DatasetType& value) { SetDatasetType(value); return *this;}
 
     /**
-     * <p> The type of the dataset. Specify <code>train</code> to create a training
-     * dataset. Specify <code>test</code> to create a test dataset. </p>
+     * <p> The type of the dataset. Specify <code>TRAIN</code> to create a training
+     * dataset. Specify <code>TEST</code> to create a test dataset. </p>
      */
     inline CreateDatasetRequest& WithDatasetType(DatasetType&& value) { SetDatasetType(std::move(value)); return *this;}
 

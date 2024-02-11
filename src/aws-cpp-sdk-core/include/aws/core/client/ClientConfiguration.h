@@ -7,11 +7,14 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/http/Scheme.h>
+#include <aws/core/http/Version.h>
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/http/HttpTypes.h>
 #include <aws/core/utils/Array.h>
 #include <aws/crt/Optional.h>
+#include <smithy/tracing/TelemetryProvider.h>
+#include <smithy/tracing/NoopTelemetryProvider.h>
 #include <memory>
 
 namespace Aws
@@ -58,6 +61,13 @@ namespace Aws
           UseRequestCompression useRequestCompression=UseRequestCompression::ENABLE;
           size_t requestMinCompressionSizeBytes = 10240;
         };
+         /**
+         * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
+          * - disableIMDS
+         */
+        struct ClientConfigurationInitValues {
+            bool shouldDisableIMDS = false;
+        };
 
         /**
          * This mutable structure is used to configure any of the AWS clients.
@@ -66,6 +76,12 @@ namespace Aws
         struct AWS_CORE_API ClientConfiguration
         {
             ClientConfiguration();
+
+            /**
+             * Create a configuration with default settings. By default IMDS calls are enabled.
+             * @param ClientConfigurationInitValues ClientConfiguration initial customizable values
+             */
+            ClientConfiguration(const ClientConfigurationInitValues &configuration);
 
             /**
              * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -151,6 +167,11 @@ namespace Aws
              * Override the http endpoint used to talk to a service.
              */
             Aws::String endpointOverride;
+
+            /**
+             * Allow HTTP client to discover system proxy setting. Off by default for legacy reasons.
+             */
+            bool allowSystemProxy = false;
             /**
              * If you have users going through a proxy, set the proxy scheme here. Default HTTP
              */
@@ -294,6 +315,21 @@ namespace Aws
             bool disableIMDS = false;
 
             /**
+             * Request HTTP client to use specific http version. Currently supported for
+             * only Curl. More or less is a one to one conversion of the CURLOPT_HTTP_VERSION
+             * configuration option.
+             *
+             * Default to Version 2 TLS which is the default after curl version 7.62.0. Will
+             * fall back to 1.1 if compiled against a earlier version of curl.
+             */
+            Aws::Http::Version version = Http::Version::HTTP_VERSION_2TLS;
+
+            /**
+             * Disable all internal IMDSV1 Calls
+             */
+            bool disableImdsV1 = false;
+
+            /**
              * A helper function to read config value from env variable or aws profile config
              */
             static Aws::String LoadConfigFromEnvOrProfile(const Aws::String& envKey,
@@ -301,6 +337,12 @@ namespace Aws
                                                           const Aws::String& profileProperty,
                                                           const Aws::Vector<Aws::String>& allowedValues,
                                                           const Aws::String& defaultValue);
+
+            /**
+             * A wrapper for interfacing with telemetry functionality.
+             */
+            std::shared_ptr<smithy::components::tracing::TelemetryProvider> telemetryProvider =
+                smithy::components::tracing::NoopTelemetryProvider::CreateProvider();
         };
 
         /**
@@ -313,7 +355,9 @@ namespace Aws
          * A helper function to compute a user agent
          * @return Aws::String with a user-agent
          */
-        AWS_CORE_API Aws::String ComputeUserAgentString();
+        AWS_CORE_API Aws::String ComputeUserAgentString(ClientConfiguration const * const pConfig = nullptr);
+
+        AWS_CORE_API Aws::String FilterUserAgentToken(char const * const token);
 
     } // namespace Client
 } // namespace Aws

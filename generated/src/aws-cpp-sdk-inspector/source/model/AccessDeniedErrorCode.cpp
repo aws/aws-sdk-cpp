@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessDeniedErrorCode::NOT_SET:
+            return {};
           case AccessDeniedErrorCode::ACCESS_DENIED_TO_ASSESSMENT_TARGET:
             return "ACCESS_DENIED_TO_ASSESSMENT_TARGET";
           case AccessDeniedErrorCode::ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE:

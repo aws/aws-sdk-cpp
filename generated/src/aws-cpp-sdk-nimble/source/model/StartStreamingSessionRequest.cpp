@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 
 StartStreamingSessionRequest::StartStreamingSessionRequest() : 
     m_backupIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_sessionIdHasBeenSet(false),
     m_studioIdHasBeenSet(false)

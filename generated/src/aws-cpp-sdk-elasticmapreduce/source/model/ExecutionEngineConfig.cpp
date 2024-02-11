@@ -22,7 +22,8 @@ ExecutionEngineConfig::ExecutionEngineConfig() :
     m_idHasBeenSet(false),
     m_type(ExecutionEngineType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_masterInstanceSecurityGroupIdHasBeenSet(false)
+    m_masterInstanceSecurityGroupIdHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ExecutionEngineConfig::ExecutionEngineConfig(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_type(ExecutionEngineType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_masterInstanceSecurityGroupIdHasBeenSet(false)
+    m_masterInstanceSecurityGroupIdHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ ExecutionEngineConfig& ExecutionEngineConfig::operator =(JsonView jsonValue)
     m_masterInstanceSecurityGroupIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExecutionRoleArn"))
+  {
+    m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
+
+    m_executionRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +88,12 @@ JsonValue ExecutionEngineConfig::Jsonize() const
   if(m_masterInstanceSecurityGroupIdHasBeenSet)
   {
    payload.WithString("MasterInstanceSecurityGroupId", m_masterInstanceSecurityGroupId);
+
+  }
+
+  if(m_executionRoleArnHasBeenSet)
+  {
+   payload.WithString("ExecutionRoleArn", m_executionRoleArn);
 
   }
 

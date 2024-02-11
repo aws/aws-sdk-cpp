@@ -34,65 +34,72 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline const Aws::String& GetAssessmentArn() const{ return m_assessmentArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAssessmentArn(const Aws::String& value) { m_assessmentArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAssessmentArn(const char* value) { m_assessmentArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline DeleteAppAssessmentResult& WithAssessmentArn(const Aws::String& value) { SetAssessmentArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline DeleteAppAssessmentResult& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline DeleteAppAssessmentResult& WithAssessmentArn(const char* value) { SetAssessmentArn(value); return *this;}
 

@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 DeleteAppInputSourceRequest::DeleteAppInputSourceRequest() : 
     m_appArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_eksSourceClusterNamespaceHasBeenSet(false),
     m_sourceArnHasBeenSet(false),

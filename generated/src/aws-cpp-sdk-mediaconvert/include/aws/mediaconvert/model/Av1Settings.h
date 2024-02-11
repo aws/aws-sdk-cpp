@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/Av1AdaptiveQuantization.h>
 #include <aws/mediaconvert/model/Av1BitDepth.h>
+#include <aws/mediaconvert/model/Av1FilmGrainSynthesis.h>
 #include <aws/mediaconvert/model/Av1FramerateControl.h>
 #include <aws/mediaconvert/model/Av1FramerateConversionAlgorithm.h>
 #include <aws/mediaconvert/model/Av1QvbrSettings.h>
@@ -46,256 +47,281 @@ namespace Model
 
     /**
      * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to Spatial adaptive quantization
-     * (spatialAdaptiveQuantization).
+     * value that you choose here applies to Spatial adaptive quantization.
      */
     inline const Av1AdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
 
     /**
      * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to Spatial adaptive quantization
-     * (spatialAdaptiveQuantization).
+     * value that you choose here applies to Spatial adaptive quantization.
      */
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
 
     /**
      * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to Spatial adaptive quantization
-     * (spatialAdaptiveQuantization).
+     * value that you choose here applies to Spatial adaptive quantization.
      */
     inline void SetAdaptiveQuantization(const Av1AdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
 
     /**
      * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to Spatial adaptive quantization
-     * (spatialAdaptiveQuantization).
+     * value that you choose here applies to Spatial adaptive quantization.
      */
     inline void SetAdaptiveQuantization(Av1AdaptiveQuantization&& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = std::move(value); }
 
     /**
      * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to Spatial adaptive quantization
-     * (spatialAdaptiveQuantization).
+     * value that you choose here applies to Spatial adaptive quantization.
      */
     inline Av1Settings& WithAdaptiveQuantization(const Av1AdaptiveQuantization& value) { SetAdaptiveQuantization(value); return *this;}
 
     /**
      * Specify the strength of any adaptive quantization filters that you enable. The
-     * value that you choose here applies to Spatial adaptive quantization
-     * (spatialAdaptiveQuantization).
+     * value that you choose here applies to Spatial adaptive quantization.
      */
     inline Av1Settings& WithAdaptiveQuantization(Av1AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
 
 
     /**
-     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
-     * (BIT_10).
+     * Specify the Bit depth. You can choose 8-bit or 10-bit.
      */
     inline const Av1BitDepth& GetBitDepth() const{ return m_bitDepth; }
 
     /**
-     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
-     * (BIT_10).
+     * Specify the Bit depth. You can choose 8-bit or 10-bit.
      */
     inline bool BitDepthHasBeenSet() const { return m_bitDepthHasBeenSet; }
 
     /**
-     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
-     * (BIT_10).
+     * Specify the Bit depth. You can choose 8-bit or 10-bit.
      */
     inline void SetBitDepth(const Av1BitDepth& value) { m_bitDepthHasBeenSet = true; m_bitDepth = value; }
 
     /**
-     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
-     * (BIT_10).
+     * Specify the Bit depth. You can choose 8-bit or 10-bit.
      */
     inline void SetBitDepth(Av1BitDepth&& value) { m_bitDepthHasBeenSet = true; m_bitDepth = std::move(value); }
 
     /**
-     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
-     * (BIT_10).
+     * Specify the Bit depth. You can choose 8-bit or 10-bit.
      */
     inline Av1Settings& WithBitDepth(const Av1BitDepth& value) { SetBitDepth(value); return *this;}
 
     /**
-     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
-     * (BIT_10).
+     * Specify the Bit depth. You can choose 8-bit or 10-bit.
      */
     inline Av1Settings& WithBitDepth(Av1BitDepth&& value) { SetBitDepth(std::move(value)); return *this;}
 
 
     /**
-     * If you are using the console, use the Framerate setting to specify the frame
-     * rate for this output. If you want to keep the same frame rate as the input
-     * video, choose Follow source. If you want to do frame rate conversion, choose a
-     * frame rate from the dropdown list or choose Custom. The framerates shown in the
-     * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline const Av1FilmGrainSynthesis& GetFilmGrainSynthesis() const{ return m_filmGrainSynthesis; }
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline bool FilmGrainSynthesisHasBeenSet() const { return m_filmGrainSynthesisHasBeenSet; }
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline void SetFilmGrainSynthesis(const Av1FilmGrainSynthesis& value) { m_filmGrainSynthesisHasBeenSet = true; m_filmGrainSynthesis = value; }
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline void SetFilmGrainSynthesis(Av1FilmGrainSynthesis&& value) { m_filmGrainSynthesisHasBeenSet = true; m_filmGrainSynthesis = std::move(value); }
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline Av1Settings& WithFilmGrainSynthesis(const Av1FilmGrainSynthesis& value) { SetFilmGrainSynthesis(value); return *this;}
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline Av1Settings& WithFilmGrainSynthesis(Av1FilmGrainSynthesis&& value) { SetFilmGrainSynthesis(std::move(value)); return *this;}
+
+
+    /**
+     * Use the Framerate setting to specify the frame rate for this output. If you want
+     * to keep the same frame rate as the input video, choose Follow source. If you
+     * want to do frame rate conversion, choose a frame rate from the dropdown list or
+     * choose Custom. The framerates shown in the dropdown list are decimal
+     * approximations of fractions. If you choose Custom, specify your frame rate as a
+     * fraction.
      */
     inline const Av1FramerateControl& GetFramerateControl() const{ return m_framerateControl; }
 
     /**
-     * If you are using the console, use the Framerate setting to specify the frame
-     * rate for this output. If you want to keep the same frame rate as the input
-     * video, choose Follow source. If you want to do frame rate conversion, choose a
-     * frame rate from the dropdown list or choose Custom. The framerates shown in the
-     * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * Use the Framerate setting to specify the frame rate for this output. If you want
+     * to keep the same frame rate as the input video, choose Follow source. If you
+     * want to do frame rate conversion, choose a frame rate from the dropdown list or
+     * choose Custom. The framerates shown in the dropdown list are decimal
+     * approximations of fractions. If you choose Custom, specify your frame rate as a
+     * fraction.
      */
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
 
     /**
-     * If you are using the console, use the Framerate setting to specify the frame
-     * rate for this output. If you want to keep the same frame rate as the input
-     * video, choose Follow source. If you want to do frame rate conversion, choose a
-     * frame rate from the dropdown list or choose Custom. The framerates shown in the
-     * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * Use the Framerate setting to specify the frame rate for this output. If you want
+     * to keep the same frame rate as the input video, choose Follow source. If you
+     * want to do frame rate conversion, choose a frame rate from the dropdown list or
+     * choose Custom. The framerates shown in the dropdown list are decimal
+     * approximations of fractions. If you choose Custom, specify your frame rate as a
+     * fraction.
      */
     inline void SetFramerateControl(const Av1FramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
 
     /**
-     * If you are using the console, use the Framerate setting to specify the frame
-     * rate for this output. If you want to keep the same frame rate as the input
-     * video, choose Follow source. If you want to do frame rate conversion, choose a
-     * frame rate from the dropdown list or choose Custom. The framerates shown in the
-     * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * Use the Framerate setting to specify the frame rate for this output. If you want
+     * to keep the same frame rate as the input video, choose Follow source. If you
+     * want to do frame rate conversion, choose a frame rate from the dropdown list or
+     * choose Custom. The framerates shown in the dropdown list are decimal
+     * approximations of fractions. If you choose Custom, specify your frame rate as a
+     * fraction.
      */
     inline void SetFramerateControl(Av1FramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
 
     /**
-     * If you are using the console, use the Framerate setting to specify the frame
-     * rate for this output. If you want to keep the same frame rate as the input
-     * video, choose Follow source. If you want to do frame rate conversion, choose a
-     * frame rate from the dropdown list or choose Custom. The framerates shown in the
-     * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * Use the Framerate setting to specify the frame rate for this output. If you want
+     * to keep the same frame rate as the input video, choose Follow source. If you
+     * want to do frame rate conversion, choose a frame rate from the dropdown list or
+     * choose Custom. The framerates shown in the dropdown list are decimal
+     * approximations of fractions. If you choose Custom, specify your frame rate as a
+     * fraction.
      */
     inline Av1Settings& WithFramerateControl(const Av1FramerateControl& value) { SetFramerateControl(value); return *this;}
 
     /**
-     * If you are using the console, use the Framerate setting to specify the frame
-     * rate for this output. If you want to keep the same frame rate as the input
-     * video, choose Follow source. If you want to do frame rate conversion, choose a
-     * frame rate from the dropdown list or choose Custom. The framerates shown in the
-     * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * Use the Framerate setting to specify the frame rate for this output. If you want
+     * to keep the same frame rate as the input video, choose Follow source. If you
+     * want to do frame rate conversion, choose a frame rate from the dropdown list or
+     * choose Custom. The framerates shown in the dropdown list are decimal
+     * approximations of fractions. If you choose Custom, specify your frame rate as a
+     * fraction.
      */
     inline Av1Settings& WithFramerateControl(Av1FramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
 
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline const Av1FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline void SetFramerateConversionAlgorithm(const Av1FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline void SetFramerateConversionAlgorithm(Av1FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline Av1Settings& WithFramerateConversionAlgorithm(const Av1FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline Av1Settings& WithFramerateConversionAlgorithm(Av1FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
@@ -467,37 +493,37 @@ namespace Model
 
     /**
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
-     * these settings only when you set QVBR for Rate control mode (RateControlMode).
+     * these settings only when you set QVBR for Rate control mode.
      */
     inline const Av1QvbrSettings& GetQvbrSettings() const{ return m_qvbrSettings; }
 
     /**
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
-     * these settings only when you set QVBR for Rate control mode (RateControlMode).
+     * these settings only when you set QVBR for Rate control mode.
      */
     inline bool QvbrSettingsHasBeenSet() const { return m_qvbrSettingsHasBeenSet; }
 
     /**
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
-     * these settings only when you set QVBR for Rate control mode (RateControlMode).
+     * these settings only when you set QVBR for Rate control mode.
      */
     inline void SetQvbrSettings(const Av1QvbrSettings& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = value; }
 
     /**
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
-     * these settings only when you set QVBR for Rate control mode (RateControlMode).
+     * these settings only when you set QVBR for Rate control mode.
      */
     inline void SetQvbrSettings(Av1QvbrSettings&& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = std::move(value); }
 
     /**
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
-     * these settings only when you set QVBR for Rate control mode (RateControlMode).
+     * these settings only when you set QVBR for Rate control mode.
      */
     inline Av1Settings& WithQvbrSettings(const Av1QvbrSettings& value) { SetQvbrSettings(value); return *this;}
 
     /**
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
-     * these settings only when you set QVBR for Rate control mode (RateControlMode).
+     * these settings only when you set QVBR for Rate control mode.
      */
     inline Av1Settings& WithQvbrSettings(Av1QvbrSettings&& value) { SetQvbrSettings(std::move(value)); return *this;}
 
@@ -573,110 +599,110 @@ namespace Model
 
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Keep the default value, Enabled, to adjust quantization within each frame based
+     * on spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline const Av1SpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Keep the default value, Enabled, to adjust quantization within each frame based
+     * on spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Keep the default value, Enabled, to adjust quantization within each frame based
+     * on spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline void SetSpatialAdaptiveQuantization(const Av1SpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Keep the default value, Enabled, to adjust quantization within each frame based
+     * on spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline void SetSpatialAdaptiveQuantization(Av1SpatialAdaptiveQuantization&& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = std::move(value); }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Keep the default value, Enabled, to adjust quantization within each frame based
+     * on spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline Av1Settings& WithSpatialAdaptiveQuantization(const Av1SpatialAdaptiveQuantization& value) { SetSpatialAdaptiveQuantization(value); return *this;}
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
-     * frame based on spatial variation of content complexity. When you enable this
-     * feature, the encoder uses fewer bits on areas that can sustain more distortion
-     * with no noticeable visual degradation and uses more bits on areas where any
-     * small distortion will be noticeable. For example, complex textured blocks are
-     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
-     * Enabling this feature will almost always improve your video quality. Note,
-     * though, that this feature doesn't take into account where the viewer's attention
-     * is likely to be. If viewers are likely to be focusing their attention on a part
-     * of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the
-     * value for Adaptive quantization (adaptiveQuantization) depending on your
-     * content. For homogeneous content, such as cartoons and video games, set it to
-     * Low. For content with a wider variety of textures, set it to High or Higher.
+     * Keep the default value, Enabled, to adjust quantization within each frame based
+     * on spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline Av1Settings& WithSpatialAdaptiveQuantization(Av1SpatialAdaptiveQuantization&& value) { SetSpatialAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -687,6 +713,9 @@ namespace Model
 
     Av1BitDepth m_bitDepth;
     bool m_bitDepthHasBeenSet = false;
+
+    Av1FilmGrainSynthesis m_filmGrainSynthesis;
+    bool m_filmGrainSynthesisHasBeenSet = false;
 
     Av1FramerateControl m_framerateControl;
     bool m_framerateControlHasBeenSet = false;

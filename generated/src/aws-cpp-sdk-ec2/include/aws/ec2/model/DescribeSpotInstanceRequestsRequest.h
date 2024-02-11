@@ -43,9 +43,9 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -61,14 +61,15 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
-     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
-     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
-     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
-     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
-     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>gp2</code> or <code>gp3</code> for General Purpose SSD, <code>io1</code>
+     * or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic.</p> </li> <li> <p> <code>launch.group-id</code> - The ID of the
+     * security group for the instance.</p> </li> <li> <p>
+     * <code>launch.group-name</code> - The name of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.image-id</code> - The ID of the
+     * AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The type of instance
+     * (for example, <code>m3.medium</code>).</p> </li> <li> <p>
      * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
      * <code>launch.key-name</code> - The name of the key pair the instance launched
      * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
@@ -120,9 +121,9 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -138,14 +139,15 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
-     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
-     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
-     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
-     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
-     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>gp2</code> or <code>gp3</code> for General Purpose SSD, <code>io1</code>
+     * or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic.</p> </li> <li> <p> <code>launch.group-id</code> - The ID of the
+     * security group for the instance.</p> </li> <li> <p>
+     * <code>launch.group-name</code> - The name of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.image-id</code> - The ID of the
+     * AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The type of instance
+     * (for example, <code>m3.medium</code>).</p> </li> <li> <p>
      * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
      * <code>launch.key-name</code> - The name of the key pair the instance launched
      * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
@@ -197,9 +199,9 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -215,14 +217,15 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
-     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
-     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
-     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
-     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
-     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>gp2</code> or <code>gp3</code> for General Purpose SSD, <code>io1</code>
+     * or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic.</p> </li> <li> <p> <code>launch.group-id</code> - The ID of the
+     * security group for the instance.</p> </li> <li> <p>
+     * <code>launch.group-name</code> - The name of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.image-id</code> - The ID of the
+     * AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The type of instance
+     * (for example, <code>m3.medium</code>).</p> </li> <li> <p>
      * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
      * <code>launch.key-name</code> - The name of the key pair the instance launched
      * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
@@ -274,9 +277,9 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -292,14 +295,15 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
-     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
-     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
-     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
-     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
-     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>gp2</code> or <code>gp3</code> for General Purpose SSD, <code>io1</code>
+     * or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic.</p> </li> <li> <p> <code>launch.group-id</code> - The ID of the
+     * security group for the instance.</p> </li> <li> <p>
+     * <code>launch.group-name</code> - The name of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.image-id</code> - The ID of the
+     * AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The type of instance
+     * (for example, <code>m3.medium</code>).</p> </li> <li> <p>
      * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
      * <code>launch.key-name</code> - The name of the key pair the instance launched
      * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
@@ -351,9 +355,9 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -369,14 +373,15 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
-     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
-     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
-     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
-     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
-     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>gp2</code> or <code>gp3</code> for General Purpose SSD, <code>io1</code>
+     * or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic.</p> </li> <li> <p> <code>launch.group-id</code> - The ID of the
+     * security group for the instance.</p> </li> <li> <p>
+     * <code>launch.group-name</code> - The name of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.image-id</code> - The ID of the
+     * AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The type of instance
+     * (for example, <code>m3.medium</code>).</p> </li> <li> <p>
      * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
      * <code>launch.key-name</code> - The name of the key pair the instance launched
      * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
@@ -428,9 +433,9 @@ namespace Model
     inline DescribeSpotInstanceRequestsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -446,14 +451,15 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
-     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
-     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
-     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
-     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
-     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>gp2</code> or <code>gp3</code> for General Purpose SSD, <code>io1</code>
+     * or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic.</p> </li> <li> <p> <code>launch.group-id</code> - The ID of the
+     * security group for the instance.</p> </li> <li> <p>
+     * <code>launch.group-name</code> - The name of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.image-id</code> - The ID of the
+     * AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The type of instance
+     * (for example, <code>m3.medium</code>).</p> </li> <li> <p>
      * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
      * <code>launch.key-name</code> - The name of the key pair the instance launched
      * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
@@ -505,9 +511,9 @@ namespace Model
     inline DescribeSpotInstanceRequestsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -523,14 +529,15 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
-     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
-     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
-     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
-     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
-     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>gp2</code> or <code>gp3</code> for General Purpose SSD, <code>io1</code>
+     * or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic.</p> </li> <li> <p> <code>launch.group-id</code> - The ID of the
+     * security group for the instance.</p> </li> <li> <p>
+     * <code>launch.group-name</code> - The name of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.image-id</code> - The ID of the
+     * AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The type of instance
+     * (for example, <code>m3.medium</code>).</p> </li> <li> <p>
      * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
      * <code>launch.key-name</code> - The name of the key pair the instance launched
      * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
@@ -582,9 +589,9 @@ namespace Model
     inline DescribeSpotInstanceRequestsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -600,14 +607,15 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
-     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
-     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
-     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
-     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
-     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>gp2</code> or <code>gp3</code> for General Purpose SSD, <code>io1</code>
+     * or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic.</p> </li> <li> <p> <code>launch.group-id</code> - The ID of the
+     * security group for the instance.</p> </li> <li> <p>
+     * <code>launch.group-name</code> - The name of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.image-id</code> - The ID of the
+     * AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The type of instance
+     * (for example, <code>m3.medium</code>).</p> </li> <li> <p>
      * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
      * <code>launch.key-name</code> - The name of the key pair the instance launched
      * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
@@ -693,47 +701,47 @@ namespace Model
 
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSpotInstanceRequestIds() const{ return m_spotInstanceRequestIds; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline bool SpotInstanceRequestIdsHasBeenSet() const { return m_spotInstanceRequestIdsHasBeenSet; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline void SetSpotInstanceRequestIds(const Aws::Vector<Aws::String>& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds = value; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline void SetSpotInstanceRequestIds(Aws::Vector<Aws::String>&& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds = std::move(value); }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline DescribeSpotInstanceRequestsRequest& WithSpotInstanceRequestIds(const Aws::Vector<Aws::String>& value) { SetSpotInstanceRequestIds(value); return *this;}
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline DescribeSpotInstanceRequestsRequest& WithSpotInstanceRequestIds(Aws::Vector<Aws::String>&& value) { SetSpotInstanceRequestIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline DescribeSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(const Aws::String& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline DescribeSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(Aws::String&& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline DescribeSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(const char* value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(value); return *this; }
 

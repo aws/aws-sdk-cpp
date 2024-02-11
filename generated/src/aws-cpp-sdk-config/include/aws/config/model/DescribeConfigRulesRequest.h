@@ -148,7 +148,7 @@ namespace Model
      * returns an unfiltered list. For more information on Detective or Proactive
      * Config rules, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
+     * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
      */
     inline const DescribeConfigRulesFilters& GetFilters() const{ return m_filters; }
 
@@ -157,7 +157,7 @@ namespace Model
      * returns an unfiltered list. For more information on Detective or Proactive
      * Config rules, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
+     * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -166,7 +166,7 @@ namespace Model
      * returns an unfiltered list. For more information on Detective or Proactive
      * Config rules, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
+     * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
      */
     inline void SetFilters(const DescribeConfigRulesFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -175,7 +175,7 @@ namespace Model
      * returns an unfiltered list. For more information on Detective or Proactive
      * Config rules, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
+     * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
      */
     inline void SetFilters(DescribeConfigRulesFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -184,7 +184,7 @@ namespace Model
      * returns an unfiltered list. For more information on Detective or Proactive
      * Config rules, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
+     * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
      */
     inline DescribeConfigRulesRequest& WithFilters(const DescribeConfigRulesFilters& value) { SetFilters(value); return *this;}
 
@@ -193,7 +193,7 @@ namespace Model
      * returns an unfiltered list. For more information on Detective or Proactive
      * Config rules, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
+     * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
      */
     inline DescribeConfigRulesRequest& WithFilters(DescribeConfigRulesFilters&& value) { SetFilters(std::move(value)); return *this;}
 

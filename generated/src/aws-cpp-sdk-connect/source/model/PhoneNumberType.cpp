@@ -22,6 +22,11 @@ namespace Aws
 
         static const int TOLL_FREE_HASH = HashingUtils::HashString("TOLL_FREE");
         static const int DID_HASH = HashingUtils::HashString("DID");
+        static const int UIFN_HASH = HashingUtils::HashString("UIFN");
+        static const int SHARED_HASH = HashingUtils::HashString("SHARED");
+        static const int THIRD_PARTY_TF_HASH = HashingUtils::HashString("THIRD_PARTY_TF");
+        static const int THIRD_PARTY_DID_HASH = HashingUtils::HashString("THIRD_PARTY_DID");
+        static const int SHORT_CODE_HASH = HashingUtils::HashString("SHORT_CODE");
 
 
         PhoneNumberType GetPhoneNumberTypeForName(const Aws::String& name)
@@ -34,6 +39,26 @@ namespace Aws
           else if (hashCode == DID_HASH)
           {
             return PhoneNumberType::DID;
+          }
+          else if (hashCode == UIFN_HASH)
+          {
+            return PhoneNumberType::UIFN;
+          }
+          else if (hashCode == SHARED_HASH)
+          {
+            return PhoneNumberType::SHARED;
+          }
+          else if (hashCode == THIRD_PARTY_TF_HASH)
+          {
+            return PhoneNumberType::THIRD_PARTY_TF;
+          }
+          else if (hashCode == THIRD_PARTY_DID_HASH)
+          {
+            return PhoneNumberType::THIRD_PARTY_DID;
+          }
+          else if (hashCode == SHORT_CODE_HASH)
+          {
+            return PhoneNumberType::SHORT_CODE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +74,22 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberType::NOT_SET:
+            return {};
           case PhoneNumberType::TOLL_FREE:
             return "TOLL_FREE";
           case PhoneNumberType::DID:
             return "DID";
+          case PhoneNumberType::UIFN:
+            return "UIFN";
+          case PhoneNumberType::SHARED:
+            return "SHARED";
+          case PhoneNumberType::THIRD_PARTY_TF:
+            return "THIRD_PARTY_TF";
+          case PhoneNumberType::THIRD_PARTY_DID:
+            return "THIRD_PARTY_DID";
+          case PhoneNumberType::SHORT_CODE:
+            return "SHORT_CODE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

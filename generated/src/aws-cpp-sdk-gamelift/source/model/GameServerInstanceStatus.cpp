@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameServerInstanceStatus::NOT_SET:
+            return {};
           case GameServerInstanceStatus::ACTIVE:
             return "ACTIVE";
           case GameServerInstanceStatus::DRAINING:

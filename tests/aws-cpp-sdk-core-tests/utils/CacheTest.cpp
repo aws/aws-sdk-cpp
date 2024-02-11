@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/Cache.h>
 #include <aws/core/utils/ConcurrentCache.h>
 
@@ -12,14 +12,18 @@
 
 using namespace Aws::Utils;
 
-TEST(CacheTests, TestGetWithEmptyCache)
+class CacheTests : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(CacheTests, TestGetWithEmptyCache)
 {
     Cache<Aws::String, Aws::String> cache(10);
     Aws::String ignored;
     ASSERT_FALSE(cache.Get("answer", ignored));
 }
 
-TEST(CacheTests, TestGetExpiredEntry)
+TEST_F(CacheTests, TestGetExpiredEntry)
 {
     Aws::String ignored;
     Cache<Aws::String, Aws::String> cache(10);
@@ -27,7 +31,7 @@ TEST(CacheTests, TestGetExpiredEntry)
     ASSERT_FALSE(cache.Get("answer", ignored));
 }
 
-TEST(CacheTests, TestGetCachedEntry)
+TEST_F(CacheTests, TestGetCachedEntry)
 {
     Cache<Aws::String, Aws::String> cache(10);
     cache.Put("answer", "42", std::chrono::minutes(1));
@@ -36,7 +40,7 @@ TEST(CacheTests, TestGetCachedEntry)
     ASSERT_STREQ("42", answer.c_str());
 }
 
-TEST(CacheTests, TestPutPrunesExpiredEntries)
+TEST_F(CacheTests, TestPutPrunesExpiredEntries)
 {
     Cache<Aws::String, int> cache(2);
     cache.Put("one", 1, std::chrono::minutes(5));
@@ -54,7 +58,7 @@ TEST(CacheTests, TestPutPrunesExpiredEntries)
 
 }
 
-TEST(CacheTests, TestPutPrunesExpiringEntries)
+TEST_F(CacheTests, TestPutPrunesExpiringEntries)
 {
     Cache<Aws::String, int> cache(2);
     cache.Put("one", 1, std::chrono::minutes(5));
@@ -71,13 +75,13 @@ TEST(CacheTests, TestPutPrunesExpiringEntries)
     ASSERT_EQ(3, out);
 }
 
-TEST(CacheTests, TestPutWithSameKey)
+TEST_F(CacheTests, TestPutWithSameKey)
 {
     Cache<Aws::String, float> cache(2);
     cache.Put("one", 1.0f, std::chrono::minutes(5));
     cache.Put("one", 1.1f, std::chrono::seconds(1));
 
-    float out;
+    float out = 0.0f;
     ASSERT_TRUE(cache.Get("one", out));
     ASSERT_EQ(1.1f, out);
 
@@ -85,7 +89,7 @@ TEST(CacheTests, TestPutWithSameKey)
     ASSERT_FALSE(cache.Get("one", out));
 }
 
-TEST(CacheTests, TestPutByConstRef)
+TEST_F(CacheTests, TestPutByConstRef)
 {
     Cache<Aws::String, int> cache;
     const Aws::String one = "one";
@@ -96,7 +100,11 @@ TEST(CacheTests, TestPutByConstRef)
     ASSERT_EQ(42, out);
 }
 
-TEST(ConcurrentCacheTest, TestPutByConstRef)
+class ConcurrentCacheTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(ConcurrentCacheTest, TestPutByConstRef)
 {
     ConcurrentCache<Aws::String, int> cache;
     const Aws::String one = "one";
@@ -107,7 +115,7 @@ TEST(ConcurrentCacheTest, TestPutByConstRef)
     ASSERT_EQ(42, out);
 }
 
-TEST(ConcurrentCacheTest, TestPutAndGetConcurrently)
+TEST_F(ConcurrentCacheTest, TestPutAndGetConcurrently)
 {
     // No assertions in this test. The point of this test is to flush out any memory safety bugs when using -fsanitize
     const std::array<const char*, 8> words {{ "The", "brown", "Fox", "Jumped", "Over", "the", "lazy", "dog" }};

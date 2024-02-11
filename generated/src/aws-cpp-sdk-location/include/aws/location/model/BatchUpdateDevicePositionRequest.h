@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>Contains the position update details for each device.</p>
+     * <p>Contains the position update details for each device, up to 10 devices.</p>
      */
     inline const Aws::Vector<DevicePositionUpdate>& GetUpdates() const{ return m_updates; }
 
     /**
-     * <p>Contains the position update details for each device.</p>
+     * <p>Contains the position update details for each device, up to 10 devices.</p>
      */
     inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
 
     /**
-     * <p>Contains the position update details for each device.</p>
+     * <p>Contains the position update details for each device, up to 10 devices.</p>
      */
     inline void SetUpdates(const Aws::Vector<DevicePositionUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
-     * <p>Contains the position update details for each device.</p>
+     * <p>Contains the position update details for each device, up to 10 devices.</p>
      */
     inline void SetUpdates(Aws::Vector<DevicePositionUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
 
     /**
-     * <p>Contains the position update details for each device.</p>
+     * <p>Contains the position update details for each device, up to 10 devices.</p>
      */
     inline BatchUpdateDevicePositionRequest& WithUpdates(const Aws::Vector<DevicePositionUpdate>& value) { SetUpdates(value); return *this;}
 
     /**
-     * <p>Contains the position update details for each device.</p>
+     * <p>Contains the position update details for each device, up to 10 devices.</p>
      */
     inline BatchUpdateDevicePositionRequest& WithUpdates(Aws::Vector<DevicePositionUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the position update details for each device.</p>
+     * <p>Contains the position update details for each device, up to 10 devices.</p>
      */
     inline BatchUpdateDevicePositionRequest& AddUpdates(const DevicePositionUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 
     /**
-     * <p>Contains the position update details for each device.</p>
+     * <p>Contains the position update details for each device, up to 10 devices.</p>
      */
     inline BatchUpdateDevicePositionRequest& AddUpdates(DevicePositionUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 

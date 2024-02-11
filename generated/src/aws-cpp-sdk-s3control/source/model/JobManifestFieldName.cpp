@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobManifestFieldName::NOT_SET:
+            return {};
           case JobManifestFieldName::Ignore:
             return "Ignore";
           case JobManifestFieldName::Bucket:

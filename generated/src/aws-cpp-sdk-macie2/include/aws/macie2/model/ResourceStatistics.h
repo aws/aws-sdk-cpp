@@ -182,117 +182,121 @@ namespace Model
 
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * due to an error or issue. For example, the object is a malformed file. This
-     * value includes objects that Macie hasn't analyzed for reasons reported by other
-     * statistics in the ResourceStatistics object.</p> 
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket due to an object-level issue or error. For example, an object is a
+     * malformed file. This value includes objects that Macie wasn't able to analyze
+     * for reasons reported by other statistics in the ResourceStatistics object.</p>
      */
     inline long long GetTotalItemsSkipped() const{ return m_totalItemsSkipped; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * due to an error or issue. For example, the object is a malformed file. This
-     * value includes objects that Macie hasn't analyzed for reasons reported by other
-     * statistics in the ResourceStatistics object.</p> 
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket due to an object-level issue or error. For example, an object is a
+     * malformed file. This value includes objects that Macie wasn't able to analyze
+     * for reasons reported by other statistics in the ResourceStatistics object.</p>
      */
     inline bool TotalItemsSkippedHasBeenSet() const { return m_totalItemsSkippedHasBeenSet; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * due to an error or issue. For example, the object is a malformed file. This
-     * value includes objects that Macie hasn't analyzed for reasons reported by other
-     * statistics in the ResourceStatistics object.</p> 
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket due to an object-level issue or error. For example, an object is a
+     * malformed file. This value includes objects that Macie wasn't able to analyze
+     * for reasons reported by other statistics in the ResourceStatistics object.</p>
      */
     inline void SetTotalItemsSkipped(long long value) { m_totalItemsSkippedHasBeenSet = true; m_totalItemsSkipped = value; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * due to an error or issue. For example, the object is a malformed file. This
-     * value includes objects that Macie hasn't analyzed for reasons reported by other
-     * statistics in the ResourceStatistics object.</p> 
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket due to an object-level issue or error. For example, an object is a
+     * malformed file. This value includes objects that Macie wasn't able to analyze
+     * for reasons reported by other statistics in the ResourceStatistics object.</p>
      */
     inline ResourceStatistics& WithTotalItemsSkipped(long long value) { SetTotalItemsSkipped(value); return *this;}
 
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because the objects are encrypted with a key that Macie isn't allowed to
-     * use.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket because the objects are encrypted with a key that Macie can't access. The
+     * objects use server-side encryption with customer-provided keys (SSE-C).</p>
      */
     inline long long GetTotalItemsSkippedInvalidEncryption() const{ return m_totalItemsSkippedInvalidEncryption; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because the objects are encrypted with a key that Macie isn't allowed to
-     * use.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket because the objects are encrypted with a key that Macie can't access. The
+     * objects use server-side encryption with customer-provided keys (SSE-C).</p>
      */
     inline bool TotalItemsSkippedInvalidEncryptionHasBeenSet() const { return m_totalItemsSkippedInvalidEncryptionHasBeenSet; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because the objects are encrypted with a key that Macie isn't allowed to
-     * use.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket because the objects are encrypted with a key that Macie can't access. The
+     * objects use server-side encryption with customer-provided keys (SSE-C).</p>
      */
     inline void SetTotalItemsSkippedInvalidEncryption(long long value) { m_totalItemsSkippedInvalidEncryptionHasBeenSet = true; m_totalItemsSkippedInvalidEncryption = value; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because the objects are encrypted with a key that Macie isn't allowed to
-     * use.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket because the objects are encrypted with a key that Macie can't access. The
+     * objects use server-side encryption with customer-provided keys (SSE-C).</p>
      */
     inline ResourceStatistics& WithTotalItemsSkippedInvalidEncryption(long long value) { SetTotalItemsSkippedInvalidEncryption(value); return *this;}
 
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because the objects are encrypted with an KMS key that was disabled or
-     * deleted.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket because the objects are encrypted with KMS keys that were disabled, are
+     * scheduled for deletion, or were deleted.</p>
      */
     inline long long GetTotalItemsSkippedInvalidKms() const{ return m_totalItemsSkippedInvalidKms; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because the objects are encrypted with an KMS key that was disabled or
-     * deleted.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket because the objects are encrypted with KMS keys that were disabled, are
+     * scheduled for deletion, or were deleted.</p>
      */
     inline bool TotalItemsSkippedInvalidKmsHasBeenSet() const { return m_totalItemsSkippedInvalidKmsHasBeenSet; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because the objects are encrypted with an KMS key that was disabled or
-     * deleted.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket because the objects are encrypted with KMS keys that were disabled, are
+     * scheduled for deletion, or were deleted.</p>
      */
     inline void SetTotalItemsSkippedInvalidKms(long long value) { m_totalItemsSkippedInvalidKmsHasBeenSet = true; m_totalItemsSkippedInvalidKms = value; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because the objects are encrypted with an KMS key that was disabled or
-     * deleted.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket because the objects are encrypted with KMS keys that were disabled, are
+     * scheduled for deletion, or were deleted.</p>
      */
     inline ResourceStatistics& WithTotalItemsSkippedInvalidKms(long long value) { SetTotalItemsSkippedInvalidKms(value); return *this;}
 
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because Macie isn't allowed to access the objects.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket due to the permissions settings for the objects or the permissions
+     * settings for the keys that were used to encrypt the objects.</p>
      */
     inline long long GetTotalItemsSkippedPermissionDenied() const{ return m_totalItemsSkippedPermissionDenied; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because Macie isn't allowed to access the objects.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket due to the permissions settings for the objects or the permissions
+     * settings for the keys that were used to encrypt the objects.</p>
      */
     inline bool TotalItemsSkippedPermissionDeniedHasBeenSet() const { return m_totalItemsSkippedPermissionDeniedHasBeenSet; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because Macie isn't allowed to access the objects.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket due to the permissions settings for the objects or the permissions
+     * settings for the keys that were used to encrypt the objects.</p>
      */
     inline void SetTotalItemsSkippedPermissionDenied(long long value) { m_totalItemsSkippedPermissionDeniedHasBeenSet = true; m_totalItemsSkippedPermissionDenied = value; }
 
     /**
-     * <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket
-     * because Macie isn't allowed to access the objects.</p>
+     * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
+     * bucket due to the permissions settings for the objects or the permissions
+     * settings for the keys that were used to encrypt the objects.</p>
      */
     inline ResourceStatistics& WithTotalItemsSkippedPermissionDenied(long long value) { SetTotalItemsSkippedPermissionDenied(value); return *this;}
 

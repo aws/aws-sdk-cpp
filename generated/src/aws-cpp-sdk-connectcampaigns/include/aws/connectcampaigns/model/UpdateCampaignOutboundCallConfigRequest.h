@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/connectcampaigns/ConnectCampaignsRequest.h>
-#include <aws/connectcampaigns/model/AnswerMachineDetectionConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcampaigns/model/AnswerMachineDetectionConfig.h>
 #include <utility>
 
 namespace Aws
@@ -37,22 +37,28 @@ namespace Model
 
 
     
-    inline const AnswerMachineDetectionConfig& GetAnswerMachineDetectionConfig() const{ return m_answerMachineDetectionConfig; }
+    inline const Aws::String& GetId() const{ return m_id; }
 
     
-    inline bool AnswerMachineDetectionConfigHasBeenSet() const { return m_answerMachineDetectionConfigHasBeenSet; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     
-    inline void SetAnswerMachineDetectionConfig(const AnswerMachineDetectionConfig& value) { m_answerMachineDetectionConfigHasBeenSet = true; m_answerMachineDetectionConfig = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     
-    inline void SetAnswerMachineDetectionConfig(AnswerMachineDetectionConfig&& value) { m_answerMachineDetectionConfigHasBeenSet = true; m_answerMachineDetectionConfig = std::move(value); }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     
-    inline UpdateCampaignOutboundCallConfigRequest& WithAnswerMachineDetectionConfig(const AnswerMachineDetectionConfig& value) { SetAnswerMachineDetectionConfig(value); return *this;}
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     
-    inline UpdateCampaignOutboundCallConfigRequest& WithAnswerMachineDetectionConfig(AnswerMachineDetectionConfig&& value) { SetAnswerMachineDetectionConfig(std::move(value)); return *this;}
+    inline UpdateCampaignOutboundCallConfigRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    
+    inline UpdateCampaignOutboundCallConfigRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    
+    inline UpdateCampaignOutboundCallConfigRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     
@@ -106,33 +112,27 @@ namespace Model
 
 
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const AnswerMachineDetectionConfig& GetAnswerMachineDetectionConfig() const{ return m_answerMachineDetectionConfig; }
 
     
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    inline bool AnswerMachineDetectionConfigHasBeenSet() const { return m_answerMachineDetectionConfigHasBeenSet; }
 
     
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetAnswerMachineDetectionConfig(const AnswerMachineDetectionConfig& value) { m_answerMachineDetectionConfigHasBeenSet = true; m_answerMachineDetectionConfig = value; }
 
     
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+    inline void SetAnswerMachineDetectionConfig(AnswerMachineDetectionConfig&& value) { m_answerMachineDetectionConfigHasBeenSet = true; m_answerMachineDetectionConfig = std::move(value); }
 
     
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+    inline UpdateCampaignOutboundCallConfigRequest& WithAnswerMachineDetectionConfig(const AnswerMachineDetectionConfig& value) { SetAnswerMachineDetectionConfig(value); return *this;}
 
     
-    inline UpdateCampaignOutboundCallConfigRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    
-    inline UpdateCampaignOutboundCallConfigRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    
-    inline UpdateCampaignOutboundCallConfigRequest& WithId(const char* value) { SetId(value); return *this;}
+    inline UpdateCampaignOutboundCallConfigRequest& WithAnswerMachineDetectionConfig(AnswerMachineDetectionConfig&& value) { SetAnswerMachineDetectionConfig(std::move(value)); return *this;}
 
   private:
 
-    AnswerMachineDetectionConfig m_answerMachineDetectionConfig;
-    bool m_answerMachineDetectionConfigHasBeenSet = false;
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_connectContactFlowId;
     bool m_connectContactFlowIdHasBeenSet = false;
@@ -140,8 +140,8 @@ namespace Model
     Aws::String m_connectSourcePhoneNumber;
     bool m_connectSourcePhoneNumberHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
+    AnswerMachineDetectionConfig m_answerMachineDetectionConfig;
+    bool m_answerMachineDetectionConfigHasBeenSet = false;
   };
 
 } // namespace Model

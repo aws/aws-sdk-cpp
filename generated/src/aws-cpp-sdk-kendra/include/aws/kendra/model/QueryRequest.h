@@ -13,6 +13,7 @@
 #include <aws/kendra/model/SortingConfiguration.h>
 #include <aws/kendra/model/UserContext.h>
 #include <aws/kendra/model/SpellCorrectionConfiguration.h>
+#include <aws/kendra/model/CollapseConfiguration.h>
 #include <aws/kendra/model/Facet.h>
 #include <aws/kendra/model/DocumentRelevanceConfiguration.h>
 #include <utility>
@@ -43,50 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index to search. The identifier is returned in the
-     * response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index for the search.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index to search. The identifier is returned in the
-     * response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index for the search.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the index to search. The identifier is returned in the
-     * response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index for the search.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the index to search. The identifier is returned in the
-     * response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index for the search.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index to search. The identifier is returned in the
-     * response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index for the search.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index to search. The identifier is returned in the
-     * response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index for the search.</p>
      */
     inline QueryRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index to search. The identifier is returned in the
-     * response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index for the search.</p>
      */
     inline QueryRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index to search. The identifier is returned in the
-     * response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index for the search.</p>
      */
     inline QueryRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
@@ -149,325 +142,309 @@ namespace Model
 
 
     /**
-     * <p>Enables filtered searches based on document attributes. You can only provide
+     * <p>Filters search results by document fields/attributes. You can only provide
      * one attribute filter; however, the <code>AndAllFilters</code>,
      * <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list
-     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter enables you
-     * to create a set of filtering rules that a document must satisfy to be included
+     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter means you
+     * can create a set of filtering rules that a document must satisfy to be included
      * in the query results.</p>
      */
     inline const AttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
 
     /**
-     * <p>Enables filtered searches based on document attributes. You can only provide
+     * <p>Filters search results by document fields/attributes. You can only provide
      * one attribute filter; however, the <code>AndAllFilters</code>,
      * <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list
-     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter enables you
-     * to create a set of filtering rules that a document must satisfy to be included
+     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter means you
+     * can create a set of filtering rules that a document must satisfy to be included
      * in the query results.</p>
      */
     inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
 
     /**
-     * <p>Enables filtered searches based on document attributes. You can only provide
+     * <p>Filters search results by document fields/attributes. You can only provide
      * one attribute filter; however, the <code>AndAllFilters</code>,
      * <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list
-     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter enables you
-     * to create a set of filtering rules that a document must satisfy to be included
+     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter means you
+     * can create a set of filtering rules that a document must satisfy to be included
      * in the query results.</p>
      */
     inline void SetAttributeFilter(const AttributeFilter& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = value; }
 
     /**
-     * <p>Enables filtered searches based on document attributes. You can only provide
+     * <p>Filters search results by document fields/attributes. You can only provide
      * one attribute filter; however, the <code>AndAllFilters</code>,
      * <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list
-     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter enables you
-     * to create a set of filtering rules that a document must satisfy to be included
+     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter means you
+     * can create a set of filtering rules that a document must satisfy to be included
      * in the query results.</p>
      */
     inline void SetAttributeFilter(AttributeFilter&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::move(value); }
 
     /**
-     * <p>Enables filtered searches based on document attributes. You can only provide
+     * <p>Filters search results by document fields/attributes. You can only provide
      * one attribute filter; however, the <code>AndAllFilters</code>,
      * <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list
-     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter enables you
-     * to create a set of filtering rules that a document must satisfy to be included
+     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter means you
+     * can create a set of filtering rules that a document must satisfy to be included
      * in the query results.</p>
      */
     inline QueryRequest& WithAttributeFilter(const AttributeFilter& value) { SetAttributeFilter(value); return *this;}
 
     /**
-     * <p>Enables filtered searches based on document attributes. You can only provide
+     * <p>Filters search results by document fields/attributes. You can only provide
      * one attribute filter; however, the <code>AndAllFilters</code>,
      * <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list
-     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter enables you
-     * to create a set of filtering rules that a document must satisfy to be included
+     * of other filters.</p> <p>The <code>AttributeFilter</code> parameter means you
+     * can create a set of filtering rules that a document must satisfy to be included
      * in the query results.</p>
      */
     inline QueryRequest& WithAttributeFilter(AttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
 
 
     /**
-     * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. This helps your users narrow their search.</p>
+     * <p>An array of documents fields/attributes for faceted search. Amazon Kendra
+     * returns a count for each field key specified. This helps your users narrow their
+     * search.</p>
      */
     inline const Aws::Vector<Facet>& GetFacets() const{ return m_facets; }
 
     /**
-     * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. This helps your users narrow their search.</p>
+     * <p>An array of documents fields/attributes for faceted search. Amazon Kendra
+     * returns a count for each field key specified. This helps your users narrow their
+     * search.</p>
      */
     inline bool FacetsHasBeenSet() const { return m_facetsHasBeenSet; }
 
     /**
-     * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. This helps your users narrow their search.</p>
+     * <p>An array of documents fields/attributes for faceted search. Amazon Kendra
+     * returns a count for each field key specified. This helps your users narrow their
+     * search.</p>
      */
     inline void SetFacets(const Aws::Vector<Facet>& value) { m_facetsHasBeenSet = true; m_facets = value; }
 
     /**
-     * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. This helps your users narrow their search.</p>
+     * <p>An array of documents fields/attributes for faceted search. Amazon Kendra
+     * returns a count for each field key specified. This helps your users narrow their
+     * search.</p>
      */
     inline void SetFacets(Aws::Vector<Facet>&& value) { m_facetsHasBeenSet = true; m_facets = std::move(value); }
 
     /**
-     * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. This helps your users narrow their search.</p>
+     * <p>An array of documents fields/attributes for faceted search. Amazon Kendra
+     * returns a count for each field key specified. This helps your users narrow their
+     * search.</p>
      */
     inline QueryRequest& WithFacets(const Aws::Vector<Facet>& value) { SetFacets(value); return *this;}
 
     /**
-     * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. This helps your users narrow their search.</p>
+     * <p>An array of documents fields/attributes for faceted search. Amazon Kendra
+     * returns a count for each field key specified. This helps your users narrow their
+     * search.</p>
      */
     inline QueryRequest& WithFacets(Aws::Vector<Facet>&& value) { SetFacets(std::move(value)); return *this;}
 
     /**
-     * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. This helps your users narrow their search.</p>
+     * <p>An array of documents fields/attributes for faceted search. Amazon Kendra
+     * returns a count for each field key specified. This helps your users narrow their
+     * search.</p>
      */
     inline QueryRequest& AddFacets(const Facet& value) { m_facetsHasBeenSet = true; m_facets.push_back(value); return *this; }
 
     /**
-     * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. This helps your users narrow their search.</p>
+     * <p>An array of documents fields/attributes for faceted search. Amazon Kendra
+     * returns a count for each field key specified. This helps your users narrow their
+     * search.</p>
      */
     inline QueryRequest& AddFacets(Facet&& value) { m_facetsHasBeenSet = true; m_facets.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An array of document attributes to include in the response. You can limit the
-     * response to include certain document attributes. By default all document
+     * <p>An array of document fields/attributes to include in the response. You can
+     * limit the response to include certain document fields. By default, all document
      * attributes are included in the response.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRequestedDocumentAttributes() const{ return m_requestedDocumentAttributes; }
 
     /**
-     * <p>An array of document attributes to include in the response. You can limit the
-     * response to include certain document attributes. By default all document
+     * <p>An array of document fields/attributes to include in the response. You can
+     * limit the response to include certain document fields. By default, all document
      * attributes are included in the response.</p>
      */
     inline bool RequestedDocumentAttributesHasBeenSet() const { return m_requestedDocumentAttributesHasBeenSet; }
 
     /**
-     * <p>An array of document attributes to include in the response. You can limit the
-     * response to include certain document attributes. By default all document
+     * <p>An array of document fields/attributes to include in the response. You can
+     * limit the response to include certain document fields. By default, all document
      * attributes are included in the response.</p>
      */
     inline void SetRequestedDocumentAttributes(const Aws::Vector<Aws::String>& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = value; }
 
     /**
-     * <p>An array of document attributes to include in the response. You can limit the
-     * response to include certain document attributes. By default all document
+     * <p>An array of document fields/attributes to include in the response. You can
+     * limit the response to include certain document fields. By default, all document
      * attributes are included in the response.</p>
      */
     inline void SetRequestedDocumentAttributes(Aws::Vector<Aws::String>&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = std::move(value); }
 
     /**
-     * <p>An array of document attributes to include in the response. You can limit the
-     * response to include certain document attributes. By default all document
+     * <p>An array of document fields/attributes to include in the response. You can
+     * limit the response to include certain document fields. By default, all document
      * attributes are included in the response.</p>
      */
     inline QueryRequest& WithRequestedDocumentAttributes(const Aws::Vector<Aws::String>& value) { SetRequestedDocumentAttributes(value); return *this;}
 
     /**
-     * <p>An array of document attributes to include in the response. You can limit the
-     * response to include certain document attributes. By default all document
+     * <p>An array of document fields/attributes to include in the response. You can
+     * limit the response to include certain document fields. By default, all document
      * attributes are included in the response.</p>
      */
     inline QueryRequest& WithRequestedDocumentAttributes(Aws::Vector<Aws::String>&& value) { SetRequestedDocumentAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>An array of document attributes to include in the response. You can limit the
-     * response to include certain document attributes. By default all document
+     * <p>An array of document fields/attributes to include in the response. You can
+     * limit the response to include certain document fields. By default, all document
      * attributes are included in the response.</p>
      */
     inline QueryRequest& AddRequestedDocumentAttributes(const Aws::String& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(value); return *this; }
 
     /**
-     * <p>An array of document attributes to include in the response. You can limit the
-     * response to include certain document attributes. By default all document
+     * <p>An array of document fields/attributes to include in the response. You can
+     * limit the response to include certain document fields. By default, all document
      * attributes are included in the response.</p>
      */
     inline QueryRequest& AddRequestedDocumentAttributes(Aws::String&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of document attributes to include in the response. You can limit the
-     * response to include certain document attributes. By default all document
+     * <p>An array of document fields/attributes to include in the response. You can
+     * limit the response to include certain document fields. By default, all document
      * attributes are included in the response.</p>
      */
     inline QueryRequest& AddRequestedDocumentAttributes(const char* value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(value); return *this; }
 
 
     /**
-     * <p>Sets the type of query. Only results for the specified query type are
-     * returned.</p>
+     * <p>Sets the type of query result or response. Only results for the specified
+     * type are returned.</p>
      */
     inline const QueryResultType& GetQueryResultTypeFilter() const{ return m_queryResultTypeFilter; }
 
     /**
-     * <p>Sets the type of query. Only results for the specified query type are
-     * returned.</p>
+     * <p>Sets the type of query result or response. Only results for the specified
+     * type are returned.</p>
      */
     inline bool QueryResultTypeFilterHasBeenSet() const { return m_queryResultTypeFilterHasBeenSet; }
 
     /**
-     * <p>Sets the type of query. Only results for the specified query type are
-     * returned.</p>
+     * <p>Sets the type of query result or response. Only results for the specified
+     * type are returned.</p>
      */
     inline void SetQueryResultTypeFilter(const QueryResultType& value) { m_queryResultTypeFilterHasBeenSet = true; m_queryResultTypeFilter = value; }
 
     /**
-     * <p>Sets the type of query. Only results for the specified query type are
-     * returned.</p>
+     * <p>Sets the type of query result or response. Only results for the specified
+     * type are returned.</p>
      */
     inline void SetQueryResultTypeFilter(QueryResultType&& value) { m_queryResultTypeFilterHasBeenSet = true; m_queryResultTypeFilter = std::move(value); }
 
     /**
-     * <p>Sets the type of query. Only results for the specified query type are
-     * returned.</p>
+     * <p>Sets the type of query result or response. Only results for the specified
+     * type are returned.</p>
      */
     inline QueryRequest& WithQueryResultTypeFilter(const QueryResultType& value) { SetQueryResultTypeFilter(value); return *this;}
 
     /**
-     * <p>Sets the type of query. Only results for the specified query type are
-     * returned.</p>
+     * <p>Sets the type of query result or response. Only results for the specified
+     * type are returned.</p>
      */
     inline QueryRequest& WithQueryResultTypeFilter(QueryResultType&& value) { SetQueryResultTypeFilter(std::move(value)); return *this;}
 
 
     /**
-     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * <p>Overrides relevance tuning configurations of fields/attributes set at the
      * index level.</p> <p>If you use this API to override the relevance tuning
      * configured at the index level, but there is no relevance tuning configured at
      * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-     * <p>If there is relevance tuning configured at the index level, but you do not
-     * use this API to override any relevance tuning in the index, then Amazon Kendra
-     * uses the relevance tuning that is configured at the index level.</p> <p>If there
-     * is relevance tuning configured for fields at the index level, but you use this
-     * API to override only some of these fields, then for the fields you did not
-     * override, the importance is set to 1.</p>
+     * <p>If there is relevance tuning configured for fields at the index level, and
+     * you use this API to override only some of these fields, then for the fields you
+     * did not override, the importance is set to 1.</p>
      */
     inline const Aws::Vector<DocumentRelevanceConfiguration>& GetDocumentRelevanceOverrideConfigurations() const{ return m_documentRelevanceOverrideConfigurations; }
 
     /**
-     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * <p>Overrides relevance tuning configurations of fields/attributes set at the
      * index level.</p> <p>If you use this API to override the relevance tuning
      * configured at the index level, but there is no relevance tuning configured at
      * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-     * <p>If there is relevance tuning configured at the index level, but you do not
-     * use this API to override any relevance tuning in the index, then Amazon Kendra
-     * uses the relevance tuning that is configured at the index level.</p> <p>If there
-     * is relevance tuning configured for fields at the index level, but you use this
-     * API to override only some of these fields, then for the fields you did not
-     * override, the importance is set to 1.</p>
+     * <p>If there is relevance tuning configured for fields at the index level, and
+     * you use this API to override only some of these fields, then for the fields you
+     * did not override, the importance is set to 1.</p>
      */
     inline bool DocumentRelevanceOverrideConfigurationsHasBeenSet() const { return m_documentRelevanceOverrideConfigurationsHasBeenSet; }
 
     /**
-     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * <p>Overrides relevance tuning configurations of fields/attributes set at the
      * index level.</p> <p>If you use this API to override the relevance tuning
      * configured at the index level, but there is no relevance tuning configured at
      * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-     * <p>If there is relevance tuning configured at the index level, but you do not
-     * use this API to override any relevance tuning in the index, then Amazon Kendra
-     * uses the relevance tuning that is configured at the index level.</p> <p>If there
-     * is relevance tuning configured for fields at the index level, but you use this
-     * API to override only some of these fields, then for the fields you did not
-     * override, the importance is set to 1.</p>
+     * <p>If there is relevance tuning configured for fields at the index level, and
+     * you use this API to override only some of these fields, then for the fields you
+     * did not override, the importance is set to 1.</p>
      */
     inline void SetDocumentRelevanceOverrideConfigurations(const Aws::Vector<DocumentRelevanceConfiguration>& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations = value; }
 
     /**
-     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * <p>Overrides relevance tuning configurations of fields/attributes set at the
      * index level.</p> <p>If you use this API to override the relevance tuning
      * configured at the index level, but there is no relevance tuning configured at
      * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-     * <p>If there is relevance tuning configured at the index level, but you do not
-     * use this API to override any relevance tuning in the index, then Amazon Kendra
-     * uses the relevance tuning that is configured at the index level.</p> <p>If there
-     * is relevance tuning configured for fields at the index level, but you use this
-     * API to override only some of these fields, then for the fields you did not
-     * override, the importance is set to 1.</p>
+     * <p>If there is relevance tuning configured for fields at the index level, and
+     * you use this API to override only some of these fields, then for the fields you
+     * did not override, the importance is set to 1.</p>
      */
     inline void SetDocumentRelevanceOverrideConfigurations(Aws::Vector<DocumentRelevanceConfiguration>&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations = std::move(value); }
 
     /**
-     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * <p>Overrides relevance tuning configurations of fields/attributes set at the
      * index level.</p> <p>If you use this API to override the relevance tuning
      * configured at the index level, but there is no relevance tuning configured at
      * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-     * <p>If there is relevance tuning configured at the index level, but you do not
-     * use this API to override any relevance tuning in the index, then Amazon Kendra
-     * uses the relevance tuning that is configured at the index level.</p> <p>If there
-     * is relevance tuning configured for fields at the index level, but you use this
-     * API to override only some of these fields, then for the fields you did not
-     * override, the importance is set to 1.</p>
+     * <p>If there is relevance tuning configured for fields at the index level, and
+     * you use this API to override only some of these fields, then for the fields you
+     * did not override, the importance is set to 1.</p>
      */
     inline QueryRequest& WithDocumentRelevanceOverrideConfigurations(const Aws::Vector<DocumentRelevanceConfiguration>& value) { SetDocumentRelevanceOverrideConfigurations(value); return *this;}
 
     /**
-     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * <p>Overrides relevance tuning configurations of fields/attributes set at the
      * index level.</p> <p>If you use this API to override the relevance tuning
      * configured at the index level, but there is no relevance tuning configured at
      * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-     * <p>If there is relevance tuning configured at the index level, but you do not
-     * use this API to override any relevance tuning in the index, then Amazon Kendra
-     * uses the relevance tuning that is configured at the index level.</p> <p>If there
-     * is relevance tuning configured for fields at the index level, but you use this
-     * API to override only some of these fields, then for the fields you did not
-     * override, the importance is set to 1.</p>
+     * <p>If there is relevance tuning configured for fields at the index level, and
+     * you use this API to override only some of these fields, then for the fields you
+     * did not override, the importance is set to 1.</p>
      */
     inline QueryRequest& WithDocumentRelevanceOverrideConfigurations(Aws::Vector<DocumentRelevanceConfiguration>&& value) { SetDocumentRelevanceOverrideConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * <p>Overrides relevance tuning configurations of fields/attributes set at the
      * index level.</p> <p>If you use this API to override the relevance tuning
      * configured at the index level, but there is no relevance tuning configured at
      * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-     * <p>If there is relevance tuning configured at the index level, but you do not
-     * use this API to override any relevance tuning in the index, then Amazon Kendra
-     * uses the relevance tuning that is configured at the index level.</p> <p>If there
-     * is relevance tuning configured for fields at the index level, but you use this
-     * API to override only some of these fields, then for the fields you did not
-     * override, the importance is set to 1.</p>
+     * <p>If there is relevance tuning configured for fields at the index level, and
+     * you use this API to override only some of these fields, then for the fields you
+     * did not override, the importance is set to 1.</p>
      */
     inline QueryRequest& AddDocumentRelevanceOverrideConfigurations(const DocumentRelevanceConfiguration& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * <p>Overrides relevance tuning configurations of fields/attributes set at the
      * index level.</p> <p>If you use this API to override the relevance tuning
      * configured at the index level, but there is no relevance tuning configured at
      * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-     * <p>If there is relevance tuning configured at the index level, but you do not
-     * use this API to override any relevance tuning in the index, then Amazon Kendra
-     * uses the relevance tuning that is configured at the index level.</p> <p>If there
-     * is relevance tuning configured for fields at the index level, but you use this
-     * API to override only some of these fields, then for the fields you did not
-     * override, the importance is set to 1.</p>
+     * <p>If there is relevance tuning configured for fields at the index level, and
+     * you use this API to override only some of these fields, then for the fields you
+     * did not override, the importance is set to 1.</p>
      */
     inline QueryRequest& AddDocumentRelevanceOverrideConfigurations(DocumentRelevanceConfiguration&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations.push_back(std::move(value)); return *this; }
 
@@ -589,6 +566,95 @@ namespace Model
      * relevance that Amazon Kendra determines for the result.</p>
      */
     inline QueryRequest& WithSortingConfiguration(SortingConfiguration&& value) { SetSortingConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline const Aws::Vector<SortingConfiguration>& GetSortingConfigurations() const{ return m_sortingConfigurations; }
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline bool SortingConfigurationsHasBeenSet() const { return m_sortingConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline void SetSortingConfigurations(const Aws::Vector<SortingConfiguration>& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations = value; }
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline void SetSortingConfigurations(Aws::Vector<SortingConfiguration>&& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations = std::move(value); }
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline QueryRequest& WithSortingConfigurations(const Aws::Vector<SortingConfiguration>& value) { SetSortingConfigurations(value); return *this;}
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline QueryRequest& WithSortingConfigurations(Aws::Vector<SortingConfiguration>&& value) { SetSortingConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline QueryRequest& AddSortingConfigurations(const SortingConfiguration& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline QueryRequest& AddSortingConfigurations(SortingConfiguration&& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -717,6 +783,49 @@ namespace Model
      */
     inline QueryRequest& WithSpellCorrectionConfiguration(SpellCorrectionConfiguration&& value) { SetSpellCorrectionConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline const CollapseConfiguration& GetCollapseConfiguration() const{ return m_collapseConfiguration; }
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline bool CollapseConfigurationHasBeenSet() const { return m_collapseConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline void SetCollapseConfiguration(const CollapseConfiguration& value) { m_collapseConfigurationHasBeenSet = true; m_collapseConfiguration = value; }
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline void SetCollapseConfiguration(CollapseConfiguration&& value) { m_collapseConfigurationHasBeenSet = true; m_collapseConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline QueryRequest& WithCollapseConfiguration(const CollapseConfiguration& value) { SetCollapseConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline QueryRequest& WithCollapseConfiguration(CollapseConfiguration&& value) { SetCollapseConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -749,6 +858,9 @@ namespace Model
     SortingConfiguration m_sortingConfiguration;
     bool m_sortingConfigurationHasBeenSet = false;
 
+    Aws::Vector<SortingConfiguration> m_sortingConfigurations;
+    bool m_sortingConfigurationsHasBeenSet = false;
+
     UserContext m_userContext;
     bool m_userContextHasBeenSet = false;
 
@@ -757,6 +869,9 @@ namespace Model
 
     SpellCorrectionConfiguration m_spellCorrectionConfiguration;
     bool m_spellCorrectionConfigurationHasBeenSet = false;
+
+    CollapseConfiguration m_collapseConfiguration;
+    bool m_collapseConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

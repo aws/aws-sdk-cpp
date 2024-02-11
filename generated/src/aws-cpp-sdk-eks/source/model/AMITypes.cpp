@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AMITypes::NOT_SET:
+            return {};
           case AMITypes::AL2_x86_64:
             return "AL2_x86_64";
           case AMITypes::AL2_x86_64_GPU:

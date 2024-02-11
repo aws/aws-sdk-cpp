@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BurninSubtitleApplyFontColor::NOT_SET:
+            return {};
           case BurninSubtitleApplyFontColor::WHITE_TEXT_ONLY:
             return "WHITE_TEXT_ONLY";
           case BurninSubtitleApplyFontColor::ALL_TEXT:

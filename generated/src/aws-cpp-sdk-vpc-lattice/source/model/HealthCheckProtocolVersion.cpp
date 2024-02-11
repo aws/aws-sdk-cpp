@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HealthCheckProtocolVersion::NOT_SET:
+            return {};
           case HealthCheckProtocolVersion::HTTP1:
             return "HTTP1";
           case HealthCheckProtocolVersion::HTTP2:

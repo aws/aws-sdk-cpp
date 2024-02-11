@@ -9,6 +9,7 @@
 #include <aws/managedblockchain/model/AccessorType.h>
 #include <aws/managedblockchain/model/AccessorStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/managedblockchain/model/AccessorNetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -252,6 +253,37 @@ namespace Model
      */
     inline AccessorSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline const AccessorNetworkType& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline void SetNetworkType(const AccessorNetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline void SetNetworkType(AccessorNetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline AccessorSummary& WithNetworkType(const AccessorNetworkType& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline AccessorSummary& WithNetworkType(AccessorNetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -268,6 +300,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    AccessorNetworkType m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

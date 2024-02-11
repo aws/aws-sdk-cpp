@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLMode::NOT_SET:
+            return {};
           case AutoMLMode::AUTO:
             return "AUTO";
           case AutoMLMode::ENSEMBLING:

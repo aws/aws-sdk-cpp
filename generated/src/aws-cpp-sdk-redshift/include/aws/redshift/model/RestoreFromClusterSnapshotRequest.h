@@ -254,57 +254,57 @@ namespace Model
 
     /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
-     * is required if your IAM user or role has a policy containing a snapshot resource
-     * element that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user has a policy containing a snapshot resource element
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline const Aws::String& GetSnapshotClusterIdentifier() const{ return m_snapshotClusterIdentifier; }
 
     /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
-     * is required if your IAM user or role has a policy containing a snapshot resource
-     * element that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user has a policy containing a snapshot resource element
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline bool SnapshotClusterIdentifierHasBeenSet() const { return m_snapshotClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
-     * is required if your IAM user or role has a policy containing a snapshot resource
-     * element that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user has a policy containing a snapshot resource element
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline void SetSnapshotClusterIdentifier(const Aws::String& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = value; }
 
     /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
-     * is required if your IAM user or role has a policy containing a snapshot resource
-     * element that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user has a policy containing a snapshot resource element
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline void SetSnapshotClusterIdentifier(Aws::String&& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = std::move(value); }
 
     /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
-     * is required if your IAM user or role has a policy containing a snapshot resource
-     * element that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user has a policy containing a snapshot resource element
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline void SetSnapshotClusterIdentifier(const char* value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier.assign(value); }
 
     /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
-     * is required if your IAM user or role has a policy containing a snapshot resource
-     * element that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user has a policy containing a snapshot resource element
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithSnapshotClusterIdentifier(const Aws::String& value) { SetSnapshotClusterIdentifier(value); return *this;}
 
     /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
-     * is required if your IAM user or role has a policy containing a snapshot resource
-     * element that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user has a policy containing a snapshot resource element
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithSnapshotClusterIdentifier(Aws::String&& value) { SetSnapshotClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
-     * is required if your IAM user or role has a policy containing a snapshot resource
-     * element that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user has a policy containing a snapshot resource element
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithSnapshotClusterIdentifier(const char* value) { SetSnapshotClusterIdentifier(value); return *this;}
 
@@ -1900,6 +1900,170 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * restored cluster's admin credentials. If <code>ManageMasterPassword</code> is
+     * false or not set, Amazon Redshift uses the admin credentials the cluster had at
+     * the time the snapshot was taken.</p>
+     */
+    inline bool GetManageMasterPassword() const{ return m_manageMasterPassword; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * restored cluster's admin credentials. If <code>ManageMasterPassword</code> is
+     * false or not set, Amazon Redshift uses the admin credentials the cluster had at
+     * the time the snapshot was taken.</p>
+     */
+    inline bool ManageMasterPasswordHasBeenSet() const { return m_manageMasterPasswordHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * restored cluster's admin credentials. If <code>ManageMasterPassword</code> is
+     * false or not set, Amazon Redshift uses the admin credentials the cluster had at
+     * the time the snapshot was taken.</p>
+     */
+    inline void SetManageMasterPassword(bool value) { m_manageMasterPasswordHasBeenSet = true; m_manageMasterPassword = value; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * restored cluster's admin credentials. If <code>ManageMasterPassword</code> is
+     * false or not set, Amazon Redshift uses the admin credentials the cluster had at
+     * the time the snapshot was taken.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithManageMasterPassword(bool value) { SetManageMasterPassword(value); return *this;}
+
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline const Aws::String& GetMasterPasswordSecretKmsKeyId() const{ return m_masterPasswordSecretKmsKeyId; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline bool MasterPasswordSecretKmsKeyIdHasBeenSet() const { return m_masterPasswordSecretKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(const Aws::String& value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId = value; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(Aws::String&& value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(const char* value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMasterPasswordSecretKmsKeyId(const Aws::String& value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMasterPasswordSecretKmsKeyId(Aws::String&& value) { SetMasterPasswordSecretKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret. You can only use this parameter if
+     * <code>ManageMasterPassword</code> is true.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMasterPasswordSecretKmsKeyId(const char* value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline const Aws::String& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const Aws::String& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(Aws::String&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const char* value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType.assign(value); }
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithIpAddressType(const Aws::String& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithIpAddressType(Aws::String&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address type for the cluster. Possible values are <code>ipv4</code>
+     * and <code>dualstack</code>.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithIpAddressType(const char* value) { SetIpAddressType(value); return *this;}
+
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p>If true, the snapshot will be restored to a cluster deployed in two
+     * Availability Zones.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2000,6 +2164,18 @@ namespace Model
 
     bool m_encrypted;
     bool m_encryptedHasBeenSet = false;
+
+    bool m_manageMasterPassword;
+    bool m_manageMasterPasswordHasBeenSet = false;
+
+    Aws::String m_masterPasswordSecretKmsKeyId;
+    bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
+
+    Aws::String m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet = false;
+
+    bool m_multiAZ;
+    bool m_multiAZHasBeenSet = false;
   };
 
 } // namespace Model

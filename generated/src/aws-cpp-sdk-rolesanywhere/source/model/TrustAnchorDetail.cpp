@@ -23,6 +23,7 @@ TrustAnchorDetail::TrustAnchorDetail() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_notificationSettingsHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_trustAnchorArnHasBeenSet(false),
     m_trustAnchorIdHasBeenSet(false),
@@ -35,6 +36,7 @@ TrustAnchorDetail::TrustAnchorDetail(JsonView jsonValue) :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_notificationSettingsHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_trustAnchorArnHasBeenSet(false),
     m_trustAnchorIdHasBeenSet(false),
@@ -64,6 +66,16 @@ TrustAnchorDetail& TrustAnchorDetail::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("notificationSettings"))
+  {
+    Aws::Utils::Array<JsonView> notificationSettingsJsonList = jsonValue.GetArray("notificationSettings");
+    for(unsigned notificationSettingsIndex = 0; notificationSettingsIndex < notificationSettingsJsonList.GetLength(); ++notificationSettingsIndex)
+    {
+      m_notificationSettings.push_back(notificationSettingsJsonList[notificationSettingsIndex].AsObject());
+    }
+    m_notificationSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("source"))
@@ -115,6 +127,17 @@ JsonValue TrustAnchorDetail::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_notificationSettingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> notificationSettingsJsonList(m_notificationSettings.size());
+   for(unsigned notificationSettingsIndex = 0; notificationSettingsIndex < notificationSettingsJsonList.GetLength(); ++notificationSettingsIndex)
+   {
+     notificationSettingsJsonList[notificationSettingsIndex].AsObject(m_notificationSettings[notificationSettingsIndex].Jsonize());
+   }
+   payload.WithArray("notificationSettings", std::move(notificationSettingsJsonList));
 
   }
 

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntegrationType::NOT_SET:
+            return {};
           case IntegrationType::SEND_FINDINGS_TO_SECURITY_HUB:
             return "SEND_FINDINGS_TO_SECURITY_HUB";
           case IntegrationType::RECEIVE_FINDINGS_FROM_SECURITY_HUB:

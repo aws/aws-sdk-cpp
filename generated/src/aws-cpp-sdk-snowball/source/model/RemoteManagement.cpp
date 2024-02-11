@@ -22,6 +22,7 @@ namespace Aws
 
         static const int INSTALLED_ONLY_HASH = HashingUtils::HashString("INSTALLED_ONLY");
         static const int INSTALLED_AUTOSTART_HASH = HashingUtils::HashString("INSTALLED_AUTOSTART");
+        static const int NOT_INSTALLED_HASH = HashingUtils::HashString("NOT_INSTALLED");
 
 
         RemoteManagement GetRemoteManagementForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == INSTALLED_AUTOSTART_HASH)
           {
             return RemoteManagement::INSTALLED_AUTOSTART;
+          }
+          else if (hashCode == NOT_INSTALLED_HASH)
+          {
+            return RemoteManagement::NOT_INSTALLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RemoteManagement::NOT_SET:
+            return {};
           case RemoteManagement::INSTALLED_ONLY:
             return "INSTALLED_ONLY";
           case RemoteManagement::INSTALLED_AUTOSTART:
             return "INSTALLED_AUTOSTART";
+          case RemoteManagement::NOT_INSTALLED:
+            return "NOT_INSTALLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

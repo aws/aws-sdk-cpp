@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PowerDrawKva::NOT_SET:
+            return {};
           case PowerDrawKva::POWER_5_KVA:
             return "POWER_5_KVA";
           case PowerDrawKva::POWER_10_KVA:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AgentHealth::NOT_SET:
+            return {};
           case AgentHealth::HEALTHY:
             return "HEALTHY";
           case AgentHealth::UNHEALTHY:

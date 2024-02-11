@@ -127,9 +127,9 @@ namespace Model
     /**
      * <p>Specify true if you are updating an existing destination policy to grant
      * permission to an organization ID instead of granting permission to individual
-     * AWS accounts. Before you update a destination policy this way, you must first
-     * update the subscription filters in the accounts that send logs to this
-     * destination. If you do not, the subscription filters might stop working. By
+     * Amazon Web Services accounts. Before you update a destination policy this way,
+     * you must first update the subscription filters in the accounts that send logs to
+     * this destination. If you do not, the subscription filters might stop working. By
      * specifying <code>true</code> for <code>forceUpdate</code>, you are affirming
      * that you have already updated the subscription filters. For more information,
      * see <a
@@ -142,9 +142,9 @@ namespace Model
     /**
      * <p>Specify true if you are updating an existing destination policy to grant
      * permission to an organization ID instead of granting permission to individual
-     * AWS accounts. Before you update a destination policy this way, you must first
-     * update the subscription filters in the accounts that send logs to this
-     * destination. If you do not, the subscription filters might stop working. By
+     * Amazon Web Services accounts. Before you update a destination policy this way,
+     * you must first update the subscription filters in the accounts that send logs to
+     * this destination. If you do not, the subscription filters might stop working. By
      * specifying <code>true</code> for <code>forceUpdate</code>, you are affirming
      * that you have already updated the subscription filters. For more information,
      * see <a
@@ -157,9 +157,9 @@ namespace Model
     /**
      * <p>Specify true if you are updating an existing destination policy to grant
      * permission to an organization ID instead of granting permission to individual
-     * AWS accounts. Before you update a destination policy this way, you must first
-     * update the subscription filters in the accounts that send logs to this
-     * destination. If you do not, the subscription filters might stop working. By
+     * Amazon Web Services accounts. Before you update a destination policy this way,
+     * you must first update the subscription filters in the accounts that send logs to
+     * this destination. If you do not, the subscription filters might stop working. By
      * specifying <code>true</code> for <code>forceUpdate</code>, you are affirming
      * that you have already updated the subscription filters. For more information,
      * see <a
@@ -172,9 +172,9 @@ namespace Model
     /**
      * <p>Specify true if you are updating an existing destination policy to grant
      * permission to an organization ID instead of granting permission to individual
-     * AWS accounts. Before you update a destination policy this way, you must first
-     * update the subscription filters in the accounts that send logs to this
-     * destination. If you do not, the subscription filters might stop working. By
+     * Amazon Web Services accounts. Before you update a destination policy this way,
+     * you must first update the subscription filters in the accounts that send logs to
+     * this destination. If you do not, the subscription filters might stop working. By
      * specifying <code>true</code> for <code>forceUpdate</code>, you are affirming
      * that you have already updated the subscription filters. For more information,
      * see <a

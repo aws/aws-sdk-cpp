@@ -121,42 +121,42 @@ namespace Model
 
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline ListedConnector& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline ListedConnector& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline ListedConnector& WithUrl(const char* value) { SetUrl(value); return *this;}
 

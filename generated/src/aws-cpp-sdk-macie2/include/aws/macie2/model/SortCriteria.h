@@ -40,50 +40,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the property to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines for a finding.</p>
+     * <p>The name of the property to sort the results by. Valid values are: count,
+     * createdAt, policyDetails.action.apiCallDetails.firstSeen,
+     * policyDetails.action.apiCallDetails.lastSeen, resourcesAffected, severity.score,
+     * type, and updatedAt.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
-     * <p>The name of the property to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines for a finding.</p>
+     * <p>The name of the property to sort the results by. Valid values are: count,
+     * createdAt, policyDetails.action.apiCallDetails.firstSeen,
+     * policyDetails.action.apiCallDetails.lastSeen, resourcesAffected, severity.score,
+     * type, and updatedAt.</p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
-     * <p>The name of the property to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines for a finding.</p>
+     * <p>The name of the property to sort the results by. Valid values are: count,
+     * createdAt, policyDetails.action.apiCallDetails.firstSeen,
+     * policyDetails.action.apiCallDetails.lastSeen, resourcesAffected, severity.score,
+     * type, and updatedAt.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
-     * <p>The name of the property to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines for a finding.</p>
+     * <p>The name of the property to sort the results by. Valid values are: count,
+     * createdAt, policyDetails.action.apiCallDetails.firstSeen,
+     * policyDetails.action.apiCallDetails.lastSeen, resourcesAffected, severity.score,
+     * type, and updatedAt.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
-     * <p>The name of the property to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines for a finding.</p>
+     * <p>The name of the property to sort the results by. Valid values are: count,
+     * createdAt, policyDetails.action.apiCallDetails.firstSeen,
+     * policyDetails.action.apiCallDetails.lastSeen, resourcesAffected, severity.score,
+     * type, and updatedAt.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
-     * <p>The name of the property to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines for a finding.</p>
+     * <p>The name of the property to sort the results by. Valid values are: count,
+     * createdAt, policyDetails.action.apiCallDetails.firstSeen,
+     * policyDetails.action.apiCallDetails.lastSeen, resourcesAffected, severity.score,
+     * type, and updatedAt.</p>
      */
     inline SortCriteria& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
-     * <p>The name of the property to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines for a finding.</p>
+     * <p>The name of the property to sort the results by. Valid values are: count,
+     * createdAt, policyDetails.action.apiCallDetails.firstSeen,
+     * policyDetails.action.apiCallDetails.lastSeen, resourcesAffected, severity.score,
+     * type, and updatedAt.</p>
      */
     inline SortCriteria& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the property to sort the results by. This value can be the name
-     * of any property that Amazon Macie defines for a finding.</p>
+     * <p>The name of the property to sort the results by. Valid values are: count,
+     * createdAt, policyDetails.action.apiCallDetails.firstSeen,
+     * policyDetails.action.apiCallDetails.lastSeen, resourcesAffected, severity.score,
+     * type, and updatedAt.</p>
      */
     inline SortCriteria& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

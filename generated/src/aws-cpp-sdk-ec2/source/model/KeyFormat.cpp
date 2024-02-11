@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyFormat::NOT_SET:
+            return {};
           case KeyFormat::pem:
             return "pem";
           case KeyFormat::ppk:

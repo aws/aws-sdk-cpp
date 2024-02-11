@@ -28,13 +28,7 @@ DeleteCustomLogSourceResult::DeleteCustomLogSourceResult(const Aws::AmazonWebSer
 
 DeleteCustomLogSourceResult& DeleteCustomLogSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("customDataLocation"))
-  {
-    m_customDataLocation = jsonValue.GetString("customDataLocation");
-
-  }
-
+  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

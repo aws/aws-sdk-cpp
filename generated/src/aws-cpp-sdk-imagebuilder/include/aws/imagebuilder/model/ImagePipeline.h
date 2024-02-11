@@ -12,6 +12,8 @@
 #include <aws/imagebuilder/model/PipelineStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/ImageScanningConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/WorkflowConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -643,42 +645,42 @@ namespace Model
 
 
     /**
-     * <p>This is no longer supported, and does not return a value.</p>
+     * <p>The next date when the pipeline is scheduled to run.</p>
      */
     inline const Aws::String& GetDateNextRun() const{ return m_dateNextRun; }
 
     /**
-     * <p>This is no longer supported, and does not return a value.</p>
+     * <p>The next date when the pipeline is scheduled to run.</p>
      */
     inline bool DateNextRunHasBeenSet() const { return m_dateNextRunHasBeenSet; }
 
     /**
-     * <p>This is no longer supported, and does not return a value.</p>
+     * <p>The next date when the pipeline is scheduled to run.</p>
      */
     inline void SetDateNextRun(const Aws::String& value) { m_dateNextRunHasBeenSet = true; m_dateNextRun = value; }
 
     /**
-     * <p>This is no longer supported, and does not return a value.</p>
+     * <p>The next date when the pipeline is scheduled to run.</p>
      */
     inline void SetDateNextRun(Aws::String&& value) { m_dateNextRunHasBeenSet = true; m_dateNextRun = std::move(value); }
 
     /**
-     * <p>This is no longer supported, and does not return a value.</p>
+     * <p>The next date when the pipeline is scheduled to run.</p>
      */
     inline void SetDateNextRun(const char* value) { m_dateNextRunHasBeenSet = true; m_dateNextRun.assign(value); }
 
     /**
-     * <p>This is no longer supported, and does not return a value.</p>
+     * <p>The next date when the pipeline is scheduled to run.</p>
      */
     inline ImagePipeline& WithDateNextRun(const Aws::String& value) { SetDateNextRun(value); return *this;}
 
     /**
-     * <p>This is no longer supported, and does not return a value.</p>
+     * <p>The next date when the pipeline is scheduled to run.</p>
      */
     inline ImagePipeline& WithDateNextRun(Aws::String&& value) { SetDateNextRun(std::move(value)); return *this;}
 
     /**
-     * <p>This is no longer supported, and does not return a value.</p>
+     * <p>The next date when the pipeline is scheduled to run.</p>
      */
     inline ImagePipeline& WithDateNextRun(const char* value) { SetDateNextRun(value); return *this;}
 
@@ -779,6 +781,96 @@ namespace Model
      */
     inline ImagePipeline& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline ImagePipeline& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline ImagePipeline& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline ImagePipeline& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+
+
+    /**
+     * <p>Contains the workflows that run for the image pipeline.</p>
+     */
+    inline const Aws::Vector<WorkflowConfiguration>& GetWorkflows() const{ return m_workflows; }
+
+    /**
+     * <p>Contains the workflows that run for the image pipeline.</p>
+     */
+    inline bool WorkflowsHasBeenSet() const { return m_workflowsHasBeenSet; }
+
+    /**
+     * <p>Contains the workflows that run for the image pipeline.</p>
+     */
+    inline void SetWorkflows(const Aws::Vector<WorkflowConfiguration>& value) { m_workflowsHasBeenSet = true; m_workflows = value; }
+
+    /**
+     * <p>Contains the workflows that run for the image pipeline.</p>
+     */
+    inline void SetWorkflows(Aws::Vector<WorkflowConfiguration>&& value) { m_workflowsHasBeenSet = true; m_workflows = std::move(value); }
+
+    /**
+     * <p>Contains the workflows that run for the image pipeline.</p>
+     */
+    inline ImagePipeline& WithWorkflows(const Aws::Vector<WorkflowConfiguration>& value) { SetWorkflows(value); return *this;}
+
+    /**
+     * <p>Contains the workflows that run for the image pipeline.</p>
+     */
+    inline ImagePipeline& WithWorkflows(Aws::Vector<WorkflowConfiguration>&& value) { SetWorkflows(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains the workflows that run for the image pipeline.</p>
+     */
+    inline ImagePipeline& AddWorkflows(const WorkflowConfiguration& value) { m_workflowsHasBeenSet = true; m_workflows.push_back(value); return *this; }
+
+    /**
+     * <p>Contains the workflows that run for the image pipeline.</p>
+     */
+    inline ImagePipeline& AddWorkflows(WorkflowConfiguration&& value) { m_workflowsHasBeenSet = true; m_workflows.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -834,6 +926,12 @@ namespace Model
 
     ImageScanningConfiguration m_imageScanningConfiguration;
     bool m_imageScanningConfigurationHasBeenSet = false;
+
+    Aws::String m_executionRole;
+    bool m_executionRoleHasBeenSet = false;
+
+    Aws::Vector<WorkflowConfiguration> m_workflows;
+    bool m_workflowsHasBeenSet = false;
   };
 
 } // namespace Model

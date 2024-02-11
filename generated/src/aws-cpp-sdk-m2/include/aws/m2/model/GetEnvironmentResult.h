@@ -42,21 +42,21 @@ namespace Model
 
     /**
      * <p>The number of instances included in the runtime environment. A standalone
-     * runtime environment has a maxiumum of one instance. Currently, a high
+     * runtime environment has a maximum of one instance. Currently, a high
      * availability runtime environment has a maximum of two instances. </p>
      */
     inline int GetActualCapacity() const{ return m_actualCapacity; }
 
     /**
      * <p>The number of instances included in the runtime environment. A standalone
-     * runtime environment has a maxiumum of one instance. Currently, a high
+     * runtime environment has a maximum of one instance. Currently, a high
      * availability runtime environment has a maximum of two instances. </p>
      */
     inline void SetActualCapacity(int value) { m_actualCapacity = value; }
 
     /**
      * <p>The number of instances included in the runtime environment. A standalone
-     * runtime environment has a maxiumum of one instance. Currently, a high
+     * runtime environment has a maximum of one instance. Currently, a high
      * availability runtime environment has a maximum of two instances. </p>
      */
     inline GetEnvironmentResult& WithActualCapacity(int value) { SetActualCapacity(value); return *this;}
@@ -467,51 +467,44 @@ namespace Model
 
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
-     * assigned.</p>
+     * <p>The maintenance window for the runtime environment. If you don't provide a
+     * value for the maintenance window, the service assigns a random value.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
-     * assigned.</p>
+     * <p>The maintenance window for the runtime environment. If you don't provide a
+     * value for the maintenance window, the service assigns a random value.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindow = value; }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
-     * assigned.</p>
+     * <p>The maintenance window for the runtime environment. If you don't provide a
+     * value for the maintenance window, the service assigns a random value.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindow = std::move(value); }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
-     * assigned.</p>
+     * <p>The maintenance window for the runtime environment. If you don't provide a
+     * value for the maintenance window, the service assigns a random value.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindow.assign(value); }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
-     * assigned.</p>
+     * <p>The maintenance window for the runtime environment. If you don't provide a
+     * value for the maintenance window, the service assigns a random value.</p>
      */
     inline GetEnvironmentResult& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
-     * assigned.</p>
+     * <p>The maintenance window for the runtime environment. If you don't provide a
+     * value for the maintenance window, the service assigns a random value.</p>
      */
     inline GetEnvironmentResult& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
-     * assigned.</p>
+     * <p>The maintenance window for the runtime environment. If you don't provide a
+     * value for the maintenance window, the service assigns a random value.</p>
      */
     inline GetEnvironmentResult& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 

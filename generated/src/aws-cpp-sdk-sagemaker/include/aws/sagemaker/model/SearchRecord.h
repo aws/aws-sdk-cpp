@@ -15,11 +15,11 @@
 #include <aws/sagemaker/model/Pipeline.h>
 #include <aws/sagemaker/model/PipelineExecution.h>
 #include <aws/sagemaker/model/FeatureGroup.h>
-#include <aws/sagemaker/model/Project.h>
 #include <aws/sagemaker/model/FeatureMetadata.h>
+#include <aws/sagemaker/model/Project.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobSearchEntity.h>
-#include <aws/sagemaker/model/ModelDashboardModel.h>
 #include <aws/sagemaker/model/ModelCard.h>
+#include <aws/sagemaker/model/ModelDashboardModel.h>
 #include <utility>
 
 namespace Aws
@@ -38,8 +38,9 @@ namespace Model
 {
 
   /**
-   * <p>A single resource returned as part of the <a>Search</a> API
-   * response.</p><p><h3>See Also:</h3>   <a
+   * <p>A single resource returned as part of the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+   * API response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchRecord">AWS
    * API Reference</a></p>
    */
@@ -291,37 +292,6 @@ namespace Model
 
 
     /**
-     * <p>The properties of a project.</p>
-     */
-    inline const Project& GetProject() const{ return m_project; }
-
-    /**
-     * <p>The properties of a project.</p>
-     */
-    inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-
-    /**
-     * <p>The properties of a project.</p>
-     */
-    inline void SetProject(const Project& value) { m_projectHasBeenSet = true; m_project = value; }
-
-    /**
-     * <p>The properties of a project.</p>
-     */
-    inline void SetProject(Project&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-
-    /**
-     * <p>The properties of a project.</p>
-     */
-    inline SearchRecord& WithProject(const Project& value) { SetProject(value); return *this;}
-
-    /**
-     * <p>The properties of a project.</p>
-     */
-    inline SearchRecord& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
-
-
-    /**
      * <p>The feature metadata used to search through the features.</p>
      */
     inline const FeatureMetadata& GetFeatureMetadata() const{ return m_featureMetadata; }
@@ -353,6 +323,37 @@ namespace Model
 
 
     /**
+     * <p>The properties of a project.</p>
+     */
+    inline const Project& GetProject() const{ return m_project; }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline void SetProject(const Project& value) { m_projectHasBeenSet = true; m_project = value; }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline void SetProject(Project&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline SearchRecord& WithProject(const Project& value) { SetProject(value); return *this;}
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline SearchRecord& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
+
+
+    /**
      * <p>The properties of a hyperparameter tuning job.</p>
      */
     inline const HyperParameterTuningJobSearchEntity& GetHyperParameterTuningJob() const{ return m_hyperParameterTuningJob; }
@@ -381,25 +382,6 @@ namespace Model
      * <p>The properties of a hyperparameter tuning job.</p>
      */
     inline SearchRecord& WithHyperParameterTuningJob(HyperParameterTuningJobSearchEntity&& value) { SetHyperParameterTuningJob(std::move(value)); return *this;}
-
-
-    
-    inline const ModelDashboardModel& GetModel() const{ return m_model; }
-
-    
-    inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-
-    
-    inline void SetModel(const ModelDashboardModel& value) { m_modelHasBeenSet = true; m_model = value; }
-
-    
-    inline void SetModel(ModelDashboardModel&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
-
-    
-    inline SearchRecord& WithModel(const ModelDashboardModel& value) { SetModel(value); return *this;}
-
-    
-    inline SearchRecord& WithModel(ModelDashboardModel&& value) { SetModel(std::move(value)); return *this;}
 
 
     /**
@@ -438,6 +420,25 @@ namespace Model
      */
     inline SearchRecord& WithModelCard(ModelCard&& value) { SetModelCard(std::move(value)); return *this;}
 
+
+    
+    inline const ModelDashboardModel& GetModel() const{ return m_model; }
+
+    
+    inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
+
+    
+    inline void SetModel(const ModelDashboardModel& value) { m_modelHasBeenSet = true; m_model = value; }
+
+    
+    inline void SetModel(ModelDashboardModel&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
+
+    
+    inline SearchRecord& WithModel(const ModelDashboardModel& value) { SetModel(value); return *this;}
+
+    
+    inline SearchRecord& WithModel(ModelDashboardModel&& value) { SetModel(std::move(value)); return *this;}
+
   private:
 
     TrainingJob m_trainingJob;
@@ -470,20 +471,20 @@ namespace Model
     FeatureGroup m_featureGroup;
     bool m_featureGroupHasBeenSet = false;
 
-    Project m_project;
-    bool m_projectHasBeenSet = false;
-
     FeatureMetadata m_featureMetadata;
     bool m_featureMetadataHasBeenSet = false;
+
+    Project m_project;
+    bool m_projectHasBeenSet = false;
 
     HyperParameterTuningJobSearchEntity m_hyperParameterTuningJob;
     bool m_hyperParameterTuningJobHasBeenSet = false;
 
-    ModelDashboardModel m_model;
-    bool m_modelHasBeenSet = false;
-
     ModelCard m_modelCard;
     bool m_modelCardHasBeenSet = false;
+
+    ModelDashboardModel m_model;
+    bool m_modelHasBeenSet = false;
   };
 
 } // namespace Model

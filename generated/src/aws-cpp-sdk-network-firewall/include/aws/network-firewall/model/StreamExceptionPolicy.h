@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     DROP,
-    CONTINUE
+    CONTINUE,
+    REJECT
   };
 
 namespace StreamExceptionPolicyMapper

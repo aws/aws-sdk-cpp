@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CheckStatus::NOT_SET:
+            return {};
           case CheckStatus::OKAY:
             return "OKAY";
           case CheckStatus::WARNING:

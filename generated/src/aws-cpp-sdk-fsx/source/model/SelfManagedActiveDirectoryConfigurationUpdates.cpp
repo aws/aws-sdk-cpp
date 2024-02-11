@@ -21,14 +21,20 @@ namespace Model
 SelfManagedActiveDirectoryConfigurationUpdates::SelfManagedActiveDirectoryConfigurationUpdates() : 
     m_userNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false)
+    m_dnsIpsHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_organizationalUnitDistinguishedNameHasBeenSet(false),
+    m_fileSystemAdministratorsGroupHasBeenSet(false)
 {
 }
 
 SelfManagedActiveDirectoryConfigurationUpdates::SelfManagedActiveDirectoryConfigurationUpdates(JsonView jsonValue) : 
     m_userNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false)
+    m_dnsIpsHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_organizationalUnitDistinguishedNameHasBeenSet(false),
+    m_fileSystemAdministratorsGroupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +65,27 @@ SelfManagedActiveDirectoryConfigurationUpdates& SelfManagedActiveDirectoryConfig
     m_dnsIpsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DomainName"))
+  {
+    m_domainName = jsonValue.GetString("DomainName");
+
+    m_domainNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OrganizationalUnitDistinguishedName"))
+  {
+    m_organizationalUnitDistinguishedName = jsonValue.GetString("OrganizationalUnitDistinguishedName");
+
+    m_organizationalUnitDistinguishedNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FileSystemAdministratorsGroup"))
+  {
+    m_fileSystemAdministratorsGroup = jsonValue.GetString("FileSystemAdministratorsGroup");
+
+    m_fileSystemAdministratorsGroupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +113,24 @@ JsonValue SelfManagedActiveDirectoryConfigurationUpdates::Jsonize() const
      dnsIpsJsonList[dnsIpsIndex].AsString(m_dnsIps[dnsIpsIndex]);
    }
    payload.WithArray("DnsIps", std::move(dnsIpsJsonList));
+
+  }
+
+  if(m_domainNameHasBeenSet)
+  {
+   payload.WithString("DomainName", m_domainName);
+
+  }
+
+  if(m_organizationalUnitDistinguishedNameHasBeenSet)
+  {
+   payload.WithString("OrganizationalUnitDistinguishedName", m_organizationalUnitDistinguishedName);
+
+  }
+
+  if(m_fileSystemAdministratorsGroupHasBeenSet)
+  {
+   payload.WithString("FileSystemAdministratorsGroup", m_fileSystemAdministratorsGroup);
 
   }
 

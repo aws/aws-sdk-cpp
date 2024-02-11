@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     LONG_CODE,
     TOLL_FREE,
-    TEN_DLC
+    TEN_DLC,
+    SIMULATOR
   };
 
 namespace RequestableNumberTypeMapper

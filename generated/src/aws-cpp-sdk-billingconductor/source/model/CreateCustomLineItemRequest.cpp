@@ -14,14 +14,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateCustomLineItemRequest::CreateCustomLineItemRequest() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_billingGroupArnHasBeenSet(false),
     m_billingPeriodRangeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_chargeDetailsHasBeenSet(false)
+    m_chargeDetailsHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,12 @@ Aws::String CreateCustomLineItemRequest::SerializePayload() const
   if(m_chargeDetailsHasBeenSet)
   {
    payload.WithObject("ChargeDetails", m_chargeDetails.Jsonize());
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
 
   }
 

@@ -44,37 +44,49 @@ namespace Model
 
     /**
      * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>
+     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline const CriterionKey& GetCriterionKey() const{ return m_criterionKey; }
 
     /**
      * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>
+     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline bool CriterionKeyHasBeenSet() const { return m_criterionKeyHasBeenSet; }
 
     /**
      * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>
+     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline void SetCriterionKey(const CriterionKey& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = value; }
 
     /**
      * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>
+     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline void SetCriterionKey(CriterionKey&& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = std::move(value); }
 
     /**
      * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>
+     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline FilterCriterion& WithCriterionKey(const CriterionKey& value) { SetCriterionKey(value); return *this;}
 
     /**
      * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>
+     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline FilterCriterion& WithCriterionKey(CriterionKey&& value) { SetCriterionKey(std::move(value)); return *this;}
 

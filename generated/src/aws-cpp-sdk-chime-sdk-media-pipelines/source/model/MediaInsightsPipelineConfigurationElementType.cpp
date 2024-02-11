@@ -28,6 +28,7 @@ namespace Aws
         static const int SqsQueueSink_HASH = HashingUtils::HashString("SqsQueueSink");
         static const int SnsTopicSink_HASH = HashingUtils::HashString("SnsTopicSink");
         static const int S3RecordingSink_HASH = HashingUtils::HashString("S3RecordingSink");
+        static const int VoiceEnhancementSink_HASH = HashingUtils::HashString("VoiceEnhancementSink");
 
 
         MediaInsightsPipelineConfigurationElementType GetMediaInsightsPipelineConfigurationElementTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return MediaInsightsPipelineConfigurationElementType::S3RecordingSink;
           }
+          else if (hashCode == VoiceEnhancementSink_HASH)
+          {
+            return MediaInsightsPipelineConfigurationElementType::VoiceEnhancementSink;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -79,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaInsightsPipelineConfigurationElementType::NOT_SET:
+            return {};
           case MediaInsightsPipelineConfigurationElementType::AmazonTranscribeCallAnalyticsProcessor:
             return "AmazonTranscribeCallAnalyticsProcessor";
           case MediaInsightsPipelineConfigurationElementType::VoiceAnalyticsProcessor:
@@ -95,6 +102,8 @@ namespace Aws
             return "SnsTopicSink";
           case MediaInsightsPipelineConfigurationElementType::S3RecordingSink:
             return "S3RecordingSink";
+          case MediaInsightsPipelineConfigurationElementType::VoiceEnhancementSink:
+            return "VoiceEnhancementSink";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -21,14 +21,16 @@ namespace Model
 ExportResourceSpecification::ExportResourceSpecification() : 
     m_botExportSpecificationHasBeenSet(false),
     m_botLocaleExportSpecificationHasBeenSet(false),
-    m_customVocabularyExportSpecificationHasBeenSet(false)
+    m_customVocabularyExportSpecificationHasBeenSet(false),
+    m_testSetExportSpecificationHasBeenSet(false)
 {
 }
 
 ExportResourceSpecification::ExportResourceSpecification(JsonView jsonValue) : 
     m_botExportSpecificationHasBeenSet(false),
     m_botLocaleExportSpecificationHasBeenSet(false),
-    m_customVocabularyExportSpecificationHasBeenSet(false)
+    m_customVocabularyExportSpecificationHasBeenSet(false),
+    m_testSetExportSpecificationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ ExportResourceSpecification& ExportResourceSpecification::operator =(JsonView js
     m_customVocabularyExportSpecificationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("testSetExportSpecification"))
+  {
+    m_testSetExportSpecification = jsonValue.GetObject("testSetExportSpecification");
+
+    m_testSetExportSpecificationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue ExportResourceSpecification::Jsonize() const
   if(m_customVocabularyExportSpecificationHasBeenSet)
   {
    payload.WithObject("customVocabularyExportSpecification", m_customVocabularyExportSpecification.Jsonize());
+
+  }
+
+  if(m_testSetExportSpecificationHasBeenSet)
+  {
+   payload.WithObject("testSetExportSpecification", m_testSetExportSpecification.Jsonize());
 
   }
 

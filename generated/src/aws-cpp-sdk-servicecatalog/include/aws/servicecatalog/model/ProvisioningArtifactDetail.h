@@ -167,54 +167,60 @@ namespace Model
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> </ul>
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration
+     * file</p> </li> <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud
+     * configuration file</p> </li> <li> <p> <code>EXTERNAL</code> - External
+     * configuration file</p> </li> </ul>
      */
     inline const ProvisioningArtifactType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> </ul>
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration
+     * file</p> </li> <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud
+     * configuration file</p> </li> <li> <p> <code>EXTERNAL</code> - External
+     * configuration file</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> </ul>
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration
+     * file</p> </li> <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud
+     * configuration file</p> </li> <li> <p> <code>EXTERNAL</code> - External
+     * configuration file</p> </li> </ul>
      */
     inline void SetType(const ProvisioningArtifactType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> </ul>
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration
+     * file</p> </li> <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud
+     * configuration file</p> </li> <li> <p> <code>EXTERNAL</code> - External
+     * configuration file</p> </li> </ul>
      */
     inline void SetType(ProvisioningArtifactType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> </ul>
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration
+     * file</p> </li> <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud
+     * configuration file</p> </li> <li> <p> <code>EXTERNAL</code> - External
+     * configuration file</p> </li> </ul>
      */
     inline ProvisioningArtifactDetail& WithType(const ProvisioningArtifactType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> </ul>
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration
+     * file</p> </li> <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud
+     * configuration file</p> </li> <li> <p> <code>EXTERNAL</code> - External
+     * configuration file</p> </li> </ul>
      */
     inline ProvisioningArtifactDetail& WithType(ProvisioningArtifactType&& value) { SetType(std::move(value)); return *this;}
 

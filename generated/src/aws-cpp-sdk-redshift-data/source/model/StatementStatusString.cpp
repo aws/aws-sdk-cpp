@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatementStatusString::NOT_SET:
+            return {};
           case StatementStatusString::SUBMITTED:
             return "SUBMITTED";
           case StatementStatusString::PICKED:

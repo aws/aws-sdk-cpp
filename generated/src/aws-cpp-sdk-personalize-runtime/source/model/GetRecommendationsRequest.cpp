@@ -22,7 +22,8 @@ GetRecommendationsRequest::GetRecommendationsRequest() :
     m_filterArnHasBeenSet(false),
     m_filterValuesHasBeenSet(false),
     m_recommenderArnHasBeenSet(false),
-    m_promotionsHasBeenSet(false)
+    m_promotionsHasBeenSet(false),
+    m_metadataColumnsHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,22 @@ Aws::String GetRecommendationsRequest::SerializePayload() const
      promotionsJsonList[promotionsIndex].AsObject(m_promotions[promotionsIndex].Jsonize());
    }
    payload.WithArray("promotions", std::move(promotionsJsonList));
+
+  }
+
+  if(m_metadataColumnsHasBeenSet)
+  {
+   JsonValue metadataColumnsJsonMap;
+   for(auto& metadataColumnsItem : m_metadataColumns)
+   {
+     Aws::Utils::Array<JsonValue> columnNamesListJsonList(metadataColumnsItem.second.size());
+     for(unsigned columnNamesListIndex = 0; columnNamesListIndex < columnNamesListJsonList.GetLength(); ++columnNamesListIndex)
+     {
+       columnNamesListJsonList[columnNamesListIndex].AsString(metadataColumnsItem.second[columnNamesListIndex]);
+     }
+     metadataColumnsJsonMap.WithArray(metadataColumnsItem.first, std::move(columnNamesListJsonList));
+   }
+   payload.WithObject("metadataColumns", std::move(metadataColumnsJsonMap));
 
   }
 

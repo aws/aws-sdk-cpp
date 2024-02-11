@@ -875,22 +875,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the DB snapshot is encrypted.</p>
+     * <p>Indicates whether the DB snapshot is encrypted.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Specifies whether the DB snapshot is encrypted.</p>
+     * <p>Indicates whether the DB snapshot is encrypted.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the DB snapshot is encrypted.</p>
+     * <p>Indicates whether the DB snapshot is encrypted.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Specifies whether the DB snapshot is encrypted.</p>
+     * <p>Indicates whether the DB snapshot is encrypted.</p>
      */
     inline DBSnapshot& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
@@ -1059,26 +1059,26 @@ namespace Model
 
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline DBSnapshot& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
@@ -1385,6 +1385,113 @@ namespace Model
      */
     inline DBSnapshot& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
 
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline const Aws::String& GetDBSystemId() const{ return m_dBSystemId; }
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline bool DBSystemIdHasBeenSet() const { return m_dBSystemIdHasBeenSet; }
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline void SetDBSystemId(const Aws::String& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = value; }
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline void SetDBSystemId(Aws::String&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::move(value); }
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline void SetDBSystemId(const char* value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId.assign(value); }
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline DBSnapshot& WithDBSystemId(const Aws::String& value) { SetDBSystemId(value); return *this;}
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline DBSnapshot& WithDBSystemId(Aws::String&& value) { SetDBSystemId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline DBSnapshot& WithDBSystemId(const char* value) { SetDBSystemId(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline DBSnapshot& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the snapshot is of a DB instance using the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+     */
+    inline bool GetMultiTenant() const{ return m_multiTenant; }
+
+    /**
+     * <p>Indicates whether the snapshot is of a DB instance using the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+     */
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the snapshot is of a DB instance using the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+     */
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+
+    /**
+     * <p>Indicates whether the snapshot is of a DB instance using the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+     */
+    inline DBSnapshot& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+
   private:
 
     Aws::String m_dBSnapshotIdentifier;
@@ -1485,6 +1592,15 @@ namespace Model
 
     int m_storageThroughput;
     bool m_storageThroughputHasBeenSet = false;
+
+    Aws::String m_dBSystemId;
+    bool m_dBSystemIdHasBeenSet = false;
+
+    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolumeHasBeenSet = false;
+
+    bool m_multiTenant;
+    bool m_multiTenantHasBeenSet = false;
   };
 
 } // namespace Model

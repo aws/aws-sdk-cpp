@@ -41,10 +41,8 @@ namespace Model
 
   /**
    * Settings related to your DASH output package. For more information, see
-   * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
-   * you work directly in your JSON job specification, include this object and any
-   * required children when you set Type, under OutputGroupSettings, to
-   * DASH_ISO_GROUP_SETTINGS.<p><h3>See Also:</h3>   <a
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DashIsoGroupSettings">AWS
    * API Reference</a></p>
    */
@@ -128,10 +126,10 @@ namespace Model
      * channel configuration tag, rather than the MPEG one. For example, you might need
      * to use this to make dynamic ad insertion work. Specify which audio channel
      * configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the
-     * default value, MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have
-     * MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby
-     * channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write
-     * this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * default value, MPEG channel configuration, to have MediaConvert write this:
+     * urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to
+     * have MediaConvert write this instead:
+     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      */
     inline const DashIsoGroupAudioChannelConfigSchemeIdUri& GetAudioChannelConfigSchemeIdUri() const{ return m_audioChannelConfigSchemeIdUri; }
 
@@ -141,10 +139,10 @@ namespace Model
      * channel configuration tag, rather than the MPEG one. For example, you might need
      * to use this to make dynamic ad insertion work. Specify which audio channel
      * configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the
-     * default value, MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have
-     * MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby
-     * channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write
-     * this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * default value, MPEG channel configuration, to have MediaConvert write this:
+     * urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to
+     * have MediaConvert write this instead:
+     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      */
     inline bool AudioChannelConfigSchemeIdUriHasBeenSet() const { return m_audioChannelConfigSchemeIdUriHasBeenSet; }
 
@@ -154,10 +152,10 @@ namespace Model
      * channel configuration tag, rather than the MPEG one. For example, you might need
      * to use this to make dynamic ad insertion work. Specify which audio channel
      * configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the
-     * default value, MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have
-     * MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby
-     * channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write
-     * this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * default value, MPEG channel configuration, to have MediaConvert write this:
+     * urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to
+     * have MediaConvert write this instead:
+     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      */
     inline void SetAudioChannelConfigSchemeIdUri(const DashIsoGroupAudioChannelConfigSchemeIdUri& value) { m_audioChannelConfigSchemeIdUriHasBeenSet = true; m_audioChannelConfigSchemeIdUri = value; }
 
@@ -167,10 +165,10 @@ namespace Model
      * channel configuration tag, rather than the MPEG one. For example, you might need
      * to use this to make dynamic ad insertion work. Specify which audio channel
      * configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the
-     * default value, MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have
-     * MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby
-     * channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write
-     * this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * default value, MPEG channel configuration, to have MediaConvert write this:
+     * urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to
+     * have MediaConvert write this instead:
+     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      */
     inline void SetAudioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri&& value) { m_audioChannelConfigSchemeIdUriHasBeenSet = true; m_audioChannelConfigSchemeIdUri = std::move(value); }
 
@@ -180,10 +178,10 @@ namespace Model
      * channel configuration tag, rather than the MPEG one. For example, you might need
      * to use this to make dynamic ad insertion work. Specify which audio channel
      * configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the
-     * default value, MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have
-     * MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby
-     * channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write
-     * this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * default value, MPEG channel configuration, to have MediaConvert write this:
+     * urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to
+     * have MediaConvert write this instead:
+     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      */
     inline DashIsoGroupSettings& WithAudioChannelConfigSchemeIdUri(const DashIsoGroupAudioChannelConfigSchemeIdUri& value) { SetAudioChannelConfigSchemeIdUri(value); return *this;}
 
@@ -193,10 +191,10 @@ namespace Model
      * channel configuration tag, rather than the MPEG one. For example, you might need
      * to use this to make dynamic ad insertion work. Specify which audio channel
      * configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the
-     * default value, MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have
-     * MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby
-     * channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write
-     * this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * default value, MPEG channel configuration, to have MediaConvert write this:
+     * urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to
+     * have MediaConvert write this instead:
+     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      */
     inline DashIsoGroupSettings& WithAudioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri&& value) { SetAudioChannelConfigSchemeIdUri(std::move(value)); return *this;}
 
@@ -326,74 +324,66 @@ namespace Model
 
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline DashIsoGroupSettings& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline DashIsoGroupSettings& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline DashIsoGroupSettings& WithDestination(const char* value) { SetDestination(value); return *this;}
 
@@ -540,78 +530,78 @@ namespace Model
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
-     * each set of images that you generate. A common application for these images is
-     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
-     * with this feature are compatible with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline const DashIsoImageBasedTrickPlay& GetImageBasedTrickPlay() const{ return m_imageBasedTrickPlay; }
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
-     * each set of images that you generate. A common application for these images is
-     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
-     * with this feature are compatible with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline bool ImageBasedTrickPlayHasBeenSet() const { return m_imageBasedTrickPlayHasBeenSet; }
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
-     * each set of images that you generate. A common application for these images is
-     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
-     * with this feature are compatible with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline void SetImageBasedTrickPlay(const DashIsoImageBasedTrickPlay& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = value; }
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
-     * each set of images that you generate. A common application for these images is
-     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
-     * with this feature are compatible with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline void SetImageBasedTrickPlay(DashIsoImageBasedTrickPlay&& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = std::move(value); }
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
-     * each set of images that you generate. A common application for these images is
-     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
-     * with this feature are compatible with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline DashIsoGroupSettings& WithImageBasedTrickPlay(const DashIsoImageBasedTrickPlay& value) { SetImageBasedTrickPlay(value); return *this;}
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
-     * each set of images that you generate. A common application for these images is
-     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
-     * with this feature are compatible with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline DashIsoGroupSettings& WithImageBasedTrickPlay(DashIsoImageBasedTrickPlay&& value) { SetImageBasedTrickPlay(std::move(value)); return *this;}
@@ -797,67 +787,61 @@ namespace Model
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals
-     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
-     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd
+     * DASH manifest. When you choose On-demand, the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
-     * On-demand, you must also set the output group setting Segment control
-     * (SegmentControl) to Single file (SINGLE_FILE).
+     * On-demand, you must also set the output group setting Segment control to Single
+     * file.
      */
     inline const DashIsoMpdProfile& GetMpdProfile() const{ return m_mpdProfile; }
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals
-     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
-     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd
+     * DASH manifest. When you choose On-demand, the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
-     * On-demand, you must also set the output group setting Segment control
-     * (SegmentControl) to Single file (SINGLE_FILE).
+     * On-demand, you must also set the output group setting Segment control to Single
+     * file.
      */
     inline bool MpdProfileHasBeenSet() const { return m_mpdProfileHasBeenSet; }
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals
-     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
-     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd
+     * DASH manifest. When you choose On-demand, the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
-     * On-demand, you must also set the output group setting Segment control
-     * (SegmentControl) to Single file (SINGLE_FILE).
+     * On-demand, you must also set the output group setting Segment control to Single
+     * file.
      */
     inline void SetMpdProfile(const DashIsoMpdProfile& value) { m_mpdProfileHasBeenSet = true; m_mpdProfile = value; }
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals
-     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
-     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd
+     * DASH manifest. When you choose On-demand, the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
-     * On-demand, you must also set the output group setting Segment control
-     * (SegmentControl) to Single file (SINGLE_FILE).
+     * On-demand, you must also set the output group setting Segment control to Single
+     * file.
      */
     inline void SetMpdProfile(DashIsoMpdProfile&& value) { m_mpdProfileHasBeenSet = true; m_mpdProfile = std::move(value); }
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals
-     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
-     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd
+     * DASH manifest. When you choose On-demand, the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
-     * On-demand, you must also set the output group setting Segment control
-     * (SegmentControl) to Single file (SINGLE_FILE).
+     * On-demand, you must also set the output group setting Segment control to Single
+     * file.
      */
     inline DashIsoGroupSettings& WithMpdProfile(const DashIsoMpdProfile& value) { SetMpdProfile(value); return *this;}
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals
-     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
-     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd
+     * DASH manifest. When you choose On-demand, the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
-     * On-demand, you must also set the output group setting Segment control
-     * (SegmentControl) to Single file (SINGLE_FILE).
+     * On-demand, you must also set the output group setting Segment control to Single
+     * file.
      */
     inline DashIsoGroupSettings& WithMpdProfile(DashIsoMpdProfile&& value) { SetMpdProfile(std::move(value)); return *this;}
 
@@ -866,12 +850,12 @@ namespace Model
      * Use this setting only when your output video stream has B-frames, which causes
      * the initial presentation time stamp (PTS) to be offset from the initial decode
      * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
-     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
-     * want MediaConvert to use the initial PTS as the first time stamp in the
-     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
-     * PTS in the video stream and instead write the initial time stamp as zero in the
-     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
-     * manifests start at zero regardless of your choice here.
+     * in output DASH manifests. Choose Match initial PTS when you want MediaConvert to
+     * use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     * to have MediaConvert ignore the initial PTS in the video stream and instead
+     * write the initial time stamp as zero in the manifest. For outputs that don't
+     * have B-frames, the time stamps in your DASH manifests start at zero regardless
+     * of your choice here.
      */
     inline const DashIsoPtsOffsetHandlingForBFrames& GetPtsOffsetHandlingForBFrames() const{ return m_ptsOffsetHandlingForBFrames; }
 
@@ -879,12 +863,12 @@ namespace Model
      * Use this setting only when your output video stream has B-frames, which causes
      * the initial presentation time stamp (PTS) to be offset from the initial decode
      * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
-     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
-     * want MediaConvert to use the initial PTS as the first time stamp in the
-     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
-     * PTS in the video stream and instead write the initial time stamp as zero in the
-     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
-     * manifests start at zero regardless of your choice here.
+     * in output DASH manifests. Choose Match initial PTS when you want MediaConvert to
+     * use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     * to have MediaConvert ignore the initial PTS in the video stream and instead
+     * write the initial time stamp as zero in the manifest. For outputs that don't
+     * have B-frames, the time stamps in your DASH manifests start at zero regardless
+     * of your choice here.
      */
     inline bool PtsOffsetHandlingForBFramesHasBeenSet() const { return m_ptsOffsetHandlingForBFramesHasBeenSet; }
 
@@ -892,12 +876,12 @@ namespace Model
      * Use this setting only when your output video stream has B-frames, which causes
      * the initial presentation time stamp (PTS) to be offset from the initial decode
      * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
-     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
-     * want MediaConvert to use the initial PTS as the first time stamp in the
-     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
-     * PTS in the video stream and instead write the initial time stamp as zero in the
-     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
-     * manifests start at zero regardless of your choice here.
+     * in output DASH manifests. Choose Match initial PTS when you want MediaConvert to
+     * use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     * to have MediaConvert ignore the initial PTS in the video stream and instead
+     * write the initial time stamp as zero in the manifest. For outputs that don't
+     * have B-frames, the time stamps in your DASH manifests start at zero regardless
+     * of your choice here.
      */
     inline void SetPtsOffsetHandlingForBFrames(const DashIsoPtsOffsetHandlingForBFrames& value) { m_ptsOffsetHandlingForBFramesHasBeenSet = true; m_ptsOffsetHandlingForBFrames = value; }
 
@@ -905,12 +889,12 @@ namespace Model
      * Use this setting only when your output video stream has B-frames, which causes
      * the initial presentation time stamp (PTS) to be offset from the initial decode
      * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
-     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
-     * want MediaConvert to use the initial PTS as the first time stamp in the
-     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
-     * PTS in the video stream and instead write the initial time stamp as zero in the
-     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
-     * manifests start at zero regardless of your choice here.
+     * in output DASH manifests. Choose Match initial PTS when you want MediaConvert to
+     * use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     * to have MediaConvert ignore the initial PTS in the video stream and instead
+     * write the initial time stamp as zero in the manifest. For outputs that don't
+     * have B-frames, the time stamps in your DASH manifests start at zero regardless
+     * of your choice here.
      */
     inline void SetPtsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames&& value) { m_ptsOffsetHandlingForBFramesHasBeenSet = true; m_ptsOffsetHandlingForBFrames = std::move(value); }
 
@@ -918,12 +902,12 @@ namespace Model
      * Use this setting only when your output video stream has B-frames, which causes
      * the initial presentation time stamp (PTS) to be offset from the initial decode
      * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
-     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
-     * want MediaConvert to use the initial PTS as the first time stamp in the
-     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
-     * PTS in the video stream and instead write the initial time stamp as zero in the
-     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
-     * manifests start at zero regardless of your choice here.
+     * in output DASH manifests. Choose Match initial PTS when you want MediaConvert to
+     * use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     * to have MediaConvert ignore the initial PTS in the video stream and instead
+     * write the initial time stamp as zero in the manifest. For outputs that don't
+     * have B-frames, the time stamps in your DASH manifests start at zero regardless
+     * of your choice here.
      */
     inline DashIsoGroupSettings& WithPtsOffsetHandlingForBFrames(const DashIsoPtsOffsetHandlingForBFrames& value) { SetPtsOffsetHandlingForBFrames(value); return *this;}
 
@@ -931,12 +915,12 @@ namespace Model
      * Use this setting only when your output video stream has B-frames, which causes
      * the initial presentation time stamp (PTS) to be offset from the initial decode
      * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
-     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
-     * want MediaConvert to use the initial PTS as the first time stamp in the
-     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
-     * PTS in the video stream and instead write the initial time stamp as zero in the
-     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
-     * manifests start at zero regardless of your choice here.
+     * in output DASH manifests. Choose Match initial PTS when you want MediaConvert to
+     * use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     * to have MediaConvert ignore the initial PTS in the video stream and instead
+     * write the initial time stamp as zero in the manifest. For outputs that don't
+     * have B-frames, the time stamps in your DASH manifests start at zero regardless
+     * of your choice here.
      */
     inline DashIsoGroupSettings& WithPtsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames&& value) { SetPtsOffsetHandlingForBFrames(std::move(value)); return *this;}
 
@@ -987,95 +971,85 @@ namespace Model
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a
      * value, MediaConvert defaults to 30. Related settings: Use Segment length control
-     * (SegmentLengthControl) to specify whether the encoder enforces this value
-     * strictly. Use Segment control (DashIsoSegmentControl) to specify whether
-     * MediaConvert creates separate segment files or one content file that has
-     * metadata to mark the segment boundaries.
+     * to specify whether the encoder enforces this value strictly. Use Segment control
+     * to specify whether MediaConvert creates separate segment files or one content
+     * file that has metadata to mark the segment boundaries.
      */
     inline int GetSegmentLength() const{ return m_segmentLength; }
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a
      * value, MediaConvert defaults to 30. Related settings: Use Segment length control
-     * (SegmentLengthControl) to specify whether the encoder enforces this value
-     * strictly. Use Segment control (DashIsoSegmentControl) to specify whether
-     * MediaConvert creates separate segment files or one content file that has
-     * metadata to mark the segment boundaries.
+     * to specify whether the encoder enforces this value strictly. Use Segment control
+     * to specify whether MediaConvert creates separate segment files or one content
+     * file that has metadata to mark the segment boundaries.
      */
     inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a
      * value, MediaConvert defaults to 30. Related settings: Use Segment length control
-     * (SegmentLengthControl) to specify whether the encoder enforces this value
-     * strictly. Use Segment control (DashIsoSegmentControl) to specify whether
-     * MediaConvert creates separate segment files or one content file that has
-     * metadata to mark the segment boundaries.
+     * to specify whether the encoder enforces this value strictly. Use Segment control
+     * to specify whether MediaConvert creates separate segment files or one content
+     * file that has metadata to mark the segment boundaries.
      */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a
      * value, MediaConvert defaults to 30. Related settings: Use Segment length control
-     * (SegmentLengthControl) to specify whether the encoder enforces this value
-     * strictly. Use Segment control (DashIsoSegmentControl) to specify whether
-     * MediaConvert creates separate segment files or one content file that has
-     * metadata to mark the segment boundaries.
+     * to specify whether the encoder enforces this value strictly. Use Segment control
+     * to specify whether MediaConvert creates separate segment files or one content
+     * file that has metadata to mark the segment boundaries.
      */
     inline DashIsoGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
 
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline const DashIsoSegmentLengthControl& GetSegmentLengthControl() const{ return m_segmentLengthControl; }
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline bool SegmentLengthControlHasBeenSet() const { return m_segmentLengthControlHasBeenSet; }
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline void SetSegmentLengthControl(const DashIsoSegmentLengthControl& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = value; }
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline void SetSegmentLengthControl(DashIsoSegmentLengthControl&& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = std::move(value); }
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline DashIsoGroupSettings& WithSegmentLengthControl(const DashIsoSegmentLengthControl& value) { SetSegmentLengthControl(value); return *this;}
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline DashIsoGroupSettings& WithSegmentLengthControl(DashIsoSegmentLengthControl&& value) { SetSegmentLengthControl(std::move(value)); return *this;}
 

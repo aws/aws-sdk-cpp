@@ -17,29 +17,27 @@ fi
 PREFIX_DIR="$1"
 OUTPUT_DIR="${PREFIX_DIR}/$2"
 SRC_DIR="${PREFIX_DIR}/aws-sdk-cpp"
-CROSS_LINK_DIR="${SRC_DIR}/tools/doxygen/doc_crosslinks"
 
 export VERSION_NUM=$(grep AWS_SDK_VERSION_STRING "${SRC_DIR}/src/aws-cpp-sdk-core/include/aws/core/VersionConfig.h" | cut -d '"' -f2)
-echo "Setting config to build docs for version: ${VERSION_NUM}"
-sed -i "s/PROJECT_NUMBER .*/PROJECT_NUMBER         = ${VERSION_NUM}/" "${SRC_DIR}/tools/doxygen/modules/static/root.config"
-sed -i "s/PROJECT_NUMBER .*/PROJECT_NUMBER         = ${VERSION_NUM}/" "${SRC_DIR}/tools/doxygen/modules/template/module-template.config"
+echo "AWS_SDK_VERSION: ${VERSION_NUM}"
 
 echo "Running doc generation"
 cd "${SRC_DIR}"
-python3 "${SRC_DIR}/tools/doxygen/modules/scripts/run-doc-generation.py"
+# curl https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/main/doxygen-awesome.css -o "${SRC_DIR}/docs/doxygen/static/doxygen-awesome.css"
+python3 "${SRC_DIR}/docs/doxygen/run_docs_generation.py" --sdk_root "${SRC_DIR}" --sdk_version "${VERSION_NUM}" --output_dir "${OUTPUT_DIR}/${VERSION_NUM}"
+
+echo "Creating Cross Links"
+python3 "${SRC_DIR}/docs/doxygen/generate_cross_link_data.py" \
+  --apiDefinitionsPath "${SRC_DIR}/tools/code-generation/api-descriptions/" \
+  --templatePath "${SRC_DIR}/docs/doxygen/static/crosslink_redirect.html" \
+  --outputPath "${OUTPUT_DIR}/crosslink_redirect.html"
+
 echo "Staging static files"
 mkdir -p "${OUTPUT_DIR}/root/html"
 cp "${SRC_DIR}/LICENSE" "${OUTPUT_DIR}/root/html"
-mkdir -p "${OUTPUT_DIR}/${VERSION_NUM}"
 mkdir -p "${OUTPUT_DIR}/LATEST"
-rsync -av "${SRC_DIR}"/doxygen/output/* "${OUTPUT_DIR}/${VERSION_NUM}"
-rsync -av "${SRC_DIR}"/doxygen/output/* "${OUTPUT_DIR}/LATEST"
-echo "Creating Cross Links"
-python3 "${CROSS_LINK_DIR}/generate_cross_link_data.py" \
-  --apiDefinitionsPath "./tools/code-generation/api-descriptions/" \
-  --templatePath "${CROSS_LINK_DIR}/crosslink_redirect.html" \
-  --outputPath "./crosslink_redirect.html"
-cp "${SRC_DIR}/doxygen/modules/static/index.html" -p "${OUTPUT_DIR}/"
-cp "${SRC_DIR}/doxygen/modules/static/index.html" "${OUTPUT_DIR}/LATEST/index.html"
-cp "${SRC_DIR}/doxygen/modules/static/index.html" "${OUTPUT_DIR}/${VERSION_NUM}/index.html"
-cp "${SRC_DIR}/crosslink_redirect.html" "${OUTPUT_DIR}/"
+rsync -av "${OUTPUT_DIR}"/"${VERSION_NUM}"/* "${OUTPUT_DIR}/LATEST"
+
+cp "${SRC_DIR}/docs/doxygen/static/index.html" -p "${OUTPUT_DIR}/"
+cp "${SRC_DIR}/docs/doxygen/static/index.html" "${OUTPUT_DIR}/LATEST/index.html"
+cp "${SRC_DIR}/docs/doxygen/static/index.html" "${OUTPUT_DIR}/${VERSION_NUM}/index.html"

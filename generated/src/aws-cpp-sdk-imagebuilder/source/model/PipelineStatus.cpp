@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PipelineStatus::NOT_SET:
+            return {};
           case PipelineStatus::DISABLED:
             return "DISABLED";
           case PipelineStatus::ENABLED:

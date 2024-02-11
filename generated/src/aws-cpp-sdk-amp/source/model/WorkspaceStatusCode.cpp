@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkspaceStatusCode::NOT_SET:
+            return {};
           case WorkspaceStatusCode::CREATING:
             return "CREATING";
           case WorkspaceStatusCode::ACTIVE:

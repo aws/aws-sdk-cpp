@@ -9,8 +9,10 @@
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
+#include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
+#include <aws/s3/model/CompletedPart.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/ResourceManager.h>
@@ -50,13 +52,13 @@ namespace Aws
              * you are using for your client configuration. This executor will be used in a different context than the s3 client is used.
              * It is not a bug to use the same executor, but at least be aware that this is how the manager will be used.
              */
-            Aws::Utils::Threading::Executor* transferExecutor;
+            Aws::Utils::Threading::Executor* transferExecutor = nullptr;
             /**
              * When true, TransferManager will calculate the MD5 digest of the content being uploaded.
              * The digest is sent to S3 via an HTTP header enabling the service to perform integrity checks.
-             * This option is disabled by default.
+             * This option is disabled by default. Defer to checksumAlgorithm to use other checksum algorithms.
              */
-            bool computeContentMD5;
+            bool computeContentMD5 = false;
             /**
              * If you have special arguments you want passed to our put object calls, put them here. We will copy the template for each put object call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
@@ -67,6 +69,11 @@ namespace Aws
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
              */
             Aws::S3::Model::GetObjectRequest getObjectTemplate;
+            /**
+             * If you have special arguments you want passed to our head object calls, put them here. We will copy the template for each call
+             * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
+             */
+            Aws::S3::Model::HeadObjectRequest headObjectTemplate;
             /**
              * If you have special arguments you want passed to our create multipart upload calls, put them here. We will copy the template for each call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
@@ -82,12 +89,12 @@ namespace Aws
              * allocate for all transfer buffers. default is 50MB.
              * If you are using Aws::Utils::Threading::PooledThreadExecutor for transferExecutor, this size should be greater than bufferSize * poolSize.
              */
-            uint64_t transferBufferMaxHeapSize;
+            uint64_t transferBufferMaxHeapSize = 10 * MB5;
             /**
              * Defaults to 5MB. If you are uploading large files,  (larger than 50GB, this needs to be specified to be something larger than 5MB. Also keep in mind that you may need
              * to increase your max heap size if this is something you plan on increasing.
              */
-            uint64_t bufferSize;
+            uint64_t bufferSize = MB5;
 
             /**
              * Callback to receive progress updates for uploads.
@@ -116,6 +123,13 @@ namespace Aws
              * key/val of map entries will be key/val of query strings.
              */
             Aws::Map<Aws::String, Aws::String> customizedAccessLogTag;
+
+            /**
+             * Set the Checksum Algorithm for the transfer manager to use for multipart
+             * upload. Defaults to CRC32. Will be overwritten to use MD5 if computeContentMD5
+             * is set to true.
+             */
+            Aws::S3::Model::ChecksumAlgorithm checksumAlgorithm = S3::Model::ChecksumAlgorithm::CRC32;
         };        
 
         /**
@@ -240,7 +254,7 @@ namespace Aws
             * the file transfers. If an error occurs prior to the transfer being initiated (e.g. list objects fails, then an error will be passed through the errorCallback).
             *
             * directory: the absolute directory on disk to download to
-            * bucketName: the name of the S3 bucket to upload to
+            * bucketName: the name of the S3 bucket to download from
             * prefix: the prefix in the bucket to use as the root directory (e.g. download all objects at x prefix in S3 and then store them starting in directory with the prefix stripped out).
             */
             void DownloadToDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix = Aws::String());
@@ -327,6 +341,13 @@ namespace Aws
              */
             void AddTask(std::shared_ptr<TransferHandle> handle);
             void RemoveTask(const std::shared_ptr<TransferHandle>& handle);
+
+            /**
+             * Sets the checksum on a Completed Part based on the state, and the algorithm selected.
+             * @param state The state of the completed part as tracker by the transfer manager.
+             * @param part The completed part of the MPU.
+             */
+            void SetChecksumForAlgorithm(const std::shared_ptr<PartState> state, Aws::S3::Model::CompletedPart &part);
 
             static Aws::String DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName);
 

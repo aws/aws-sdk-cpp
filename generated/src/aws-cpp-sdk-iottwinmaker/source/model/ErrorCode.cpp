@@ -25,6 +25,9 @@ namespace Aws
         static const int SYNC_INITIALIZING_ERROR_HASH = HashingUtils::HashString("SYNC_INITIALIZING_ERROR");
         static const int SYNC_CREATING_ERROR_HASH = HashingUtils::HashString("SYNC_CREATING_ERROR");
         static const int SYNC_PROCESSING_ERROR_HASH = HashingUtils::HashString("SYNC_PROCESSING_ERROR");
+        static const int SYNC_DELETING_ERROR_HASH = HashingUtils::HashString("SYNC_DELETING_ERROR");
+        static const int PROCESSING_ERROR_HASH = HashingUtils::HashString("PROCESSING_ERROR");
+        static const int COMPOSITE_COMPONENT_FAILURE_HASH = HashingUtils::HashString("COMPOSITE_COMPONENT_FAILURE");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -50,6 +53,18 @@ namespace Aws
           {
             return ErrorCode::SYNC_PROCESSING_ERROR;
           }
+          else if (hashCode == SYNC_DELETING_ERROR_HASH)
+          {
+            return ErrorCode::SYNC_DELETING_ERROR;
+          }
+          else if (hashCode == PROCESSING_ERROR_HASH)
+          {
+            return ErrorCode::PROCESSING_ERROR;
+          }
+          else if (hashCode == COMPOSITE_COMPONENT_FAILURE_HASH)
+          {
+            return ErrorCode::COMPOSITE_COMPONENT_FAILURE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -64,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::VALIDATION_ERROR:
             return "VALIDATION_ERROR";
           case ErrorCode::INTERNAL_FAILURE:
@@ -74,6 +91,12 @@ namespace Aws
             return "SYNC_CREATING_ERROR";
           case ErrorCode::SYNC_PROCESSING_ERROR:
             return "SYNC_PROCESSING_ERROR";
+          case ErrorCode::SYNC_DELETING_ERROR:
+            return "SYNC_DELETING_ERROR";
+          case ErrorCode::PROCESSING_ERROR:
+            return "PROCESSING_ERROR";
+          case ErrorCode::COMPOSITE_COMPONENT_FAILURE:
+            return "COMPOSITE_COMPONENT_FAILURE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

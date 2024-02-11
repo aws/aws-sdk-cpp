@@ -48,8 +48,6 @@ static const char DEFAULT_CREDENTIALS_FILE[] = "credentials";
 extern const char DEFAULT_CONFIG_FILE[] = "config";
 
 
-static const int AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 1000;
-
 void AWSCredentialsProvider::Reload()
 {
     m_lastLoadedMs = DateTime::Now().Millis();
@@ -83,7 +81,7 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
         if (!secretKey.empty())
         {
             credentials.SetAWSSecretKey(secretKey);
-            AWS_LOGSTREAM_INFO(ENVIRONMENT_LOG_TAG, "Found secret key");
+            AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found secret key");
         }
 
         auto sessionToken = Aws::Environment::GetEnv(SESSION_TOKEN_ENV_VAR);
@@ -91,7 +89,7 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
         if(!sessionToken.empty())
         {
             credentials.SetSessionToken(sessionToken);
-            AWS_LOGSTREAM_INFO(ENVIRONMENT_LOG_TAG, "Found sessionToken");
+            AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found sessionToken");
         }
     }
 
@@ -302,94 +300,6 @@ void InstanceProfileCredentialsProvider::RefreshIfExpired()
         {
             return;
         }
-    }
-
-    Reload();
-}
-
-static const char TASK_ROLE_LOG_TAG[] = "TaskRoleCredentialsProvider";
-
-TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const char* URI, long refreshRateMs) :
-    m_ecsCredentialsClient(Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(TASK_ROLE_LOG_TAG, URI)),
-    m_loadFrequencyMs(refreshRateMs)
-{
-    AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
-}
-
-TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const char* endpoint, const char* token, long refreshRateMs) :
-    m_ecsCredentialsClient(Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(TASK_ROLE_LOG_TAG, ""/*resourcePath*/, endpoint, token)),
-    m_loadFrequencyMs(refreshRateMs)
-{
-    AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
-}
-
-TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(
-        const std::shared_ptr<Aws::Internal::ECSCredentialsClient>& client, long refreshRateMs) :
-    m_ecsCredentialsClient(client),
-    m_loadFrequencyMs(refreshRateMs)
-{
-    AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
-}
-
-AWSCredentials TaskRoleCredentialsProvider::GetAWSCredentials()
-{
-    RefreshIfExpired();
-    ReaderLockGuard guard(m_reloadLock);
-    return m_credentials;
-}
-
-bool TaskRoleCredentialsProvider::ExpiresSoon() const
-{
-    return ((m_credentials.GetExpiration() - Aws::Utils::DateTime::Now()).count() < AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
-}
-
-void TaskRoleCredentialsProvider::Reload()
-{
-    AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Credentials have expired or will expire, attempting to re-pull from ECS IAM Service.");
-    if (!m_ecsCredentialsClient)
-    {
-        AWS_LOGSTREAM_ERROR(INSTANCE_LOG_TAG, "ECS Credentials client is a nullptr");
-        return;
-    }
-
-    auto credentialsStr = m_ecsCredentialsClient->GetECSCredentials();
-    if (credentialsStr.empty()) return;
-
-    Json::JsonValue credentialsDoc(credentialsStr);
-    if (!credentialsDoc.WasParseSuccessful())
-    {
-        AWS_LOGSTREAM_ERROR(TASK_ROLE_LOG_TAG, "Failed to parse output from ECSCredentialService.");
-        return;
-    }
-
-    Aws::String accessKey, secretKey, token;
-    Utils::Json::JsonView credentialsView(credentialsDoc);
-    accessKey = credentialsView.GetString("AccessKeyId");
-    secretKey = credentialsView.GetString("SecretAccessKey");
-    token = credentialsView.GetString("Token");
-    AWS_LOGSTREAM_DEBUG(TASK_ROLE_LOG_TAG, "Successfully pulled credentials from metadata service with access key " << accessKey);
-
-    m_credentials.SetAWSAccessKeyId(accessKey);
-    m_credentials.SetAWSSecretKey(secretKey);
-    m_credentials.SetSessionToken(token);
-    m_credentials.SetExpiration(Aws::Utils::DateTime(credentialsView.GetString("Expiration"), DateFormat::ISO_8601));
-    AWSCredentialsProvider::Reload();
-}
-
-void TaskRoleCredentialsProvider::RefreshIfExpired()
-{
-    AWS_LOGSTREAM_DEBUG(TASK_ROLE_LOG_TAG, "Checking if latest credential pull has expired.");
-    ReaderLockGuard guard(m_reloadLock);
-    if (!m_credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
-    {
-        return;
-    }
-
-    guard.UpgradeToWriterLock();
-
-    if (!m_credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
-    {
-        return;
     }
 
     Reload();

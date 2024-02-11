@@ -125,6 +125,55 @@ namespace Model
 
 
     /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline ListEndpointAccessRequest& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline ListEndpointAccessRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline ListEndpointAccessRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
+
+
+    /**
      * <p>The unique identifier of the virtual private cloud with access to Amazon
      * Redshift Serverless.</p>
      */
@@ -220,6 +269,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_ownerAccount;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;

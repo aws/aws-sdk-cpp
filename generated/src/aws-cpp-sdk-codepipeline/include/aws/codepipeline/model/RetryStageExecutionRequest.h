@@ -179,38 +179,32 @@ namespace Model
 
 
     /**
-     * <p>The scope of the retry attempt. Currently, the only supported value is
-     * FAILED_ACTIONS.</p>
+     * <p>The scope of the retry attempt.</p>
      */
     inline const StageRetryMode& GetRetryMode() const{ return m_retryMode; }
 
     /**
-     * <p>The scope of the retry attempt. Currently, the only supported value is
-     * FAILED_ACTIONS.</p>
+     * <p>The scope of the retry attempt.</p>
      */
     inline bool RetryModeHasBeenSet() const { return m_retryModeHasBeenSet; }
 
     /**
-     * <p>The scope of the retry attempt. Currently, the only supported value is
-     * FAILED_ACTIONS.</p>
+     * <p>The scope of the retry attempt.</p>
      */
     inline void SetRetryMode(const StageRetryMode& value) { m_retryModeHasBeenSet = true; m_retryMode = value; }
 
     /**
-     * <p>The scope of the retry attempt. Currently, the only supported value is
-     * FAILED_ACTIONS.</p>
+     * <p>The scope of the retry attempt.</p>
      */
     inline void SetRetryMode(StageRetryMode&& value) { m_retryModeHasBeenSet = true; m_retryMode = std::move(value); }
 
     /**
-     * <p>The scope of the retry attempt. Currently, the only supported value is
-     * FAILED_ACTIONS.</p>
+     * <p>The scope of the retry attempt.</p>
      */
     inline RetryStageExecutionRequest& WithRetryMode(const StageRetryMode& value) { SetRetryMode(value); return *this;}
 
     /**
-     * <p>The scope of the retry attempt. Currently, the only supported value is
-     * FAILED_ACTIONS.</p>
+     * <p>The scope of the retry attempt.</p>
      */
     inline RetryStageExecutionRequest& WithRetryMode(StageRetryMode&& value) { SetRetryMode(std::move(value)); return *this;}
 

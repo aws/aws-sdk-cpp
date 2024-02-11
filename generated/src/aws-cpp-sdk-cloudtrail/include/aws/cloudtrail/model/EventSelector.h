@@ -104,7 +104,7 @@ namespace Model
      * Events</a> in the <i>CloudTrail User Guide</i>.</p> <p>By default, the value is
      * <code>true</code>.</p> <p>The first copy of management events is free. You are
      * charged for additional copies of management events that you are logging on any
-     * subsequent trail in the same region. For more information about CloudTrail
+     * subsequent trail in the same Region. For more information about CloudTrail
      * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
      * Pricing</a>.</p>
      */
@@ -117,7 +117,7 @@ namespace Model
      * Events</a> in the <i>CloudTrail User Guide</i>.</p> <p>By default, the value is
      * <code>true</code>.</p> <p>The first copy of management events is free. You are
      * charged for additional copies of management events that you are logging on any
-     * subsequent trail in the same region. For more information about CloudTrail
+     * subsequent trail in the same Region. For more information about CloudTrail
      * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
      * Pricing</a>.</p>
      */
@@ -130,7 +130,7 @@ namespace Model
      * Events</a> in the <i>CloudTrail User Guide</i>.</p> <p>By default, the value is
      * <code>true</code>.</p> <p>The first copy of management events is free. You are
      * charged for additional copies of management events that you are logging on any
-     * subsequent trail in the same region. For more information about CloudTrail
+     * subsequent trail in the same Region. For more information about CloudTrail
      * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
      * Pricing</a>.</p>
      */
@@ -143,7 +143,7 @@ namespace Model
      * Events</a> in the <i>CloudTrail User Guide</i>.</p> <p>By default, the value is
      * <code>true</code>.</p> <p>The first copy of management events is free. You are
      * charged for additional copies of management events that you are logging on any
-     * subsequent trail in the same region. For more information about CloudTrail
+     * subsequent trail in the same Region. For more information about CloudTrail
      * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
      * Pricing</a>.</p>
      */
@@ -271,7 +271,7 @@ namespace Model
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
      * API events are logged to your trail. You can exclude management event sources
-     * only in regions that support the event source.</p>
+     * only in Regions that support the event source.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludeManagementEventSources() const{ return m_excludeManagementEventSources; }
 
@@ -283,7 +283,7 @@ namespace Model
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
      * API events are logged to your trail. You can exclude management event sources
-     * only in regions that support the event source.</p>
+     * only in Regions that support the event source.</p>
      */
     inline bool ExcludeManagementEventSourcesHasBeenSet() const { return m_excludeManagementEventSourcesHasBeenSet; }
 
@@ -295,7 +295,7 @@ namespace Model
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
      * API events are logged to your trail. You can exclude management event sources
-     * only in regions that support the event source.</p>
+     * only in Regions that support the event source.</p>
      */
     inline void SetExcludeManagementEventSources(const Aws::Vector<Aws::String>& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources = value; }
 
@@ -307,7 +307,7 @@ namespace Model
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
      * API events are logged to your trail. You can exclude management event sources
-     * only in regions that support the event source.</p>
+     * only in Regions that support the event source.</p>
      */
     inline void SetExcludeManagementEventSources(Aws::Vector<Aws::String>&& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources = std::move(value); }
 
@@ -319,7 +319,7 @@ namespace Model
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
      * API events are logged to your trail. You can exclude management event sources
-     * only in regions that support the event source.</p>
+     * only in Regions that support the event source.</p>
      */
     inline EventSelector& WithExcludeManagementEventSources(const Aws::Vector<Aws::String>& value) { SetExcludeManagementEventSources(value); return *this;}
 
@@ -331,7 +331,7 @@ namespace Model
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
      * API events are logged to your trail. You can exclude management event sources
-     * only in regions that support the event source.</p>
+     * only in Regions that support the event source.</p>
      */
     inline EventSelector& WithExcludeManagementEventSources(Aws::Vector<Aws::String>&& value) { SetExcludeManagementEventSources(std::move(value)); return *this;}
 
@@ -343,7 +343,7 @@ namespace Model
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
      * API events are logged to your trail. You can exclude management event sources
-     * only in regions that support the event source.</p>
+     * only in Regions that support the event source.</p>
      */
     inline EventSelector& AddExcludeManagementEventSources(const Aws::String& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources.push_back(value); return *this; }
 
@@ -355,7 +355,7 @@ namespace Model
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
      * API events are logged to your trail. You can exclude management event sources
-     * only in regions that support the event source.</p>
+     * only in Regions that support the event source.</p>
      */
     inline EventSelector& AddExcludeManagementEventSources(Aws::String&& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources.push_back(std::move(value)); return *this; }
 
@@ -367,7 +367,7 @@ namespace Model
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
      * API events are logged to your trail. You can exclude management event sources
-     * only in regions that support the event source.</p>
+     * only in Regions that support the event source.</p>
      */
     inline EventSelector& AddExcludeManagementEventSources(const char* value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources.push_back(value); return *this; }
 

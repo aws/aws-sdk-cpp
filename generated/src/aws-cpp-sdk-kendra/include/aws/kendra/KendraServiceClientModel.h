@@ -62,6 +62,7 @@
 #include <aws/kendra/model/ListTagsForResourceResult.h>
 #include <aws/kendra/model/ListThesauriResult.h>
 #include <aws/kendra/model/QueryResult.h>
+#include <aws/kendra/model/RetrieveResult.h>
 #include <aws/kendra/model/StartDataSourceSyncJobResult.h>
 #include <aws/kendra/model/TagResourceResult.h>
 #include <aws/kendra/model/UntagResourceResult.h>
@@ -160,6 +161,7 @@ namespace Aws
       class ListThesauriRequest;
       class PutPrincipalMappingRequest;
       class QueryRequest;
+      class RetrieveRequest;
       class StartDataSourceSyncJobRequest;
       class StopDataSourceSyncJobRequest;
       class SubmitFeedbackRequest;
@@ -228,6 +230,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListThesauriResult, KendraError> ListThesauriOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> PutPrincipalMappingOutcome;
       typedef Aws::Utils::Outcome<QueryResult, KendraError> QueryOutcome;
+      typedef Aws::Utils::Outcome<RetrieveResult, KendraError> RetrieveOutcome;
       typedef Aws::Utils::Outcome<StartDataSourceSyncJobResult, KendraError> StartDataSourceSyncJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> StopDataSourceSyncJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> SubmitFeedbackOutcome;
@@ -296,6 +299,7 @@ namespace Aws
       typedef std::future<ListThesauriOutcome> ListThesauriOutcomeCallable;
       typedef std::future<PutPrincipalMappingOutcome> PutPrincipalMappingOutcomeCallable;
       typedef std::future<QueryOutcome> QueryOutcomeCallable;
+      typedef std::future<RetrieveOutcome> RetrieveOutcomeCallable;
       typedef std::future<StartDataSourceSyncJobOutcome> StartDataSourceSyncJobOutcomeCallable;
       typedef std::future<StopDataSourceSyncJobOutcome> StopDataSourceSyncJobOutcomeCallable;
       typedef std::future<SubmitFeedbackOutcome> SubmitFeedbackOutcomeCallable;
@@ -367,6 +371,7 @@ namespace Aws
     typedef std::function<void(const KendraClient*, const Model::ListThesauriRequest&, const Model::ListThesauriOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThesauriResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::PutPrincipalMappingRequest&, const Model::PutPrincipalMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPrincipalMappingResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::QueryRequest&, const Model::QueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::RetrieveRequest&, const Model::RetrieveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetrieveResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::StartDataSourceSyncJobRequest&, const Model::StartDataSourceSyncJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDataSourceSyncJobResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::StopDataSourceSyncJobRequest&, const Model::StopDataSourceSyncJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDataSourceSyncJobResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::SubmitFeedbackRequest&, const Model::SubmitFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitFeedbackResponseReceivedHandler;

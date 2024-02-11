@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SlotConstraint::NOT_SET:
+            return {};
           case SlotConstraint::Required:
             return "Required";
           case SlotConstraint::Optional:

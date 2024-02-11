@@ -65,7 +65,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_desiredCapacityTypeHasBeenSet(false),
     m_defaultInstanceWarmup(0),
     m_defaultInstanceWarmupHasBeenSet(false),
-    m_trafficSourcesHasBeenSet(false)
+    m_trafficSourcesHasBeenSet(false),
+    m_instanceMaintenancePolicyHasBeenSet(false)
 {
 }
 
@@ -114,7 +115,8 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_desiredCapacityTypeHasBeenSet(false),
     m_defaultInstanceWarmup(0),
     m_defaultInstanceWarmupHasBeenSet(false),
-    m_trafficSourcesHasBeenSet(false)
+    m_trafficSourcesHasBeenSet(false),
+    m_instanceMaintenancePolicyHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -383,6 +385,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
 
       m_trafficSourcesHasBeenSet = true;
     }
+    XmlNode instanceMaintenancePolicyNode = resultNode.FirstChild("InstanceMaintenancePolicy");
+    if(!instanceMaintenancePolicyNode.IsNull())
+    {
+      m_instanceMaintenancePolicy = instanceMaintenancePolicyNode;
+      m_instanceMaintenancePolicyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -612,6 +620,13 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_instanceMaintenancePolicyHasBeenSet)
+  {
+      Aws::StringStream instanceMaintenancePolicyLocationAndMemberSs;
+      instanceMaintenancePolicyLocationAndMemberSs << location << index << locationValue << ".InstanceMaintenancePolicy";
+      m_instanceMaintenancePolicy.OutputToStream(oStream, instanceMaintenancePolicyLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -803,6 +818,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         trafficSourcesSs << location <<  ".TrafficSources.member." << trafficSourcesIdx++;
         item.OutputToStream(oStream, trafficSourcesSs.str().c_str());
       }
+  }
+  if(m_instanceMaintenancePolicyHasBeenSet)
+  {
+      Aws::String instanceMaintenancePolicyLocationAndMember(location);
+      instanceMaintenancePolicyLocationAndMember += ".InstanceMaintenancePolicy";
+      m_instanceMaintenancePolicy.OutputToStream(oStream, instanceMaintenancePolicyLocationAndMember.c_str());
   }
 }
 

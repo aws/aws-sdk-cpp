@@ -22,13 +22,17 @@ namespace Model
     F1macro,
     AUC,
     RMSE,
-    MAE,
-    R2,
     BalancedAccuracy,
+    R2,
+    Recall,
+    RecallMacro,
     Precision,
     PrecisionMacro,
-    Recall,
-    RecallMacro
+    MAE,
+    MAPE,
+    MASE,
+    WAPE,
+    AverageWeightedQuantileLoss
   };
 
 namespace AutoMLMetricEnumMapper

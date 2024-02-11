@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestCaseScenarioStatus::NOT_SET:
+            return {};
           case TestCaseScenarioStatus::PASS:
             return "PASS";
           case TestCaseScenarioStatus::FAIL:

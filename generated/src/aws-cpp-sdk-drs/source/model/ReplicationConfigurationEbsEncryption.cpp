@@ -22,6 +22,7 @@ namespace Aws
 
         static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         ReplicationConfigurationEbsEncryption GetReplicationConfigurationEbsEncryptionForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == CUSTOM_HASH)
           {
             return ReplicationConfigurationEbsEncryption::CUSTOM;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return ReplicationConfigurationEbsEncryption::NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationConfigurationEbsEncryption::NOT_SET:
+            return {};
           case ReplicationConfigurationEbsEncryption::DEFAULT:
             return "DEFAULT";
           case ReplicationConfigurationEbsEncryption::CUSTOM:
             return "CUSTOM";
+          case ReplicationConfigurationEbsEncryption::NONE:
+            return "NONE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

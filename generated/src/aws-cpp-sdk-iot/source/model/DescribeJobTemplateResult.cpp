@@ -104,6 +104,15 @@ DescribeJobTemplateResult& DescribeJobTemplateResult::operator =(const Aws::Amaz
     }
   }
 
+  if(jsonValue.ValueExists("destinationPackageVersions"))
+  {
+    Aws::Utils::Array<JsonView> destinationPackageVersionsJsonList = jsonValue.GetArray("destinationPackageVersions");
+    for(unsigned destinationPackageVersionsIndex = 0; destinationPackageVersionsIndex < destinationPackageVersionsJsonList.GetLength(); ++destinationPackageVersionsIndex)
+    {
+      m_destinationPackageVersions.push_back(destinationPackageVersionsJsonList[destinationPackageVersionsIndex].AsString());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

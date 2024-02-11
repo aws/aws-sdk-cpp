@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::THING:
             return "THING";
           case EventType::THING_GROUP:

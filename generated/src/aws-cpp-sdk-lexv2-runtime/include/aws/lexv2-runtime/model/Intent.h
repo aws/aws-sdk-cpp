@@ -157,69 +157,135 @@ namespace Model
 
 
     /**
-     * <p>Contains fulfillment information for the intent. </p>
+     * <p>Indicates the fulfillment state for the intent. The meanings of each value
+     * are as follows:</p> <ul> <li> <p> <code>Failed</code> – The bot failed to
+     * fulfill the intent.</p> </li> <li> <p> <code>Fulfilled</code> – The bot has
+     * completed fulfillment of the intent.</p> </li> <li> <p>
+     * <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the
+     * intent.</p> </li> <li> <p> <code>InProgress</code> – The bot is in the middle of
+     * eliciting the slot values that are necessary to fulfill the intent.</p> </li>
+     * <li> <p> <code>ReadyForFulfillment</code> – The bot has elicited all the slot
+     * values for the intent and is ready to fulfill the intent.</p> </li> <li> <p>
+     * <code>Waiting</code> – The bot is waiting for a response from the user (limited
+     * to streaming conversations).</p> </li> </ul>
      */
     inline const IntentState& GetState() const{ return m_state; }
 
     /**
-     * <p>Contains fulfillment information for the intent. </p>
+     * <p>Indicates the fulfillment state for the intent. The meanings of each value
+     * are as follows:</p> <ul> <li> <p> <code>Failed</code> – The bot failed to
+     * fulfill the intent.</p> </li> <li> <p> <code>Fulfilled</code> – The bot has
+     * completed fulfillment of the intent.</p> </li> <li> <p>
+     * <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the
+     * intent.</p> </li> <li> <p> <code>InProgress</code> – The bot is in the middle of
+     * eliciting the slot values that are necessary to fulfill the intent.</p> </li>
+     * <li> <p> <code>ReadyForFulfillment</code> – The bot has elicited all the slot
+     * values for the intent and is ready to fulfill the intent.</p> </li> <li> <p>
+     * <code>Waiting</code> – The bot is waiting for a response from the user (limited
+     * to streaming conversations).</p> </li> </ul>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>Contains fulfillment information for the intent. </p>
+     * <p>Indicates the fulfillment state for the intent. The meanings of each value
+     * are as follows:</p> <ul> <li> <p> <code>Failed</code> – The bot failed to
+     * fulfill the intent.</p> </li> <li> <p> <code>Fulfilled</code> – The bot has
+     * completed fulfillment of the intent.</p> </li> <li> <p>
+     * <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the
+     * intent.</p> </li> <li> <p> <code>InProgress</code> – The bot is in the middle of
+     * eliciting the slot values that are necessary to fulfill the intent.</p> </li>
+     * <li> <p> <code>ReadyForFulfillment</code> – The bot has elicited all the slot
+     * values for the intent and is ready to fulfill the intent.</p> </li> <li> <p>
+     * <code>Waiting</code> – The bot is waiting for a response from the user (limited
+     * to streaming conversations).</p> </li> </ul>
      */
     inline void SetState(const IntentState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>Contains fulfillment information for the intent. </p>
+     * <p>Indicates the fulfillment state for the intent. The meanings of each value
+     * are as follows:</p> <ul> <li> <p> <code>Failed</code> – The bot failed to
+     * fulfill the intent.</p> </li> <li> <p> <code>Fulfilled</code> – The bot has
+     * completed fulfillment of the intent.</p> </li> <li> <p>
+     * <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the
+     * intent.</p> </li> <li> <p> <code>InProgress</code> – The bot is in the middle of
+     * eliciting the slot values that are necessary to fulfill the intent.</p> </li>
+     * <li> <p> <code>ReadyForFulfillment</code> – The bot has elicited all the slot
+     * values for the intent and is ready to fulfill the intent.</p> </li> <li> <p>
+     * <code>Waiting</code> – The bot is waiting for a response from the user (limited
+     * to streaming conversations).</p> </li> </ul>
      */
     inline void SetState(IntentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>Contains fulfillment information for the intent. </p>
+     * <p>Indicates the fulfillment state for the intent. The meanings of each value
+     * are as follows:</p> <ul> <li> <p> <code>Failed</code> – The bot failed to
+     * fulfill the intent.</p> </li> <li> <p> <code>Fulfilled</code> – The bot has
+     * completed fulfillment of the intent.</p> </li> <li> <p>
+     * <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the
+     * intent.</p> </li> <li> <p> <code>InProgress</code> – The bot is in the middle of
+     * eliciting the slot values that are necessary to fulfill the intent.</p> </li>
+     * <li> <p> <code>ReadyForFulfillment</code> – The bot has elicited all the slot
+     * values for the intent and is ready to fulfill the intent.</p> </li> <li> <p>
+     * <code>Waiting</code> – The bot is waiting for a response from the user (limited
+     * to streaming conversations).</p> </li> </ul>
      */
     inline Intent& WithState(const IntentState& value) { SetState(value); return *this;}
 
     /**
-     * <p>Contains fulfillment information for the intent. </p>
+     * <p>Indicates the fulfillment state for the intent. The meanings of each value
+     * are as follows:</p> <ul> <li> <p> <code>Failed</code> – The bot failed to
+     * fulfill the intent.</p> </li> <li> <p> <code>Fulfilled</code> – The bot has
+     * completed fulfillment of the intent.</p> </li> <li> <p>
+     * <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the
+     * intent.</p> </li> <li> <p> <code>InProgress</code> – The bot is in the middle of
+     * eliciting the slot values that are necessary to fulfill the intent.</p> </li>
+     * <li> <p> <code>ReadyForFulfillment</code> – The bot has elicited all the slot
+     * values for the intent and is ready to fulfill the intent.</p> </li> <li> <p>
+     * <code>Waiting</code> – The bot is waiting for a response from the user (limited
+     * to streaming conversations).</p> </li> </ul>
      */
     inline Intent& WithState(IntentState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
-     * <p>Contains information about whether fulfillment of the intent has been
-     * confirmed.</p>
+     * <p>Indicates whether the intent has been <code>Confirmed</code>,
+     * <code>Denied</code>, or <code>None</code> if the confirmation stage has not yet
+     * been reached.</p>
      */
     inline const ConfirmationState& GetConfirmationState() const{ return m_confirmationState; }
 
     /**
-     * <p>Contains information about whether fulfillment of the intent has been
-     * confirmed.</p>
+     * <p>Indicates whether the intent has been <code>Confirmed</code>,
+     * <code>Denied</code>, or <code>None</code> if the confirmation stage has not yet
+     * been reached.</p>
      */
     inline bool ConfirmationStateHasBeenSet() const { return m_confirmationStateHasBeenSet; }
 
     /**
-     * <p>Contains information about whether fulfillment of the intent has been
-     * confirmed.</p>
+     * <p>Indicates whether the intent has been <code>Confirmed</code>,
+     * <code>Denied</code>, or <code>None</code> if the confirmation stage has not yet
+     * been reached.</p>
      */
     inline void SetConfirmationState(const ConfirmationState& value) { m_confirmationStateHasBeenSet = true; m_confirmationState = value; }
 
     /**
-     * <p>Contains information about whether fulfillment of the intent has been
-     * confirmed.</p>
+     * <p>Indicates whether the intent has been <code>Confirmed</code>,
+     * <code>Denied</code>, or <code>None</code> if the confirmation stage has not yet
+     * been reached.</p>
      */
     inline void SetConfirmationState(ConfirmationState&& value) { m_confirmationStateHasBeenSet = true; m_confirmationState = std::move(value); }
 
     /**
-     * <p>Contains information about whether fulfillment of the intent has been
-     * confirmed.</p>
+     * <p>Indicates whether the intent has been <code>Confirmed</code>,
+     * <code>Denied</code>, or <code>None</code> if the confirmation stage has not yet
+     * been reached.</p>
      */
     inline Intent& WithConfirmationState(const ConfirmationState& value) { SetConfirmationState(value); return *this;}
 
     /**
-     * <p>Contains information about whether fulfillment of the intent has been
-     * confirmed.</p>
+     * <p>Indicates whether the intent has been <code>Confirmed</code>,
+     * <code>Denied</code>, or <code>None</code> if the confirmation stage has not yet
+     * been reached.</p>
      */
     inline Intent& WithConfirmationState(ConfirmationState&& value) { SetConfirmationState(std::move(value)); return *this;}
 

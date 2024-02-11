@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SectionPageBreakStatus::NOT_SET:
+            return {};
           case SectionPageBreakStatus::ENABLED:
             return "ENABLED";
           case SectionPageBreakStatus::DISABLED:

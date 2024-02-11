@@ -45,9 +45,9 @@ namespace Model
      * the TXT record, the domain's verification status is "Pending". When Amazon SES
      * detects the record, the domain's verification status changes to "Success". If
      * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, if you still want to
-     * verify the domain, you must restart the verification process from the
-     * beginning.</p>
+     * verification status changes to "Failed." In that case, to verify the domain, you
+     * must restart the verification process from the beginning. The domain's
+     * verification status also changes to "Success" when it is DKIM verified.</p>
      */
     inline const Aws::String& GetVerificationToken() const{ return m_verificationToken; }
 
@@ -57,9 +57,9 @@ namespace Model
      * the TXT record, the domain's verification status is "Pending". When Amazon SES
      * detects the record, the domain's verification status changes to "Success". If
      * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, if you still want to
-     * verify the domain, you must restart the verification process from the
-     * beginning.</p>
+     * verification status changes to "Failed." In that case, to verify the domain, you
+     * must restart the verification process from the beginning. The domain's
+     * verification status also changes to "Success" when it is DKIM verified.</p>
      */
     inline void SetVerificationToken(const Aws::String& value) { m_verificationToken = value; }
 
@@ -69,9 +69,9 @@ namespace Model
      * the TXT record, the domain's verification status is "Pending". When Amazon SES
      * detects the record, the domain's verification status changes to "Success". If
      * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, if you still want to
-     * verify the domain, you must restart the verification process from the
-     * beginning.</p>
+     * verification status changes to "Failed." In that case, to verify the domain, you
+     * must restart the verification process from the beginning. The domain's
+     * verification status also changes to "Success" when it is DKIM verified.</p>
      */
     inline void SetVerificationToken(Aws::String&& value) { m_verificationToken = std::move(value); }
 
@@ -81,9 +81,9 @@ namespace Model
      * the TXT record, the domain's verification status is "Pending". When Amazon SES
      * detects the record, the domain's verification status changes to "Success". If
      * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, if you still want to
-     * verify the domain, you must restart the verification process from the
-     * beginning.</p>
+     * verification status changes to "Failed." In that case, to verify the domain, you
+     * must restart the verification process from the beginning. The domain's
+     * verification status also changes to "Success" when it is DKIM verified.</p>
      */
     inline void SetVerificationToken(const char* value) { m_verificationToken.assign(value); }
 
@@ -93,9 +93,9 @@ namespace Model
      * the TXT record, the domain's verification status is "Pending". When Amazon SES
      * detects the record, the domain's verification status changes to "Success". If
      * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, if you still want to
-     * verify the domain, you must restart the verification process from the
-     * beginning.</p>
+     * verification status changes to "Failed." In that case, to verify the domain, you
+     * must restart the verification process from the beginning. The domain's
+     * verification status also changes to "Success" when it is DKIM verified.</p>
      */
     inline VerifyDomainIdentityResult& WithVerificationToken(const Aws::String& value) { SetVerificationToken(value); return *this;}
 
@@ -105,9 +105,9 @@ namespace Model
      * the TXT record, the domain's verification status is "Pending". When Amazon SES
      * detects the record, the domain's verification status changes to "Success". If
      * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, if you still want to
-     * verify the domain, you must restart the verification process from the
-     * beginning.</p>
+     * verification status changes to "Failed." In that case, to verify the domain, you
+     * must restart the verification process from the beginning. The domain's
+     * verification status also changes to "Success" when it is DKIM verified.</p>
      */
     inline VerifyDomainIdentityResult& WithVerificationToken(Aws::String&& value) { SetVerificationToken(std::move(value)); return *this;}
 
@@ -117,9 +117,9 @@ namespace Model
      * the TXT record, the domain's verification status is "Pending". When Amazon SES
      * detects the record, the domain's verification status changes to "Success". If
      * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, if you still want to
-     * verify the domain, you must restart the verification process from the
-     * beginning.</p>
+     * verification status changes to "Failed." In that case, to verify the domain, you
+     * must restart the verification process from the beginning. The domain's
+     * verification status also changes to "Success" when it is DKIM verified.</p>
      */
     inline VerifyDomainIdentityResult& WithVerificationToken(const char* value) { SetVerificationToken(value); return *this;}
 

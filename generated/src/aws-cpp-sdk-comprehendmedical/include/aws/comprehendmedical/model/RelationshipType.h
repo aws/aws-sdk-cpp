@@ -35,7 +35,9 @@ namespace Model
     TEST_UNIT,
     DIRECTION,
     SYSTEM_ORGAN_SITE,
-    AMOUNT
+    AMOUNT,
+    USAGE,
+    QUALITY
   };
 
 namespace RelationshipTypeMapper

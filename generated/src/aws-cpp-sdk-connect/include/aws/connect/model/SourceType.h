@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SALESFORCE,
-    ZENDESK
+    ZENDESK,
+    CASES
   };
 
 namespace SourceTypeMapper

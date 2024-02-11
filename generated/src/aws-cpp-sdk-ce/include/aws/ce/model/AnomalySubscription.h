@@ -28,10 +28,20 @@ namespace Model
 {
 
   /**
-   * <p>The association between a monitor, threshold, and list of subscribers used to
-   * deliver notifications about anomalies detected by a monitor that exceeds a
-   * threshold. The content consists of the detailed metadata and the current status
-   * of the <code>AnomalySubscription</code> object. </p><p><h3>See Also:</h3>   <a
+   * <p>An <code>AnomalySubscription</code> resource (also referred to as an alert
+   * subscription) sends notifications about specific anomalies that meet an alerting
+   * criteria defined by you.</p> <p>You can specify the frequency of the alerts and
+   * the subscribers to notify.</p> <p>Anomaly subscriptions can be associated with
+   * one or more <a
+   * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
+   * <code>AnomalyMonitor</code> </a> resources, and they only send notifications
+   * about anomalies detected by those associated monitors. You can also configure a
+   * threshold to further control which anomalies are included in the
+   * notifications.</p> <p>Anomalies that don’t exceed the chosen threshold and
+   * therefore don’t trigger notifications from an anomaly subscription will still be
+   * available on the console and from the <a
+   * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalies.html">
+   * <code>GetAnomalies</code> </a> API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/AnomalySubscription">AWS
    * API Reference</a></p>
    */
@@ -214,32 +224,56 @@ namespace Model
 
 
     /**
-     * <p>The frequency that anomaly reports are sent over email. </p>
+     * <p>The frequency that anomaly notifications are sent. Notifications are sent
+     * either over email (for DAILY and WEEKLY frequencies) or SNS (for IMMEDIATE
+     * frequency). For more information, see <a
+     * href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating
+     * an Amazon SNS topic for anomaly notifications</a>.</p>
      */
     inline const AnomalySubscriptionFrequency& GetFrequency() const{ return m_frequency; }
 
     /**
-     * <p>The frequency that anomaly reports are sent over email. </p>
+     * <p>The frequency that anomaly notifications are sent. Notifications are sent
+     * either over email (for DAILY and WEEKLY frequencies) or SNS (for IMMEDIATE
+     * frequency). For more information, see <a
+     * href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating
+     * an Amazon SNS topic for anomaly notifications</a>.</p>
      */
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
 
     /**
-     * <p>The frequency that anomaly reports are sent over email. </p>
+     * <p>The frequency that anomaly notifications are sent. Notifications are sent
+     * either over email (for DAILY and WEEKLY frequencies) or SNS (for IMMEDIATE
+     * frequency). For more information, see <a
+     * href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating
+     * an Amazon SNS topic for anomaly notifications</a>.</p>
      */
     inline void SetFrequency(const AnomalySubscriptionFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
-     * <p>The frequency that anomaly reports are sent over email. </p>
+     * <p>The frequency that anomaly notifications are sent. Notifications are sent
+     * either over email (for DAILY and WEEKLY frequencies) or SNS (for IMMEDIATE
+     * frequency). For more information, see <a
+     * href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating
+     * an Amazon SNS topic for anomaly notifications</a>.</p>
      */
     inline void SetFrequency(AnomalySubscriptionFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
 
     /**
-     * <p>The frequency that anomaly reports are sent over email. </p>
+     * <p>The frequency that anomaly notifications are sent. Notifications are sent
+     * either over email (for DAILY and WEEKLY frequencies) or SNS (for IMMEDIATE
+     * frequency). For more information, see <a
+     * href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating
+     * an Amazon SNS topic for anomaly notifications</a>.</p>
      */
     inline AnomalySubscription& WithFrequency(const AnomalySubscriptionFrequency& value) { SetFrequency(value); return *this;}
 
     /**
-     * <p>The frequency that anomaly reports are sent over email. </p>
+     * <p>The frequency that anomaly notifications are sent. Notifications are sent
+     * either over email (for DAILY and WEEKLY frequencies) or SNS (for IMMEDIATE
+     * frequency). For more information, see <a
+     * href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating
+     * an Amazon SNS topic for anomaly notifications</a>.</p>
      */
     inline AnomalySubscription& WithFrequency(AnomalySubscriptionFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 
@@ -291,11 +325,14 @@ namespace Model
      * object used to specify the anomalies that you want to generate alerts for. This
      * supports dimensions and nested expressions. The supported dimensions are
      * <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression
-     * types are <code>AND</code> and <code>OR</code>. The match option
-     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0
-     * and 10,000,000,000.</p> <p>One of Threshold or ThresholdExpression is required
-     * for this resource.</p> <p>The following are examples of valid
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s
+     * TotalImpact and TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a>
+     * for more details). The supported nested expression types are <code>AND</code>
+     * and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is
+     * required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.</p> <p>One of Threshold or ThresholdExpression is required for this
+     * resource. You cannot specify both.</p> <p>The following are examples of valid
      * ThresholdExpressions:</p> <ul> <li> <p>Absolute threshold: <code>{ "Dimensions":
      * { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [
      * "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> <li>
@@ -321,11 +358,14 @@ namespace Model
      * object used to specify the anomalies that you want to generate alerts for. This
      * supports dimensions and nested expressions. The supported dimensions are
      * <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression
-     * types are <code>AND</code> and <code>OR</code>. The match option
-     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0
-     * and 10,000,000,000.</p> <p>One of Threshold or ThresholdExpression is required
-     * for this resource.</p> <p>The following are examples of valid
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s
+     * TotalImpact and TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a>
+     * for more details). The supported nested expression types are <code>AND</code>
+     * and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is
+     * required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.</p> <p>One of Threshold or ThresholdExpression is required for this
+     * resource. You cannot specify both.</p> <p>The following are examples of valid
      * ThresholdExpressions:</p> <ul> <li> <p>Absolute threshold: <code>{ "Dimensions":
      * { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [
      * "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> <li>
@@ -351,11 +391,14 @@ namespace Model
      * object used to specify the anomalies that you want to generate alerts for. This
      * supports dimensions and nested expressions. The supported dimensions are
      * <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression
-     * types are <code>AND</code> and <code>OR</code>. The match option
-     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0
-     * and 10,000,000,000.</p> <p>One of Threshold or ThresholdExpression is required
-     * for this resource.</p> <p>The following are examples of valid
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s
+     * TotalImpact and TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a>
+     * for more details). The supported nested expression types are <code>AND</code>
+     * and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is
+     * required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.</p> <p>One of Threshold or ThresholdExpression is required for this
+     * resource. You cannot specify both.</p> <p>The following are examples of valid
      * ThresholdExpressions:</p> <ul> <li> <p>Absolute threshold: <code>{ "Dimensions":
      * { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [
      * "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> <li>
@@ -381,11 +424,14 @@ namespace Model
      * object used to specify the anomalies that you want to generate alerts for. This
      * supports dimensions and nested expressions. The supported dimensions are
      * <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression
-     * types are <code>AND</code> and <code>OR</code>. The match option
-     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0
-     * and 10,000,000,000.</p> <p>One of Threshold or ThresholdExpression is required
-     * for this resource.</p> <p>The following are examples of valid
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s
+     * TotalImpact and TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a>
+     * for more details). The supported nested expression types are <code>AND</code>
+     * and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is
+     * required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.</p> <p>One of Threshold or ThresholdExpression is required for this
+     * resource. You cannot specify both.</p> <p>The following are examples of valid
      * ThresholdExpressions:</p> <ul> <li> <p>Absolute threshold: <code>{ "Dimensions":
      * { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [
      * "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> <li>
@@ -411,11 +457,14 @@ namespace Model
      * object used to specify the anomalies that you want to generate alerts for. This
      * supports dimensions and nested expressions. The supported dimensions are
      * <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression
-     * types are <code>AND</code> and <code>OR</code>. The match option
-     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0
-     * and 10,000,000,000.</p> <p>One of Threshold or ThresholdExpression is required
-     * for this resource.</p> <p>The following are examples of valid
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s
+     * TotalImpact and TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a>
+     * for more details). The supported nested expression types are <code>AND</code>
+     * and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is
+     * required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.</p> <p>One of Threshold or ThresholdExpression is required for this
+     * resource. You cannot specify both.</p> <p>The following are examples of valid
      * ThresholdExpressions:</p> <ul> <li> <p>Absolute threshold: <code>{ "Dimensions":
      * { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [
      * "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> <li>
@@ -441,11 +490,14 @@ namespace Model
      * object used to specify the anomalies that you want to generate alerts for. This
      * supports dimensions and nested expressions. The supported dimensions are
      * <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression
-     * types are <code>AND</code> and <code>OR</code>. The match option
-     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0
-     * and 10,000,000,000.</p> <p>One of Threshold or ThresholdExpression is required
-     * for this resource.</p> <p>The following are examples of valid
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s
+     * TotalImpact and TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a>
+     * for more details). The supported nested expression types are <code>AND</code>
+     * and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is
+     * required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.</p> <p>One of Threshold or ThresholdExpression is required for this
+     * resource. You cannot specify both.</p> <p>The following are examples of valid
      * ThresholdExpressions:</p> <ul> <li> <p>Absolute threshold: <code>{ "Dimensions":
      * { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [
      * "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> <li>

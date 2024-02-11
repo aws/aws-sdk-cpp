@@ -22,7 +22,8 @@ AssumeRoleRequest::AssumeRoleRequest() :
     m_externalIdHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
     m_tokenCodeHasBeenSet(false),
-    m_sourceIdentityHasBeenSet(false)
+    m_sourceIdentityHasBeenSet(false),
+    m_providedContextsHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,16 @@ Aws::String AssumeRoleRequest::SerializePayload() const
   if(m_sourceIdentityHasBeenSet)
   {
     ss << "SourceIdentity=" << StringUtils::URLEncode(m_sourceIdentity.c_str()) << "&";
+  }
+
+  if(m_providedContextsHasBeenSet)
+  {
+    unsigned providedContextsCount = 1;
+    for(auto& item : m_providedContexts)
+    {
+      item.OutputToStream(ss, "ProvidedContexts.member.", providedContextsCount, "");
+      providedContextsCount++;
+    }
   }
 
   ss << "Version=2011-06-15";

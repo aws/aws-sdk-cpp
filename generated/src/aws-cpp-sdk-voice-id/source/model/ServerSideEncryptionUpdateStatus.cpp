@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServerSideEncryptionUpdateStatus::NOT_SET:
+            return {};
           case ServerSideEncryptionUpdateStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case ServerSideEncryptionUpdateStatus::COMPLETED:

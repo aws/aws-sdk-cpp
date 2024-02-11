@@ -26,7 +26,7 @@ namespace SSM
    * up Amazon Web Services Systems Manager</a>.</p> <p class="title"> <b>Related
    * resources</b> </p> <ul> <li> <p>For information about each of the capabilities
    * that comprise Systems Manager, see <a
-   * href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities">Systems
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities">Systems
    * Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User
    * Guide</i>.</p> </li> <li> <p>For details about predefined runbooks for
    * Automation, a capability of Amazon Web Services Systems Manager, see the <i> <a
@@ -49,6 +49,9 @@ namespace SSM
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef SSMClientConfiguration ClientConfigurationType;
+      typedef SSMEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -398,8 +401,8 @@ namespace SSM
         /**
          * <p>Creates a new OpsItem. You must have permission in Identity and Access
          * Management (IAM) to create a new OpsItem. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set
+         * up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
          * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
          * Services Systems Manager OpsCenter to view, investigate, and remediate
          * operational issues impacting the performance and health of their Amazon Web
@@ -673,6 +676,48 @@ namespace SSM
         void DeleteMaintenanceWindowAsync(const DeleteMaintenanceWindowRequestT& request, const DeleteMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSMClient::DeleteMaintenanceWindow, request, handler, context);
+        }
+
+        /**
+         * <p>Delete an OpsItem. You must have permission in Identity and Access Management
+         * (IAM) to delete an OpsItem. </p>  <p>Note the following important
+         * information about this operation.</p> <ul> <li> <p>Deleting an OpsItem is
+         * irreversible. You can't restore a deleted OpsItem.</p> </li> <li> <p>This
+         * operation uses an <i>eventual consistency model</i>, which means the system can
+         * take a few minutes to complete this operation. If you delete an OpsItem and
+         * immediately call, for example, <a>GetOpsItem</a>, the deleted OpsItem might
+         * still appear in the response. </p> </li> <li> <p>This operation is idempotent.
+         * The system doesn't throw an exception if you repeatedly call this operation for
+         * the same OpsItem. If the first call is successful, all additional calls return
+         * the same successful response as the first call.</p> </li> <li> <p>This operation
+         * doesn't support cross-account calls. A delegated administrator or management
+         * account can't delete OpsItems in other accounts, even if OpsCenter has been set
+         * up for cross-account administration. For more information about cross-account
+         * administration, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setting-up-cross-account.html">Setting
+         * up OpsCenter to centrally manage OpsItems across accounts</a> in the <i>Systems
+         * Manager User Guide</i>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsItem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteOpsItemOutcome DeleteOpsItem(const Model::DeleteOpsItemRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteOpsItem that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteOpsItemRequestT = Model::DeleteOpsItemRequest>
+        Model::DeleteOpsItemOutcomeCallable DeleteOpsItemCallable(const DeleteOpsItemRequestT& request) const
+        {
+            return SubmitCallable(&SSMClient::DeleteOpsItem, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteOpsItem that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteOpsItemRequestT = Model::DeleteOpsItemRequest>
+        void DeleteOpsItemAsync(const DeleteOpsItemRequestT& request, const DeleteOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMClient::DeleteOpsItem, request, handler, context);
         }
 
         /**
@@ -1259,16 +1304,17 @@ namespace SSM
         }
 
         /**
-         * <p>Describes one or more of your managed nodes, including information about the
-         * operating system platform, the version of SSM Agent installed on the managed
-         * node, node status, and so on.</p> <p>If you specify one or more managed node
-         * IDs, it returns information for those managed nodes. If you don't specify node
-         * IDs, it returns information for all your managed nodes. If you specify a node ID
-         * that isn't valid or a node that you don't own, you receive an error.</p> 
-         * <p>The <code>IamRole</code> field for this API operation is the Identity and
-         * Access Management (IAM) role assigned to on-premises managed nodes. This call
-         * doesn't return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3> 
-         * <a
+         * <p>Provides information about one or more of your managed nodes, including the
+         * operating system platform, SSM Agent version, association status, and IP
+         * address. This operation does not return information for nodes that are either
+         * Stopped or Terminated.</p> <p>If you specify one or more node IDs, the operation
+         * returns information for those managed nodes. If you don't specify node IDs, it
+         * returns information for all your managed nodes. If you specify a node ID that
+         * isn't valid or a node that you don't own, you receive an error.</p> 
+         * <p>The <code>IamRole</code> field returned for this API operation is the
+         * Identity and Access Management (IAM) role assigned to on-premises managed nodes.
+         * This operation does not return the IAM role for EC2 instances.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
          * API Reference</a></p>
          */
@@ -1615,8 +1661,8 @@ namespace SSM
         /**
          * <p>Query a set of OpsItems. You must have permission in Identity and Access
          * Management (IAM) to query a list of OpsItems. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set
+         * up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
          * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
          * Services Systems Manager OpsCenter to view, investigate, and remediate
          * operational issues impacting the performance and health of their Amazon Web
@@ -2267,8 +2313,8 @@ namespace SSM
          * <p>Get information about an OpsItem by using the ID. You must have permission in
          * Identity and Access Management (IAM) to view information about an OpsItem. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set
+         * up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
          * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
          * Services Systems Manager OpsCenter to view, investigate, and remediate
          * operational issues impacting the performance and health of their Amazon Web
@@ -3980,8 +4026,8 @@ namespace SSM
         /**
          * <p>Edit or change an OpsItem. You must have permission in Identity and Access
          * Management (IAM) to update an OpsItem. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set
+         * up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
          * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
          * Services Systems Manager OpsCenter to view, investigate, and remediate
          * operational issues impacting the performance and health of their Amazon Web

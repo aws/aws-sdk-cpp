@@ -48,6 +48,7 @@ enum class MainframeModernizationErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXECUTION_TIMEOUT,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };

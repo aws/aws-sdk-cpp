@@ -22,6 +22,8 @@ namespace Aws
 
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
         static const int SCALING_HASH = HashingUtils::HashString("SCALING");
         static const int READY_HASH = HashingUtils::HashString("READY");
 
@@ -36,6 +38,14 @@ namespace Aws
           else if (hashCode == DELETING_HASH)
           {
             return AttachmentStatus::DELETING;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return AttachmentStatus::FAILED;
+          }
+          else if (hashCode == ERROR__HASH)
+          {
+            return AttachmentStatus::ERROR_;
           }
           else if (hashCode == SCALING_HASH)
           {
@@ -59,10 +69,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttachmentStatus::NOT_SET:
+            return {};
           case AttachmentStatus::CREATING:
             return "CREATING";
           case AttachmentStatus::DELETING:
             return "DELETING";
+          case AttachmentStatus::FAILED:
+            return "FAILED";
+          case AttachmentStatus::ERROR_:
+            return "ERROR";
           case AttachmentStatus::SCALING:
             return "SCALING";
           case AttachmentStatus::READY:

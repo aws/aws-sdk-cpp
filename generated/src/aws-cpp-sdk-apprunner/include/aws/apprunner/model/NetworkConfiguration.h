@@ -7,6 +7,7 @@
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/apprunner/model/EgressConfiguration.h>
 #include <aws/apprunner/model/IngressConfiguration.h>
+#include <aws/apprunner/model/IpAddressType.h>
 #include <utility>
 
 namespace Aws
@@ -101,6 +102,85 @@ namespace Model
      */
     inline NetworkConfiguration& WithIngressConfiguration(IngressConfiguration&& value) { SetIngressConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>App Runner provides you with the option to choose between <i>Internet
+     * Protocol version 4 (IPv4)</i> and <i>dual-stack</i> (IPv4 and IPv6) for your
+     * incoming public network configuration. This is an optional parameter. If you do
+     * not specify an <code>IpAddressType</code>, it defaults to select IPv4.</p>
+     *  <p> Currently, App Runner supports dual-stack for only Public endpoint.
+     * Only IPv4 is supported for Private endpoint. If you update a service that's
+     * using dual-stack Public endpoint to a Private endpoint, your App Runner service
+     * will default to support only IPv4 for Private endpoint and fail to receive
+     * traffic originating from IPv6 endpoint. </p> 
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>App Runner provides you with the option to choose between <i>Internet
+     * Protocol version 4 (IPv4)</i> and <i>dual-stack</i> (IPv4 and IPv6) for your
+     * incoming public network configuration. This is an optional parameter. If you do
+     * not specify an <code>IpAddressType</code>, it defaults to select IPv4.</p>
+     *  <p> Currently, App Runner supports dual-stack for only Public endpoint.
+     * Only IPv4 is supported for Private endpoint. If you update a service that's
+     * using dual-stack Public endpoint to a Private endpoint, your App Runner service
+     * will default to support only IPv4 for Private endpoint and fail to receive
+     * traffic originating from IPv6 endpoint. </p> 
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>App Runner provides you with the option to choose between <i>Internet
+     * Protocol version 4 (IPv4)</i> and <i>dual-stack</i> (IPv4 and IPv6) for your
+     * incoming public network configuration. This is an optional parameter. If you do
+     * not specify an <code>IpAddressType</code>, it defaults to select IPv4.</p>
+     *  <p> Currently, App Runner supports dual-stack for only Public endpoint.
+     * Only IPv4 is supported for Private endpoint. If you update a service that's
+     * using dual-stack Public endpoint to a Private endpoint, your App Runner service
+     * will default to support only IPv4 for Private endpoint and fail to receive
+     * traffic originating from IPv6 endpoint. </p> 
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>App Runner provides you with the option to choose between <i>Internet
+     * Protocol version 4 (IPv4)</i> and <i>dual-stack</i> (IPv4 and IPv6) for your
+     * incoming public network configuration. This is an optional parameter. If you do
+     * not specify an <code>IpAddressType</code>, it defaults to select IPv4.</p>
+     *  <p> Currently, App Runner supports dual-stack for only Public endpoint.
+     * Only IPv4 is supported for Private endpoint. If you update a service that's
+     * using dual-stack Public endpoint to a Private endpoint, your App Runner service
+     * will default to support only IPv4 for Private endpoint and fail to receive
+     * traffic originating from IPv6 endpoint. </p> 
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>App Runner provides you with the option to choose between <i>Internet
+     * Protocol version 4 (IPv4)</i> and <i>dual-stack</i> (IPv4 and IPv6) for your
+     * incoming public network configuration. This is an optional parameter. If you do
+     * not specify an <code>IpAddressType</code>, it defaults to select IPv4.</p>
+     *  <p> Currently, App Runner supports dual-stack for only Public endpoint.
+     * Only IPv4 is supported for Private endpoint. If you update a service that's
+     * using dual-stack Public endpoint to a Private endpoint, your App Runner service
+     * will default to support only IPv4 for Private endpoint and fail to receive
+     * traffic originating from IPv6 endpoint. </p> 
+     */
+    inline NetworkConfiguration& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>App Runner provides you with the option to choose between <i>Internet
+     * Protocol version 4 (IPv4)</i> and <i>dual-stack</i> (IPv4 and IPv6) for your
+     * incoming public network configuration. This is an optional parameter. If you do
+     * not specify an <code>IpAddressType</code>, it defaults to select IPv4.</p>
+     *  <p> Currently, App Runner supports dual-stack for only Public endpoint.
+     * Only IPv4 is supported for Private endpoint. If you update a service that's
+     * using dual-stack Public endpoint to a Private endpoint, your App Runner service
+     * will default to support only IPv4 for Private endpoint and fail to receive
+     * traffic originating from IPv6 endpoint. </p> 
+     */
+    inline NetworkConfiguration& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
   private:
 
     EgressConfiguration m_egressConfiguration;
@@ -108,6 +188,9 @@ namespace Model
 
     IngressConfiguration m_ingressConfiguration;
     bool m_ingressConfigurationHasBeenSet = false;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

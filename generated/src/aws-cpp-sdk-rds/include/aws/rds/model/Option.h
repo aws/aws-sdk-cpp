@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Option details.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of an option.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Option">AWS API
    * Reference</a></p>
    */
@@ -126,43 +126,43 @@ namespace Model
 
 
     /**
-     * <p>Indicate if this option is persistent.</p>
+     * <p>Indicates whether this option is persistent.</p>
      */
     inline bool GetPersistent() const{ return m_persistent; }
 
     /**
-     * <p>Indicate if this option is persistent.</p>
+     * <p>Indicates whether this option is persistent.</p>
      */
     inline bool PersistentHasBeenSet() const { return m_persistentHasBeenSet; }
 
     /**
-     * <p>Indicate if this option is persistent.</p>
+     * <p>Indicates whether this option is persistent.</p>
      */
     inline void SetPersistent(bool value) { m_persistentHasBeenSet = true; m_persistent = value; }
 
     /**
-     * <p>Indicate if this option is persistent.</p>
+     * <p>Indicates whether this option is persistent.</p>
      */
     inline Option& WithPersistent(bool value) { SetPersistent(value); return *this;}
 
 
     /**
-     * <p>Indicate if this option is permanent.</p>
+     * <p>Indicates whether this option is permanent.</p>
      */
     inline bool GetPermanent() const{ return m_permanent; }
 
     /**
-     * <p>Indicate if this option is permanent.</p>
+     * <p>Indicates whether this option is permanent.</p>
      */
     inline bool PermanentHasBeenSet() const { return m_permanentHasBeenSet; }
 
     /**
-     * <p>Indicate if this option is permanent.</p>
+     * <p>Indicates whether this option is permanent.</p>
      */
     inline void SetPermanent(bool value) { m_permanentHasBeenSet = true; m_permanent = value; }
 
     /**
-     * <p>Indicate if this option is permanent.</p>
+     * <p>Indicates whether this option is permanent.</p>
      */
     inline Option& WithPermanent(bool value) { SetPermanent(value); return *this;}
 

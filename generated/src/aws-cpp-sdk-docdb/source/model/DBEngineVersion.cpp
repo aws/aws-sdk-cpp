@@ -29,7 +29,10 @@ DBEngineVersion::DBEngineVersion() :
     m_validUpgradeTargetHasBeenSet(false),
     m_exportableLogTypesHasBeenSet(false),
     m_supportsLogExportsToCloudwatchLogs(false),
-    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false)
+    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
+    m_supportedCACertificateIdentifiersHasBeenSet(false),
+    m_supportsCertificateRotationWithoutRestart(false),
+    m_supportsCertificateRotationWithoutRestartHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_validUpgradeTargetHasBeenSet(false),
     m_exportableLogTypesHasBeenSet(false),
     m_supportsLogExportsToCloudwatchLogs(false),
-    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false)
+    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
+    m_supportedCACertificateIdentifiersHasBeenSet(false),
+    m_supportsCertificateRotationWithoutRestart(false),
+    m_supportsCertificateRotationWithoutRestartHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -113,6 +119,24 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_supportsLogExportsToCloudwatchLogs = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLogExportsToCloudwatchLogsNode.GetText()).c_str()).c_str());
       m_supportsLogExportsToCloudwatchLogsHasBeenSet = true;
     }
+    XmlNode supportedCACertificateIdentifiersNode = resultNode.FirstChild("SupportedCACertificateIdentifiers");
+    if(!supportedCACertificateIdentifiersNode.IsNull())
+    {
+      XmlNode supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersNode.FirstChild("member");
+      while(!supportedCACertificateIdentifiersMember.IsNull())
+      {
+        m_supportedCACertificateIdentifiers.push_back(supportedCACertificateIdentifiersMember.GetText());
+        supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersMember.NextNode("member");
+      }
+
+      m_supportedCACertificateIdentifiersHasBeenSet = true;
+    }
+    XmlNode supportsCertificateRotationWithoutRestartNode = resultNode.FirstChild("SupportsCertificateRotationWithoutRestart");
+    if(!supportsCertificateRotationWithoutRestartNode.IsNull())
+    {
+      m_supportsCertificateRotationWithoutRestart = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsCertificateRotationWithoutRestartNode.GetText()).c_str()).c_str());
+      m_supportsCertificateRotationWithoutRestartHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -170,6 +194,20 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".SupportsLogExportsToCloudwatchLogs=" << std::boolalpha << m_supportsLogExportsToCloudwatchLogs << "&";
   }
 
+  if(m_supportedCACertificateIdentifiersHasBeenSet)
+  {
+      unsigned supportedCACertificateIdentifiersIdx = 1;
+      for(auto& item : m_supportedCACertificateIdentifiers)
+      {
+        oStream << location << index << locationValue << ".SupportedCACertificateIdentifiers.member." << supportedCACertificateIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_supportsCertificateRotationWithoutRestartHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsCertificateRotationWithoutRestart=" << std::boolalpha << m_supportsCertificateRotationWithoutRestart << "&";
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -215,6 +253,18 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_supportsLogExportsToCloudwatchLogsHasBeenSet)
   {
       oStream << location << ".SupportsLogExportsToCloudwatchLogs=" << std::boolalpha << m_supportsLogExportsToCloudwatchLogs << "&";
+  }
+  if(m_supportedCACertificateIdentifiersHasBeenSet)
+  {
+      unsigned supportedCACertificateIdentifiersIdx = 1;
+      for(auto& item : m_supportedCACertificateIdentifiers)
+      {
+        oStream << location << ".SupportedCACertificateIdentifiers.member." << supportedCACertificateIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_supportsCertificateRotationWithoutRestartHasBeenSet)
+  {
+      oStream << location << ".SupportsCertificateRotationWithoutRestart=" << std::boolalpha << m_supportsCertificateRotationWithoutRestart << "&";
   }
 }
 

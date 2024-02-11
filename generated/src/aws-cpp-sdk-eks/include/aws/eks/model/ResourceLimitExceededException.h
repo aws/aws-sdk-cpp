@@ -120,28 +120,85 @@ namespace Model
     inline ResourceLimitExceededException& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline ResourceLimitExceededException& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline ResourceLimitExceededException& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline ResourceLimitExceededException& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline ResourceLimitExceededException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline ResourceLimitExceededException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline ResourceLimitExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
@@ -151,6 +208,9 @@ namespace Model
 
     Aws::String m_nodegroupName;
     bool m_nodegroupNameHasBeenSet = false;
+
+    Aws::String m_subscriptionId;
+    bool m_subscriptionIdHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;

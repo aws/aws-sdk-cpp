@@ -20,7 +20,7 @@ CreateContactChannelRequest::CreateContactChannelRequest() :
     m_deliveryAddressHasBeenSet(false),
     m_deferActivation(false),
     m_deferActivationHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

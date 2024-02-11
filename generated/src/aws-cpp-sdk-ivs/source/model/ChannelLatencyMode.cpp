@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelLatencyMode::NOT_SET:
+            return {};
           case ChannelLatencyMode::NORMAL:
             return "NORMAL";
           case ChannelLatencyMode::LOW:

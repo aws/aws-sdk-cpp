@@ -21,9 +21,12 @@
         #else
             #define AWS_LEXMODELBUILDINGSERVICE_API __declspec(dllimport)
         #endif /* AWS_LEXMODELBUILDINGSERVICE_EXPORTS */
+        #define AWS_LEXMODELBUILDINGSERVICE_EXTERN
     #else
         #define AWS_LEXMODELBUILDINGSERVICE_API
+        #define AWS_LEXMODELBUILDINGSERVICE_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_LEXMODELBUILDINGSERVICE_API
+    #define AWS_LEXMODELBUILDINGSERVICE_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

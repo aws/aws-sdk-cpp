@@ -64,7 +64,7 @@ namespace Model
      * Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance
      * discovery only. This instance discovery method is the "HTTP" namespace type in
      * the Command Line Interface. Other types of instance discovery aren't used by
-     * Service Connect.</p> <p>If you update the service with an empty string
+     * Service Connect.</p> <p>If you update the cluster with an empty string
      * <code>""</code> for the namespace name, the cluster configuration for Service
      * Connect is removed. Note that the namespace will remain in Cloud Map and must be
      * deleted separately.</p> <p>For more information about Cloud Map, see <a
@@ -85,7 +85,7 @@ namespace Model
      * Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance
      * discovery only. This instance discovery method is the "HTTP" namespace type in
      * the Command Line Interface. Other types of instance discovery aren't used by
-     * Service Connect.</p> <p>If you update the service with an empty string
+     * Service Connect.</p> <p>If you update the cluster with an empty string
      * <code>""</code> for the namespace name, the cluster configuration for Service
      * Connect is removed. Note that the namespace will remain in Cloud Map and must be
      * deleted separately.</p> <p>For more information about Cloud Map, see <a
@@ -106,7 +106,7 @@ namespace Model
      * Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance
      * discovery only. This instance discovery method is the "HTTP" namespace type in
      * the Command Line Interface. Other types of instance discovery aren't used by
-     * Service Connect.</p> <p>If you update the service with an empty string
+     * Service Connect.</p> <p>If you update the cluster with an empty string
      * <code>""</code> for the namespace name, the cluster configuration for Service
      * Connect is removed. Note that the namespace will remain in Cloud Map and must be
      * deleted separately.</p> <p>For more information about Cloud Map, see <a
@@ -127,7 +127,7 @@ namespace Model
      * Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance
      * discovery only. This instance discovery method is the "HTTP" namespace type in
      * the Command Line Interface. Other types of instance discovery aren't used by
-     * Service Connect.</p> <p>If you update the service with an empty string
+     * Service Connect.</p> <p>If you update the cluster with an empty string
      * <code>""</code> for the namespace name, the cluster configuration for Service
      * Connect is removed. Note that the namespace will remain in Cloud Map and must be
      * deleted separately.</p> <p>For more information about Cloud Map, see <a
@@ -148,7 +148,7 @@ namespace Model
      * Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance
      * discovery only. This instance discovery method is the "HTTP" namespace type in
      * the Command Line Interface. Other types of instance discovery aren't used by
-     * Service Connect.</p> <p>If you update the service with an empty string
+     * Service Connect.</p> <p>If you update the cluster with an empty string
      * <code>""</code> for the namespace name, the cluster configuration for Service
      * Connect is removed. Note that the namespace will remain in Cloud Map and must be
      * deleted separately.</p> <p>For more information about Cloud Map, see <a
@@ -169,7 +169,7 @@ namespace Model
      * Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance
      * discovery only. This instance discovery method is the "HTTP" namespace type in
      * the Command Line Interface. Other types of instance discovery aren't used by
-     * Service Connect.</p> <p>If you update the service with an empty string
+     * Service Connect.</p> <p>If you update the cluster with an empty string
      * <code>""</code> for the namespace name, the cluster configuration for Service
      * Connect is removed. Note that the namespace will remain in Cloud Map and must be
      * deleted separately.</p> <p>For more information about Cloud Map, see <a
@@ -190,7 +190,7 @@ namespace Model
      * Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance
      * discovery only. This instance discovery method is the "HTTP" namespace type in
      * the Command Line Interface. Other types of instance discovery aren't used by
-     * Service Connect.</p> <p>If you update the service with an empty string
+     * Service Connect.</p> <p>If you update the cluster with an empty string
      * <code>""</code> for the namespace name, the cluster configuration for Service
      * Connect is removed. Note that the namespace will remain in Cloud Map and must be
      * deleted separately.</p> <p>For more information about Cloud Map, see <a
@@ -211,7 +211,7 @@ namespace Model
      * Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance
      * discovery only. This instance discovery method is the "HTTP" namespace type in
      * the Command Line Interface. Other types of instance discovery aren't used by
-     * Service Connect.</p> <p>If you update the service with an empty string
+     * Service Connect.</p> <p>If you update the cluster with an empty string
      * <code>""</code> for the namespace name, the cluster configuration for Service
      * Connect is removed. Note that the namespace will remain in Cloud Map and must be
      * deleted separately.</p> <p>For more information about Cloud Map, see <a

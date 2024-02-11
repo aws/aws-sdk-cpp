@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     SNAPSHOT_NOT_FOUND,
-    DEPENDENCY_RESOURCE_NOT_FOUND
+    GRANT_NOT_FOUND,
+    DEPENDENCY_RESOURCE_NOT_FOUND,
+    IMAGE_NOT_FOUND
   };
 
 namespace ResourceNotFoundExceptionReasonMapper

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkloadEnvironment::NOT_SET:
+            return {};
           case WorkloadEnvironment::PRODUCTION:
             return "PRODUCTION";
           case WorkloadEnvironment::PREPRODUCTION:

@@ -42,6 +42,9 @@ namespace Lightsail
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef LightsailClientConfiguration ClientConfigurationType;
+      typedef LightsailEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -2277,7 +2280,7 @@ namespace Lightsail
 
         /**
          * <p>Returns information about one or more Amazon Lightsail SSL/TLS
-         * certificates.</p>  <p>To get a summary of a certificate, ommit
+         * certificates.</p>  <p>To get a summary of a certificate, omit
          * <code>includeCertificateDetails</code> from your request. The response will
          * include only the certificate Amazon Resource Name (ARN), certificate name,
          * domain name, and tags.</p> <p><h3>See Also:</h3>   <a

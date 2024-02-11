@@ -8,6 +8,7 @@
 #include <aws/kendra/KendraRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/Mode.h>
+#include <aws/kendra/model/AttributeSuggestionsUpdateConfig.h>
 #include <utility>
 
 namespace Aws
@@ -296,6 +297,43 @@ namespace Model
      */
     inline UpdateQuerySuggestionsConfigRequest& WithMinimumQueryCount(int value) { SetMinimumQueryCount(value); return *this;}
 
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline const AttributeSuggestionsUpdateConfig& GetAttributeSuggestionsConfig() const{ return m_attributeSuggestionsConfig; }
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline bool AttributeSuggestionsConfigHasBeenSet() const { return m_attributeSuggestionsConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline void SetAttributeSuggestionsConfig(const AttributeSuggestionsUpdateConfig& value) { m_attributeSuggestionsConfigHasBeenSet = true; m_attributeSuggestionsConfig = value; }
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline void SetAttributeSuggestionsConfig(AttributeSuggestionsUpdateConfig&& value) { m_attributeSuggestionsConfigHasBeenSet = true; m_attributeSuggestionsConfig = std::move(value); }
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline UpdateQuerySuggestionsConfigRequest& WithAttributeSuggestionsConfig(const AttributeSuggestionsUpdateConfig& value) { SetAttributeSuggestionsConfig(value); return *this;}
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline UpdateQuerySuggestionsConfigRequest& WithAttributeSuggestionsConfig(AttributeSuggestionsUpdateConfig&& value) { SetAttributeSuggestionsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -315,6 +353,9 @@ namespace Model
 
     int m_minimumQueryCount;
     bool m_minimumQueryCountHasBeenSet = false;
+
+    AttributeSuggestionsUpdateConfig m_attributeSuggestionsConfig;
+    bool m_attributeSuggestionsConfigHasBeenSet = false;
   };
 
 } // namespace Model

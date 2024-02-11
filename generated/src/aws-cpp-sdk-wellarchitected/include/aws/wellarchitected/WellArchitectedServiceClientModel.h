@@ -21,6 +21,10 @@
 #include <aws/wellarchitected/model/CreateLensShareResult.h>
 #include <aws/wellarchitected/model/CreateLensVersionResult.h>
 #include <aws/wellarchitected/model/CreateMilestoneResult.h>
+#include <aws/wellarchitected/model/CreateProfileResult.h>
+#include <aws/wellarchitected/model/CreateProfileShareResult.h>
+#include <aws/wellarchitected/model/CreateReviewTemplateResult.h>
+#include <aws/wellarchitected/model/CreateTemplateShareResult.h>
 #include <aws/wellarchitected/model/CreateWorkloadResult.h>
 #include <aws/wellarchitected/model/CreateWorkloadShareResult.h>
 #include <aws/wellarchitected/model/ExportLensResult.h>
@@ -31,6 +35,11 @@
 #include <aws/wellarchitected/model/GetLensReviewReportResult.h>
 #include <aws/wellarchitected/model/GetLensVersionDifferenceResult.h>
 #include <aws/wellarchitected/model/GetMilestoneResult.h>
+#include <aws/wellarchitected/model/GetProfileResult.h>
+#include <aws/wellarchitected/model/GetProfileTemplateResult.h>
+#include <aws/wellarchitected/model/GetReviewTemplateResult.h>
+#include <aws/wellarchitected/model/GetReviewTemplateAnswerResult.h>
+#include <aws/wellarchitected/model/GetReviewTemplateLensReviewResult.h>
 #include <aws/wellarchitected/model/GetWorkloadResult.h>
 #include <aws/wellarchitected/model/ImportLensResult.h>
 #include <aws/wellarchitected/model/ListAnswersResult.h>
@@ -42,14 +51,24 @@
 #include <aws/wellarchitected/model/ListLensesResult.h>
 #include <aws/wellarchitected/model/ListMilestonesResult.h>
 #include <aws/wellarchitected/model/ListNotificationsResult.h>
+#include <aws/wellarchitected/model/ListProfileNotificationsResult.h>
+#include <aws/wellarchitected/model/ListProfileSharesResult.h>
+#include <aws/wellarchitected/model/ListProfilesResult.h>
+#include <aws/wellarchitected/model/ListReviewTemplateAnswersResult.h>
+#include <aws/wellarchitected/model/ListReviewTemplatesResult.h>
 #include <aws/wellarchitected/model/ListShareInvitationsResult.h>
 #include <aws/wellarchitected/model/ListTagsForResourceResult.h>
+#include <aws/wellarchitected/model/ListTemplateSharesResult.h>
 #include <aws/wellarchitected/model/ListWorkloadSharesResult.h>
 #include <aws/wellarchitected/model/ListWorkloadsResult.h>
 #include <aws/wellarchitected/model/TagResourceResult.h>
 #include <aws/wellarchitected/model/UntagResourceResult.h>
 #include <aws/wellarchitected/model/UpdateAnswerResult.h>
 #include <aws/wellarchitected/model/UpdateLensReviewResult.h>
+#include <aws/wellarchitected/model/UpdateProfileResult.h>
+#include <aws/wellarchitected/model/UpdateReviewTemplateResult.h>
+#include <aws/wellarchitected/model/UpdateReviewTemplateAnswerResult.h>
+#include <aws/wellarchitected/model/UpdateReviewTemplateLensReviewResult.h>
 #include <aws/wellarchitected/model/UpdateShareInvitationResult.h>
 #include <aws/wellarchitected/model/UpdateWorkloadResult.h>
 #include <aws/wellarchitected/model/UpdateWorkloadShareResult.h>
@@ -95,16 +114,26 @@ namespace Aws
     {
       /* Service model forward declarations required in WellArchitectedClient header */
       class AssociateLensesRequest;
+      class AssociateProfilesRequest;
       class CreateLensShareRequest;
       class CreateLensVersionRequest;
       class CreateMilestoneRequest;
+      class CreateProfileRequest;
+      class CreateProfileShareRequest;
+      class CreateReviewTemplateRequest;
+      class CreateTemplateShareRequest;
       class CreateWorkloadRequest;
       class CreateWorkloadShareRequest;
       class DeleteLensRequest;
       class DeleteLensShareRequest;
+      class DeleteProfileRequest;
+      class DeleteProfileShareRequest;
+      class DeleteReviewTemplateRequest;
+      class DeleteTemplateShareRequest;
       class DeleteWorkloadRequest;
       class DeleteWorkloadShareRequest;
       class DisassociateLensesRequest;
+      class DisassociateProfilesRequest;
       class ExportLensRequest;
       class GetAnswerRequest;
       class GetConsolidatedReportRequest;
@@ -113,6 +142,11 @@ namespace Aws
       class GetLensReviewReportRequest;
       class GetLensVersionDifferenceRequest;
       class GetMilestoneRequest;
+      class GetProfileRequest;
+      class GetProfileTemplateRequest;
+      class GetReviewTemplateRequest;
+      class GetReviewTemplateAnswerRequest;
+      class GetReviewTemplateLensReviewRequest;
       class GetWorkloadRequest;
       class ImportLensRequest;
       class ListAnswersRequest;
@@ -124,8 +158,14 @@ namespace Aws
       class ListLensesRequest;
       class ListMilestonesRequest;
       class ListNotificationsRequest;
+      class ListProfileNotificationsRequest;
+      class ListProfileSharesRequest;
+      class ListProfilesRequest;
+      class ListReviewTemplateAnswersRequest;
+      class ListReviewTemplatesRequest;
       class ListShareInvitationsRequest;
       class ListTagsForResourceRequest;
+      class ListTemplateSharesRequest;
       class ListWorkloadSharesRequest;
       class ListWorkloadsRequest;
       class TagResourceRequest;
@@ -133,24 +173,40 @@ namespace Aws
       class UpdateAnswerRequest;
       class UpdateGlobalSettingsRequest;
       class UpdateLensReviewRequest;
+      class UpdateProfileRequest;
+      class UpdateReviewTemplateRequest;
+      class UpdateReviewTemplateAnswerRequest;
+      class UpdateReviewTemplateLensReviewRequest;
       class UpdateShareInvitationRequest;
       class UpdateWorkloadRequest;
       class UpdateWorkloadShareRequest;
       class UpgradeLensReviewRequest;
+      class UpgradeProfileVersionRequest;
+      class UpgradeReviewTemplateLensReviewRequest;
       /* End of service model forward declarations required in WellArchitectedClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> AssociateLensesOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> AssociateProfilesOutcome;
       typedef Aws::Utils::Outcome<CreateLensShareResult, WellArchitectedError> CreateLensShareOutcome;
       typedef Aws::Utils::Outcome<CreateLensVersionResult, WellArchitectedError> CreateLensVersionOutcome;
       typedef Aws::Utils::Outcome<CreateMilestoneResult, WellArchitectedError> CreateMilestoneOutcome;
+      typedef Aws::Utils::Outcome<CreateProfileResult, WellArchitectedError> CreateProfileOutcome;
+      typedef Aws::Utils::Outcome<CreateProfileShareResult, WellArchitectedError> CreateProfileShareOutcome;
+      typedef Aws::Utils::Outcome<CreateReviewTemplateResult, WellArchitectedError> CreateReviewTemplateOutcome;
+      typedef Aws::Utils::Outcome<CreateTemplateShareResult, WellArchitectedError> CreateTemplateShareOutcome;
       typedef Aws::Utils::Outcome<CreateWorkloadResult, WellArchitectedError> CreateWorkloadOutcome;
       typedef Aws::Utils::Outcome<CreateWorkloadShareResult, WellArchitectedError> CreateWorkloadShareOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteLensOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteLensShareOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteProfileOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteProfileShareOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteReviewTemplateOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteTemplateShareOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteWorkloadOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteWorkloadShareOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DisassociateLensesOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DisassociateProfilesOutcome;
       typedef Aws::Utils::Outcome<ExportLensResult, WellArchitectedError> ExportLensOutcome;
       typedef Aws::Utils::Outcome<GetAnswerResult, WellArchitectedError> GetAnswerOutcome;
       typedef Aws::Utils::Outcome<GetConsolidatedReportResult, WellArchitectedError> GetConsolidatedReportOutcome;
@@ -159,6 +215,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetLensReviewReportResult, WellArchitectedError> GetLensReviewReportOutcome;
       typedef Aws::Utils::Outcome<GetLensVersionDifferenceResult, WellArchitectedError> GetLensVersionDifferenceOutcome;
       typedef Aws::Utils::Outcome<GetMilestoneResult, WellArchitectedError> GetMilestoneOutcome;
+      typedef Aws::Utils::Outcome<GetProfileResult, WellArchitectedError> GetProfileOutcome;
+      typedef Aws::Utils::Outcome<GetProfileTemplateResult, WellArchitectedError> GetProfileTemplateOutcome;
+      typedef Aws::Utils::Outcome<GetReviewTemplateResult, WellArchitectedError> GetReviewTemplateOutcome;
+      typedef Aws::Utils::Outcome<GetReviewTemplateAnswerResult, WellArchitectedError> GetReviewTemplateAnswerOutcome;
+      typedef Aws::Utils::Outcome<GetReviewTemplateLensReviewResult, WellArchitectedError> GetReviewTemplateLensReviewOutcome;
       typedef Aws::Utils::Outcome<GetWorkloadResult, WellArchitectedError> GetWorkloadOutcome;
       typedef Aws::Utils::Outcome<ImportLensResult, WellArchitectedError> ImportLensOutcome;
       typedef Aws::Utils::Outcome<ListAnswersResult, WellArchitectedError> ListAnswersOutcome;
@@ -170,8 +231,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListLensesResult, WellArchitectedError> ListLensesOutcome;
       typedef Aws::Utils::Outcome<ListMilestonesResult, WellArchitectedError> ListMilestonesOutcome;
       typedef Aws::Utils::Outcome<ListNotificationsResult, WellArchitectedError> ListNotificationsOutcome;
+      typedef Aws::Utils::Outcome<ListProfileNotificationsResult, WellArchitectedError> ListProfileNotificationsOutcome;
+      typedef Aws::Utils::Outcome<ListProfileSharesResult, WellArchitectedError> ListProfileSharesOutcome;
+      typedef Aws::Utils::Outcome<ListProfilesResult, WellArchitectedError> ListProfilesOutcome;
+      typedef Aws::Utils::Outcome<ListReviewTemplateAnswersResult, WellArchitectedError> ListReviewTemplateAnswersOutcome;
+      typedef Aws::Utils::Outcome<ListReviewTemplatesResult, WellArchitectedError> ListReviewTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListShareInvitationsResult, WellArchitectedError> ListShareInvitationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, WellArchitectedError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ListTemplateSharesResult, WellArchitectedError> ListTemplateSharesOutcome;
       typedef Aws::Utils::Outcome<ListWorkloadSharesResult, WellArchitectedError> ListWorkloadSharesOutcome;
       typedef Aws::Utils::Outcome<ListWorkloadsResult, WellArchitectedError> ListWorkloadsOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, WellArchitectedError> TagResourceOutcome;
@@ -179,24 +246,40 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateAnswerResult, WellArchitectedError> UpdateAnswerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> UpdateGlobalSettingsOutcome;
       typedef Aws::Utils::Outcome<UpdateLensReviewResult, WellArchitectedError> UpdateLensReviewOutcome;
+      typedef Aws::Utils::Outcome<UpdateProfileResult, WellArchitectedError> UpdateProfileOutcome;
+      typedef Aws::Utils::Outcome<UpdateReviewTemplateResult, WellArchitectedError> UpdateReviewTemplateOutcome;
+      typedef Aws::Utils::Outcome<UpdateReviewTemplateAnswerResult, WellArchitectedError> UpdateReviewTemplateAnswerOutcome;
+      typedef Aws::Utils::Outcome<UpdateReviewTemplateLensReviewResult, WellArchitectedError> UpdateReviewTemplateLensReviewOutcome;
       typedef Aws::Utils::Outcome<UpdateShareInvitationResult, WellArchitectedError> UpdateShareInvitationOutcome;
       typedef Aws::Utils::Outcome<UpdateWorkloadResult, WellArchitectedError> UpdateWorkloadOutcome;
       typedef Aws::Utils::Outcome<UpdateWorkloadShareResult, WellArchitectedError> UpdateWorkloadShareOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> UpgradeLensReviewOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> UpgradeProfileVersionOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> UpgradeReviewTemplateLensReviewOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<AssociateLensesOutcome> AssociateLensesOutcomeCallable;
+      typedef std::future<AssociateProfilesOutcome> AssociateProfilesOutcomeCallable;
       typedef std::future<CreateLensShareOutcome> CreateLensShareOutcomeCallable;
       typedef std::future<CreateLensVersionOutcome> CreateLensVersionOutcomeCallable;
       typedef std::future<CreateMilestoneOutcome> CreateMilestoneOutcomeCallable;
+      typedef std::future<CreateProfileOutcome> CreateProfileOutcomeCallable;
+      typedef std::future<CreateProfileShareOutcome> CreateProfileShareOutcomeCallable;
+      typedef std::future<CreateReviewTemplateOutcome> CreateReviewTemplateOutcomeCallable;
+      typedef std::future<CreateTemplateShareOutcome> CreateTemplateShareOutcomeCallable;
       typedef std::future<CreateWorkloadOutcome> CreateWorkloadOutcomeCallable;
       typedef std::future<CreateWorkloadShareOutcome> CreateWorkloadShareOutcomeCallable;
       typedef std::future<DeleteLensOutcome> DeleteLensOutcomeCallable;
       typedef std::future<DeleteLensShareOutcome> DeleteLensShareOutcomeCallable;
+      typedef std::future<DeleteProfileOutcome> DeleteProfileOutcomeCallable;
+      typedef std::future<DeleteProfileShareOutcome> DeleteProfileShareOutcomeCallable;
+      typedef std::future<DeleteReviewTemplateOutcome> DeleteReviewTemplateOutcomeCallable;
+      typedef std::future<DeleteTemplateShareOutcome> DeleteTemplateShareOutcomeCallable;
       typedef std::future<DeleteWorkloadOutcome> DeleteWorkloadOutcomeCallable;
       typedef std::future<DeleteWorkloadShareOutcome> DeleteWorkloadShareOutcomeCallable;
       typedef std::future<DisassociateLensesOutcome> DisassociateLensesOutcomeCallable;
+      typedef std::future<DisassociateProfilesOutcome> DisassociateProfilesOutcomeCallable;
       typedef std::future<ExportLensOutcome> ExportLensOutcomeCallable;
       typedef std::future<GetAnswerOutcome> GetAnswerOutcomeCallable;
       typedef std::future<GetConsolidatedReportOutcome> GetConsolidatedReportOutcomeCallable;
@@ -205,6 +288,11 @@ namespace Aws
       typedef std::future<GetLensReviewReportOutcome> GetLensReviewReportOutcomeCallable;
       typedef std::future<GetLensVersionDifferenceOutcome> GetLensVersionDifferenceOutcomeCallable;
       typedef std::future<GetMilestoneOutcome> GetMilestoneOutcomeCallable;
+      typedef std::future<GetProfileOutcome> GetProfileOutcomeCallable;
+      typedef std::future<GetProfileTemplateOutcome> GetProfileTemplateOutcomeCallable;
+      typedef std::future<GetReviewTemplateOutcome> GetReviewTemplateOutcomeCallable;
+      typedef std::future<GetReviewTemplateAnswerOutcome> GetReviewTemplateAnswerOutcomeCallable;
+      typedef std::future<GetReviewTemplateLensReviewOutcome> GetReviewTemplateLensReviewOutcomeCallable;
       typedef std::future<GetWorkloadOutcome> GetWorkloadOutcomeCallable;
       typedef std::future<ImportLensOutcome> ImportLensOutcomeCallable;
       typedef std::future<ListAnswersOutcome> ListAnswersOutcomeCallable;
@@ -216,8 +304,14 @@ namespace Aws
       typedef std::future<ListLensesOutcome> ListLensesOutcomeCallable;
       typedef std::future<ListMilestonesOutcome> ListMilestonesOutcomeCallable;
       typedef std::future<ListNotificationsOutcome> ListNotificationsOutcomeCallable;
+      typedef std::future<ListProfileNotificationsOutcome> ListProfileNotificationsOutcomeCallable;
+      typedef std::future<ListProfileSharesOutcome> ListProfileSharesOutcomeCallable;
+      typedef std::future<ListProfilesOutcome> ListProfilesOutcomeCallable;
+      typedef std::future<ListReviewTemplateAnswersOutcome> ListReviewTemplateAnswersOutcomeCallable;
+      typedef std::future<ListReviewTemplatesOutcome> ListReviewTemplatesOutcomeCallable;
       typedef std::future<ListShareInvitationsOutcome> ListShareInvitationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ListTemplateSharesOutcome> ListTemplateSharesOutcomeCallable;
       typedef std::future<ListWorkloadSharesOutcome> ListWorkloadSharesOutcomeCallable;
       typedef std::future<ListWorkloadsOutcome> ListWorkloadsOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -225,10 +319,16 @@ namespace Aws
       typedef std::future<UpdateAnswerOutcome> UpdateAnswerOutcomeCallable;
       typedef std::future<UpdateGlobalSettingsOutcome> UpdateGlobalSettingsOutcomeCallable;
       typedef std::future<UpdateLensReviewOutcome> UpdateLensReviewOutcomeCallable;
+      typedef std::future<UpdateProfileOutcome> UpdateProfileOutcomeCallable;
+      typedef std::future<UpdateReviewTemplateOutcome> UpdateReviewTemplateOutcomeCallable;
+      typedef std::future<UpdateReviewTemplateAnswerOutcome> UpdateReviewTemplateAnswerOutcomeCallable;
+      typedef std::future<UpdateReviewTemplateLensReviewOutcome> UpdateReviewTemplateLensReviewOutcomeCallable;
       typedef std::future<UpdateShareInvitationOutcome> UpdateShareInvitationOutcomeCallable;
       typedef std::future<UpdateWorkloadOutcome> UpdateWorkloadOutcomeCallable;
       typedef std::future<UpdateWorkloadShareOutcome> UpdateWorkloadShareOutcomeCallable;
       typedef std::future<UpgradeLensReviewOutcome> UpgradeLensReviewOutcomeCallable;
+      typedef std::future<UpgradeProfileVersionOutcome> UpgradeProfileVersionOutcomeCallable;
+      typedef std::future<UpgradeReviewTemplateLensReviewOutcome> UpgradeReviewTemplateLensReviewOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -236,16 +336,26 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const WellArchitectedClient*, const Model::AssociateLensesRequest&, const Model::AssociateLensesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLensesResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::AssociateProfilesRequest&, const Model::AssociateProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateProfilesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::CreateLensShareRequest&, const Model::CreateLensShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLensShareResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::CreateLensVersionRequest&, const Model::CreateLensVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLensVersionResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::CreateMilestoneRequest&, const Model::CreateMilestoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMilestoneResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::CreateProfileRequest&, const Model::CreateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProfileResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::CreateProfileShareRequest&, const Model::CreateProfileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProfileShareResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::CreateReviewTemplateRequest&, const Model::CreateReviewTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReviewTemplateResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::CreateTemplateShareRequest&, const Model::CreateTemplateShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateShareResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::CreateWorkloadRequest&, const Model::CreateWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkloadResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::CreateWorkloadShareRequest&, const Model::CreateWorkloadShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkloadShareResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::DeleteLensRequest&, const Model::DeleteLensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLensResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::DeleteLensShareRequest&, const Model::DeleteLensShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLensShareResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::DeleteProfileRequest&, const Model::DeleteProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::DeleteProfileShareRequest&, const Model::DeleteProfileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileShareResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::DeleteReviewTemplateRequest&, const Model::DeleteReviewTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReviewTemplateResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::DeleteTemplateShareRequest&, const Model::DeleteTemplateShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTemplateShareResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::DeleteWorkloadRequest&, const Model::DeleteWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkloadResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::DeleteWorkloadShareRequest&, const Model::DeleteWorkloadShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkloadShareResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::DisassociateLensesRequest&, const Model::DisassociateLensesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLensesResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::DisassociateProfilesRequest&, const Model::DisassociateProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateProfilesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ExportLensRequest&, const Model::ExportLensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportLensResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetAnswerRequest&, const Model::GetAnswerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnswerResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetConsolidatedReportRequest&, const Model::GetConsolidatedReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsolidatedReportResponseReceivedHandler;
@@ -254,6 +364,11 @@ namespace Aws
     typedef std::function<void(const WellArchitectedClient*, const Model::GetLensReviewReportRequest&, const Model::GetLensReviewReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLensReviewReportResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetLensVersionDifferenceRequest&, const Model::GetLensVersionDifferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLensVersionDifferenceResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetMilestoneRequest&, const Model::GetMilestoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMilestoneResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::GetProfileRequest&, const Model::GetProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::GetProfileTemplateRequest&, const Model::GetProfileTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileTemplateResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::GetReviewTemplateRequest&, const Model::GetReviewTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReviewTemplateResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::GetReviewTemplateAnswerRequest&, const Model::GetReviewTemplateAnswerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReviewTemplateAnswerResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::GetReviewTemplateLensReviewRequest&, const Model::GetReviewTemplateLensReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReviewTemplateLensReviewResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetWorkloadRequest&, const Model::GetWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkloadResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ImportLensRequest&, const Model::ImportLensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportLensResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListAnswersRequest&, const Model::ListAnswersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnswersResponseReceivedHandler;
@@ -265,8 +380,14 @@ namespace Aws
     typedef std::function<void(const WellArchitectedClient*, const Model::ListLensesRequest&, const Model::ListLensesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLensesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListMilestonesRequest&, const Model::ListMilestonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMilestonesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListNotificationsRequest&, const Model::ListNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotificationsResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::ListProfileNotificationsRequest&, const Model::ListProfileNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileNotificationsResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::ListProfileSharesRequest&, const Model::ListProfileSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileSharesResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::ListProfilesRequest&, const Model::ListProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfilesResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::ListReviewTemplateAnswersRequest&, const Model::ListReviewTemplateAnswersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReviewTemplateAnswersResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::ListReviewTemplatesRequest&, const Model::ListReviewTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReviewTemplatesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListShareInvitationsRequest&, const Model::ListShareInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListShareInvitationsResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::ListTemplateSharesRequest&, const Model::ListTemplateSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTemplateSharesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListWorkloadSharesRequest&, const Model::ListWorkloadSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkloadSharesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListWorkloadsRequest&, const Model::ListWorkloadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkloadsResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -274,10 +395,16 @@ namespace Aws
     typedef std::function<void(const WellArchitectedClient*, const Model::UpdateAnswerRequest&, const Model::UpdateAnswerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnswerResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::UpdateGlobalSettingsRequest&, const Model::UpdateGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalSettingsResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::UpdateLensReviewRequest&, const Model::UpdateLensReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLensReviewResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::UpdateProfileRequest&, const Model::UpdateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProfileResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::UpdateReviewTemplateRequest&, const Model::UpdateReviewTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReviewTemplateResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::UpdateReviewTemplateAnswerRequest&, const Model::UpdateReviewTemplateAnswerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReviewTemplateAnswerResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::UpdateReviewTemplateLensReviewRequest&, const Model::UpdateReviewTemplateLensReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReviewTemplateLensReviewResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::UpdateShareInvitationRequest&, const Model::UpdateShareInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateShareInvitationResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::UpdateWorkloadRequest&, const Model::UpdateWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkloadResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::UpdateWorkloadShareRequest&, const Model::UpdateWorkloadShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkloadShareResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::UpgradeLensReviewRequest&, const Model::UpgradeLensReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpgradeLensReviewResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::UpgradeProfileVersionRequest&, const Model::UpgradeProfileVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpgradeProfileVersionResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::UpgradeReviewTemplateLensReviewRequest&, const Model::UpgradeReviewTemplateLensReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpgradeReviewTemplateLensReviewResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace WellArchitected
 } // namespace Aws

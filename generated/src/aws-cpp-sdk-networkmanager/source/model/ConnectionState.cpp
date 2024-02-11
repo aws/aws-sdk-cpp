@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionState::NOT_SET:
+            return {};
           case ConnectionState::PENDING:
             return "PENDING";
           case ConnectionState::AVAILABLE:

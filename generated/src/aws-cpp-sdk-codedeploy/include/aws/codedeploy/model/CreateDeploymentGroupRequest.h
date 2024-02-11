@@ -53,50 +53,50 @@ namespace Model
 
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline CreateDeploymentGroupRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline CreateDeploymentGroupRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline CreateDeploymentGroupRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -988,6 +988,83 @@ namespace Model
      */
     inline CreateDeploymentGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto
+     * Scaling. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating
+     * CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User
+     * Guide</i>.</p> <p>Set <code>terminationHookEnabled</code> to <code>true</code>
+     * to have CodeDeploy install a termination hook into your Auto Scaling group when
+     * you create a deployment group. When this hook is installed, CodeDeploy will
+     * perform termination deployments.</p> <p>For information about termination
+     * deployments, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling
+     * termination deployments during Auto Scaling scale-in events</a> in the
+     * <i>CodeDeploy User Guide</i>.</p> <p>For more information about Auto Scaling
+     * scale-in events, see the <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in">Scale
+     * in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     */
+    inline bool GetTerminationHookEnabled() const{ return m_terminationHookEnabled; }
+
+    /**
+     * <p>This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto
+     * Scaling. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating
+     * CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User
+     * Guide</i>.</p> <p>Set <code>terminationHookEnabled</code> to <code>true</code>
+     * to have CodeDeploy install a termination hook into your Auto Scaling group when
+     * you create a deployment group. When this hook is installed, CodeDeploy will
+     * perform termination deployments.</p> <p>For information about termination
+     * deployments, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling
+     * termination deployments during Auto Scaling scale-in events</a> in the
+     * <i>CodeDeploy User Guide</i>.</p> <p>For more information about Auto Scaling
+     * scale-in events, see the <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in">Scale
+     * in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     */
+    inline bool TerminationHookEnabledHasBeenSet() const { return m_terminationHookEnabledHasBeenSet; }
+
+    /**
+     * <p>This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto
+     * Scaling. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating
+     * CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User
+     * Guide</i>.</p> <p>Set <code>terminationHookEnabled</code> to <code>true</code>
+     * to have CodeDeploy install a termination hook into your Auto Scaling group when
+     * you create a deployment group. When this hook is installed, CodeDeploy will
+     * perform termination deployments.</p> <p>For information about termination
+     * deployments, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling
+     * termination deployments during Auto Scaling scale-in events</a> in the
+     * <i>CodeDeploy User Guide</i>.</p> <p>For more information about Auto Scaling
+     * scale-in events, see the <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in">Scale
+     * in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     */
+    inline void SetTerminationHookEnabled(bool value) { m_terminationHookEnabledHasBeenSet = true; m_terminationHookEnabled = value; }
+
+    /**
+     * <p>This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto
+     * Scaling. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating
+     * CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User
+     * Guide</i>.</p> <p>Set <code>terminationHookEnabled</code> to <code>true</code>
+     * to have CodeDeploy install a termination hook into your Auto Scaling group when
+     * you create a deployment group. When this hook is installed, CodeDeploy will
+     * perform termination deployments.</p> <p>For information about termination
+     * deployments, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling
+     * termination deployments during Auto Scaling scale-in events</a> in the
+     * <i>CodeDeploy User Guide</i>.</p> <p>For more information about Auto Scaling
+     * scale-in events, see the <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in">Scale
+     * in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     */
+    inline CreateDeploymentGroupRequest& WithTerminationHookEnabled(bool value) { SetTerminationHookEnabled(value); return *this;}
+
   private:
 
     Aws::String m_applicationName;
@@ -1043,6 +1120,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    bool m_terminationHookEnabled;
+    bool m_terminationHookEnabledHasBeenSet = false;
   };
 
 } // namespace Model

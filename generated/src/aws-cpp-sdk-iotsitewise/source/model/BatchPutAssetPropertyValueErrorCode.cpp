@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchPutAssetPropertyValueErrorCode::NOT_SET:
+            return {};
           case BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException:
             return "ResourceNotFoundException";
           case BatchPutAssetPropertyValueErrorCode::InvalidRequestException:

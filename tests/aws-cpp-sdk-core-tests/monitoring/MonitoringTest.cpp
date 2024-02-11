@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
 #include <aws/core/monitoring/CoreMetrics.h>
@@ -183,7 +183,7 @@ Aws::UniquePtr<MonitoringFactory> CreateMonitoringFactoryTwo()
     return Aws::MakeUnique<MockMonitoringFactoryTwo>(ALLOCATION_TAG);
 }
 
-class MonitoringTestSuite : public ::testing::Test
+class MonitoringTestSuite : public Aws::Testing::AwsCppSdkGTestSuite
 {
 protected:
     std::shared_ptr<MockHttpClient> mockHttpClient;

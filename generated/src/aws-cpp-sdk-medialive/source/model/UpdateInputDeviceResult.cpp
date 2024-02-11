@@ -21,7 +21,8 @@ UpdateInputDeviceResult::UpdateInputDeviceResult() :
     m_connectionState(InputDeviceConnectionState::NOT_SET),
     m_deviceSettingsSyncState(DeviceSettingsSyncState::NOT_SET),
     m_deviceUpdateStatus(DeviceUpdateStatus::NOT_SET),
-    m_type(InputDeviceType::NOT_SET)
+    m_type(InputDeviceType::NOT_SET),
+    m_outputType(InputDeviceOutputType::NOT_SET)
 {
 }
 
@@ -29,7 +30,8 @@ UpdateInputDeviceResult::UpdateInputDeviceResult(const Aws::AmazonWebServiceResu
     m_connectionState(InputDeviceConnectionState::NOT_SET),
     m_deviceSettingsSyncState(DeviceSettingsSyncState::NOT_SET),
     m_deviceUpdateStatus(DeviceUpdateStatus::NOT_SET),
-    m_type(InputDeviceType::NOT_SET)
+    m_type(InputDeviceType::NOT_SET),
+    m_outputType(InputDeviceOutputType::NOT_SET)
 {
   *this = result;
 }
@@ -116,6 +118,27 @@ UpdateInputDeviceResult& UpdateInputDeviceResult::operator =(const Aws::AmazonWe
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("availabilityZone"))
+  {
+    m_availabilityZone = jsonValue.GetString("availabilityZone");
+
+  }
+
+  if(jsonValue.ValueExists("medialiveInputArns"))
+  {
+    Aws::Utils::Array<JsonView> medialiveInputArnsJsonList = jsonValue.GetArray("medialiveInputArns");
+    for(unsigned medialiveInputArnsIndex = 0; medialiveInputArnsIndex < medialiveInputArnsJsonList.GetLength(); ++medialiveInputArnsIndex)
+    {
+      m_medialiveInputArns.push_back(medialiveInputArnsJsonList[medialiveInputArnsIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("outputType"))
+  {
+    m_outputType = InputDeviceOutputTypeMapper::GetInputDeviceOutputTypeForName(jsonValue.GetString("outputType"));
+
   }
 
 

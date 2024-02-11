@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetType::NOT_SET:
+            return {};
           case TargetType::RDS_INSTANCE:
             return "RDS_INSTANCE";
           case TargetType::RDS_SERVERLESS_ENDPOINT:

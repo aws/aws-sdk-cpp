@@ -119,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataReplicationErrorString::NOT_SET:
+            return {};
           case DataReplicationErrorString::AGENT_NOT_SEEN:
             return "AGENT_NOT_SEEN";
           case DataReplicationErrorString::SNAPSHOTS_FAILURE:

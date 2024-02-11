@@ -39,8 +39,8 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a
-     * VPC security group that's associated with the instance.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a VPC
+     * security group that's associated with the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
@@ -50,15 +50,14 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p>
      * </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a
-     * VPC security group that's associated with the instance.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a VPC
+     * security group that's associated with the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
@@ -68,15 +67,14 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p>
      * </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a
-     * VPC security group that's associated with the instance.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a VPC
+     * security group that's associated with the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
@@ -86,15 +84,14 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p>
      * </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a
-     * VPC security group that's associated with the instance.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a VPC
+     * security group that's associated with the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
@@ -104,15 +101,14 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p>
      * </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a
-     * VPC security group that's associated with the instance.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a VPC
+     * security group that's associated with the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
@@ -122,15 +118,14 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p>
      * </li> </ul>
      */
     inline DescribeClassicLinkInstancesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a
-     * VPC security group that's associated with the instance.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a VPC
+     * security group that's associated with the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
@@ -140,15 +135,14 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p>
      * </li> </ul>
      */
     inline DescribeClassicLinkInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a
-     * VPC security group that's associated with the instance.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a VPC
+     * security group that's associated with the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
@@ -158,15 +152,14 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p>
      * </li> </ul>
      */
     inline DescribeClassicLinkInstancesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a
-     * VPC security group that's associated with the instance.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a VPC
+     * security group that's associated with the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
@@ -176,8 +169,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p>
      * </li> </ul>
      */
     inline DescribeClassicLinkInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
@@ -217,56 +209,47 @@ namespace Model
 
 
     /**
-     * <p>One or more instance IDs. Must be instances linked to a VPC through
-     * ClassicLink.</p>
+     * <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>One or more instance IDs. Must be instances linked to a VPC through
-     * ClassicLink.</p>
+     * <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>One or more instance IDs. Must be instances linked to a VPC through
-     * ClassicLink.</p>
+     * <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>One or more instance IDs. Must be instances linked to a VPC through
-     * ClassicLink.</p>
+     * <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>One or more instance IDs. Must be instances linked to a VPC through
-     * ClassicLink.</p>
+     * <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
      */
     inline DescribeClassicLinkInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>One or more instance IDs. Must be instances linked to a VPC through
-     * ClassicLink.</p>
+     * <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
      */
     inline DescribeClassicLinkInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more instance IDs. Must be instances linked to a VPC through
-     * ClassicLink.</p>
+     * <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
      */
     inline DescribeClassicLinkInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more instance IDs. Must be instances linked to a VPC through
-     * ClassicLink.</p>
+     * <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
      */
     inline DescribeClassicLinkInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more instance IDs. Must be instances linked to a VPC through
-     * ClassicLink.</p>
+     * <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
      */
     inline DescribeClassicLinkInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 

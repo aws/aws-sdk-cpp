@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IdentityStore::NOT_SET:
+            return {};
           case IdentityStore::QUICKSIGHT:
             return "QUICKSIGHT";
           default:

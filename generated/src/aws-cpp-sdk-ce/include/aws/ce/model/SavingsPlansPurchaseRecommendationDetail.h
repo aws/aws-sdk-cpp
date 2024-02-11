@@ -803,6 +803,55 @@ namespace Model
      */
     inline SavingsPlansPurchaseRecommendationDetail& WithCurrentAverageHourlyOnDemandSpend(const char* value) { SetCurrentAverageHourlyOnDemandSpend(value); return *this;}
 
+
+    /**
+     * <p>Contains detailed information about a specific Savings Plan
+     * recommendation.</p>
+     */
+    inline const Aws::String& GetRecommendationDetailId() const{ return m_recommendationDetailId; }
+
+    /**
+     * <p>Contains detailed information about a specific Savings Plan
+     * recommendation.</p>
+     */
+    inline bool RecommendationDetailIdHasBeenSet() const { return m_recommendationDetailIdHasBeenSet; }
+
+    /**
+     * <p>Contains detailed information about a specific Savings Plan
+     * recommendation.</p>
+     */
+    inline void SetRecommendationDetailId(const Aws::String& value) { m_recommendationDetailIdHasBeenSet = true; m_recommendationDetailId = value; }
+
+    /**
+     * <p>Contains detailed information about a specific Savings Plan
+     * recommendation.</p>
+     */
+    inline void SetRecommendationDetailId(Aws::String&& value) { m_recommendationDetailIdHasBeenSet = true; m_recommendationDetailId = std::move(value); }
+
+    /**
+     * <p>Contains detailed information about a specific Savings Plan
+     * recommendation.</p>
+     */
+    inline void SetRecommendationDetailId(const char* value) { m_recommendationDetailIdHasBeenSet = true; m_recommendationDetailId.assign(value); }
+
+    /**
+     * <p>Contains detailed information about a specific Savings Plan
+     * recommendation.</p>
+     */
+    inline SavingsPlansPurchaseRecommendationDetail& WithRecommendationDetailId(const Aws::String& value) { SetRecommendationDetailId(value); return *this;}
+
+    /**
+     * <p>Contains detailed information about a specific Savings Plan
+     * recommendation.</p>
+     */
+    inline SavingsPlansPurchaseRecommendationDetail& WithRecommendationDetailId(Aws::String&& value) { SetRecommendationDetailId(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains detailed information about a specific Savings Plan
+     * recommendation.</p>
+     */
+    inline SavingsPlansPurchaseRecommendationDetail& WithRecommendationDetailId(const char* value) { SetRecommendationDetailId(value); return *this;}
+
   private:
 
     SavingsPlansDetails m_savingsPlansDetails;
@@ -852,6 +901,9 @@ namespace Model
 
     Aws::String m_currentAverageHourlyOnDemandSpend;
     bool m_currentAverageHourlyOnDemandSpendHasBeenSet = false;
+
+    Aws::String m_recommendationDetailId;
+    bool m_recommendationDetailIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,22 +12,13 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterAccountRequest::RegisterAccountRequest() : 
-    m_timestreamResourcesHasBeenSet(false)
+RegisterAccountRequest::RegisterAccountRequest()
 {
 }
 
 Aws::String RegisterAccountRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_timestreamResourcesHasBeenSet)
-  {
-   payload.WithObject("timestreamResources", m_timestreamResources.Jsonize());
-
-  }
-
-  return payload.View().WriteReadable();
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection RegisterAccountRequest::GetRequestSpecificHeaders() const

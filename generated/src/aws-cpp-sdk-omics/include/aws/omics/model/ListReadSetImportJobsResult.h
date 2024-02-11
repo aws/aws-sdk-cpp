@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/ImportReadSetJobItem.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     AWS_OMICS_API ListReadSetImportJobsResult();
     AWS_OMICS_API ListReadSetImportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API ListReadSetImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline const Aws::Vector<ImportReadSetJobItem>& GetImportJobs() const{ return m_importJobs; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline void SetImportJobs(const Aws::Vector<ImportReadSetJobItem>& value) { m_importJobs = value; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline void SetImportJobs(Aws::Vector<ImportReadSetJobItem>&& value) { m_importJobs = std::move(value); }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetImportJobsResult& WithImportJobs(const Aws::Vector<ImportReadSetJobItem>& value) { SetImportJobs(value); return *this;}
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetImportJobsResult& WithImportJobs(Aws::Vector<ImportReadSetJobItem>&& value) { SetImportJobs(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetImportJobsResult& AddImportJobs(const ImportReadSetJobItem& value) { m_importJobs.push_back(value); return *this; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetImportJobsResult& AddImportJobs(ImportReadSetJobItem&& value) { m_importJobs.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -106,6 +70,42 @@ namespace Model
     inline ListReadSetImportJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline const Aws::Vector<ImportReadSetJobItem>& GetImportJobs() const{ return m_importJobs; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline void SetImportJobs(const Aws::Vector<ImportReadSetJobItem>& value) { m_importJobs = value; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline void SetImportJobs(Aws::Vector<ImportReadSetJobItem>&& value) { m_importJobs = std::move(value); }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetImportJobsResult& WithImportJobs(const Aws::Vector<ImportReadSetJobItem>& value) { SetImportJobs(value); return *this;}
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetImportJobsResult& WithImportJobs(Aws::Vector<ImportReadSetJobItem>&& value) { SetImportJobs(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetImportJobsResult& AddImportJobs(const ImportReadSetJobItem& value) { m_importJobs.push_back(value); return *this; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetImportJobsResult& AddImportJobs(ImportReadSetJobItem&& value) { m_importJobs.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -129,9 +129,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<ImportReadSetJobItem> m_importJobs;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<ImportReadSetJobItem> m_importJobs;
 
     Aws::String m_requestId;
   };

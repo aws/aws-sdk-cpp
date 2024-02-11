@@ -21,9 +21,12 @@
         #else
             #define AWS_IOTANALYTICS_API __declspec(dllimport)
         #endif /* AWS_IOTANALYTICS_EXPORTS */
+        #define AWS_IOTANALYTICS_EXTERN
     #else
         #define AWS_IOTANALYTICS_API
+        #define AWS_IOTANALYTICS_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_IOTANALYTICS_API
+    #define AWS_IOTANALYTICS_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

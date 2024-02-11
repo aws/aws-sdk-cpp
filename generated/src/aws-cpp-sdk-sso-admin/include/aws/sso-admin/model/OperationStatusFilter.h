@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Filters he operation status list based on the passed attribute
+   * <p>Filters the operation status list based on the passed attribute
    * value.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/OperationStatusFilter">AWS
    * API Reference</a></p>

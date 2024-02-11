@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleTypeOption::NOT_SET:
+            return {};
           case RuleTypeOption::FORWARD:
             return "FORWARD";
           case RuleTypeOption::SYSTEM:

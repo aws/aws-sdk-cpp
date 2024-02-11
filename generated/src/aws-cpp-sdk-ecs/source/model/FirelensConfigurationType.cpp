@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FirelensConfigurationType::NOT_SET:
+            return {};
           case FirelensConfigurationType::fluentd:
             return "fluentd";
           case FirelensConfigurationType::fluentbit:

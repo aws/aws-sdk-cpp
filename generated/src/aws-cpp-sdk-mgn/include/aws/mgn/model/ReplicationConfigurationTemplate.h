@@ -601,6 +601,27 @@ namespace Model
     inline ReplicationConfigurationTemplate& WithUseDedicatedReplicationServer(bool value) { SetUseDedicatedReplicationServer(value); return *this;}
 
 
+    /**
+     * <p>Replication Configuration template use Fips Endpoint.</p>
+     */
+    inline bool GetUseFipsEndpoint() const{ return m_useFipsEndpoint; }
+
+    /**
+     * <p>Replication Configuration template use Fips Endpoint.</p>
+     */
+    inline bool UseFipsEndpointHasBeenSet() const { return m_useFipsEndpointHasBeenSet; }
+
+    /**
+     * <p>Replication Configuration template use Fips Endpoint.</p>
+     */
+    inline void SetUseFipsEndpoint(bool value) { m_useFipsEndpointHasBeenSet = true; m_useFipsEndpoint = value; }
+
+    /**
+     * <p>Replication Configuration template use Fips Endpoint.</p>
+     */
+    inline ReplicationConfigurationTemplate& WithUseFipsEndpoint(bool value) { SetUseFipsEndpoint(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -671,6 +692,9 @@ namespace Model
 
     bool m_useDedicatedReplicationServer;
     bool m_useDedicatedReplicationServerHasBeenSet = false;
+
+    bool m_useFipsEndpoint;
+    bool m_useFipsEndpointHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -39,23 +39,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == DRY_RUN_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubErrors::DRY_RUN_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubErrors::DRY_RUN_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNAUTHORIZED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubErrors::UNAUTHORIZED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubErrors::UNAUTHORIZED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubErrors::POLICY_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubErrors::POLICY_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_INPUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubErrors::INVALID_INPUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == HOME_REGION_NOT_SET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubErrors::HOME_REGION_NOT_SET), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubErrors::HOME_REGION_NOT_SET), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

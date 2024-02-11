@@ -38,6 +38,15 @@ DeleteFacesResult& DeleteFacesResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("UnsuccessfulFaceDeletions"))
+  {
+    Aws::Utils::Array<JsonView> unsuccessfulFaceDeletionsJsonList = jsonValue.GetArray("UnsuccessfulFaceDeletions");
+    for(unsigned unsuccessfulFaceDeletionsIndex = 0; unsuccessfulFaceDeletionsIndex < unsuccessfulFaceDeletionsJsonList.GetLength(); ++unsuccessfulFaceDeletionsIndex)
+    {
+      m_unsuccessfulFaceDeletions.push_back(unsuccessfulFaceDeletionsJsonList[unsuccessfulFaceDeletionsIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

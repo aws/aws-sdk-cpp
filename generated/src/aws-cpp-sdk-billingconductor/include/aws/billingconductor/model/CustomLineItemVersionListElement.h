@@ -475,6 +475,55 @@ namespace Model
      */
     inline CustomLineItemVersionListElement& WithStartTime(long long value) { SetStartTime(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Web Services account in which this custom line item will be
+     * applied to.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The Amazon Web Services account in which this custom line item will be
+     * applied to.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account in which this custom line item will be
+     * applied to.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The Amazon Web Services account in which this custom line item will be
+     * applied to.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account in which this custom line item will be
+     * applied to.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account in which this custom line item will be
+     * applied to.</p>
+     */
+    inline CustomLineItemVersionListElement& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account in which this custom line item will be
+     * applied to.</p>
+     */
+    inline CustomLineItemVersionListElement& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account in which this custom line item will be
+     * applied to.</p>
+     */
+    inline CustomLineItemVersionListElement& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -515,6 +564,9 @@ namespace Model
 
     long long m_startTime;
     bool m_startTimeHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

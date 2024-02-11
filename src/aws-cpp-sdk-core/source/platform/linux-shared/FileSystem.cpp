@@ -120,7 +120,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
 
             AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Calling stat on path " << entry.path);
 
-            struct stat dirInfo;
+            struct stat dirInfo = {};
             if(!lstat(entry.path.c_str(), &dirInfo))
             {
                if(S_ISDIR(dirInfo.st_mode))
@@ -139,7 +139,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                    entry.fileType = FileType::File;
                }
 
-               entry.fileSize = static_cast<int64_t>(dirInfo.st_size);
+               entry.fileSize = static_cast<unsigned long long>(dirInfo.st_size);
                AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "file size detected as " << entry.fileSize);
             }
             else
@@ -150,7 +150,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
             return entry;
         }
 
-        DIR* m_dir;
+        DIR* m_dir = nullptr;
     };
 
 Aws::String GetHomeDirectory()
@@ -253,7 +253,7 @@ Aws::String CreateTempFilePath()
     Aws::StringStream ss;
     auto dt = Aws::Utils::DateTime::Now();
 
-    ss << dt.ToGmtString("%Y%m%dT%H%M%S") << dt.Millis() << Aws::String(Aws::Utils::UUID::RandomUUID());
+    ss << dt.ToGmtString("%Y%m%dT%H%M%S") << dt.Millis() << Aws::String(Aws::Utils::UUID::PseudoRandomUUID());
     Aws::String tempFile(ss.str());
 
     AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "CreateTempFilePath generated: " << tempFile);

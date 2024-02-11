@@ -43,6 +43,55 @@ namespace Model
 
 
     /**
+     * <p>Pagination token to request the next page in a paginated list. This token is
+     * obtained from the output of the previous ListWorkspaces request.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Pagination token to request the next page in a paginated list. This token is
+     * obtained from the output of the previous ListWorkspaces request.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>Pagination token to request the next page in a paginated list. This token is
+     * obtained from the output of the previous ListWorkspaces request.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>Pagination token to request the next page in a paginated list. This token is
+     * obtained from the output of the previous ListWorkspaces request.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>Pagination token to request the next page in a paginated list. This token is
+     * obtained from the output of the previous ListWorkspaces request.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>Pagination token to request the next page in a paginated list. This token is
+     * obtained from the output of the previous ListWorkspaces request.</p>
+     */
+    inline ListWorkspacesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>Pagination token to request the next page in a paginated list. This token is
+     * obtained from the output of the previous ListWorkspaces request.</p>
+     */
+    inline ListWorkspacesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Pagination token to request the next page in a paginated list. This token is
+     * obtained from the output of the previous ListWorkspaces request.</p>
+     */
+    inline ListWorkspacesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
      * <p>Optional filter for workspace alias. Only the workspaces with aliases that
      * begin with this value will be returned.</p>
      */
@@ -111,65 +160,16 @@ namespace Model
      */
     inline ListWorkspacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
-
-    /**
-     * <p>Pagination token to request the next page in a paginated list. This token is
-     * obtained from the output of the previous ListWorkspaces request.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Pagination token to request the next page in a paginated list. This token is
-     * obtained from the output of the previous ListWorkspaces request.</p>
-     */
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Pagination token to request the next page in a paginated list. This token is
-     * obtained from the output of the previous ListWorkspaces request.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Pagination token to request the next page in a paginated list. This token is
-     * obtained from the output of the previous ListWorkspaces request.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Pagination token to request the next page in a paginated list. This token is
-     * obtained from the output of the previous ListWorkspaces request.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Pagination token to request the next page in a paginated list. This token is
-     * obtained from the output of the previous ListWorkspaces request.</p>
-     */
-    inline ListWorkspacesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Pagination token to request the next page in a paginated list. This token is
-     * obtained from the output of the previous ListWorkspaces request.</p>
-     */
-    inline ListWorkspacesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Pagination token to request the next page in a paginated list. This token is
-     * obtained from the output of the previous ListWorkspaces request.</p>
-     */
-    inline ListWorkspacesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
   private:
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_alias;
     bool m_aliasHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

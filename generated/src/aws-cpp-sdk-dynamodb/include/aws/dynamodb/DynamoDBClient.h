@@ -40,6 +40,9 @@ namespace DynamoDB
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef DynamoDBClientConfiguration ClientConfigurationType;
+      typedef DynamoDBEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -130,14 +133,15 @@ namespace DynamoDB
          * <p>A single operation can retrieve up to 16 MB of data, which can contain as
          * many as 100 items. <code>BatchGetItem</code> returns a partial result if the
          * response size limit is exceeded, the table's provisioned throughput is exceeded,
-         * or an internal processing failure occurs. If a partial result is returned, the
-         * operation returns a value for <code>UnprocessedKeys</code>. You can use this
-         * value to retry the operation starting with the next item to get.</p> 
-         * <p>If you request more than 100 items, <code>BatchGetItem</code> returns a
-         * <code>ValidationException</code> with the message "Too many items requested for
-         * the BatchGetItem call."</p>  <p>For example, if you ask to retrieve
-         * 100 items, but each individual item is 300 KB in size, the system returns 52
-         * items (so as not to exceed the 16 MB limit). It also returns an appropriate
+         * more than 1MB per partition is requested, or an internal processing failure
+         * occurs. If a partial result is returned, the operation returns a value for
+         * <code>UnprocessedKeys</code>. You can use this value to retry the operation
+         * starting with the next item to get.</p>  <p>If you request more than
+         * 100 items, <code>BatchGetItem</code> returns a <code>ValidationException</code>
+         * with the message "Too many items requested for the BatchGetItem call."</p>
+         *  <p>For example, if you ask to retrieve 100 items, but each
+         * individual item is 300 KB in size, the system returns 52 items (so as not to
+         * exceed the 16 MB limit). It also returns an appropriate
          * <code>UnprocessedKeys</code> value so you can get the next page of results. If
          * desired, your application can include its own logic to assemble the pages of
          * results into one dataset.</p> <p>If <i>none</i> of the items can be processed
@@ -617,9 +621,8 @@ namespace DynamoDB
         }
 
         /**
-         * <p>Returns the regional endpoint information. This action must be included in
-         * your VPC endpoint policies, or access to the DescribeEndpoints API will be
-         * denied. For more information on policy permissions, please see <a
+         * <p>Returns the regional endpoint information. For more information on policy
+         * permissions, please see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/inter-network-traffic-privacy.html#inter-network-traffic-DescribeEndpoints">Internetwork
          * traffic privacy</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">AWS
@@ -1160,14 +1163,18 @@ namespace DynamoDB
         }
 
         /**
-         * <p>List backups associated with an Amazon Web Services account. To list backups
-         * for a given table, specify <code>TableName</code>. <code>ListBackups</code>
-         * returns a paginated list of results with at most 1 MB worth of items in a page.
-         * You can also specify a maximum number of entries to be returned in a page.</p>
-         * <p>In the request, start time is inclusive, but end time is exclusive. Note that
-         * these boundaries are for the time at which the original backup was
-         * requested.</p> <p>You can call <code>ListBackups</code> a maximum of five times
-         * per second.</p><p><h3>See Also:</h3>   <a
+         * <p>List DynamoDB backups that are associated with an Amazon Web Services account
+         * and weren't made with Amazon Web Services Backup. To list these backups for a
+         * given table, specify <code>TableName</code>. <code>ListBackups</code> returns a
+         * paginated list of results with at most 1 MB worth of items in a page. You can
+         * also specify a maximum number of entries to be returned in a page.</p> <p>In the
+         * request, start time is inclusive, but end time is exclusive. Note that these
+         * boundaries are for the time at which the original backup was requested.</p>
+         * <p>You can call <code>ListBackups</code> a maximum of five times per second.</p>
+         * <p>If you want to retrieve the complete list of backups made with Amazon Web
+         * Services Backup, use the <a
+         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupJobs.html">Amazon
+         * Web Services Backup list API.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
          * API Reference</a></p>
          */
@@ -1555,29 +1562,43 @@ namespace DynamoDB
          * <p>The <code>Scan</code> operation returns one or more items and item attributes
          * by accessing every item in a table or a secondary index. To have DynamoDB return
          * fewer items, you can provide a <code>FilterExpression</code> operation.</p>
-         * <p>If the total number of scanned items exceeds the maximum dataset size limit
-         * of 1 MB, the scan stops and results are returned to the user as a
-         * <code>LastEvaluatedKey</code> value to continue the scan in a subsequent
-         * operation. The results also include the number of items exceeding the limit. A
-         * scan can result in no table data meeting the filter criteria. </p> <p>A single
-         * <code>Scan</code> operation reads up to the maximum number of items set (if
-         * using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
-         * apply any filtering to the results using <code>FilterExpression</code>. If
-         * <code>LastEvaluatedKey</code> is present in the response, you need to paginate
-         * the result set. For more information, see <a
+         * <p>If the total size of scanned items exceeds the maximum dataset size limit of
+         * 1 MB, the scan completes and results are returned to the user. The
+         * <code>LastEvaluatedKey</code> value is also returned and the requestor can use
+         * the <code>LastEvaluatedKey</code> to continue the scan in a subsequent
+         * operation. Each scan response also includes number of items that were scanned
+         * (ScannedCount) as part of the request. If using a <code>FilterExpression</code>,
+         * a scan result can result in no items meeting the criteria and the
+         * <code>Count</code> will result in zero. If you did not use a
+         * <code>FilterExpression</code> in the scan request, then <code>Count</code> is
+         * the same as <code>ScannedCount</code>.</p>  <p> <code>Count</code> and
+         * <code>ScannedCount</code> only return the count of items specific to a single
+         * scan request and, unless the table is less than 1MB, do not represent the total
+         * number of items in the table. </p>  <p>A single <code>Scan</code>
+         * operation first reads up to the maximum number of items set (if using the
+         * <code>Limit</code> parameter) or a maximum of 1 MB of data and then applies any
+         * filtering to the results if a <code>FilterExpression</code> is provided. If
+         * <code>LastEvaluatedKey</code> is present in the response, pagination is required
+         * to complete the full table scan. For more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
-         * the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p> <p>
+         * the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>
          * <code>Scan</code> operations proceed sequentially; however, for faster
          * performance on a large table or secondary index, applications can request a
          * parallel <code>Scan</code> operation by providing the <code>Segment</code> and
          * <code>TotalSegments</code> parameters. For more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
-         * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>
-         * <code>Scan</code> uses eventually consistent reads when accessing the data in a
-         * table; therefore, the result set might not include the changes to data in the
-         * table immediately before the operation began. If you need a consistent copy of
-         * the data, as of the time that the <code>Scan</code> begins, you can set the
-         * <code>ConsistentRead</code> parameter to <code>true</code>.</p><p><h3>See
+         * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>By default, a
+         * <code>Scan</code> uses eventually consistent reads when accessing the items in a
+         * table. Therefore, the results from an eventually consistent <code>Scan</code>
+         * may not include the latest item changes at the time the scan iterates through
+         * each item in the table. If you require a strongly consistent read of each item
+         * as the scan iterates through the items in the table, you can set the
+         * <code>ConsistentRead</code> parameter to true. Strong consistency only relates
+         * to the consistency of the read at the item level.</p>  <p> DynamoDB does
+         * not provide snapshot isolation for a scan operation when the
+         * <code>ConsistentRead</code> parameter is set to true. Thus, a DynamoDB scan
+         * operation does not guarantee that all reads in a scan see a consistent snapshot
+         * of the table when the scan operation was requested. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">AWS API
          * Reference</a></p>

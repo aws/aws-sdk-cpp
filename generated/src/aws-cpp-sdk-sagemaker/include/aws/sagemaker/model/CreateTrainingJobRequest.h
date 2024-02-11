@@ -20,6 +20,8 @@
 #include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
+#include <aws/sagemaker/model/RemoteDebugConfig.h>
+#include <aws/sagemaker/model/InfraCheckConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/DebugRuleConfiguration.h>
@@ -480,7 +482,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline const Aws::Vector<Channel>& GetInputDataConfig() const{ return m_inputDataConfig; }
 
@@ -496,7 +499,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
@@ -512,7 +516,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline void SetInputDataConfig(const Aws::Vector<Channel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
@@ -528,7 +533,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline void SetInputDataConfig(Aws::Vector<Channel>&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
 
@@ -544,7 +550,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline CreateTrainingJobRequest& WithInputDataConfig(const Aws::Vector<Channel>& value) { SetInputDataConfig(value); return *this;}
 
@@ -560,7 +567,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline CreateTrainingJobRequest& WithInputDataConfig(Aws::Vector<Channel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
@@ -576,7 +584,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline CreateTrainingJobRequest& AddInputDataConfig(const Channel& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(value); return *this; }
 
@@ -592,7 +601,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline CreateTrainingJobRequest& AddInputDataConfig(Channel&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(std::move(value)); return *this; }
 
@@ -702,54 +712,66 @@ namespace Model
 
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your training
-     * job to connect to. Control access to and from your training container by
-     * configuring the VPC. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your training job to connect to.
+     * Control access to and from your training container by configuring the VPC. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your training
-     * job to connect to. Control access to and from your training container by
-     * configuring the VPC. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your training job to connect to.
+     * Control access to and from your training container by configuring the VPC. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your training
-     * job to connect to. Control access to and from your training container by
-     * configuring the VPC. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your training job to connect to.
+     * Control access to and from your training container by configuring the VPC. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your training
-     * job to connect to. Control access to and from your training container by
-     * configuring the VPC. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your training job to connect to.
+     * Control access to and from your training container by configuring the VPC. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your training
-     * job to connect to. Control access to and from your training container by
-     * configuring the VPC. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your training job to connect to.
+     * Control access to and from your training container by configuring the VPC. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline CreateTrainingJobRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your training
-     * job to connect to. Control access to and from your training container by
-     * configuring the VPC. For more information, see <a
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your training job to connect to.
+     * Control access to and from your training container by configuring the VPC. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
@@ -1352,6 +1374,98 @@ namespace Model
      */
     inline CreateTrainingJobRequest& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline const RemoteDebugConfig& GetRemoteDebugConfig() const{ return m_remoteDebugConfig; }
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline bool RemoteDebugConfigHasBeenSet() const { return m_remoteDebugConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline void SetRemoteDebugConfig(const RemoteDebugConfig& value) { m_remoteDebugConfigHasBeenSet = true; m_remoteDebugConfig = value; }
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline void SetRemoteDebugConfig(RemoteDebugConfig&& value) { m_remoteDebugConfigHasBeenSet = true; m_remoteDebugConfig = std::move(value); }
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline CreateTrainingJobRequest& WithRemoteDebugConfig(const RemoteDebugConfig& value) { SetRemoteDebugConfig(value); return *this;}
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline CreateTrainingJobRequest& WithRemoteDebugConfig(RemoteDebugConfig&& value) { SetRemoteDebugConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline const InfraCheckConfig& GetInfraCheckConfig() const{ return m_infraCheckConfig; }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline bool InfraCheckConfigHasBeenSet() const { return m_infraCheckConfigHasBeenSet; }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline void SetInfraCheckConfig(const InfraCheckConfig& value) { m_infraCheckConfigHasBeenSet = true; m_infraCheckConfig = value; }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline void SetInfraCheckConfig(InfraCheckConfig&& value) { m_infraCheckConfigHasBeenSet = true; m_infraCheckConfig = std::move(value); }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline CreateTrainingJobRequest& WithInfraCheckConfig(const InfraCheckConfig& value) { SetInfraCheckConfig(value); return *this;}
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline CreateTrainingJobRequest& WithInfraCheckConfig(InfraCheckConfig&& value) { SetInfraCheckConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1419,6 +1533,12 @@ namespace Model
 
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet = false;
+
+    RemoteDebugConfig m_remoteDebugConfig;
+    bool m_remoteDebugConfigHasBeenSet = false;
+
+    InfraCheckConfig m_infraCheckConfig;
+    bool m_infraCheckConfigHasBeenSet = false;
   };
 
 } // namespace Model

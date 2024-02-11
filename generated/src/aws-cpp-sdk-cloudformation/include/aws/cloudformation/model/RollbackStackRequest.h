@@ -166,6 +166,35 @@ namespace Model
      */
     inline RollbackStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetRetainExceptOnCreate() const{ return m_retainExceptOnCreate; }
+
+    /**
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool RetainExceptOnCreateHasBeenSet() const { return m_retainExceptOnCreateHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetRetainExceptOnCreate(bool value) { m_retainExceptOnCreateHasBeenSet = true; m_retainExceptOnCreate = value; }
+
+    /**
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline RollbackStackRequest& WithRetainExceptOnCreate(bool value) { SetRetainExceptOnCreate(value); return *this;}
+
   private:
 
     Aws::String m_stackName;
@@ -176,6 +205,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
+
+    bool m_retainExceptOnCreate;
+    bool m_retainExceptOnCreateHasBeenSet = false;
   };
 
 } // namespace Model

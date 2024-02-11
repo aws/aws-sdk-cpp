@@ -49,11 +49,12 @@ namespace Model
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul> <p>*The Equals operator for Title matches the first 100
-     * characters. If you specify more than 100 characters, they system returns an
-     * error that the filter value exceeds the length limit.</p> <p>**If you filter the
-     * response by using the OperationalData operator, specify a key-value pair by
-     * using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+     * Equals</p> </li> <li> <p>Key: AccountId</p> <p>Operations: Equals</p> </li>
+     * </ul> <p>*The Equals operator for Title matches the first 100 characters. If you
+     * specify more than 100 characters, they system returns an error that the filter
+     * value exceeds the length limit.</p> <p>**If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline const Aws::Vector<OpsItemFilter>& GetOpsItemFilters() const{ return m_opsItemFilters; }
 
@@ -70,11 +71,12 @@ namespace Model
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul> <p>*The Equals operator for Title matches the first 100
-     * characters. If you specify more than 100 characters, they system returns an
-     * error that the filter value exceeds the length limit.</p> <p>**If you filter the
-     * response by using the OperationalData operator, specify a key-value pair by
-     * using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+     * Equals</p> </li> <li> <p>Key: AccountId</p> <p>Operations: Equals</p> </li>
+     * </ul> <p>*The Equals operator for Title matches the first 100 characters. If you
+     * specify more than 100 characters, they system returns an error that the filter
+     * value exceeds the length limit.</p> <p>**If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline bool OpsItemFiltersHasBeenSet() const { return m_opsItemFiltersHasBeenSet; }
 
@@ -91,11 +93,12 @@ namespace Model
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul> <p>*The Equals operator for Title matches the first 100
-     * characters. If you specify more than 100 characters, they system returns an
-     * error that the filter value exceeds the length limit.</p> <p>**If you filter the
-     * response by using the OperationalData operator, specify a key-value pair by
-     * using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+     * Equals</p> </li> <li> <p>Key: AccountId</p> <p>Operations: Equals</p> </li>
+     * </ul> <p>*The Equals operator for Title matches the first 100 characters. If you
+     * specify more than 100 characters, they system returns an error that the filter
+     * value exceeds the length limit.</p> <p>**If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline void SetOpsItemFilters(const Aws::Vector<OpsItemFilter>& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters = value; }
 
@@ -112,11 +115,12 @@ namespace Model
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul> <p>*The Equals operator for Title matches the first 100
-     * characters. If you specify more than 100 characters, they system returns an
-     * error that the filter value exceeds the length limit.</p> <p>**If you filter the
-     * response by using the OperationalData operator, specify a key-value pair by
-     * using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+     * Equals</p> </li> <li> <p>Key: AccountId</p> <p>Operations: Equals</p> </li>
+     * </ul> <p>*The Equals operator for Title matches the first 100 characters. If you
+     * specify more than 100 characters, they system returns an error that the filter
+     * value exceeds the length limit.</p> <p>**If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline void SetOpsItemFilters(Aws::Vector<OpsItemFilter>&& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters = std::move(value); }
 
@@ -133,11 +137,12 @@ namespace Model
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul> <p>*The Equals operator for Title matches the first 100
-     * characters. If you specify more than 100 characters, they system returns an
-     * error that the filter value exceeds the length limit.</p> <p>**If you filter the
-     * response by using the OperationalData operator, specify a key-value pair by
-     * using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+     * Equals</p> </li> <li> <p>Key: AccountId</p> <p>Operations: Equals</p> </li>
+     * </ul> <p>*The Equals operator for Title matches the first 100 characters. If you
+     * specify more than 100 characters, they system returns an error that the filter
+     * value exceeds the length limit.</p> <p>**If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline DescribeOpsItemsRequest& WithOpsItemFilters(const Aws::Vector<OpsItemFilter>& value) { SetOpsItemFilters(value); return *this;}
 
@@ -154,11 +159,12 @@ namespace Model
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul> <p>*The Equals operator for Title matches the first 100
-     * characters. If you specify more than 100 characters, they system returns an
-     * error that the filter value exceeds the length limit.</p> <p>**If you filter the
-     * response by using the OperationalData operator, specify a key-value pair by
-     * using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+     * Equals</p> </li> <li> <p>Key: AccountId</p> <p>Operations: Equals</p> </li>
+     * </ul> <p>*The Equals operator for Title matches the first 100 characters. If you
+     * specify more than 100 characters, they system returns an error that the filter
+     * value exceeds the length limit.</p> <p>**If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline DescribeOpsItemsRequest& WithOpsItemFilters(Aws::Vector<OpsItemFilter>&& value) { SetOpsItemFilters(std::move(value)); return *this;}
 
@@ -175,11 +181,12 @@ namespace Model
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul> <p>*The Equals operator for Title matches the first 100
-     * characters. If you specify more than 100 characters, they system returns an
-     * error that the filter value exceeds the length limit.</p> <p>**If you filter the
-     * response by using the OperationalData operator, specify a key-value pair by
-     * using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+     * Equals</p> </li> <li> <p>Key: AccountId</p> <p>Operations: Equals</p> </li>
+     * </ul> <p>*The Equals operator for Title matches the first 100 characters. If you
+     * specify more than 100 characters, they system returns an error that the filter
+     * value exceeds the length limit.</p> <p>**If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline DescribeOpsItemsRequest& AddOpsItemFilters(const OpsItemFilter& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters.push_back(value); return *this; }
 
@@ -196,11 +203,12 @@ namespace Model
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul> <p>*The Equals operator for Title matches the first 100
-     * characters. If you specify more than 100 characters, they system returns an
-     * error that the filter value exceeds the length limit.</p> <p>**If you filter the
-     * response by using the OperationalData operator, specify a key-value pair by
-     * using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+     * Equals</p> </li> <li> <p>Key: AccountId</p> <p>Operations: Equals</p> </li>
+     * </ul> <p>*The Equals operator for Title matches the first 100 characters. If you
+     * specify more than 100 characters, they system returns an error that the filter
+     * value exceeds the length limit.</p> <p>**If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline DescribeOpsItemsRequest& AddOpsItemFilters(OpsItemFilter&& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters.push_back(std::move(value)); return *this; }
 

@@ -15,6 +15,8 @@
 #include <aws/wafv2/model/JsonBody.h>
 #include <aws/wafv2/model/Headers.h>
 #include <aws/wafv2/model/Cookies.h>
+#include <aws/wafv2/model/HeaderOrder.h>
+#include <aws/wafv2/model/JA3Fingerprint.h>
 #include <utility>
 
 namespace Aws
@@ -270,11 +272,11 @@ namespace Model
      * data that you want to send to your web server as the HTTP request body, such as
      * data from a form. </p> <p>A limited amount of the request body is forwarded to
      * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
-     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
-     * fees. </p> <p>For information about how to handle oversized request bodies, see
-     * the <code>Body</code> object configuration. </p>
+     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
+     * <code>Body</code> object configuration. </p>
      */
     inline const Body& GetBody() const{ return m_body; }
 
@@ -284,11 +286,11 @@ namespace Model
      * data that you want to send to your web server as the HTTP request body, such as
      * data from a form. </p> <p>A limited amount of the request body is forwarded to
      * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
-     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
-     * fees. </p> <p>For information about how to handle oversized request bodies, see
-     * the <code>Body</code> object configuration. </p>
+     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
+     * <code>Body</code> object configuration. </p>
      */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
@@ -298,11 +300,11 @@ namespace Model
      * data that you want to send to your web server as the HTTP request body, such as
      * data from a form. </p> <p>A limited amount of the request body is forwarded to
      * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
-     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
-     * fees. </p> <p>For information about how to handle oversized request bodies, see
-     * the <code>Body</code> object configuration. </p>
+     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
+     * <code>Body</code> object configuration. </p>
      */
     inline void SetBody(const Body& value) { m_bodyHasBeenSet = true; m_body = value; }
 
@@ -312,11 +314,11 @@ namespace Model
      * data that you want to send to your web server as the HTTP request body, such as
      * data from a form. </p> <p>A limited amount of the request body is forwarded to
      * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
-     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
-     * fees. </p> <p>For information about how to handle oversized request bodies, see
-     * the <code>Body</code> object configuration. </p>
+     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
+     * <code>Body</code> object configuration. </p>
      */
     inline void SetBody(Body&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
@@ -326,11 +328,11 @@ namespace Model
      * data that you want to send to your web server as the HTTP request body, such as
      * data from a form. </p> <p>A limited amount of the request body is forwarded to
      * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
-     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
-     * fees. </p> <p>For information about how to handle oversized request bodies, see
-     * the <code>Body</code> object configuration. </p>
+     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
+     * <code>Body</code> object configuration. </p>
      */
     inline FieldToMatch& WithBody(const Body& value) { SetBody(value); return *this;}
 
@@ -340,11 +342,11 @@ namespace Model
      * data that you want to send to your web server as the HTTP request body, such as
      * data from a form. </p> <p>A limited amount of the request body is forwarded to
      * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
-     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
-     * fees. </p> <p>For information about how to handle oversized request bodies, see
-     * the <code>Body</code> object configuration. </p>
+     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
+     * <code>Body</code> object configuration. </p>
      */
     inline FieldToMatch& WithBody(Body&& value) { SetBody(std::move(value)); return *this;}
 
@@ -392,10 +394,10 @@ namespace Model
      * that you want to send to your web server as the HTTP request body, such as data
      * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
      * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
-     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
-     * </p> <p>For information about how to handle oversized request bodies, see the
+     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
     inline const JsonBody& GetJsonBody() const{ return m_jsonBody; }
@@ -406,10 +408,10 @@ namespace Model
      * that you want to send to your web server as the HTTP request body, such as data
      * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
      * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
-     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
-     * </p> <p>For information about how to handle oversized request bodies, see the
+     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
     inline bool JsonBodyHasBeenSet() const { return m_jsonBodyHasBeenSet; }
@@ -420,10 +422,10 @@ namespace Model
      * that you want to send to your web server as the HTTP request body, such as data
      * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
      * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
-     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
-     * </p> <p>For information about how to handle oversized request bodies, see the
+     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
     inline void SetJsonBody(const JsonBody& value) { m_jsonBodyHasBeenSet = true; m_jsonBody = value; }
@@ -434,10 +436,10 @@ namespace Model
      * that you want to send to your web server as the HTTP request body, such as data
      * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
      * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
-     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
-     * </p> <p>For information about how to handle oversized request bodies, see the
+     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
     inline void SetJsonBody(JsonBody&& value) { m_jsonBodyHasBeenSet = true; m_jsonBody = std::move(value); }
@@ -448,10 +450,10 @@ namespace Model
      * that you want to send to your web server as the HTTP request body, such as data
      * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
      * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
-     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
-     * </p> <p>For information about how to handle oversized request bodies, see the
+     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
     inline FieldToMatch& WithJsonBody(const JsonBody& value) { SetJsonBody(value); return *this;}
@@ -462,10 +464,10 @@ namespace Model
      * that you want to send to your web server as the HTTP request body, such as data
      * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
      * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
-     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
-     * </p> <p>For information about how to handle oversized request bodies, see the
+     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
+     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
     inline FieldToMatch& WithJsonBody(JsonBody&& value) { SetJsonBody(std::move(value)); return *this;}
@@ -616,6 +618,182 @@ namespace Model
      */
     inline FieldToMatch& WithCookies(Cookies&& value) { SetCookies(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using colons and no
+     * added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.</p>
+     */
+    inline const HeaderOrder& GetHeaderOrder() const{ return m_headerOrder; }
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using colons and no
+     * added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.</p>
+     */
+    inline bool HeaderOrderHasBeenSet() const { return m_headerOrderHasBeenSet; }
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using colons and no
+     * added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.</p>
+     */
+    inline void SetHeaderOrder(const HeaderOrder& value) { m_headerOrderHasBeenSet = true; m_headerOrder = value; }
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using colons and no
+     * added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.</p>
+     */
+    inline void SetHeaderOrder(HeaderOrder&& value) { m_headerOrderHasBeenSet = true; m_headerOrder = std::move(value); }
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using colons and no
+     * added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.</p>
+     */
+    inline FieldToMatch& WithHeaderOrder(const HeaderOrder& value) { SetHeaderOrder(value); return *this;}
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using colons and no
+     * added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.</p>
+     */
+    inline FieldToMatch& WithHeaderOrder(HeaderOrder&& value) { SetHeaderOrder(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline const JA3Fingerprint& GetJA3Fingerprint() const{ return m_jA3Fingerprint; }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline bool JA3FingerprintHasBeenSet() const { return m_jA3FingerprintHasBeenSet; }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline void SetJA3Fingerprint(const JA3Fingerprint& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = value; }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline void SetJA3Fingerprint(JA3Fingerprint&& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = std::move(value); }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline FieldToMatch& WithJA3Fingerprint(const JA3Fingerprint& value) { SetJA3Fingerprint(value); return *this;}
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline FieldToMatch& WithJA3Fingerprint(JA3Fingerprint&& value) { SetJA3Fingerprint(std::move(value)); return *this;}
+
   private:
 
     SingleHeader m_singleHeader;
@@ -647,6 +825,12 @@ namespace Model
 
     Cookies m_cookies;
     bool m_cookiesHasBeenSet = false;
+
+    HeaderOrder m_headerOrder;
+    bool m_headerOrderHasBeenSet = false;
+
+    JA3Fingerprint m_jA3Fingerprint;
+    bool m_jA3FingerprintHasBeenSet = false;
   };
 
 } // namespace Model

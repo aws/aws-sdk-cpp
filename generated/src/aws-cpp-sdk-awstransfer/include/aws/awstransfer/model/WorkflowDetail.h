@@ -28,8 +28,8 @@ namespace Model
    * that's used for executing the workflow.</p> <p>In addition to a workflow to
    * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
    * also contain a workflow ID (and execution role) for a workflow to execute on
-   * partial upload. A partial upload occurs when a file is open when the session
-   * disconnects.</p><p><h3>See Also:</h3>   <a
+   * partial upload. A partial upload occurs when the server session disconnects
+   * while the file is still being uploaded.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/WorkflowDetail">AWS
    * API Reference</a></p>
    */

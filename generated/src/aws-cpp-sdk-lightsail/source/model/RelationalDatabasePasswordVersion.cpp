@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelationalDatabasePasswordVersion::NOT_SET:
+            return {};
           case RelationalDatabasePasswordVersion::CURRENT:
             return "CURRENT";
           case RelationalDatabasePasswordVersion::PREVIOUS:

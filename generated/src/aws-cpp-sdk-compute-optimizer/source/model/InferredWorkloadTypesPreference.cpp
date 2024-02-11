@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InferredWorkloadTypesPreference::NOT_SET:
+            return {};
           case InferredWorkloadTypesPreference::Active:
             return "Active";
           case InferredWorkloadTypesPreference::Inactive:

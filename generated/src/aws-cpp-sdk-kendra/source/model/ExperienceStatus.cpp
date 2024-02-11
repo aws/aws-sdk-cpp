@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExperienceStatus::NOT_SET:
+            return {};
           case ExperienceStatus::CREATING:
             return "CREATING";
           case ExperienceStatus::ACTIVE:

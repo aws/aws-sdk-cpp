@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SchemaDiffType::NOT_SET:
+            return {};
           case SchemaDiffType::SYNTAX_DIFF:
             return "SYNTAX_DIFF";
           default:

@@ -16,7 +16,8 @@ ListNotificationsRequest::ListNotificationsRequest() :
     m_workloadIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_resourceArnHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String ListNotificationsRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("ResourceArn", m_resourceArn);
 
   }
 

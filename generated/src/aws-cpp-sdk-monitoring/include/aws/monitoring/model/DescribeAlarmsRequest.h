@@ -145,56 +145,96 @@ namespace Model
     /**
      * <p>Use this parameter to specify whether you want the operation to return metric
      * alarms or composite alarms. If you omit this parameter, only metric alarms are
-     * returned.</p>
+     * returned, even if composite alarms exist in the account.</p> <p>For example, if
+     * you omit this parameter or specify <code>MetricAlarms</code>, the operation
+     * returns only a list of metric alarms. It does not return any composite alarms,
+     * even if composite alarms exist in the account.</p> <p>If you specify
+     * <code>CompositeAlarms</code>, the operation returns only a list of composite
+     * alarms, and does not return any metric alarms.</p>
      */
     inline const Aws::Vector<AlarmType>& GetAlarmTypes() const{ return m_alarmTypes; }
 
     /**
      * <p>Use this parameter to specify whether you want the operation to return metric
      * alarms or composite alarms. If you omit this parameter, only metric alarms are
-     * returned.</p>
+     * returned, even if composite alarms exist in the account.</p> <p>For example, if
+     * you omit this parameter or specify <code>MetricAlarms</code>, the operation
+     * returns only a list of metric alarms. It does not return any composite alarms,
+     * even if composite alarms exist in the account.</p> <p>If you specify
+     * <code>CompositeAlarms</code>, the operation returns only a list of composite
+     * alarms, and does not return any metric alarms.</p>
      */
     inline bool AlarmTypesHasBeenSet() const { return m_alarmTypesHasBeenSet; }
 
     /**
      * <p>Use this parameter to specify whether you want the operation to return metric
      * alarms or composite alarms. If you omit this parameter, only metric alarms are
-     * returned.</p>
+     * returned, even if composite alarms exist in the account.</p> <p>For example, if
+     * you omit this parameter or specify <code>MetricAlarms</code>, the operation
+     * returns only a list of metric alarms. It does not return any composite alarms,
+     * even if composite alarms exist in the account.</p> <p>If you specify
+     * <code>CompositeAlarms</code>, the operation returns only a list of composite
+     * alarms, and does not return any metric alarms.</p>
      */
     inline void SetAlarmTypes(const Aws::Vector<AlarmType>& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes = value; }
 
     /**
      * <p>Use this parameter to specify whether you want the operation to return metric
      * alarms or composite alarms. If you omit this parameter, only metric alarms are
-     * returned.</p>
+     * returned, even if composite alarms exist in the account.</p> <p>For example, if
+     * you omit this parameter or specify <code>MetricAlarms</code>, the operation
+     * returns only a list of metric alarms. It does not return any composite alarms,
+     * even if composite alarms exist in the account.</p> <p>If you specify
+     * <code>CompositeAlarms</code>, the operation returns only a list of composite
+     * alarms, and does not return any metric alarms.</p>
      */
     inline void SetAlarmTypes(Aws::Vector<AlarmType>&& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes = std::move(value); }
 
     /**
      * <p>Use this parameter to specify whether you want the operation to return metric
      * alarms or composite alarms. If you omit this parameter, only metric alarms are
-     * returned.</p>
+     * returned, even if composite alarms exist in the account.</p> <p>For example, if
+     * you omit this parameter or specify <code>MetricAlarms</code>, the operation
+     * returns only a list of metric alarms. It does not return any composite alarms,
+     * even if composite alarms exist in the account.</p> <p>If you specify
+     * <code>CompositeAlarms</code>, the operation returns only a list of composite
+     * alarms, and does not return any metric alarms.</p>
      */
     inline DescribeAlarmsRequest& WithAlarmTypes(const Aws::Vector<AlarmType>& value) { SetAlarmTypes(value); return *this;}
 
     /**
      * <p>Use this parameter to specify whether you want the operation to return metric
      * alarms or composite alarms. If you omit this parameter, only metric alarms are
-     * returned.</p>
+     * returned, even if composite alarms exist in the account.</p> <p>For example, if
+     * you omit this parameter or specify <code>MetricAlarms</code>, the operation
+     * returns only a list of metric alarms. It does not return any composite alarms,
+     * even if composite alarms exist in the account.</p> <p>If you specify
+     * <code>CompositeAlarms</code>, the operation returns only a list of composite
+     * alarms, and does not return any metric alarms.</p>
      */
     inline DescribeAlarmsRequest& WithAlarmTypes(Aws::Vector<AlarmType>&& value) { SetAlarmTypes(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter to specify whether you want the operation to return metric
      * alarms or composite alarms. If you omit this parameter, only metric alarms are
-     * returned.</p>
+     * returned, even if composite alarms exist in the account.</p> <p>For example, if
+     * you omit this parameter or specify <code>MetricAlarms</code>, the operation
+     * returns only a list of metric alarms. It does not return any composite alarms,
+     * even if composite alarms exist in the account.</p> <p>If you specify
+     * <code>CompositeAlarms</code>, the operation returns only a list of composite
+     * alarms, and does not return any metric alarms.</p>
      */
     inline DescribeAlarmsRequest& AddAlarmTypes(const AlarmType& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes.push_back(value); return *this; }
 
     /**
      * <p>Use this parameter to specify whether you want the operation to return metric
      * alarms or composite alarms. If you omit this parameter, only metric alarms are
-     * returned.</p>
+     * returned, even if composite alarms exist in the account.</p> <p>For example, if
+     * you omit this parameter or specify <code>MetricAlarms</code>, the operation
+     * returns only a list of metric alarms. It does not return any composite alarms,
+     * even if composite alarms exist in the account.</p> <p>If you specify
+     * <code>CompositeAlarms</code>, the operation returns only a list of composite
+     * alarms, and does not return any metric alarms.</p>
      */
     inline DescribeAlarmsRequest& AddAlarmTypes(AlarmType&& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes.push_back(std::move(value)); return *this; }
 

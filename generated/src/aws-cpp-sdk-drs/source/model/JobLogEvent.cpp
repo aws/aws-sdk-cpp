@@ -37,6 +37,16 @@ namespace Aws
         static const int LAUNCH_FAILED_HASH = HashingUtils::HashString("LAUNCH_FAILED");
         static const int JOB_CANCEL_HASH = HashingUtils::HashString("JOB_CANCEL");
         static const int JOB_END_HASH = HashingUtils::HashString("JOB_END");
+        static const int DEPLOY_NETWORK_CONFIGURATION_START_HASH = HashingUtils::HashString("DEPLOY_NETWORK_CONFIGURATION_START");
+        static const int DEPLOY_NETWORK_CONFIGURATION_END_HASH = HashingUtils::HashString("DEPLOY_NETWORK_CONFIGURATION_END");
+        static const int DEPLOY_NETWORK_CONFIGURATION_FAILED_HASH = HashingUtils::HashString("DEPLOY_NETWORK_CONFIGURATION_FAILED");
+        static const int UPDATE_NETWORK_CONFIGURATION_START_HASH = HashingUtils::HashString("UPDATE_NETWORK_CONFIGURATION_START");
+        static const int UPDATE_NETWORK_CONFIGURATION_END_HASH = HashingUtils::HashString("UPDATE_NETWORK_CONFIGURATION_END");
+        static const int UPDATE_NETWORK_CONFIGURATION_FAILED_HASH = HashingUtils::HashString("UPDATE_NETWORK_CONFIGURATION_FAILED");
+        static const int UPDATE_LAUNCH_TEMPLATE_START_HASH = HashingUtils::HashString("UPDATE_LAUNCH_TEMPLATE_START");
+        static const int UPDATE_LAUNCH_TEMPLATE_END_HASH = HashingUtils::HashString("UPDATE_LAUNCH_TEMPLATE_END");
+        static const int UPDATE_LAUNCH_TEMPLATE_FAILED_HASH = HashingUtils::HashString("UPDATE_LAUNCH_TEMPLATE_FAILED");
+        static const int NETWORK_RECOVERY_FAIL_HASH = HashingUtils::HashString("NETWORK_RECOVERY_FAIL");
 
 
         JobLogEvent GetJobLogEventForName(const Aws::String& name)
@@ -110,6 +120,46 @@ namespace Aws
           {
             return JobLogEvent::JOB_END;
           }
+          else if (hashCode == DEPLOY_NETWORK_CONFIGURATION_START_HASH)
+          {
+            return JobLogEvent::DEPLOY_NETWORK_CONFIGURATION_START;
+          }
+          else if (hashCode == DEPLOY_NETWORK_CONFIGURATION_END_HASH)
+          {
+            return JobLogEvent::DEPLOY_NETWORK_CONFIGURATION_END;
+          }
+          else if (hashCode == DEPLOY_NETWORK_CONFIGURATION_FAILED_HASH)
+          {
+            return JobLogEvent::DEPLOY_NETWORK_CONFIGURATION_FAILED;
+          }
+          else if (hashCode == UPDATE_NETWORK_CONFIGURATION_START_HASH)
+          {
+            return JobLogEvent::UPDATE_NETWORK_CONFIGURATION_START;
+          }
+          else if (hashCode == UPDATE_NETWORK_CONFIGURATION_END_HASH)
+          {
+            return JobLogEvent::UPDATE_NETWORK_CONFIGURATION_END;
+          }
+          else if (hashCode == UPDATE_NETWORK_CONFIGURATION_FAILED_HASH)
+          {
+            return JobLogEvent::UPDATE_NETWORK_CONFIGURATION_FAILED;
+          }
+          else if (hashCode == UPDATE_LAUNCH_TEMPLATE_START_HASH)
+          {
+            return JobLogEvent::UPDATE_LAUNCH_TEMPLATE_START;
+          }
+          else if (hashCode == UPDATE_LAUNCH_TEMPLATE_END_HASH)
+          {
+            return JobLogEvent::UPDATE_LAUNCH_TEMPLATE_END;
+          }
+          else if (hashCode == UPDATE_LAUNCH_TEMPLATE_FAILED_HASH)
+          {
+            return JobLogEvent::UPDATE_LAUNCH_TEMPLATE_FAILED;
+          }
+          else if (hashCode == NETWORK_RECOVERY_FAIL_HASH)
+          {
+            return JobLogEvent::NETWORK_RECOVERY_FAIL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -124,6 +174,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobLogEvent::NOT_SET:
+            return {};
           case JobLogEvent::JOB_START:
             return "JOB_START";
           case JobLogEvent::SERVER_SKIPPED:
@@ -158,6 +210,26 @@ namespace Aws
             return "JOB_CANCEL";
           case JobLogEvent::JOB_END:
             return "JOB_END";
+          case JobLogEvent::DEPLOY_NETWORK_CONFIGURATION_START:
+            return "DEPLOY_NETWORK_CONFIGURATION_START";
+          case JobLogEvent::DEPLOY_NETWORK_CONFIGURATION_END:
+            return "DEPLOY_NETWORK_CONFIGURATION_END";
+          case JobLogEvent::DEPLOY_NETWORK_CONFIGURATION_FAILED:
+            return "DEPLOY_NETWORK_CONFIGURATION_FAILED";
+          case JobLogEvent::UPDATE_NETWORK_CONFIGURATION_START:
+            return "UPDATE_NETWORK_CONFIGURATION_START";
+          case JobLogEvent::UPDATE_NETWORK_CONFIGURATION_END:
+            return "UPDATE_NETWORK_CONFIGURATION_END";
+          case JobLogEvent::UPDATE_NETWORK_CONFIGURATION_FAILED:
+            return "UPDATE_NETWORK_CONFIGURATION_FAILED";
+          case JobLogEvent::UPDATE_LAUNCH_TEMPLATE_START:
+            return "UPDATE_LAUNCH_TEMPLATE_START";
+          case JobLogEvent::UPDATE_LAUNCH_TEMPLATE_END:
+            return "UPDATE_LAUNCH_TEMPLATE_END";
+          case JobLogEvent::UPDATE_LAUNCH_TEMPLATE_FAILED:
+            return "UPDATE_LAUNCH_TEMPLATE_FAILED";
+          case JobLogEvent::NETWORK_RECOVERY_FAIL:
+            return "NETWORK_RECOVERY_FAIL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

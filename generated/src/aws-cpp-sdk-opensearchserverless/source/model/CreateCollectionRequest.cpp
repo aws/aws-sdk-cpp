@@ -13,10 +13,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateCollectionRequest::CreateCollectionRequest() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_standbyReplicas(StandbyReplicas::NOT_SET),
+    m_standbyReplicasHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(CollectionType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -43,6 +45,11 @@ Aws::String CreateCollectionRequest::SerializePayload() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_standbyReplicasHasBeenSet)
+  {
+   payload.WithString("standbyReplicas", StandbyReplicasMapper::GetNameForStandbyReplicas(m_standbyReplicas));
   }
 
   if(m_tagsHasBeenSet)

@@ -37,50 +37,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the feature group containing the feature that you're
-     * updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
+     * feature that you're updating.</p>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
 
     /**
-     * <p>The name of the feature group containing the feature that you're
-     * updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
+     * feature that you're updating.</p>
      */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the feature group containing the feature that you're
-     * updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
+     * feature that you're updating.</p>
      */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
 
     /**
-     * <p>The name of the feature group containing the feature that you're
-     * updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
+     * feature that you're updating.</p>
      */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
 
     /**
-     * <p>The name of the feature group containing the feature that you're
-     * updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
+     * feature that you're updating.</p>
      */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
 
     /**
-     * <p>The name of the feature group containing the feature that you're
-     * updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
+     * feature that you're updating.</p>
      */
     inline UpdateFeatureMetadataRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
 
     /**
-     * <p>The name of the feature group containing the feature that you're
-     * updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
+     * feature that you're updating.</p>
      */
     inline UpdateFeatureMetadataRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the feature group containing the feature that you're
-     * updating.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
+     * feature that you're updating.</p>
      */
     inline UpdateFeatureMetadataRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
 

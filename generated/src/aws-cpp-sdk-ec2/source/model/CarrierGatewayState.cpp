@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CarrierGatewayState::NOT_SET:
+            return {};
           case CarrierGatewayState::pending:
             return "pending";
           case CarrierGatewayState::available:

@@ -39,27 +39,6 @@ namespace Model
 
 
     /**
-     * <p>Whether to force deletion.</p>
-     */
-    inline bool GetForce() const{ return m_force; }
-
-    /**
-     * <p>Whether to force deletion.</p>
-     */
-    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
-
-    /**
-     * <p>Whether to force deletion.</p>
-     */
-    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
-
-    /**
-     * <p>Whether to force deletion.</p>
-     */
-    inline DeleteVariantStoreRequest& WithForce(bool value) { SetForce(value); return *this;}
-
-
-    /**
      * <p>The store's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -99,13 +78,34 @@ namespace Model
      */
     inline DeleteVariantStoreRequest& WithName(const char* value) { SetName(value); return *this;}
 
-  private:
 
-    bool m_force;
-    bool m_forceHasBeenSet = false;
+    /**
+     * <p>Whether to force deletion.</p>
+     */
+    inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>Whether to force deletion.</p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+
+    /**
+     * <p>Whether to force deletion.</p>
+     */
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+
+    /**
+     * <p>Whether to force deletion.</p>
+     */
+    inline DeleteVariantStoreRequest& WithForce(bool value) { SetForce(value); return *this;}
+
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    bool m_force;
+    bool m_forceHasBeenSet = false;
   };
 
 } // namespace Model

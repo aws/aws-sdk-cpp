@@ -17,7 +17,7 @@ UpdateDashboardRequest::UpdateDashboardRequest() :
     m_dashboardNameHasBeenSet(false),
     m_dashboardDescriptionHasBeenSet(false),
     m_dashboardDefinitionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

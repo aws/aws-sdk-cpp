@@ -51,7 +51,7 @@ bool CompleteMultipartUploadRequest::HasEmbeddedError(Aws::IOStream &body,
     return false;
   }
 
-  if (doc.GetRootElement().GetName() == "Error") {
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
     /// Must not be here because earlier we already checked for an embedded error in PocoHTTPClient (see checkRequestCanReturn2xxAndErrorInBody).
     AWS_FATAL_ASSERT(false);
   }
@@ -181,6 +181,9 @@ CompleteMultipartUploadRequest::EndpointParameters CompleteMultipartUploadReques
     // Operation context parameters
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    if (KeyHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Key"), this->GetKey(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
     }
     return parameters;
 }

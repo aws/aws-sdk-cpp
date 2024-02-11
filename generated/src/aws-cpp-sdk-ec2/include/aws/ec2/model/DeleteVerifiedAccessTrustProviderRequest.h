@@ -38,42 +38,42 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline const Aws::String& GetVerifiedAccessTrustProviderId() const{ return m_verifiedAccessTrustProviderId; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline bool VerifiedAccessTrustProviderIdHasBeenSet() const { return m_verifiedAccessTrustProviderIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline void SetVerifiedAccessTrustProviderId(const Aws::String& value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline void SetVerifiedAccessTrustProviderId(Aws::String&& value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline void SetVerifiedAccessTrustProviderId(const char* value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline DeleteVerifiedAccessTrustProviderRequest& WithVerifiedAccessTrustProviderId(const Aws::String& value) { SetVerifiedAccessTrustProviderId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline DeleteVerifiedAccessTrustProviderRequest& WithVerifiedAccessTrustProviderId(Aws::String&& value) { SetVerifiedAccessTrustProviderId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline DeleteVerifiedAccessTrustProviderRequest& WithVerifiedAccessTrustProviderId(const char* value) { SetVerifiedAccessTrustProviderId(value); return *this;}
 

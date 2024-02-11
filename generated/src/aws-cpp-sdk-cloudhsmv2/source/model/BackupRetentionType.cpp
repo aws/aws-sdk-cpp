@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackupRetentionType::NOT_SET:
+            return {};
           case BackupRetentionType::DAYS:
             return "DAYS";
           default:

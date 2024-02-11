@@ -74,42 +74,42 @@ namespace Model
 
 
     /**
-     * <p>The API ID.</p>
+     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
      */
     inline const Aws::String& GetApiId() const{ return m_apiId; }
 
     /**
-     * <p>The API ID.</p>
+     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
      */
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
 
     /**
-     * <p>The API ID.</p>
+     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
      */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
-     * <p>The API ID.</p>
+     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
      */
     inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
 
     /**
-     * <p>The API ID.</p>
+     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
      */
     inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
 
     /**
-     * <p>The API ID.</p>
+     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
      */
     inline AssociateApiRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
 
     /**
-     * <p>The API ID.</p>
+     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
      */
     inline AssociateApiRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The API ID.</p>
+     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
      */
     inline AssociateApiRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
 

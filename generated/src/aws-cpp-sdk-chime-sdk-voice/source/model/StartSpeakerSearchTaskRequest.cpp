@@ -16,7 +16,9 @@ StartSpeakerSearchTaskRequest::StartSpeakerSearchTaskRequest() :
     m_voiceConnectorIdHasBeenSet(false),
     m_transactionIdHasBeenSet(false),
     m_voiceProfileDomainIdHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_callLeg(CallLegType::NOT_SET),
+    m_callLegHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,11 @@ Aws::String StartSpeakerSearchTaskRequest::SerializePayload() const
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
 
+  }
+
+  if(m_callLegHasBeenSet)
+  {
+   payload.WithString("CallLeg", CallLegTypeMapper::GetNameForCallLegType(m_callLeg));
   }
 
   return payload.View().WriteReadable();

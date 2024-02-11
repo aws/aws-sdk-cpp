@@ -82,10 +82,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
@@ -100,10 +97,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
@@ -118,10 +112,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
@@ -136,10 +127,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
@@ -154,10 +142,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline ImportRestApiRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
@@ -172,10 +157,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline ImportRestApiRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -190,10 +172,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -208,10 +187,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -226,10 +202,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -244,10 +217,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -262,10 +232,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -280,10 +247,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -298,10 +262,7 @@ namespace Model
      * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basepath</code>, set
      * <code>parameters</code> as <code>basepath=ignore</code>,
-     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p> <p>For
-     * example, the AWS CLI command to exclude documentation from the imported API
-     * is:</p> <p>The AWS CLI command to set the regional endpoint on the imported API
-     * is:</p>
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
      */
     inline ImportRestApiRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

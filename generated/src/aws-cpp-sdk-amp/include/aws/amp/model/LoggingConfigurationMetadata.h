@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amp/model/LoggingConfigurationStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -38,117 +38,6 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API LoggingConfigurationMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API LoggingConfigurationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The time when the logging configuration was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The time when the logging configuration was created.</p>
-     */
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The time when the logging configuration was created.</p>
-     */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The time when the logging configuration was created.</p>
-     */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The time when the logging configuration was created.</p>
-     */
-    inline LoggingConfigurationMetadata& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The time when the logging configuration was created.</p>
-     */
-    inline LoggingConfigurationMetadata& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The ARN of the CW log group to which the vended log data will be
-     * published.</p>
-     */
-    inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
-
-    /**
-     * <p>The ARN of the CW log group to which the vended log data will be
-     * published.</p>
-     */
-    inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the CW log group to which the vended log data will be
-     * published.</p>
-     */
-    inline void SetLogGroupArn(const Aws::String& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = value; }
-
-    /**
-     * <p>The ARN of the CW log group to which the vended log data will be
-     * published.</p>
-     */
-    inline void SetLogGroupArn(Aws::String&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the CW log group to which the vended log data will be
-     * published.</p>
-     */
-    inline void SetLogGroupArn(const char* value) { m_logGroupArnHasBeenSet = true; m_logGroupArn.assign(value); }
-
-    /**
-     * <p>The ARN of the CW log group to which the vended log data will be
-     * published.</p>
-     */
-    inline LoggingConfigurationMetadata& WithLogGroupArn(const Aws::String& value) { SetLogGroupArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the CW log group to which the vended log data will be
-     * published.</p>
-     */
-    inline LoggingConfigurationMetadata& WithLogGroupArn(Aws::String&& value) { SetLogGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the CW log group to which the vended log data will be
-     * published.</p>
-     */
-    inline LoggingConfigurationMetadata& WithLogGroupArn(const char* value) { SetLogGroupArn(value); return *this;}
-
-
-    /**
-     * <p>The time when the logging configuration was modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-
-    /**
-     * <p>The time when the logging configuration was modified.</p>
-     */
-    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
-
-    /**
-     * <p>The time when the logging configuration was modified.</p>
-     */
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
-
-    /**
-     * <p>The time when the logging configuration was modified.</p>
-     */
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
-
-    /**
-     * <p>The time when the logging configuration was modified.</p>
-     */
-    inline LoggingConfigurationMetadata& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-
-    /**
-     * <p>The time when the logging configuration was modified.</p>
-     */
-    inline LoggingConfigurationMetadata& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
 
 
     /**
@@ -222,22 +111,133 @@ namespace Model
      */
     inline LoggingConfigurationMetadata& WithWorkspace(const char* value) { SetWorkspace(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the CW log group to which the vended log data will be
+     * published.</p>
+     */
+    inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
+
+    /**
+     * <p>The ARN of the CW log group to which the vended log data will be
+     * published.</p>
+     */
+    inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the CW log group to which the vended log data will be
+     * published.</p>
+     */
+    inline void SetLogGroupArn(const Aws::String& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = value; }
+
+    /**
+     * <p>The ARN of the CW log group to which the vended log data will be
+     * published.</p>
+     */
+    inline void SetLogGroupArn(Aws::String&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the CW log group to which the vended log data will be
+     * published.</p>
+     */
+    inline void SetLogGroupArn(const char* value) { m_logGroupArnHasBeenSet = true; m_logGroupArn.assign(value); }
+
+    /**
+     * <p>The ARN of the CW log group to which the vended log data will be
+     * published.</p>
+     */
+    inline LoggingConfigurationMetadata& WithLogGroupArn(const Aws::String& value) { SetLogGroupArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the CW log group to which the vended log data will be
+     * published.</p>
+     */
+    inline LoggingConfigurationMetadata& WithLogGroupArn(Aws::String&& value) { SetLogGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the CW log group to which the vended log data will be
+     * published.</p>
+     */
+    inline LoggingConfigurationMetadata& WithLogGroupArn(const char* value) { SetLogGroupArn(value); return *this;}
+
+
+    /**
+     * <p>The time when the logging configuration was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The time when the logging configuration was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time when the logging configuration was created.</p>
+     */
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The time when the logging configuration was created.</p>
+     */
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * <p>The time when the logging configuration was created.</p>
+     */
+    inline LoggingConfigurationMetadata& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The time when the logging configuration was created.</p>
+     */
+    inline LoggingConfigurationMetadata& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time when the logging configuration was modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
+
+    /**
+     * <p>The time when the logging configuration was modified.</p>
+     */
+    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
+
+    /**
+     * <p>The time when the logging configuration was modified.</p>
+     */
+    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
+
+    /**
+     * <p>The time when the logging configuration was modified.</p>
+     */
+    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
+
+    /**
+     * <p>The time when the logging configuration was modified.</p>
+     */
+    inline LoggingConfigurationMetadata& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
+
+    /**
+     * <p>The time when the logging configuration was modified.</p>
+     */
+    inline LoggingConfigurationMetadata& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+
   private:
-
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_logGroupArn;
-    bool m_logGroupArnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_modifiedAt;
-    bool m_modifiedAtHasBeenSet = false;
 
     LoggingConfigurationStatus m_status;
     bool m_statusHasBeenSet = false;
 
     Aws::String m_workspace;
     bool m_workspaceHasBeenSet = false;
+
+    Aws::String m_logGroupArn;
+    bool m_logGroupArnHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_modifiedAt;
+    bool m_modifiedAtHasBeenSet = false;
   };
 
 } // namespace Model

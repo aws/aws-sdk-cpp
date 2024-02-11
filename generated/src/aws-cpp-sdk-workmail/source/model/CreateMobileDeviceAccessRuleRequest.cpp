@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreateMobileDeviceAccessRuleRequest::CreateMobileDeviceAccessRuleRequest() : 
     m_organizationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),

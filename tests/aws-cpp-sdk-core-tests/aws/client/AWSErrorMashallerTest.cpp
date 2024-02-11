@@ -4,7 +4,7 @@
  */
 
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,7 +131,11 @@ public:
     inline Aws::Utils::Json::JsonValue GetJsonPayload() { return AWSError<CoreErrors>::GetJsonPayload(); }
 };
 
-TEST(XmlErrorMarshallerTest, TestXmlErrorPayload)
+class AWSErrorMarshallerTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(AWSErrorMarshallerTest, TestXmlErrorPayload)
 {
     XmlErrorMarshaller awsErrorMarshaller;
     Aws::String message = "Test Message";
@@ -181,7 +185,7 @@ TEST(XmlErrorMarshallerTest, TestXmlErrorPayload)
     ASSERT_TRUE(error.ShouldRetry());
 }
 
-TEST(JsonErrorMashallerTest, TestCombinationsOfJsonErrorPayload)
+TEST_F(AWSErrorMarshallerTest, TestCombinationsOfJsonErrorPayload)
 {
     AWSError<CoreErrors> error2(CoreErrors::INCOMPLETE_SIGNATURE, false);
     JsonErrorMarshaller awsErrorMarshaller;
@@ -223,7 +227,7 @@ TEST(JsonErrorMashallerTest, TestCombinationsOfJsonErrorPayload)
     ASSERT_FALSE(error.ShouldRetry());
 }
 
-TEST(JsonErrorMashallerTest, TestErrorsWithPrefixParse)
+TEST_F(AWSErrorMarshallerTest, TestErrorsWithPrefixParse)
 {
     JsonErrorMarshaller awsErrorMarshaller;
     Aws::String message = "Test Message";
@@ -475,7 +479,7 @@ TEST(JsonErrorMashallerTest, TestErrorsWithPrefixParse)
     ASSERT_FALSE(error.ShouldRetry());
 }
 
-TEST(AWSErrorMashallerTest, TestErrorsWithoutPrefixParse)
+TEST_F(AWSErrorMarshallerTest, TestErrorsWithoutPrefixParse)
 {
     JsonErrorMarshaller awsErrorMarshaller;
     Aws::String message = "Test Message";

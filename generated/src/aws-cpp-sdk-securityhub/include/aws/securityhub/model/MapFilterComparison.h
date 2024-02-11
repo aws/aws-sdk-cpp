@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     EQUALS,
-    NOT_EQUALS
+    NOT_EQUALS,
+    CONTAINS,
+    NOT_CONTAINS
   };
 
 namespace MapFilterComparisonMapper

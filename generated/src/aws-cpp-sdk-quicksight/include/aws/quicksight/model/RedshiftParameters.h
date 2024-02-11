@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/RedshiftIAMParameters.h>
+#include <aws/quicksight/model/IdentityCenterConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -191,6 +193,98 @@ namespace Model
      */
     inline RedshiftParameters& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline const RedshiftIAMParameters& GetIAMParameters() const{ return m_iAMParameters; }
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline bool IAMParametersHasBeenSet() const { return m_iAMParametersHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline void SetIAMParameters(const RedshiftIAMParameters& value) { m_iAMParametersHasBeenSet = true; m_iAMParameters = value; }
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline void SetIAMParameters(RedshiftIAMParameters&& value) { m_iAMParametersHasBeenSet = true; m_iAMParameters = std::move(value); }
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline RedshiftParameters& WithIAMParameters(const RedshiftIAMParameters& value) { SetIAMParameters(value); return *this;}
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline RedshiftParameters& WithIAMParameters(RedshiftIAMParameters&& value) { SetIAMParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An optional parameter that configures IAM Identity Center authentication to
+     * grant Amazon QuickSight access to your cluster.</p> <p>This parameter can only
+     * be specified if your Amazon QuickSight account is configured with IAM Identity
+     * Center.</p>
+     */
+    inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const{ return m_identityCenterConfiguration; }
+
+    /**
+     * <p>An optional parameter that configures IAM Identity Center authentication to
+     * grant Amazon QuickSight access to your cluster.</p> <p>This parameter can only
+     * be specified if your Amazon QuickSight account is configured with IAM Identity
+     * Center.</p>
+     */
+    inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that configures IAM Identity Center authentication to
+     * grant Amazon QuickSight access to your cluster.</p> <p>This parameter can only
+     * be specified if your Amazon QuickSight account is configured with IAM Identity
+     * Center.</p>
+     */
+    inline void SetIdentityCenterConfiguration(const IdentityCenterConfiguration& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = value; }
+
+    /**
+     * <p>An optional parameter that configures IAM Identity Center authentication to
+     * grant Amazon QuickSight access to your cluster.</p> <p>This parameter can only
+     * be specified if your Amazon QuickSight account is configured with IAM Identity
+     * Center.</p>
+     */
+    inline void SetIdentityCenterConfiguration(IdentityCenterConfiguration&& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = std::move(value); }
+
+    /**
+     * <p>An optional parameter that configures IAM Identity Center authentication to
+     * grant Amazon QuickSight access to your cluster.</p> <p>This parameter can only
+     * be specified if your Amazon QuickSight account is configured with IAM Identity
+     * Center.</p>
+     */
+    inline RedshiftParameters& WithIdentityCenterConfiguration(const IdentityCenterConfiguration& value) { SetIdentityCenterConfiguration(value); return *this;}
+
+    /**
+     * <p>An optional parameter that configures IAM Identity Center authentication to
+     * grant Amazon QuickSight access to your cluster.</p> <p>This parameter can only
+     * be specified if your Amazon QuickSight account is configured with IAM Identity
+     * Center.</p>
+     */
+    inline RedshiftParameters& WithIdentityCenterConfiguration(IdentityCenterConfiguration&& value) { SetIdentityCenterConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_host;
@@ -204,6 +298,12 @@ namespace Model
 
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet = false;
+
+    RedshiftIAMParameters m_iAMParameters;
+    bool m_iAMParametersHasBeenSet = false;
+
+    IdentityCenterConfiguration m_identityCenterConfiguration;
+    bool m_identityCenterConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -170,89 +170,97 @@ namespace Model
 
     /**
      * <p>When you are updating endpoint resources with
-     * <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
+     * <code>RetainAllVariantProperties</code>, whose value is set to
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
-     * list of type <a>VariantProperty</a> to override with the values provided by
-     * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
-     * overridden. </p>
+     * list of type <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a>
+     * to override with the values provided by <code>EndpointConfig</code>. If you
+     * don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no
+     * variant properties are overridden. </p>
      */
     inline const Aws::Vector<VariantProperty>& GetExcludeRetainedVariantProperties() const{ return m_excludeRetainedVariantProperties; }
 
     /**
      * <p>When you are updating endpoint resources with
-     * <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
+     * <code>RetainAllVariantProperties</code>, whose value is set to
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
-     * list of type <a>VariantProperty</a> to override with the values provided by
-     * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
-     * overridden. </p>
+     * list of type <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a>
+     * to override with the values provided by <code>EndpointConfig</code>. If you
+     * don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no
+     * variant properties are overridden. </p>
      */
     inline bool ExcludeRetainedVariantPropertiesHasBeenSet() const { return m_excludeRetainedVariantPropertiesHasBeenSet; }
 
     /**
      * <p>When you are updating endpoint resources with
-     * <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
+     * <code>RetainAllVariantProperties</code>, whose value is set to
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
-     * list of type <a>VariantProperty</a> to override with the values provided by
-     * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
-     * overridden. </p>
+     * list of type <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a>
+     * to override with the values provided by <code>EndpointConfig</code>. If you
+     * don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no
+     * variant properties are overridden. </p>
      */
     inline void SetExcludeRetainedVariantProperties(const Aws::Vector<VariantProperty>& value) { m_excludeRetainedVariantPropertiesHasBeenSet = true; m_excludeRetainedVariantProperties = value; }
 
     /**
      * <p>When you are updating endpoint resources with
-     * <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
+     * <code>RetainAllVariantProperties</code>, whose value is set to
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
-     * list of type <a>VariantProperty</a> to override with the values provided by
-     * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
-     * overridden. </p>
+     * list of type <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a>
+     * to override with the values provided by <code>EndpointConfig</code>. If you
+     * don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no
+     * variant properties are overridden. </p>
      */
     inline void SetExcludeRetainedVariantProperties(Aws::Vector<VariantProperty>&& value) { m_excludeRetainedVariantPropertiesHasBeenSet = true; m_excludeRetainedVariantProperties = std::move(value); }
 
     /**
      * <p>When you are updating endpoint resources with
-     * <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
+     * <code>RetainAllVariantProperties</code>, whose value is set to
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
-     * list of type <a>VariantProperty</a> to override with the values provided by
-     * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
-     * overridden. </p>
+     * list of type <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a>
+     * to override with the values provided by <code>EndpointConfig</code>. If you
+     * don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no
+     * variant properties are overridden. </p>
      */
     inline UpdateEndpointRequest& WithExcludeRetainedVariantProperties(const Aws::Vector<VariantProperty>& value) { SetExcludeRetainedVariantProperties(value); return *this;}
 
     /**
      * <p>When you are updating endpoint resources with
-     * <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
+     * <code>RetainAllVariantProperties</code>, whose value is set to
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
-     * list of type <a>VariantProperty</a> to override with the values provided by
-     * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
-     * overridden. </p>
+     * list of type <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a>
+     * to override with the values provided by <code>EndpointConfig</code>. If you
+     * don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no
+     * variant properties are overridden. </p>
      */
     inline UpdateEndpointRequest& WithExcludeRetainedVariantProperties(Aws::Vector<VariantProperty>&& value) { SetExcludeRetainedVariantProperties(std::move(value)); return *this;}
 
     /**
      * <p>When you are updating endpoint resources with
-     * <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
+     * <code>RetainAllVariantProperties</code>, whose value is set to
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
-     * list of type <a>VariantProperty</a> to override with the values provided by
-     * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
-     * overridden. </p>
+     * list of type <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a>
+     * to override with the values provided by <code>EndpointConfig</code>. If you
+     * don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no
+     * variant properties are overridden. </p>
      */
     inline UpdateEndpointRequest& AddExcludeRetainedVariantProperties(const VariantProperty& value) { m_excludeRetainedVariantPropertiesHasBeenSet = true; m_excludeRetainedVariantProperties.push_back(value); return *this; }
 
     /**
      * <p>When you are updating endpoint resources with
-     * <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
+     * <code>RetainAllVariantProperties</code>, whose value is set to
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
-     * list of type <a>VariantProperty</a> to override with the values provided by
-     * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
-     * overridden. </p>
+     * list of type <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a>
+     * to override with the values provided by <code>EndpointConfig</code>. If you
+     * don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no
+     * variant properties are overridden. </p>
      */
     inline UpdateEndpointRequest& AddExcludeRetainedVariantProperties(VariantProperty&& value) { m_excludeRetainedVariantPropertiesHasBeenSet = true; m_excludeRetainedVariantProperties.push_back(std::move(value)); return *this; }
 

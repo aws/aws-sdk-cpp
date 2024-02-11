@@ -26,7 +26,11 @@ DataShareAssociation::DataShareAssociation() :
     m_statusHasBeenSet(false),
     m_consumerRegionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_statusChangeDateHasBeenSet(false)
+    m_statusChangeDateHasBeenSet(false),
+    m_producerAllowedWrites(false),
+    m_producerAllowedWritesHasBeenSet(false),
+    m_consumerAcceptedWrites(false),
+    m_consumerAcceptedWritesHasBeenSet(false)
 {
 }
 
@@ -36,7 +40,11 @@ DataShareAssociation::DataShareAssociation(const XmlNode& xmlNode) :
     m_statusHasBeenSet(false),
     m_consumerRegionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_statusChangeDateHasBeenSet(false)
+    m_statusChangeDateHasBeenSet(false),
+    m_producerAllowedWrites(false),
+    m_producerAllowedWritesHasBeenSet(false),
+    m_consumerAcceptedWrites(false),
+    m_consumerAcceptedWritesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -77,6 +85,18 @@ DataShareAssociation& DataShareAssociation::operator =(const XmlNode& xmlNode)
       m_statusChangeDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusChangeDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_statusChangeDateHasBeenSet = true;
     }
+    XmlNode producerAllowedWritesNode = resultNode.FirstChild("ProducerAllowedWrites");
+    if(!producerAllowedWritesNode.IsNull())
+    {
+      m_producerAllowedWrites = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(producerAllowedWritesNode.GetText()).c_str()).c_str());
+      m_producerAllowedWritesHasBeenSet = true;
+    }
+    XmlNode consumerAcceptedWritesNode = resultNode.FirstChild("ConsumerAcceptedWrites");
+    if(!consumerAcceptedWritesNode.IsNull())
+    {
+      m_consumerAcceptedWrites = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(consumerAcceptedWritesNode.GetText()).c_str()).c_str());
+      m_consumerAcceptedWritesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -109,6 +129,16 @@ void DataShareAssociation::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".StatusChangeDate=" << StringUtils::URLEncode(m_statusChangeDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_producerAllowedWritesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ProducerAllowedWrites=" << std::boolalpha << m_producerAllowedWrites << "&";
+  }
+
+  if(m_consumerAcceptedWritesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ConsumerAcceptedWrites=" << std::boolalpha << m_consumerAcceptedWrites << "&";
+  }
+
 }
 
 void DataShareAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -132,6 +162,14 @@ void DataShareAssociation::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_statusChangeDateHasBeenSet)
   {
       oStream << location << ".StatusChangeDate=" << StringUtils::URLEncode(m_statusChangeDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_producerAllowedWritesHasBeenSet)
+  {
+      oStream << location << ".ProducerAllowedWrites=" << std::boolalpha << m_producerAllowedWrites << "&";
+  }
+  if(m_consumerAcceptedWritesHasBeenSet)
+  {
+      oStream << location << ".ConsumerAcceptedWrites=" << std::boolalpha << m_consumerAcceptedWrites << "&";
   }
 }
 

@@ -87,22 +87,67 @@ namespace Model
 
 
     /**
-     * <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
+     * <p>The name of the created model.</p>
+     */
+    inline const Aws::String& GetModelName() const{ return m_modelName; }
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline RecommendationJobInputConfig& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline RecommendationJobInputConfig& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline RecommendationJobInputConfig& WithModelName(const char* value) { SetModelName(value); return *this;}
+
+
+    /**
+     * <p>Specifies the maximum duration of the job, in seconds. The maximum value is
+     * 18,000 seconds.</p>
      */
     inline int GetJobDurationInSeconds() const{ return m_jobDurationInSeconds; }
 
     /**
-     * <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
+     * <p>Specifies the maximum duration of the job, in seconds. The maximum value is
+     * 18,000 seconds.</p>
      */
     inline bool JobDurationInSecondsHasBeenSet() const { return m_jobDurationInSecondsHasBeenSet; }
 
     /**
-     * <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
+     * <p>Specifies the maximum duration of the job, in seconds. The maximum value is
+     * 18,000 seconds.</p>
      */
     inline void SetJobDurationInSeconds(int value) { m_jobDurationInSecondsHasBeenSet = true; m_jobDurationInSeconds = value; }
 
     /**
-     * <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
+     * <p>Specifies the maximum duration of the job, in seconds. The maximum value is
+     * 18,000 seconds.</p>
      */
     inline RecommendationJobInputConfig& WithJobDurationInSeconds(int value) { SetJobDurationInSeconds(value); return *this;}
 
@@ -523,51 +568,13 @@ namespace Model
      */
     inline RecommendationJobInputConfig& WithVpcConfig(RecommendationJobVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The name of the created model.</p>
-     */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
-
-    /**
-     * <p>The name of the created model.</p>
-     */
-    inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the created model.</p>
-     */
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-
-    /**
-     * <p>The name of the created model.</p>
-     */
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-
-    /**
-     * <p>The name of the created model.</p>
-     */
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-
-    /**
-     * <p>The name of the created model.</p>
-     */
-    inline RecommendationJobInputConfig& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-
-    /**
-     * <p>The name of the created model.</p>
-     */
-    inline RecommendationJobInputConfig& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the created model.</p>
-     */
-    inline RecommendationJobInputConfig& WithModelName(const char* value) { SetModelName(value); return *this;}
-
   private:
 
     Aws::String m_modelPackageVersionArn;
     bool m_modelPackageVersionArnHasBeenSet = false;
+
+    Aws::String m_modelName;
+    bool m_modelNameHasBeenSet = false;
 
     int m_jobDurationInSeconds;
     bool m_jobDurationInSecondsHasBeenSet = false;
@@ -592,9 +599,6 @@ namespace Model
 
     RecommendationJobVpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
-
-    Aws::String m_modelName;
-    bool m_modelNameHasBeenSet = false;
   };
 
 } // namespace Model

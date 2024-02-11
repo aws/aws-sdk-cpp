@@ -25,6 +25,8 @@ namespace Aws
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int PROCESSING_UPLOAD_HASH = HashingUtils::HashString("PROCESSING_UPLOAD");
+        static const int UPLOAD_FAILED_HASH = HashingUtils::HashString("UPLOAD_FAILED");
 
 
         ReadSetStatus GetReadSetStatusForName(const Aws::String& name)
@@ -50,6 +52,14 @@ namespace Aws
           {
             return ReadSetStatus::DELETED;
           }
+          else if (hashCode == PROCESSING_UPLOAD_HASH)
+          {
+            return ReadSetStatus::PROCESSING_UPLOAD;
+          }
+          else if (hashCode == UPLOAD_FAILED_HASH)
+          {
+            return ReadSetStatus::UPLOAD_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -64,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReadSetStatus::NOT_SET:
+            return {};
           case ReadSetStatus::ARCHIVED:
             return "ARCHIVED";
           case ReadSetStatus::ACTIVATING:
@@ -74,6 +86,10 @@ namespace Aws
             return "DELETING";
           case ReadSetStatus::DELETED:
             return "DELETED";
+          case ReadSetStatus::PROCESSING_UPLOAD:
+            return "PROCESSING_UPLOAD";
+          case ReadSetStatus::UPLOAD_FAILED:
+            return "UPLOAD_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -40,6 +40,119 @@ namespace Model
 
 
     /**
+     * <p>The ID of the workspace in which to create the rule group namespace.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+
+    /**
+     * <p>The ID of the workspace in which to create the rule group namespace.</p>
+     */
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the workspace in which to create the rule group namespace.</p>
+     */
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+
+    /**
+     * <p>The ID of the workspace in which to create the rule group namespace.</p>
+     */
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the workspace in which to create the rule group namespace.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
+
+    /**
+     * <p>The ID of the workspace in which to create the rule group namespace.</p>
+     */
+    inline CreateRuleGroupsNamespaceRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the workspace in which to create the rule group namespace.</p>
+     */
+    inline CreateRuleGroupsNamespaceRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workspace in which to create the rule group namespace.</p>
+     */
+    inline CreateRuleGroupsNamespaceRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline CreateRuleGroupsNamespaceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline CreateRuleGroupsNamespaceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline CreateRuleGroupsNamespaceRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The namespace data that define the rule groups.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+
+    /**
+     * <p>The namespace data that define the rule groups.</p>
+     */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+
+    /**
+     * <p>The namespace data that define the rule groups.</p>
+     */
+    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
+
+    /**
+     * <p>The namespace data that define the rule groups.</p>
+     */
+    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
+
+    /**
+     * <p>The namespace data that define the rule groups.</p>
+     */
+    inline CreateRuleGroupsNamespaceRequest& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
+
+    /**
+     * <p>The namespace data that define the rule groups.</p>
+     */
+    inline CreateRuleGroupsNamespaceRequest& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+
+
+    /**
      * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
      * idempotency of the request.</p>
      */
@@ -86,78 +199,6 @@ namespace Model
      * idempotency of the request.</p>
      */
     inline CreateRuleGroupsNamespaceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
-
-    /**
-     * <p>The namespace data that define the rule groups.</p>
-     */
-    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
-
-    /**
-     * <p>The namespace data that define the rule groups.</p>
-     */
-    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The namespace data that define the rule groups.</p>
-     */
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The namespace data that define the rule groups.</p>
-     */
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The namespace data that define the rule groups.</p>
-     */
-    inline CreateRuleGroupsNamespaceRequest& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The namespace data that define the rule groups.</p>
-     */
-    inline CreateRuleGroupsNamespaceRequest& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline CreateRuleGroupsNamespaceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline CreateRuleGroupsNamespaceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline CreateRuleGroupsNamespaceRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -225,63 +266,22 @@ namespace Model
      */
     inline CreateRuleGroupsNamespaceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>The ID of the workspace in which to create the rule group namespace.</p>
-     */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace in which to create the rule group namespace.</p>
-     */
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace in which to create the rule group namespace.</p>
-     */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace in which to create the rule group namespace.</p>
-     */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace in which to create the rule group namespace.</p>
-     */
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace in which to create the rule group namespace.</p>
-     */
-    inline CreateRuleGroupsNamespaceRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace in which to create the rule group namespace.</p>
-     */
-    inline CreateRuleGroupsNamespaceRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace in which to create the rule group namespace.</p>
-     */
-    inline CreateRuleGroupsNamespaceRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    Aws::Utils::ByteBuffer m_data;
-    bool m_dataHasBeenSet = false;
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    Aws::Utils::ByteBuffer m_data;
+    bool m_dataHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         static const int ml_p3_16xlarge_HASH = HashingUtils::HashString("ml.p3.16xlarge");
         static const int ml_p3dn_24xlarge_HASH = HashingUtils::HashString("ml.p3dn.24xlarge");
         static const int ml_p4d_24xlarge_HASH = HashingUtils::HashString("ml.p4d.24xlarge");
+        static const int ml_p4de_24xlarge_HASH = HashingUtils::HashString("ml.p4de.24xlarge");
+        static const int ml_p5_48xlarge_HASH = HashingUtils::HashString("ml.p5.48xlarge");
         static const int ml_c5_xlarge_HASH = HashingUtils::HashString("ml.c5.xlarge");
         static const int ml_c5_2xlarge_HASH = HashingUtils::HashString("ml.c5.2xlarge");
         static const int ml_c5_4xlarge_HASH = HashingUtils::HashString("ml.c5.4xlarge");
@@ -69,6 +71,24 @@ namespace Aws
         static const int ml_g5_48xlarge_HASH = HashingUtils::HashString("ml.g5.48xlarge");
         static const int ml_trn1_2xlarge_HASH = HashingUtils::HashString("ml.trn1.2xlarge");
         static const int ml_trn1_32xlarge_HASH = HashingUtils::HashString("ml.trn1.32xlarge");
+        static const int ml_trn1n_32xlarge_HASH = HashingUtils::HashString("ml.trn1n.32xlarge");
+        static const int ml_m6i_large_HASH = HashingUtils::HashString("ml.m6i.large");
+        static const int ml_m6i_xlarge_HASH = HashingUtils::HashString("ml.m6i.xlarge");
+        static const int ml_m6i_2xlarge_HASH = HashingUtils::HashString("ml.m6i.2xlarge");
+        static const int ml_m6i_4xlarge_HASH = HashingUtils::HashString("ml.m6i.4xlarge");
+        static const int ml_m6i_8xlarge_HASH = HashingUtils::HashString("ml.m6i.8xlarge");
+        static const int ml_m6i_12xlarge_HASH = HashingUtils::HashString("ml.m6i.12xlarge");
+        static const int ml_m6i_16xlarge_HASH = HashingUtils::HashString("ml.m6i.16xlarge");
+        static const int ml_m6i_24xlarge_HASH = HashingUtils::HashString("ml.m6i.24xlarge");
+        static const int ml_m6i_32xlarge_HASH = HashingUtils::HashString("ml.m6i.32xlarge");
+        static const int ml_c6i_xlarge_HASH = HashingUtils::HashString("ml.c6i.xlarge");
+        static const int ml_c6i_2xlarge_HASH = HashingUtils::HashString("ml.c6i.2xlarge");
+        static const int ml_c6i_8xlarge_HASH = HashingUtils::HashString("ml.c6i.8xlarge");
+        static const int ml_c6i_4xlarge_HASH = HashingUtils::HashString("ml.c6i.4xlarge");
+        static const int ml_c6i_12xlarge_HASH = HashingUtils::HashString("ml.c6i.12xlarge");
+        static const int ml_c6i_16xlarge_HASH = HashingUtils::HashString("ml.c6i.16xlarge");
+        static const int ml_c6i_24xlarge_HASH = HashingUtils::HashString("ml.c6i.24xlarge");
+        static const int ml_c6i_32xlarge_HASH = HashingUtils::HashString("ml.c6i.32xlarge");
 
 
         TrainingInstanceType GetTrainingInstanceTypeForName(const Aws::String& name)
@@ -190,6 +210,14 @@ namespace Aws
           {
             return TrainingInstanceType::ml_p4d_24xlarge;
           }
+          else if (hashCode == ml_p4de_24xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_p4de_24xlarge;
+          }
+          else if (hashCode == ml_p5_48xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_p5_48xlarge;
+          }
           else if (hashCode == ml_c5_xlarge_HASH)
           {
             return TrainingInstanceType::ml_c5_xlarge;
@@ -270,6 +298,78 @@ namespace Aws
           {
             return TrainingInstanceType::ml_trn1_32xlarge;
           }
+          else if (hashCode == ml_trn1n_32xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_trn1n_32xlarge;
+          }
+          else if (hashCode == ml_m6i_large_HASH)
+          {
+            return TrainingInstanceType::ml_m6i_large;
+          }
+          else if (hashCode == ml_m6i_xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_m6i_xlarge;
+          }
+          else if (hashCode == ml_m6i_2xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_m6i_2xlarge;
+          }
+          else if (hashCode == ml_m6i_4xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_m6i_4xlarge;
+          }
+          else if (hashCode == ml_m6i_8xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_m6i_8xlarge;
+          }
+          else if (hashCode == ml_m6i_12xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_m6i_12xlarge;
+          }
+          else if (hashCode == ml_m6i_16xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_m6i_16xlarge;
+          }
+          else if (hashCode == ml_m6i_24xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_m6i_24xlarge;
+          }
+          else if (hashCode == ml_m6i_32xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_m6i_32xlarge;
+          }
+          else if (hashCode == ml_c6i_xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c6i_xlarge;
+          }
+          else if (hashCode == ml_c6i_2xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c6i_2xlarge;
+          }
+          else if (hashCode == ml_c6i_8xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c6i_8xlarge;
+          }
+          else if (hashCode == ml_c6i_4xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c6i_4xlarge;
+          }
+          else if (hashCode == ml_c6i_12xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c6i_12xlarge;
+          }
+          else if (hashCode == ml_c6i_16xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c6i_16xlarge;
+          }
+          else if (hashCode == ml_c6i_24xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c6i_24xlarge;
+          }
+          else if (hashCode == ml_c6i_32xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c6i_32xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -284,6 +384,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrainingInstanceType::NOT_SET:
+            return {};
           case TrainingInstanceType::ml_m4_xlarge:
             return "ml.m4.xlarge";
           case TrainingInstanceType::ml_m4_2xlarge:
@@ -342,6 +444,10 @@ namespace Aws
             return "ml.p3dn.24xlarge";
           case TrainingInstanceType::ml_p4d_24xlarge:
             return "ml.p4d.24xlarge";
+          case TrainingInstanceType::ml_p4de_24xlarge:
+            return "ml.p4de.24xlarge";
+          case TrainingInstanceType::ml_p5_48xlarge:
+            return "ml.p5.48xlarge";
           case TrainingInstanceType::ml_c5_xlarge:
             return "ml.c5.xlarge";
           case TrainingInstanceType::ml_c5_2xlarge:
@@ -382,6 +488,42 @@ namespace Aws
             return "ml.trn1.2xlarge";
           case TrainingInstanceType::ml_trn1_32xlarge:
             return "ml.trn1.32xlarge";
+          case TrainingInstanceType::ml_trn1n_32xlarge:
+            return "ml.trn1n.32xlarge";
+          case TrainingInstanceType::ml_m6i_large:
+            return "ml.m6i.large";
+          case TrainingInstanceType::ml_m6i_xlarge:
+            return "ml.m6i.xlarge";
+          case TrainingInstanceType::ml_m6i_2xlarge:
+            return "ml.m6i.2xlarge";
+          case TrainingInstanceType::ml_m6i_4xlarge:
+            return "ml.m6i.4xlarge";
+          case TrainingInstanceType::ml_m6i_8xlarge:
+            return "ml.m6i.8xlarge";
+          case TrainingInstanceType::ml_m6i_12xlarge:
+            return "ml.m6i.12xlarge";
+          case TrainingInstanceType::ml_m6i_16xlarge:
+            return "ml.m6i.16xlarge";
+          case TrainingInstanceType::ml_m6i_24xlarge:
+            return "ml.m6i.24xlarge";
+          case TrainingInstanceType::ml_m6i_32xlarge:
+            return "ml.m6i.32xlarge";
+          case TrainingInstanceType::ml_c6i_xlarge:
+            return "ml.c6i.xlarge";
+          case TrainingInstanceType::ml_c6i_2xlarge:
+            return "ml.c6i.2xlarge";
+          case TrainingInstanceType::ml_c6i_8xlarge:
+            return "ml.c6i.8xlarge";
+          case TrainingInstanceType::ml_c6i_4xlarge:
+            return "ml.c6i.4xlarge";
+          case TrainingInstanceType::ml_c6i_12xlarge:
+            return "ml.c6i.12xlarge";
+          case TrainingInstanceType::ml_c6i_16xlarge:
+            return "ml.c6i.16xlarge";
+          case TrainingInstanceType::ml_c6i_24xlarge:
+            return "ml.c6i.24xlarge";
+          case TrainingInstanceType::ml_c6i_32xlarge:
+            return "ml.c6i.32xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

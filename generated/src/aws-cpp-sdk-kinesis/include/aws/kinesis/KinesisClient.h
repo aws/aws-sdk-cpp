@@ -27,6 +27,9 @@ namespace Kinesis
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef KinesisClientConfiguration ClientConfigurationType;
+      typedef KinesisEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -77,13 +80,13 @@ namespace Kinesis
 
         /**
          * <p>Adds or updates tags for the specified Kinesis data stream. You can assign up
-         * to 50 tags to a data stream.</p>  <p>When invoking this API, it is
-         * recommended you use the <code>StreamARN</code> input parameter rather than the
-         * <code>StreamName</code> input parameter.</p>  <p>If tags have already
-         * been assigned to the stream, <code>AddTagsToStream</code> overwrites any
-         * existing tags that correspond to the specified tag keys.</p> <p>
-         * <a>AddTagsToStream</a> has a limit of five transactions per second per
-         * account.</p><p><h3>See Also:</h3>   <a
+         * to 50 tags to a data stream.</p>  <p>When invoking this API, you must use
+         * either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or
+         * both. It is recommended that you use the <code>StreamARN</code> input parameter
+         * when you invoke this API.</p>  <p>If tags have already been assigned to
+         * the stream, <code>AddTagsToStream</code> overwrites any existing tags that
+         * correspond to the specified tag keys.</p> <p> <a>AddTagsToStream</a> has a limit
+         * of five transactions per second per account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream">AWS
          * API Reference</a></p>
          */
@@ -172,11 +175,13 @@ namespace Kinesis
          * <p>Decreases the Kinesis data stream's retention period, which is the length of
          * time data records are accessible after they are added to the stream. The minimum
          * value of a stream's retention period is 24 hours.</p>  <p>When invoking
-         * this API, it is recommended you use the <code>StreamARN</code> input parameter
-         * rather than the <code>StreamName</code> input parameter.</p>  <p>This
-         * operation may result in lost data. For example, if the stream's retention period
-         * is 48 hours and is decreased to 24 hours, any data already in the stream that is
-         * older than 24 hours is inaccessible.</p><p><h3>See Also:</h3>   <a
+         * this API, you must use either the <code>StreamARN</code> or the
+         * <code>StreamName</code> parameter, or both. It is recommended that you use the
+         * <code>StreamARN</code> input parameter when you invoke this API.</p> 
+         * <p>This operation may result in lost data. For example, if the stream's
+         * retention period is 48 hours and is decreased to 24 hours, any data already in
+         * the stream that is older than 24 hours is inaccessible.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod">AWS
          * API Reference</a></p>
          */
@@ -201,13 +206,44 @@ namespace Kinesis
         }
 
         /**
+         * <p>Delete a policy for the specified data stream or consumer. Request patterns
+         * can be one of the following:</p> <ul> <li> <p>Data stream pattern:
+         * <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> </p> </li> <li>
+         * <p>Consumer pattern:
+         * <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&KinesisClient::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KinesisClient::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a Kinesis data stream and all its shards and data. You must shut down
          * any applications that are operating on the stream before you delete the stream.
          * If an application attempts to operate on a deleted stream, it receives the
          * exception <code>ResourceNotFoundException</code>.</p>  <p>When invoking
-         * this API, it is recommended you use the <code>StreamARN</code> input parameter
-         * rather than the <code>StreamName</code> input parameter.</p>  <p>If the
-         * stream is in the <code>ACTIVE</code> state, you can delete it. After a
+         * this API, you must use either the <code>StreamARN</code> or the
+         * <code>StreamName</code> parameter, or both. It is recommended that you use the
+         * <code>StreamARN</code> input parameter when you invoke this API.</p> 
+         * <p>If the stream is in the <code>ACTIVE</code> state, you can delete it. After a
          * <code>DeleteStream</code> request, the specified stream is in the
          * <code>DELETING</code> state until Kinesis Data Streams completes the
          * deletion.</p> <p> <b>Note:</b> Kinesis Data Streams might continue to accept
@@ -308,9 +344,10 @@ namespace Kinesis
          * revised. It's highly recommended that you use the <a>DescribeStreamSummary</a>
          * API to get a summarized description of the specified Kinesis data stream and the
          * <a>ListShards</a> API to list the shards in a specified data stream and obtain
-         * information about each shard. </p>   <p>When invoking this API, it
-         * is recommended you use the <code>StreamARN</code> input parameter rather than
-         * the <code>StreamName</code> input parameter.</p>  <p>The information
+         * information about each shard. </p>   <p>When invoking this API, you
+         * must use either the <code>StreamARN</code> or the <code>StreamName</code>
+         * parameter, or both. It is recommended that you use the <code>StreamARN</code>
+         * input parameter when you invoke this API.</p>  <p>The information
          * returned includes the stream name, Amazon Resource Name (ARN), creation time,
          * enhanced metric configuration, and shard map. The shard map is an array of shard
          * objects. For each shard object, there is the hash key and sequence number ranges
@@ -356,8 +393,10 @@ namespace Kinesis
          * the name or ARN of the consumer that you want to describe, you can use the
          * <a>ListStreamConsumers</a> operation to get a list of the descriptions of all
          * the consumers that are currently registered with a given data stream.</p>
-         * <p>This operation has a limit of 20 transactions per second per
-         * stream.</p><p><h3>See Also:</h3>   <a
+         * <p>This operation has a limit of 20 transactions per second per stream.</p>
+         *  <p>When making a cross-account call with
+         * <code>DescribeStreamConsumer</code>, make sure to provide the ARN of the
+         * consumer. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamConsumer">AWS
          * API Reference</a></p>
          */
@@ -383,13 +422,14 @@ namespace Kinesis
 
         /**
          * <p>Provides a summarized description of the specified Kinesis data stream
-         * without the shard list.</p>  <p>When invoking this API, it is recommended
-         * you use the <code>StreamARN</code> input parameter rather than the
-         * <code>StreamName</code> input parameter.</p>  <p>The information returned
-         * includes the stream name, Amazon Resource Name (ARN), status, record retention
-         * period, approximate creation time, monitoring, encryption details, and open
-         * shard count. </p> <p> <a>DescribeStreamSummary</a> has a limit of 20
-         * transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * without the shard list.</p>  <p>When invoking this API, you must use
+         * either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or
+         * both. It is recommended that you use the <code>StreamARN</code> input parameter
+         * when you invoke this API.</p>  <p>The information returned includes the
+         * stream name, Amazon Resource Name (ARN), status, record retention period,
+         * approximate creation time, monitoring, encryption details, and open shard count.
+         * </p> <p> <a>DescribeStreamSummary</a> has a limit of 20 transactions per second
+         * per account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamSummary">AWS
          * API Reference</a></p>
          */
@@ -414,9 +454,10 @@ namespace Kinesis
         }
 
         /**
-         * <p>Disables enhanced monitoring.</p>  <p>When invoking this API, it is
-         * recommended you use the <code>StreamARN</code> input parameter rather than the
-         * <code>StreamName</code> input parameter.</p> <p><h3>See Also:</h3>   <a
+         * <p>Disables enhanced monitoring.</p>  <p>When invoking this API, you must
+         * use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+         * or both. It is recommended that you use the <code>StreamARN</code> input
+         * parameter when you invoke this API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring">AWS
          * API Reference</a></p>
          */
@@ -442,9 +483,10 @@ namespace Kinesis
 
         /**
          * <p>Enables enhanced Kinesis data stream monitoring for shard-level metrics.</p>
-         *  <p>When invoking this API, it is recommended you use the
-         * <code>StreamARN</code> input parameter rather than the <code>StreamName</code>
-         * input parameter.</p> <p><h3>See Also:</h3>   <a
+         *  <p>When invoking this API, you must use either the <code>StreamARN</code>
+         * or the <code>StreamName</code> parameter, or both. It is recommended that you
+         * use the <code>StreamARN</code> input parameter when you invoke this API.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring">AWS
          * API Reference</a></p>
          */
@@ -470,8 +512,9 @@ namespace Kinesis
 
         /**
          * <p>Gets data records from a Kinesis data stream's shard.</p>  <p>When
-         * invoking this API, it is recommended you use the <code>StreamARN</code> input
-         * parameter in addition to the <code>ShardIterator</code> parameter.</p> 
+         * invoking this API, you must use either the <code>StreamARN</code> or the
+         * <code>StreamName</code> parameter, or both. It is recommended that you use the
+         * <code>StreamARN</code> input parameter when you invoke this API.</p> 
          * <p>Specify a shard iterator using the <code>ShardIterator</code> parameter. The
          * shard iterator specifies the position in the shard from which you want to start
          * reading data records sequentially. If there are no records available in the
@@ -550,10 +593,41 @@ namespace Kinesis
         }
 
         /**
+         * <p>Returns a policy attached to the specified data stream or consumer. Request
+         * patterns can be one of the following:</p> <ul> <li> <p>Data stream pattern:
+         * <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> </p> </li> <li> <p>
+         * Consumer pattern:
+         * <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&KinesisClient::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KinesisClient::GetResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes
-         * after it is returned to the requester.</p>  <p>When invoking this API, it
-         * is recommended you use the <code>StreamARN</code> input parameter rather than
-         * the <code>StreamName</code> input parameter.</p>  <p>A shard iterator
+         * after it is returned to the requester.</p>  <p>When invoking this API, you
+         * must use either the <code>StreamARN</code> or the <code>StreamName</code>
+         * parameter, or both. It is recommended that you use the <code>StreamARN</code>
+         * input parameter when you invoke this API.</p>  <p>A shard iterator
          * specifies the shard position from which to start reading data records
          * sequentially. The position is specified using the sequence number of a data
          * record in a shard. A sequence number is the identifier associated with every
@@ -614,15 +688,16 @@ namespace Kinesis
          * <p>Increases the Kinesis data stream's retention period, which is the length of
          * time data records are accessible after they are added to the stream. The maximum
          * value of a stream's retention period is 8760 hours (365 days).</p> 
-         * <p>When invoking this API, it is recommended you use the <code>StreamARN</code>
-         * input parameter rather than the <code>StreamName</code> input parameter.</p>
-         *  <p>If you choose a longer stream retention period, this operation
-         * increases the time period during which records that have not yet expired are
-         * accessible. However, it does not make previous, expired data (older than the
-         * stream's previous retention period) accessible after the operation has been
-         * called. For example, if a stream's retention period is set to 24 hours and is
-         * increased to 168 hours, any data that is older than 24 hours remains
-         * inaccessible to consumer applications.</p><p><h3>See Also:</h3>   <a
+         * <p>When invoking this API, you must use either the <code>StreamARN</code> or the
+         * <code>StreamName</code> parameter, or both. It is recommended that you use the
+         * <code>StreamARN</code> input parameter when you invoke this API.</p> 
+         * <p>If you choose a longer stream retention period, this operation increases the
+         * time period during which records that have not yet expired are accessible.
+         * However, it does not make previous, expired data (older than the stream's
+         * previous retention period) accessible after the operation has been called. For
+         * example, if a stream's retention period is set to 24 hours and is increased to
+         * 168 hours, any data that is older than 24 hours remains inaccessible to consumer
+         * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">AWS
          * API Reference</a></p>
          */
@@ -649,10 +724,11 @@ namespace Kinesis
         /**
          * <p>Lists the shards in a stream and provides information about each shard. This
          * operation has a limit of 1000 transactions per second per data stream.</p>
-         *  <p>When invoking this API, it is recommended you use the
-         * <code>StreamARN</code> input parameter rather than the <code>StreamName</code>
-         * input parameter.</p>  <p>This action does not list expired shards. For
-         * information about expired shards, see <a
+         *  <p>When invoking this API, you must use either the <code>StreamARN</code>
+         * or the <code>StreamName</code> parameter, or both. It is recommended that you
+         * use the <code>StreamARN</code> input parameter when you invoke this API.</p>
+         *  <p>This action does not list expired shards. For information about
+         * expired shards, see <a
          * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing">Data
          * Routing, Data Persistence, and Shard State after a Reshard</a>. </p> 
          * <p>This API is a new operation that is used by the Amazon Kinesis Client Library
@@ -753,9 +829,10 @@ namespace Kinesis
         /**
          * <p>Lists the tags for the specified Kinesis data stream. This operation has a
          * limit of five transactions per second per account.</p>  <p>When invoking
-         * this API, it is recommended you use the <code>StreamARN</code> input parameter
-         * rather than the <code>StreamName</code> input parameter.</p> <p><h3>See
-         * Also:</h3>   <a
+         * this API, you must use either the <code>StreamARN</code> or the
+         * <code>StreamName</code> parameter, or both. It is recommended that you use the
+         * <code>StreamARN</code> input parameter when you invoke this API.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream">AWS
          * API Reference</a></p>
          */
@@ -789,9 +866,10 @@ namespace Kinesis
          * range of 382...454, then you could merge these two shards into a single shard
          * that would have a hash key range of 276...454. After the merge, the single child
          * shard receives data for all hash key values covered by the two parent
-         * shards.</p>  <p>When invoking this API, it is recommended you use the
-         * <code>StreamARN</code> input parameter rather than the <code>StreamName</code>
-         * input parameter.</p>  <p> <code>MergeShards</code> is called when there
+         * shards.</p>  <p>When invoking this API, you must use either the
+         * <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is
+         * recommended that you use the <code>StreamARN</code> input parameter when you
+         * invoke this API.</p>  <p> <code>MergeShards</code> is called when there
          * is a need to reduce the overall capacity of a stream because of excess capacity
          * that is not being used. You must specify the shard to be merged and the adjacent
          * shard for a stream. For more information about merging shards, see <a
@@ -845,9 +923,10 @@ namespace Kinesis
          * <code>PutRecord</code> to send data into the stream for real-time ingestion and
          * subsequent processing, one record at a time. Each shard can support writes up to
          * 1,000 records per second, up to a maximum data write total of 1 MiB per
-         * second.</p>  <p>When invoking this API, it is recommended you use the
-         * <code>StreamARN</code> input parameter rather than the <code>StreamName</code>
-         * input parameter.</p>  <p>You must specify the name of the stream that
+         * second.</p>  <p>When invoking this API, you must use either the
+         * <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is
+         * recommended that you use the <code>StreamARN</code> input parameter when you
+         * invoke this API.</p>  <p>You must specify the name of the stream that
          * captures, stores, and transports the data; a partition key; and the data blob
          * itself.</p> <p>The data blob can be any type of data; for example, a segment
          * from a log file, geographic/location data, website clickstream data, and so
@@ -908,8 +987,9 @@ namespace Kinesis
          * <p>Writes multiple data records into a Kinesis data stream in a single call
          * (also referred to as a <code>PutRecords</code> request). Use this operation to
          * send data into the stream for data ingestion and processing. </p>  <p>When
-         * invoking this API, it is recommended you use the <code>StreamARN</code> input
-         * parameter rather than the <code>StreamName</code> input parameter.</p> 
+         * invoking this API, you must use either the <code>StreamARN</code> or the
+         * <code>StreamName</code> parameter, or both. It is recommended that you use the
+         * <code>StreamARN</code> input parameter when you invoke this API.</p> 
          * <p>Each <code>PutRecords</code> request can support up to 500 records. Each
          * record in the request can be as large as 1 MiB, up to a limit of 5 MiB for the
          * entire request, including partition keys. Each shard can support writes up to
@@ -990,6 +1070,47 @@ namespace Kinesis
         }
 
         /**
+         * <p>Attaches a resource-based policy to a data stream or registered consumer. If
+         * you are using an identity other than the root user of the Amazon Web Services
+         * account that owns the resource, the calling identity must have the
+         * <code>PutResourcePolicy</code> permissions on the specified Kinesis Data Streams
+         * resource and belong to the owner's account in order to use this operation. If
+         * you don't have <code>PutResourcePolicy</code> permissions, Amazon Kinesis Data
+         * Streams returns a <code>403 Access Denied error</code>. If you receive a
+         * <code>ResourceNotFoundException</code>, check to see if you passed a valid
+         * stream or consumer resource. </p> <p> Request patterns can be one of the
+         * following:</p> <ul> <li> <p>Data stream pattern:
+         * <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> </p> </li> <li>
+         * <p>Consumer pattern:
+         * <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+         * </p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
+         * Access to Amazon Kinesis Data Streams Resources Using IAM</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&KinesisClient::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KinesisClient::PutResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Registers a consumer with a Kinesis data stream. When you use this operation,
          * the consumer you register can then call <a>SubscribeToShard</a> to receive data
          * from the stream using enhanced fan-out, at a rate of up to 2 MiB per second for
@@ -1030,9 +1151,10 @@ namespace Kinesis
         /**
          * <p>Removes tags from the specified Kinesis data stream. Removed tags are deleted
          * and cannot be recovered after this operation successfully completes.</p> 
-         * <p>When invoking this API, it is recommended you use the <code>StreamARN</code>
-         * input parameter rather than the <code>StreamName</code> input parameter.</p>
-         *  <p>If you specify a tag that does not exist, it is ignored.</p> <p>
+         * <p>When invoking this API, you must use either the <code>StreamARN</code> or the
+         * <code>StreamName</code> parameter, or both. It is recommended that you use the
+         * <code>StreamARN</code> input parameter when you invoke this API.</p> 
+         * <p>If you specify a tag that does not exist, it is ignored.</p> <p>
          * <a>RemoveTagsFromStream</a> has a limit of five transactions per second per
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream">AWS
@@ -1064,19 +1186,19 @@ namespace Kinesis
          * called when there is a need to increase the overall capacity of a stream because
          * of an expected increase in the volume of data records being ingested. This API
          * is only supported for the data streams with the provisioned capacity mode.</p>
-         *  <p>When invoking this API, it is recommended you use the
-         * <code>StreamARN</code> input parameter rather than the <code>StreamName</code>
-         * input parameter.</p>  <p>You can also use <code>SplitShard</code> when a
-         * shard appears to be approaching its maximum utilization; for example, the
-         * producers sending data into the specific shard are suddenly sending more than
-         * previously anticipated. You can also call <code>SplitShard</code> to increase
-         * stream capacity, so that more Kinesis Data Streams applications can
-         * simultaneously read data from the stream for real-time processing. </p> <p>You
-         * must specify the shard to be split and the new hash key, which is the position
-         * in the shard where the shard gets split in two. In many cases, the new hash key
-         * might be the average of the beginning and ending hash key, but it can be any
-         * hash key value in the range being mapped into the shard. For more information,
-         * see <a
+         *  <p>When invoking this API, you must use either the <code>StreamARN</code>
+         * or the <code>StreamName</code> parameter, or both. It is recommended that you
+         * use the <code>StreamARN</code> input parameter when you invoke this API.</p>
+         *  <p>You can also use <code>SplitShard</code> when a shard appears to be
+         * approaching its maximum utilization; for example, the producers sending data
+         * into the specific shard are suddenly sending more than previously anticipated.
+         * You can also call <code>SplitShard</code> to increase stream capacity, so that
+         * more Kinesis Data Streams applications can simultaneously read data from the
+         * stream for real-time processing. </p> <p>You must specify the shard to be split
+         * and the new hash key, which is the position in the shard where the shard gets
+         * split in two. In many cases, the new hash key might be the average of the
+         * beginning and ending hash key, but it can be any hash key value in the range
+         * being mapped into the shard. For more information, see <a
          * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
          * a Shard</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
          * <p>You can use <a>DescribeStreamSummary</a> and the <a>ListShards</a> APIs to
@@ -1130,7 +1252,10 @@ namespace Kinesis
 
         /**
          * <p>Enables or updates server-side encryption using an Amazon Web Services KMS
-         * key for a specified stream. </p> <p>Starting encryption is an asynchronous
+         * key for a specified stream. </p>  <p>When invoking this API, you must use
+         * either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or
+         * both. It is recommended that you use the <code>StreamARN</code> input parameter
+         * when you invoke this API.</p>  <p>Starting encryption is an asynchronous
          * operation. Upon receiving the request, Kinesis Data Streams returns immediately
          * and sets the status of the stream to <code>UPDATING</code>. After the update is
          * complete, Kinesis Data Streams sets the status of the stream back to
@@ -1144,9 +1269,7 @@ namespace Kinesis
          * <code>ACTIVE</code> status before all records written to the stream are
          * encrypted. After you enable encryption, you can verify that encryption is
          * applied by inspecting the API response from <code>PutRecord</code> or
-         * <code>PutRecords</code>.</p>  <p>When invoking this API, it is recommended
-         * you use the <code>StreamARN</code> input parameter rather than the
-         * <code>StreamName</code> input parameter.</p> <p><h3>See Also:</h3>   <a
+         * <code>PutRecords</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption">AWS
          * API Reference</a></p>
          */
@@ -1172,8 +1295,9 @@ namespace Kinesis
 
         /**
          * <p>Disables server-side encryption for a specified stream. </p>  <p>When
-         * invoking this API, it is recommended you use the <code>StreamARN</code> input
-         * parameter rather than the <code>StreamName</code> input parameter.</p> 
+         * invoking this API, you must use either the <code>StreamARN</code> or the
+         * <code>StreamName</code> parameter, or both. It is recommended that you use the
+         * <code>StreamARN</code> input parameter when you invoke this API.</p> 
          * <p>Stopping encryption is an asynchronous operation. Upon receiving the request,
          * Kinesis Data Streams returns immediately and sets the status of the stream to
          * <code>UPDATING</code>. After the update is complete, Kinesis Data Streams sets
@@ -1263,16 +1387,17 @@ namespace Kinesis
         /**
          * <p>Updates the shard count of the specified stream to the specified number of
          * shards. This API is only supported for the data streams with the provisioned
-         * capacity mode.</p>  <p>When invoking this API, it is recommended you use
-         * the <code>StreamARN</code> input parameter rather than the
-         * <code>StreamName</code> input parameter.</p>  <p>Updating the shard count
-         * is an asynchronous operation. Upon receiving the request, Kinesis Data Streams
-         * returns immediately and sets the status of the stream to <code>UPDATING</code>.
-         * After the update is complete, Kinesis Data Streams sets the status of the stream
-         * back to <code>ACTIVE</code>. Depending on the size of the stream, the scaling
-         * action could take a few minutes to complete. You can continue to read and write
-         * data to your stream while its status is <code>UPDATING</code>.</p> <p>To update
-         * the shard count, Kinesis Data Streams performs splits or merges on individual
+         * capacity mode.</p>  <p>When invoking this API, you must use either the
+         * <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is
+         * recommended that you use the <code>StreamARN</code> input parameter when you
+         * invoke this API.</p>  <p>Updating the shard count is an asynchronous
+         * operation. Upon receiving the request, Kinesis Data Streams returns immediately
+         * and sets the status of the stream to <code>UPDATING</code>. After the update is
+         * complete, Kinesis Data Streams sets the status of the stream back to
+         * <code>ACTIVE</code>. Depending on the size of the stream, the scaling action
+         * could take a few minutes to complete. You can continue to read and write data to
+         * your stream while its status is <code>UPDATING</code>.</p> <p>To update the
+         * shard count, Kinesis Data Streams performs splits or merges on individual
          * shards. This can cause short-lived shards to be created, in addition to the
          * final shards. These short-lived shards count towards your total shard limit for
          * your account in the Region.</p> <p>When using this operation, we recommend that
@@ -1286,8 +1411,9 @@ namespace Kinesis
          * half your current shard count for a stream</p> </li> <li> <p>Scale up to more
          * than 10000 shards in a stream</p> </li> <li> <p>Scale a stream with more than
          * 10000 shards down unless the result is less than 10000 shards</p> </li> <li>
-         * <p>Scale up to more than the shard limit for your account</p> </li> </ul> <p>For
-         * the default limits for an Amazon Web Services account, see <a
+         * <p>Scale up to more than the shard limit for your account</p> </li> <li> <p>Make
+         * over 10 TPS. TPS over 10 will trigger the LimitExceededException</p> </li> </ul>
+         * <p>For the default limits for an Amazon Web Services account, see <a
          * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
          * Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request
          * an increase in the call rate limit, the shard limit for this API, or your

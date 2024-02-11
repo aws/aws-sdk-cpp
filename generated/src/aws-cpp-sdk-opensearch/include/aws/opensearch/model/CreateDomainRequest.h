@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/model/ClusterConfig.h>
 #include <aws/opensearch/model/EBSOptions.h>
+#include <aws/opensearch/model/IPAddressType.h>
 #include <aws/opensearch/model/SnapshotOptions.h>
 #include <aws/opensearch/model/VPCOptions.h>
 #include <aws/opensearch/model/CognitoOptions.h>
@@ -294,6 +295,37 @@ namespace Model
      * policies for the new domain.</p>
      */
     inline CreateDomainRequest& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
+
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline const IPAddressType& GetIPAddressType() const{ return m_iPAddressType; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(const IPAddressType& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(IPAddressType&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline CreateDomainRequest& WithIPAddressType(const IPAddressType& value) { SetIPAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline CreateDomainRequest& WithIPAddressType(IPAddressType&& value) { SetIPAddressType(std::move(value)); return *this;}
 
 
     /**
@@ -826,52 +858,52 @@ namespace Model
 
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline const Aws::Map<LogType, LogPublishingOption>& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline bool LogPublishingOptionsHasBeenSet() const { return m_logPublishingOptionsHasBeenSet; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline void SetLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline void SetLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& WithLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { SetLogPublishingOptions(value); return *this;}
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& WithLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& AddLogPublishingOptions(const LogType& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, value); return *this; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& AddLogPublishingOptions(LogType&& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& AddLogPublishingOptions(const LogType& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& AddLogPublishingOptions(LogType&& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -1117,6 +1149,9 @@ namespace Model
 
     Aws::String m_accessPolicies;
     bool m_accessPoliciesHasBeenSet = false;
+
+    IPAddressType m_iPAddressType;
+    bool m_iPAddressTypeHasBeenSet = false;
 
     SnapshotOptions m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet = false;

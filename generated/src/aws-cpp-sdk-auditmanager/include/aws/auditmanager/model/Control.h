@@ -125,32 +125,32 @@ namespace Model
 
 
     /**
-     * <p> The type of control, such as a custom control or a standard control. </p>
+     * <p> Specifies whether the control is a standard control or a custom control.</p>
      */
     inline const ControlType& GetType() const{ return m_type; }
 
     /**
-     * <p> The type of control, such as a custom control or a standard control. </p>
+     * <p> Specifies whether the control is a standard control or a custom control.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p> The type of control, such as a custom control or a standard control. </p>
+     * <p> Specifies whether the control is a standard control or a custom control.</p>
      */
     inline void SetType(const ControlType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p> The type of control, such as a custom control or a standard control. </p>
+     * <p> Specifies whether the control is a standard control or a custom control.</p>
      */
     inline void SetType(ControlType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p> The type of control, such as a custom control or a standard control. </p>
+     * <p> Specifies whether the control is a standard control or a custom control.</p>
      */
     inline Control& WithType(const ControlType& value) { SetType(value); return *this;}
 
     /**
-     * <p> The type of control, such as a custom control or a standard control. </p>
+     * <p> Specifies whether the control is a standard control or a custom control.</p>
      */
     inline Control& WithType(ControlType&& value) { SetType(std::move(value)); return *this;}
 

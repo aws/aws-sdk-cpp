@@ -36,6 +36,10 @@ namespace Aws
         static const int DiskIOPSUnderprovisioned_HASH = HashingUtils::HashString("DiskIOPSUnderprovisioned");
         static const int DiskThroughputOverprovisioned_HASH = HashingUtils::HashString("DiskThroughputOverprovisioned");
         static const int DiskThroughputUnderprovisioned_HASH = HashingUtils::HashString("DiskThroughputUnderprovisioned");
+        static const int GPUUnderprovisioned_HASH = HashingUtils::HashString("GPUUnderprovisioned");
+        static const int GPUOverprovisioned_HASH = HashingUtils::HashString("GPUOverprovisioned");
+        static const int GPUMemoryUnderprovisioned_HASH = HashingUtils::HashString("GPUMemoryUnderprovisioned");
+        static const int GPUMemoryOverprovisioned_HASH = HashingUtils::HashString("GPUMemoryOverprovisioned");
 
 
         InstanceRecommendationFindingReasonCode GetInstanceRecommendationFindingReasonCodeForName(const Aws::String& name)
@@ -105,6 +109,22 @@ namespace Aws
           {
             return InstanceRecommendationFindingReasonCode::DiskThroughputUnderprovisioned;
           }
+          else if (hashCode == GPUUnderprovisioned_HASH)
+          {
+            return InstanceRecommendationFindingReasonCode::GPUUnderprovisioned;
+          }
+          else if (hashCode == GPUOverprovisioned_HASH)
+          {
+            return InstanceRecommendationFindingReasonCode::GPUOverprovisioned;
+          }
+          else if (hashCode == GPUMemoryUnderprovisioned_HASH)
+          {
+            return InstanceRecommendationFindingReasonCode::GPUMemoryUnderprovisioned;
+          }
+          else if (hashCode == GPUMemoryOverprovisioned_HASH)
+          {
+            return InstanceRecommendationFindingReasonCode::GPUMemoryOverprovisioned;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -119,6 +139,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceRecommendationFindingReasonCode::NOT_SET:
+            return {};
           case InstanceRecommendationFindingReasonCode::CPUOverprovisioned:
             return "CPUOverprovisioned";
           case InstanceRecommendationFindingReasonCode::CPUUnderprovisioned:
@@ -151,6 +173,14 @@ namespace Aws
             return "DiskThroughputOverprovisioned";
           case InstanceRecommendationFindingReasonCode::DiskThroughputUnderprovisioned:
             return "DiskThroughputUnderprovisioned";
+          case InstanceRecommendationFindingReasonCode::GPUUnderprovisioned:
+            return "GPUUnderprovisioned";
+          case InstanceRecommendationFindingReasonCode::GPUOverprovisioned:
+            return "GPUOverprovisioned";
+          case InstanceRecommendationFindingReasonCode::GPUMemoryUnderprovisioned:
+            return "GPUMemoryUnderprovisioned";
+          case InstanceRecommendationFindingReasonCode::GPUMemoryOverprovisioned:
+            return "GPUMemoryOverprovisioned";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

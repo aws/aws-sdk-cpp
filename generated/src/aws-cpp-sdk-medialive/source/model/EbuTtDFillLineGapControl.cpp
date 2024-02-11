@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EbuTtDFillLineGapControl::NOT_SET:
+            return {};
           case EbuTtDFillLineGapControl::DISABLED:
             return "DISABLED";
           case EbuTtDFillLineGapControl::ENABLED:

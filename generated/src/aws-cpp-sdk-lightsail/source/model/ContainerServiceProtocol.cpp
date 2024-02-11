@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerServiceProtocol::NOT_SET:
+            return {};
           case ContainerServiceProtocol::HTTP:
             return "HTTP";
           case ContainerServiceProtocol::HTTPS:

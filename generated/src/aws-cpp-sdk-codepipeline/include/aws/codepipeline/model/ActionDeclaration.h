@@ -141,13 +141,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -159,13 +159,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -177,13 +177,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -195,13 +195,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -213,13 +213,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -231,13 +231,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -249,13 +249,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -267,13 +267,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -285,13 +285,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -303,13 +303,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -321,13 +321,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -339,13 +339,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -357,13 +357,13 @@ namespace Model
      * values for an action. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
      * Structure Requirements in CodePipeline</a>. For the list of configuration
-     * properties for the AWS CloudFormation action type in CodePipeline, see <a
+     * properties for the CloudFormation action type in CodePipeline, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-     * Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For
-     * template snippets with examples, see <a
+     * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+     * snippets with examples, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-     * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS
-     * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+     * Parameter Override Functions with CodePipeline Pipelines</a> in the
+     * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
      * JSON or YAML format. For example, the JSON configuration item format is as
      * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
      * },</code> </p>
@@ -519,42 +519,42 @@ namespace Model
 
 
     /**
-     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     * <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     * <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     * <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     * <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     * <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     * <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
      */
     inline ActionDeclaration& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     * <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
      */
     inline ActionDeclaration& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     * <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
      */
     inline ActionDeclaration& WithRegion(const char* value) { SetRegion(value); return *this;}
 

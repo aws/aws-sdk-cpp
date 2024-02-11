@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MxfXavcDurationMode::NOT_SET:
+            return {};
           case MxfXavcDurationMode::ALLOW_ANY_DURATION:
             return "ALLOW_ANY_DURATION";
           case MxfXavcDurationMode::DROP_FRAMES_FOR_COMPLIANCE:

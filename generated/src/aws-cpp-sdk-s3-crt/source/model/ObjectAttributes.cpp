@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectAttributes::NOT_SET:
+            return {};
           case ObjectAttributes::ETag:
             return "ETag";
           case ObjectAttributes::Checksum:

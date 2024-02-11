@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrincipalRoleType::NOT_SET:
+            return {};
           case PrincipalRoleType::VIEWER:
             return "VIEWER";
           case PrincipalRoleType::CONTRIBUTOR:

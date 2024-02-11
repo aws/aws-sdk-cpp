@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BuildPhaseType::NOT_SET:
+            return {};
           case BuildPhaseType::SUBMITTED:
             return "SUBMITTED";
           case BuildPhaseType::QUEUED:

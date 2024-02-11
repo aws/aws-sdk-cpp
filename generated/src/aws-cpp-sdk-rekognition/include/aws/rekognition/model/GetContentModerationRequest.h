@@ -8,6 +8,7 @@
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/ContentModerationSortBy.h>
+#include <aws/rekognition/model/ContentModerationAggregateBy.h>
 #include <utility>
 
 namespace Aws
@@ -240,6 +241,49 @@ namespace Model
      */
     inline GetContentModerationRequest& WithSortBy(ContentModerationSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Defines how to aggregate results of the StartContentModeration request.
+     * Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation
+     * labels over time.</p>
+     */
+    inline const ContentModerationAggregateBy& GetAggregateBy() const{ return m_aggregateBy; }
+
+    /**
+     * <p>Defines how to aggregate results of the StartContentModeration request.
+     * Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation
+     * labels over time.</p>
+     */
+    inline bool AggregateByHasBeenSet() const { return m_aggregateByHasBeenSet; }
+
+    /**
+     * <p>Defines how to aggregate results of the StartContentModeration request.
+     * Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation
+     * labels over time.</p>
+     */
+    inline void SetAggregateBy(const ContentModerationAggregateBy& value) { m_aggregateByHasBeenSet = true; m_aggregateBy = value; }
+
+    /**
+     * <p>Defines how to aggregate results of the StartContentModeration request.
+     * Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation
+     * labels over time.</p>
+     */
+    inline void SetAggregateBy(ContentModerationAggregateBy&& value) { m_aggregateByHasBeenSet = true; m_aggregateBy = std::move(value); }
+
+    /**
+     * <p>Defines how to aggregate results of the StartContentModeration request.
+     * Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation
+     * labels over time.</p>
+     */
+    inline GetContentModerationRequest& WithAggregateBy(const ContentModerationAggregateBy& value) { SetAggregateBy(value); return *this;}
+
+    /**
+     * <p>Defines how to aggregate results of the StartContentModeration request.
+     * Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation
+     * labels over time.</p>
+     */
+    inline GetContentModerationRequest& WithAggregateBy(ContentModerationAggregateBy&& value) { SetAggregateBy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -253,6 +297,9 @@ namespace Model
 
     ContentModerationSortBy m_sortBy;
     bool m_sortByHasBeenSet = false;
+
+    ContentModerationAggregateBy m_aggregateBy;
+    bool m_aggregateByHasBeenSet = false;
   };
 
 } // namespace Model

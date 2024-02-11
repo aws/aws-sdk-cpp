@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int cloudfront_js_1_0_HASH = HashingUtils::HashString("cloudfront-js-1.0");
+        static const int cloudfront_js_2_0_HASH = HashingUtils::HashString("cloudfront-js-2.0");
 
 
         FunctionRuntime GetFunctionRuntimeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == cloudfront_js_1_0_HASH)
           {
             return FunctionRuntime::cloudfront_js_1_0;
+          }
+          else if (hashCode == cloudfront_js_2_0_HASH)
+          {
+            return FunctionRuntime::cloudfront_js_2_0;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +49,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FunctionRuntime::NOT_SET:
+            return {};
           case FunctionRuntime::cloudfront_js_1_0:
             return "cloudfront-js-1.0";
+          case FunctionRuntime::cloudfront_js_2_0:
+            return "cloudfront-js-2.0";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StartTimerFailedCause::NOT_SET:
+            return {};
           case StartTimerFailedCause::TIMER_ID_ALREADY_IN_USE:
             return "TIMER_ID_ALREADY_IN_USE";
           case StartTimerFailedCause::OPEN_TIMERS_LIMIT_EXCEEDED:

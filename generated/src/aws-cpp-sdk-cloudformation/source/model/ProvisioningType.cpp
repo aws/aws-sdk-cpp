@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisioningType::NOT_SET:
+            return {};
           case ProvisioningType::NON_PROVISIONABLE:
             return "NON_PROVISIONABLE";
           case ProvisioningType::IMMUTABLE:

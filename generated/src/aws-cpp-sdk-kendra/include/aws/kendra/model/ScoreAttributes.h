@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Provides a relative ranking that indicates how confident Amazon Kendra is
-   * that the response matches the query.</p><p><h3>See Also:</h3>   <a
+   * that the response is relevant to the query.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ScoreAttributes">AWS
    * API Reference</a></p>
    */
@@ -39,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>A relative ranking for how well the response matches the query.</p>
+     * <p>A relative ranking for how relevant the response is to the query.</p>
      */
     inline const ScoreConfidence& GetScoreConfidence() const{ return m_scoreConfidence; }
 
     /**
-     * <p>A relative ranking for how well the response matches the query.</p>
+     * <p>A relative ranking for how relevant the response is to the query.</p>
      */
     inline bool ScoreConfidenceHasBeenSet() const { return m_scoreConfidenceHasBeenSet; }
 
     /**
-     * <p>A relative ranking for how well the response matches the query.</p>
+     * <p>A relative ranking for how relevant the response is to the query.</p>
      */
     inline void SetScoreConfidence(const ScoreConfidence& value) { m_scoreConfidenceHasBeenSet = true; m_scoreConfidence = value; }
 
     /**
-     * <p>A relative ranking for how well the response matches the query.</p>
+     * <p>A relative ranking for how relevant the response is to the query.</p>
      */
     inline void SetScoreConfidence(ScoreConfidence&& value) { m_scoreConfidenceHasBeenSet = true; m_scoreConfidence = std::move(value); }
 
     /**
-     * <p>A relative ranking for how well the response matches the query.</p>
+     * <p>A relative ranking for how relevant the response is to the query.</p>
      */
     inline ScoreAttributes& WithScoreConfidence(const ScoreConfidence& value) { SetScoreConfidence(value); return *this;}
 
     /**
-     * <p>A relative ranking for how well the response matches the query.</p>
+     * <p>A relative ranking for how relevant the response is to the query.</p>
      */
     inline ScoreAttributes& WithScoreConfidence(ScoreConfidence&& value) { SetScoreConfidence(std::move(value)); return *this;}
 

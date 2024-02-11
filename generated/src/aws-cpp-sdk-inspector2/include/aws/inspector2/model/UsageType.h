@@ -19,7 +19,8 @@ namespace Model
     EC2_INSTANCE_HOURS,
     ECR_INITIAL_SCAN,
     ECR_RESCAN,
-    LAMBDA_FUNCTION_HOURS
+    LAMBDA_FUNCTION_HOURS,
+    LAMBDA_FUNCTION_CODE_HOURS
   };
 
 namespace UsageTypeMapper

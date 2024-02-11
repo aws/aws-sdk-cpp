@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> The preferences and settings that will be used to compute the Amazon Web
-   * Services charges for a billing group. </p><p><h3>See Also:</h3>   <a
+   * <p>The preferences and settings that will be used to compute the Amazon Web
+   * Services charges for a billing group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ComputationPreference">AWS
    * API Reference</a></p>
    */

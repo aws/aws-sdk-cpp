@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
@@ -22,13 +22,6 @@
 #include <fstream>
 #include <thread>
 #include <aws/core/utils/logging/LogMacros.h>
-
-// TODO: temporary fix for naming conflicts for Windows.
-#ifdef _WIN32
-#ifdef GetMessage
-#undef GetMessage
-#endif
-#endif
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -66,7 +59,7 @@ protected:
     }
 };
 
-class AWSClientTestSuite : public ::testing::Test
+class AWSClientTestSuite : public Aws::Testing::AwsCppSdkGTestSuite
 {
 protected:
     std::shared_ptr<MockHttpClient> mockHttpClient;
@@ -513,7 +506,7 @@ TEST_F(AWSClientTestSuite, TestErrorInBodyOfResponse)
     ASSERT_EQ(outcome.GetError().GetExceptionName(), "TestErrorInBodyOfResponse");
 }
 
-TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
+TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersOnly)
 {
     HeaderValueCollection headerValues;
     headerValues["test1"] = "testValue1";
@@ -542,7 +535,10 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
+    auto config = ClientConfiguration();
+    auto expUA = ComputeUserAgentString(&config);
+    auto actualUA = finalHeaders[Http::USER_AGENT_HEADER];
+    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 
     headerValues[Http::CONTENT_LENGTH_HEADER] = "0";
     headerValues[Http::CONTENT_TYPE_HEADER] = "blah";
@@ -563,10 +559,12 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
+    expUA = ComputeUserAgentString(&config);
+    actualUA = finalHeaders[Http::USER_AGENT_HEADER];
+    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 }
 
-TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
+TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersAndBody)
 {
     HeaderValueCollection headerValues;
     headerValues["test1"] = "testValue1";
@@ -603,14 +601,17 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_EQ(hashResult, finalHeaders[Http::CONTENT_MD5_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
+    auto config = ClientConfiguration();
+    auto expUA = ComputeUserAgentString(&config);
+    auto actualUA = finalHeaders[Http::USER_AGENT_HEADER];
+    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 
     Aws::StringStream contentLengthExpected;
     contentLengthExpected << ss->str().length();
     ASSERT_EQ(contentLengthExpected.str(), finalHeaders[Http::CONTENT_LENGTH_HEADER]);
 }
 
-TEST(AWSClientTest, TestBuildHttpRequestWithAdditionalHeadersAndBody)
+TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithAdditionalHeadersAndBody)
 {
     HeaderValueCollection headerValues;
     headerValues["test1"] = "testValue1";
@@ -654,14 +655,17 @@ TEST(AWSClientTest, TestBuildHttpRequestWithAdditionalHeadersAndBody)
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_EQ(hashResult, finalHeaders[Http::CONTENT_MD5_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
+    auto config = ClientConfiguration();
+    auto expUA = ComputeUserAgentString(&config);
+    auto actualUA = finalHeaders[Http::USER_AGENT_HEADER];
+    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 
     Aws::StringStream contentLengthExpected;
     contentLengthExpected << ss->str().length();
     ASSERT_EQ(contentLengthExpected.str(), finalHeaders[Http::CONTENT_LENGTH_HEADER]);
 }
 
-TEST(AWSClientTest, TestHostHeaderWithNonStandardHttpPort)
+TEST_F(AWSClientTestSuite, TestHostHeaderWithNonStandardHttpPort)
 {
     Standard::StandardHttpRequest r1("http://example.amazonaws.com:8080", HttpMethod::HTTP_GET);
     auto host = r1.GetHeaderValue(Aws::Http::HOST_HEADER);
@@ -672,7 +676,7 @@ TEST(AWSClientTest, TestHostHeaderWithNonStandardHttpPort)
     ASSERT_STREQ("example.amazonaws.com:8888", host.c_str());
 }
 
-TEST(AWSClientTest, TestHostHeaderWithStandardHttpPort)
+TEST_F(AWSClientTestSuite, TestHostHeaderWithStandardHttpPort)
 {
     Standard::StandardHttpRequest r1("http://example.amazonaws.com:80", HttpMethod::HTTP_GET);
     auto host = r1.GetHeaderValue(Aws::Http::HOST_HEADER);
@@ -693,7 +697,7 @@ TEST(AWSClientTest, TestHostHeaderWithStandardHttpPort)
     ASSERT_STREQ("example.amazonaws.com:80", host.c_str());
 }
 
-TEST(AWSClientTest, TestOverflowContainer)
+TEST_F(AWSClientTestSuite, TestOverflowContainer)
 {
     auto container = Aws::GetEnumOverflowContainer();
     const auto hashcode = 42;
@@ -704,7 +708,7 @@ TEST(AWSClientTest, TestOverflowContainer)
 
 
 
-class AWSRegionTest : public ::testing::Test
+class AWSRegionTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 public:
     void SetUp()

@@ -19,11 +19,12 @@ CreateClusterRequest::CreateClusterRequest() :
     m_resourcesVpcConfigHasBeenSet(false),
     m_kubernetesNetworkConfigHasBeenSet(false),
     m_loggingHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_encryptionConfigHasBeenSet(false),
-    m_outpostConfigHasBeenSet(false)
+    m_outpostConfigHasBeenSet(false),
+    m_accessConfigHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_outpostConfigHasBeenSet)
   {
    payload.WithObject("outpostConfig", m_outpostConfig.Jsonize());
+
+  }
+
+  if(m_accessConfigHasBeenSet)
+  {
+   payload.WithObject("accessConfig", m_accessConfig.Jsonize());
 
   }
 

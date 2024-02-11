@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2CodecProfile::NOT_SET:
+            return {};
           case Mpeg2CodecProfile::MAIN:
             return "MAIN";
           case Mpeg2CodecProfile::PROFILE_422:

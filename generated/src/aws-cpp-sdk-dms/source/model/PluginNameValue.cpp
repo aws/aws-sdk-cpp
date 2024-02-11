@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PluginNameValue::NOT_SET:
+            return {};
           case PluginNameValue::no_preference:
             return "no-preference";
           case PluginNameValue::test_decoding:

@@ -8,6 +8,7 @@
 #include <aws/sagemaker/model/RStudioServerProDomainSettingsForUpdate.h>
 #include <aws/sagemaker/model/ExecutionRoleIdentityConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/DockerSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -43,37 +44,43 @@ namespace Model
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline const RStudioServerProDomainSettingsForUpdate& GetRStudioServerProDomainSettingsForUpdate() const{ return m_rStudioServerProDomainSettingsForUpdate; }
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline bool RStudioServerProDomainSettingsForUpdateHasBeenSet() const { return m_rStudioServerProDomainSettingsForUpdateHasBeenSet; }
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline void SetRStudioServerProDomainSettingsForUpdate(const RStudioServerProDomainSettingsForUpdate& value) { m_rStudioServerProDomainSettingsForUpdateHasBeenSet = true; m_rStudioServerProDomainSettingsForUpdate = value; }
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline void SetRStudioServerProDomainSettingsForUpdate(RStudioServerProDomainSettingsForUpdate&& value) { m_rStudioServerProDomainSettingsForUpdateHasBeenSet = true; m_rStudioServerProDomainSettingsForUpdate = std::move(value); }
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline DomainSettingsForUpdate& WithRStudioServerProDomainSettingsForUpdate(const RStudioServerProDomainSettingsForUpdate& value) { SetRStudioServerProDomainSettingsForUpdate(value); return *this;}
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline DomainSettingsForUpdate& WithRStudioServerProDomainSettingsForUpdate(RStudioServerProDomainSettingsForUpdate&& value) { SetRStudioServerProDomainSettingsForUpdate(std::move(value)); return *this;}
 
@@ -196,6 +203,37 @@ namespace Model
      */
     inline DomainSettingsForUpdate& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline const DockerSettings& GetDockerSettings() const{ return m_dockerSettings; }
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline bool DockerSettingsHasBeenSet() const { return m_dockerSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline void SetDockerSettings(const DockerSettings& value) { m_dockerSettingsHasBeenSet = true; m_dockerSettings = value; }
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline void SetDockerSettings(DockerSettings&& value) { m_dockerSettingsHasBeenSet = true; m_dockerSettings = std::move(value); }
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline DomainSettingsForUpdate& WithDockerSettings(const DockerSettings& value) { SetDockerSettings(value); return *this;}
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline DomainSettingsForUpdate& WithDockerSettings(DockerSettings&& value) { SetDockerSettings(std::move(value)); return *this;}
+
   private:
 
     RStudioServerProDomainSettingsForUpdate m_rStudioServerProDomainSettingsForUpdate;
@@ -206,6 +244,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;
+
+    DockerSettings m_dockerSettings;
+    bool m_dockerSettingsHasBeenSet = false;
   };
 
 } // namespace Model

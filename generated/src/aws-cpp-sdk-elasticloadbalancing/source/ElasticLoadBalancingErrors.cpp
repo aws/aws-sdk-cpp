@@ -48,91 +48,91 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::OPERATION_NOT_PERMITTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::OPERATION_NOT_PERMITTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SUBNET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_SUBNET), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_SUBNET), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SCHEME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_SCHEME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_SCHEME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_TYPE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::POLICY_TYPE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::POLICY_TYPE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATE_ACCESS_POINT_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_ACCESS_POINT_NAME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_ACCESS_POINT_NAME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_END_POINT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_END_POINT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_END_POINT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATE_LISTENER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_LISTENER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_LISTENER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LOAD_BALANCER_ATTRIBUTE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::LOAD_BALANCER_ATTRIBUTE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::LOAD_BALANCER_ATTRIBUTE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::POLICY_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_ACCESS_POINTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_ACCESS_POINTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_ACCESS_POINTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATE_TAG_KEYS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_TAG_KEYS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_TAG_KEYS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LISTENER_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::LISTENER_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::LISTENER_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATE_POLICY_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_POLICY_NAME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DUPLICATE_POLICY_NAME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DEPENDENCY_THROTTLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DEPENDENCY_THROTTLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::DEPENDENCY_THROTTLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CONFIGURATION_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_CONFIGURATION_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_CONFIGURATION_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_PROTOCOL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::UNSUPPORTED_PROTOCOL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::UNSUPPORTED_PROTOCOL), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCESS_POINT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::ACCESS_POINT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::ACCESS_POINT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::SUBNET_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::SUBNET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SECURITY_GROUP_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_SECURITY_GROUP), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::INVALID_SECURITY_GROUP), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_POLICIES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_POLICIES), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::TOO_MANY_POLICIES), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CERTIFICATE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::CERTIFICATE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingErrors::CERTIFICATE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

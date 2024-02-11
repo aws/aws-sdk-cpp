@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoPlaybackDeviceCompatibility::NOT_SET:
+            return {};
           case DashIsoPlaybackDeviceCompatibility::CENC_V1:
             return "CENC_V1";
           case DashIsoPlaybackDeviceCompatibility::UNENCRYPTED_SEI:

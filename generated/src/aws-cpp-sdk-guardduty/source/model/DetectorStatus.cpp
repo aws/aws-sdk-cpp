@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetectorStatus::NOT_SET:
+            return {};
           case DetectorStatus::ENABLED:
             return "ENABLED";
           case DetectorStatus::DISABLED:

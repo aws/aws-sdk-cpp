@@ -29,6 +29,9 @@ namespace GroundStation
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef GroundStationClientConfiguration ClientConfigurationType;
+      typedef GroundStationEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -442,7 +445,8 @@ namespace GroundStation
         }
 
         /**
-         * <p>Returns the number of minutes used by account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the number of reserved minutes used by account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMinuteUsage">AWS
          * API Reference</a></p>
          */

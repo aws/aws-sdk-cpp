@@ -21,9 +21,12 @@
         #else
             #define AWS_GUARDDUTY_API __declspec(dllimport)
         #endif /* AWS_GUARDDUTY_EXPORTS */
+        #define AWS_GUARDDUTY_EXTERN
     #else
         #define AWS_GUARDDUTY_API
+        #define AWS_GUARDDUTY_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_GUARDDUTY_API
+    #define AWS_GUARDDUTY_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

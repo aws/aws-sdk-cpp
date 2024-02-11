@@ -26,6 +26,9 @@ namespace Aws
         static const int DIAGNOSTIC_HASH = HashingUtils::HashString("DIAGNOSTIC");
         static const int TERMINATE_RECOVERY_INSTANCES_HASH = HashingUtils::HashString("TERMINATE_RECOVERY_INSTANCES");
         static const int TARGET_ACCOUNT_HASH = HashingUtils::HashString("TARGET_ACCOUNT");
+        static const int CREATE_NETWORK_RECOVERY_HASH = HashingUtils::HashString("CREATE_NETWORK_RECOVERY");
+        static const int UPDATE_NETWORK_RECOVERY_HASH = HashingUtils::HashString("UPDATE_NETWORK_RECOVERY");
+        static const int ASSOCIATE_NETWORK_RECOVERY_HASH = HashingUtils::HashString("ASSOCIATE_NETWORK_RECOVERY");
 
 
         InitiatedBy GetInitiatedByForName(const Aws::String& name)
@@ -55,6 +58,18 @@ namespace Aws
           {
             return InitiatedBy::TARGET_ACCOUNT;
           }
+          else if (hashCode == CREATE_NETWORK_RECOVERY_HASH)
+          {
+            return InitiatedBy::CREATE_NETWORK_RECOVERY;
+          }
+          else if (hashCode == UPDATE_NETWORK_RECOVERY_HASH)
+          {
+            return InitiatedBy::UPDATE_NETWORK_RECOVERY;
+          }
+          else if (hashCode == ASSOCIATE_NETWORK_RECOVERY_HASH)
+          {
+            return InitiatedBy::ASSOCIATE_NETWORK_RECOVERY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -69,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InitiatedBy::NOT_SET:
+            return {};
           case InitiatedBy::START_RECOVERY:
             return "START_RECOVERY";
           case InitiatedBy::START_DRILL:
@@ -81,6 +98,12 @@ namespace Aws
             return "TERMINATE_RECOVERY_INSTANCES";
           case InitiatedBy::TARGET_ACCOUNT:
             return "TARGET_ACCOUNT";
+          case InitiatedBy::CREATE_NETWORK_RECOVERY:
+            return "CREATE_NETWORK_RECOVERY";
+          case InitiatedBy::UPDATE_NETWORK_RECOVERY:
+            return "UPDATE_NETWORK_RECOVERY";
+          case InitiatedBy::ASSOCIATE_NETWORK_RECOVERY:
+            return "ASSOCIATE_NETWORK_RECOVERY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

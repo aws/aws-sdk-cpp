@@ -31,6 +31,9 @@ namespace ServiceCatalog
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef ServiceCatalogClientConfiguration ClientConfigurationType;
+      typedef ServiceCatalogEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -138,7 +141,7 @@ namespace ServiceCatalog
          * <code>PortfolioID</code>, <code>PrincipalARN</code>, and
          * <code>PrincipalType</code> parameters are required. </p> <p>You can associate a
          * maximum of 10 Principals with a portfolio using <code>PrincipalType</code> as
-         * <code>IAM_PATTERN</code> </p>  <p>When you associate a principal with
+         * <code>IAM_PATTERN</code>. </p>  <p>When you associate a principal with
          * portfolio, a potential privilege escalation path may occur when that portfolio
          * is then shared with other accounts. For a user in a recipient account who is
          * <i>not</i> an Service Catalog Admin, but still has the ability to create
@@ -1301,7 +1304,16 @@ namespace ServiceCatalog
          * have been shared with principal name sharing enabled: after disassociating a
          * principal, share recipient accounts will no longer be able to provision products
          * in this portfolio using a role matching the name of the associated principal.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p>For more information, review <a
+         * href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+         * in the Amazon Web Services CLI Command Reference. </p>  <p>If you
+         * disassociate a principal from a portfolio, with PrincipalType as
+         * <code>IAM</code>, the same principal will still have access to the portfolio if
+         * it matches one of the associated principals of type <code>IAM_PATTERN</code>. To
+         * fully remove access for a principal, verify all the associated Principals of
+         * type <code>IAM_PATTERN</code>, and then ensure you disassociate any
+         * <code>IAM_PATTERN</code> principals that match the principal whose access you
+         * are removing.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">AWS
          * API Reference</a></p>
          */
@@ -1557,20 +1569,22 @@ namespace ServiceCatalog
          * that is associated to an Service Catalog product and provisioning artifact. Once
          * imported, all supported governance actions are supported on the provisioned
          * product. </p> <p> Resource import only supports CloudFormation stack ARNs.
-         * CloudFormation StackSets, and non-root nested stacks are not supported. </p> <p>
-         * The CloudFormation stack must have one of the following statuses to be imported:
-         * <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>,
+         * CloudFormation StackSets, and non-root nested stacks, are not supported. </p>
+         * <p> The CloudFormation stack must have one of the following statuses to be
+         * imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>,
          * <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, and
          * <code>IMPORT_ROLLBACK_COMPLETE</code>. </p> <p> Import of the resource requires
          * that the CloudFormation stack template matches the associated Service Catalog
          * product provisioning artifact. </p>  <p> When you import an existing
-         * CloudFormation stack into a portfolio, constraints that are associated with the
-         * product aren't applied during the import process. The constraints are applied
-         * after you call <code>UpdateProvisionedProduct</code> for the provisioned
-         * product. </p>  <p> The user or role that performs this operation must
-         * have the <code>cloudformation:GetTemplate</code> and
-         * <code>cloudformation:DescribeStacks</code> IAM policy permissions.
-         * </p><p><h3>See Also:</h3>   <a
+         * CloudFormation stack into a portfolio, Service Catalog does not apply the
+         * product's associated constraints during the import process. Service Catalog
+         * applies the constraints after you call <code>UpdateProvisionedProduct</code> for
+         * the provisioned product. </p>  <p> The user or role that performs this
+         * operation must have the <code>cloudformation:GetTemplate</code> and
+         * <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p> <p>You
+         * can only import one provisioned product at a time. The product's CloudFormation
+         * stack must have the <code>IMPORT_COMPLETE</code> status before you import
+         * another. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct">AWS
          * API Reference</a></p>
          */
@@ -2407,7 +2421,7 @@ namespace ServiceCatalog
          * portfolio share. </p> <p>The portfolio share cannot be updated if the
          * <code>CreatePortfolioShare</code> operation is <code>IN_PROGRESS</code>, as the
          * share is not available to recipient entities. In this case, you must wait for
-         * the portfolio share to be COMPLETED.</p> <p>You must provide the
+         * the portfolio share to be completed.</p> <p>You must provide the
          * <code>accountId</code> or organization node in the input, but not both.</p>
          * <p>If the portfolio is shared to both an external account and an organization
          * node, and both shares need to be updated, you must invoke

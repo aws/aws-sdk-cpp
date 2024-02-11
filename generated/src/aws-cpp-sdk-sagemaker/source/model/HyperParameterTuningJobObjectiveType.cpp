@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HyperParameterTuningJobObjectiveType::NOT_SET:
+            return {};
           case HyperParameterTuningJobObjectiveType::Maximize:
             return "Maximize";
           case HyperParameterTuningJobObjectiveType::Minimize:

@@ -85,7 +85,9 @@ OracleSettings::OracleSettings() :
     m_trimSpaceInChar(false),
     m_trimSpaceInCharHasBeenSet(false),
     m_convertTimestampWithZoneToUTC(false),
-    m_convertTimestampWithZoneToUTCHasBeenSet(false)
+    m_convertTimestampWithZoneToUTCHasBeenSet(false),
+    m_openTransactionWindow(0),
+    m_openTransactionWindowHasBeenSet(false)
 {
 }
 
@@ -156,7 +158,9 @@ OracleSettings::OracleSettings(JsonView jsonValue) :
     m_trimSpaceInChar(false),
     m_trimSpaceInCharHasBeenSet(false),
     m_convertTimestampWithZoneToUTC(false),
-    m_convertTimestampWithZoneToUTCHasBeenSet(false)
+    m_convertTimestampWithZoneToUTCHasBeenSet(false),
+    m_openTransactionWindow(0),
+    m_openTransactionWindowHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -460,6 +464,13 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_convertTimestampWithZoneToUTCHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OpenTransactionWindow"))
+  {
+    m_openTransactionWindow = jsonValue.GetInteger("OpenTransactionWindow");
+
+    m_openTransactionWindowHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -720,6 +731,12 @@ JsonValue OracleSettings::Jsonize() const
   if(m_convertTimestampWithZoneToUTCHasBeenSet)
   {
    payload.WithBool("ConvertTimestampWithZoneToUTC", m_convertTimestampWithZoneToUTC);
+
+  }
+
+  if(m_openTransactionWindowHasBeenSet)
+  {
+   payload.WithInteger("OpenTransactionWindow", m_openTransactionWindow);
 
   }
 

@@ -85,42 +85,42 @@ namespace Model
 
 
     /**
-     * <p>One or more entries (rules) in the network ACL.</p>
+     * <p>The entries (rules) in the network ACL.</p>
      */
     inline const Aws::Vector<NetworkAclEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>One or more entries (rules) in the network ACL.</p>
+     * <p>The entries (rules) in the network ACL.</p>
      */
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
 
     /**
-     * <p>One or more entries (rules) in the network ACL.</p>
+     * <p>The entries (rules) in the network ACL.</p>
      */
     inline void SetEntries(const Aws::Vector<NetworkAclEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
 
     /**
-     * <p>One or more entries (rules) in the network ACL.</p>
+     * <p>The entries (rules) in the network ACL.</p>
      */
     inline void SetEntries(Aws::Vector<NetworkAclEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
 
     /**
-     * <p>One or more entries (rules) in the network ACL.</p>
+     * <p>The entries (rules) in the network ACL.</p>
      */
     inline NetworkAcl& WithEntries(const Aws::Vector<NetworkAclEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>One or more entries (rules) in the network ACL.</p>
+     * <p>The entries (rules) in the network ACL.</p>
      */
     inline NetworkAcl& WithEntries(Aws::Vector<NetworkAclEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>One or more entries (rules) in the network ACL.</p>
+     * <p>The entries (rules) in the network ACL.</p>
      */
     inline NetworkAcl& AddEntries(const NetworkAclEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
 
     /**
-     * <p>One or more entries (rules) in the network ACL.</p>
+     * <p>The entries (rules) in the network ACL.</p>
      */
     inline NetworkAcl& AddEntries(NetworkAclEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 

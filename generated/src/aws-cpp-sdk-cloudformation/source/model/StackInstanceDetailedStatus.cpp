@@ -26,6 +26,7 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
         static const int INOPERABLE_HASH = HashingUtils::HashString("INOPERABLE");
+        static const int SKIPPED_SUSPENDED_ACCOUNT_HASH = HashingUtils::HashString("SKIPPED_SUSPENDED_ACCOUNT");
 
 
         StackInstanceDetailedStatus GetStackInstanceDetailedStatusForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return StackInstanceDetailedStatus::INOPERABLE;
           }
+          else if (hashCode == SKIPPED_SUSPENDED_ACCOUNT_HASH)
+          {
+            return StackInstanceDetailedStatus::SKIPPED_SUSPENDED_ACCOUNT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -69,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackInstanceDetailedStatus::NOT_SET:
+            return {};
           case StackInstanceDetailedStatus::PENDING:
             return "PENDING";
           case StackInstanceDetailedStatus::RUNNING:
@@ -81,6 +88,8 @@ namespace Aws
             return "CANCELLED";
           case StackInstanceDetailedStatus::INOPERABLE:
             return "INOPERABLE";
+          case StackInstanceDetailedStatus::SKIPPED_SUSPENDED_ACCOUNT:
+            return "SKIPPED_SUSPENDED_ACCOUNT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

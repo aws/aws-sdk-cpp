@@ -83,42 +83,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the endpoint.</p>
+     * <p>The case insensitive unique identifier for the endpoint. The identifier can't
+     * contain <code>$</code>, <code>{</code> or <code>}</code>.</p>
      */
     inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
 
     /**
-     * <p>The unique identifier for the endpoint.</p>
+     * <p>The case insensitive unique identifier for the endpoint. The identifier can't
+     * contain <code>$</code>, <code>{</code> or <code>}</code>.</p>
      */
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the endpoint.</p>
+     * <p>The case insensitive unique identifier for the endpoint. The identifier can't
+     * contain <code>$</code>, <code>{</code> or <code>}</code>.</p>
      */
     inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
 
     /**
-     * <p>The unique identifier for the endpoint.</p>
+     * <p>The case insensitive unique identifier for the endpoint. The identifier can't
+     * contain <code>$</code>, <code>{</code> or <code>}</code>.</p>
      */
     inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the endpoint.</p>
+     * <p>The case insensitive unique identifier for the endpoint. The identifier can't
+     * contain <code>$</code>, <code>{</code> or <code>}</code>.</p>
      */
     inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
 
     /**
-     * <p>The unique identifier for the endpoint.</p>
+     * <p>The case insensitive unique identifier for the endpoint. The identifier can't
+     * contain <code>$</code>, <code>{</code> or <code>}</code>.</p>
      */
     inline UpdateEndpointRequest& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the endpoint.</p>
+     * <p>The case insensitive unique identifier for the endpoint. The identifier can't
+     * contain <code>$</code>, <code>{</code> or <code>}</code>.</p>
      */
     inline UpdateEndpointRequest& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the endpoint.</p>
+     * <p>The case insensitive unique identifier for the endpoint. The identifier can't
+     * contain <code>$</code>, <code>{</code> or <code>}</code>.</p>
      */
     inline UpdateEndpointRequest& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
 

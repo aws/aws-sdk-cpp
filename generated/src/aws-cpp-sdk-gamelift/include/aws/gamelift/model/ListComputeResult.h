@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of compute resources registered to the fleet you specified.</p>
+     * <p>A list of compute resources in the specified fleet.</p>
      */
     inline const Aws::Vector<Compute>& GetComputeList() const{ return m_computeList; }
 
     /**
-     * <p>A list of compute resources registered to the fleet you specified.</p>
+     * <p>A list of compute resources in the specified fleet.</p>
      */
     inline void SetComputeList(const Aws::Vector<Compute>& value) { m_computeList = value; }
 
     /**
-     * <p>A list of compute resources registered to the fleet you specified.</p>
+     * <p>A list of compute resources in the specified fleet.</p>
      */
     inline void SetComputeList(Aws::Vector<Compute>&& value) { m_computeList = std::move(value); }
 
     /**
-     * <p>A list of compute resources registered to the fleet you specified.</p>
+     * <p>A list of compute resources in the specified fleet.</p>
      */
     inline ListComputeResult& WithComputeList(const Aws::Vector<Compute>& value) { SetComputeList(value); return *this;}
 
     /**
-     * <p>A list of compute resources registered to the fleet you specified.</p>
+     * <p>A list of compute resources in the specified fleet.</p>
      */
     inline ListComputeResult& WithComputeList(Aws::Vector<Compute>&& value) { SetComputeList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of compute resources registered to the fleet you specified.</p>
+     * <p>A list of compute resources in the specified fleet.</p>
      */
     inline ListComputeResult& AddComputeList(const Compute& value) { m_computeList.push_back(value); return *this; }
 
     /**
-     * <p>A list of compute resources registered to the fleet you specified.</p>
+     * <p>A list of compute resources in the specified fleet.</p>
      */
     inline ListComputeResult& AddComputeList(Compute&& value) { m_computeList.push_back(std::move(value)); return *this; }
 

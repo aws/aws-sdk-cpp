@@ -84,7 +84,13 @@ namespace Model
     ml_g5_16xlarge,
     ml_g5_12xlarge,
     ml_g5_24xlarge,
-    ml_g5_48xlarge
+    ml_g5_48xlarge,
+    ml_inf1_xlarge,
+    ml_inf1_2xlarge,
+    ml_inf1_6xlarge,
+    ml_inf1_24xlarge,
+    ml_p4d_24xlarge,
+    ml_p4de_24xlarge
   };
 
 namespace InstanceTypeMapper

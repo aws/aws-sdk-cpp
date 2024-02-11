@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreateApplicationRequest::CreateApplicationRequest() : 
     m_apiGatewayProxyHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_environmentIdentifierHasBeenSet(false),
     m_nameHasBeenSet(false),

@@ -68,6 +68,14 @@
 #include <aws/glue/model/S3DeltaSource.h>
 #include <aws/glue/model/S3DeltaCatalogTarget.h>
 #include <aws/glue/model/S3DeltaDirectTarget.h>
+#include <aws/glue/model/AmazonRedshiftSource.h>
+#include <aws/glue/model/AmazonRedshiftTarget.h>
+#include <aws/glue/model/EvaluateDataQualityMultiFrame.h>
+#include <aws/glue/model/Recipe.h>
+#include <aws/glue/model/SnowflakeSource.h>
+#include <aws/glue/model/SnowflakeTarget.h>
+#include <aws/glue/model/ConnectorDataSource.h>
+#include <aws/glue/model/ConnectorDataTarget.h>
 #include <utility>
 
 namespace Aws
@@ -2251,6 +2259,260 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithS3DeltaDirectTarget(S3DeltaDirectTarget&& value) { SetS3DeltaDirectTarget(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline const AmazonRedshiftSource& GetAmazonRedshiftSource() const{ return m_amazonRedshiftSource; }
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline bool AmazonRedshiftSourceHasBeenSet() const { return m_amazonRedshiftSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline void SetAmazonRedshiftSource(const AmazonRedshiftSource& value) { m_amazonRedshiftSourceHasBeenSet = true; m_amazonRedshiftSource = value; }
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline void SetAmazonRedshiftSource(AmazonRedshiftSource&& value) { m_amazonRedshiftSourceHasBeenSet = true; m_amazonRedshiftSource = std::move(value); }
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline CodeGenConfigurationNode& WithAmazonRedshiftSource(const AmazonRedshiftSource& value) { SetAmazonRedshiftSource(value); return *this;}
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline CodeGenConfigurationNode& WithAmazonRedshiftSource(AmazonRedshiftSource&& value) { SetAmazonRedshiftSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline const AmazonRedshiftTarget& GetAmazonRedshiftTarget() const{ return m_amazonRedshiftTarget; }
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline bool AmazonRedshiftTargetHasBeenSet() const { return m_amazonRedshiftTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline void SetAmazonRedshiftTarget(const AmazonRedshiftTarget& value) { m_amazonRedshiftTargetHasBeenSet = true; m_amazonRedshiftTarget = value; }
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline void SetAmazonRedshiftTarget(AmazonRedshiftTarget&& value) { m_amazonRedshiftTargetHasBeenSet = true; m_amazonRedshiftTarget = std::move(value); }
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline CodeGenConfigurationNode& WithAmazonRedshiftTarget(const AmazonRedshiftTarget& value) { SetAmazonRedshiftTarget(value); return *this;}
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline CodeGenConfigurationNode& WithAmazonRedshiftTarget(AmazonRedshiftTarget&& value) { SetAmazonRedshiftTarget(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline const EvaluateDataQualityMultiFrame& GetEvaluateDataQualityMultiFrame() const{ return m_evaluateDataQualityMultiFrame; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline bool EvaluateDataQualityMultiFrameHasBeenSet() const { return m_evaluateDataQualityMultiFrameHasBeenSet; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline void SetEvaluateDataQualityMultiFrame(const EvaluateDataQualityMultiFrame& value) { m_evaluateDataQualityMultiFrameHasBeenSet = true; m_evaluateDataQualityMultiFrame = value; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline void SetEvaluateDataQualityMultiFrame(EvaluateDataQualityMultiFrame&& value) { m_evaluateDataQualityMultiFrameHasBeenSet = true; m_evaluateDataQualityMultiFrame = std::move(value); }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline CodeGenConfigurationNode& WithEvaluateDataQualityMultiFrame(const EvaluateDataQualityMultiFrame& value) { SetEvaluateDataQualityMultiFrame(value); return *this;}
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline CodeGenConfigurationNode& WithEvaluateDataQualityMultiFrame(EvaluateDataQualityMultiFrame&& value) { SetEvaluateDataQualityMultiFrame(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline const Recipe& GetRecipe() const{ return m_recipe; }
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline bool RecipeHasBeenSet() const { return m_recipeHasBeenSet; }
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline void SetRecipe(const Recipe& value) { m_recipeHasBeenSet = true; m_recipe = value; }
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline void SetRecipe(Recipe&& value) { m_recipeHasBeenSet = true; m_recipe = std::move(value); }
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline CodeGenConfigurationNode& WithRecipe(const Recipe& value) { SetRecipe(value); return *this;}
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline CodeGenConfigurationNode& WithRecipe(Recipe&& value) { SetRecipe(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline const SnowflakeSource& GetSnowflakeSource() const{ return m_snowflakeSource; }
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline bool SnowflakeSourceHasBeenSet() const { return m_snowflakeSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline void SetSnowflakeSource(const SnowflakeSource& value) { m_snowflakeSourceHasBeenSet = true; m_snowflakeSource = value; }
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline void SetSnowflakeSource(SnowflakeSource&& value) { m_snowflakeSourceHasBeenSet = true; m_snowflakeSource = std::move(value); }
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline CodeGenConfigurationNode& WithSnowflakeSource(const SnowflakeSource& value) { SetSnowflakeSource(value); return *this;}
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline CodeGenConfigurationNode& WithSnowflakeSource(SnowflakeSource&& value) { SetSnowflakeSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline const SnowflakeTarget& GetSnowflakeTarget() const{ return m_snowflakeTarget; }
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline bool SnowflakeTargetHasBeenSet() const { return m_snowflakeTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline void SetSnowflakeTarget(const SnowflakeTarget& value) { m_snowflakeTargetHasBeenSet = true; m_snowflakeTarget = value; }
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline void SetSnowflakeTarget(SnowflakeTarget&& value) { m_snowflakeTargetHasBeenSet = true; m_snowflakeTarget = std::move(value); }
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline CodeGenConfigurationNode& WithSnowflakeTarget(const SnowflakeTarget& value) { SetSnowflakeTarget(value); return *this;}
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline CodeGenConfigurationNode& WithSnowflakeTarget(SnowflakeTarget&& value) { SetSnowflakeTarget(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline const ConnectorDataSource& GetConnectorDataSource() const{ return m_connectorDataSource; }
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline bool ConnectorDataSourceHasBeenSet() const { return m_connectorDataSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline void SetConnectorDataSource(const ConnectorDataSource& value) { m_connectorDataSourceHasBeenSet = true; m_connectorDataSource = value; }
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline void SetConnectorDataSource(ConnectorDataSource&& value) { m_connectorDataSourceHasBeenSet = true; m_connectorDataSource = std::move(value); }
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline CodeGenConfigurationNode& WithConnectorDataSource(const ConnectorDataSource& value) { SetConnectorDataSource(value); return *this;}
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline CodeGenConfigurationNode& WithConnectorDataSource(ConnectorDataSource&& value) { SetConnectorDataSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline const ConnectorDataTarget& GetConnectorDataTarget() const{ return m_connectorDataTarget; }
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline bool ConnectorDataTargetHasBeenSet() const { return m_connectorDataTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline void SetConnectorDataTarget(const ConnectorDataTarget& value) { m_connectorDataTargetHasBeenSet = true; m_connectorDataTarget = value; }
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline void SetConnectorDataTarget(ConnectorDataTarget&& value) { m_connectorDataTargetHasBeenSet = true; m_connectorDataTarget = std::move(value); }
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline CodeGenConfigurationNode& WithConnectorDataTarget(const ConnectorDataTarget& value) { SetConnectorDataTarget(value); return *this;}
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline CodeGenConfigurationNode& WithConnectorDataTarget(ConnectorDataTarget&& value) { SetConnectorDataTarget(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -2441,6 +2703,30 @@ namespace Model
 
     S3DeltaDirectTarget m_s3DeltaDirectTarget;
     bool m_s3DeltaDirectTargetHasBeenSet = false;
+
+    AmazonRedshiftSource m_amazonRedshiftSource;
+    bool m_amazonRedshiftSourceHasBeenSet = false;
+
+    AmazonRedshiftTarget m_amazonRedshiftTarget;
+    bool m_amazonRedshiftTargetHasBeenSet = false;
+
+    EvaluateDataQualityMultiFrame m_evaluateDataQualityMultiFrame;
+    bool m_evaluateDataQualityMultiFrameHasBeenSet = false;
+
+    Recipe m_recipe;
+    bool m_recipeHasBeenSet = false;
+
+    SnowflakeSource m_snowflakeSource;
+    bool m_snowflakeSourceHasBeenSet = false;
+
+    SnowflakeTarget m_snowflakeTarget;
+    bool m_snowflakeTargetHasBeenSet = false;
+
+    ConnectorDataSource m_connectorDataSource;
+    bool m_connectorDataSourceHasBeenSet = false;
+
+    ConnectorDataTarget m_connectorDataTarget;
+    bool m_connectorDataTargetHasBeenSet = false;
   };
 
 } // namespace Model

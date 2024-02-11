@@ -71,138 +71,138 @@ namespace Model
 
 
     /**
-     * <p>The ID of one or more of the VPC's security groups. You cannot specify
-     * security groups from a different VPC.</p>
+     * <p>The IDs of the security groups. You cannot specify security groups from a
+     * different VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>The ID of one or more of the VPC's security groups. You cannot specify
-     * security groups from a different VPC.</p>
+     * <p>The IDs of the security groups. You cannot specify security groups from a
+     * different VPC.</p>
      */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
-     * <p>The ID of one or more of the VPC's security groups. You cannot specify
-     * security groups from a different VPC.</p>
+     * <p>The IDs of the security groups. You cannot specify security groups from a
+     * different VPC.</p>
      */
     inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * <p>The ID of one or more of the VPC's security groups. You cannot specify
-     * security groups from a different VPC.</p>
+     * <p>The IDs of the security groups. You cannot specify security groups from a
+     * different VPC.</p>
      */
     inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * <p>The ID of one or more of the VPC's security groups. You cannot specify
-     * security groups from a different VPC.</p>
+     * <p>The IDs of the security groups. You cannot specify security groups from a
+     * different VPC.</p>
      */
     inline AttachClassicLinkVpcRequest& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>The ID of one or more of the VPC's security groups. You cannot specify
-     * security groups from a different VPC.</p>
+     * <p>The IDs of the security groups. You cannot specify security groups from a
+     * different VPC.</p>
      */
     inline AttachClassicLinkVpcRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of one or more of the VPC's security groups. You cannot specify
-     * security groups from a different VPC.</p>
+     * <p>The IDs of the security groups. You cannot specify security groups from a
+     * different VPC.</p>
      */
     inline AttachClassicLinkVpcRequest& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>The ID of one or more of the VPC's security groups. You cannot specify
-     * security groups from a different VPC.</p>
+     * <p>The IDs of the security groups. You cannot specify security groups from a
+     * different VPC.</p>
      */
     inline AttachClassicLinkVpcRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ID of one or more of the VPC's security groups. You cannot specify
-     * security groups from a different VPC.</p>
+     * <p>The IDs of the security groups. You cannot specify security groups from a
+     * different VPC.</p>
      */
     inline AttachClassicLinkVpcRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
 
     /**
-     * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+     * <p>The ID of the EC2-Classic instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+     * <p>The ID of the EC2-Classic instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+     * <p>The ID of the EC2-Classic instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+     * <p>The ID of the EC2-Classic instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+     * <p>The ID of the EC2-Classic instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+     * <p>The ID of the EC2-Classic instance.</p>
      */
     inline AttachClassicLinkVpcRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+     * <p>The ID of the EC2-Classic instance.</p>
      */
     inline AttachClassicLinkVpcRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+     * <p>The ID of the EC2-Classic instance.</p>
      */
     inline AttachClassicLinkVpcRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC.</p>
+     * <p>The ID of the ClassicLink-enabled VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC.</p>
+     * <p>The ID of the ClassicLink-enabled VPC.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC.</p>
+     * <p>The ID of the ClassicLink-enabled VPC.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC.</p>
+     * <p>The ID of the ClassicLink-enabled VPC.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC.</p>
+     * <p>The ID of the ClassicLink-enabled VPC.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC.</p>
+     * <p>The ID of the ClassicLink-enabled VPC.</p>
      */
     inline AttachClassicLinkVpcRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC.</p>
+     * <p>The ID of the ClassicLink-enabled VPC.</p>
      */
     inline AttachClassicLinkVpcRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC.</p>
+     * <p>The ID of the ClassicLink-enabled VPC.</p>
      */
     inline AttachClassicLinkVpcRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 

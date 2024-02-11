@@ -7,6 +7,7 @@
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisor_EXPORTS.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotdeviceadvisor/model/AuthenticationMethod.h>
 #include <utility>
 
 namespace Aws
@@ -119,6 +120,78 @@ namespace Model
      */
     inline GetEndpointRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
+    /**
+     * <p>The device role ARN of the device. This is an optional parameter.</p>
+     */
+    inline const Aws::String& GetDeviceRoleArn() const{ return m_deviceRoleArn; }
+
+    /**
+     * <p>The device role ARN of the device. This is an optional parameter.</p>
+     */
+    inline bool DeviceRoleArnHasBeenSet() const { return m_deviceRoleArnHasBeenSet; }
+
+    /**
+     * <p>The device role ARN of the device. This is an optional parameter.</p>
+     */
+    inline void SetDeviceRoleArn(const Aws::String& value) { m_deviceRoleArnHasBeenSet = true; m_deviceRoleArn = value; }
+
+    /**
+     * <p>The device role ARN of the device. This is an optional parameter.</p>
+     */
+    inline void SetDeviceRoleArn(Aws::String&& value) { m_deviceRoleArnHasBeenSet = true; m_deviceRoleArn = std::move(value); }
+
+    /**
+     * <p>The device role ARN of the device. This is an optional parameter.</p>
+     */
+    inline void SetDeviceRoleArn(const char* value) { m_deviceRoleArnHasBeenSet = true; m_deviceRoleArn.assign(value); }
+
+    /**
+     * <p>The device role ARN of the device. This is an optional parameter.</p>
+     */
+    inline GetEndpointRequest& WithDeviceRoleArn(const Aws::String& value) { SetDeviceRoleArn(value); return *this;}
+
+    /**
+     * <p>The device role ARN of the device. This is an optional parameter.</p>
+     */
+    inline GetEndpointRequest& WithDeviceRoleArn(Aws::String&& value) { SetDeviceRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The device role ARN of the device. This is an optional parameter.</p>
+     */
+    inline GetEndpointRequest& WithDeviceRoleArn(const char* value) { SetDeviceRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The authentication method used during the device connection.</p>
+     */
+    inline const AuthenticationMethod& GetAuthenticationMethod() const{ return m_authenticationMethod; }
+
+    /**
+     * <p>The authentication method used during the device connection.</p>
+     */
+    inline bool AuthenticationMethodHasBeenSet() const { return m_authenticationMethodHasBeenSet; }
+
+    /**
+     * <p>The authentication method used during the device connection.</p>
+     */
+    inline void SetAuthenticationMethod(const AuthenticationMethod& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = value; }
+
+    /**
+     * <p>The authentication method used during the device connection.</p>
+     */
+    inline void SetAuthenticationMethod(AuthenticationMethod&& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = std::move(value); }
+
+    /**
+     * <p>The authentication method used during the device connection.</p>
+     */
+    inline GetEndpointRequest& WithAuthenticationMethod(const AuthenticationMethod& value) { SetAuthenticationMethod(value); return *this;}
+
+    /**
+     * <p>The authentication method used during the device connection.</p>
+     */
+    inline GetEndpointRequest& WithAuthenticationMethod(AuthenticationMethod&& value) { SetAuthenticationMethod(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_thingArn;
@@ -126,6 +199,12 @@ namespace Model
 
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet = false;
+
+    Aws::String m_deviceRoleArn;
+    bool m_deviceRoleArnHasBeenSet = false;
+
+    AuthenticationMethod m_authenticationMethod;
+    bool m_authenticationMethodHasBeenSet = false;
   };
 
 } // namespace Model

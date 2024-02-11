@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HITAccessActions::NOT_SET:
+            return {};
           case HITAccessActions::Accept:
             return "Accept";
           case HITAccessActions::PreviewAndAccept:

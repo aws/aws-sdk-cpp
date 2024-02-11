@@ -31,9 +31,9 @@ namespace Model
 {
 
   /**
-   * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-   * the input that you will use in your outputs. You can use multiple Audio
-   * selectors per input.<p><h3>See Also:</h3>   <a
+   * Use Audio selectors to specify a track or set of tracks from the input that you
+   * will use in your outputs. You can use multiple Audio selectors per
+   * input.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioSelector">AWS
    * API Reference</a></p>
    */
@@ -454,11 +454,9 @@ namespace Model
      * extract specific program data from the track. To select multiple programs,
      * create multiple selectors with the same Track and different Program numbers. In
      * the console, this setting is visible when you set Selector type to Track. Choose
-     * the program number from the dropdown list. If you are sending a JSON file,
-     * provide the program ID, which is part of the audio metadata. If your input file
-     * has incorrect metadata, you can choose All channels instead of a program number
-     * to have the service ignore the program IDs and include all the programs in the
-     * track.
+     * the program number from the dropdown list. If your input file has incorrect
+     * metadata, you can choose All channels instead of a program number to have the
+     * service ignore the program IDs and include all the programs in the track.
      */
     inline int GetProgramSelection() const{ return m_programSelection; }
 
@@ -467,11 +465,9 @@ namespace Model
      * extract specific program data from the track. To select multiple programs,
      * create multiple selectors with the same Track and different Program numbers. In
      * the console, this setting is visible when you set Selector type to Track. Choose
-     * the program number from the dropdown list. If you are sending a JSON file,
-     * provide the program ID, which is part of the audio metadata. If your input file
-     * has incorrect metadata, you can choose All channels instead of a program number
-     * to have the service ignore the program IDs and include all the programs in the
-     * track.
+     * the program number from the dropdown list. If your input file has incorrect
+     * metadata, you can choose All channels instead of a program number to have the
+     * service ignore the program IDs and include all the programs in the track.
      */
     inline bool ProgramSelectionHasBeenSet() const { return m_programSelectionHasBeenSet; }
 
@@ -480,11 +476,9 @@ namespace Model
      * extract specific program data from the track. To select multiple programs,
      * create multiple selectors with the same Track and different Program numbers. In
      * the console, this setting is visible when you set Selector type to Track. Choose
-     * the program number from the dropdown list. If you are sending a JSON file,
-     * provide the program ID, which is part of the audio metadata. If your input file
-     * has incorrect metadata, you can choose All channels instead of a program number
-     * to have the service ignore the program IDs and include all the programs in the
-     * track.
+     * the program number from the dropdown list. If your input file has incorrect
+     * metadata, you can choose All channels instead of a program number to have the
+     * service ignore the program IDs and include all the programs in the track.
      */
     inline void SetProgramSelection(int value) { m_programSelectionHasBeenSet = true; m_programSelection = value; }
 
@@ -493,11 +487,9 @@ namespace Model
      * extract specific program data from the track. To select multiple programs,
      * create multiple selectors with the same Track and different Program numbers. In
      * the console, this setting is visible when you set Selector type to Track. Choose
-     * the program number from the dropdown list. If you are sending a JSON file,
-     * provide the program ID, which is part of the audio metadata. If your input file
-     * has incorrect metadata, you can choose All channels instead of a program number
-     * to have the service ignore the program IDs and include all the programs in the
-     * track.
+     * the program number from the dropdown list. If your input file has incorrect
+     * metadata, you can choose All channels instead of a program number to have the
+     * service ignore the program IDs and include all the programs in the track.
      */
     inline AudioSelector& WithProgramSelection(int value) { SetProgramSelection(value); return *this;}
 
@@ -580,9 +572,7 @@ namespace Model
      * Identify a track from the input audio to include in this selector by entering
      * the track index number. To include several tracks in a single audio selector,
      * specify multiple tracks as follows. Using the console, enter a comma-separated
-     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
-     * directly in your JSON job file, provide the track numbers in an array. For
-     * example, "tracks": [1,2,3].
+     * list. For example, type "1,2,3" to include tracks 1 through 3.
      */
     inline const Aws::Vector<int>& GetTracks() const{ return m_tracks; }
 
@@ -590,9 +580,7 @@ namespace Model
      * Identify a track from the input audio to include in this selector by entering
      * the track index number. To include several tracks in a single audio selector,
      * specify multiple tracks as follows. Using the console, enter a comma-separated
-     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
-     * directly in your JSON job file, provide the track numbers in an array. For
-     * example, "tracks": [1,2,3].
+     * list. For example, type "1,2,3" to include tracks 1 through 3.
      */
     inline bool TracksHasBeenSet() const { return m_tracksHasBeenSet; }
 
@@ -600,9 +588,7 @@ namespace Model
      * Identify a track from the input audio to include in this selector by entering
      * the track index number. To include several tracks in a single audio selector,
      * specify multiple tracks as follows. Using the console, enter a comma-separated
-     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
-     * directly in your JSON job file, provide the track numbers in an array. For
-     * example, "tracks": [1,2,3].
+     * list. For example, type "1,2,3" to include tracks 1 through 3.
      */
     inline void SetTracks(const Aws::Vector<int>& value) { m_tracksHasBeenSet = true; m_tracks = value; }
 
@@ -610,9 +596,7 @@ namespace Model
      * Identify a track from the input audio to include in this selector by entering
      * the track index number. To include several tracks in a single audio selector,
      * specify multiple tracks as follows. Using the console, enter a comma-separated
-     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
-     * directly in your JSON job file, provide the track numbers in an array. For
-     * example, "tracks": [1,2,3].
+     * list. For example, type "1,2,3" to include tracks 1 through 3.
      */
     inline void SetTracks(Aws::Vector<int>&& value) { m_tracksHasBeenSet = true; m_tracks = std::move(value); }
 
@@ -620,9 +604,7 @@ namespace Model
      * Identify a track from the input audio to include in this selector by entering
      * the track index number. To include several tracks in a single audio selector,
      * specify multiple tracks as follows. Using the console, enter a comma-separated
-     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
-     * directly in your JSON job file, provide the track numbers in an array. For
-     * example, "tracks": [1,2,3].
+     * list. For example, type "1,2,3" to include tracks 1 through 3.
      */
     inline AudioSelector& WithTracks(const Aws::Vector<int>& value) { SetTracks(value); return *this;}
 
@@ -630,9 +612,7 @@ namespace Model
      * Identify a track from the input audio to include in this selector by entering
      * the track index number. To include several tracks in a single audio selector,
      * specify multiple tracks as follows. Using the console, enter a comma-separated
-     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
-     * directly in your JSON job file, provide the track numbers in an array. For
-     * example, "tracks": [1,2,3].
+     * list. For example, type "1,2,3" to include tracks 1 through 3.
      */
     inline AudioSelector& WithTracks(Aws::Vector<int>&& value) { SetTracks(std::move(value)); return *this;}
 
@@ -640,9 +620,7 @@ namespace Model
      * Identify a track from the input audio to include in this selector by entering
      * the track index number. To include several tracks in a single audio selector,
      * specify multiple tracks as follows. Using the console, enter a comma-separated
-     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
-     * directly in your JSON job file, provide the track numbers in an array. For
-     * example, "tracks": [1,2,3].
+     * list. For example, type "1,2,3" to include tracks 1 through 3.
      */
     inline AudioSelector& AddTracks(int value) { m_tracksHasBeenSet = true; m_tracks.push_back(value); return *this; }
 

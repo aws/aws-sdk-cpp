@@ -36,6 +36,9 @@ namespace MigrationHubConfig
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef MigrationHubConfigClientConfiguration ClientConfigurationType;
+      typedef MigrationHubConfigEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -108,6 +111,33 @@ namespace MigrationHubConfig
         void CreateHomeRegionControlAsync(const CreateHomeRegionControlRequestT& request, const CreateHomeRegionControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MigrationHubConfigClient::CreateHomeRegionControl, request, handler, context);
+        }
+
+        /**
+         * <p>This operation deletes the home region configuration for the calling account.
+         * The operation does not delete discovery or migration tracking data in the home
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DeleteHomeRegionControl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteHomeRegionControlOutcome DeleteHomeRegionControl(const Model::DeleteHomeRegionControlRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteHomeRegionControl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteHomeRegionControlRequestT = Model::DeleteHomeRegionControlRequest>
+        Model::DeleteHomeRegionControlOutcomeCallable DeleteHomeRegionControlCallable(const DeleteHomeRegionControlRequestT& request) const
+        {
+            return SubmitCallable(&MigrationHubConfigClient::DeleteHomeRegionControl, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteHomeRegionControl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteHomeRegionControlRequestT = Model::DeleteHomeRegionControlRequest>
+        void DeleteHomeRegionControlAsync(const DeleteHomeRegionControlRequestT& request, const DeleteHomeRegionControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MigrationHubConfigClient::DeleteHomeRegionControl, request, handler, context);
         }
 
         /**

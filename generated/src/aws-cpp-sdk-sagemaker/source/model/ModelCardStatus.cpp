@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelCardStatus::NOT_SET:
+            return {};
           case ModelCardStatus::Draft:
             return "Draft";
           case ModelCardStatus::PendingReview:

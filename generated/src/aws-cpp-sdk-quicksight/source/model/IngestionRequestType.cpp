@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IngestionRequestType::NOT_SET:
+            return {};
           case IngestionRequestType::INITIAL_INGESTION:
             return "INITIAL_INGESTION";
           case IngestionRequestType::EDIT:

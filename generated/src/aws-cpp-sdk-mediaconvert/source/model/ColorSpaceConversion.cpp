@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColorSpaceConversion::NOT_SET:
+            return {};
           case ColorSpaceConversion::NONE:
             return "NONE";
           case ColorSpaceConversion::FORCE_601:

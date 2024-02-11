@@ -41,7 +41,7 @@ namespace Model
      * an error adding a document to an index the error is reported in your Amazon Web
      * Services CloudWatch log. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
-     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
+     * Amazon Kendra with Amazon CloudWatch logs</a>.</p>
      */
     inline const Aws::Vector<BatchPutDocumentResponseFailedDocument>& GetFailedDocuments() const{ return m_failedDocuments; }
 
@@ -52,7 +52,7 @@ namespace Model
      * an error adding a document to an index the error is reported in your Amazon Web
      * Services CloudWatch log. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
-     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
+     * Amazon Kendra with Amazon CloudWatch logs</a>.</p>
      */
     inline void SetFailedDocuments(const Aws::Vector<BatchPutDocumentResponseFailedDocument>& value) { m_failedDocuments = value; }
 
@@ -63,7 +63,7 @@ namespace Model
      * an error adding a document to an index the error is reported in your Amazon Web
      * Services CloudWatch log. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
-     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
+     * Amazon Kendra with Amazon CloudWatch logs</a>.</p>
      */
     inline void SetFailedDocuments(Aws::Vector<BatchPutDocumentResponseFailedDocument>&& value) { m_failedDocuments = std::move(value); }
 
@@ -74,7 +74,7 @@ namespace Model
      * an error adding a document to an index the error is reported in your Amazon Web
      * Services CloudWatch log. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
-     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
+     * Amazon Kendra with Amazon CloudWatch logs</a>.</p>
      */
     inline BatchPutDocumentResult& WithFailedDocuments(const Aws::Vector<BatchPutDocumentResponseFailedDocument>& value) { SetFailedDocuments(value); return *this;}
 
@@ -85,7 +85,7 @@ namespace Model
      * an error adding a document to an index the error is reported in your Amazon Web
      * Services CloudWatch log. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
-     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
+     * Amazon Kendra with Amazon CloudWatch logs</a>.</p>
      */
     inline BatchPutDocumentResult& WithFailedDocuments(Aws::Vector<BatchPutDocumentResponseFailedDocument>&& value) { SetFailedDocuments(std::move(value)); return *this;}
 
@@ -96,7 +96,7 @@ namespace Model
      * an error adding a document to an index the error is reported in your Amazon Web
      * Services CloudWatch log. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
-     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
+     * Amazon Kendra with Amazon CloudWatch logs</a>.</p>
      */
     inline BatchPutDocumentResult& AddFailedDocuments(const BatchPutDocumentResponseFailedDocument& value) { m_failedDocuments.push_back(value); return *this; }
 
@@ -107,7 +107,7 @@ namespace Model
      * an error adding a document to an index the error is reported in your Amazon Web
      * Services CloudWatch log. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
-     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
+     * Amazon Kendra with Amazon CloudWatch logs</a>.</p>
      */
     inline BatchPutDocumentResult& AddFailedDocuments(BatchPutDocumentResponseFailedDocument&& value) { m_failedDocuments.push_back(std::move(value)); return *this; }
 

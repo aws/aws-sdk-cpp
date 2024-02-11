@@ -34,7 +34,11 @@ UpgradeTarget::UpgradeTarget() :
     m_supportsGlobalDatabases(false),
     m_supportsGlobalDatabasesHasBeenSet(false),
     m_supportsBabelfish(false),
-    m_supportsBabelfishHasBeenSet(false)
+    m_supportsBabelfishHasBeenSet(false),
+    m_supportsLocalWriteForwarding(false),
+    m_supportsLocalWriteForwardingHasBeenSet(false),
+    m_supportsIntegrations(false),
+    m_supportsIntegrationsHasBeenSet(false)
 {
 }
 
@@ -52,7 +56,11 @@ UpgradeTarget::UpgradeTarget(const XmlNode& xmlNode) :
     m_supportsGlobalDatabases(false),
     m_supportsGlobalDatabasesHasBeenSet(false),
     m_supportsBabelfish(false),
-    m_supportsBabelfishHasBeenSet(false)
+    m_supportsBabelfishHasBeenSet(false),
+    m_supportsLocalWriteForwarding(false),
+    m_supportsLocalWriteForwardingHasBeenSet(false),
+    m_supportsIntegrations(false),
+    m_supportsIntegrationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -123,6 +131,18 @@ UpgradeTarget& UpgradeTarget::operator =(const XmlNode& xmlNode)
       m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
       m_supportsBabelfishHasBeenSet = true;
     }
+    XmlNode supportsLocalWriteForwardingNode = resultNode.FirstChild("SupportsLocalWriteForwarding");
+    if(!supportsLocalWriteForwardingNode.IsNull())
+    {
+      m_supportsLocalWriteForwarding = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLocalWriteForwardingNode.GetText()).c_str()).c_str());
+      m_supportsLocalWriteForwardingHasBeenSet = true;
+    }
+    XmlNode supportsIntegrationsNode = resultNode.FirstChild("SupportsIntegrations");
+    if(!supportsIntegrationsNode.IsNull())
+    {
+      m_supportsIntegrations = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsIntegrationsNode.GetText()).c_str()).c_str());
+      m_supportsIntegrationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -179,6 +199,16 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
   }
 
+  if(m_supportsLocalWriteForwardingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsLocalWriteForwarding=" << std::boolalpha << m_supportsLocalWriteForwarding << "&";
+  }
+
+  if(m_supportsIntegrationsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsIntegrations=" << std::boolalpha << m_supportsIntegrations << "&";
+  }
+
 }
 
 void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -222,6 +252,14 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_supportsBabelfishHasBeenSet)
   {
       oStream << location << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
+  }
+  if(m_supportsLocalWriteForwardingHasBeenSet)
+  {
+      oStream << location << ".SupportsLocalWriteForwarding=" << std::boolalpha << m_supportsLocalWriteForwarding << "&";
+  }
+  if(m_supportsIntegrationsHasBeenSet)
+  {
+      oStream << location << ".SupportsIntegrations=" << std::boolalpha << m_supportsIntegrations << "&";
   }
 }
 

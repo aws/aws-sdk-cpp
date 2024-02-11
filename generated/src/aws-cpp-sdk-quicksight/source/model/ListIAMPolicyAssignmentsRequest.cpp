@@ -28,19 +28,19 @@ ListIAMPolicyAssignmentsRequest::ListIAMPolicyAssignmentsRequest() :
 
 Aws::String ListIAMPolicyAssignmentsRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_assignmentStatusHasBeenSet)
-  {
-   payload.WithString("AssignmentStatus", AssignmentStatusMapper::GetNameForAssignmentStatus(m_assignmentStatus));
-  }
-
-  return payload.View().WriteReadable();
+  return {};
 }
 
 void ListIAMPolicyAssignmentsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_assignmentStatusHasBeenSet)
+    {
+      ss << AssignmentStatusMapper::GetNameForAssignmentStatus(m_assignmentStatus);
+      uri.AddQueryStringParameter("assignment-status", ss.str());
+      ss.str("");
+    }
+
     if(m_nextTokenHasBeenSet)
     {
       ss << m_nextToken;

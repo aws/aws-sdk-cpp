@@ -9,6 +9,9 @@
 #include <aws/fsx/model/SecurityStyle.h>
 #include <aws/fsx/model/TieringPolicy.h>
 #include <aws/fsx/model/InputOntapVolumeType.h>
+#include <aws/fsx/model/CreateSnaplockConfiguration.h>
+#include <aws/fsx/model/VolumeStyle.h>
+#include <aws/fsx/model/CreateAggregateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -211,35 +214,6 @@ namespace Model
      * </ul>
      */
     inline CreateOntapVolumeConfiguration& WithSecurityStyle(SecurityStyle&& value) { SetSecurityStyle(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
-     * Provide any whole number in the range of 20–104857600 to specify the size of the
-     * volume.</p>
-     */
-    inline int GetSizeInMegabytes() const{ return m_sizeInMegabytes; }
-
-    /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
-     * Provide any whole number in the range of 20–104857600 to specify the size of the
-     * volume.</p>
-     */
-    inline bool SizeInMegabytesHasBeenSet() const { return m_sizeInMegabytesHasBeenSet; }
-
-    /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
-     * Provide any whole number in the range of 20–104857600 to specify the size of the
-     * volume.</p>
-     */
-    inline void SetSizeInMegabytes(int value) { m_sizeInMegabytesHasBeenSet = true; m_sizeInMegabytes = value; }
-
-    /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
-     * Provide any whole number in the range of 20–104857600 to specify the size of the
-     * volume.</p>
-     */
-    inline CreateOntapVolumeConfiguration& WithSizeInMegabytes(int value) { SetSizeInMegabytes(value); return *this;}
 
 
     /**
@@ -593,6 +567,144 @@ namespace Model
      */
     inline CreateOntapVolumeConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
 
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline const CreateSnaplockConfiguration& GetSnaplockConfiguration() const{ return m_snaplockConfiguration; }
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline bool SnaplockConfigurationHasBeenSet() const { return m_snaplockConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline void SetSnaplockConfiguration(const CreateSnaplockConfiguration& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = value; }
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline void SetSnaplockConfiguration(CreateSnaplockConfiguration&& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline CreateOntapVolumeConfiguration& WithSnaplockConfiguration(const CreateSnaplockConfiguration& value) { SetSnaplockConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline CreateOntapVolumeConfiguration& WithSnaplockConfiguration(CreateSnaplockConfiguration&& value) { SetSnaplockConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline const VolumeStyle& GetVolumeStyle() const{ return m_volumeStyle; }
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline bool VolumeStyleHasBeenSet() const { return m_volumeStyleHasBeenSet; }
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline void SetVolumeStyle(const VolumeStyle& value) { m_volumeStyleHasBeenSet = true; m_volumeStyle = value; }
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline void SetVolumeStyle(VolumeStyle&& value) { m_volumeStyleHasBeenSet = true; m_volumeStyle = std::move(value); }
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline CreateOntapVolumeConfiguration& WithVolumeStyle(const VolumeStyle& value) { SetVolumeStyle(value); return *this;}
+
+    /**
+     * <p>Use to specify the style of an ONTAP volume. For more information about
+     * FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+     * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+     */
+    inline CreateOntapVolumeConfiguration& WithVolumeStyle(VolumeStyle&& value) { SetVolumeStyle(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Use to specify configuration options for a volume’s storage aggregate or
+     * aggregates.</p>
+     */
+    inline const CreateAggregateConfiguration& GetAggregateConfiguration() const{ return m_aggregateConfiguration; }
+
+    /**
+     * <p>Use to specify configuration options for a volume’s storage aggregate or
+     * aggregates.</p>
+     */
+    inline bool AggregateConfigurationHasBeenSet() const { return m_aggregateConfigurationHasBeenSet; }
+
+    /**
+     * <p>Use to specify configuration options for a volume’s storage aggregate or
+     * aggregates.</p>
+     */
+    inline void SetAggregateConfiguration(const CreateAggregateConfiguration& value) { m_aggregateConfigurationHasBeenSet = true; m_aggregateConfiguration = value; }
+
+    /**
+     * <p>Use to specify configuration options for a volume’s storage aggregate or
+     * aggregates.</p>
+     */
+    inline void SetAggregateConfiguration(CreateAggregateConfiguration&& value) { m_aggregateConfigurationHasBeenSet = true; m_aggregateConfiguration = std::move(value); }
+
+    /**
+     * <p>Use to specify configuration options for a volume’s storage aggregate or
+     * aggregates.</p>
+     */
+    inline CreateOntapVolumeConfiguration& WithAggregateConfiguration(const CreateAggregateConfiguration& value) { SetAggregateConfiguration(value); return *this;}
+
+    /**
+     * <p>Use to specify configuration options for a volume’s storage aggregate or
+     * aggregates.</p>
+     */
+    inline CreateOntapVolumeConfiguration& WithAggregateConfiguration(CreateAggregateConfiguration&& value) { SetAggregateConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline CreateOntapVolumeConfiguration& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
+
   private:
 
     Aws::String m_junctionPath;
@@ -600,9 +712,6 @@ namespace Model
 
     SecurityStyle m_securityStyle;
     bool m_securityStyleHasBeenSet = false;
-
-    int m_sizeInMegabytes;
-    bool m_sizeInMegabytesHasBeenSet = false;
 
     bool m_storageEfficiencyEnabled;
     bool m_storageEfficiencyEnabledHasBeenSet = false;
@@ -621,6 +730,18 @@ namespace Model
 
     bool m_copyTagsToBackups;
     bool m_copyTagsToBackupsHasBeenSet = false;
+
+    CreateSnaplockConfiguration m_snaplockConfiguration;
+    bool m_snaplockConfigurationHasBeenSet = false;
+
+    VolumeStyle m_volumeStyle;
+    bool m_volumeStyleHasBeenSet = false;
+
+    CreateAggregateConfiguration m_aggregateConfiguration;
+    bool m_aggregateConfigurationHasBeenSet = false;
+
+    long long m_sizeInBytes;
+    bool m_sizeInBytesHasBeenSet = false;
   };
 
 } // namespace Model

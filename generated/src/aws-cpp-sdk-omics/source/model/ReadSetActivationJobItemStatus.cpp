@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReadSetActivationJobItemStatus::NOT_SET:
+            return {};
           case ReadSetActivationJobItemStatus::NOT_STARTED:
             return "NOT_STARTED";
           case ReadSetActivationJobItemStatus::IN_PROGRESS:

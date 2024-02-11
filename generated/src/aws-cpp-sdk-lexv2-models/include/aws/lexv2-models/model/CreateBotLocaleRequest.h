@@ -8,6 +8,7 @@
 #include <aws/lexv2-models/LexModelsV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-models/model/VoiceSettings.h>
+#include <aws/lexv2-models/model/GenerativeAISettings.h>
 #include <utility>
 
 namespace Aws
@@ -346,6 +347,25 @@ namespace Model
      */
     inline CreateBotLocaleRequest& WithVoiceSettings(VoiceSettings&& value) { SetVoiceSettings(std::move(value)); return *this;}
 
+
+    
+    inline const GenerativeAISettings& GetGenerativeAISettings() const{ return m_generativeAISettings; }
+
+    
+    inline bool GenerativeAISettingsHasBeenSet() const { return m_generativeAISettingsHasBeenSet; }
+
+    
+    inline void SetGenerativeAISettings(const GenerativeAISettings& value) { m_generativeAISettingsHasBeenSet = true; m_generativeAISettings = value; }
+
+    
+    inline void SetGenerativeAISettings(GenerativeAISettings&& value) { m_generativeAISettingsHasBeenSet = true; m_generativeAISettings = std::move(value); }
+
+    
+    inline CreateBotLocaleRequest& WithGenerativeAISettings(const GenerativeAISettings& value) { SetGenerativeAISettings(value); return *this;}
+
+    
+    inline CreateBotLocaleRequest& WithGenerativeAISettings(GenerativeAISettings&& value) { SetGenerativeAISettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_botId;
@@ -365,6 +385,9 @@ namespace Model
 
     VoiceSettings m_voiceSettings;
     bool m_voiceSettingsHasBeenSet = false;
+
+    GenerativeAISettings m_generativeAISettings;
+    bool m_generativeAISettingsHasBeenSet = false;
   };
 
 } // namespace Model

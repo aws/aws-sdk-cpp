@@ -25,7 +25,8 @@ AutoMLChannel::AutoMLChannel() :
     m_targetAttributeNameHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
     m_channelType(AutoMLChannelType::NOT_SET),
-    m_channelTypeHasBeenSet(false)
+    m_channelTypeHasBeenSet(false),
+    m_sampleWeightAttributeNameHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ AutoMLChannel::AutoMLChannel(JsonView jsonValue) :
     m_targetAttributeNameHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
     m_channelType(AutoMLChannelType::NOT_SET),
-    m_channelTypeHasBeenSet(false)
+    m_channelTypeHasBeenSet(false),
+    m_sampleWeightAttributeNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +80,13 @@ AutoMLChannel& AutoMLChannel::operator =(JsonView jsonValue)
     m_channelTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SampleWeightAttributeName"))
+  {
+    m_sampleWeightAttributeName = jsonValue.GetString("SampleWeightAttributeName");
+
+    m_sampleWeightAttributeNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +120,12 @@ JsonValue AutoMLChannel::Jsonize() const
   if(m_channelTypeHasBeenSet)
   {
    payload.WithString("ChannelType", AutoMLChannelTypeMapper::GetNameForAutoMLChannelType(m_channelType));
+  }
+
+  if(m_sampleWeightAttributeNameHasBeenSet)
+  {
+   payload.WithString("SampleWeightAttributeName", m_sampleWeightAttributeName);
+
   }
 
   return payload;

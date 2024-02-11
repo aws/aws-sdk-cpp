@@ -35,87 +35,87 @@ namespace Model
 
 
     /**
-     * <p>Lists the controls enabled by AWS Control Tower on the specified
-     * organizational unit and the accounts it contains.</p>
+     * <p>Lists the controls enabled by Amazon Web Services Control Tower on the
+     * specified organizational unit and the accounts it contains.</p>
      */
     inline const Aws::Vector<EnabledControlSummary>& GetEnabledControls() const{ return m_enabledControls; }
 
     /**
-     * <p>Lists the controls enabled by AWS Control Tower on the specified
-     * organizational unit and the accounts it contains.</p>
+     * <p>Lists the controls enabled by Amazon Web Services Control Tower on the
+     * specified organizational unit and the accounts it contains.</p>
      */
     inline void SetEnabledControls(const Aws::Vector<EnabledControlSummary>& value) { m_enabledControls = value; }
 
     /**
-     * <p>Lists the controls enabled by AWS Control Tower on the specified
-     * organizational unit and the accounts it contains.</p>
+     * <p>Lists the controls enabled by Amazon Web Services Control Tower on the
+     * specified organizational unit and the accounts it contains.</p>
      */
     inline void SetEnabledControls(Aws::Vector<EnabledControlSummary>&& value) { m_enabledControls = std::move(value); }
 
     /**
-     * <p>Lists the controls enabled by AWS Control Tower on the specified
-     * organizational unit and the accounts it contains.</p>
+     * <p>Lists the controls enabled by Amazon Web Services Control Tower on the
+     * specified organizational unit and the accounts it contains.</p>
      */
     inline ListEnabledControlsResult& WithEnabledControls(const Aws::Vector<EnabledControlSummary>& value) { SetEnabledControls(value); return *this;}
 
     /**
-     * <p>Lists the controls enabled by AWS Control Tower on the specified
-     * organizational unit and the accounts it contains.</p>
+     * <p>Lists the controls enabled by Amazon Web Services Control Tower on the
+     * specified organizational unit and the accounts it contains.</p>
      */
     inline ListEnabledControlsResult& WithEnabledControls(Aws::Vector<EnabledControlSummary>&& value) { SetEnabledControls(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the controls enabled by AWS Control Tower on the specified
-     * organizational unit and the accounts it contains.</p>
+     * <p>Lists the controls enabled by Amazon Web Services Control Tower on the
+     * specified organizational unit and the accounts it contains.</p>
      */
     inline ListEnabledControlsResult& AddEnabledControls(const EnabledControlSummary& value) { m_enabledControls.push_back(value); return *this; }
 
     /**
-     * <p>Lists the controls enabled by AWS Control Tower on the specified
-     * organizational unit and the accounts it contains.</p>
+     * <p>Lists the controls enabled by Amazon Web Services Control Tower on the
+     * specified organizational unit and the accounts it contains.</p>
      */
     inline ListEnabledControlsResult& AddEnabledControls(EnabledControlSummary&& value) { m_enabledControls.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Retrieves the next page of results. If the string is empty, the current
-     * response is the end of the results.</p>
+     * <p>Retrieves the next page of results. If the string is empty, the response is
+     * the end of the results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Retrieves the next page of results. If the string is empty, the current
-     * response is the end of the results.</p>
+     * <p>Retrieves the next page of results. If the string is empty, the response is
+     * the end of the results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Retrieves the next page of results. If the string is empty, the current
-     * response is the end of the results.</p>
+     * <p>Retrieves the next page of results. If the string is empty, the response is
+     * the end of the results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Retrieves the next page of results. If the string is empty, the current
-     * response is the end of the results.</p>
+     * <p>Retrieves the next page of results. If the string is empty, the response is
+     * the end of the results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Retrieves the next page of results. If the string is empty, the current
-     * response is the end of the results.</p>
+     * <p>Retrieves the next page of results. If the string is empty, the response is
+     * the end of the results.</p>
      */
     inline ListEnabledControlsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Retrieves the next page of results. If the string is empty, the current
-     * response is the end of the results.</p>
+     * <p>Retrieves the next page of results. If the string is empty, the response is
+     * the end of the results.</p>
      */
     inline ListEnabledControlsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Retrieves the next page of results. If the string is empty, the current
-     * response is the end of the results.</p>
+     * <p>Retrieves the next page of results. If the string is empty, the response is
+     * the end of the results.</p>
      */
     inline ListEnabledControlsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkFabricType::NOT_SET:
+            return {};
           case NetworkFabricType::TRANSIT_GATEWAY:
             return "TRANSIT_GATEWAY";
           case NetworkFabricType::NONE:

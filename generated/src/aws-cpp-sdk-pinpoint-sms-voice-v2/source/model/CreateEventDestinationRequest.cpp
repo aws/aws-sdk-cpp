@@ -19,7 +19,7 @@ CreateEventDestinationRequest::CreateEventDestinationRequest() :
     m_cloudWatchLogsDestinationHasBeenSet(false),
     m_kinesisFirehoseDestinationHasBeenSet(false),
     m_snsDestinationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

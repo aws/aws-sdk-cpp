@@ -33,7 +33,8 @@ AmazonopensearchserviceDestinationConfiguration::AmazonopensearchserviceDestinat
     m_s3ConfigurationHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+    m_vpcConfigurationHasBeenSet(false),
+    m_documentIdOptionsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ AmazonopensearchserviceDestinationConfiguration::AmazonopensearchserviceDestinat
     m_s3ConfigurationHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+    m_vpcConfigurationHasBeenSet(false),
+    m_documentIdOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -150,6 +152,13 @@ AmazonopensearchserviceDestinationConfiguration& AmazonopensearchserviceDestinat
     m_vpcConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DocumentIdOptions"))
+  {
+    m_documentIdOptions = jsonValue.GetObject("DocumentIdOptions");
+
+    m_documentIdOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -230,6 +239,12 @@ JsonValue AmazonopensearchserviceDestinationConfiguration::Jsonize() const
   if(m_vpcConfigurationHasBeenSet)
   {
    payload.WithObject("VpcConfiguration", m_vpcConfiguration.Jsonize());
+
+  }
+
+  if(m_documentIdOptionsHasBeenSet)
+  {
+   payload.WithObject("DocumentIdOptions", m_documentIdOptions.Jsonize());
 
   }
 

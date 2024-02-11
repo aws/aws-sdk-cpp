@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MotionImagePlayback::NOT_SET:
+            return {};
           case MotionImagePlayback::ONCE:
             return "ONCE";
           case MotionImagePlayback::REPEAT:

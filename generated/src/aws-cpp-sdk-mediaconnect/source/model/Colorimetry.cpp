@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Colorimetry::NOT_SET:
+            return {};
           case Colorimetry::BT601:
             return "BT601";
           case Colorimetry::BT709:

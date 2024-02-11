@@ -3,12 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/http/HttpTypes.h>
 
 using namespace Aws::Http;
 
-TEST(HttpMethodMapperTest, TestHttpMethodToString)
+class HttpMethodMapperTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(HttpMethodMapperTest, TestHttpMethodToString)
 {
     ASSERT_STREQ("GET", HttpMethodMapper::GetNameForHttpMethod(HttpMethod::HTTP_GET));
     ASSERT_STREQ("PUT", HttpMethodMapper::GetNameForHttpMethod(HttpMethod::HTTP_PUT));

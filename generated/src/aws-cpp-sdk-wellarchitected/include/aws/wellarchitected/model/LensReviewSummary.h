@@ -9,7 +9,9 @@
 #include <aws/wellarchitected/model/LensStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wellarchitected/model/Risk.h>
+#include <aws/wellarchitected/model/WorkloadProfile.h>
 #include <utility>
 
 namespace Aws
@@ -247,6 +249,72 @@ namespace Model
     
     inline LensReviewSummary& AddRiskCounts(Risk&& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(std::move(key), value); return *this; }
 
+
+    /**
+     * <p>The profiles associated with the workload.</p>
+     */
+    inline const Aws::Vector<WorkloadProfile>& GetProfiles() const{ return m_profiles; }
+
+    /**
+     * <p>The profiles associated with the workload.</p>
+     */
+    inline bool ProfilesHasBeenSet() const { return m_profilesHasBeenSet; }
+
+    /**
+     * <p>The profiles associated with the workload.</p>
+     */
+    inline void SetProfiles(const Aws::Vector<WorkloadProfile>& value) { m_profilesHasBeenSet = true; m_profiles = value; }
+
+    /**
+     * <p>The profiles associated with the workload.</p>
+     */
+    inline void SetProfiles(Aws::Vector<WorkloadProfile>&& value) { m_profilesHasBeenSet = true; m_profiles = std::move(value); }
+
+    /**
+     * <p>The profiles associated with the workload.</p>
+     */
+    inline LensReviewSummary& WithProfiles(const Aws::Vector<WorkloadProfile>& value) { SetProfiles(value); return *this;}
+
+    /**
+     * <p>The profiles associated with the workload.</p>
+     */
+    inline LensReviewSummary& WithProfiles(Aws::Vector<WorkloadProfile>&& value) { SetProfiles(std::move(value)); return *this;}
+
+    /**
+     * <p>The profiles associated with the workload.</p>
+     */
+    inline LensReviewSummary& AddProfiles(const WorkloadProfile& value) { m_profilesHasBeenSet = true; m_profiles.push_back(value); return *this; }
+
+    /**
+     * <p>The profiles associated with the workload.</p>
+     */
+    inline LensReviewSummary& AddProfiles(WorkloadProfile&& value) { m_profilesHasBeenSet = true; m_profiles.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const Aws::Map<Risk, int>& GetPrioritizedRiskCounts() const{ return m_prioritizedRiskCounts; }
+
+    
+    inline bool PrioritizedRiskCountsHasBeenSet() const { return m_prioritizedRiskCountsHasBeenSet; }
+
+    
+    inline void SetPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = value; }
+
+    
+    inline void SetPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = std::move(value); }
+
+    
+    inline LensReviewSummary& WithPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { SetPrioritizedRiskCounts(value); return *this;}
+
+    
+    inline LensReviewSummary& WithPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { SetPrioritizedRiskCounts(std::move(value)); return *this;}
+
+    
+    inline LensReviewSummary& AddPrioritizedRiskCounts(const Risk& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(key, value); return *this; }
+
+    
+    inline LensReviewSummary& AddPrioritizedRiskCounts(Risk&& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(std::move(key), value); return *this; }
+
   private:
 
     Aws::String m_lensAlias;
@@ -269,6 +337,12 @@ namespace Model
 
     Aws::Map<Risk, int> m_riskCounts;
     bool m_riskCountsHasBeenSet = false;
+
+    Aws::Vector<WorkloadProfile> m_profiles;
+    bool m_profilesHasBeenSet = false;
+
+    Aws::Map<Risk, int> m_prioritizedRiskCounts;
+    bool m_prioritizedRiskCountsHasBeenSet = false;
   };
 
 } // namespace Model

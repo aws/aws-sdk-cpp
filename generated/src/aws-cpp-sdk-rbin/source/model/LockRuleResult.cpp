@@ -86,6 +86,12 @@ LockRuleResult& LockRuleResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("RuleArn"))
+  {
+    m_ruleArn = jsonValue.GetString("RuleArn");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

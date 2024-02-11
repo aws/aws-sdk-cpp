@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int spot_HASH = HashingUtils::HashString("spot");
+        static const int capacity_block_HASH = HashingUtils::HashString("capacity-block");
 
 
         MarketType GetMarketTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == spot_HASH)
           {
             return MarketType::spot;
+          }
+          else if (hashCode == capacity_block_HASH)
+          {
+            return MarketType::capacity_block;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +49,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MarketType::NOT_SET:
+            return {};
           case MarketType::spot:
             return "spot";
+          case MarketType::capacity_block:
+            return "capacity-block";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

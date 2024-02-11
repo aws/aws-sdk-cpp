@@ -5,7 +5,6 @@
 
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -13,10 +12,11 @@ namespace Aws
 {
 namespace Utils
 {
-namespace Xml
+namespace Json
 {
-  class XmlNode;
-} // namespace Xml
+  class JsonValue;
+  class JsonView;
+} // namespace Json
 } // namespace Utils
 namespace SQS
 {
@@ -33,82 +33,80 @@ namespace Model
   {
   public:
     AWS_SQS_API DeleteMessageBatchRequestEntry();
-    AWS_SQS_API DeleteMessageBatchRequestEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_SQS_API DeleteMessageBatchRequestEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
-    AWS_SQS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_SQS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SQS_API DeleteMessageBatchRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SQS_API DeleteMessageBatchRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SQS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>An identifier for this particular receipt handle. This is used to communicate
-     * the result.</p>  <p>The <code>Id</code>s of a batch request need to be
-     * unique within a request.</p> <p>This identifier can have up to 80 characters.
-     * The following characters are accepted: alphanumeric characters, hyphens(-), and
-     * underscores (_).</p> 
+     * <p>The identifier for this particular receipt handle. This is used to
+     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
+     * need to be unique within a request.</p> <p>This identifier can have up to 80
+     * characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).</p> 
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>An identifier for this particular receipt handle. This is used to communicate
-     * the result.</p>  <p>The <code>Id</code>s of a batch request need to be
-     * unique within a request.</p> <p>This identifier can have up to 80 characters.
-     * The following characters are accepted: alphanumeric characters, hyphens(-), and
-     * underscores (_).</p> 
+     * <p>The identifier for this particular receipt handle. This is used to
+     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
+     * need to be unique within a request.</p> <p>This identifier can have up to 80
+     * characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).</p> 
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>An identifier for this particular receipt handle. This is used to communicate
-     * the result.</p>  <p>The <code>Id</code>s of a batch request need to be
-     * unique within a request.</p> <p>This identifier can have up to 80 characters.
-     * The following characters are accepted: alphanumeric characters, hyphens(-), and
-     * underscores (_).</p> 
+     * <p>The identifier for this particular receipt handle. This is used to
+     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
+     * need to be unique within a request.</p> <p>This identifier can have up to 80
+     * characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).</p> 
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>An identifier for this particular receipt handle. This is used to communicate
-     * the result.</p>  <p>The <code>Id</code>s of a batch request need to be
-     * unique within a request.</p> <p>This identifier can have up to 80 characters.
-     * The following characters are accepted: alphanumeric characters, hyphens(-), and
-     * underscores (_).</p> 
+     * <p>The identifier for this particular receipt handle. This is used to
+     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
+     * need to be unique within a request.</p> <p>This identifier can have up to 80
+     * characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).</p> 
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>An identifier for this particular receipt handle. This is used to communicate
-     * the result.</p>  <p>The <code>Id</code>s of a batch request need to be
-     * unique within a request.</p> <p>This identifier can have up to 80 characters.
-     * The following characters are accepted: alphanumeric characters, hyphens(-), and
-     * underscores (_).</p> 
+     * <p>The identifier for this particular receipt handle. This is used to
+     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
+     * need to be unique within a request.</p> <p>This identifier can have up to 80
+     * characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).</p> 
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>An identifier for this particular receipt handle. This is used to communicate
-     * the result.</p>  <p>The <code>Id</code>s of a batch request need to be
-     * unique within a request.</p> <p>This identifier can have up to 80 characters.
-     * The following characters are accepted: alphanumeric characters, hyphens(-), and
-     * underscores (_).</p> 
+     * <p>The identifier for this particular receipt handle. This is used to
+     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
+     * need to be unique within a request.</p> <p>This identifier can have up to 80
+     * characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).</p> 
      */
     inline DeleteMessageBatchRequestEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>An identifier for this particular receipt handle. This is used to communicate
-     * the result.</p>  <p>The <code>Id</code>s of a batch request need to be
-     * unique within a request.</p> <p>This identifier can have up to 80 characters.
-     * The following characters are accepted: alphanumeric characters, hyphens(-), and
-     * underscores (_).</p> 
+     * <p>The identifier for this particular receipt handle. This is used to
+     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
+     * need to be unique within a request.</p> <p>This identifier can have up to 80
+     * characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).</p> 
      */
     inline DeleteMessageBatchRequestEntry& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier for this particular receipt handle. This is used to communicate
-     * the result.</p>  <p>The <code>Id</code>s of a batch request need to be
-     * unique within a request.</p> <p>This identifier can have up to 80 characters.
-     * The following characters are accepted: alphanumeric characters, hyphens(-), and
-     * underscores (_).</p> 
+     * <p>The identifier for this particular receipt handle. This is used to
+     * communicate the result.</p>  <p>The <code>Id</code>s of a batch request
+     * need to be unique within a request.</p> <p>This identifier can have up to 80
+     * characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).</p> 
      */
     inline DeleteMessageBatchRequestEntry& WithId(const char* value) { SetId(value); return *this;}
 

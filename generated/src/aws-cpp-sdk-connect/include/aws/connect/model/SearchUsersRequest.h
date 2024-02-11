@@ -38,6 +38,8 @@ namespace Model
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     *  <p>InstanceID is a required field. The "Required: No" below is
+     * incorrect.</p> 
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
@@ -45,6 +47,8 @@ namespace Model
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     *  <p>InstanceID is a required field. The "Required: No" below is
+     * incorrect.</p> 
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
@@ -52,6 +56,8 @@ namespace Model
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     *  <p>InstanceID is a required field. The "Required: No" below is
+     * incorrect.</p> 
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
@@ -59,6 +65,8 @@ namespace Model
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     *  <p>InstanceID is a required field. The "Required: No" below is
+     * incorrect.</p> 
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
@@ -66,6 +74,8 @@ namespace Model
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     *  <p>InstanceID is a required field. The "Required: No" below is
+     * incorrect.</p> 
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
@@ -73,6 +83,8 @@ namespace Model
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     *  <p>InstanceID is a required field. The "Required: No" below is
+     * incorrect.</p> 
      */
     inline SearchUsersRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
@@ -80,6 +92,8 @@ namespace Model
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     *  <p>InstanceID is a required field. The "Required: No" below is
+     * incorrect.</p> 
      */
     inline SearchUsersRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
@@ -87,6 +101,8 @@ namespace Model
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     *  <p>InstanceID is a required field. The "Required: No" below is
+     * incorrect.</p> 
      */
     inline SearchUsersRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

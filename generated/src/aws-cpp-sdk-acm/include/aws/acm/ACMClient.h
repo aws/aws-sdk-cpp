@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm/ACMServiceClientModel.h>
+#include <aws/acm/model/GetAccountConfigurationRequest.h>
 
 namespace Aws
 {
@@ -28,6 +29,9 @@ namespace ACM
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef ACMClientConfiguration ClientConfigurationType;
+      typedef ACMEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -216,25 +220,26 @@ namespace ACM
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountConfigurationOutcome GetAccountConfiguration() const;
+        virtual Model::GetAccountConfigurationOutcome GetAccountConfiguration(const Model::GetAccountConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetAccountConfigurationOutcomeCallable GetAccountConfigurationCallable() const
+        template<typename GetAccountConfigurationRequestT = Model::GetAccountConfigurationRequest>
+        Model::GetAccountConfigurationOutcomeCallable GetAccountConfigurationCallable(const GetAccountConfigurationRequestT& request = {}) const
         {
-            return SubmitCallable(&ACMClient::GetAccountConfiguration);
+            return SubmitCallable(&ACMClient::GetAccountConfiguration, request);
         }
 
         /**
          * An Async wrapper for GetAccountConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetAccountConfigurationAsync(const GetAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetAccountConfigurationRequestT = Model::GetAccountConfigurationRequest>
+        void GetAccountConfigurationAsync(const GetAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountConfigurationRequestT& request = {}) const
         {
-            return SubmitAsync(&ACMClient::GetAccountConfiguration, handler, context);
+            return SubmitAsync(&ACMClient::GetAccountConfiguration, request, handler, context);
         }
+
         /**
          * <p>Retrieves an Amazon-issued certificate and its certificate chain. The chain
          * consists of the certificate of the issuing CA and the intermediate certificates

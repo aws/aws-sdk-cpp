@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::OWNED:
             return "OWNED";
           case SourceType::ENTITLED:

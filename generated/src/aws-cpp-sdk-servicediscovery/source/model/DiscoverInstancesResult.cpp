@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DiscoverInstancesResult::DiscoverInstancesResult()
+DiscoverInstancesResult::DiscoverInstancesResult() : 
+    m_instancesRevision(0)
 {
 }
 
-DiscoverInstancesResult::DiscoverInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DiscoverInstancesResult::DiscoverInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_instancesRevision(0)
 {
   *this = result;
 }
@@ -36,6 +38,12 @@ DiscoverInstancesResult& DiscoverInstancesResult::operator =(const Aws::AmazonWe
     {
       m_instances.push_back(instancesJsonList[instancesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("InstancesRevision"))
+  {
+    m_instancesRevision = jsonValue.GetInt64("InstancesRevision");
+
   }
 
 

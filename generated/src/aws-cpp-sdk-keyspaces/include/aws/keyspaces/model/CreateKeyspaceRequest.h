@@ -8,6 +8,7 @@
 #include <aws/keyspaces/KeyspacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/keyspaces/model/ReplicationSpecification.h>
 #include <aws/keyspaces/model/Tag.h>
 #include <utility>
 
@@ -149,6 +150,79 @@ namespace Model
      */
     inline CreateKeyspaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The replication specification of the keyspace includes:</p> <ul> <li> <p>
+     * <code>replicationStrategy</code> - the required value is
+     * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li> <li> <p>
+     * <code>regionList</code> - if the <code>replicationStrategy</code> is
+     * <code>MULTI_REGION</code>, the <code>regionList</code> requires the current
+     * Region and at least one additional Amazon Web Services Region where the keyspace
+     * is going to be replicated in. The maximum number of supported replication
+     * Regions including the current Region is six.</p> </li> </ul>
+     */
+    inline const ReplicationSpecification& GetReplicationSpecification() const{ return m_replicationSpecification; }
+
+    /**
+     * <p> The replication specification of the keyspace includes:</p> <ul> <li> <p>
+     * <code>replicationStrategy</code> - the required value is
+     * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li> <li> <p>
+     * <code>regionList</code> - if the <code>replicationStrategy</code> is
+     * <code>MULTI_REGION</code>, the <code>regionList</code> requires the current
+     * Region and at least one additional Amazon Web Services Region where the keyspace
+     * is going to be replicated in. The maximum number of supported replication
+     * Regions including the current Region is six.</p> </li> </ul>
+     */
+    inline bool ReplicationSpecificationHasBeenSet() const { return m_replicationSpecificationHasBeenSet; }
+
+    /**
+     * <p> The replication specification of the keyspace includes:</p> <ul> <li> <p>
+     * <code>replicationStrategy</code> - the required value is
+     * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li> <li> <p>
+     * <code>regionList</code> - if the <code>replicationStrategy</code> is
+     * <code>MULTI_REGION</code>, the <code>regionList</code> requires the current
+     * Region and at least one additional Amazon Web Services Region where the keyspace
+     * is going to be replicated in. The maximum number of supported replication
+     * Regions including the current Region is six.</p> </li> </ul>
+     */
+    inline void SetReplicationSpecification(const ReplicationSpecification& value) { m_replicationSpecificationHasBeenSet = true; m_replicationSpecification = value; }
+
+    /**
+     * <p> The replication specification of the keyspace includes:</p> <ul> <li> <p>
+     * <code>replicationStrategy</code> - the required value is
+     * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li> <li> <p>
+     * <code>regionList</code> - if the <code>replicationStrategy</code> is
+     * <code>MULTI_REGION</code>, the <code>regionList</code> requires the current
+     * Region and at least one additional Amazon Web Services Region where the keyspace
+     * is going to be replicated in. The maximum number of supported replication
+     * Regions including the current Region is six.</p> </li> </ul>
+     */
+    inline void SetReplicationSpecification(ReplicationSpecification&& value) { m_replicationSpecificationHasBeenSet = true; m_replicationSpecification = std::move(value); }
+
+    /**
+     * <p> The replication specification of the keyspace includes:</p> <ul> <li> <p>
+     * <code>replicationStrategy</code> - the required value is
+     * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li> <li> <p>
+     * <code>regionList</code> - if the <code>replicationStrategy</code> is
+     * <code>MULTI_REGION</code>, the <code>regionList</code> requires the current
+     * Region and at least one additional Amazon Web Services Region where the keyspace
+     * is going to be replicated in. The maximum number of supported replication
+     * Regions including the current Region is six.</p> </li> </ul>
+     */
+    inline CreateKeyspaceRequest& WithReplicationSpecification(const ReplicationSpecification& value) { SetReplicationSpecification(value); return *this;}
+
+    /**
+     * <p> The replication specification of the keyspace includes:</p> <ul> <li> <p>
+     * <code>replicationStrategy</code> - the required value is
+     * <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li> <li> <p>
+     * <code>regionList</code> - if the <code>replicationStrategy</code> is
+     * <code>MULTI_REGION</code>, the <code>regionList</code> requires the current
+     * Region and at least one additional Amazon Web Services Region where the keyspace
+     * is going to be replicated in. The maximum number of supported replication
+     * Regions including the current Region is six.</p> </li> </ul>
+     */
+    inline CreateKeyspaceRequest& WithReplicationSpecification(ReplicationSpecification&& value) { SetReplicationSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_keyspaceName;
@@ -156,6 +230,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ReplicationSpecification m_replicationSpecification;
+    bool m_replicationSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

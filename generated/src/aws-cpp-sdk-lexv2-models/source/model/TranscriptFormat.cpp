@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscriptFormat::NOT_SET:
+            return {};
           case TranscriptFormat::Lex:
             return "Lex";
           default:

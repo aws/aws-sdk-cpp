@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SharePointOnlineAuthenticationType::NOT_SET:
+            return {};
           case SharePointOnlineAuthenticationType::HTTP_BASIC:
             return "HTTP_BASIC";
           case SharePointOnlineAuthenticationType::OAUTH2:

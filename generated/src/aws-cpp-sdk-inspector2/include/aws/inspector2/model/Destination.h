@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>The prefix of the KMS key used to export findings.</p>
+     * <p>The prefix that the findings will be written under.</p>
      */
     inline const Aws::String& GetKeyPrefix() const{ return m_keyPrefix; }
 
     /**
-     * <p>The prefix of the KMS key used to export findings.</p>
+     * <p>The prefix that the findings will be written under.</p>
      */
     inline bool KeyPrefixHasBeenSet() const { return m_keyPrefixHasBeenSet; }
 
     /**
-     * <p>The prefix of the KMS key used to export findings.</p>
+     * <p>The prefix that the findings will be written under.</p>
      */
     inline void SetKeyPrefix(const Aws::String& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = value; }
 
     /**
-     * <p>The prefix of the KMS key used to export findings.</p>
+     * <p>The prefix that the findings will be written under.</p>
      */
     inline void SetKeyPrefix(Aws::String&& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = std::move(value); }
 
     /**
-     * <p>The prefix of the KMS key used to export findings.</p>
+     * <p>The prefix that the findings will be written under.</p>
      */
     inline void SetKeyPrefix(const char* value) { m_keyPrefixHasBeenSet = true; m_keyPrefix.assign(value); }
 
     /**
-     * <p>The prefix of the KMS key used to export findings.</p>
+     * <p>The prefix that the findings will be written under.</p>
      */
     inline Destination& WithKeyPrefix(const Aws::String& value) { SetKeyPrefix(value); return *this;}
 
     /**
-     * <p>The prefix of the KMS key used to export findings.</p>
+     * <p>The prefix that the findings will be written under.</p>
      */
     inline Destination& WithKeyPrefix(Aws::String&& value) { SetKeyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix of the KMS key used to export findings.</p>
+     * <p>The prefix that the findings will be written under.</p>
      */
     inline Destination& WithKeyPrefix(const char* value) { SetKeyPrefix(value); return *this;}
 

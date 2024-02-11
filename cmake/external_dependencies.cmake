@@ -126,6 +126,17 @@ else()
     message(STATUS "You will need to inject an http client implementation before making any http requests!")
 endif()
 
+# Open telemetry client
+if (BUILD_OPTEL)
+    find_package(opentelemetry-cpp CONFIG REQUIRED)
+endif ()
+if (BUILD_OPTEL_OTLP_BENCHMARKS)
+    find_package(Protobuf REQUIRED)
+    find_package(CURL REQUIRED)
+    find_package(nlohmann_json REQUIRED)
+    find_package(opentelemetry-cpp CONFIG REQUIRED)
+endif ()
+
 if (EXTERNAL_DEPS_INCLUDE_DIRS)
     List(REMOVE_DUPLICATES EXTERNAL_DEPS_INCLUDE_DIRS)
 endif()

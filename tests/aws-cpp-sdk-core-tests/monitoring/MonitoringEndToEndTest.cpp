@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
@@ -14,7 +14,7 @@
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/monitoring/DefaultMonitoring.h>
 #include <aws/core/net/SimpleUDP.h>
-#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/DefaultExecutor.h>
 #include <aws/core/utils/threading/ThreadTask.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
@@ -83,7 +83,7 @@ private:
     Aws::String m_requestName;
 };
 
-class MonitoringEndToEndTestSuite : public ::testing::Test
+class MonitoringEndToEndTestSuite : public Aws::Testing::AwsCppSdkGTestSuite
 {
 protected:
     std::shared_ptr<MockHttpClient> mockHttpClient;

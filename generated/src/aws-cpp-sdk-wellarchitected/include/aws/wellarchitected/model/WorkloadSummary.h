@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/wellarchitected/model/WorkloadImprovementStatus.h>
 #include <aws/wellarchitected/model/Risk.h>
+#include <aws/wellarchitected/model/WorkloadProfile.h>
 #include <utility>
 
 namespace Aws
@@ -232,6 +233,72 @@ namespace Model
     
     inline WorkloadSummary& WithImprovementStatus(WorkloadImprovementStatus&& value) { SetImprovementStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Profile associated with a workload.</p>
+     */
+    inline const Aws::Vector<WorkloadProfile>& GetProfiles() const{ return m_profiles; }
+
+    /**
+     * <p>Profile associated with a workload.</p>
+     */
+    inline bool ProfilesHasBeenSet() const { return m_profilesHasBeenSet; }
+
+    /**
+     * <p>Profile associated with a workload.</p>
+     */
+    inline void SetProfiles(const Aws::Vector<WorkloadProfile>& value) { m_profilesHasBeenSet = true; m_profiles = value; }
+
+    /**
+     * <p>Profile associated with a workload.</p>
+     */
+    inline void SetProfiles(Aws::Vector<WorkloadProfile>&& value) { m_profilesHasBeenSet = true; m_profiles = std::move(value); }
+
+    /**
+     * <p>Profile associated with a workload.</p>
+     */
+    inline WorkloadSummary& WithProfiles(const Aws::Vector<WorkloadProfile>& value) { SetProfiles(value); return *this;}
+
+    /**
+     * <p>Profile associated with a workload.</p>
+     */
+    inline WorkloadSummary& WithProfiles(Aws::Vector<WorkloadProfile>&& value) { SetProfiles(std::move(value)); return *this;}
+
+    /**
+     * <p>Profile associated with a workload.</p>
+     */
+    inline WorkloadSummary& AddProfiles(const WorkloadProfile& value) { m_profilesHasBeenSet = true; m_profiles.push_back(value); return *this; }
+
+    /**
+     * <p>Profile associated with a workload.</p>
+     */
+    inline WorkloadSummary& AddProfiles(WorkloadProfile&& value) { m_profilesHasBeenSet = true; m_profiles.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const Aws::Map<Risk, int>& GetPrioritizedRiskCounts() const{ return m_prioritizedRiskCounts; }
+
+    
+    inline bool PrioritizedRiskCountsHasBeenSet() const { return m_prioritizedRiskCountsHasBeenSet; }
+
+    
+    inline void SetPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = value; }
+
+    
+    inline void SetPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = std::move(value); }
+
+    
+    inline WorkloadSummary& WithPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { SetPrioritizedRiskCounts(value); return *this;}
+
+    
+    inline WorkloadSummary& WithPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { SetPrioritizedRiskCounts(std::move(value)); return *this;}
+
+    
+    inline WorkloadSummary& AddPrioritizedRiskCounts(const Risk& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(key, value); return *this; }
+
+    
+    inline WorkloadSummary& AddPrioritizedRiskCounts(Risk&& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(std::move(key), value); return *this; }
+
   private:
 
     Aws::String m_workloadId;
@@ -257,6 +324,12 @@ namespace Model
 
     WorkloadImprovementStatus m_improvementStatus;
     bool m_improvementStatusHasBeenSet = false;
+
+    Aws::Vector<WorkloadProfile> m_profiles;
+    bool m_profilesHasBeenSet = false;
+
+    Aws::Map<Risk, int> m_prioritizedRiskCounts;
+    bool m_prioritizedRiskCountsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,15 +19,13 @@ namespace RAM
    * <p>This is the <i>Resource Access Manager API Reference</i>. This documentation
    * provides descriptions and syntax for each of the actions and data types in RAM.
    * RAM is a service that helps you securely share your Amazon Web Services
-   * resources across Amazon Web Services accounts. If you have multiple Amazon Web
-   * Services accounts, you can use RAM to share those resources with other accounts.
-   * If you use Organizations to manage your accounts, then you share your resources
-   * with your organization or organizational units (OUs). For supported resource
-   * types, you can also share resources with individual Identity and Access
-   * Management (IAM) roles an users. </p> <p>To learn more about RAM, see the
-   * following resources:</p> <ul> <li> <p> <a
-   * href="http://aws.amazon.com/ram">Resource Access Manager product page</a> </p>
-   * </li> <li> <p> <a
+   * resources to other Amazon Web Services accounts. If you use Organizations to
+   * manage your accounts, then you can share your resources with your entire
+   * organization or to organizational units (OUs). For supported resource types, you
+   * can also share resources with individual Identity and Access Management (IAM)
+   * roles and users. </p> <p>To learn more about RAM, see the following
+   * resources:</p> <ul> <li> <p> <a href="http://aws.amazon.com/ram">Resource Access
+   * Manager product page</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/ram/latest/userguide/">Resource Access Manager
    * User Guide</a> </p> </li> </ul>
    */
@@ -37,6 +35,9 @@ namespace RAM
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef RAMClientConfiguration ClientConfigurationType;
+      typedef RAMEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -173,6 +174,65 @@ namespace RAM
         }
 
         /**
+         * <p>Creates a customer managed permission for a specified resource type that you
+         * can attach to resource shares. It is created in the Amazon Web Services Region
+         * in which you call the operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePermissionOutcome CreatePermission(const Model::CreatePermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePermissionRequestT = Model::CreatePermissionRequest>
+        Model::CreatePermissionOutcomeCallable CreatePermissionCallable(const CreatePermissionRequestT& request) const
+        {
+            return SubmitCallable(&RAMClient::CreatePermission, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePermissionRequestT = Model::CreatePermissionRequest>
+        void CreatePermissionAsync(const CreatePermissionRequestT& request, const CreatePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RAMClient::CreatePermission, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new version of the specified customer managed permission. The new
+         * version is automatically set as the default version of the customer managed
+         * permission. New resource shares automatically use the default permission.
+         * Existing resource shares continue to use their original permission versions, but
+         * you can use <a>ReplacePermissionAssociations</a> to update them.</p> <p>If the
+         * specified customer managed permission already has the maximum of 5 versions,
+         * then you must delete one of the existing versions before you can create a new
+         * one.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermissionVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePermissionVersionOutcome CreatePermissionVersion(const Model::CreatePermissionVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePermissionVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePermissionVersionRequestT = Model::CreatePermissionVersionRequest>
+        Model::CreatePermissionVersionOutcomeCallable CreatePermissionVersionCallable(const CreatePermissionVersionRequestT& request) const
+        {
+            return SubmitCallable(&RAMClient::CreatePermissionVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePermissionVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePermissionVersionRequestT = Model::CreatePermissionVersionRequest>
+        void CreatePermissionVersionAsync(const CreatePermissionVersionRequestT& request, const CreatePermissionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RAMClient::CreatePermissionVersion, request, handler, context);
+        }
+
+        /**
          * <p>Creates a resource share. You can provide a list of the <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
          * Resource Names (ARNs)</a> for the resources that you want to share, a list of
@@ -205,10 +265,68 @@ namespace RAM
         }
 
         /**
-         * <p>Deletes the specified resource share. This doesn't delete any of the
-         * resources that were associated with the resource share; it only stops the
-         * sharing of those resources outside of the Amazon Web Services account that
-         * created them.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified customer managed permission in the Amazon Web Services
+         * Region in which you call this operation. You can delete a customer managed
+         * permission only if it isn't attached to any resource share. The operation
+         * deletes all versions associated with the customer managed
+         * permission.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePermissionOutcome DeletePermission(const Model::DeletePermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePermissionRequestT = Model::DeletePermissionRequest>
+        Model::DeletePermissionOutcomeCallable DeletePermissionCallable(const DeletePermissionRequestT& request) const
+        {
+            return SubmitCallable(&RAMClient::DeletePermission, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePermissionRequestT = Model::DeletePermissionRequest>
+        void DeletePermissionAsync(const DeletePermissionRequestT& request, const DeletePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RAMClient::DeletePermission, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes one version of a customer managed permission. The version you specify
+         * must not be attached to any resource share and must not be the default version
+         * for the permission.</p> <p>If a customer managed permission has the maximum of 5
+         * versions, then you must delete at least one version before you can create
+         * another.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermissionVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePermissionVersionOutcome DeletePermissionVersion(const Model::DeletePermissionVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePermissionVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePermissionVersionRequestT = Model::DeletePermissionVersionRequest>
+        Model::DeletePermissionVersionOutcomeCallable DeletePermissionVersionCallable(const DeletePermissionVersionRequestT& request) const
+        {
+            return SubmitCallable(&RAMClient::DeletePermissionVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePermissionVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePermissionVersionRequestT = Model::DeletePermissionVersionRequest>
+        void DeletePermissionVersionAsync(const DeletePermissionVersionRequestT& request, const DeletePermissionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RAMClient::DeletePermissionVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified resource share.</p>  <p>This doesn't delete
+         * any of the resources that were associated with the resource share; it only stops
+         * the sharing of those resources through this resource share.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeleteResourceShare">AWS
          * API Reference</a></p>
          */
@@ -233,8 +351,8 @@ namespace RAM
         }
 
         /**
-         * <p>Disassociates the specified principals or resources from the specified
-         * resource share.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified principals or resources from participating in the
+         * specified resource share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceShare">AWS
          * API Reference</a></p>
          */
@@ -259,8 +377,8 @@ namespace RAM
         }
 
         /**
-         * <p>Disassociates an RAM permission from a resource share. Permission changes
-         * take effect immediately. You can remove a RAM permission from a resource share
+         * <p>Removes a managed permission from a resource share. Permission changes take
+         * effect immediately. You can remove a managed permission from a resource share
          * only if there are currently no resources of the relevant resource type currently
          * attached to the resource share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission">AWS
@@ -287,15 +405,18 @@ namespace RAM
         }
 
         /**
-         * <p>Enables resource sharing within your organization in Organizations. Calling
-         * this operation enables RAM to retrieve information about the organization and
-         * its structure. This lets you share resources with all of the accounts in an
-         * organization by specifying the organization's ID, or all of the accounts in an
-         * organizational unit (OU) by specifying the OU's ID. Until you enable sharing
+         * <p>Enables resource sharing within your organization in Organizations. This
+         * operation creates a service-linked role called
+         * <code>AWSServiceRoleForResourceAccessManager</code> that has the IAM managed
+         * policy named AWSResourceAccessManagerServiceRolePolicy attached. This role
+         * permits RAM to retrieve information about the organization and its structure.
+         * This lets you share resources with all of the accounts in the calling account's
+         * organization by specifying the organization ID, or all of the accounts in an
+         * organizational unit (OU) by specifying the OU ID. Until you enable sharing
          * within the organization, you can specify only individual Amazon Web Services
-         * accounts, or for supported resource types, IAM users and roles.</p> <p>You must
-         * call this operation from an IAM user or role in the organization's management
-         * account.</p><p><h3>See Also:</h3>   <a
+         * accounts, or for supported resource types, IAM roles and users.</p> <p>You must
+         * call this operation from an IAM role or user in the organization's management
+         * account.</p> <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">AWS
          * API Reference</a></p>
          */
@@ -320,7 +441,7 @@ namespace RAM
         }
 
         /**
-         * <p>Gets the contents of an RAM permission in JSON format.</p><p><h3>See
+         * <p>Retrieves the contents of a managed permission in JSON format.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetPermission">AWS
          * API Reference</a></p>
@@ -372,8 +493,8 @@ namespace RAM
         }
 
         /**
-         * <p>Retrieves the resource and principal associations for resource shares that
-         * you own.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the lists of resources and principals that associated for resource
+         * shares that you own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareAssociations">AWS
          * API Reference</a></p>
          */
@@ -478,6 +599,34 @@ namespace RAM
         }
 
         /**
+         * <p>Lists information about the managed permission and its associations to any
+         * resource shares that use this managed permission. This lets you see which
+         * resource shares use which versions of the specified managed
+         * permission.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPermissionAssociationsOutcome ListPermissionAssociations(const Model::ListPermissionAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPermissionAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPermissionAssociationsRequestT = Model::ListPermissionAssociationsRequest>
+        Model::ListPermissionAssociationsOutcomeCallable ListPermissionAssociationsCallable(const ListPermissionAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&RAMClient::ListPermissionAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListPermissionAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPermissionAssociationsRequestT = Model::ListPermissionAssociationsRequest>
+        void ListPermissionAssociationsAsync(const ListPermissionAssociationsRequestT& request, const ListPermissionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RAMClient::ListPermissionAssociations, request, handler, context);
+        }
+
+        /**
          * <p>Lists the available versions of the specified RAM permission.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions">AWS
@@ -553,6 +702,33 @@ namespace RAM
         void ListPrincipalsAsync(const ListPrincipalsRequestT& request, const ListPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RAMClient::ListPrincipals, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the current status of the asynchronous tasks performed by RAM when
+         * you perform the <a>ReplacePermissionAssociationsWork</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListReplacePermissionAssociationsWork">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReplacePermissionAssociationsWorkOutcome ListReplacePermissionAssociationsWork(const Model::ListReplacePermissionAssociationsWorkRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListReplacePermissionAssociationsWork that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListReplacePermissionAssociationsWorkRequestT = Model::ListReplacePermissionAssociationsWorkRequest>
+        Model::ListReplacePermissionAssociationsWorkOutcomeCallable ListReplacePermissionAssociationsWorkCallable(const ListReplacePermissionAssociationsWorkRequestT& request) const
+        {
+            return SubmitCallable(&RAMClient::ListReplacePermissionAssociationsWork, request);
+        }
+
+        /**
+         * An Async wrapper for ListReplacePermissionAssociationsWork that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListReplacePermissionAssociationsWorkRequestT = Model::ListReplacePermissionAssociationsWorkRequest>
+        void ListReplacePermissionAssociationsWorkAsync(const ListReplacePermissionAssociationsWorkRequestT& request, const ListReplacePermissionAssociationsWorkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RAMClient::ListReplacePermissionAssociationsWork, request, handler, context);
         }
 
         /**
@@ -634,13 +810,69 @@ namespace RAM
         }
 
         /**
-         * <p>When you attach a resource-based permission policy to a resource, it
-         * automatically creates a resource share. However, resource shares created this
-         * way are visible only to the resource share owner, and the resource share can't
-         * be modified in RAM.</p> <p>You can use this operation to promote the resource
-         * share to a full RAM resource share. When you promote a resource share, you can
-         * then manage the resource share in RAM and it becomes visible to all of the
-         * principals you shared it with.</p><p><h3>See Also:</h3>   <a
+         * <p>When you attach a resource-based policy to a resource, RAM automatically
+         * creates a resource share of
+         * <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a managed
+         * permission that has the same IAM permissions as the original resource-based
+         * policy. However, this type of managed permission is visible to only the resource
+         * share owner, and the associated resource share can't be modified by using
+         * RAM.</p> <p>This operation creates a separate, fully manageable customer managed
+         * permission that has the same IAM permissions as the original resource-based
+         * policy. You can associate this customer managed permission to any resource
+         * shares.</p> <p>Before you use <a>PromoteResourceShareCreatedFromPolicy</a>, you
+         * should first run this operation to ensure that you have an appropriate customer
+         * managed permission that can be associated with the promoted resource share.</p>
+         *  <ul> <li> <p>The original <code>CREATED_FROM_POLICY</code> policy isn't
+         * deleted, and resource shares using that original policy aren't automatically
+         * updated.</p> </li> <li> <p>You can't modify a <code>CREATED_FROM_POLICY</code>
+         * resource share so you can't associate the new customer managed permission by
+         * using <code>ReplacePermsissionAssociations</code>. However, if you use
+         * <a>PromoteResourceShareCreatedFromPolicy</a>, that operation automatically
+         * associates the fully manageable customer managed permission to the newly
+         * promoted <code>STANDARD</code> resource share.</p> </li> <li> <p>After you
+         * promote a resource share, if the original <code>CREATED_FROM_POLICY</code>
+         * managed permission has no other associations to A resource share, then RAM
+         * automatically deletes it.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromotePermissionCreatedFromPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PromotePermissionCreatedFromPolicyOutcome PromotePermissionCreatedFromPolicy(const Model::PromotePermissionCreatedFromPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PromotePermissionCreatedFromPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PromotePermissionCreatedFromPolicyRequestT = Model::PromotePermissionCreatedFromPolicyRequest>
+        Model::PromotePermissionCreatedFromPolicyOutcomeCallable PromotePermissionCreatedFromPolicyCallable(const PromotePermissionCreatedFromPolicyRequestT& request) const
+        {
+            return SubmitCallable(&RAMClient::PromotePermissionCreatedFromPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PromotePermissionCreatedFromPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PromotePermissionCreatedFromPolicyRequestT = Model::PromotePermissionCreatedFromPolicyRequest>
+        void PromotePermissionCreatedFromPolicyAsync(const PromotePermissionCreatedFromPolicyRequestT& request, const PromotePermissionCreatedFromPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RAMClient::PromotePermissionCreatedFromPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>When you attach a resource-based policy to a resource, RAM automatically
+         * creates a resource share of
+         * <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a managed
+         * permission that has the same IAM permissions as the original resource-based
+         * policy. However, this type of managed permission is visible to only the resource
+         * share owner, and the associated resource share can't be modified by using
+         * RAM.</p> <p>This operation promotes the resource share to a
+         * <code>STANDARD</code> resource share that is fully manageable in RAM. When you
+         * promote a resource share, you can then manage the resource share in RAM and it
+         * becomes visible to all of the principals you shared it with.</p> 
+         * <p>Before you perform this operation, you should first run
+         * <a>PromotePermissionCreatedFromPolicy</a>to ensure that you have an appropriate
+         * customer managed permission that can be associated with this resource share
+         * after its is promoted. If this operation can't find a managed permission that
+         * exactly matches the existing <code>CREATED_FROM_POLICY</code> permission, then
+         * this operation fails.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy">AWS
          * API Reference</a></p>
          */
@@ -691,9 +923,79 @@ namespace RAM
         }
 
         /**
-         * <p>Adds the specified tag keys and values to the specified resource share. The
-         * tags are attached only to the resource share, not to the resources that are in
-         * the resource share.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates all resource shares that use a managed permission to a different
+         * managed permission. This operation always applies the default version of the
+         * target managed permission. You can optionally specify that the update applies to
+         * only resource shares that currently use a specified version. This enables you to
+         * update to the latest version, without changing the which managed permission is
+         * used.</p> <p>You can use this operation to update all of your resource shares to
+         * use the current default version of the permission by specifying the same value
+         * for the <code>fromPermissionArn</code> and <code>toPermissionArn</code>
+         * parameters.</p> <p>You can use the optional <code>fromPermissionVersion</code>
+         * parameter to update only those resources that use a specified version of the
+         * managed permission to the new managed permission.</p>  <p>To
+         * successfully perform this operation, you must have permission to update the
+         * resource-based policy on all affected resource types.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ReplacePermissionAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReplacePermissionAssociationsOutcome ReplacePermissionAssociations(const Model::ReplacePermissionAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ReplacePermissionAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ReplacePermissionAssociationsRequestT = Model::ReplacePermissionAssociationsRequest>
+        Model::ReplacePermissionAssociationsOutcomeCallable ReplacePermissionAssociationsCallable(const ReplacePermissionAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&RAMClient::ReplacePermissionAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ReplacePermissionAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ReplacePermissionAssociationsRequestT = Model::ReplacePermissionAssociationsRequest>
+        void ReplacePermissionAssociationsAsync(const ReplacePermissionAssociationsRequestT& request, const ReplacePermissionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RAMClient::ReplacePermissionAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Designates the specified version number as the default version for the
+         * specified customer managed permission. New resource shares automatically use
+         * this new default permission. Existing resource shares continue to use their
+         * original permission version, but you can use
+         * <a>ReplacePermissionAssociations</a> to update them.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/SetDefaultPermissionVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetDefaultPermissionVersionOutcome SetDefaultPermissionVersion(const Model::SetDefaultPermissionVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for SetDefaultPermissionVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SetDefaultPermissionVersionRequestT = Model::SetDefaultPermissionVersionRequest>
+        Model::SetDefaultPermissionVersionOutcomeCallable SetDefaultPermissionVersionCallable(const SetDefaultPermissionVersionRequestT& request) const
+        {
+            return SubmitCallable(&RAMClient::SetDefaultPermissionVersion, request);
+        }
+
+        /**
+         * An Async wrapper for SetDefaultPermissionVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SetDefaultPermissionVersionRequestT = Model::SetDefaultPermissionVersionRequest>
+        void SetDefaultPermissionVersionAsync(const SetDefaultPermissionVersionRequestT& request, const SetDefaultPermissionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RAMClient::SetDefaultPermissionVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Adds the specified tag keys and values to a resource share or managed
+         * permission. If you choose a resource share, the tags are attached to only the
+         * resource share, not to the resources that are in the resource share.</p> <p>The
+         * tags on a managed permission are the same for all versions of the managed
+         * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">AWS API
          * Reference</a></p>
          */
@@ -719,7 +1021,7 @@ namespace RAM
 
         /**
          * <p>Removes the specified tag key and value pairs from the specified resource
-         * share.</p><p><h3>See Also:</h3>   <a
+         * share or managed permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UntagResource">AWS
          * API Reference</a></p>
          */

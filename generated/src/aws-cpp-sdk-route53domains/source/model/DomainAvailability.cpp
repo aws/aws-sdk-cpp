@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DomainAvailability::NOT_SET:
+            return {};
           case DomainAvailability::AVAILABLE:
             return "AVAILABLE";
           case DomainAvailability::AVAILABLE_RESERVED:

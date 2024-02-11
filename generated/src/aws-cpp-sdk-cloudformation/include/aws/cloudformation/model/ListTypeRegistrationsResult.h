@@ -35,58 +35,58 @@ namespace Model
 
 
     /**
-     * <p>A list of extension registration tokens.</p> <p>Use <code>
-     * <a>DescribeTypeRegistration</a> </code> to return detailed information about a
-     * type registration request.</p>
+     * <p>A list of extension registration tokens.</p> <p>Use
+     * <a>DescribeTypeRegistration</a> to return detailed information about a type
+     * registration request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegistrationTokenList() const{ return m_registrationTokenList; }
 
     /**
-     * <p>A list of extension registration tokens.</p> <p>Use <code>
-     * <a>DescribeTypeRegistration</a> </code> to return detailed information about a
-     * type registration request.</p>
+     * <p>A list of extension registration tokens.</p> <p>Use
+     * <a>DescribeTypeRegistration</a> to return detailed information about a type
+     * registration request.</p>
      */
     inline void SetRegistrationTokenList(const Aws::Vector<Aws::String>& value) { m_registrationTokenList = value; }
 
     /**
-     * <p>A list of extension registration tokens.</p> <p>Use <code>
-     * <a>DescribeTypeRegistration</a> </code> to return detailed information about a
-     * type registration request.</p>
+     * <p>A list of extension registration tokens.</p> <p>Use
+     * <a>DescribeTypeRegistration</a> to return detailed information about a type
+     * registration request.</p>
      */
     inline void SetRegistrationTokenList(Aws::Vector<Aws::String>&& value) { m_registrationTokenList = std::move(value); }
 
     /**
-     * <p>A list of extension registration tokens.</p> <p>Use <code>
-     * <a>DescribeTypeRegistration</a> </code> to return detailed information about a
-     * type registration request.</p>
+     * <p>A list of extension registration tokens.</p> <p>Use
+     * <a>DescribeTypeRegistration</a> to return detailed information about a type
+     * registration request.</p>
      */
     inline ListTypeRegistrationsResult& WithRegistrationTokenList(const Aws::Vector<Aws::String>& value) { SetRegistrationTokenList(value); return *this;}
 
     /**
-     * <p>A list of extension registration tokens.</p> <p>Use <code>
-     * <a>DescribeTypeRegistration</a> </code> to return detailed information about a
-     * type registration request.</p>
+     * <p>A list of extension registration tokens.</p> <p>Use
+     * <a>DescribeTypeRegistration</a> to return detailed information about a type
+     * registration request.</p>
      */
     inline ListTypeRegistrationsResult& WithRegistrationTokenList(Aws::Vector<Aws::String>&& value) { SetRegistrationTokenList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of extension registration tokens.</p> <p>Use <code>
-     * <a>DescribeTypeRegistration</a> </code> to return detailed information about a
-     * type registration request.</p>
+     * <p>A list of extension registration tokens.</p> <p>Use
+     * <a>DescribeTypeRegistration</a> to return detailed information about a type
+     * registration request.</p>
      */
     inline ListTypeRegistrationsResult& AddRegistrationTokenList(const Aws::String& value) { m_registrationTokenList.push_back(value); return *this; }
 
     /**
-     * <p>A list of extension registration tokens.</p> <p>Use <code>
-     * <a>DescribeTypeRegistration</a> </code> to return detailed information about a
-     * type registration request.</p>
+     * <p>A list of extension registration tokens.</p> <p>Use
+     * <a>DescribeTypeRegistration</a> to return detailed information about a type
+     * registration request.</p>
      */
     inline ListTypeRegistrationsResult& AddRegistrationTokenList(Aws::String&& value) { m_registrationTokenList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of extension registration tokens.</p> <p>Use <code>
-     * <a>DescribeTypeRegistration</a> </code> to return detailed information about a
-     * type registration request.</p>
+     * <p>A list of extension registration tokens.</p> <p>Use
+     * <a>DescribeTypeRegistration</a> to return detailed information about a type
+     * registration request.</p>
      */
     inline ListTypeRegistrationsResult& AddRegistrationTokenList(const char* value) { m_registrationTokenList.push_back(value); return *this; }
 

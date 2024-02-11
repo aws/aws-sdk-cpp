@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaggableResourceType::NOT_SET:
+            return {};
           case TaggableResourceType::BatchPrediction:
             return "BatchPrediction";
           case TaggableResourceType::DataSource:

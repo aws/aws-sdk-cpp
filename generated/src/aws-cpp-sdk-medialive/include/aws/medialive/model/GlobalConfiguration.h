@@ -10,6 +10,7 @@
 #include <aws/medialive/model/GlobalConfigurationOutputLockingMode.h>
 #include <aws/medialive/model/GlobalConfigurationOutputTimingSource.h>
 #include <aws/medialive/model/GlobalConfigurationLowFramerateInputs.h>
+#include <aws/medialive/model/OutputLockingSettings.h>
 #include <utility>
 
 namespace Aws
@@ -312,6 +313,37 @@ EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each
      */
     inline GlobalConfiguration& WithSupportLowFramerateInputs(GlobalConfigurationLowFramerateInputs&& value) { SetSupportLowFramerateInputs(std::move(value)); return *this;}
 
+
+    /**
+     * Advanced output locking settings
+     */
+    inline const OutputLockingSettings& GetOutputLockingSettings() const{ return m_outputLockingSettings; }
+
+    /**
+     * Advanced output locking settings
+     */
+    inline bool OutputLockingSettingsHasBeenSet() const { return m_outputLockingSettingsHasBeenSet; }
+
+    /**
+     * Advanced output locking settings
+     */
+    inline void SetOutputLockingSettings(const OutputLockingSettings& value) { m_outputLockingSettingsHasBeenSet = true; m_outputLockingSettings = value; }
+
+    /**
+     * Advanced output locking settings
+     */
+    inline void SetOutputLockingSettings(OutputLockingSettings&& value) { m_outputLockingSettingsHasBeenSet = true; m_outputLockingSettings = std::move(value); }
+
+    /**
+     * Advanced output locking settings
+     */
+    inline GlobalConfiguration& WithOutputLockingSettings(const OutputLockingSettings& value) { SetOutputLockingSettings(value); return *this;}
+
+    /**
+     * Advanced output locking settings
+     */
+    inline GlobalConfiguration& WithOutputLockingSettings(OutputLockingSettings&& value) { SetOutputLockingSettings(std::move(value)); return *this;}
+
   private:
 
     int m_initialAudioGain;
@@ -331,6 +363,9 @@ EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each
 
     GlobalConfigurationLowFramerateInputs m_supportLowFramerateInputs;
     bool m_supportLowFramerateInputsHasBeenSet = false;
+
+    OutputLockingSettings m_outputLockingSettings;
+    bool m_outputLockingSettingsHasBeenSet = false;
   };
 
 } // namespace Model
