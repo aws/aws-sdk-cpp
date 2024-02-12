@@ -62,7 +62,7 @@ namespace Aws
           size_t requestMinCompressionSizeBytes = 10240;
         };
          /**
-         * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
+          * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
           * - disableIMDS
          */
         struct ClientConfigurationInitValues {
@@ -99,9 +99,9 @@ namespace Aws
              */
             explicit ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
-	    /**
-	     * Add virtual method to allow use of dynamic_cast under inheritance.
-	     */
+            /**
+             * Add virtual method to allow use of dynamic_cast under inheritance.
+             */
             virtual ~ClientConfiguration() = default;
 
             /**
@@ -242,11 +242,25 @@ namespace Aws
              */
             Aws::String caPath;
             /**
+             * Same as caPath, but used when verifying an HTTPS proxy. 
+             * Used to set CURLOPT_PROXY_CAPATH in libcurl and proxy tls
+             * settings in crt HTTP client.
+             * Does nothing on windows.
+             */
+            Aws::String proxyCaPath;
+            /**
              * If you certificate file is different from the default, you can tell clients that
              * aren't using the default trust store where to find your ca file.
              * If you are on windows or apple, you likely don't want this.
              */
              Aws::String caFile;
+            /**
+             * Same as caFile, but used when verifying an HTTPS proxy. 
+             * Used to set CURLOPT_PROXY_CAINFO in libcurl and proxy tls
+             * settings in crt HTTP client.
+             * Does nothing on windows.
+             */
+            Aws::String proxyCaFile;
             /**
              * Rate Limiter implementation for outgoing bandwidth. Default is wide-open.
              */

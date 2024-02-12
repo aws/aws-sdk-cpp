@@ -628,7 +628,13 @@ namespace Aws
                         contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtlsPkcs12(pkcs12CertFile, pkcs12Pwd);
                     }
 
-                    if (!m_configuration.caFile.empty() || !m_configuration.caPath.empty())
+                    if (!m_configuration.proxyCaFile.empty() || !m_configuration.proxyCaPath.empty()) 
+                    {
+                        const char* caPath = clientConfig.proxyCaPath.empty() ? nullptr : clientConfig.proxyCaPath.c_str();
+                        const char* caFile = clientConfig.proxyCaFile.empty() ? nullptr : clientConfig.proxyCaFile.c_str();
+                        contextOptions.OverrideDefaultTrustStore(caPath, caFile);
+                    } 
+                    else if (!m_configuration.caFile.empty() || !m_configuration.caPath.empty())
                     {
                         const char* caPath = clientConfig.caPath.empty() ? nullptr : clientConfig.caPath.c_str();
                         const char* caFile = clientConfig.caFile.empty() ? nullptr : clientConfig.caFile.c_str();
