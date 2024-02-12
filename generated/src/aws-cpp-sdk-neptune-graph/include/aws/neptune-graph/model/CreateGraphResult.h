@@ -309,19 +309,19 @@ namespace Model
 
     /**
      * <p>Specifies whether or not the graph can be reachable over the internet. All
-     * access to graphs IAM authenticated.</p>
+     * access to graphs is IAM authenticated.</p>
      */
     inline bool GetPublicConnectivity() const{ return m_publicConnectivity; }
 
     /**
      * <p>Specifies whether or not the graph can be reachable over the internet. All
-     * access to graphs IAM authenticated.</p>
+     * access to graphs is IAM authenticated.</p>
      */
     inline void SetPublicConnectivity(bool value) { m_publicConnectivity = value; }
 
     /**
      * <p>Specifies whether or not the graph can be reachable over the internet. All
-     * access to graphs IAM authenticated.</p>
+     * access to graphs is IAM authenticated.</p>
      */
     inline CreateGraphResult& WithPublicConnectivity(bool value) { SetPublicConnectivity(value); return *this;}
 

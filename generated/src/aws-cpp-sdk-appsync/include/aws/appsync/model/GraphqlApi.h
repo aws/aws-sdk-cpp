@@ -16,6 +16,7 @@
 #include <aws/appsync/model/GraphQLApiVisibility.h>
 #include <aws/appsync/model/GraphQLApiType.h>
 #include <aws/appsync/model/GraphQLApiIntrospectionConfig.h>
+#include <aws/appsync/model/EnhancedMetricsConfig.h>
 #include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <utility>
 
@@ -1040,6 +1041,37 @@ namespace Model
      */
     inline GraphqlApi& WithResolverCountLimit(int value) { SetResolverCountLimit(value); return *this;}
 
+
+    /**
+     * <p>The <code>enhancedMetricsConfig</code> object.</p>
+     */
+    inline const EnhancedMetricsConfig& GetEnhancedMetricsConfig() const{ return m_enhancedMetricsConfig; }
+
+    /**
+     * <p>The <code>enhancedMetricsConfig</code> object.</p>
+     */
+    inline bool EnhancedMetricsConfigHasBeenSet() const { return m_enhancedMetricsConfigHasBeenSet; }
+
+    /**
+     * <p>The <code>enhancedMetricsConfig</code> object.</p>
+     */
+    inline void SetEnhancedMetricsConfig(const EnhancedMetricsConfig& value) { m_enhancedMetricsConfigHasBeenSet = true; m_enhancedMetricsConfig = value; }
+
+    /**
+     * <p>The <code>enhancedMetricsConfig</code> object.</p>
+     */
+    inline void SetEnhancedMetricsConfig(EnhancedMetricsConfig&& value) { m_enhancedMetricsConfigHasBeenSet = true; m_enhancedMetricsConfig = std::move(value); }
+
+    /**
+     * <p>The <code>enhancedMetricsConfig</code> object.</p>
+     */
+    inline GraphqlApi& WithEnhancedMetricsConfig(const EnhancedMetricsConfig& value) { SetEnhancedMetricsConfig(value); return *this;}
+
+    /**
+     * <p>The <code>enhancedMetricsConfig</code> object.</p>
+     */
+    inline GraphqlApi& WithEnhancedMetricsConfig(EnhancedMetricsConfig&& value) { SetEnhancedMetricsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1107,6 +1139,9 @@ namespace Model
 
     int m_resolverCountLimit;
     bool m_resolverCountLimitHasBeenSet = false;
+
+    EnhancedMetricsConfig m_enhancedMetricsConfig;
+    bool m_enhancedMetricsConfigHasBeenSet = false;
   };
 
 } // namespace Model

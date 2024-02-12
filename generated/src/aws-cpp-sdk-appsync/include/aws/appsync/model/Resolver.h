@@ -11,6 +11,7 @@
 #include <aws/appsync/model/SyncConfig.h>
 #include <aws/appsync/model/CachingConfig.h>
 #include <aws/appsync/model/AppSyncRuntime.h>
+#include <aws/appsync/model/ResolverLevelMetricsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -544,6 +545,85 @@ namespace Model
      */
     inline Resolver& WithCode(const char* value) { SetCode(value); return *this;}
 
+
+    /**
+     * <p>Enables or disables enhanced resolver metrics for specified resolvers. Note
+     * that <code>metricsConfig</code> won't be used unless the
+     * <code>resolverLevelMetricsBehavior</code> value is set to
+     * <code>PER_RESOLVER_METRICS</code>. If the
+     * <code>resolverLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_RESOLVER_METRICS</code> instead, <code>metricsConfig</code>
+     * will be ignored. However, you can still set its value.</p> <p>
+     * <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline const ResolverLevelMetricsConfig& GetMetricsConfig() const{ return m_metricsConfig; }
+
+    /**
+     * <p>Enables or disables enhanced resolver metrics for specified resolvers. Note
+     * that <code>metricsConfig</code> won't be used unless the
+     * <code>resolverLevelMetricsBehavior</code> value is set to
+     * <code>PER_RESOLVER_METRICS</code>. If the
+     * <code>resolverLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_RESOLVER_METRICS</code> instead, <code>metricsConfig</code>
+     * will be ignored. However, you can still set its value.</p> <p>
+     * <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline bool MetricsConfigHasBeenSet() const { return m_metricsConfigHasBeenSet; }
+
+    /**
+     * <p>Enables or disables enhanced resolver metrics for specified resolvers. Note
+     * that <code>metricsConfig</code> won't be used unless the
+     * <code>resolverLevelMetricsBehavior</code> value is set to
+     * <code>PER_RESOLVER_METRICS</code>. If the
+     * <code>resolverLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_RESOLVER_METRICS</code> instead, <code>metricsConfig</code>
+     * will be ignored. However, you can still set its value.</p> <p>
+     * <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline void SetMetricsConfig(const ResolverLevelMetricsConfig& value) { m_metricsConfigHasBeenSet = true; m_metricsConfig = value; }
+
+    /**
+     * <p>Enables or disables enhanced resolver metrics for specified resolvers. Note
+     * that <code>metricsConfig</code> won't be used unless the
+     * <code>resolverLevelMetricsBehavior</code> value is set to
+     * <code>PER_RESOLVER_METRICS</code>. If the
+     * <code>resolverLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_RESOLVER_METRICS</code> instead, <code>metricsConfig</code>
+     * will be ignored. However, you can still set its value.</p> <p>
+     * <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline void SetMetricsConfig(ResolverLevelMetricsConfig&& value) { m_metricsConfigHasBeenSet = true; m_metricsConfig = std::move(value); }
+
+    /**
+     * <p>Enables or disables enhanced resolver metrics for specified resolvers. Note
+     * that <code>metricsConfig</code> won't be used unless the
+     * <code>resolverLevelMetricsBehavior</code> value is set to
+     * <code>PER_RESOLVER_METRICS</code>. If the
+     * <code>resolverLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_RESOLVER_METRICS</code> instead, <code>metricsConfig</code>
+     * will be ignored. However, you can still set its value.</p> <p>
+     * <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline Resolver& WithMetricsConfig(const ResolverLevelMetricsConfig& value) { SetMetricsConfig(value); return *this;}
+
+    /**
+     * <p>Enables or disables enhanced resolver metrics for specified resolvers. Note
+     * that <code>metricsConfig</code> won't be used unless the
+     * <code>resolverLevelMetricsBehavior</code> value is set to
+     * <code>PER_RESOLVER_METRICS</code>. If the
+     * <code>resolverLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_RESOLVER_METRICS</code> instead, <code>metricsConfig</code>
+     * will be ignored. However, you can still set its value.</p> <p>
+     * <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline Resolver& WithMetricsConfig(ResolverLevelMetricsConfig&& value) { SetMetricsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_typeName;
@@ -584,6 +664,9 @@ namespace Model
 
     Aws::String m_code;
     bool m_codeHasBeenSet = false;
+
+    ResolverLevelMetricsConfig m_metricsConfig;
+    bool m_metricsConfigHasBeenSet = false;
   };
 
 } // namespace Model

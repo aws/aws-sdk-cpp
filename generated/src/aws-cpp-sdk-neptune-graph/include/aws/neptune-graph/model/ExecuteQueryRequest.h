@@ -8,8 +8,10 @@
 #include <aws/neptune-graph/NeptuneGraphRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/model/QueryLanguage.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/neptune-graph/model/PlanCacheType.h>
 #include <aws/neptune-graph/model/ExplainMode.h>
+#include <aws/core/utils/Document.h>
 #include <utility>
 
 namespace Aws
@@ -161,6 +163,79 @@ namespace Model
 
 
     /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline void SetParameters(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline void SetParameters(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline ExecuteQueryRequest& WithParameters(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline ExecuteQueryRequest& WithParameters(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline ExecuteQueryRequest& AddParameters(const Aws::String& key, const Aws::Utils::Document& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline ExecuteQueryRequest& AddParameters(Aws::String&& key, const Aws::Utils::Document& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline ExecuteQueryRequest& AddParameters(const Aws::String& key, Aws::Utils::Document&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline ExecuteQueryRequest& AddParameters(Aws::String&& key, Aws::Utils::Document&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline ExecuteQueryRequest& AddParameters(const char* key, Aws::Utils::Document&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The data parameters the query can use in JSON format. For example: {"name":
+     * "john", "age": 20}. (optional) </p>
+     */
+    inline ExecuteQueryRequest& AddParameters(const char* key, const Aws::Utils::Document& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
+
+    /**
      * <p>Query plan cache is a feature that saves the query plan and reuses it on
      * successive executions of the same query. This reduces query latency, and works
      * for both <code>READ</code> and <code>UPDATE</code> queries. The plan cache is an
@@ -288,6 +363,9 @@ namespace Model
 
     QueryLanguage m_language;
     bool m_languageHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::Utils::Document> m_parameters;
+    bool m_parametersHasBeenSet = false;
 
     PlanCacheType m_planCache;
     bool m_planCacheHasBeenSet = false;

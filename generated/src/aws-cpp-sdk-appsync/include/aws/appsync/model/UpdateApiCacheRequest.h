@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appsync/model/ApiCachingBehavior.h>
 #include <aws/appsync/model/ApiCacheType.h>
+#include <aws/appsync/model/CacheHealthMetricsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -261,6 +262,67 @@ namespace Model
      */
     inline UpdateApiCacheRequest& WithType(ApiCacheType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * number of times a specified GraphQL operation was called.</p> </li> <li>
+     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
+     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
+     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline const CacheHealthMetricsConfig& GetHealthMetricsConfig() const{ return m_healthMetricsConfig; }
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * number of times a specified GraphQL operation was called.</p> </li> <li>
+     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
+     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
+     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline bool HealthMetricsConfigHasBeenSet() const { return m_healthMetricsConfigHasBeenSet; }
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * number of times a specified GraphQL operation was called.</p> </li> <li>
+     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
+     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
+     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline void SetHealthMetricsConfig(const CacheHealthMetricsConfig& value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = value; }
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * number of times a specified GraphQL operation was called.</p> </li> <li>
+     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
+     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
+     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline void SetHealthMetricsConfig(CacheHealthMetricsConfig&& value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = std::move(value); }
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * number of times a specified GraphQL operation was called.</p> </li> <li>
+     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
+     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
+     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline UpdateApiCacheRequest& WithHealthMetricsConfig(const CacheHealthMetricsConfig& value) { SetHealthMetricsConfig(value); return *this;}
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * number of times a specified GraphQL operation was called.</p> </li> <li>
+     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
+     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
+     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline UpdateApiCacheRequest& WithHealthMetricsConfig(CacheHealthMetricsConfig&& value) { SetHealthMetricsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -274,6 +336,9 @@ namespace Model
 
     ApiCacheType m_type;
     bool m_typeHasBeenSet = false;
+
+    CacheHealthMetricsConfig m_healthMetricsConfig;
+    bool m_healthMetricsConfigHasBeenSet = false;
   };
 
 } // namespace Model

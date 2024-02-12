@@ -30,7 +30,9 @@ ApiCache::ApiCache() :
     m_type(ApiCacheType::NOT_SET),
     m_typeHasBeenSet(false),
     m_status(ApiCacheStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_healthMetricsConfig(CacheHealthMetricsConfig::NOT_SET),
+    m_healthMetricsConfigHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ ApiCache::ApiCache(JsonView jsonValue) :
     m_type(ApiCacheType::NOT_SET),
     m_typeHasBeenSet(false),
     m_status(ApiCacheStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_healthMetricsConfig(CacheHealthMetricsConfig::NOT_SET),
+    m_healthMetricsConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +99,13 @@ ApiCache& ApiCache::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("healthMetricsConfig"))
+  {
+    m_healthMetricsConfig = CacheHealthMetricsConfigMapper::GetCacheHealthMetricsConfigForName(jsonValue.GetString("healthMetricsConfig"));
+
+    m_healthMetricsConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +144,11 @@ JsonValue ApiCache::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ApiCacheStatusMapper::GetNameForApiCacheStatus(m_status));
+  }
+
+  if(m_healthMetricsConfigHasBeenSet)
+  {
+   payload.WithString("healthMetricsConfig", CacheHealthMetricsConfigMapper::GetNameForCacheHealthMetricsConfig(m_healthMetricsConfig));
   }
 
   return payload;

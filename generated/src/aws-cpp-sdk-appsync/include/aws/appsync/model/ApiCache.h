@@ -8,6 +8,7 @@
 #include <aws/appsync/model/ApiCachingBehavior.h>
 #include <aws/appsync/model/ApiCacheType.h>
 #include <aws/appsync/model/ApiCacheStatus.h>
+#include <aws/appsync/model/CacheHealthMetricsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -332,6 +333,79 @@ namespace Model
      */
     inline ApiCache& WithStatus(ApiCacheStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline const CacheHealthMetricsConfig& GetHealthMetricsConfig() const{ return m_healthMetricsConfig; }
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline bool HealthMetricsConfigHasBeenSet() const { return m_healthMetricsConfigHasBeenSet; }
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline void SetHealthMetricsConfig(const CacheHealthMetricsConfig& value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = value; }
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline void SetHealthMetricsConfig(CacheHealthMetricsConfig&& value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = std::move(value); }
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline ApiCache& WithHealthMetricsConfig(const CacheHealthMetricsConfig& value) { SetHealthMetricsConfig(value); return *this;}
+
+    /**
+     * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
+     * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     */
+    inline ApiCache& WithHealthMetricsConfig(CacheHealthMetricsConfig&& value) { SetHealthMetricsConfig(std::move(value)); return *this;}
+
   private:
 
     long long m_ttl;
@@ -351,6 +425,9 @@ namespace Model
 
     ApiCacheStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    CacheHealthMetricsConfig m_healthMetricsConfig;
+    bool m_healthMetricsConfigHasBeenSet = false;
   };
 
 } // namespace Model

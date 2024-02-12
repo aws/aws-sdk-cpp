@@ -19,7 +19,9 @@ UpdateDomainContactPrivacyRequest::UpdateDomainContactPrivacyRequest() :
     m_registrantPrivacy(false),
     m_registrantPrivacyHasBeenSet(false),
     m_techPrivacy(false),
-    m_techPrivacyHasBeenSet(false)
+    m_techPrivacyHasBeenSet(false),
+    m_billingPrivacy(false),
+    m_billingPrivacyHasBeenSet(false)
 {
 }
 
@@ -48,6 +50,12 @@ Aws::String UpdateDomainContactPrivacyRequest::SerializePayload() const
   if(m_techPrivacyHasBeenSet)
   {
    payload.WithBool("TechPrivacy", m_techPrivacy);
+
+  }
+
+  if(m_billingPrivacyHasBeenSet)
+  {
+   payload.WithBool("BillingPrivacy", m_billingPrivacy);
 
   }
 
