@@ -479,7 +479,7 @@ unsigned int LevenshteinDistance(Aws::String s1, Aws::String s2)
 
 TEST_F(TranscribeStreamingTests, TranscribeStreamingCppSdkSample)
 {
-  static const char expected[] = "This is a C plus plus test sample";
+  const Aws::Vector<Aws::String> EXPECTED_ALTERNATIVES = {"This is a C plus plus test sample", "This is a C++ test sample"};
   for(size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 25)
   {
     int64_t startedAt = Aws::Utils::DateTime::Now().Millis();
@@ -487,9 +487,13 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingCppSdkSample)
     int64_t endedAt = Aws::Utils::DateTime::Now().Millis();
     std::cout << "Transcription of this_is_a_cpp_test_sample_8kHz_2162ms with chunk duration " << chunkDuration << " ms took " << endedAt - startedAt << " ms.\n";
 
-    int difference = LevenshteinDistance(expected, result);
-    ASSERT_LT(difference, result.length() * 0.2) << "The difference between a resulting transcription and the expectation is too high: " << difference << "\n"
-                                                 << "Expected: " << expected << "\nResulted: " << result;
+    int minDiff = 999999;
+    for(const auto& expected : EXPECTED_ALTERNATIVES)
+    {
+      int difference = LevenshteinDistance(expected, result);
+      minDiff = std::min(std::abs(minDiff), std::abs(difference));
+    }
+    ASSERT_LT(minDiff, result.length() * 0.2) << "The difference between a resulting transcription and the expectation is too high: " << minDiff << "\nResulted transcription: " << result;
   }
 }
 
