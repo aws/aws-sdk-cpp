@@ -212,9 +212,8 @@ namespace Model
     /**
      * <p>Specifies whether contact information is concealed from WHOIS queries. If the
      * value is <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If the value is
-     * <code>false</code>, WHOIS queries return the information that you entered for
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
      * the admin contact.</p>
      */
     inline bool GetAdminPrivacy() const{ return m_adminPrivacy; }
@@ -222,9 +221,8 @@ namespace Model
     /**
      * <p>Specifies whether contact information is concealed from WHOIS queries. If the
      * value is <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If the value is
-     * <code>false</code>, WHOIS queries return the information that you entered for
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
      * the admin contact.</p>
      */
     inline void SetAdminPrivacy(bool value) { m_adminPrivacy = value; }
@@ -232,9 +230,8 @@ namespace Model
     /**
      * <p>Specifies whether contact information is concealed from WHOIS queries. If the
      * value is <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If the value is
-     * <code>false</code>, WHOIS queries return the information that you entered for
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
      * the admin contact.</p>
      */
     inline GetDomainDetailResult& WithAdminPrivacy(bool value) { SetAdminPrivacy(value); return *this;}
@@ -243,9 +240,8 @@ namespace Model
     /**
      * <p>Specifies whether contact information is concealed from WHOIS queries. If the
      * value is <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If the value is
-     * <code>false</code>, WHOIS queries return the information that you entered for
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
      * the registrant contact (domain owner).</p>
      */
     inline bool GetRegistrantPrivacy() const{ return m_registrantPrivacy; }
@@ -253,9 +249,8 @@ namespace Model
     /**
      * <p>Specifies whether contact information is concealed from WHOIS queries. If the
      * value is <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If the value is
-     * <code>false</code>, WHOIS queries return the information that you entered for
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
      * the registrant contact (domain owner).</p>
      */
     inline void SetRegistrantPrivacy(bool value) { m_registrantPrivacy = value; }
@@ -263,9 +258,8 @@ namespace Model
     /**
      * <p>Specifies whether contact information is concealed from WHOIS queries. If the
      * value is <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If the value is
-     * <code>false</code>, WHOIS queries return the information that you entered for
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
      * the registrant contact (domain owner).</p>
      */
     inline GetDomainDetailResult& WithRegistrantPrivacy(bool value) { SetRegistrantPrivacy(value); return *this;}
@@ -274,9 +268,8 @@ namespace Model
     /**
      * <p>Specifies whether contact information is concealed from WHOIS queries. If the
      * value is <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If the value is
-     * <code>false</code>, WHOIS queries return the information that you entered for
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
      * the technical contact.</p>
      */
     inline bool GetTechPrivacy() const{ return m_techPrivacy; }
@@ -284,9 +277,8 @@ namespace Model
     /**
      * <p>Specifies whether contact information is concealed from WHOIS queries. If the
      * value is <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If the value is
-     * <code>false</code>, WHOIS queries return the information that you entered for
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
      * the technical contact.</p>
      */
     inline void SetTechPrivacy(bool value) { m_techPrivacy = value; }
@@ -294,67 +286,45 @@ namespace Model
     /**
      * <p>Specifies whether contact information is concealed from WHOIS queries. If the
      * value is <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If the value is
-     * <code>false</code>, WHOIS queries return the information that you entered for
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
      * the technical contact.</p>
      */
     inline GetDomainDetailResult& WithTechPrivacy(bool value) { SetTechPrivacy(value); return *this;}
 
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Domains
-     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
-     * domains are registered by our registrar associate, Gandi. The value for domains
-     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. </p>
      */
     inline const Aws::String& GetRegistrarName() const{ return m_registrarName; }
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Domains
-     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
-     * domains are registered by our registrar associate, Gandi. The value for domains
-     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. </p>
      */
     inline void SetRegistrarName(const Aws::String& value) { m_registrarName = value; }
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Domains
-     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
-     * domains are registered by our registrar associate, Gandi. The value for domains
-     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. </p>
      */
     inline void SetRegistrarName(Aws::String&& value) { m_registrarName = std::move(value); }
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Domains
-     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
-     * domains are registered by our registrar associate, Gandi. The value for domains
-     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. </p>
      */
     inline void SetRegistrarName(const char* value) { m_registrarName.assign(value); }
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Domains
-     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
-     * domains are registered by our registrar associate, Gandi. The value for domains
-     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. </p>
      */
     inline GetDomainDetailResult& WithRegistrarName(const Aws::String& value) { SetRegistrarName(value); return *this;}
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Domains
-     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
-     * domains are registered by our registrar associate, Gandi. The value for domains
-     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. </p>
      */
     inline GetDomainDetailResult& WithRegistrarName(Aws::String&& value) { SetRegistrarName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Domains
-     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
-     * domains are registered by our registrar associate, Gandi. The value for domains
-     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. </p>
      */
     inline GetDomainDetailResult& WithRegistrarName(const char* value) { SetRegistrarName(value); return *this;}
 
@@ -906,6 +876,60 @@ namespace Model
     inline GetDomainDetailResult& AddDnssecKeys(DnssecKey&& value) { m_dnssecKeys.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Provides details about the domain billing contact.</p>
+     */
+    inline const ContactDetail& GetBillingContact() const{ return m_billingContact; }
+
+    /**
+     * <p>Provides details about the domain billing contact.</p>
+     */
+    inline void SetBillingContact(const ContactDetail& value) { m_billingContact = value; }
+
+    /**
+     * <p>Provides details about the domain billing contact.</p>
+     */
+    inline void SetBillingContact(ContactDetail&& value) { m_billingContact = std::move(value); }
+
+    /**
+     * <p>Provides details about the domain billing contact.</p>
+     */
+    inline GetDomainDetailResult& WithBillingContact(const ContactDetail& value) { SetBillingContact(value); return *this;}
+
+    /**
+     * <p>Provides details about the domain billing contact.</p>
+     */
+    inline GetDomainDetailResult& WithBillingContact(ContactDetail&& value) { SetBillingContact(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
+     * the billing contact.</p>
+     */
+    inline bool GetBillingPrivacy() const{ return m_billingPrivacy; }
+
+    /**
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
+     * the billing contact.</p>
+     */
+    inline void SetBillingPrivacy(bool value) { m_billingPrivacy = value; }
+
+    /**
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar or for our registrar associate, Gandi. If the value
+     * is <code>false</code>, WHOIS queries return the information that you entered for
+     * the billing contact.</p>
+     */
+    inline GetDomainDetailResult& WithBillingPrivacy(bool value) { SetBillingPrivacy(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -972,6 +996,10 @@ namespace Model
     Aws::Vector<Aws::String> m_statusList;
 
     Aws::Vector<DnssecKey> m_dnssecKeys;
+
+    ContactDetail m_billingContact;
+
+    bool m_billingPrivacy;
 
     Aws::String m_requestId;
   };

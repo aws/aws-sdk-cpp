@@ -33,7 +33,9 @@ Resolver::Resolver() :
     m_maxBatchSize(0),
     m_maxBatchSizeHasBeenSet(false),
     m_runtimeHasBeenSet(false),
-    m_codeHasBeenSet(false)
+    m_codeHasBeenSet(false),
+    m_metricsConfig(ResolverLevelMetricsConfig::NOT_SET),
+    m_metricsConfigHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ Resolver::Resolver(JsonView jsonValue) :
     m_maxBatchSize(0),
     m_maxBatchSizeHasBeenSet(false),
     m_runtimeHasBeenSet(false),
-    m_codeHasBeenSet(false)
+    m_codeHasBeenSet(false),
+    m_metricsConfig(ResolverLevelMetricsConfig::NOT_SET),
+    m_metricsConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -150,6 +154,13 @@ Resolver& Resolver::operator =(JsonView jsonValue)
     m_codeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("metricsConfig"))
+  {
+    m_metricsConfig = ResolverLevelMetricsConfigMapper::GetResolverLevelMetricsConfigForName(jsonValue.GetString("metricsConfig"));
+
+    m_metricsConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -232,6 +243,11 @@ JsonValue Resolver::Jsonize() const
   {
    payload.WithString("code", m_code);
 
+  }
+
+  if(m_metricsConfigHasBeenSet)
+  {
+   payload.WithString("metricsConfig", ResolverLevelMetricsConfigMapper::GetNameForResolverLevelMetricsConfig(m_metricsConfig));
   }
 
   return payload;

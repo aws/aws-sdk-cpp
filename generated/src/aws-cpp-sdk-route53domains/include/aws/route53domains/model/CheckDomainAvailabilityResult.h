@@ -49,14 +49,16 @@ namespace Model
      * <p>The TLD registry didn't reply with a definitive answer about whether the
      * domain name is available. Route 53 can return this response for a variety of
      * reasons, for example, the registry is performing maintenance. Try again
-     * later.</p> </dd> <dt>PENDING</dt> <dd> <p>The TLD registry didn't return a
-     * response in the expected amount of time. When the response is delayed, it
-     * usually takes just a few extra seconds. You can resubmit the request
-     * immediately.</p> </dd> <dt>RESERVED</dt> <dd> <p>The domain name has been
-     * reserved for another person or organization.</p> </dd> <dt>UNAVAILABLE</dt> <dd>
-     * <p>The domain name is not available.</p> </dd> <dt>UNAVAILABLE_PREMIUM</dt> <dd>
-     * <p>The domain name is not available.</p> </dd> <dt>UNAVAILABLE_RESTRICTED</dt>
-     * <dd> <p>The domain name is forbidden.</p> </dd> </dl>
+     * later.</p> </dd> <dt>INVALID_NAME_FOR_TLD</dt> <dd> <p>The TLD isn't valid. For
+     * example, it can contain characters that aren't allowed.</p> </dd>
+     * <dt>PENDING</dt> <dd> <p>The TLD registry didn't return a response in the
+     * expected amount of time. When the response is delayed, it usually takes just a
+     * few extra seconds. You can resubmit the request immediately.</p> </dd>
+     * <dt>RESERVED</dt> <dd> <p>The domain name has been reserved for another person
+     * or organization.</p> </dd> <dt>UNAVAILABLE</dt> <dd> <p>The domain name is not
+     * available.</p> </dd> <dt>UNAVAILABLE_PREMIUM</dt> <dd> <p>The domain name is not
+     * available.</p> </dd> <dt>UNAVAILABLE_RESTRICTED</dt> <dd> <p>The domain name is
+     * forbidden.</p> </dd> </dl>
      */
     inline const DomainAvailability& GetAvailability() const{ return m_availability; }
 
@@ -70,14 +72,16 @@ namespace Model
      * <p>The TLD registry didn't reply with a definitive answer about whether the
      * domain name is available. Route 53 can return this response for a variety of
      * reasons, for example, the registry is performing maintenance. Try again
-     * later.</p> </dd> <dt>PENDING</dt> <dd> <p>The TLD registry didn't return a
-     * response in the expected amount of time. When the response is delayed, it
-     * usually takes just a few extra seconds. You can resubmit the request
-     * immediately.</p> </dd> <dt>RESERVED</dt> <dd> <p>The domain name has been
-     * reserved for another person or organization.</p> </dd> <dt>UNAVAILABLE</dt> <dd>
-     * <p>The domain name is not available.</p> </dd> <dt>UNAVAILABLE_PREMIUM</dt> <dd>
-     * <p>The domain name is not available.</p> </dd> <dt>UNAVAILABLE_RESTRICTED</dt>
-     * <dd> <p>The domain name is forbidden.</p> </dd> </dl>
+     * later.</p> </dd> <dt>INVALID_NAME_FOR_TLD</dt> <dd> <p>The TLD isn't valid. For
+     * example, it can contain characters that aren't allowed.</p> </dd>
+     * <dt>PENDING</dt> <dd> <p>The TLD registry didn't return a response in the
+     * expected amount of time. When the response is delayed, it usually takes just a
+     * few extra seconds. You can resubmit the request immediately.</p> </dd>
+     * <dt>RESERVED</dt> <dd> <p>The domain name has been reserved for another person
+     * or organization.</p> </dd> <dt>UNAVAILABLE</dt> <dd> <p>The domain name is not
+     * available.</p> </dd> <dt>UNAVAILABLE_PREMIUM</dt> <dd> <p>The domain name is not
+     * available.</p> </dd> <dt>UNAVAILABLE_RESTRICTED</dt> <dd> <p>The domain name is
+     * forbidden.</p> </dd> </dl>
      */
     inline void SetAvailability(const DomainAvailability& value) { m_availability = value; }
 
@@ -91,14 +95,16 @@ namespace Model
      * <p>The TLD registry didn't reply with a definitive answer about whether the
      * domain name is available. Route 53 can return this response for a variety of
      * reasons, for example, the registry is performing maintenance. Try again
-     * later.</p> </dd> <dt>PENDING</dt> <dd> <p>The TLD registry didn't return a
-     * response in the expected amount of time. When the response is delayed, it
-     * usually takes just a few extra seconds. You can resubmit the request
-     * immediately.</p> </dd> <dt>RESERVED</dt> <dd> <p>The domain name has been
-     * reserved for another person or organization.</p> </dd> <dt>UNAVAILABLE</dt> <dd>
-     * <p>The domain name is not available.</p> </dd> <dt>UNAVAILABLE_PREMIUM</dt> <dd>
-     * <p>The domain name is not available.</p> </dd> <dt>UNAVAILABLE_RESTRICTED</dt>
-     * <dd> <p>The domain name is forbidden.</p> </dd> </dl>
+     * later.</p> </dd> <dt>INVALID_NAME_FOR_TLD</dt> <dd> <p>The TLD isn't valid. For
+     * example, it can contain characters that aren't allowed.</p> </dd>
+     * <dt>PENDING</dt> <dd> <p>The TLD registry didn't return a response in the
+     * expected amount of time. When the response is delayed, it usually takes just a
+     * few extra seconds. You can resubmit the request immediately.</p> </dd>
+     * <dt>RESERVED</dt> <dd> <p>The domain name has been reserved for another person
+     * or organization.</p> </dd> <dt>UNAVAILABLE</dt> <dd> <p>The domain name is not
+     * available.</p> </dd> <dt>UNAVAILABLE_PREMIUM</dt> <dd> <p>The domain name is not
+     * available.</p> </dd> <dt>UNAVAILABLE_RESTRICTED</dt> <dd> <p>The domain name is
+     * forbidden.</p> </dd> </dl>
      */
     inline void SetAvailability(DomainAvailability&& value) { m_availability = std::move(value); }
 
@@ -112,14 +118,16 @@ namespace Model
      * <p>The TLD registry didn't reply with a definitive answer about whether the
      * domain name is available. Route 53 can return this response for a variety of
      * reasons, for example, the registry is performing maintenance. Try again
-     * later.</p> </dd> <dt>PENDING</dt> <dd> <p>The TLD registry didn't return a
-     * response in the expected amount of time. When the response is delayed, it
-     * usually takes just a few extra seconds. You can resubmit the request
-     * immediately.</p> </dd> <dt>RESERVED</dt> <dd> <p>The domain name has been
-     * reserved for another person or organization.</p> </dd> <dt>UNAVAILABLE</dt> <dd>
-     * <p>The domain name is not available.</p> </dd> <dt>UNAVAILABLE_PREMIUM</dt> <dd>
-     * <p>The domain name is not available.</p> </dd> <dt>UNAVAILABLE_RESTRICTED</dt>
-     * <dd> <p>The domain name is forbidden.</p> </dd> </dl>
+     * later.</p> </dd> <dt>INVALID_NAME_FOR_TLD</dt> <dd> <p>The TLD isn't valid. For
+     * example, it can contain characters that aren't allowed.</p> </dd>
+     * <dt>PENDING</dt> <dd> <p>The TLD registry didn't return a response in the
+     * expected amount of time. When the response is delayed, it usually takes just a
+     * few extra seconds. You can resubmit the request immediately.</p> </dd>
+     * <dt>RESERVED</dt> <dd> <p>The domain name has been reserved for another person
+     * or organization.</p> </dd> <dt>UNAVAILABLE</dt> <dd> <p>The domain name is not
+     * available.</p> </dd> <dt>UNAVAILABLE_PREMIUM</dt> <dd> <p>The domain name is not
+     * available.</p> </dd> <dt>UNAVAILABLE_RESTRICTED</dt> <dd> <p>The domain name is
+     * forbidden.</p> </dd> </dl>
      */
     inline CheckDomainAvailabilityResult& WithAvailability(const DomainAvailability& value) { SetAvailability(value); return *this;}
 
@@ -133,14 +141,16 @@ namespace Model
      * <p>The TLD registry didn't reply with a definitive answer about whether the
      * domain name is available. Route 53 can return this response for a variety of
      * reasons, for example, the registry is performing maintenance. Try again
-     * later.</p> </dd> <dt>PENDING</dt> <dd> <p>The TLD registry didn't return a
-     * response in the expected amount of time. When the response is delayed, it
-     * usually takes just a few extra seconds. You can resubmit the request
-     * immediately.</p> </dd> <dt>RESERVED</dt> <dd> <p>The domain name has been
-     * reserved for another person or organization.</p> </dd> <dt>UNAVAILABLE</dt> <dd>
-     * <p>The domain name is not available.</p> </dd> <dt>UNAVAILABLE_PREMIUM</dt> <dd>
-     * <p>The domain name is not available.</p> </dd> <dt>UNAVAILABLE_RESTRICTED</dt>
-     * <dd> <p>The domain name is forbidden.</p> </dd> </dl>
+     * later.</p> </dd> <dt>INVALID_NAME_FOR_TLD</dt> <dd> <p>The TLD isn't valid. For
+     * example, it can contain characters that aren't allowed.</p> </dd>
+     * <dt>PENDING</dt> <dd> <p>The TLD registry didn't return a response in the
+     * expected amount of time. When the response is delayed, it usually takes just a
+     * few extra seconds. You can resubmit the request immediately.</p> </dd>
+     * <dt>RESERVED</dt> <dd> <p>The domain name has been reserved for another person
+     * or organization.</p> </dd> <dt>UNAVAILABLE</dt> <dd> <p>The domain name is not
+     * available.</p> </dd> <dt>UNAVAILABLE_PREMIUM</dt> <dd> <p>The domain name is not
+     * available.</p> </dd> <dt>UNAVAILABLE_RESTRICTED</dt> <dd> <p>The domain name is
+     * forbidden.</p> </dd> </dl>
      */
     inline CheckDomainAvailabilityResult& WithAvailability(DomainAvailability&& value) { SetAvailability(std::move(value)); return *this;}
 

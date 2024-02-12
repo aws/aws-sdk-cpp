@@ -17,7 +17,8 @@ UpdateDomainContactRequest::UpdateDomainContactRequest() :
     m_adminContactHasBeenSet(false),
     m_registrantContactHasBeenSet(false),
     m_techContactHasBeenSet(false),
-    m_consentHasBeenSet(false)
+    m_consentHasBeenSet(false),
+    m_billingContactHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,12 @@ Aws::String UpdateDomainContactRequest::SerializePayload() const
   if(m_consentHasBeenSet)
   {
    payload.WithObject("Consent", m_consent.Jsonize());
+
+  }
+
+  if(m_billingContactHasBeenSet)
+  {
+   payload.WithObject("BillingContact", m_billingContact.Jsonize());
 
   }
 

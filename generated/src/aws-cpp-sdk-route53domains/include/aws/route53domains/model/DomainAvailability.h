@@ -23,7 +23,9 @@ namespace Model
     UNAVAILABLE_PREMIUM,
     UNAVAILABLE_RESTRICTED,
     RESERVED,
-    DONT_KNOW
+    DONT_KNOW,
+    INVALID_NAME_FOR_TLD,
+    PENDING
   };
 
 namespace DomainAvailabilityMapper

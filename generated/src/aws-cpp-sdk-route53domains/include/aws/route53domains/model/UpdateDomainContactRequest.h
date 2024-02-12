@@ -210,6 +210,37 @@ namespace Model
      */
     inline UpdateDomainContactRequest& WithConsent(Consent&& value) { SetConsent(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
+    inline const ContactDetail& GetBillingContact() const{ return m_billingContact; }
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
+    inline bool BillingContactHasBeenSet() const { return m_billingContactHasBeenSet; }
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
+    inline void SetBillingContact(const ContactDetail& value) { m_billingContactHasBeenSet = true; m_billingContact = value; }
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
+    inline void SetBillingContact(ContactDetail&& value) { m_billingContactHasBeenSet = true; m_billingContact = std::move(value); }
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
+    inline UpdateDomainContactRequest& WithBillingContact(const ContactDetail& value) { SetBillingContact(value); return *this;}
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
+    inline UpdateDomainContactRequest& WithBillingContact(ContactDetail&& value) { SetBillingContact(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -226,6 +257,9 @@ namespace Model
 
     Consent m_consent;
     bool m_consentHasBeenSet = false;
+
+    ContactDetail m_billingContact;
+    bool m_billingContactHasBeenSet = false;
   };
 
 } // namespace Model

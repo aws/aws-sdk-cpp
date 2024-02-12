@@ -184,28 +184,28 @@ namespace Model
 
     /**
      * <p>Specifies whether or not the graph can be reachable over the internet. All
-     * access to graphs IAM authenticated. (<code>true</code> to enable, or
+     * access to graphs is IAM authenticated. (<code>true</code> to enable, or
      * <code>false</code> to disable.</p>
      */
     inline bool GetPublicConnectivity() const{ return m_publicConnectivity; }
 
     /**
      * <p>Specifies whether or not the graph can be reachable over the internet. All
-     * access to graphs IAM authenticated. (<code>true</code> to enable, or
+     * access to graphs is IAM authenticated. (<code>true</code> to enable, or
      * <code>false</code> to disable.</p>
      */
     inline bool PublicConnectivityHasBeenSet() const { return m_publicConnectivityHasBeenSet; }
 
     /**
      * <p>Specifies whether or not the graph can be reachable over the internet. All
-     * access to graphs IAM authenticated. (<code>true</code> to enable, or
+     * access to graphs is IAM authenticated. (<code>true</code> to enable, or
      * <code>false</code> to disable.</p>
      */
     inline void SetPublicConnectivity(bool value) { m_publicConnectivityHasBeenSet = true; m_publicConnectivity = value; }
 
     /**
      * <p>Specifies whether or not the graph can be reachable over the internet. All
-     * access to graphs IAM authenticated. (<code>true</code> to enable, or
+     * access to graphs is IAM authenticated. (<code>true</code> to enable, or
      * <code>false</code> to disable.</p>
      */
     inline CreateGraphRequest& WithPublicConnectivity(bool value) { SetPublicConnectivity(value); return *this;}

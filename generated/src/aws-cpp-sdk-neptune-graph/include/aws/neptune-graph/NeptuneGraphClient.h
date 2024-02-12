@@ -317,8 +317,13 @@ namespace NeptuneGraph
         /**
          * <p>Execute an openCypher query. Currently, the SDK does not support
          * parameterized queries. If you want to make a parameterized query call, you can
-         * use an HTTP request. </p>  <p> Non-parametrized queries are not considered
-         * for plan caching. You can force plan caching with
+         * use an HTTP request. </p> <p> When invoking this operation in a Neptune
+         * Analytics cluster, the IAM user or role making the request must have a policy
+         * attached that allows one of the following IAM actions in that cluster, depending
+         * on the query: </p> <ul> <li> <p>neptune-graph:ReadDataViaQuery</p> </li> <li>
+         * <p>neptune-graph:WriteDataViaQuery</p> </li> <li>
+         * <p>neptune-graph:DeleteDataViaQuery</p> </li> </ul>  <p> Non-parametrized
+         * queries are not considered for plan caching. You can force plan caching with
          * <code>planCache=enabled</code>. The plan cache will be reused only for the same
          * exact query. Slight variations in the query will not be able to reuse the query
          * plan cache. </p> <p><h3>See Also:</h3>   <a
@@ -472,7 +477,10 @@ namespace NeptuneGraph
         }
 
         /**
-         * <p>Retrieves the status of a specified query.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the status of a specified query.</p>  <p> When invoking this
+         * operation in a Neptune Analytics cluster, the IAM user or role making the
+         * request must have the <code>neptune-graph:GetQueryStatus</code> IAM action
+         * attached. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetQuery">AWS
          * API Reference</a></p>
          */

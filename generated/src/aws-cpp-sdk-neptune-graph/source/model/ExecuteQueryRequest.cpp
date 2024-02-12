@@ -18,6 +18,7 @@ ExecuteQueryRequest::ExecuteQueryRequest() :
     m_queryStringHasBeenSet(false),
     m_language(QueryLanguage::NOT_SET),
     m_languageHasBeenSet(false),
+    m_parametersHasBeenSet(false),
     m_planCache(PlanCacheType::NOT_SET),
     m_planCacheHasBeenSet(false),
     m_explainMode(ExplainMode::NOT_SET),
@@ -40,6 +41,17 @@ Aws::String ExecuteQueryRequest::SerializePayload() const
   if(m_languageHasBeenSet)
   {
    payload.WithString("language", QueryLanguageMapper::GetNameForQueryLanguage(m_language));
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   JsonValue parametersJsonMap;
+   for(auto& parametersItem : m_parameters)
+   {
+     parametersJsonMap.WithObject(parametersItem.first, parametersItem.second.View());
+   }
+   payload.WithObject("parameters", std::move(parametersJsonMap));
+
   }
 
   if(m_planCacheHasBeenSet)

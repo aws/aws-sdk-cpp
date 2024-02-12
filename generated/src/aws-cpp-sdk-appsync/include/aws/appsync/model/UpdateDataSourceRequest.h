@@ -15,6 +15,7 @@
 #include <aws/appsync/model/HttpDataSourceConfig.h>
 #include <aws/appsync/model/RelationalDatabaseDataSourceConfig.h>
 #include <aws/appsync/model/EventBridgeDataSourceConfig.h>
+#include <aws/appsync/model/DataSourceLevelMetricsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -469,6 +470,85 @@ namespace Model
      */
     inline UpdateDataSourceRequest& WithEventBridgeConfig(EventBridgeDataSourceConfig&& value) { SetEventBridgeConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enables or disables enhanced data source metrics for specified data sources.
+     * Note that <code>metricsConfig</code> won't be used unless the
+     * <code>dataSourceLevelMetricsBehavior</code> value is set to
+     * <code>PER_DATA_SOURCE_METRICS</code>. If the
+     * <code>dataSourceLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead,
+     * <code>metricsConfig</code> will be ignored. However, you can still set its
+     * value.</p> <p> <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline const DataSourceLevelMetricsConfig& GetMetricsConfig() const{ return m_metricsConfig; }
+
+    /**
+     * <p>Enables or disables enhanced data source metrics for specified data sources.
+     * Note that <code>metricsConfig</code> won't be used unless the
+     * <code>dataSourceLevelMetricsBehavior</code> value is set to
+     * <code>PER_DATA_SOURCE_METRICS</code>. If the
+     * <code>dataSourceLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead,
+     * <code>metricsConfig</code> will be ignored. However, you can still set its
+     * value.</p> <p> <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline bool MetricsConfigHasBeenSet() const { return m_metricsConfigHasBeenSet; }
+
+    /**
+     * <p>Enables or disables enhanced data source metrics for specified data sources.
+     * Note that <code>metricsConfig</code> won't be used unless the
+     * <code>dataSourceLevelMetricsBehavior</code> value is set to
+     * <code>PER_DATA_SOURCE_METRICS</code>. If the
+     * <code>dataSourceLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead,
+     * <code>metricsConfig</code> will be ignored. However, you can still set its
+     * value.</p> <p> <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline void SetMetricsConfig(const DataSourceLevelMetricsConfig& value) { m_metricsConfigHasBeenSet = true; m_metricsConfig = value; }
+
+    /**
+     * <p>Enables or disables enhanced data source metrics for specified data sources.
+     * Note that <code>metricsConfig</code> won't be used unless the
+     * <code>dataSourceLevelMetricsBehavior</code> value is set to
+     * <code>PER_DATA_SOURCE_METRICS</code>. If the
+     * <code>dataSourceLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead,
+     * <code>metricsConfig</code> will be ignored. However, you can still set its
+     * value.</p> <p> <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline void SetMetricsConfig(DataSourceLevelMetricsConfig&& value) { m_metricsConfigHasBeenSet = true; m_metricsConfig = std::move(value); }
+
+    /**
+     * <p>Enables or disables enhanced data source metrics for specified data sources.
+     * Note that <code>metricsConfig</code> won't be used unless the
+     * <code>dataSourceLevelMetricsBehavior</code> value is set to
+     * <code>PER_DATA_SOURCE_METRICS</code>. If the
+     * <code>dataSourceLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead,
+     * <code>metricsConfig</code> will be ignored. However, you can still set its
+     * value.</p> <p> <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline UpdateDataSourceRequest& WithMetricsConfig(const DataSourceLevelMetricsConfig& value) { SetMetricsConfig(value); return *this;}
+
+    /**
+     * <p>Enables or disables enhanced data source metrics for specified data sources.
+     * Note that <code>metricsConfig</code> won't be used unless the
+     * <code>dataSourceLevelMetricsBehavior</code> value is set to
+     * <code>PER_DATA_SOURCE_METRICS</code>. If the
+     * <code>dataSourceLevelMetricsBehavior</code> is set to
+     * <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead,
+     * <code>metricsConfig</code> will be ignored. However, you can still set its
+     * value.</p> <p> <code>metricsConfig</code> can be <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
+     */
+    inline UpdateDataSourceRequest& WithMetricsConfig(DataSourceLevelMetricsConfig&& value) { SetMetricsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -506,6 +586,9 @@ namespace Model
 
     EventBridgeDataSourceConfig m_eventBridgeConfig;
     bool m_eventBridgeConfigHasBeenSet = false;
+
+    DataSourceLevelMetricsConfig m_metricsConfig;
+    bool m_metricsConfigHasBeenSet = false;
   };
 
 } // namespace Model

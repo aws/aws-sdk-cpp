@@ -31,7 +31,8 @@ UpdateGraphqlApiRequest::UpdateGraphqlApiRequest() :
     m_queryDepthLimit(0),
     m_queryDepthLimitHasBeenSet(false),
     m_resolverCountLimit(0),
-    m_resolverCountLimitHasBeenSet(false)
+    m_resolverCountLimitHasBeenSet(false),
+    m_enhancedMetricsConfigHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,12 @@ Aws::String UpdateGraphqlApiRequest::SerializePayload() const
   if(m_resolverCountLimitHasBeenSet)
   {
    payload.WithInteger("resolverCountLimit", m_resolverCountLimit);
+
+  }
+
+  if(m_enhancedMetricsConfigHasBeenSet)
+  {
+   payload.WithObject("enhancedMetricsConfig", m_enhancedMetricsConfig.Jsonize());
 
   }
 
