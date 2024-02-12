@@ -41,6 +41,14 @@ SSOBearerTokenProvider::SSOBearerTokenProvider(const Aws::String& awsProfile)
     AWS_LOGSTREAM_INFO(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "Setting sso bearerToken provider to read config from " <<  m_profileToUse);
 }
 
+SSOBearerTokenProvider::SSOBearerTokenProvider(const Aws::String& awsProfile, std::shared_ptr<const Client::ClientConfiguration> config)
+    : m_profileToUse(awsProfile),
+    m_lastUpdateAttempt((int64_t)0),
+    m_config(config)
+{
+    AWS_LOGSTREAM_INFO(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "Setting sso bearerToken provider to read config from " << m_profileToUse);
+}
+
 AWSBearerToken SSOBearerTokenProvider::GetAWSBearerToken()
 {
     Aws::Utils::Threading::ReaderLockGuard guard(m_reloadLock);
@@ -93,14 +101,20 @@ void SSOBearerTokenProvider::RefreshFromSso()
 
     if(!m_client)
     {
-        Aws::Client::ClientConfiguration config;
-        config.scheme = Aws::Http::Scheme::HTTPS;
+        auto scheme = Aws::Http::Scheme::HTTPS;
         /* The SSO token provider must not resolve if any SSO configuration values are present directly on the profile
          * instead of an `sso-session` section. The SSO token provider must ignore these configuration values if these
          * values are present directly on the profile instead of an `sso-session` section. */
         // config.region = m_profile.GetSsoRegion(); // <- intentionally not used per comment above
-        config.region = cachedSsoToken.region;
-        m_client = Aws::MakeUnique<Aws::Internal::SSOCredentialsClient>(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, config);
+        auto& region = cachedSsoToken.region;
+        Aws::Client::ClientConfiguration defaultConfig;
+        if (!m_config)
+        {
+            defaultConfig.scheme = scheme;
+            defaultConfig.region = region;
+        }
+        const Aws::Client::ClientConfiguration& config = m_config ? *m_config : defaultConfig;
+        m_client = Aws::MakeUnique<Aws::Internal::SSOCredentialsClient>(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, config, scheme, cachedSsoToken.region);
     }
 
     Aws::Internal::SSOCredentialsClient::SSOCreateTokenRequest ssoCreateTokenRequest;
