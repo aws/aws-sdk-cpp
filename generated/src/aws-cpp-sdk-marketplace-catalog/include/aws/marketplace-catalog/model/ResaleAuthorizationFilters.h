@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>A filter for ResaleAuthorization entity.</p><p><h3>See Also:</h3>   <a
+   * <p>Object containing all the filter fields for resale authorization entity.
+   * Client can add only one wildcard filter and a maximum of 8 filters in a single
+   * <code>ListEntities</code> request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ResaleAuthorizationFilters">AWS
    * API Reference</a></p>
    */

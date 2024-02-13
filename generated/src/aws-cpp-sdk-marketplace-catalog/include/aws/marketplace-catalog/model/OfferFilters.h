@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>A filter for offers entity.</p><p><h3>See Also:</h3>   <a
+   * <p>Object containing all the filter fields for offers entity. Client can add
+   * only one wildcard filter and a maximum of 8 filters in a single
+   * <code>ListEntities</code> request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/OfferFilters">AWS
    * API Reference</a></p>
    */

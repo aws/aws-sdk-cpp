@@ -8,6 +8,7 @@
 #include <aws/marketplace-catalog/MarketplaceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/marketplace-catalog/model/Intent.h>
 #include <aws/marketplace-catalog/model/Change.h>
 #include <aws/marketplace-catalog/model/Tag.h>
 #include <utility>
@@ -264,6 +265,67 @@ namespace Model
      */
     inline StartChangeSetRequest& AddChangeSetTags(Tag&& value) { m_changeSetTagsHasBeenSet = true; m_changeSetTags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The intent related to the request. The default is <code>APPLY</code>. To test
+     * your request before applying changes to your entities, use
+     * <code>VALIDATE</code>. This feature is currently available for adding versions
+     * to single-AMI products. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+     * a new version</a>.</p>
+     */
+    inline const Intent& GetIntent() const{ return m_intent; }
+
+    /**
+     * <p>The intent related to the request. The default is <code>APPLY</code>. To test
+     * your request before applying changes to your entities, use
+     * <code>VALIDATE</code>. This feature is currently available for adding versions
+     * to single-AMI products. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+     * a new version</a>.</p>
+     */
+    inline bool IntentHasBeenSet() const { return m_intentHasBeenSet; }
+
+    /**
+     * <p>The intent related to the request. The default is <code>APPLY</code>. To test
+     * your request before applying changes to your entities, use
+     * <code>VALIDATE</code>. This feature is currently available for adding versions
+     * to single-AMI products. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+     * a new version</a>.</p>
+     */
+    inline void SetIntent(const Intent& value) { m_intentHasBeenSet = true; m_intent = value; }
+
+    /**
+     * <p>The intent related to the request. The default is <code>APPLY</code>. To test
+     * your request before applying changes to your entities, use
+     * <code>VALIDATE</code>. This feature is currently available for adding versions
+     * to single-AMI products. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+     * a new version</a>.</p>
+     */
+    inline void SetIntent(Intent&& value) { m_intentHasBeenSet = true; m_intent = std::move(value); }
+
+    /**
+     * <p>The intent related to the request. The default is <code>APPLY</code>. To test
+     * your request before applying changes to your entities, use
+     * <code>VALIDATE</code>. This feature is currently available for adding versions
+     * to single-AMI products. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+     * a new version</a>.</p>
+     */
+    inline StartChangeSetRequest& WithIntent(const Intent& value) { SetIntent(value); return *this;}
+
+    /**
+     * <p>The intent related to the request. The default is <code>APPLY</code>. To test
+     * your request before applying changes to your entities, use
+     * <code>VALIDATE</code>. This feature is currently available for adding versions
+     * to single-AMI products. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+     * a new version</a>.</p>
+     */
+    inline StartChangeSetRequest& WithIntent(Intent&& value) { SetIntent(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_catalog;
@@ -280,6 +342,9 @@ namespace Model
 
     Aws::Vector<Tag> m_changeSetTags;
     bool m_changeSetTagsHasBeenSet = false;
+
+    Intent m_intent;
+    bool m_intentHasBeenSet = false;
   };
 
 } // namespace Model

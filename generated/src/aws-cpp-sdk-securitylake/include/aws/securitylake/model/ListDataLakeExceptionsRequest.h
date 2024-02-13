@@ -128,47 +128,47 @@ namespace Model
 
 
     /**
-     * <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+     * <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+     * <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
-     * <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+     * <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+     * <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+     * <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
      */
     inline ListDataLakeExceptionsRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+     * <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
      */
     inline ListDataLakeExceptionsRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+     * <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
      */
     inline ListDataLakeExceptionsRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+     * <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
      */
     inline ListDataLakeExceptionsRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+     * <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
      */
     inline ListDataLakeExceptionsRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 

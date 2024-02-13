@@ -18,7 +18,9 @@ StartChangeSetRequest::StartChangeSetRequest() :
     m_changeSetNameHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_changeSetTagsHasBeenSet(false)
+    m_changeSetTagsHasBeenSet(false),
+    m_intent(Intent::NOT_SET),
+    m_intentHasBeenSet(false)
 {
 }
 
@@ -64,6 +66,11 @@ Aws::String StartChangeSetRequest::SerializePayload() const
    }
    payload.WithArray("ChangeSetTags", std::move(changeSetTagsJsonList));
 
+  }
+
+  if(m_intentHasBeenSet)
+  {
+   payload.WithString("Intent", IntentMapper::GetNameForIntent(m_intent));
   }
 
   return payload.View().WriteReadable();
