@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides replication details of Amazon Security Lake object.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides replication details for objects stored in the Amazon Security Lake
+   * data lake.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DataLakeReplicationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -40,110 +40,146 @@ namespace Model
 
 
     /**
-     * <p>Replication enables automatic, asynchronous copying of objects across Amazon
-     * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same Amazon Web Services account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination
-     * buckets. The destination buckets can be in different Amazon Web Services Regions
-     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
-     * Regions by providing the Region or Regions that should contribute to the central
-     * rollup Region.</p>
+     * <p>Specifies one or more centralized rollup Regions. The Amazon Web Services
+     * Region specified in the <code>region</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html">
+     * <code>CreateDataLake</code> </a> or <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html">
+     * <code>UpdateDataLake</code> </a> operations contributes data to the rollup
+     * Region or Regions specified in this parameter.</p> <p>Replication enables
+     * automatic, asynchronous copying of objects across Amazon S3 buckets. S3 buckets
+     * that are configured for object replication can be owned by the same Amazon Web
+     * Services account or by different accounts. You can replicate objects to a single
+     * destination bucket or to multiple destination buckets. The destination buckets
+     * can be in different Regions or within the same Region as the source bucket.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>Replication enables automatic, asynchronous copying of objects across Amazon
-     * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same Amazon Web Services account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination
-     * buckets. The destination buckets can be in different Amazon Web Services Regions
-     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
-     * Regions by providing the Region or Regions that should contribute to the central
-     * rollup Region.</p>
+     * <p>Specifies one or more centralized rollup Regions. The Amazon Web Services
+     * Region specified in the <code>region</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html">
+     * <code>CreateDataLake</code> </a> or <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html">
+     * <code>UpdateDataLake</code> </a> operations contributes data to the rollup
+     * Region or Regions specified in this parameter.</p> <p>Replication enables
+     * automatic, asynchronous copying of objects across Amazon S3 buckets. S3 buckets
+     * that are configured for object replication can be owned by the same Amazon Web
+     * Services account or by different accounts. You can replicate objects to a single
+     * destination bucket or to multiple destination buckets. The destination buckets
+     * can be in different Regions or within the same Region as the source bucket.</p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
-     * <p>Replication enables automatic, asynchronous copying of objects across Amazon
-     * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same Amazon Web Services account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination
-     * buckets. The destination buckets can be in different Amazon Web Services Regions
-     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
-     * Regions by providing the Region or Regions that should contribute to the central
-     * rollup Region.</p>
+     * <p>Specifies one or more centralized rollup Regions. The Amazon Web Services
+     * Region specified in the <code>region</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html">
+     * <code>CreateDataLake</code> </a> or <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html">
+     * <code>UpdateDataLake</code> </a> operations contributes data to the rollup
+     * Region or Regions specified in this parameter.</p> <p>Replication enables
+     * automatic, asynchronous copying of objects across Amazon S3 buckets. S3 buckets
+     * that are configured for object replication can be owned by the same Amazon Web
+     * Services account or by different accounts. You can replicate objects to a single
+     * destination bucket or to multiple destination buckets. The destination buckets
+     * can be in different Regions or within the same Region as the source bucket.</p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>Replication enables automatic, asynchronous copying of objects across Amazon
-     * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same Amazon Web Services account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination
-     * buckets. The destination buckets can be in different Amazon Web Services Regions
-     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
-     * Regions by providing the Region or Regions that should contribute to the central
-     * rollup Region.</p>
+     * <p>Specifies one or more centralized rollup Regions. The Amazon Web Services
+     * Region specified in the <code>region</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html">
+     * <code>CreateDataLake</code> </a> or <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html">
+     * <code>UpdateDataLake</code> </a> operations contributes data to the rollup
+     * Region or Regions specified in this parameter.</p> <p>Replication enables
+     * automatic, asynchronous copying of objects across Amazon S3 buckets. S3 buckets
+     * that are configured for object replication can be owned by the same Amazon Web
+     * Services account or by different accounts. You can replicate objects to a single
+     * destination bucket or to multiple destination buckets. The destination buckets
+     * can be in different Regions or within the same Region as the source bucket.</p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>Replication enables automatic, asynchronous copying of objects across Amazon
-     * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same Amazon Web Services account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination
-     * buckets. The destination buckets can be in different Amazon Web Services Regions
-     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
-     * Regions by providing the Region or Regions that should contribute to the central
-     * rollup Region.</p>
+     * <p>Specifies one or more centralized rollup Regions. The Amazon Web Services
+     * Region specified in the <code>region</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html">
+     * <code>CreateDataLake</code> </a> or <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html">
+     * <code>UpdateDataLake</code> </a> operations contributes data to the rollup
+     * Region or Regions specified in this parameter.</p> <p>Replication enables
+     * automatic, asynchronous copying of objects across Amazon S3 buckets. S3 buckets
+     * that are configured for object replication can be owned by the same Amazon Web
+     * Services account or by different accounts. You can replicate objects to a single
+     * destination bucket or to multiple destination buckets. The destination buckets
+     * can be in different Regions or within the same Region as the source bucket.</p>
      */
     inline DataLakeReplicationConfiguration& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>Replication enables automatic, asynchronous copying of objects across Amazon
-     * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same Amazon Web Services account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination
-     * buckets. The destination buckets can be in different Amazon Web Services Regions
-     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
-     * Regions by providing the Region or Regions that should contribute to the central
-     * rollup Region.</p>
+     * <p>Specifies one or more centralized rollup Regions. The Amazon Web Services
+     * Region specified in the <code>region</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html">
+     * <code>CreateDataLake</code> </a> or <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html">
+     * <code>UpdateDataLake</code> </a> operations contributes data to the rollup
+     * Region or Regions specified in this parameter.</p> <p>Replication enables
+     * automatic, asynchronous copying of objects across Amazon S3 buckets. S3 buckets
+     * that are configured for object replication can be owned by the same Amazon Web
+     * Services account or by different accounts. You can replicate objects to a single
+     * destination bucket or to multiple destination buckets. The destination buckets
+     * can be in different Regions or within the same Region as the source bucket.</p>
      */
     inline DataLakeReplicationConfiguration& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>Replication enables automatic, asynchronous copying of objects across Amazon
-     * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same Amazon Web Services account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination
-     * buckets. The destination buckets can be in different Amazon Web Services Regions
-     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
-     * Regions by providing the Region or Regions that should contribute to the central
-     * rollup Region.</p>
+     * <p>Specifies one or more centralized rollup Regions. The Amazon Web Services
+     * Region specified in the <code>region</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html">
+     * <code>CreateDataLake</code> </a> or <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html">
+     * <code>UpdateDataLake</code> </a> operations contributes data to the rollup
+     * Region or Regions specified in this parameter.</p> <p>Replication enables
+     * automatic, asynchronous copying of objects across Amazon S3 buckets. S3 buckets
+     * that are configured for object replication can be owned by the same Amazon Web
+     * Services account or by different accounts. You can replicate objects to a single
+     * destination bucket or to multiple destination buckets. The destination buckets
+     * can be in different Regions or within the same Region as the source bucket.</p>
      */
     inline DataLakeReplicationConfiguration& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>Replication enables automatic, asynchronous copying of objects across Amazon
-     * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same Amazon Web Services account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination
-     * buckets. The destination buckets can be in different Amazon Web Services Regions
-     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
-     * Regions by providing the Region or Regions that should contribute to the central
-     * rollup Region.</p>
+     * <p>Specifies one or more centralized rollup Regions. The Amazon Web Services
+     * Region specified in the <code>region</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html">
+     * <code>CreateDataLake</code> </a> or <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html">
+     * <code>UpdateDataLake</code> </a> operations contributes data to the rollup
+     * Region or Regions specified in this parameter.</p> <p>Replication enables
+     * automatic, asynchronous copying of objects across Amazon S3 buckets. S3 buckets
+     * that are configured for object replication can be owned by the same Amazon Web
+     * Services account or by different accounts. You can replicate objects to a single
+     * destination bucket or to multiple destination buckets. The destination buckets
+     * can be in different Regions or within the same Region as the source bucket.</p>
      */
     inline DataLakeReplicationConfiguration& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Replication enables automatic, asynchronous copying of objects across Amazon
-     * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same Amazon Web Services account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination
-     * buckets. The destination buckets can be in different Amazon Web Services Regions
-     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
-     * Regions by providing the Region or Regions that should contribute to the central
-     * rollup Region.</p>
+     * <p>Specifies one or more centralized rollup Regions. The Amazon Web Services
+     * Region specified in the <code>region</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_CreateDataLake.html">
+     * <code>CreateDataLake</code> </a> or <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_UpdateDataLake.html">
+     * <code>UpdateDataLake</code> </a> operations contributes data to the rollup
+     * Region or Regions specified in this parameter.</p> <p>Replication enables
+     * automatic, asynchronous copying of objects across Amazon S3 buckets. S3 buckets
+     * that are configured for object replication can be owned by the same Amazon Web
+     * Services account or by different accounts. You can replicate objects to a single
+     * destination bucket or to multiple destination buckets. The destination buckets
+     * can be in different Regions or within the same Region as the source bucket.</p>
      */
     inline DataLakeReplicationConfiguration& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 

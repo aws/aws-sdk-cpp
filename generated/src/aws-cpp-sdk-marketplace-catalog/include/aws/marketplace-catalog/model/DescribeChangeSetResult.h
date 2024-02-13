@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/marketplace-catalog/model/Intent.h>
 #include <aws/marketplace-catalog/model/ChangeStatus.h>
 #include <aws/marketplace-catalog/model/FailureCode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -163,6 +164,37 @@ namespace Model
      * do not provide a name, one is set by default.</p>
      */
     inline DescribeChangeSetResult& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+
+
+    /**
+     * <p>The optional intent provided in the <code>StartChangeSet</code> request. If
+     * you do not provide an intent, <code>APPLY</code> is set by default.</p>
+     */
+    inline const Intent& GetIntent() const{ return m_intent; }
+
+    /**
+     * <p>The optional intent provided in the <code>StartChangeSet</code> request. If
+     * you do not provide an intent, <code>APPLY</code> is set by default.</p>
+     */
+    inline void SetIntent(const Intent& value) { m_intent = value; }
+
+    /**
+     * <p>The optional intent provided in the <code>StartChangeSet</code> request. If
+     * you do not provide an intent, <code>APPLY</code> is set by default.</p>
+     */
+    inline void SetIntent(Intent&& value) { m_intent = std::move(value); }
+
+    /**
+     * <p>The optional intent provided in the <code>StartChangeSet</code> request. If
+     * you do not provide an intent, <code>APPLY</code> is set by default.</p>
+     */
+    inline DescribeChangeSetResult& WithIntent(const Intent& value) { SetIntent(value); return *this;}
+
+    /**
+     * <p>The optional intent provided in the <code>StartChangeSet</code> request. If
+     * you do not provide an intent, <code>APPLY</code> is set by default.</p>
+     */
+    inline DescribeChangeSetResult& WithIntent(Intent&& value) { SetIntent(std::move(value)); return *this;}
 
 
     /**
@@ -437,6 +469,8 @@ namespace Model
     Aws::String m_changeSetArn;
 
     Aws::String m_changeSetName;
+
+    Intent m_intent;
 
     Aws::String m_startTime;
 
