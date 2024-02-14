@@ -44,6 +44,10 @@ namespace Aws
                  * Writes any buffered messages to the underlying device if the logger supports buffering.
                  */
                 virtual void Flush() = 0;
+                /**
+                 * Stops logging on this logger without destroying the object.
+                 */
+                virtual void Stop() { return; };
             };
 
         } // namespace Logging

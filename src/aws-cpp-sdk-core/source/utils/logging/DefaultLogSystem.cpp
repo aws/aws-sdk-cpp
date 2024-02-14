@@ -90,11 +90,7 @@ DefaultLogSystem::DefaultLogSystem(LogLevel logLevel, const Aws::String& filenam
 
 DefaultLogSystem::~DefaultLogSystem()
 {
-    {
-        std::lock_guard<std::mutex> locker(m_syncData.m_logQueueMutex);
-        m_syncData.m_stopLogging = true;
-        m_syncData.m_queueSignal.notify_one();
-    }
+    Stop();
 
     // explicitly wait for logging thread to finish
     {
@@ -128,5 +124,17 @@ void DefaultLogSystem::Flush()
 {
     std::lock_guard<std::mutex> locker(m_syncData.m_logQueueMutex);
     m_syncData.m_queueSignal.notify_one();
+}
+
+void DefaultLogSystem::Stop()
+{
+    FormattedLogSystem::Stop();
+    Flush();
+
+    {
+        std::lock_guard<std::mutex> locker(m_syncData.m_logQueueMutex);
+        m_syncData.m_stopLogging = true;
+        m_syncData.m_queueSignal.notify_one();
+    }
 }
 

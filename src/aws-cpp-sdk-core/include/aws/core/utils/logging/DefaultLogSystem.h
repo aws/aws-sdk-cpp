@@ -53,6 +53,11 @@ namespace Aws
                 void Flush() override;
 
                 /**
+                 * Stops logging on this logger without destroying the object.
+                 */
+                void Stop() override;
+
+                /**
                  * Structure containing semaphores, queue etc... 
                  */
                 struct LogSynchronizationData
