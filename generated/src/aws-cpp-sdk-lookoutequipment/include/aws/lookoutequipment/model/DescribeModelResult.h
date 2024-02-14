@@ -12,6 +12,7 @@
 #include <aws/lookoutequipment/model/ModelStatus.h>
 #include <aws/lookoutequipment/model/ModelVersionStatus.h>
 #include <aws/lookoutequipment/model/RetrainingSchedulerStatus.h>
+#include <aws/lookoutequipment/model/ModelDiagnosticsOutputConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -1441,6 +1442,32 @@ namespace Model
     inline DescribeModelResult& WithRetrainingSchedulerStatus(RetrainingSchedulerStatus&& value) { SetRetrainingSchedulerStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Configuration information for the model's pointwise model diagnostics.</p>
+     */
+    inline const ModelDiagnosticsOutputConfiguration& GetModelDiagnosticsOutputConfiguration() const{ return m_modelDiagnosticsOutputConfiguration; }
+
+    /**
+     * <p>Configuration information for the model's pointwise model diagnostics.</p>
+     */
+    inline void SetModelDiagnosticsOutputConfiguration(const ModelDiagnosticsOutputConfiguration& value) { m_modelDiagnosticsOutputConfiguration = value; }
+
+    /**
+     * <p>Configuration information for the model's pointwise model diagnostics.</p>
+     */
+    inline void SetModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfiguration&& value) { m_modelDiagnosticsOutputConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information for the model's pointwise model diagnostics.</p>
+     */
+    inline DescribeModelResult& WithModelDiagnosticsOutputConfiguration(const ModelDiagnosticsOutputConfiguration& value) { SetModelDiagnosticsOutputConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information for the model's pointwise model diagnostics.</p>
+     */
+    inline DescribeModelResult& WithModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfiguration&& value) { SetModelDiagnosticsOutputConfiguration(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1543,6 +1570,8 @@ namespace Model
     Aws::Utils::DateTime m_accumulatedInferenceDataEndTime;
 
     RetrainingSchedulerStatus m_retrainingSchedulerStatus;
+
+    ModelDiagnosticsOutputConfiguration m_modelDiagnosticsOutputConfiguration;
 
     Aws::String m_requestId;
   };

@@ -195,10 +195,38 @@ namespace ControlTower
         }
 
         /**
+         * <p>Disable an <code>EnabledBaseline</code> resource on the specified Target.
+         * This API starts an asynchronous operation to remove all resources deployed as
+         * part of the baseline enablement. The resource will vary depending on the enabled
+         * baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableBaseline">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableBaselineOutcome DisableBaseline(const Model::DisableBaselineRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableBaselineRequestT = Model::DisableBaselineRequest>
+        Model::DisableBaselineOutcomeCallable DisableBaselineCallable(const DisableBaselineRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::DisableBaseline, request);
+        }
+
+        /**
+         * An Async wrapper for DisableBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableBaselineRequestT = Model::DisableBaselineRequest>
+        void DisableBaselineAsync(const DisableBaselineRequestT& request, const DisableBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::DisableBaseline, request, handler, context);
+        }
+
+        /**
          * <p>This API call turns off a control. It starts an asynchronous operation that
-         * deletes Amazon Web Services resources on the specified organizational unit and
-         * the accounts it contains. The resources will vary according to the control that
-         * you specify. For usage examples, see <a
+         * deletes AWS resources on the specified organizational unit and the accounts it
+         * contains. The resources will vary according to the control that you specify. For
+         * usage examples, see <a
          * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
          * <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -223,6 +251,33 @@ namespace ControlTower
         void DisableControlAsync(const DisableControlRequestT& request, const DisableControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ControlTowerClient::DisableControl, request, handler, context);
+        }
+
+        /**
+         * <p>Enable (apply) a <code>Baseline</code> to a Target. This API starts an
+         * asynchronous operation to deploy resources specified by the
+         * <code>Baseline</code> to the specified Target.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableBaseline">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableBaselineOutcome EnableBaseline(const Model::EnableBaselineRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableBaselineRequestT = Model::EnableBaselineRequest>
+        Model::EnableBaselineOutcomeCallable EnableBaselineCallable(const EnableBaselineRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::EnableBaseline, request);
+        }
+
+        /**
+         * An Async wrapper for EnableBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableBaselineRequestT = Model::EnableBaselineRequest>
+        void EnableBaselineAsync(const EnableBaselineRequestT& request, const EnableBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::EnableBaseline, request, handler, context);
         }
 
         /**
@@ -257,6 +312,60 @@ namespace ControlTower
         }
 
         /**
+         * <p>Retrieve details about an existing <code>Baseline</code> resource by
+         * specifying its identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaseline">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBaselineOutcome GetBaseline(const Model::GetBaselineRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetBaselineRequestT = Model::GetBaselineRequest>
+        Model::GetBaselineOutcomeCallable GetBaselineCallable(const GetBaselineRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::GetBaseline, request);
+        }
+
+        /**
+         * An Async wrapper for GetBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetBaselineRequestT = Model::GetBaselineRequest>
+        void GetBaselineAsync(const GetBaselineRequestT& request, const GetBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::GetBaseline, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the details of an asynchronous baseline operation, as initiated by
+         * any of these APIs: <code>EnableBaseline</code>, <code>DisableBaseline</code>,
+         * <code>UpdateEnabledBaseline</code>, <code>ResetEnabledBaseline</code>. A status
+         * message is displayed in case of operation failure.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaselineOperation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBaselineOperationOutcome GetBaselineOperation(const Model::GetBaselineOperationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetBaselineOperation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetBaselineOperationRequestT = Model::GetBaselineOperationRequest>
+        Model::GetBaselineOperationOutcomeCallable GetBaselineOperationCallable(const GetBaselineOperationRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::GetBaselineOperation, request);
+        }
+
+        /**
+         * An Async wrapper for GetBaselineOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetBaselineOperationRequestT = Model::GetBaselineOperationRequest>
+        void GetBaselineOperationAsync(const GetBaselineOperationRequestT& request, const GetBaselineOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::GetBaselineOperation, request, handler, context);
+        }
+
+        /**
          * <p>Returns the status of a particular <code>EnableControl</code> or
          * <code>DisableControl</code> operation. Displays a message in case of error.
          * Details for an operation are available for 90 days. For usage examples, see <a
@@ -284,6 +393,32 @@ namespace ControlTower
         void GetControlOperationAsync(const GetControlOperationRequestT& request, const GetControlOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ControlTowerClient::GetControlOperation, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieve details of an <code>EnabledBaseline</code> resource by specifying
+         * its identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledBaseline">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEnabledBaselineOutcome GetEnabledBaseline(const Model::GetEnabledBaselineRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEnabledBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEnabledBaselineRequestT = Model::GetEnabledBaselineRequest>
+        Model::GetEnabledBaselineOutcomeCallable GetEnabledBaselineCallable(const GetEnabledBaselineRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::GetEnabledBaseline, request);
+        }
+
+        /**
+         * An Async wrapper for GetEnabledBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEnabledBaselineRequestT = Model::GetEnabledBaselineRequest>
+        void GetEnabledBaselineAsync(const GetEnabledBaselineRequestT& request, const GetEnabledBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::GetEnabledBaseline, request, handler, context);
         }
 
         /**
@@ -364,6 +499,60 @@ namespace ControlTower
         void GetLandingZoneOperationAsync(const GetLandingZoneOperationRequestT& request, const GetLandingZoneOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ControlTowerClient::GetLandingZoneOperation, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a summary list of all available baselines.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListBaselines">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBaselinesOutcome ListBaselines(const Model::ListBaselinesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBaselines that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListBaselinesRequestT = Model::ListBaselinesRequest>
+        Model::ListBaselinesOutcomeCallable ListBaselinesCallable(const ListBaselinesRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::ListBaselines, request);
+        }
+
+        /**
+         * An Async wrapper for ListBaselines that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListBaselinesRequestT = Model::ListBaselinesRequest>
+        void ListBaselinesAsync(const ListBaselinesRequestT& request, const ListBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::ListBaselines, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of summaries describing <code>EnabledBaseline</code>
+         * resources. You can filter the list by the corresponding <code>Baseline</code> or
+         * <code>Target</code> of the <code>EnabledBaseline</code> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledBaselines">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEnabledBaselinesOutcome ListEnabledBaselines(const Model::ListEnabledBaselinesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEnabledBaselines that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEnabledBaselinesRequestT = Model::ListEnabledBaselinesRequest>
+        Model::ListEnabledBaselinesOutcomeCallable ListEnabledBaselinesCallable(const ListEnabledBaselinesRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::ListEnabledBaselines, request);
+        }
+
+        /**
+         * An Async wrapper for ListEnabledBaselines that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEnabledBaselinesRequestT = Model::ListEnabledBaselinesRequest>
+        void ListEnabledBaselinesAsync(const ListEnabledBaselinesRequestT& request, const ListEnabledBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::ListEnabledBaselines, request, handler, context);
         }
 
         /**
@@ -454,6 +643,33 @@ namespace ControlTower
         }
 
         /**
+         * <p>Re-enables an <code>EnabledBaseline</code> resource. For example, this API
+         * can re-apply the existing <code>Baseline</code> after a new member account is
+         * moved to the target OU.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledBaseline">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetEnabledBaselineOutcome ResetEnabledBaseline(const Model::ResetEnabledBaselineRequest& request) const;
+
+        /**
+         * A Callable wrapper for ResetEnabledBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ResetEnabledBaselineRequestT = Model::ResetEnabledBaselineRequest>
+        Model::ResetEnabledBaselineOutcomeCallable ResetEnabledBaselineCallable(const ResetEnabledBaselineRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::ResetEnabledBaseline, request);
+        }
+
+        /**
+         * An Async wrapper for ResetEnabledBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ResetEnabledBaselineRequestT = Model::ResetEnabledBaselineRequest>
+        void ResetEnabledBaselineAsync(const ResetEnabledBaselineRequestT& request, const ResetEnabledBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::ResetEnabledBaseline, request, handler, context);
+        }
+
+        /**
          * <p>This API call resets a landing zone. It starts an asynchronous operation that
          * resets the landing zone to the parameters specified in its original
          * configuration.</p><p><h3>See Also:</h3>   <a
@@ -534,6 +750,32 @@ namespace ControlTower
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ControlTowerClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an <code>EnabledBaseline</code> resource's applied parameters or
+         * version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledBaseline">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEnabledBaselineOutcome UpdateEnabledBaseline(const Model::UpdateEnabledBaselineRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEnabledBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEnabledBaselineRequestT = Model::UpdateEnabledBaselineRequest>
+        Model::UpdateEnabledBaselineOutcomeCallable UpdateEnabledBaselineCallable(const UpdateEnabledBaselineRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::UpdateEnabledBaseline, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEnabledBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEnabledBaselineRequestT = Model::UpdateEnabledBaselineRequest>
+        void UpdateEnabledBaselineAsync(const UpdateEnabledBaselineRequestT& request, const UpdateEnabledBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::UpdateEnabledBaseline, request, handler, context);
         }
 
         /**

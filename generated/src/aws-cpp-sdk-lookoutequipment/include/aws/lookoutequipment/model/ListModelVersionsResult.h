@@ -100,43 +100,64 @@ namespace Model
 
     /**
      * <p>Provides information on the specified model version, including the created
-     * time, model and dataset ARNs, and status.</p>
+     * time, model and dataset ARNs, and status.</p>  <p>If you don't supply the
+     * <code>ModelName</code> request parameter, or if you supply the name of a model
+     * that doesn't exist, <code>ListModelVersions</code> returns an empty array in
+     * <code>ModelVersionSummaries</code>. </p> 
      */
     inline const Aws::Vector<ModelVersionSummary>& GetModelVersionSummaries() const{ return m_modelVersionSummaries; }
 
     /**
      * <p>Provides information on the specified model version, including the created
-     * time, model and dataset ARNs, and status.</p>
+     * time, model and dataset ARNs, and status.</p>  <p>If you don't supply the
+     * <code>ModelName</code> request parameter, or if you supply the name of a model
+     * that doesn't exist, <code>ListModelVersions</code> returns an empty array in
+     * <code>ModelVersionSummaries</code>. </p> 
      */
     inline void SetModelVersionSummaries(const Aws::Vector<ModelVersionSummary>& value) { m_modelVersionSummaries = value; }
 
     /**
      * <p>Provides information on the specified model version, including the created
-     * time, model and dataset ARNs, and status.</p>
+     * time, model and dataset ARNs, and status.</p>  <p>If you don't supply the
+     * <code>ModelName</code> request parameter, or if you supply the name of a model
+     * that doesn't exist, <code>ListModelVersions</code> returns an empty array in
+     * <code>ModelVersionSummaries</code>. </p> 
      */
     inline void SetModelVersionSummaries(Aws::Vector<ModelVersionSummary>&& value) { m_modelVersionSummaries = std::move(value); }
 
     /**
      * <p>Provides information on the specified model version, including the created
-     * time, model and dataset ARNs, and status.</p>
+     * time, model and dataset ARNs, and status.</p>  <p>If you don't supply the
+     * <code>ModelName</code> request parameter, or if you supply the name of a model
+     * that doesn't exist, <code>ListModelVersions</code> returns an empty array in
+     * <code>ModelVersionSummaries</code>. </p> 
      */
     inline ListModelVersionsResult& WithModelVersionSummaries(const Aws::Vector<ModelVersionSummary>& value) { SetModelVersionSummaries(value); return *this;}
 
     /**
      * <p>Provides information on the specified model version, including the created
-     * time, model and dataset ARNs, and status.</p>
+     * time, model and dataset ARNs, and status.</p>  <p>If you don't supply the
+     * <code>ModelName</code> request parameter, or if you supply the name of a model
+     * that doesn't exist, <code>ListModelVersions</code> returns an empty array in
+     * <code>ModelVersionSummaries</code>. </p> 
      */
     inline ListModelVersionsResult& WithModelVersionSummaries(Aws::Vector<ModelVersionSummary>&& value) { SetModelVersionSummaries(std::move(value)); return *this;}
 
     /**
      * <p>Provides information on the specified model version, including the created
-     * time, model and dataset ARNs, and status.</p>
+     * time, model and dataset ARNs, and status.</p>  <p>If you don't supply the
+     * <code>ModelName</code> request parameter, or if you supply the name of a model
+     * that doesn't exist, <code>ListModelVersions</code> returns an empty array in
+     * <code>ModelVersionSummaries</code>. </p> 
      */
     inline ListModelVersionsResult& AddModelVersionSummaries(const ModelVersionSummary& value) { m_modelVersionSummaries.push_back(value); return *this; }
 
     /**
      * <p>Provides information on the specified model version, including the created
-     * time, model and dataset ARNs, and status.</p>
+     * time, model and dataset ARNs, and status.</p>  <p>If you don't supply the
+     * <code>ModelName</code> request parameter, or if you supply the name of a model
+     * that doesn't exist, <code>ListModelVersions</code> returns an empty array in
+     * <code>ModelVersionSummaries</code>. </p> 
      */
     inline ListModelVersionsResult& AddModelVersionSummaries(ModelVersionSummary&& value) { m_modelVersionSummaries.push_back(std::move(value)); return *this; }
 

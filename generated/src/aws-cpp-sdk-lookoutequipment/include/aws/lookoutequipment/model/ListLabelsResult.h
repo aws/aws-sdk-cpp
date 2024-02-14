@@ -78,37 +78,58 @@ namespace Model
 
 
     /**
-     * <p> A summary of the items in the label group. </p>
+     * <p> A summary of the items in the label group. </p>  <p>If you don't
+     * supply the <code>LabelGroupName</code> request parameter, or if you supply the
+     * name of a label group that doesn't exist, <code>ListLabels</code> returns an
+     * empty array in <code>LabelSummaries</code>.</p> 
      */
     inline const Aws::Vector<LabelSummary>& GetLabelSummaries() const{ return m_labelSummaries; }
 
     /**
-     * <p> A summary of the items in the label group. </p>
+     * <p> A summary of the items in the label group. </p>  <p>If you don't
+     * supply the <code>LabelGroupName</code> request parameter, or if you supply the
+     * name of a label group that doesn't exist, <code>ListLabels</code> returns an
+     * empty array in <code>LabelSummaries</code>.</p> 
      */
     inline void SetLabelSummaries(const Aws::Vector<LabelSummary>& value) { m_labelSummaries = value; }
 
     /**
-     * <p> A summary of the items in the label group. </p>
+     * <p> A summary of the items in the label group. </p>  <p>If you don't
+     * supply the <code>LabelGroupName</code> request parameter, or if you supply the
+     * name of a label group that doesn't exist, <code>ListLabels</code> returns an
+     * empty array in <code>LabelSummaries</code>.</p> 
      */
     inline void SetLabelSummaries(Aws::Vector<LabelSummary>&& value) { m_labelSummaries = std::move(value); }
 
     /**
-     * <p> A summary of the items in the label group. </p>
+     * <p> A summary of the items in the label group. </p>  <p>If you don't
+     * supply the <code>LabelGroupName</code> request parameter, or if you supply the
+     * name of a label group that doesn't exist, <code>ListLabels</code> returns an
+     * empty array in <code>LabelSummaries</code>.</p> 
      */
     inline ListLabelsResult& WithLabelSummaries(const Aws::Vector<LabelSummary>& value) { SetLabelSummaries(value); return *this;}
 
     /**
-     * <p> A summary of the items in the label group. </p>
+     * <p> A summary of the items in the label group. </p>  <p>If you don't
+     * supply the <code>LabelGroupName</code> request parameter, or if you supply the
+     * name of a label group that doesn't exist, <code>ListLabels</code> returns an
+     * empty array in <code>LabelSummaries</code>.</p> 
      */
     inline ListLabelsResult& WithLabelSummaries(Aws::Vector<LabelSummary>&& value) { SetLabelSummaries(std::move(value)); return *this;}
 
     /**
-     * <p> A summary of the items in the label group. </p>
+     * <p> A summary of the items in the label group. </p>  <p>If you don't
+     * supply the <code>LabelGroupName</code> request parameter, or if you supply the
+     * name of a label group that doesn't exist, <code>ListLabels</code> returns an
+     * empty array in <code>LabelSummaries</code>.</p> 
      */
     inline ListLabelsResult& AddLabelSummaries(const LabelSummary& value) { m_labelSummaries.push_back(value); return *this; }
 
     /**
-     * <p> A summary of the items in the label group. </p>
+     * <p> A summary of the items in the label group. </p>  <p>If you don't
+     * supply the <code>LabelGroupName</code> request parameter, or if you supply the
+     * name of a label group that doesn't exist, <code>ListLabels</code> returns an
+     * empty array in <code>LabelSummaries</code>.</p> 
      */
     inline ListLabelsResult& AddLabelSummaries(LabelSummary&& value) { m_labelSummaries.push_back(std::move(value)); return *this; }
 

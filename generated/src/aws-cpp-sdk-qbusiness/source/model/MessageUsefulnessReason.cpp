@@ -28,6 +28,10 @@ namespace Aws
         static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
         static const int RELEVANT_SOURCES_HASH = HashingUtils::HashString("RELEVANT_SOURCES");
         static const int HELPFUL_HASH = HashingUtils::HashString("HELPFUL");
+        static const int NOT_BASED_ON_DOCUMENTS_HASH = HashingUtils::HashString("NOT_BASED_ON_DOCUMENTS");
+        static const int NOT_COMPLETE_HASH = HashingUtils::HashString("NOT_COMPLETE");
+        static const int NOT_CONCISE_HASH = HashingUtils::HashString("NOT_CONCISE");
+        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 
 
         MessageUsefulnessReason GetMessageUsefulnessReasonForName(const Aws::String& name)
@@ -65,6 +69,22 @@ namespace Aws
           {
             return MessageUsefulnessReason::HELPFUL;
           }
+          else if (hashCode == NOT_BASED_ON_DOCUMENTS_HASH)
+          {
+            return MessageUsefulnessReason::NOT_BASED_ON_DOCUMENTS;
+          }
+          else if (hashCode == NOT_COMPLETE_HASH)
+          {
+            return MessageUsefulnessReason::NOT_COMPLETE;
+          }
+          else if (hashCode == NOT_CONCISE_HASH)
+          {
+            return MessageUsefulnessReason::NOT_CONCISE;
+          }
+          else if (hashCode == OTHER_HASH)
+          {
+            return MessageUsefulnessReason::OTHER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +117,14 @@ namespace Aws
             return "RELEVANT_SOURCES";
           case MessageUsefulnessReason::HELPFUL:
             return "HELPFUL";
+          case MessageUsefulnessReason::NOT_BASED_ON_DOCUMENTS:
+            return "NOT_BASED_ON_DOCUMENTS";
+          case MessageUsefulnessReason::NOT_COMPLETE:
+            return "NOT_COMPLETE";
+          case MessageUsefulnessReason::NOT_CONCISE:
+            return "NOT_CONCISE";
+          case MessageUsefulnessReason::OTHER:
+            return "OTHER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

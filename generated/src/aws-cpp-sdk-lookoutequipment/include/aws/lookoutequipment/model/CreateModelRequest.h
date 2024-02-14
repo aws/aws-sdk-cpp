@@ -12,6 +12,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lookoutequipment/model/DataPreProcessingConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lookoutequipment/model/ModelDiagnosticsOutputConfiguration.h>
 #include <aws/lookoutequipment/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -662,6 +663,49 @@ namespace Model
      */
     inline CreateModelRequest& WithOffCondition(const char* value) { SetOffCondition(value); return *this;}
 
+
+    /**
+     * <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save
+     * the pointwise model diagnostics. You must also specify the <code>RoleArn</code>
+     * request parameter.</p>
+     */
+    inline const ModelDiagnosticsOutputConfiguration& GetModelDiagnosticsOutputConfiguration() const{ return m_modelDiagnosticsOutputConfiguration; }
+
+    /**
+     * <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save
+     * the pointwise model diagnostics. You must also specify the <code>RoleArn</code>
+     * request parameter.</p>
+     */
+    inline bool ModelDiagnosticsOutputConfigurationHasBeenSet() const { return m_modelDiagnosticsOutputConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save
+     * the pointwise model diagnostics. You must also specify the <code>RoleArn</code>
+     * request parameter.</p>
+     */
+    inline void SetModelDiagnosticsOutputConfiguration(const ModelDiagnosticsOutputConfiguration& value) { m_modelDiagnosticsOutputConfigurationHasBeenSet = true; m_modelDiagnosticsOutputConfiguration = value; }
+
+    /**
+     * <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save
+     * the pointwise model diagnostics. You must also specify the <code>RoleArn</code>
+     * request parameter.</p>
+     */
+    inline void SetModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfiguration&& value) { m_modelDiagnosticsOutputConfigurationHasBeenSet = true; m_modelDiagnosticsOutputConfiguration = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save
+     * the pointwise model diagnostics. You must also specify the <code>RoleArn</code>
+     * request parameter.</p>
+     */
+    inline CreateModelRequest& WithModelDiagnosticsOutputConfiguration(const ModelDiagnosticsOutputConfiguration& value) { SetModelDiagnosticsOutputConfiguration(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save
+     * the pointwise model diagnostics. You must also specify the <code>RoleArn</code>
+     * request parameter.</p>
+     */
+    inline CreateModelRequest& WithModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfiguration&& value) { SetModelDiagnosticsOutputConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelName;
@@ -705,6 +749,9 @@ namespace Model
 
     Aws::String m_offCondition;
     bool m_offConditionHasBeenSet = false;
+
+    ModelDiagnosticsOutputConfiguration m_modelDiagnosticsOutputConfiguration;
+    bool m_modelDiagnosticsOutputConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Enables filtering of Amazon Q web experience responses based on document
-   * attributes or metadata fields.</p><p><h3>See Also:</h3>   <a
+   * <p>Enables filtering of responses based on document attributes or metadata
+   * fields.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/AttributeFilter">AWS
    * API Reference</a></p>
    */

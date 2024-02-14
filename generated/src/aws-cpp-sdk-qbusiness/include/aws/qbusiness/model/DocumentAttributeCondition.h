@@ -28,7 +28,7 @@ namespace Model
   /**
    * <p>The condition used for the target document attribute or metadata field when
    * ingesting documents into Amazon Q. You use this with <a
-   * href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_DocumentAttributeTarget.html">
+   * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html">
    * <code>DocumentAttributeTarget</code> </a> to apply the condition.</p> <p>For
    * example, you can create the 'Department' target field and have it prefill
    * department names associated with the documents based on information in the

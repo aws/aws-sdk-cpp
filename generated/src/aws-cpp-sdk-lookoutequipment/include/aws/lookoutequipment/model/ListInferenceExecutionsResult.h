@@ -80,49 +80,77 @@ namespace Model
     /**
      * <p>Provides an array of information about the individual inference executions
      * returned from the <code>ListInferenceExecutions</code> operation, including
-     * model used, inference scheduler, data configuration, and so on. </p>
+     * model used, inference scheduler, data configuration, and so on. </p> 
+     * <p>If you don't supply the <code>InferenceSchedulerName</code> request
+     * parameter, or if you supply the name of an inference scheduler that doesn't
+     * exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.</p> 
      */
     inline const Aws::Vector<InferenceExecutionSummary>& GetInferenceExecutionSummaries() const{ return m_inferenceExecutionSummaries; }
 
     /**
      * <p>Provides an array of information about the individual inference executions
      * returned from the <code>ListInferenceExecutions</code> operation, including
-     * model used, inference scheduler, data configuration, and so on. </p>
+     * model used, inference scheduler, data configuration, and so on. </p> 
+     * <p>If you don't supply the <code>InferenceSchedulerName</code> request
+     * parameter, or if you supply the name of an inference scheduler that doesn't
+     * exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.</p> 
      */
     inline void SetInferenceExecutionSummaries(const Aws::Vector<InferenceExecutionSummary>& value) { m_inferenceExecutionSummaries = value; }
 
     /**
      * <p>Provides an array of information about the individual inference executions
      * returned from the <code>ListInferenceExecutions</code> operation, including
-     * model used, inference scheduler, data configuration, and so on. </p>
+     * model used, inference scheduler, data configuration, and so on. </p> 
+     * <p>If you don't supply the <code>InferenceSchedulerName</code> request
+     * parameter, or if you supply the name of an inference scheduler that doesn't
+     * exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.</p> 
      */
     inline void SetInferenceExecutionSummaries(Aws::Vector<InferenceExecutionSummary>&& value) { m_inferenceExecutionSummaries = std::move(value); }
 
     /**
      * <p>Provides an array of information about the individual inference executions
      * returned from the <code>ListInferenceExecutions</code> operation, including
-     * model used, inference scheduler, data configuration, and so on. </p>
+     * model used, inference scheduler, data configuration, and so on. </p> 
+     * <p>If you don't supply the <code>InferenceSchedulerName</code> request
+     * parameter, or if you supply the name of an inference scheduler that doesn't
+     * exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.</p> 
      */
     inline ListInferenceExecutionsResult& WithInferenceExecutionSummaries(const Aws::Vector<InferenceExecutionSummary>& value) { SetInferenceExecutionSummaries(value); return *this;}
 
     /**
      * <p>Provides an array of information about the individual inference executions
      * returned from the <code>ListInferenceExecutions</code> operation, including
-     * model used, inference scheduler, data configuration, and so on. </p>
+     * model used, inference scheduler, data configuration, and so on. </p> 
+     * <p>If you don't supply the <code>InferenceSchedulerName</code> request
+     * parameter, or if you supply the name of an inference scheduler that doesn't
+     * exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.</p> 
      */
     inline ListInferenceExecutionsResult& WithInferenceExecutionSummaries(Aws::Vector<InferenceExecutionSummary>&& value) { SetInferenceExecutionSummaries(std::move(value)); return *this;}
 
     /**
      * <p>Provides an array of information about the individual inference executions
      * returned from the <code>ListInferenceExecutions</code> operation, including
-     * model used, inference scheduler, data configuration, and so on. </p>
+     * model used, inference scheduler, data configuration, and so on. </p> 
+     * <p>If you don't supply the <code>InferenceSchedulerName</code> request
+     * parameter, or if you supply the name of an inference scheduler that doesn't
+     * exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.</p> 
      */
     inline ListInferenceExecutionsResult& AddInferenceExecutionSummaries(const InferenceExecutionSummary& value) { m_inferenceExecutionSummaries.push_back(value); return *this; }
 
     /**
      * <p>Provides an array of information about the individual inference executions
      * returned from the <code>ListInferenceExecutions</code> operation, including
-     * model used, inference scheduler, data configuration, and so on. </p>
+     * model used, inference scheduler, data configuration, and so on. </p> 
+     * <p>If you don't supply the <code>InferenceSchedulerName</code> request
+     * parameter, or if you supply the name of an inference scheduler that doesn't
+     * exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.</p> 
      */
     inline ListInferenceExecutionsResult& AddInferenceExecutionSummaries(InferenceExecutionSummary&& value) { m_inferenceExecutionSummaries.push_back(std::move(value)); return *this; }
 

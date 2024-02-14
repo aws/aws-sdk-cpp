@@ -36,11 +36,11 @@ namespace Model
    * create a target field if it has not already been created as an index field.
    * After you create your index field, you can create a document metadata field
    * using <a
-   * href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_DocumentAttributeTarget.html">
+   * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html">
    * <code>DocumentAttributeTarget</code> </a>. Amazon Q will then map your newly
    * created document attribute to your index field.</p> <p>You can also use this
    * with <a
-   * href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_DocumentAttributeCondition.html">
+   * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeCondition.html">
    * <code>DocumentAttributeCondition</code> </a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DocumentAttributeTarget">AWS
    * API Reference</a></p>

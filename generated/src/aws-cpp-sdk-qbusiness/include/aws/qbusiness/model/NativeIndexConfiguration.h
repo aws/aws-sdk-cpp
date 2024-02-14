@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/model/DocumentAttributeBoostingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +38,79 @@ namespace Model
     AWS_QBUSINESS_API NativeIndexConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API NativeIndexConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline const Aws::Map<Aws::String, DocumentAttributeBoostingConfiguration>& GetBoostingOverride() const{ return m_boostingOverride; }
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline bool BoostingOverrideHasBeenSet() const { return m_boostingOverrideHasBeenSet; }
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline void SetBoostingOverride(const Aws::Map<Aws::String, DocumentAttributeBoostingConfiguration>& value) { m_boostingOverrideHasBeenSet = true; m_boostingOverride = value; }
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline void SetBoostingOverride(Aws::Map<Aws::String, DocumentAttributeBoostingConfiguration>&& value) { m_boostingOverrideHasBeenSet = true; m_boostingOverride = std::move(value); }
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline NativeIndexConfiguration& WithBoostingOverride(const Aws::Map<Aws::String, DocumentAttributeBoostingConfiguration>& value) { SetBoostingOverride(value); return *this;}
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline NativeIndexConfiguration& WithBoostingOverride(Aws::Map<Aws::String, DocumentAttributeBoostingConfiguration>&& value) { SetBoostingOverride(std::move(value)); return *this;}
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline NativeIndexConfiguration& AddBoostingOverride(const Aws::String& key, const DocumentAttributeBoostingConfiguration& value) { m_boostingOverrideHasBeenSet = true; m_boostingOverride.emplace(key, value); return *this; }
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline NativeIndexConfiguration& AddBoostingOverride(Aws::String&& key, const DocumentAttributeBoostingConfiguration& value) { m_boostingOverrideHasBeenSet = true; m_boostingOverride.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline NativeIndexConfiguration& AddBoostingOverride(const Aws::String& key, DocumentAttributeBoostingConfiguration&& value) { m_boostingOverrideHasBeenSet = true; m_boostingOverride.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline NativeIndexConfiguration& AddBoostingOverride(Aws::String&& key, DocumentAttributeBoostingConfiguration&& value) { m_boostingOverrideHasBeenSet = true; m_boostingOverride.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline NativeIndexConfiguration& AddBoostingOverride(const char* key, DocumentAttributeBoostingConfiguration&& value) { m_boostingOverrideHasBeenSet = true; m_boostingOverride.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Overrides the default boosts applied by Amazon Q to supported document
+     * attribute data types.</p>
+     */
+    inline NativeIndexConfiguration& AddBoostingOverride(const char* key, const DocumentAttributeBoostingConfiguration& value) { m_boostingOverrideHasBeenSet = true; m_boostingOverride.emplace(key, value); return *this; }
 
 
     /**
@@ -79,6 +154,9 @@ namespace Model
     inline NativeIndexConfiguration& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
   private:
+
+    Aws::Map<Aws::String, DocumentAttributeBoostingConfiguration> m_boostingOverride;
+    bool m_boostingOverrideHasBeenSet = false;
 
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;

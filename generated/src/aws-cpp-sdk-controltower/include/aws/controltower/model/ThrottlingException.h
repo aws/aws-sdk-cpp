@@ -105,63 +105,63 @@ namespace Model
 
 
     /**
-     * <p>The number of seconds to wait before retrying.</p>
+     * <p>The number of seconds the caller should wait before retrying.</p>
      */
     inline int GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
 
     /**
-     * <p>The number of seconds to wait before retrying.</p>
+     * <p>The number of seconds the caller should wait before retrying.</p>
      */
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
 
     /**
-     * <p>The number of seconds to wait before retrying.</p>
+     * <p>The number of seconds the caller should wait before retrying.</p>
      */
     inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
 
     /**
-     * <p>The number of seconds to wait before retrying.</p>
+     * <p>The number of seconds the caller should wait before retrying.</p>
      */
     inline ThrottlingException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
 
 
     /**
-     * <p>The ID of the service that is associated with the error. </p>
+     * <p>The ID of the service that is associated with the error.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>The ID of the service that is associated with the error. </p>
+     * <p>The ID of the service that is associated with the error.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>The ID of the service that is associated with the error. </p>
+     * <p>The ID of the service that is associated with the error.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>The ID of the service that is associated with the error. </p>
+     * <p>The ID of the service that is associated with the error.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>The ID of the service that is associated with the error. </p>
+     * <p>The ID of the service that is associated with the error.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>The ID of the service that is associated with the error. </p>
+     * <p>The ID of the service that is associated with the error.</p>
      */
     inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>The ID of the service that is associated with the error. </p>
+     * <p>The ID of the service that is associated with the error.</p>
      */
     inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the service that is associated with the error. </p>
+     * <p>The ID of the service that is associated with the error.</p>
      */
     inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 

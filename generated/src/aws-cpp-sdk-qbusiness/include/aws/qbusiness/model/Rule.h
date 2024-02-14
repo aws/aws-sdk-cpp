@@ -134,32 +134,32 @@ namespace Model
 
 
     /**
-     * <p>The type fo rule.</p>
+     * <p>The type of rule.</p>
      */
     inline const RuleType& GetRuleType() const{ return m_ruleType; }
 
     /**
-     * <p>The type fo rule.</p>
+     * <p>The type of rule.</p>
      */
     inline bool RuleTypeHasBeenSet() const { return m_ruleTypeHasBeenSet; }
 
     /**
-     * <p>The type fo rule.</p>
+     * <p>The type of rule.</p>
      */
     inline void SetRuleType(const RuleType& value) { m_ruleTypeHasBeenSet = true; m_ruleType = value; }
 
     /**
-     * <p>The type fo rule.</p>
+     * <p>The type of rule.</p>
      */
     inline void SetRuleType(RuleType&& value) { m_ruleTypeHasBeenSet = true; m_ruleType = std::move(value); }
 
     /**
-     * <p>The type fo rule.</p>
+     * <p>The type of rule.</p>
      */
     inline Rule& WithRuleType(const RuleType& value) { SetRuleType(value); return *this;}
 
     /**
-     * <p>The type fo rule.</p>
+     * <p>The type of rule.</p>
      */
     inline Rule& WithRuleType(RuleType&& value) { SetRuleType(std::move(value)); return *this;}
 
