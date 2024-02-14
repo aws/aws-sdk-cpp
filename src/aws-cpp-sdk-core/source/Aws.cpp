@@ -212,10 +212,12 @@ namespace Aws
         if (options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
             Aws::Utils::Logging::ShutdownCRTLogging();
-            Aws::Utils::Logging::ShutdownAWSLogging();
+            Aws::Utils::Logging::PushLogger(nullptr); // stops further logging but keeps old logger object alive
         }
         Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
         Aws::CleanupCrt();
+
+        Aws::Utils::Logging::ShutdownAWSLogging();
 #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)
         {
