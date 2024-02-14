@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateModelRequest::UpdateModelRequest() : 
     m_modelNameHasBeenSet(false),
     m_labelsInputConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_modelDiagnosticsOutputConfigurationHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String UpdateModelRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_modelDiagnosticsOutputConfigurationHasBeenSet)
+  {
+   payload.WithObject("ModelDiagnosticsOutputConfiguration", m_modelDiagnosticsOutputConfiguration.Jsonize());
 
   }
 

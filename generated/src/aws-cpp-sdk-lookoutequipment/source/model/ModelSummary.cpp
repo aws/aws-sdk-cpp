@@ -36,7 +36,8 @@ ModelSummary::ModelSummary() :
     m_latestScheduledRetrainingStartTimeHasBeenSet(false),
     m_nextScheduledRetrainingStartDateHasBeenSet(false),
     m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
-    m_retrainingSchedulerStatusHasBeenSet(false)
+    m_retrainingSchedulerStatusHasBeenSet(false),
+    m_modelDiagnosticsOutputConfigurationHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ ModelSummary::ModelSummary(JsonView jsonValue) :
     m_latestScheduledRetrainingStartTimeHasBeenSet(false),
     m_nextScheduledRetrainingStartDateHasBeenSet(false),
     m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
-    m_retrainingSchedulerStatusHasBeenSet(false)
+    m_retrainingSchedulerStatusHasBeenSet(false),
+    m_modelDiagnosticsOutputConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -156,6 +158,13 @@ ModelSummary& ModelSummary::operator =(JsonView jsonValue)
     m_retrainingSchedulerStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelDiagnosticsOutputConfiguration"))
+  {
+    m_modelDiagnosticsOutputConfiguration = jsonValue.GetObject("ModelDiagnosticsOutputConfiguration");
+
+    m_modelDiagnosticsOutputConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -233,6 +242,12 @@ JsonValue ModelSummary::Jsonize() const
   if(m_retrainingSchedulerStatusHasBeenSet)
   {
    payload.WithString("RetrainingSchedulerStatus", RetrainingSchedulerStatusMapper::GetNameForRetrainingSchedulerStatus(m_retrainingSchedulerStatus));
+  }
+
+  if(m_modelDiagnosticsOutputConfigurationHasBeenSet)
+  {
+   payload.WithObject("ModelDiagnosticsOutputConfiguration", m_modelDiagnosticsOutputConfiguration.Jsonize());
+
   }
 
   return payload;

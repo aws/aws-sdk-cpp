@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lookoutequipment/model/ModelVersionStatus.h>
 #include <aws/lookoutequipment/model/RetrainingSchedulerStatus.h>
+#include <aws/lookoutequipment/model/ModelDiagnosticsOutputConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -517,6 +518,25 @@ namespace Model
      */
     inline ModelSummary& WithRetrainingSchedulerStatus(RetrainingSchedulerStatus&& value) { SetRetrainingSchedulerStatus(std::move(value)); return *this;}
 
+
+    
+    inline const ModelDiagnosticsOutputConfiguration& GetModelDiagnosticsOutputConfiguration() const{ return m_modelDiagnosticsOutputConfiguration; }
+
+    
+    inline bool ModelDiagnosticsOutputConfigurationHasBeenSet() const { return m_modelDiagnosticsOutputConfigurationHasBeenSet; }
+
+    
+    inline void SetModelDiagnosticsOutputConfiguration(const ModelDiagnosticsOutputConfiguration& value) { m_modelDiagnosticsOutputConfigurationHasBeenSet = true; m_modelDiagnosticsOutputConfiguration = value; }
+
+    
+    inline void SetModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfiguration&& value) { m_modelDiagnosticsOutputConfigurationHasBeenSet = true; m_modelDiagnosticsOutputConfiguration = std::move(value); }
+
+    
+    inline ModelSummary& WithModelDiagnosticsOutputConfiguration(const ModelDiagnosticsOutputConfiguration& value) { SetModelDiagnosticsOutputConfiguration(value); return *this;}
+
+    
+    inline ModelSummary& WithModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfiguration&& value) { SetModelDiagnosticsOutputConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelName;
@@ -557,6 +577,9 @@ namespace Model
 
     RetrainingSchedulerStatus m_retrainingSchedulerStatus;
     bool m_retrainingSchedulerStatusHasBeenSet = false;
+
+    ModelDiagnosticsOutputConfiguration m_modelDiagnosticsOutputConfiguration;
+    bool m_modelDiagnosticsOutputConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

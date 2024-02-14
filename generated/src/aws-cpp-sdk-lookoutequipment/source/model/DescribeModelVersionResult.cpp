@@ -233,6 +233,18 @@ DescribeModelVersionResult& DescribeModelVersionResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("ModelDiagnosticsOutputConfiguration"))
+  {
+    m_modelDiagnosticsOutputConfiguration = jsonValue.GetObject("ModelDiagnosticsOutputConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("ModelDiagnosticsResultsObject"))
+  {
+    m_modelDiagnosticsResultsObject = jsonValue.GetObject("ModelDiagnosticsResultsObject");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

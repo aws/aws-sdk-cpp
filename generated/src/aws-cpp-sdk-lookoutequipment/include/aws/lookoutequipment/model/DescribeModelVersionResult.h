@@ -12,6 +12,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lookoutequipment/model/DataPreProcessingConfiguration.h>
 #include <aws/lookoutequipment/model/AutoPromotionResult.h>
+#include <aws/lookoutequipment/model/ModelDiagnosticsOutputConfiguration.h>
+#include <aws/lookoutequipment/model/S3Object.h>
 #include <utility>
 
 namespace Aws
@@ -1155,6 +1157,68 @@ namespace Model
     inline DescribeModelVersionResult& WithAutoPromotionResultReason(const char* value) { SetAutoPromotionResultReason(value); return *this;}
 
 
+    /**
+     * <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise
+     * model diagnostics for the model version.</p>
+     */
+    inline const ModelDiagnosticsOutputConfiguration& GetModelDiagnosticsOutputConfiguration() const{ return m_modelDiagnosticsOutputConfiguration; }
+
+    /**
+     * <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise
+     * model diagnostics for the model version.</p>
+     */
+    inline void SetModelDiagnosticsOutputConfiguration(const ModelDiagnosticsOutputConfiguration& value) { m_modelDiagnosticsOutputConfiguration = value; }
+
+    /**
+     * <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise
+     * model diagnostics for the model version.</p>
+     */
+    inline void SetModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfiguration&& value) { m_modelDiagnosticsOutputConfiguration = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise
+     * model diagnostics for the model version.</p>
+     */
+    inline DescribeModelVersionResult& WithModelDiagnosticsOutputConfiguration(const ModelDiagnosticsOutputConfiguration& value) { SetModelDiagnosticsOutputConfiguration(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise
+     * model diagnostics for the model version.</p>
+     */
+    inline DescribeModelVersionResult& WithModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfiguration&& value) { SetModelDiagnosticsOutputConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon S3 output prefix for where Lookout for Equipment saves the
+     * pointwise model diagnostics for the model version.</p>
+     */
+    inline const S3Object& GetModelDiagnosticsResultsObject() const{ return m_modelDiagnosticsResultsObject; }
+
+    /**
+     * <p>The Amazon S3 output prefix for where Lookout for Equipment saves the
+     * pointwise model diagnostics for the model version.</p>
+     */
+    inline void SetModelDiagnosticsResultsObject(const S3Object& value) { m_modelDiagnosticsResultsObject = value; }
+
+    /**
+     * <p>The Amazon S3 output prefix for where Lookout for Equipment saves the
+     * pointwise model diagnostics for the model version.</p>
+     */
+    inline void SetModelDiagnosticsResultsObject(S3Object&& value) { m_modelDiagnosticsResultsObject = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 output prefix for where Lookout for Equipment saves the
+     * pointwise model diagnostics for the model version.</p>
+     */
+    inline DescribeModelVersionResult& WithModelDiagnosticsResultsObject(const S3Object& value) { SetModelDiagnosticsResultsObject(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 output prefix for where Lookout for Equipment saves the
+     * pointwise model diagnostics for the model version.</p>
+     */
+    inline DescribeModelVersionResult& WithModelDiagnosticsResultsObject(S3Object&& value) { SetModelDiagnosticsResultsObject(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1241,6 +1305,10 @@ namespace Model
     AutoPromotionResult m_autoPromotionResult;
 
     Aws::String m_autoPromotionResultReason;
+
+    ModelDiagnosticsOutputConfiguration m_modelDiagnosticsOutputConfiguration;
+
+    S3Object m_modelDiagnosticsResultsObject;
 
     Aws::String m_requestId;
   };

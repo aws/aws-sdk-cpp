@@ -23,7 +23,11 @@ namespace Model
     FACTUALLY_CORRECT,
     COMPLETE,
     RELEVANT_SOURCES,
-    HELPFUL
+    HELPFUL,
+    NOT_BASED_ON_DOCUMENTS,
+    NOT_COMPLETE,
+    NOT_CONCISE,
+    OTHER
   };
 
 namespace MessageUsefulnessReasonMapper
