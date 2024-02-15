@@ -253,6 +253,7 @@
 #include <aws/sagemaker/model/UpdateAppImageConfigResult.h>
 #include <aws/sagemaker/model/UpdateArtifactResult.h>
 #include <aws/sagemaker/model/UpdateClusterResult.h>
+#include <aws/sagemaker/model/UpdateClusterSoftwareResult.h>
 #include <aws/sagemaker/model/UpdateCodeRepositoryResult.h>
 #include <aws/sagemaker/model/UpdateContextResult.h>
 #include <aws/sagemaker/model/UpdateDomainResult.h>
@@ -610,6 +611,7 @@ namespace Aws
       class UpdateAppImageConfigRequest;
       class UpdateArtifactRequest;
       class UpdateClusterRequest;
+      class UpdateClusterSoftwareRequest;
       class UpdateCodeRepositoryRequest;
       class UpdateContextRequest;
       class UpdateDeviceFleetRequest;
@@ -932,6 +934,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateAppImageConfigResult, SageMakerError> UpdateAppImageConfigOutcome;
       typedef Aws::Utils::Outcome<UpdateArtifactResult, SageMakerError> UpdateArtifactOutcome;
       typedef Aws::Utils::Outcome<UpdateClusterResult, SageMakerError> UpdateClusterOutcome;
+      typedef Aws::Utils::Outcome<UpdateClusterSoftwareResult, SageMakerError> UpdateClusterSoftwareOutcome;
       typedef Aws::Utils::Outcome<UpdateCodeRepositoryResult, SageMakerError> UpdateCodeRepositoryOutcome;
       typedef Aws::Utils::Outcome<UpdateContextResult, SageMakerError> UpdateContextOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> UpdateDeviceFleetOutcome;
@@ -1254,6 +1257,7 @@ namespace Aws
       typedef std::future<UpdateAppImageConfigOutcome> UpdateAppImageConfigOutcomeCallable;
       typedef std::future<UpdateArtifactOutcome> UpdateArtifactOutcomeCallable;
       typedef std::future<UpdateClusterOutcome> UpdateClusterOutcomeCallable;
+      typedef std::future<UpdateClusterSoftwareOutcome> UpdateClusterSoftwareOutcomeCallable;
       typedef std::future<UpdateCodeRepositoryOutcome> UpdateCodeRepositoryOutcomeCallable;
       typedef std::future<UpdateContextOutcome> UpdateContextOutcomeCallable;
       typedef std::future<UpdateDeviceFleetOutcome> UpdateDeviceFleetOutcomeCallable;
@@ -1579,6 +1583,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::UpdateAppImageConfigRequest&, const Model::UpdateAppImageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppImageConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateArtifactRequest&, const Model::UpdateArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateArtifactResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateClusterRequest&, const Model::UpdateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateClusterSoftwareRequest&, const Model::UpdateClusterSoftwareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterSoftwareResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateCodeRepositoryRequest&, const Model::UpdateCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateContextRequest&, const Model::UpdateContextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContextResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateDeviceFleetRequest&, const Model::UpdateDeviceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceFleetResponseReceivedHandler;

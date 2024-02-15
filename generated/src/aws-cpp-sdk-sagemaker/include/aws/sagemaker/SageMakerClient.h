@@ -8233,7 +8233,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Update a SageMaker HyperPod cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a SageMaker HyperPod cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCluster">AWS
          * API Reference</a></p>
          */
@@ -8255,6 +8255,35 @@ namespace SageMaker
         void UpdateClusterAsync(const UpdateClusterRequestT& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::UpdateCluster, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the platform software of a SageMaker HyperPod cluster for security
+         * patching. To learn how to use this API, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+         * the SageMaker HyperPod platform software of a cluster</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSoftware">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateClusterSoftwareOutcome UpdateClusterSoftware(const Model::UpdateClusterSoftwareRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateClusterSoftware that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateClusterSoftwareRequestT = Model::UpdateClusterSoftwareRequest>
+        Model::UpdateClusterSoftwareOutcomeCallable UpdateClusterSoftwareCallable(const UpdateClusterSoftwareRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::UpdateClusterSoftware, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateClusterSoftware that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateClusterSoftwareRequestT = Model::UpdateClusterSoftwareRequest>
+        void UpdateClusterSoftwareAsync(const UpdateClusterSoftwareRequestT& request, const UpdateClusterSoftwareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::UpdateClusterSoftware, request, handler, context);
         }
 
         /**

@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>IP address where the resource was first used in the impossible travel</p>
+     * <p>IP address where the resource was first used in the impossible travel.</p>
      */
     inline const Aws::String& GetStartingIpAddress() const{ return m_startingIpAddress; }
 
     /**
-     * <p>IP address where the resource was first used in the impossible travel</p>
+     * <p>IP address where the resource was first used in the impossible travel.</p>
      */
     inline bool StartingIpAddressHasBeenSet() const { return m_startingIpAddressHasBeenSet; }
 
     /**
-     * <p>IP address where the resource was first used in the impossible travel</p>
+     * <p>IP address where the resource was first used in the impossible travel.</p>
      */
     inline void SetStartingIpAddress(const Aws::String& value) { m_startingIpAddressHasBeenSet = true; m_startingIpAddress = value; }
 
     /**
-     * <p>IP address where the resource was first used in the impossible travel</p>
+     * <p>IP address where the resource was first used in the impossible travel.</p>
      */
     inline void SetStartingIpAddress(Aws::String&& value) { m_startingIpAddressHasBeenSet = true; m_startingIpAddress = std::move(value); }
 
     /**
-     * <p>IP address where the resource was first used in the impossible travel</p>
+     * <p>IP address where the resource was first used in the impossible travel.</p>
      */
     inline void SetStartingIpAddress(const char* value) { m_startingIpAddressHasBeenSet = true; m_startingIpAddress.assign(value); }
 
     /**
-     * <p>IP address where the resource was first used in the impossible travel</p>
+     * <p>IP address where the resource was first used in the impossible travel.</p>
      */
     inline ImpossibleTravelDetail& WithStartingIpAddress(const Aws::String& value) { SetStartingIpAddress(value); return *this;}
 
     /**
-     * <p>IP address where the resource was first used in the impossible travel</p>
+     * <p>IP address where the resource was first used in the impossible travel.</p>
      */
     inline ImpossibleTravelDetail& WithStartingIpAddress(Aws::String&& value) { SetStartingIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>IP address where the resource was first used in the impossible travel</p>
+     * <p>IP address where the resource was first used in the impossible travel.</p>
      */
     inline ImpossibleTravelDetail& WithStartingIpAddress(const char* value) { SetStartingIpAddress(value); return *this;}
 
@@ -121,42 +121,42 @@ namespace Model
 
 
     /**
-     * <p>Location where the resource was first used in the impossible travel</p>
+     * <p>Location where the resource was first used in the impossible travel.</p>
      */
     inline const Aws::String& GetStartingLocation() const{ return m_startingLocation; }
 
     /**
-     * <p>Location where the resource was first used in the impossible travel</p>
+     * <p>Location where the resource was first used in the impossible travel.</p>
      */
     inline bool StartingLocationHasBeenSet() const { return m_startingLocationHasBeenSet; }
 
     /**
-     * <p>Location where the resource was first used in the impossible travel</p>
+     * <p>Location where the resource was first used in the impossible travel.</p>
      */
     inline void SetStartingLocation(const Aws::String& value) { m_startingLocationHasBeenSet = true; m_startingLocation = value; }
 
     /**
-     * <p>Location where the resource was first used in the impossible travel</p>
+     * <p>Location where the resource was first used in the impossible travel.</p>
      */
     inline void SetStartingLocation(Aws::String&& value) { m_startingLocationHasBeenSet = true; m_startingLocation = std::move(value); }
 
     /**
-     * <p>Location where the resource was first used in the impossible travel</p>
+     * <p>Location where the resource was first used in the impossible travel.</p>
      */
     inline void SetStartingLocation(const char* value) { m_startingLocationHasBeenSet = true; m_startingLocation.assign(value); }
 
     /**
-     * <p>Location where the resource was first used in the impossible travel</p>
+     * <p>Location where the resource was first used in the impossible travel.</p>
      */
     inline ImpossibleTravelDetail& WithStartingLocation(const Aws::String& value) { SetStartingLocation(value); return *this;}
 
     /**
-     * <p>Location where the resource was first used in the impossible travel</p>
+     * <p>Location where the resource was first used in the impossible travel.</p>
      */
     inline ImpossibleTravelDetail& WithStartingLocation(Aws::String&& value) { SetStartingLocation(std::move(value)); return *this;}
 
     /**
-     * <p>Location where the resource was first used in the impossible travel</p>
+     * <p>Location where the resource was first used in the impossible travel.</p>
      */
     inline ImpossibleTravelDetail& WithStartingLocation(const char* value) { SetStartingLocation(value); return *this;}
 

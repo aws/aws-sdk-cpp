@@ -35,108 +35,101 @@ namespace Model
 
 
     /**
-     * <p>Investigations details lists the summary of uncommon behavior or malicious
-     * activity which indicates a compromise.</p>
+     * <p>Lists the summary of uncommon behavior or malicious activity which indicates
+     * a compromise.</p>
      */
     inline const Aws::Vector<InvestigationDetail>& GetInvestigationDetails() const{ return m_investigationDetails; }
 
     /**
-     * <p>Investigations details lists the summary of uncommon behavior or malicious
-     * activity which indicates a compromise.</p>
+     * <p>Lists the summary of uncommon behavior or malicious activity which indicates
+     * a compromise.</p>
      */
     inline void SetInvestigationDetails(const Aws::Vector<InvestigationDetail>& value) { m_investigationDetails = value; }
 
     /**
-     * <p>Investigations details lists the summary of uncommon behavior or malicious
-     * activity which indicates a compromise.</p>
+     * <p>Lists the summary of uncommon behavior or malicious activity which indicates
+     * a compromise.</p>
      */
     inline void SetInvestigationDetails(Aws::Vector<InvestigationDetail>&& value) { m_investigationDetails = std::move(value); }
 
     /**
-     * <p>Investigations details lists the summary of uncommon behavior or malicious
-     * activity which indicates a compromise.</p>
+     * <p>Lists the summary of uncommon behavior or malicious activity which indicates
+     * a compromise.</p>
      */
     inline ListInvestigationsResult& WithInvestigationDetails(const Aws::Vector<InvestigationDetail>& value) { SetInvestigationDetails(value); return *this;}
 
     /**
-     * <p>Investigations details lists the summary of uncommon behavior or malicious
-     * activity which indicates a compromise.</p>
+     * <p>Lists the summary of uncommon behavior or malicious activity which indicates
+     * a compromise.</p>
      */
     inline ListInvestigationsResult& WithInvestigationDetails(Aws::Vector<InvestigationDetail>&& value) { SetInvestigationDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Investigations details lists the summary of uncommon behavior or malicious
-     * activity which indicates a compromise.</p>
+     * <p>Lists the summary of uncommon behavior or malicious activity which indicates
+     * a compromise.</p>
      */
     inline ListInvestigationsResult& AddInvestigationDetails(const InvestigationDetail& value) { m_investigationDetails.push_back(value); return *this; }
 
     /**
-     * <p>Investigations details lists the summary of uncommon behavior or malicious
-     * activity which indicates a compromise.</p>
+     * <p>Lists the summary of uncommon behavior or malicious activity which indicates
+     * a compromise.</p>
      */
     inline ListInvestigationsResult& AddInvestigationDetails(InvestigationDetail&& value) { m_investigationDetails.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
-     * pagination token expires after 24 hours. Using an expired pagination token will
-     * return an HTTP 400 InvalidToken error.</p>
+     * pagination token expires after 24 hours. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
-     * pagination token expires after 24 hours. Using an expired pagination token will
-     * return an HTTP 400 InvalidToken error.</p>
+     * pagination token expires after 24 hours. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
-     * pagination token expires after 24 hours. Using an expired pagination token will
-     * return an HTTP 400 InvalidToken error.</p>
+     * pagination token expires after 24 hours. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
-     * pagination token expires after 24 hours. Using an expired pagination token will
-     * return an HTTP 400 InvalidToken error.</p>
+     * pagination token expires after 24 hours. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
-     * pagination token expires after 24 hours. Using an expired pagination token will
-     * return an HTTP 400 InvalidToken error.</p>
+     * pagination token expires after 24 hours. </p>
      */
     inline ListInvestigationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
-     * pagination token expires after 24 hours. Using an expired pagination token will
-     * return an HTTP 400 InvalidToken error.</p>
+     * pagination token expires after 24 hours. </p>
      */
     inline ListInvestigationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
-     * pagination token expires after 24 hours. Using an expired pagination token will
-     * return an HTTP 400 InvalidToken error.</p>
+     * pagination token expires after 24 hours. </p>
      */
     inline ListInvestigationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -80,22 +80,26 @@ namespace Model
 
 
     /**
-     * <p>Checks if the ASO is for new for the entire account.</p>
+     * <p>Checks if the Autonomous System Organization (ASO) is new for the entire
+     * account.</p>
      */
     inline bool GetIsNewForEntireAccount() const{ return m_isNewForEntireAccount; }
 
     /**
-     * <p>Checks if the ASO is for new for the entire account.</p>
+     * <p>Checks if the Autonomous System Organization (ASO) is new for the entire
+     * account.</p>
      */
     inline bool IsNewForEntireAccountHasBeenSet() const { return m_isNewForEntireAccountHasBeenSet; }
 
     /**
-     * <p>Checks if the ASO is for new for the entire account.</p>
+     * <p>Checks if the Autonomous System Organization (ASO) is new for the entire
+     * account.</p>
      */
     inline void SetIsNewForEntireAccount(bool value) { m_isNewForEntireAccountHasBeenSet = true; m_isNewForEntireAccount = value; }
 
     /**
-     * <p>Checks if the ASO is for new for the entire account.</p>
+     * <p>Checks if the Autonomous System Organization (ASO) is new for the entire
+     * account.</p>
      */
     inline NewAsoDetail& WithIsNewForEntireAccount(bool value) { SetIsNewForEntireAccount(value); return *this;}
 

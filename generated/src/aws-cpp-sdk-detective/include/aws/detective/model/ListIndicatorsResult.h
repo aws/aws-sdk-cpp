@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline void SetGraphArn(const Aws::String& value) { m_graphArn = value; }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline void SetGraphArn(Aws::String&& value) { m_graphArn = std::move(value); }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline void SetGraphArn(const char* value) { m_graphArn.assign(value); }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline ListIndicatorsResult& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline ListIndicatorsResult& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline ListIndicatorsResult& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
 
@@ -107,7 +107,7 @@ namespace Model
 
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -116,7 +116,7 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -125,7 +125,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -134,7 +134,7 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -143,7 +143,7 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -152,7 +152,7 @@ namespace Model
     inline ListIndicatorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -161,7 +161,7 @@ namespace Model
     inline ListIndicatorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -171,37 +171,37 @@ namespace Model
 
 
     /**
-     * <p>Indicators of compromise listed based on severity.</p>
+     * <p>Lists the indicators of compromise.</p>
      */
     inline const Aws::Vector<Indicator>& GetIndicators() const{ return m_indicators; }
 
     /**
-     * <p>Indicators of compromise listed based on severity.</p>
+     * <p>Lists the indicators of compromise.</p>
      */
     inline void SetIndicators(const Aws::Vector<Indicator>& value) { m_indicators = value; }
 
     /**
-     * <p>Indicators of compromise listed based on severity.</p>
+     * <p>Lists the indicators of compromise.</p>
      */
     inline void SetIndicators(Aws::Vector<Indicator>&& value) { m_indicators = std::move(value); }
 
     /**
-     * <p>Indicators of compromise listed based on severity.</p>
+     * <p>Lists the indicators of compromise.</p>
      */
     inline ListIndicatorsResult& WithIndicators(const Aws::Vector<Indicator>& value) { SetIndicators(value); return *this;}
 
     /**
-     * <p>Indicators of compromise listed based on severity.</p>
+     * <p>Lists the indicators of compromise.</p>
      */
     inline ListIndicatorsResult& WithIndicators(Aws::Vector<Indicator>&& value) { SetIndicators(std::move(value)); return *this;}
 
     /**
-     * <p>Indicators of compromise listed based on severity.</p>
+     * <p>Lists the indicators of compromise.</p>
      */
     inline ListIndicatorsResult& AddIndicators(const Indicator& value) { m_indicators.push_back(value); return *this; }
 
     /**
-     * <p>Indicators of compromise listed based on severity.</p>
+     * <p>Lists the indicators of compromise.</p>
      */
     inline ListIndicatorsResult& AddIndicators(Indicator&& value) { m_indicators.push_back(std::move(value)); return *this; }
 

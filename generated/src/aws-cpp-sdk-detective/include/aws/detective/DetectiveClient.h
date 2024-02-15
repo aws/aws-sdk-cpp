@@ -59,7 +59,7 @@ namespace Detective
    * </ul> <p>All API actions are logged as CloudTrail events. See <a
    * href="https://docs.aws.amazon.com/detective/latest/adminguide/logging-using-cloudtrail.html">Logging
    * Detective API Calls with CloudTrail</a>.</p>  <p>We replaced the term
-   * "master account" with the term "administrator account." An administrator account
+   * "master account" with the term "administrator account". An administrator account
    * is used to centrally manage multiple accounts. In the case of Detective, the
    * administrator account manages the accounts in their behavior graph.</p> 
    */
@@ -204,19 +204,14 @@ namespace Detective
         /**
          * <p>Creates a new behavior graph for the calling account, and sets that account
          * as the administrator account. This operation is called by the account that is
-         * enabling Detective.</p> <p>Before you try to enable Detective, make sure that
-         * your account has been enrolled in Amazon GuardDuty for at least 48 hours. If you
-         * do not meet this requirement, you cannot enable Detective. If you do meet the
-         * GuardDuty prerequisite, then when you make the request to enable Detective, it
-         * checks whether your data volume is within the Detective quota. If it exceeds the
-         * quota, then you cannot enable Detective. </p> <p>The operation also enables
-         * Detective for the calling account in the currently selected Region. It returns
-         * the ARN of the new behavior graph.</p> <p> <code>CreateGraph</code> triggers a
-         * process to create the corresponding data tables for the new behavior graph.</p>
-         * <p>An account can only be the administrator account for one behavior graph
-         * within a Region. If the same account calls <code>CreateGraph</code> with the
-         * same administrator account, it always returns the same behavior graph ARN. It
-         * does not create a new behavior graph.</p><p><h3>See Also:</h3>   <a
+         * enabling Detective.</p> <p>The operation also enables Detective for the calling
+         * account in the currently selected Region. It returns the ARN of the new behavior
+         * graph.</p> <p> <code>CreateGraph</code> triggers a process to create the
+         * corresponding data tables for the new behavior graph.</p> <p>An account can only
+         * be the administrator account for one behavior graph within a Region. If the same
+         * account calls <code>CreateGraph</code> with the same administrator account, it
+         * always returns the same behavior graph ARN. It does not create a new behavior
+         * graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">AWS
          * API Reference</a></p>
          */
@@ -482,8 +477,12 @@ namespace Detective
         }
 
         /**
-         * <p>Returns the investigation results of an investigation for a behavior graph.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Detective investigations lets you investigate IAM users and IAM roles using
+         * indicators of compromise. An indicator of compromise (IOC) is an artifact
+         * observed in or on a network, system, or environment that can (with a high level
+         * of confidence) identify malicious activity or a security incident.
+         * <code>GetInvestigation</code> returns the investigation results of an
+         * investigation for a behavior graph. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation">AWS
          * API Reference</a></p>
          */
@@ -589,7 +588,10 @@ namespace Detective
         }
 
         /**
-         * <p>Get the indicators from an investigation</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the indicators from an investigation. You can use the information from
+         * the indicators to determine if an IAM user and/or IAM role is involved in an
+         * unusual activity that could indicate malicious behavior and its
+         * impact.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators">AWS
          * API Reference</a></p>
          */
@@ -614,7 +616,12 @@ namespace Detective
         }
 
         /**
-         * <p>List all Investigations.</p><p><h3>See Also:</h3>   <a
+         * <p>Detective investigations lets you investigate IAM users and IAM roles using
+         * indicators of compromise. An indicator of compromise (IOC) is an artifact
+         * observed in or on a network, system, or environment that can (with a high level
+         * of confidence) identify malicious activity or a security incident.
+         * <code>ListInvestigations</code> lists all active Detective
+         * investigations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations">AWS
          * API Reference</a></p>
          */
@@ -782,8 +789,12 @@ namespace Detective
         }
 
         /**
-         * <p>initiate an investigation on an entity in a graph</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Detective investigations lets you investigate IAM users and IAM roles using
+         * indicators of compromise. An indicator of compromise (IOC) is an artifact
+         * observed in or on a network, system, or environment that can (with a high level
+         * of confidence) identify malicious activity or a security incident.
+         * <code>StartInvestigation</code> initiates an investigation on an entity in a
+         * behavior graph. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation">AWS
          * API Reference</a></p>
          */
@@ -914,7 +925,7 @@ namespace Detective
         }
 
         /**
-         * <p>Update the state of an investigation.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the state of an investigation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState">AWS
          * API Reference</a></p>
          */

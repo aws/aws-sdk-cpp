@@ -122,22 +122,22 @@ namespace Model
 
 
     /**
-     * <p>Checks if the gelocation is new for the entire account.</p>
+     * <p>Checks if the geolocation is new for the entire account.</p>
      */
     inline bool GetIsNewForEntireAccount() const{ return m_isNewForEntireAccount; }
 
     /**
-     * <p>Checks if the gelocation is new for the entire account.</p>
+     * <p>Checks if the geolocation is new for the entire account.</p>
      */
     inline bool IsNewForEntireAccountHasBeenSet() const { return m_isNewForEntireAccountHasBeenSet; }
 
     /**
-     * <p>Checks if the gelocation is new for the entire account.</p>
+     * <p>Checks if the geolocation is new for the entire account.</p>
      */
     inline void SetIsNewForEntireAccount(bool value) { m_isNewForEntireAccountHasBeenSet = true; m_isNewForEntireAccount = value; }
 
     /**
-     * <p>Checks if the gelocation is new for the entire account.</p>
+     * <p>Checks if the geolocation is new for the entire account.</p>
      */
     inline NewGeolocationDetail& WithIsNewForEntireAccount(bool value) { SetIsNewForEntireAccount(value); return *this;}
 

@@ -54,6 +54,14 @@ namespace Aws
         static const int t3_large_search_HASH = HashingUtils::HashString("t3.large.search");
         static const int t3_xlarge_search_HASH = HashingUtils::HashString("t3.xlarge.search");
         static const int t3_2xlarge_search_HASH = HashingUtils::HashString("t3.2xlarge.search");
+        static const int or1_medium_search_HASH = HashingUtils::HashString("or1.medium.search");
+        static const int or1_large_search_HASH = HashingUtils::HashString("or1.large.search");
+        static const int or1_xlarge_search_HASH = HashingUtils::HashString("or1.xlarge.search");
+        static const int or1_2xlarge_search_HASH = HashingUtils::HashString("or1.2xlarge.search");
+        static const int or1_4xlarge_search_HASH = HashingUtils::HashString("or1.4xlarge.search");
+        static const int or1_8xlarge_search_HASH = HashingUtils::HashString("or1.8xlarge.search");
+        static const int or1_12xlarge_search_HASH = HashingUtils::HashString("or1.12xlarge.search");
+        static const int or1_16xlarge_search_HASH = HashingUtils::HashString("or1.16xlarge.search");
         static const int ultrawarm1_medium_search_HASH = HashingUtils::HashString("ultrawarm1.medium.search");
         static const int ultrawarm1_large_search_HASH = HashingUtils::HashString("ultrawarm1.large.search");
         static const int ultrawarm1_xlarge_search_HASH = HashingUtils::HashString("ultrawarm1.xlarge.search");
@@ -255,6 +263,38 @@ namespace Aws
           else if (hashCode == t3_2xlarge_search_HASH)
           {
             return OpenSearchPartitionInstanceType::t3_2xlarge_search;
+          }
+          else if (hashCode == or1_medium_search_HASH)
+          {
+            return OpenSearchPartitionInstanceType::or1_medium_search;
+          }
+          else if (hashCode == or1_large_search_HASH)
+          {
+            return OpenSearchPartitionInstanceType::or1_large_search;
+          }
+          else if (hashCode == or1_xlarge_search_HASH)
+          {
+            return OpenSearchPartitionInstanceType::or1_xlarge_search;
+          }
+          else if (hashCode == or1_2xlarge_search_HASH)
+          {
+            return OpenSearchPartitionInstanceType::or1_2xlarge_search;
+          }
+          else if (hashCode == or1_4xlarge_search_HASH)
+          {
+            return OpenSearchPartitionInstanceType::or1_4xlarge_search;
+          }
+          else if (hashCode == or1_8xlarge_search_HASH)
+          {
+            return OpenSearchPartitionInstanceType::or1_8xlarge_search;
+          }
+          else if (hashCode == or1_12xlarge_search_HASH)
+          {
+            return OpenSearchPartitionInstanceType::or1_12xlarge_search;
+          }
+          else if (hashCode == or1_16xlarge_search_HASH)
+          {
+            return OpenSearchPartitionInstanceType::or1_16xlarge_search;
           }
           else if (hashCode == ultrawarm1_medium_search_HASH)
           {
@@ -584,6 +624,22 @@ namespace Aws
             return "t3.xlarge.search";
           case OpenSearchPartitionInstanceType::t3_2xlarge_search:
             return "t3.2xlarge.search";
+          case OpenSearchPartitionInstanceType::or1_medium_search:
+            return "or1.medium.search";
+          case OpenSearchPartitionInstanceType::or1_large_search:
+            return "or1.large.search";
+          case OpenSearchPartitionInstanceType::or1_xlarge_search:
+            return "or1.xlarge.search";
+          case OpenSearchPartitionInstanceType::or1_2xlarge_search:
+            return "or1.2xlarge.search";
+          case OpenSearchPartitionInstanceType::or1_4xlarge_search:
+            return "or1.4xlarge.search";
+          case OpenSearchPartitionInstanceType::or1_8xlarge_search:
+            return "or1.8xlarge.search";
+          case OpenSearchPartitionInstanceType::or1_12xlarge_search:
+            return "or1.12xlarge.search";
+          case OpenSearchPartitionInstanceType::or1_16xlarge_search:
+            return "or1.16xlarge.search";
           case OpenSearchPartitionInstanceType::ultrawarm1_medium_search:
             return "ultrawarm1.medium.search";
           case OpenSearchPartitionInstanceType::ultrawarm1_large_search:
