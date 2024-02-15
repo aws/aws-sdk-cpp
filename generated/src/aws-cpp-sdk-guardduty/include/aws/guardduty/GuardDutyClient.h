@@ -948,8 +948,12 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Lists Amazon GuardDuty findings statistics for the specified detector
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists Amazon GuardDuty findings statistics for the specified detector ID.</p>
+         * <p>There might be regional differences because some flags might not be available
+         * in all the Regions where GuardDuty is currently supported. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindingsStatistics">AWS
          * API Reference</a></p>
          */
@@ -1356,8 +1360,11 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Lists Amazon GuardDuty findings for the specified detector ID.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists GuardDuty findings for the specified detector ID.</p> <p>There might be
+         * regional differences because some flags might not be available in all the
+         * Regions where GuardDuty is currently supported. For more information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFindings">AWS
          * API Reference</a></p>
          */
@@ -1733,10 +1740,10 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Updates the Amazon GuardDuty detector specified by the detectorId.</p>
-         * <p>There might be regional differences because some data sources might not be
-         * available in all the Amazon Web Services Regions where GuardDuty is presently
-         * supported. For more information, see <a
+         * <p>Updates the GuardDuty detector specified by the detectorId.</p> <p>There
+         * might be regional differences because some data sources might not be available
+         * in all the Amazon Web Services Regions where GuardDuty is presently supported.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
          * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector">AWS

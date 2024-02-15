@@ -30,7 +30,7 @@ namespace Model
 
   /**
    * <p>Details about the investigation related to a potential security event
-   * identified by Detective</p><p><h3>See Also:</h3>   <a
+   * identified by Detective.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/InvestigationDetail">AWS
    * API Reference</a></p>
    */
@@ -190,32 +190,44 @@ namespace Model
 
 
     /**
-     * <p>The UTC time stamp of the creation time of the investigation report.</p>
+     * <p>The time stamp of the creation time of the investigation report. The value is
+     * an UTC ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The UTC time stamp of the creation time of the investigation report.</p>
+     * <p>The time stamp of the creation time of the investigation report. The value is
+     * an UTC ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The UTC time stamp of the creation time of the investigation report.</p>
+     * <p>The time stamp of the creation time of the investigation report. The value is
+     * an UTC ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The UTC time stamp of the creation time of the investigation report.</p>
+     * <p>The time stamp of the creation time of the investigation report. The value is
+     * an UTC ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The UTC time stamp of the creation time of the investigation report.</p>
+     * <p>The time stamp of the creation time of the investigation report. The value is
+     * an UTC ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline InvestigationDetail& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The UTC time stamp of the creation time of the investigation report.</p>
+     * <p>The time stamp of the creation time of the investigation report. The value is
+     * an UTC ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline InvestigationDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 

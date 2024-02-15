@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline StartInvestigationRequest& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline StartInvestigationRequest& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline StartInvestigationRequest& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
 
@@ -153,37 +153,37 @@ namespace Model
 
 
     /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
+     * <p>The data and time when the investigation ended. The value is an UTC ISO8601
      * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetScopeEndTime() const{ return m_scopeEndTime; }
 
     /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
+     * <p>The data and time when the investigation ended. The value is an UTC ISO8601
      * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline bool ScopeEndTimeHasBeenSet() const { return m_scopeEndTimeHasBeenSet; }
 
     /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
+     * <p>The data and time when the investigation ended. The value is an UTC ISO8601
      * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline void SetScopeEndTime(const Aws::Utils::DateTime& value) { m_scopeEndTimeHasBeenSet = true; m_scopeEndTime = value; }
 
     /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
+     * <p>The data and time when the investigation ended. The value is an UTC ISO8601
      * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline void SetScopeEndTime(Aws::Utils::DateTime&& value) { m_scopeEndTimeHasBeenSet = true; m_scopeEndTime = std::move(value); }
 
     /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
+     * <p>The data and time when the investigation ended. The value is an UTC ISO8601
      * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline StartInvestigationRequest& WithScopeEndTime(const Aws::Utils::DateTime& value) { SetScopeEndTime(value); return *this;}
 
     /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
+     * <p>The data and time when the investigation ended. The value is an UTC ISO8601
      * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline StartInvestigationRequest& WithScopeEndTime(Aws::Utils::DateTime&& value) { SetScopeEndTime(std::move(value)); return *this;}

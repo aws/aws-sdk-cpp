@@ -164,83 +164,99 @@ namespace Model
 
 
     /**
-     * <p>The IP address where the TTP was observed.</p>
+     * <p>The IP address where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>The IP address where the TTP was observed.</p>
+     * <p>The IP address where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>The IP address where the TTP was observed.</p>
+     * <p>The IP address where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>The IP address where the TTP was observed.</p>
+     * <p>The IP address where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>The IP address where the TTP was observed.</p>
+     * <p>The IP address where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>The IP address where the TTP was observed.</p>
+     * <p>The IP address where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline TTPsObservedDetail& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address where the TTP was observed.</p>
+     * <p>The IP address where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline TTPsObservedDetail& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address where the TTP was observed.</p>
+     * <p>The IP address where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline TTPsObservedDetail& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
 
     /**
-     * <p>The name of the API where the TTP was observed.</p>
+     * <p>The name of the API where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline const Aws::String& GetAPIName() const{ return m_aPIName; }
 
     /**
-     * <p>The name of the API where the TTP was observed.</p>
+     * <p>The name of the API where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline bool APINameHasBeenSet() const { return m_aPINameHasBeenSet; }
 
     /**
-     * <p>The name of the API where the TTP was observed.</p>
+     * <p>The name of the API where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline void SetAPIName(const Aws::String& value) { m_aPINameHasBeenSet = true; m_aPIName = value; }
 
     /**
-     * <p>The name of the API where the TTP was observed.</p>
+     * <p>The name of the API where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline void SetAPIName(Aws::String&& value) { m_aPINameHasBeenSet = true; m_aPIName = std::move(value); }
 
     /**
-     * <p>The name of the API where the TTP was observed.</p>
+     * <p>The name of the API where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline void SetAPIName(const char* value) { m_aPINameHasBeenSet = true; m_aPIName.assign(value); }
 
     /**
-     * <p>The name of the API where the TTP was observed.</p>
+     * <p>The name of the API where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline TTPsObservedDetail& WithAPIName(const Aws::String& value) { SetAPIName(value); return *this;}
 
     /**
-     * <p>The name of the API where the TTP was observed.</p>
+     * <p>The name of the API where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline TTPsObservedDetail& WithAPIName(Aws::String&& value) { SetAPIName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the API where the TTP was observed.</p>
+     * <p>The name of the API where the tactics, techniques, and procedure (TTP) was
+     * observed.</p>
      */
     inline TTPsObservedDetail& WithAPIName(const char* value) { SetAPIName(value); return *this;}
 

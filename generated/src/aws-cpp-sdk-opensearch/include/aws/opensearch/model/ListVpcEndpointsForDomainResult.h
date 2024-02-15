@@ -73,49 +73,49 @@ namespace Model
     /**
      * <p>When <code>nextToken</code> is returned, there are more results available.
      * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
+     * Send the request again using the returned token to retrieve the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>When <code>nextToken</code> is returned, there are more results available.
      * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
+     * Send the request again using the returned token to retrieve the next page.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>When <code>nextToken</code> is returned, there are more results available.
      * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
+     * Send the request again using the returned token to retrieve the next page.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>When <code>nextToken</code> is returned, there are more results available.
      * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
+     * Send the request again using the returned token to retrieve the next page.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>When <code>nextToken</code> is returned, there are more results available.
      * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
+     * Send the request again using the returned token to retrieve the next page.</p>
      */
     inline ListVpcEndpointsForDomainResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>When <code>nextToken</code> is returned, there are more results available.
      * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
+     * Send the request again using the returned token to retrieve the next page.</p>
      */
     inline ListVpcEndpointsForDomainResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>When <code>nextToken</code> is returned, there are more results available.
      * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
+     * Send the request again using the returned token to retrieve the next page.</p>
      */
     inline ListVpcEndpointsForDomainResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

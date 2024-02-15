@@ -77,37 +77,37 @@ namespace Model
 
     /**
      * <p>A timestamp representing the end date of the time period until when data is
-     * filtered , including the end date.</p>
+     * filtered, including the end date.</p>
      */
     inline const Aws::Utils::DateTime& GetEndInclusive() const{ return m_endInclusive; }
 
     /**
      * <p>A timestamp representing the end date of the time period until when data is
-     * filtered , including the end date.</p>
+     * filtered, including the end date.</p>
      */
     inline bool EndInclusiveHasBeenSet() const { return m_endInclusiveHasBeenSet; }
 
     /**
      * <p>A timestamp representing the end date of the time period until when data is
-     * filtered , including the end date.</p>
+     * filtered, including the end date.</p>
      */
     inline void SetEndInclusive(const Aws::Utils::DateTime& value) { m_endInclusiveHasBeenSet = true; m_endInclusive = value; }
 
     /**
      * <p>A timestamp representing the end date of the time period until when data is
-     * filtered , including the end date.</p>
+     * filtered, including the end date.</p>
      */
     inline void SetEndInclusive(Aws::Utils::DateTime&& value) { m_endInclusiveHasBeenSet = true; m_endInclusive = std::move(value); }
 
     /**
      * <p>A timestamp representing the end date of the time period until when data is
-     * filtered , including the end date.</p>
+     * filtered, including the end date.</p>
      */
     inline DateFilter& WithEndInclusive(const Aws::Utils::DateTime& value) { SetEndInclusive(value); return *this;}
 
     /**
      * <p>A timestamp representing the end date of the time period until when data is
-     * filtered , including the end date.</p>
+     * filtered, including the end date.</p>
      */
     inline DateFilter& WithEndInclusive(Aws::Utils::DateTime&& value) { SetEndInclusive(std::move(value)); return *this;}
 

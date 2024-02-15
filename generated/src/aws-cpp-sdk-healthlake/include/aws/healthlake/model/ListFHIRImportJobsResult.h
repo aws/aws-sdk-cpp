@@ -36,43 +36,43 @@ namespace Model
 
     /**
      * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
+     * the status of the job, and the progress report of the job. </p>
      */
     inline const Aws::Vector<ImportJobProperties>& GetImportJobPropertiesList() const{ return m_importJobPropertiesList; }
 
     /**
      * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
+     * the status of the job, and the progress report of the job. </p>
      */
     inline void SetImportJobPropertiesList(const Aws::Vector<ImportJobProperties>& value) { m_importJobPropertiesList = value; }
 
     /**
      * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
+     * the status of the job, and the progress report of the job. </p>
      */
     inline void SetImportJobPropertiesList(Aws::Vector<ImportJobProperties>&& value) { m_importJobPropertiesList = std::move(value); }
 
     /**
      * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
+     * the status of the job, and the progress report of the job. </p>
      */
     inline ListFHIRImportJobsResult& WithImportJobPropertiesList(const Aws::Vector<ImportJobProperties>& value) { SetImportJobPropertiesList(value); return *this;}
 
     /**
      * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
+     * the status of the job, and the progress report of the job. </p>
      */
     inline ListFHIRImportJobsResult& WithImportJobPropertiesList(Aws::Vector<ImportJobProperties>&& value) { SetImportJobPropertiesList(std::move(value)); return *this;}
 
     /**
      * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
+     * the status of the job, and the progress report of the job. </p>
      */
     inline ListFHIRImportJobsResult& AddImportJobPropertiesList(const ImportJobProperties& value) { m_importJobPropertiesList.push_back(value); return *this; }
 
     /**
      * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
+     * the status of the job, and the progress report of the job. </p>
      */
     inline ListFHIRImportJobsResult& AddImportJobPropertiesList(ImportJobProperties&& value) { m_importJobPropertiesList.push_back(std::move(value)); return *this; }
 

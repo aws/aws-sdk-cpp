@@ -35,48 +35,48 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline ListInvestigationsRequest& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline ListInvestigationsRequest& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline ListInvestigationsRequest& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
 
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -85,7 +85,7 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -94,7 +94,7 @@ namespace Model
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -103,7 +103,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -112,7 +112,7 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -121,7 +121,7 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -130,7 +130,7 @@ namespace Model
     inline ListInvestigationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -139,7 +139,7 @@ namespace Model
     inline ListInvestigationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will
@@ -149,53 +149,53 @@ namespace Model
 
 
     /**
-     * <p>List the maximum number of investigations in a page.</p>
+     * <p>Lists the maximum number of investigations in a page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>List the maximum number of investigations in a page.</p>
+     * <p>Lists the maximum number of investigations in a page.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>List the maximum number of investigations in a page.</p>
+     * <p>Lists the maximum number of investigations in a page.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>List the maximum number of investigations in a page.</p>
+     * <p>Lists the maximum number of investigations in a page.</p>
      */
     inline ListInvestigationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>Filter the investigation results based on a criteria.</p>
+     * <p>Filters the investigation results based on a criteria.</p>
      */
     inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
 
     /**
-     * <p>Filter the investigation results based on a criteria.</p>
+     * <p>Filters the investigation results based on a criteria.</p>
      */
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
 
     /**
-     * <p>Filter the investigation results based on a criteria.</p>
+     * <p>Filters the investigation results based on a criteria.</p>
      */
     inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
 
     /**
-     * <p>Filter the investigation results based on a criteria.</p>
+     * <p>Filters the investigation results based on a criteria.</p>
      */
     inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
 
     /**
-     * <p>Filter the investigation results based on a criteria.</p>
+     * <p>Filters the investigation results based on a criteria.</p>
      */
     inline ListInvestigationsRequest& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
 
     /**
-     * <p>Filter the investigation results based on a criteria.</p>
+     * <p>Filters the investigation results based on a criteria.</p>
      */
     inline ListInvestigationsRequest& WithFilterCriteria(FilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
 
