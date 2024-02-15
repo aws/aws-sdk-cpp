@@ -28,6 +28,11 @@ using namespace Aws::TranscribeStreamingService::Model;
 static const char TEST_FILE_NAME[] = "transcribe-test-file.wav";
 const char ALLOC_TAG[] = "TranscribestreamingIntegTest";
 
+#define AWS_ADD_FAILURE(MSG) \
+ADD_FAILURE() << MSG;        \
+TestTraceFailure(MSG);
+
+
 class TranscribeStreamingTests : public Aws::Testing::AwsCppSdkGTestSuite
 {
 public:
@@ -66,6 +71,27 @@ public:
     Aws::UniquePtr<TranscribeStreamingServiceClient> m_clientWithWrongEndpoint;
 
 protected:
+    Aws::String m_testTraces;
+    void TestTrace(Aws::String msg)
+    {
+        m_testTraces += Aws::Utils::DateTime::Now().ToGmtStringWithMs() + " " + std::move(msg) + "\n";
+    };
+    void TestTraceFailure(Aws::String msg)
+    {
+        m_testTraces += "[FAILURE] " + Aws::Utils::DateTime::Now().ToGmtStringWithMs() + " " + std::move(msg) + "\n";
+    };
+    void SetUp()
+    {
+    }
+    void TearDown()
+    {
+        if (::testing::Test::HasFailure())
+        {
+            std::cout << "Test traces: " << m_testTraces << "\n";
+        }
+        m_testTraces.erase();
+    }
+
     Aws::String RunTestLikeSample(size_t timeoutMs, const Aws::String& fileName, const size_t SampleRate, const size_t chunkLengthToUseMs);
 };
 
@@ -91,7 +117,7 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
         transcribedResult = alternatives.back().GetTranscript();
     });
 
-    handler.SetOnErrorCallback([&transcribedResult](const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& errors)
+    handler.SetOnErrorCallback([&transcribedResult, this](const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& errors)
     {
         // we will receive an error because the request was abruptly shutdown (via stream.Close()).
         // However, we cannot delay the call to closing the stream, because HTTP clients such as libcurl buffer the
@@ -100,7 +126,7 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
         // To discern between that case and a true error, we check if we have received any text back from the service.
         if(transcribedResult.empty())
         {
-            FAIL() << "Received error: " << errors.GetExceptionName() << ". with msg: " << errors.GetMessage();
+            AWS_ADD_FAILURE(Aws::String("Received error: ") + errors.GetExceptionName() + ". with msg: " + errors.GetMessage())
         }
     });
 
@@ -295,15 +321,17 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
 
     StartStreamTranscriptionHandler handler;
     handler.SetOnErrorCallback(
-            [](const Aws::Client::AWSError<TranscribeStreamingServiceErrors> &error) {
-                    FAIL() << "SetOnErrorCallback ERROR: " + error.GetMessage();
+            [this](const Aws::Client::AWSError<TranscribeStreamingServiceErrors> &error) {
+                    AWS_ADD_FAILURE(Aws::String("OnErrorCallback: ") + error.GetMessage())
             });
     //SetTranscriptEventCallback called for every 'chunk' of file transcripted.
     // Partial results are returned in real time.
-    handler.SetTranscriptEventCallback([&transcribedResult, &testMustEndBeforeMs](const TranscriptEvent &ev) {
+    handler.SetTranscriptEventCallback([&transcribedResult, &testMustEndBeforeMs, this](const TranscriptEvent &ev) {
+            TestTrace(Aws::String("TranscriptEventCallback: ") + ev.Jsonize().View().WriteCompact());
             if(Aws::Utils::DateTime::Now().Millis() > testMustEndBeforeMs)
             {
-              FAIL() << "Test is taking too long, aborting.";
+                AWS_ADD_FAILURE("Test is taking too long, aborting.");
+                return;
             }
             for (auto &&r: ev.GetTranscript().GetResults()) {
                 Aws::String alternatives;
@@ -329,7 +357,8 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
     request.SetMediaEncoding(MediaEncoding::pcm); // wav and aiff files are PCM formats.
     request.SetEventStreamHandler(handler);
 
-    auto OnStreamReady = [&fileName, chunkLengthToUseMs, SampleRate, testMustEndBeforeMs, &failedToKeepUpCount](AudioStream &stream) {
+    auto OnStreamReady = [&fileName, chunkLengthToUseMs, SampleRate, testMustEndBeforeMs, &failedToKeepUpCount, this](AudioStream &stream) {
+            TestTrace("OnStreamReady start");
             Aws::FStream file(fileName.c_str(), std::ios_base::in | std::ios_base::binary);
             if (!file.is_open()) {
                 FAIL() << "Failed to open " << fileName << '\n';
@@ -341,20 +370,22 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
             while (file && file.peek() != -1) {
                 if(Aws::Utils::DateTime::Now().Millis() > testMustEndBeforeMs)
                 {
-                    FAIL() << "Test is taking too long, aborting.";
+                    AWS_ADD_FAILURE("Test is taking too long, aborting.");
+                    break;
                 }
                 int64_t eventStart = Aws::Utils::DateTime::Now().Millis();
                 file.read(&buf[0], buf.size());
 
                 if (!file && file.gcount() == 0) {
-                    FAIL() << "Provided file is empty: " << fileName;
+                    AWS_ADD_FAILURE(Aws::String("Provided file is empty: ") + fileName);
+                    break;
                 }
 
                 Aws::Vector<unsigned char> bits{buf.begin(), buf.begin() + file.gcount()};
                 AudioEvent event(std::move(bits));
                 if (!stream) {
-                    FAIL() << "Failed to create a stream" << std::endl;
-                    // break; // Unreachable due to FAIL macro above
+                    AWS_ADD_FAILURE("Failed to create a stream");
+                    break;
                 }
 
                 // The std::basic_istream::gcount() is used to count the characters in the given string. It returns
@@ -372,13 +403,15 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
                     }
 
                     if (!stream.WriteAudioEvent(event)) {
-                        FAIL() << "Failed to write an audio event";
-                        // break; // Unreachable due to FAIL macro above
+                        AWS_ADD_FAILURE("Failed to write an audio event");
+                        break;
                     }
+                    TestTrace(Aws::String("OnStreamReady WriteAudioEvent sent another chunk of ") + Aws::Utils::StringUtils::to_string(event.GetAudioChunk().size()) + " bytes");
                     lastAudioEventSentAt = Aws::Utils::DateTime::Now().Millis();
                     if(Aws::Utils::DateTime::Now().Millis() > testMustEndBeforeMs)
                     {
-                        FAIL() << "Test is taking too long, aborting.";
+                        AWS_ADD_FAILURE("Test is taking too long, aborting.");
+                        break;
                     }
                     stream.flush();
                     int64_t eventEnd = Aws::Utils::DateTime::Now().Millis();
@@ -400,14 +433,14 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
             if (!stream.WriteAudioEvent(
                     AudioEvent())) {
                 // Per the spec, we have to send an empty event (an event without a payload) at the end.
-                FAIL() << "Failed to send an empty frame" << std::endl;
+                AWS_ADD_FAILURE("Failed to send an empty frame");
             }
             else {
                 SCOPED_TRACE("Successfully sent the empty frame");
             }
             if(Aws::Utils::DateTime::Now().Millis() > testMustEndBeforeMs)
             {
-                FAIL() << "Test is taking too long, aborting.";
+                AWS_ADD_FAILURE("Test is taking too long, aborting.");
             }
             stream.flush();
             stream.WaitForDrain();
@@ -415,7 +448,7 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
      };
 
     Aws::Utils::Threading::Semaphore signaling(0 /*initialCount*/, 1 /*maxCount*/);
-    auto OnResponseCallback = [&signaling](
+    auto OnResponseCallback = [&signaling, this](
             const TranscribeStreamingServiceClient * /*unused*/,
             const Model::StartStreamTranscriptionRequest & /*unused*/,
             const Model::StartStreamTranscriptionOutcome & outcome,
@@ -423,7 +456,7 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
 
         if (!outcome.IsSuccess())
         {
-            FAIL() << "Transcribe streaming error " << outcome.GetError().GetMessage() << std::endl;
+            AWS_ADD_FAILURE(Aws::String("ResponseCallback error: ") + outcome.GetError().GetMessage());
         }
 
         signaling.Release();
@@ -482,10 +515,13 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingCppSdkSample)
   const Aws::Vector<Aws::String> EXPECTED_ALTERNATIVES = {"This is a C plus plus test sample", "This is a C++ test sample"};
   for(size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 25)
   {
+    m_testTraces.clear();
+    TestTrace(Aws::String("### Starting TranscribeStreamingCppSdkSample with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");
     int64_t startedAt = Aws::Utils::DateTime::Now().Millis();
-    Aws::String result = RunTestLikeSample(3500, "this_is_a_cpp_test_sample_8kHz_2162ms.wav", 8000, chunkDuration);
+    Aws::String result = RunTestLikeSample(4500, "this_is_a_cpp_test_sample_8kHz_2162ms.wav", 8000, chunkDuration);
     int64_t endedAt = Aws::Utils::DateTime::Now().Millis();
-    std::cout << "Transcription of this_is_a_cpp_test_sample_8kHz_2162ms with chunk duration " << chunkDuration << " ms took " << endedAt - startedAt << " ms.\n";
+    TestTrace(Aws::String("### Done this_is_a_cpp_test_sample_8kHz_2162ms with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");
+    std::cout << "Transcription of TranscribeStreamingCppSdkSample with chunk duration " << chunkDuration << " ms took " << endedAt - startedAt << " ms.\n";
 
     int minDiff = 999999;
     for(const auto& expected : EXPECTED_ALTERNATIVES)
@@ -504,9 +540,12 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingKantSample)
                                  "the starry heavens above me and the moral law within me.";
   for(size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 25)
   {
+    m_testTraces.clear();
+    TestTrace(Aws::String("### Starting TranscribeStreamingKantSample with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");
     int64_t startedAt = Aws::Utils::DateTime::Now().Millis();
     Aws::String result = RunTestLikeSample(22000, "Kant_16kHz_17176ms.wav", 16000, chunkDuration);
     int64_t endedAt = Aws::Utils::DateTime::Now().Millis();
+    TestTrace(Aws::String("### Done TranscribeStreamingKantSample with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");
     std::cout << "Transcription of Kant_16kHz_17176ms with chunk duration " << chunkDuration << " ms took " << endedAt - startedAt << " ms.\n";
 
     int difference = LevenshteinDistance(expected, result);
