@@ -48,88 +48,88 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
@@ -318,64 +318,64 @@ namespace Model
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
+     * already has another type, Firehose returns an error during run time.</p> <p>For
+     * Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
+     * already has another type, Firehose returns an error during run time.</p> <p>For
+     * Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
+     * already has another type, Firehose returns an error during run time.</p> <p>For
+     * Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
+     * already has another type, Firehose returns an error during run time.</p> <p>For
+     * Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
+     * already has another type, Firehose returns an error during run time.</p> <p>For
+     * Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
+     * already has another type, Firehose returns an error during run time.</p> <p>For
+     * Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
+     * already has another type, Firehose returns an error during run time.</p> <p>For
+     * Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
+     * already has another type, Firehose returns an error during run time.</p> <p>For
+     * Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
@@ -479,49 +479,49 @@ namespace Model
 
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline const ElasticsearchRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline void SetRetryOptions(const ElasticsearchRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline void SetRetryOptions(ElasticsearchRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline ElasticsearchDestinationConfiguration& WithRetryOptions(const ElasticsearchRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline ElasticsearchDestinationConfiguration& WithRetryOptions(ElasticsearchRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
-     * that could not be indexed to the configured Amazon S3 destination, with
+     * <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not
+     * be indexed to the configured Amazon S3 destination, with
      * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
-     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
-     * records to Amazon S3, and also writes failed documents with
+     * set to <code>AllDocuments</code>, Firehose delivers all incoming records to
+     * Amazon S3, and also writes failed documents with
      * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
@@ -533,11 +533,11 @@ namespace Model
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
-     * that could not be indexed to the configured Amazon S3 destination, with
+     * <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not
+     * be indexed to the configured Amazon S3 destination, with
      * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
-     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
-     * records to Amazon S3, and also writes failed documents with
+     * set to <code>AllDocuments</code>, Firehose delivers all incoming records to
+     * Amazon S3, and also writes failed documents with
      * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
@@ -549,11 +549,11 @@ namespace Model
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
-     * that could not be indexed to the configured Amazon S3 destination, with
+     * <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not
+     * be indexed to the configured Amazon S3 destination, with
      * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
-     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
-     * records to Amazon S3, and also writes failed documents with
+     * set to <code>AllDocuments</code>, Firehose delivers all incoming records to
+     * Amazon S3, and also writes failed documents with
      * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
@@ -565,11 +565,11 @@ namespace Model
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
-     * that could not be indexed to the configured Amazon S3 destination, with
+     * <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not
+     * be indexed to the configured Amazon S3 destination, with
      * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
-     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
-     * records to Amazon S3, and also writes failed documents with
+     * set to <code>AllDocuments</code>, Firehose delivers all incoming records to
+     * Amazon S3, and also writes failed documents with
      * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
@@ -581,11 +581,11 @@ namespace Model
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
-     * that could not be indexed to the configured Amazon S3 destination, with
+     * <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not
+     * be indexed to the configured Amazon S3 destination, with
      * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
-     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
-     * records to Amazon S3, and also writes failed documents with
+     * set to <code>AllDocuments</code>, Firehose delivers all incoming records to
+     * Amazon S3, and also writes failed documents with
      * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
@@ -597,11 +597,11 @@ namespace Model
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
-     * that could not be indexed to the configured Amazon S3 destination, with
+     * <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not
+     * be indexed to the configured Amazon S3 destination, with
      * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
-     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
-     * records to Amazon S3, and also writes failed documents with
+     * set to <code>AllDocuments</code>, Firehose delivers all incoming records to
+     * Amazon S3, and also writes failed documents with
      * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
@@ -738,43 +738,37 @@ namespace Model
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline const DocumentIdOptions& GetDocumentIdOptions() const{ return m_documentIdOptions; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline bool DocumentIdOptionsHasBeenSet() const { return m_documentIdOptionsHasBeenSet; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline void SetDocumentIdOptions(const DocumentIdOptions& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = value; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline void SetDocumentIdOptions(DocumentIdOptions&& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = std::move(value); }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithDocumentIdOptions(const DocumentIdOptions& value) { SetDocumentIdOptions(value); return *this;}
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithDocumentIdOptions(DocumentIdOptions&& value) { SetDocumentIdOptions(std::move(value)); return *this;}
 

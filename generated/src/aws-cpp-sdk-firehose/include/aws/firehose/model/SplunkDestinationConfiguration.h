@@ -46,50 +46,50 @@ namespace Model
 
 
     /**
-     * <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends
-     * your data.</p>
+     * <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your
+     * data.</p>
      */
     inline const Aws::String& GetHECEndpoint() const{ return m_hECEndpoint; }
 
     /**
-     * <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends
-     * your data.</p>
+     * <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your
+     * data.</p>
      */
     inline bool HECEndpointHasBeenSet() const { return m_hECEndpointHasBeenSet; }
 
     /**
-     * <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends
-     * your data.</p>
+     * <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your
+     * data.</p>
      */
     inline void SetHECEndpoint(const Aws::String& value) { m_hECEndpointHasBeenSet = true; m_hECEndpoint = value; }
 
     /**
-     * <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends
-     * your data.</p>
+     * <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your
+     * data.</p>
      */
     inline void SetHECEndpoint(Aws::String&& value) { m_hECEndpointHasBeenSet = true; m_hECEndpoint = std::move(value); }
 
     /**
-     * <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends
-     * your data.</p>
+     * <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your
+     * data.</p>
      */
     inline void SetHECEndpoint(const char* value) { m_hECEndpointHasBeenSet = true; m_hECEndpoint.assign(value); }
 
     /**
-     * <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends
-     * your data.</p>
+     * <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your
+     * data.</p>
      */
     inline SplunkDestinationConfiguration& WithHECEndpoint(const Aws::String& value) { SetHECEndpoint(value); return *this;}
 
     /**
-     * <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends
-     * your data.</p>
+     * <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your
+     * data.</p>
      */
     inline SplunkDestinationConfiguration& WithHECEndpoint(Aws::String&& value) { SetHECEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends
-     * your data.</p>
+     * <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your
+     * data.</p>
      */
     inline SplunkDestinationConfiguration& WithHECEndpoint(const char* value) { SetHECEndpoint(value); return *this;}
 
@@ -175,81 +175,81 @@ namespace Model
 
 
     /**
-     * <p>The amount of time that Kinesis Data Firehose waits to receive an
-     * acknowledgment from Splunk after it sends it data. At the end of the timeout
-     * period, Kinesis Data Firehose either tries to send the data again or considers
-     * it an error, based on your retry settings.</p>
+     * <p>The amount of time that Firehose waits to receive an acknowledgment from
+     * Splunk after it sends it data. At the end of the timeout period, Firehose either
+     * tries to send the data again or considers it an error, based on your retry
+     * settings.</p>
      */
     inline int GetHECAcknowledgmentTimeoutInSeconds() const{ return m_hECAcknowledgmentTimeoutInSeconds; }
 
     /**
-     * <p>The amount of time that Kinesis Data Firehose waits to receive an
-     * acknowledgment from Splunk after it sends it data. At the end of the timeout
-     * period, Kinesis Data Firehose either tries to send the data again or considers
-     * it an error, based on your retry settings.</p>
+     * <p>The amount of time that Firehose waits to receive an acknowledgment from
+     * Splunk after it sends it data. At the end of the timeout period, Firehose either
+     * tries to send the data again or considers it an error, based on your retry
+     * settings.</p>
      */
     inline bool HECAcknowledgmentTimeoutInSecondsHasBeenSet() const { return m_hECAcknowledgmentTimeoutInSecondsHasBeenSet; }
 
     /**
-     * <p>The amount of time that Kinesis Data Firehose waits to receive an
-     * acknowledgment from Splunk after it sends it data. At the end of the timeout
-     * period, Kinesis Data Firehose either tries to send the data again or considers
-     * it an error, based on your retry settings.</p>
+     * <p>The amount of time that Firehose waits to receive an acknowledgment from
+     * Splunk after it sends it data. At the end of the timeout period, Firehose either
+     * tries to send the data again or considers it an error, based on your retry
+     * settings.</p>
      */
     inline void SetHECAcknowledgmentTimeoutInSeconds(int value) { m_hECAcknowledgmentTimeoutInSecondsHasBeenSet = true; m_hECAcknowledgmentTimeoutInSeconds = value; }
 
     /**
-     * <p>The amount of time that Kinesis Data Firehose waits to receive an
-     * acknowledgment from Splunk after it sends it data. At the end of the timeout
-     * period, Kinesis Data Firehose either tries to send the data again or considers
-     * it an error, based on your retry settings.</p>
+     * <p>The amount of time that Firehose waits to receive an acknowledgment from
+     * Splunk after it sends it data. At the end of the timeout period, Firehose either
+     * tries to send the data again or considers it an error, based on your retry
+     * settings.</p>
      */
     inline SplunkDestinationConfiguration& WithHECAcknowledgmentTimeoutInSeconds(int value) { SetHECAcknowledgmentTimeoutInSeconds(value); return *this;}
 
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to
-     * Splunk, or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+     * <p>The retry behavior in case Firehose is unable to deliver data to Splunk, or
+     * if it doesn't receive an acknowledgment of receipt from Splunk.</p>
      */
     inline const SplunkRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to
-     * Splunk, or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+     * <p>The retry behavior in case Firehose is unable to deliver data to Splunk, or
+     * if it doesn't receive an acknowledgment of receipt from Splunk.</p>
      */
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to
-     * Splunk, or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+     * <p>The retry behavior in case Firehose is unable to deliver data to Splunk, or
+     * if it doesn't receive an acknowledgment of receipt from Splunk.</p>
      */
     inline void SetRetryOptions(const SplunkRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to
-     * Splunk, or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+     * <p>The retry behavior in case Firehose is unable to deliver data to Splunk, or
+     * if it doesn't receive an acknowledgment of receipt from Splunk.</p>
      */
     inline void SetRetryOptions(SplunkRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to
-     * Splunk, or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+     * <p>The retry behavior in case Firehose is unable to deliver data to Splunk, or
+     * if it doesn't receive an acknowledgment of receipt from Splunk.</p>
      */
     inline SplunkDestinationConfiguration& WithRetryOptions(const SplunkRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to
-     * Splunk, or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+     * <p>The retry behavior in case Firehose is unable to deliver data to Splunk, or
+     * if it doesn't receive an acknowledgment of receipt from Splunk.</p>
      */
     inline SplunkDestinationConfiguration& WithRetryOptions(SplunkRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When set to
-     * <code>FailedEventsOnly</code>, Kinesis Data Firehose writes any data that could
-     * not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to
-     * Amazon S3, and also writes failed documents to Amazon S3. The default value is
+     * <code>FailedEventsOnly</code>, Firehose writes any data that could not be
+     * indexed to the configured Amazon S3 destination. When set to
+     * <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and
+     * also writes failed documents to Amazon S3. The default value is
      * <code>FailedEventsOnly</code>.</p> <p>You can update this backup mode from
      * <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
      * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
@@ -258,10 +258,10 @@ namespace Model
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When set to
-     * <code>FailedEventsOnly</code>, Kinesis Data Firehose writes any data that could
-     * not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to
-     * Amazon S3, and also writes failed documents to Amazon S3. The default value is
+     * <code>FailedEventsOnly</code>, Firehose writes any data that could not be
+     * indexed to the configured Amazon S3 destination. When set to
+     * <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and
+     * also writes failed documents to Amazon S3. The default value is
      * <code>FailedEventsOnly</code>.</p> <p>You can update this backup mode from
      * <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
      * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
@@ -270,10 +270,10 @@ namespace Model
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When set to
-     * <code>FailedEventsOnly</code>, Kinesis Data Firehose writes any data that could
-     * not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to
-     * Amazon S3, and also writes failed documents to Amazon S3. The default value is
+     * <code>FailedEventsOnly</code>, Firehose writes any data that could not be
+     * indexed to the configured Amazon S3 destination. When set to
+     * <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and
+     * also writes failed documents to Amazon S3. The default value is
      * <code>FailedEventsOnly</code>.</p> <p>You can update this backup mode from
      * <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
      * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
@@ -282,10 +282,10 @@ namespace Model
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When set to
-     * <code>FailedEventsOnly</code>, Kinesis Data Firehose writes any data that could
-     * not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to
-     * Amazon S3, and also writes failed documents to Amazon S3. The default value is
+     * <code>FailedEventsOnly</code>, Firehose writes any data that could not be
+     * indexed to the configured Amazon S3 destination. When set to
+     * <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and
+     * also writes failed documents to Amazon S3. The default value is
      * <code>FailedEventsOnly</code>.</p> <p>You can update this backup mode from
      * <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
      * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
@@ -294,10 +294,10 @@ namespace Model
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When set to
-     * <code>FailedEventsOnly</code>, Kinesis Data Firehose writes any data that could
-     * not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to
-     * Amazon S3, and also writes failed documents to Amazon S3. The default value is
+     * <code>FailedEventsOnly</code>, Firehose writes any data that could not be
+     * indexed to the configured Amazon S3 destination. When set to
+     * <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and
+     * also writes failed documents to Amazon S3. The default value is
      * <code>FailedEventsOnly</code>.</p> <p>You can update this backup mode from
      * <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
      * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
@@ -306,10 +306,10 @@ namespace Model
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When set to
-     * <code>FailedEventsOnly</code>, Kinesis Data Firehose writes any data that could
-     * not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to
-     * Amazon S3, and also writes failed documents to Amazon S3. The default value is
+     * <code>FailedEventsOnly</code>, Firehose writes any data that could not be
+     * indexed to the configured Amazon S3 destination. When set to
+     * <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and
+     * also writes failed documents to Amazon S3. The default value is
      * <code>FailedEventsOnly</code>.</p> <p>You can update this backup mode from
      * <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
      * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>

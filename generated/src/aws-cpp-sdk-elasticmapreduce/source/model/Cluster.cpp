@@ -34,6 +34,8 @@ Cluster::Cluster() :
     m_autoTerminateHasBeenSet(false),
     m_terminationProtected(false),
     m_terminationProtectedHasBeenSet(false),
+    m_unhealthyNodeReplacement(false),
+    m_unhealthyNodeReplacementHasBeenSet(false),
     m_visibleToAllUsers(false),
     m_visibleToAllUsersHasBeenSet(false),
     m_applicationsHasBeenSet(false),
@@ -82,6 +84,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_autoTerminateHasBeenSet(false),
     m_terminationProtected(false),
     m_terminationProtectedHasBeenSet(false),
+    m_unhealthyNodeReplacement(false),
+    m_unhealthyNodeReplacementHasBeenSet(false),
     m_visibleToAllUsers(false),
     m_visibleToAllUsersHasBeenSet(false),
     m_applicationsHasBeenSet(false),
@@ -199,6 +203,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_terminationProtected = jsonValue.GetBool("TerminationProtected");
 
     m_terminationProtectedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UnhealthyNodeReplacement"))
+  {
+    m_unhealthyNodeReplacement = jsonValue.GetBool("UnhealthyNodeReplacement");
+
+    m_unhealthyNodeReplacementHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VisibleToAllUsers"))
@@ -435,6 +446,12 @@ JsonValue Cluster::Jsonize() const
   if(m_terminationProtectedHasBeenSet)
   {
    payload.WithBool("TerminationProtected", m_terminationProtected);
+
+  }
+
+  if(m_unhealthyNodeReplacementHasBeenSet)
+  {
+   payload.WithBool("UnhealthyNodeReplacement", m_unhealthyNodeReplacement);
 
   }
 

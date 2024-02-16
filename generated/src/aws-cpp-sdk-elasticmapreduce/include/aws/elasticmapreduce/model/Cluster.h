@@ -585,6 +585,31 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core
+     * instances that have degraded within the cluster.</p>
+     */
+    inline bool GetUnhealthyNodeReplacement() const{ return m_unhealthyNodeReplacement; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core
+     * instances that have degraded within the cluster.</p>
+     */
+    inline bool UnhealthyNodeReplacementHasBeenSet() const { return m_unhealthyNodeReplacementHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core
+     * instances that have degraded within the cluster.</p>
+     */
+    inline void SetUnhealthyNodeReplacement(bool value) { m_unhealthyNodeReplacementHasBeenSet = true; m_unhealthyNodeReplacement = value; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core
+     * instances that have degraded within the cluster.</p>
+     */
+    inline Cluster& WithUnhealthyNodeReplacement(bool value) { SetUnhealthyNodeReplacement(value); return *this;}
+
+
+    /**
      * <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web
      * Services account associated with the cluster. When <code>true</code>, IAM
      * principals in the Amazon Web Services account can perform Amazon EMR cluster
@@ -1597,6 +1622,9 @@ namespace Model
 
     bool m_terminationProtected;
     bool m_terminationProtectedHasBeenSet = false;
+
+    bool m_unhealthyNodeReplacement;
+    bool m_unhealthyNodeReplacementHasBeenSet = false;
 
     bool m_visibleToAllUsers;
     bool m_visibleToAllUsersHasBeenSet = false;

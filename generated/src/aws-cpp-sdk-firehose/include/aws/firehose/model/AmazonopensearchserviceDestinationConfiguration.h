@@ -48,58 +48,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
-     * indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon OpenSearch Service Configuration API and for indexing
+     * documents.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
-     * indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon OpenSearch Service Configuration API and for indexing
+     * documents.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
-     * indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon OpenSearch Service Configuration API and for indexing
+     * documents.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
-     * indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon OpenSearch Service Configuration API and for indexing
+     * documents.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
-     * indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon OpenSearch Service Configuration API and for indexing
+     * documents.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
-     * indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon OpenSearch Service Configuration API and for indexing
+     * documents.</p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
-     * indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon OpenSearch Service Configuration API and for indexing
+     * documents.</p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
-     * indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon OpenSearch Service Configuration API and for indexing
+     * documents.</p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -262,64 +262,56 @@ namespace Model
     /**
      * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
      * only one type per index. If you try to specify a new type for an existing index
-     * that already has another type, Kinesis Data Firehose returns an error during run
-     * time. </p>
+     * that already has another type, Firehose returns an error during run time. </p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
      * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
      * only one type per index. If you try to specify a new type for an existing index
-     * that already has another type, Kinesis Data Firehose returns an error during run
-     * time. </p>
+     * that already has another type, Firehose returns an error during run time. </p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
      * only one type per index. If you try to specify a new type for an existing index
-     * that already has another type, Kinesis Data Firehose returns an error during run
-     * time. </p>
+     * that already has another type, Firehose returns an error during run time. </p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
      * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
      * only one type per index. If you try to specify a new type for an existing index
-     * that already has another type, Kinesis Data Firehose returns an error during run
-     * time. </p>
+     * that already has another type, Firehose returns an error during run time. </p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
      * only one type per index. If you try to specify a new type for an existing index
-     * that already has another type, Kinesis Data Firehose returns an error during run
-     * time. </p>
+     * that already has another type, Firehose returns an error during run time. </p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
      * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
      * only one type per index. If you try to specify a new type for an existing index
-     * that already has another type, Kinesis Data Firehose returns an error during run
-     * time. </p>
+     * that already has another type, Firehose returns an error during run time. </p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
      * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
      * only one type per index. If you try to specify a new type for an existing index
-     * that already has another type, Kinesis Data Firehose returns an error during run
-     * time. </p>
+     * that already has another type, Firehose returns an error during run time. </p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
      * only one type per index. If you try to specify a new type for an existing index
-     * that already has another type, Kinesis Data Firehose returns an error during run
-     * time. </p>
+     * that already has another type, Firehose returns an error during run time. </p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
@@ -399,111 +391,99 @@ namespace Model
 
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
-     * </p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes). </p>
      */
     inline const AmazonopensearchserviceRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
-     * </p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes). </p>
      */
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
-     * </p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes). </p>
      */
     inline void SetRetryOptions(const AmazonopensearchserviceRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
-     * </p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes). </p>
      */
     inline void SetRetryOptions(AmazonopensearchserviceRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
-     * </p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes). </p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithRetryOptions(const AmazonopensearchserviceRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
-     * </p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes). </p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithRetryOptions(AmazonopensearchserviceRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not
-     * be indexed to the configured Amazon S3 destination, with
-     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to
-     * AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3,
-     * and also writes failed documents with AmazonOpenSearchService-failed/ appended
-     * to the prefix. </p>
+     * FailedDocumentsOnly, Firehose writes any documents that could not be indexed to
+     * the configured Amazon S3 destination, with AmazonOpenSearchService-failed/
+     * appended to the key prefix. When set to AllDocuments, Firehose delivers all
+     * incoming records to Amazon S3, and also writes failed documents with
+     * AmazonOpenSearchService-failed/ appended to the prefix. </p>
      */
     inline const AmazonopensearchserviceS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not
-     * be indexed to the configured Amazon S3 destination, with
-     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to
-     * AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3,
-     * and also writes failed documents with AmazonOpenSearchService-failed/ appended
-     * to the prefix. </p>
+     * FailedDocumentsOnly, Firehose writes any documents that could not be indexed to
+     * the configured Amazon S3 destination, with AmazonOpenSearchService-failed/
+     * appended to the key prefix. When set to AllDocuments, Firehose delivers all
+     * incoming records to Amazon S3, and also writes failed documents with
+     * AmazonOpenSearchService-failed/ appended to the prefix. </p>
      */
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not
-     * be indexed to the configured Amazon S3 destination, with
-     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to
-     * AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3,
-     * and also writes failed documents with AmazonOpenSearchService-failed/ appended
-     * to the prefix. </p>
+     * FailedDocumentsOnly, Firehose writes any documents that could not be indexed to
+     * the configured Amazon S3 destination, with AmazonOpenSearchService-failed/
+     * appended to the key prefix. When set to AllDocuments, Firehose delivers all
+     * incoming records to Amazon S3, and also writes failed documents with
+     * AmazonOpenSearchService-failed/ appended to the prefix. </p>
      */
     inline void SetS3BackupMode(const AmazonopensearchserviceS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not
-     * be indexed to the configured Amazon S3 destination, with
-     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to
-     * AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3,
-     * and also writes failed documents with AmazonOpenSearchService-failed/ appended
-     * to the prefix. </p>
+     * FailedDocumentsOnly, Firehose writes any documents that could not be indexed to
+     * the configured Amazon S3 destination, with AmazonOpenSearchService-failed/
+     * appended to the key prefix. When set to AllDocuments, Firehose delivers all
+     * incoming records to Amazon S3, and also writes failed documents with
+     * AmazonOpenSearchService-failed/ appended to the prefix. </p>
      */
     inline void SetS3BackupMode(AmazonopensearchserviceS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not
-     * be indexed to the configured Amazon S3 destination, with
-     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to
-     * AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3,
-     * and also writes failed documents with AmazonOpenSearchService-failed/ appended
-     * to the prefix. </p>
+     * FailedDocumentsOnly, Firehose writes any documents that could not be indexed to
+     * the configured Amazon S3 destination, with AmazonOpenSearchService-failed/
+     * appended to the key prefix. When set to AllDocuments, Firehose delivers all
+     * incoming records to Amazon S3, and also writes failed documents with
+     * AmazonOpenSearchService-failed/ appended to the prefix. </p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithS3BackupMode(const AmazonopensearchserviceS3BackupMode& value) { SetS3BackupMode(value); return *this;}
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
-     * FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not
-     * be indexed to the configured Amazon S3 destination, with
-     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to
-     * AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3,
-     * and also writes failed documents with AmazonOpenSearchService-failed/ appended
-     * to the prefix. </p>
+     * FailedDocumentsOnly, Firehose writes any documents that could not be indexed to
+     * the configured Amazon S3 destination, with AmazonOpenSearchService-failed/
+     * appended to the key prefix. When set to AllDocuments, Firehose delivers all
+     * incoming records to Amazon S3, and also writes failed documents with
+     * AmazonOpenSearchService-failed/ appended to the prefix. </p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithS3BackupMode(AmazonopensearchserviceS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
 
@@ -586,43 +566,37 @@ namespace Model
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline const DocumentIdOptions& GetDocumentIdOptions() const{ return m_documentIdOptions; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline bool DocumentIdOptionsHasBeenSet() const { return m_documentIdOptionsHasBeenSet; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline void SetDocumentIdOptions(const DocumentIdOptions& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = value; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline void SetDocumentIdOptions(DocumentIdOptions&& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = std::move(value); }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithDocumentIdOptions(const DocumentIdOptions& value) { SetDocumentIdOptions(value); return *this;}
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline AmazonopensearchserviceDestinationConfiguration& WithDocumentIdOptions(DocumentIdOptions&& value) { SetDocumentIdOptions(std::move(value)); return *this;}
 

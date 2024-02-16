@@ -18,7 +18,8 @@ namespace Model
 {
 
   /**
-   * <p>Input for SetEndpointAttributes action.</p><p><h3>See Also:</h3>   <a
+   * <p>Input for <code>SetEndpointAttributes</code> action.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributesInput">AWS
    * API Reference</a></p>
    */
@@ -41,42 +42,42 @@ namespace Model
   public:
 
     /**
-     * <p>EndpointArn used for SetEndpointAttributes action.</p>
+     * <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
      */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
 
     /**
-     * <p>EndpointArn used for SetEndpointAttributes action.</p>
+     * <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
      */
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
 
     /**
-     * <p>EndpointArn used for SetEndpointAttributes action.</p>
+     * <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
      */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /**
-     * <p>EndpointArn used for SetEndpointAttributes action.</p>
+     * <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
      */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
 
     /**
-     * <p>EndpointArn used for SetEndpointAttributes action.</p>
+     * <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
      */
     inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
 
     /**
-     * <p>EndpointArn used for SetEndpointAttributes action.</p>
+     * <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
      */
     inline SetEndpointAttributesRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
 
     /**
-     * <p>EndpointArn used for SetEndpointAttributes action.</p>
+     * <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
      */
     inline SetEndpointAttributesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
 
     /**
-     * <p>EndpointArn used for SetEndpointAttributes action.</p>
+     * <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
      */
     inline SetEndpointAttributesRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 

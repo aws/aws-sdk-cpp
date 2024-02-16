@@ -209,9 +209,15 @@ namespace SNS
          * <code>APNS_SANDBOX</code> using token credentials,
          * <code>PlatformPrincipal</code> is <code>signing key ID</code> and
          * <code>PlatformCredential</code> is <code>signing key</code>.</p> </li> <li>
-         * <p>For <code>GCM</code> (Firebase Cloud Messaging), there is no
-         * <code>PlatformPrincipal</code> and the <code>PlatformCredential</code> is
-         * <code>API key</code>.</p> </li> <li> <p>For <code>MPNS</code>,
+         * <p>For GCM (Firebase Cloud Messaging) using key credentials, there is no
+         * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+         * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+         * credentials, there is no <code>PlatformPrincipal</code>. The
+         * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+         * the Amazon Web Services CLI, the file must be in string format and special
+         * characters must be ignored. To format the file correctly, Amazon SNS recommends
+         * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+         * service.json`</code>.</p> </li> <li> <p>For <code>MPNS</code>,
          * <code>PlatformPrincipal</code> is <code>TLS certificate</code> and
          * <code>PlatformCredential</code> is <code>private key</code>.</p> </li> <li>
          * <p>For <code>WNS</code>, <code>PlatformPrincipal</code> is <code>Package

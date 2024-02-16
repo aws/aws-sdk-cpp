@@ -46,88 +46,88 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Amazon ES Configuration API and for indexing documents.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Amazon ES Configuration API and for indexing documents. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-     * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
@@ -316,96 +316,88 @@ namespace Model
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during
-     * runtime.</p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
-     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
-     * with the old index name and type name. If you want to update your delivery
-     * stream with a new index name, provide an empty string for <code>TypeName</code>.
-     * </p>
+     * already has another type, Firehose returns an error during runtime.</p> <p>If
+     * you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
+     * Firehose still delivers data to Elasticsearch with the old index name and type
+     * name. If you want to update your delivery stream with a new index name, provide
+     * an empty string for <code>TypeName</code>. </p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during
-     * runtime.</p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
-     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
-     * with the old index name and type name. If you want to update your delivery
-     * stream with a new index name, provide an empty string for <code>TypeName</code>.
-     * </p>
+     * already has another type, Firehose returns an error during runtime.</p> <p>If
+     * you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
+     * Firehose still delivers data to Elasticsearch with the old index name and type
+     * name. If you want to update your delivery stream with a new index name, provide
+     * an empty string for <code>TypeName</code>. </p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during
-     * runtime.</p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
-     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
-     * with the old index name and type name. If you want to update your delivery
-     * stream with a new index name, provide an empty string for <code>TypeName</code>.
-     * </p>
+     * already has another type, Firehose returns an error during runtime.</p> <p>If
+     * you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
+     * Firehose still delivers data to Elasticsearch with the old index name and type
+     * name. If you want to update your delivery stream with a new index name, provide
+     * an empty string for <code>TypeName</code>. </p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during
-     * runtime.</p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
-     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
-     * with the old index name and type name. If you want to update your delivery
-     * stream with a new index name, provide an empty string for <code>TypeName</code>.
-     * </p>
+     * already has another type, Firehose returns an error during runtime.</p> <p>If
+     * you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
+     * Firehose still delivers data to Elasticsearch with the old index name and type
+     * name. If you want to update your delivery stream with a new index name, provide
+     * an empty string for <code>TypeName</code>. </p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during
-     * runtime.</p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
-     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
-     * with the old index name and type name. If you want to update your delivery
-     * stream with a new index name, provide an empty string for <code>TypeName</code>.
-     * </p>
+     * already has another type, Firehose returns an error during runtime.</p> <p>If
+     * you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
+     * Firehose still delivers data to Elasticsearch with the old index name and type
+     * name. If you want to update your delivery stream with a new index name, provide
+     * an empty string for <code>TypeName</code>. </p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during
-     * runtime.</p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
-     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
-     * with the old index name and type name. If you want to update your delivery
-     * stream with a new index name, provide an empty string for <code>TypeName</code>.
-     * </p>
+     * already has another type, Firehose returns an error during runtime.</p> <p>If
+     * you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
+     * Firehose still delivers data to Elasticsearch with the old index name and type
+     * name. If you want to update your delivery stream with a new index name, provide
+     * an empty string for <code>TypeName</code>. </p>
      */
     inline ElasticsearchDestinationUpdate& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during
-     * runtime.</p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
-     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
-     * with the old index name and type name. If you want to update your delivery
-     * stream with a new index name, provide an empty string for <code>TypeName</code>.
-     * </p>
+     * already has another type, Firehose returns an error during runtime.</p> <p>If
+     * you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
+     * Firehose still delivers data to Elasticsearch with the old index name and type
+     * name. If you want to update your delivery stream with a new index name, provide
+     * an empty string for <code>TypeName</code>. </p>
      */
     inline ElasticsearchDestinationUpdate& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
-     * already has another type, Kinesis Data Firehose returns an error during
-     * runtime.</p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
-     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
-     * with the old index name and type name. If you want to update your delivery
-     * stream with a new index name, provide an empty string for <code>TypeName</code>.
-     * </p>
+     * already has another type, Firehose returns an error during runtime.</p> <p>If
+     * you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
+     * Firehose still delivers data to Elasticsearch with the old index name and type
+     * name. If you want to update your delivery stream with a new index name, provide
+     * an empty string for <code>TypeName</code>. </p>
      */
     inline ElasticsearchDestinationUpdate& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
@@ -509,38 +501,38 @@ namespace Model
 
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline const ElasticsearchRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline void SetRetryOptions(const ElasticsearchRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline void SetRetryOptions(ElasticsearchRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline ElasticsearchDestinationUpdate& WithRetryOptions(const ElasticsearchRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon ES. The default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * ES. The default value is 300 (5 minutes).</p>
      */
     inline ElasticsearchDestinationUpdate& WithRetryOptions(ElasticsearchRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 
@@ -640,43 +632,37 @@ namespace Model
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline const DocumentIdOptions& GetDocumentIdOptions() const{ return m_documentIdOptions; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline bool DocumentIdOptionsHasBeenSet() const { return m_documentIdOptionsHasBeenSet; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline void SetDocumentIdOptions(const DocumentIdOptions& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = value; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline void SetDocumentIdOptions(DocumentIdOptions&& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = std::move(value); }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline ElasticsearchDestinationUpdate& WithDocumentIdOptions(const DocumentIdOptions& value) { SetDocumentIdOptions(value); return *this;}
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline ElasticsearchDestinationUpdate& WithDocumentIdOptions(DocumentIdOptions&& value) { SetDocumentIdOptions(std::move(value)); return *this;}
 

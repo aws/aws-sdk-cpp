@@ -234,72 +234,72 @@ namespace Model
 
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline const Aws::String& GetErrorOutputPrefix() const{ return m_errorOutputPrefix; }
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline bool ErrorOutputPrefixHasBeenSet() const { return m_errorOutputPrefixHasBeenSet; }
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetErrorOutputPrefix(const Aws::String& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = value; }
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetErrorOutputPrefix(Aws::String&& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = std::move(value); }
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetErrorOutputPrefix(const char* value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix.assign(value); }
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline ExtendedS3DestinationDescription& WithErrorOutputPrefix(const Aws::String& value) { SetErrorOutputPrefix(value); return *this;}
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline ExtendedS3DestinationDescription& WithErrorOutputPrefix(Aws::String&& value) { SetErrorOutputPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
@@ -620,6 +620,88 @@ namespace Model
      */
     inline ExtendedS3DestinationDescription& WithDynamicPartitioningConfiguration(DynamicPartitioningConfiguration&& value) { SetDynamicPartitioningConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specify a file extension. It will override the default file extension</p>
+     */
+    inline const Aws::String& GetFileExtension() const{ return m_fileExtension; }
+
+    /**
+     * <p>Specify a file extension. It will override the default file extension</p>
+     */
+    inline bool FileExtensionHasBeenSet() const { return m_fileExtensionHasBeenSet; }
+
+    /**
+     * <p>Specify a file extension. It will override the default file extension</p>
+     */
+    inline void SetFileExtension(const Aws::String& value) { m_fileExtensionHasBeenSet = true; m_fileExtension = value; }
+
+    /**
+     * <p>Specify a file extension. It will override the default file extension</p>
+     */
+    inline void SetFileExtension(Aws::String&& value) { m_fileExtensionHasBeenSet = true; m_fileExtension = std::move(value); }
+
+    /**
+     * <p>Specify a file extension. It will override the default file extension</p>
+     */
+    inline void SetFileExtension(const char* value) { m_fileExtensionHasBeenSet = true; m_fileExtension.assign(value); }
+
+    /**
+     * <p>Specify a file extension. It will override the default file extension</p>
+     */
+    inline ExtendedS3DestinationDescription& WithFileExtension(const Aws::String& value) { SetFileExtension(value); return *this;}
+
+    /**
+     * <p>Specify a file extension. It will override the default file extension</p>
+     */
+    inline ExtendedS3DestinationDescription& WithFileExtension(Aws::String&& value) { SetFileExtension(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify a file extension. It will override the default file extension</p>
+     */
+    inline ExtendedS3DestinationDescription& WithFileExtension(const char* value) { SetFileExtension(value); return *this;}
+
+
+    /**
+     * <p>The time zone you prefer. UTC is the default.</p>
+     */
+    inline const Aws::String& GetCustomTimeZone() const{ return m_customTimeZone; }
+
+    /**
+     * <p>The time zone you prefer. UTC is the default.</p>
+     */
+    inline bool CustomTimeZoneHasBeenSet() const { return m_customTimeZoneHasBeenSet; }
+
+    /**
+     * <p>The time zone you prefer. UTC is the default.</p>
+     */
+    inline void SetCustomTimeZone(const Aws::String& value) { m_customTimeZoneHasBeenSet = true; m_customTimeZone = value; }
+
+    /**
+     * <p>The time zone you prefer. UTC is the default.</p>
+     */
+    inline void SetCustomTimeZone(Aws::String&& value) { m_customTimeZoneHasBeenSet = true; m_customTimeZone = std::move(value); }
+
+    /**
+     * <p>The time zone you prefer. UTC is the default.</p>
+     */
+    inline void SetCustomTimeZone(const char* value) { m_customTimeZoneHasBeenSet = true; m_customTimeZone.assign(value); }
+
+    /**
+     * <p>The time zone you prefer. UTC is the default.</p>
+     */
+    inline ExtendedS3DestinationDescription& WithCustomTimeZone(const Aws::String& value) { SetCustomTimeZone(value); return *this;}
+
+    /**
+     * <p>The time zone you prefer. UTC is the default.</p>
+     */
+    inline ExtendedS3DestinationDescription& WithCustomTimeZone(Aws::String&& value) { SetCustomTimeZone(std::move(value)); return *this;}
+
+    /**
+     * <p>The time zone you prefer. UTC is the default.</p>
+     */
+    inline ExtendedS3DestinationDescription& WithCustomTimeZone(const char* value) { SetCustomTimeZone(value); return *this;}
+
   private:
 
     Aws::String m_roleARN;
@@ -660,6 +742,12 @@ namespace Model
 
     DynamicPartitioningConfiguration m_dynamicPartitioningConfiguration;
     bool m_dynamicPartitioningConfigurationHasBeenSet = false;
+
+    Aws::String m_fileExtension;
+    bool m_fileExtensionHasBeenSet = false;
+
+    Aws::String m_customTimeZone;
+    bool m_customTimeZoneHasBeenSet = false;
   };
 
 } // namespace Model

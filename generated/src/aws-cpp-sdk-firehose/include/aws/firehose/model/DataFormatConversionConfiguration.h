@@ -26,14 +26,14 @@ namespace Model
 {
 
   /**
-   * <p>Specifies that you want Kinesis Data Firehose to convert data from the JSON
-   * format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data
-   * Firehose uses the serializer and deserializer that you specify, in addition to
-   * the column information from the Amazon Web Services Glue table, to deserialize
-   * your input data from JSON and then serialize it to the Parquet or ORC format.
-   * For more information, see <a
-   * href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis
-   * Data Firehose Record Format Conversion</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies that you want Firehose to convert data from the JSON format to the
+   * Parquet or ORC format before writing it to Amazon S3. Firehose uses the
+   * serializer and deserializer that you specify, in addition to the column
+   * information from the Amazon Web Services Glue table, to deserialize your input
+   * data from JSON and then serialize it to the Parquet or ORC format. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Firehose
+   * Record Format Conversion</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DataFormatConversionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -90,87 +90,87 @@ namespace Model
 
 
     /**
-     * <p>Specifies the deserializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data from JSON. This parameter is required if
+     * <p>Specifies the deserializer that you want Firehose to use to convert the
+     * format of your data from JSON. This parameter is required if
      * <code>Enabled</code> is set to true.</p>
      */
     inline const InputFormatConfiguration& GetInputFormatConfiguration() const{ return m_inputFormatConfiguration; }
 
     /**
-     * <p>Specifies the deserializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data from JSON. This parameter is required if
+     * <p>Specifies the deserializer that you want Firehose to use to convert the
+     * format of your data from JSON. This parameter is required if
      * <code>Enabled</code> is set to true.</p>
      */
     inline bool InputFormatConfigurationHasBeenSet() const { return m_inputFormatConfigurationHasBeenSet; }
 
     /**
-     * <p>Specifies the deserializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data from JSON. This parameter is required if
+     * <p>Specifies the deserializer that you want Firehose to use to convert the
+     * format of your data from JSON. This parameter is required if
      * <code>Enabled</code> is set to true.</p>
      */
     inline void SetInputFormatConfiguration(const InputFormatConfiguration& value) { m_inputFormatConfigurationHasBeenSet = true; m_inputFormatConfiguration = value; }
 
     /**
-     * <p>Specifies the deserializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data from JSON. This parameter is required if
+     * <p>Specifies the deserializer that you want Firehose to use to convert the
+     * format of your data from JSON. This parameter is required if
      * <code>Enabled</code> is set to true.</p>
      */
     inline void SetInputFormatConfiguration(InputFormatConfiguration&& value) { m_inputFormatConfigurationHasBeenSet = true; m_inputFormatConfiguration = std::move(value); }
 
     /**
-     * <p>Specifies the deserializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data from JSON. This parameter is required if
+     * <p>Specifies the deserializer that you want Firehose to use to convert the
+     * format of your data from JSON. This parameter is required if
      * <code>Enabled</code> is set to true.</p>
      */
     inline DataFormatConversionConfiguration& WithInputFormatConfiguration(const InputFormatConfiguration& value) { SetInputFormatConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies the deserializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data from JSON. This parameter is required if
+     * <p>Specifies the deserializer that you want Firehose to use to convert the
+     * format of your data from JSON. This parameter is required if
      * <code>Enabled</code> is set to true.</p>
      */
     inline DataFormatConversionConfiguration& WithInputFormatConfiguration(InputFormatConfiguration&& value) { SetInputFormatConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the serializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data to the Parquet or ORC format. This parameter is
-     * required if <code>Enabled</code> is set to true.</p>
+     * <p>Specifies the serializer that you want Firehose to use to convert the format
+     * of your data to the Parquet or ORC format. This parameter is required if
+     * <code>Enabled</code> is set to true.</p>
      */
     inline const OutputFormatConfiguration& GetOutputFormatConfiguration() const{ return m_outputFormatConfiguration; }
 
     /**
-     * <p>Specifies the serializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data to the Parquet or ORC format. This parameter is
-     * required if <code>Enabled</code> is set to true.</p>
+     * <p>Specifies the serializer that you want Firehose to use to convert the format
+     * of your data to the Parquet or ORC format. This parameter is required if
+     * <code>Enabled</code> is set to true.</p>
      */
     inline bool OutputFormatConfigurationHasBeenSet() const { return m_outputFormatConfigurationHasBeenSet; }
 
     /**
-     * <p>Specifies the serializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data to the Parquet or ORC format. This parameter is
-     * required if <code>Enabled</code> is set to true.</p>
+     * <p>Specifies the serializer that you want Firehose to use to convert the format
+     * of your data to the Parquet or ORC format. This parameter is required if
+     * <code>Enabled</code> is set to true.</p>
      */
     inline void SetOutputFormatConfiguration(const OutputFormatConfiguration& value) { m_outputFormatConfigurationHasBeenSet = true; m_outputFormatConfiguration = value; }
 
     /**
-     * <p>Specifies the serializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data to the Parquet or ORC format. This parameter is
-     * required if <code>Enabled</code> is set to true.</p>
+     * <p>Specifies the serializer that you want Firehose to use to convert the format
+     * of your data to the Parquet or ORC format. This parameter is required if
+     * <code>Enabled</code> is set to true.</p>
      */
     inline void SetOutputFormatConfiguration(OutputFormatConfiguration&& value) { m_outputFormatConfigurationHasBeenSet = true; m_outputFormatConfiguration = std::move(value); }
 
     /**
-     * <p>Specifies the serializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data to the Parquet or ORC format. This parameter is
-     * required if <code>Enabled</code> is set to true.</p>
+     * <p>Specifies the serializer that you want Firehose to use to convert the format
+     * of your data to the Parquet or ORC format. This parameter is required if
+     * <code>Enabled</code> is set to true.</p>
      */
     inline DataFormatConversionConfiguration& WithOutputFormatConfiguration(const OutputFormatConfiguration& value) { SetOutputFormatConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies the serializer that you want Kinesis Data Firehose to use to
-     * convert the format of your data to the Parquet or ORC format. This parameter is
-     * required if <code>Enabled</code> is set to true.</p>
+     * <p>Specifies the serializer that you want Firehose to use to convert the format
+     * of your data to the Parquet or ORC format. This parameter is required if
+     * <code>Enabled</code> is set to true.</p>
      */
     inline DataFormatConversionConfiguration& WithOutputFormatConfiguration(OutputFormatConfiguration&& value) { SetOutputFormatConfiguration(std::move(value)); return *this;}
 
