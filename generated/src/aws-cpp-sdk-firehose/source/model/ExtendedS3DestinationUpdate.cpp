@@ -33,7 +33,9 @@ ExtendedS3DestinationUpdate::ExtendedS3DestinationUpdate() :
     m_s3BackupModeHasBeenSet(false),
     m_s3BackupUpdateHasBeenSet(false),
     m_dataFormatConversionConfigurationHasBeenSet(false),
-    m_dynamicPartitioningConfigurationHasBeenSet(false)
+    m_dynamicPartitioningConfigurationHasBeenSet(false),
+    m_fileExtensionHasBeenSet(false),
+    m_customTimeZoneHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ ExtendedS3DestinationUpdate::ExtendedS3DestinationUpdate(JsonView jsonValue) :
     m_s3BackupModeHasBeenSet(false),
     m_s3BackupUpdateHasBeenSet(false),
     m_dataFormatConversionConfigurationHasBeenSet(false),
-    m_dynamicPartitioningConfigurationHasBeenSet(false)
+    m_dynamicPartitioningConfigurationHasBeenSet(false),
+    m_fileExtensionHasBeenSet(false),
+    m_customTimeZoneHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -150,6 +154,20 @@ ExtendedS3DestinationUpdate& ExtendedS3DestinationUpdate::operator =(JsonView js
     m_dynamicPartitioningConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileExtension"))
+  {
+    m_fileExtension = jsonValue.GetString("FileExtension");
+
+    m_fileExtensionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomTimeZone"))
+  {
+    m_customTimeZone = jsonValue.GetString("CustomTimeZone");
+
+    m_customTimeZoneHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -230,6 +248,18 @@ JsonValue ExtendedS3DestinationUpdate::Jsonize() const
   if(m_dynamicPartitioningConfigurationHasBeenSet)
   {
    payload.WithObject("DynamicPartitioningConfiguration", m_dynamicPartitioningConfiguration.Jsonize());
+
+  }
+
+  if(m_fileExtensionHasBeenSet)
+  {
+   payload.WithString("FileExtension", m_fileExtension);
+
+  }
+
+  if(m_customTimeZoneHasBeenSet)
+  {
+   payload.WithString("CustomTimeZone", m_customTimeZone);
 
   }
 

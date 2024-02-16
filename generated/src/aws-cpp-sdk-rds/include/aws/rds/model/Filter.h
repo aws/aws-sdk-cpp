@@ -35,6 +35,7 @@ namespace Model
    * <code>DescribeDBClusters</code> </p> </li> <li> <p>
    * <code>DescribeDBInstances</code> </p> </li> <li> <p>
    * <code>DescribeDBRecommendations</code> </p> </li> <li> <p>
+   * <code>DescribeDBShardGroups</code> </p> </li> <li> <p>
    * <code>DescribePendingMaintenanceActions</code> </p> </li> </ul><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Filter">AWS API

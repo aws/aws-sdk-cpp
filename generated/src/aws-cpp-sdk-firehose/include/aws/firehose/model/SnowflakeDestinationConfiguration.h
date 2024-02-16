@@ -717,38 +717,38 @@ namespace Model
 
 
     /**
-     * <p>The time period where Kinesis Data Firehose will retry sending data to the
-     * chosen HTTP endpoint.</p>
+     * <p>The time period where Firehose will retry sending data to the chosen HTTP
+     * endpoint.</p>
      */
     inline const SnowflakeRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>The time period where Kinesis Data Firehose will retry sending data to the
-     * chosen HTTP endpoint.</p>
+     * <p>The time period where Firehose will retry sending data to the chosen HTTP
+     * endpoint.</p>
      */
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
 
     /**
-     * <p>The time period where Kinesis Data Firehose will retry sending data to the
-     * chosen HTTP endpoint.</p>
+     * <p>The time period where Firehose will retry sending data to the chosen HTTP
+     * endpoint.</p>
      */
     inline void SetRetryOptions(const SnowflakeRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>The time period where Kinesis Data Firehose will retry sending data to the
-     * chosen HTTP endpoint.</p>
+     * <p>The time period where Firehose will retry sending data to the chosen HTTP
+     * endpoint.</p>
      */
     inline void SetRetryOptions(SnowflakeRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
     /**
-     * <p>The time period where Kinesis Data Firehose will retry sending data to the
-     * chosen HTTP endpoint.</p>
+     * <p>The time period where Firehose will retry sending data to the chosen HTTP
+     * endpoint.</p>
      */
     inline SnowflakeDestinationConfiguration& WithRetryOptions(const SnowflakeRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>The time period where Kinesis Data Firehose will retry sending data to the
-     * chosen HTTP endpoint.</p>
+     * <p>The time period where Firehose will retry sending data to the chosen HTTP
+     * endpoint.</p>
      */
     inline SnowflakeDestinationConfiguration& WithRetryOptions(SnowflakeRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 

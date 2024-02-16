@@ -27,8 +27,8 @@ namespace SNS
 namespace Model
 {
   /**
-   * <p>Response from GetEndpointAttributes of the EndpointArn.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Response from <code>GetEndpointAttributes</code> of the
+   * <code>EndpointArn</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributesResponse">AWS
    * API Reference</a></p>
    */

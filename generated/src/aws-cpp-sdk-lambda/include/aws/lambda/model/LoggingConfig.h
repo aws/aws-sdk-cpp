@@ -81,85 +81,97 @@ namespace Model
     /**
      * <p>Set this property to filter the application logs for your function that
      * Lambda sends to CloudWatch. Lambda only sends application logs at the selected
-     * level and lower.</p>
+     * level of detail and lower, where <code>TRACE</code> is the highest level and
+     * <code>FATAL</code> is the lowest.</p>
      */
     inline const ApplicationLogLevel& GetApplicationLogLevel() const{ return m_applicationLogLevel; }
 
     /**
      * <p>Set this property to filter the application logs for your function that
      * Lambda sends to CloudWatch. Lambda only sends application logs at the selected
-     * level and lower.</p>
+     * level of detail and lower, where <code>TRACE</code> is the highest level and
+     * <code>FATAL</code> is the lowest.</p>
      */
     inline bool ApplicationLogLevelHasBeenSet() const { return m_applicationLogLevelHasBeenSet; }
 
     /**
      * <p>Set this property to filter the application logs for your function that
      * Lambda sends to CloudWatch. Lambda only sends application logs at the selected
-     * level and lower.</p>
+     * level of detail and lower, where <code>TRACE</code> is the highest level and
+     * <code>FATAL</code> is the lowest.</p>
      */
     inline void SetApplicationLogLevel(const ApplicationLogLevel& value) { m_applicationLogLevelHasBeenSet = true; m_applicationLogLevel = value; }
 
     /**
      * <p>Set this property to filter the application logs for your function that
      * Lambda sends to CloudWatch. Lambda only sends application logs at the selected
-     * level and lower.</p>
+     * level of detail and lower, where <code>TRACE</code> is the highest level and
+     * <code>FATAL</code> is the lowest.</p>
      */
     inline void SetApplicationLogLevel(ApplicationLogLevel&& value) { m_applicationLogLevelHasBeenSet = true; m_applicationLogLevel = std::move(value); }
 
     /**
      * <p>Set this property to filter the application logs for your function that
      * Lambda sends to CloudWatch. Lambda only sends application logs at the selected
-     * level and lower.</p>
+     * level of detail and lower, where <code>TRACE</code> is the highest level and
+     * <code>FATAL</code> is the lowest.</p>
      */
     inline LoggingConfig& WithApplicationLogLevel(const ApplicationLogLevel& value) { SetApplicationLogLevel(value); return *this;}
 
     /**
      * <p>Set this property to filter the application logs for your function that
      * Lambda sends to CloudWatch. Lambda only sends application logs at the selected
-     * level and lower.</p>
+     * level of detail and lower, where <code>TRACE</code> is the highest level and
+     * <code>FATAL</code> is the lowest.</p>
      */
     inline LoggingConfig& WithApplicationLogLevel(ApplicationLogLevel&& value) { SetApplicationLogLevel(std::move(value)); return *this;}
 
 
     /**
      * <p>Set this property to filter the system logs for your function that Lambda
-     * sends to CloudWatch. Lambda only sends system logs at the selected level and
-     * lower.</p>
+     * sends to CloudWatch. Lambda only sends system logs at the selected level of
+     * detail and lower, where <code>DEBUG</code> is the highest level and
+     * <code>WARN</code> is the lowest.</p>
      */
     inline const SystemLogLevel& GetSystemLogLevel() const{ return m_systemLogLevel; }
 
     /**
      * <p>Set this property to filter the system logs for your function that Lambda
-     * sends to CloudWatch. Lambda only sends system logs at the selected level and
-     * lower.</p>
+     * sends to CloudWatch. Lambda only sends system logs at the selected level of
+     * detail and lower, where <code>DEBUG</code> is the highest level and
+     * <code>WARN</code> is the lowest.</p>
      */
     inline bool SystemLogLevelHasBeenSet() const { return m_systemLogLevelHasBeenSet; }
 
     /**
      * <p>Set this property to filter the system logs for your function that Lambda
-     * sends to CloudWatch. Lambda only sends system logs at the selected level and
-     * lower.</p>
+     * sends to CloudWatch. Lambda only sends system logs at the selected level of
+     * detail and lower, where <code>DEBUG</code> is the highest level and
+     * <code>WARN</code> is the lowest.</p>
      */
     inline void SetSystemLogLevel(const SystemLogLevel& value) { m_systemLogLevelHasBeenSet = true; m_systemLogLevel = value; }
 
     /**
      * <p>Set this property to filter the system logs for your function that Lambda
-     * sends to CloudWatch. Lambda only sends system logs at the selected level and
-     * lower.</p>
+     * sends to CloudWatch. Lambda only sends system logs at the selected level of
+     * detail and lower, where <code>DEBUG</code> is the highest level and
+     * <code>WARN</code> is the lowest.</p>
      */
     inline void SetSystemLogLevel(SystemLogLevel&& value) { m_systemLogLevelHasBeenSet = true; m_systemLogLevel = std::move(value); }
 
     /**
      * <p>Set this property to filter the system logs for your function that Lambda
-     * sends to CloudWatch. Lambda only sends system logs at the selected level and
-     * lower.</p>
+     * sends to CloudWatch. Lambda only sends system logs at the selected level of
+     * detail and lower, where <code>DEBUG</code> is the highest level and
+     * <code>WARN</code> is the lowest.</p>
      */
     inline LoggingConfig& WithSystemLogLevel(const SystemLogLevel& value) { SetSystemLogLevel(value); return *this;}
 
     /**
      * <p>Set this property to filter the system logs for your function that Lambda
-     * sends to CloudWatch. Lambda only sends system logs at the selected level and
-     * lower.</p>
+     * sends to CloudWatch. Lambda only sends system logs at the selected level of
+     * detail and lower, where <code>DEBUG</code> is the highest level and
+     * <code>WARN</code> is the lowest.</p>
      */
     inline LoggingConfig& WithSystemLogLevel(SystemLogLevel&& value) { SetSystemLogLevel(std::move(value)); return *this;}
 

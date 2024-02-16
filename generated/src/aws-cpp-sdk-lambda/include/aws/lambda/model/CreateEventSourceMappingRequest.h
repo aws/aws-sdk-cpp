@@ -50,9 +50,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
@@ -62,9 +64,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
 
@@ -74,9 +78,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
@@ -86,9 +92,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
@@ -98,9 +106,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
@@ -110,9 +120,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
@@ -122,9 +134,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
@@ -134,9 +148,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 
@@ -580,38 +596,44 @@ namespace Model
 
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = value; }
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::move(value); }
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline CreateEventSourceMappingRequest& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline CreateEventSourceMappingRequest& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
 

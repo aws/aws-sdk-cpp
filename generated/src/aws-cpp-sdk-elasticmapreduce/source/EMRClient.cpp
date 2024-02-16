@@ -69,6 +69,7 @@
 #include <aws/elasticmapreduce/model/RunJobFlowRequest.h>
 #include <aws/elasticmapreduce/model/SetKeepJobFlowAliveWhenNoStepsRequest.h>
 #include <aws/elasticmapreduce/model/SetTerminationProtectionRequest.h>
+#include <aws/elasticmapreduce/model/SetUnhealthyNodeReplacementRequest.h>
 #include <aws/elasticmapreduce/model/SetVisibleToAllUsersRequest.h>
 #include <aws/elasticmapreduce/model/StartNotebookExecutionRequest.h>
 #include <aws/elasticmapreduce/model/StopNotebookExecutionRequest.h>
@@ -1458,6 +1459,32 @@ SetTerminationProtectionOutcome EMRClient::SetTerminationProtection(const SetTer
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetTerminationProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return SetTerminationProtectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SetUnhealthyNodeReplacementOutcome EMRClient::SetUnhealthyNodeReplacement(const SetUnhealthyNodeReplacementRequest& request) const
+{
+  AWS_OPERATION_GUARD(SetUnhealthyNodeReplacement);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetUnhealthyNodeReplacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SetUnhealthyNodeReplacement, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SetUnhealthyNodeReplacement, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SetUnhealthyNodeReplacement",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SetUnhealthyNodeReplacementOutcome>(
+    [&]()-> SetUnhealthyNodeReplacementOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetUnhealthyNodeReplacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return SetUnhealthyNodeReplacementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

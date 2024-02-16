@@ -18,6 +18,7 @@ namespace Model
     NOT_SET,
     RecordDeAggregation,
     Decompression,
+    CloudWatchLogProcessing,
     Lambda,
     MetadataExtraction,
     AppendDelimiterToRecord

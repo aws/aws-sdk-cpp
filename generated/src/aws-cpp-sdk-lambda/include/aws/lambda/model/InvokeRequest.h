@@ -272,49 +272,57 @@ namespace Model
 
     /**
      * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
-     * the function in the context object.</p>
+     * the function in the context object. Lambda passes the <code>ClientContext</code>
+     * object to your function for synchronous invocations only.</p>
      */
     inline const Aws::String& GetClientContext() const{ return m_clientContext; }
 
     /**
      * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
-     * the function in the context object.</p>
+     * the function in the context object. Lambda passes the <code>ClientContext</code>
+     * object to your function for synchronous invocations only.</p>
      */
     inline bool ClientContextHasBeenSet() const { return m_clientContextHasBeenSet; }
 
     /**
      * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
-     * the function in the context object.</p>
+     * the function in the context object. Lambda passes the <code>ClientContext</code>
+     * object to your function for synchronous invocations only.</p>
      */
     inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
 
     /**
      * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
-     * the function in the context object.</p>
+     * the function in the context object. Lambda passes the <code>ClientContext</code>
+     * object to your function for synchronous invocations only.</p>
      */
     inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::move(value); }
 
     /**
      * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
-     * the function in the context object.</p>
+     * the function in the context object. Lambda passes the <code>ClientContext</code>
+     * object to your function for synchronous invocations only.</p>
      */
     inline void SetClientContext(const char* value) { m_clientContextHasBeenSet = true; m_clientContext.assign(value); }
 
     /**
      * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
-     * the function in the context object.</p>
+     * the function in the context object. Lambda passes the <code>ClientContext</code>
+     * object to your function for synchronous invocations only.</p>
      */
     inline InvokeRequest& WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
 
     /**
      * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
-     * the function in the context object.</p>
+     * the function in the context object. Lambda passes the <code>ClientContext</code>
+     * object to your function for synchronous invocations only.</p>
      */
     inline InvokeRequest& WithClientContext(Aws::String&& value) { SetClientContext(std::move(value)); return *this;}
 
     /**
      * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
-     * the function in the context object.</p>
+     * the function in the context object. Lambda passes the <code>ClientContext</code>
+     * object to your function for synchronous invocations only.</p>
      */
     inline InvokeRequest& WithClientContext(const char* value) { SetClientContext(value); return *this;}
 

@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about the Amazon MSK cluster used as the source for a Kinesis Data
-   * Firehose delivery stream.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about the Amazon MSK cluster used as the source for a Firehose
+   * delivery stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/MSKSourceDescription">AWS
    * API Reference</a></p>
    */
@@ -154,38 +154,38 @@ namespace Model
 
 
     /**
-     * <p>Kinesis Data Firehose starts retrieving records from the topic within the
-     * Amazon MSK cluster starting with this timestamp.</p>
+     * <p>Firehose starts retrieving records from the topic within the Amazon MSK
+     * cluster starting with this timestamp.</p>
      */
     inline const Aws::Utils::DateTime& GetDeliveryStartTimestamp() const{ return m_deliveryStartTimestamp; }
 
     /**
-     * <p>Kinesis Data Firehose starts retrieving records from the topic within the
-     * Amazon MSK cluster starting with this timestamp.</p>
+     * <p>Firehose starts retrieving records from the topic within the Amazon MSK
+     * cluster starting with this timestamp.</p>
      */
     inline bool DeliveryStartTimestampHasBeenSet() const { return m_deliveryStartTimestampHasBeenSet; }
 
     /**
-     * <p>Kinesis Data Firehose starts retrieving records from the topic within the
-     * Amazon MSK cluster starting with this timestamp.</p>
+     * <p>Firehose starts retrieving records from the topic within the Amazon MSK
+     * cluster starting with this timestamp.</p>
      */
     inline void SetDeliveryStartTimestamp(const Aws::Utils::DateTime& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = value; }
 
     /**
-     * <p>Kinesis Data Firehose starts retrieving records from the topic within the
-     * Amazon MSK cluster starting with this timestamp.</p>
+     * <p>Firehose starts retrieving records from the topic within the Amazon MSK
+     * cluster starting with this timestamp.</p>
      */
     inline void SetDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = std::move(value); }
 
     /**
-     * <p>Kinesis Data Firehose starts retrieving records from the topic within the
-     * Amazon MSK cluster starting with this timestamp.</p>
+     * <p>Firehose starts retrieving records from the topic within the Amazon MSK
+     * cluster starting with this timestamp.</p>
      */
     inline MSKSourceDescription& WithDeliveryStartTimestamp(const Aws::Utils::DateTime& value) { SetDeliveryStartTimestamp(value); return *this;}
 
     /**
-     * <p>Kinesis Data Firehose starts retrieving records from the topic within the
-     * Amazon MSK cluster starting with this timestamp.</p>
+     * <p>Firehose starts retrieving records from the topic within the Amazon MSK
+     * cluster starting with this timestamp.</p>
      */
     inline MSKSourceDescription& WithDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { SetDeliveryStartTimestamp(std::move(value)); return *this;}
 

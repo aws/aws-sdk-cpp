@@ -285,80 +285,88 @@ namespace Model
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 

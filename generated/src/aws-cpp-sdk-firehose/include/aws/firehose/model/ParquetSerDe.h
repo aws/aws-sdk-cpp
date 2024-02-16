@@ -44,32 +44,32 @@ namespace Model
     /**
      * <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you
      * intend to copy the data from Amazon S3 to HDFS before querying. The default is
-     * 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for
-     * padding calculations.</p>
+     * 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding
+     * calculations.</p>
      */
     inline int GetBlockSizeBytes() const{ return m_blockSizeBytes; }
 
     /**
      * <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you
      * intend to copy the data from Amazon S3 to HDFS before querying. The default is
-     * 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for
-     * padding calculations.</p>
+     * 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding
+     * calculations.</p>
      */
     inline bool BlockSizeBytesHasBeenSet() const { return m_blockSizeBytesHasBeenSet; }
 
     /**
      * <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you
      * intend to copy the data from Amazon S3 to HDFS before querying. The default is
-     * 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for
-     * padding calculations.</p>
+     * 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding
+     * calculations.</p>
      */
     inline void SetBlockSizeBytes(int value) { m_blockSizeBytesHasBeenSet = true; m_blockSizeBytes = value; }
 
     /**
      * <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you
      * intend to copy the data from Amazon S3 to HDFS before querying. The default is
-     * 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for
-     * padding calculations.</p>
+     * 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding
+     * calculations.</p>
      */
     inline ParquetSerDe& WithBlockSizeBytes(int value) { SetBlockSizeBytes(value); return *this;}
 

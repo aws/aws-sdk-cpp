@@ -1425,7 +1425,7 @@ namespace EMR
          * <code>SetTerminationProtection</code> to <code>true</code>, you must first
          * unlock the job flow by a subsequent call to
          * <code>SetTerminationProtection</code> in which you set the value to
-         * <code>false</code>. </p> <p> For more information, see<a
+         * <code>false</code>. </p> <p> For more information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
          * Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1450,6 +1450,44 @@ namespace EMR
         void SetTerminationProtectionAsync(const SetTerminationProtectionRequestT& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EMRClient::SetTerminationProtection, request, handler, context);
+        }
+
+        /**
+         * <p>Specify whether to enable unhealthy node replacement, which lets Amazon EMR
+         * gracefully replace core nodes on a cluster if any nodes become unhealthy. For
+         * example, a node becomes unhealthy if disk usage is above 90%. If unhealthy node
+         * replacement is on and <code>TerminationProtected</code> are off, Amazon EMR
+         * immediately terminates the unhealthy core nodes. To use unhealthy node
+         * replacement and retain unhealthy core nodes, use to turn on termination
+         * protection. In such cases, Amazon EMR adds the unhealthy nodes to a denylist,
+         * reducing job interruptions and failures.</p> <p>If unhealthy node replacement is
+         * on, Amazon EMR notifies YARN and other applications on the cluster to stop
+         * scheduling tasks with these nodes, moves the data, and then terminates the
+         * nodes.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_UnhealthyNodeReplacement.html">graceful
+         * node replacement</a> in the <i>Amazon EMR Management Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetUnhealthyNodeReplacement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetUnhealthyNodeReplacementOutcome SetUnhealthyNodeReplacement(const Model::SetUnhealthyNodeReplacementRequest& request) const;
+
+        /**
+         * A Callable wrapper for SetUnhealthyNodeReplacement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SetUnhealthyNodeReplacementRequestT = Model::SetUnhealthyNodeReplacementRequest>
+        Model::SetUnhealthyNodeReplacementOutcomeCallable SetUnhealthyNodeReplacementCallable(const SetUnhealthyNodeReplacementRequestT& request) const
+        {
+            return SubmitCallable(&EMRClient::SetUnhealthyNodeReplacement, request);
+        }
+
+        /**
+         * An Async wrapper for SetUnhealthyNodeReplacement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SetUnhealthyNodeReplacementRequestT = Model::SetUnhealthyNodeReplacementRequest>
+        void SetUnhealthyNodeReplacementAsync(const SetUnhealthyNodeReplacementRequestT& request, const SetUnhealthyNodeReplacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRClient::SetUnhealthyNodeReplacement, request, handler, context);
         }
 
         /**
