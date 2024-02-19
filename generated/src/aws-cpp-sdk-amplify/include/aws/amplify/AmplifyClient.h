@@ -190,8 +190,8 @@ namespace Amplify
         }
 
         /**
-         * <p> Creates a new domain association for an Amplify app. This action associates
-         * a custom domain with the Amplify app </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new domain association for an Amplify app. This action associates a
+         * custom domain with the Amplify app </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociation">AWS
          * API Reference</a></p>
          */
@@ -318,7 +318,7 @@ namespace Amplify
         }
 
         /**
-         * <p> Deletes a domain association for an Amplify app. </p><p><h3>See Also:</h3>  
+         * <p>Deletes a domain association for an Amplify app. </p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteDomainAssociation">AWS
          * API Reference</a></p>
@@ -523,7 +523,7 @@ namespace Amplify
         }
 
         /**
-         * <p> Returns the domain information for an Amplify app. </p><p><h3>See Also:</h3>
+         * <p>Returns the domain information for an Amplify app. </p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetDomainAssociation">AWS
          * API Reference</a></p>
@@ -702,8 +702,8 @@ namespace Amplify
         }
 
         /**
-         * <p> Returns the domain associations for an Amplify app. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the domain associations for an Amplify app. </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListDomainAssociations">AWS
          * API Reference</a></p>
          */
@@ -986,8 +986,8 @@ namespace Amplify
         }
 
         /**
-         * <p> Creates a new domain association for an Amplify app.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new domain association for an Amplify app.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociation">AWS
          * API Reference</a></p>
          */

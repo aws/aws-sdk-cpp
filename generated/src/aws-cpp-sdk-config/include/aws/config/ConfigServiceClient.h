@@ -1132,7 +1132,7 @@ namespace ConfigService
          * the limit and the next token, you receive a paginated response.</p> <p>Limit and
          * next token are not applicable if you specify organization Config rule names. It
          * is only applicable, when you request all the organization Config rules.</p> <p>
-         * <i>For accounts within an organzation</i> </p> <p>If you deploy an
+         * <i>For accounts within an organization</i> </p> <p>If you deploy an
          * organizational rule or conformance pack in an organization administrator
          * account, and then establish a delegated administrator and deploy an
          * organizational rule or conformance pack in the delegated administrator account,
@@ -1205,8 +1205,8 @@ namespace ConfigService
          * <p>Limit and next token are not applicable if you specify organization
          * conformance packs names. They are only applicable, when you request all the
          * organization conformance packs. </p> <p> <i>For accounts within an
-         * organzation</i> </p> <p>If you deploy an organizational rule or conformance pack
-         * in an organization administrator account, and then establish a delegated
+         * organization</i> </p> <p>If you deploy an organizational rule or conformance
+         * pack in an organization administrator account, and then establish a delegated
          * administrator and deploy an organizational rule or conformance pack in the
          * delegated administrator account, you won't be able to see the organizational
          * rule or conformance pack in the organization administrator account from the
@@ -2558,18 +2558,30 @@ namespace ConfigService
          * <code>RemediationConfiguration</code> object for the Config rule. The Config
          * rule must already exist for you to add a remediation configuration. The target
          * (SSM document) must exist and have permissions to use the target. </p> 
-         * <p>If you make backward incompatible changes to the SSM document, you must call
-         * this again to ensure the remediations can run.</p> <p>This API does not support
-         * adding remediation configurations for service-linked Config Rules such as
-         * Organization Config rules, the rules deployed by conformance packs, and rules
-         * deployed by Amazon Web Services Security Hub.</p>   <p>For manual
-         * remediation configuration, you need to provide a value for
+         * <p> <b>Be aware of backward incompatible changes</b> </p> <p>If you make
+         * backward incompatible changes to the SSM document, you must call this again to
+         * ensure the remediations can run.</p> <p>This API does not support adding
+         * remediation configurations for service-linked Config Rules such as Organization
+         * Config rules, the rules deployed by conformance packs, and rules deployed by
+         * Amazon Web Services Security Hub.</p>   <p> <b>Required fields</b>
+         * </p> <p>For manual remediation configuration, you need to provide a value for
          * <code>automationAssumeRole</code> or use a value in the
          * <code>assumeRole</code>field to remediate your resources. The SSM automation
          * document can use either as long as it maps to a valid parameter.</p> <p>However,
          * for automatic remediation configuration, the only valid <code>assumeRole</code>
          * field value is <code>AutomationAssumeRole</code> and you need to provide a value
-         * for <code>AutomationAssumeRole</code> to remediate your resources.</p>
+         * for <code>AutomationAssumeRole</code> to remediate your resources.</p> 
+         *  <p> <b>Auto remediation can be initiated even for compliant resources</b>
+         * </p> <p>If you enable auto remediation for a specific Config rule using the <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html">PutRemediationConfigurations</a>
+         * API or the Config console, it initiates the remediation process for all
+         * non-compliant resources for that specific rule. The auto remediation process
+         * relies on the compliance data snapshot which is captured on a periodic basis.
+         * Any non-compliant resource that is updated between the snapshot schedule will
+         * continue to be remediated based on the last known compliance data snapshot.</p>
+         * <p>This means that in some cases auto remediation can be initiated even for
+         * compliant resources, since the bootstrap processor uses a database that can have
+         * stale evaluation results based on the last known compliance data snapshot.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">AWS
          * API Reference</a></p>
@@ -2597,26 +2609,39 @@ namespace ConfigService
         /**
          * <p>A remediation exception is when a specified resource is no longer considered
          * for auto-remediation. This API adds a new exception or updates an existing
-         * exception for a specified resource with a specified Config rule. </p> 
-         * <p>Config generates a remediation exception when a problem occurs running a
-         * remediation action for a specified resource. Remediation exceptions blocks
-         * auto-remediation until the exception is cleared.</p>   <p>When
-         * placing an exception on an Amazon Web Services resource, it is recommended that
-         * remediation is set as manual remediation until the given Config rule for the
-         * specified resource evaluates the resource as <code>NON_COMPLIANT</code>. Once
-         * the resource has been evaluated as <code>NON_COMPLIANT</code>, you can add
-         * remediation exceptions and change the remediation type back from Manual to Auto
-         * if you want to use auto-remediation. Otherwise, using auto-remediation before a
-         * <code>NON_COMPLIANT</code> evaluation result can delete resources before the
-         * exception is applied.</p>   <p>Placing an exception can only be
-         * performed on resources that are <code>NON_COMPLIANT</code>. If you use this API
-         * for <code>COMPLIANT</code> resources or resources that are
-         * <code>NOT_APPLICABLE</code>, a remediation exception will not be generated. For
-         * more information on the conditions that initiate the possible Config evaluation
-         * results, see <a
+         * exception for a specified resource with a specified Config rule. </p>  <p>
+         * <b>Exceptions block auto remediation</b> </p> <p>Config generates a remediation
+         * exception when a problem occurs running a remediation action for a specified
+         * resource. Remediation exceptions blocks auto-remediation until the exception is
+         * cleared.</p>   <p> <b>Manual remediation is recommended when
+         * placing an exception</b> </p> <p>When placing an exception on an Amazon Web
+         * Services resource, it is recommended that remediation is set as manual
+         * remediation until the given Config rule for the specified resource evaluates the
+         * resource as <code>NON_COMPLIANT</code>. Once the resource has been evaluated as
+         * <code>NON_COMPLIANT</code>, you can add remediation exceptions and change the
+         * remediation type back from Manual to Auto if you want to use auto-remediation.
+         * Otherwise, using auto-remediation before a <code>NON_COMPLIANT</code> evaluation
+         * result can delete resources before the exception is applied.</p>  
+         * <p> <b>Exceptions can only be performed on non-compliant resources</b> </p>
+         * <p>Placing an exception can only be performed on resources that are
+         * <code>NON_COMPLIANT</code>. If you use this API for <code>COMPLIANT</code>
+         * resources or resources that are <code>NOT_APPLICABLE</code>, a remediation
+         * exception will not be generated. For more information on the conditions that
+         * initiate the possible Config evaluation results, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts
-         * | Config Rules</a> in the <i>Config Developer Guide</i>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * | Config Rules</a> in the <i>Config Developer Guide</i>.</p>   <p>
+         * <b>Auto remediation can be initiated even for compliant resources</b> </p> <p>If
+         * you enable auto remediation for a specific Config rule using the <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html">PutRemediationConfigurations</a>
+         * API or the Config console, it initiates the remediation process for all
+         * non-compliant resources for that specific rule. The auto remediation process
+         * relies on the compliance data snapshot which is captured on a periodic basis.
+         * Any non-compliant resource that is updated between the snapshot schedule will
+         * continue to be remediated based on the last known compliance data snapshot.</p>
+         * <p>This means that in some cases auto remediation can be initiated even for
+         * compliant resources, since the bootstrap processor uses a database that can have
+         * stale evaluation results based on the last known compliance data snapshot.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">AWS
          * API Reference</a></p>
          */

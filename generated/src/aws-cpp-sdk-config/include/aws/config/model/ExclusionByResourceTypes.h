@@ -46,10 +46,10 @@ namespace Model
    * You cannot be record the global IAM resouce types in Regions supported by Config
    * after February 2022. This list where you cannot record the global IAM resource
    * types includes the following Regions:</p> <ul> <li> <p>Asia Pacific
-   * (Hyderabad)</p> </li> <li> <p>Asia Pacific (Melbourne)</p> </li> <li> <p>Europe
-   * (Spain)</p> </li> <li> <p>Europe (Zurich)</p> </li> <li> <p>Israel (Tel
-   * Aviv)</p> </li> <li> <p>Middle East (UAE)</p> </li> </ul> <p><h3>See
-   * Also:</h3>   <a
+   * (Hyderabad)</p> </li> <li> <p>Asia Pacific (Melbourne)</p> </li> <li> <p>Canada
+   * West (Calgary)</p> </li> <li> <p>Europe (Spain)</p> </li> <li> <p>Europe
+   * (Zurich)</p> </li> <li> <p>Israel (Tel Aviv)</p> </li> <li> <p>Middle East
+   * (UAE)</p> </li> </ul> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ExclusionByResourceTypes">AWS
    * API Reference</a></p>
    */

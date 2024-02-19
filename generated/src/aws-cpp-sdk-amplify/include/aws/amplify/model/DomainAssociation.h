@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amplify/model/DomainStatus.h>
+#include <aws/amplify/model/UpdateStatus.h>
+#include <aws/amplify/model/Certificate.h>
 #include <aws/amplify/model/SubDomain.h>
 #include <utility>
 
@@ -27,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p> Describes a domain association that associates a custom domain with an
-   * Amplify app. </p><p><h3>See Also:</h3>   <a
+   * <p>Describes the association between a custom domain and an Amplify app.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DomainAssociation">AWS
    * API Reference</a></p>
    */
@@ -271,42 +273,201 @@ namespace Model
 
 
     /**
-     * <p> The reason for the current status of the domain association. </p>
+     * <p>The status of the domain update operation that is currently in progress. The
+     * following list describes the valid update states.</p> <dl>
+     * <dt>REQUESTING_CERTIFICATE</dt> <dd> <p>The certificate is in the process of
+     * being updated.</p> </dd> <dt>PENDING_VERIFICATION</dt> <dd> <p>Indicates that an
+     * Amplify managed certificate is in the process of being verified. This occurs
+     * during the creation of a custom domain or when a custom domain is updated to use
+     * a managed certificate.</p> </dd> <dt>IMPORTING_CUSTOM_CERTIFICATE</dt> <dd>
+     * <p>Indicates that an Amplify custom certificate is in the process of being
+     * imported. This occurs during the creation of a custom domain or when a custom
+     * domain is updated to use a custom certificate.</p> </dd>
+     * <dt>PENDING_DEPLOYMENT</dt> <dd> <p>Indicates that the subdomain or certificate
+     * changes are being propagated.</p> </dd> <dt>AWAITING_APP_CNAME</dt> <dd>
+     * <p>Amplify is waiting for CNAME records corresponding to subdomains to be
+     * propagated. If your custom domain is on Route 53, Amplify handles this for you
+     * automatically. For more information about custom domains, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting
+     * up custom domains</a> in the <i>Amplify Hosting User Guide</i>. </p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The certificate has been associated with a
+     * domain.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The certificate has failed to
+     * be provisioned or associated, and there is no existing active certificate to
+     * roll back to.</p> </dd> </dl>
+     */
+    inline const UpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
+
+    /**
+     * <p>The status of the domain update operation that is currently in progress. The
+     * following list describes the valid update states.</p> <dl>
+     * <dt>REQUESTING_CERTIFICATE</dt> <dd> <p>The certificate is in the process of
+     * being updated.</p> </dd> <dt>PENDING_VERIFICATION</dt> <dd> <p>Indicates that an
+     * Amplify managed certificate is in the process of being verified. This occurs
+     * during the creation of a custom domain or when a custom domain is updated to use
+     * a managed certificate.</p> </dd> <dt>IMPORTING_CUSTOM_CERTIFICATE</dt> <dd>
+     * <p>Indicates that an Amplify custom certificate is in the process of being
+     * imported. This occurs during the creation of a custom domain or when a custom
+     * domain is updated to use a custom certificate.</p> </dd>
+     * <dt>PENDING_DEPLOYMENT</dt> <dd> <p>Indicates that the subdomain or certificate
+     * changes are being propagated.</p> </dd> <dt>AWAITING_APP_CNAME</dt> <dd>
+     * <p>Amplify is waiting for CNAME records corresponding to subdomains to be
+     * propagated. If your custom domain is on Route 53, Amplify handles this for you
+     * automatically. For more information about custom domains, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting
+     * up custom domains</a> in the <i>Amplify Hosting User Guide</i>. </p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The certificate has been associated with a
+     * domain.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The certificate has failed to
+     * be provisioned or associated, and there is no existing active certificate to
+     * roll back to.</p> </dd> </dl>
+     */
+    inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the domain update operation that is currently in progress. The
+     * following list describes the valid update states.</p> <dl>
+     * <dt>REQUESTING_CERTIFICATE</dt> <dd> <p>The certificate is in the process of
+     * being updated.</p> </dd> <dt>PENDING_VERIFICATION</dt> <dd> <p>Indicates that an
+     * Amplify managed certificate is in the process of being verified. This occurs
+     * during the creation of a custom domain or when a custom domain is updated to use
+     * a managed certificate.</p> </dd> <dt>IMPORTING_CUSTOM_CERTIFICATE</dt> <dd>
+     * <p>Indicates that an Amplify custom certificate is in the process of being
+     * imported. This occurs during the creation of a custom domain or when a custom
+     * domain is updated to use a custom certificate.</p> </dd>
+     * <dt>PENDING_DEPLOYMENT</dt> <dd> <p>Indicates that the subdomain or certificate
+     * changes are being propagated.</p> </dd> <dt>AWAITING_APP_CNAME</dt> <dd>
+     * <p>Amplify is waiting for CNAME records corresponding to subdomains to be
+     * propagated. If your custom domain is on Route 53, Amplify handles this for you
+     * automatically. For more information about custom domains, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting
+     * up custom domains</a> in the <i>Amplify Hosting User Guide</i>. </p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The certificate has been associated with a
+     * domain.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The certificate has failed to
+     * be provisioned or associated, and there is no existing active certificate to
+     * roll back to.</p> </dd> </dl>
+     */
+    inline void SetUpdateStatus(const UpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+
+    /**
+     * <p>The status of the domain update operation that is currently in progress. The
+     * following list describes the valid update states.</p> <dl>
+     * <dt>REQUESTING_CERTIFICATE</dt> <dd> <p>The certificate is in the process of
+     * being updated.</p> </dd> <dt>PENDING_VERIFICATION</dt> <dd> <p>Indicates that an
+     * Amplify managed certificate is in the process of being verified. This occurs
+     * during the creation of a custom domain or when a custom domain is updated to use
+     * a managed certificate.</p> </dd> <dt>IMPORTING_CUSTOM_CERTIFICATE</dt> <dd>
+     * <p>Indicates that an Amplify custom certificate is in the process of being
+     * imported. This occurs during the creation of a custom domain or when a custom
+     * domain is updated to use a custom certificate.</p> </dd>
+     * <dt>PENDING_DEPLOYMENT</dt> <dd> <p>Indicates that the subdomain or certificate
+     * changes are being propagated.</p> </dd> <dt>AWAITING_APP_CNAME</dt> <dd>
+     * <p>Amplify is waiting for CNAME records corresponding to subdomains to be
+     * propagated. If your custom domain is on Route 53, Amplify handles this for you
+     * automatically. For more information about custom domains, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting
+     * up custom domains</a> in the <i>Amplify Hosting User Guide</i>. </p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The certificate has been associated with a
+     * domain.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The certificate has failed to
+     * be provisioned or associated, and there is no existing active certificate to
+     * roll back to.</p> </dd> </dl>
+     */
+    inline void SetUpdateStatus(UpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
+
+    /**
+     * <p>The status of the domain update operation that is currently in progress. The
+     * following list describes the valid update states.</p> <dl>
+     * <dt>REQUESTING_CERTIFICATE</dt> <dd> <p>The certificate is in the process of
+     * being updated.</p> </dd> <dt>PENDING_VERIFICATION</dt> <dd> <p>Indicates that an
+     * Amplify managed certificate is in the process of being verified. This occurs
+     * during the creation of a custom domain or when a custom domain is updated to use
+     * a managed certificate.</p> </dd> <dt>IMPORTING_CUSTOM_CERTIFICATE</dt> <dd>
+     * <p>Indicates that an Amplify custom certificate is in the process of being
+     * imported. This occurs during the creation of a custom domain or when a custom
+     * domain is updated to use a custom certificate.</p> </dd>
+     * <dt>PENDING_DEPLOYMENT</dt> <dd> <p>Indicates that the subdomain or certificate
+     * changes are being propagated.</p> </dd> <dt>AWAITING_APP_CNAME</dt> <dd>
+     * <p>Amplify is waiting for CNAME records corresponding to subdomains to be
+     * propagated. If your custom domain is on Route 53, Amplify handles this for you
+     * automatically. For more information about custom domains, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting
+     * up custom domains</a> in the <i>Amplify Hosting User Guide</i>. </p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The certificate has been associated with a
+     * domain.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The certificate has failed to
+     * be provisioned or associated, and there is no existing active certificate to
+     * roll back to.</p> </dd> </dl>
+     */
+    inline DomainAssociation& WithUpdateStatus(const UpdateStatus& value) { SetUpdateStatus(value); return *this;}
+
+    /**
+     * <p>The status of the domain update operation that is currently in progress. The
+     * following list describes the valid update states.</p> <dl>
+     * <dt>REQUESTING_CERTIFICATE</dt> <dd> <p>The certificate is in the process of
+     * being updated.</p> </dd> <dt>PENDING_VERIFICATION</dt> <dd> <p>Indicates that an
+     * Amplify managed certificate is in the process of being verified. This occurs
+     * during the creation of a custom domain or when a custom domain is updated to use
+     * a managed certificate.</p> </dd> <dt>IMPORTING_CUSTOM_CERTIFICATE</dt> <dd>
+     * <p>Indicates that an Amplify custom certificate is in the process of being
+     * imported. This occurs during the creation of a custom domain or when a custom
+     * domain is updated to use a custom certificate.</p> </dd>
+     * <dt>PENDING_DEPLOYMENT</dt> <dd> <p>Indicates that the subdomain or certificate
+     * changes are being propagated.</p> </dd> <dt>AWAITING_APP_CNAME</dt> <dd>
+     * <p>Amplify is waiting for CNAME records corresponding to subdomains to be
+     * propagated. If your custom domain is on Route 53, Amplify handles this for you
+     * automatically. For more information about custom domains, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting
+     * up custom domains</a> in the <i>Amplify Hosting User Guide</i>. </p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The certificate has been associated with a
+     * domain.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The certificate has failed to
+     * be provisioned or associated, and there is no existing active certificate to
+     * roll back to.</p> </dd> </dl>
+     */
+    inline DomainAssociation& WithUpdateStatus(UpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Additional information that describes why the domain association is in the
+     * current state.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
-     * <p> The reason for the current status of the domain association. </p>
+     * <p> Additional information that describes why the domain association is in the
+     * current state.</p>
      */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
-     * <p> The reason for the current status of the domain association. </p>
+     * <p> Additional information that describes why the domain association is in the
+     * current state.</p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
-     * <p> The reason for the current status of the domain association. </p>
+     * <p> Additional information that describes why the domain association is in the
+     * current state.</p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
-     * <p> The reason for the current status of the domain association. </p>
+     * <p> Additional information that describes why the domain association is in the
+     * current state.</p>
      */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
     /**
-     * <p> The reason for the current status of the domain association. </p>
+     * <p> Additional information that describes why the domain association is in the
+     * current state.</p>
      */
     inline DomainAssociation& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
-     * <p> The reason for the current status of the domain association. </p>
+     * <p> Additional information that describes why the domain association is in the
+     * current state.</p>
      */
     inline DomainAssociation& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
-     * <p> The reason for the current status of the domain association. </p>
+     * <p> Additional information that describes why the domain association is in the
+     * current state.</p>
      */
     inline DomainAssociation& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
@@ -392,6 +553,67 @@ namespace Model
      */
     inline DomainAssociation& AddSubDomains(SubDomain&& value) { m_subDomainsHasBeenSet = true; m_subDomains.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Describes the SSL/TLS certificate for the domain association. This can be
+     * your own custom certificate or the default certificate that Amplify provisions
+     * for you.</p> <p>If you are updating your domain to use a different certificate,
+     * <code>certificate</code> points to the new certificate that is being created
+     * instead of the current active certificate. Otherwise, <code>certificate</code>
+     * points to the current active certificate.</p>
+     */
+    inline const Certificate& GetCertificate() const{ return m_certificate; }
+
+    /**
+     * <p>Describes the SSL/TLS certificate for the domain association. This can be
+     * your own custom certificate or the default certificate that Amplify provisions
+     * for you.</p> <p>If you are updating your domain to use a different certificate,
+     * <code>certificate</code> points to the new certificate that is being created
+     * instead of the current active certificate. Otherwise, <code>certificate</code>
+     * points to the current active certificate.</p>
+     */
+    inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
+
+    /**
+     * <p>Describes the SSL/TLS certificate for the domain association. This can be
+     * your own custom certificate or the default certificate that Amplify provisions
+     * for you.</p> <p>If you are updating your domain to use a different certificate,
+     * <code>certificate</code> points to the new certificate that is being created
+     * instead of the current active certificate. Otherwise, <code>certificate</code>
+     * points to the current active certificate.</p>
+     */
+    inline void SetCertificate(const Certificate& value) { m_certificateHasBeenSet = true; m_certificate = value; }
+
+    /**
+     * <p>Describes the SSL/TLS certificate for the domain association. This can be
+     * your own custom certificate or the default certificate that Amplify provisions
+     * for you.</p> <p>If you are updating your domain to use a different certificate,
+     * <code>certificate</code> points to the new certificate that is being created
+     * instead of the current active certificate. Otherwise, <code>certificate</code>
+     * points to the current active certificate.</p>
+     */
+    inline void SetCertificate(Certificate&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
+
+    /**
+     * <p>Describes the SSL/TLS certificate for the domain association. This can be
+     * your own custom certificate or the default certificate that Amplify provisions
+     * for you.</p> <p>If you are updating your domain to use a different certificate,
+     * <code>certificate</code> points to the new certificate that is being created
+     * instead of the current active certificate. Otherwise, <code>certificate</code>
+     * points to the current active certificate.</p>
+     */
+    inline DomainAssociation& WithCertificate(const Certificate& value) { SetCertificate(value); return *this;}
+
+    /**
+     * <p>Describes the SSL/TLS certificate for the domain association. This can be
+     * your own custom certificate or the default certificate that Amplify provisions
+     * for you.</p> <p>If you are updating your domain to use a different certificate,
+     * <code>certificate</code> points to the new certificate that is being created
+     * instead of the current active certificate. Otherwise, <code>certificate</code>
+     * points to the current active certificate.</p>
+     */
+    inline DomainAssociation& WithCertificate(Certificate&& value) { SetCertificate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainAssociationArn;
@@ -412,6 +634,9 @@ namespace Model
     DomainStatus m_domainStatus;
     bool m_domainStatusHasBeenSet = false;
 
+    UpdateStatus m_updateStatus;
+    bool m_updateStatusHasBeenSet = false;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
 
@@ -420,6 +645,9 @@ namespace Model
 
     Aws::Vector<SubDomain> m_subDomains;
     bool m_subDomainsHasBeenSet = false;
+
+    Certificate m_certificate;
+    bool m_certificateHasBeenSet = false;
   };
 
 } // namespace Model
