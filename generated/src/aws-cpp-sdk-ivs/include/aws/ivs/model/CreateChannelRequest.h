@@ -89,54 +89,42 @@ namespace Model
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline const ChannelLatencyMode& GetLatencyMode() const{ return m_latencyMode; }
 
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline bool LatencyModeHasBeenSet() const { return m_latencyModeHasBeenSet; }
 
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline void SetLatencyMode(const ChannelLatencyMode& value) { m_latencyModeHasBeenSet = true; m_latencyMode = value; }
 
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline void SetLatencyMode(ChannelLatencyMode&& value) { m_latencyModeHasBeenSet = true; m_latencyMode = std::move(value); }
 
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline CreateChannelRequest& WithLatencyMode(const ChannelLatencyMode& value) { SetLatencyMode(value); return *this;}
 
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline CreateChannelRequest& WithLatencyMode(ChannelLatencyMode&& value) { SetLatencyMode(std::move(value)); return *this;}
 

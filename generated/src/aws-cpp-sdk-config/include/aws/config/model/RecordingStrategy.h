@@ -90,9 +90,9 @@ namespace Model
      * resouce types in Regions supported by Config after February 2022. This list
      * where you cannot record the global IAM resource types includes the following
      * Regions:</p> <ul> <li> <p>Asia Pacific (Hyderabad)</p> </li> <li> <p>Asia
-     * Pacific (Melbourne)</p> </li> <li> <p>Europe (Spain)</p> </li> <li> <p>Europe
-     * (Zurich)</p> </li> <li> <p>Israel (Tel Aviv)</p> </li> <li> <p>Middle East
-     * (UAE)</p> </li> </ul> 
+     * Pacific (Melbourne)</p> </li> <li> <p>Canada West (Calgary)</p> </li> <li>
+     * <p>Europe (Spain)</p> </li> <li> <p>Europe (Zurich)</p> </li> <li> <p>Israel
+     * (Tel Aviv)</p> </li> <li> <p>Middle East (UAE)</p> </li> </ul> 
      */
     inline const RecordingStrategyType& GetUseOnly() const{ return m_useOnly; }
 
@@ -148,9 +148,9 @@ namespace Model
      * resouce types in Regions supported by Config after February 2022. This list
      * where you cannot record the global IAM resource types includes the following
      * Regions:</p> <ul> <li> <p>Asia Pacific (Hyderabad)</p> </li> <li> <p>Asia
-     * Pacific (Melbourne)</p> </li> <li> <p>Europe (Spain)</p> </li> <li> <p>Europe
-     * (Zurich)</p> </li> <li> <p>Israel (Tel Aviv)</p> </li> <li> <p>Middle East
-     * (UAE)</p> </li> </ul> 
+     * Pacific (Melbourne)</p> </li> <li> <p>Canada West (Calgary)</p> </li> <li>
+     * <p>Europe (Spain)</p> </li> <li> <p>Europe (Zurich)</p> </li> <li> <p>Israel
+     * (Tel Aviv)</p> </li> <li> <p>Middle East (UAE)</p> </li> </ul> 
      */
     inline bool UseOnlyHasBeenSet() const { return m_useOnlyHasBeenSet; }
 
@@ -206,9 +206,9 @@ namespace Model
      * resouce types in Regions supported by Config after February 2022. This list
      * where you cannot record the global IAM resource types includes the following
      * Regions:</p> <ul> <li> <p>Asia Pacific (Hyderabad)</p> </li> <li> <p>Asia
-     * Pacific (Melbourne)</p> </li> <li> <p>Europe (Spain)</p> </li> <li> <p>Europe
-     * (Zurich)</p> </li> <li> <p>Israel (Tel Aviv)</p> </li> <li> <p>Middle East
-     * (UAE)</p> </li> </ul> 
+     * Pacific (Melbourne)</p> </li> <li> <p>Canada West (Calgary)</p> </li> <li>
+     * <p>Europe (Spain)</p> </li> <li> <p>Europe (Zurich)</p> </li> <li> <p>Israel
+     * (Tel Aviv)</p> </li> <li> <p>Middle East (UAE)</p> </li> </ul> 
      */
     inline void SetUseOnly(const RecordingStrategyType& value) { m_useOnlyHasBeenSet = true; m_useOnly = value; }
 
@@ -264,9 +264,9 @@ namespace Model
      * resouce types in Regions supported by Config after February 2022. This list
      * where you cannot record the global IAM resource types includes the following
      * Regions:</p> <ul> <li> <p>Asia Pacific (Hyderabad)</p> </li> <li> <p>Asia
-     * Pacific (Melbourne)</p> </li> <li> <p>Europe (Spain)</p> </li> <li> <p>Europe
-     * (Zurich)</p> </li> <li> <p>Israel (Tel Aviv)</p> </li> <li> <p>Middle East
-     * (UAE)</p> </li> </ul> 
+     * Pacific (Melbourne)</p> </li> <li> <p>Canada West (Calgary)</p> </li> <li>
+     * <p>Europe (Spain)</p> </li> <li> <p>Europe (Zurich)</p> </li> <li> <p>Israel
+     * (Tel Aviv)</p> </li> <li> <p>Middle East (UAE)</p> </li> </ul> 
      */
     inline void SetUseOnly(RecordingStrategyType&& value) { m_useOnlyHasBeenSet = true; m_useOnly = std::move(value); }
 
@@ -322,9 +322,9 @@ namespace Model
      * resouce types in Regions supported by Config after February 2022. This list
      * where you cannot record the global IAM resource types includes the following
      * Regions:</p> <ul> <li> <p>Asia Pacific (Hyderabad)</p> </li> <li> <p>Asia
-     * Pacific (Melbourne)</p> </li> <li> <p>Europe (Spain)</p> </li> <li> <p>Europe
-     * (Zurich)</p> </li> <li> <p>Israel (Tel Aviv)</p> </li> <li> <p>Middle East
-     * (UAE)</p> </li> </ul> 
+     * Pacific (Melbourne)</p> </li> <li> <p>Canada West (Calgary)</p> </li> <li>
+     * <p>Europe (Spain)</p> </li> <li> <p>Europe (Zurich)</p> </li> <li> <p>Israel
+     * (Tel Aviv)</p> </li> <li> <p>Middle East (UAE)</p> </li> </ul> 
      */
     inline RecordingStrategy& WithUseOnly(const RecordingStrategyType& value) { SetUseOnly(value); return *this;}
 
@@ -380,9 +380,9 @@ namespace Model
      * resouce types in Regions supported by Config after February 2022. This list
      * where you cannot record the global IAM resource types includes the following
      * Regions:</p> <ul> <li> <p>Asia Pacific (Hyderabad)</p> </li> <li> <p>Asia
-     * Pacific (Melbourne)</p> </li> <li> <p>Europe (Spain)</p> </li> <li> <p>Europe
-     * (Zurich)</p> </li> <li> <p>Israel (Tel Aviv)</p> </li> <li> <p>Middle East
-     * (UAE)</p> </li> </ul> 
+     * Pacific (Melbourne)</p> </li> <li> <p>Canada West (Calgary)</p> </li> <li>
+     * <p>Europe (Spain)</p> </li> <li> <p>Europe (Zurich)</p> </li> <li> <p>Israel
+     * (Tel Aviv)</p> </li> <li> <p>Middle East (UAE)</p> </li> </ul> 
      */
     inline RecordingStrategy& WithUseOnly(RecordingStrategyType&& value) { SetUseOnly(std::move(value)); return *this;}
 

@@ -47,64 +47,56 @@ namespace Model
     /**
      * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
      * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
+     * and Amazon Web Services Region for the SSM document.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
      * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
+     * and Amazon Web Services Region for the SSM document.</p>
      */
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
      * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
+     * and Amazon Web Services Region for the SSM document.</p>
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
      * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
+     * and Amazon Web Services Region for the SSM document.</p>
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
      * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
+     * and Amazon Web Services Region for the SSM document.</p>
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
      * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
+     * and Amazon Web Services Region for the SSM document.</p>
      */
     inline TemplateSSMDocumentDetails& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
      * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
+     * and Amazon Web Services Region for the SSM document.</p>
      */
     inline TemplateSSMDocumentDetails& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
      * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
+     * and Amazon Web Services Region for the SSM document.</p>
      */
     inline TemplateSSMDocumentDetails& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 

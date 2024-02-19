@@ -122,7 +122,7 @@ namespace Model
     /**
      * <p>The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
      * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
-     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * a 301 (moved permanently) redirect rule. This and all future requests should be
      * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
      * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
      * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
@@ -133,7 +133,7 @@ namespace Model
     /**
      * <p>The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
      * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
-     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * a 301 (moved permanently) redirect rule. This and all future requests should be
      * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
      * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
      * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
@@ -144,7 +144,7 @@ namespace Model
     /**
      * <p>The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
      * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
-     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * a 301 (moved permanently) redirect rule. This and all future requests should be
      * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
      * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
      * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
@@ -155,7 +155,7 @@ namespace Model
     /**
      * <p>The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
      * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
-     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * a 301 (moved permanently) redirect rule. This and all future requests should be
      * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
      * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
      * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
@@ -166,7 +166,7 @@ namespace Model
     /**
      * <p>The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
      * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
-     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * a 301 (moved permanently) redirect rule. This and all future requests should be
      * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
      * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
      * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
@@ -177,7 +177,7 @@ namespace Model
     /**
      * <p>The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
      * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
-     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * a 301 (moved permanently) redirect rule. This and all future requests should be
      * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
      * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
      * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
@@ -188,7 +188,7 @@ namespace Model
     /**
      * <p>The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
      * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
-     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * a 301 (moved permanently) redirect rule. This and all future requests should be
      * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
      * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
      * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
@@ -199,7 +199,7 @@ namespace Model
     /**
      * <p>The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
      * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
-     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * a 301 (moved permanently) redirect rule. This and all future requests should be
      * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
      * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
      * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite

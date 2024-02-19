@@ -27,9 +27,12 @@ DomainAssociation::DomainAssociation() :
     m_autoSubDomainIAMRoleHasBeenSet(false),
     m_domainStatus(DomainStatus::NOT_SET),
     m_domainStatusHasBeenSet(false),
+    m_updateStatus(UpdateStatus::NOT_SET),
+    m_updateStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_certificateVerificationDNSRecordHasBeenSet(false),
-    m_subDomainsHasBeenSet(false)
+    m_subDomainsHasBeenSet(false),
+    m_certificateHasBeenSet(false)
 {
 }
 
@@ -42,9 +45,12 @@ DomainAssociation::DomainAssociation(JsonView jsonValue) :
     m_autoSubDomainIAMRoleHasBeenSet(false),
     m_domainStatus(DomainStatus::NOT_SET),
     m_domainStatusHasBeenSet(false),
+    m_updateStatus(UpdateStatus::NOT_SET),
+    m_updateStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_certificateVerificationDNSRecordHasBeenSet(false),
-    m_subDomainsHasBeenSet(false)
+    m_subDomainsHasBeenSet(false),
+    m_certificateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +102,13 @@ DomainAssociation& DomainAssociation::operator =(JsonView jsonValue)
     m_domainStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("updateStatus"))
+  {
+    m_updateStatus = UpdateStatusMapper::GetUpdateStatusForName(jsonValue.GetString("updateStatus"));
+
+    m_updateStatusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
@@ -118,6 +131,13 @@ DomainAssociation& DomainAssociation::operator =(JsonView jsonValue)
       m_subDomains.push_back(subDomainsJsonList[subDomainsIndex].AsObject());
     }
     m_subDomainsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("certificate"))
+  {
+    m_certificate = jsonValue.GetObject("certificate");
+
+    m_certificateHasBeenSet = true;
   }
 
   return *this;
@@ -167,6 +187,11 @@ JsonValue DomainAssociation::Jsonize() const
    payload.WithString("domainStatus", DomainStatusMapper::GetNameForDomainStatus(m_domainStatus));
   }
 
+  if(m_updateStatusHasBeenSet)
+  {
+   payload.WithString("updateStatus", UpdateStatusMapper::GetNameForUpdateStatus(m_updateStatus));
+  }
+
   if(m_statusReasonHasBeenSet)
   {
    payload.WithString("statusReason", m_statusReason);
@@ -187,6 +212,12 @@ JsonValue DomainAssociation::Jsonize() const
      subDomainsJsonList[subDomainsIndex].AsObject(m_subDomains[subDomainsIndex].Jsonize());
    }
    payload.WithArray("subDomains", std::move(subDomainsJsonList));
+
+  }
+
+  if(m_certificateHasBeenSet)
+  {
+   payload.WithObject("certificate", m_certificate.Jsonize());
 
   }
 

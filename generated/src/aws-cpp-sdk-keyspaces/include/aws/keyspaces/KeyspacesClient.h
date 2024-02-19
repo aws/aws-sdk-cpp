@@ -288,7 +288,14 @@ namespace Keyspaces
          * automatically in response to application traffic. For more information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
          * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
-         * <i>Amazon Keyspaces Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <i>Amazon Keyspaces Developer Guide</i>.</p>  <p>
+         * <code>GetTableAutoScalingSettings</code> can't be used as an action in an IAM
+         * policy.</p>  <p>To define permissions for
+         * <code>GetTableAutoScalingSettings</code>, you must allow the following two
+         * actions in the IAM policy statement's <code>Action</code> element:</p> <ul> <li>
+         * <p> <code>application-autoscaling:DescribeScalableTargets</code> </p> </li> <li>
+         * <p> <code>application-autoscaling:DescribeScalingPolicies</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetTableAutoScalingSettings">AWS
          * API Reference</a></p>
          */
