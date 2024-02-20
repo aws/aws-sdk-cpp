@@ -37,6 +37,7 @@ namespace Model
     dotnetcore2_1,
     dotnetcore3_1,
     dotnet6,
+    dotnet8,
     nodejs4_3_edge,
     go1_x,
     ruby2_5,
