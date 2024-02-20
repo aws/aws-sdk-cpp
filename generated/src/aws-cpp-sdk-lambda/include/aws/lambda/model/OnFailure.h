@@ -51,8 +51,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination">self-managed
      * Kafka</a> or <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
-     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
-     * destination.</p>
+     * MSK</a>, you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3
+     * bucket as the destination.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
@@ -70,8 +70,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination">self-managed
      * Kafka</a> or <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
-     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
-     * destination.</p>
+     * MSK</a>, you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3
+     * bucket as the destination.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
@@ -89,8 +89,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination">self-managed
      * Kafka</a> or <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
-     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
-     * destination.</p>
+     * MSK</a>, you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3
+     * bucket as the destination.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
@@ -108,8 +108,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination">self-managed
      * Kafka</a> or <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
-     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
-     * destination.</p>
+     * MSK</a>, you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3
+     * bucket as the destination.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
@@ -127,8 +127,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination">self-managed
      * Kafka</a> or <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
-     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
-     * destination.</p>
+     * MSK</a>, you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3
+     * bucket as the destination.</p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
@@ -146,8 +146,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination">self-managed
      * Kafka</a> or <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
-     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
-     * destination.</p>
+     * MSK</a>, you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3
+     * bucket as the destination.</p>
      */
     inline OnFailure& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
@@ -165,8 +165,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination">self-managed
      * Kafka</a> or <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
-     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
-     * destination.</p>
+     * MSK</a>, you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3
+     * bucket as the destination.</p>
      */
     inline OnFailure& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
@@ -184,8 +184,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination">self-managed
      * Kafka</a> or <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
-     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
-     * destination.</p>
+     * MSK</a>, you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3
+     * bucket as the destination.</p>
      */
     inline OnFailure& WithDestination(const char* value) { SetDestination(value); return *this;}
 

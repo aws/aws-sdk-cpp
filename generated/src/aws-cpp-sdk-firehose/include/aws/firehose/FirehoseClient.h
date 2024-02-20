@@ -242,29 +242,6 @@ namespace Firehose
         }
 
         /**
-         * 
-         */
-        virtual Model::GetKinesisStreamOutcome GetKinesisStream(const Model::GetKinesisStreamRequest& request) const;
-
-        /**
-         * A Callable wrapper for GetKinesisStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename GetKinesisStreamRequestT = Model::GetKinesisStreamRequest>
-        Model::GetKinesisStreamOutcomeCallable GetKinesisStreamCallable(const GetKinesisStreamRequestT& request) const
-        {
-            return SubmitCallable(&FirehoseClient::GetKinesisStream, request);
-        }
-
-        /**
-         * An Async wrapper for GetKinesisStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename GetKinesisStreamRequestT = Model::GetKinesisStreamRequest>
-        void GetKinesisStreamAsync(const GetKinesisStreamRequestT& request, const GetKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&FirehoseClient::GetKinesisStream, request, handler, context);
-        }
-
-        /**
          * <p>Lists your delivery streams in alphabetical order of their names.</p> <p>The
          * number of delivery streams might be too large to return using a single call to
          * <code>ListDeliveryStreams</code>. You can limit the number of delivery streams
@@ -691,29 +668,6 @@ namespace Firehose
         void UpdateDestinationAsync(const UpdateDestinationRequestT& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&FirehoseClient::UpdateDestination, request, handler, context);
-        }
-
-        /**
-         * 
-         */
-        virtual Model::VerifyResourcesExistForTagrisOutcome VerifyResourcesExistForTagris(const Model::VerifyResourcesExistForTagrisRequest& request) const;
-
-        /**
-         * A Callable wrapper for VerifyResourcesExistForTagris that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename VerifyResourcesExistForTagrisRequestT = Model::VerifyResourcesExistForTagrisRequest>
-        Model::VerifyResourcesExistForTagrisOutcomeCallable VerifyResourcesExistForTagrisCallable(const VerifyResourcesExistForTagrisRequestT& request) const
-        {
-            return SubmitCallable(&FirehoseClient::VerifyResourcesExistForTagris, request);
-        }
-
-        /**
-         * An Async wrapper for VerifyResourcesExistForTagris that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename VerifyResourcesExistForTagrisRequestT = Model::VerifyResourcesExistForTagrisRequest>
-        void VerifyResourcesExistForTagrisAsync(const VerifyResourcesExistForTagrisRequestT& request, const VerifyResourcesExistForTagrisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&FirehoseClient::VerifyResourcesExistForTagris, request, handler, context);
         }
 
 

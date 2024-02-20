@@ -549,32 +549,37 @@ namespace Model
 
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic
-     * destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event
+     * sources only) A configuration object that specifies the destination of an event
+     * after Lambda processes it.</p>
      */
     inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic
-     * destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event
+     * sources only) A configuration object that specifies the destination of an event
+     * after Lambda processes it.</p>
      */
     inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfig = value; }
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic
-     * destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event
+     * sources only) A configuration object that specifies the destination of an event
+     * after Lambda processes it.</p>
      */
     inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfig = std::move(value); }
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic
-     * destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event
+     * sources only) A configuration object that specifies the destination of an event
+     * after Lambda processes it.</p>
      */
     inline GetEventSourceMappingResult& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic
-     * destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event
+     * sources only) A configuration object that specifies the destination of an event
+     * after Lambda processes it.</p>
      */
     inline GetEventSourceMappingResult& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
 
