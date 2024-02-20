@@ -151,7 +151,7 @@ void* WinHttpSyncHttpClient::OpenRequest(const std::shared_ptr<HttpRequest>& req
     LPCWSTR accept[2] = { nullptr, nullptr };
 
     DWORD requestFlags = WINHTTP_FLAG_REFRESH |
-        (request->GetUri().GetScheme() == Scheme::HTTPS ? WINHTTP_FLAG_SECURE : 0);
+        (request->GetUri().GetScheme() == Scheme::HTTPS && m_verifySSL ? WINHTTP_FLAG_SECURE : 0);
 
     Aws::WString acceptHeader(L"*/*");
 
