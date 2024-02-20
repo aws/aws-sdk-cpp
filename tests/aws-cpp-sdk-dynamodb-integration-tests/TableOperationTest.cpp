@@ -681,6 +681,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         hashKey.SetS(ss.str());
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(crudCallbacksTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -716,6 +717,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
 
     ScanRequest scanRequest;
     scanRequest.WithTableName(crudCallbacksTestTableName);
+    scanRequest.WithConsistentRead(true);
 
     ScanOutcome scanOutcome = m_client->Scan(scanRequest);
     AWS_EXPECT_SUCCESS(scanOutcome);
@@ -759,6 +761,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         hashKey.SetS(ss.str());
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(crudCallbacksTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
 
         Aws::Vector<Aws::String> attributesToGet;
