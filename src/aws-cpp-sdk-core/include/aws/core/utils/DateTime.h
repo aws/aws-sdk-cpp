@@ -70,9 +70,11 @@ namespace Aws
             DateTime(int64_t millisSinceEpoch);
 
             /**
-             * Initializes time point to epoch time in seconds.millis
+             * Initializes time point to epoch time in seconds with a millis mantissa,
+             *
+             * i.e. 1.1 would be 1100 milliseconds
              */
-            DateTime(double epoch_millis);
+            DateTime(double secondsSinceEpoch);
 
             /**
              * Initializes time point to value represented by timestamp and format.
@@ -95,7 +97,9 @@ namespace Aws
             DateTime operator-(const std::chrono::milliseconds& a) const;
 
             /**
-             * Assign from seconds.millis since epoch.
+             * Initializes time point to epoch time in seconds with a millis mantissa,
+             *
+             * i.e. 1.1 would be 1100 milliseconds
              */
             DateTime& operator=(double secondsSinceEpoch);
 
@@ -145,7 +149,9 @@ namespace Aws
             Aws::String ToGmtStringWithMs() const;
 
             /**
-             * Get the representation of this datetime as seconds.milliseconds since epoch
+             * Get the representation of this datetime as seconds with a millis mantissa since epoch
+             *
+             * i.e. 1.1 would be 1100 milliseconds
              */
             double SecondsWithMSPrecision() const;
 
