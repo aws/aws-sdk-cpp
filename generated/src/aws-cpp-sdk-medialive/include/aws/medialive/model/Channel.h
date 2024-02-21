@@ -166,7 +166,6 @@ destination
      * per output. For other types (HLS, for example), there is
 one destination per
      * packager.
-
      */
     inline const Aws::Vector<OutputDestination>& GetDestinations() const{ return m_destinations; }
 
@@ -176,7 +175,6 @@ destination
      * per output. For other types (HLS, for example), there is
 one destination per
      * packager.
-
      */
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
 
@@ -186,7 +184,6 @@ destination
      * per output. For other types (HLS, for example), there is
 one destination per
      * packager.
-
      */
     inline void SetDestinations(const Aws::Vector<OutputDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
@@ -196,7 +193,6 @@ destination
      * per output. For other types (HLS, for example), there is
 one destination per
      * packager.
-
      */
     inline void SetDestinations(Aws::Vector<OutputDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
 
@@ -206,7 +202,6 @@ destination
      * per output. For other types (HLS, for example), there is
 one destination per
      * packager.
-
      */
     inline Channel& WithDestinations(const Aws::Vector<OutputDestination>& value) { SetDestinations(value); return *this;}
 
@@ -216,7 +211,6 @@ destination
      * per output. For other types (HLS, for example), there is
 one destination per
      * packager.
-
      */
     inline Channel& WithDestinations(Aws::Vector<OutputDestination>&& value) { SetDestinations(std::move(value)); return *this;}
 
@@ -226,7 +220,6 @@ destination
      * per output. For other types (HLS, for example), there is
 one destination per
      * packager.
-
      */
     inline Channel& AddDestinations(const OutputDestination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
 
@@ -236,7 +229,6 @@ destination
      * per output. For other types (HLS, for example), there is
 one destination per
      * packager.
-
      */
     inline Channel& AddDestinations(OutputDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
 

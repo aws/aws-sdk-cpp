@@ -42,7 +42,6 @@ namespace Model
      * The system-generated static IP address of endpoint.
 It remains fixed for the
      * lifetime of the input.
-
      */
     inline const Aws::String& GetIp() const{ return m_ip; }
 
@@ -50,7 +49,6 @@ It remains fixed for the
      * The system-generated static IP address of endpoint.
 It remains fixed for the
      * lifetime of the input.
-
      */
     inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
 
@@ -58,7 +56,6 @@ It remains fixed for the
      * The system-generated static IP address of endpoint.
 It remains fixed for the
      * lifetime of the input.
-
      */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
@@ -66,7 +63,6 @@ It remains fixed for the
      * The system-generated static IP address of endpoint.
 It remains fixed for the
      * lifetime of the input.
-
      */
     inline void SetIp(Aws::String&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
 
@@ -74,7 +70,6 @@ It remains fixed for the
      * The system-generated static IP address of endpoint.
 It remains fixed for the
      * lifetime of the input.
-
      */
     inline void SetIp(const char* value) { m_ipHasBeenSet = true; m_ip.assign(value); }
 
@@ -82,7 +77,6 @@ It remains fixed for the
      * The system-generated static IP address of endpoint.
 It remains fixed for the
      * lifetime of the input.
-
      */
     inline InputDestination& WithIp(const Aws::String& value) { SetIp(value); return *this;}
 
@@ -90,7 +84,6 @@ It remains fixed for the
      * The system-generated static IP address of endpoint.
 It remains fixed for the
      * lifetime of the input.
-
      */
     inline InputDestination& WithIp(Aws::String&& value) { SetIp(std::move(value)); return *this;}
 
@@ -98,7 +91,6 @@ It remains fixed for the
      * The system-generated static IP address of endpoint.
 It remains fixed for the
      * lifetime of the input.
-
      */
     inline InputDestination& WithIp(const char* value) { SetIp(value); return *this;}
 
@@ -147,56 +139,48 @@ It remains fixed for the
     /**
      * This represents the endpoint that the customer stream will be
 pushed to.
-
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
      * This represents the endpoint that the customer stream will be
 pushed to.
-
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * This represents the endpoint that the customer stream will be
 pushed to.
-
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
      * This represents the endpoint that the customer stream will be
 pushed to.
-
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
      * This represents the endpoint that the customer stream will be
 pushed to.
-
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
      * This represents the endpoint that the customer stream will be
 pushed to.
-
      */
     inline InputDestination& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
      * This represents the endpoint that the customer stream will be
 pushed to.
-
      */
     inline InputDestination& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
      * This represents the endpoint that the customer stream will be
 pushed to.
-
      */
     inline InputDestination& WithUrl(const char* value) { SetUrl(value); return *this;}
 

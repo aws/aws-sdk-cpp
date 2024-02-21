@@ -39,16 +39,17 @@ namespace MediaLive
 namespace Model
 {
   /**
-   * Placeholder documentation for DescribeChannelResponse<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeChannelResponse">AWS
+   * Placeholder documentation for RestartChannelPipelinesResponse<p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelinesResponse">AWS
    * API Reference</a></p>
    */
-  class DescribeChannelResult
+  class RestartChannelPipelinesResult
   {
   public:
-    AWS_MEDIALIVE_API DescribeChannelResult();
-    AWS_MEDIALIVE_API DescribeChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_MEDIALIVE_API DescribeChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API RestartChannelPipelinesResult();
+    AWS_MEDIALIVE_API RestartChannelPipelinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API RestartChannelPipelinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -74,17 +75,17 @@ namespace Model
     /**
      * The unique arn of the channel.
      */
-    inline DescribeChannelResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline RestartChannelPipelinesResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * The unique arn of the channel.
      */
-    inline DescribeChannelResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * The unique arn of the channel.
      */
-    inline DescribeChannelResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline RestartChannelPipelinesResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -105,12 +106,12 @@ namespace Model
     /**
      * Specification of CDI inputs for this channel
      */
-    inline DescribeChannelResult& WithCdiInputSpecification(const CdiInputSpecification& value) { SetCdiInputSpecification(value); return *this;}
+    inline RestartChannelPipelinesResult& WithCdiInputSpecification(const CdiInputSpecification& value) { SetCdiInputSpecification(value); return *this;}
 
     /**
      * Specification of CDI inputs for this channel
      */
-    inline DescribeChannelResult& WithCdiInputSpecification(CdiInputSpecification&& value) { SetCdiInputSpecification(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithCdiInputSpecification(CdiInputSpecification&& value) { SetCdiInputSpecification(std::move(value)); return *this;}
 
 
     /**
@@ -135,13 +136,13 @@ namespace Model
      * The class for this channel. STANDARD for a channel with two pipelines or
      * SINGLE_PIPELINE for a channel with one pipeline.
      */
-    inline DescribeChannelResult& WithChannelClass(const ChannelClass& value) { SetChannelClass(value); return *this;}
+    inline RestartChannelPipelinesResult& WithChannelClass(const ChannelClass& value) { SetChannelClass(value); return *this;}
 
     /**
      * The class for this channel. STANDARD for a channel with two pipelines or
      * SINGLE_PIPELINE for a channel with one pipeline.
      */
-    inline DescribeChannelResult& WithChannelClass(ChannelClass&& value) { SetChannelClass(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithChannelClass(ChannelClass&& value) { SetChannelClass(std::move(value)); return *this;}
 
 
     /**
@@ -178,7 +179,7 @@ destination
 one destination per
      * packager.
      */
-    inline DescribeChannelResult& WithDestinations(const Aws::Vector<OutputDestination>& value) { SetDestinations(value); return *this;}
+    inline RestartChannelPipelinesResult& WithDestinations(const Aws::Vector<OutputDestination>& value) { SetDestinations(value); return *this;}
 
     /**
      * A list of destinations of the channel. For UDP outputs, there is one
@@ -187,7 +188,7 @@ destination
 one destination per
      * packager.
      */
-    inline DescribeChannelResult& WithDestinations(Aws::Vector<OutputDestination>&& value) { SetDestinations(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithDestinations(Aws::Vector<OutputDestination>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
      * A list of destinations of the channel. For UDP outputs, there is one
@@ -196,7 +197,7 @@ destination
 one destination per
      * packager.
      */
-    inline DescribeChannelResult& AddDestinations(const OutputDestination& value) { m_destinations.push_back(value); return *this; }
+    inline RestartChannelPipelinesResult& AddDestinations(const OutputDestination& value) { m_destinations.push_back(value); return *this; }
 
     /**
      * A list of destinations of the channel. For UDP outputs, there is one
@@ -205,7 +206,7 @@ destination
 one destination per
      * packager.
      */
-    inline DescribeChannelResult& AddDestinations(OutputDestination&& value) { m_destinations.push_back(std::move(value)); return *this; }
+    inline RestartChannelPipelinesResult& AddDestinations(OutputDestination&& value) { m_destinations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -226,22 +227,22 @@ one destination per
     /**
      * The endpoints where outgoing connections initiate from
      */
-    inline DescribeChannelResult& WithEgressEndpoints(const Aws::Vector<ChannelEgressEndpoint>& value) { SetEgressEndpoints(value); return *this;}
+    inline RestartChannelPipelinesResult& WithEgressEndpoints(const Aws::Vector<ChannelEgressEndpoint>& value) { SetEgressEndpoints(value); return *this;}
 
     /**
      * The endpoints where outgoing connections initiate from
      */
-    inline DescribeChannelResult& WithEgressEndpoints(Aws::Vector<ChannelEgressEndpoint>&& value) { SetEgressEndpoints(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithEgressEndpoints(Aws::Vector<ChannelEgressEndpoint>&& value) { SetEgressEndpoints(std::move(value)); return *this;}
 
     /**
      * The endpoints where outgoing connections initiate from
      */
-    inline DescribeChannelResult& AddEgressEndpoints(const ChannelEgressEndpoint& value) { m_egressEndpoints.push_back(value); return *this; }
+    inline RestartChannelPipelinesResult& AddEgressEndpoints(const ChannelEgressEndpoint& value) { m_egressEndpoints.push_back(value); return *this; }
 
     /**
      * The endpoints where outgoing connections initiate from
      */
-    inline DescribeChannelResult& AddEgressEndpoints(ChannelEgressEndpoint&& value) { m_egressEndpoints.push_back(std::move(value)); return *this; }
+    inline RestartChannelPipelinesResult& AddEgressEndpoints(ChannelEgressEndpoint&& value) { m_egressEndpoints.push_back(std::move(value)); return *this; }
 
 
     
@@ -254,10 +255,10 @@ one destination per
     inline void SetEncoderSettings(EncoderSettings&& value) { m_encoderSettings = std::move(value); }
 
     
-    inline DescribeChannelResult& WithEncoderSettings(const EncoderSettings& value) { SetEncoderSettings(value); return *this;}
+    inline RestartChannelPipelinesResult& WithEncoderSettings(const EncoderSettings& value) { SetEncoderSettings(value); return *this;}
 
     
-    inline DescribeChannelResult& WithEncoderSettings(EncoderSettings&& value) { SetEncoderSettings(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithEncoderSettings(EncoderSettings&& value) { SetEncoderSettings(std::move(value)); return *this;}
 
 
     /**
@@ -283,17 +284,17 @@ one destination per
     /**
      * The unique id of the channel.
      */
-    inline DescribeChannelResult& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline RestartChannelPipelinesResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * The unique id of the channel.
      */
-    inline DescribeChannelResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The unique id of the channel.
      */
-    inline DescribeChannelResult& WithId(const char* value) { SetId(value); return *this;}
+    inline RestartChannelPipelinesResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
@@ -314,22 +315,22 @@ one destination per
     /**
      * List of input attachments for channel.
      */
-    inline DescribeChannelResult& WithInputAttachments(const Aws::Vector<InputAttachment>& value) { SetInputAttachments(value); return *this;}
+    inline RestartChannelPipelinesResult& WithInputAttachments(const Aws::Vector<InputAttachment>& value) { SetInputAttachments(value); return *this;}
 
     /**
      * List of input attachments for channel.
      */
-    inline DescribeChannelResult& WithInputAttachments(Aws::Vector<InputAttachment>&& value) { SetInputAttachments(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithInputAttachments(Aws::Vector<InputAttachment>&& value) { SetInputAttachments(std::move(value)); return *this;}
 
     /**
      * List of input attachments for channel.
      */
-    inline DescribeChannelResult& AddInputAttachments(const InputAttachment& value) { m_inputAttachments.push_back(value); return *this; }
+    inline RestartChannelPipelinesResult& AddInputAttachments(const InputAttachment& value) { m_inputAttachments.push_back(value); return *this; }
 
     /**
      * List of input attachments for channel.
      */
-    inline DescribeChannelResult& AddInputAttachments(InputAttachment&& value) { m_inputAttachments.push_back(std::move(value)); return *this; }
+    inline RestartChannelPipelinesResult& AddInputAttachments(InputAttachment&& value) { m_inputAttachments.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -350,12 +351,12 @@ one destination per
     /**
      * Specification of network and file inputs for this channel
      */
-    inline DescribeChannelResult& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
+    inline RestartChannelPipelinesResult& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
 
     /**
      * Specification of network and file inputs for this channel
      */
-    inline DescribeChannelResult& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
 
 
     /**
@@ -376,12 +377,12 @@ one destination per
     /**
      * The log level being written to CloudWatch Logs.
      */
-    inline DescribeChannelResult& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
+    inline RestartChannelPipelinesResult& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
 
     /**
      * The log level being written to CloudWatch Logs.
      */
-    inline DescribeChannelResult& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
 
 
     /**
@@ -402,12 +403,48 @@ one destination per
     /**
      * Maintenance settings for this channel.
      */
-    inline DescribeChannelResult& WithMaintenance(const MaintenanceStatus& value) { SetMaintenance(value); return *this;}
+    inline RestartChannelPipelinesResult& WithMaintenance(const MaintenanceStatus& value) { SetMaintenance(value); return *this;}
 
     /**
      * Maintenance settings for this channel.
      */
-    inline DescribeChannelResult& WithMaintenance(MaintenanceStatus&& value) { SetMaintenance(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithMaintenance(MaintenanceStatus&& value) { SetMaintenance(std::move(value)); return *this;}
+
+
+    /**
+     * The time in milliseconds by when the PVRE restart must occur.
+     */
+    inline const Aws::String& GetMaintenanceStatus() const{ return m_maintenanceStatus; }
+
+    /**
+     * The time in milliseconds by when the PVRE restart must occur.
+     */
+    inline void SetMaintenanceStatus(const Aws::String& value) { m_maintenanceStatus = value; }
+
+    /**
+     * The time in milliseconds by when the PVRE restart must occur.
+     */
+    inline void SetMaintenanceStatus(Aws::String&& value) { m_maintenanceStatus = std::move(value); }
+
+    /**
+     * The time in milliseconds by when the PVRE restart must occur.
+     */
+    inline void SetMaintenanceStatus(const char* value) { m_maintenanceStatus.assign(value); }
+
+    /**
+     * The time in milliseconds by when the PVRE restart must occur.
+     */
+    inline RestartChannelPipelinesResult& WithMaintenanceStatus(const Aws::String& value) { SetMaintenanceStatus(value); return *this;}
+
+    /**
+     * The time in milliseconds by when the PVRE restart must occur.
+     */
+    inline RestartChannelPipelinesResult& WithMaintenanceStatus(Aws::String&& value) { SetMaintenanceStatus(std::move(value)); return *this;}
+
+    /**
+     * The time in milliseconds by when the PVRE restart must occur.
+     */
+    inline RestartChannelPipelinesResult& WithMaintenanceStatus(const char* value) { SetMaintenanceStatus(value); return *this;}
 
 
     /**
@@ -433,17 +470,17 @@ one destination per
     /**
      * The name of the channel. (user-mutable)
      */
-    inline DescribeChannelResult& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline RestartChannelPipelinesResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * The name of the channel. (user-mutable)
      */
-    inline DescribeChannelResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * The name of the channel. (user-mutable)
      */
-    inline DescribeChannelResult& WithName(const char* value) { SetName(value); return *this;}
+    inline RestartChannelPipelinesResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -464,22 +501,22 @@ one destination per
     /**
      * Runtime details for the pipelines of a running channel.
      */
-    inline DescribeChannelResult& WithPipelineDetails(const Aws::Vector<PipelineDetail>& value) { SetPipelineDetails(value); return *this;}
+    inline RestartChannelPipelinesResult& WithPipelineDetails(const Aws::Vector<PipelineDetail>& value) { SetPipelineDetails(value); return *this;}
 
     /**
      * Runtime details for the pipelines of a running channel.
      */
-    inline DescribeChannelResult& WithPipelineDetails(Aws::Vector<PipelineDetail>&& value) { SetPipelineDetails(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithPipelineDetails(Aws::Vector<PipelineDetail>&& value) { SetPipelineDetails(std::move(value)); return *this;}
 
     /**
      * Runtime details for the pipelines of a running channel.
      */
-    inline DescribeChannelResult& AddPipelineDetails(const PipelineDetail& value) { m_pipelineDetails.push_back(value); return *this; }
+    inline RestartChannelPipelinesResult& AddPipelineDetails(const PipelineDetail& value) { m_pipelineDetails.push_back(value); return *this; }
 
     /**
      * Runtime details for the pipelines of a running channel.
      */
-    inline DescribeChannelResult& AddPipelineDetails(PipelineDetail&& value) { m_pipelineDetails.push_back(std::move(value)); return *this; }
+    inline RestartChannelPipelinesResult& AddPipelineDetails(PipelineDetail&& value) { m_pipelineDetails.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -495,7 +532,7 @@ one destination per
     /**
      * The number of currently healthy pipelines.
      */
-    inline DescribeChannelResult& WithPipelinesRunningCount(int value) { SetPipelinesRunningCount(value); return *this;}
+    inline RestartChannelPipelinesResult& WithPipelinesRunningCount(int value) { SetPipelinesRunningCount(value); return *this;}
 
 
     /**
@@ -521,17 +558,17 @@ one destination per
     /**
      * The Amazon Resource Name (ARN) of the role assumed when running the Channel.
      */
-    inline DescribeChannelResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+    inline RestartChannelPipelinesResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * The Amazon Resource Name (ARN) of the role assumed when running the Channel.
      */
-    inline DescribeChannelResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * The Amazon Resource Name (ARN) of the role assumed when running the Channel.
      */
-    inline DescribeChannelResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline RestartChannelPipelinesResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     
@@ -544,10 +581,10 @@ one destination per
     inline void SetState(ChannelState&& value) { m_state = std::move(value); }
 
     
-    inline DescribeChannelResult& WithState(const ChannelState& value) { SetState(value); return *this;}
+    inline RestartChannelPipelinesResult& WithState(const ChannelState& value) { SetState(value); return *this;}
 
     
-    inline DescribeChannelResult& WithState(ChannelState&& value) { SetState(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithState(ChannelState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
@@ -568,47 +605,47 @@ one destination per
     /**
      * A collection of key-value pairs.
      */
-    inline DescribeChannelResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+    inline RestartChannelPipelinesResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * A collection of key-value pairs.
      */
-    inline DescribeChannelResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * A collection of key-value pairs.
      */
-    inline DescribeChannelResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+    inline RestartChannelPipelinesResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
      * A collection of key-value pairs.
      */
-    inline DescribeChannelResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+    inline RestartChannelPipelinesResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * A collection of key-value pairs.
      */
-    inline DescribeChannelResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+    inline RestartChannelPipelinesResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * A collection of key-value pairs.
      */
-    inline DescribeChannelResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+    inline RestartChannelPipelinesResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * A collection of key-value pairs.
      */
-    inline DescribeChannelResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+    inline RestartChannelPipelinesResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * A collection of key-value pairs.
      */
-    inline DescribeChannelResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+    inline RestartChannelPipelinesResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * A collection of key-value pairs.
      */
-    inline DescribeChannelResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline RestartChannelPipelinesResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
     /**
@@ -629,12 +666,12 @@ one destination per
     /**
      * Settings for VPC output
      */
-    inline DescribeChannelResult& WithVpc(const VpcOutputSettingsDescription& value) { SetVpc(value); return *this;}
+    inline RestartChannelPipelinesResult& WithVpc(const VpcOutputSettingsDescription& value) { SetVpc(value); return *this;}
 
     /**
      * Settings for VPC output
      */
-    inline DescribeChannelResult& WithVpc(VpcOutputSettingsDescription&& value) { SetVpc(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithVpc(VpcOutputSettingsDescription&& value) { SetVpc(std::move(value)); return *this;}
 
 
     
@@ -650,13 +687,13 @@ one destination per
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     
-    inline DescribeChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline RestartChannelPipelinesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     
-    inline DescribeChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+    inline RestartChannelPipelinesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     
-    inline DescribeChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline RestartChannelPipelinesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
 
@@ -681,6 +718,8 @@ one destination per
     LogLevel m_logLevel;
 
     MaintenanceStatus m_maintenance;
+
+    Aws::String m_maintenanceStatus;
 
     Aws::String m_name;
 

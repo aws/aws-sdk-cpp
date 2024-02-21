@@ -24,7 +24,8 @@ DescribeModelResult::DescribeModelResult() :
     m_latestScheduledRetrainingStatus(ModelVersionStatus::NOT_SET),
     m_latestScheduledRetrainingModelVersion(0),
     m_latestScheduledRetrainingAvailableDataInDays(0),
-    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET)
+    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
+    m_modelQuality(ModelQuality::NOT_SET)
 {
 }
 
@@ -35,7 +36,8 @@ DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonV
     m_latestScheduledRetrainingStatus(ModelVersionStatus::NOT_SET),
     m_latestScheduledRetrainingModelVersion(0),
     m_latestScheduledRetrainingAvailableDataInDays(0),
-    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET)
+    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
+    m_modelQuality(ModelQuality::NOT_SET)
 {
   *this = result;
 }
@@ -286,6 +288,12 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("ModelDiagnosticsOutputConfiguration"))
   {
     m_modelDiagnosticsOutputConfiguration = jsonValue.GetObject("ModelDiagnosticsOutputConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("ModelQuality"))
+  {
+    m_modelQuality = ModelQualityMapper::GetModelQualityForName(jsonValue.GetString("ModelQuality"));
 
   }
 

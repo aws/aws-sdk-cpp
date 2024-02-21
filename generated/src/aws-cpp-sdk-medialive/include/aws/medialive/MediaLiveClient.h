@@ -1266,6 +1266,32 @@ namespace MediaLive
         }
 
         /**
+         * Restart pipelines in one channel that is currently running.<p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RestartChannelPipelinesOutcome RestartChannelPipelines(const Model::RestartChannelPipelinesRequest& request) const;
+
+        /**
+         * A Callable wrapper for RestartChannelPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RestartChannelPipelinesRequestT = Model::RestartChannelPipelinesRequest>
+        Model::RestartChannelPipelinesOutcomeCallable RestartChannelPipelinesCallable(const RestartChannelPipelinesRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::RestartChannelPipelines, request);
+        }
+
+        /**
+         * An Async wrapper for RestartChannelPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RestartChannelPipelinesRequestT = Model::RestartChannelPipelinesRequest>
+        void RestartChannelPipelinesAsync(const RestartChannelPipelinesRequestT& request, const RestartChannelPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::RestartChannelPipelines, request, handler, context);
+        }
+
+        /**
          * Starts an existing channel<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartChannel">AWS
          * API Reference</a></p>

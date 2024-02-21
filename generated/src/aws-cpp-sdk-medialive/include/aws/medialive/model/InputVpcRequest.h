@@ -31,8 +31,7 @@ When this property is specified, the input
    * addresses.
 This property requires setting the roleArn property on Input
    * creation.
-Not compatible with the inputSecurityGroups property.
-<p><h3>See
+Not compatible with the inputSecurityGroups property.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputVpcRequest">AWS
    * API Reference</a></p>
@@ -51,7 +50,6 @@ Not compatible with the inputSecurityGroups property.
      * interfaces.
 Requires subnetIds. If none are specified then the VPC default
      * security group will be used.
-
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
@@ -60,7 +58,6 @@ Requires subnetIds. If none are specified then the VPC default
      * interfaces.
 Requires subnetIds. If none are specified then the VPC default
      * security group will be used.
-
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
@@ -69,7 +66,6 @@ Requires subnetIds. If none are specified then the VPC default
      * interfaces.
 Requires subnetIds. If none are specified then the VPC default
      * security group will be used.
-
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
@@ -78,7 +74,6 @@ Requires subnetIds. If none are specified then the VPC default
      * interfaces.
 Requires subnetIds. If none are specified then the VPC default
      * security group will be used.
-
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
@@ -87,7 +82,6 @@ Requires subnetIds. If none are specified then the VPC default
      * interfaces.
 Requires subnetIds. If none are specified then the VPC default
      * security group will be used.
-
      */
     inline InputVpcRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
@@ -96,7 +90,6 @@ Requires subnetIds. If none are specified then the VPC default
      * interfaces.
 Requires subnetIds. If none are specified then the VPC default
      * security group will be used.
-
      */
     inline InputVpcRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
@@ -105,7 +98,6 @@ Requires subnetIds. If none are specified then the VPC default
      * interfaces.
 Requires subnetIds. If none are specified then the VPC default
      * security group will be used.
-
      */
     inline InputVpcRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -114,7 +106,6 @@ Requires subnetIds. If none are specified then the VPC default
      * interfaces.
 Requires subnetIds. If none are specified then the VPC default
      * security group will be used.
-
      */
     inline InputVpcRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
@@ -123,7 +114,6 @@ Requires subnetIds. If none are specified then the VPC default
      * interfaces.
 Requires subnetIds. If none are specified then the VPC default
      * security group will be used.
-
      */
     inline InputVpcRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -132,7 +122,6 @@ Requires subnetIds. If none are specified then the VPC default
      * A list of 2 VPC subnet IDs from the same VPC.
 Subnet IDs must be mapped to two
      * unique availability zones (AZ).
-
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
@@ -140,7 +129,6 @@ Subnet IDs must be mapped to two
      * A list of 2 VPC subnet IDs from the same VPC.
 Subnet IDs must be mapped to two
      * unique availability zones (AZ).
-
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
@@ -148,7 +136,6 @@ Subnet IDs must be mapped to two
      * A list of 2 VPC subnet IDs from the same VPC.
 Subnet IDs must be mapped to two
      * unique availability zones (AZ).
-
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
@@ -156,7 +143,6 @@ Subnet IDs must be mapped to two
      * A list of 2 VPC subnet IDs from the same VPC.
 Subnet IDs must be mapped to two
      * unique availability zones (AZ).
-
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
@@ -164,7 +150,6 @@ Subnet IDs must be mapped to two
      * A list of 2 VPC subnet IDs from the same VPC.
 Subnet IDs must be mapped to two
      * unique availability zones (AZ).
-
      */
     inline InputVpcRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
@@ -172,7 +157,6 @@ Subnet IDs must be mapped to two
      * A list of 2 VPC subnet IDs from the same VPC.
 Subnet IDs must be mapped to two
      * unique availability zones (AZ).
-
      */
     inline InputVpcRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
@@ -180,7 +164,6 @@ Subnet IDs must be mapped to two
      * A list of 2 VPC subnet IDs from the same VPC.
 Subnet IDs must be mapped to two
      * unique availability zones (AZ).
-
      */
     inline InputVpcRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -188,7 +171,6 @@ Subnet IDs must be mapped to two
      * A list of 2 VPC subnet IDs from the same VPC.
 Subnet IDs must be mapped to two
      * unique availability zones (AZ).
-
      */
     inline InputVpcRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
@@ -196,7 +178,6 @@ Subnet IDs must be mapped to two
      * A list of 2 VPC subnet IDs from the same VPC.
 Subnet IDs must be mapped to two
      * unique availability zones (AZ).
-
      */
     inline InputVpcRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 

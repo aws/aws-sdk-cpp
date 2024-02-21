@@ -134,6 +134,7 @@ static const int DOCUMENT_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString
 static const int RESOURCE_DATA_SYNC_NOT_FOUND_HASH = HashingUtils::HashString("ResourceDataSyncNotFoundException");
 static const int INVALID_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidFilterValue");
 static const int OPS_ITEM_ALREADY_EXISTS_HASH = HashingUtils::HashString("OpsItemAlreadyExistsException");
+static const int MALFORMED_RESOURCE_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedResourcePolicyDocumentException");
 static const int INVALID_DELETE_INVENTORY_PARAMETERS_HASH = HashingUtils::HashString("InvalidDeleteInventoryParametersException");
 static const int OPS_METADATA_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OpsMetadataLimitExceededException");
 static const int FEATURE_NOT_AVAILABLE_HASH = HashingUtils::HashString("FeatureNotAvailableException");
@@ -217,6 +218,7 @@ static const int INVALID_DOCUMENT_VERSION_HASH = HashingUtils::HashString("Inval
 static const int INVALID_NOTIFICATION_CONFIG_HASH = HashingUtils::HashString("InvalidNotificationConfig");
 static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTag");
 static const int INVALID_SCHEDULE_HASH = HashingUtils::HashString("InvalidSchedule");
+static const int RESOURCE_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("ResourcePolicyNotFoundException");
 static const int INVALID_ACTIVATION_ID_HASH = HashingUtils::HashString("InvalidActivationId");
 static const int RESOURCE_DATA_SYNC_CONFLICT_HASH = HashingUtils::HashString("ResourceDataSyncConflictException");
 static const int OPS_METADATA_KEY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OpsMetadataKeyLimitExceededException");
@@ -394,6 +396,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == OPS_ITEM_ALREADY_EXISTS_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == MALFORMED_RESOURCE_POLICY_DOCUMENT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::MALFORMED_RESOURCE_POLICY_DOCUMENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DELETE_INVENTORY_PARAMETERS_HASH)
@@ -811,6 +818,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_SCHEDULE), RetryableType::NOT_RETRYABLE);
     return true;
   }
+  else if (hashCode == RESOURCE_POLICY_NOT_FOUND_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
   else if (hashCode == INVALID_ACTIVATION_ID_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION_ID), RetryableType::NOT_RETRYABLE);
@@ -841,7 +853,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_GROUP), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  else if (hashCode == POLICIES_LIMIT_EXCEEDED_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == POLICIES_LIMIT_EXCEEDED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::POLICIES_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
@@ -851,12 +868,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_PARAMETER_TYPE), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == MAX_DOCUMENT_SIZE_EXCEEDED_HASH)
+  else if (hashCode == MAX_DOCUMENT_SIZE_EXCEEDED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::MAX_DOCUMENT_SIZE_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
