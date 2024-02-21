@@ -1121,9 +1121,9 @@ DateTime::DateTime(int64_t millisSinceEpoch) : m_valid(true)
     m_time = std::chrono::system_clock::time_point(timestamp);
 }
 
-DateTime::DateTime(double epoch_millis) : m_valid(true)
+DateTime::DateTime(double secondsSinceEpoch) : m_valid(true)
 {
-    std::chrono::duration<double, std::chrono::seconds::period> timestamp(epoch_millis);
+    std::chrono::duration<double, std::chrono::seconds::period> timestamp(secondsSinceEpoch);
     m_time = std::chrono::system_clock::time_point(std::chrono::duration_cast<std::chrono::milliseconds>(timestamp));
 }
 
