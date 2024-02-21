@@ -208,6 +208,7 @@ list(APPEND TEST_DEPENDENCY_LIST "s3control:s3,access-management,cognito-identit
 list(APPEND TEST_DEPENDENCY_LIST "sqs:access-management,cognito-identity,iam,core")
 list(APPEND TEST_DEPENDENCY_LIST "text-to-speech:polly,core")
 list(APPEND TEST_DEPENDENCY_LIST "transfer:s3,core")
+list(APPEND TEST_DEPENDENCY_LIST "logs:access-management,cognito-identity,iam,core")
 
 # make a list of the generated clients
 set(GENERATED_SERVICE_LIST "")
