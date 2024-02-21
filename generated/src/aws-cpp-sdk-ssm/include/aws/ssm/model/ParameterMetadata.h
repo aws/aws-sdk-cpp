@@ -29,8 +29,9 @@ namespace Model
 {
 
   /**
-   * <p>Metadata includes information like the ARN of the last user and the date/time
-   * the parameter was last used.</p><p><h3>See Also:</h3>   <a
+   * <p>Metadata includes information like the Amazon Resource Name (ARN) of the last
+   * user to update the parameter and the date and time the parameter was last
+   * used.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParameterMetadata">AWS
    * API Reference</a></p>
    */
@@ -82,6 +83,47 @@ namespace Model
      * <p>The parameter name.</p>
      */
     inline ParameterMetadata& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The (ARN) of the last user to update the parameter.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The (ARN) of the last user to update the parameter.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The (ARN) of the last user to update the parameter.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The (ARN) of the last user to update the parameter.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The (ARN) of the last user to update the parameter.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The (ARN) of the last user to update the parameter.</p>
+     */
+    inline ParameterMetadata& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The (ARN) of the last user to update the parameter.</p>
+     */
+    inline ParameterMetadata& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The (ARN) of the last user to update the parameter.</p>
+     */
+    inline ParameterMetadata& WithARN(const char* value) { SetARN(value); return *this;}
 
 
     /**
@@ -485,6 +527,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet = false;
 
     ParameterType m_type;
     bool m_typeHasBeenSet = false;

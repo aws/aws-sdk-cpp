@@ -196,6 +196,67 @@ namespace Model
      */
     inline DescribeParametersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Lists parameters that are shared with you.</p>  <p>By default when
+     * using this option, the command returns parameters that have been shared using a
+     * standard Resource Access Manager Resource Share. In order for a parameter that
+     * was shared using the <a>PutResourcePolicy</a> command to be returned, the
+     * associated <code>RAM Resource Share Created From Policy</code> must have been
+     * promoted to a standard Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+     * API operation.</p> <p>For more information about sharing parameters, see <a
+     * href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p> 
+     */
+    inline bool GetShared() const{ return m_shared; }
+
+    /**
+     * <p>Lists parameters that are shared with you.</p>  <p>By default when
+     * using this option, the command returns parameters that have been shared using a
+     * standard Resource Access Manager Resource Share. In order for a parameter that
+     * was shared using the <a>PutResourcePolicy</a> command to be returned, the
+     * associated <code>RAM Resource Share Created From Policy</code> must have been
+     * promoted to a standard Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+     * API operation.</p> <p>For more information about sharing parameters, see <a
+     * href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p> 
+     */
+    inline bool SharedHasBeenSet() const { return m_sharedHasBeenSet; }
+
+    /**
+     * <p>Lists parameters that are shared with you.</p>  <p>By default when
+     * using this option, the command returns parameters that have been shared using a
+     * standard Resource Access Manager Resource Share. In order for a parameter that
+     * was shared using the <a>PutResourcePolicy</a> command to be returned, the
+     * associated <code>RAM Resource Share Created From Policy</code> must have been
+     * promoted to a standard Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+     * API operation.</p> <p>For more information about sharing parameters, see <a
+     * href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p> 
+     */
+    inline void SetShared(bool value) { m_sharedHasBeenSet = true; m_shared = value; }
+
+    /**
+     * <p>Lists parameters that are shared with you.</p>  <p>By default when
+     * using this option, the command returns parameters that have been shared using a
+     * standard Resource Access Manager Resource Share. In order for a parameter that
+     * was shared using the <a>PutResourcePolicy</a> command to be returned, the
+     * associated <code>RAM Resource Share Created From Policy</code> must have been
+     * promoted to a standard Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+     * API operation.</p> <p>For more information about sharing parameters, see <a
+     * href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p> 
+     */
+    inline DescribeParametersRequest& WithShared(bool value) { SetShared(value); return *this;}
+
   private:
 
     Aws::Vector<ParametersFilter> m_filters;
@@ -209,6 +270,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    bool m_shared;
+    bool m_sharedHasBeenSet = false;
   };
 
 } // namespace Model

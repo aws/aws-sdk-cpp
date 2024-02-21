@@ -43,49 +43,41 @@ namespace Model
 
     /**
      * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-
      */
     inline const Aws::String& GetChannelClass() const{ return m_channelClass; }
 
     /**
      * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-
      */
     inline bool ChannelClassHasBeenSet() const { return m_channelClassHasBeenSet; }
 
     /**
      * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-
      */
     inline void SetChannelClass(const Aws::String& value) { m_channelClassHasBeenSet = true; m_channelClass = value; }
 
     /**
      * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-
      */
     inline void SetChannelClass(Aws::String&& value) { m_channelClassHasBeenSet = true; m_channelClass = std::move(value); }
 
     /**
      * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-
      */
     inline void SetChannelClass(const char* value) { m_channelClassHasBeenSet = true; m_channelClass.assign(value); }
 
     /**
      * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-
      */
     inline ListReservationsRequest& WithChannelClass(const Aws::String& value) { SetChannelClass(value); return *this;}
 
     /**
      * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-
      */
     inline ListReservationsRequest& WithChannelClass(Aws::String&& value) { SetChannelClass(std::move(value)); return *this;}
 
     /**
      * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-
      */
     inline ListReservationsRequest& WithChannelClass(const char* value) { SetChannelClass(value); return *this;}
 
@@ -146,49 +138,41 @@ namespace Model
 
     /**
      * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-
      */
     inline const Aws::String& GetMaximumBitrate() const{ return m_maximumBitrate; }
 
     /**
      * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-
      */
     inline bool MaximumBitrateHasBeenSet() const { return m_maximumBitrateHasBeenSet; }
 
     /**
      * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-
      */
     inline void SetMaximumBitrate(const Aws::String& value) { m_maximumBitrateHasBeenSet = true; m_maximumBitrate = value; }
 
     /**
      * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-
      */
     inline void SetMaximumBitrate(Aws::String&& value) { m_maximumBitrateHasBeenSet = true; m_maximumBitrate = std::move(value); }
 
     /**
      * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-
      */
     inline void SetMaximumBitrate(const char* value) { m_maximumBitrateHasBeenSet = true; m_maximumBitrate.assign(value); }
 
     /**
      * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-
      */
     inline ListReservationsRequest& WithMaximumBitrate(const Aws::String& value) { SetMaximumBitrate(value); return *this;}
 
     /**
      * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-
      */
     inline ListReservationsRequest& WithMaximumBitrate(Aws::String&& value) { SetMaximumBitrate(std::move(value)); return *this;}
 
     /**
      * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-
      */
     inline ListReservationsRequest& WithMaximumBitrate(const char* value) { SetMaximumBitrate(value); return *this;}
 
@@ -343,98 +327,82 @@ namespace Model
 
     /**
      * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-
      */
     inline const Aws::String& GetSpecialFeature() const{ return m_specialFeature; }
 
     /**
      * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-
      */
     inline bool SpecialFeatureHasBeenSet() const { return m_specialFeatureHasBeenSet; }
 
     /**
      * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-
      */
     inline void SetSpecialFeature(const Aws::String& value) { m_specialFeatureHasBeenSet = true; m_specialFeature = value; }
 
     /**
      * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-
      */
     inline void SetSpecialFeature(Aws::String&& value) { m_specialFeatureHasBeenSet = true; m_specialFeature = std::move(value); }
 
     /**
      * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-
      */
     inline void SetSpecialFeature(const char* value) { m_specialFeatureHasBeenSet = true; m_specialFeature.assign(value); }
 
     /**
      * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-
      */
     inline ListReservationsRequest& WithSpecialFeature(const Aws::String& value) { SetSpecialFeature(value); return *this;}
 
     /**
      * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-
      */
     inline ListReservationsRequest& WithSpecialFeature(Aws::String&& value) { SetSpecialFeature(std::move(value)); return *this;}
 
     /**
      * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-
      */
     inline ListReservationsRequest& WithSpecialFeature(const char* value) { SetSpecialFeature(value); return *this;}
 
 
     /**
      * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-
      */
     inline const Aws::String& GetVideoQuality() const{ return m_videoQuality; }
 
     /**
      * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-
      */
     inline bool VideoQualityHasBeenSet() const { return m_videoQualityHasBeenSet; }
 
     /**
      * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-
      */
     inline void SetVideoQuality(const Aws::String& value) { m_videoQualityHasBeenSet = true; m_videoQuality = value; }
 
     /**
      * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-
      */
     inline void SetVideoQuality(Aws::String&& value) { m_videoQualityHasBeenSet = true; m_videoQuality = std::move(value); }
 
     /**
      * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-
      */
     inline void SetVideoQuality(const char* value) { m_videoQualityHasBeenSet = true; m_videoQuality.assign(value); }
 
     /**
      * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-
      */
     inline ListReservationsRequest& WithVideoQuality(const Aws::String& value) { SetVideoQuality(value); return *this;}
 
     /**
      * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-
      */
     inline ListReservationsRequest& WithVideoQuality(Aws::String&& value) { SetVideoQuality(std::move(value)); return *this;}
 
     /**
      * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-
      */
     inline ListReservationsRequest& WithVideoQuality(const char* value) { SetVideoQuality(value); return *this;}
 

@@ -63,6 +63,7 @@
 #include <aws/medialive/model/PurchaseOfferingResult.h>
 #include <aws/medialive/model/RebootInputDeviceResult.h>
 #include <aws/medialive/model/RejectInputDeviceTransferResult.h>
+#include <aws/medialive/model/RestartChannelPipelinesResult.h>
 #include <aws/medialive/model/StartChannelResult.h>
 #include <aws/medialive/model/StartInputDeviceResult.h>
 #include <aws/medialive/model/StartInputDeviceMaintenanceWindowResult.h>
@@ -168,6 +169,7 @@ namespace Aws
       class PurchaseOfferingRequest;
       class RebootInputDeviceRequest;
       class RejectInputDeviceTransferRequest;
+      class RestartChannelPipelinesRequest;
       class StartChannelRequest;
       class StartInputDeviceRequest;
       class StartInputDeviceMaintenanceWindowRequest;
@@ -235,6 +237,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PurchaseOfferingResult, MediaLiveError> PurchaseOfferingOutcome;
       typedef Aws::Utils::Outcome<RebootInputDeviceResult, MediaLiveError> RebootInputDeviceOutcome;
       typedef Aws::Utils::Outcome<RejectInputDeviceTransferResult, MediaLiveError> RejectInputDeviceTransferOutcome;
+      typedef Aws::Utils::Outcome<RestartChannelPipelinesResult, MediaLiveError> RestartChannelPipelinesOutcome;
       typedef Aws::Utils::Outcome<StartChannelResult, MediaLiveError> StartChannelOutcome;
       typedef Aws::Utils::Outcome<StartInputDeviceResult, MediaLiveError> StartInputDeviceOutcome;
       typedef Aws::Utils::Outcome<StartInputDeviceMaintenanceWindowResult, MediaLiveError> StartInputDeviceMaintenanceWindowOutcome;
@@ -302,6 +305,7 @@ namespace Aws
       typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
       typedef std::future<RebootInputDeviceOutcome> RebootInputDeviceOutcomeCallable;
       typedef std::future<RejectInputDeviceTransferOutcome> RejectInputDeviceTransferOutcomeCallable;
+      typedef std::future<RestartChannelPipelinesOutcome> RestartChannelPipelinesOutcomeCallable;
       typedef std::future<StartChannelOutcome> StartChannelOutcomeCallable;
       typedef std::future<StartInputDeviceOutcome> StartInputDeviceOutcomeCallable;
       typedef std::future<StartInputDeviceMaintenanceWindowOutcome> StartInputDeviceMaintenanceWindowOutcomeCallable;
@@ -372,6 +376,7 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::PurchaseOfferingRequest&, const Model::PurchaseOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseOfferingResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::RebootInputDeviceRequest&, const Model::RebootInputDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootInputDeviceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::RejectInputDeviceTransferRequest&, const Model::RejectInputDeviceTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInputDeviceTransferResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::RestartChannelPipelinesRequest&, const Model::RestartChannelPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestartChannelPipelinesResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartChannelRequest&, const Model::StartChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartInputDeviceRequest&, const Model::StartInputDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInputDeviceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartInputDeviceMaintenanceWindowRequest&, const Model::StartInputDeviceMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInputDeviceMaintenanceWindowResponseReceivedHandler;

@@ -41,37 +41,43 @@ namespace Model
 
     /**
      * Indicates whether the caption track implements accessibility features such as
-     * written descriptions of spoken dialog, music, and sounds.
+     * written descriptions of spoken dialog, music, and sounds. This signaling is
+     * added to HLS output group and MediaPackage output group.
      */
     inline const AccessibilityType& GetAccessibility() const{ return m_accessibility; }
 
     /**
      * Indicates whether the caption track implements accessibility features such as
-     * written descriptions of spoken dialog, music, and sounds.
+     * written descriptions of spoken dialog, music, and sounds. This signaling is
+     * added to HLS output group and MediaPackage output group.
      */
     inline bool AccessibilityHasBeenSet() const { return m_accessibilityHasBeenSet; }
 
     /**
      * Indicates whether the caption track implements accessibility features such as
-     * written descriptions of spoken dialog, music, and sounds.
+     * written descriptions of spoken dialog, music, and sounds. This signaling is
+     * added to HLS output group and MediaPackage output group.
      */
     inline void SetAccessibility(const AccessibilityType& value) { m_accessibilityHasBeenSet = true; m_accessibility = value; }
 
     /**
      * Indicates whether the caption track implements accessibility features such as
-     * written descriptions of spoken dialog, music, and sounds.
+     * written descriptions of spoken dialog, music, and sounds. This signaling is
+     * added to HLS output group and MediaPackage output group.
      */
     inline void SetAccessibility(AccessibilityType&& value) { m_accessibilityHasBeenSet = true; m_accessibility = std::move(value); }
 
     /**
      * Indicates whether the caption track implements accessibility features such as
-     * written descriptions of spoken dialog, music, and sounds.
+     * written descriptions of spoken dialog, music, and sounds. This signaling is
+     * added to HLS output group and MediaPackage output group.
      */
     inline CaptionDescription& WithAccessibility(const AccessibilityType& value) { SetAccessibility(value); return *this;}
 
     /**
      * Indicates whether the caption track implements accessibility features such as
-     * written descriptions of spoken dialog, music, and sounds.
+     * written descriptions of spoken dialog, music, and sounds. This signaling is
+     * added to HLS output group and MediaPackage output group.
      */
     inline CaptionDescription& WithAccessibility(AccessibilityType&& value) { SetAccessibility(std::move(value)); return *this;}
 

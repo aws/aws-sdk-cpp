@@ -37,7 +37,9 @@ ModelSummary::ModelSummary() :
     m_nextScheduledRetrainingStartDateHasBeenSet(false),
     m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
     m_retrainingSchedulerStatusHasBeenSet(false),
-    m_modelDiagnosticsOutputConfigurationHasBeenSet(false)
+    m_modelDiagnosticsOutputConfigurationHasBeenSet(false),
+    m_modelQuality(ModelQuality::NOT_SET),
+    m_modelQualityHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ ModelSummary::ModelSummary(JsonView jsonValue) :
     m_nextScheduledRetrainingStartDateHasBeenSet(false),
     m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
     m_retrainingSchedulerStatusHasBeenSet(false),
-    m_modelDiagnosticsOutputConfigurationHasBeenSet(false)
+    m_modelDiagnosticsOutputConfigurationHasBeenSet(false),
+    m_modelQuality(ModelQuality::NOT_SET),
+    m_modelQualityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -165,6 +169,13 @@ ModelSummary& ModelSummary::operator =(JsonView jsonValue)
     m_modelDiagnosticsOutputConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelQuality"))
+  {
+    m_modelQuality = ModelQualityMapper::GetModelQualityForName(jsonValue.GetString("ModelQuality"));
+
+    m_modelQualityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -248,6 +259,11 @@ JsonValue ModelSummary::Jsonize() const
   {
    payload.WithObject("ModelDiagnosticsOutputConfiguration", m_modelDiagnosticsOutputConfiguration.Jsonize());
 
+  }
+
+  if(m_modelQualityHasBeenSet)
+  {
+   payload.WithString("ModelQuality", ModelQualityMapper::GetNameForModelQuality(m_modelQuality));
   }
 
   return payload;

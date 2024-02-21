@@ -234,7 +234,6 @@ SINGLE_PIPELINE - You can
      * connect only one source to this input. If the ChannelClass is also 
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
-
      */
     inline const InputClass& GetInputClass() const{ return m_inputClass; }
 
@@ -247,7 +246,6 @@ SINGLE_PIPELINE - You can
      * connect only one source to this input. If the ChannelClass is also 
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
-
      */
     inline bool InputClassHasBeenSet() const { return m_inputClassHasBeenSet; }
 
@@ -260,7 +258,6 @@ SINGLE_PIPELINE - You can
      * connect only one source to this input. If the ChannelClass is also 
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
-
      */
     inline void SetInputClass(const InputClass& value) { m_inputClassHasBeenSet = true; m_inputClass = value; }
 
@@ -273,7 +270,6 @@ SINGLE_PIPELINE - You can
      * connect only one source to this input. If the ChannelClass is also 
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
-
      */
     inline void SetInputClass(InputClass&& value) { m_inputClassHasBeenSet = true; m_inputClass = std::move(value); }
 
@@ -286,7 +282,6 @@ SINGLE_PIPELINE - You can
      * connect only one source to this input. If the ChannelClass is also 
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
-
      */
     inline Input& WithInputClass(const InputClass& value) { SetInputClass(value); return *this;}
 
@@ -299,7 +294,6 @@ SINGLE_PIPELINE - You can
      * connect only one source to this input. If the ChannelClass is also 
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
-
      */
     inline Input& WithInputClass(InputClass&& value) { SetInputClass(std::move(value)); return *this;}
 
@@ -396,7 +390,6 @@ SINGLE_PIPELINE - You can
      * URL's dynamically changes
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
-
      */
     inline const InputSourceType& GetInputSourceType() const{ return m_inputSourceType; }
 
@@ -405,7 +398,6 @@ during input switch actions. Presently, this
      * URL's dynamically changes
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
-
      */
     inline bool InputSourceTypeHasBeenSet() const { return m_inputSourceTypeHasBeenSet; }
 
@@ -414,7 +406,6 @@ during input switch actions. Presently, this
      * URL's dynamically changes
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
-
      */
     inline void SetInputSourceType(const InputSourceType& value) { m_inputSourceTypeHasBeenSet = true; m_inputSourceType = value; }
 
@@ -423,7 +414,6 @@ during input switch actions. Presently, this
      * URL's dynamically changes
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
-
      */
     inline void SetInputSourceType(InputSourceType&& value) { m_inputSourceTypeHasBeenSet = true; m_inputSourceType = std::move(value); }
 
@@ -432,7 +422,6 @@ during input switch actions. Presently, this
      * URL's dynamically changes
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
-
      */
     inline Input& WithInputSourceType(const InputSourceType& value) { SetInputSourceType(value); return *this;}
 
@@ -441,7 +430,6 @@ during input switch actions. Presently, this
      * URL's dynamically changes
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
-
      */
     inline Input& WithInputSourceType(InputSourceType&& value) { SetInputSourceType(std::move(value)); return *this;}
 
