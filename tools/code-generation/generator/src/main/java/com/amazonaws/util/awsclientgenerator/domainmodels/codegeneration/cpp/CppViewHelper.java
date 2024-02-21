@@ -481,4 +481,9 @@ public class CppViewHelper {
                 .map(__ -> prefix + cppType)
                 .orElse(functionName);
     }
+
+    public static boolean hasListMemberUsedForHeader(final Shape shape) {
+        return shape.getMembers().values().stream()
+                .anyMatch(shapeMember -> shapeMember.getShape().isList() && shapeMember.isUsedForHeader());
+    }
 }
