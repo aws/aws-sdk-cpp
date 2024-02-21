@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
+#include <numeric>
 
 using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
@@ -122,12 +123,13 @@ Aws::Http::HeaderValueCollection GetObjectAttributesRequest::GetRequestSpecificH
 
   if(m_objectAttributesHasBeenSet)
   {
-    for(const auto& item : m_objectAttributes)
-    {
-      ss << ObjectAttributesMapper::GetNameForObjectAttributes(item);
-      headers.emplace("x-amz-object-attributes", ss.str());
-      ss.str("");
-    }
+    headers.emplace("x-amz-object-attributes", std::accumulate(std::begin(m_objectAttributes),
+      std::end(m_objectAttributes),
+      Aws::String{},
+      [](const Aws::String &acc, const ObjectAttributes &item) -> Aws::String {
+        const auto headerValue = ObjectAttributesMapper::GetNameForObjectAttributes(item);
+        return acc.empty() ? headerValue : acc + "," + headerValue;
+      }));
   }
 
   return headers;

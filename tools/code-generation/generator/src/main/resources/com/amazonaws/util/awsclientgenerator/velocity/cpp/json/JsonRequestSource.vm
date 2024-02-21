@@ -16,6 +16,9 @@
 #end
 
 \#include <utility>
+#if(${CppViewHelper.hasListMemberUsedForHeader($shape)})
+\#include <numeric>
+#end
 
 using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Utils::Json;
