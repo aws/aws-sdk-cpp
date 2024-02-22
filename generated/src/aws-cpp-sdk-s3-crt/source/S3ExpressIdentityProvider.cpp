@@ -70,9 +70,9 @@ Aws::S3Crt::DefaultS3ExpressIdentityProvider::DefaultS3ExpressIdentityProvider(
 
 }
 
-S3ExpressIdentity DefaultS3ExpressIdentityProvider::GetS3ExpressIdentity(const ServiceSpecificParameters &serviceSpecificParameters) {
-    auto bucketNameIter = serviceSpecificParameters.parameterMap.find("bucketName");
-    if (bucketNameIter == serviceSpecificParameters.parameterMap.end()) {
+S3ExpressIdentity DefaultS3ExpressIdentityProvider::GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) {
+    auto bucketNameIter = serviceSpecificParameters->parameterMap.find("bucketName");
+    if (bucketNameIter == serviceSpecificParameters->parameterMap.end()) {
         AWS_LOGSTREAM_ERROR(S3_EXPRESS_IDENTITY_PROVIDER, "property bucketName Required to make call")
         return {"", "", "", {}};
     }
@@ -146,9 +146,9 @@ void DefaultAsyncS3ExpressIdentityProvider::refreshIdentities(std::chrono::minut
     }
 }
 
-S3ExpressIdentity DefaultAsyncS3ExpressIdentityProvider::GetS3ExpressIdentity(const ServiceSpecificParameters &serviceSpecificParameters) {
-    auto bucketNameIter = serviceSpecificParameters.parameterMap.find("bucketName");
-    if (bucketNameIter == serviceSpecificParameters.parameterMap.end()) {
+S3ExpressIdentity DefaultAsyncS3ExpressIdentityProvider::GetS3ExpressIdentity(const std::shared_ptr<ServiceSpecificParameters> &serviceSpecificParameters) {
+    auto bucketNameIter = serviceSpecificParameters->parameterMap.find("bucketName");
+    if (bucketNameIter == serviceSpecificParameters->parameterMap.end()) {
         AWS_LOGSTREAM_ERROR(S3_EXPRESS_IDENTITY_PROVIDER, "property bucketName Required to make call")
         return {"", "", "", {}};
     }
