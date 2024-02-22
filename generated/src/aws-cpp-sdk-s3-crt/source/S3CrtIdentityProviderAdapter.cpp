@@ -8,6 +8,8 @@
 
 using namespace Aws::S3Crt;
 
+static const char* ALLOC_TAG = "S3CrtIdentityProviderAdapter";
+
 aws_s3express_credentials_provider *S3CrtIdentityProviderAdapter::ProviderFactory(struct aws_allocator *allocator,
     struct aws_s3_client *client,
     aws_simple_completion_callback *on_provider_shutdown_callback,
@@ -42,7 +44,8 @@ aws_s3express_credentials_provider *S3CrtIdentityProviderAdapter::ProviderFactor
     // hostname at this point in theory will always be this way for express hosts.
     auto bucketName = hostname.substr(0, hostname.find('.'));
     params.emplace("bucketName", bucketName);
-    Http::ServiceSpecificParameters serviceSpecificParameters{std::move(params)};
+    const auto serviceSpecificParameters = Aws::MakeShared<Http::ServiceSpecificParameters>(ALLOC_TAG);
+    serviceSpecificParameters->parameterMap = std::move(params);
 
     //Get creds as raw ptr
     auto providerImpl = static_cast<S3ExpressIdentityProvider *>(provider->impl);

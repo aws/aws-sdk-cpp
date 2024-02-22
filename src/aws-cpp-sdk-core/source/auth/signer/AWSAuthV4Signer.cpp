@@ -79,7 +79,7 @@ AWSAuthV4Signer::~AWSAuthV4Signer()
 bool AWSAuthV4Signer::SignRequestWithSigV4a(Aws::Http::HttpRequest& request, const char* region, const char* serviceName,
     bool signBody, long long expirationTimeInSeconds, Aws::Crt::Auth::SignatureType signatureType) const
 {
-    AWSCredentials credentials = GetCredentials(*request.GetServiceSpecificParameters());
+    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
     auto crtCredentials = Aws::MakeShared<Aws::Crt::Auth::Credentials>(v4AsymmetricLogTag,
         Aws::Crt::ByteCursorFromCString(credentials.GetAWSAccessKeyId().c_str()),
         Aws::Crt::ByteCursorFromCString(credentials.GetAWSSecretKey().c_str()),
@@ -191,7 +191,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
 {
     Aws::String signingRegion = region ? region : m_region;
     Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
-    AWSCredentials credentials = GetCredentials(*request.GetServiceSpecificParameters());
+    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
 
     //don't sign anonymous requests
     if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
@@ -364,7 +364,7 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
 {
     Aws::String signingRegion = region ? region : m_region;
     Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
-    AWSCredentials credentials = GetCredentials(*request.GetServiceSpecificParameters());
+    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
 
     //don't sign anonymous requests
     if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
@@ -603,7 +603,7 @@ Aws::Utils::ByteBuffer AWSAuthV4Signer::ComputeHash(const Aws::String& secretKey
     return hashResult.GetResult();
 }
 
-Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) const {
+Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
     AWS_UNREFERENCED_PARAM(serviceSpecificParameters);
     return m_credentialsProvider->GetAWSCredentials();
 }
