@@ -118,7 +118,7 @@ namespace Model
      * <p>The minimum percentage of overall traffic for an application that must be
      * impacted by an issue before Internet Monitor creates an event when a threshold
      * is crossed for a local health score.</p> <p>If you don't set a minimum traffic
-     * impact threshold, the default value is 0.01%.</p>
+     * impact threshold, the default value is 0.1%.</p>
      */
     inline double GetMinTrafficImpact() const{ return m_minTrafficImpact; }
 
@@ -126,7 +126,7 @@ namespace Model
      * <p>The minimum percentage of overall traffic for an application that must be
      * impacted by an issue before Internet Monitor creates an event when a threshold
      * is crossed for a local health score.</p> <p>If you don't set a minimum traffic
-     * impact threshold, the default value is 0.01%.</p>
+     * impact threshold, the default value is 0.1%.</p>
      */
     inline bool MinTrafficImpactHasBeenSet() const { return m_minTrafficImpactHasBeenSet; }
 
@@ -134,7 +134,7 @@ namespace Model
      * <p>The minimum percentage of overall traffic for an application that must be
      * impacted by an issue before Internet Monitor creates an event when a threshold
      * is crossed for a local health score.</p> <p>If you don't set a minimum traffic
-     * impact threshold, the default value is 0.01%.</p>
+     * impact threshold, the default value is 0.1%.</p>
      */
     inline void SetMinTrafficImpact(double value) { m_minTrafficImpactHasBeenSet = true; m_minTrafficImpact = value; }
 
@@ -142,7 +142,7 @@ namespace Model
      * <p>The minimum percentage of overall traffic for an application that must be
      * impacted by an issue before Internet Monitor creates an event when a threshold
      * is crossed for a local health score.</p> <p>If you don't set a minimum traffic
-     * impact threshold, the default value is 0.01%.</p>
+     * impact threshold, the default value is 0.1%.</p>
      */
     inline LocalHealthEventsConfig& WithMinTrafficImpact(double value) { SetMinTrafficImpact(value); return *this;}
 
