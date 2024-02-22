@@ -25,7 +25,7 @@ namespace ${rootNamespace} {
             explicit S3ExpressIdentityProvider(const ${metadata.classNamePrefix}Client &s3Client) : m_s3Client(s3Client) {}
 
             virtual S3ExpressIdentity
-            GetS3ExpressIdentity(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) = 0;
+            GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) = 0;
 
             virtual ~S3ExpressIdentityProvider() {}
 
@@ -53,7 +53,7 @@ namespace ${rootNamespace} {
 
             virtual ~DefaultS3ExpressIdentityProvider() override = default;
 
-            S3ExpressIdentity GetS3ExpressIdentity(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) override;
+            S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
 
         private:
             mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> m_credentialsCache;
@@ -75,7 +75,7 @@ namespace ${rootNamespace} {
 
             virtual ~DefaultAsyncS3ExpressIdentityProvider() override;
 
-            S3ExpressIdentity GetS3ExpressIdentity(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) override;
+            S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
 
         private:
             void refreshIdentities(std::chrono::minutes refreshPeriod);

@@ -58,7 +58,7 @@ bool S3ExpressSigner::SignRequest(Aws::Http::HttpRequest &request,
         return false;
     }
     putRequestId(requestId);
-    auto identity = m_S3ExpressIdentityProvider->GetS3ExpressIdentity(*request.GetServiceSpecificParameters());
+    auto identity = m_S3ExpressIdentityProvider->GetS3ExpressIdentity(request.GetServiceSpecificParameters());
     request.SetHeaderValue(S3_EXPRESS_HEADER, identity.getSessionToken());
     auto isSigned = AWSAuthV4Signer::SignRequest(request, region, serviceName, signBody);
     deleteRequestId(requestId);
@@ -80,7 +80,7 @@ bool S3ExpressSigner::PresignRequest(Aws::Http::HttpRequest &request,
         return false;
     }
     putRequestId(requestId);
-    auto identity = m_S3ExpressIdentityProvider->GetS3ExpressIdentity(*request.GetServiceSpecificParameters());
+    auto identity = m_S3ExpressIdentityProvider->GetS3ExpressIdentity(request.GetServiceSpecificParameters());
     request.AddQueryStringParameter(S3_EXPRESS_QUERY_PARAM, identity.getSessionToken());
     auto isSigned = AWSAuthV4Signer::PresignRequest(request, region, serviceName, expirationInSeconds);
     deleteRequestId(requestId);
@@ -91,7 +91,7 @@ bool S3ExpressSigner::ServiceRequireUnsignedPayload(const Aws::String &serviceNa
     return S3_EXPRESS_SERVICE_NAME == serviceName || AWSAuthV4Signer::ServiceRequireUnsignedPayload(serviceName);
 }
 
-Aws::Auth::AWSCredentials S3ExpressSigner::GetCredentials(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) const {
+Aws::Auth::AWSCredentials S3ExpressSigner::GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
     auto identity = m_S3ExpressIdentityProvider->GetS3ExpressIdentity(serviceSpecificParameters);
     return {identity.getAccessKeyId(), identity.getSecretKeyId()};
 }

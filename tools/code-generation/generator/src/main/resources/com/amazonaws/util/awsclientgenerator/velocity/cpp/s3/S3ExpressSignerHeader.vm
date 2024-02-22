@@ -41,7 +41,7 @@ namespace ${rootNamespace} {
                 long long expirationInSeconds
             ) const override;
 
-            Aws::Auth::AWSCredentials GetCredentials(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) const override;
+            Aws::Auth::AWSCredentials GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const override;
 
         protected:
             bool ServiceRequireUnsignedPayload(const String &serviceName) const override;
