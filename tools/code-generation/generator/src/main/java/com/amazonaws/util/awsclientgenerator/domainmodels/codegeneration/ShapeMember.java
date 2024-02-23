@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Map;
 
@@ -39,6 +40,8 @@ public class ShapeMember {
     boolean hostLabel;
     boolean endpointDiscoveryId;
     boolean xmlAttribute;
+    boolean checksumMember = false;
+    String checksumEnumMember;
 
     public boolean isUsedForHeader() {
         return "header".equals(location) || "headers".equals(location);
