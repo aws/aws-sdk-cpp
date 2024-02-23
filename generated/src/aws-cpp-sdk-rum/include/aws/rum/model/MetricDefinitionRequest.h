@@ -27,15 +27,15 @@ namespace Model
   /**
    * <p>Use this structure to define one extended metric or custom metric that RUM
    * will send to CloudWatch or CloudWatch Evidently. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
-   * Additional metrics that you can send to CloudWatch and CloudWatch
-   * Evidently</a>.</p> <p>This structure is validated differently for extended
-   * metrics and custom metrics. For extended metrics that are sent to the
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-and-extended-metrics.html">
+   * Custom metrics and extended metrics that you can send to CloudWatch and
+   * CloudWatch Evidently</a>.</p> <p>This structure is validated differently for
+   * extended metrics and custom metrics. For extended metrics that are sent to the
    * <code>AWS/RUM</code> namespace, the following validations apply:</p> <ul> <li>
    * <p>The <code>Namespace</code> parameter must be omitted or set to
    * <code>AWS/RUM</code>.</p> </li> <li> <p>Only certain combinations of values for
    * <code>Name</code>, <code>ValueKey</code>, and <code>EventPattern</code> are
-   * valid. In addition to what is displayed in the list below, the
+   * valid. In addition to what is displayed in the following list, the
    * <code>EventPattern</code> can also include information used by the
    * <code>DimensionKeys</code> field.</p> <ul> <li> <p>If <code>Name</code> is
    * <code>PerformanceNavigationDuration</code>, then <code>ValueKey</code>must be
@@ -81,10 +81,21 @@ namespace Model
    * <code>Name</code> is <code>SessionCount</code>, then <code>ValueKey</code>must
    * be null and the <code>EventPattern</code> must include
    * <code>{"event_type":["com.amazon.rum.session_start_event"]}</code> </p> </li>
-   * </ul> </li> </ul> <p>For custom metrics, the following validation rules
-   * apply:</p> <ul> <li> <p>The namespace can't be omitted and can't be
-   * <code>AWS/RUM</code>. You can use the <code>AWS/RUM</code> namespace only for
-   * extended metrics.</p> </li> <li> <p>All dimensions listed in the
+   * <li> <p>If <code>Name</code> is <code>PageViewCount</code>, then
+   * <code>ValueKey</code>must be null and the <code>EventPattern</code> must include
+   * <code>{"event_type":["com.amazon.rum.page_view_event"]}</code> </p> </li> <li>
+   * <p>If <code>Name</code> is <code>Http4xxCount</code>, then
+   * <code>ValueKey</code>must be null and the <code>EventPattern</code> must include
+   * <code>{"event_type":
+   * ["com.amazon.rum.http_event"],"event_details":{"response":{"status":[{"numeric":["&gt;=",400,"&lt;",500]}]}}}
+   * }</code> </p> </li> <li> <p>If <code>Name</code> is <code>Http5xxCount</code>,
+   * then <code>ValueKey</code>must be null and the <code>EventPattern</code> must
+   * include <code>{"event_type":
+   * ["com.amazon.rum.http_event"],"event_details":{"response":{"status":[{"numeric":["&gt;=",500,"&lt;=",599]}]}}}
+   * }</code> </p> </li> </ul> </li> </ul> <p>For custom metrics, the following
+   * validation rules apply:</p> <ul> <li> <p>The namespace can't be omitted and
+   * can't be <code>AWS/RUM</code>. You can use the <code>AWS/RUM</code> namespace
+   * only for extended metrics.</p> </li> <li> <p>All dimensions listed in the
    * <code>DimensionKeys</code> field must be present in the value of
    * <code>EventPattern</code>.</p> </li> <li> <p>The values that you specify for
    * <code>ValueKey</code>, <code>EventPattern</code>, and <code>DimensionKeys</code>
@@ -349,7 +360,7 @@ namespace Model
      * "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": {
      * "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] },
      * "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }]
-     * } }'</code> </p> </li> </ul> <p>If the metrics destination' is
+     * } }'</code> </p> </li> </ul> <p>If the metrics destination is
      * <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified
      * dimensions. </p>
@@ -370,7 +381,7 @@ namespace Model
      * "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": {
      * "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] },
      * "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }]
-     * } }'</code> </p> </li> </ul> <p>If the metrics destination' is
+     * } }'</code> </p> </li> </ul> <p>If the metrics destination is
      * <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified
      * dimensions. </p>
@@ -391,7 +402,7 @@ namespace Model
      * "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": {
      * "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] },
      * "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }]
-     * } }'</code> </p> </li> </ul> <p>If the metrics destination' is
+     * } }'</code> </p> </li> </ul> <p>If the metrics destination is
      * <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified
      * dimensions. </p>
@@ -412,7 +423,7 @@ namespace Model
      * "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": {
      * "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] },
      * "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }]
-     * } }'</code> </p> </li> </ul> <p>If the metrics destination' is
+     * } }'</code> </p> </li> </ul> <p>If the metrics destination is
      * <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified
      * dimensions. </p>
@@ -433,7 +444,7 @@ namespace Model
      * "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": {
      * "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] },
      * "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }]
-     * } }'</code> </p> </li> </ul> <p>If the metrics destination' is
+     * } }'</code> </p> </li> </ul> <p>If the metrics destination is
      * <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified
      * dimensions. </p>
@@ -454,7 +465,7 @@ namespace Model
      * "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": {
      * "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] },
      * "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }]
-     * } }'</code> </p> </li> </ul> <p>If the metrics destination' is
+     * } }'</code> </p> </li> </ul> <p>If the metrics destination is
      * <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified
      * dimensions. </p>
@@ -475,7 +486,7 @@ namespace Model
      * "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": {
      * "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] },
      * "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }]
-     * } }'</code> </p> </li> </ul> <p>If the metrics destination' is
+     * } }'</code> </p> </li> </ul> <p>If the metrics destination is
      * <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified
      * dimensions. </p>
@@ -496,7 +507,7 @@ namespace Model
      * "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": {
      * "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] },
      * "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }]
-     * } }'</code> </p> </li> </ul> <p>If the metrics destination' is
+     * } }'</code> </p> </li> </ul> <p>If the metrics destination is
      * <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified
      * dimensions. </p>
@@ -758,9 +769,9 @@ namespace Model
     /**
      * <p>The field within the event object that the metric value is sourced from.</p>
      * <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value.
-     * This is useful if you just want to count the number of events that the filter
+     * This is useful if you want to count the number of events that the filter
      * catches. </p> <p>If this metric is sent to CloudWatch Evidently, this field will
-     * be passed to Evidently raw and Evidently will handle data extraction from the
+     * be passed to Evidently raw. Evidently will handle data extraction from the
      * event.</p>
      */
     inline const Aws::String& GetValueKey() const{ return m_valueKey; }
@@ -768,9 +779,9 @@ namespace Model
     /**
      * <p>The field within the event object that the metric value is sourced from.</p>
      * <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value.
-     * This is useful if you just want to count the number of events that the filter
+     * This is useful if you want to count the number of events that the filter
      * catches. </p> <p>If this metric is sent to CloudWatch Evidently, this field will
-     * be passed to Evidently raw and Evidently will handle data extraction from the
+     * be passed to Evidently raw. Evidently will handle data extraction from the
      * event.</p>
      */
     inline bool ValueKeyHasBeenSet() const { return m_valueKeyHasBeenSet; }
@@ -778,9 +789,9 @@ namespace Model
     /**
      * <p>The field within the event object that the metric value is sourced from.</p>
      * <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value.
-     * This is useful if you just want to count the number of events that the filter
+     * This is useful if you want to count the number of events that the filter
      * catches. </p> <p>If this metric is sent to CloudWatch Evidently, this field will
-     * be passed to Evidently raw and Evidently will handle data extraction from the
+     * be passed to Evidently raw. Evidently will handle data extraction from the
      * event.</p>
      */
     inline void SetValueKey(const Aws::String& value) { m_valueKeyHasBeenSet = true; m_valueKey = value; }
@@ -788,9 +799,9 @@ namespace Model
     /**
      * <p>The field within the event object that the metric value is sourced from.</p>
      * <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value.
-     * This is useful if you just want to count the number of events that the filter
+     * This is useful if you want to count the number of events that the filter
      * catches. </p> <p>If this metric is sent to CloudWatch Evidently, this field will
-     * be passed to Evidently raw and Evidently will handle data extraction from the
+     * be passed to Evidently raw. Evidently will handle data extraction from the
      * event.</p>
      */
     inline void SetValueKey(Aws::String&& value) { m_valueKeyHasBeenSet = true; m_valueKey = std::move(value); }
@@ -798,9 +809,9 @@ namespace Model
     /**
      * <p>The field within the event object that the metric value is sourced from.</p>
      * <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value.
-     * This is useful if you just want to count the number of events that the filter
+     * This is useful if you want to count the number of events that the filter
      * catches. </p> <p>If this metric is sent to CloudWatch Evidently, this field will
-     * be passed to Evidently raw and Evidently will handle data extraction from the
+     * be passed to Evidently raw. Evidently will handle data extraction from the
      * event.</p>
      */
     inline void SetValueKey(const char* value) { m_valueKeyHasBeenSet = true; m_valueKey.assign(value); }
@@ -808,9 +819,9 @@ namespace Model
     /**
      * <p>The field within the event object that the metric value is sourced from.</p>
      * <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value.
-     * This is useful if you just want to count the number of events that the filter
+     * This is useful if you want to count the number of events that the filter
      * catches. </p> <p>If this metric is sent to CloudWatch Evidently, this field will
-     * be passed to Evidently raw and Evidently will handle data extraction from the
+     * be passed to Evidently raw. Evidently will handle data extraction from the
      * event.</p>
      */
     inline MetricDefinitionRequest& WithValueKey(const Aws::String& value) { SetValueKey(value); return *this;}
@@ -818,9 +829,9 @@ namespace Model
     /**
      * <p>The field within the event object that the metric value is sourced from.</p>
      * <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value.
-     * This is useful if you just want to count the number of events that the filter
+     * This is useful if you want to count the number of events that the filter
      * catches. </p> <p>If this metric is sent to CloudWatch Evidently, this field will
-     * be passed to Evidently raw and Evidently will handle data extraction from the
+     * be passed to Evidently raw. Evidently will handle data extraction from the
      * event.</p>
      */
     inline MetricDefinitionRequest& WithValueKey(Aws::String&& value) { SetValueKey(std::move(value)); return *this;}
@@ -828,9 +839,9 @@ namespace Model
     /**
      * <p>The field within the event object that the metric value is sourced from.</p>
      * <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value.
-     * This is useful if you just want to count the number of events that the filter
+     * This is useful if you want to count the number of events that the filter
      * catches. </p> <p>If this metric is sent to CloudWatch Evidently, this field will
-     * be passed to Evidently raw and Evidently will handle data extraction from the
+     * be passed to Evidently raw. Evidently will handle data extraction from the
      * event.</p>
      */
     inline MetricDefinitionRequest& WithValueKey(const char* value) { SetValueKey(value); return *this;}

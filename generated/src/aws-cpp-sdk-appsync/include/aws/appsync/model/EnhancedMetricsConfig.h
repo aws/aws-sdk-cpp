@@ -46,7 +46,7 @@ namespace Model
    * time:</p> <ul> <li> <p> <code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and
    * emits metric data for all resolvers in the request.</p> </li> <li> <p>
    * <code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers
-   * that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p>
+   * that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p>
    * </li> </ul> </li> <li> <p> <code>dataSourceLevelMetricsBehavior</code>: Controls
    * how data source metrics will be emitted to CloudWatch. Data source metrics
    * include:</p> <ul> <li> <p>Requests: The number of invocations that occured
@@ -59,7 +59,7 @@ namespace Model
    * time:</p> <ul> <li> <p> <code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records
    * and emits metric data for all data sources in the request.</p> </li> <li> <p>
    * <code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data
-   * sources that have the <code>metricConfig</code> value set to
+   * sources that have the <code>metricsConfig</code> value set to
    * <code>ENABLED</code>.</p> </li> </ul> </li> <li> <p>
    * <code>operationLevelMetricsConfig</code>: Controls how operation metrics will be
    * emitted to CloudWatch. Operation metrics include:</p> <ul> <li> <p>Requests: The
@@ -94,7 +94,7 @@ namespace Model
      * <code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for
      * all resolvers in the request.</p> </li> <li> <p>
      * <code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers
-     * that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p>
+     * that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p>
      * </li> </ul>
      */
     inline const ResolverLevelMetricsBehavior& GetResolverLevelMetricsBehavior() const{ return m_resolverLevelMetricsBehavior; }
@@ -113,7 +113,7 @@ namespace Model
      * <code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for
      * all resolvers in the request.</p> </li> <li> <p>
      * <code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers
-     * that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p>
+     * that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p>
      * </li> </ul>
      */
     inline bool ResolverLevelMetricsBehaviorHasBeenSet() const { return m_resolverLevelMetricsBehaviorHasBeenSet; }
@@ -132,7 +132,7 @@ namespace Model
      * <code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for
      * all resolvers in the request.</p> </li> <li> <p>
      * <code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers
-     * that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p>
+     * that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p>
      * </li> </ul>
      */
     inline void SetResolverLevelMetricsBehavior(const ResolverLevelMetricsBehavior& value) { m_resolverLevelMetricsBehaviorHasBeenSet = true; m_resolverLevelMetricsBehavior = value; }
@@ -151,7 +151,7 @@ namespace Model
      * <code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for
      * all resolvers in the request.</p> </li> <li> <p>
      * <code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers
-     * that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p>
+     * that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p>
      * </li> </ul>
      */
     inline void SetResolverLevelMetricsBehavior(ResolverLevelMetricsBehavior&& value) { m_resolverLevelMetricsBehaviorHasBeenSet = true; m_resolverLevelMetricsBehavior = std::move(value); }
@@ -170,7 +170,7 @@ namespace Model
      * <code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for
      * all resolvers in the request.</p> </li> <li> <p>
      * <code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers
-     * that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p>
+     * that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p>
      * </li> </ul>
      */
     inline EnhancedMetricsConfig& WithResolverLevelMetricsBehavior(const ResolverLevelMetricsBehavior& value) { SetResolverLevelMetricsBehavior(value); return *this;}
@@ -189,7 +189,7 @@ namespace Model
      * <code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for
      * all resolvers in the request.</p> </li> <li> <p>
      * <code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers
-     * that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p>
+     * that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p>
      * </li> </ul>
      */
     inline EnhancedMetricsConfig& WithResolverLevelMetricsBehavior(ResolverLevelMetricsBehavior&& value) { SetResolverLevelMetricsBehavior(std::move(value)); return *this;}
@@ -207,7 +207,7 @@ namespace Model
      * time:</p> <ul> <li> <p> <code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records
      * and emits metric data for all data sources in the request.</p> </li> <li> <p>
      * <code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data
-     * sources that have the <code>metricConfig</code> value set to
+     * sources that have the <code>metricsConfig</code> value set to
      * <code>ENABLED</code>.</p> </li> </ul>
      */
     inline const DataSourceLevelMetricsBehavior& GetDataSourceLevelMetricsBehavior() const{ return m_dataSourceLevelMetricsBehavior; }
@@ -224,7 +224,7 @@ namespace Model
      * time:</p> <ul> <li> <p> <code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records
      * and emits metric data for all data sources in the request.</p> </li> <li> <p>
      * <code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data
-     * sources that have the <code>metricConfig</code> value set to
+     * sources that have the <code>metricsConfig</code> value set to
      * <code>ENABLED</code>.</p> </li> </ul>
      */
     inline bool DataSourceLevelMetricsBehaviorHasBeenSet() const { return m_dataSourceLevelMetricsBehaviorHasBeenSet; }
@@ -241,7 +241,7 @@ namespace Model
      * time:</p> <ul> <li> <p> <code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records
      * and emits metric data for all data sources in the request.</p> </li> <li> <p>
      * <code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data
-     * sources that have the <code>metricConfig</code> value set to
+     * sources that have the <code>metricsConfig</code> value set to
      * <code>ENABLED</code>.</p> </li> </ul>
      */
     inline void SetDataSourceLevelMetricsBehavior(const DataSourceLevelMetricsBehavior& value) { m_dataSourceLevelMetricsBehaviorHasBeenSet = true; m_dataSourceLevelMetricsBehavior = value; }
@@ -258,7 +258,7 @@ namespace Model
      * time:</p> <ul> <li> <p> <code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records
      * and emits metric data for all data sources in the request.</p> </li> <li> <p>
      * <code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data
-     * sources that have the <code>metricConfig</code> value set to
+     * sources that have the <code>metricsConfig</code> value set to
      * <code>ENABLED</code>.</p> </li> </ul>
      */
     inline void SetDataSourceLevelMetricsBehavior(DataSourceLevelMetricsBehavior&& value) { m_dataSourceLevelMetricsBehaviorHasBeenSet = true; m_dataSourceLevelMetricsBehavior = std::move(value); }
@@ -275,7 +275,7 @@ namespace Model
      * time:</p> <ul> <li> <p> <code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records
      * and emits metric data for all data sources in the request.</p> </li> <li> <p>
      * <code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data
-     * sources that have the <code>metricConfig</code> value set to
+     * sources that have the <code>metricsConfig</code> value set to
      * <code>ENABLED</code>.</p> </li> </ul>
      */
     inline EnhancedMetricsConfig& WithDataSourceLevelMetricsBehavior(const DataSourceLevelMetricsBehavior& value) { SetDataSourceLevelMetricsBehavior(value); return *this;}
@@ -292,7 +292,7 @@ namespace Model
      * time:</p> <ul> <li> <p> <code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records
      * and emits metric data for all data sources in the request.</p> </li> <li> <p>
      * <code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data
-     * sources that have the <code>metricConfig</code> value set to
+     * sources that have the <code>metricsConfig</code> value set to
      * <code>ENABLED</code>.</p> </li> </ul>
      */
     inline EnhancedMetricsConfig& WithDataSourceLevelMetricsBehavior(DataSourceLevelMetricsBehavior&& value) { SetDataSourceLevelMetricsBehavior(std::move(value)); return *this;}
