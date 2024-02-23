@@ -57,6 +57,13 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             "PutBucketPolicyRequest"
     );
 
+    private static final Map<String, String> CHECKSUM_MEMBERS_ENUMS = ImmutableMap.of(
+            "ChecksumCRC32", "CRC32",
+            "ChecksumCRC32C", "CRC32C",
+            "ChecksumSHA1", "SHA1",
+            "ChecksumSHA256", "SHA256"
+    );
+
     static {
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
         opsThatDoNotSupportVirtualAddressing.add("ListBuckets");
@@ -240,6 +247,18 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
                 logTagShape.getReferencedBy().add(operationEntry.getRequest().getShape().getName());
             }
         });
+
+        serviceModel.getOperations().values().stream()
+                .filter(Operation::hasRequest)
+                .map(Operation::getRequest)
+                .map(ShapeMember::getShape)
+                .filter(requestShape -> requestShape.hasMember("ChecksumAlgorithm"))
+                .forEach(requestShape -> requestShape.getMembers().values().stream()
+                        .filter(member -> CHECKSUM_MEMBERS_ENUMS.containsKey(member.getShape().getName()))
+                        .forEach(member -> {
+                            member.setChecksumMember(true);
+                            member.setChecksumEnumMember(CHECKSUM_MEMBERS_ENUMS.get(member.getShape().getName()));
+                        }));
 
         return Stream.concat(generateS3ExpressFiles(serviceModel).stream(),
                         Arrays.stream(super.generateSourceFiles(serviceModel)))
