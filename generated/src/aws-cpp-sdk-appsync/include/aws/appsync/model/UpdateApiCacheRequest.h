@@ -266,60 +266,72 @@ namespace Model
     /**
      * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
      * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
-     * number of times a specified GraphQL operation was called.</p> </li> <li>
-     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
-     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
-     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
     inline const CacheHealthMetricsConfig& GetHealthMetricsConfig() const{ return m_healthMetricsConfig; }
 
     /**
      * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
      * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
-     * number of times a specified GraphQL operation was called.</p> </li> <li>
-     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
-     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
-     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
     inline bool HealthMetricsConfigHasBeenSet() const { return m_healthMetricsConfigHasBeenSet; }
 
     /**
      * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
      * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
-     * number of times a specified GraphQL operation was called.</p> </li> <li>
-     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
-     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
-     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
     inline void SetHealthMetricsConfig(const CacheHealthMetricsConfig& value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = value; }
 
     /**
      * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
      * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
-     * number of times a specified GraphQL operation was called.</p> </li> <li>
-     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
-     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
-     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
     inline void SetHealthMetricsConfig(CacheHealthMetricsConfig&& value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = std::move(value); }
 
     /**
      * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
      * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
-     * number of times a specified GraphQL operation was called.</p> </li> <li>
-     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
-     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
-     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
     inline UpdateApiCacheRequest& WithHealthMetricsConfig(const CacheHealthMetricsConfig& value) { SetHealthMetricsConfig(value); return *this;}
 
     /**
      * <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health
      * metrics include:</p> <ul> <li> <p>NetworkBandwidthOutAllowanceExceeded: The
-     * number of times a specified GraphQL operation was called.</p> </li> <li>
-     * <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a
-     * specified GraphQL operation.</p> </li> </ul> <p>Metrics will be recorded by API
-     * ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     * network packets dropped because the throughput exceeded the aggregated bandwidth
+     * limit. This is useful for diagnosing bottlenecks in a cache configuration.</p>
+     * </li> <li> <p>EngineCPUUtilization: The CPU utilization (percentage) allocated
+     * to the Redis process. This is useful for diagnosing bottlenecks in a cache
+     * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
+     * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
     inline UpdateApiCacheRequest& WithHealthMetricsConfig(CacheHealthMetricsConfig&& value) { SetHealthMetricsConfig(std::move(value)); return *this;}
 

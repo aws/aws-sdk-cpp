@@ -41,7 +41,7 @@ namespace Model
      * identity pool to use for authorization. If you don't include
      * <code>AppMonitorConfiguration</code>, you must set up your own authorization
      * method. For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
      * your application to send data to Amazon Web Services</a>.</p>
      */
     inline const AppMonitorConfiguration& GetAppMonitorConfiguration() const{ return m_appMonitorConfiguration; }
@@ -53,7 +53,7 @@ namespace Model
      * identity pool to use for authorization. If you don't include
      * <code>AppMonitorConfiguration</code>, you must set up your own authorization
      * method. For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
      * your application to send data to Amazon Web Services</a>.</p>
      */
     inline bool AppMonitorConfigurationHasBeenSet() const { return m_appMonitorConfigurationHasBeenSet; }
@@ -65,7 +65,7 @@ namespace Model
      * identity pool to use for authorization. If you don't include
      * <code>AppMonitorConfiguration</code>, you must set up your own authorization
      * method. For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
      * your application to send data to Amazon Web Services</a>.</p>
      */
     inline void SetAppMonitorConfiguration(const AppMonitorConfiguration& value) { m_appMonitorConfigurationHasBeenSet = true; m_appMonitorConfiguration = value; }
@@ -77,7 +77,7 @@ namespace Model
      * identity pool to use for authorization. If you don't include
      * <code>AppMonitorConfiguration</code>, you must set up your own authorization
      * method. For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
      * your application to send data to Amazon Web Services</a>.</p>
      */
     inline void SetAppMonitorConfiguration(AppMonitorConfiguration&& value) { m_appMonitorConfigurationHasBeenSet = true; m_appMonitorConfiguration = std::move(value); }
@@ -89,7 +89,7 @@ namespace Model
      * identity pool to use for authorization. If you don't include
      * <code>AppMonitorConfiguration</code>, you must set up your own authorization
      * method. For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
      * your application to send data to Amazon Web Services</a>.</p>
      */
     inline UpdateAppMonitorRequest& WithAppMonitorConfiguration(const AppMonitorConfiguration& value) { SetAppMonitorConfiguration(value); return *this;}
@@ -101,7 +101,7 @@ namespace Model
      * identity pool to use for authorization. If you don't include
      * <code>AppMonitorConfiguration</code>, you must set up your own authorization
      * method. For more information, see <a
-     * href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
      * your application to send data to Amazon Web Services</a>.</p>
      */
     inline UpdateAppMonitorRequest& WithAppMonitorConfiguration(AppMonitorConfiguration&& value) { SetAppMonitorConfiguration(std::move(value)); return *this;}
