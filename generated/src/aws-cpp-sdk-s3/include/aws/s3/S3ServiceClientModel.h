@@ -58,7 +58,6 @@
 #include <aws/s3/model/GetPublicAccessBlockResult.h>
 #include <aws/s3/model/HeadBucketResult.h>
 #include <aws/s3/model/HeadObjectResult.h>
-#include <aws/s3/model/HeadBucketResult.h>
 #include <aws/s3/model/ListBucketAnalyticsConfigurationsResult.h>
 #include <aws/s3/model/ListBucketIntelligentTieringConfigurationsResult.h>
 #include <aws/s3/model/ListBucketInventoryConfigurationsResult.h>
