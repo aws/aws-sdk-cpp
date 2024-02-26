@@ -2429,8 +2429,8 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
-     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
+     * <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
@@ -2440,14 +2440,13 @@ namespace Model
      * <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
      * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared
      * snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB cluster
-     * snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for PostgreSQL
-     * Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     * snapshot.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterSnapshotIdentifier() const{ return m_dBClusterSnapshotIdentifier; }
 
     /**
-     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
-     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
+     * <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
@@ -2457,14 +2456,13 @@ namespace Model
      * <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
      * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared
      * snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB cluster
-     * snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for PostgreSQL
-     * Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     * snapshot.</p> </li> </ul>
      */
     inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
 
     /**
-     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
-     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
+     * <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
@@ -2474,14 +2472,13 @@ namespace Model
      * <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
      * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared
      * snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB cluster
-     * snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for PostgreSQL
-     * Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     * snapshot.</p> </li> </ul>
      */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**
-     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
-     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
+     * <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
@@ -2491,14 +2488,13 @@ namespace Model
      * <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
      * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared
      * snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB cluster
-     * snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for PostgreSQL
-     * Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     * snapshot.</p> </li> </ul>
      */
     inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
 
     /**
-     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
-     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
+     * <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
@@ -2508,14 +2504,13 @@ namespace Model
      * <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
      * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared
      * snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB cluster
-     * snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for PostgreSQL
-     * Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     * snapshot.</p> </li> </ul>
      */
     inline void SetDBClusterSnapshotIdentifier(const char* value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier.assign(value); }
 
     /**
-     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
-     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
+     * <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
@@ -2525,14 +2520,13 @@ namespace Model
      * <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
      * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared
      * snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB cluster
-     * snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for PostgreSQL
-     * Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     * snapshot.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBClusterSnapshotIdentifier(const Aws::String& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
-     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
+     * <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
@@ -2542,14 +2536,13 @@ namespace Model
      * <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
      * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared
      * snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB cluster
-     * snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for PostgreSQL
-     * Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     * snapshot.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
-     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
+     * <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
@@ -2559,8 +2552,7 @@ namespace Model
      * <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
      * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared
      * snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB cluster
-     * snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for PostgreSQL
-     * Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     * snapshot.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 

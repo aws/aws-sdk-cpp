@@ -77,7 +77,7 @@ namespace KafkaConnect
         virtual ~KafkaConnectClient();
 
         /**
-         * <p>Creates a connector using the specified properties.</p><p><h3>See Also:</h3> 
+         * <p>Creates a connector using the specified properties. </p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateConnector">AWS
          * API Reference</a></p>
@@ -202,6 +202,31 @@ namespace KafkaConnect
         void DeleteCustomPluginAsync(const DeleteCustomPluginRequestT& request, const DeleteCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaConnectClient::DeleteCustomPlugin, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified worker configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteWorkerConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWorkerConfigurationOutcome DeleteWorkerConfiguration(const Model::DeleteWorkerConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWorkerConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteWorkerConfigurationRequestT = Model::DeleteWorkerConfigurationRequest>
+        Model::DeleteWorkerConfigurationOutcomeCallable DeleteWorkerConfigurationCallable(const DeleteWorkerConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&KafkaConnectClient::DeleteWorkerConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteWorkerConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteWorkerConfigurationRequestT = Model::DeleteWorkerConfigurationRequest>
+        void DeleteWorkerConfigurationAsync(const DeleteWorkerConfigurationRequestT& request, const DeleteWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaConnectClient::DeleteWorkerConfiguration, request, handler, context);
         }
 
         /**
@@ -336,6 +361,32 @@ namespace KafkaConnect
         }
 
         /**
+         * <p>Lists all the tags attached to the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&KafkaConnectClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaConnectClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of all of the worker configurations in this account and
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListWorkerConfigurations">AWS
@@ -359,6 +410,56 @@ namespace KafkaConnect
         void ListWorkerConfigurationsAsync(const ListWorkerConfigurationsRequestT& request, const ListWorkerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaConnectClient::ListWorkerConfigurations, request, handler, context);
+        }
+
+        /**
+         * <p>Attaches tags to the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&KafkaConnectClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaConnectClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Removes tags from the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&KafkaConnectClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaConnectClient::UntagResource, request, handler, context);
         }
 
         /**

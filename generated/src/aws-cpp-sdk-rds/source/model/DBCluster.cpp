@@ -121,7 +121,9 @@ DBCluster::DBCluster() :
     m_localWriteForwardingStatus(LocalWriteForwardingStatus::NOT_SET),
     m_localWriteForwardingStatusHasBeenSet(false),
     m_awsBackupRecoveryPointArnHasBeenSet(false),
-    m_limitlessDatabaseHasBeenSet(false)
+    m_limitlessDatabaseHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
 }
 
@@ -226,7 +228,9 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_localWriteForwardingStatus(LocalWriteForwardingStatus::NOT_SET),
     m_localWriteForwardingStatusHasBeenSet(false),
     m_awsBackupRecoveryPointArnHasBeenSet(false),
-    m_limitlessDatabaseHasBeenSet(false)
+    m_limitlessDatabaseHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -765,6 +769,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_limitlessDatabase = limitlessDatabaseNode;
       m_limitlessDatabaseHasBeenSet = true;
     }
+    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
+    if(!storageThroughputNode.IsNull())
+    {
+      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
+      m_storageThroughputHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1227,6 +1237,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       m_limitlessDatabase.OutputToStream(oStream, limitlessDatabaseLocationAndMemberSs.str().c_str());
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1608,6 +1623,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String limitlessDatabaseLocationAndMember(location);
       limitlessDatabaseLocationAndMember += ".LimitlessDatabase";
       m_limitlessDatabase.OutputToStream(oStream, limitlessDatabaseLocationAndMember.c_str());
+  }
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 }
 
