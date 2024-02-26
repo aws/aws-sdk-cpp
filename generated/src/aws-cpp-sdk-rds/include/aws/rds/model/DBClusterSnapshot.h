@@ -1046,6 +1046,39 @@ namespace Model
      */
     inline DBClusterSnapshot& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 
+
+    /**
+     * <p>The storage throughput for the DB cluster snapshot. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>The storage throughput for the DB cluster snapshot. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>The storage throughput for the DB cluster snapshot. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>The storage throughput for the DB cluster snapshot. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline DBClusterSnapshot& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -1122,6 +1155,9 @@ namespace Model
 
     Aws::String m_dbClusterResourceId;
     bool m_dbClusterResourceIdHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

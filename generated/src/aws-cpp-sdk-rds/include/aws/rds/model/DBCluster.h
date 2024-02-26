@@ -3344,6 +3344,35 @@ namespace Model
      */
     inline DBCluster& WithLimitlessDatabase(LimitlessDatabase&& value) { SetLimitlessDatabase(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The storage throughput for the DB cluster. The throughput is automatically
+     * set based on the IOPS that you provision, and is not configurable.</p> <p>This
+     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>The storage throughput for the DB cluster. The throughput is automatically
+     * set based on the IOPS that you provision, and is not configurable.</p> <p>This
+     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>The storage throughput for the DB cluster. The throughput is automatically
+     * set based on the IOPS that you provision, and is not configurable.</p> <p>This
+     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>The storage throughput for the DB cluster. The throughput is automatically
+     * set based on the IOPS that you provision, and is not configurable.</p> <p>This
+     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -3576,6 +3605,9 @@ namespace Model
 
     LimitlessDatabase m_limitlessDatabase;
     bool m_limitlessDatabaseHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

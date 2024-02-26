@@ -413,42 +413,82 @@ namespace Model
 
 
     /**
-     * <p>Specifies which plugins to use for the connector.</p>
+     *  <p>Amazon MSK Connect does not currently support specifying multiple
+     * plugins as a list. To use more than one plugin for your connector, you can
+     * create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.</p>  <p>Specifies which plugin to use for the connector.
+     * You must specify a single-element list containing one <code>customPlugin</code>
+     * object.</p>
      */
     inline const Aws::Vector<Plugin>& GetPlugins() const{ return m_plugins; }
 
     /**
-     * <p>Specifies which plugins to use for the connector.</p>
+     *  <p>Amazon MSK Connect does not currently support specifying multiple
+     * plugins as a list. To use more than one plugin for your connector, you can
+     * create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.</p>  <p>Specifies which plugin to use for the connector.
+     * You must specify a single-element list containing one <code>customPlugin</code>
+     * object.</p>
      */
     inline bool PluginsHasBeenSet() const { return m_pluginsHasBeenSet; }
 
     /**
-     * <p>Specifies which plugins to use for the connector.</p>
+     *  <p>Amazon MSK Connect does not currently support specifying multiple
+     * plugins as a list. To use more than one plugin for your connector, you can
+     * create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.</p>  <p>Specifies which plugin to use for the connector.
+     * You must specify a single-element list containing one <code>customPlugin</code>
+     * object.</p>
      */
     inline void SetPlugins(const Aws::Vector<Plugin>& value) { m_pluginsHasBeenSet = true; m_plugins = value; }
 
     /**
-     * <p>Specifies which plugins to use for the connector.</p>
+     *  <p>Amazon MSK Connect does not currently support specifying multiple
+     * plugins as a list. To use more than one plugin for your connector, you can
+     * create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.</p>  <p>Specifies which plugin to use for the connector.
+     * You must specify a single-element list containing one <code>customPlugin</code>
+     * object.</p>
      */
     inline void SetPlugins(Aws::Vector<Plugin>&& value) { m_pluginsHasBeenSet = true; m_plugins = std::move(value); }
 
     /**
-     * <p>Specifies which plugins to use for the connector.</p>
+     *  <p>Amazon MSK Connect does not currently support specifying multiple
+     * plugins as a list. To use more than one plugin for your connector, you can
+     * create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.</p>  <p>Specifies which plugin to use for the connector.
+     * You must specify a single-element list containing one <code>customPlugin</code>
+     * object.</p>
      */
     inline CreateConnectorRequest& WithPlugins(const Aws::Vector<Plugin>& value) { SetPlugins(value); return *this;}
 
     /**
-     * <p>Specifies which plugins to use for the connector.</p>
+     *  <p>Amazon MSK Connect does not currently support specifying multiple
+     * plugins as a list. To use more than one plugin for your connector, you can
+     * create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.</p>  <p>Specifies which plugin to use for the connector.
+     * You must specify a single-element list containing one <code>customPlugin</code>
+     * object.</p>
      */
     inline CreateConnectorRequest& WithPlugins(Aws::Vector<Plugin>&& value) { SetPlugins(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies which plugins to use for the connector.</p>
+     *  <p>Amazon MSK Connect does not currently support specifying multiple
+     * plugins as a list. To use more than one plugin for your connector, you can
+     * create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.</p>  <p>Specifies which plugin to use for the connector.
+     * You must specify a single-element list containing one <code>customPlugin</code>
+     * object.</p>
      */
     inline CreateConnectorRequest& AddPlugins(const Plugin& value) { m_pluginsHasBeenSet = true; m_plugins.push_back(value); return *this; }
 
     /**
-     * <p>Specifies which plugins to use for the connector.</p>
+     *  <p>Amazon MSK Connect does not currently support specifying multiple
+     * plugins as a list. To use more than one plugin for your connector, you can
+     * create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.</p>  <p>Specifies which plugin to use for the connector.
+     * You must specify a single-element list containing one <code>customPlugin</code>
+     * object.</p>
      */
     inline CreateConnectorRequest& AddPlugins(Plugin&& value) { m_pluginsHasBeenSet = true; m_plugins.push_back(std::move(value)); return *this; }
 
@@ -527,6 +567,72 @@ namespace Model
 
 
     /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline CreateConnectorRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline CreateConnectorRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline CreateConnectorRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline CreateConnectorRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline CreateConnectorRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline CreateConnectorRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline CreateConnectorRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline CreateConnectorRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags you want to attach to the connector.</p>
+     */
+    inline CreateConnectorRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>Specifies which worker configuration to use with the connector.</p>
      */
     inline const WorkerConfiguration& GetWorkerConfiguration() const{ return m_workerConfiguration; }
@@ -590,6 +696,9 @@ namespace Model
 
     Aws::String m_serviceExecutionRoleArn;
     bool m_serviceExecutionRoleArnHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     WorkerConfiguration m_workerConfiguration;
     bool m_workerConfigurationHasBeenSet = false;

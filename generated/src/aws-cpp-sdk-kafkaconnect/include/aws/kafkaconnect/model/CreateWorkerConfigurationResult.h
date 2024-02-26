@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/kafkaconnect/model/WorkerConfigurationRevisionSummary.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kafkaconnect/model/WorkerConfigurationState.h>
 #include <utility>
 
 namespace Aws
@@ -165,6 +166,32 @@ namespace Model
     inline CreateWorkerConfigurationResult& WithWorkerConfigurationArn(const char* value) { SetWorkerConfigurationArn(value); return *this;}
 
 
+    /**
+     * <p>The state of the worker configuration.</p>
+     */
+    inline const WorkerConfigurationState& GetWorkerConfigurationState() const{ return m_workerConfigurationState; }
+
+    /**
+     * <p>The state of the worker configuration.</p>
+     */
+    inline void SetWorkerConfigurationState(const WorkerConfigurationState& value) { m_workerConfigurationState = value; }
+
+    /**
+     * <p>The state of the worker configuration.</p>
+     */
+    inline void SetWorkerConfigurationState(WorkerConfigurationState&& value) { m_workerConfigurationState = std::move(value); }
+
+    /**
+     * <p>The state of the worker configuration.</p>
+     */
+    inline CreateWorkerConfigurationResult& WithWorkerConfigurationState(const WorkerConfigurationState& value) { SetWorkerConfigurationState(value); return *this;}
+
+    /**
+     * <p>The state of the worker configuration.</p>
+     */
+    inline CreateWorkerConfigurationResult& WithWorkerConfigurationState(WorkerConfigurationState&& value) { SetWorkerConfigurationState(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -195,6 +222,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::String m_workerConfigurationArn;
+
+    WorkerConfigurationState m_workerConfigurationState;
 
     Aws::String m_requestId;
   };

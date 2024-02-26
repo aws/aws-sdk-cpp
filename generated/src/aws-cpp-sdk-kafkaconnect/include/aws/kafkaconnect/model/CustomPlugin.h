@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A plugin is an AWS resource that contains the code that defines a connector's
-   * logic.</p><p><h3>See Also:</h3>   <a
+   * <p>A plugin is an Amazon Web Services resource that contains the code that
+   * defines a connector's logic.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CustomPlugin">AWS
    * API Reference</a></p>
    */

@@ -17,7 +17,8 @@ CreateCustomPluginRequest::CreateCustomPluginRequest() :
     m_contentTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,17 @@ Aws::String CreateCustomPluginRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

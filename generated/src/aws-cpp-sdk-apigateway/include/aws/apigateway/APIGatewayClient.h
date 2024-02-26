@@ -2938,7 +2938,8 @@ namespace APIGateway
         }
 
         /**
-         * <p>Changes information about a model.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes information about a model. The maximum size of the model is 400
+         * KB.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">AWS
          * API Reference</a></p>
          */

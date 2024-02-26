@@ -997,6 +997,39 @@ namespace Model
      */
     inline DBClusterAutomatedBackup& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
 
+
+    /**
+     * <p>The storage throughput for the automated backup. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>The storage throughput for the automated backup. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>The storage throughput for the automated backup. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>The storage throughput for the automated backup. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline DBClusterAutomatedBackup& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -1070,6 +1103,9 @@ namespace Model
 
     Aws::String m_awsBackupRecoveryPointArn;
     bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

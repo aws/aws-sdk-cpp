@@ -60,6 +60,47 @@ namespace Model
 
 
     /**
+     * <p>Lists custom plugin names that start with the specified text string.</p>
+     */
+    inline const Aws::String& GetNamePrefix() const{ return m_namePrefix; }
+
+    /**
+     * <p>Lists custom plugin names that start with the specified text string.</p>
+     */
+    inline bool NamePrefixHasBeenSet() const { return m_namePrefixHasBeenSet; }
+
+    /**
+     * <p>Lists custom plugin names that start with the specified text string.</p>
+     */
+    inline void SetNamePrefix(const Aws::String& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
+
+    /**
+     * <p>Lists custom plugin names that start with the specified text string.</p>
+     */
+    inline void SetNamePrefix(Aws::String&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = std::move(value); }
+
+    /**
+     * <p>Lists custom plugin names that start with the specified text string.</p>
+     */
+    inline void SetNamePrefix(const char* value) { m_namePrefixHasBeenSet = true; m_namePrefix.assign(value); }
+
+    /**
+     * <p>Lists custom plugin names that start with the specified text string.</p>
+     */
+    inline ListCustomPluginsRequest& WithNamePrefix(const Aws::String& value) { SetNamePrefix(value); return *this;}
+
+    /**
+     * <p>Lists custom plugin names that start with the specified text string.</p>
+     */
+    inline ListCustomPluginsRequest& WithNamePrefix(Aws::String&& value) { SetNamePrefix(std::move(value)); return *this;}
+
+    /**
+     * <p>Lists custom plugin names that start with the specified text string.</p>
+     */
+    inline ListCustomPluginsRequest& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
+
+
+    /**
      * <p>If the response of a ListCustomPlugins operation is truncated, it will
      * include a NextToken. Send this NextToken in a subsequent request to continue
      * listing from where the previous operation left off.</p>
@@ -119,6 +160,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_namePrefix;
+    bool m_namePrefixHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
