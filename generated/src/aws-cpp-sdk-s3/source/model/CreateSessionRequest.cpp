@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection CreateSessionRequest::GetRequestSpecificHeaders
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_sessionModeHasBeenSet)
+  if(m_sessionModeHasBeenSet && m_sessionMode != SessionMode::NOT_SET)
   {
     headers.emplace("x-amz-create-session-mode", SessionModeMapper::GetNameForSessionMode(m_sessionMode));
   }

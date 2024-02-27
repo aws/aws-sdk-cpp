@@ -78,7 +78,7 @@ Aws::Http::HeaderValueCollection PublishRequest::GetRequestSpecificHeaders() con
     ss.str("");
   }
 
-  if(m_payloadFormatIndicatorHasBeenSet)
+  if(m_payloadFormatIndicatorHasBeenSet && m_payloadFormatIndicator != PayloadFormatIndicator::NOT_SET)
   {
     headers.emplace("x-amz-mqtt5-payload-format-indicator", PayloadFormatIndicatorMapper::GetNameForPayloadFormatIndicator(m_payloadFormatIndicator));
   }
