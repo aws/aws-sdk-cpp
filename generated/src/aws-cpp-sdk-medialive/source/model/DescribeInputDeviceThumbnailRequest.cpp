@@ -29,7 +29,7 @@ Aws::Http::HeaderValueCollection DescribeInputDeviceThumbnailRequest::GetRequest
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_acceptHasBeenSet)
+  if(m_acceptHasBeenSet && m_accept != AcceptHeader::NOT_SET)
   {
     headers.emplace("accept", AcceptHeaderMapper::GetNameForAcceptHeader(m_accept));
   }

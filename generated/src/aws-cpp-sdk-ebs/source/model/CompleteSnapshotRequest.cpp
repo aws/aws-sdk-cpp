@@ -48,12 +48,12 @@ Aws::Http::HeaderValueCollection CompleteSnapshotRequest::GetRequestSpecificHead
     ss.str("");
   }
 
-  if(m_checksumAlgorithmHasBeenSet)
+  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
   {
     headers.emplace("x-amz-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
 
-  if(m_checksumAggregationMethodHasBeenSet)
+  if(m_checksumAggregationMethodHasBeenSet && m_checksumAggregationMethod != ChecksumAggregationMethod::NOT_SET)
   {
     headers.emplace("x-amz-checksum-aggregation-method", ChecksumAggregationMethodMapper::GetNameForChecksumAggregationMethod(m_checksumAggregationMethod));
   }

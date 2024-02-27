@@ -29,7 +29,7 @@ Aws::Http::HeaderValueCollection GetSolNetworkPackageContentRequest::GetRequestS
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_acceptHasBeenSet)
+  if(m_acceptHasBeenSet && m_accept != PackageContentType::NOT_SET)
   {
     headers.emplace("accept", PackageContentTypeMapper::GetNameForPackageContentType(m_accept));
   }

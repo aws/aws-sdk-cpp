@@ -45,12 +45,12 @@ Aws::Http::HeaderValueCollection InvokeRequest::GetRequestSpecificHeaders() cons
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_invocationTypeHasBeenSet)
+  if(m_invocationTypeHasBeenSet && m_invocationType != InvocationType::NOT_SET)
   {
     headers.emplace("x-amz-invocation-type", InvocationTypeMapper::GetNameForInvocationType(m_invocationType));
   }
 
-  if(m_logTypeHasBeenSet)
+  if(m_logTypeHasBeenSet && m_logType != LogType::NOT_SET)
   {
     headers.emplace("x-amz-log-type", LogTypeMapper::GetNameForLogType(m_logType));
   }
