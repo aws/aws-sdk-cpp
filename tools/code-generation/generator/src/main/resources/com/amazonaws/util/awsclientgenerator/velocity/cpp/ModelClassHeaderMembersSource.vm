@@ -12,7 +12,11 @@
 #if($member.usedForHeader)
 #set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
+#if($member.shape.enum && !$member.shape.enumValues.contains("NOT_SET"))
+#set($varNameHasBeenSet = "$CppViewHelper.computeVariableHasBeenSetName($memberName) && $memberVarName != ${member.shape.name}::NOT_SET")
+#else
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
+#end
 #if(!$member.required && $useRequiredField)
 #set($spaces = '  ')
   if($varNameHasBeenSet)
