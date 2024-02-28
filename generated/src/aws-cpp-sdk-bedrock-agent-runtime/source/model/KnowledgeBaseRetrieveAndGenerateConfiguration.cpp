@@ -20,13 +20,15 @@ namespace Model
 
 KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateConfiguration() : 
     m_knowledgeBaseIdHasBeenSet(false),
-    m_modelArnHasBeenSet(false)
+    m_modelArnHasBeenSet(false),
+    m_retrievalConfigurationHasBeenSet(false)
 {
 }
 
 KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateConfiguration(JsonView jsonValue) : 
     m_knowledgeBaseIdHasBeenSet(false),
-    m_modelArnHasBeenSet(false)
+    m_modelArnHasBeenSet(false),
+    m_retrievalConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ KnowledgeBaseRetrieveAndGenerateConfiguration& KnowledgeBaseRetrieveAndGenerateC
     m_modelArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("retrievalConfiguration"))
+  {
+    m_retrievalConfiguration = jsonValue.GetObject("retrievalConfiguration");
+
+    m_retrievalConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue KnowledgeBaseRetrieveAndGenerateConfiguration::Jsonize() const
   if(m_modelArnHasBeenSet)
   {
    payload.WithString("modelArn", m_modelArn);
+
+  }
+
+  if(m_retrievalConfigurationHasBeenSet)
+  {
+   payload.WithObject("retrievalConfiguration", m_retrievalConfiguration.Jsonize());
 
   }
 

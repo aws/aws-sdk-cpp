@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The network configuration for jobs that are running on Fargate resources.
-   * Jobs that are running on EC2 resources must not specify this
+   * Jobs that are running on Amazon EC2 resources must not specify this
    * parameter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NetworkConfiguration">AWS
    * API Reference</a></p>

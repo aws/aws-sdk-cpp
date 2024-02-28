@@ -354,6 +354,103 @@ namespace Model
 
 
     /**
+     * <p>These containers run before application containers, always runs to
+     * completion, and must complete successfully before the next container starts.
+     * These containers are registered with the Amazon EKS Connector agent and persists
+     * the registration information in the Kubernetes backend data store. For more
+     * information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline const Aws::Vector<EksContainer>& GetInitContainers() const{ return m_initContainers; }
+
+    /**
+     * <p>These containers run before application containers, always runs to
+     * completion, and must complete successfully before the next container starts.
+     * These containers are registered with the Amazon EKS Connector agent and persists
+     * the registration information in the Kubernetes backend data store. For more
+     * information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline bool InitContainersHasBeenSet() const { return m_initContainersHasBeenSet; }
+
+    /**
+     * <p>These containers run before application containers, always runs to
+     * completion, and must complete successfully before the next container starts.
+     * These containers are registered with the Amazon EKS Connector agent and persists
+     * the registration information in the Kubernetes backend data store. For more
+     * information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline void SetInitContainers(const Aws::Vector<EksContainer>& value) { m_initContainersHasBeenSet = true; m_initContainers = value; }
+
+    /**
+     * <p>These containers run before application containers, always runs to
+     * completion, and must complete successfully before the next container starts.
+     * These containers are registered with the Amazon EKS Connector agent and persists
+     * the registration information in the Kubernetes backend data store. For more
+     * information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline void SetInitContainers(Aws::Vector<EksContainer>&& value) { m_initContainersHasBeenSet = true; m_initContainers = std::move(value); }
+
+    /**
+     * <p>These containers run before application containers, always runs to
+     * completion, and must complete successfully before the next container starts.
+     * These containers are registered with the Amazon EKS Connector agent and persists
+     * the registration information in the Kubernetes backend data store. For more
+     * information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline EksPodProperties& WithInitContainers(const Aws::Vector<EksContainer>& value) { SetInitContainers(value); return *this;}
+
+    /**
+     * <p>These containers run before application containers, always runs to
+     * completion, and must complete successfully before the next container starts.
+     * These containers are registered with the Amazon EKS Connector agent and persists
+     * the registration information in the Kubernetes backend data store. For more
+     * information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline EksPodProperties& WithInitContainers(Aws::Vector<EksContainer>&& value) { SetInitContainers(std::move(value)); return *this;}
+
+    /**
+     * <p>These containers run before application containers, always runs to
+     * completion, and must complete successfully before the next container starts.
+     * These containers are registered with the Amazon EKS Connector agent and persists
+     * the registration information in the Kubernetes backend data store. For more
+     * information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline EksPodProperties& AddInitContainers(const EksContainer& value) { m_initContainersHasBeenSet = true; m_initContainers.push_back(value); return *this; }
+
+    /**
+     * <p>These containers run before application containers, always runs to
+     * completion, and must complete successfully before the next container starts.
+     * These containers are registered with the Amazon EKS Connector agent and persists
+     * the registration information in the Kubernetes backend data store. For more
+     * information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline EksPodProperties& AddInitContainers(EksContainer&& value) { m_initContainersHasBeenSet = true; m_initContainers.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Specifies the volumes for a job definition that uses Amazon EKS
      * resources.</p>
      */
@@ -444,6 +541,39 @@ namespace Model
      */
     inline EksPodProperties& WithMetadata(EksMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates if the processes in a container are shared, or visible, to other
+     * containers in the same pod. For more information, see <a
+     * href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share
+     * Process Namespace between Containers in a Pod</a>.</p>
+     */
+    inline bool GetShareProcessNamespace() const{ return m_shareProcessNamespace; }
+
+    /**
+     * <p>Indicates if the processes in a container are shared, or visible, to other
+     * containers in the same pod. For more information, see <a
+     * href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share
+     * Process Namespace between Containers in a Pod</a>.</p>
+     */
+    inline bool ShareProcessNamespaceHasBeenSet() const { return m_shareProcessNamespaceHasBeenSet; }
+
+    /**
+     * <p>Indicates if the processes in a container are shared, or visible, to other
+     * containers in the same pod. For more information, see <a
+     * href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share
+     * Process Namespace between Containers in a Pod</a>.</p>
+     */
+    inline void SetShareProcessNamespace(bool value) { m_shareProcessNamespaceHasBeenSet = true; m_shareProcessNamespace = value; }
+
+    /**
+     * <p>Indicates if the processes in a container are shared, or visible, to other
+     * containers in the same pod. For more information, see <a
+     * href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share
+     * Process Namespace between Containers in a Pod</a>.</p>
+     */
+    inline EksPodProperties& WithShareProcessNamespace(bool value) { SetShareProcessNamespace(value); return *this;}
+
   private:
 
     Aws::String m_serviceAccountName;
@@ -458,11 +588,17 @@ namespace Model
     Aws::Vector<EksContainer> m_containers;
     bool m_containersHasBeenSet = false;
 
+    Aws::Vector<EksContainer> m_initContainers;
+    bool m_initContainersHasBeenSet = false;
+
     Aws::Vector<EksVolume> m_volumes;
     bool m_volumesHasBeenSet = false;
 
     EksMetadata m_metadata;
     bool m_metadataHasBeenSet = false;
+
+    bool m_shareProcessNamespace;
+    bool m_shareProcessNamespaceHasBeenSet = false;
   };
 
 } // namespace Model

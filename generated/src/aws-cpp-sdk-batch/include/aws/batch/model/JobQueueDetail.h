@@ -331,9 +331,9 @@ namespace Model
      * associated with the same compute environment. Priority is determined in
      * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
-     * value of <code>1</code>. All of the compute environments must be either EC2
-     * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
+     * value of <code>1</code>. All of the compute environments must be either Amazon
+     * EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>). Amazon EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline int GetPriority() const{ return m_priority; }
@@ -344,9 +344,9 @@ namespace Model
      * associated with the same compute environment. Priority is determined in
      * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
-     * value of <code>1</code>. All of the compute environments must be either EC2
-     * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
+     * value of <code>1</code>. All of the compute environments must be either Amazon
+     * EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>). Amazon EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
@@ -357,9 +357,9 @@ namespace Model
      * associated with the same compute environment. Priority is determined in
      * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
-     * value of <code>1</code>. All of the compute environments must be either EC2
-     * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
+     * value of <code>1</code>. All of the compute environments must be either Amazon
+     * EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>). Amazon EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
@@ -370,9 +370,9 @@ namespace Model
      * associated with the same compute environment. Priority is determined in
      * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
-     * value of <code>1</code>. All of the compute environments must be either EC2
-     * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
+     * value of <code>1</code>. All of the compute environments must be either Amazon
+     * EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>). Amazon EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline JobQueueDetail& WithPriority(int value) { SetPriority(value); return *this;}

@@ -1137,8 +1137,8 @@ namespace Model
 
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1153,8 +1153,8 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1169,8 +1169,8 @@ namespace Model
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1185,8 +1185,8 @@ namespace Model
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1201,8 +1201,8 @@ namespace Model
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1217,8 +1217,8 @@ namespace Model
     inline ComputeResource& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1233,8 +1233,8 @@ namespace Model
     inline ComputeResource& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1249,8 +1249,8 @@ namespace Model
     inline ComputeResource& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1265,8 +1265,8 @@ namespace Model
     inline ComputeResource& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1281,8 +1281,8 @@ namespace Model
     inline ComputeResource& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1297,8 +1297,8 @@ namespace Model
     inline ComputeResource& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1313,8 +1313,8 @@ namespace Model
     inline ComputeResource& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1329,8 +1329,8 @@ namespace Model
     inline ComputeResource& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1666,10 +1666,11 @@ namespace Model
 
     /**
      * <p>The launch template to use for your compute resources. Any other compute
-     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
-     * operation override the same parameters in the launch template. You must specify
-     * either the launch template ID or launch template name in the request, but not
-     * both. For more information, see <a
+     * resource parameters that you specify in a <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a>
+     * API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request,
+     * but not both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Batch User Guide</i>.</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
@@ -1679,10 +1680,11 @@ namespace Model
 
     /**
      * <p>The launch template to use for your compute resources. Any other compute
-     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
-     * operation override the same parameters in the launch template. You must specify
-     * either the launch template ID or launch template name in the request, but not
-     * both. For more information, see <a
+     * resource parameters that you specify in a <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a>
+     * API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request,
+     * but not both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Batch User Guide</i>.</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
@@ -1692,10 +1694,11 @@ namespace Model
 
     /**
      * <p>The launch template to use for your compute resources. Any other compute
-     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
-     * operation override the same parameters in the launch template. You must specify
-     * either the launch template ID or launch template name in the request, but not
-     * both. For more information, see <a
+     * resource parameters that you specify in a <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a>
+     * API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request,
+     * but not both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Batch User Guide</i>.</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
@@ -1705,10 +1708,11 @@ namespace Model
 
     /**
      * <p>The launch template to use for your compute resources. Any other compute
-     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
-     * operation override the same parameters in the launch template. You must specify
-     * either the launch template ID or launch template name in the request, but not
-     * both. For more information, see <a
+     * resource parameters that you specify in a <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a>
+     * API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request,
+     * but not both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Batch User Guide</i>.</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
@@ -1718,10 +1722,11 @@ namespace Model
 
     /**
      * <p>The launch template to use for your compute resources. Any other compute
-     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
-     * operation override the same parameters in the launch template. You must specify
-     * either the launch template ID or launch template name in the request, but not
-     * both. For more information, see <a
+     * resource parameters that you specify in a <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a>
+     * API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request,
+     * but not both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Batch User Guide</i>.</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
@@ -1731,10 +1736,11 @@ namespace Model
 
     /**
      * <p>The launch template to use for your compute resources. Any other compute
-     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
-     * operation override the same parameters in the launch template. You must specify
-     * either the launch template ID or launch template name in the request, but not
-     * both. For more information, see <a
+     * resource parameters that you specify in a <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a>
+     * API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request,
+     * but not both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Batch User Guide</i>.</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
@@ -1745,73 +1751,81 @@ namespace Model
 
     /**
      * <p>Provides information that's used to select Amazon Machine Images (AMIs) for
-     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
-     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * Amazon EC2 instances in the compute environment. If
+     * <code>Ec2Configuration</code> isn't specified, the default is
+     * <code>ECS_AL2</code>.</p> <p>One or two values can be provided.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline const Aws::Vector<Ec2Configuration>& GetEc2Configuration() const{ return m_ec2Configuration; }
 
     /**
      * <p>Provides information that's used to select Amazon Machine Images (AMIs) for
-     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
-     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * Amazon EC2 instances in the compute environment. If
+     * <code>Ec2Configuration</code> isn't specified, the default is
+     * <code>ECS_AL2</code>.</p> <p>One or two values can be provided.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline bool Ec2ConfigurationHasBeenSet() const { return m_ec2ConfigurationHasBeenSet; }
 
     /**
      * <p>Provides information that's used to select Amazon Machine Images (AMIs) for
-     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
-     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * Amazon EC2 instances in the compute environment. If
+     * <code>Ec2Configuration</code> isn't specified, the default is
+     * <code>ECS_AL2</code>.</p> <p>One or two values can be provided.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline void SetEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = value; }
 
     /**
      * <p>Provides information that's used to select Amazon Machine Images (AMIs) for
-     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
-     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * Amazon EC2 instances in the compute environment. If
+     * <code>Ec2Configuration</code> isn't specified, the default is
+     * <code>ECS_AL2</code>.</p> <p>One or two values can be provided.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline void SetEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = std::move(value); }
 
     /**
      * <p>Provides information that's used to select Amazon Machine Images (AMIs) for
-     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
-     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * Amazon EC2 instances in the compute environment. If
+     * <code>Ec2Configuration</code> isn't specified, the default is
+     * <code>ECS_AL2</code>.</p> <p>One or two values can be provided.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline ComputeResource& WithEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { SetEc2Configuration(value); return *this;}
 
     /**
      * <p>Provides information that's used to select Amazon Machine Images (AMIs) for
-     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
-     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * Amazon EC2 instances in the compute environment. If
+     * <code>Ec2Configuration</code> isn't specified, the default is
+     * <code>ECS_AL2</code>.</p> <p>One or two values can be provided.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline ComputeResource& WithEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { SetEc2Configuration(std::move(value)); return *this;}
 
     /**
      * <p>Provides information that's used to select Amazon Machine Images (AMIs) for
-     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
-     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * Amazon EC2 instances in the compute environment. If
+     * <code>Ec2Configuration</code> isn't specified, the default is
+     * <code>ECS_AL2</code>.</p> <p>One or two values can be provided.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline ComputeResource& AddEc2Configuration(const Ec2Configuration& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(value); return *this; }
 
     /**
      * <p>Provides information that's used to select Amazon Machine Images (AMIs) for
-     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
-     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * Amazon EC2 instances in the compute environment. If
+     * <code>Ec2Configuration</code> isn't specified, the default is
+     * <code>ECS_AL2</code>.</p> <p>One or two values can be provided.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline ComputeResource& AddEc2Configuration(Ec2Configuration&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(std::move(value)); return *this; }
 

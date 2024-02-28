@@ -149,6 +149,51 @@ namespace Model
 
 
     /**
+     * <p>The amount of time, in seconds, that WAF should include in its request
+     * counts, looking back from the current time. For example, for a setting of 120,
+     * when WAF checks the rate, it counts the requests for the 2 minutes immediately
+     * preceding the current time. Valid settings are 60, 120, 300, and 600. </p>
+     * <p>This setting doesn't determine how often WAF checks the rate, but how far
+     * back it looks each time it checks. WAF checks the rate about every 10
+     * seconds.</p> <p>Default: <code>300</code> (5 minutes)</p>
+     */
+    inline long long GetEvaluationWindowSec() const{ return m_evaluationWindowSec; }
+
+    /**
+     * <p>The amount of time, in seconds, that WAF should include in its request
+     * counts, looking back from the current time. For example, for a setting of 120,
+     * when WAF checks the rate, it counts the requests for the 2 minutes immediately
+     * preceding the current time. Valid settings are 60, 120, 300, and 600. </p>
+     * <p>This setting doesn't determine how often WAF checks the rate, but how far
+     * back it looks each time it checks. WAF checks the rate about every 10
+     * seconds.</p> <p>Default: <code>300</code> (5 minutes)</p>
+     */
+    inline bool EvaluationWindowSecHasBeenSet() const { return m_evaluationWindowSecHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, that WAF should include in its request
+     * counts, looking back from the current time. For example, for a setting of 120,
+     * when WAF checks the rate, it counts the requests for the 2 minutes immediately
+     * preceding the current time. Valid settings are 60, 120, 300, and 600. </p>
+     * <p>This setting doesn't determine how often WAF checks the rate, but how far
+     * back it looks each time it checks. WAF checks the rate about every 10
+     * seconds.</p> <p>Default: <code>300</code> (5 minutes)</p>
+     */
+    inline void SetEvaluationWindowSec(long long value) { m_evaluationWindowSecHasBeenSet = true; m_evaluationWindowSec = value; }
+
+    /**
+     * <p>The amount of time, in seconds, that WAF should include in its request
+     * counts, looking back from the current time. For example, for a setting of 120,
+     * when WAF checks the rate, it counts the requests for the 2 minutes immediately
+     * preceding the current time. Valid settings are 60, 120, 300, and 600. </p>
+     * <p>This setting doesn't determine how often WAF checks the rate, but how far
+     * back it looks each time it checks. WAF checks the rate about every 10
+     * seconds.</p> <p>Default: <code>300</code> (5 minutes)</p>
+     */
+    inline RateBasedStatement& WithEvaluationWindowSec(long long value) { SetEvaluationWindowSec(value); return *this;}
+
+
+    /**
      * <p>Setting that indicates how to aggregate the request counts. </p> 
      * <p>Web requests that are missing any of the components specified in the
      * aggregation keys are omitted from the rate-based rule evaluation and handling.
@@ -489,6 +534,9 @@ namespace Model
 
     long long m_limit;
     bool m_limitHasBeenSet = false;
+
+    long long m_evaluationWindowSec;
+    bool m_evaluationWindowSecHasBeenSet = false;
 
     RateBasedStatementAggregateKeyType m_aggregateKeyType;
     bool m_aggregateKeyTypeHasBeenSet = false;

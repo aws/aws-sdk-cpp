@@ -82,6 +82,103 @@ namespace Model
 
 
     /**
+     * <p>The overrides for the conatainers defined in the Amazon EKS pod. These
+     * containers run before application containers, always runs to completion, and
+     * must complete successfully before the next container starts. These containers
+     * are registered with the Amazon EKS Connector agent and persists the registration
+     * information in the Kubernetes backend data store. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline const Aws::Vector<EksContainerOverride>& GetInitContainers() const{ return m_initContainers; }
+
+    /**
+     * <p>The overrides for the conatainers defined in the Amazon EKS pod. These
+     * containers run before application containers, always runs to completion, and
+     * must complete successfully before the next container starts. These containers
+     * are registered with the Amazon EKS Connector agent and persists the registration
+     * information in the Kubernetes backend data store. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline bool InitContainersHasBeenSet() const { return m_initContainersHasBeenSet; }
+
+    /**
+     * <p>The overrides for the conatainers defined in the Amazon EKS pod. These
+     * containers run before application containers, always runs to completion, and
+     * must complete successfully before the next container starts. These containers
+     * are registered with the Amazon EKS Connector agent and persists the registration
+     * information in the Kubernetes backend data store. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline void SetInitContainers(const Aws::Vector<EksContainerOverride>& value) { m_initContainersHasBeenSet = true; m_initContainers = value; }
+
+    /**
+     * <p>The overrides for the conatainers defined in the Amazon EKS pod. These
+     * containers run before application containers, always runs to completion, and
+     * must complete successfully before the next container starts. These containers
+     * are registered with the Amazon EKS Connector agent and persists the registration
+     * information in the Kubernetes backend data store. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline void SetInitContainers(Aws::Vector<EksContainerOverride>&& value) { m_initContainersHasBeenSet = true; m_initContainers = std::move(value); }
+
+    /**
+     * <p>The overrides for the conatainers defined in the Amazon EKS pod. These
+     * containers run before application containers, always runs to completion, and
+     * must complete successfully before the next container starts. These containers
+     * are registered with the Amazon EKS Connector agent and persists the registration
+     * information in the Kubernetes backend data store. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline EksPodPropertiesOverride& WithInitContainers(const Aws::Vector<EksContainerOverride>& value) { SetInitContainers(value); return *this;}
+
+    /**
+     * <p>The overrides for the conatainers defined in the Amazon EKS pod. These
+     * containers run before application containers, always runs to completion, and
+     * must complete successfully before the next container starts. These containers
+     * are registered with the Amazon EKS Connector agent and persists the registration
+     * information in the Kubernetes backend data store. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline EksPodPropertiesOverride& WithInitContainers(Aws::Vector<EksContainerOverride>&& value) { SetInitContainers(std::move(value)); return *this;}
+
+    /**
+     * <p>The overrides for the conatainers defined in the Amazon EKS pod. These
+     * containers run before application containers, always runs to completion, and
+     * must complete successfully before the next container starts. These containers
+     * are registered with the Amazon EKS Connector agent and persists the registration
+     * information in the Kubernetes backend data store. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline EksPodPropertiesOverride& AddInitContainers(const EksContainerOverride& value) { m_initContainersHasBeenSet = true; m_initContainers.push_back(value); return *this; }
+
+    /**
+     * <p>The overrides for the conatainers defined in the Amazon EKS pod. These
+     * containers run before application containers, always runs to completion, and
+     * must complete successfully before the next container starts. These containers
+     * are registered with the Amazon EKS Connector agent and persists the registration
+     * information in the Kubernetes backend data store. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
+     * is limited to 10 elements</p> 
+     */
+    inline EksPodPropertiesOverride& AddInitContainers(EksContainerOverride&& value) { m_initContainersHasBeenSet = true; m_initContainers.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Metadata about the overrides for the container that's used on the Amazon EKS
      * pod.</p>
      */
@@ -121,6 +218,9 @@ namespace Model
 
     Aws::Vector<EksContainerOverride> m_containers;
     bool m_containersHasBeenSet = false;
+
+    Aws::Vector<EksContainerOverride> m_initContainers;
+    bool m_initContainersHasBeenSet = false;
 
     EksMetadata m_metadata;
     bool m_metadataHasBeenSet = false;

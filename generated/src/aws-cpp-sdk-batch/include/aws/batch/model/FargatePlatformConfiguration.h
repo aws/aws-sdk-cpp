@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>The platform configuration for jobs that are running on Fargate resources.
-   * Jobs that run on EC2 resources must not specify this parameter.</p><p><h3>See
-   * Also:</h3>   <a
+   * Jobs that run on Amazon EC2 resources must not specify this
+   * parameter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/FargatePlatformConfiguration">AWS
    * API Reference</a></p>
    */

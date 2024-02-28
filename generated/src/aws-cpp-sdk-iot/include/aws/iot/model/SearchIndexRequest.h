@@ -188,26 +188,42 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return per page at one time. The response
-     * might contain fewer results but will never contain more.</p>
+     * <p>The maximum number of results to return per page at one time. This maximum
+     * number cannot exceed 100. The response might contain fewer results but will
+     * never contain more. You can use <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_SearchIndex.html#iot-SearchIndex-request-nextToken">
+     * <code>nextToken</code> </a> to retrieve the next set of results until
+     * <code>nextToken</code> returns <code>NULL</code>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return per page at one time. The response
-     * might contain fewer results but will never contain more.</p>
+     * <p>The maximum number of results to return per page at one time. This maximum
+     * number cannot exceed 100. The response might contain fewer results but will
+     * never contain more. You can use <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_SearchIndex.html#iot-SearchIndex-request-nextToken">
+     * <code>nextToken</code> </a> to retrieve the next set of results until
+     * <code>nextToken</code> returns <code>NULL</code>.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return per page at one time. The response
-     * might contain fewer results but will never contain more.</p>
+     * <p>The maximum number of results to return per page at one time. This maximum
+     * number cannot exceed 100. The response might contain fewer results but will
+     * never contain more. You can use <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_SearchIndex.html#iot-SearchIndex-request-nextToken">
+     * <code>nextToken</code> </a> to retrieve the next set of results until
+     * <code>nextToken</code> returns <code>NULL</code>.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return per page at one time. The response
-     * might contain fewer results but will never contain more.</p>
+     * <p>The maximum number of results to return per page at one time. This maximum
+     * number cannot exceed 100. The response might contain fewer results but will
+     * never contain more. You can use <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_SearchIndex.html#iot-SearchIndex-request-nextToken">
+     * <code>nextToken</code> </a> to retrieve the next set of results until
+     * <code>nextToken</code> returns <code>NULL</code>.</p>
      */
     inline SearchIndexRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

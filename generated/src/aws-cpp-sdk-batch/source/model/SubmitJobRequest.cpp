@@ -29,7 +29,8 @@ SubmitJobRequest::SubmitJobRequest() :
     m_propagateTagsHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_eksPropertiesOverrideHasBeenSet(false)
+    m_eksPropertiesOverrideHasBeenSet(false),
+    m_ecsPropertiesOverrideHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,12 @@ Aws::String SubmitJobRequest::SerializePayload() const
   if(m_eksPropertiesOverrideHasBeenSet)
   {
    payload.WithObject("eksPropertiesOverride", m_eksPropertiesOverride.Jsonize());
+
+  }
+
+  if(m_ecsPropertiesOverrideHasBeenSet)
+  {
+   payload.WithObject("ecsPropertiesOverride", m_ecsPropertiesOverride.Jsonize());
 
   }
 

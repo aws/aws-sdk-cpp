@@ -354,6 +354,32 @@ namespace CostExplorer
         }
 
         /**
+         * <p>Retrieves estimated usage records for hourly granularity or resource-level
+         * data at daily granularity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetApproximateUsageRecordsOutcome GetApproximateUsageRecords(const Model::GetApproximateUsageRecordsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetApproximateUsageRecords that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetApproximateUsageRecordsRequestT = Model::GetApproximateUsageRecordsRequest>
+        Model::GetApproximateUsageRecordsOutcomeCallable GetApproximateUsageRecordsCallable(const GetApproximateUsageRecordsRequestT& request) const
+        {
+            return SubmitCallable(&CostExplorerClient::GetApproximateUsageRecords, request);
+        }
+
+        /**
+         * An Async wrapper for GetApproximateUsageRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetApproximateUsageRecordsRequestT = Model::GetApproximateUsageRecordsRequest>
+        void GetApproximateUsageRecordsAsync(const GetApproximateUsageRecordsRequestT& request, const GetApproximateUsageRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostExplorerClient::GetApproximateUsageRecords, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves cost and usage metrics for your account. You can specify which cost
          * and usage-related metric that you want the request to return. For example, you
          * can specify <code>BlendedCosts</code> or <code>UsageQuantity</code>. You can

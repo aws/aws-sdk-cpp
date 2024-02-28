@@ -24,8 +24,11 @@ EksPodProperties::EksPodProperties() :
     m_hostNetworkHasBeenSet(false),
     m_dnsPolicyHasBeenSet(false),
     m_containersHasBeenSet(false),
+    m_initContainersHasBeenSet(false),
     m_volumesHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_shareProcessNamespace(false),
+    m_shareProcessNamespaceHasBeenSet(false)
 {
 }
 
@@ -35,8 +38,11 @@ EksPodProperties::EksPodProperties(JsonView jsonValue) :
     m_hostNetworkHasBeenSet(false),
     m_dnsPolicyHasBeenSet(false),
     m_containersHasBeenSet(false),
+    m_initContainersHasBeenSet(false),
     m_volumesHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_shareProcessNamespace(false),
+    m_shareProcessNamespaceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +80,16 @@ EksPodProperties& EksPodProperties::operator =(JsonView jsonValue)
     m_containersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("initContainers"))
+  {
+    Aws::Utils::Array<JsonView> initContainersJsonList = jsonValue.GetArray("initContainers");
+    for(unsigned initContainersIndex = 0; initContainersIndex < initContainersJsonList.GetLength(); ++initContainersIndex)
+    {
+      m_initContainers.push_back(initContainersJsonList[initContainersIndex].AsObject());
+    }
+    m_initContainersHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("volumes"))
   {
     Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
@@ -89,6 +105,13 @@ EksPodProperties& EksPodProperties::operator =(JsonView jsonValue)
     m_metadata = jsonValue.GetObject("metadata");
 
     m_metadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("shareProcessNamespace"))
+  {
+    m_shareProcessNamespace = jsonValue.GetBool("shareProcessNamespace");
+
+    m_shareProcessNamespaceHasBeenSet = true;
   }
 
   return *this;
@@ -127,6 +150,17 @@ JsonValue EksPodProperties::Jsonize() const
 
   }
 
+  if(m_initContainersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> initContainersJsonList(m_initContainers.size());
+   for(unsigned initContainersIndex = 0; initContainersIndex < initContainersJsonList.GetLength(); ++initContainersIndex)
+   {
+     initContainersJsonList[initContainersIndex].AsObject(m_initContainers[initContainersIndex].Jsonize());
+   }
+   payload.WithArray("initContainers", std::move(initContainersJsonList));
+
+  }
+
   if(m_volumesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> volumesJsonList(m_volumes.size());
@@ -141,6 +175,12 @@ JsonValue EksPodProperties::Jsonize() const
   if(m_metadataHasBeenSet)
   {
    payload.WithObject("metadata", m_metadata.Jsonize());
+
+  }
+
+  if(m_shareProcessNamespaceHasBeenSet)
+  {
+   payload.WithBool("shareProcessNamespace", m_shareProcessNamespace);
 
   }
 
