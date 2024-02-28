@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/KnowledgeBaseRetrievalConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -87,6 +88,25 @@ namespace Model
     
     inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithModelArn(const char* value) { SetModelArn(value); return *this;}
 
+
+    
+    inline const KnowledgeBaseRetrievalConfiguration& GetRetrievalConfiguration() const{ return m_retrievalConfiguration; }
+
+    
+    inline bool RetrievalConfigurationHasBeenSet() const { return m_retrievalConfigurationHasBeenSet; }
+
+    
+    inline void SetRetrievalConfiguration(const KnowledgeBaseRetrievalConfiguration& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = value; }
+
+    
+    inline void SetRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration&& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = std::move(value); }
+
+    
+    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithRetrievalConfiguration(const KnowledgeBaseRetrievalConfiguration& value) { SetRetrievalConfiguration(value); return *this;}
+
+    
+    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_knowledgeBaseId;
@@ -94,6 +114,9 @@ namespace Model
 
     Aws::String m_modelArn;
     bool m_modelArnHasBeenSet = false;
+
+    KnowledgeBaseRetrievalConfiguration m_retrievalConfiguration;
+    bool m_retrievalConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

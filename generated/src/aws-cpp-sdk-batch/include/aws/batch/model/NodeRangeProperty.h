@@ -7,6 +7,8 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/ContainerProperties.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/EcsProperties.h>
 #include <utility>
 
 namespace Aws
@@ -25,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents the properties of the node range for a multi-node
-   * parallel job.</p><p><h3>See Also:</h3>   <a
+   * <p>This is an object that represents the properties of the node range for a
+   * multi-node parallel job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodeRangeProperty">AWS
    * API Reference</a></p>
    */
@@ -166,6 +168,116 @@ namespace Model
      */
     inline NodeRangeProperty& WithContainer(ContainerProperties&& value) { SetContainer(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The instance types of the underlying host infrastructure of a multi-node
+     * parallel job.</p>  <p>This parameter isn't applicable to jobs that are
+     * running on Fargate resources.</p> <p>In addition, this list object is currently
+     * limited to one element.</p> 
+     */
+    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
+
+    /**
+     * <p>The instance types of the underlying host infrastructure of a multi-node
+     * parallel job.</p>  <p>This parameter isn't applicable to jobs that are
+     * running on Fargate resources.</p> <p>In addition, this list object is currently
+     * limited to one element.</p> 
+     */
+    inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
+
+    /**
+     * <p>The instance types of the underlying host infrastructure of a multi-node
+     * parallel job.</p>  <p>This parameter isn't applicable to jobs that are
+     * running on Fargate resources.</p> <p>In addition, this list object is currently
+     * limited to one element.</p> 
+     */
+    inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
+
+    /**
+     * <p>The instance types of the underlying host infrastructure of a multi-node
+     * parallel job.</p>  <p>This parameter isn't applicable to jobs that are
+     * running on Fargate resources.</p> <p>In addition, this list object is currently
+     * limited to one element.</p> 
+     */
+    inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
+
+    /**
+     * <p>The instance types of the underlying host infrastructure of a multi-node
+     * parallel job.</p>  <p>This parameter isn't applicable to jobs that are
+     * running on Fargate resources.</p> <p>In addition, this list object is currently
+     * limited to one element.</p> 
+     */
+    inline NodeRangeProperty& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
+
+    /**
+     * <p>The instance types of the underlying host infrastructure of a multi-node
+     * parallel job.</p>  <p>This parameter isn't applicable to jobs that are
+     * running on Fargate resources.</p> <p>In addition, this list object is currently
+     * limited to one element.</p> 
+     */
+    inline NodeRangeProperty& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance types of the underlying host infrastructure of a multi-node
+     * parallel job.</p>  <p>This parameter isn't applicable to jobs that are
+     * running on Fargate resources.</p> <p>In addition, this list object is currently
+     * limited to one element.</p> 
+     */
+    inline NodeRangeProperty& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The instance types of the underlying host infrastructure of a multi-node
+     * parallel job.</p>  <p>This parameter isn't applicable to jobs that are
+     * running on Fargate resources.</p> <p>In addition, this list object is currently
+     * limited to one element.</p> 
+     */
+    inline NodeRangeProperty& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The instance types of the underlying host infrastructure of a multi-node
+     * parallel job.</p>  <p>This parameter isn't applicable to jobs that are
+     * running on Fargate resources.</p> <p>In addition, this list object is currently
+     * limited to one element.</p> 
+     */
+    inline NodeRangeProperty& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
+
+    /**
+     * <p>This is an object that represents the properties of the node range for a
+     * multi-node parallel job.</p>
+     */
+    inline const EcsProperties& GetEcsProperties() const{ return m_ecsProperties; }
+
+    /**
+     * <p>This is an object that represents the properties of the node range for a
+     * multi-node parallel job.</p>
+     */
+    inline bool EcsPropertiesHasBeenSet() const { return m_ecsPropertiesHasBeenSet; }
+
+    /**
+     * <p>This is an object that represents the properties of the node range for a
+     * multi-node parallel job.</p>
+     */
+    inline void SetEcsProperties(const EcsProperties& value) { m_ecsPropertiesHasBeenSet = true; m_ecsProperties = value; }
+
+    /**
+     * <p>This is an object that represents the properties of the node range for a
+     * multi-node parallel job.</p>
+     */
+    inline void SetEcsProperties(EcsProperties&& value) { m_ecsPropertiesHasBeenSet = true; m_ecsProperties = std::move(value); }
+
+    /**
+     * <p>This is an object that represents the properties of the node range for a
+     * multi-node parallel job.</p>
+     */
+    inline NodeRangeProperty& WithEcsProperties(const EcsProperties& value) { SetEcsProperties(value); return *this;}
+
+    /**
+     * <p>This is an object that represents the properties of the node range for a
+     * multi-node parallel job.</p>
+     */
+    inline NodeRangeProperty& WithEcsProperties(EcsProperties&& value) { SetEcsProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_targetNodes;
@@ -173,6 +285,12 @@ namespace Model
 
     ContainerProperties m_container;
     bool m_containerHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_instanceTypes;
+    bool m_instanceTypesHasBeenSet = false;
+
+    EcsProperties m_ecsProperties;
+    bool m_ecsPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

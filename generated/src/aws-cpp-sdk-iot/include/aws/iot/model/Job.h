@@ -735,8 +735,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline const Aws::String& GetNamespaceId() const{ return m_namespaceId; }
 
@@ -746,8 +748,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
 
@@ -757,8 +761,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline void SetNamespaceId(const Aws::String& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = value; }
 
@@ -768,8 +774,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline void SetNamespaceId(Aws::String&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::move(value); }
 
@@ -779,8 +787,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline void SetNamespaceId(const char* value) { m_namespaceIdHasBeenSet = true; m_namespaceId.assign(value); }
 
@@ -790,8 +800,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline Job& WithNamespaceId(const Aws::String& value) { SetNamespaceId(value); return *this;}
 
@@ -801,8 +813,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline Job& WithNamespaceId(Aws::String&& value) { SetNamespaceId(std::move(value)); return *this;}
 
@@ -812,8 +826,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline Job& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
 

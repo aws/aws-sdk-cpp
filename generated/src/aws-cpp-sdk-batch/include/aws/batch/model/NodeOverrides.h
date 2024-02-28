@@ -26,10 +26,11 @@ namespace Model
 
   /**
    * <p>An object that represents any node overrides to a job definition that's used
-   * in a <a>SubmitJob</a> API operation.</p>  <p>This parameter isn't
-   * applicable to jobs that are running on Fargate resources. Don't provide it for
-   * these jobs. Rather, use <code>containerOverrides</code> instead.</p>
-   * <p><h3>See Also:</h3>   <a
+   * in a <a
+   * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+   * API operation.</p>  <p>This parameter isn't applicable to jobs that are
+   * running on Fargate resources. Don't provide it for these jobs. Rather, use
+   * <code>containerOverrides</code> instead.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodeOverrides">AWS
    * API Reference</a></p>
    */

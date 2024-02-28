@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/SearchType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,10 +57,44 @@ namespace Model
      */
     inline KnowledgeBaseVectorSearchConfiguration& WithNumberOfResults(int value) { SetNumberOfResults(value); return *this;}
 
+
+    /**
+     * <p>Override the type of query to be performed on data store</p>
+     */
+    inline const SearchType& GetOverrideSearchType() const{ return m_overrideSearchType; }
+
+    /**
+     * <p>Override the type of query to be performed on data store</p>
+     */
+    inline bool OverrideSearchTypeHasBeenSet() const { return m_overrideSearchTypeHasBeenSet; }
+
+    /**
+     * <p>Override the type of query to be performed on data store</p>
+     */
+    inline void SetOverrideSearchType(const SearchType& value) { m_overrideSearchTypeHasBeenSet = true; m_overrideSearchType = value; }
+
+    /**
+     * <p>Override the type of query to be performed on data store</p>
+     */
+    inline void SetOverrideSearchType(SearchType&& value) { m_overrideSearchTypeHasBeenSet = true; m_overrideSearchType = std::move(value); }
+
+    /**
+     * <p>Override the type of query to be performed on data store</p>
+     */
+    inline KnowledgeBaseVectorSearchConfiguration& WithOverrideSearchType(const SearchType& value) { SetOverrideSearchType(value); return *this;}
+
+    /**
+     * <p>Override the type of query to be performed on data store</p>
+     */
+    inline KnowledgeBaseVectorSearchConfiguration& WithOverrideSearchType(SearchType&& value) { SetOverrideSearchType(std::move(value)); return *this;}
+
   private:
 
     int m_numberOfResults;
     bool m_numberOfResultsHasBeenSet = false;
+
+    SearchType m_overrideSearchType;
+    bool m_overrideSearchTypeHasBeenSet = false;
   };
 
 } // namespace Model

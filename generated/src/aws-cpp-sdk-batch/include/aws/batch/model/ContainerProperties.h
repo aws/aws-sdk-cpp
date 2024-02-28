@@ -1297,16 +1297,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1330,16 +1331,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1363,16 +1365,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1396,16 +1399,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1429,16 +1433,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1462,16 +1467,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1538,74 +1544,86 @@ namespace Model
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerProperties& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerProperties& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline const FargatePlatformConfiguration& GetFargatePlatformConfiguration() const{ return m_fargatePlatformConfiguration; }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline bool FargatePlatformConfigurationHasBeenSet() const { return m_fargatePlatformConfigurationHasBeenSet; }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetFargatePlatformConfiguration(const FargatePlatformConfiguration& value) { m_fargatePlatformConfigurationHasBeenSet = true; m_fargatePlatformConfiguration = value; }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { m_fargatePlatformConfigurationHasBeenSet = true; m_fargatePlatformConfiguration = std::move(value); }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerProperties& WithFargatePlatformConfiguration(const FargatePlatformConfiguration& value) { SetFargatePlatformConfiguration(value); return *this;}
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerProperties& WithFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { SetFargatePlatformConfiguration(std::move(value)); return *this;}
 

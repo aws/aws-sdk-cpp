@@ -7,6 +7,8 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/ContainerOverrides.h>
+#include <aws/batch/model/EcsPropertiesOverride.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -26,7 +28,9 @@ namespace Model
 
   /**
    * <p>The object that represents any node overrides to a job definition that's used
-   * in a <a>SubmitJob</a> API operation.</p><p><h3>See Also:</h3>   <a
+   * in a <a
+   * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+   * API operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodePropertyOverride">AWS
    * API Reference</a></p>
    */
@@ -150,6 +154,98 @@ namespace Model
      */
     inline NodePropertyOverride& WithContainerOverrides(ContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that contains the properties that you want to replace for the
+     * existing Amazon ECS resources of a job.</p>
+     */
+    inline const EcsPropertiesOverride& GetEcsPropertiesOverride() const{ return m_ecsPropertiesOverride; }
+
+    /**
+     * <p>An object that contains the properties that you want to replace for the
+     * existing Amazon ECS resources of a job.</p>
+     */
+    inline bool EcsPropertiesOverrideHasBeenSet() const { return m_ecsPropertiesOverrideHasBeenSet; }
+
+    /**
+     * <p>An object that contains the properties that you want to replace for the
+     * existing Amazon ECS resources of a job.</p>
+     */
+    inline void SetEcsPropertiesOverride(const EcsPropertiesOverride& value) { m_ecsPropertiesOverrideHasBeenSet = true; m_ecsPropertiesOverride = value; }
+
+    /**
+     * <p>An object that contains the properties that you want to replace for the
+     * existing Amazon ECS resources of a job.</p>
+     */
+    inline void SetEcsPropertiesOverride(EcsPropertiesOverride&& value) { m_ecsPropertiesOverrideHasBeenSet = true; m_ecsPropertiesOverride = std::move(value); }
+
+    /**
+     * <p>An object that contains the properties that you want to replace for the
+     * existing Amazon ECS resources of a job.</p>
+     */
+    inline NodePropertyOverride& WithEcsPropertiesOverride(const EcsPropertiesOverride& value) { SetEcsPropertiesOverride(value); return *this;}
+
+    /**
+     * <p>An object that contains the properties that you want to replace for the
+     * existing Amazon ECS resources of a job.</p>
+     */
+    inline NodePropertyOverride& WithEcsPropertiesOverride(EcsPropertiesOverride&& value) { SetEcsPropertiesOverride(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object that contains the instance types that you want to replace for the
+     * existing resources of a job.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
+
+    /**
+     * <p>An object that contains the instance types that you want to replace for the
+     * existing resources of a job.</p>
+     */
+    inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
+
+    /**
+     * <p>An object that contains the instance types that you want to replace for the
+     * existing resources of a job.</p>
+     */
+    inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
+
+    /**
+     * <p>An object that contains the instance types that you want to replace for the
+     * existing resources of a job.</p>
+     */
+    inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
+
+    /**
+     * <p>An object that contains the instance types that you want to replace for the
+     * existing resources of a job.</p>
+     */
+    inline NodePropertyOverride& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
+
+    /**
+     * <p>An object that contains the instance types that you want to replace for the
+     * existing resources of a job.</p>
+     */
+    inline NodePropertyOverride& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>An object that contains the instance types that you want to replace for the
+     * existing resources of a job.</p>
+     */
+    inline NodePropertyOverride& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>An object that contains the instance types that you want to replace for the
+     * existing resources of a job.</p>
+     */
+    inline NodePropertyOverride& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An object that contains the instance types that you want to replace for the
+     * existing resources of a job.</p>
+     */
+    inline NodePropertyOverride& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_targetNodes;
@@ -157,6 +253,12 @@ namespace Model
 
     ContainerOverrides m_containerOverrides;
     bool m_containerOverridesHasBeenSet = false;
+
+    EcsPropertiesOverride m_ecsPropertiesOverride;
+    bool m_ecsPropertiesOverrideHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_instanceTypes;
+    bool m_instanceTypesHasBeenSet = false;
   };
 
 } // namespace Model

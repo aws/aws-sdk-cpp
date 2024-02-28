@@ -202,8 +202,8 @@ namespace Model
      * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. For Fargate compute resources, providing
      * an empty list will be handled as if this parameter wasn't specified and no
-     * change is made. For EC2 compute resources, providing an empty list removes the
-     * VPC subnets from the compute resource. For more information, see <a
+     * change is made. For Amazon EC2 compute resources, providing an empty list
+     * removes the VPC subnets from the compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>When updating a
      * compute environment, changing the VPC subnets requires an infrastructure update
@@ -228,8 +228,8 @@ namespace Model
      * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. For Fargate compute resources, providing
      * an empty list will be handled as if this parameter wasn't specified and no
-     * change is made. For EC2 compute resources, providing an empty list removes the
-     * VPC subnets from the compute resource. For more information, see <a
+     * change is made. For Amazon EC2 compute resources, providing an empty list
+     * removes the VPC subnets from the compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>When updating a
      * compute environment, changing the VPC subnets requires an infrastructure update
@@ -254,8 +254,8 @@ namespace Model
      * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. For Fargate compute resources, providing
      * an empty list will be handled as if this parameter wasn't specified and no
-     * change is made. For EC2 compute resources, providing an empty list removes the
-     * VPC subnets from the compute resource. For more information, see <a
+     * change is made. For Amazon EC2 compute resources, providing an empty list
+     * removes the VPC subnets from the compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>When updating a
      * compute environment, changing the VPC subnets requires an infrastructure update
@@ -280,8 +280,8 @@ namespace Model
      * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. For Fargate compute resources, providing
      * an empty list will be handled as if this parameter wasn't specified and no
-     * change is made. For EC2 compute resources, providing an empty list removes the
-     * VPC subnets from the compute resource. For more information, see <a
+     * change is made. For Amazon EC2 compute resources, providing an empty list
+     * removes the VPC subnets from the compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>When updating a
      * compute environment, changing the VPC subnets requires an infrastructure update
@@ -306,8 +306,8 @@ namespace Model
      * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. For Fargate compute resources, providing
      * an empty list will be handled as if this parameter wasn't specified and no
-     * change is made. For EC2 compute resources, providing an empty list removes the
-     * VPC subnets from the compute resource. For more information, see <a
+     * change is made. For Amazon EC2 compute resources, providing an empty list
+     * removes the VPC subnets from the compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>When updating a
      * compute environment, changing the VPC subnets requires an infrastructure update
@@ -332,8 +332,8 @@ namespace Model
      * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. For Fargate compute resources, providing
      * an empty list will be handled as if this parameter wasn't specified and no
-     * change is made. For EC2 compute resources, providing an empty list removes the
-     * VPC subnets from the compute resource. For more information, see <a
+     * change is made. For Amazon EC2 compute resources, providing an empty list
+     * removes the VPC subnets from the compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>When updating a
      * compute environment, changing the VPC subnets requires an infrastructure update
@@ -358,8 +358,8 @@ namespace Model
      * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. For Fargate compute resources, providing
      * an empty list will be handled as if this parameter wasn't specified and no
-     * change is made. For EC2 compute resources, providing an empty list removes the
-     * VPC subnets from the compute resource. For more information, see <a
+     * change is made. For Amazon EC2 compute resources, providing an empty list
+     * removes the VPC subnets from the compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>When updating a
      * compute environment, changing the VPC subnets requires an infrastructure update
@@ -384,8 +384,8 @@ namespace Model
      * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. For Fargate compute resources, providing
      * an empty list will be handled as if this parameter wasn't specified and no
-     * change is made. For EC2 compute resources, providing an empty list removes the
-     * VPC subnets from the compute resource. For more information, see <a
+     * change is made. For Amazon EC2 compute resources, providing an empty list
+     * removes the VPC subnets from the compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>When updating a
      * compute environment, changing the VPC subnets requires an infrastructure update
@@ -410,8 +410,8 @@ namespace Model
      * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. For Fargate compute resources, providing
      * an empty list will be handled as if this parameter wasn't specified and no
-     * change is made. For EC2 compute resources, providing an empty list removes the
-     * VPC subnets from the compute resource. For more information, see <a
+     * change is made. For Amazon EC2 compute resources, providing an empty list
+     * removes the VPC subnets from the compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>When updating a
      * compute environment, changing the VPC subnets requires an infrastructure update
@@ -438,10 +438,11 @@ namespace Model
      * the compute environment. This parameter is required for Fargate compute
      * resources, where it can contain up to 5 security groups. For Fargate compute
      * resources, providing an empty list is handled as if this parameter wasn't
-     * specified and no change is made. For EC2 compute resources, providing an empty
-     * list removes the security groups from the compute resource.</p> <p>When updating
-     * a compute environment, changing the EC2 security groups requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * specified and no change is made. For Amazon EC2 compute resources, providing an
+     * empty list removes the security groups from the compute resource.</p> <p>When
+     * updating a compute environment, changing the Amazon EC2 security groups requires
+     * an infrastructure update of the compute environment. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
@@ -452,10 +453,11 @@ namespace Model
      * the compute environment. This parameter is required for Fargate compute
      * resources, where it can contain up to 5 security groups. For Fargate compute
      * resources, providing an empty list is handled as if this parameter wasn't
-     * specified and no change is made. For EC2 compute resources, providing an empty
-     * list removes the security groups from the compute resource.</p> <p>When updating
-     * a compute environment, changing the EC2 security groups requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * specified and no change is made. For Amazon EC2 compute resources, providing an
+     * empty list removes the security groups from the compute resource.</p> <p>When
+     * updating a compute environment, changing the Amazon EC2 security groups requires
+     * an infrastructure update of the compute environment. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
@@ -466,10 +468,11 @@ namespace Model
      * the compute environment. This parameter is required for Fargate compute
      * resources, where it can contain up to 5 security groups. For Fargate compute
      * resources, providing an empty list is handled as if this parameter wasn't
-     * specified and no change is made. For EC2 compute resources, providing an empty
-     * list removes the security groups from the compute resource.</p> <p>When updating
-     * a compute environment, changing the EC2 security groups requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * specified and no change is made. For Amazon EC2 compute resources, providing an
+     * empty list removes the security groups from the compute resource.</p> <p>When
+     * updating a compute environment, changing the Amazon EC2 security groups requires
+     * an infrastructure update of the compute environment. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
@@ -480,10 +483,11 @@ namespace Model
      * the compute environment. This parameter is required for Fargate compute
      * resources, where it can contain up to 5 security groups. For Fargate compute
      * resources, providing an empty list is handled as if this parameter wasn't
-     * specified and no change is made. For EC2 compute resources, providing an empty
-     * list removes the security groups from the compute resource.</p> <p>When updating
-     * a compute environment, changing the EC2 security groups requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * specified and no change is made. For Amazon EC2 compute resources, providing an
+     * empty list removes the security groups from the compute resource.</p> <p>When
+     * updating a compute environment, changing the Amazon EC2 security groups requires
+     * an infrastructure update of the compute environment. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
@@ -494,10 +498,11 @@ namespace Model
      * the compute environment. This parameter is required for Fargate compute
      * resources, where it can contain up to 5 security groups. For Fargate compute
      * resources, providing an empty list is handled as if this parameter wasn't
-     * specified and no change is made. For EC2 compute resources, providing an empty
-     * list removes the security groups from the compute resource.</p> <p>When updating
-     * a compute environment, changing the EC2 security groups requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * specified and no change is made. For Amazon EC2 compute resources, providing an
+     * empty list removes the security groups from the compute resource.</p> <p>When
+     * updating a compute environment, changing the Amazon EC2 security groups requires
+     * an infrastructure update of the compute environment. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
@@ -508,10 +513,11 @@ namespace Model
      * the compute environment. This parameter is required for Fargate compute
      * resources, where it can contain up to 5 security groups. For Fargate compute
      * resources, providing an empty list is handled as if this parameter wasn't
-     * specified and no change is made. For EC2 compute resources, providing an empty
-     * list removes the security groups from the compute resource.</p> <p>When updating
-     * a compute environment, changing the EC2 security groups requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * specified and no change is made. For Amazon EC2 compute resources, providing an
+     * empty list removes the security groups from the compute resource.</p> <p>When
+     * updating a compute environment, changing the Amazon EC2 security groups requires
+     * an infrastructure update of the compute environment. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
@@ -522,10 +528,11 @@ namespace Model
      * the compute environment. This parameter is required for Fargate compute
      * resources, where it can contain up to 5 security groups. For Fargate compute
      * resources, providing an empty list is handled as if this parameter wasn't
-     * specified and no change is made. For EC2 compute resources, providing an empty
-     * list removes the security groups from the compute resource.</p> <p>When updating
-     * a compute environment, changing the EC2 security groups requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * specified and no change is made. For Amazon EC2 compute resources, providing an
+     * empty list removes the security groups from the compute resource.</p> <p>When
+     * updating a compute environment, changing the Amazon EC2 security groups requires
+     * an infrastructure update of the compute environment. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
@@ -536,10 +543,11 @@ namespace Model
      * the compute environment. This parameter is required for Fargate compute
      * resources, where it can contain up to 5 security groups. For Fargate compute
      * resources, providing an empty list is handled as if this parameter wasn't
-     * specified and no change is made. For EC2 compute resources, providing an empty
-     * list removes the security groups from the compute resource.</p> <p>When updating
-     * a compute environment, changing the EC2 security groups requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * specified and no change is made. For Amazon EC2 compute resources, providing an
+     * empty list removes the security groups from the compute resource.</p> <p>When
+     * updating a compute environment, changing the Amazon EC2 security groups requires
+     * an infrastructure update of the compute environment. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
@@ -550,10 +558,11 @@ namespace Model
      * the compute environment. This parameter is required for Fargate compute
      * resources, where it can contain up to 5 security groups. For Fargate compute
      * resources, providing an empty list is handled as if this parameter wasn't
-     * specified and no change is made. For EC2 compute resources, providing an empty
-     * list removes the security groups from the compute resource.</p> <p>When updating
-     * a compute environment, changing the EC2 security groups requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * specified and no change is made. For Amazon EC2 compute resources, providing an
+     * empty list removes the security groups from the compute resource.</p> <p>When
+     * updating a compute environment, changing the Amazon EC2 security groups requires
+     * an infrastructure update of the compute environment. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
@@ -986,7 +995,7 @@ namespace Model
      * <p>The Amazon EC2 key pair that's used for instances launched in the compute
      * environment. You can use this key pair to log in to your instances with SSH. To
      * remove the Amazon EC2 key pair, set this value to an empty string.</p> <p>When
-     * updating a compute environment, changing the EC2 key pair requires an
+     * updating a compute environment, changing the Amazon EC2 key pair requires an
      * infrastructure update of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
@@ -999,7 +1008,7 @@ namespace Model
      * <p>The Amazon EC2 key pair that's used for instances launched in the compute
      * environment. You can use this key pair to log in to your instances with SSH. To
      * remove the Amazon EC2 key pair, set this value to an empty string.</p> <p>When
-     * updating a compute environment, changing the EC2 key pair requires an
+     * updating a compute environment, changing the Amazon EC2 key pair requires an
      * infrastructure update of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
@@ -1012,7 +1021,7 @@ namespace Model
      * <p>The Amazon EC2 key pair that's used for instances launched in the compute
      * environment. You can use this key pair to log in to your instances with SSH. To
      * remove the Amazon EC2 key pair, set this value to an empty string.</p> <p>When
-     * updating a compute environment, changing the EC2 key pair requires an
+     * updating a compute environment, changing the Amazon EC2 key pair requires an
      * infrastructure update of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
@@ -1025,7 +1034,7 @@ namespace Model
      * <p>The Amazon EC2 key pair that's used for instances launched in the compute
      * environment. You can use this key pair to log in to your instances with SSH. To
      * remove the Amazon EC2 key pair, set this value to an empty string.</p> <p>When
-     * updating a compute environment, changing the EC2 key pair requires an
+     * updating a compute environment, changing the Amazon EC2 key pair requires an
      * infrastructure update of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
@@ -1038,7 +1047,7 @@ namespace Model
      * <p>The Amazon EC2 key pair that's used for instances launched in the compute
      * environment. You can use this key pair to log in to your instances with SSH. To
      * remove the Amazon EC2 key pair, set this value to an empty string.</p> <p>When
-     * updating a compute environment, changing the EC2 key pair requires an
+     * updating a compute environment, changing the Amazon EC2 key pair requires an
      * infrastructure update of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
@@ -1051,7 +1060,7 @@ namespace Model
      * <p>The Amazon EC2 key pair that's used for instances launched in the compute
      * environment. You can use this key pair to log in to your instances with SSH. To
      * remove the Amazon EC2 key pair, set this value to an empty string.</p> <p>When
-     * updating a compute environment, changing the EC2 key pair requires an
+     * updating a compute environment, changing the Amazon EC2 key pair requires an
      * infrastructure update of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
@@ -1064,7 +1073,7 @@ namespace Model
      * <p>The Amazon EC2 key pair that's used for instances launched in the compute
      * environment. You can use this key pair to log in to your instances with SSH. To
      * remove the Amazon EC2 key pair, set this value to an empty string.</p> <p>When
-     * updating a compute environment, changing the EC2 key pair requires an
+     * updating a compute environment, changing the Amazon EC2 key pair requires an
      * infrastructure update of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
@@ -1077,7 +1086,7 @@ namespace Model
      * <p>The Amazon EC2 key pair that's used for instances launched in the compute
      * environment. You can use this key pair to log in to your instances with SSH. To
      * remove the Amazon EC2 key pair, set this value to an empty string.</p> <p>When
-     * updating a compute environment, changing the EC2 key pair requires an
+     * updating a compute environment, changing the Amazon EC2 key pair requires an
      * infrastructure update of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
@@ -1233,8 +1242,8 @@ namespace Model
 
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1250,8 +1259,8 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1267,8 +1276,8 @@ namespace Model
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1284,8 +1293,8 @@ namespace Model
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1301,8 +1310,8 @@ namespace Model
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1318,8 +1327,8 @@ namespace Model
     inline ComputeResourceUpdate& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1335,8 +1344,8 @@ namespace Model
     inline ComputeResourceUpdate& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1352,8 +1361,8 @@ namespace Model
     inline ComputeResourceUpdate& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1369,8 +1378,8 @@ namespace Model
     inline ComputeResourceUpdate& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1386,8 +1395,8 @@ namespace Model
     inline ComputeResourceUpdate& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1403,8 +1412,8 @@ namespace Model
     inline ComputeResourceUpdate& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1420,8 +1429,8 @@ namespace Model
     inline ComputeResourceUpdate& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1437,8 +1446,8 @@ namespace Model
     inline ComputeResourceUpdate& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
-     * compute environment. For Batch, these take the form of <code>"String1":
+     * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
+     * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
      * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
@@ -1792,122 +1801,122 @@ namespace Model
 
 
     /**
-     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
-     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for Amazon
+     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
      * specified, the default is <code>ECS_AL2</code>.</p> <p>When updating a compute
      * environment, changing this setting requires an infrastructure update of the
      * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2
-     * configuration and any custom AMI ID specified in <code>imageIdOverride</code>,
-     * set this value to an empty string.</p> <p>One or two values can be provided.</p>
-     *  <p>This parameter isn't applicable to jobs that are running on Fargate
-     * resources. Don't specify it.</p> 
+     * compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon
+     * EC2 configuration and any custom AMI ID specified in
+     * <code>imageIdOverride</code>, set this value to an empty string.</p> <p>One or
+     * two values can be provided.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources. Don't specify it.</p> 
      */
     inline const Aws::Vector<Ec2Configuration>& GetEc2Configuration() const{ return m_ec2Configuration; }
 
     /**
-     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
-     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for Amazon
+     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
      * specified, the default is <code>ECS_AL2</code>.</p> <p>When updating a compute
      * environment, changing this setting requires an infrastructure update of the
      * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2
-     * configuration and any custom AMI ID specified in <code>imageIdOverride</code>,
-     * set this value to an empty string.</p> <p>One or two values can be provided.</p>
-     *  <p>This parameter isn't applicable to jobs that are running on Fargate
-     * resources. Don't specify it.</p> 
+     * compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon
+     * EC2 configuration and any custom AMI ID specified in
+     * <code>imageIdOverride</code>, set this value to an empty string.</p> <p>One or
+     * two values can be provided.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources. Don't specify it.</p> 
      */
     inline bool Ec2ConfigurationHasBeenSet() const { return m_ec2ConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
-     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for Amazon
+     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
      * specified, the default is <code>ECS_AL2</code>.</p> <p>When updating a compute
      * environment, changing this setting requires an infrastructure update of the
      * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2
-     * configuration and any custom AMI ID specified in <code>imageIdOverride</code>,
-     * set this value to an empty string.</p> <p>One or two values can be provided.</p>
-     *  <p>This parameter isn't applicable to jobs that are running on Fargate
-     * resources. Don't specify it.</p> 
+     * compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon
+     * EC2 configuration and any custom AMI ID specified in
+     * <code>imageIdOverride</code>, set this value to an empty string.</p> <p>One or
+     * two values can be provided.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources. Don't specify it.</p> 
      */
     inline void SetEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = value; }
 
     /**
-     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
-     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for Amazon
+     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
      * specified, the default is <code>ECS_AL2</code>.</p> <p>When updating a compute
      * environment, changing this setting requires an infrastructure update of the
      * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2
-     * configuration and any custom AMI ID specified in <code>imageIdOverride</code>,
-     * set this value to an empty string.</p> <p>One or two values can be provided.</p>
-     *  <p>This parameter isn't applicable to jobs that are running on Fargate
-     * resources. Don't specify it.</p> 
+     * compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon
+     * EC2 configuration and any custom AMI ID specified in
+     * <code>imageIdOverride</code>, set this value to an empty string.</p> <p>One or
+     * two values can be provided.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources. Don't specify it.</p> 
      */
     inline void SetEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = std::move(value); }
 
     /**
-     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
-     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for Amazon
+     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
      * specified, the default is <code>ECS_AL2</code>.</p> <p>When updating a compute
      * environment, changing this setting requires an infrastructure update of the
      * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2
-     * configuration and any custom AMI ID specified in <code>imageIdOverride</code>,
-     * set this value to an empty string.</p> <p>One or two values can be provided.</p>
-     *  <p>This parameter isn't applicable to jobs that are running on Fargate
-     * resources. Don't specify it.</p> 
+     * compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon
+     * EC2 configuration and any custom AMI ID specified in
+     * <code>imageIdOverride</code>, set this value to an empty string.</p> <p>One or
+     * two values can be provided.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources. Don't specify it.</p> 
      */
     inline ComputeResourceUpdate& WithEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { SetEc2Configuration(value); return *this;}
 
     /**
-     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
-     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for Amazon
+     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
      * specified, the default is <code>ECS_AL2</code>.</p> <p>When updating a compute
      * environment, changing this setting requires an infrastructure update of the
      * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2
-     * configuration and any custom AMI ID specified in <code>imageIdOverride</code>,
-     * set this value to an empty string.</p> <p>One or two values can be provided.</p>
-     *  <p>This parameter isn't applicable to jobs that are running on Fargate
-     * resources. Don't specify it.</p> 
+     * compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon
+     * EC2 configuration and any custom AMI ID specified in
+     * <code>imageIdOverride</code>, set this value to an empty string.</p> <p>One or
+     * two values can be provided.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources. Don't specify it.</p> 
      */
     inline ComputeResourceUpdate& WithEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { SetEc2Configuration(std::move(value)); return *this;}
 
     /**
-     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
-     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for Amazon
+     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
      * specified, the default is <code>ECS_AL2</code>.</p> <p>When updating a compute
      * environment, changing this setting requires an infrastructure update of the
      * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2
-     * configuration and any custom AMI ID specified in <code>imageIdOverride</code>,
-     * set this value to an empty string.</p> <p>One or two values can be provided.</p>
-     *  <p>This parameter isn't applicable to jobs that are running on Fargate
-     * resources. Don't specify it.</p> 
+     * compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon
+     * EC2 configuration and any custom AMI ID specified in
+     * <code>imageIdOverride</code>, set this value to an empty string.</p> <p>One or
+     * two values can be provided.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources. Don't specify it.</p> 
      */
     inline ComputeResourceUpdate& AddEc2Configuration(const Ec2Configuration& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(value); return *this; }
 
     /**
-     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
-     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for Amazon
+     * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
      * specified, the default is <code>ECS_AL2</code>.</p> <p>When updating a compute
      * environment, changing this setting requires an infrastructure update of the
      * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2
-     * configuration and any custom AMI ID specified in <code>imageIdOverride</code>,
-     * set this value to an empty string.</p> <p>One or two values can be provided.</p>
-     *  <p>This parameter isn't applicable to jobs that are running on Fargate
-     * resources. Don't specify it.</p> 
+     * compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon
+     * EC2 configuration and any custom AMI ID specified in
+     * <code>imageIdOverride</code>, set this value to an empty string.</p> <p>One or
+     * two values can be provided.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources. Don't specify it.</p> 
      */
     inline ComputeResourceUpdate& AddEc2Configuration(Ec2Configuration&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(std::move(value)); return *this; }
 

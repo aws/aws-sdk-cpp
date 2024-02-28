@@ -20,13 +20,17 @@ namespace Model
 
 KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration() : 
     m_numberOfResults(0),
-    m_numberOfResultsHasBeenSet(false)
+    m_numberOfResultsHasBeenSet(false),
+    m_overrideSearchType(SearchType::NOT_SET),
+    m_overrideSearchTypeHasBeenSet(false)
 {
 }
 
 KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration(JsonView jsonValue) : 
     m_numberOfResults(0),
-    m_numberOfResultsHasBeenSet(false)
+    m_numberOfResultsHasBeenSet(false),
+    m_overrideSearchType(SearchType::NOT_SET),
+    m_overrideSearchTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ KnowledgeBaseVectorSearchConfiguration& KnowledgeBaseVectorSearchConfiguration::
     m_numberOfResultsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("overrideSearchType"))
+  {
+    m_overrideSearchType = SearchTypeMapper::GetSearchTypeForName(jsonValue.GetString("overrideSearchType"));
+
+    m_overrideSearchTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -51,6 +62,11 @@ JsonValue KnowledgeBaseVectorSearchConfiguration::Jsonize() const
   {
    payload.WithInteger("numberOfResults", m_numberOfResults);
 
+  }
+
+  if(m_overrideSearchTypeHasBeenSet)
+  {
+   payload.WithString("overrideSearchType", SearchTypeMapper::GetNameForSearchType(m_overrideSearchType));
   }
 
   return payload;
