@@ -673,10 +673,11 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         headers = curl_slist_append(headers, "Expect:");
     }
 
-    CURL* connectionHandle = m_curlHandleContainer.AcquireCurlHandle();
+    Crt::Optional<CURL*> connectionHandleOption = m_curlHandleContainer.AcquireCurlHandle();
 
-    if (connectionHandle)
+    if (connectionHandleOption.has_value())
     {
+        const auto connectionHandle = connectionHandleOption.value();
         AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Obtained connection handle " << connectionHandle);
 
         if (headers)
@@ -944,6 +945,9 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, ss.str());
         }
         request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::RequestLatency), (DateTime::Now() - startTransmissionTime).count());
+    } else {
+        response->SetClientErrorType(CoreErrors::NOT_INITIALIZED);
+        response->SetClientErrorMessage("Curl Handle was not able to be obtained");
     }
 
     if (headers)

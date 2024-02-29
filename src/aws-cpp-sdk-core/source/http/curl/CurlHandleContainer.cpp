@@ -34,7 +34,7 @@ CurlHandleContainer::~CurlHandleContainer()
     }
 }
 
-CURL* CurlHandleContainer::AcquireCurlHandle()
+Aws::Crt::Optional<CURL*> CurlHandleContainer::AcquireCurlHandle()
 {
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Attempting to acquire curl connection.");
 
@@ -44,9 +44,13 @@ CURL* CurlHandleContainer::AcquireCurlHandle()
         CheckAndGrowPool();
     }
 
-    CURL* handle = m_handleContainer.Acquire();
+    Crt::Optional<CURL*> handle = m_handleContainer.TryAquire();
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Connection has been released. Continuing.");
-    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Returning connection handle " << handle);
+    if (handle.has_value()) {
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Returning connection handle " << handle.value());
+    } else {
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Could not aquire curl handle");
+    }
     return handle;
 }
 

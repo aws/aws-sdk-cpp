@@ -37,7 +37,7 @@ public:
     /**
       * Blocks until a curl handle from the pool is available for use.
       */
-    CURL* AcquireCurlHandle();
+    Crt::Optional<CURL*> AcquireCurlHandle();
     /**
       * Returns a handle to the pool for reuse. It is imperative that this is called
       * after you are finished with the handle.
