@@ -96,8 +96,8 @@ namespace Aws
              */
             Aws::Vector<RESOURCE_TYPE> ShutdownAndWait(size_t resourceCount)
             {
-                std::unique_lock<std::mutex> locker(m_queueLock);
                 m_shutdown = true;
+                std::unique_lock<std::mutex> locker(m_queueLock);
 
                 //wait for all acquired resources to be released.
                 while (m_resources.size() < resourceCount)
