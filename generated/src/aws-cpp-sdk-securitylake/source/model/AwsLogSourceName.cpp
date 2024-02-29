@@ -26,6 +26,8 @@ namespace Aws
         static const int CLOUD_TRAIL_MGMT_HASH = HashingUtils::HashString("CLOUD_TRAIL_MGMT");
         static const int LAMBDA_EXECUTION_HASH = HashingUtils::HashString("LAMBDA_EXECUTION");
         static const int S3_DATA_HASH = HashingUtils::HashString("S3_DATA");
+        static const int EKS_AUDIT_HASH = HashingUtils::HashString("EKS_AUDIT");
+        static const int WAF_HASH = HashingUtils::HashString("WAF");
 
 
         AwsLogSourceName GetAwsLogSourceNameForName(const Aws::String& name)
@@ -55,6 +57,14 @@ namespace Aws
           {
             return AwsLogSourceName::S3_DATA;
           }
+          else if (hashCode == EKS_AUDIT_HASH)
+          {
+            return AwsLogSourceName::EKS_AUDIT;
+          }
+          else if (hashCode == WAF_HASH)
+          {
+            return AwsLogSourceName::WAF;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +93,10 @@ namespace Aws
             return "LAMBDA_EXECUTION";
           case AwsLogSourceName::S3_DATA:
             return "S3_DATA";
+          case AwsLogSourceName::EKS_AUDIT:
+            return "EKS_AUDIT";
+          case AwsLogSourceName::WAF:
+            return "WAF";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

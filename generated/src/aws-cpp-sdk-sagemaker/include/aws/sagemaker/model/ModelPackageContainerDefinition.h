@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/ModelDataSource.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/ModelInput.h>
 #include <aws/sagemaker/model/AdditionalS3DataSource.h>
@@ -299,6 +300,43 @@ namespace Model
      * package.</p> 
      */
     inline ModelPackageContainerDefinition& WithModelDataUrl(const char* value) { SetModelDataUrl(value); return *this;}
+
+
+    /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline const ModelDataSource& GetModelDataSource() const{ return m_modelDataSource; }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline bool ModelDataSourceHasBeenSet() const { return m_modelDataSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline void SetModelDataSource(const ModelDataSource& value) { m_modelDataSourceHasBeenSet = true; m_modelDataSource = value; }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline void SetModelDataSource(ModelDataSource&& value) { m_modelDataSourceHasBeenSet = true; m_modelDataSource = std::move(value); }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline ModelPackageContainerDefinition& WithModelDataSource(const ModelDataSource& value) { SetModelDataSource(value); return *this;}
+
+    /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline ModelPackageContainerDefinition& WithModelDataSource(ModelDataSource&& value) { SetModelDataSource(std::move(value)); return *this;}
 
 
     /**
@@ -653,6 +691,9 @@ namespace Model
 
     Aws::String m_modelDataUrl;
     bool m_modelDataUrlHasBeenSet = false;
+
+    ModelDataSource m_modelDataSource;
+    bool m_modelDataSourceHasBeenSet = false;
 
     Aws::String m_productId;
     bool m_productIdHasBeenSet = false;

@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in DocDBElasticClient header */
+#include <aws/docdb-elastic/model/CopyClusterSnapshotResult.h>
 #include <aws/docdb-elastic/model/CreateClusterResult.h>
 #include <aws/docdb-elastic/model/CreateClusterSnapshotResult.h>
 #include <aws/docdb-elastic/model/DeleteClusterResult.h>
@@ -28,6 +29,8 @@
 #include <aws/docdb-elastic/model/ListClustersResult.h>
 #include <aws/docdb-elastic/model/ListTagsForResourceResult.h>
 #include <aws/docdb-elastic/model/RestoreClusterFromSnapshotResult.h>
+#include <aws/docdb-elastic/model/StartClusterResult.h>
+#include <aws/docdb-elastic/model/StopClusterResult.h>
 #include <aws/docdb-elastic/model/TagResourceResult.h>
 #include <aws/docdb-elastic/model/UntagResourceResult.h>
 #include <aws/docdb-elastic/model/UpdateClusterResult.h>
@@ -71,6 +74,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in DocDBElasticClient header */
+      class CopyClusterSnapshotRequest;
       class CreateClusterRequest;
       class CreateClusterSnapshotRequest;
       class DeleteClusterRequest;
@@ -81,12 +85,15 @@ namespace Aws
       class ListClustersRequest;
       class ListTagsForResourceRequest;
       class RestoreClusterFromSnapshotRequest;
+      class StartClusterRequest;
+      class StopClusterRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateClusterRequest;
       /* End of service model forward declarations required in DocDBElasticClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<CopyClusterSnapshotResult, DocDBElasticError> CopyClusterSnapshotOutcome;
       typedef Aws::Utils::Outcome<CreateClusterResult, DocDBElasticError> CreateClusterOutcome;
       typedef Aws::Utils::Outcome<CreateClusterSnapshotResult, DocDBElasticError> CreateClusterSnapshotOutcome;
       typedef Aws::Utils::Outcome<DeleteClusterResult, DocDBElasticError> DeleteClusterOutcome;
@@ -97,12 +104,15 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListClustersResult, DocDBElasticError> ListClustersOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, DocDBElasticError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<RestoreClusterFromSnapshotResult, DocDBElasticError> RestoreClusterFromSnapshotOutcome;
+      typedef Aws::Utils::Outcome<StartClusterResult, DocDBElasticError> StartClusterOutcome;
+      typedef Aws::Utils::Outcome<StopClusterResult, DocDBElasticError> StopClusterOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, DocDBElasticError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, DocDBElasticError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateClusterResult, DocDBElasticError> UpdateClusterOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<CopyClusterSnapshotOutcome> CopyClusterSnapshotOutcomeCallable;
       typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
       typedef std::future<CreateClusterSnapshotOutcome> CreateClusterSnapshotOutcomeCallable;
       typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
@@ -113,6 +123,8 @@ namespace Aws
       typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<RestoreClusterFromSnapshotOutcome> RestoreClusterFromSnapshotOutcomeCallable;
+      typedef std::future<StartClusterOutcome> StartClusterOutcomeCallable;
+      typedef std::future<StopClusterOutcome> StopClusterOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateClusterOutcome> UpdateClusterOutcomeCallable;
@@ -122,6 +134,7 @@ namespace Aws
     class DocDBElasticClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const DocDBElasticClient*, const Model::CopyClusterSnapshotRequest&, const Model::CopyClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const DocDBElasticClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
     typedef std::function<void(const DocDBElasticClient*, const Model::CreateClusterSnapshotRequest&, const Model::CreateClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const DocDBElasticClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
@@ -132,6 +145,8 @@ namespace Aws
     typedef std::function<void(const DocDBElasticClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const DocDBElasticClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DocDBElasticClient*, const Model::RestoreClusterFromSnapshotRequest&, const Model::RestoreClusterFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreClusterFromSnapshotResponseReceivedHandler;
+    typedef std::function<void(const DocDBElasticClient*, const Model::StartClusterRequest&, const Model::StartClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartClusterResponseReceivedHandler;
+    typedef std::function<void(const DocDBElasticClient*, const Model::StopClusterRequest&, const Model::StopClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopClusterResponseReceivedHandler;
     typedef std::function<void(const DocDBElasticClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DocDBElasticClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DocDBElasticClient*, const Model::UpdateClusterRequest&, const Model::UpdateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterResponseReceivedHandler;

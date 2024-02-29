@@ -972,6 +972,47 @@ namespace Model
 
 
     /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline const Aws::String& GetSourceUri() const{ return m_sourceUri; }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline bool SourceUriHasBeenSet() const { return m_sourceUriHasBeenSet; }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(const Aws::String& value) { m_sourceUriHasBeenSet = true; m_sourceUri = value; }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(Aws::String&& value) { m_sourceUriHasBeenSet = true; m_sourceUri = std::move(value); }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(const char* value) { m_sourceUriHasBeenSet = true; m_sourceUri.assign(value); }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline ModelPackage& WithSourceUri(const Aws::String& value) { SetSourceUri(value); return *this;}
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline ModelPackage& WithSourceUri(Aws::String&& value) { SetSourceUri(std::move(value)); return *this;}
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline ModelPackage& WithSourceUri(const char* value) { SetSourceUri(value); return *this;}
+
+
+    /**
      * <p>A list of the tags associated with the model package. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
@@ -1247,6 +1288,9 @@ namespace Model
 
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
     bool m_additionalInferenceSpecificationsHasBeenSet = false;
+
+    Aws::String m_sourceUri;
+    bool m_sourceUriHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

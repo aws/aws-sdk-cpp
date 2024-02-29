@@ -201,6 +201,12 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("SourceUri"))
+  {
+    m_sourceUri = jsonValue.GetString("SourceUri");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

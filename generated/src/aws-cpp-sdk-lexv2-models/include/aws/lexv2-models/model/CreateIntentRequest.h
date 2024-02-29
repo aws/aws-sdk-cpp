@@ -14,6 +14,7 @@
 #include <aws/lexv2-models/model/IntentClosingSetting.h>
 #include <aws/lexv2-models/model/KendraConfiguration.h>
 #include <aws/lexv2-models/model/InitialResponseSetting.h>
+#include <aws/lexv2-models/model/QnAIntentConfiguration.h>
 #include <aws/lexv2-models/model/SampleUtterance.h>
 #include <aws/lexv2-models/model/InputContext.h>
 #include <aws/lexv2-models/model/OutputContext.h>
@@ -912,6 +913,55 @@ namespace Model
      */
     inline CreateIntentRequest& WithInitialResponseSetting(InitialResponseSetting&& value) { SetInitialResponseSetting(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't
+     * determine another intent to invoke. If you specify this field, you can't specify
+     * the <code>kendraConfiguration</code> field.</p>
+     */
+    inline const QnAIntentConfiguration& GetQnAIntentConfiguration() const{ return m_qnAIntentConfiguration; }
+
+    /**
+     * <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't
+     * determine another intent to invoke. If you specify this field, you can't specify
+     * the <code>kendraConfiguration</code> field.</p>
+     */
+    inline bool QnAIntentConfigurationHasBeenSet() const { return m_qnAIntentConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't
+     * determine another intent to invoke. If you specify this field, you can't specify
+     * the <code>kendraConfiguration</code> field.</p>
+     */
+    inline void SetQnAIntentConfiguration(const QnAIntentConfiguration& value) { m_qnAIntentConfigurationHasBeenSet = true; m_qnAIntentConfiguration = value; }
+
+    /**
+     * <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't
+     * determine another intent to invoke. If you specify this field, you can't specify
+     * the <code>kendraConfiguration</code> field.</p>
+     */
+    inline void SetQnAIntentConfiguration(QnAIntentConfiguration&& value) { m_qnAIntentConfigurationHasBeenSet = true; m_qnAIntentConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't
+     * determine another intent to invoke. If you specify this field, you can't specify
+     * the <code>kendraConfiguration</code> field.</p>
+     */
+    inline CreateIntentRequest& WithQnAIntentConfiguration(const QnAIntentConfiguration& value) { SetQnAIntentConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't
+     * determine another intent to invoke. If you specify this field, you can't specify
+     * the <code>kendraConfiguration</code> field.</p>
+     */
+    inline CreateIntentRequest& WithQnAIntentConfiguration(QnAIntentConfiguration&& value) { SetQnAIntentConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_intentName;
@@ -958,6 +1008,9 @@ namespace Model
 
     InitialResponseSetting m_initialResponseSetting;
     bool m_initialResponseSettingHasBeenSet = false;
+
+    QnAIntentConfiguration m_qnAIntentConfiguration;
+    bool m_qnAIntentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

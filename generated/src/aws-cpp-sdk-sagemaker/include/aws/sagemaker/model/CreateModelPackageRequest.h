@@ -203,68 +203,68 @@ namespace Model
 
 
     /**
-     * <p>Specifies details about inference jobs that can be run with models based on
-     * this model package, including the following:</p> <ul> <li> <p>The Amazon ECR
-     * paths of containers that contain the inference code and model artifacts.</p>
-     * </li> <li> <p>The instance types that the model package supports for transform
-     * jobs and real-time endpoints used for inference.</p> </li> <li> <p>The input and
-     * output content formats that the model package supports for inference.</p> </li>
-     * </ul>
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
      */
     inline const InferenceSpecification& GetInferenceSpecification() const{ return m_inferenceSpecification; }
 
     /**
-     * <p>Specifies details about inference jobs that can be run with models based on
-     * this model package, including the following:</p> <ul> <li> <p>The Amazon ECR
-     * paths of containers that contain the inference code and model artifacts.</p>
-     * </li> <li> <p>The instance types that the model package supports for transform
-     * jobs and real-time endpoints used for inference.</p> </li> <li> <p>The input and
-     * output content formats that the model package supports for inference.</p> </li>
-     * </ul>
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
      */
     inline bool InferenceSpecificationHasBeenSet() const { return m_inferenceSpecificationHasBeenSet; }
 
     /**
-     * <p>Specifies details about inference jobs that can be run with models based on
-     * this model package, including the following:</p> <ul> <li> <p>The Amazon ECR
-     * paths of containers that contain the inference code and model artifacts.</p>
-     * </li> <li> <p>The instance types that the model package supports for transform
-     * jobs and real-time endpoints used for inference.</p> </li> <li> <p>The input and
-     * output content formats that the model package supports for inference.</p> </li>
-     * </ul>
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
      */
     inline void SetInferenceSpecification(const InferenceSpecification& value) { m_inferenceSpecificationHasBeenSet = true; m_inferenceSpecification = value; }
 
     /**
-     * <p>Specifies details about inference jobs that can be run with models based on
-     * this model package, including the following:</p> <ul> <li> <p>The Amazon ECR
-     * paths of containers that contain the inference code and model artifacts.</p>
-     * </li> <li> <p>The instance types that the model package supports for transform
-     * jobs and real-time endpoints used for inference.</p> </li> <li> <p>The input and
-     * output content formats that the model package supports for inference.</p> </li>
-     * </ul>
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
      */
     inline void SetInferenceSpecification(InferenceSpecification&& value) { m_inferenceSpecificationHasBeenSet = true; m_inferenceSpecification = std::move(value); }
 
     /**
-     * <p>Specifies details about inference jobs that can be run with models based on
-     * this model package, including the following:</p> <ul> <li> <p>The Amazon ECR
-     * paths of containers that contain the inference code and model artifacts.</p>
-     * </li> <li> <p>The instance types that the model package supports for transform
-     * jobs and real-time endpoints used for inference.</p> </li> <li> <p>The input and
-     * output content formats that the model package supports for inference.</p> </li>
-     * </ul>
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
      */
     inline CreateModelPackageRequest& WithInferenceSpecification(const InferenceSpecification& value) { SetInferenceSpecification(value); return *this;}
 
     /**
-     * <p>Specifies details about inference jobs that can be run with models based on
-     * this model package, including the following:</p> <ul> <li> <p>The Amazon ECR
-     * paths of containers that contain the inference code and model artifacts.</p>
-     * </li> <li> <p>The instance types that the model package supports for transform
-     * jobs and real-time endpoints used for inference.</p> </li> <li> <p>The input and
-     * output content formats that the model package supports for inference.</p> </li>
-     * </ul>
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
      */
     inline CreateModelPackageRequest& WithInferenceSpecification(InferenceSpecification&& value) { SetInferenceSpecification(std::move(value)); return *this;}
 
@@ -1054,6 +1054,63 @@ namespace Model
      */
     inline CreateModelPackageRequest& WithSkipModelValidation(SkipModelValidation&& value) { SetSkipModelValidation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The URI of the source for the model package. If you want to clone a model
+     * package, set it to the model package Amazon Resource Name (ARN). If you want to
+     * register a model, set it to the model ARN.</p>
+     */
+    inline const Aws::String& GetSourceUri() const{ return m_sourceUri; }
+
+    /**
+     * <p>The URI of the source for the model package. If you want to clone a model
+     * package, set it to the model package Amazon Resource Name (ARN). If you want to
+     * register a model, set it to the model ARN.</p>
+     */
+    inline bool SourceUriHasBeenSet() const { return m_sourceUriHasBeenSet; }
+
+    /**
+     * <p>The URI of the source for the model package. If you want to clone a model
+     * package, set it to the model package Amazon Resource Name (ARN). If you want to
+     * register a model, set it to the model ARN.</p>
+     */
+    inline void SetSourceUri(const Aws::String& value) { m_sourceUriHasBeenSet = true; m_sourceUri = value; }
+
+    /**
+     * <p>The URI of the source for the model package. If you want to clone a model
+     * package, set it to the model package Amazon Resource Name (ARN). If you want to
+     * register a model, set it to the model ARN.</p>
+     */
+    inline void SetSourceUri(Aws::String&& value) { m_sourceUriHasBeenSet = true; m_sourceUri = std::move(value); }
+
+    /**
+     * <p>The URI of the source for the model package. If you want to clone a model
+     * package, set it to the model package Amazon Resource Name (ARN). If you want to
+     * register a model, set it to the model ARN.</p>
+     */
+    inline void SetSourceUri(const char* value) { m_sourceUriHasBeenSet = true; m_sourceUri.assign(value); }
+
+    /**
+     * <p>The URI of the source for the model package. If you want to clone a model
+     * package, set it to the model package Amazon Resource Name (ARN). If you want to
+     * register a model, set it to the model ARN.</p>
+     */
+    inline CreateModelPackageRequest& WithSourceUri(const Aws::String& value) { SetSourceUri(value); return *this;}
+
+    /**
+     * <p>The URI of the source for the model package. If you want to clone a model
+     * package, set it to the model package Amazon Resource Name (ARN). If you want to
+     * register a model, set it to the model ARN.</p>
+     */
+    inline CreateModelPackageRequest& WithSourceUri(Aws::String&& value) { SetSourceUri(std::move(value)); return *this;}
+
+    /**
+     * <p>The URI of the source for the model package. If you want to clone a model
+     * package, set it to the model package Amazon Resource Name (ARN). If you want to
+     * register a model, set it to the model ARN.</p>
+     */
+    inline CreateModelPackageRequest& WithSourceUri(const char* value) { SetSourceUri(value); return *this;}
+
   private:
 
     Aws::String m_modelPackageName;
@@ -1112,6 +1169,9 @@ namespace Model
 
     SkipModelValidation m_skipModelValidation;
     bool m_skipModelValidationHasBeenSet = false;
+
+    Aws::String m_sourceUri;
+    bool m_sourceUriHasBeenSet = false;
   };
 
 } // namespace Model

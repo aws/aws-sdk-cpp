@@ -26,6 +26,8 @@ ClusterSnapshot::ClusterSnapshot() :
     m_snapshotArnHasBeenSet(false),
     m_snapshotCreationTimeHasBeenSet(false),
     m_snapshotNameHasBeenSet(false),
+    m_snapshotType(SnapshotType::NOT_SET),
+    m_snapshotTypeHasBeenSet(false),
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
@@ -41,6 +43,8 @@ ClusterSnapshot::ClusterSnapshot(JsonView jsonValue) :
     m_snapshotArnHasBeenSet(false),
     m_snapshotCreationTimeHasBeenSet(false),
     m_snapshotNameHasBeenSet(false),
+    m_snapshotType(SnapshotType::NOT_SET),
+    m_snapshotTypeHasBeenSet(false),
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
@@ -98,6 +102,13 @@ ClusterSnapshot& ClusterSnapshot::operator =(JsonView jsonValue)
     m_snapshotName = jsonValue.GetString("snapshotName");
 
     m_snapshotNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("snapshotType"))
+  {
+    m_snapshotType = SnapshotTypeMapper::GetSnapshotTypeForName(jsonValue.GetString("snapshotType"));
+
+    m_snapshotTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -174,6 +185,11 @@ JsonValue ClusterSnapshot::Jsonize() const
   {
    payload.WithString("snapshotName", m_snapshotName);
 
+  }
+
+  if(m_snapshotTypeHasBeenSet)
+  {
+   payload.WithString("snapshotType", SnapshotTypeMapper::GetNameForSnapshotType(m_snapshotType));
   }
 
   if(m_statusHasBeenSet)

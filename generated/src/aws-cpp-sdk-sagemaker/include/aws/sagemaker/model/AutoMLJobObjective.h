@@ -46,16 +46,13 @@ namespace Model
      * list of available metrics supported by Autopilot and the default metric applied
      * when you do not specify a metric name explicitly depend on the problem type.</p>
      * <ul> <li> <p>For tabular problem types:</p> <ul> <li> <p>List of available
-     * metrics: </p> <ul> <li> <p> Regression: <code>InferenceLatency</code>,
-     * <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code> </p>
-     * </li> <li> <p> Binary classification: <code>Accuracy</code>, <code>AUC</code>,
-     * <code>BalancedAccuracy</code>, <code>F1</code>, <code>InferenceLatency</code>,
-     * <code>LogLoss</code>, <code>Precision</code>, <code>Recall</code> </p> </li>
-     * <li> <p> Multiclass classification: <code>Accuracy</code>,
-     * <code>BalancedAccuracy</code>, <code>F1macro</code>,
-     * <code>InferenceLatency</code>, <code>LogLoss</code>,
-     * <code>PrecisionMacro</code>, <code>RecallMacro</code> </p> </li> </ul> <p>For a
-     * description of each metric, see <a
+     * metrics: </p> <ul> <li> <p> Regression: <code>MAE</code>, <code>MSE</code>,
+     * <code>R2</code>, <code>RMSE</code> </p> </li> <li> <p> Binary classification:
+     * <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>,
+     * <code>F1</code>, <code>Precision</code>, <code>Recall</code> </p> </li> <li> <p>
+     * Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>,
+     * <code>F1macro</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code> </p>
+     * </li> </ul> <p>For a description of each metric, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics for classification and regression</a>.</p> </li> <li> <p>Default
      * objective metrics:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li>
@@ -95,16 +92,13 @@ namespace Model
      * list of available metrics supported by Autopilot and the default metric applied
      * when you do not specify a metric name explicitly depend on the problem type.</p>
      * <ul> <li> <p>For tabular problem types:</p> <ul> <li> <p>List of available
-     * metrics: </p> <ul> <li> <p> Regression: <code>InferenceLatency</code>,
-     * <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code> </p>
-     * </li> <li> <p> Binary classification: <code>Accuracy</code>, <code>AUC</code>,
-     * <code>BalancedAccuracy</code>, <code>F1</code>, <code>InferenceLatency</code>,
-     * <code>LogLoss</code>, <code>Precision</code>, <code>Recall</code> </p> </li>
-     * <li> <p> Multiclass classification: <code>Accuracy</code>,
-     * <code>BalancedAccuracy</code>, <code>F1macro</code>,
-     * <code>InferenceLatency</code>, <code>LogLoss</code>,
-     * <code>PrecisionMacro</code>, <code>RecallMacro</code> </p> </li> </ul> <p>For a
-     * description of each metric, see <a
+     * metrics: </p> <ul> <li> <p> Regression: <code>MAE</code>, <code>MSE</code>,
+     * <code>R2</code>, <code>RMSE</code> </p> </li> <li> <p> Binary classification:
+     * <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>,
+     * <code>F1</code>, <code>Precision</code>, <code>Recall</code> </p> </li> <li> <p>
+     * Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>,
+     * <code>F1macro</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code> </p>
+     * </li> </ul> <p>For a description of each metric, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics for classification and regression</a>.</p> </li> <li> <p>Default
      * objective metrics:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li>
@@ -144,16 +138,13 @@ namespace Model
      * list of available metrics supported by Autopilot and the default metric applied
      * when you do not specify a metric name explicitly depend on the problem type.</p>
      * <ul> <li> <p>For tabular problem types:</p> <ul> <li> <p>List of available
-     * metrics: </p> <ul> <li> <p> Regression: <code>InferenceLatency</code>,
-     * <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code> </p>
-     * </li> <li> <p> Binary classification: <code>Accuracy</code>, <code>AUC</code>,
-     * <code>BalancedAccuracy</code>, <code>F1</code>, <code>InferenceLatency</code>,
-     * <code>LogLoss</code>, <code>Precision</code>, <code>Recall</code> </p> </li>
-     * <li> <p> Multiclass classification: <code>Accuracy</code>,
-     * <code>BalancedAccuracy</code>, <code>F1macro</code>,
-     * <code>InferenceLatency</code>, <code>LogLoss</code>,
-     * <code>PrecisionMacro</code>, <code>RecallMacro</code> </p> </li> </ul> <p>For a
-     * description of each metric, see <a
+     * metrics: </p> <ul> <li> <p> Regression: <code>MAE</code>, <code>MSE</code>,
+     * <code>R2</code>, <code>RMSE</code> </p> </li> <li> <p> Binary classification:
+     * <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>,
+     * <code>F1</code>, <code>Precision</code>, <code>Recall</code> </p> </li> <li> <p>
+     * Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>,
+     * <code>F1macro</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code> </p>
+     * </li> </ul> <p>For a description of each metric, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics for classification and regression</a>.</p> </li> <li> <p>Default
      * objective metrics:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li>
@@ -193,16 +184,13 @@ namespace Model
      * list of available metrics supported by Autopilot and the default metric applied
      * when you do not specify a metric name explicitly depend on the problem type.</p>
      * <ul> <li> <p>For tabular problem types:</p> <ul> <li> <p>List of available
-     * metrics: </p> <ul> <li> <p> Regression: <code>InferenceLatency</code>,
-     * <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code> </p>
-     * </li> <li> <p> Binary classification: <code>Accuracy</code>, <code>AUC</code>,
-     * <code>BalancedAccuracy</code>, <code>F1</code>, <code>InferenceLatency</code>,
-     * <code>LogLoss</code>, <code>Precision</code>, <code>Recall</code> </p> </li>
-     * <li> <p> Multiclass classification: <code>Accuracy</code>,
-     * <code>BalancedAccuracy</code>, <code>F1macro</code>,
-     * <code>InferenceLatency</code>, <code>LogLoss</code>,
-     * <code>PrecisionMacro</code>, <code>RecallMacro</code> </p> </li> </ul> <p>For a
-     * description of each metric, see <a
+     * metrics: </p> <ul> <li> <p> Regression: <code>MAE</code>, <code>MSE</code>,
+     * <code>R2</code>, <code>RMSE</code> </p> </li> <li> <p> Binary classification:
+     * <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>,
+     * <code>F1</code>, <code>Precision</code>, <code>Recall</code> </p> </li> <li> <p>
+     * Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>,
+     * <code>F1macro</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code> </p>
+     * </li> </ul> <p>For a description of each metric, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics for classification and regression</a>.</p> </li> <li> <p>Default
      * objective metrics:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li>
@@ -242,16 +230,13 @@ namespace Model
      * list of available metrics supported by Autopilot and the default metric applied
      * when you do not specify a metric name explicitly depend on the problem type.</p>
      * <ul> <li> <p>For tabular problem types:</p> <ul> <li> <p>List of available
-     * metrics: </p> <ul> <li> <p> Regression: <code>InferenceLatency</code>,
-     * <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code> </p>
-     * </li> <li> <p> Binary classification: <code>Accuracy</code>, <code>AUC</code>,
-     * <code>BalancedAccuracy</code>, <code>F1</code>, <code>InferenceLatency</code>,
-     * <code>LogLoss</code>, <code>Precision</code>, <code>Recall</code> </p> </li>
-     * <li> <p> Multiclass classification: <code>Accuracy</code>,
-     * <code>BalancedAccuracy</code>, <code>F1macro</code>,
-     * <code>InferenceLatency</code>, <code>LogLoss</code>,
-     * <code>PrecisionMacro</code>, <code>RecallMacro</code> </p> </li> </ul> <p>For a
-     * description of each metric, see <a
+     * metrics: </p> <ul> <li> <p> Regression: <code>MAE</code>, <code>MSE</code>,
+     * <code>R2</code>, <code>RMSE</code> </p> </li> <li> <p> Binary classification:
+     * <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>,
+     * <code>F1</code>, <code>Precision</code>, <code>Recall</code> </p> </li> <li> <p>
+     * Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>,
+     * <code>F1macro</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code> </p>
+     * </li> </ul> <p>For a description of each metric, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics for classification and regression</a>.</p> </li> <li> <p>Default
      * objective metrics:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li>
@@ -291,16 +276,13 @@ namespace Model
      * list of available metrics supported by Autopilot and the default metric applied
      * when you do not specify a metric name explicitly depend on the problem type.</p>
      * <ul> <li> <p>For tabular problem types:</p> <ul> <li> <p>List of available
-     * metrics: </p> <ul> <li> <p> Regression: <code>InferenceLatency</code>,
-     * <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code> </p>
-     * </li> <li> <p> Binary classification: <code>Accuracy</code>, <code>AUC</code>,
-     * <code>BalancedAccuracy</code>, <code>F1</code>, <code>InferenceLatency</code>,
-     * <code>LogLoss</code>, <code>Precision</code>, <code>Recall</code> </p> </li>
-     * <li> <p> Multiclass classification: <code>Accuracy</code>,
-     * <code>BalancedAccuracy</code>, <code>F1macro</code>,
-     * <code>InferenceLatency</code>, <code>LogLoss</code>,
-     * <code>PrecisionMacro</code>, <code>RecallMacro</code> </p> </li> </ul> <p>For a
-     * description of each metric, see <a
+     * metrics: </p> <ul> <li> <p> Regression: <code>MAE</code>, <code>MSE</code>,
+     * <code>R2</code>, <code>RMSE</code> </p> </li> <li> <p> Binary classification:
+     * <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>,
+     * <code>F1</code>, <code>Precision</code>, <code>Recall</code> </p> </li> <li> <p>
+     * Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>,
+     * <code>F1macro</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code> </p>
+     * </li> </ul> <p>For a description of each metric, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics for classification and regression</a>.</p> </li> <li> <p>Default
      * objective metrics:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li>

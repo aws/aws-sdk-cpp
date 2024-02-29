@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
+     * <p>Returns information about a specific elastic cluster snapshot.</p>
      */
     inline const ClusterSnapshot& GetSnapshot() const{ return m_snapshot; }
 
     /**
-     * <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
+     * <p>Returns information about a specific elastic cluster snapshot.</p>
      */
     inline void SetSnapshot(const ClusterSnapshot& value) { m_snapshot = value; }
 
     /**
-     * <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
+     * <p>Returns information about a specific elastic cluster snapshot.</p>
      */
     inline void SetSnapshot(ClusterSnapshot&& value) { m_snapshot = std::move(value); }
 
     /**
-     * <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
+     * <p>Returns information about a specific elastic cluster snapshot.</p>
      */
     inline GetClusterSnapshotResult& WithSnapshot(const ClusterSnapshot& value) { SetSnapshot(value); return *this;}
 
     /**
-     * <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
+     * <p>Returns information about a specific elastic cluster snapshot.</p>
      */
     inline GetClusterSnapshotResult& WithSnapshot(ClusterSnapshot&& value) { SetSnapshot(std::move(value)); return *this;}
 

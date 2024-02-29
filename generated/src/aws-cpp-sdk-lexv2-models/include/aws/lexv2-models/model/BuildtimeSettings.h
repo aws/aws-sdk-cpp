@@ -77,22 +77,34 @@ namespace Model
     inline BuildtimeSettings& WithDescriptiveBotBuilder(DescriptiveBotBuilderSpecification&& value) { SetDescriptiveBotBuilder(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Contains specifications for the sample utterance generation feature.</p>
+     */
     inline const SampleUtteranceGenerationSpecification& GetSampleUtteranceGeneration() const{ return m_sampleUtteranceGeneration; }
 
-    
+    /**
+     * <p>Contains specifications for the sample utterance generation feature.</p>
+     */
     inline bool SampleUtteranceGenerationHasBeenSet() const { return m_sampleUtteranceGenerationHasBeenSet; }
 
-    
+    /**
+     * <p>Contains specifications for the sample utterance generation feature.</p>
+     */
     inline void SetSampleUtteranceGeneration(const SampleUtteranceGenerationSpecification& value) { m_sampleUtteranceGenerationHasBeenSet = true; m_sampleUtteranceGeneration = value; }
 
-    
+    /**
+     * <p>Contains specifications for the sample utterance generation feature.</p>
+     */
     inline void SetSampleUtteranceGeneration(SampleUtteranceGenerationSpecification&& value) { m_sampleUtteranceGenerationHasBeenSet = true; m_sampleUtteranceGeneration = std::move(value); }
 
-    
+    /**
+     * <p>Contains specifications for the sample utterance generation feature.</p>
+     */
     inline BuildtimeSettings& WithSampleUtteranceGeneration(const SampleUtteranceGenerationSpecification& value) { SetSampleUtteranceGeneration(value); return *this;}
 
-    
+    /**
+     * <p>Contains specifications for the sample utterance generation feature.</p>
+     */
     inline BuildtimeSettings& WithSampleUtteranceGeneration(SampleUtteranceGenerationSpecification&& value) { SetSampleUtteranceGeneration(std::move(value)); return *this;}
 
   private:
