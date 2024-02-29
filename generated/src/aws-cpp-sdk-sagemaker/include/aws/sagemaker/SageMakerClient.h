@@ -1343,19 +1343,15 @@ namespace SageMaker
          * create an endpoint configuration with the <code>CreateEndpointConfig</code> API,
          * and then create an endpoint with the <code>CreateEndpoint</code> API. SageMaker
          * then deploys all of the containers that you defined for the model in the hosting
-         * environment. </p> <p>For an example that calls this method when deploying a
-         * model to SageMaker hosting services, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-model">Create
-         * a Model (Amazon Web Services SDK for Python (Boto 3)).</a> </p> <p>To run a
-         * batch transform using your model, you start a job with the
-         * <code>CreateTransformJob</code> API. SageMaker uses your model and your dataset
-         * to get inferences which are then saved to a specified S3 location.</p> <p>In the
-         * request, you also provide an IAM role that SageMaker can assume to access model
-         * artifacts and docker image for deployment on ML compute hosting instances or for
-         * batch transform jobs. In addition, you also use the IAM role to manage
-         * permissions the inference code needs. For example, if the inference code access
-         * any other Amazon Web Services resources, you grant necessary permissions via
-         * this role.</p><p><h3>See Also:</h3>   <a
+         * environment. </p> <p>To run a batch transform using your model, you start a job
+         * with the <code>CreateTransformJob</code> API. SageMaker uses your model and your
+         * dataset to get inferences which are then saved to a specified S3 location.</p>
+         * <p>In the request, you also provide an IAM role that SageMaker can assume to
+         * access model artifacts and docker image for deployment on ML compute hosting
+         * instances or for batch transform jobs. In addition, you also use the IAM role to
+         * manage permissions the inference code needs. For example, if the inference code
+         * access any other Amazon Web Services resources, you grant necessary permissions
+         * via this role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS
          * API Reference</a></p>
          */
@@ -8525,7 +8521,10 @@ namespace SageMaker
          * <i>after the feature group is updated</i>. If a record level
          * <code>TtlDuration</code> exists from using the <code>PutRecord</code> API, the
          * record level <code>TtlDuration</code> applies to that record instead of the
-         * default <code>TtlDuration</code>.</p><p><h3>See Also:</h3>   <a
+         * default <code>TtlDuration</code>. To remove the default <code>TtlDuration</code>
+         * from an existing feature group, use the <code>UpdateFeatureGroup</code> API and
+         * set the <code>TtlDuration</code> <code>Unit</code> and <code>Value</code> to
+         * <code>null</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup">AWS
          * API Reference</a></p>
          */

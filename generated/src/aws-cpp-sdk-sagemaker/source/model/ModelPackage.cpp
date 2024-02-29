@@ -46,6 +46,7 @@ ModelPackage::ModelPackage() :
     m_taskHasBeenSet(false),
     m_samplePayloadUrlHasBeenSet(false),
     m_additionalInferenceSpecificationsHasBeenSet(false),
+    m_sourceUriHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_customerMetadataPropertiesHasBeenSet(false),
     m_driftCheckBaselinesHasBeenSet(false),
@@ -82,6 +83,7 @@ ModelPackage::ModelPackage(JsonView jsonValue) :
     m_taskHasBeenSet(false),
     m_samplePayloadUrlHasBeenSet(false),
     m_additionalInferenceSpecificationsHasBeenSet(false),
+    m_sourceUriHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_customerMetadataPropertiesHasBeenSet(false),
     m_driftCheckBaselinesHasBeenSet(false),
@@ -255,6 +257,13 @@ ModelPackage& ModelPackage::operator =(JsonView jsonValue)
       m_additionalInferenceSpecifications.push_back(additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject());
     }
     m_additionalInferenceSpecificationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceUri"))
+  {
+    m_sourceUri = jsonValue.GetString("SourceUri");
+
+    m_sourceUriHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -434,6 +443,12 @@ JsonValue ModelPackage::Jsonize() const
      additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject(m_additionalInferenceSpecifications[additionalInferenceSpecificationsIndex].Jsonize());
    }
    payload.WithArray("AdditionalInferenceSpecifications", std::move(additionalInferenceSpecificationsJsonList));
+
+  }
+
+  if(m_sourceUriHasBeenSet)
+  {
+   payload.WithString("SourceUri", m_sourceUri);
 
   }
 

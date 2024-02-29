@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The new Elastic DocumentDB cluster that has been created.</p>
+     * <p>The new elastic cluster that has been created.</p>
      */
     inline const Cluster& GetCluster() const{ return m_cluster; }
 
     /**
-     * <p>The new Elastic DocumentDB cluster that has been created.</p>
+     * <p>The new elastic cluster that has been created.</p>
      */
     inline void SetCluster(const Cluster& value) { m_cluster = value; }
 
     /**
-     * <p>The new Elastic DocumentDB cluster that has been created.</p>
+     * <p>The new elastic cluster that has been created.</p>
      */
     inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
 
     /**
-     * <p>The new Elastic DocumentDB cluster that has been created.</p>
+     * <p>The new elastic cluster that has been created.</p>
      */
     inline CreateClusterResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The new Elastic DocumentDB cluster that has been created.</p>
+     * <p>The new elastic cluster that has been created.</p>
      */
     inline CreateClusterResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
 

@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/InferenceSpecification.h>
 #include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <utility>
 
@@ -352,6 +353,114 @@ namespace Model
      */
     inline UpdateModelPackageRequest& AddAdditionalInferenceSpecificationsToAdd(AdditionalInferenceSpecificationDefinition&& value) { m_additionalInferenceSpecificationsToAddHasBeenSet = true; m_additionalInferenceSpecificationsToAdd.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
+     */
+    inline const InferenceSpecification& GetInferenceSpecification() const{ return m_inferenceSpecification; }
+
+    /**
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
+     */
+    inline bool InferenceSpecificationHasBeenSet() const { return m_inferenceSpecificationHasBeenSet; }
+
+    /**
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
+     */
+    inline void SetInferenceSpecification(const InferenceSpecification& value) { m_inferenceSpecificationHasBeenSet = true; m_inferenceSpecification = value; }
+
+    /**
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
+     */
+    inline void SetInferenceSpecification(InferenceSpecification&& value) { m_inferenceSpecificationHasBeenSet = true; m_inferenceSpecification = std::move(value); }
+
+    /**
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
+     */
+    inline UpdateModelPackageRequest& WithInferenceSpecification(const InferenceSpecification& value) { SetInferenceSpecification(value); return *this;}
+
+    /**
+     * <p>Specifies details about inference jobs that you can run with models based on
+     * this model package, including the following information:</p> <ul> <li> <p>The
+     * Amazon ECR paths of containers that contain the inference code and model
+     * artifacts.</p> </li> <li> <p>The instance types that the model package supports
+     * for transform jobs and real-time endpoints used for inference.</p> </li> <li>
+     * <p>The input and output content formats that the model package supports for
+     * inference.</p> </li> </ul>
+     */
+    inline UpdateModelPackageRequest& WithInferenceSpecification(InferenceSpecification&& value) { SetInferenceSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline const Aws::String& GetSourceUri() const{ return m_sourceUri; }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline bool SourceUriHasBeenSet() const { return m_sourceUriHasBeenSet; }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(const Aws::String& value) { m_sourceUriHasBeenSet = true; m_sourceUri = value; }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(Aws::String&& value) { m_sourceUriHasBeenSet = true; m_sourceUri = std::move(value); }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(const char* value) { m_sourceUriHasBeenSet = true; m_sourceUri.assign(value); }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline UpdateModelPackageRequest& WithSourceUri(const Aws::String& value) { SetSourceUri(value); return *this;}
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline UpdateModelPackageRequest& WithSourceUri(Aws::String&& value) { SetSourceUri(std::move(value)); return *this;}
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline UpdateModelPackageRequest& WithSourceUri(const char* value) { SetSourceUri(value); return *this;}
+
   private:
 
     Aws::String m_modelPackageArn;
@@ -371,6 +480,12 @@ namespace Model
 
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecificationsToAdd;
     bool m_additionalInferenceSpecificationsToAddHasBeenSet = false;
+
+    InferenceSpecification m_inferenceSpecification;
+    bool m_inferenceSpecificationHasBeenSet = false;
+
+    Aws::String m_sourceUri;
+    bool m_sourceUriHasBeenSet = false;
   };
 
 } // namespace Model

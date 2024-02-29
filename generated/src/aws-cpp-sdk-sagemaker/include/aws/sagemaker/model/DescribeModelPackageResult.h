@@ -241,31 +241,31 @@ namespace Model
 
 
     /**
-     * <p>Details about inference jobs that can be run with models based on this model
+     * <p>Details about inference jobs that you can run with models based on this model
      * package.</p>
      */
     inline const InferenceSpecification& GetInferenceSpecification() const{ return m_inferenceSpecification; }
 
     /**
-     * <p>Details about inference jobs that can be run with models based on this model
+     * <p>Details about inference jobs that you can run with models based on this model
      * package.</p>
      */
     inline void SetInferenceSpecification(const InferenceSpecification& value) { m_inferenceSpecification = value; }
 
     /**
-     * <p>Details about inference jobs that can be run with models based on this model
+     * <p>Details about inference jobs that you can run with models based on this model
      * package.</p>
      */
     inline void SetInferenceSpecification(InferenceSpecification&& value) { m_inferenceSpecification = std::move(value); }
 
     /**
-     * <p>Details about inference jobs that can be run with models based on this model
+     * <p>Details about inference jobs that you can run with models based on this model
      * package.</p>
      */
     inline DescribeModelPackageResult& WithInferenceSpecification(const InferenceSpecification& value) { SetInferenceSpecification(value); return *this;}
 
     /**
-     * <p>Details about inference jobs that can be run with models based on this model
+     * <p>Details about inference jobs that you can run with models based on this model
      * package.</p>
      */
     inline DescribeModelPackageResult& WithInferenceSpecification(InferenceSpecification&& value) { SetInferenceSpecification(std::move(value)); return *this;}
@@ -901,6 +901,42 @@ namespace Model
     inline DescribeModelPackageResult& WithSkipModelValidation(SkipModelValidation&& value) { SetSkipModelValidation(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline const Aws::String& GetSourceUri() const{ return m_sourceUri; }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(const Aws::String& value) { m_sourceUri = value; }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(Aws::String&& value) { m_sourceUri = std::move(value); }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(const char* value) { m_sourceUri.assign(value); }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline DescribeModelPackageResult& WithSourceUri(const Aws::String& value) { SetSourceUri(value); return *this;}
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline DescribeModelPackageResult& WithSourceUri(Aws::String&& value) { SetSourceUri(std::move(value)); return *this;}
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline DescribeModelPackageResult& WithSourceUri(const char* value) { SetSourceUri(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -975,6 +1011,8 @@ namespace Model
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
 
     SkipModelValidation m_skipModelValidation;
+
+    Aws::String m_sourceUri;
 
     Aws::String m_requestId;
   };

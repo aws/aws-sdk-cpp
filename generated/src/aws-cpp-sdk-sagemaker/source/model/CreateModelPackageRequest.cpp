@@ -35,7 +35,8 @@ CreateModelPackageRequest::CreateModelPackageRequest() :
     m_driftCheckBaselinesHasBeenSet(false),
     m_additionalInferenceSpecificationsHasBeenSet(false),
     m_skipModelValidation(SkipModelValidation::NOT_SET),
-    m_skipModelValidationHasBeenSet(false)
+    m_skipModelValidationHasBeenSet(false),
+    m_sourceUriHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,12 @@ Aws::String CreateModelPackageRequest::SerializePayload() const
   if(m_skipModelValidationHasBeenSet)
   {
    payload.WithString("SkipModelValidation", SkipModelValidationMapper::GetNameForSkipModelValidation(m_skipModelValidation));
+  }
+
+  if(m_sourceUriHasBeenSet)
+  {
+   payload.WithString("SourceUri", m_sourceUri);
+
   }
 
   return payload.View().WriteReadable();

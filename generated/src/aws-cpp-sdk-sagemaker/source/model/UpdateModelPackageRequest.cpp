@@ -19,7 +19,9 @@ UpdateModelPackageRequest::UpdateModelPackageRequest() :
     m_approvalDescriptionHasBeenSet(false),
     m_customerMetadataPropertiesHasBeenSet(false),
     m_customerMetadataPropertiesToRemoveHasBeenSet(false),
-    m_additionalInferenceSpecificationsToAddHasBeenSet(false)
+    m_additionalInferenceSpecificationsToAddHasBeenSet(false),
+    m_inferenceSpecificationHasBeenSet(false),
+    m_sourceUriHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,18 @@ Aws::String UpdateModelPackageRequest::SerializePayload() const
      additionalInferenceSpecificationsToAddJsonList[additionalInferenceSpecificationsToAddIndex].AsObject(m_additionalInferenceSpecificationsToAdd[additionalInferenceSpecificationsToAddIndex].Jsonize());
    }
    payload.WithArray("AdditionalInferenceSpecificationsToAdd", std::move(additionalInferenceSpecificationsToAddJsonList));
+
+  }
+
+  if(m_inferenceSpecificationHasBeenSet)
+  {
+   payload.WithObject("InferenceSpecification", m_inferenceSpecification.Jsonize());
+
+  }
+
+  if(m_sourceUriHasBeenSet)
+  {
+   payload.WithString("SourceUri", m_sourceUri);
 
   }
 

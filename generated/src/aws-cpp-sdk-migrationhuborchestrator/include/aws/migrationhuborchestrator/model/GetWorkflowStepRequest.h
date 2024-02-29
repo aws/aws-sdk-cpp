@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>desThe ID of the step group.</p>
+     * <p>The ID of the step group.</p>
      */
     inline const Aws::String& GetStepGroupId() const{ return m_stepGroupId; }
 
     /**
-     * <p>desThe ID of the step group.</p>
+     * <p>The ID of the step group.</p>
      */
     inline bool StepGroupIdHasBeenSet() const { return m_stepGroupIdHasBeenSet; }
 
     /**
-     * <p>desThe ID of the step group.</p>
+     * <p>The ID of the step group.</p>
      */
     inline void SetStepGroupId(const Aws::String& value) { m_stepGroupIdHasBeenSet = true; m_stepGroupId = value; }
 
     /**
-     * <p>desThe ID of the step group.</p>
+     * <p>The ID of the step group.</p>
      */
     inline void SetStepGroupId(Aws::String&& value) { m_stepGroupIdHasBeenSet = true; m_stepGroupId = std::move(value); }
 
     /**
-     * <p>desThe ID of the step group.</p>
+     * <p>The ID of the step group.</p>
      */
     inline void SetStepGroupId(const char* value) { m_stepGroupIdHasBeenSet = true; m_stepGroupId.assign(value); }
 
     /**
-     * <p>desThe ID of the step group.</p>
+     * <p>The ID of the step group.</p>
      */
     inline GetWorkflowStepRequest& WithStepGroupId(const Aws::String& value) { SetStepGroupId(value); return *this;}
 
     /**
-     * <p>desThe ID of the step group.</p>
+     * <p>The ID of the step group.</p>
      */
     inline GetWorkflowStepRequest& WithStepGroupId(Aws::String&& value) { SetStepGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>desThe ID of the step group.</p>
+     * <p>The ID of the step group.</p>
      */
     inline GetWorkflowStepRequest& WithStepGroupId(const char* value) { SetStepGroupId(value); return *this;}
 
