@@ -40,47 +40,56 @@ namespace Model
 
 
     /**
-     * <p>A list of actions for the access permissions.</p>
+     * <p>A list of actions for the access permissions. Any strings that can be used as
+     * an action in an IAM policy can be used in the list of actions to check.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>A list of actions for the access permissions.</p>
+     * <p>A list of actions for the access permissions. Any strings that can be used as
+     * an action in an IAM policy can be used in the list of actions to check.</p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
-     * <p>A list of actions for the access permissions.</p>
+     * <p>A list of actions for the access permissions. Any strings that can be used as
+     * an action in an IAM policy can be used in the list of actions to check.</p>
      */
     inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>A list of actions for the access permissions.</p>
+     * <p>A list of actions for the access permissions. Any strings that can be used as
+     * an action in an IAM policy can be used in the list of actions to check.</p>
      */
     inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>A list of actions for the access permissions.</p>
+     * <p>A list of actions for the access permissions. Any strings that can be used as
+     * an action in an IAM policy can be used in the list of actions to check.</p>
      */
     inline Access& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>A list of actions for the access permissions.</p>
+     * <p>A list of actions for the access permissions. Any strings that can be used as
+     * an action in an IAM policy can be used in the list of actions to check.</p>
      */
     inline Access& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of actions for the access permissions.</p>
+     * <p>A list of actions for the access permissions. Any strings that can be used as
+     * an action in an IAM policy can be used in the list of actions to check.</p>
      */
     inline Access& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>A list of actions for the access permissions.</p>
+     * <p>A list of actions for the access permissions. Any strings that can be used as
+     * an action in an IAM policy can be used in the list of actions to check.</p>
      */
     inline Access& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of actions for the access permissions.</p>
+     * <p>A list of actions for the access permissions. Any strings that can be used as
+     * an action in an IAM policy can be used in the list of actions to check.</p>
      */
     inline Access& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 

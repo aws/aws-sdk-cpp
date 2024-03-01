@@ -165,63 +165,63 @@ namespace Model
 
     /**
      * <p>The network nodes. The nodes are hashed based on your account. Instances from
-     * different accounts running under the same droplet will return a different hashed
+     * different accounts running under the same server will return a different hashed
      * list of strings.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkNodes() const{ return m_networkNodes; }
 
     /**
      * <p>The network nodes. The nodes are hashed based on your account. Instances from
-     * different accounts running under the same droplet will return a different hashed
+     * different accounts running under the same server will return a different hashed
      * list of strings.</p>
      */
     inline bool NetworkNodesHasBeenSet() const { return m_networkNodesHasBeenSet; }
 
     /**
      * <p>The network nodes. The nodes are hashed based on your account. Instances from
-     * different accounts running under the same droplet will return a different hashed
+     * different accounts running under the same server will return a different hashed
      * list of strings.</p>
      */
     inline void SetNetworkNodes(const Aws::Vector<Aws::String>& value) { m_networkNodesHasBeenSet = true; m_networkNodes = value; }
 
     /**
      * <p>The network nodes. The nodes are hashed based on your account. Instances from
-     * different accounts running under the same droplet will return a different hashed
+     * different accounts running under the same server will return a different hashed
      * list of strings.</p>
      */
     inline void SetNetworkNodes(Aws::Vector<Aws::String>&& value) { m_networkNodesHasBeenSet = true; m_networkNodes = std::move(value); }
 
     /**
      * <p>The network nodes. The nodes are hashed based on your account. Instances from
-     * different accounts running under the same droplet will return a different hashed
+     * different accounts running under the same server will return a different hashed
      * list of strings.</p>
      */
     inline InstanceTopology& WithNetworkNodes(const Aws::Vector<Aws::String>& value) { SetNetworkNodes(value); return *this;}
 
     /**
      * <p>The network nodes. The nodes are hashed based on your account. Instances from
-     * different accounts running under the same droplet will return a different hashed
+     * different accounts running under the same server will return a different hashed
      * list of strings.</p>
      */
     inline InstanceTopology& WithNetworkNodes(Aws::Vector<Aws::String>&& value) { SetNetworkNodes(std::move(value)); return *this;}
 
     /**
      * <p>The network nodes. The nodes are hashed based on your account. Instances from
-     * different accounts running under the same droplet will return a different hashed
+     * different accounts running under the same server will return a different hashed
      * list of strings.</p>
      */
     inline InstanceTopology& AddNetworkNodes(const Aws::String& value) { m_networkNodesHasBeenSet = true; m_networkNodes.push_back(value); return *this; }
 
     /**
      * <p>The network nodes. The nodes are hashed based on your account. Instances from
-     * different accounts running under the same droplet will return a different hashed
+     * different accounts running under the same server will return a different hashed
      * list of strings.</p>
      */
     inline InstanceTopology& AddNetworkNodes(Aws::String&& value) { m_networkNodesHasBeenSet = true; m_networkNodes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The network nodes. The nodes are hashed based on your account. Instances from
-     * different accounts running under the same droplet will return a different hashed
+     * different accounts running under the same server will return a different hashed
      * list of strings.</p>
      */
     inline InstanceTopology& AddNetworkNodes(const char* value) { m_networkNodesHasBeenSet = true; m_networkNodes.push_back(value); return *this; }

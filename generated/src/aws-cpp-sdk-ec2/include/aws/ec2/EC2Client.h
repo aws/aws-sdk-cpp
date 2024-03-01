@@ -7099,9 +7099,9 @@ namespace EC2
         }
 
         /**
-         * <p>Describes Capacity Block offerings available for purchase. With Capacity
-         * Blocks, you purchase a specific instance type for a period of
-         * time.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes Capacity Block offerings available for purchase in the Amazon Web
+         * Services Region that you're currently using. With Capacity Blocks, you purchase
+         * a specific instance type for a period of time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">AWS
          * API Reference</a></p>
          */
@@ -7672,9 +7672,12 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the running instances for the specified EC2 Fleet.</p> <p>For more
+         * <p>Describes the running instances for the specified EC2 Fleet.</p> 
+         * <p>Currently, <code>DescribeFleetInstances</code> does not support fleets of
+         * type <code>instant</code>. Instead, use <code>DescribeFleets</code>, specifying
+         * the <code>instant</code> fleet ID in the request.</p>  <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe
          * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">AWS
@@ -7701,9 +7704,11 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p> <p>For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
+         * <p>Describes the specified EC2 Fleet or all of your EC2 Fleets.</p> 
+         * <p>If a fleet is of type <code>instant</code>, you must specify the fleet ID in
+         * the request, otherwise the fleet does not appear in the response.</p>
+         *  <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe
          * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
@@ -8314,8 +8319,10 @@ namespace EC2
          * <li> <p> <b>Instance state</b> - You can manage your instances from the moment
          * you launch them through their termination. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> </ul>  <p>The
+         * order of the elements in the response, including those within nested structures,
+         * might vary. Applications should not assume the elements appear in a particular
+         * order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">AWS
          * API Reference</a></p>
          */
@@ -8452,7 +8459,10 @@ namespace EC2
          * experiencing a service disruption and you specify instance IDs that are in the
          * affected zone, or do not specify any instance IDs at all, the call fails. If you
          * describe instances and specify only instance IDs that are in an unaffected zone,
-         * the call works normally.</p><p><h3>See Also:</h3>   <a
+         * the call works normally.</p>  <p>The order of the elements in the
+         * response, including those within nested structures, might vary. Applications
+         * should not assume the elements appear in a particular order.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          */
@@ -9435,7 +9445,10 @@ namespace EC2
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
          * <p>For more information about Reserved Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>The order of
+         * the elements in the response, including those within nested structures, might
+         * vary. Applications should not assume the elements appear in a particular
+         * order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">AWS
          * API Reference</a></p>
          */
@@ -9475,8 +9488,10 @@ namespace EC2
          * you until your demand is met. You are charged based on the total price of all of
          * the listings that you purchase.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>The
+         * order of the elements in the response, including those within nested structures,
+         * might vary. Applications should not assume the elements appear in a particular
+         * order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">AWS
          * API Reference</a></p>
          */
@@ -9506,8 +9521,10 @@ namespace EC2
          * requests is returned. If a modification ID is specified, only information about
          * the specific modification is returned.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>The
+         * order of the elements in the response, including those within nested structures,
+         * might vary. Applications should not assume the elements appear in a particular
+         * order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">AWS
          * API Reference</a></p>
          */
@@ -9541,8 +9558,10 @@ namespace EC2
          * results. This is to ensure that you do not purchase your own Reserved
          * Instances.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>The
+         * order of the elements in the response, including those within nested structures,
+         * might vary. Applications should not assume the elements appear in a particular
+         * order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">AWS
          * API Reference</a></p>
          */
@@ -15194,7 +15213,7 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
          * Host</a>. When affinity is set to <code>host</code> and the instance is not
          * associated with a specific Dedicated Host, the next time the instance is
-         * launched, it is automatically associated with the host on which it lands. If the
+         * started, it is automatically associated with the host on which it lands. If the
          * instance is restarted or rebooted, this relationship persists.</p> </li> <li>
          * <p>Change the Dedicated Host with which an instance is associated.</p> </li>
          * <li> <p>Change the instance tenancy of an instance.</p> </li> <li> <p>Move an
