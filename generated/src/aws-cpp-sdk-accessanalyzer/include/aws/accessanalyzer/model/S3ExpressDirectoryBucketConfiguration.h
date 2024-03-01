@@ -33,9 +33,10 @@ namespace Model
    * new resource and you do not specify the Amazon S3 bucket policy, the access
    * preview assumes an directory bucket without a policy. To propose deletion of an
    * existing bucket policy, you can specify an empty string. For more information
-   * about bucket policy limits, see <a
+   * about Amazon S3 directory bucket policies, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
-   * bucket policies</a>.</p><p><h3>See Also:</h3>   <a
+   * directory bucket policies for S3 Express One Zone</a>.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/S3ExpressDirectoryBucketConfiguration">AWS
    * API Reference</a></p>
    */
