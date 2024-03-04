@@ -12,6 +12,7 @@
 #include <aws/cloudformation/model/RollbackConfiguration.h>
 #include <aws/cloudformation/model/StackStatus.h>
 #include <aws/cloudformation/model/StackDriftInformation.h>
+#include <aws/cloudformation/model/DetailedStatus.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Output.h>
@@ -1022,6 +1023,73 @@ namespace Model
      */
     inline Stack& WithRetainExceptOnCreate(bool value) { SetRetainExceptOnCreate(value); return *this;}
 
+
+    /**
+     * <p>The detailed status of the resource or stack. If
+     * <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource
+     * configuration phase has completed and the stabilization of the resources is in
+     * progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+     */
+    inline const DetailedStatus& GetDetailedStatus() const{ return m_detailedStatus; }
+
+    /**
+     * <p>The detailed status of the resource or stack. If
+     * <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource
+     * configuration phase has completed and the stabilization of the resources is in
+     * progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+     */
+    inline bool DetailedStatusHasBeenSet() const { return m_detailedStatusHasBeenSet; }
+
+    /**
+     * <p>The detailed status of the resource or stack. If
+     * <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource
+     * configuration phase has completed and the stabilization of the resources is in
+     * progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+     */
+    inline void SetDetailedStatus(const DetailedStatus& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = value; }
+
+    /**
+     * <p>The detailed status of the resource or stack. If
+     * <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource
+     * configuration phase has completed and the stabilization of the resources is in
+     * progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+     */
+    inline void SetDetailedStatus(DetailedStatus&& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = std::move(value); }
+
+    /**
+     * <p>The detailed status of the resource or stack. If
+     * <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource
+     * configuration phase has completed and the stabilization of the resources is in
+     * progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+     */
+    inline Stack& WithDetailedStatus(const DetailedStatus& value) { SetDetailedStatus(value); return *this;}
+
+    /**
+     * <p>The detailed status of the resource or stack. If
+     * <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource
+     * configuration phase has completed and the stabilization of the resources is in
+     * progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+     */
+    inline Stack& WithDetailedStatus(DetailedStatus&& value) { SetDetailedStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stackId;
@@ -1092,6 +1160,9 @@ namespace Model
 
     bool m_retainExceptOnCreate;
     bool m_retainExceptOnCreateHasBeenSet = false;
+
+    DetailedStatus m_detailedStatus;
+    bool m_detailedStatusHasBeenSet = false;
   };
 
 } // namespace Model

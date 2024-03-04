@@ -448,7 +448,7 @@ namespace Model
      * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
      * value of deployment type is <code>SINGLE_AZ_2</code> and
      * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
-     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * valid HA pair (a value between 2 and 12).</p> </li> <li> <p>The value of
      * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
      */
     inline int GetThroughputCapacityPerHAPair() const{ return m_throughputCapacityPerHAPair; }
@@ -467,7 +467,7 @@ namespace Model
      * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
      * value of deployment type is <code>SINGLE_AZ_2</code> and
      * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
-     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * valid HA pair (a value between 2 and 12).</p> </li> <li> <p>The value of
      * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
      */
     inline bool ThroughputCapacityPerHAPairHasBeenSet() const { return m_throughputCapacityPerHAPairHasBeenSet; }
@@ -486,7 +486,7 @@ namespace Model
      * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
      * value of deployment type is <code>SINGLE_AZ_2</code> and
      * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
-     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * valid HA pair (a value between 2 and 12).</p> </li> <li> <p>The value of
      * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
      */
     inline void SetThroughputCapacityPerHAPair(int value) { m_throughputCapacityPerHAPairHasBeenSet = true; m_throughputCapacityPerHAPair = value; }
@@ -505,7 +505,7 @@ namespace Model
      * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
      * value of deployment type is <code>SINGLE_AZ_2</code> and
      * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
-     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * valid HA pair (a value between 2 and 12).</p> </li> <li> <p>The value of
      * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
      */
     inline UpdateFileSystemOntapConfiguration& WithThroughputCapacityPerHAPair(int value) { SetThroughputCapacityPerHAPair(value); return *this;}

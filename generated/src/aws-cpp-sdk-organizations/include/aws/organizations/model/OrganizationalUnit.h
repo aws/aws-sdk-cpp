@@ -41,74 +41,82 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
-     * unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or
-     * digits (the ID of the root that contains the OU). This string is followed by a
-     * second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) associated with this OU. The ID is unique to the
+     * organization only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for an organizational unit ID string requires "ou-" followed by from
+     * 4 to 32 lowercase letters or digits (the ID of the root that contains the OU).
+     * This string is followed by a second "-" dash and from 8 to 32 additional
+     * lowercase letters or digits.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
-     * unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or
-     * digits (the ID of the root that contains the OU). This string is followed by a
-     * second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) associated with this OU. The ID is unique to the
+     * organization only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for an organizational unit ID string requires "ou-" followed by from
+     * 4 to 32 lowercase letters or digits (the ID of the root that contains the OU).
+     * This string is followed by a second "-" dash and from 8 to 32 additional
+     * lowercase letters or digits.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
-     * unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or
-     * digits (the ID of the root that contains the OU). This string is followed by a
-     * second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) associated with this OU. The ID is unique to the
+     * organization only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for an organizational unit ID string requires "ou-" followed by from
+     * 4 to 32 lowercase letters or digits (the ID of the root that contains the OU).
+     * This string is followed by a second "-" dash and from 8 to 32 additional
+     * lowercase letters or digits.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
-     * unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or
-     * digits (the ID of the root that contains the OU). This string is followed by a
-     * second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) associated with this OU. The ID is unique to the
+     * organization only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for an organizational unit ID string requires "ou-" followed by from
+     * 4 to 32 lowercase letters or digits (the ID of the root that contains the OU).
+     * This string is followed by a second "-" dash and from 8 to 32 additional
+     * lowercase letters or digits.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
-     * unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or
-     * digits (the ID of the root that contains the OU). This string is followed by a
-     * second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) associated with this OU. The ID is unique to the
+     * organization only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for an organizational unit ID string requires "ou-" followed by from
+     * 4 to 32 lowercase letters or digits (the ID of the root that contains the OU).
+     * This string is followed by a second "-" dash and from 8 to 32 additional
+     * lowercase letters or digits.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
-     * unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or
-     * digits (the ID of the root that contains the OU). This string is followed by a
-     * second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) associated with this OU. The ID is unique to the
+     * organization only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for an organizational unit ID string requires "ou-" followed by from
+     * 4 to 32 lowercase letters or digits (the ID of the root that contains the OU).
+     * This string is followed by a second "-" dash and from 8 to 32 additional
+     * lowercase letters or digits.</p>
      */
     inline OrganizationalUnit& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
-     * unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or
-     * digits (the ID of the root that contains the OU). This string is followed by a
-     * second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) associated with this OU. The ID is unique to the
+     * organization only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for an organizational unit ID string requires "ou-" followed by from
+     * 4 to 32 lowercase letters or digits (the ID of the root that contains the OU).
+     * This string is followed by a second "-" dash and from 8 to 32 additional
+     * lowercase letters or digits.</p>
      */
     inline OrganizationalUnit& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
-     * unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or
-     * digits (the ID of the root that contains the OU). This string is followed by a
-     * second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) associated with this OU. The ID is unique to the
+     * organization only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for an organizational unit ID string requires "ou-" followed by from
+     * 4 to 32 lowercase letters or digits (the ID of the root that contains the OU).
+     * This string is followed by a second "-" dash and from 8 to 32 additional
+     * lowercase letters or digits.</p>
      */
     inline OrganizationalUnit& WithId(const char* value) { SetId(value); return *this;}
 

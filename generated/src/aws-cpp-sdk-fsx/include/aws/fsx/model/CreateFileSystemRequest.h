@@ -161,14 +161,15 @@ namespace Model
      * values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>
      * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can
      * configure depends on the value of the <code>HAPairs</code> property. The minimum
-     * value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated
-     * as 524,288 * <code>HAPairs</code>..</p> <p> <b>FSx for OpenZFS file systems</b>
-     * - The amount of storage capacity that you can configure is from 64 GiB up to
-     * 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file systems</b> -
-     * The amount of storage capacity that you can configure depends on the value that
-     * you set for <code>StorageType</code> as follows:</p> <ul> <li> <p>For SSD
-     * storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li> <p>For HDD
-     * storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li> </ul>
+     * value is calculated as 1,024 * <code>HAPairs</code> and the maximum is
+     * calculated as 524,288 * <code>HAPairs</code>. </p> <p> <b>FSx for OpenZFS file
+     * systems</b> - The amount of storage capacity that you can configure is from 64
+     * GiB up to 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file
+     * systems</b> - The amount of storage capacity that you can configure depends on
+     * the value that you set for <code>StorageType</code> as follows:</p> <ul> <li>
+     * <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li>
+     * <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
+     * </ul>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
@@ -186,14 +187,15 @@ namespace Model
      * values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>
      * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can
      * configure depends on the value of the <code>HAPairs</code> property. The minimum
-     * value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated
-     * as 524,288 * <code>HAPairs</code>..</p> <p> <b>FSx for OpenZFS file systems</b>
-     * - The amount of storage capacity that you can configure is from 64 GiB up to
-     * 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file systems</b> -
-     * The amount of storage capacity that you can configure depends on the value that
-     * you set for <code>StorageType</code> as follows:</p> <ul> <li> <p>For SSD
-     * storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li> <p>For HDD
-     * storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li> </ul>
+     * value is calculated as 1,024 * <code>HAPairs</code> and the maximum is
+     * calculated as 524,288 * <code>HAPairs</code>. </p> <p> <b>FSx for OpenZFS file
+     * systems</b> - The amount of storage capacity that you can configure is from 64
+     * GiB up to 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file
+     * systems</b> - The amount of storage capacity that you can configure depends on
+     * the value that you set for <code>StorageType</code> as follows:</p> <ul> <li>
+     * <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li>
+     * <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
+     * </ul>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
@@ -211,14 +213,15 @@ namespace Model
      * values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>
      * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can
      * configure depends on the value of the <code>HAPairs</code> property. The minimum
-     * value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated
-     * as 524,288 * <code>HAPairs</code>..</p> <p> <b>FSx for OpenZFS file systems</b>
-     * - The amount of storage capacity that you can configure is from 64 GiB up to
-     * 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file systems</b> -
-     * The amount of storage capacity that you can configure depends on the value that
-     * you set for <code>StorageType</code> as follows:</p> <ul> <li> <p>For SSD
-     * storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li> <p>For HDD
-     * storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li> </ul>
+     * value is calculated as 1,024 * <code>HAPairs</code> and the maximum is
+     * calculated as 524,288 * <code>HAPairs</code>. </p> <p> <b>FSx for OpenZFS file
+     * systems</b> - The amount of storage capacity that you can configure is from 64
+     * GiB up to 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file
+     * systems</b> - The amount of storage capacity that you can configure depends on
+     * the value that you set for <code>StorageType</code> as follows:</p> <ul> <li>
+     * <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li>
+     * <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
+     * </ul>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
@@ -236,14 +239,15 @@ namespace Model
      * values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>
      * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can
      * configure depends on the value of the <code>HAPairs</code> property. The minimum
-     * value is calculated as 1,024 * <code>HAPairs</code> and the maxium is calculated
-     * as 524,288 * <code>HAPairs</code>..</p> <p> <b>FSx for OpenZFS file systems</b>
-     * - The amount of storage capacity that you can configure is from 64 GiB up to
-     * 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file systems</b> -
-     * The amount of storage capacity that you can configure depends on the value that
-     * you set for <code>StorageType</code> as follows:</p> <ul> <li> <p>For SSD
-     * storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li> <p>For HDD
-     * storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li> </ul>
+     * value is calculated as 1,024 * <code>HAPairs</code> and the maximum is
+     * calculated as 524,288 * <code>HAPairs</code>. </p> <p> <b>FSx for OpenZFS file
+     * systems</b> - The amount of storage capacity that you can configure is from 64
+     * GiB up to 524,288 GiB (512 TiB).</p> <p> <b>FSx for Windows File Server file
+     * systems</b> - The amount of storage capacity that you can configure depends on
+     * the value that you set for <code>StorageType</code> as follows:</p> <ul> <li>
+     * <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li> <li>
+     * <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
+     * </ul>
      */
     inline CreateFileSystemRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 
@@ -532,63 +536,81 @@ namespace Model
     /**
      * <p>A list of IDs specifying the security groups to apply to all network
      * interfaces created for file system access. This list isn't returned in later
-     * requests to describe the file system.</p>
+     * requests to describe the file system.</p>  <p>You must specify a
+     * security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC
+     * subnet that has been shared with you.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>A list of IDs specifying the security groups to apply to all network
      * interfaces created for file system access. This list isn't returned in later
-     * requests to describe the file system.</p>
+     * requests to describe the file system.</p>  <p>You must specify a
+     * security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC
+     * subnet that has been shared with you.</p> 
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of IDs specifying the security groups to apply to all network
      * interfaces created for file system access. This list isn't returned in later
-     * requests to describe the file system.</p>
+     * requests to describe the file system.</p>  <p>You must specify a
+     * security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC
+     * subnet that has been shared with you.</p> 
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>A list of IDs specifying the security groups to apply to all network
      * interfaces created for file system access. This list isn't returned in later
-     * requests to describe the file system.</p>
+     * requests to describe the file system.</p>  <p>You must specify a
+     * security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC
+     * subnet that has been shared with you.</p> 
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>A list of IDs specifying the security groups to apply to all network
      * interfaces created for file system access. This list isn't returned in later
-     * requests to describe the file system.</p>
+     * requests to describe the file system.</p>  <p>You must specify a
+     * security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC
+     * subnet that has been shared with you.</p> 
      */
     inline CreateFileSystemRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>A list of IDs specifying the security groups to apply to all network
      * interfaces created for file system access. This list isn't returned in later
-     * requests to describe the file system.</p>
+     * requests to describe the file system.</p>  <p>You must specify a
+     * security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC
+     * subnet that has been shared with you.</p> 
      */
     inline CreateFileSystemRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of IDs specifying the security groups to apply to all network
      * interfaces created for file system access. This list isn't returned in later
-     * requests to describe the file system.</p>
+     * requests to describe the file system.</p>  <p>You must specify a
+     * security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC
+     * subnet that has been shared with you.</p> 
      */
     inline CreateFileSystemRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>A list of IDs specifying the security groups to apply to all network
      * interfaces created for file system access. This list isn't returned in later
-     * requests to describe the file system.</p>
+     * requests to describe the file system.</p>  <p>You must specify a
+     * security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC
+     * subnet that has been shared with you.</p> 
      */
     inline CreateFileSystemRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of IDs specifying the security groups to apply to all network
      * interfaces created for file system access. This list isn't returned in later
-     * requests to describe the file system.</p>
+     * requests to describe the file system.</p>  <p>You must specify a
+     * security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC
+     * subnet that has been shared with you.</p> 
      */
     inline CreateFileSystemRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

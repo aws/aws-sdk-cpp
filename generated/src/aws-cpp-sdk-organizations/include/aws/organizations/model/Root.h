@@ -43,58 +43,66 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier (ID) for the root.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) for the root. The ID is unique to the organization
+     * only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * a root ID string requires "r-" followed by from 4 to 32 lowercase letters or
+     * digits.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier (ID) for the root.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) for the root. The ID is unique to the organization
+     * only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * a root ID string requires "r-" followed by from 4 to 32 lowercase letters or
+     * digits.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The unique identifier (ID) for the root.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) for the root. The ID is unique to the organization
+     * only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * a root ID string requires "r-" followed by from 4 to 32 lowercase letters or
+     * digits.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique identifier (ID) for the root.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) for the root. The ID is unique to the organization
+     * only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * a root ID string requires "r-" followed by from 4 to 32 lowercase letters or
+     * digits.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier (ID) for the root.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) for the root. The ID is unique to the organization
+     * only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * a root ID string requires "r-" followed by from 4 to 32 lowercase letters or
+     * digits.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique identifier (ID) for the root.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) for the root. The ID is unique to the organization
+     * only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * a root ID string requires "r-" followed by from 4 to 32 lowercase letters or
+     * digits.</p>
      */
     inline Root& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier (ID) for the root.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) for the root. The ID is unique to the organization
+     * only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * a root ID string requires "r-" followed by from 4 to 32 lowercase letters or
+     * digits.</p>
      */
     inline Root& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier (ID) for the root.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+     * <p>The unique identifier (ID) for the root. The ID is unique to the organization
+     * only.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * a root ID string requires "r-" followed by from 4 to 32 lowercase letters or
+     * digits.</p>
      */
     inline Root& WithId(const char* value) { SetId(value); return *this;}
 

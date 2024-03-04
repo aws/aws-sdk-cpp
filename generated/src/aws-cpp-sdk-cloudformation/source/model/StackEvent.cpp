@@ -40,7 +40,9 @@ StackEvent::StackEvent() :
     m_hookInvocationPoint(HookInvocationPoint::NOT_SET),
     m_hookInvocationPointHasBeenSet(false),
     m_hookFailureMode(HookFailureMode::NOT_SET),
-    m_hookFailureModeHasBeenSet(false)
+    m_hookFailureModeHasBeenSet(false),
+    m_detailedStatus(DetailedStatus::NOT_SET),
+    m_detailedStatusHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ StackEvent::StackEvent(const XmlNode& xmlNode) :
     m_hookInvocationPoint(HookInvocationPoint::NOT_SET),
     m_hookInvocationPointHasBeenSet(false),
     m_hookFailureMode(HookFailureMode::NOT_SET),
-    m_hookFailureModeHasBeenSet(false)
+    m_hookFailureModeHasBeenSet(false),
+    m_detailedStatus(DetailedStatus::NOT_SET),
+    m_detailedStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -171,6 +175,12 @@ StackEvent& StackEvent::operator =(const XmlNode& xmlNode)
       m_hookFailureMode = HookFailureModeMapper::GetHookFailureModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookFailureModeNode.GetText()).c_str()).c_str());
       m_hookFailureModeHasBeenSet = true;
     }
+    XmlNode detailedStatusNode = resultNode.FirstChild("DetailedStatus");
+    if(!detailedStatusNode.IsNull())
+    {
+      m_detailedStatus = DetailedStatusMapper::GetDetailedStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(detailedStatusNode.GetText()).c_str()).c_str());
+      m_detailedStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -258,6 +268,11 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".HookFailureMode=" << HookFailureModeMapper::GetNameForHookFailureMode(m_hookFailureMode) << "&";
   }
 
+  if(m_detailedStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DetailedStatus=" << DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus) << "&";
+  }
+
 }
 
 void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -325,6 +340,10 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_hookFailureModeHasBeenSet)
   {
       oStream << location << ".HookFailureMode=" << HookFailureModeMapper::GetNameForHookFailureMode(m_hookFailureMode) << "&";
+  }
+  if(m_detailedStatusHasBeenSet)
+  {
+      oStream << location << ".DetailedStatus=" << DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus) << "&";
   }
 }
 

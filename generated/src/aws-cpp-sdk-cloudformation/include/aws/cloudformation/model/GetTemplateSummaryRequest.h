@@ -136,8 +136,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify only one of the following parameters: <code>StackName</code>,
+     * anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
      */
@@ -148,8 +149,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify only one of the following parameters: <code>StackName</code>,
+     * anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
      */
@@ -160,8 +162,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify only one of the following parameters: <code>StackName</code>,
+     * anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
      */
@@ -172,8 +175,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify only one of the following parameters: <code>StackName</code>,
+     * anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
      */
@@ -184,8 +188,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify only one of the following parameters: <code>StackName</code>,
+     * anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
      */
@@ -196,8 +201,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify only one of the following parameters: <code>StackName</code>,
+     * anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
      */
@@ -208,8 +214,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify only one of the following parameters: <code>StackName</code>,
+     * anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
      */
@@ -220,8 +227,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify only one of the following parameters: <code>StackName</code>,
+     * anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
      */

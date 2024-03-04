@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Used to specify the configuration options for a volume's storage aggregate or
-   * aggregates.</p><p><h3>See Also:</h3>   <a
+   * <p>Used to specify the configuration options for an FSx for ONTAP volume's
+   * storage aggregate or aggregates.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateAggregateConfiguration">AWS
    * API Reference</a></p>
    */
