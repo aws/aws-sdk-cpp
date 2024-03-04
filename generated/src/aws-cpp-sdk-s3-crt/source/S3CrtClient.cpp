@@ -545,6 +545,21 @@ static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request,
   return AWS_OP_SUCCESS;
 }
 
+static void S3CrtRequestProgressCallback(struct aws_s3_meta_request *meta_request, const struct aws_s3_meta_request_progress *progress, void *user_data)
+{
+  AWS_UNREFERENCED_PARAM(meta_request);
+  auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+
+  auto& progressHandler = userData->request->GetDataSentEventHandler();
+  if (progressHandler)
+  {
+    progressHandler(userData->request.get(), static_cast<long long>(progress->bytes_transferred));
+  }
+  AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, progress->bytes_transferred << " bytes transferred.");
+
+  return;
+}
+
 static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
     const struct aws_s3_meta_request_result *meta_request_result, void *user_data)
 {
@@ -685,6 +700,7 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
   options->user_data = static_cast<void*>(userData);
   options->headers_callback = S3CrtRequestHeadersCallback;
   options->body_callback = S3CrtRequestGetBodyCallback;
+  options->progress_callback = S3CrtRequestProgressCallback;
   options->finish_callback = S3CrtRequestFinishCallback;
   const auto endpointStr = uri.GetURIString();
   const auto endpointCursor{ aws_byte_cursor_from_array(endpointStr.c_str(), endpointStr.size()) };
