@@ -128,9 +128,10 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
 
@@ -139,9 +140,10 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
      */
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
 
@@ -150,9 +152,10 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
      */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
 
@@ -161,9 +164,10 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
      */
     inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
 
@@ -172,9 +176,10 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
      */
     inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
 
@@ -183,9 +188,10 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
      */
     inline EstimateTemplateCostRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
 
@@ -194,9 +200,10 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
      */
     inline EstimateTemplateCostRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
 
@@ -205,9 +212,10 @@ namespace Model
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
-     * passed, only <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
+     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
+     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
      */
     inline EstimateTemplateCostRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 

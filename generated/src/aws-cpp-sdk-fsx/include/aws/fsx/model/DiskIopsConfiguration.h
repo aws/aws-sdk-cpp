@@ -45,42 +45,42 @@ namespace Model
 
     /**
      * <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting
-     * of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a
+     * of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a
      * <code>USER_PROVISIONED</code> value.</p>
      */
     inline const DiskIopsConfigurationMode& GetMode() const{ return m_mode; }
 
     /**
      * <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting
-     * of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a
+     * of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a
      * <code>USER_PROVISIONED</code> value.</p>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
      * <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting
-     * of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a
+     * of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a
      * <code>USER_PROVISIONED</code> value.</p>
      */
     inline void SetMode(const DiskIopsConfigurationMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
      * <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting
-     * of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a
+     * of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a
      * <code>USER_PROVISIONED</code> value.</p>
      */
     inline void SetMode(DiskIopsConfigurationMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
      * <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting
-     * of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a
+     * of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a
      * <code>USER_PROVISIONED</code> value.</p>
      */
     inline DiskIopsConfiguration& WithMode(const DiskIopsConfigurationMode& value) { SetMode(value); return *this;}
 
     /**
      * <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting
-     * of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a
+     * of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a
      * <code>USER_PROVISIONED</code> value.</p>
      */
     inline DiskIopsConfiguration& WithMode(DiskIopsConfigurationMode&& value) { SetMode(std::move(value)); return *this;}

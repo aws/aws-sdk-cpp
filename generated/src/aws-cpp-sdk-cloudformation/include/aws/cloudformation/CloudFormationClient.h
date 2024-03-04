@@ -133,9 +133,9 @@ namespace CloudFormation
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
          * public extensions</a> in the <i>CloudFormation User Guide</i>.</p> <p>Once you
          * have activated a public third-party extension in your account and Region, use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
-         * to specify configuration properties for the extension. For more information, see
-         * <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">
+         * <code>SetTypeConfiguration</code> </a> to specify configuration properties for
+         * the extension. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
          * extensions at the account level</a> in the <i>CloudFormation User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -619,8 +619,8 @@ namespace CloudFormation
          * extension. If you do deregister the default version of an extension, the
          * extension type itself is deregistered as well and marked as deprecated.</p>
          * <p>To view the deprecation status of an extension or extension version, use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
+         * <code>DescribeType</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">AWS
          * API Reference</a></p>
          */
@@ -795,8 +795,8 @@ namespace CloudFormation
          * publisher, <code>DescribePublisher</code> returns information about your own
          * publisher account.</p> <p>For more information about registering as a publisher,
          * see:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>
-         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+         * <code>RegisterPublisher</code> </a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
          * extensions to make them available for public use</a> in the <i>CloudFormation
          * CLI User Guide</i> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -2019,8 +2019,8 @@ namespace CloudFormation
          * extensions to make them available for public use</a> in the <i>CloudFormation
          * CLI User Guide</i>.</p> <p>To publish an extension, you must be registered as a
          * publisher with CloudFormation. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+         * <code>RegisterPublisher</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType">AWS
          * API Reference</a></p>
          */
@@ -2116,15 +2116,15 @@ namespace CloudFormation
          * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>You
          * can have a maximum of 50 resource extension versions registered at a time. This
          * maximum is per account and per Region. Use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
-         * to deregister specific extension versions if necessary.</p> <p>Once you have
-         * initiated a registration request using <a>RegisterType</a>, you can use
-         * <a>DescribeTypeRegistration</a> to monitor the progress of the registration
-         * request.</p> <p>Once you have registered a private extension in your account and
-         * Region, use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
-         * to specify configuration properties for the extension. For more information, see
-         * <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">
+         * <code>DeregisterType</code> </a> to deregister specific extension versions if
+         * necessary.</p> <p>Once you have initiated a registration request using
+         * <a>RegisterType</a>, you can use <a>DescribeTypeRegistration</a> to monitor the
+         * progress of the registration request.</p> <p>Once you have registered a private
+         * extension in your account and Region, use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">
+         * <code>SetTypeConfiguration</code> </a> to specify configuration properties for
+         * the extension. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
          * extensions at the account level</a> in the <i>CloudFormation User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2217,8 +2217,8 @@ namespace CloudFormation
          * <p>Specifies the configuration data for a registered CloudFormation extension,
          * in the given account and Region.</p> <p>To view the current configuration data
          * for an extension, refer to the <code>ConfigurationSchema</code> element of <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
-         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
+         * <code>DescribeType</code> </a>. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
          * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
          *  <p>It's strongly recommended that you use dynamic references to
@@ -2375,13 +2375,15 @@ namespace CloudFormation
          * default version of the extension in your account and Region for testing.</p>
          * <p>To perform testing, CloudFormation assumes the execution role specified when
          * the type was registered. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-         * <p>Once you've initiated testing on an extension using <code>TestType</code>,
-         * you can pass the returned <code>TypeVersionArn</code> into <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
-         * to monitor the current test status and test status description for the
-         * extension.</p> <p>An extension must have a test status of <code>PASSED</code>
-         * before it can be published. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
+         * <code>RegisterType</code> </a>.</p> <p>Once you've initiated testing on an
+         * extension using <code>TestType</code>, you can pass the returned
+         * <code>TypeVersionArn</code> into <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
+         * <code>DescribeType</code> </a> to monitor the current test status and test
+         * status description for the extension.</p> <p>An extension must have a test
+         * status of <code>PASSED</code> before it can be published. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
          * extensions to make them available for public use</a> in the <i>CloudFormation
          * CLI User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2475,20 +2477,20 @@ namespace CloudFormation
          * stack in a specific account and Region.</p> <p>You can only update stack
          * instances in Amazon Web Services Regions and accounts where they already exist;
          * to create additional stack instances, use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.</p>
-         * <p>During stack set updates, any parameters overridden for a stack instance
-         * aren't updated, but retain their overridden value.</p> <p>You can only update
-         * the parameter <i>values</i> that are specified in the stack set; to add or
-         * delete a parameter itself, use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-         * to update the stack set template. If you add a parameter to a template, before
-         * you can override the parameter value specified in the stack set you must first
-         * use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-         * to update all stack instances with the updated template and parameter value
-         * specified in the stack set. Once a stack instance has been updated with the new
-         * parameter, you can then override the parameter value using
-         * <code>UpdateStackInstances</code>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">
+         * <code>CreateStackInstances</code> </a>.</p> <p>During stack set updates, any
+         * parameters overridden for a stack instance aren't updated, but retain their
+         * overridden value.</p> <p>You can only update the parameter <i>values</i> that
+         * are specified in the stack set; to add or delete a parameter itself, use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+         * <code>UpdateStackSet</code> </a> to update the stack set template. If you add a
+         * parameter to a template, before you can override the parameter value specified
+         * in the stack set you must first use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+         * <code>UpdateStackSet</code> </a> to update all stack instances with the updated
+         * template and parameter value specified in the stack set. Once a stack instance
+         * has been updated with the new parameter, you can then override the parameter
+         * value using <code>UpdateStackInstances</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackInstances">AWS
          * API Reference</a></p>
          */

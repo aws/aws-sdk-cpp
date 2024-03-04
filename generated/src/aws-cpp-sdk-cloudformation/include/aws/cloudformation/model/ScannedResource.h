@@ -44,72 +44,64 @@ namespace Model
     /**
      * <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the
      * list of supported resources, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC
-     * generator supported resource types</a> In the <i>CloudFormation User Guide</i>
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+     * type support</a> In the <i>CloudFormation User Guide</i> </p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the
      * list of supported resources, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC
-     * generator supported resource types</a> In the <i>CloudFormation User Guide</i>
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+     * type support</a> In the <i>CloudFormation User Guide</i> </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the
      * list of supported resources, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC
-     * generator supported resource types</a> In the <i>CloudFormation User Guide</i>
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+     * type support</a> In the <i>CloudFormation User Guide</i> </p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the
      * list of supported resources, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC
-     * generator supported resource types</a> In the <i>CloudFormation User Guide</i>
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+     * type support</a> In the <i>CloudFormation User Guide</i> </p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the
      * list of supported resources, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC
-     * generator supported resource types</a> In the <i>CloudFormation User Guide</i>
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+     * type support</a> In the <i>CloudFormation User Guide</i> </p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
      * <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the
      * list of supported resources, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC
-     * generator supported resource types</a> In the <i>CloudFormation User Guide</i>
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+     * type support</a> In the <i>CloudFormation User Guide</i> </p>
      */
     inline ScannedResource& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the
      * list of supported resources, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC
-     * generator supported resource types</a> In the <i>CloudFormation User Guide</i>
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+     * type support</a> In the <i>CloudFormation User Guide</i> </p>
      */
     inline ScannedResource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the
      * list of supported resources, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC
-     * generator supported resource types</a> In the <i>CloudFormation User Guide</i>
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+     * type support</a> In the <i>CloudFormation User Guide</i> </p>
      */
     inline ScannedResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

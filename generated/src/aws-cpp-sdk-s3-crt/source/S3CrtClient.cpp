@@ -553,7 +553,7 @@ static void S3CrtRequestProgressCallback(struct aws_s3_meta_request *meta_reques
   auto& progressHandler = userData->request->GetDataSentEventHandler();
   if (progressHandler)
   {
-    progressHandler(userData->request.get(), static_cast<long long>(progress->bytes_transferred));
+  progressHandler(userData->request.get(), static_cast<long long>(progress->bytes_transferred));
   }
   AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, progress->bytes_transferred << " bytes transferred.");
 

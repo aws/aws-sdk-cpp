@@ -12,6 +12,7 @@
 #include <aws/cloudformation/model/HookStatus.h>
 #include <aws/cloudformation/model/HookInvocationPoint.h>
 #include <aws/cloudformation/model/HookFailureMode.h>
+#include <aws/cloudformation/model/DetailedStatus.h>
 #include <utility>
 
 namespace Aws
@@ -785,6 +786,85 @@ namespace Model
      */
     inline StackEvent& WithHookFailureMode(HookFailureMode&& value) { SetHookFailureMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An optional field containing information about the detailed status of the
+     * stack event.</p> <ul> <li> <p> <code>CONFIGURATION_COMPLETE</code> - all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p> </li> </ul>
+     * <ul> <li> <p> <code>VALIDATION_FAILED</code> - template validation failed
+     * because of invalid properties in the template. The
+     * <code>ResourceStatusReason</code> field shows what properties are defined
+     * incorrectly.</p> </li> </ul>
+     */
+    inline const DetailedStatus& GetDetailedStatus() const{ return m_detailedStatus; }
+
+    /**
+     * <p>An optional field containing information about the detailed status of the
+     * stack event.</p> <ul> <li> <p> <code>CONFIGURATION_COMPLETE</code> - all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p> </li> </ul>
+     * <ul> <li> <p> <code>VALIDATION_FAILED</code> - template validation failed
+     * because of invalid properties in the template. The
+     * <code>ResourceStatusReason</code> field shows what properties are defined
+     * incorrectly.</p> </li> </ul>
+     */
+    inline bool DetailedStatusHasBeenSet() const { return m_detailedStatusHasBeenSet; }
+
+    /**
+     * <p>An optional field containing information about the detailed status of the
+     * stack event.</p> <ul> <li> <p> <code>CONFIGURATION_COMPLETE</code> - all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p> </li> </ul>
+     * <ul> <li> <p> <code>VALIDATION_FAILED</code> - template validation failed
+     * because of invalid properties in the template. The
+     * <code>ResourceStatusReason</code> field shows what properties are defined
+     * incorrectly.</p> </li> </ul>
+     */
+    inline void SetDetailedStatus(const DetailedStatus& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = value; }
+
+    /**
+     * <p>An optional field containing information about the detailed status of the
+     * stack event.</p> <ul> <li> <p> <code>CONFIGURATION_COMPLETE</code> - all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p> </li> </ul>
+     * <ul> <li> <p> <code>VALIDATION_FAILED</code> - template validation failed
+     * because of invalid properties in the template. The
+     * <code>ResourceStatusReason</code> field shows what properties are defined
+     * incorrectly.</p> </li> </ul>
+     */
+    inline void SetDetailedStatus(DetailedStatus&& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = std::move(value); }
+
+    /**
+     * <p>An optional field containing information about the detailed status of the
+     * stack event.</p> <ul> <li> <p> <code>CONFIGURATION_COMPLETE</code> - all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p> </li> </ul>
+     * <ul> <li> <p> <code>VALIDATION_FAILED</code> - template validation failed
+     * because of invalid properties in the template. The
+     * <code>ResourceStatusReason</code> field shows what properties are defined
+     * incorrectly.</p> </li> </ul>
+     */
+    inline StackEvent& WithDetailedStatus(const DetailedStatus& value) { SetDetailedStatus(value); return *this;}
+
+    /**
+     * <p>An optional field containing information about the detailed status of the
+     * stack event.</p> <ul> <li> <p> <code>CONFIGURATION_COMPLETE</code> - all of the
+     * resources in the stack have reached that event. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p> </li> </ul>
+     * <ul> <li> <p> <code>VALIDATION_FAILED</code> - template validation failed
+     * because of invalid properties in the template. The
+     * <code>ResourceStatusReason</code> field shows what properties are defined
+     * incorrectly.</p> </li> </ul>
+     */
+    inline StackEvent& WithDetailedStatus(DetailedStatus&& value) { SetDetailedStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stackId;
@@ -834,6 +914,9 @@ namespace Model
 
     HookFailureMode m_hookFailureMode;
     bool m_hookFailureModeHasBeenSet = false;
+
+    DetailedStatus m_detailedStatus;
+    bool m_detailedStatusHasBeenSet = false;
   };
 
 } // namespace Model

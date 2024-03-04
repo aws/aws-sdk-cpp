@@ -515,7 +515,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
      * (HA) pairs</a> in the FSx for ONTAP user guide.</p> <p>Amazon FSx responds with
      * an HTTP status code 400 (Bad Request) for the following conditions:</p> <ul>
-     * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p>
+     * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p>
      * </li> <li> <p>The value of <code>HAPairs</code> is greater than 1 and the value
      * of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or
      * <code>MULTI_AZ_1</code>.</p> </li> </ul>
@@ -530,7 +530,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
      * (HA) pairs</a> in the FSx for ONTAP user guide.</p> <p>Amazon FSx responds with
      * an HTTP status code 400 (Bad Request) for the following conditions:</p> <ul>
-     * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p>
+     * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p>
      * </li> <li> <p>The value of <code>HAPairs</code> is greater than 1 and the value
      * of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or
      * <code>MULTI_AZ_1</code>.</p> </li> </ul>
@@ -545,7 +545,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
      * (HA) pairs</a> in the FSx for ONTAP user guide.</p> <p>Amazon FSx responds with
      * an HTTP status code 400 (Bad Request) for the following conditions:</p> <ul>
-     * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p>
+     * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p>
      * </li> <li> <p>The value of <code>HAPairs</code> is greater than 1 and the value
      * of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or
      * <code>MULTI_AZ_1</code>.</p> </li> </ul>
@@ -560,7 +560,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
      * (HA) pairs</a> in the FSx for ONTAP user guide.</p> <p>Amazon FSx responds with
      * an HTTP status code 400 (Bad Request) for the following conditions:</p> <ul>
-     * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p>
+     * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p>
      * </li> <li> <p>The value of <code>HAPairs</code> is greater than 1 and the value
      * of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or
      * <code>MULTI_AZ_1</code>.</p> </li> </ul>
@@ -584,7 +584,7 @@ namespace Model
      * not the same value.</p> </li> <li> <p>The value of deployment type is
      * <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
      * <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2
-     * and 6).</p> </li> <li> <p>The value of <code>ThroughputCapacityPerHAPair</code>
+     * and 12).</p> </li> <li> <p>The value of <code>ThroughputCapacityPerHAPair</code>
      * is not a valid value.</p> </li> </ul>
      */
     inline int GetThroughputCapacityPerHAPair() const{ return m_throughputCapacityPerHAPair; }
@@ -605,7 +605,7 @@ namespace Model
      * not the same value.</p> </li> <li> <p>The value of deployment type is
      * <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
      * <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2
-     * and 6).</p> </li> <li> <p>The value of <code>ThroughputCapacityPerHAPair</code>
+     * and 12).</p> </li> <li> <p>The value of <code>ThroughputCapacityPerHAPair</code>
      * is not a valid value.</p> </li> </ul>
      */
     inline bool ThroughputCapacityPerHAPairHasBeenSet() const { return m_throughputCapacityPerHAPairHasBeenSet; }
@@ -626,7 +626,7 @@ namespace Model
      * not the same value.</p> </li> <li> <p>The value of deployment type is
      * <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
      * <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2
-     * and 6).</p> </li> <li> <p>The value of <code>ThroughputCapacityPerHAPair</code>
+     * and 12).</p> </li> <li> <p>The value of <code>ThroughputCapacityPerHAPair</code>
      * is not a valid value.</p> </li> </ul>
      */
     inline void SetThroughputCapacityPerHAPair(int value) { m_throughputCapacityPerHAPairHasBeenSet = true; m_throughputCapacityPerHAPair = value; }
@@ -647,7 +647,7 @@ namespace Model
      * not the same value.</p> </li> <li> <p>The value of deployment type is
      * <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
      * <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2
-     * and 6).</p> </li> <li> <p>The value of <code>ThroughputCapacityPerHAPair</code>
+     * and 12).</p> </li> <li> <p>The value of <code>ThroughputCapacityPerHAPair</code>
      * is not a valid value.</p> </li> </ul>
      */
     inline OntapFileSystemConfiguration& WithThroughputCapacityPerHAPair(int value) { SetThroughputCapacityPerHAPair(value); return *this;}

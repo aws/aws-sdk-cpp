@@ -1130,9 +1130,9 @@ namespace FSx
         /**
          * <p>Indicates whether participant accounts in your organization can create Amazon
          * FSx for NetApp ONTAP Multi-AZ file systems in subnets that are shared by a
-         * virtual private cloud (VPC) owner. For more information, see the <a
-         * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html">Amazon
-         * FSx for NetApp ONTAP User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * virtual private cloud (VPC) owner. For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/creating-file-systems.html#fsxn-vpc-shared-subnets">Creating
+         * FSx for ONTAP file systems in shared subnets</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSharedVpcConfiguration">AWS
          * API Reference</a></p>
          */
