@@ -511,37 +511,37 @@ namespace Model
 
     /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message Raw message or a template Message.</p>
+     * message, Raw message, or a Templated message.</p>
      */
     inline const EmailContent& GetContent() const{ return m_content; }
 
     /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message Raw message or a template Message.</p>
+     * message, Raw message, or a Templated message.</p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message Raw message or a template Message.</p>
+     * message, Raw message, or a Templated message.</p>
      */
     inline void SetContent(const EmailContent& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message Raw message or a template Message.</p>
+     * message, Raw message, or a Templated message.</p>
      */
     inline void SetContent(EmailContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message Raw message or a template Message.</p>
+     * message, Raw message, or a Templated message.</p>
      */
     inline SendEmailRequest& WithContent(const EmailContent& value) { SetContent(value); return *this;}
 
     /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message Raw message or a template Message.</p>
+     * message, Raw message, or a Templated message.</p>
      */
     inline SendEmailRequest& WithContent(EmailContent&& value) { SetContent(std::move(value)); return *this;}
 

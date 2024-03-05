@@ -2536,9 +2536,10 @@ namespace SESV2
         }
 
         /**
-         * <p>Updates a contact's preferences for a list. It is not necessary to specify
-         * all existing topic preferences in the TopicPreferences object, just the ones
-         * that need updating.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a contact's preferences for a list.</p>  <p>You must specify
+         * all existing topic preferences in the <code>TopicPreferences</code> object, not
+         * just the ones that need updating; otherwise, all your existing preferences will
+         * be removed.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContact">AWS
          * API Reference</a></p>
          */
