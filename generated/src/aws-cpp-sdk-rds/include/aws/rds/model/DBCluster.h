@@ -19,6 +19,7 @@
 #include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/LocalWriteForwardingStatus.h>
 #include <aws/rds/model/LimitlessDatabase.h>
+#include <aws/rds/model/CertificateDetails.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterStatusInfo.h>
 #include <aws/rds/model/DBClusterMember.h>
@@ -3373,6 +3374,25 @@ namespace Model
      */
     inline DBCluster& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
 
+
+    
+    inline const CertificateDetails& GetCertificateDetails() const{ return m_certificateDetails; }
+
+    
+    inline bool CertificateDetailsHasBeenSet() const { return m_certificateDetailsHasBeenSet; }
+
+    
+    inline void SetCertificateDetails(const CertificateDetails& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = value; }
+
+    
+    inline void SetCertificateDetails(CertificateDetails&& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = std::move(value); }
+
+    
+    inline DBCluster& WithCertificateDetails(const CertificateDetails& value) { SetCertificateDetails(value); return *this;}
+
+    
+    inline DBCluster& WithCertificateDetails(CertificateDetails&& value) { SetCertificateDetails(std::move(value)); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -3608,6 +3628,9 @@ namespace Model
 
     int m_storageThroughput;
     bool m_storageThroughputHasBeenSet = false;
+
+    CertificateDetails m_certificateDetails;
+    bool m_certificateDetailsHasBeenSet = false;
   };
 
 } // namespace Model

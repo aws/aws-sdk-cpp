@@ -123,7 +123,8 @@ DBCluster::DBCluster() :
     m_awsBackupRecoveryPointArnHasBeenSet(false),
     m_limitlessDatabaseHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false)
 {
 }
 
@@ -230,7 +231,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_awsBackupRecoveryPointArnHasBeenSet(false),
     m_limitlessDatabaseHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -775,6 +777,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
       m_storageThroughputHasBeenSet = true;
     }
+    XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");
+    if(!certificateDetailsNode.IsNull())
+    {
+      m_certificateDetails = certificateDetailsNode;
+      m_certificateDetailsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1242,6 +1250,13 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::StringStream certificateDetailsLocationAndMemberSs;
+      certificateDetailsLocationAndMemberSs << location << index << locationValue << ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1627,6 +1642,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_storageThroughputHasBeenSet)
   {
       oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::String certificateDetailsLocationAndMember(location);
+      certificateDetailsLocationAndMember += ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
   }
 }
 

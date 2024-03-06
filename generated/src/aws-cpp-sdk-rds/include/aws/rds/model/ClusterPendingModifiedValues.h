@@ -9,6 +9,7 @@
 #include <aws/rds/model/PendingCloudwatchLogsExports.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/RdsCustomClusterConfiguration.h>
+#include <aws/rds/model/CertificateDetails.h>
 #include <utility>
 
 namespace Aws
@@ -360,6 +361,25 @@ namespace Model
      */
     inline ClusterPendingModifiedValues& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
+
+    
+    inline const CertificateDetails& GetCertificateDetails() const{ return m_certificateDetails; }
+
+    
+    inline bool CertificateDetailsHasBeenSet() const { return m_certificateDetailsHasBeenSet; }
+
+    
+    inline void SetCertificateDetails(const CertificateDetails& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = value; }
+
+    
+    inline void SetCertificateDetails(CertificateDetails&& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = std::move(value); }
+
+    
+    inline ClusterPendingModifiedValues& WithCertificateDetails(const CertificateDetails& value) { SetCertificateDetails(value); return *this;}
+
+    
+    inline ClusterPendingModifiedValues& WithCertificateDetails(CertificateDetails&& value) { SetCertificateDetails(std::move(value)); return *this;}
+
   private:
 
     PendingCloudwatchLogsExports m_pendingCloudwatchLogsExports;
@@ -391,6 +411,9 @@ namespace Model
 
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;
+
+    CertificateDetails m_certificateDetails;
+    bool m_certificateDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/imagebuilder/model/LifecycleExecutionResourceState.h>
 #include <aws/imagebuilder/model/LifecycleExecutionResourceAction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/imagebuilder/model/LifecycleExecutionSnapshotResource.h>
 #include <utility>
 
@@ -370,6 +371,80 @@ namespace Model
      */
     inline LifecycleExecutionResource& AddImageUris(const char* value) { m_imageUrisHasBeenSet = true; m_imageUris.push_back(value); return *this; }
 
+
+    /**
+     * <p>The starting timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The starting timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The starting timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>The starting timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
+
+    /**
+     * <p>The starting timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline LifecycleExecutionResource& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The starting timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline LifecycleExecutionResource& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ending timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The ending timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The ending timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p>The ending timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
+
+    /**
+     * <p>The ending timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline LifecycleExecutionResource& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p>The ending timestamp from the lifecycle action that was applied to the
+     * resource.</p>
+     */
+    inline LifecycleExecutionResource& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -392,6 +467,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_imageUris;
     bool m_imageUrisHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endTime;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,50 +38,50 @@ namespace Model
   public:
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the
+     * list of datashares.</p>
      */
     inline const Aws::String& GetProducerArn() const{ return m_producerArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the
+     * list of datashares.</p>
      */
     inline bool ProducerArnHasBeenSet() const { return m_producerArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the
+     * list of datashares.</p>
      */
     inline void SetProducerArn(const Aws::String& value) { m_producerArnHasBeenSet = true; m_producerArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the
+     * list of datashares.</p>
      */
     inline void SetProducerArn(Aws::String&& value) { m_producerArnHasBeenSet = true; m_producerArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the
+     * list of datashares.</p>
      */
     inline void SetProducerArn(const char* value) { m_producerArnHasBeenSet = true; m_producerArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the
+     * list of datashares.</p>
      */
     inline DescribeDataSharesForProducerRequest& WithProducerArn(const Aws::String& value) { SetProducerArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the
+     * list of datashares.</p>
      */
     inline DescribeDataSharesForProducerRequest& WithProducerArn(Aws::String&& value) { SetProducerArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the
+     * list of datashares.</p>
      */
     inline DescribeDataSharesForProducerRequest& WithProducerArn(const char* value) { SetProducerArn(value); return *this;}
 

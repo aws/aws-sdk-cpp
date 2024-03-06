@@ -1060,73 +1060,73 @@ namespace Model
 
     /**
      * <p>The storage type to associate with the read replica.</p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
-     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
-     * parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a
+     * value for the <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3
+     * | io1 | io2 | standard</code> </p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
      * <p>The storage type to associate with the read replica.</p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
-     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
-     * parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a
+     * value for the <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3
+     * | io1 | io2 | standard</code> </p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>The storage type to associate with the read replica.</p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
-     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
-     * parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a
+     * value for the <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3
+     * | io1 | io2 | standard</code> </p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
      * <p>The storage type to associate with the read replica.</p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
-     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
-     * parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a
+     * value for the <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3
+     * | io1 | io2 | standard</code> </p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>The storage type to associate with the read replica.</p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
-     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
-     * parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a
+     * value for the <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3
+     * | io1 | io2 | standard</code> </p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
      * <p>The storage type to associate with the read replica.</p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
-     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
-     * parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a
+     * value for the <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3
+     * | io1 | io2 | standard</code> </p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
      * <p>The storage type to associate with the read replica.</p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
-     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
-     * parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a
+     * value for the <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3
+     * | io1 | io2 | standard</code> </p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>The storage type to associate with the read replica.</p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
-     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
-     * parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a
+     * value for the <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3
+     * | io1 | io2 | standard</code> </p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 

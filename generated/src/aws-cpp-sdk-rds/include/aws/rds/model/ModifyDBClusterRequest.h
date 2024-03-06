@@ -3076,6 +3076,55 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithEnableLimitlessDatabase(bool value) { SetEnableLimitlessDatabase(value); return *this;}
 
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline void SetCACertificateIdentifier(const Aws::String& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = value; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline void SetCACertificateIdentifier(Aws::String&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::move(value); }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline void SetCACertificateIdentifier(const char* value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier.assign(value); }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline ModifyDBClusterRequest& WithCACertificateIdentifier(const Aws::String& value) { SetCACertificateIdentifier(value); return *this;}
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline ModifyDBClusterRequest& WithCACertificateIdentifier(Aws::String&& value) { SetCACertificateIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline ModifyDBClusterRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -3209,6 +3258,9 @@ namespace Model
 
     bool m_enableLimitlessDatabase;
     bool m_enableLimitlessDatabaseHasBeenSet = false;
+
+    Aws::String m_cACertificateIdentifier;
+    bool m_cACertificateIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

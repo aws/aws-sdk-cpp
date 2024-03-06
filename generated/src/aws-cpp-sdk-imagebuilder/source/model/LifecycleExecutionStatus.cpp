@@ -25,6 +25,7 @@ namespace Aws
         static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 
 
         LifecycleExecutionStatus GetLifecycleExecutionStatusForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == SUCCESS_HASH)
           {
             return LifecycleExecutionStatus::SUCCESS;
+          }
+          else if (hashCode == PENDING_HASH)
+          {
+            return LifecycleExecutionStatus::PENDING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "FAILED";
           case LifecycleExecutionStatus::SUCCESS:
             return "SUCCESS";
+          case LifecycleExecutionStatus::PENDING:
+            return "PENDING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

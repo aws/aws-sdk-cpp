@@ -82,6 +82,7 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_masterUserSecretKmsKeyIdHasBeenSet(false),
     m_enableLocalWriteForwarding(false),
     m_enableLocalWriteForwardingHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -371,6 +372,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_enableLocalWriteForwardingHasBeenSet)
   {
     ss << "EnableLocalWriteForwarding=" << std::boolalpha << m_enableLocalWriteForwarding << "&";
+  }
+
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

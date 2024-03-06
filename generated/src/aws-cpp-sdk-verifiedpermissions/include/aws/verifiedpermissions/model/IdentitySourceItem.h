@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/verifiedpermissions/model/IdentitySourceItemDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/verifiedpermissions/model/ConfigurationItem.h>
 #include <utility>
 
 namespace Aws
@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>A structure that defines an identity source.</p> <p>This data type is used as
-   * a request parameter for the <a
-   * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListIdentityStores.html">ListIdentityStores</a>
+   * <p>A structure that defines an identity source.</p> <p>This data type is a
+   * response parameter to the <a
+   * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListIdentitySources.html">ListIdentitySources</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/IdentitySourceItem">AWS
    * API Reference</a></p>
@@ -71,43 +71,6 @@ namespace Model
      * <p>The date and time the identity source was originally created.</p>
      */
     inline IdentitySourceItem& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
-
-
-    /**
-     * <p>A structure that contains the details of the associated identity provider
-     * (IdP).</p>
-     */
-    inline const IdentitySourceItemDetails& GetDetails() const{ return m_details; }
-
-    /**
-     * <p>A structure that contains the details of the associated identity provider
-     * (IdP).</p>
-     */
-    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-
-    /**
-     * <p>A structure that contains the details of the associated identity provider
-     * (IdP).</p>
-     */
-    inline void SetDetails(const IdentitySourceItemDetails& value) { m_detailsHasBeenSet = true; m_details = value; }
-
-    /**
-     * <p>A structure that contains the details of the associated identity provider
-     * (IdP).</p>
-     */
-    inline void SetDetails(IdentitySourceItemDetails&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-
-    /**
-     * <p>A structure that contains the details of the associated identity provider
-     * (IdP).</p>
-     */
-    inline IdentitySourceItem& WithDetails(const IdentitySourceItemDetails& value) { SetDetails(value); return *this;}
-
-    /**
-     * <p>A structure that contains the details of the associated identity provider
-     * (IdP).</p>
-     */
-    inline IdentitySourceItem& WithDetails(IdentitySourceItemDetails&& value) { SetDetails(std::move(value)); return *this;}
 
 
     /**
@@ -271,13 +234,41 @@ namespace Model
      */
     inline IdentitySourceItem& WithPrincipalEntityType(const char* value) { SetPrincipalEntityType(value); return *this;}
 
+
+    /**
+     * <p>Contains configuration information about an identity source.</p>
+     */
+    inline const ConfigurationItem& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>Contains configuration information about an identity source.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+
+    /**
+     * <p>Contains configuration information about an identity source.</p>
+     */
+    inline void SetConfiguration(const ConfigurationItem& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+
+    /**
+     * <p>Contains configuration information about an identity source.</p>
+     */
+    inline void SetConfiguration(ConfigurationItem&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+
+    /**
+     * <p>Contains configuration information about an identity source.</p>
+     */
+    inline IdentitySourceItem& WithConfiguration(const ConfigurationItem& value) { SetConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains configuration information about an identity source.</p>
+     */
+    inline IdentitySourceItem& WithConfiguration(ConfigurationItem&& value) { SetConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet = false;
-
-    IdentitySourceItemDetails m_details;
-    bool m_detailsHasBeenSet = false;
 
     Aws::String m_identitySourceId;
     bool m_identitySourceIdHasBeenSet = false;
@@ -290,6 +281,9 @@ namespace Model
 
     Aws::String m_principalEntityType;
     bool m_principalEntityTypeHasBeenSet = false;
+
+    ConfigurationItem m_configuration;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

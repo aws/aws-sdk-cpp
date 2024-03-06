@@ -34,7 +34,8 @@ ClusterPendingModifiedValues::ClusterPendingModifiedValues() :
     m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ ClusterPendingModifiedValues::ClusterPendingModifiedValues(const XmlNode& xmlNod
     m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -123,6 +125,12 @@ ClusterPendingModifiedValues& ClusterPendingModifiedValues::operator =(const Xml
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
     }
+    XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");
+    if(!certificateDetailsNode.IsNull())
+    {
+      m_certificateDetails = certificateDetailsNode;
+      m_certificateDetailsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -184,6 +192,13 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::StringStream certificateDetailsLocationAndMemberSs;
+      certificateDetailsLocationAndMemberSs << location << index << locationValue << ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -231,6 +246,12 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
   if(m_storageTypeHasBeenSet)
   {
       oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::String certificateDetailsLocationAndMember(location);
+      certificateDetailsLocationAndMember += ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
   }
 }
 

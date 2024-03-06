@@ -193,7 +193,7 @@ namespace VerifiedPermissions
          * the Amazon Cognito user pool.</p>   <p>Verified Permissions is <i>
          * <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
          * consistent</a> </i>. It can take a few seconds for a new or changed element to
-         * be propagate through the service and be visible in the results of other Verified
+         * propagate through the service and be visible in the results of other Verified
          * Permissions operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreateIdentitySource">AWS
          * API Reference</a></p>
@@ -233,7 +233,7 @@ namespace VerifiedPermissions
          * the operation fails and the policy isn't stored.</p>   <p>Verified
          * Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicy">AWS
@@ -266,7 +266,7 @@ namespace VerifiedPermissions
          * multiple namespaces</a>, Verified Permissions currently supports only one
          * namespace per policy store.</p>   <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicyStore">AWS
@@ -302,7 +302,7 @@ namespace VerifiedPermissions
          * that are linked to that template are immediately updated as well.</p> 
          * <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicyTemplate">AWS
@@ -760,7 +760,7 @@ namespace VerifiedPermissions
          * is evaluated against the new schema at that time.</p>  <p>Verified
          * Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/PutSchema">AWS
@@ -791,7 +791,7 @@ namespace VerifiedPermissions
          * source, or to change the mapping of identities from the IdP to a different
          * principal entity type.</p>  <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdateIdentitySource">AWS
@@ -828,7 +828,7 @@ namespace VerifiedPermissions
          * updating a static policy causes Verified Permissions to validate the policy
          * against the schema in the policy store. If the updated static policy doesn't
          * pass validation, the operation fails and the update isn't stored.</p> </li> <li>
-         * <p>When you edit a static policy, You can change only certain elements of a
+         * <p>When you edit a static policy, you can change only certain elements of a
          * static policy:</p> <ul> <li> <p>The action referenced by the policy. </p> </li>
          * <li> <p>A condition clause, such as when and unless. </p> </li> </ul> <p>You
          * can't change these elements of a static policy: </p> <ul> <li> <p>Changing a
@@ -839,7 +839,7 @@ namespace VerifiedPermissions
          * template-linked policy, you must update the template instead. </p> </li> </ul>
          *   <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicy">AWS
@@ -869,7 +869,7 @@ namespace VerifiedPermissions
          * <p>Modifies the validation setting for a policy store.</p>  <p>Verified
          * Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicyStore">AWS
@@ -904,7 +904,7 @@ namespace VerifiedPermissions
          * authorization decisions that involve all template-linked policies instantiated
          * from this template.</p>   <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicyTemplate">AWS
