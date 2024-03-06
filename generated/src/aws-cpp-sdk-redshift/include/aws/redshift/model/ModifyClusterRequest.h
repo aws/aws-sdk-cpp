@@ -1614,22 +1614,42 @@ namespace Model
 
 
     /**
-     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     * <p>The option to change the port of an Amazon Redshift cluster.</p> <p>Valid
+     * Values: </p> <ul> <li> <p>For clusters with ra3 nodes - Select a port within the
+     * ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an
+     * existing cluster with ra3 nodes, it isn't required that you change the port to
+     * these ranges.)</p> </li> <li> <p>For clusters with ds2 or dc2 nodes - Select a
+     * port within the range <code>1150-65535</code>.</p> </li> </ul>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     * <p>The option to change the port of an Amazon Redshift cluster.</p> <p>Valid
+     * Values: </p> <ul> <li> <p>For clusters with ra3 nodes - Select a port within the
+     * ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an
+     * existing cluster with ra3 nodes, it isn't required that you change the port to
+     * these ranges.)</p> </li> <li> <p>For clusters with ds2 or dc2 nodes - Select a
+     * port within the range <code>1150-65535</code>.</p> </li> </ul>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     * <p>The option to change the port of an Amazon Redshift cluster.</p> <p>Valid
+     * Values: </p> <ul> <li> <p>For clusters with ra3 nodes - Select a port within the
+     * ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an
+     * existing cluster with ra3 nodes, it isn't required that you change the port to
+     * these ranges.)</p> </li> <li> <p>For clusters with ds2 or dc2 nodes - Select a
+     * port within the range <code>1150-65535</code>.</p> </li> </ul>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     * <p>The option to change the port of an Amazon Redshift cluster.</p> <p>Valid
+     * Values: </p> <ul> <li> <p>For clusters with ra3 nodes - Select a port within the
+     * ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an
+     * existing cluster with ra3 nodes, it isn't required that you change the port to
+     * these ranges.)</p> </li> <li> <p>For clusters with ds2 or dc2 nodes - Select a
+     * port within the range <code>1150-65535</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithPort(int value) { SetPort(value); return *this;}
 

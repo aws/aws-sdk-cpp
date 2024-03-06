@@ -272,49 +272,57 @@ namespace Model
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline const Aws::String& GetS3BucketOwner() const{ return m_s3BucketOwner; }
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline void SetS3BucketOwner(const Aws::String& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = value; }
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline void SetS3BucketOwner(Aws::String&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::move(value); }
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline void SetS3BucketOwner(const char* value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner.assign(value); }
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline ExportTableToPointInTimeRequest& WithS3BucketOwner(const Aws::String& value) { SetS3BucketOwner(value); return *this;}
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline ExportTableToPointInTimeRequest& WithS3BucketOwner(Aws::String&& value) { SetS3BucketOwner(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline ExportTableToPointInTimeRequest& WithS3BucketOwner(const char* value) { SetS3BucketOwner(value); return *this;}
 

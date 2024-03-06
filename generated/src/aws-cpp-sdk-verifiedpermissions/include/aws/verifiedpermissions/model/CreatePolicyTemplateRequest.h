@@ -45,7 +45,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -59,7 +62,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -73,7 +79,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -87,7 +96,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -101,7 +113,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -115,7 +130,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline CreatePolicyTemplateRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -129,7 +147,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline CreatePolicyTemplateRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -143,7 +164,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline CreatePolicyTemplateRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

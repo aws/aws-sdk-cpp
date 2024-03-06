@@ -1492,73 +1492,81 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code> </p> <p>If you
+     * specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also
+     * include a value for the <code>Iops</code> parameter.</p> <p>Default:
+     * <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     * <code>gp2</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code> </p> <p>If you
+     * specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also
+     * include a value for the <code>Iops</code> parameter.</p> <p>Default:
+     * <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     * <code>gp2</code> </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code> </p> <p>If you
+     * specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also
+     * include a value for the <code>Iops</code> parameter.</p> <p>Default:
+     * <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     * <code>gp2</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code> </p> <p>If you
+     * specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also
+     * include a value for the <code>Iops</code> parameter.</p> <p>Default:
+     * <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     * <code>gp2</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code> </p> <p>If you
+     * specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also
+     * include a value for the <code>Iops</code> parameter.</p> <p>Default:
+     * <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     * <code>gp2</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code> </p> <p>If you
+     * specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also
+     * include a value for the <code>Iops</code> parameter.</p> <p>Default:
+     * <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     * <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code> </p> <p>If you
+     * specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also
+     * include a value for the <code>Iops</code> parameter.</p> <p>Default:
+     * <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     * <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code> </p> <p>If you
+     * specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also
+     * include a value for the <code>Iops</code> parameter.</p> <p>Default:
+     * <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     * <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 

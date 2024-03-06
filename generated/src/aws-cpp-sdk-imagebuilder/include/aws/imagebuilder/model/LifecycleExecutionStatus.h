@@ -20,7 +20,8 @@ namespace Model
     CANCELLED,
     CANCELLING,
     FAILED,
-    SUCCESS
+    SUCCESS,
+    PENDING
   };
 
 namespace LifecycleExecutionStatusMapper

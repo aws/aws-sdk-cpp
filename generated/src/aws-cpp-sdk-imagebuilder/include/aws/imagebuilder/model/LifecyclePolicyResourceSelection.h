@@ -91,80 +91,80 @@ namespace Model
 
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTagMap() const{ return m_tagMap; }
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline bool TagMapHasBeenSet() const { return m_tagMapHasBeenSet; }
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline void SetTagMap(const Aws::Map<Aws::String, Aws::String>& value) { m_tagMapHasBeenSet = true; m_tagMap = value; }
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline void SetTagMap(Aws::Map<Aws::String, Aws::String>&& value) { m_tagMapHasBeenSet = true; m_tagMap = std::move(value); }
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline LifecyclePolicyResourceSelection& WithTagMap(const Aws::Map<Aws::String, Aws::String>& value) { SetTagMap(value); return *this;}
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline LifecyclePolicyResourceSelection& WithTagMap(Aws::Map<Aws::String, Aws::String>&& value) { SetTagMap(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline LifecyclePolicyResourceSelection& AddTagMap(const Aws::String& key, const Aws::String& value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(key, value); return *this; }
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline LifecyclePolicyResourceSelection& AddTagMap(Aws::String&& key, const Aws::String& value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline LifecyclePolicyResourceSelection& AddTagMap(const Aws::String& key, Aws::String&& value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline LifecyclePolicyResourceSelection& AddTagMap(Aws::String&& key, Aws::String&& value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline LifecyclePolicyResourceSelection& AddTagMap(const char* key, Aws::String&& value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline LifecyclePolicyResourceSelection& AddTagMap(Aws::String&& key, const char* value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of tags that are used as selection criteria for the resources that the
-     * lifecycle policy applies to.</p>
+     * <p>A list of tags that are used as selection criteria for the Image Builder
+     * image resources that the lifecycle policy applies to.</p>
      */
     inline LifecyclePolicyResourceSelection& AddTagMap(const char* key, const char* value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(key, value); return *this; }
 

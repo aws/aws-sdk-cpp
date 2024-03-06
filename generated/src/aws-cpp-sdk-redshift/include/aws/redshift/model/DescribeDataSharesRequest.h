@@ -37,42 +37,42 @@ namespace Model
   public:
 
     /**
-     * <p>The identifier of the datashare to describe details of.</p>
+     * <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
      */
     inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
 
     /**
-     * <p>The identifier of the datashare to describe details of.</p>
+     * <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
      */
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
 
     /**
-     * <p>The identifier of the datashare to describe details of.</p>
+     * <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
      */
     inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
 
     /**
-     * <p>The identifier of the datashare to describe details of.</p>
+     * <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
      */
     inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
 
     /**
-     * <p>The identifier of the datashare to describe details of.</p>
+     * <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
      */
     inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
 
     /**
-     * <p>The identifier of the datashare to describe details of.</p>
+     * <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
      */
     inline DescribeDataSharesRequest& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
 
     /**
-     * <p>The identifier of the datashare to describe details of.</p>
+     * <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
      */
     inline DescribeDataSharesRequest& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the datashare to describe details of.</p>
+     * <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
      */
     inline DescribeDataSharesRequest& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
 

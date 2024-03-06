@@ -75,7 +75,8 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_enableLocalWriteForwardingHasBeenSet(false),
     m_awsBackupRecoveryPointArnHasBeenSet(false),
     m_enableLimitlessDatabase(false),
-    m_enableLimitlessDatabaseHasBeenSet(false)
+    m_enableLimitlessDatabaseHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false)
 {
 }
 
@@ -307,6 +308,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_enableLimitlessDatabaseHasBeenSet)
   {
     ss << "EnableLimitlessDatabase=" << std::boolalpha << m_enableLimitlessDatabase << "&";
+  }
+
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";
