@@ -75,13 +75,11 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
     {
         credentials.SetAWSAccessKeyId(accessKey);
 
-        AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found credential in environment with access key id " << accessKey);
         auto secretKey = Aws::Environment::GetEnv(SECRET_KEY_ENV_VAR);
 
         if (!secretKey.empty())
         {
             credentials.SetAWSSecretKey(secretKey);
-            AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found secret key");
         }
 
         auto sessionToken = Aws::Environment::GetEnv(SESSION_TOKEN_ENV_VAR);
@@ -89,7 +87,6 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
         if(!sessionToken.empty())
         {
             credentials.SetSessionToken(sessionToken);
-            AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found sessionToken");
         }
     }
 
