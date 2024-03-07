@@ -490,8 +490,9 @@ namespace WorkSpaces
          * information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
          * WorkSpaces Core</a>.</p> </li> <li> <p>You don't need to specify the
          * <code>PCOIP</code> protocol for Linux bundles because <code>WSP</code> is the
-         * default protocol for those bundles.</p> </li> </ul> <p><h3>See Also:</h3>
-         * <a
+         * default protocol for those bundles.</p> </li> <li> <p>User-decoupled WorkSpaces
+         * are only supported by Amazon WorkSpaces Core.</p> </li> </ul> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">AWS
          * API Reference</a></p>
          */
@@ -1817,9 +1818,11 @@ namespace WorkSpaces
 
         /**
          * <p>Reboots the specified WorkSpaces.</p> <p>You cannot reboot a WorkSpace unless
-         * its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.</p> <p>This
-         * operation is asynchronous and returns before the WorkSpaces have
-         * rebooted.</p><p><h3>See Also:</h3>   <a
+         * its state is <code>AVAILABLE</code>, <code>UNHEALTHY</code>, or
+         * <code>REBOOTING</code>. Reboot a WorkSpace in the <code>REBOOTING</code> state
+         * only if your WorkSpace has been stuck in the <code>REBOOTING</code> state for
+         * over 20 minutes.</p> <p>This operation is asynchronous and returns before the
+         * WorkSpaces have rebooted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">AWS
          * API Reference</a></p>
          */

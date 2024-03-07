@@ -7045,7 +7045,10 @@ namespace EC2
          * <p>Completed bundle tasks are listed for only a limited time. If your bundle
          * task is no longer in the list, you can still register an AMI from it. Just use
          * <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest
-         * name you provided to the bundle task.</p> <p><h3>See Also:</h3>   <a
+         * name you provided to the bundle task.</p>   <p>The order of the
+         * elements in the response, including those within nested structures, might vary.
+         * Applications should not assume the elements appear in a particular order.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">AWS
          * API Reference</a></p>
          */
@@ -8029,7 +8032,10 @@ namespace EC2
 
         /**
          * <p>Describes the specified attribute of the specified AMI. You can specify only
-         * one attribute at a time.</p><p><h3>See Also:</h3>   <a
+         * one attribute at a time.</p>  <p>The order of the elements in the
+         * response, including those within nested structures, might vary. Applications
+         * should not assume the elements appear in a particular order.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageAttribute">AWS
          * API Reference</a></p>
          */
@@ -8061,8 +8067,10 @@ namespace EC2
          * <p>Recently deregistered images appear in the returned results for a short
          * interval and then return empty results. After all instances that reference a
          * deregistered AMI are terminated, specifying the ID of the image will eventually
-         * return an error indicating that the AMI ID cannot be found.</p><p><h3>See
-         * Also:</h3>   <a
+         * return an error indicating that the AMI ID cannot be found.</p>  <p>The
+         * order of the elements in the response, including those within nested structures,
+         * might vary. Applications should not assume the elements appear in a particular
+         * order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">AWS
          * API Reference</a></p>
          */
@@ -16918,8 +16926,8 @@ namespace EC2
         }
 
         /**
-         * <p>Registers an AMI. When you're creating an AMI, this is the final step you
-         * must complete before you can launch an instance from the AMI. For more
+         * <p>Registers an AMI. When you're creating an instance-store backed AMI,
+         * registering the AMI is the final step in the creation process. For more
          * information about creating AMIs, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create
          * your own AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>

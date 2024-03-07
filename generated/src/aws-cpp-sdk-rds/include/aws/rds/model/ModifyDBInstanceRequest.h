@@ -2230,7 +2230,7 @@ namespace Model
 
     /**
      * <p>The storage type to associate with the DB instance.</p> <p>If you specify
-     * <code>io1</code>), <code>io2</code>, or <code>gp3</code> you must also include a
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code> you must also include a
      * value for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your
      * DB instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
@@ -2251,7 +2251,7 @@ namespace Model
 
     /**
      * <p>The storage type to associate with the DB instance.</p> <p>If you specify
-     * <code>io1</code>), <code>io2</code>, or <code>gp3</code> you must also include a
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code> you must also include a
      * value for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your
      * DB instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
@@ -2272,7 +2272,7 @@ namespace Model
 
     /**
      * <p>The storage type to associate with the DB instance.</p> <p>If you specify
-     * <code>io1</code>), <code>io2</code>, or <code>gp3</code> you must also include a
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code> you must also include a
      * value for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your
      * DB instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
@@ -2293,7 +2293,7 @@ namespace Model
 
     /**
      * <p>The storage type to associate with the DB instance.</p> <p>If you specify
-     * <code>io1</code>), <code>io2</code>, or <code>gp3</code> you must also include a
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code> you must also include a
      * value for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your
      * DB instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
@@ -2314,7 +2314,7 @@ namespace Model
 
     /**
      * <p>The storage type to associate with the DB instance.</p> <p>If you specify
-     * <code>io1</code>), <code>io2</code>, or <code>gp3</code> you must also include a
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code> you must also include a
      * value for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your
      * DB instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
@@ -2335,7 +2335,7 @@ namespace Model
 
     /**
      * <p>The storage type to associate with the DB instance.</p> <p>If you specify
-     * <code>io1</code>), <code>io2</code>, or <code>gp3</code> you must also include a
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code> you must also include a
      * value for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your
      * DB instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
@@ -2356,7 +2356,7 @@ namespace Model
 
     /**
      * <p>The storage type to associate with the DB instance.</p> <p>If you specify
-     * <code>io1</code>), <code>io2</code>, or <code>gp3</code> you must also include a
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code> you must also include a
      * value for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your
      * DB instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
@@ -2377,7 +2377,7 @@ namespace Model
 
     /**
      * <p>The storage type to associate with the DB instance.</p> <p>If you specify
-     * <code>io1</code>), <code>io2</code>, or <code>gp3</code> you must also include a
+     * <code>io1</code>, <code>io2</code>, or <code>gp3</code> you must also include a
      * value for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your
      * DB instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The

@@ -41,50 +41,42 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Required: Yes</p>
+     * <p>The ID of the instance to bundle.</p> <p>Default: None</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Required: Yes</p>
+     * <p>The ID of the instance to bundle.</p> <p>Default: None</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Required: Yes</p>
+     * <p>The ID of the instance to bundle.</p> <p>Default: None</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Required: Yes</p>
+     * <p>The ID of the instance to bundle.</p> <p>Default: None</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Required: Yes</p>
+     * <p>The ID of the instance to bundle.</p> <p>Default: None</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Required: Yes</p>
+     * <p>The ID of the instance to bundle.</p> <p>Default: None</p>
      */
     inline BundleInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Required: Yes</p>
+     * <p>The ID of the instance to bundle.</p> <p>Default: None</p>
      */
     inline BundleInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Required: Yes</p>
+     * <p>The ID of the instance to bundle.</p> <p>Default: None</p>
      */
     inline BundleInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

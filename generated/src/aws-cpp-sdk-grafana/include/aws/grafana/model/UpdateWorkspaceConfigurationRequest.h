@@ -98,66 +98,90 @@ namespace Model
 
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>Can
-     * only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for
-     * example, from 9.4 to 8.4).</p> <p>To know what versions are available to upgrade
-     * to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+     * <p>Specifies the version of Grafana to support in the workspace. If not
+     * specified, keeps the current version of the workspace.</p> <p>Can only be used
+     * to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4
+     * to 8.4).</p> <p>To know what versions are available to upgrade to for a specific
+     * workspace, see the <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a>
+     * operation.</p>
      */
     inline const Aws::String& GetGrafanaVersion() const{ return m_grafanaVersion; }
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>Can
-     * only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for
-     * example, from 9.4 to 8.4).</p> <p>To know what versions are available to upgrade
-     * to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+     * <p>Specifies the version of Grafana to support in the workspace. If not
+     * specified, keeps the current version of the workspace.</p> <p>Can only be used
+     * to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4
+     * to 8.4).</p> <p>To know what versions are available to upgrade to for a specific
+     * workspace, see the <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a>
+     * operation.</p>
      */
     inline bool GrafanaVersionHasBeenSet() const { return m_grafanaVersionHasBeenSet; }
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>Can
-     * only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for
-     * example, from 9.4 to 8.4).</p> <p>To know what versions are available to upgrade
-     * to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+     * <p>Specifies the version of Grafana to support in the workspace. If not
+     * specified, keeps the current version of the workspace.</p> <p>Can only be used
+     * to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4
+     * to 8.4).</p> <p>To know what versions are available to upgrade to for a specific
+     * workspace, see the <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a>
+     * operation.</p>
      */
     inline void SetGrafanaVersion(const Aws::String& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = value; }
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>Can
-     * only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for
-     * example, from 9.4 to 8.4).</p> <p>To know what versions are available to upgrade
-     * to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+     * <p>Specifies the version of Grafana to support in the workspace. If not
+     * specified, keeps the current version of the workspace.</p> <p>Can only be used
+     * to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4
+     * to 8.4).</p> <p>To know what versions are available to upgrade to for a specific
+     * workspace, see the <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a>
+     * operation.</p>
      */
     inline void SetGrafanaVersion(Aws::String&& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = std::move(value); }
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>Can
-     * only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for
-     * example, from 9.4 to 8.4).</p> <p>To know what versions are available to upgrade
-     * to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+     * <p>Specifies the version of Grafana to support in the workspace. If not
+     * specified, keeps the current version of the workspace.</p> <p>Can only be used
+     * to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4
+     * to 8.4).</p> <p>To know what versions are available to upgrade to for a specific
+     * workspace, see the <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a>
+     * operation.</p>
      */
     inline void SetGrafanaVersion(const char* value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion.assign(value); }
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>Can
-     * only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for
-     * example, from 9.4 to 8.4).</p> <p>To know what versions are available to upgrade
-     * to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+     * <p>Specifies the version of Grafana to support in the workspace. If not
+     * specified, keeps the current version of the workspace.</p> <p>Can only be used
+     * to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4
+     * to 8.4).</p> <p>To know what versions are available to upgrade to for a specific
+     * workspace, see the <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a>
+     * operation.</p>
      */
     inline UpdateWorkspaceConfigurationRequest& WithGrafanaVersion(const Aws::String& value) { SetGrafanaVersion(value); return *this;}
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>Can
-     * only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for
-     * example, from 9.4 to 8.4).</p> <p>To know what versions are available to upgrade
-     * to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+     * <p>Specifies the version of Grafana to support in the workspace. If not
+     * specified, keeps the current version of the workspace.</p> <p>Can only be used
+     * to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4
+     * to 8.4).</p> <p>To know what versions are available to upgrade to for a specific
+     * workspace, see the <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a>
+     * operation.</p>
      */
     inline UpdateWorkspaceConfigurationRequest& WithGrafanaVersion(Aws::String&& value) { SetGrafanaVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>Can
-     * only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for
-     * example, from 9.4 to 8.4).</p> <p>To know what versions are available to upgrade
-     * to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+     * <p>Specifies the version of Grafana to support in the workspace. If not
+     * specified, keeps the current version of the workspace.</p> <p>Can only be used
+     * to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4
+     * to 8.4).</p> <p>To know what versions are available to upgrade to for a specific
+     * workspace, see the <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a>
+     * operation.</p>
      */
     inline UpdateWorkspaceConfigurationRequest& WithGrafanaVersion(const char* value) { SetGrafanaVersion(value); return *this;}
 

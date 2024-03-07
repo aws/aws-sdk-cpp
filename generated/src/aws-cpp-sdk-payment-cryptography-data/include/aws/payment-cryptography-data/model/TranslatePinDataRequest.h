@@ -85,37 +85,37 @@ namespace Model
 
     /**
      * <p>The attributes and values to use for incoming DUKPT encryption key for PIN
-     * block tranlation.</p>
+     * block translation.</p>
      */
     inline const DukptDerivationAttributes& GetIncomingDukptAttributes() const{ return m_incomingDukptAttributes; }
 
     /**
      * <p>The attributes and values to use for incoming DUKPT encryption key for PIN
-     * block tranlation.</p>
+     * block translation.</p>
      */
     inline bool IncomingDukptAttributesHasBeenSet() const { return m_incomingDukptAttributesHasBeenSet; }
 
     /**
      * <p>The attributes and values to use for incoming DUKPT encryption key for PIN
-     * block tranlation.</p>
+     * block translation.</p>
      */
     inline void SetIncomingDukptAttributes(const DukptDerivationAttributes& value) { m_incomingDukptAttributesHasBeenSet = true; m_incomingDukptAttributes = value; }
 
     /**
      * <p>The attributes and values to use for incoming DUKPT encryption key for PIN
-     * block tranlation.</p>
+     * block translation.</p>
      */
     inline void SetIncomingDukptAttributes(DukptDerivationAttributes&& value) { m_incomingDukptAttributesHasBeenSet = true; m_incomingDukptAttributes = std::move(value); }
 
     /**
      * <p>The attributes and values to use for incoming DUKPT encryption key for PIN
-     * block tranlation.</p>
+     * block translation.</p>
      */
     inline TranslatePinDataRequest& WithIncomingDukptAttributes(const DukptDerivationAttributes& value) { SetIncomingDukptAttributes(value); return *this;}
 
     /**
      * <p>The attributes and values to use for incoming DUKPT encryption key for PIN
-     * block tranlation.</p>
+     * block translation.</p>
      */
     inline TranslatePinDataRequest& WithIncomingDukptAttributes(DukptDerivationAttributes&& value) { SetIncomingDukptAttributes(std::move(value)); return *this;}
 
@@ -170,37 +170,37 @@ namespace Model
 
 
     /**
-     * <p>The format of the incoming PIN block data for tranlation within Amazon Web
+     * <p>The format of the incoming PIN block data for translation within Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline const TranslationIsoFormats& GetIncomingTranslationAttributes() const{ return m_incomingTranslationAttributes; }
 
     /**
-     * <p>The format of the incoming PIN block data for tranlation within Amazon Web
+     * <p>The format of the incoming PIN block data for translation within Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline bool IncomingTranslationAttributesHasBeenSet() const { return m_incomingTranslationAttributesHasBeenSet; }
 
     /**
-     * <p>The format of the incoming PIN block data for tranlation within Amazon Web
+     * <p>The format of the incoming PIN block data for translation within Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline void SetIncomingTranslationAttributes(const TranslationIsoFormats& value) { m_incomingTranslationAttributesHasBeenSet = true; m_incomingTranslationAttributes = value; }
 
     /**
-     * <p>The format of the incoming PIN block data for tranlation within Amazon Web
+     * <p>The format of the incoming PIN block data for translation within Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline void SetIncomingTranslationAttributes(TranslationIsoFormats&& value) { m_incomingTranslationAttributesHasBeenSet = true; m_incomingTranslationAttributes = std::move(value); }
 
     /**
-     * <p>The format of the incoming PIN block data for tranlation within Amazon Web
+     * <p>The format of the incoming PIN block data for translation within Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline TranslatePinDataRequest& WithIncomingTranslationAttributes(const TranslationIsoFormats& value) { SetIncomingTranslationAttributes(value); return *this;}
 
     /**
-     * <p>The format of the incoming PIN block data for tranlation within Amazon Web
+     * <p>The format of the incoming PIN block data for translation within Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline TranslatePinDataRequest& WithIncomingTranslationAttributes(TranslationIsoFormats&& value) { SetIncomingTranslationAttributes(std::move(value)); return *this;}
@@ -293,37 +293,37 @@ namespace Model
 
 
     /**
-     * <p>The format of the outgoing PIN block data after tranlation by Amazon Web
+     * <p>The format of the outgoing PIN block data after translation by Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline const TranslationIsoFormats& GetOutgoingTranslationAttributes() const{ return m_outgoingTranslationAttributes; }
 
     /**
-     * <p>The format of the outgoing PIN block data after tranlation by Amazon Web
+     * <p>The format of the outgoing PIN block data after translation by Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline bool OutgoingTranslationAttributesHasBeenSet() const { return m_outgoingTranslationAttributesHasBeenSet; }
 
     /**
-     * <p>The format of the outgoing PIN block data after tranlation by Amazon Web
+     * <p>The format of the outgoing PIN block data after translation by Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline void SetOutgoingTranslationAttributes(const TranslationIsoFormats& value) { m_outgoingTranslationAttributesHasBeenSet = true; m_outgoingTranslationAttributes = value; }
 
     /**
-     * <p>The format of the outgoing PIN block data after tranlation by Amazon Web
+     * <p>The format of the outgoing PIN block data after translation by Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline void SetOutgoingTranslationAttributes(TranslationIsoFormats&& value) { m_outgoingTranslationAttributesHasBeenSet = true; m_outgoingTranslationAttributes = std::move(value); }
 
     /**
-     * <p>The format of the outgoing PIN block data after tranlation by Amazon Web
+     * <p>The format of the outgoing PIN block data after translation by Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline TranslatePinDataRequest& WithOutgoingTranslationAttributes(const TranslationIsoFormats& value) { SetOutgoingTranslationAttributes(value); return *this;}
 
     /**
-     * <p>The format of the outgoing PIN block data after tranlation by Amazon Web
+     * <p>The format of the outgoing PIN block data after translation by Amazon Web
      * Services Payment Cryptography.</p>
      */
     inline TranslatePinDataRequest& WithOutgoingTranslationAttributes(TranslationIsoFormats&& value) { SetOutgoingTranslationAttributes(std::move(value)); return *this;}

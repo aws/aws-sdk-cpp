@@ -33,7 +33,8 @@ RegisterImageRequest::RegisterImageRequest() :
     m_tpmSupportHasBeenSet(false),
     m_uefiDataHasBeenSet(false),
     m_imdsSupport(ImdsSupportValues::NOT_SET),
-    m_imdsSupportHasBeenSet(false)
+    m_imdsSupportHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,16 @@ Aws::String RegisterImageRequest::SerializePayload() const
   if(m_imdsSupportHasBeenSet)
   {
     ss << "ImdsSupport=" << ImdsSupportValuesMapper::GetNameForImdsSupportValues(m_imdsSupport) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";
