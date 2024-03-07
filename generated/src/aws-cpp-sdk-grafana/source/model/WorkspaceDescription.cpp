@@ -29,6 +29,7 @@ WorkspaceDescription::WorkspaceDescription() :
     m_freeTrialConsumed(false),
     m_freeTrialConsumedHasBeenSet(false),
     m_freeTrialExpirationHasBeenSet(false),
+    m_grafanaTokenHasBeenSet(false),
     m_grafanaVersionHasBeenSet(false),
     m_idHasBeenSet(false),
     m_licenseExpirationHasBeenSet(false),
@@ -62,6 +63,7 @@ WorkspaceDescription::WorkspaceDescription(JsonView jsonValue) :
     m_freeTrialConsumed(false),
     m_freeTrialConsumedHasBeenSet(false),
     m_freeTrialExpirationHasBeenSet(false),
+    m_grafanaTokenHasBeenSet(false),
     m_grafanaVersionHasBeenSet(false),
     m_idHasBeenSet(false),
     m_licenseExpirationHasBeenSet(false),
@@ -144,6 +146,13 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_freeTrialExpiration = jsonValue.GetDouble("freeTrialExpiration");
 
     m_freeTrialExpirationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("grafanaToken"))
+  {
+    m_grafanaToken = jsonValue.GetString("grafanaToken");
+
+    m_grafanaTokenHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("grafanaVersion"))
@@ -322,6 +331,12 @@ JsonValue WorkspaceDescription::Jsonize() const
   if(m_freeTrialExpirationHasBeenSet)
   {
    payload.WithDouble("freeTrialExpiration", m_freeTrialExpiration.SecondsWithMSPrecision());
+  }
+
+  if(m_grafanaTokenHasBeenSet)
+  {
+   payload.WithString("grafanaToken", m_grafanaToken);
+
   }
 
   if(m_grafanaVersionHasBeenSet)

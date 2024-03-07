@@ -44,9 +44,9 @@ namespace Model
 
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -56,9 +56,9 @@ namespace Model
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -68,9 +68,9 @@ namespace Model
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -80,9 +80,9 @@ namespace Model
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -92,9 +92,9 @@ namespace Model
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -104,9 +104,9 @@ namespace Model
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -116,9 +116,9 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -128,9 +128,9 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length

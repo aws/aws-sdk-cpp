@@ -2995,12 +2995,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -3016,12 +3016,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -3037,12 +3037,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -3058,12 +3058,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -3079,12 +3079,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -3100,12 +3100,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -3121,12 +3121,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -3142,12 +3142,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -4107,49 +4107,73 @@ namespace Model
 
     /**
      * <p>The CA certificate identifier to use for the DB cluster's server
-     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
      */
     inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
 
     /**
      * <p>The CA certificate identifier to use for the DB cluster's server
-     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
      */
     inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
 
     /**
      * <p>The CA certificate identifier to use for the DB cluster's server
-     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
      */
     inline void SetCACertificateIdentifier(const Aws::String& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = value; }
 
     /**
      * <p>The CA certificate identifier to use for the DB cluster's server
-     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
      */
     inline void SetCACertificateIdentifier(Aws::String&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::move(value); }
 
     /**
      * <p>The CA certificate identifier to use for the DB cluster's server
-     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
      */
     inline void SetCACertificateIdentifier(const char* value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier.assign(value); }
 
     /**
      * <p>The CA certificate identifier to use for the DB cluster's server
-     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithCACertificateIdentifier(const Aws::String& value) { SetCACertificateIdentifier(value); return *this;}
 
     /**
      * <p>The CA certificate identifier to use for the DB cluster's server
-     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithCACertificateIdentifier(Aws::String&& value) { SetCACertificateIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The CA certificate identifier to use for the DB cluster's server
-     * certificate.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
 

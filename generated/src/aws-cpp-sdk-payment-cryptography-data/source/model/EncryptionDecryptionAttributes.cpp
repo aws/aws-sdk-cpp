@@ -21,6 +21,7 @@ namespace Model
 EncryptionDecryptionAttributes::EncryptionDecryptionAttributes() : 
     m_asymmetricHasBeenSet(false),
     m_dukptHasBeenSet(false),
+    m_emvHasBeenSet(false),
     m_symmetricHasBeenSet(false)
 {
 }
@@ -28,6 +29,7 @@ EncryptionDecryptionAttributes::EncryptionDecryptionAttributes() :
 EncryptionDecryptionAttributes::EncryptionDecryptionAttributes(JsonView jsonValue) : 
     m_asymmetricHasBeenSet(false),
     m_dukptHasBeenSet(false),
+    m_emvHasBeenSet(false),
     m_symmetricHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,6 +49,13 @@ EncryptionDecryptionAttributes& EncryptionDecryptionAttributes::operator =(JsonV
     m_dukpt = jsonValue.GetObject("Dukpt");
 
     m_dukptHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Emv"))
+  {
+    m_emv = jsonValue.GetObject("Emv");
+
+    m_emvHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Symmetric"))
@@ -72,6 +81,12 @@ JsonValue EncryptionDecryptionAttributes::Jsonize() const
   if(m_dukptHasBeenSet)
   {
    payload.WithObject("Dukpt", m_dukpt.Jsonize());
+
+  }
+
+  if(m_emvHasBeenSet)
+  {
+   payload.WithObject("Emv", m_emv.Jsonize());
 
   }
 

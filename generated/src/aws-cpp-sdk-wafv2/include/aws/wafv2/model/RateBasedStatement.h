@@ -32,47 +32,49 @@ namespace Model
    * <p>A rate-based rule counts incoming requests and rate limits requests when they
    * are coming at too fast a rate. The rule categorizes requests according to your
    * aggregation criteria, collects them into aggregation instances, and counts and
-   * rate limits the requests for each instance. </p> <p>You can specify individual
-   * aggregation keys, like IP address or HTTP method. You can also specify
-   * aggregation key combinations, like IP address and HTTP method, or HTTP method,
-   * query argument, and cookie. </p> <p>Each unique set of values for the
-   * aggregation keys that you specify is a separate aggregation instance, with the
-   * value from each key contributing to the aggregation instance definition. </p>
-   * <p>For example, assume the rule evaluates web requests with the following IP
-   * address and HTTP method values: </p> <ul> <li> <p>IP address 10.1.1.1, HTTP
-   * method POST</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET</p> </li>
-   * <li> <p>IP address 127.0.0.0, HTTP method POST</p> </li> <li> <p>IP address
-   * 10.1.1.1, HTTP method GET</p> </li> </ul> <p>The rule would create different
-   * aggregation instances according to your aggregation criteria, for example: </p>
-   * <ul> <li> <p>If the aggregation criteria is just the IP address, then each
-   * individual address is an aggregation instance, and WAF counts requests
-   * separately for each. The aggregation instances and request counts for our
-   * example would be the following: </p> <ul> <li> <p>IP address 10.1.1.1: count
-   * 3</p> </li> <li> <p>IP address 127.0.0.0: count 1</p> </li> </ul> </li> <li>
-   * <p>If the aggregation criteria is HTTP method, then each individual HTTP method
-   * is an aggregation instance. The aggregation instances and request counts for our
-   * example would be the following: </p> <ul> <li> <p>HTTP method POST: count 2</p>
-   * </li> <li> <p>HTTP method GET: count 2</p> </li> </ul> </li> <li> <p>If the
-   * aggregation criteria is IP address and HTTP method, then each IP address and
-   * each HTTP method would contribute to the combined aggregation instance. The
-   * aggregation instances and request counts for our example would be the following:
-   * </p> <ul> <li> <p>IP address 10.1.1.1, HTTP method POST: count 1</p> </li> <li>
-   * <p>IP address 10.1.1.1, HTTP method GET: count 2</p> </li> <li> <p>IP address
-   * 127.0.0.0, HTTP method POST: count 1</p> </li> </ul> </li> </ul> <p>For any
-   * n-tuple of aggregation keys, each unique combination of values for the keys
-   * defines a separate aggregation instance, which WAF counts and rate-limits
-   * individually. </p> <p>You can optionally nest another statement inside the
-   * rate-based statement, to narrow the scope of the rule so that it only counts and
-   * rate limits requests that match the nested statement. You can use this nested
-   * scope-down statement in conjunction with your aggregation key specifications or
-   * you can just count and rate limit all requests that match the scope-down
-   * statement, without additional aggregation. When you choose to just manage all
-   * requests that match a scope-down statement, the aggregation instance is singular
-   * for the rule. </p> <p>You cannot nest a <code>RateBasedStatement</code> inside
-   * another statement, for example inside a <code>NotStatement</code> or
-   * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
-   * inside a web ACL and inside a rule group. </p> <p>For additional information
-   * about the options, see <a
+   * rate limits the requests for each instance. </p>  <p>If you change any of
+   * these settings in a rule that's currently in use, the change resets the rule's
+   * rate limiting counts. This can pause the rule's rate limiting activities for up
+   * to a minute. </p>  <p>You can specify individual aggregation keys, like
+   * IP address or HTTP method. You can also specify aggregation key combinations,
+   * like IP address and HTTP method, or HTTP method, query argument, and cookie.
+   * </p> <p>Each unique set of values for the aggregation keys that you specify is a
+   * separate aggregation instance, with the value from each key contributing to the
+   * aggregation instance definition. </p> <p>For example, assume the rule evaluates
+   * web requests with the following IP address and HTTP method values: </p> <ul>
+   * <li> <p>IP address 10.1.1.1, HTTP method POST</p> </li> <li> <p>IP address
+   * 10.1.1.1, HTTP method GET</p> </li> <li> <p>IP address 127.0.0.0, HTTP method
+   * POST</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET</p> </li> </ul>
+   * <p>The rule would create different aggregation instances according to your
+   * aggregation criteria, for example: </p> <ul> <li> <p>If the aggregation criteria
+   * is just the IP address, then each individual address is an aggregation instance,
+   * and WAF counts requests separately for each. The aggregation instances and
+   * request counts for our example would be the following: </p> <ul> <li> <p>IP
+   * address 10.1.1.1: count 3</p> </li> <li> <p>IP address 127.0.0.0: count 1</p>
+   * </li> </ul> </li> <li> <p>If the aggregation criteria is HTTP method, then each
+   * individual HTTP method is an aggregation instance. The aggregation instances and
+   * request counts for our example would be the following: </p> <ul> <li> <p>HTTP
+   * method POST: count 2</p> </li> <li> <p>HTTP method GET: count 2</p> </li> </ul>
+   * </li> <li> <p>If the aggregation criteria is IP address and HTTP method, then
+   * each IP address and each HTTP method would contribute to the combined
+   * aggregation instance. The aggregation instances and request counts for our
+   * example would be the following: </p> <ul> <li> <p>IP address 10.1.1.1, HTTP
+   * method POST: count 1</p> </li> <li> <p>IP address 10.1.1.1, HTTP method GET:
+   * count 2</p> </li> <li> <p>IP address 127.0.0.0, HTTP method POST: count 1</p>
+   * </li> </ul> </li> </ul> <p>For any n-tuple of aggregation keys, each unique
+   * combination of values for the keys defines a separate aggregation instance,
+   * which WAF counts and rate-limits individually. </p> <p>You can optionally nest
+   * another statement inside the rate-based statement, to narrow the scope of the
+   * rule so that it only counts and rate limits requests that match the nested
+   * statement. You can use this nested scope-down statement in conjunction with your
+   * aggregation key specifications or you can just count and rate limit all requests
+   * that match the scope-down statement, without additional aggregation. When you
+   * choose to just manage all requests that match a scope-down statement, the
+   * aggregation instance is singular for the rule. </p> <p>You cannot nest a
+   * <code>RateBasedStatement</code> inside another statement, for example inside a
+   * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
+   * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
+   * <p>For additional information about the options, see <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rate-based-rules.html">Rate
    * limiting web requests using rate-based rules</a> in the <i>WAF Developer
    * Guide</i>. </p> <p>If you only aggregate on the individual IP address or

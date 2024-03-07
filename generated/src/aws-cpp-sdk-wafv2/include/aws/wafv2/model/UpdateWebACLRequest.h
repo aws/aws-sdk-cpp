@@ -895,66 +895,84 @@ namespace Model
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline const AssociationConfig& GetAssociationConfig() const{ return m_associationConfig; }
 
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline bool AssociationConfigHasBeenSet() const { return m_associationConfigHasBeenSet; }
 
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline void SetAssociationConfig(const AssociationConfig& value) { m_associationConfigHasBeenSet = true; m_associationConfig = value; }
 
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline void SetAssociationConfig(AssociationConfig&& value) { m_associationConfigHasBeenSet = true; m_associationConfig = std::move(value); }
 
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline UpdateWebACLRequest& WithAssociationConfig(const AssociationConfig& value) { SetAssociationConfig(value); return *this;}
 
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline UpdateWebACLRequest& WithAssociationConfig(AssociationConfig&& value) { SetAssociationConfig(std::move(value)); return *this;}
 

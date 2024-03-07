@@ -78,106 +78,92 @@ namespace Model
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline const Aws::String& GetKeyCheckValue() const{ return m_keyCheckValue; }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline void SetKeyCheckValue(const Aws::String& value) { m_keyCheckValue = value; }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline void SetKeyCheckValue(Aws::String&& value) { m_keyCheckValue = std::move(value); }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline void SetKeyCheckValue(const char* value) { m_keyCheckValue.assign(value); }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline DecryptDataResult& WithKeyCheckValue(const Aws::String& value) { SetKeyCheckValue(value); return *this;}
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline DecryptDataResult& WithKeyCheckValue(Aws::String&& value) { SetKeyCheckValue(std::move(value)); return *this;}
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline DecryptDataResult& WithKeyCheckValue(const char* value) { SetKeyCheckValue(value); return *this;}
 
 
     /**
-     * <p>The decrypted plaintext data.</p>
+     * <p>The decrypted plaintext data in hexBinary format.</p>
      */
     inline const Aws::String& GetPlainText() const{ return m_plainText; }
 
     /**
-     * <p>The decrypted plaintext data.</p>
+     * <p>The decrypted plaintext data in hexBinary format.</p>
      */
     inline void SetPlainText(const Aws::String& value) { m_plainText = value; }
 
     /**
-     * <p>The decrypted plaintext data.</p>
+     * <p>The decrypted plaintext data in hexBinary format.</p>
      */
     inline void SetPlainText(Aws::String&& value) { m_plainText = std::move(value); }
 
     /**
-     * <p>The decrypted plaintext data.</p>
+     * <p>The decrypted plaintext data in hexBinary format.</p>
      */
     inline void SetPlainText(const char* value) { m_plainText.assign(value); }
 
     /**
-     * <p>The decrypted plaintext data.</p>
+     * <p>The decrypted plaintext data in hexBinary format.</p>
      */
     inline DecryptDataResult& WithPlainText(const Aws::String& value) { SetPlainText(value); return *this;}
 
     /**
-     * <p>The decrypted plaintext data.</p>
+     * <p>The decrypted plaintext data in hexBinary format.</p>
      */
     inline DecryptDataResult& WithPlainText(Aws::String&& value) { SetPlainText(std::move(value)); return *this;}
 
     /**
-     * <p>The decrypted plaintext data.</p>
+     * <p>The decrypted plaintext data in hexBinary format.</p>
      */
     inline DecryptDataResult& WithPlainText(const char* value) { SetPlainText(value); return *this;}
 
